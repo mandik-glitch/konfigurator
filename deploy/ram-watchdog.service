@@ -1,0 +1,25 @@
+[Unit]
+Description=RAM watchdog - SOFT/HARD alert + SIGSTOP bezpecneho seznamu + eskalace do tmux bot3 (viz SERVER_RAM_WATCHDOG.md, zdroj deploy/ram-watchdog.sh)
+Documentation=file:/opt/konfigurator/SERVER_RAM_WATCHDOG.md
+After=multi-user.target
+
+[Service]
+Type=simple
+User=root
+Group=root
+# /etc/default/ram-watchdog = volitelne prepsani prahu / COORDINATOR_TMUX_SESSION
+# (cte si ho i sam skript; pri zmene koordinatora `systemctl restart ram-watchdog`)
+ExecStart=/usr/local/sbin/ram-watchdog.sh
+Restart=always
+RestartSec=5
+# musi bezet i kdyz je server pod tlakem: prednost na CPU, nikdy ne prvni obet OOM
+Nice=-5
+OOMScoreAdjust=-900
+MemoryMax=64M
+# ZADNE PrivateTmp: tmux socket koordinatora je /tmp/tmux-0/, jinak ESCALATE
+# potichu selze (viz incident 2026-08-23)
+KillSignal=SIGTERM
+TimeoutStopSec=15
+
+[Install]
+WantedBy=multi-user.target

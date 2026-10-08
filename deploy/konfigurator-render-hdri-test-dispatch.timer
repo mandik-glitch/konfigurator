@@ -1,0 +1,13 @@
+[Unit]
+Description=Casovac testovacich HDRI renderu (kazdych ~10s, interaktivni pouziti z adminu)
+
+[Timer]
+# OnUnitActiveSec (monotonni, ne OnCalendar) - ZAMERNE: tenhle automat je
+# pro interaktivni kliknuti Robertem v adminu, potrebuje kratky cyklus,
+# ne 15minutovy vzor zbytku Vandr rodiny. Pocita se od KONCE predchoziho
+# behu, takze se nikdy neprekryva sam se sebou.
+OnBootSec=10s
+OnUnitActiveSec=10s
+
+[Install]
+WantedBy=timers.target

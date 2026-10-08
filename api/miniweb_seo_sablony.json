@@ -1,0 +1,315 @@
+{
+  "_zdroj": "docs/miniweb_seo_sablony_navrh.json (bot7, 2026-10-03) - sekce sk a en; cte api/miniweb_seo.py",
+  "sk": {
+    "host": "baliace-stoly.top",
+    "brand": "Baliace a pracovné stoly",
+    "locale": "sk_SK",
+    "lang": "sk",
+    "home": {
+      "title": "Baliace a pracovné stoly – Navrhnite si vlastný baliaci stôl",
+      "description": "Baliace a pracovné stoly na mieru z hliníkových profilov. Nastavte rozmery a príslušenstvo, pozrite si 3D a objednajte. Ceny bez DPH.",
+      "h1_key": "home.h1",
+      "robots": "index,follow"
+    },
+    "category": {
+      "title": "{category.name} – Baliace a pracovné stoly",
+      "description": "Pracovné a baliace stoly z hliníkových profilov: vlastná šírka, hĺbka a výška, police a príslušenstvo. Dodanie 3–5 týždňov.",
+      "robots": "index,follow"
+    },
+    "product": {
+      "title": "{product.name}",
+      "description": "{product.summary}",
+      "robots": "index,follow",
+      "poznamka": "title = product.name (41 znakov), bez pripony brandu; description = product.summary (<= 160, aktualne 130 znakov)"
+    },
+    "contact": {
+      "title": "Kontakt – Baliace a pracovné stoly",
+      "description": "Máte otázku k baliacemu alebo pracovnému stolu? Napíšte nám cez formulár a odpovieme vám.",
+      "robots": "index,follow"
+    },
+    "legal": {
+      "title": "Právne informácie – Baliace a pracovné stoly",
+      "description": "Informácie o prevádzkovateľovi, objednávke a ochrane osobných údajov.",
+      "robots": "index,follow"
+    },
+    "cart": {
+      "title": "Košík – Baliace a pracovné stoly",
+      "description": "Obsah košíka.",
+      "robots": "noindex,nofollow"
+    },
+    "inquiry": {
+      "title": "Dopyt – Baliace a pracovné stoly",
+      "description": "Odoslanie dopytu.",
+      "robots": "noindex,nofollow"
+    },
+    "not_found": {
+      "title": "Stránka sa nenašla – Baliace a pracovné stoly",
+      "description": "Požadovaná stránka neexistuje.",
+      "robots": "noindex,follow",
+      "http_status": 404
+    },
+    "og": {
+      "site_name": "Baliace a pracovné stoly",
+      "type_home": "website",
+      "type_product": "product",
+      "locale": "sk_SK",
+      "title": "= title stránky",
+      "description": "= meta description stránky",
+      "url": "= canonical",
+      "image": "VYNECHANE. Karta 4934 nema ziadny obrazok ani otocku (bot4 2026-10-03); otocky inych kariet nesu ochranne razitko s logom. og:image sa nepouzije, kym nevznikne samostatny render bez razitok (zadava len automat/Robert). Nikdy logo obchodu ani prevadzkovatela.",
+      "image_alt": "nepouziva sa (bez og:image)"
+    },
+    "twitter": {
+      "card": "summary (bez obrazka)",
+      "title": "= og:title",
+      "description": "= og:description",
+      "image": "nepouziva sa",
+      "image_alt": "nepouziva sa",
+      "site": "nevypĺňať (žiadny účet)"
+    },
+    "checkout": {
+      "title": "Dokončenie objednávky – Baliace a pracovné stoly",
+      "description": "Dokončenie objednávky.",
+      "robots": "noindex,nofollow"
+    },
+    "order_done": {
+      "title": "Objednávka prijatá – Baliace a pracovné stoly",
+      "description": "Objednávka bola prijatá.",
+      "robots": "noindex,nofollow"
+    }
+  },
+  "en": {
+    "host": "packing-tables.top",
+    "brand": "Packing Stations & Workbenches",
+    "locale": "en_IE",
+    "lang": "en",
+    "home": {
+      "title": "Packing Stations & Workbenches – Design your own",
+      "description": "Packing tables and aluminium workbenches made to your size. Set dimensions and accessories, see 3D and order. Prices excl. VAT.",
+      "h1_key": "home.h1",
+      "robots": "index,follow"
+    },
+    "category": {
+      "title": "{category.name} – Packing Stations & Workbenches",
+      "description": "Packing tables and workbenches from aluminium profiles: your own width, depth and height, shelves and accessories. Delivery in 3–5 weeks.",
+      "robots": "index,follow"
+    },
+    "product": {
+      "title": "{product.name}",
+      "description": "{product.summary}",
+      "robots": "index,follow",
+      "poznamka": "title = product.name, without the brand suffix; description = product.summary (<= 160)"
+    },
+    "contact": {
+      "title": "Contact – Packing Stations & Workbenches",
+      "description": "Questions about a packing table or workbench? Write to us through the form and we will reply.",
+      "robots": "index,follow"
+    },
+    "legal": {
+      "title": "Legal information – Packing Stations & Workbenches",
+      "description": "Information about the operator, the order and privacy.",
+      "robots": "index,follow"
+    },
+    "cart": {
+      "title": "Cart – Packing Stations & Workbenches",
+      "description": "Contents of the cart.",
+      "robots": "noindex,nofollow"
+    },
+    "inquiry": {
+      "title": "Inquiry – Packing Stations & Workbenches",
+      "description": "Sending an inquiry.",
+      "robots": "noindex,nofollow"
+    },
+    "not_found": {
+      "title": "Page not found – Packing Stations & Workbenches",
+      "description": "The requested page does not exist.",
+      "robots": "noindex,follow",
+      "http_status": 404
+    },
+    "og": {
+      "site_name": "Packing Stations & Workbenches",
+      "type_home": "website",
+      "type_product": "product",
+      "locale": "en_IE",
+      "title": "= page title",
+      "description": "= page meta description",
+      "url": "= canonical",
+      "image": "OMITTED. Product cards have no brand-free image; og:image is not used until a render without the stamp exists. Never the shop logo or the operator logo.",
+      "image_alt": "not used (no og:image)"
+    },
+    "twitter": {
+      "card": "summary (no image)",
+      "title": "= og:title",
+      "description": "= og:description",
+      "image": "not used",
+      "image_alt": "not used",
+      "site": "leave empty (no account)"
+    },
+    "checkout": {
+      "title": "Checkout – Packing Stations & Workbenches",
+      "description": "Completing the order.",
+      "robots": "noindex,nofollow"
+    },
+    "order_done": {
+      "title": "Order received – Packing Stations & Workbenches",
+      "description": "The order has been received.",
+      "robots": "noindex,nofollow"
+    }
+  },
+  "de": {
+    "host": "packtische.top",
+    "brand": "Packtische & Arbeitstische",
+    "locale": "de_DE",
+    "lang": "de",
+    "home": {
+      "title": "Packtische & Arbeitstische nach Maß – Selbst gestalten",
+      "description": "Packtische und Arbeitstische nach Maß aus Aluminiumprofilen. Abmessungen und Zubehör einstellen, in 3D ansehen und bestellen. Preise zzgl. MwSt.",
+      "h1_key": "home.h1",
+      "robots": "index,follow"
+    },
+    "category": {
+      "title": "{category.name} – Packtische & Arbeitstische",
+      "description": "Pack- und Arbeitstische aus Aluminiumprofilen: eigene Breite, Tiefe und Höhe, Fachböden und Zubehör. Lieferung in 3–5 Wochen.",
+      "robots": "index,follow"
+    },
+    "product": {
+      "title": "{product.name}",
+      "description": "{product.summary}",
+      "robots": "index,follow",
+      "poznamka": "title = product.name, ohne Markenzusatz; description = product.summary (<= 160)"
+    },
+    "contact": {
+      "title": "Kontakt – Packtische & Arbeitstische",
+      "description": "Haben Sie Fragen zu einem Pack- oder Arbeitstisch? Schreiben Sie uns über das Formular, wir antworten Ihnen.",
+      "robots": "index,follow"
+    },
+    "legal": {
+      "title": "Rechtliches – Packtische & Arbeitstische",
+      "description": "Rechtliche Informationen: Angaben zum Betreiber, zur Bestellung und zum Schutz Ihrer personenbezogenen Daten.",
+      "robots": "index,follow"
+    },
+    "cart": {
+      "title": "Warenkorb – Packtische & Arbeitstische",
+      "description": "Ihr Warenkorb mit den ausgewählten Konfigurationen. Prüfen Sie die Positionen, bevor Sie die Bestellung abschicken.",
+      "robots": "noindex,nofollow"
+    },
+    "inquiry": {
+      "title": "Anfrage – Packtische & Arbeitstische",
+      "description": "Anfrage senden: Schreiben Sie uns, was Sie an einem Pack- oder Arbeitstisch benötigen, wir melden uns bei Ihnen.",
+      "robots": "noindex,nofollow"
+    },
+    "not_found": {
+      "title": "Seite nicht gefunden – Packtische & Arbeitstische",
+      "description": "Die angeforderte Seite existiert nicht oder wurde verschoben. Auf der Startseite finden Sie unsere Pack- und Arbeitstische.",
+      "robots": "noindex,follow",
+      "http_status": 404
+    },
+    "og": {
+      "site_name": "Packtische & Arbeitstische",
+      "type_home": "website",
+      "type_product": "product",
+      "locale": "de_DE",
+      "title": "= Seitentitel",
+      "description": "= Meta-Beschreibung der Seite",
+      "url": "= canonical",
+      "image": "AUSGELASSEN. Produktkarten haben kein markenfreies Bild; og:image wird nicht verwendet, bis ein Render ohne Schutzstempel existiert. Niemals das Logo des Shops oder des Betreibers.",
+      "image_alt": "nicht verwendet (kein og:image)"
+    },
+    "twitter": {
+      "card": "summary (ohne Bild)",
+      "title": "= og:title",
+      "description": "= og:description",
+      "image": "nicht verwendet",
+      "image_alt": "nicht verwendet",
+      "site": "leer lassen (kein Konto)"
+    },
+    "checkout": {
+      "title": "Bestellung abschließen – Packtische & Arbeitstische",
+      "description": "Bestellung abschließen: Geben Sie Ihre Daten ein, prüfen Sie die Positionen und senden Sie Ihre Bestellung ab.",
+      "robots": "noindex,nofollow"
+    },
+    "order_done": {
+      "title": "Bestellung eingegangen – Packtische & Arbeitstische",
+      "description": "Vielen Dank, Ihre Bestellung ist bei uns eingegangen. Wir melden uns bei Ihnen mit den nächsten Schritten.",
+      "robots": "noindex,nofollow"
+    }
+  },
+  "hu": {
+    "host": "csomagoloasztalok.top",
+    "brand": "Csomagoló- és munkaasztalok",
+    "locale": "hu_HU",
+    "lang": "hu",
+    "home": {
+      "title": "Csomagoló- és munkaasztalok – Tervezze meg saját asztalát",
+      "description": "Méretre gyártott csomagoló- és munkaasztalok alumínium profilokból. Adja meg a méreteket és a tartozékokat, nézze meg 3D-ben, és rendelje meg. Árak ÁFA nélkül.",
+      "h1_key": "home.h1",
+      "robots": "index,follow"
+    },
+    "category": {
+      "title": "{category.name}",
+      "description": "Csomagoló- és munkaasztalok alumínium profilokból: saját szélesség, mélység és magasság, polcok és tartozékok. Szállítási határidő 3–5 hét.",
+      "robots": "index,follow"
+    },
+    "product": {
+      "title": "{product.name}",
+      "description": "{product.summary}",
+      "robots": "index,follow",
+      "poznamka": "title = product.name, a márkanév utótagja nélkül; description = product.summary (<= 160)"
+    },
+    "contact": {
+      "title": "Kapcsolat – Csomagoló- és munkaasztalok",
+      "description": "Kérdése van egy csomagoló- vagy munkaasztallal kapcsolatban? Írjon nekünk az űrlapon keresztül, és válaszolunk Önnek.",
+      "robots": "index,follow"
+    },
+    "legal": {
+      "title": "Jogi információk – Csomagoló- és munkaasztalok",
+      "description": "Jogi információk az üzemeltetőről, a megrendelésről és a személyes adatok védelméről a csomagoló- és munkaasztalok boltjában.",
+      "robots": "index,follow"
+    },
+    "cart": {
+      "title": "Kosár – Csomagoló- és munkaasztalok",
+      "description": "A kosár tartalma a csomagoló- és munkaasztalok boltjában. Itt ellenőrizheti a kiválasztott tételeket, mielőtt a pénztárhoz lép.",
+      "robots": "noindex,nofollow"
+    },
+    "inquiry": {
+      "title": "Ajánlatkérés – Csomagoló- és munkaasztalok",
+      "description": "Ajánlatkérés küldése a csomagoló- és munkaasztalok boltjában. Adja meg az adatait és az üzenetét, és válaszolunk Önnek.",
+      "robots": "noindex,nofollow"
+    },
+    "not_found": {
+      "title": "Az oldal nem található – Csomagoló- és munkaasztalok",
+      "description": "A kért oldal nem létezik. Térjen vissza a csomagoló- és munkaasztalok nyitóoldalára, vagy válasszon az asztalok kínálatából.",
+      "robots": "noindex,follow",
+      "http_status": 404
+    },
+    "og": {
+      "site_name": "Csomagoló- és munkaasztalok",
+      "type_home": "website",
+      "type_product": "product",
+      "locale": "hu_HU",
+      "title": "= az oldal címe",
+      "description": "= az oldal meta leírása",
+      "url": "= canonical",
+      "image": "KIHAGYVA. A termékkártyáknak nincs márkajelzés nélküli képe; az og:image nem használatos, amíg nem készül külön render védőbélyeg nélkül. Soha nem a bolt vagy az üzemeltető logója.",
+      "image_alt": "nem használatos (og:image nélkül)"
+    },
+    "twitter": {
+      "card": "summary (kép nélkül)",
+      "title": "= og:title",
+      "description": "= og:description",
+      "image": "nem használatos",
+      "image_alt": "nem használatos",
+      "site": "üresen hagyni (nincs fiók)"
+    },
+    "checkout": {
+      "title": "Megrendelés befejezése – Csomagoló- és munkaasztalok",
+      "description": "A megrendelés befejezése a csomagoló- és munkaasztalok boltjában: ellenőrizze az adatokat, majd küldje el a megrendelést.",
+      "robots": "noindex,nofollow"
+    },
+    "order_done": {
+      "title": "Megrendelés beérkezett – Csomagoló- és munkaasztalok",
+      "description": "A megrendelés beérkezett. Köszönjük, hogy a csomagoló- és munkaasztalok boltjában adta le megrendelését.",
+      "robots": "noindex,nofollow"
+    }
+  }
+}

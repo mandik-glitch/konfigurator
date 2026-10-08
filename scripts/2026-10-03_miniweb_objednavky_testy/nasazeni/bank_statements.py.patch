@@ -1,0 +1,11 @@
+--- a/api/bank_statements.py
++++ b/api/bank_statements.py
+@@ -402,7 +402,7 @@
+         # ze jde o platbu predem - bezpecny default je NEVYSTAVOVAT
+         # (stejny princip jako create_proforma_invoice_if_needed vyse).
+         return None
+-    amount_net = round(float(bank_amount_gross) / (1 + documents.VAT_RATE / 100), 2)
++    amount_net = round(float(bank_amount_gross) / (1 + documents._order_vat_rate(order) / 100), 2)
+     if amount_net <= 0:
+         return None
+     dedicated_conn = None

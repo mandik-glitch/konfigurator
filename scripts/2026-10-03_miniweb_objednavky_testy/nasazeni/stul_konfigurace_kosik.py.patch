@@ -1,0 +1,38 @@
+--- a/api/konfigurace_kosik.py
++++ b/api/konfigurace_kosik.py
+@@ -58,6 +58,9 @@
+     (konfigurovatelna karta nema radek v product_assemblies). Radek sluzby: klic montaz, aktivni, pricing_mode procento_z_ceny, hodnota v (0, 100]. Cte jen pres kurzor."""
+     if not kod_typu or str(kod_typu).upper() == "AUTO":
+         return None
++    if str(kod_typu).upper() == TYP_SESTAVY:                 # stul: JEDINE rozhodnuti o sazbe = app_settings stul_montaz_pct (vychozi 12 %, 0 = nenabizi se; Robert pres bot9 2026-10-04), api/stul_montaz.py
++        import stul_montaz
++        return stul_montaz.pct(cur)
+     cur.execute("SELECT id FROM sestava_typ WHERE kod=%s", (kod_typu,))
+     typ = cur.fetchone()
+     if not typ:
+@@ -258,17 +261,22 @@
+     if montaz_zvolena and (res["montaz_czk"] is None or not montaz_dostupna_pro_zemi(it.get("delivery_country"))):
+         raise chyba("Montáž u této konfigurace se nenabízí, odeberte ji v košíku.", 409)
+     cena, zaklad = _cena_po_sleve(cur, product["id"], res["net_czk"], user_id)
+-    unit = round(cena + res["montaz_czk"], 2) if montaz_zvolena else cena
++    unit = cena                                                  # montaz je v objednavce SAMOSTATNY radek (viz _montaz_radek nize), ne soucast ceny konfigurace
+     snimek = {"v": CFG_VERZE, "product_id": product["id"], "kod": res["kod"], "hash": res["hash"], "rules_version": res["rules_version"], "lang": "cs",
+               "selection": res["selection"], "summary": res["summary"], "bom": res["bom"], "pocet_spoju": res["pocet_spoju"], "price_summary": res["price_summary"], "warnings": res["warnings"],
+               "list_net_czk": res["net_czk"], "price_basis": zaklad, "weight_kg": res["weight_kg"], "weight_complete": res["weight_complete"], "weight_missing": res["weight_missing"],
+               "montaz": {"zvolena": montaz_zvolena, "pct": res["montaz_pct"], "czk": res["montaz_czk"] if montaz_zvolena else None}}
+-    return {
++    radek = {
+         "product_id": None, "product_name_snapshot": jmeno_radku(product.get("name"), res["selection"], res["kod"]), "unit_price_czk": unit, "qty": qty, "cut_pieces_json": None,
+         "line_total_czk": round(unit * qty, 2), "stock_qty": 0, "is_profile_material": False, "assembly_id": None, "assembly_kod_snapshot": None,
+         "montaz_zvolena": montaz_zvolena, "montaz_czk_snapshot": res["montaz_czk"] if montaz_zvolena else None, "montaz_misto_snapshot": None, "bez_boxu": False, "boxy_czk_snapshot": None,
+         "configuration_json": json.dumps(snimek, ensure_ascii=False), "configuration_code": res["kod"],
+-    }, float(res["weight_kg"] or 0.0) * qty, res["weight_complete"]
++    }
++    if montaz_zvolena:                                           # samostatny radek 'Montaz' (product_id NULL, DPH jako zbozi); jadro objednavky ho prida za radek konfigurace a odstrani z radku klic
++        mont = round(float(res["montaz_czk"]), 2)
++        radek["_montaz_radek"] = {"product_id": None, "product_name_snapshot": f"Montáž – {res['kod']}", "unit_price_czk": mont, "qty": qty, "cut_pieces_json": None, "line_total_czk": round(mont * qty, 2),
++                                  "stock_qty": 0, "is_profile_material": False}
++    return radek, float(res["weight_kg"] or 0.0) * qty, res["weight_complete"]
+ 
+ 
+ def hmotnost_pro_nahled(cur, it):

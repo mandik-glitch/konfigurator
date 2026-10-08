@@ -1,0 +1,68 @@
+{
+ "key": "PE21",
+ "ok": true,
+ "family": "expert",
+ "base": "Peugeot_Expert_PE21_2016-",
+ "offsetX": -401.5,
+ "offsetY": 2,
+ "H": 1180,
+ "CAP_H": 260,
+ "CUTOUT_H": 395,
+ "uskok": 225,
+ "capOffsetFromW": 70,
+ "legs": [
+  {
+   "anchorZ": -1186.4999923706055,
+   "type": "plain"
+  },
+  {
+   "anchorZ": -324.49999237060547,
+   "type": "vyrez"
+  }
+ ],
+ "columns": [
+  {
+   "legFromIdx": 0,
+   "legToIdx": 1,
+   "width": 832,
+   "N": 2
+  }
+ ],
+ "legExtensions": {
+  "1": 290
+ },
+ "columnPlans": [
+  {
+   "colIdx": 0,
+   "legFromIdx": 0,
+   "legToIdx": 1,
+   "N": 2,
+   "floorY": 318,
+   "railZFrom": -1156.4999923706055,
+   "railZTo": -324.49999237060547,
+   "railZCenter": -740.4999923706055,
+   "railLen": 832,
+   "crossLen": 289,
+   "crossXCenter": 174.5
+  }
+ ],
+ "columnLevels": [
+  {
+   "colIdx": 0,
+   "levels": [
+    {
+     "railYCenter": 333,
+     "boxH": 270,
+     "boxTop": 618
+    },
+    {
+     "railYCenter": 663,
+     "boxH": 220,
+     "boxTop": 898
+    }
+   ]
+  }
+ ],
+ "rearLimitZ": -890.4999923706055,
+ "elapsedMs": 7250
+}

@@ -1,0 +1,12 @@
+{
+ "0": {
+  "floorLegBased": 213,
+  "finalFloorY": 213,
+  "railYCenterMin": 228
+ },
+ "1": {
+  "floorLegBased": 213,
+  "finalFloorY": 318,
+  "railYCenterMin": 333
+ }
+}

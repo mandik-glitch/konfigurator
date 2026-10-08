@@ -1,0 +1,27 @@
+{
+  "poznamka": "NAVRH bot7 pre bot16/bot5 (nic sa nenahrava). FAZA 2: zapnut spolu s UI volby montaze v SK/EN mini-shope (bot16). Robert 2026-10-05: S montazou = stol dodany ZMONTOVANY, bez montaze = DEMONTOVANY (rozlozeny). Bez ceny a bez percenta montaze (cena sa ukazuje pri volbe). Katalog: pole 'delivery' a posledna cast popisu produktu (SK/EN, produkt 1 aj 2); import schvaleneho textu len cez --revise-approved s Robertovym klikom. i18n kluce (pdc.montaz*) su uz v cs/sk/en.json.",
+  "sk": {
+    "delivery": "Vyrába sa na objednávku. Dodacia lehota je 3–5 týždňov. Montáž je voliteľná služba: s montážou dodáme stôl zmontovaný, bez nej demontovaný (rozložený). Cenu dopravy určíme po objednávke a pred vystavením zálohovej faktúry ju potvrdíme.",
+    "description_posledna_cast": "Dodanie, montáž a doprava\nStôl sa vyrába na objednávku, dodacia lehota je 3–5 týždňov. Montáž je voliteľná služba: s montážou dodáme stôl zmontovaný, bez nej demontovaný (rozložený) a zmontujete si ho sami. Cena dopravy sa mení podľa toho, či si montáž zvolíte; určíme ju po objednávke a pred vystavením zálohovej faktúry ju potvrdíme.",
+    "i18n": {
+      "home.usp4.d": "Stôl sa vyrába na objednávku. Montáž je voliteľná: s ňou dostanete stôl zmontovaný, bez nej demontovaný.",
+      "faq.5.q": "Aká je dodacia lehota a ako sa stôl dodáva?",
+      "faq.5.a": "Stôl sa vyrába na objednávku. Dodacia lehota je 3–5 týždňov. S montážou dodáme stôl zmontovaný, bez nej demontovaný (rozložený).",
+      "faq.9.q": "Je montáž súčasťou dodávky?",
+      "faq.9.a": "Nie, montáž je voliteľná služba. S montážou dodáme stôl zmontovaný, bez nej demontovaný (rozložený) a zmontujete si ho sami. Cena dopravy sa mení podľa toho, či si montáž zvolíte; určíme ju po objednávke a pred vystavením zálohovej faktúry ju potvrdíme.",
+      "pd.shipping_payment_text": "Platba je vopred prevodom na základe zálohovej faktúry. Montáž je voliteľná služba: s ňou dodáme stôl zmontovaný, bez nej demontovaný. Cenu dopravy určíme po objednávke a pred vystavením zálohovej faktúry ju potvrdíme."
+    }
+  },
+  "en": {
+    "delivery": "Made to order. Delivery in 3–5 weeks. Assembly is an optional service: with it the table is delivered assembled, without it disassembled. We set the shipping price after the order and confirm it before the proforma invoice is issued.",
+    "description_posledna_cast": "Delivery, assembly and shipping\nThe table is made to order and delivery takes 3–5 weeks. Assembly is an optional service: with it the table is delivered assembled, without it disassembled, and you assemble it yourself. The shipping price depends on whether you choose assembly; we set it after the order and confirm it with you before the proforma invoice is issued.",
+    "i18n": {
+      "home.usp4.d": "The table is made to order. Assembly is optional: with it you get the table assembled, without it disassembled.",
+      "faq.5.q": "What is the delivery time and how is the table delivered?",
+      "faq.5.a": "The table is made to order. Delivery takes 3–5 weeks. With assembly the table is delivered assembled, without it disassembled.",
+      "faq.9.q": "Is assembly included in the delivery?",
+      "faq.9.a": "No, assembly is an optional service. With it the table is delivered assembled, without it disassembled, and you assemble it yourself. The shipping price depends on whether you choose assembly; we set it after the order and confirm it before the proforma invoice is issued.",
+      "pd.shipping_payment_text": "Payment is in advance by bank transfer based on a proforma invoice. Assembly is an optional service: with it the table is delivered assembled, without it disassembled. We set the shipping price after the order and confirm it before the proforma invoice is issued."
+    }
+  }
+}

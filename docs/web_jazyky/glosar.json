@@ -1,0 +1,465 @@
+{
+ "_pozn": "Glosar hlavniho webu cs -> en/it (bot7, 2026-10-08). Pri rozporu s kontextem vyhrava smysl, ale TERMIN drzet jednotne napric vsemi texty. EN = britska pravopis (aluminium, colour). Robert 2026-10-05: EN drazka = slot (ne groove). Robert: rozek/rohovy prvek = corner connector.",
+ "nazev_webu": {
+  "cs": "Hliníkový konstrukční stavebnicový systém s drážkami",
+  "en": "Modular aluminium construction system with slots",
+  "it": "Sistema costruttivo modulare in alluminio con scanalature",
+  "pozn": "Robert 2026-10-08 (volná odpověď „scanalature“): IT drážka = scanalatura; EN název zatím navržen, čeká na potvrzení"
+ },
+ "terminy": [
+  {
+   "cs": "hliníkový profil",
+   "en": "aluminium profile",
+   "it": "profilo in alluminio"
+  },
+  {
+   "cs": "stavebnicový",
+   "en": "modular",
+   "it": "modulare"
+  },
+  {
+   "cs": "konstrukční systém",
+   "en": "construction system",
+   "it": "sistema costruttivo"
+  },
+  {
+   "cs": "drážka",
+   "en": "slot",
+   "it": "scanalatura (pl. scanalature)",
+   "pozn": "EN nikdy groove; IT Robert 2026-10-08: scanalatura (ne cava)"
+  },
+  {
+   "cs": "matice do drážky",
+   "en": "slot nut",
+   "it": "dado per scanalatura"
+  },
+  {
+   "cs": "zakrutná / rýhovaná matice",
+   "en": "twist-in nut",
+   "it": "dado ad inserimento a rotazione"
+  },
+  {
+   "cs": "šroub",
+   "en": "screw",
+   "it": "vite"
+  },
+  {
+   "cs": "matice",
+   "en": "nut",
+   "it": "dado"
+  },
+  {
+   "cs": "podložka",
+   "en": "washer",
+   "it": "rondella"
+  },
+  {
+   "cs": "spojovací materiál",
+   "en": "fasteners",
+   "it": "elementi di collegamento"
+  },
+  {
+   "cs": "rohová spojka / rožek / rohový prvek",
+   "en": "corner connector",
+   "it": "giunto angolare"
+  },
+  {
+   "cs": "spojka (obecně)",
+   "en": "connector",
+   "it": "giunto"
+  },
+  {
+   "cs": "úhelník",
+   "en": "angle bracket",
+   "it": "squadretta"
+  },
+  {
+   "cs": "záslepka",
+   "en": "end cap",
+   "it": "tappo terminale"
+  },
+  {
+   "cs": "kryt",
+   "en": "cover",
+   "it": "copertura"
+  },
+  {
+   "cs": "těsnění drážky",
+   "en": "slot seal",
+   "it": "guarnizione per scanalatura"
+  },
+  {
+   "cs": "posuvné kolečko",
+   "en": "sliding wheel",
+   "it": "rotella scorrevole"
+  },
+  {
+   "cs": "vzpěra",
+   "en": "strut",
+   "it": "puntone"
+  },
+  {
+   "cs": "plynová vzpěra",
+   "en": "gas strut",
+   "it": "molla a gas"
+  },
+  {
+   "cs": "kloub",
+   "en": "joint / hinge (dle kontextu)",
+   "it": "giunto articolato / cerniera (dle kontextu)"
+  },
+  {
+   "cs": "profil 30×30 / systém 30",
+   "en": "30×30 profile / system 30",
+   "it": "profilo 30×30 / sistema 30"
+  },
+  {
+   "cs": "systém 40",
+   "en": "system 40",
+   "it": "sistema 40"
+  },
+  {
+   "cs": "police",
+   "en": "shelf",
+   "it": "ripiano"
+  },
+  {
+   "cs": "regál",
+   "en": "shelving unit",
+   "it": "scaffale"
+  },
+  {
+   "cs": "šuplík / zásuvka",
+   "en": "drawer",
+   "it": "cassetto"
+  },
+  {
+   "cs": "výsuv",
+   "en": "pull-out",
+   "it": "estraibile"
+  },
+  {
+   "cs": "box (v regálu)",
+   "en": "box",
+   "it": "box"
+  },
+  {
+   "cs": "eurobox",
+   "en": "Euro box",
+   "it": "eurobox"
+  },
+  {
+   "cs": "přepravka",
+   "en": "crate",
+   "it": "cassetta"
+  },
+  {
+   "cs": "deska (stolu)",
+   "en": "worktop",
+   "it": "piano di lavoro"
+  },
+  {
+   "cs": "stůl",
+   "en": "table",
+   "it": "tavolo"
+  },
+  {
+   "cs": "pracovní stůl",
+   "en": "workbench",
+   "it": "banco da lavoro"
+  },
+  {
+   "cs": "balicí stůl",
+   "en": "packing table",
+   "it": "tavolo da imballaggio"
+  },
+  {
+   "cs": "montážní stůl",
+   "en": "assembly table",
+   "it": "tavolo di montaggio"
+  },
+  {
+   "cs": "noha",
+   "en": "leg",
+   "it": "gamba"
+  },
+  {
+   "cs": "rám",
+   "en": "frame",
+   "it": "telaio"
+  },
+  {
+   "cs": "perforovaný panel",
+   "en": "perforated panel",
+   "it": "pannello forato"
+  },
+  {
+   "cs": "laminovaná deska",
+   "en": "laminated board",
+   "it": "pannello laminato"
+  },
+  {
+   "cs": "překližka",
+   "en": "plywood",
+   "it": "compensato"
+  },
+  {
+   "cs": "foliovaná překližka",
+   "en": "film-faced plywood",
+   "it": "compensato rivestito"
+  },
+  {
+   "cs": "LED svítidlo",
+   "en": "LED light fixture",
+   "it": "apparecchio LED"
+  },
+  {
+   "cs": "vestavba (do dodávky)",
+   "en": "van fit-out",
+   "it": "allestimento per furgoni"
+  },
+  {
+   "cs": "dodávka",
+   "en": "van",
+   "it": "furgone"
+  },
+  {
+   "cs": "karoserie",
+   "en": "vehicle body",
+   "it": "carrozzeria"
+  },
+  {
+   "cs": "na míru",
+   "en": "made to measure / custom",
+   "it": "su misura"
+  },
+  {
+   "cs": "sestava",
+   "en": "assembly (hotova skladba dilu)",
+   "it": "composizione"
+  },
+  {
+   "cs": "montáž (sestaveni dilu zakaznikem / dodavatelem)",
+   "en": "assembly",
+   "it": "montaggio"
+  },
+  {
+   "cs": "montáž (vestavby ve vozidle)",
+   "en": "installation",
+   "it": "installazione"
+  },
+  {
+   "cs": "dopravník (bez pohonu)",
+   "en": "(unpowered) conveyor",
+   "it": "trasportatore (senza motore)"
+  },
+  {
+   "cs": "válečkový dopravník",
+   "en": "roller conveyor",
+   "it": "trasportatore a rulli"
+  },
+  {
+   "cs": "váleček",
+   "en": "roller",
+   "it": "rullo"
+  },
+  {
+   "cs": "boční vodítko",
+   "en": "side guide",
+   "it": "guida laterale"
+  },
+  {
+   "cs": "podvozek / noha dopravníku",
+   "en": "conveyor stand",
+   "it": "supporto per trasportatore"
+  },
+  {
+   "cs": "3D náhled",
+   "en": "3D preview",
+   "it": "anteprima 3D"
+  },
+  {
+   "cs": "generátor (stolu...)",
+   "en": "generator",
+   "it": "generatore",
+   "pozn": "slovo 'konfigurator/configurator/configuratore' je ZAKAZANE; pis generator / 3D design (progettazione 3D)"
+  },
+  {
+   "cs": "nosnost",
+   "en": "load capacity",
+   "it": "portata",
+   "pozn": "cisla nosnosti se nevymyslet"
+  },
+  {
+   "cs": "hmotnost",
+   "en": "weight",
+   "it": "peso"
+  },
+  {
+   "cs": "rozměry",
+   "en": "dimensions",
+   "it": "dimensioni"
+  },
+  {
+   "cs": "délka × šířka × výška",
+   "en": "length × width × height",
+   "it": "lunghezza × larghezza × altezza"
+  },
+  {
+   "cs": "kategorie",
+   "en": "category",
+   "it": "categoria"
+  },
+  {
+   "cs": "příslušenství",
+   "en": "accessories",
+   "it": "accessori"
+  },
+  {
+   "cs": "poptávka",
+   "en": "enquiry",
+   "it": "richiesta di offerta"
+  },
+  {
+   "cs": "cenová nabídka",
+   "en": "quotation",
+   "it": "preventivo"
+  },
+  {
+   "cs": "objednávka",
+   "en": "order",
+   "it": "ordine"
+  },
+  {
+   "cs": "košík",
+   "en": "basket",
+   "it": "carrello"
+  },
+  {
+   "cs": "doprava (zasilani)",
+   "en": "shipping",
+   "it": "spedizione"
+  },
+  {
+   "cs": "platba",
+   "en": "payment",
+   "it": "pagamento"
+  },
+  {
+   "cs": "cena bez DPH",
+   "en": "price excl. VAT",
+   "it": "prezzo IVA esclusa"
+  },
+  {
+   "cs": "s DPH",
+   "en": "incl. VAT",
+   "it": "IVA inclusa"
+  },
+  {
+   "cs": "skladem",
+   "en": "in stock",
+   "it": "disponibile a magazzino"
+  },
+  {
+   "cs": "dodání",
+   "en": "delivery",
+   "it": "consegna"
+  },
+  {
+   "cs": "ks (kus)",
+   "en": "pcs",
+   "it": "pz"
+  },
+  {
+   "cs": "obchodní podmínky",
+   "en": "terms and conditions",
+   "it": "condizioni generali di vendita"
+  },
+  {
+   "cs": "ochrana osobních údajů",
+   "en": "privacy policy",
+   "it": "informativa sulla privacy"
+  },
+  {
+   "cs": "homologace",
+   "en": "homologation / type approval",
+   "it": "omologazione"
+  }
+ ],
+ "zakazano_v_textu": [
+  "dogus",
+  "vandr",
+  "vandrawee",
+  "unity",
+  "konfigurátor / configurator / configuratore",
+  "ponk",
+  "jmeno puvodniho dodavatele knihovny karoserii",
+  "nazvy konkurentu"
+ ],
+ "poznamky": [
+  "Znacka Logiman smi zustat tam, kde je ve zdroji. Pravni nazev firmy LOGIMAN s.r.o. beze zmeny.",
+  "Kody, SKU, rozmery (30x30, 45°, Ø50, M6, K-075, 120 × 60) a jednotky (mm, kg, g, m) se NEPREKLADAJI ani neprepisuji; desetinna carka -> tecka v EN, carka zustava v IT; tisice: EN 1,000, IT 1.000.",
+  "Nikdy 'bez vrtani do karoserie' ani 'kotveno bez zasahu'; nevymyslet nosnost, ceny, normy, certifikace, ktere nejsou ve zdroji.",
+  "IT: vykani formou neosobnich vet nebo Lei, nikdy 'tu'. EN: 'you'."
+ ],
+ "sjednotit": [
+  {
+   "jazyk": "en",
+   "hledat": "\\bRobust\\b(?! )",
+   "nahradit": "Heavy-duty",
+   "pozn": "Robustní stůl -> heavy-duty"
+  },
+  {
+   "jazyk": "en",
+   "hledat": "\\bArticulated nuts\\b",
+   "nahradit": "Swivel nuts"
+  },
+  {
+   "jazyk": "en",
+   "hledat": "\\bload floors?\\b",
+   "nahradit": "load platform"
+  },
+  {
+   "jazyk": "en",
+   "hledat": "\\bLifting forks\\b",
+   "nahradit": "Hanging forks"
+  },
+  {
+   "jazyk": "en",
+   "hledat": "\\brunning wheels\\b",
+   "nahradit": "castors"
+  },
+  {
+   "jazyk": "en",
+   "hledat": "\\bConnector cubes\\b",
+   "nahradit": "Cube connectors"
+  },
+  {
+   "jazyk": "it",
+   "hledat": "\\bFermacavi\\b",
+   "nahradit": "Supporti per cavi"
+  },
+  {
+   "jazyk": "en",
+   "hledat": "\\bball bearing tables\\b",
+   "nahradit": "ball transfer tables"
+  },
+  {
+   "jazyk": "it",
+   "hledat": "\\bcave\\b",
+   "nahradit": "scanalature",
+   "pozn": "Robert 2026-10-08"
+  },
+  {
+   "jazyk": "it",
+   "hledat": "\\bcava\\b",
+   "nahradit": "scanalatura",
+   "pozn": "Robert 2026-10-08"
+  }
+ ],
+ "nazev_webu_kratky": {
+  "en": "Modular aluminium construction system",
+  "it": "Sistema costruttivo modulare in alluminio",
+  "pozn": "do titulků stránek (limit 60 znaků), bot16"
+ }
+}

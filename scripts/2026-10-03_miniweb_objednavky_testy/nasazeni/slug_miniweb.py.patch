@@ -1,0 +1,65 @@
+--- a/api/miniweb.py
++++ b/api/miniweb.py
+@@ -266,6 +266,12 @@
+     return out
+ 
+ 
++def _url_slug(t, base):
++    """Slug v jazyce shopu (bot5, 2026-10-03; SEO adresy po jazycich): url_slug z textu (schvaluje se spolu s textem), kdyz je platny a bez znacky, jinak zakladni slug (jazykove neutralni identita)."""
++    v = (t or {}).get("url_slug")
++    return v if isinstance(v, str) and _SLUG_RE.match(v) and not dealers._brand_hit(v) else base
++
++
+ def _visible_categories(cur, ctx):
+     """{id: {id, parent_id, slug, name, sort_order, text_status}} jen pro viditelne kategorie: z RODINY shopu, aktivni, s textem v jazyce shopu, bez znacky, a CELY retezec rodicu viditelny
+     (rodic z jine rodiny se nenacte, takze potomek zustane skryty)."""
+@@ -281,7 +287,7 @@
+         if r is not None and cid not in seen:
+             t = texts.get(cid)
+             name = _plain(t["name"], 200) if t else ""
+-            if name and not dealers._brand_hit(name, r["slug"]):
++            if name and not dealers._brand_hit(name, r["slug"], _url_slug(t, r["slug"])):
+                 ok = r["parent_id"] is None or visible(r["parent_id"], seen + (cid,))
+         memo[cid] = ok
+         return ok
+@@ -289,7 +295,7 @@
+     out = {}
+     for cid, r in rows.items():
+         if visible(cid):
+-            out[cid] = {"id": cid, "parent_id": r["parent_id"], "slug": r["slug"], "name": _plain(texts[cid]["name"], 200), "sort_order": r["sort_order"], "text_status": texts[cid]["status"]}
++            out[cid] = {"id": cid, "parent_id": r["parent_id"], "slug": _url_slug(texts[cid], r["slug"]), "base_slug": r["slug"], "name": _plain(texts[cid]["name"], 200), "sort_order": r["sort_order"], "text_status": texts[cid]["status"]}
+     return out
+ 
+ 
+@@ -347,10 +353,11 @@
+     name, summary = _plain(t["name"], 200), _plain(t["summary"], 500)
+     description, delivery = _plain(t["description"], 4000, multiline=True), _plain(t["delivery"], 255)
+     specs = _specs(t["specs_json"])
+-    if not name or dealers._brand_hit(name, summary, description, delivery, p["slug"], p["public_sku"], *[x for s in specs for x in (s["name"], s["value"])]):
++    slug = _url_slug(t, p["slug"])
++    if not name or dealers._brand_hit(name, summary, description, delivery, p["slug"], slug, p["public_sku"], *[x for s in specs for x in (s["name"], s["value"])]):
+         return None
+     available = bool(p["configurator_available"])
+-    item = {"id": p["id"], "slug": p["slug"], "sku": p["public_sku"], "category_id": p["category_id"], "name": name, "summary": summary, "description": description,
++    item = {"id": p["id"], "slug": slug, "slug_alt": [p["slug"]] if p["slug"] != slug else [], "sku": p["public_sku"], "category_id": p["category_id"], "name": name, "summary": summary, "description": description,
+             "price_from": _price_from(p, shop), "currency": _currency(shop), "delivery": delivery,
+             "configurator": {"available": available, "default_view": p["default_view"], "product_id": p["shop_product_id"] if available else None}, "specs": specs, **_profil_info(p)}
+     if ctx["include_draft"] and t["status"] == "draft":
+@@ -449,7 +456,7 @@
+             seen.add(cid)
+             cid = cats[cid]["parent_id"]
+     ordered = sorted(cats.values(), key=lambda c: (c["sort_order"], c["id"]))
+-    return _respond({"categories": [{"id": c["id"], "parent_id": c["parent_id"], "slug": c["slug"], "name": c["name"], "count": counts[c["id"]]} for c in ordered]}, ctx)
++    return _respond({"categories": [{"id": c["id"], "parent_id": c["parent_id"], "slug": c["slug"], "slug_alt": [c["base_slug"]] if c["base_slug"] != c["slug"] else [], "name": c["name"], "count": counts[c["id"]]} for c in ordered]}, ctx)
+ 
+ 
+ @app.get("/api/miniweb/products")
+@@ -469,7 +476,7 @@
+     finally:
+         conn.close()
+     if cat_slug:
+-        target = next((c for c in cats.values() if c["slug"] == cat_slug), None) if _SLUG_RE.match(cat_slug) else None
++        target = next((c for c in cats.values() if cat_slug in (c["slug"], c["base_slug"])), None) if _SLUG_RE.match(cat_slug) else None
+         wanted = set()
+         if target:
+             wanted = {target["id"]}

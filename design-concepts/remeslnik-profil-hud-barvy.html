@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>remeslnik.pro — profil řemeslníka, HUD styl ve 3 barvách</title>
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin:0; padding:0; font-family:-apple-system,"Segoe UI",Roboto,Arial,sans-serif; background:#0a0c0b; color:#eaf2ec; }
+
+  .intro { max-width:1100px; margin:0 auto; padding:34px 24px 10px; }
+  .intro .eyebrow { font-family:"SF Mono","Cascadia Code",Consolas,monospace; font-size:11px; letter-spacing:.18em; color:#2fe07a; text-transform:uppercase; margin-bottom:10px; }
+  .intro .eyebrow::before { content:"// "; opacity:.6; }
+  .intro h1 { font-size:23px; margin:0 0 10px; font-weight:800; letter-spacing:-.01em; }
+  .intro p { font-size:13.5px; line-height:1.7; color:#8a978f; max-width:760px; margin:0 0 8px; }
+  .intro p b { color:#eaf2ec; }
+  .intro code { font-family:"SF Mono",Consolas,monospace; font-size:12.5px; color:#eaf2ec; background:#1a1d1c; padding:1px 5px; }
+
+  /* ============ Jedna varianta = jeden .swatch blok ============
+     Vsechny 3 varianty pouzivaji IDENTICKY HUD jazyk z
+     design-concepts/admin-hud-navrh.html (clip-path serizle rohy,
+     rohove zavorky, mono eyebrow, fill-sweep hover) - lisi se VYHRADNE
+     barevnymi promennymi, aby slo srovnat jablka s jablky. */
+  .swatch { padding:30px 24px 44px; }
+  .swatch-head { max-width:1100px; margin:0 auto 18px; display:flex; align-items:baseline; gap:14px; flex-wrap:wrap; }
+  .swatch-head h2 { font-size:17px; margin:0; font-weight:700; }
+  .swatch-head .hex { font-family:"SF Mono",Consolas,monospace; font-size:12px; padding:2px 8px; border:1px solid currentColor; }
+  .swatch-head .desc { font-size:13px; color:#8a978f; }
+
+  /* varianta A - jantarova / vystrazna oranzova */
+  .v-amber  { --accent:#ff9d2f; --bg:#cdc9c3; --panel:#6d6865; --panel2:#655f5c;
+              --border:#847e77; --text:#f9f5f0; --text2:#e0dad2; --muted:#b8afa4; --faint:#9d948a; }
+  /* varianta B - ocelova modro-azurova */
+  .v-steel  { --accent:#3fb8d4; --bg:#c7cdcf; --panel:#666d70; --panel2:#5e6568;
+              --border:#7c8588; --text:#f2f8fa; --text2:#d3dee1; --muted:#a8b7bc; --faint:#91a0a5; }
+  /* varianta C - medena / cihlova */
+  .v-copper { --accent:#e2653d; --bg:#d0c9c5; --panel:#6e6763; --panel2:#66605c;
+              --border:#857c74; --text:#f9f1ec; --text2:#e2d5cd; --muted:#baa89f; --faint:#a08e85; }
+
+  .stage {
+    background-color:var(--bg); color:var(--text);
+    background-image:
+      repeating-linear-gradient(45deg, transparent 0 126px, rgba(0,0,0,.05) 126px 127px,
+        transparent 127px 252px, rgba(0,0,0,.05) 252px 253px,
+        transparent 253px 504px, color-mix(in srgb, var(--accent) 22%, transparent) 504px 505.5px),
+      repeating-linear-gradient(-45deg, transparent 0 126px, rgba(0,0,0,.05) 126px 127px);
+    padding:26px; max-width:1100px; margin:0 auto;
+    font-family:-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  }
+  .mono { font-family:"SF Mono","Cascadia Code",Consolas,monospace; }
+
+  /* ---- sdilene HUD prvky ---- */
+  .hud { position:relative; background:var(--panel);
+         border:1px solid var(--border); padding:18px 20px;
+         clip-path:polygon(0 12px, 12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%); }
+  .hud::before, .hud::after { content:""; position:absolute; width:15px; height:15px; pointer-events:none; }
+  .hud::before { top:-1px; right:-1px; border-top:2px solid var(--accent); border-right:2px solid var(--accent); }
+  .hud::after { bottom:-1px; left:-1px; border-bottom:2px solid var(--accent); border-left:2px solid var(--accent); }
+
+  .eyebrow2 { font-family:"SF Mono",Consolas,monospace; font-size:10.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--accent); margin-bottom:8px; }
+  .eyebrow2::before { content:"// "; opacity:.55; }
+
+  /* ---- hlavicka profilu ---- */
+  .p-hero { display:flex; gap:22px; align-items:flex-start; margin-bottom:16px; flex-wrap:wrap; }
+  .p-avatar { width:96px; height:96px; flex-shrink:0; background:var(--panel2); border:1px solid var(--border);
+              clip-path:polygon(0 14px, 14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%);
+              display:flex; align-items:center; justify-content:center;
+              font-family:"SF Mono",Consolas,monospace; font-size:28px; font-weight:700; color:var(--accent); }
+  .p-hero-main { flex:1; min-width:220px; }
+  .p-name { font-size:27px; font-weight:800; letter-spacing:-.015em; margin:0 0 4px; }
+  .p-trade { font-family:"SF Mono",Consolas,monospace; font-size:12.5px; letter-spacing:.09em; text-transform:uppercase; color:var(--accent); margin-bottom:12px; }
+  .p-trade .sep { opacity:.45; margin:0 7px; }
+  .p-bio { font-size:14px; line-height:1.7; color:var(--text2); max-width:600px; margin:0; }
+
+  /* ---- statistiky ---- */
+  .p-stats { display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:10px; margin-bottom:16px; }
+  .p-stat { position:relative; background:var(--panel); border:1px solid var(--border); padding:11px 13px;
+            clip-path:polygon(0 9px, 9px 0, 100% 0, 100% calc(100% - 9px), calc(100% - 9px) 100%, 0 100%); }
+  .p-stat::before { content:""; position:absolute; top:-1px; right:-1px; width:11px; height:11px; border-top:1.5px solid var(--accent); border-right:1.5px solid var(--accent); }
+  .p-stat .lab { font-family:"SF Mono",Consolas,monospace; font-size:9.5px; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); margin-bottom:5px; }
+  .p-stat .val { font-family:"SF Mono",Consolas,monospace; font-size:20px; font-weight:700; }
+
+  /* ---- galerie praci ---- */
+  .p-gallery { display:grid; grid-template-columns:repeat(auto-fill,minmax(158px,1fr)); gap:10px; margin-top:12px; }
+  .p-shot { aspect-ratio:4/3; border:1px solid var(--border); position:relative; overflow:hidden;
+            clip-path:polygon(0 10px, 10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
+            background-image:repeating-linear-gradient(135deg, var(--panel2) 0 9px, color-mix(in srgb, var(--accent) 7%, var(--panel2)) 9px 18px);
+            display:flex; align-items:flex-end; padding:9px; }
+  .p-shot span { font-family:"SF Mono",Consolas,monospace; font-size:10px; color:var(--muted); letter-spacing:.05em; }
+
+  /* ---- kontakt / CTA (fill-sweep vzor z pravidel UI) ---- */
+  .p-cta { display:flex; gap:10px; flex-wrap:wrap; margin-top:16px; }
+  .btn-hud { font-family:"SF Mono",Consolas,monospace; font-size:12.5px; font-weight:700; letter-spacing:.07em; text-transform:uppercase;
+             color:var(--accent); border:1px solid var(--accent); background:transparent; padding:11px 20px; cursor:pointer;
+             clip-path:polygon(0 9px, 9px 0, 100% 0, 100% calc(100% - 9px), calc(100% - 9px) 100%, 0 100%);
+             background-image:linear-gradient(var(--accent),var(--accent)); background-size:0% 100%; background-repeat:no-repeat;
+             transition:background-size .22s ease, color .22s ease; }
+  .btn-hud:hover { background-size:100% 100%; color:#1c1a18; }
+  .btn-hud.ghost { color:var(--text2); border-color:var(--border); background-image:linear-gradient(var(--text2),var(--text2)); }
+  .btn-hud.ghost:hover { color:#1c1a18; }
+
+  /* ---- paticka se zpetnym odkazem ---- */
+  .p-foot { margin-top:18px; padding-top:14px; border-top:1px solid var(--border);
+            font-family:"SF Mono",Consolas,monospace; font-size:11.5px; color:var(--faint); letter-spacing:.03em; }
+  .p-foot a { color:var(--accent); text-decoration:none; border-bottom:1px solid color-mix(in srgb, var(--accent) 45%, transparent); }
+  .p-foot a:hover { border-bottom-color:var(--accent); }
+
+  .grid2 { display:grid; grid-template-columns:1.55fr 1fr; gap:14px; align-items:start; }
+  @media (max-width:760px) { .grid2 { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+
+<div class="intro">
+  <div class="eyebrow">remeslnik.pro — návrh vzhledu</div>
+  <h1>Profil řemeslníka v HUD stylu, tři barevné varianty</h1>
+  <p>
+    Robert (2026-08-19): <b>„web chci ve stylu HUD, ale v jiných barvách než máme na vandrawee"</b>.
+    Všechny tři varianty používají <b>identický HUD vizuální jazyk</b> jako
+    <code>admin-hud-navrh.html</code> a <code>PRAVIDLA_UI.md</code> — seříznuté rohy přes
+    <code>clip-path</code> (ne <code>border-radius</code>), rohové závorky, monospace popisky
+    s <code>//</code> prefixem, diagonální šrafovaná mřížka na pozadí, fill-sweep hover na tlačítkách.
+  </p>
+  <p>
+    Liší se <b>výhradně barevnou paletou</b>, aby šlo srovnat jablka s jablky. Vandrawee zelená
+    <code>#2fe07a</code> se tu záměrně nevyskytuje — obě domény musí být na první pohled rozeznatelné.
+    Najeď myší na tlačítka, ať vidíš fill-sweep chování.
+  </p>
+</div>
+
+<!-- ====================== A - JANTAROVÁ ====================== -->
+<div class="swatch v-amber">
+  <div class="swatch-head" style="color:#ff9d2f">
+    <h2 style="color:#eaf2ec">A — Jantarová / výstražná oranžová</h2>
+    <span class="hex">#ff9d2f</span>
+    <span class="desc">dílna, výstražná vesta, staveniště — nejdál od vandrawee zelené</span>
+  </div>
+  <div class="stage">
+    <div class="grid2">
+      <div class="hud">
+        <div class="eyebrow2">Profil řemeslníka</div>
+        <div class="p-hero">
+          <div class="p-avatar">JN</div>
+          <div class="p-hero-main">
+            <h3 class="p-name">Jan Novák</h3>
+            <div class="p-trade">Obkladač<span class="sep">·</span>Brno a okolí</div>
+            <p class="p-bio">
+              Obklady a dlažby v koupelnách a kuchyních, velkoformát i mozaika.
+              Dělám na sebe od roku 2014, převážně rekonstrukce bytových jader.
+              Vlastní míchačka i řezačka, po sobě uklízím.
+            </p>
+          </div>
+        </div>
+        <div class="eyebrow2" style="margin-top:6px">Ukázky práce</div>
+        <div class="p-gallery">
+          <div class="p-shot"><span>koupelna · Žabovřesky</span></div>
+          <div class="p-shot"><span>kuchyň · Královo Pole</span></div>
+          <div class="p-shot"><span>terasa · Bystrc</span></div>
+        </div>
+        <div class="p-foot">
+          Tuto stránku vám zdarma poskytuje <a href="#">vandrawee.cz</a>
+        </div>
+      </div>
+      <div>
+        <div class="p-stats">
+          <div class="p-stat"><div class="lab">Praxe</div><div class="val">12 let</div></div>
+          <div class="p-stat"><div class="lab">Zakázek</div><div class="val">340+</div></div>
+        </div>
+        <div class="hud">
+          <div class="eyebrow2">Kontakt</div>
+          <p style="font-size:13.5px; line-height:1.7; margin:0; color:var(--text2)">
+            Nezávazně napište, co potřebujete — ozvu se do druhého dne.
+          </p>
+          <div class="p-cta">
+            <button class="btn-hud">Poptat práci</button>
+            <button class="btn-hud ghost">Zavolat</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ====================== B - OCELOVÁ ====================== -->
+<div class="swatch v-steel">
+  <div class="swatch-head" style="color:#3fb8d4">
+    <h2 style="color:#eaf2ec">B — Ocelová modro-azurová</h2>
+    <span class="hex">#3fb8d4</span>
+    <span class="desc">nářadí, přesnost, technický výkres — chladnější, profesionálnější</span>
+  </div>
+  <div class="stage">
+    <div class="grid2">
+      <div class="hud">
+        <div class="eyebrow2">Profil řemeslníka</div>
+        <div class="p-hero">
+          <div class="p-avatar">JN</div>
+          <div class="p-hero-main">
+            <h3 class="p-name">Jan Novák</h3>
+            <div class="p-trade">Obkladač<span class="sep">·</span>Brno a okolí</div>
+            <p class="p-bio">
+              Obklady a dlažby v koupelnách a kuchyních, velkoformát i mozaika.
+              Dělám na sebe od roku 2014, převážně rekonstrukce bytových jader.
+              Vlastní míchačka i řezačka, po sobě uklízím.
+            </p>
+          </div>
+        </div>
+        <div class="eyebrow2" style="margin-top:6px">Ukázky práce</div>
+        <div class="p-gallery">
+          <div class="p-shot"><span>koupelna · Žabovřesky</span></div>
+          <div class="p-shot"><span>kuchyň · Královo Pole</span></div>
+          <div class="p-shot"><span>terasa · Bystrc</span></div>
+        </div>
+        <div class="p-foot">
+          Tuto stránku vám zdarma poskytuje <a href="#">vandrawee.cz</a>
+        </div>
+      </div>
+      <div>
+        <div class="p-stats">
+          <div class="p-stat"><div class="lab">Praxe</div><div class="val">12 let</div></div>
+          <div class="p-stat"><div class="lab">Zakázek</div><div class="val">340+</div></div>
+        </div>
+        <div class="hud">
+          <div class="eyebrow2">Kontakt</div>
+          <p style="font-size:13.5px; line-height:1.7; margin:0; color:var(--text2)">
+            Nezávazně napište, co potřebujete — ozvu se do druhého dne.
+          </p>
+          <div class="p-cta">
+            <button class="btn-hud">Poptat práci</button>
+            <button class="btn-hud ghost">Zavolat</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ====================== C - MĚDĚNÁ ====================== -->
+<div class="swatch v-copper">
+  <div class="swatch-head" style="color:#e2653d">
+    <h2 style="color:#eaf2ec">C — Měděná / cihlová</h2>
+    <span class="hex">#e2653d</span>
+    <span class="desc">měď, cihla, terakota — materiálová, řemeslná tradice</span>
+  </div>
+  <div class="stage">
+    <div class="grid2">
+      <div class="hud">
+        <div class="eyebrow2">Profil řemeslníka</div>
+        <div class="p-hero">
+          <div class="p-avatar">JN</div>
+          <div class="p-hero-main">
+            <h3 class="p-name">Jan Novák</h3>
+            <div class="p-trade">Obkladač<span class="sep">·</span>Brno a okolí</div>
+            <p class="p-bio">
+              Obklady a dlažby v koupelnách a kuchyních, velkoformát i mozaika.
+              Dělám na sebe od roku 2014, převážně rekonstrukce bytových jader.
+              Vlastní míchačka i řezačka, po sobě uklízím.
+            </p>
+          </div>
+        </div>
+        <div class="eyebrow2" style="margin-top:6px">Ukázky práce</div>
+        <div class="p-gallery">
+          <div class="p-shot"><span>koupelna · Žabovřesky</span></div>
+          <div class="p-shot"><span>kuchyň · Královo Pole</span></div>
+          <div class="p-shot"><span>terasa · Bystrc</span></div>
+        </div>
+        <div class="p-foot">
+          Tuto stránku vám zdarma poskytuje <a href="#">vandrawee.cz</a>
+        </div>
+      </div>
+      <div>
+        <div class="p-stats">
+          <div class="p-stat"><div class="lab">Praxe</div><div class="val">12 let</div></div>
+          <div class="p-stat"><div class="lab">Zakázek</div><div class="val">340+</div></div>
+        </div>
+        <div class="hud">
+          <div class="eyebrow2">Kontakt</div>
+          <p style="font-size:13.5px; line-height:1.7; margin:0; color:var(--text2)">
+            Nezávazně napište, co potřebujete — ozvu se do druhého dne.
+          </p>
+          <div class="p-cta">
+            <button class="btn-hud">Poptat práci</button>
+            <button class="btn-hud ghost">Zavolat</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="intro" style="padding-bottom:50px">
+  <div class="eyebrow">poznámka</div>
+  <p>
+    Obsah stránky je zástupný (Jan Novák / obkladač) — jde o vzhled, ne o finální texty.
+    Šrafované dlaždice v galerii zastupují skutečné fotky prací z fotobanky
+    (<code>content_gallery_items</code>, owner_type <code>remeslo_craftsman_public</code>).
+    Patička drží zpětný odkaz na <code>vandrawee.cz</code> podle rozhodnutí z 2026-08-19.
+  </p>
+</div>
+
+</body>
+</html>

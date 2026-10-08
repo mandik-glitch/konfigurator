@@ -1,0 +1,636 @@
+{
+ "v": 1,
+ "vytvoreno": "2026-10-01T17:12:10",
+ "shop_product_id": 4594,
+ "glb_file": "vandr/vd_export_regalova_vestavba_ford_connect_l2_2a600088.glb",
+ "glb": "/opt/konfigurator/webapp/katalog/vandr/vd_export_regalova_vestavba_ford_connect_l2_2a600088.glb",
+ "glb_sha12": "f3a041490274",
+ "vandr_predni_azimut_deg": 270,
+ "strany": {
+  "left": 646
+ },
+ "komponenty": [
+  {
+   "unity_id": "Front.floor.PR10.S40.150.univerzalni",
+   "klic": "frontfloorpr10s40150univerzalni",
+   "category_id": 4,
+   "kategorie": "Univerzální",
+   "is_universal": true,
+   "is_top": false,
+   "pocet": 1,
+   "strany": [
+    "left"
+   ],
+   "dily": [
+    {
+     "unity_id": "PR10_1289x89",
+     "pocet": 1
+    },
+    {
+     "unity_id": "SL40x40x1267_Zx2",
+     "pocet": 2
+    },
+    {
+     "unity_id": "Zajistovaci_sroub_M6x35+matice-otocna_M6_S10",
+     "pocet": 2
+    }
+   ],
+   "rozsireni": []
+  },
+  {
+   "unity_id": "Police.S40.0D.univerzalni",
+   "klic": "polices400duniverzalni",
+   "category_id": 4,
+   "kategorie": "Univerzální",
+   "is_universal": true,
+   "is_top": false,
+   "pocet": 2,
+   "strany": [
+    "left"
+   ],
+   "dily": [
+    {
+     "unity_id": "CUB10_1290x89",
+     "pocet": 1
+    },
+    {
+     "unity_id": "PR10_1266x291",
+     "pocet": 1
+    },
+    {
+     "unity_id": "PR10_1290x89",
+     "pocet": 1
+    },
+    {
+     "unity_id": "PR10_291x89",
+     "pocet": 2
+    },
+    {
+     "unity_id": "SL40x40x1267_Zx2",
+     "pocet": 2
+    },
+    {
+     "unity_id": "SL40x40x269_Zx2",
+     "pocet": 2
+    },
+    {
+     "unity_id": "Zajistovaci_sroub_M6x35+matice-otocna_M6_S10",
+     "pocet": 4
+    }
+   ],
+   "rozsireni": []
+  },
+  {
+   "unity_id": "Police.door.A.2040.S40.univerzalni",
+   "klic": "policedoora2040s40univerzalni",
+   "category_id": 4,
+   "kategorie": "Univerzální",
+   "is_universal": true,
+   "is_top": false,
+   "pocet": 1,
+   "strany": [
+    "left"
+   ],
+   "dily": [
+    {
+     "unity_id": "20x40x1258",
+     "pocet": 1
+    },
+    {
+     "unity_id": "PR10_1266x291",
+     "pocet": 1
+    },
+    {
+     "unity_id": "Pant_45x30",
+     "pocet": 3
+    },
+    {
+     "unity_id": "SL40x40x1267_Zx2",
+     "pocet": 2
+    },
+    {
+     "unity_id": "Zajistovaci_sroub_M6x35+matice-otocna_M6_S10",
+     "pocet": 4
+    },
+    {
+     "unity_id": "Zapadka_20.S6_3Dtisk",
+     "pocet": 2
+    },
+    {
+     "unity_id": "Zaslepka_20x40",
+     "pocet": 2
+    }
+   ],
+   "rozsireni": []
+  },
+  {
+   "unity_id": "Police.door.B.2040.S40.univerzalni",
+   "klic": "policedoorb2040s40univerzalni",
+   "category_id": 4,
+   "kategorie": "Univerzální",
+   "is_universal": true,
+   "is_top": false,
+   "pocet": 1,
+   "strany": [
+    "left"
+   ],
+   "dily": [
+    {
+     "unity_id": "20x40x1258",
+     "pocet": 1
+    },
+    {
+     "unity_id": "PR10_1266x291",
+     "pocet": 1
+    },
+    {
+     "unity_id": "PR10_291x89",
+     "pocet": 2
+    },
+    {
+     "unity_id": "PR10_635x89",
+     "pocet": 2
+    },
+    {
+     "unity_id": "Pant_45x30",
+     "pocet": 3
+    },
+    {
+     "unity_id": "SL40x40x1267_Zx2",
+     "pocet": 2
+    },
+    {
+     "unity_id": "SL40x40x269_Zx2",
+     "pocet": 2
+    },
+    {
+     "unity_id": "SL40x40x77_Zx1",
+     "pocet": 1
+    },
+    {
+     "unity_id": "Zajistovaci_sroub_M6x35+matice-otocna_M6_S10",
+     "pocet": 4
+    },
+    {
+     "unity_id": "Zapadka_20.S6_3Dtisk",
+     "pocet": 2
+    },
+    {
+     "unity_id": "Zaslepka_20x40",
+     "pocet": 2
+    },
+    {
+     "unity_id": "Zaslepka_40x40",
+     "pocet": 1
+    }
+   ],
+   "rozsireni": []
+  },
+  {
+   "unity_id": "Police.door.B.2080.S40.univerzalni",
+   "klic": "policedoorb2080s40univerzalni",
+   "category_id": 4,
+   "kategorie": "Univerzální",
+   "is_universal": true,
+   "is_top": false,
+   "pocet": 1,
+   "strany": [
+    "left"
+   ],
+   "dily": [
+    {
+     "unity_id": "20x80x1258",
+     "pocet": 1
+    },
+    {
+     "unity_id": "PR10_1266x291",
+     "pocet": 1
+    },
+    {
+     "unity_id": "PR10_291x130",
+     "pocet": 2
+    },
+    {
+     "unity_id": "PR10_635x130",
+     "pocet": 2
+    },
+    {
+     "unity_id": "Pant_45x30",
+     "pocet": 3
+    },
+    {
+     "unity_id": "SL40x40x120_Zx1",
+     "pocet": 1
+    },
+    {
+     "unity_id": "SL40x40x1267_Zx2",
+     "pocet": 2
+    },
+    {
+     "unity_id": "SL40x40x269_Zx2",
+     "pocet": 2
+    },
+    {
+     "unity_id": "Zajistovaci_sroub_M6x35+matice-otocna_M6_S10",
+     "pocet": 4
+    },
+    {
+     "unity_id": "Zapadka_20.S6_3Dtisk",
+     "pocet": 2
+    },
+    {
+     "unity_id": "Zaslepka_20x80",
+     "pocet": 2
+    },
+    {
+     "unity_id": "Zaslepka_40x40",
+     "pocet": 1
+    }
+   ],
+   "rozsireni": []
+  },
+  {
+   "unity_id": "Upinaci.plocha.S40.univerzalni",
+   "klic": "upinaciplochas40univerzalni",
+   "category_id": 4,
+   "kategorie": "Univerzální",
+   "is_universal": true,
+   "is_top": false,
+   "pocet": 1,
+   "strany": [
+    "left"
+   ],
+   "dily": [
+    {
+     "unity_id": "PR10_1266x291",
+     "pocet": 1
+    },
+    {
+     "unity_id": "SL40x40x1267_Zx2",
+     "pocet": 2
+    },
+    {
+     "unity_id": "Zajistovaci_sroub_M6x35+matice-otocna_M6_S10",
+     "pocet": 4
+    }
+   ],
+   "rozsireni": []
+  },
+  {
+   "unity_id": "Vysuv.Eurobox.4.3212.942.349",
+   "klic": "vysuveurobox43212942349",
+   "category_id": 13,
+   "kategorie": "942 mm",
+   "is_universal": false,
+   "is_top": false,
+   "pocet": 2,
+   "strany": [
+    "left"
+   ],
+   "dily": [
+    {
+     "unity_id": "30x30x270_Zx2",
+     "pocet": 1
+    },
+    {
+     "unity_id": "30x30x300",
+     "pocet": 2
+    },
+    {
+     "unity_id": "30x30x776_Zx2",
+     "pocet": 1
+    },
+    {
+     "unity_id": "30x30x836",
+     "pocet": 1
+    },
+    {
+     "unity_id": "Box.grey.300.200.120",
+     "pocet": 4
+    },
+    {
+     "unity_id": "Kamen_M5_S10",
+     "pocet": 6
+    },
+    {
+     "unity_id": "Kamen_M5_S8",
+     "pocet": 6
+    },
+    {
+     "unity_id": "Madlo.rucka",
+     "pocet": 1
+    },
+    {
+     "unity_id": "Pojezdy.strong.350.46x13.par",
+     "pocet": 2
+    },
+    {
+     "unity_id": "SL40x40x269_Zx2",
+     "pocet": 2
+    },
+    {
+     "unity_id": "Sroub_zapustny_M5x12",
+     "pocet": 6
+    },
+    {
+     "unity_id": "Sroub_zapustny_M5x6",
+     "pocet": 6
+    },
+    {
+     "unity_id": "Zajistovaci_sroub_M6x35+matice-otocna_M6_S10",
+     "pocet": 4
+    },
+    {
+     "unity_id": "Zamek.Woc",
+     "pocet": 2
+    }
+   ],
+   "rozsireni": []
+  }
+ ],
+ "instance": [
+  {
+   "unity_id": "Front.floor.PR10.S40.150.univerzalni",
+   "klic": "frontfloorpr10s40150univerzalni",
+   "strana": "left",
+   "nohy": "Nohy.2.Ford.Transit.Connect.H1.1100.349",
+   "pozice": [
+    -0.383,
+    0.339997,
+    -0.446
+   ],
+   "rotace": [
+    270.0,
+    90.0,
+    0.0
+   ],
+   "rozsireni": []
+  },
+  {
+   "unity_id": "Police.door.A.2040.S40.univerzalni",
+   "klic": "policedoora2040s40univerzalni",
+   "strana": "left",
+   "nohy": "Nohy.2.Ford.Transit.Connect.H1.1100.349",
+   "pozice": [
+    -0.383,
+    0.628798,
+    -0.446
+   ],
+   "rotace": [
+    270.0,
+    90.0,
+    0.0
+   ],
+   "rozsireni": []
+  },
+  {
+   "unity_id": "Police.S40.0D.univerzalni",
+   "klic": "polices400duniverzalni",
+   "strana": "left",
+   "nohy": "Nohy.2.Ford.Transit.Connect.H1.1100.349",
+   "pozice": [
+    -0.383,
+    1.32433,
+    -0.446
+   ],
+   "rotace": [
+    270.0,
+    90.0,
+    0.0
+   ],
+   "rozsireni": []
+  },
+  {
+   "unity_id": "Upinaci.plocha.S40.univerzalni",
+   "klic": "upinaciplochas40univerzalni",
+   "strana": "left",
+   "nohy": "Nohy.2.Ford.Transit.Connect.H1.1100.349",
+   "pozice": [
+    -0.383,
+    1.093637,
+    -0.446
+   ],
+   "rotace": [
+    270.0,
+    90.0,
+    0.0
+   ],
+   "rozsireni": []
+  },
+  {
+   "unity_id": "Police.door.B.2040.S40.univerzalni",
+   "klic": "policedoorb2040s40univerzalni",
+   "strana": "left",
+   "nohy": "Nohy.2.Ford.Transit.Connect.H1.1100.349",
+   "pozice": [
+    -0.383,
+    0.86291,
+    -0.446
+   ],
+   "rotace": [
+    270.0,
+    90.0,
+    0.0
+   ],
+   "rozsireni": []
+  },
+  {
+   "unity_id": "Vysuv.Eurobox.4.3212.942.349",
+   "klic": "vysuveurobox43212942349",
+   "strana": "left",
+   "nohy": "Nohy.2.Ford.Transit.Connect.H1.1100.349",
+   "pozice": [
+    -0.383,
+    0.668798,
+    0.359
+   ],
+   "rotace": [
+    270.0,
+    90.0,
+    0.0
+   ],
+   "rozsireni": []
+  },
+  {
+   "unity_id": "Vysuv.Eurobox.4.3212.942.349",
+   "klic": "vysuveurobox43212942349",
+   "strana": "left",
+   "nohy": "Nohy.2.Ford.Transit.Connect.H1.1100.349",
+   "pozice": [
+    -0.383,
+    0.822911,
+    0.359
+   ],
+   "rotace": [
+    270.0,
+    90.0,
+    0.0
+   ],
+   "rozsireni": []
+  },
+  {
+   "unity_id": "Police.S40.0D.univerzalni",
+   "klic": "polices400duniverzalni",
+   "strana": "left",
+   "nohy": "Nohy.2.Ford.Transit.Connect.H1.1100.349",
+   "pozice": [
+    -0.383,
+    1.32433,
+    0.359
+   ],
+   "rotace": [
+    270.0,
+    90.0,
+    0.0
+   ],
+   "rozsireni": []
+  },
+  {
+   "unity_id": "Police.door.B.2080.S40.univerzalni",
+   "klic": "policedoorb2080s40univerzalni",
+   "strana": "left",
+   "nohy": "Nohy.2.Ford.Transit.Connect.H1.1100.349",
+   "pozice": [
+    -0.383,
+    0.975518,
+    0.359
+   ],
+   "rotace": [
+    270.0,
+    90.0,
+    0.0
+   ],
+   "rozsireni": []
+  }
+ ],
+ "prirazeni_materialu": {
+  "alu_material": "Alumi2",
+  "alu_knihovna_soubor": "Alumi2.blend",
+  "klt_material": "Blue Ceramic",
+  "klt_knihovna_soubor": "modrecelo.blend",
+  "svetla_soubor": "X1_SCENA.blend",
+  "cub_seda_tmava_sila": 0.1,
+  "alu_ao_sila": 0.4,
+  "hdri_sila": 1.4,
+  "hdri_rotace_deg": 177.0,
+  "azimut_deg": 250.0,
+  "svetla_aktivni": false,
+  "svetla_vybrana": [
+   "Light",
+   "Spot.001"
+  ],
+  "hdri_file_id": 4125,
+  "nahrady": [
+   {
+    "rodina": "",
+    "role": "black",
+    "material": "Black",
+    "knihovna_soubor": "Black.blend",
+    "typ": ""
+   },
+   {
+    "rodina": "",
+    "role": "plastgr",
+    "material": "Grey",
+    "knihovna_soubor": "grey.blend",
+    "typ": ""
+   },
+   {
+    "rodina": "",
+    "role": "preklizkahl",
+    "material": "brown",
+    "knihovna_soubor": "brown.blend",
+    "typ": ""
+   },
+   {
+    "rodina": "",
+    "role": "sroub",
+    "material": "Chrome",
+    "knihovna_soubor": "chrome.blend",
+    "typ": ""
+   },
+   {
+    "rodina": "",
+    "role": "blueklt",
+    "material": "KLT1",
+    "knihovna_soubor": "klt1.blend",
+    "typ": ""
+   },
+   {
+    "rodina": "",
+    "role": "multiboxarc",
+    "material": "Multibox",
+    "knihovna_soubor": "Multibox.blend",
+    "typ": ""
+   },
+   {
+    "rodina": "",
+    "role": "red",
+    "material": "Red ",
+    "knihovna_soubor": "red.blend",
+    "typ": ""
+   },
+   {
+    "rodina": "",
+    "role": "zinc",
+    "material": "Grey",
+    "knihovna_soubor": "grey.blend",
+    "typ": ""
+   }
+  ],
+  "aktivni_pro_automat": true,
+  "kryci_listy_skryt": true
+ },
+ "kryci_listy_skryt": true,
+ "pohyby_vychozi": {
+  "v": 1,
+  "_pozn": "Vychozi hodnoty pohybu ve 3D nabidce (bot10, 2026-10-01). Plati, dokud Robert nerozhodne (otevrene otazky: uhel dvirek, plny vysuv, mechanismus pinu, choreografie boxu). Cte je scripts/v3d/vandr_motions.py pres ctx.json (build_ctx.py) a stejny soubor ma cist i nativni modul. Zmena se projevi pri dalsim sestaveni modelu. Hodnoty 'overeno': false se do geom.json propisuji jako varovani.",
+  "stav": "vychozi - neovereno Robertem",
+  "suplik": {
+   "_pozn": "Suplik, vysuv (KLT/Multibox/Eurobox), kufrik: draha = delka kolejnice z kusovniku Pojezdy.<delka> (plny vysuv) x podil.",
+   "podil": 1.0,
+   "ms": 600,
+   "overeno": false
+  },
+  "dvirka": {
+   "_pozn": "Sklopna dvirka police (panty, osa = primka pres stredy kloubu). Do vodorovne polohy = 90 stupnu. Znamenko v souboru je jen konvence 'ven/dolu'; skutecny smer otoceni urcuje geometrie tak, aby se teziste kridla posunulo k celu.",
+   "uhel_deg": -90,
+   "ms": 650,
+   "overeno": false
+  },
+  "podlahova_dvirka": {
+   "_pozn": "Podlahova dvirka (osa = kluzne srouby M10).",
+   "uhel_deg": -90,
+   "ms": 700,
+   "overeno": false
+  },
+  "pin": {
+   "_pozn": "HYPOTEZA z geometrie: odjisteni = posun zapadky s kolikem a knoflikem podel osy X komponenty smerem dovnitr (od nohy). Pred sklopenim dvirek.",
+   "posun_mm": 16,
+   "ms": 250,
+   "overeno": false
+  },
+  "box_na_vysuvu": {
+   "_pozn": "Box (KLT, Multibox, Eurobox) na vysuvu: po vysunuti zvednout. Kdyz je nad vysunutym boxem jiny dil (napr. madlo vysuvu nad nim), zdvih se zkrati na volne misto - 2 mm; pod min_zdvih_mm box jede jen s vysuvem (varovani).",
+   "zdvih_mm": 60,
+   "min_zdvih_mm": 12,
+   "ms": 450,
+   "overeno": false
+  },
+  "box_na_polici": {
+   "_pozn": "Box primo na polici (bez kolejnic): zvednout nad predni listu (vyska listy + rezerva, jen kdyz je nad boxem misto), vytahnout pred regal (hloubka + presah) a dozvednout na zdvih_mm celkem.",
+   "rezerva_mm": 5,
+   "presah_mm": 30,
+   "zdvih_mm": 60,
+   "ms": 450,
+   "overeno": false
+  },
+  "typ_z_geometrie": {
+   "_pozn": "Kdyz kusovnik komponenty ve Vandr DB neuvadi pant/zapadku, ale komponenta je podle jmena dvirka (Police.door) a model ma pojmenovane panty a klouby na jedne primce, dvirka se animuji a do geom.json jde varovani.",
+   "povolit": true
+  }
+ },
+ "warnings": [],
+ "pohyby_vychozi_soubor": "pohyby-vychozi.json",
+ "ctx_sha8": "1b5a80f1"
+}

@@ -1,0 +1,5074 @@
+[
+ {
+  "id": "kat:5:name",
+  "typ": "text",
+  "cs": "Návody a postupy",
+  "en": "Guides and procedures",
+  "it": "Guide e procedure",
+  "h": "d8735d44fc"
+ },
+ {
+  "id": "kat:5:meta_title",
+  "typ": "text",
+  "cs": "Návody a postupy – práce s konfigurátorem a montáž profilů",
+  "en": "Guides and how-tos – design tool and profile assembly",
+  "it": "Guide e procedure – progettazione e montaggio profili",
+  "h": "2f3f329ec5"
+ },
+ {
+  "id": "kat:5:meta_description",
+  "typ": "text",
+  "cs": "Praktické návody, jak navrhnout konstrukci v 3D konfigurátoru Logiman a jak smontovat hliníkové profily po doručení, krok za krokem s ukázkami a videi.",
+  "en": "Practical guides to designing a structure in the Logiman 3D design tool and assembling the profiles after delivery – step by step, with examples and videos.",
+  "it": "Guide pratiche per progettare una struttura con lo strumento di progettazione 3D Logiman e montare i profili alla consegna, passo dopo passo con esempi e video.",
+  "h": "377b7a9255"
+ },
+ {
+  "id": "kat:5:focus_keyword",
+  "typ": "text",
+  "cs": "návody konfigurátor hliníkové profily",
+  "en": "aluminium profile design guides",
+  "it": "guide progettazione profili in alluminio",
+  "h": "8d5bb05ca9"
+ },
+ {
+  "id": "kat:7:name",
+  "typ": "text",
+  "cs": "Montáž konstrukce",
+  "en": "Structure assembly",
+  "it": "Montaggio della struttura",
+  "h": "42b553ed33"
+ },
+ {
+  "id": "kat:7:meta_title",
+  "typ": "text",
+  "cs": "Montáž konstrukce z hliníkových profilů – návod",
+  "en": "Assembling an aluminium profile structure – guide",
+  "it": "Montaggio di strutture in profilo di alluminio – guida",
+  "h": "f99eefd631"
+ },
+ {
+  "id": "kat:7:meta_description",
+  "typ": "text",
+  "cs": "Jak fyzicky smontovat konstrukci navrženou v konfigurátoru, jakmile dorazí hliníkové profily a spojovací materiál Logiman – postup krok za krokem.",
+  "en": "How to physically assemble a structure designed in our design tool once your Logiman aluminium profiles and fasteners arrive – step by step.",
+  "it": "Come montare la struttura creata con lo strumento di progettazione, all'arrivo di profili in alluminio ed elementi di collegamento Logiman: passo dopo passo.",
+  "h": "ac55bf2027"
+ },
+ {
+  "id": "kat:7:focus_keyword",
+  "typ": "text",
+  "cs": "montáž konstrukce z profilů",
+  "en": "profile frame assembly",
+  "it": "montaggio strutture in profilato",
+  "h": "7bf8260f98"
+ },
+ {
+  "id": "kat:10:name",
+  "typ": "text",
+  "cs": "Instruktážní videa",
+  "en": "Instructional videos",
+  "it": "Video istruttivi",
+  "h": "58a4a07ec4"
+ },
+ {
+  "id": "kat:10:meta_title",
+  "typ": "text",
+  "cs": "Instruktážní videa – montáž hliníkových profilů",
+  "en": "Instructional videos – assembling aluminium profiles",
+  "it": "Video istruttivi – montaggio dei profili in alluminio",
+  "h": "6ccd31538e"
+ },
+ {
+  "id": "kat:10:meta_description",
+  "typ": "text",
+  "cs": "Instruktážní videa k montáži konstrukcí z hliníkových stavebnicových profilů a spojovacích prvků Logiman – praktické postupy pro sestavení na místě.",
+  "en": "Video tutorials on assembling structures from Logiman modular aluminium profiles and fasteners – practical step-by-step procedures for on-site assembly.",
+  "it": "Video tutorial sul montaggio di strutture con profili modulari in alluminio ed elementi di collegamento Logiman – procedure pratiche per l'assemblaggio in loco.",
+  "h": "fde76ded00"
+ },
+ {
+  "id": "kat:10:focus_keyword",
+  "typ": "text",
+  "cs": "instruktážní videa montáž profilů",
+  "en": "profile assembly video tutorials",
+  "it": "video tutorial montaggio profilati",
+  "h": "e6f6164330"
+ },
+ {
+  "id": "kat:12:name",
+  "typ": "text",
+  "cs": "Katalog profilů (PDF)",
+  "en": "Profile catalogue (PDF)",
+  "it": "Catalogo dei profili (PDF)",
+  "h": "b62221df21"
+ },
+ {
+  "id": "kat:12:meta_title",
+  "typ": "text",
+  "cs": "Katalog hliníkových profilů Logiman ke stažení (PDF)",
+  "en": "Logiman aluminium profile catalogue – download (PDF)",
+  "it": "Catalogo profili in alluminio Logiman – download (PDF)",
+  "h": "f69d6f0250"
+ },
+ {
+  "id": "kat:12:meta_description",
+  "typ": "text",
+  "cs": "Kompletní katalog hliníkových stavebnicových profilů Logiman ke stažení v PDF – průřezy, rozměry a technické parametry jednotlivých řad profilů.",
+  "en": "Complete catalogue of Logiman modular aluminium profiles to download as a PDF – cross-sections, dimensions and technical parameters of each profile series.",
+  "it": "Catalogo completo dei profili modulari in alluminio Logiman da scaricare in PDF: sezioni, dimensioni e parametri tecnici delle singole serie di profili.",
+  "h": "65f22242cf"
+ },
+ {
+  "id": "kat:12:focus_keyword",
+  "typ": "text",
+  "cs": "katalog profilů PDF",
+  "en": "profile catalogue PDF",
+  "it": "catalogo profili PDF",
+  "h": "cb5fdbe7fb"
+ },
+ {
+  "id": "kat:149:name",
+  "typ": "text",
+  "cs": "Hliníkové stavebnicové profily",
+  "en": "Modular aluminium profiles",
+  "it": "Profili modulari in alluminio",
+  "h": "96e3f980f7"
+ },
+ {
+  "id": "kat:149:meta_title",
+  "typ": "text",
+  "cs": "Hliníkové stavebnicové profily – modulární systém",
+  "en": "Modular aluminium profiles – construction system",
+  "it": "Profili modulari in alluminio – sistema costruttivo",
+  "h": "7f01b5ea54"
+ },
+ {
+  "id": "kat:149:meta_description",
+  "typ": "text",
+  "cs": "Hliníkové stavebnicové profily Logiman pro rámy, pracovní stoly, kryty strojů i regály – drážkový systém pro pevné spoje bez svařování, drážky 6–10 mm.",
+  "en": "Logiman modular aluminium profiles for frames, workbenches, machine guards and shelving – a slotted system for strong joints without welding, slots 6–10 mm.",
+  "it": "Profili modulari in alluminio Logiman per telai, banchi, protezioni macchina e scaffali: sistema a scanalature per giunzioni solide senza saldare, scanalature 6–10 mm.",
+  "h": "1b3a24b1de"
+ },
+ {
+  "id": "kat:149:focus_keyword",
+  "typ": "text",
+  "cs": "hliníkové stavebnicové profily",
+  "en": "modular aluminium profiles",
+  "it": "profili modulari in alluminio",
+  "h": "e3631cd199"
+ },
+ {
+  "id": "kat:150:name",
+  "typ": "text",
+  "cs": "Příslušenství profilů",
+  "en": "Profile accessories",
+  "it": "Accessori per profili",
+  "h": "d742913164"
+ },
+ {
+  "id": "kat:150:meta_title",
+  "typ": "text",
+  "cs": "Příslušenství profilů – záslepky, patky, panty a doplňky",
+  "en": "Profile accessories – end caps, feet, hinges and extras",
+  "it": "Accessori per profili – tappi, piedini, cerniere e altro",
+  "h": "2bafc3f8fe"
+ },
+ {
+  "id": "kat:150:meta_description",
+  "typ": "text",
+  "cs": "Doplňkové díly pro hliníkové stavebnicové profily Logiman – plastové záslepky, krycí lišty drážek, stavitelné patky, kolečka, panty, madla a další.",
+  "en": "Additional parts for Logiman modular aluminium profiles – plastic end caps, slot cover strips, adjustable feet, wheels, hinges, handles and more.",
+  "it": "Componenti accessori per profili modulari in alluminio Logiman: tappi in plastica, copricava, piedini regolabili, rotelle, cerniere, maniglie e altro.",
+  "h": "57caf1a7d8"
+ },
+ {
+  "id": "kat:150:focus_keyword",
+  "typ": "text",
+  "cs": "příslušenství hliníkových profilů",
+  "en": "aluminium profile accessories",
+  "it": "accessori per profili in alluminio",
+  "h": "09fb81a467"
+ },
+ {
+  "id": "kat:151:name",
+  "typ": "text",
+  "cs": "Konektory pro patky",
+  "en": "Foot connectors",
+  "it": "Connettori per piedini",
+  "h": "8bcb6be10a"
+ },
+ {
+  "id": "kat:151:meta_title",
+  "typ": "text",
+  "cs": "Konektory pro patky hliníkových profilů",
+  "en": "Connectors for aluminium profile feet",
+  "it": "Connettori per piedini di profili in alluminio",
+  "h": "0b6b113800"
+ },
+ {
+  "id": "kat:151:meta_description",
+  "typ": "text",
+  "cs": "Konektory pro uchycení stavitelných a pojezdových patek k hliníkovým stavebnicovým profilům Logiman – varianty skladem pro spodní zakončení konstrukce.",
+  "en": "Connectors for attaching adjustable feet and castor feet to Logiman modular aluminium profiles – variants in stock for finishing the bottom of the structure.",
+  "it": "Connettori per fissare piedini regolabili e a rotelle ai profili modulari in alluminio Logiman: varianti disponibili a magazzino per la base della struttura.",
+  "h": "e332f1012b"
+ },
+ {
+  "id": "kat:151:focus_keyword",
+  "typ": "text",
+  "cs": "konektory pro patky",
+  "en": "foot connectors",
+  "it": "connettori per piedini",
+  "h": "9701638ee8"
+ },
+ {
+  "id": "kat:152:name",
+  "typ": "text",
+  "cs": "Spojovací prvky",
+  "en": "Fasteners",
+  "it": "Elementi di collegamento",
+  "h": "ce17f889ab"
+ },
+ {
+  "id": "kat:152:meta_title",
+  "typ": "text",
+  "cs": "Spojovací prvky – úhelníky, kostky, matice a šrouby",
+  "en": "Connecting elements – angle brackets, cubes, nuts, screws",
+  "it": "Elementi di collegamento – squadrette, cubi, dadi e viti",
+  "h": "3301252e68"
+ },
+ {
+  "id": "kat:152:meta_description",
+  "typ": "text",
+  "cs": "Sortiment spojovacích prvků pro hliníkové stavebnicové profily Logiman – rohové úhelníky, spojovací kostky, T-matice a šrouby pro pevné i rozebíratelné spoje.",
+  "en": "Range of fasteners for Logiman modular aluminium profiles – corner brackets, cube connectors, T-nuts and screws for fixed and detachable joints.",
+  "it": "Elementi di collegamento per profili modulari in alluminio Logiman: squadrette angolari, giunti a cubo, dadi a T e viti per giunzioni fisse e smontabili.",
+  "h": "7d56bebff1"
+ },
+ {
+  "id": "kat:152:focus_keyword",
+  "typ": "text",
+  "cs": "spojovací prvky profilů",
+  "en": "profile fasteners",
+  "it": "elementi di collegamento per profilati",
+  "h": "c6d2587813"
+ },
+ {
+  "id": "kat:153:name",
+  "typ": "text",
+  "cs": "Plotna rohové spoje",
+  "en": "Connecting plate for corner joints",
+  "it": "Piastra di collegamento per giunzioni ad angolo",
+  "h": "d7caabda8b"
+ },
+ {
+  "id": "kat:153:meta_title",
+  "typ": "text",
+  "cs": "Plotny pro rohové spoje profilů",
+  "en": "Connecting plates for profile corner joints",
+  "it": "Piastre di collegamento per giunzioni ad angolo dei profili",
+  "h": "829c320d8d"
+ },
+ {
+  "id": "kat:153:meta_description",
+  "typ": "text",
+  "cs": "Spojovací plotny pro rohové spoje hliníkových stavebnicových profilů Logiman – pevné a přesné spojení rámů v pravém úhlu.",
+  "en": "Connecting plates for corner joints in Logiman modular aluminium profiles – strong, precise right-angle connections for frames and structures.",
+  "it": "Piastre di collegamento per giunzioni ad angolo dei profili modulari in alluminio Logiman: collegamenti dei telai ad angolo retto, solidi e precisi.",
+  "h": "4e22fbd3b1"
+ },
+ {
+  "id": "kat:153:focus_keyword",
+  "typ": "text",
+  "cs": "plotny pro rohové spoje",
+  "en": "corner joint plates",
+  "it": "piastre per giunzioni ad angolo",
+  "h": "c661a6e7a5"
+ },
+ {
+  "id": "kat:154:name",
+  "typ": "text",
+  "cs": "Hliníkové profily s drážkou 10 mm",
+  "en": "Aluminium profiles with 10 mm slot",
+  "it": "Profili in alluminio con scanalatura da 10 mm",
+  "h": "635bfcb2ee"
+ },
+ {
+  "id": "kat:154:meta_title",
+  "typ": "text",
+  "cs": "Hliníkové profily s drážkou 10 mm – nejsilnější řada",
+  "en": "Aluminium profiles with 10 mm slot – the strongest range",
+  "it": "Profili in alluminio con scanalatura da 10 mm – serie più robusta",
+  "h": "430302fea7"
+ },
+ {
+  "id": "kat:154:meta_description",
+  "typ": "text",
+  "cs": "Nejsilnější řada hliníkových stavebnicových profilů s drážkou 10 mm Logiman – pro těžké rámy strojů, montážní linky a konstrukce s vysokou nosností.",
+  "en": "The strongest range of Logiman modular aluminium profiles with a 10 mm slot – for heavy machine frames, assembly lines and high-load-capacity structures.",
+  "it": "La serie più robusta di profili modulari in alluminio Logiman con scanalatura da 10 mm – per telai di macchine pesanti, linee di montaggio e strutture ad alta portata.",
+  "h": "2de3a6cb17"
+ },
+ {
+  "id": "kat:154:focus_keyword",
+  "typ": "text",
+  "cs": "hliníkové profily drážka 10 mm",
+  "en": "aluminium profiles 10 mm slot",
+  "it": "profili in alluminio scanalatura 10 mm",
+  "h": "87fe49730a"
+ },
+ {
+  "id": "kat:155:name",
+  "typ": "text",
+  "cs": "Plotna pro T spoje",
+  "en": "Connecting plate for T-joints",
+  "it": "Piastra di collegamento per giunzioni a T",
+  "h": "adee58b518"
+ },
+ {
+  "id": "kat:155:meta_title",
+  "typ": "text",
+  "cs": "Plotny pro T spoje profilů",
+  "en": "Connecting plates for profile T-joints",
+  "it": "Piastre di collegamento per giunzioni a T dei profili",
+  "h": "21a0fc00dd"
+ },
+ {
+  "id": "kat:155:meta_description",
+  "typ": "text",
+  "cs": "Spojovací plotny pro T-spoje hliníkových stavebnicových profilů Logiman – napojení příčného profilu na hlavní rám konstrukce.",
+  "en": "Connecting plates for T-joints in Logiman modular aluminium profiles – for joining a transverse profile to the main frame of the whole structure.",
+  "it": "Piastre di collegamento per giunzioni a T dei profili modulari in alluminio Logiman – fissano il profilo trasversale al telaio principale della struttura.",
+  "h": "b9e9ccbf8d"
+ },
+ {
+  "id": "kat:155:focus_keyword",
+  "typ": "text",
+  "cs": "plotny pro T spoje",
+  "en": "T-joint plates",
+  "it": "piastre per giunzioni a T",
+  "h": "a2e4996cf9"
+ },
+ {
+  "id": "kat:156:name",
+  "typ": "text",
+  "cs": "Hliníkové profily Dynamic",
+  "en": "Dynamic aluminium profiles",
+  "it": "Profili in alluminio Dynamic",
+  "h": "226252c29b"
+ },
+ {
+  "id": "kat:156:meta_title",
+  "typ": "text",
+  "cs": "Hliníkové profily Dynamic – systém pro dopravníky a linky",
+  "en": "Dynamic aluminium profiles – system for conveyors and lines",
+  "it": "Profili in alluminio Dynamic – per trasportatori e linee",
+  "h": "61da9c1314"
+ },
+ {
+  "id": "kat:156:meta_description",
+  "typ": "text",
+  "cs": "Systém hliníkových profilů Dynamic Logiman pro dopravníkové tratě, montážní linky a válečkové dráhy – vlastní řada spojovacích prvků a příslušenství.",
+  "en": "Logiman Dynamic aluminium profile system for conveyor lines, assembly lines and roller tracks – with its own range of connecting elements and accessories.",
+  "it": "Sistema di profili in alluminio Dynamic Logiman per linee trasportatrici, linee di montaggio e vie a rulli, con elementi di collegamento e accessori dedicati.",
+  "h": "8be8244b2c"
+ },
+ {
+  "id": "kat:156:focus_keyword",
+  "typ": "text",
+  "cs": "profily Dynamic",
+  "en": "Dynamic profiles",
+  "it": "profili Dynamic",
+  "h": "8600115c60"
+ },
+ {
+  "id": "kat:157:name",
+  "typ": "text",
+  "cs": "Spojovací prvky systému Dynamic",
+  "en": "Dynamic system fasteners",
+  "it": "Elementi di collegamento del sistema Dynamic",
+  "h": "87c9429bec"
+ },
+ {
+  "id": "kat:157:meta_title",
+  "typ": "text",
+  "cs": "Spojovací prvky systému Dynamic",
+  "en": "Connection elements of the Dynamic system",
+  "it": "Elementi di collegamento del sistema Dynamic",
+  "h": "87c9429bec"
+ },
+ {
+  "id": "kat:157:meta_description",
+  "typ": "text",
+  "cs": "Spojovací prvky pro hliníkové profily systému Dynamic Logiman – díly pro montážní linky, dopravníky a válečkové dráhy.",
+  "en": "Fasteners for the aluminium profiles of the Logiman Dynamic system – connecting components for building assembly lines, conveyors and roller tracks.",
+  "it": "Elementi di collegamento per i profili in alluminio del sistema Dynamic Logiman – componenti per realizzare linee di montaggio, trasportatori e vie a rulli.",
+  "h": "5ba8d675a9"
+ },
+ {
+  "id": "kat:157:focus_keyword",
+  "typ": "text",
+  "cs": "spojovací prvky Dynamic",
+  "en": "Dynamic fasteners",
+  "it": "elementi di collegamento Dynamic",
+  "h": "265e143783"
+ },
+ {
+  "id": "kat:158:name",
+  "typ": "text",
+  "cs": "Plastové záslepky rožků",
+  "en": "Plastic end caps for corner connectors",
+  "it": "Tappi in plastica per giunti angolari",
+  "h": "7a2a651954"
+ },
+ {
+  "id": "kat:158:meta_title",
+  "typ": "text",
+  "cs": "Plastové záslepky rožků hliníkových profilů",
+  "en": "Plastic end caps for aluminium profile corner connectors",
+  "it": "Tappi in plastica per giunti angolari dei profili",
+  "h": "cef4112b3f"
+ },
+ {
+  "id": "kat:158:meta_description",
+  "typ": "text",
+  "cs": "Plastové záslepky rohových spojů (rožků) hliníkových profilů Logiman – bezpečné zakrytí ostrých hran a estetické dokončení konstrukce.",
+  "en": "Plastic caps for corner connectors of Logiman aluminium profiles – safe covering of sharp edges and a neat, aesthetic finish to the whole structure.",
+  "it": "Tappi in plastica per giunti angolari dei profili in alluminio Logiman – copertura sicura degli spigoli vivi e finitura estetica della struttura.",
+  "h": "c27fa4e3a3"
+ },
+ {
+  "id": "kat:158:focus_keyword",
+  "typ": "text",
+  "cs": "plastové záslepky rožků",
+  "en": "plastic corner connector caps",
+  "it": "tappi in plastica per giunti angolari",
+  "h": "2909c8849d"
+ },
+ {
+  "id": "kat:159:name",
+  "typ": "text",
+  "cs": "Úhlové spojky ploché",
+  "en": "Flat angle connectors",
+  "it": "Giunti angolari piatti",
+  "h": "9f4ea0afab"
+ },
+ {
+  "id": "kat:159:meta_title",
+  "typ": "text",
+  "cs": "Ploché úhlové spojky profilů",
+  "en": "Flat angle connectors for profiles",
+  "it": "Giunti angolari piatti per profili",
+  "h": "cdbf0cffc0"
+ },
+ {
+  "id": "kat:159:meta_description",
+  "typ": "text",
+  "cs": "Ploché úhlové spojky pro spoje hliníkových stavebnicových profilů Logiman pod úhlem 90° – nízkoprofilové řešení bez vyčnívajících prvků.",
+  "en": "Flat angle connectors for 90° joints in Logiman modular aluminium profiles – a low-profile solution without any protruding elements on the surface.",
+  "it": "Giunti angolari piatti per collegamenti a 90° dei profili modulari in alluminio Logiman – soluzione a basso profilo senza elementi sporgenti.",
+  "h": "469a068dd5"
+ },
+ {
+  "id": "kat:159:focus_keyword",
+  "typ": "text",
+  "cs": "ploché úhlové spojky",
+  "en": "flat angle connectors",
+  "it": "giunti angolari piatti",
+  "h": "8e5b32b4f5"
+ },
+ {
+  "id": "kat:160:name",
+  "typ": "text",
+  "cs": "Vrtací přípravky",
+  "en": "Drilling jigs",
+  "it": "Dime di foratura",
+  "h": "5d621c82bf"
+ },
+ {
+  "id": "kat:160:meta_title",
+  "typ": "text",
+  "cs": "Vrtací přípravky pro hliníkové profily",
+  "en": "Drilling jigs for aluminium profiles",
+  "it": "Dime di foratura per profili in alluminio",
+  "h": "736f8e53c3"
+ },
+ {
+  "id": "kat:160:meta_description",
+  "typ": "text",
+  "cs": "Vrtací přípravky a šablony pro přesné vrtání hliníkových stavebnicových profilů Logiman – rychlá a opakovatelná příprava otvorů pro spoje.",
+  "en": "Drilling jigs and templates for precise drilling of Logiman modular aluminium profiles – fast and repeatable preparation of holes for the joints.",
+  "it": "Dime e sagome di foratura per la foratura precisa dei profili modulari in alluminio Logiman – preparazione rapida e ripetibile dei fori per le giunzioni.",
+  "h": "9b7615c92a"
+ },
+ {
+  "id": "kat:160:focus_keyword",
+  "typ": "text",
+  "cs": "vrtací přípravky",
+  "en": "drilling jigs",
+  "it": "dime di foratura",
+  "h": "3f9c4cbe12"
+ },
+ {
+  "id": "kat:161:name",
+  "typ": "text",
+  "cs": "Rožky trojcestné oblé",
+  "en": "Rounded three-way corner connectors",
+  "it": "Giunti angolari a tre vie arrotondati",
+  "h": "de40ae6958"
+ },
+ {
+  "id": "kat:161:meta_title",
+  "typ": "text",
+  "cs": "Trojcestné oblé rožky profilů",
+  "en": "Rounded three-way corner connectors for profiles",
+  "it": "Giunti angolari a tre vie arrotondati per profili",
+  "h": "98832820b5"
+ },
+ {
+  "id": "kat:161:meta_description",
+  "typ": "text",
+  "cs": "Trojcestné oblé rožky pro spojení tří hliníkových stavebnicových profilů Logiman v jednom bodě – zaoblený design bez ostrých hran.",
+  "en": "Rounded three-way corner connectors joining three Logiman modular aluminium profiles at a single point – a rounded design with no sharp edges.",
+  "it": "Giunti angolari a tre vie arrotondati per unire tre profili modulari in alluminio Logiman in un unico punto: design arrotondato senza spigoli vivi.",
+  "h": "0856ce78e5"
+ },
+ {
+  "id": "kat:161:focus_keyword",
+  "typ": "text",
+  "cs": "trojcestné oblé rožky",
+  "en": "three-way rounded corner connectors",
+  "it": "giunti angolari a tre vie arrotondati",
+  "h": "21074a0b3f"
+ },
+ {
+  "id": "kat:162:name",
+  "typ": "text",
+  "cs": "Spojovací kostky",
+  "en": "Cube connectors",
+  "it": "Giunti a cubo",
+  "h": "252c037498"
+ },
+ {
+  "id": "kat:162:meta_title",
+  "typ": "text",
+  "cs": "Spojovací kostky pro profily",
+  "en": "Connecting cubes for profiles",
+  "it": "Cubi di collegamento per profili",
+  "h": "bcd582baef"
+ },
+ {
+  "id": "kat:162:meta_description",
+  "typ": "text",
+  "cs": "Spojovací kostky pro pevné rohové spoje hliníkových stavebnicových profilů Logiman – jednoduchá montáž bez obrábění profilu.",
+  "en": "Cube connectors for strong corner joints in Logiman modular aluminium profiles – simple assembly with no machining of the profiles required.",
+  "it": "Cubi di collegamento per giunzioni ad angolo robuste dei profili modulari in alluminio Logiman: montaggio semplice, senza lavorazioni sul profilo.",
+  "h": "ba53a06ad9"
+ },
+ {
+  "id": "kat:162:focus_keyword",
+  "typ": "text",
+  "cs": "spojovací kostky",
+  "en": "cube connectors",
+  "it": "giunti a cubo",
+  "h": "a5cd8c72a9"
+ },
+ {
+  "id": "kat:163:name",
+  "typ": "text",
+  "cs": "Plotna pro křížové spoje",
+  "en": "Connecting plate for cross joints",
+  "it": "Piastra di collegamento per giunzioni a croce",
+  "h": "d28bb99800"
+ },
+ {
+  "id": "kat:163:meta_title",
+  "typ": "text",
+  "cs": "Plotny pro křížové spoje profilů",
+  "en": "Cross-joint plates for profiles",
+  "it": "Piastre per giunzioni a croce dei profili",
+  "h": "56aeb74b71"
+ },
+ {
+  "id": "kat:163:meta_description",
+  "typ": "text",
+  "cs": "Spojovací plotny pro křížové spoje hliníkových stavebnicových profilů Logiman – spojení čtyř profilů v jednom rovinném uzlu.",
+  "en": "Connecting plates for cross joints between Logiman modular aluminium profiles – four profiles connected at one junction point in the same plane.",
+  "it": "Piastre di collegamento per giunzioni a croce dei profili modulari in alluminio Logiman: quattro profili uniti in un unico nodo sullo stesso piano.",
+  "h": "11539466df"
+ },
+ {
+  "id": "kat:163:focus_keyword",
+  "typ": "text",
+  "cs": "plotny pro křížové spoje",
+  "en": "cross joint plates",
+  "it": "piastre per giunzioni a croce",
+  "h": "6e694cb05c"
+ },
+ {
+  "id": "kat:164:name",
+  "typ": "text",
+  "cs": "Závěsné karabiny",
+  "en": "Hanging carabiners",
+  "it": "Moschettoni di sospensione",
+  "h": "481711f645"
+ },
+ {
+  "id": "kat:164:meta_title",
+  "typ": "text",
+  "cs": "Závěsné karabiny na profil",
+  "en": "Hanging carabiners for profiles",
+  "it": "Moschettoni di sospensione per profili",
+  "h": "95367507be"
+ },
+ {
+  "id": "kat:164:meta_description",
+  "typ": "text",
+  "cs": "Závěsné karabiny pro zavěšení nářadí, kabelů a doplňků na drážku hliníkových stavebnicových profilů Logiman.",
+  "en": "Hanging carabiners for tools, cables and accessories, fitted to the slot of Logiman modular aluminium profiles. Practical storage directly on the structure.",
+  "it": "Moschettoni di sospensione per attrezzi, cavi e accessori da fissare nella scanalatura dei profili modulari in alluminio Logiman – soluzione pratica sulla struttura.",
+  "h": "7be2ded8b5"
+ },
+ {
+  "id": "kat:164:focus_keyword",
+  "typ": "text",
+  "cs": "závěsné karabiny",
+  "en": "hanging carabiners",
+  "it": "moschettoni di sospensione",
+  "h": "5488085399"
+ },
+ {
+  "id": "kat:165:name",
+  "typ": "text",
+  "cs": "Zámky",
+  "en": "Locks",
+  "it": "Serrature",
+  "h": "12420a1c8f"
+ },
+ {
+  "id": "kat:165:meta_title",
+  "typ": "text",
+  "cs": "Zámky pro hliníkové profilové konstrukce",
+  "en": "Locks for aluminium profile structures",
+  "it": "Serrature per strutture in profilo di alluminio",
+  "h": "58bf9f6c00"
+ },
+ {
+  "id": "kat:165:meta_description",
+  "typ": "text",
+  "cs": "Zámky a uzamykací prvky pro dvířka a kryty z hliníkových stavebnicových profilů Logiman – zabezpečení skříní, krytů strojů a pracovišť.",
+  "en": "Locks and locking hardware for doors and covers on Logiman modular aluminium profiles – for securing cabinets, machine covers and workstations.",
+  "it": "Serrature ed elementi di chiusura per sportelli e coperture di profili modulari in alluminio Logiman: sicurezza per armadi, protezioni macchina e postazioni.",
+  "h": "68611c7501"
+ },
+ {
+  "id": "kat:165:focus_keyword",
+  "typ": "text",
+  "cs": "zámky pro profilové konstrukce",
+  "en": "locks for profile structures",
+  "it": "serrature per strutture in profilato",
+  "h": "2d28790eaf"
+ },
+ {
+  "id": "kat:166:name",
+  "typ": "text",
+  "cs": "Rožky standardní",
+  "en": "Standard corner connectors",
+  "it": "Giunti angolari standard",
+  "h": "8d8f674d71"
+ },
+ {
+  "id": "kat:166:meta_title",
+  "typ": "text",
+  "cs": "Standardní rožky hliníkových profilů",
+  "en": "Standard corner connectors for aluminium profiles",
+  "it": "Giunti angolari standard per profili in alluminio",
+  "h": "f2a8cc5ff9"
+ },
+ {
+  "id": "kat:166:meta_description",
+  "typ": "text",
+  "cs": "Standardní rohové rožky pro spojení hliníkových stavebnicových profilů Logiman v pravém úhlu – nejpoužívanější spojovací prvek konstrukce.",
+  "en": "Standard corner connectors for joining Logiman modular aluminium profiles at a right angle – the most widely used connecting element in the structure.",
+  "it": "Giunti angolari standard per collegare ad angolo retto i profili modulari in alluminio Logiman – l'elemento di collegamento più utilizzato nella struttura.",
+  "h": "84f27f0942"
+ },
+ {
+  "id": "kat:166:focus_keyword",
+  "typ": "text",
+  "cs": "standardní rožky",
+  "en": "standard corner connectors",
+  "it": "giunti angolari standard",
+  "h": "97dabfc64f"
+ },
+ {
+  "id": "kat:167:name",
+  "typ": "text",
+  "cs": "Rožky velké",
+  "en": "Large corner connectors",
+  "it": "Giunti angolari grandi",
+  "h": "e4bc12ee7f"
+ },
+ {
+  "id": "kat:167:meta_title",
+  "typ": "text",
+  "cs": "Velké rožky hliníkových profilů",
+  "en": "Large corner connectors for aluminium profiles",
+  "it": "Giunti angolari grandi per profili in alluminio",
+  "h": "4d1daa67f6"
+ },
+ {
+  "id": "kat:167:meta_description",
+  "typ": "text",
+  "cs": "Velké rohové rožky pro spojení silnějších hliníkových stavebnicových profilů Logiman – vyšší pevnost spoje pro náročnější konstrukce.",
+  "en": "Large corner connectors for joining thicker, stronger Logiman modular aluminium profiles – greater joint strength for more demanding structures.",
+  "it": "Giunti angolari grandi per unire profili modulari in alluminio Logiman di sezione maggiore: giunzione più resistente per strutture più impegnative.",
+  "h": "ad6aa23832"
+ },
+ {
+  "id": "kat:167:focus_keyword",
+  "typ": "text",
+  "cs": "velké rožky",
+  "en": "large corner connectors",
+  "it": "giunti angolari grandi",
+  "h": "435de26d41"
+ },
+ {
+  "id": "kat:168:name",
+  "typ": "text",
+  "cs": "Deskové hliníkové profily",
+  "en": "Aluminium panel profiles",
+  "it": "Profili a pannello in alluminio",
+  "h": "13d8e46b99"
+ },
+ {
+  "id": "kat:168:meta_title",
+  "typ": "text",
+  "cs": "Deskové hliníkové profily – ploché profily s drážkou",
+  "en": "Aluminium panel profiles – flat slotted profiles",
+  "it": "Profili a pannello in alluminio – piatti con scanalatura",
+  "h": "76a3c2fa70"
+ },
+ {
+  "id": "kat:168:meta_description",
+  "typ": "text",
+  "cs": "Ploché deskové hliníkové profily Logiman pro širší nosné a krycí plochy – pracovní desky, boční stěny krytů a montážní panely se drážkovým systémem.",
+  "en": "Flat panel aluminium profiles from Logiman for wider load-bearing and covering surfaces – worktops, enclosure side walls and assembly panels with a slot system.",
+  "it": "Profili piani a pannello in alluminio Logiman per superfici portanti e di copertura più ampie – piani di lavoro, pareti di coperture e pannelli di montaggio a scanalature.",
+  "h": "05393d62a3"
+ },
+ {
+  "id": "kat:168:focus_keyword",
+  "typ": "text",
+  "cs": "deskové hliníkové profily",
+  "en": "aluminium panel profiles",
+  "it": "profili a pannello in alluminio",
+  "h": "15f873f773"
+ },
+ {
+  "id": "kat:169:name",
+  "typ": "text",
+  "cs": "Hliníkové profily s drážkou 8 mm",
+  "en": "Aluminium profiles with 8 mm slot",
+  "it": "Profili in alluminio con scanalatura da 8 mm",
+  "h": "55c42ccab4"
+ },
+ {
+  "id": "kat:169:meta_title",
+  "typ": "text",
+  "cs": "Hliníkové profily s drážkou 8 mm – univerzální řada",
+  "en": "Aluminium profiles with 8 mm slot – universal range",
+  "it": "Profili in alluminio con scanalatura da 8 mm – serie universale",
+  "h": "2cf2bb455e"
+ },
+ {
+  "id": "kat:169:meta_description",
+  "typ": "text",
+  "cs": "Univerzální řada hliníkových stavebnicových profilů s drážkou 8 mm Logiman – standard pro pracovní stoly, rámy strojů a montážní pracoviště.",
+  "en": "The universal range of Logiman modular aluminium profiles with an 8 mm slot – the standard for workbenches, machine frames and assembly workstations.",
+  "it": "La serie universale di profili modulari in alluminio Logiman con scanalatura da 8 mm – lo standard per banchi da lavoro, telai di macchine e postazioni di montaggio.",
+  "h": "91e2329feb"
+ },
+ {
+  "id": "kat:169:focus_keyword",
+  "typ": "text",
+  "cs": "hliníkové profily drážka 8 mm",
+  "en": "aluminium profiles 8 mm slot",
+  "it": "profili in alluminio scanalatura 8 mm",
+  "h": "657c9fe313"
+ },
+ {
+  "id": "kat:170:name",
+  "typ": "text",
+  "cs": "Plastové záslepky profilů",
+  "en": "Plastic end caps for profiles",
+  "it": "Tappi in plastica per profili",
+  "h": "268386015c"
+ },
+ {
+  "id": "kat:170:meta_title",
+  "typ": "text",
+  "cs": "Plastové záslepky profilů",
+  "en": "Plastic end caps for profiles",
+  "it": "Tappi in plastica per profili",
+  "h": "268386015c"
+ },
+ {
+  "id": "kat:170:meta_description",
+  "typ": "text",
+  "cs": "Plastové záslepky čel hliníkových stavebnicových profilů Logiman – zakrytí drážek a hran, dostupné pro všechny běžné rozměry profilů skladem.",
+  "en": "Plastic end caps for Logiman modular aluminium profiles – cover slots and edges neatly; available from stock for all common profile sizes.",
+  "it": "Tappi terminali in plastica per profili modulari in alluminio Logiman – coprono scanalature e spigoli, a magazzino per tutte le dimensioni comuni di profilo.",
+  "h": "e9c99c792d"
+ },
+ {
+  "id": "kat:170:focus_keyword",
+  "typ": "text",
+  "cs": "plastové záslepky profilů",
+  "en": "plastic profile end caps",
+  "it": "tappi terminali in plastica per profilati",
+  "h": "ecf48a918f"
+ },
+ {
+  "id": "kat:171:name",
+  "typ": "text",
+  "cs": "Panty plastové",
+  "en": "Plastic hinges",
+  "it": "Cerniere in plastica",
+  "h": "016a578e68"
+ },
+ {
+  "id": "kat:171:meta_title",
+  "typ": "text",
+  "cs": "Plastové panty pro hliníkové profily",
+  "en": "Plastic hinges for aluminium profiles",
+  "it": "Cerniere in plastica per profili in alluminio",
+  "h": "bafaadaa03"
+ },
+ {
+  "id": "kat:171:meta_description",
+  "typ": "text",
+  "cs": "Plastové panty pro dvířka a kryty z hliníkových stavebnicových profilů Logiman – lehké řešení otočných spojů bez nutnosti vrtání.",
+  "en": "Plastic hinges for doors and covers on Logiman modular aluminium profiles – a lightweight solution for pivoting joints with no drilling required.",
+  "it": "Cerniere in plastica per sportelli e coperture di profili modulari in alluminio Logiman: soluzione leggera per giunti girevoli senza necessità di foratura.",
+  "h": "4e5e14c801"
+ },
+ {
+  "id": "kat:171:focus_keyword",
+  "typ": "text",
+  "cs": "plastové panty",
+  "en": "plastic hinges",
+  "it": "cerniere in plastica",
+  "h": "9302e386fc"
+ },
+ {
+  "id": "kat:172:name",
+  "typ": "text",
+  "cs": "Panty kovové",
+  "en": "Metal hinges",
+  "it": "Cerniere in metallo",
+  "h": "97a51ae087"
+ },
+ {
+  "id": "kat:172:meta_title",
+  "typ": "text",
+  "cs": "Kovové panty pro hliníkové profily",
+  "en": "Metal hinges for aluminium profiles",
+  "it": "Cerniere in metallo per profili in alluminio",
+  "h": "03ce998f7d"
+ },
+ {
+  "id": "kat:172:meta_description",
+  "typ": "text",
+  "cs": "Kovové panty pro dvířka, kryty a poklopy z hliníkových stavebnicových profilů Logiman – vyšší nosnost a životnost než plastové varianty.",
+  "en": "Metal hinges for doors, covers and hatches on Logiman modular aluminium profiles – higher load capacity and service life than the plastic versions.",
+  "it": "Cerniere metalliche per sportelli, coperture e botole di profili modulari in alluminio Logiman: portata e durata superiori rispetto alle versioni in plastica.",
+  "h": "77658ca7e8"
+ },
+ {
+  "id": "kat:172:focus_keyword",
+  "typ": "text",
+  "cs": "kovové panty",
+  "en": "metal hinges",
+  "it": "cerniere in metallo",
+  "h": "147e827710"
+ },
+ {
+  "id": "kat:173:name",
+  "typ": "text",
+  "cs": "Rožky úzké",
+  "en": "Narrow corner connectors",
+  "it": "Giunti angolari stretti",
+  "h": "f7ad6a8c72"
+ },
+ {
+  "id": "kat:173:meta_title",
+  "typ": "text",
+  "cs": "Úzké rožky hliníkových profilů",
+  "en": "Narrow corner connectors for aluminium profiles",
+  "it": "Giunti angolari stretti per profili in alluminio",
+  "h": "e89fcf0293"
+ },
+ {
+  "id": "kat:173:meta_description",
+  "typ": "text",
+  "cs": "Úzké rohové rožky pro hliníkové stavebnicové profily Logiman – kompaktní spoj tam, kde standardní rožek nemá dostatek místa.",
+  "en": "Narrow corner connectors for Logiman modular aluminium profiles – a compact joint where a standard corner connector does not have enough room.",
+  "it": "Giunti angolari stretti per profili modulari in alluminio Logiman – collegamento compatto dove il giunto angolare standard non ha spazio sufficiente.",
+  "h": "dec4638897"
+ },
+ {
+  "id": "kat:173:focus_keyword",
+  "typ": "text",
+  "cs": "úzké rožky",
+  "en": "narrow corner connectors",
+  "it": "giunti angolari stretti",
+  "h": "0c5fd202dd"
+ },
+ {
+  "id": "kat:174:name",
+  "typ": "text",
+  "cs": "Úhelníky",
+  "en": "Angle brackets",
+  "it": "Squadrette",
+  "h": "ebe8813a04"
+ },
+ {
+  "id": "kat:174:meta_title",
+  "typ": "text",
+  "cs": "Úhelníky pro hliníkové profily",
+  "en": "Angle brackets for aluminium profiles",
+  "it": "Squadrette per profili in alluminio",
+  "h": "a9139e09b4"
+ },
+ {
+  "id": "kat:174:meta_description",
+  "typ": "text",
+  "cs": "Úhelníky pro pevné šroubované spoje hliníkových stavebnicových profilů Logiman – univerzální rohové i T spojení konstrukce.",
+  "en": "Angle brackets for strong screw-fixed joints in Logiman modular aluminium profiles – universal for both corner and T connections of the structure.",
+  "it": "Squadrette per giunzioni avvitate solide dei profili modulari in alluminio Logiman: collegamenti universali ad angolo e a T della struttura.",
+  "h": "32a8f9f287"
+ },
+ {
+  "id": "kat:174:focus_keyword",
+  "typ": "text",
+  "cs": "úhelníky pro profily",
+  "en": "angle brackets for profiles",
+  "it": "squadrette per profilati",
+  "h": "e4006c5eba"
+ },
+ {
+  "id": "kat:175:name",
+  "typ": "text",
+  "cs": "Vnitřní spoje",
+  "en": "Internal connectors",
+  "it": "Giunti interni",
+  "h": "89f12e236a"
+ },
+ {
+  "id": "kat:175:meta_title",
+  "typ": "text",
+  "cs": "Vnitřní spoje hliníkových profilů",
+  "en": "Internal joints for aluminium profiles",
+  "it": "Giunzioni interne per profili in alluminio",
+  "h": "03d5018f29"
+ },
+ {
+  "id": "kat:175:meta_description",
+  "typ": "text",
+  "cs": "Vnitřní spojovací prvky hliníkových stavebnicových profilů Logiman – spoj skrytý uvnitř profilu pro čistý vzhled konstrukce.",
+  "en": "Internal connecting elements for Logiman modular aluminium profiles – the joint stays hidden inside the profile for a clean, tidy look to the structure.",
+  "it": "Elementi di collegamento interni per profili modulari in alluminio Logiman: giunzione nascosta all'interno del profilo per un aspetto pulito della struttura.",
+  "h": "4d54b4ddbf"
+ },
+ {
+  "id": "kat:175:focus_keyword",
+  "typ": "text",
+  "cs": "vnitřní spoje profilů",
+  "en": "internal profile joints",
+  "it": "giunzioni interne per profilati",
+  "h": "f47f800f9f"
+ },
+ {
+  "id": "kat:176:name",
+  "typ": "text",
+  "cs": "Spojovací klouby s páčkou",
+  "en": "Articulated connecting joints with lever",
+  "it": "Giunti articolati di collegamento con leva",
+  "h": "deec5a0125"
+ },
+ {
+  "id": "kat:176:meta_title",
+  "typ": "text",
+  "cs": "Spojovací klouby s páčkou",
+  "en": "Articulated connecting joints with lever",
+  "it": "Giunti articolati di collegamento con leva",
+  "h": "deec5a0125"
+ },
+ {
+  "id": "kat:176:meta_description",
+  "typ": "text",
+  "cs": "Spojovací klouby s aretační páčkou pro nastavitelné a rychle rozebíratelné spoje hliníkových stavebnicových profilů Logiman.",
+  "en": "Articulated connecting joints with a locking lever for adjustable connections of Logiman modular aluminium profiles that can be taken apart quickly.",
+  "it": "Giunti articolati di collegamento con leva di bloccaggio per giunzioni regolabili e rapidamente smontabili dei profili modulari in alluminio Logiman.",
+  "h": "0dcb271ef0"
+ },
+ {
+  "id": "kat:176:focus_keyword",
+  "typ": "text",
+  "cs": "spojovací klouby s páčkou",
+  "en": "lever joint connectors",
+  "it": "giunti di collegamento con leva",
+  "h": "efcd4fd3c6"
+ },
+ {
+  "id": "kat:177:name",
+  "typ": "text",
+  "cs": "Vodící kolečka",
+  "en": "Guide wheels",
+  "it": "Rotelle di guida",
+  "h": "c80bcdb26f"
+ },
+ {
+  "id": "kat:177:meta_title",
+  "typ": "text",
+  "cs": "Vodící kolečka na profil",
+  "en": "Guide wheels for profiles",
+  "it": "Rotelle di guida per profili",
+  "h": "b7a7d72f23"
+ },
+ {
+  "id": "kat:177:meta_description",
+  "typ": "text",
+  "cs": "Vodící kolečka pro pojezd po hliníkových stavebnicových profilech Logiman – posuvné dveře, kryty a vozíky s hladkým vedením.",
+  "en": "Guide wheels for running along Logiman modular aluminium profiles – for sliding doors, covers and trolleys that need smooth, guided movement.",
+  "it": "Rotelle di guida per lo scorrimento lungo i profili modulari in alluminio Logiman: per porte scorrevoli, coperture e carrelli con guida fluida.",
+  "h": "85fd570257"
+ },
+ {
+  "id": "kat:177:focus_keyword",
+  "typ": "text",
+  "cs": "vodící kolečka",
+  "en": "guide wheels",
+  "it": "rotelle di guida",
+  "h": "29dc3e511c"
+ },
+ {
+  "id": "kat:178:name",
+  "typ": "text",
+  "cs": "Rožky trojcestné ukosené",
+  "en": "Bevelled three-way corner connectors",
+  "it": "Giunti angolari a tre vie smussati",
+  "h": "ff5512e664"
+ },
+ {
+  "id": "kat:178:meta_title",
+  "typ": "text",
+  "cs": "Trojcestné ukosené rožky profilů",
+  "en": "Bevelled three-way corner connectors for profiles",
+  "it": "Giunti angolari a tre vie smussati per profili",
+  "h": "58afeeded5"
+ },
+ {
+  "id": "kat:178:meta_description",
+  "typ": "text",
+  "cs": "Trojcestné rožky s ukoseným tvarem pro spojení tří hliníkových stavebnicových profilů Logiman v omezeném prostoru konstrukce.",
+  "en": "Three-way corner connectors with a bevelled shape for joining three Logiman modular aluminium profiles in tight spaces within the structure.",
+  "it": "Giunti angolari a tre vie di forma smussata per unire tre profili modulari in alluminio Logiman in spazi ridotti all'interno della struttura.",
+  "h": "86f08a41fb"
+ },
+ {
+  "id": "kat:178:focus_keyword",
+  "typ": "text",
+  "cs": "trojcestné ukosené rožky",
+  "en": "three-way mitred corner connectors",
+  "it": "giunti angolari a tre vie a taglio obliquo",
+  "h": "259c241b95"
+ },
+ {
+  "id": "kat:179:name",
+  "typ": "text",
+  "cs": "Panty s aretací",
+  "en": "Locking hinges",
+  "it": "Cerniere con bloccaggio",
+  "h": "290d3ebe56"
+ },
+ {
+  "id": "kat:179:meta_title",
+  "typ": "text",
+  "cs": "Panty s aretací pro hliníkové profily",
+  "en": "Locking hinges for aluminium profiles",
+  "it": "Cerniere con blocco per profili in alluminio",
+  "h": "544a3bddf9"
+ },
+ {
+  "id": "kat:179:meta_description",
+  "typ": "text",
+  "cs": "Panty s aretací (samodržné) pro dvířka z hliníkových stavebnicových profilů Logiman – bezpečně udrží otevřenou polohu bez dalšího zajištění.",
+  "en": "Locking (self-holding) hinges for doors made of Logiman modular aluminium profiles – they hold the open position securely without extra fastening.",
+  "it": "Cerniere con bloccaggio (autobloccanti) per sportelli in profili modulari Logiman in alluminio – mantengono la posizione aperta senza ulteriori fissaggi.",
+  "h": "f58aab4240"
+ },
+ {
+  "id": "kat:179:focus_keyword",
+  "typ": "text",
+  "cs": "panty s aretací",
+  "en": "locking hinges",
+  "it": "cerniere con bloccaggio",
+  "h": "d6d432b8b7"
+ },
+ {
+  "id": "kat:180:name",
+  "typ": "text",
+  "cs": "Madla",
+  "en": "Handles",
+  "it": "Maniglie",
+  "h": "5e1c91a65b"
+ },
+ {
+  "id": "kat:180:meta_title",
+  "typ": "text",
+  "cs": "Madla pro hliníkové profilové konstrukce",
+  "en": "Handles for aluminium profile structures",
+  "it": "Maniglie per strutture in profilo di alluminio",
+  "h": "599dd218a0"
+ },
+ {
+  "id": "kat:180:meta_description",
+  "typ": "text",
+  "cs": "Madla a úchyty pro dvířka, kryty a konstrukce z hliníkových stavebnicových profilů Logiman – hliníkové provedení kompatibilní s drážkovým systémem.",
+  "en": "Handles and grips for doors, covers and structures made of Logiman modular aluminium profiles – aluminium design compatible with the slot system.",
+  "it": "Maniglie e impugnature per sportelli, coperture e strutture in profili modulari di alluminio Logiman – versione in alluminio compatibile con il sistema a scanalature.",
+  "h": "4212e1a228"
+ },
+ {
+  "id": "kat:180:focus_keyword",
+  "typ": "text",
+  "cs": "madla pro profilové konstrukce",
+  "en": "handles for profile structures",
+  "it": "maniglie per strutture in profilato",
+  "h": "17709b1b14"
+ },
+ {
+  "id": "kat:181:name",
+  "typ": "text",
+  "cs": "Kulaté hliníkové profily",
+  "en": "Round aluminium profiles",
+  "it": "Profili tondi in alluminio",
+  "h": "1b15d1fb6a"
+ },
+ {
+  "id": "kat:181:meta_title",
+  "typ": "text",
+  "cs": "Kulaté hliníkové profily – madla, zábradlí, stojany",
+  "en": "Round aluminium profiles – handles, railings, stands",
+  "it": "Profili tondi in alluminio – maniglie, ringhiere, supporti",
+  "h": "2fbb24f2dc"
+ },
+ {
+  "id": "kat:181:meta_description",
+  "typ": "text",
+  "cs": "Hliníkové profily s kruhovým průřezem Logiman bez ostrých hran – vhodné pro madla, zábradlí, stojany i konstrukce s rotačním pohybem kolem osy.",
+  "en": "Logiman round-section aluminium profiles with no sharp edges – suitable for handles, railings, stands and structures with rotary movement around an axis.",
+  "it": "Profili in alluminio Logiman a sezione circolare, senza spigoli vivi: adatti a maniglie, ringhiere, supporti e strutture con rotazione attorno a un asse.",
+  "h": "c9f2144bdd"
+ },
+ {
+  "id": "kat:181:focus_keyword",
+  "typ": "text",
+  "cs": "kulaté hliníkové profily",
+  "en": "round aluminium profiles",
+  "it": "profili tondi in alluminio",
+  "h": "58eb2e133c"
+ },
+ {
+  "id": "kat:182:name",
+  "typ": "text",
+  "cs": "Balicí stoly a pracoviště na míru",
+  "en": "Made-to-measure packing tables and workstations",
+  "it": "Tavoli da imballaggio e postazioni di lavoro su misura",
+  "h": "936eb55d14"
+ },
+ {
+  "id": "kat:182:meta_title",
+  "typ": "text",
+  "cs": "Balicí stoly a pracoviště na míru",
+  "en": "Made-to-measure packing tables and workstations",
+  "it": "Tavoli da imballaggio e postazioni su misura",
+  "h": "936eb55d14"
+ },
+ {
+  "id": "kat:182:meta_description",
+  "typ": "text",
+  "cs": "Balicí stoly a pracoviště na míru od Logiman – navrhneme a sestavíme řešení pro balení a expedici podle vašich prostorových i výkonových požadavků.",
+  "en": "Custom packing tables and workstations from Logiman – we design and assemble a packing and dispatch solution to your space and throughput requirements.",
+  "it": "Tavoli da imballaggio e postazioni su misura Logiman – progettiamo e montiamo la soluzione per imballaggio e spedizione secondo spazi e prestazioni richiesti.",
+  "h": "d4523cbccb"
+ },
+ {
+  "id": "kat:182:focus_keyword",
+  "typ": "text",
+  "cs": "balicí stoly na míru",
+  "en": "custom packing tables",
+  "it": "tavoli da imballaggio su misura",
+  "h": "c4d96eb9a7"
+ },
+ {
+  "id": "kat:183:name",
+  "typ": "text",
+  "cs": "Ergonomické balicí stoly SSE",
+  "en": "Ergonomic packing tables SSE",
+  "it": "Tavoli da imballaggio ergonomici SSE",
+  "h": "db2da8d547"
+ },
+ {
+  "id": "kat:183:meta_title",
+  "typ": "text",
+  "cs": "Ergonomické balicí stoly SSE",
+  "en": "Ergonomic packing tables SSE",
+  "it": "Tavoli da imballaggio ergonomici SSE",
+  "h": "db2da8d547"
+ },
+ {
+  "id": "kat:183:meta_description",
+  "typ": "text",
+  "cs": "Balicí stoly SSE z hliníkových profilů s drážkou pro snadnou montáž vlastního příslušenství – flexibilní ergonomické pracoviště pro balení a expedici.",
+  "en": "SSE packing tables made of aluminium profiles with a slot for easy mounting of your own accessories – a flexible ergonomic workstation for packing and dispatch.",
+  "it": "Tavoli da imballaggio SSE in profili di alluminio con scanalatura per montare facilmente accessori propri – postazione ergonomica flessibile per imballaggio e spedizione.",
+  "h": "39d0717fb2"
+ },
+ {
+  "id": "kat:183:focus_keyword",
+  "typ": "text",
+  "cs": "balicí stoly SSE",
+  "en": "SSE packing tables",
+  "it": "tavoli da imballaggio SSE",
+  "h": "2e91543282"
+ },
+ {
+  "id": "kat:184:name",
+  "typ": "text",
+  "cs": "Vestavby do dodávek, aut",
+  "en": "Van and car fit-outs",
+  "it": "Allestimenti per furgoni e auto",
+  "h": "0ef4d10bd3"
+ },
+ {
+  "id": "kat:184:meta_title",
+  "typ": "text",
+  "cs": "Pracovní vestavby do dodávek a aut | Logiman",
+  "en": "Work van and car fit-outs | Logiman",
+  "it": "Allestimenti di lavoro per furgoni e auto | Logiman",
+  "h": "0420cdc1d0"
+ },
+ {
+  "id": "kat:184:meta_description",
+  "typ": "text",
+  "cs": "Vestavba do dodávky na míru z hliníku i oceli: regály, šuplíky, výsuvy a podlahy podle vašeho nářadí. Pracovní vestavby do aut na klíč od roku 2009.",
+  "en": "Custom van fit-out in aluminium and steel: shelving, drawers, pull-outs and floors to suit your tools. Turnkey work vehicle fit-outs since 2009.",
+  "it": "Allestimento furgone su misura in alluminio e acciaio: scaffali, cassetti, estraibili e pianali secondo gli attrezzi. Allestimenti da lavoro chiavi in mano dal 2009.",
+  "h": "4d7fc71bba"
+ },
+ {
+  "id": "kat:184:focus_keyword",
+  "typ": "text",
+  "cs": "vestavba do dodávky",
+  "en": "van fit-out",
+  "it": "allestimento furgone",
+  "h": "37a972ba40"
+ },
+ {
+  "id": "kat:185:name",
+  "typ": "text",
+  "cs": "Držáky kabelů",
+  "en": "Cable holders",
+  "it": "Supporti per cavi",
+  "h": "03679292f6"
+ },
+ {
+  "id": "kat:185:meta_title",
+  "typ": "text",
+  "cs": "Držáky kabelů na profil",
+  "en": "Cable holders for profiles",
+  "it": "Supporti per cavi per profili",
+  "h": "5c8781a108"
+ },
+ {
+  "id": "kat:185:meta_description",
+  "typ": "text",
+  "cs": "Držáky kabelů pro uspořádané vedení elektroinstalace a vzduchových hadic po hliníkových stavebnicových profilech Logiman.",
+  "en": "Cable holders for neatly routing electrical wiring and air hoses along Logiman modular aluminium profiles – tidy runs fixed directly to the profile.",
+  "it": "Supporti per cavi per guidare in ordine impianto elettrico e tubi dell'aria lungo i profili modulari in alluminio Logiman, fissati direttamente al profilo.",
+  "h": "df347b3a90"
+ },
+ {
+  "id": "kat:185:focus_keyword",
+  "typ": "text",
+  "cs": "držáky kabelů",
+  "en": "cable holders",
+  "it": "supporti per cavi",
+  "h": "1d7ffdf50c"
+ },
+ {
+  "id": "kat:186:name",
+  "typ": "text",
+  "cs": "Drážkové čepy",
+  "en": "Slot pins",
+  "it": "Perni per scanalatura",
+  "h": "860b6319a8"
+ },
+ {
+  "id": "kat:186:meta_title",
+  "typ": "text",
+  "cs": "Drážkové čepy pro hliníkové profily",
+  "en": "Slot pins for aluminium profiles",
+  "it": "Perni per scanalatura per profili in alluminio",
+  "h": "8835db3feb"
+ },
+ {
+  "id": "kat:186:meta_description",
+  "typ": "text",
+  "cs": "Drážkové čepy pro rychlé a pevné spojení hliníkových stavebnicových profilů Logiman bez nutnosti vrtání otvorů.",
+  "en": "Slot pins for a quick and firm connection between Logiman modular aluminium profiles – assembled in the slots, with no need to drill any holes.",
+  "it": "Perni per scanalatura per collegare in modo rapido e solido i profili modulari in alluminio Logiman, senza dover praticare alcun foro nei profili stessi.",
+  "h": "02a100ba21"
+ },
+ {
+  "id": "kat:186:focus_keyword",
+  "typ": "text",
+  "cs": "drážkové čepy",
+  "en": "slot pins",
+  "it": "perni per scanalatura",
+  "h": "b3a4c2dbfd"
+ },
+ {
+  "id": "kat:187:name",
+  "typ": "text",
+  "cs": "Plynové vzpěry",
+  "en": "Gas struts",
+  "it": "Molle a gas",
+  "h": "7a9e4b4c3c"
+ },
+ {
+  "id": "kat:187:meta_title",
+  "typ": "text",
+  "cs": "Plynové vzpěry pro profilové konstrukce",
+  "en": "Gas struts for profile structures",
+  "it": "Molle a gas per strutture in profilo",
+  "h": "b4960bb42b"
+ },
+ {
+  "id": "kat:187:meta_description",
+  "typ": "text",
+  "cs": "Plynové vzpěry pro odklopná víka, dvířka a kryty z hliníkových stavebnicových profilů Logiman – plynulé a bezpečné otevírání.",
+  "en": "Gas struts for flip-up lids, doors and covers on structures made from Logiman modular aluminium profiles – they ensure smooth and safe opening.",
+  "it": "Molle a gas per coperchi ribaltabili, sportelli e coperture di strutture in profili modulari in alluminio Logiman: apertura fluida e sicura.",
+  "h": "cd48df534d"
+ },
+ {
+  "id": "kat:187:focus_keyword",
+  "typ": "text",
+  "cs": "plynové vzpěry",
+  "en": "gas struts",
+  "it": "molle a gas",
+  "h": "d281f13525"
+ },
+ {
+  "id": "kat:191:name",
+  "typ": "text",
+  "cs": "Příslušenství systému Dynamic",
+  "en": "Dynamic system accessories",
+  "it": "Accessori del sistema Dynamic",
+  "h": "07ae0bba02"
+ },
+ {
+  "id": "kat:191:meta_title",
+  "typ": "text",
+  "cs": "Příslušenství systému Dynamic",
+  "en": "Dynamic system accessories",
+  "it": "Accessori del sistema Dynamic",
+  "h": "07ae0bba02"
+ },
+ {
+  "id": "kat:191:meta_description",
+  "typ": "text",
+  "cs": "Příslušenství k hliníkovým profilům systému Dynamic Logiman – doplňkové díly pro dopravníkové a montážní linky.",
+  "en": "Accessories for the aluminium profiles of the Logiman Dynamic system – additional components for building conveyor lines and assembly lines.",
+  "it": "Accessori per i profili in alluminio del sistema Dynamic Logiman: componenti complementari per la realizzazione di linee trasportatrici e di montaggio.",
+  "h": "b7978853e0"
+ },
+ {
+  "id": "kat:191:focus_keyword",
+  "typ": "text",
+  "cs": "příslušenství Dynamic",
+  "en": "Dynamic accessories",
+  "it": "accessori Dynamic",
+  "h": "6e04c4bcfa"
+ },
+ {
+  "id": "kat:192:name",
+  "typ": "text",
+  "cs": "Hliníkové profily Dynamic",
+  "en": "Dynamic aluminium profiles",
+  "it": "Profili in alluminio Dynamic",
+  "h": "226252c29b"
+ },
+ {
+  "id": "kat:192:meta_title",
+  "typ": "text",
+  "cs": "Profily systému Dynamic pro linky a dopravníky",
+  "en": "Dynamic system profiles for lines and conveyors",
+  "it": "Profili del sistema Dynamic per linee e trasportatori",
+  "h": "77beded0ed"
+ },
+ {
+  "id": "kat:192:meta_description",
+  "typ": "text",
+  "cs": "Hliníkové profily systému Dynamic Logiman – konstrukční řada určená pro montážní linky, dopravníkové tratě a válečkové dráhy.",
+  "en": "Aluminium profiles of the Logiman Dynamic system – a structural range designed specifically for building assembly lines, conveyor lines and roller tracks.",
+  "it": "Profili in alluminio del sistema Dynamic Logiman – serie costruttiva progettata specificamente per realizzare linee di montaggio, linee di trasporto e vie a rulli.",
+  "h": "23b7ab57fa"
+ },
+ {
+  "id": "kat:192:focus_keyword",
+  "typ": "text",
+  "cs": "profily Dynamic linky",
+  "en": "Dynamic line profiles",
+  "it": "profili linea Dynamic",
+  "h": "2ee72a734f"
+ },
+ {
+  "id": "kat:193:name",
+  "typ": "text",
+  "cs": "Ergonomické pracovní stoly",
+  "en": "Ergonomic workbenches",
+  "it": "Banchi da lavoro ergonomici",
+  "h": "7a114f654d"
+ },
+ {
+  "id": "kat:193:meta_title",
+  "typ": "text",
+  "cs": "Ergonomické pracovní stoly – zdravé pracoviště na míru",
+  "en": "Ergonomic workbenches – healthy custom workstations",
+  "it": "Banchi da lavoro ergonomici – postazioni salutari su misura",
+  "h": "f15a423dd8"
+ },
+ {
+  "id": "kat:193:meta_description",
+  "typ": "text",
+  "cs": "Ergonomické pracovní stoly Logiman pro montážní a výrobní provozy – výškově stavitelná řešení snižující riziko muskuloskeletálních potíží zaměstnanců.",
+  "en": "Ergonomic Logiman workbenches for assembly and production plants – height-adjustable solutions that reduce the risk of musculoskeletal problems for employees.",
+  "it": "Banchi da lavoro ergonomici Logiman per montaggio e produzione: soluzioni regolabili in altezza che riducono il rischio di disturbi muscoloscheletrici.",
+  "h": "6f10c13abf"
+ },
+ {
+  "id": "kat:193:focus_keyword",
+  "typ": "text",
+  "cs": "ergonomické pracovní stoly",
+  "en": "ergonomic workbenches",
+  "it": "banchi da lavoro ergonomici",
+  "h": "6049d2b28b"
+ },
+ {
+  "id": "kat:194:name",
+  "typ": "text",
+  "cs": "Elektrické ergonomické stoly ESSE",
+  "en": "Electric ergonomic tables ESSE",
+  "it": "Tavoli ergonomici elettrici ESSE",
+  "h": "3c977799e6"
+ },
+ {
+  "id": "kat:194:meta_title",
+  "typ": "text",
+  "cs": "Elektrické ergonomické stoly ESSE",
+  "en": "Electric ergonomic tables ESSE",
+  "it": "Tavoli ergonomici elettrici ESSE",
+  "h": "3c977799e6"
+ },
+ {
+  "id": "kat:194:meta_description",
+  "typ": "text",
+  "cs": "Elektricky výškově stavitelné stoly ESSE Logiman – ergonomické pracoviště s motorickým nastavením výšky pro maximální komfort obsluhy.",
+  "en": "Logiman ESSE electrically height-adjustable tables – an ergonomic workstation with motor-driven height adjustment for the greatest possible operator comfort.",
+  "it": "Tavoli ESSE Logiman regolabili in altezza elettricamente – postazione ergonomica con regolazione motorizzata dell'altezza per il massimo comfort dell'operatore.",
+  "h": "71bf100611"
+ },
+ {
+  "id": "kat:194:focus_keyword",
+  "typ": "text",
+  "cs": "elektrické ergonomické stoly ESSE",
+  "en": "ESSE electric ergonomic tables",
+  "it": "tavoli ergonomici elettrici ESSE",
+  "h": "632acbd31d"
+ },
+ {
+  "id": "kat:195:name",
+  "typ": "text",
+  "cs": "Páčky",
+  "en": "Levers",
+  "it": "Leve",
+  "h": "ccc7da4c01"
+ },
+ {
+  "id": "kat:195:meta_title",
+  "typ": "text",
+  "cs": "Páčky pro hliníkové profilové konstrukce",
+  "en": "Levers for aluminium profile structures",
+  "it": "Leve per strutture in profilo di alluminio",
+  "h": "fa25947581"
+ },
+ {
+  "id": "kat:195:meta_description",
+  "typ": "text",
+  "cs": "Ovládací a upínací páčky pro dvířka, uzávěry a upínací mechanismy hliníkových stavebnicových profilů Logiman.",
+  "en": "Operating levers and clamping levers for doors, closures and clamping mechanisms of structures made from Logiman modular aluminium profiles.",
+  "it": "Leve di comando e leve di serraggio per sportelli, chiusure e meccanismi di serraggio di strutture in profili modulari in alluminio Logiman.",
+  "h": "20f156c1cb"
+ },
+ {
+  "id": "kat:195:focus_keyword",
+  "typ": "text",
+  "cs": "páčky pro profilové konstrukce",
+  "en": "levers for profile structures",
+  "it": "leve per strutture in profilato",
+  "h": "c9a7e1b64e"
+ },
+ {
+  "id": "kat:196:name",
+  "typ": "text",
+  "cs": "Krycí lišty drážek",
+  "en": "Slot cover strips",
+  "it": "Listelli di copertura per scanalature",
+  "h": "4b3be6f04a"
+ },
+ {
+  "id": "kat:196:meta_title",
+  "typ": "text",
+  "cs": "Krycí lišty drážek profilů",
+  "en": "Slot cover strips for profiles",
+  "it": "Listelli di copertura per scanalature dei profili",
+  "h": "669cffa93d"
+ },
+ {
+  "id": "kat:196:meta_description",
+  "typ": "text",
+  "cs": "Krycí lišty pro zakrytí nevyužitých drážek hliníkových stavebnicových profilů Logiman – estetické dokončení a ochrana povrchu konstrukce.",
+  "en": "Slot cover strips for closing unused slots in Logiman modular aluminium profiles – a neat finish that also protects the surface of your structure.",
+  "it": "Listelli per chiudere le scanalature inutilizzate dei profili modulari in alluminio Logiman: finitura estetica e protezione della superficie della struttura.",
+  "h": "cc7634c299"
+ },
+ {
+  "id": "kat:196:focus_keyword",
+  "typ": "text",
+  "cs": "krycí lišty drážek",
+  "en": "slot cover strips",
+  "it": "listelli di copertura per scanalature",
+  "h": "9833ebc9d1"
+ },
+ {
+  "id": "kat:198:name",
+  "typ": "text",
+  "cs": "Hliníkové profily s drážkou 6 mm",
+  "en": "Aluminium profiles with 6 mm slot",
+  "it": "Profili in alluminio con scanalatura da 6 mm",
+  "h": "e51f731e10"
+ },
+ {
+  "id": "kat:198:meta_title",
+  "typ": "text",
+  "cs": "Hliníkové profily s drážkou 6 mm – nejlehčí řada",
+  "en": "Aluminium profiles with 6 mm slot – the lightest range",
+  "it": "Profili in alluminio con scanalatura da 6 mm – serie più leggera",
+  "h": "96fe7cf4b0"
+ },
+ {
+  "id": "kat:198:meta_description",
+  "typ": "text",
+  "cs": "Nejlehčí řada hliníkových stavebnicových profilů s drážkou 6 mm Logiman – pro lehké konstrukce, kryty přístrojů, stojany a přenosné konstrukce.",
+  "en": "The lightest range of Logiman modular aluminium profiles with a 6 mm slot – for light structures, equipment enclosures, stands and portable constructions.",
+  "it": "La serie più leggera di profili modulari in alluminio Logiman con scanalatura da 6 mm: per strutture leggere, carter per apparecchi, supporti e strutture portatili.",
+  "h": "6474d00acc"
+ },
+ {
+  "id": "kat:198:focus_keyword",
+  "typ": "text",
+  "cs": "hliníkové profily drážka 6 mm",
+  "en": "aluminium profiles 6 mm slot",
+  "it": "profili in alluminio scanalatura 6 mm",
+  "h": "c44ed83da7"
+ },
+ {
+  "id": "kat:199:name",
+  "typ": "text",
+  "cs": "Matice s kloubem",
+  "en": "Swivel nuts",
+  "it": "Dadi con snodo",
+  "h": "409caafa37"
+ },
+ {
+  "id": "kat:199:meta_title",
+  "typ": "text",
+  "cs": "Matice s kloubem pro profily",
+  "en": "Swivel nuts for profiles",
+  "it": "Dadi con snodo per profili",
+  "h": "7ecd80f368"
+ },
+ {
+  "id": "kat:199:meta_description",
+  "typ": "text",
+  "cs": "Kloubové matice pro pohyblivé a nastavitelné spoje hliníkových stavebnicových profilů Logiman – kompenzace odchylky úhlu spoje.",
+  "en": "Swivel nuts for movable, adjustable joints in Logiman modular aluminium profiles – they compensate for any angular deviation in the joint.",
+  "it": "Dadi articolati per giunzioni mobili e regolabili dei profili modulari in alluminio Logiman: compensano eventuali scostamenti angolari del giunto.",
+  "h": "26d96085a2"
+ },
+ {
+  "id": "kat:199:focus_keyword",
+  "typ": "text",
+  "cs": "matice s kloubem",
+  "en": "swivel nuts",
+  "it": "dadi con snodo",
+  "h": "5faf2804c7"
+ },
+ {
+  "id": "kat:200:name",
+  "typ": "text",
+  "cs": "Komponenty, polotovary a části stolů",
+  "en": "Components, semi-finished parts and table parts",
+  "it": "Componenti, semilavorati e parti dei tavoli",
+  "h": "f70840c330"
+ },
+ {
+  "id": "kat:200:meta_title",
+  "typ": "text",
+  "cs": "Komponenty a polotovary pracovních stolů",
+  "en": "Workbench components and semi-finished parts",
+  "it": "Componenti e semilavorati per banchi da lavoro",
+  "h": "120e5fdf85"
+ },
+ {
+  "id": "kat:200:meta_description",
+  "typ": "text",
+  "cs": "Komponenty, polotovary a náhradní díly pro ergonomické pracovní stoly Logiman – zvedací sloupky, desky a doplňky pro vlastní sestavení.",
+  "en": "Components, semi-finished parts and spare parts for ergonomic Logiman workbenches – lifting columns, worktops and accessories for self-assembly.",
+  "it": "Componenti, semilavorati e ricambi per banchi da lavoro ergonomici Logiman: colonne di sollevamento, piani e accessori per il montaggio in proprio.",
+  "h": "438f37c336"
+ },
+ {
+  "id": "kat:200:focus_keyword",
+  "typ": "text",
+  "cs": "komponenty pracovních stolů",
+  "en": "workbench components",
+  "it": "componenti per banchi da lavoro",
+  "h": "1754f012ce"
+ },
+ {
+  "id": "kat:201:name",
+  "typ": "text",
+  "cs": "Zvedací sloupky",
+  "en": "Lifting columns",
+  "it": "Colonne di sollevamento",
+  "h": "a061be0962"
+ },
+ {
+  "id": "kat:201:meta_title",
+  "typ": "text",
+  "cs": "Zvedací sloupky pro pracovní stoly",
+  "en": "Lifting columns for workbenches",
+  "it": "Colonne di sollevamento per banchi da lavoro",
+  "h": "071da8cac2"
+ },
+ {
+  "id": "kat:201:meta_description",
+  "typ": "text",
+  "cs": "Zvedací sloupky pro výškově stavitelné pracovní stoly Logiman – elektrický pohon pro plynulé nastavení pracovní výšky.",
+  "en": "Electric lifting columns for height-adjustable Logiman workbenches – electric drive for continuous, stepless adjustment of the working height.",
+  "it": "Colonne di sollevamento per banchi da lavoro Logiman regolabili in altezza: azionamento elettrico per la regolazione continua dell'altezza di lavoro.",
+  "h": "de80e119dc"
+ },
+ {
+  "id": "kat:201:focus_keyword",
+  "typ": "text",
+  "cs": "zvedací sloupky",
+  "en": "lifting columns",
+  "it": "colonne di sollevamento",
+  "h": "4ca4c3344b"
+ },
+ {
+  "id": "kat:202:name",
+  "typ": "text",
+  "cs": "Stavitelné patky",
+  "en": "Adjustable feet",
+  "it": "Piedini regolabili",
+  "h": "319c536a33"
+ },
+ {
+  "id": "kat:202:meta_title",
+  "typ": "text",
+  "cs": "Stavitelné patky pro hliníkové profily",
+  "en": "Adjustable feet for aluminium profiles",
+  "it": "Piedini regolabili per profili in alluminio",
+  "h": "cb10c9c0a8"
+ },
+ {
+  "id": "kat:202:meta_description",
+  "typ": "text",
+  "cs": "Stavitelné patky pro vyrovnání a výškové nastavení konstrukcí z hliníkových stavebnicových profilů Logiman – stabilní ukotvení na nerovném povrchu.",
+  "en": "Adjustable feet for levelling and setting the height of structures made from Logiman modular aluminium profiles – stable support on uneven surfaces.",
+  "it": "Piedini regolabili per livellare e regolare in altezza strutture in profili modulari in alluminio Logiman: appoggio stabile su superfici irregolari.",
+  "h": "7dd5332d70"
+ },
+ {
+  "id": "kat:202:focus_keyword",
+  "typ": "text",
+  "cs": "stavitelné patky",
+  "en": "adjustable feet",
+  "it": "piedini regolabili",
+  "h": "919430f052"
+ },
+ {
+  "id": "kat:203:name",
+  "typ": "text",
+  "cs": "Plastové kluzáky",
+  "en": "Plastic glides",
+  "it": "Pattini in plastica",
+  "h": "5d6b97b5fe"
+ },
+ {
+  "id": "kat:203:meta_title",
+  "typ": "text",
+  "cs": "Plastové kluzáky pro hliníkové profily",
+  "en": "Plastic glides for aluminium profiles",
+  "it": "Pattini in plastica per profili in alluminio",
+  "h": "12f92a9a16"
+ },
+ {
+  "id": "kat:203:meta_description",
+  "typ": "text",
+  "cs": "Plastové kluzáky (patky) pro hliníkové stavebnicové profily Logiman – ochrana podlahy a snadný posun lehčích konstrukcí.",
+  "en": "Plastic glides (feet) for Logiman modular aluminium profiles – they protect the floor and make lighter structures easy to slide and shift around.",
+  "it": "Pattini in plastica (piedini) per profili modulari in alluminio Logiman: proteggono il pavimento e facilitano lo spostamento di strutture leggere.",
+  "h": "ddc0bd2b67"
+ },
+ {
+  "id": "kat:203:focus_keyword",
+  "typ": "text",
+  "cs": "plastové kluzáky",
+  "en": "plastic glides",
+  "it": "pattini in plastica",
+  "h": "35574d93bc"
+ },
+ {
+  "id": "kat:204:name",
+  "typ": "text",
+  "cs": "T Matice otočné",
+  "en": "Twist-in T-nuts",
+  "it": "Dadi a T ad inserimento a rotazione",
+  "h": "efda49c2db"
+ },
+ {
+  "id": "kat:204:meta_title",
+  "typ": "text",
+  "cs": "T matice otočné pro profily",
+  "en": "Rotating T-nuts for profiles",
+  "it": "Dadi a T girevoli per profili",
+  "h": "b49563d61a"
+ },
+ {
+  "id": "kat:204:meta_description",
+  "typ": "text",
+  "cs": "Otočné T-matice do drážky hliníkových stavebnicových profilů Logiman – rychlé zasunutí i uprostřed profilu bez navlékání od konce.",
+  "en": "Twist-in T-nuts for Logiman modular aluminium profiles – quick insertion even in the middle of a profile, without threading on from the end.",
+  "it": "Dadi a T ad inserimento a rotazione per profili modulari in alluminio Logiman: montaggio rapido anche a metà profilo, senza infilare dall'estremità.",
+  "h": "c9c8ca39ed"
+ },
+ {
+  "id": "kat:204:focus_keyword",
+  "typ": "text",
+  "cs": "T matice otočné",
+  "en": "twist-in T-nuts",
+  "it": "dadi a T ad inserimento a rotazione",
+  "h": "322d142ec6"
+ },
+ {
+  "id": "kat:205:name",
+  "typ": "text",
+  "cs": "T šrouby",
+  "en": "T-bolts",
+  "it": "Viti a T",
+  "h": "96a55a913e"
+ },
+ {
+  "id": "kat:205:meta_title",
+  "typ": "text",
+  "cs": "T šrouby pro hliníkové profily",
+  "en": "T-bolts for aluminium profiles",
+  "it": "Viti a T per profili in alluminio",
+  "h": "35048a3ab3"
+ },
+ {
+  "id": "kat:205:meta_description",
+  "typ": "text",
+  "cs": "T šrouby do drážky hliníkových stavebnicových profilů Logiman – spolehlivé šroubové spoje kompatibilní s T-maticemi a úhelníky.",
+  "en": "T-bolts for the slot of Logiman modular aluminium profiles – reliable bolted connections, fully compatible with T-nuts and angle brackets.",
+  "it": "Viti a T per la scanalatura dei profili modulari in alluminio Logiman – collegamenti avvitati affidabili, compatibili con dadi a T e squadrette per le strutture.",
+  "h": "0890d22009"
+ },
+ {
+  "id": "kat:205:focus_keyword",
+  "typ": "text",
+  "cs": "T šrouby",
+  "en": "T-bolts",
+  "it": "viti a T",
+  "h": "96a55a913e"
+ },
+ {
+  "id": "kat:206:name",
+  "typ": "text",
+  "cs": "Lehký balicí stůl system 30",
+  "en": "Lightweight packing table system 30",
+  "it": "Tavolo da imballaggio leggero sistema 30",
+  "h": "c82cbfa928"
+ },
+ {
+  "id": "kat:206:meta_title",
+  "typ": "text",
+  "cs": "Lehký balicí stůl system 30 – generátor stolu ve 3D",
+  "en": "Light packing table system 30 – 3D table generator",
+  "it": "Tavolo da imballaggio leggero sistema 30 – generatore 3D",
+  "h": "105f5b8f4f"
+ },
+ {
+  "id": "kat:206:meta_description",
+  "typ": "text",
+  "cs": "Lehký balicí stůl z hliníkových profilů 30×30 pro balení, příjem a expedici. Nastavte rozměry, police a příslušenství ve 3D a uvidíte orientační cenu.",
+  "en": "Lightweight packing table from 30×30 aluminium profiles for packing, receiving and dispatch. Set size, shelves and accessories in 3D for an indicative price.",
+  "it": "Tavolo da imballaggio leggero in profili di alluminio 30×30 per imballo e spedizione. Impostare misure, ripiani e accessori in 3D e vedere il prezzo indicativo.",
+  "h": "ad163e932d"
+ },
+ {
+  "id": "kat:206:focus_keyword",
+  "typ": "text",
+  "cs": "balicí stůl",
+  "en": "packing table",
+  "it": "tavolo da imballaggio",
+  "h": "2f83761f08"
+ },
+ {
+  "id": "kat:207:name",
+  "typ": "text",
+  "cs": "Laminovaná dřevotříska",
+  "en": "Laminated chipboard",
+  "it": "Truciolare laminato",
+  "h": "789c9f4aa3"
+ },
+ {
+  "id": "kat:207:meta_title",
+  "typ": "text",
+  "cs": "Laminovaná dřevotříska pro pracovní desky",
+  "en": "Laminated chipboard for worktops",
+  "it": "Truciolare laminato per piani di lavoro",
+  "h": "3f1d4a9bb1"
+ },
+ {
+  "id": "kat:207:meta_description",
+  "typ": "text",
+  "cs": "Laminovaná dřevotříska pro pracovní desky stolů a pracovišť Logiman – odolný povrch pro běžný dílenský provoz.",
+  "en": "Laminated chipboard for worktops of Logiman tables and workstations – a durable surface for normal workshop use. Combine it with an aluminium profile frame.",
+  "it": "Truciolare laminato per i piani di lavoro di tavoli e postazioni Logiman – superficie resistente per l'uso quotidiano in officina, abbinabile ai telai in alluminio.",
+  "h": "220f123fec"
+ },
+ {
+  "id": "kat:207:focus_keyword",
+  "typ": "text",
+  "cs": "laminovaná dřevotříska",
+  "en": "laminated chipboard",
+  "it": "truciolare laminato",
+  "h": "0aec5c47de"
+ },
+ {
+  "id": "kat:209:name",
+  "typ": "text",
+  "cs": "Magnety",
+  "en": "Magnets",
+  "it": "Magneti",
+  "h": "0a849547f0"
+ },
+ {
+  "id": "kat:209:meta_title",
+  "typ": "text",
+  "cs": "Magnety pro hliníkové profilové konstrukce",
+  "en": "Magnets for aluminium profile structures",
+  "it": "Magneti per strutture in profilo di alluminio",
+  "h": "86e7e80590"
+ },
+ {
+  "id": "kat:209:meta_description",
+  "typ": "text",
+  "cs": "Magnetické prvky pro uchycení na hliníkové stavebnicové profily Logiman – rychlé a nedestruktivní upevnění dvířek, štítků a doplňků.",
+  "en": "Magnetic elements for attaching to Logiman modular aluminium profiles – quick, non-destructive fixing of doors, labels and other accessories.",
+  "it": "Elementi magnetici da applicare ai profili modulari in alluminio Logiman – fissaggio rapido e non distruttivo di sportelli, etichette e accessori.",
+  "h": "69aa6fdd2a"
+ },
+ {
+  "id": "kat:209:focus_keyword",
+  "typ": "text",
+  "cs": "magnety pro profilové konstrukce",
+  "en": "magnets for profile structures",
+  "it": "magneti per strutture in profilato",
+  "h": "148b62a89c"
+ },
+ {
+  "id": "kat:210:name",
+  "typ": "text",
+  "cs": "Ocelové šuplíky do aut",
+  "en": "Steel drawers for vehicles",
+  "it": "Cassetti in acciaio per auto",
+  "h": "88ca3e3659"
+ },
+ {
+  "id": "kat:210:meta_title",
+  "typ": "text",
+  "cs": "Šuplíkové vestavby TECNO do dodávek a aut",
+  "en": "TECNO drawer fit-outs for vans and cars",
+  "it": "Allestimenti a cassetti TECNO per furgoni e auto",
+  "h": "ccc7cd1a78"
+ },
+ {
+  "id": "kat:210:meta_description",
+  "typ": "text",
+  "cs": "Šuplíkové vestavby TECNO — ocelové šuplíky s aretací na míru pro Mercedes Sprinter, Ford Transit, Fiat Ducato, Renault Trafic, VW Crafter a další.",
+  "en": "TECNO drawer fit-outs: made-to-measure steel drawers with locking for Mercedes Sprinter, Ford Transit, Fiat Ducato, Renault Trafic, VW Crafter and other vans.",
+  "it": "Allestimenti a cassetti TECNO: cassetti in acciaio con blocco, su misura per Mercedes Sprinter, Ford Transit, Fiat Ducato, Renault Trafic, VW Crafter e altri.",
+  "h": "1dde234485"
+ },
+ {
+  "id": "kat:210:focus_keyword",
+  "typ": "text",
+  "cs": "šuplíkové vestavby TECNO",
+  "en": "TECNO drawer fit-outs",
+  "it": "allestimenti a cassetti TECNO",
+  "h": "5902166998"
+ },
+ {
+  "id": "kat:212:name",
+  "typ": "text",
+  "cs": "Montážní stoly a pracoviště",
+  "en": "Assembly tables and workstations",
+  "it": "Tavoli di montaggio e postazioni di lavoro",
+  "h": "6f672179ff"
+ },
+ {
+  "id": "kat:212:meta_title",
+  "typ": "text",
+  "cs": "Montážní stoly a pracoviště na míru",
+  "en": "Made-to-measure assembly tables and workstations",
+  "it": "Tavoli di montaggio e postazioni di lavoro su misura",
+  "h": "d4709a7f78"
+ },
+ {
+  "id": "kat:212:meta_description",
+  "typ": "text",
+  "cs": "Montážní pracoviště a stoly Logiman navržená s důrazem na ergonomii – 3D vizualizace i realizace montážní linky nebo pracoviště podle vašeho provozu.",
+  "en": "Logiman assembly workstations and tables with a focus on ergonomics – 3D visualisation and delivery of an assembly line or workstation for your operation.",
+  "it": "Postazioni e tavoli di montaggio Logiman ergonomici: visualizzazione 3D e realizzazione di linee o postazioni di montaggio secondo le esigenze operative.",
+  "h": "579b47cc4f"
+ },
+ {
+  "id": "kat:212:focus_keyword",
+  "typ": "text",
+  "cs": "montážní stoly a pracoviště",
+  "en": "assembly tables and workstations",
+  "it": "tavoli di montaggio e postazioni di lavoro",
+  "h": "fcdc7efb23"
+ },
+ {
+  "id": "kat:213:name",
+  "typ": "text",
+  "cs": "Montážní linky na míru",
+  "en": "Made-to-measure assembly lines",
+  "it": "Linee di montaggio su misura",
+  "h": "7076291311"
+ },
+ {
+  "id": "kat:213:meta_title",
+  "typ": "text",
+  "cs": "Montážní linky na míru",
+  "en": "Made-to-measure assembly lines",
+  "it": "Linee di montaggio su misura",
+  "h": "7076291311"
+ },
+ {
+  "id": "kat:213:meta_description",
+  "typ": "text",
+  "cs": "Montážní linky na míru od Logiman – válečkové nebo spádové dráhy pro pohyb výrobků, řešení podle rozměru profilu a provozu zákazníka.",
+  "en": "Custom assembly lines from Logiman – roller or gravity tracks for moving products, solutions to suit the profile size and the customer's operation.",
+  "it": "Linee di montaggio su misura Logiman – vie a rulli o a gravità per la movimentazione dei prodotti, soluzioni in base al profilo e all'attività del cliente.",
+  "h": "4d29fe68cc"
+ },
+ {
+  "id": "kat:213:focus_keyword",
+  "typ": "text",
+  "cs": "montážní linky na míru",
+  "en": "custom assembly lines",
+  "it": "linee di montaggio su misura",
+  "h": "41f90b0c68"
+ },
+ {
+  "id": "kat:214:name",
+  "typ": "text",
+  "cs": "Pojezdová kola",
+  "en": "Castors",
+  "it": "Ruote di scorrimento",
+  "h": "022fa8dad9"
+ },
+ {
+  "id": "kat:214:meta_title",
+  "typ": "text",
+  "cs": "Pojezdová kola Ø50 až Ø100 – s brzdou",
+  "en": "Castors Ø50 to Ø100 – with brake",
+  "it": "Ruote da Ø50 a Ø100 – con freno",
+  "h": "1cdff3140e"
+ },
+ {
+  "id": "kat:214:meta_description",
+  "typ": "text",
+  "cs": "Pojezdová kola Ø50, 75, 80 a 100 mm z polyamidu a plastu, jednoduchá a dvojitá, s brzdou i bez ní. Pro pojízdné konstrukce a vozíky.",
+  "en": "Castors Ø50, 75, 80 and 100 mm in polyamide and plastic, single and twin wheel, with or without a brake. For mobile structures and trolleys.",
+  "it": "Ruote di scorrimento Ø50, 75, 80 e 100 mm in poliammide e plastica, semplici e doppie, con o senza freno: adatte a strutture mobili e a carrelli.",
+  "h": "acf4bf44f1"
+ },
+ {
+  "id": "kat:214:focus_keyword",
+  "typ": "text",
+  "cs": "pojezdová kola",
+  "en": "castors",
+  "it": "ruote di scorrimento",
+  "h": "186e60dc09"
+ },
+ {
+  "id": "kat:217:name",
+  "typ": "text",
+  "cs": "Držáky plexiskla",
+  "en": "Acrylic sheet holders",
+  "it": "Supporti per lastre acriliche",
+  "h": "3079eac5a3"
+ },
+ {
+  "id": "kat:217:meta_title",
+  "typ": "text",
+  "cs": "Držáky plexiskla pro hliníkové profily",
+  "en": "Acrylic sheet holders for aluminium profiles",
+  "it": "Supporti per lastre acriliche per profili in alluminio",
+  "h": "9f47d49ec6"
+ },
+ {
+  "id": "kat:217:meta_description",
+  "typ": "text",
+  "cs": "Držáky plexiskla a průhledných výplní pro hliníkové stavebnicové profily Logiman – ochranné kryty strojů a přepážky pracovišť.",
+  "en": "Holders for acrylic sheets and transparent infill panels for Logiman modular aluminium profiles – protective machine covers and workstation partitions.",
+  "it": "Supporti per lastre acriliche e tamponamenti trasparenti per profili modulari in alluminio Logiman – ripari per macchine e paratie per postazioni di lavoro.",
+  "h": "5a2f14bbc8"
+ },
+ {
+  "id": "kat:217:focus_keyword",
+  "typ": "text",
+  "cs": "držáky plexiskla",
+  "en": "acrylic sheet holders",
+  "it": "supporti per lastre acriliche",
+  "h": "f6a10a2850"
+ },
+ {
+  "id": "kat:218:name",
+  "typ": "text",
+  "cs": "Obdélníkové plotny",
+  "en": "Rectangular connecting plates",
+  "it": "Piastre di collegamento rettangolari",
+  "h": "096fd71cae"
+ },
+ {
+  "id": "kat:218:meta_title",
+  "typ": "text",
+  "cs": "Obdélníkové spojovací plotny profilů",
+  "en": "Rectangular connecting plates for profiles",
+  "it": "Piastre di collegamento rettangolari per profili",
+  "h": "a0d4ce6160"
+ },
+ {
+  "id": "kat:218:meta_description",
+  "typ": "text",
+  "cs": "Obdélníkové spojovací plotny pro plošné spoje hliníkových stavebnicových profilů Logiman – vyšší tuhost spoje na větší ploše.",
+  "en": "Rectangular connecting plates for flat joints in Logiman modular aluminium profiles – greater joint rigidity thanks to a larger contact area.",
+  "it": "Piastre di collegamento rettangolari per giunzioni piane dei profili modulari in alluminio Logiman: maggiore rigidità del giunto su una superficie più ampia.",
+  "h": "318813bed9"
+ },
+ {
+  "id": "kat:218:focus_keyword",
+  "typ": "text",
+  "cs": "obdélníkové plotny",
+  "en": "rectangular plates",
+  "it": "piastre rettangolari",
+  "h": "5751ba81cb"
+ },
+ {
+  "id": "kat:219:name",
+  "typ": "text",
+  "cs": "Vozíky a stojany",
+  "en": "Trolleys and stands",
+  "it": "Carrelli e supporti",
+  "h": "88cab6fec0"
+ },
+ {
+  "id": "kat:219:meta_title",
+  "typ": "text",
+  "cs": "Vozíky a stojany na míru",
+  "en": "Made-to-measure trolleys and stands",
+  "it": "Carrelli e supporti su misura",
+  "h": "796407c7b6"
+ },
+ {
+  "id": "kat:219:meta_description",
+  "typ": "text",
+  "cs": "Manipulační vozíky a stojany z hliníkových profilů Logiman pro sklady a výrobu – konstrukce na míru podle požadavků provozu.",
+  "en": "Handling trolleys and stands made from Logiman aluminium profiles for warehouses and production – structures made to measure to suit your operation.",
+  "it": "Carrelli di movimentazione e supporti in profili di alluminio Logiman per magazzini e produzione: strutture su misura in base alle esigenze operative.",
+  "h": "4ab2a8f170"
+ },
+ {
+  "id": "kat:219:focus_keyword",
+  "typ": "text",
+  "cs": "vozíky a stojany",
+  "en": "trolleys and stands",
+  "it": "carrelli e supporti",
+  "h": "c655c5cf25"
+ },
+ {
+  "id": "kat:220:name",
+  "typ": "text",
+  "cs": "Ukládání kufrů",
+  "en": "Case storage",
+  "it": "Stoccaggio valigette",
+  "h": "656fc3a199"
+ },
+ {
+  "id": "kat:220:meta_title",
+  "typ": "text",
+  "cs": "Výsuvy z dodávky na míru | pracovní vestavby",
+  "en": "Made-to-measure pull-outs for vans | work fit-outs",
+  "it": "Estraibili su misura per furgoni | allestimenti di lavoro",
+  "h": "b5aa56c1d0"
+ },
+ {
+  "id": "kat:220:meta_description",
+  "typ": "text",
+  "cs": "Individuální výsuvy z dodávky na míru – z podlahy nebo z bočních dveří, pro elektrocentrály, přepravky i jumbo šuplíky na kufry.",
+  "en": "Individual made-to-measure pull-outs for vans – from the floor or from the side doors, for power generators, crates and jumbo drawers for cases.",
+  "it": "Estraibili su misura per furgoni, individuali – dal pianale o dalle porte laterali, per gruppi elettrogeni, cassette e cassetti jumbo per valigette.",
+  "h": "201822fad1"
+ },
+ {
+  "id": "kat:220:focus_keyword",
+  "typ": "text",
+  "cs": "výsuv z dodávky na míru",
+  "en": "custom van pull-out",
+  "it": "estraibile per furgone su misura",
+  "h": "7215ce2ca7"
+ },
+ {
+  "id": "kat:222:name",
+  "typ": "text",
+  "cs": "Specializované pracovní stoly",
+  "en": "Specialised workbenches",
+  "it": "Banchi da lavoro speciali",
+  "h": "c72e160f67"
+ },
+ {
+  "id": "kat:222:meta_title",
+  "typ": "text",
+  "cs": "Specializované pracovní stoly na míru",
+  "en": "Specialised made-to-measure workbenches",
+  "it": "Banchi da lavoro specializzati su misura",
+  "h": "f5dac59f6f"
+ },
+ {
+  "id": "kat:222:meta_description",
+  "typ": "text",
+  "cs": "Specializované pracovní stoly Logiman – upínací stoly a podstavce pro roboty, nerezová provedení a řešení na míru výrobní linky.",
+  "en": "Specialised Logiman workbenches – clamping tables and robot stands, stainless steel versions and solutions made to measure for the production line.",
+  "it": "Banchi da lavoro speciali Logiman – tavoli di serraggio e basamenti per robot, versioni in acciaio inox e soluzioni su misura per la linea di produzione.",
+  "h": "e324447754"
+ },
+ {
+  "id": "kat:222:focus_keyword",
+  "typ": "text",
+  "cs": "specializované pracovní stoly",
+  "en": "specialised workbenches",
+  "it": "banchi da lavoro speciali",
+  "h": "e2a7cf55ce"
+ },
+ {
+  "id": "kat:224:name",
+  "typ": "text",
+  "cs": "Matice obdélníkové",
+  "en": "Rectangular nuts",
+  "it": "Dadi rettangolari",
+  "h": "98750f1284"
+ },
+ {
+  "id": "kat:224:meta_title",
+  "typ": "text",
+  "cs": "Obdélníkové matice pro profily",
+  "en": "Rectangular nuts for profiles",
+  "it": "Dadi rettangolari per profili",
+  "h": "e23db4119e"
+ },
+ {
+  "id": "kat:224:meta_description",
+  "typ": "text",
+  "cs": "Obdélníkové matice do drážky hliníkových stavebnicových profilů Logiman – stabilní uložení proti pootočení při utahování šroubu.",
+  "en": "Rectangular slot nuts for the slots of Logiman modular aluminium profiles – seated securely, so they do not turn when the screw is tightened.",
+  "it": "Dadi rettangolari per scanalatura dei profili modulari in alluminio Logiman: alloggiamento stabile che impedisce la rotazione durante il serraggio della vite.",
+  "h": "0252111b7c"
+ },
+ {
+  "id": "kat:224:focus_keyword",
+  "typ": "text",
+  "cs": "matice obdélníkové",
+  "en": "rectangular nuts",
+  "it": "dadi rettangolari",
+  "h": "a1aa91047d"
+ },
+ {
+  "id": "kat:225:name",
+  "typ": "text",
+  "cs": "Válečkové dráhy",
+  "en": "Roller tracks",
+  "it": "Vie a rulli",
+  "h": "d78b288f8c"
+ },
+ {
+  "id": "kat:225:meta_title",
+  "typ": "text",
+  "cs": "Válečkové dráhy – hliník, zinek, plechy",
+  "en": "Roller tracks – aluminium, zinc, sheet metal",
+  "it": "Vie a rulli – alluminio, zinco, lamiere",
+  "h": "723b4b7759"
+ },
+ {
+  "id": "kat:225:meta_description",
+  "typ": "text",
+  "cs": "Válečkové dráhy z hliníku a zinku s víčky, spojovacími a zarážkovými plechy, včetně dílů pro regály Dynamic. Bez pohonu.",
+  "en": "Roller tracks in aluminium and zinc with end caps, connecting plates and stop plates, including parts for Dynamic shelving units. Unpowered.",
+  "it": "Vie a rulli in alluminio e zinco con tappi, piastre di giunzione e piastre di arresto, inclusi componenti per scaffali Dynamic. Senza motore.",
+  "h": "361360c11f"
+ },
+ {
+  "id": "kat:225:focus_keyword",
+  "typ": "text",
+  "cs": "válečkové dráhy",
+  "en": "roller tracks",
+  "it": "vie a rulli",
+  "h": "a47ed30816"
+ },
+ {
+  "id": "kat:226:name",
+  "typ": "text",
+  "cs": "Příslušenství balících stolů",
+  "en": "Packing table accessories",
+  "it": "Accessori per tavoli da imballaggio",
+  "h": "408a675e66"
+ },
+ {
+  "id": "kat:226:meta_title",
+  "typ": "text",
+  "cs": "Příslušenství balicích stolů",
+  "en": "Packing table accessories",
+  "it": "Accessori per tavoli da imballaggio",
+  "h": "7436c976c4"
+ },
+ {
+  "id": "kat:226:meta_description",
+  "typ": "text",
+  "cs": "Příslušenství k balicím stolům a pracovištím Logiman – doplňkové díly pro dovybavení balicího pracoviště podle potřeby.",
+  "en": "Accessories for Logiman packing tables and workstations – additional parts to upgrade and equip your packing station exactly the way you need it.",
+  "it": "Accessori per tavoli da imballaggio e postazioni di lavoro Logiman: componenti aggiuntivi per completare la postazione di imballaggio in base alle esigenze.",
+  "h": "d393d86c92"
+ },
+ {
+  "id": "kat:226:focus_keyword",
+  "typ": "text",
+  "cs": "příslušenství balicích stolů",
+  "en": "packing table accessories",
+  "it": "accessori per tavoli da imballaggio",
+  "h": "62e8f4a9ba"
+ },
+ {
+  "id": "kat:227:name",
+  "typ": "text",
+  "cs": "Spojka s úhlem 45",
+  "en": "45° connector",
+  "it": "Giunto a 45°",
+  "h": "4bc6cdf063"
+ },
+ {
+  "id": "kat:227:meta_title",
+  "typ": "text",
+  "cs": "Spojka s úhlem 45° pro profily",
+  "en": "45° angle connector for profiles",
+  "it": "Giunto ad angolo di 45° per profili",
+  "h": "997151b2a9"
+ },
+ {
+  "id": "kat:227:meta_description",
+  "typ": "text",
+  "cs": "Spojka s úhlem 45° pro šikmé spoje hliníkových stavebnicových profilů Logiman – konstrukce vzpěr, výztuh a šikmých rámů.",
+  "en": "45° connector for angled joints of Logiman modular aluminium profiles – for constructing struts, stiffening braces and angled frames in profile structures.",
+  "it": "Giunto a 45° per collegamenti obliqui dei profili modulari in alluminio Logiman – per realizzare puntoni, rinforzi e telai inclinati nelle strutture.",
+  "h": "52a63333ca"
+ },
+ {
+  "id": "kat:227:focus_keyword",
+  "typ": "text",
+  "cs": "spojka s úhlem 45",
+  "en": "45° connector",
+  "it": "giunto a 45°",
+  "h": "ae176b580d"
+ },
+ {
+  "id": "kat:228:name",
+  "typ": "text",
+  "cs": "Matice čtvercové",
+  "en": "Square nuts",
+  "it": "Dadi quadrati",
+  "h": "73fc30ef33"
+ },
+ {
+  "id": "kat:228:meta_title",
+  "typ": "text",
+  "cs": "Čtvercové matice pro profily",
+  "en": "Square nuts for profiles",
+  "it": "Dadi quadrati per profili",
+  "h": "7de44cb16b"
+ },
+ {
+  "id": "kat:228:meta_description",
+  "typ": "text",
+  "cs": "Čtvercové matice do drážky hliníkových stavebnicových profilů Logiman – základní spojovací prvek pro šroubové spoje po délce drážky.",
+  "en": "Square nuts for the slot of Logiman modular aluminium profiles – a basic fastener for bolted joints at any point along the length of the slot.",
+  "it": "Dadi quadrati per la scanalatura dei profili modulari in alluminio Logiman – elemento di collegamento di base per giunzioni avvitate lungo la scanalatura.",
+  "h": "831fe2ff30"
+ },
+ {
+  "id": "kat:228:focus_keyword",
+  "typ": "text",
+  "cs": "matice čtvercové",
+  "en": "square nuts",
+  "it": "dadi quadrati",
+  "h": "eaa3f0b8de"
+ },
+ {
+  "id": "kat:229:name",
+  "typ": "text",
+  "cs": "T Matice kameny",
+  "en": "T-nuts (slot nuts)",
+  "it": "Dadi a T per scanalatura",
+  "h": "3371391d8d"
+ },
+ {
+  "id": "kat:229:meta_title",
+  "typ": "text",
+  "cs": "T matice kameny pro profily",
+  "en": "T-nuts (slot nuts) for profiles",
+  "it": "Dadi a T per profili",
+  "h": "f697d232c3"
+ },
+ {
+  "id": "kat:229:meta_description",
+  "typ": "text",
+  "cs": "T-matice (kameny) do drážky hliníkových stavebnicových profilů Logiman – nejpoužívanější způsob zasunutí matice do drážky od konce profilu.",
+  "en": "T-nuts (slot nuts) for Logiman modular aluminium profiles – the most common way to fit a nut into a slot, by sliding it in from the end of the profile.",
+  "it": "Dadi a T per scanalatura dei profili modulari in alluminio Logiman: il metodo più diffuso per inserire il dado nella scanalatura dall'estremità del profilo.",
+  "h": "757fcd7ae5"
+ },
+ {
+  "id": "kat:229:focus_keyword",
+  "typ": "text",
+  "cs": "T matice kameny",
+  "en": "T-nut blocks",
+  "it": "dadi a T a blocchetto",
+  "h": "605a733ede"
+ },
+ {
+  "id": "kat:230:name",
+  "typ": "text",
+  "cs": "T Matice kameny dlouhé",
+  "en": "Long T-nuts (slot nuts)",
+  "it": "Dadi a T lunghi per scanalatura",
+  "h": "e6cdc95ece"
+ },
+ {
+  "id": "kat:230:meta_title",
+  "typ": "text",
+  "cs": "T matice kameny dlouhé",
+  "en": "Long T-nuts (slot nuts)",
+  "it": "Dadi a T lunghi per scanalatura",
+  "h": "a9d7bc6e29"
+ },
+ {
+  "id": "kat:230:meta_description",
+  "typ": "text",
+  "cs": "Dlouhé T-matice (kameny) do drážky hliníkových stavebnicových profilů Logiman – větší plocha pro spoje s vyšším namáháním.",
+  "en": "Long T-nuts (slot blocks) for the slots of Logiman modular aluminium profiles – a larger bearing surface for joints subject to heavier stress.",
+  "it": "Dadi a T lunghi (blocchetti) per scanalatura dei profili modulari in alluminio Logiman: superficie d'appoggio maggiore per giunzioni con sollecitazioni più elevate.",
+  "h": "6cd538eae2"
+ },
+ {
+  "id": "kat:230:focus_keyword",
+  "typ": "text",
+  "cs": "T matice kameny dlouhé",
+  "en": "long T-nut blocks",
+  "it": "dadi a T lunghi",
+  "h": "a9d7bc6e29"
+ },
+ {
+  "id": "kat:231:name",
+  "typ": "text",
+  "cs": "Matice pružinové",
+  "en": "Spring nuts",
+  "it": "Dadi a molla",
+  "h": "928c5e7d31"
+ },
+ {
+  "id": "kat:231:meta_title",
+  "typ": "text",
+  "cs": "Pružinové matice pro profily",
+  "en": "Spring nuts for profiles",
+  "it": "Dadi a molla per profili",
+  "h": "d4a987c0a5"
+ },
+ {
+  "id": "kat:231:meta_description",
+  "typ": "text",
+  "cs": "Pružinové matice do drážky hliníkových stavebnicových profilů Logiman – zasunutí a upevnění kdekoli podél drážky bez navlékání od konce.",
+  "en": "Spring-loaded slot nuts for Logiman modular aluminium profiles – insert and fix them anywhere along the slot without threading on from the end.",
+  "it": "Dadi a molla per scanalatura dei profili modulari in alluminio Logiman: inserimento e fissaggio in qualsiasi punto della scanalatura, senza infilarli dall'estremità.",
+  "h": "c4209acb16"
+ },
+ {
+  "id": "kat:231:focus_keyword",
+  "typ": "text",
+  "cs": "matice pružinové",
+  "en": "spring nuts",
+  "it": "dadi a molla",
+  "h": "ae378be368"
+ },
+ {
+  "id": "kat:232:name",
+  "typ": "text",
+  "cs": "Plynule stavitelné úhlové konzole",
+  "en": "Continuously adjustable angle brackets",
+  "it": "Squadrette angolari regolabili in continuo",
+  "h": "e1cf28eb0a"
+ },
+ {
+  "id": "kat:232:meta_title",
+  "typ": "text",
+  "cs": "Stavitelné úhlové konzole profilů",
+  "en": "Adjustable angle brackets for profiles",
+  "it": "Squadrette angolari regolabili per profili",
+  "h": "7de67c218c"
+ },
+ {
+  "id": "kat:232:meta_description",
+  "typ": "text",
+  "cs": "Plynule stavitelné úhlové konzole pro spoje hliníkových stavebnicových profilů Logiman pod libovolným úhlem – flexibilní konstrukční řešení.",
+  "en": "Continuously adjustable angle brackets for joining Logiman modular aluminium profiles at any angle – a flexible solution for your structures.",
+  "it": "Squadrette angolari regolabili in continuo per collegare i profili modulari in alluminio Logiman con qualsiasi angolo: una soluzione costruttiva flessibile.",
+  "h": "567e03808e"
+ },
+ {
+  "id": "kat:232:focus_keyword",
+  "typ": "text",
+  "cs": "stavitelné úhlové konzole",
+  "en": "adjustable angle brackets",
+  "it": "squadrette angolari regolabili",
+  "h": "1a6955daca"
+ },
+ {
+  "id": "kat:233:name",
+  "typ": "text",
+  "cs": "Vestavby pro Ducato, Jumper, Boxer",
+  "en": "Ducato, Jumper, Boxer van fit-outs",
+  "it": "Allestimenti per Ducato, Jumper, Boxer",
+  "h": "0c3052a7f8"
+ },
+ {
+  "id": "kat:233:meta_title",
+  "typ": "text",
+  "cs": "Vestavby pro Fiat Ducato, Citroën Jumper, Peugeot Boxer",
+  "en": "Fit-outs for Fiat Ducato, Citroën Jumper, Peugeot Boxer",
+  "it": "Allestimenti per Fiat Ducato, Citroën Jumper, Peugeot Boxer",
+  "h": "f2368d97c5"
+ },
+ {
+  "id": "kat:233:meta_description",
+  "typ": "text",
+  "cs": "Vestavba do Fiat Ducato, Citroën Jumper a Peugeot Boxer na míru – regálový systém podle konkrétní verze vozidla (L1H1, L1H2 a další).",
+  "en": "Custom fit-out for Fiat Ducato, Citroën Jumper and Peugeot Boxer – shelving system for the specific vehicle version (L1H1, L1H2 and others).",
+  "it": "Allestimento su misura per Fiat Ducato, Citroën Jumper e Peugeot Boxer – sistema di scaffalatura per la versione specifica del veicolo (L1H1, L1H2 e altre).",
+  "h": "59b28d5b83"
+ },
+ {
+  "id": "kat:233:focus_keyword",
+  "typ": "text",
+  "cs": "vestavba Fiat Ducato",
+  "en": "Fiat Ducato van fit-out",
+  "it": "allestimento Fiat Ducato",
+  "h": "7a5b78b731"
+ },
+ {
+  "id": "kat:234:name",
+  "typ": "text",
+  "cs": "Vnitřní spojky uhel 90",
+  "en": "Internal 90° connectors",
+  "it": "Giunti interni a 90°",
+  "h": "79df5b357a"
+ },
+ {
+  "id": "kat:234:meta_title",
+  "typ": "text",
+  "cs": "Vnitřní spojky úhel 90° profilů",
+  "en": "Internal 90° angle connectors for profiles",
+  "it": "Giunti interni ad angolo di 90° per profili",
+  "h": "35718a64f4"
+ },
+ {
+  "id": "kat:234:meta_description",
+  "typ": "text",
+  "cs": "Vnitřní spojky pod úhlem 90° pro hliníkové stavebnicové profily Logiman – skrytý pravoúhlý spoj bez vyčnívajících dílů na povrchu.",
+  "en": "Internal 90° connectors for Logiman modular aluminium profiles – a concealed right-angle joint with no parts protruding from the profile surface.",
+  "it": "Giunti interni a 90° per profili modulari in alluminio Logiman – collegamento ad angolo retto nascosto, senza parti sporgenti in superficie.",
+  "h": "ebcc056f35"
+ },
+ {
+  "id": "kat:234:focus_keyword",
+  "typ": "text",
+  "cs": "vnitřní spojky úhel 90",
+  "en": "internal 90° connectors",
+  "it": "giunti interni a 90°",
+  "h": "7d44546d09"
+ },
+ {
+  "id": "kat:236:name",
+  "typ": "text",
+  "cs": "Zavěšovací vidlice",
+  "en": "Hanging forks",
+  "it": "Forcelle di sospensione",
+  "h": "c03d00c430"
+ },
+ {
+  "id": "kat:236:meta_title",
+  "typ": "text",
+  "cs": "Zavěšovací vidlice pro hliníkové profily",
+  "en": "Hanging forks for aluminium profiles",
+  "it": "Forcelle di sospensione per profili in alluminio",
+  "h": "6aecb88c51"
+ },
+ {
+  "id": "kat:236:meta_description",
+  "typ": "text",
+  "cs": "Zavěšovací vidlice pro manipulaci a zavěšení konstrukcí z hliníkových stavebnicových profilů Logiman jeřábem či zvedacím zařízením.",
+  "en": "Hanging forks for handling and hoisting structures made from Logiman modular aluminium profiles using a crane or any other lifting equipment.",
+  "it": "Forcelle di sospensione per movimentare e sollevare strutture in profili modulari in alluminio Logiman con gru o altri dispositivi di sollevamento.",
+  "h": "79a395fb9e"
+ },
+ {
+  "id": "kat:236:focus_keyword",
+  "typ": "text",
+  "cs": "zavěšovací vidlice",
+  "en": "hanging forks",
+  "it": "forcelle di sospensione",
+  "h": "3e704ce1bf"
+ },
+ {
+  "id": "kat:238:name",
+  "typ": "text",
+  "cs": "Zvedací elektrické police na míru",
+  "en": "Made-to-measure electric lifting shelves",
+  "it": "Ripiani elettrici sollevabili su misura",
+  "h": "bcecab1541"
+ },
+ {
+  "id": "kat:238:meta_title",
+  "typ": "text",
+  "cs": "Zvedací elektrické police na míru",
+  "en": "Made-to-measure electric lifting shelves",
+  "it": "Ripiani elettrici sollevabili su misura",
+  "h": "bcecab1541"
+ },
+ {
+  "id": "kat:238:meta_description",
+  "typ": "text",
+  "cs": "Vlastní elektrický zvedací systém polic Logiman na míru – zvedání těžších přístrojů do výšky nad pracovním stolem podle potřeb zákazníka.",
+  "en": "Logiman's own electric shelf lifting system, made to measure – lifts heavier equipment to a height above the workbench to suit customer needs.",
+  "it": "Sistema elettrico di sollevamento ripiani Logiman su misura – solleva apparecchi più pesanti sopra il banco da lavoro in base alle esigenze del cliente.",
+  "h": "bc052ada75"
+ },
+ {
+  "id": "kat:238:focus_keyword",
+  "typ": "text",
+  "cs": "zvedací elektrické police",
+  "en": "electric lifting shelves",
+  "it": "ripiani elettrici sollevabili",
+  "h": "feaca7c17f"
+ },
+ {
+  "id": "kat:240:name",
+  "typ": "text",
+  "cs": "Pojízdné pracovní stoly",
+  "en": "Mobile workbenches",
+  "it": "Banchi da lavoro mobili",
+  "h": "0de5aa3d9e"
+ },
+ {
+  "id": "kat:240:meta_title",
+  "typ": "text",
+  "cs": "Pojízdné pracovní stoly na míru",
+  "en": "Made-to-measure mobile workbenches",
+  "it": "Banchi da lavoro mobili su misura",
+  "h": "64dd25108b"
+ },
+ {
+  "id": "kat:240:meta_description",
+  "typ": "text",
+  "cs": "Pojízdné pracovní stoly Logiman s pojezdovými koly a zachovanou výškovou stavitelností – snadné přemístění po provozu.",
+  "en": "Mobile Logiman workbenches on travel castors that keep their height adjustability – easy to move around from one part of your facility to another.",
+  "it": "Banchi da lavoro Logiman mobili, con ruote di spostamento e regolazione in altezza mantenuta: facili da spostare all'interno dello stabilimento.",
+  "h": "6982896546"
+ },
+ {
+  "id": "kat:240:focus_keyword",
+  "typ": "text",
+  "cs": "pojízdné pracovní stoly",
+  "en": "mobile workbenches",
+  "it": "banchi da lavoro mobili",
+  "h": "22a0959fc5"
+ },
+ {
+  "id": "kat:241:name",
+  "typ": "text",
+  "cs": "Pracovní stoly na míru",
+  "en": "Made-to-measure workbenches",
+  "it": "Banchi da lavoro su misura",
+  "h": "63bdd86f0d"
+ },
+ {
+  "id": "kat:241:meta_title",
+  "typ": "text",
+  "cs": "Pracovní stoly na míru pro výrobu",
+  "en": "Made-to-measure workbenches for production",
+  "it": "Banchi da lavoro su misura per la produzione",
+  "h": "6ecb1fde69"
+ },
+ {
+  "id": "kat:241:meta_description",
+  "typ": "text",
+  "cs": "Pracovní stoly na míru od Logiman navržené s ohledem na zdraví zaměstnanců – od jednoho pracoviště po kompletní projekt nové výroby.",
+  "en": "Custom workbenches from Logiman designed with the health of your employees in mind – from a single workstation to a complete project for new production.",
+  "it": "Banchi da lavoro su misura Logiman progettati nel rispetto della salute dei dipendenti – da una singola postazione a un progetto completo per nuova produzione.",
+  "h": "267e48a83c"
+ },
+ {
+  "id": "kat:241:focus_keyword",
+  "typ": "text",
+  "cs": "pracovní stoly na míru",
+  "en": "custom workbenches",
+  "it": "banchi da lavoro su misura",
+  "h": "baab2b882d"
+ },
+ {
+  "id": "kat:242:name",
+  "typ": "text",
+  "cs": "Robustní pracovní stůl 45",
+  "en": "Heavy-duty workbench 45",
+  "it": "Banco da lavoro robusto 45",
+  "h": "d8d96176ad"
+ },
+ {
+  "id": "kat:242:meta_title",
+  "typ": "text",
+  "cs": "Robustní pracovní stůl 45",
+  "en": "Heavy-duty workbench 45",
+  "it": "Banco da lavoro robusto 45",
+  "h": "d8d96176ad"
+ },
+ {
+  "id": "kat:242:meta_description",
+  "typ": "text",
+  "cs": "Robustní pracovní stůl 45 Logiman pro náročné provozy – individuální řešení pracoviště podle konkrétních požadavků zákazníka.",
+  "en": "Logiman heavy-duty workbench 45 for demanding operations – an individual workstation solution made to the specific requirements of the customer.",
+  "it": "Banco da lavoro robusto 45 Logiman per attività impegnative – soluzione individuale di postazione secondo le esigenze specifiche del cliente.",
+  "h": "05823c6c85"
+ },
+ {
+  "id": "kat:242:focus_keyword",
+  "typ": "text",
+  "cs": "robustní pracovní stůl 45",
+  "en": "heavy-duty workbench 45",
+  "it": "banco da lavoro robusto 45",
+  "h": "870c919bab"
+ },
+ {
+  "id": "kat:243:name",
+  "typ": "text",
+  "cs": "Bezpečnostní ochranné oplocení",
+  "en": "Safety guard fencing",
+  "it": "Recinzioni protettive di sicurezza",
+  "h": "4d993153f2"
+ },
+ {
+  "id": "kat:243:meta_title",
+  "typ": "text",
+  "cs": "Bezpečnostní ochranné oplocení strojů",
+  "en": "Safety guard fencing for machines",
+  "it": "Recinzioni di sicurezza per macchine",
+  "h": "aa14ff9816"
+ },
+ {
+  "id": "kat:243:meta_description",
+  "typ": "text",
+  "cs": "Bezpečnostní ochranné oplocení z hliníkových profilů Logiman pro ohrazení strojů a montážních linek podle bezpečnostních požadavků provozu.",
+  "en": "Safety guard fencing made of Logiman aluminium profiles for enclosing machines and assembly lines according to the safety requirements of the operation.",
+  "it": "Recinzioni protettive di sicurezza in profili di alluminio Logiman per delimitare macchine e linee di montaggio secondo i requisiti di sicurezza dell'attività.",
+  "h": "232c92422c"
+ },
+ {
+  "id": "kat:243:focus_keyword",
+  "typ": "text",
+  "cs": "bezpečnostní ochranné oplocení",
+  "en": "safety guard fencing",
+  "it": "recinzioni protettive di sicurezza",
+  "h": "c551f88cd6"
+ },
+ {
+  "id": "kat:244:name",
+  "typ": "text",
+  "cs": "Přívěsný vozík s úložným systémem",
+  "en": "Trailer with storage system",
+  "it": "Rimorchio con sistema di stoccaggio",
+  "h": "d72f0b6282"
+ },
+ {
+  "id": "kat:244:meta_title",
+  "typ": "text",
+  "cs": "Přívěsný vozík s úložným systémem zásuvek",
+  "en": "Trailer with drawer storage system",
+  "it": "Carrello rimorchio con sistema a cassetti",
+  "h": "31bd65526e"
+ },
+ {
+  "id": "kat:244:meta_description",
+  "typ": "text",
+  "cs": "Přívěsný vozík s úložným systémem zásuvek (přívěsný vozík na nářadí) na míru — různé velikosti a nosnosti, příklad provedení 1850×1750 mm ložné plochy.",
+  "en": "Trailer with a drawer storage system (tool trailer), made to measure – various sizes and load capacities, example version with a 1850×1750 mm load area.",
+  "it": "Rimorchio con sistema di stoccaggio a cassetti (rimorchio portattrezzi) su misura – varie dimensioni e portate, esempio con piano di carico 1850×1750 mm.",
+  "h": "5e0b99b6d9"
+ },
+ {
+  "id": "kat:244:focus_keyword",
+  "typ": "text",
+  "cs": "přívěsný vozík s úložným systémem",
+  "en": "trailer with storage system",
+  "it": "rimorchio con sistema di stoccaggio",
+  "h": "4041e3e226"
+ },
+ {
+  "id": "kat:246:name",
+  "typ": "text",
+  "cs": "Vyjímatelná přídavná ložná plocha dodávky",
+  "en": "Removable additional load platform for vans",
+  "it": "Piano di carico supplementare rimovibile per furgoni",
+  "h": "5da1d88dce"
+ },
+ {
+  "id": "kat:246:meta_title",
+  "typ": "text",
+  "cs": "Vyjímatelná ložná plocha do dodávky",
+  "en": "Removable load platform for vans",
+  "it": "Piano di carico rimovibile per furgoni",
+  "h": "3890af1efa"
+ },
+ {
+  "id": "kat:246:meta_description",
+  "typ": "text",
+  "cs": "Vyjímatelná přídavná ložná plocha do dodávky – ekonomické řešení pro malý nákladový prostor. Nastavitelná výška, dělení přepážkami, na míru každé dodávce.",
+  "en": "Removable additional load platform for vans – an economical solution for a small cargo area. Adjustable height, divider panels, made to measure for each van.",
+  "it": "Piano di carico supplementare rimovibile per furgoni – soluzione economica per vani di carico ridotti. Altezza regolabile, divisori, su misura per ogni furgone.",
+  "h": "6a522fff80"
+ },
+ {
+  "id": "kat:246:focus_keyword",
+  "typ": "text",
+  "cs": "přídavná ložná plocha do dodávky",
+  "en": "additional van load platform",
+  "it": "piano di carico supplementare per furgone",
+  "h": "fedc0d7239"
+ },
+ {
+  "id": "kat:247:name",
+  "typ": "text",
+  "cs": "Regály do auta",
+  "en": "Vehicle shelving units",
+  "it": "Scaffali per veicoli",
+  "h": "298cc481a2"
+ },
+ {
+  "id": "kat:247:menu_group_label",
+  "typ": "text",
+  "cs": "PODLE TYPU ÚLOŽIŠTĚ",
+  "en": "BY STORAGE TYPE",
+  "it": "PER TIPO DI STOCCAGGIO",
+  "h": "883c2fb7ce"
+ },
+ {
+  "id": "kat:247:meta_title",
+  "typ": "text",
+  "cs": "Regály do auta — hliníková stavebnice na míru",
+  "en": "Vehicle shelving – custom modular aluminium system",
+  "it": "Scaffali per auto – sistema modulare in alluminio su misura",
+  "h": "9a1506b616"
+ },
+ {
+  "id": "kat:247:meta_description",
+  "typ": "text",
+  "cs": "Hliníková stavebnice regálů do auta na míru i z hotových sestav. Vestavby dodáváme na klíč od roku 2009, vlastní úložný systém vyvinutý v roce 2019.",
+  "en": "Modular aluminium vehicle shelving, made to measure or from ready-made assemblies. Turnkey fit-outs since 2009, our own storage system developed in 2019.",
+  "it": "Scaffali in alluminio per veicoli, su misura o da composizioni pronte. Allestimenti chiavi in mano dal 2009, sistema di stoccaggio proprio sviluppato nel 2019.",
+  "h": "2c308879df"
+ },
+ {
+  "id": "kat:247:focus_keyword",
+  "typ": "text",
+  "cs": "regály do auta",
+  "en": "vehicle shelving",
+  "it": "scaffali per veicoli",
+  "h": "6cf15479ac"
+ },
+ {
+  "id": "kat:248:name",
+  "typ": "text",
+  "cs": "Výsuvný systém euroboxů",
+  "en": "Euro box pull-out system",
+  "it": "Sistema estraibile per eurobox",
+  "h": "6207f7961f"
+ },
+ {
+  "id": "kat:248:meta_title",
+  "typ": "text",
+  "cs": "Výsuvný systém euroboxů v autě",
+  "en": "Euro box pull-out system in a vehicle",
+  "it": "Sistema estraibile per eurobox nel veicolo",
+  "h": "feb37bdb3e"
+ },
+ {
+  "id": "kat:248:meta_description",
+  "typ": "text",
+  "cs": "Výsuvný systém euroboxů do dodávky — hliníkové výsuvné rámy s pružinovou aretací, kombinovatelné do více sekcí podle velikosti přepravek.",
+  "en": "Euro box pull-out system for vans – aluminium pull-out frames with spring locking, combinable into several sections to suit the size of your crates.",
+  "it": "Sistema estraibile per eurobox per furgoni – telai estraibili in alluminio con bloccaggio a molla, combinabili in più sezioni secondo le cassette.",
+  "h": "a1854eb2bd"
+ },
+ {
+  "id": "kat:248:focus_keyword",
+  "typ": "text",
+  "cs": "výsuvný systém euroboxů",
+  "en": "Euro box pull-out system",
+  "it": "sistema estraibile per eurobox",
+  "h": "77a16d7ca3"
+ },
+ {
+  "id": "kat:249:name",
+  "typ": "text",
+  "cs": "Úložný prostor v podlaze dodávky",
+  "en": "Van underfloor storage",
+  "it": "Vano portaoggetti nel pianale del furgone",
+  "h": "83e1811fc4"
+ },
+ {
+  "id": "kat:249:meta_title",
+  "typ": "text",
+  "cs": "Úložný prostor v podlaze dodávky na míru",
+  "en": "Made-to-measure van underfloor storage",
+  "it": "Vano portaoggetti nel pianale del furgone su misura",
+  "h": "ccebc75cdf"
+ },
+ {
+  "id": "kat:249:meta_description",
+  "typ": "text",
+  "cs": "Úložný prostor v podlaze dodávky — šuplíky a euroboxy na výsuvech, které zachovají maximální velikost ložné plochy vozidla. Skladba na míru dle 3D modelu.",
+  "en": "Underfloor storage for vans – drawers and Euro boxes on pull-outs that keep the full size of the vehicle's load area. Layout made to measure from a 3D model.",
+  "it": "Vano nel pianale del furgone – cassetti ed eurobox su estraibili che mantengono la massima superficie di carico. Composizione su misura da modello 3D.",
+  "h": "59f1972964"
+ },
+ {
+  "id": "kat:249:focus_keyword",
+  "typ": "text",
+  "cs": "úložný prostor v podlaze dodávky",
+  "en": "van underfloor storage",
+  "it": "vano portaoggetti nel pianale del furgone",
+  "h": "ca92a0c47d"
+ },
+ {
+  "id": "kat:254:name",
+  "typ": "text",
+  "cs": "Výsuvné podlahy do dodávek",
+  "en": "Pull-out floors for vans",
+  "it": "Pianali estraibili per furgoni",
+  "h": "a78f4b7ca7"
+ },
+ {
+  "id": "kat:254:meta_title",
+  "typ": "text",
+  "cs": "Výsuvné podlahy do dodávek na míru",
+  "en": "Made-to-measure pull-out floors for vans",
+  "it": "Pianali estraibili su misura per furgoni",
+  "h": "be0f47f3ec"
+ },
+ {
+  "id": "kat:254:meta_description",
+  "typ": "text",
+  "cs": "Výsuvné podlahy (výsuvné podlahové platformy) do dodávek na míru – řešení podle konkrétního zadání, včetně kombinace s výsuvem na kolo nebo stávající vestavbou.",
+  "en": "Made-to-measure pull-out floors (pull-out floor platforms) for vans – tailored to your brief, including combination with a bike pull-out or existing fit-out.",
+  "it": "Pianali estraibili (piattaforme estraibili) per furgoni su misura – soluzioni secondo le richieste, anche con estraibile per bici o allestimento esistente.",
+  "h": "b0a6f40853"
+ },
+ {
+  "id": "kat:254:focus_keyword",
+  "typ": "text",
+  "cs": "výsuvná podlaha do dodávky",
+  "en": "van pull-out floor",
+  "it": "pianale estraibile per furgone",
+  "h": "89e836c8e5"
+ },
+ {
+  "id": "kat:260:name",
+  "typ": "text",
+  "cs": "Kotvení vestaveb do auta",
+  "en": "Anchoring vehicle fit-outs",
+  "it": "Ancoraggio degli allestimenti nei veicoli",
+  "h": "8e7db3acef"
+ },
+ {
+  "id": "kat:260:meta_title",
+  "typ": "text",
+  "cs": "Kotvení vestaveb do auta – upínací drážka v profilu",
+  "en": "Anchoring vehicle fit-outs – clamping slot in the profile",
+  "it": "Ancoraggio allestimenti auto – scanalatura di fissaggio nel profilo",
+  "h": "373995e669"
+ },
+ {
+  "id": "kat:260:meta_description",
+  "typ": "text",
+  "cs": "Kotvící prvky pro vestavby do dodávek — upínací drážky po celé délce hliníkových profilů umožňují ukotvit regál, šuplík i vlastní doplněk kamkoli v autě.",
+  "en": "Anchoring elements for van fit-outs – clamping slots along the full length of aluminium profiles let you secure shelving, a drawer or an add-on anywhere.",
+  "it": "Ancoraggio per allestimenti di furgoni: le scanalature di fissaggio lungo tutto il profilo in alluminio permettono di fissare scaffale, cassetto o accessori ovunque.",
+  "h": "63afff6577"
+ },
+ {
+  "id": "kat:260:focus_keyword",
+  "typ": "text",
+  "cs": "kotvení vestavby do auta",
+  "en": "vehicle fit-out anchoring",
+  "it": "ancoraggio allestimento veicolo",
+  "h": "03fe8f3f85"
+ },
+ {
+  "id": "kat:262:name",
+  "typ": "text",
+  "cs": "Sigma profily",
+  "en": "Sigma profiles",
+  "it": "Profili Sigma",
+  "h": "f7ea74c979"
+ },
+ {
+  "id": "kat:262:meta_title",
+  "typ": "text",
+  "cs": "Sigma profily – speciální řada hliníkových profilů",
+  "en": "Sigma profiles – special range of aluminium profiles",
+  "it": "Profili Sigma – serie speciale di profili in alluminio",
+  "h": "02100f9c9b"
+ },
+ {
+  "id": "kat:262:meta_description",
+  "typ": "text",
+  "cs": "Sigma profily Logiman – speciální série hliníkových stavebnicových profilů s vlastním profilovým průřezem pro specifické konstrukční požadavky.",
+  "en": "Logiman Sigma profiles – a special series of modular aluminium profiles with their own distinctive cross-section for specific construction requirements.",
+  "it": "Profili Sigma Logiman: serie speciale di profili modulari in alluminio con sezione trasversale propria, pensata per esigenze costruttive specifiche.",
+  "h": "41b2e322db"
+ },
+ {
+  "id": "kat:262:focus_keyword",
+  "typ": "text",
+  "cs": "sigma profily",
+  "en": "sigma profiles",
+  "it": "profili sigma",
+  "h": "e973416888"
+ },
+ {
+  "id": "kat:263:name",
+  "typ": "text",
+  "cs": "Šrouby",
+  "en": "Screws",
+  "it": "Viti",
+  "h": "b6415da46a"
+ },
+ {
+  "id": "kat:263:meta_title",
+  "typ": "text",
+  "cs": "Šrouby pro hliníkové profilové konstrukce",
+  "en": "Screws for aluminium profile structures",
+  "it": "Viti per strutture in profilo di alluminio",
+  "h": "e539d1e80b"
+ },
+ {
+  "id": "kat:263:meta_description",
+  "typ": "text",
+  "cs": "Šrouby pro spojovací prvky hliníkových stavebnicových profilů Logiman – kompletní sortiment k úhelníkům, maticím a rožkům skladem.",
+  "en": "Screws for connecting Logiman modular aluminium profiles – a complete range to fit angle brackets, nuts and corner connectors, available from stock.",
+  "it": "Viti per gli elementi di collegamento dei profili modulari in alluminio Logiman – gamma completa per squadrette, dadi e giunti angolari, a magazzino.",
+  "h": "8c4c6f5533"
+ },
+ {
+  "id": "kat:263:focus_keyword",
+  "typ": "text",
+  "cs": "šrouby pro profilové konstrukce",
+  "en": "screws for profile structures",
+  "it": "viti per strutture in profilato",
+  "h": "7cbbb37302"
+ },
+ {
+  "id": "kat:264:name",
+  "typ": "text",
+  "cs": "Dopravníkové profily",
+  "en": "Conveyor profiles",
+  "it": "Profili per trasportatori",
+  "h": "88ab598b8c"
+ },
+ {
+  "id": "kat:264:meta_title",
+  "typ": "text",
+  "cs": "Dopravníkové profily – 23×75 až 45×75 mm",
+  "en": "Conveyor profiles – 23×75 to 45×75 mm",
+  "it": "Profili per trasportatori – da 23×75 a 45×75 mm",
+  "h": "9253d263ea"
+ },
+ {
+  "id": "kat:264:meta_description",
+  "typ": "text",
+  "cs": "Hliníkové dopravníkové profily 23×75, 23×127, 25×105, 25×150 a 45×75 mm ze slitiny EN AW-6063 T5 pro stavbu rámů dopravníků.",
+  "en": "Aluminium conveyor profiles 23×75, 23×127, 25×105, 25×150 and 45×75 mm made of EN AW-6063 T5 alloy – for building conveyor frames and supporting structures.",
+  "it": "Profili in alluminio per trasportatori 23×75, 23×127, 25×105, 25×150 e 45×75 mm in lega EN AW-6063 T5, per la realizzazione di telai per trasportatori.",
+  "h": "d3e1586531"
+ },
+ {
+  "id": "kat:264:focus_keyword",
+  "typ": "text",
+  "cs": "dopravníkové profily",
+  "en": "conveyor profiles",
+  "it": "profili per trasportatori",
+  "h": "e752402f8b"
+ },
+ {
+  "id": "kat:267:name",
+  "typ": "text",
+  "cs": "Vestavby podle vozidla",
+  "en": "Fit-outs by vehicle",
+  "it": "Allestimenti per modello di veicolo",
+  "h": "a9a1f18c6e"
+ },
+ {
+  "id": "kat:267:nav_label",
+  "typ": "text",
+  "cs": "Vestavby podle vozidla",
+  "en": "Fit-outs by vehicle",
+  "it": "Allestimenti per modello di veicolo",
+  "h": "a9a1f18c6e"
+ },
+ {
+  "id": "kat:267:menu_group_label",
+  "typ": "text",
+  "cs": "PODLE VOZIDLA",
+  "en": "BY VEHICLE",
+  "it": "PER VEICOLO",
+  "h": "8b414a0fb7"
+ },
+ {
+  "id": "kat:267:meta_title",
+  "typ": "text",
+  "cs": "Vestavby podle vozidla — najděte svou značku | Logiman",
+  "en": "Fit-outs by vehicle – find your make | Logiman",
+  "it": "Allestimenti per veicolo – ricerca per marca | Logiman",
+  "h": "04f26360a9"
+ },
+ {
+  "id": "kat:267:meta_description",
+  "typ": "text",
+  "cs": "Rozcestník vestaveb podle vozidla — Citroën, Fiat, Ford, Mercedes, Volkswagen a další značky. Vyberte si auto a uvidíte, jaké vestavby na míru se do něj hodí.",
+  "en": "Fit-outs by vehicle – Citroën, Fiat, Ford, Mercedes, Volkswagen and other makes. Choose your vehicle and see which made-to-measure fit-outs suit it.",
+  "it": "Allestimenti per veicolo – Citroën, Fiat, Ford, Mercedes, Volkswagen e altre marche. Scegliere il veicolo per vedere quali allestimenti su misura sono adatti.",
+  "h": "ae81bff60e"
+ },
+ {
+  "id": "kat:267:focus_keyword",
+  "typ": "text",
+  "cs": "vestavby podle vozidla",
+  "en": "fit-outs by vehicle",
+  "it": "allestimenti per modello di veicolo",
+  "h": "e167a1d4c6"
+ },
+ {
+  "id": "kat:268:name",
+  "typ": "text",
+  "cs": "Vestavby pro Citroën",
+  "en": "Citroën van fit-outs",
+  "it": "Allestimenti per Citroën",
+  "h": "afdd8ddcd9"
+ },
+ {
+  "id": "kat:268:nav_label",
+  "typ": "text",
+  "cs": "Vestavby pro Citroën",
+  "en": "Citroën van fit-outs",
+  "it": "Allestimenti per Citroën",
+  "h": "afdd8ddcd9"
+ },
+ {
+  "id": "kat:268:meta_title",
+  "typ": "text",
+  "cs": "Vestavby pro Citroën – regály do Jumpy na míru",
+  "en": "Citroën fit-outs – made-to-measure Jumpy shelving",
+  "it": "Allestimenti Citroën – scaffali per Jumpy su misura",
+  "h": "79491fa689"
+ },
+ {
+  "id": "kat:268:meta_description",
+  "typ": "text",
+  "cs": "Vestavby pro Citroën Jumpy ve všech osmi karosériích: regál na euroboxy z hliníkových profilů, na míru a na milimetr podle vašich kufrů a nářadí.",
+  "en": "Citroën Jumpy fit-outs for all eight body variants: aluminium profile Euro box shelving, made to measure and to the millimetre for your cases and tools.",
+  "it": "Allestimenti per Citroën Jumpy in tutte le otto carrozzerie: scaffale per eurobox in profili di alluminio, su misura e al millimetro per valigette e attrezzi.",
+  "h": "82a69df543"
+ },
+ {
+  "id": "kat:268:focus_keyword",
+  "typ": "text",
+  "cs": "vestavby pro Citroën",
+  "en": "Citroën van fit-outs",
+  "it": "allestimenti per Citroën",
+  "h": "c912c2dbae"
+ },
+ {
+  "id": "kat:269:name",
+  "typ": "text",
+  "cs": "Vestavby pro Fiat",
+  "en": "Fiat van fit-outs",
+  "it": "Allestimenti per Fiat",
+  "h": "0c9d13ac63"
+ },
+ {
+  "id": "kat:269:nav_label",
+  "typ": "text",
+  "cs": "Vestavby pro Fiat",
+  "en": "Fiat van fit-outs",
+  "it": "Allestimenti per Fiat",
+  "h": "0c9d13ac63"
+ },
+ {
+  "id": "kat:269:meta_title",
+  "typ": "text",
+  "cs": "Vestavby pro Fiat Doblò a Doblò Maxi na míru",
+  "en": "Made-to-measure fit-outs for Fiat Doblò and Doblò Maxi",
+  "it": "Allestimenti per Fiat Doblò e Doblò Maxi su misura",
+  "h": "9a3a0a870e"
+ },
+ {
+  "id": "kat:269:meta_description",
+  "typ": "text",
+  "cs": "Vestavba do Fiat Doblò a Doblò Maxi na míru, na milimetr podle vašich kufrů a vercajku. Pro Fiat Ducato máme samostatnou stránku Ducato/Jumper/Boxer.",
+  "en": "Made-to-measure Fiat Doblò and Doblò Maxi fit-out, to the millimetre around your cases and tools. Fiat Ducato has its own page: Ducato/Jumper/Boxer.",
+  "it": "Allestimento su misura per Fiat Doblò e Doblò Maxi, al millimetro in base a valigette e attrezzi. Per Fiat Ducato c'è la pagina Ducato/Jumper/Boxer.",
+  "h": "82626553a0"
+ },
+ {
+  "id": "kat:269:focus_keyword",
+  "typ": "text",
+  "cs": "vestavba Fiat Doblò",
+  "en": "Fiat Doblò van fit-out",
+  "it": "allestimento Fiat Doblò",
+  "h": "197361aa7e"
+ },
+ {
+  "id": "kat:270:name",
+  "typ": "text",
+  "cs": "Vestavby pro Mercedes",
+  "en": "Mercedes van fit-outs",
+  "it": "Allestimenti per Mercedes",
+  "h": "76661d0620"
+ },
+ {
+  "id": "kat:270:nav_label",
+  "typ": "text",
+  "cs": "Vestavby pro Mercedes",
+  "en": "Mercedes van fit-outs",
+  "it": "Allestimenti per Mercedes",
+  "h": "76661d0620"
+ },
+ {
+  "id": "kat:270:meta_title",
+  "typ": "text",
+  "cs": "Vestavby pro Mercedes Vito a eVito",
+  "en": "Mercedes Vito and eVito van fit-outs",
+  "it": "Allestimenti per Mercedes Vito ed eVito",
+  "h": "e6b3ae61d7"
+ },
+ {
+  "id": "kat:270:meta_description",
+  "typ": "text",
+  "cs": "Vestavba do Mercedes Vito a eVito na míru – hliníkový regálový systém přizpůsobený na milimetr vašemu vybavení. Přehled provedení podle verze vozidla.",
+  "en": "Custom Mercedes Vito and eVito fit-out – an aluminium shelving system adapted to the millimetre to your equipment. Overview of versions by vehicle variant.",
+  "it": "Allestimento su misura per Mercedes Vito ed eVito – scaffalatura in alluminio adattata al millimetro alla dotazione. Versioni per variante di veicolo.",
+  "h": "b5a71f9122"
+ },
+ {
+  "id": "kat:270:focus_keyword",
+  "typ": "text",
+  "cs": "vestavba Mercedes Vito",
+  "en": "Mercedes Vito van fit-out",
+  "it": "allestimento Mercedes Vito",
+  "h": "0f557bb1dc"
+ },
+ {
+  "id": "kat:271:name",
+  "typ": "text",
+  "cs": "Vestavby pro Volkswagen",
+  "en": "Volkswagen van fit-outs",
+  "it": "Allestimenti per Volkswagen",
+  "h": "3085f315b1"
+ },
+ {
+  "id": "kat:271:nav_label",
+  "typ": "text",
+  "cs": "Vestavby pro Volkswagen",
+  "en": "Volkswagen van fit-outs",
+  "it": "Allestimenti per Volkswagen",
+  "h": "3085f315b1"
+ },
+ {
+  "id": "kat:271:meta_title",
+  "typ": "text",
+  "cs": "Vestavby pro Volkswagen Transporter",
+  "en": "Volkswagen Transporter van fit-outs",
+  "it": "Allestimenti per Volkswagen Transporter",
+  "h": "26b11de9e7"
+ },
+ {
+  "id": "kat:271:meta_description",
+  "typ": "text",
+  "cs": "Vestavba do Volkswagen Transporter na míru – hliníkový regálový systém podle vaší karoserie a vybavení. Přehled dostupných provedení podle verze vozidla.",
+  "en": "Made-to-measure Volkswagen Transporter fit-out – an aluminium shelving system for your body and equipment. Overview of versions available per vehicle variant.",
+  "it": "Allestimento su misura per Volkswagen Transporter: scaffalatura in alluminio secondo carrozzeria e dotazione. Panoramica delle versioni per variante di veicolo.",
+  "h": "1ce298f14e"
+ },
+ {
+  "id": "kat:271:focus_keyword",
+  "typ": "text",
+  "cs": "vestavba Volkswagen Transporter",
+  "en": "Volkswagen Transporter van fit-out",
+  "it": "allestimento Volkswagen Transporter",
+  "h": "7642598a23"
+ },
+ {
+  "id": "kat:272:name",
+  "typ": "text",
+  "cs": "Vestavby pro Citroën Jumpy",
+  "en": "Citroën Jumpy van fit-outs",
+  "it": "Allestimenti per Citroën Jumpy",
+  "h": "3dfb83e2c3"
+ },
+ {
+  "id": "kat:272:nav_label",
+  "typ": "text",
+  "cs": "Vestavby pro Citroën Jumpy",
+  "en": "Citroën Jumpy van fit-outs",
+  "it": "Allestimenti per Citroën Jumpy",
+  "h": "3dfb83e2c3"
+ },
+ {
+  "id": "kat:272:meta_title",
+  "typ": "text",
+  "cs": "Vestavby pro Citroën Jumpy",
+  "en": "Citroën Jumpy van fit-outs",
+  "it": "Allestimenti per Citroën Jumpy",
+  "h": "3dfb83e2c3"
+ },
+ {
+  "id": "kat:272:meta_description",
+  "typ": "text",
+  "cs": "Vestavba do Citroën Jumpy na míru – regál na euroboxy pro L1, L2, L3, Crew Cab i elektrický ë-Jumpy podle rozměrů karoserie. Montáž s homologací.",
+  "en": "Made-to-measure Citroën Jumpy fit-out – Euro box shelving for L1, L2, L3, Crew Cab and the electric ë-Jumpy, sized to the body. Installation with type approval.",
+  "it": "Allestimento su misura Citroën Jumpy: scaffale per eurobox per L1, L2, L3, Crew Cab e ë-Jumpy elettrico, sulla carrozzeria. Installazione con omologazione.",
+  "h": "022845f82a"
+ },
+ {
+  "id": "kat:272:focus_keyword",
+  "typ": "text",
+  "cs": "vestavba Citroën Jumpy",
+  "en": "Citroën Jumpy van fit-out",
+  "it": "allestimento Citroën Jumpy",
+  "h": "a7a7cae9e2"
+ },
+ {
+  "id": "kat:273:name",
+  "typ": "text",
+  "cs": "Vestavby pro Fiat Doblò",
+  "en": "Fiat Doblò van fit-outs",
+  "it": "Allestimenti per Fiat Doblò",
+  "h": "cbbf17b51a"
+ },
+ {
+  "id": "kat:273:nav_label",
+  "typ": "text",
+  "cs": "Vestavby pro Fiat Doblò",
+  "en": "Fiat Doblò van fit-outs",
+  "it": "Allestimenti per Fiat Doblò",
+  "h": "cbbf17b51a"
+ },
+ {
+  "id": "kat:273:meta_title",
+  "typ": "text",
+  "cs": "Vestavby pro Fiat Doblò — regál na euroboxy",
+  "en": "Fiat Doblò fit-outs – Euro box shelving",
+  "it": "Allestimenti per Fiat Doblò – scaffale per eurobox",
+  "h": "1e6d31897e"
+ },
+ {
+  "id": "kat:273:meta_description",
+  "typ": "text",
+  "cs": "Regál na euroboxy do Fiat Doblò na míru, na milimetr podle vašich kufrů a vercajku. L1H1, Maxi L2H1, L1, Maxi L2 i elektrické E-Doblò.",
+  "en": "Made-to-measure Euro box shelving for Fiat Doblò, fitted to the millimetre to your cases and tools. L1H1, Maxi L2H1, L1, Maxi L2 and the electric E-Doblò.",
+  "it": "Scaffale per eurobox su misura per Fiat Doblò, al millimetro in base a valigette e attrezzi. L1H1, Maxi L2H1, L1, Maxi L2 ed E-Doblò elettrico.",
+  "h": "c2e728bab2"
+ },
+ {
+  "id": "kat:273:focus_keyword",
+  "typ": "text",
+  "cs": "vestavba Fiat Doblò",
+  "en": "Fiat Doblò van fit-out",
+  "it": "allestimento Fiat Doblò",
+  "h": "197361aa7e"
+ },
+ {
+  "id": "kat:274:name",
+  "typ": "text",
+  "cs": "Regál na euroboxy",
+  "en": "Euro box shelving unit",
+  "it": "Scaffale per eurobox",
+  "h": "2cb4ecbf9a"
+ },
+ {
+  "id": "kat:274:nav_label",
+  "typ": "text",
+  "cs": "Regál na euroboxy",
+  "en": "Euro box shelving unit",
+  "it": "Scaffale per eurobox",
+  "h": "2cb4ecbf9a"
+ },
+ {
+  "id": "kat:274:meta_title",
+  "typ": "text",
+  "cs": "Regál na euroboxy do dodávky",
+  "en": "Euro box shelving for vans",
+  "it": "Scaffale per eurobox per furgoni",
+  "h": "97db2caa1e"
+ },
+ {
+  "id": "kat:274:meta_description",
+  "typ": "text",
+  "cs": "Regál na euroboxy — sloupcová hliníková konstrukce s patry pro euroboxy 400×300 mm. Na míru, na milimetr podle vašeho vozu.",
+  "en": "Euro box shelving unit – an aluminium column structure with tiers for 400×300 mm Euro boxes. Made to measure, accurate to the millimetre for your vehicle.",
+  "it": "Scaffale per eurobox: struttura a colonne in alluminio con livelli per eurobox 400×300 mm. Su misura, al millimetro, in base al veicolo del cliente.",
+  "h": "18af0f33a0"
+ },
+ {
+  "id": "kat:274:focus_keyword",
+  "typ": "text",
+  "cs": "regál na euroboxy",
+  "en": "Euro box shelving unit",
+  "it": "scaffale per eurobox",
+  "h": "483cdb983a"
+ },
+ {
+  "id": "kat:277:name",
+  "typ": "text",
+  "cs": "Univerzální regál",
+  "en": "Universal shelving unit",
+  "it": "Scaffale universale",
+  "h": "85dff91a13"
+ },
+ {
+  "id": "kat:277:nav_label",
+  "typ": "text",
+  "cs": "Univerzální regál",
+  "en": "Universal shelving unit",
+  "it": "Scaffale universale",
+  "h": "85dff91a13"
+ },
+ {
+  "id": "kat:277:meta_title",
+  "typ": "text",
+  "cs": "Univerzální regál do dodávky | Logiman",
+  "en": "Universal van shelving unit | Logiman",
+  "it": "Scaffale universale per furgone | Logiman",
+  "h": "f9ac0aa21a"
+ },
+ {
+  "id": "kat:277:meta_description",
+  "typ": "text",
+  "cs": "Univerzální regál — upínací police, organizéry, police vany i sklopná dvířka. Detailní rozpis jednotlivých provedení připravujeme.",
+  "en": "Universal shelving unit with clamping shelves, organisers, tub shelves and fold-down doors. A detailed breakdown of the individual versions is in preparation.",
+  "it": "Scaffale universale con ripiani di fissaggio, organizer, ripiani a vasca e sportelli ribaltabili. Il dettaglio delle singole versioni è in preparazione.",
+  "h": "fcd855e325"
+ },
+ {
+  "id": "kat:277:focus_keyword",
+  "typ": "text",
+  "cs": "univerzální regál do dodávky",
+  "en": "universal van shelving unit",
+  "it": "scaffale universale per furgone",
+  "h": "06e66b397b"
+ },
+ {
+  "id": "kat:278:name",
+  "typ": "text",
+  "cs": "Podlahy a ložné plochy",
+  "en": "Floors and load platforms",
+  "it": "Pianali e piani di carico",
+  "h": "7592137cfb"
+ },
+ {
+  "id": "kat:278:nav_label",
+  "typ": "text",
+  "cs": "Podlahy a ložné plochy",
+  "en": "Floors and load platforms",
+  "it": "Pianali e piani di carico",
+  "h": "7592137cfb"
+ },
+ {
+  "id": "kat:278:meta_title",
+  "typ": "text",
+  "cs": "Podlahy a ložné plochy do dodávek",
+  "en": "Floors and load platforms for vans",
+  "it": "Pianali e piani di carico per furgoni",
+  "h": "b576767f76"
+ },
+ {
+  "id": "kat:278:meta_description",
+  "typ": "text",
+  "cs": "Výsuvné podlahy a vyjímatelná přídavná ložná plocha do dodávky na míru – úložný prostor v podlaze a nad podběhy kol, mimo klasický regál.",
+  "en": "Made-to-measure pull-out floors and a removable additional load platform for vans – storage in the floor and above the wheel arches, outside the classic shelving.",
+  "it": "Pianali estraibili e piano di carico supplementare rimovibile per furgoni su misura – spazio nel pianale e sopra i passaruota, oltre alla scaffalatura classica.",
+  "h": "f17444947f"
+ },
+ {
+  "id": "kat:278:focus_keyword",
+  "typ": "text",
+  "cs": "podlahy a ložné plochy do dodávky",
+  "en": "van floors and load platforms",
+  "it": "pianali e piani di carico per furgone",
+  "h": "7dd51a332c"
+ },
+ {
+  "id": "kat:279:name",
+  "typ": "text",
+  "cs": "Vestavby pro Ford",
+  "en": "Ford van fit-outs",
+  "it": "Allestimenti per Ford",
+  "h": "bb8273dca1"
+ },
+ {
+  "id": "kat:279:nav_label",
+  "typ": "text",
+  "cs": "Vestavby pro Ford",
+  "en": "Ford van fit-outs",
+  "it": "Allestimenti per Ford",
+  "h": "bb8273dca1"
+ },
+ {
+  "id": "kat:279:meta_title",
+  "typ": "text",
+  "cs": "Vestavby pro Ford Transit, Custom a Connect",
+  "en": "Fit-outs for Ford Transit, Custom and Connect",
+  "it": "Allestimenti per Ford Transit, Custom e Connect",
+  "h": "8c0b98b5ec"
+ },
+ {
+  "id": "kat:279:meta_description",
+  "typ": "text",
+  "cs": "Vestavba do Ford Transit Connect na míru – hliníkový regál na euroboxy podle vaší karoserie a vybavení.",
+  "en": "Custom Ford Transit Connect van fit-out from Logiman – aluminium Euro box shelving, tailored precisely to your vehicle body and equipment needs.",
+  "it": "Allestimento su misura per Ford Transit Connect di Logiman – scaffale in alluminio per eurobox adattato alla carrozzeria del veicolo e alla dotazione.",
+  "h": "998dd86601"
+ },
+ {
+  "id": "kat:279:focus_keyword",
+  "typ": "text",
+  "cs": "vestavba Ford Transit Connect",
+  "en": "Ford Transit Connect van fit-out",
+  "it": "allestimento Ford Transit Connect",
+  "h": "6b080d17c1"
+ },
+ {
+  "id": "kat:280:name",
+  "typ": "text",
+  "cs": "Vestavby pro Ford Transit Connect",
+  "en": "Ford Transit Connect van fit-outs",
+  "it": "Allestimenti per Ford Transit Connect",
+  "h": "27e22a2f87"
+ },
+ {
+  "id": "kat:280:nav_label",
+  "typ": "text",
+  "cs": "Vestavby pro Ford Transit Connect",
+  "en": "Ford Transit Connect van fit-outs",
+  "it": "Allestimenti per Ford Transit Connect",
+  "h": "27e22a2f87"
+ },
+ {
+  "id": "kat:280:meta_title",
+  "typ": "text",
+  "cs": "Vestavba Ford Transit Connect – regál na euroboxy",
+  "en": "Ford Transit Connect fit-out – Euro box shelving",
+  "it": "Allestimento Ford Transit Connect – scaffale per eurobox",
+  "h": "14d313d233"
+ },
+ {
+  "id": "kat:280:meta_description",
+  "typ": "text",
+  "cs": "Regál na euroboxy do Ford Transit Connect L1 i L2, na míru na milimetr podle vašich kufrů a vercajku.",
+  "en": "Shelving unit for Euro boxes in the Ford Transit Connect L1 and L2, made to measure and accurate to the millimetre around your cases and tools.",
+  "it": "Scaffale per eurobox per Ford Transit Connect L1 e L2, realizzato su misura e al millimetro in base alle valigette e agli utensili da trasportare.",
+  "h": "353ca0b9f6"
+ },
+ {
+  "id": "kat:280:focus_keyword",
+  "typ": "text",
+  "cs": "vestavba Ford Transit Connect",
+  "en": "Ford Transit Connect van fit-out",
+  "it": "allestimento Ford Transit Connect",
+  "h": "6b080d17c1"
+ },
+ {
+  "id": "kat:281:name",
+  "typ": "text",
+  "cs": "Vestavby pro Toyota",
+  "en": "Toyota van fit-outs",
+  "it": "Allestimenti per Toyota",
+  "h": "6cd6ae9185"
+ },
+ {
+  "id": "kat:281:nav_label",
+  "typ": "text",
+  "cs": "Vestavby pro Toyota",
+  "en": "Toyota van fit-outs",
+  "it": "Allestimenti per Toyota",
+  "h": "6cd6ae9185"
+ },
+ {
+  "id": "kat:281:meta_title",
+  "typ": "text",
+  "cs": "Vestavby pro Toyota ProAce – dílenské na míru",
+  "en": "Fit-outs for Toyota ProAce – custom workshop versions",
+  "it": "Allestimenti per Toyota ProAce – da officina su misura",
+  "h": "6dd5a34a3f"
+ },
+ {
+  "id": "kat:281:meta_description",
+  "typ": "text",
+  "cs": "Vestavba do Toyota Proace Long na míru – hliníkový regál na euroboxy podle vaší karoserie a vybavení.",
+  "en": "Made-to-measure Toyota Proace Long van fit-out from Logiman – aluminium shelving for Euro boxes, tailored to your vehicle body and equipment.",
+  "it": "Allestimento su misura per Toyota Proace Long di Logiman – scaffale in alluminio per eurobox, adattato alla carrozzeria del veicolo e alla dotazione.",
+  "h": "5356588606"
+ },
+ {
+  "id": "kat:281:focus_keyword",
+  "typ": "text",
+  "cs": "vestavba Toyota Proace Long",
+  "en": "Toyota Proace Long van fit-out",
+  "it": "allestimento Toyota Proace Long",
+  "h": "d5ce252551"
+ },
+ {
+  "id": "kat:282:name",
+  "typ": "text",
+  "cs": "Vestavby pro Toyota Proace Long",
+  "en": "Toyota Proace Long van fit-outs",
+  "it": "Allestimenti per Toyota Proace Long",
+  "h": "10c49ebba1"
+ },
+ {
+  "id": "kat:282:nav_label",
+  "typ": "text",
+  "cs": "Vestavby pro Toyota Proace Long",
+  "en": "Toyota Proace Long van fit-outs",
+  "it": "Allestimenti per Toyota Proace Long",
+  "h": "10c49ebba1"
+ },
+ {
+  "id": "kat:282:meta_title",
+  "typ": "text",
+  "cs": "Vestavba Toyota Proace Long – regál na euroboxy",
+  "en": "Toyota Proace Long fit-out – Euro box shelving",
+  "it": "Allestimento Toyota Proace Long – scaffale per eurobox",
+  "h": "1b7768225a"
+ },
+ {
+  "id": "kat:282:meta_description",
+  "typ": "text",
+  "cs": "Regál na euroboxy do Toyota Proace Long (od 2016) na míru, na milimetr podle vašich kufrů a nářadí. Kotvení do zpevněných částí karoserie, montáž volitelná.",
+  "en": "Custom Euro box shelving for the Toyota Proace Long (from 2016), fitted to your cases and tools. Anchored to reinforced body parts; installation optional.",
+  "it": "Scaffale per eurobox su misura per Toyota Proace Long (dal 2016), in base a valigette e attrezzi. Ancoraggio alle parti rinforzate; installazione opzionale.",
+  "h": "a34230d020"
+ },
+ {
+  "id": "kat:282:focus_keyword",
+  "typ": "text",
+  "cs": "vestavba Toyota Proace Long",
+  "en": "Toyota Proace Long van fit-out",
+  "it": "allestimento Toyota Proace Long",
+  "h": "d5ce252551"
+ },
+ {
+  "id": "kat:283:name",
+  "typ": "text",
+  "cs": "Vestavby pro Mercedes Vito",
+  "en": "Mercedes Vito van fit-outs",
+  "it": "Allestimenti per Mercedes Vito",
+  "h": "497918714c"
+ },
+ {
+  "id": "kat:283:nav_label",
+  "typ": "text",
+  "cs": "Vestavby pro Mercedes Vito",
+  "en": "Mercedes Vito van fit-outs",
+  "it": "Allestimenti per Mercedes Vito",
+  "h": "497918714c"
+ },
+ {
+  "id": "kat:283:meta_title",
+  "typ": "text",
+  "cs": "Vestavby pro Mercedes Vito",
+  "en": "Mercedes Vito van fit-outs",
+  "it": "Allestimenti per Mercedes Vito",
+  "h": "497918714c"
+ },
+ {
+  "id": "kat:283:meta_description",
+  "typ": "text",
+  "cs": "Vestavba do Mercedes Vito na míru: hliníkový regál na euroboxy nebo ocelové šuplíky TECNO podle vašich kufrů a nářadí. Compact, Long i Extra Long.",
+  "en": "Made-to-measure Mercedes Vito fit-out: aluminium Euro box shelving or TECNO steel drawers built around your cases and tools. Compact, Long and Extra Long.",
+  "it": "Allestimento Mercedes Vito su misura: scaffale in alluminio per eurobox o cassetti in acciaio TECNO secondo valigette e utensili. Compact, Long, Extra Long.",
+  "h": "7a94cf87be"
+ },
+ {
+  "id": "kat:283:focus_keyword",
+  "typ": "text",
+  "cs": "vestavba Mercedes Vito",
+  "en": "Mercedes Vito van fit-out",
+  "it": "allestimento Mercedes Vito",
+  "h": "0f557bb1dc"
+ },
+ {
+  "id": "kat:284:name",
+  "typ": "text",
+  "cs": "Vestavby pro Volkswagen Caddy",
+  "en": "Volkswagen Caddy van fit-outs",
+  "it": "Allestimenti per Volkswagen Caddy",
+  "h": "4c5405210f"
+ },
+ {
+  "id": "kat:284:nav_label",
+  "typ": "text",
+  "cs": "Vestavby pro Volkswagen Caddy",
+  "en": "Volkswagen Caddy van fit-outs",
+  "it": "Allestimenti per Volkswagen Caddy",
+  "h": "4c5405210f"
+ },
+ {
+  "id": "kat:284:meta_title",
+  "typ": "text",
+  "cs": "Vestavby pro Volkswagen Caddy",
+  "en": "Volkswagen Caddy van fit-outs",
+  "it": "Allestimenti per Volkswagen Caddy",
+  "h": "4c5405210f"
+ },
+ {
+  "id": "kat:284:meta_description",
+  "typ": "text",
+  "cs": "Regál na euroboxy do Volkswagen Caddy Cargo Maxi, na míru na milimetr podle vašich kufrů a vercajku.",
+  "en": "Euro box shelving unit for the Volkswagen Caddy Cargo Maxi, made to measure and accurate to the millimetre, built around your cases and tools.",
+  "it": "Scaffale per eurobox per Volkswagen Caddy Cargo Maxi, realizzato su misura e al millimetro in base alle valigette e agli utensili da trasportare.",
+  "h": "b11c6c5f03"
+ },
+ {
+  "id": "kat:284:focus_keyword",
+  "typ": "text",
+  "cs": "vestavba Volkswagen Caddy",
+  "en": "Volkswagen Caddy van fit-out",
+  "it": "allestimento Volkswagen Caddy",
+  "h": "6c315928ed"
+ },
+ {
+  "id": "kat:285:name",
+  "typ": "text",
+  "cs": "Vestavby pro Renault",
+  "en": "Renault van fit-outs",
+  "it": "Allestimenti per Renault",
+  "h": "c9f32c145c"
+ },
+ {
+  "id": "kat:285:nav_label",
+  "typ": "text",
+  "cs": "Vestavby pro Renault",
+  "en": "Renault van fit-outs",
+  "it": "Allestimenti per Renault",
+  "h": "c9f32c145c"
+ },
+ {
+  "id": "kat:285:meta_title",
+  "typ": "text",
+  "cs": "Vestavby pro Renault Master a Trafic",
+  "en": "Renault Master and Trafic van fit-outs",
+  "it": "Allestimenti per Renault Master e Trafic",
+  "h": "c8fa3d891d"
+ },
+ {
+  "id": "kat:285:meta_description",
+  "typ": "text",
+  "cs": "Vestavba do Renault Master a Trafic na míru – hliníkový regál na euroboxy podle vaší karoserie a vybavení.",
+  "en": "Made-to-measure fit-out for Renault Master and Trafic – an aluminium Euro box shelving unit built around your vehicle body and your equipment.",
+  "it": "Allestimento su misura per Renault Master e Trafic: scaffale in alluminio per eurobox, realizzato in base alla carrozzeria e all'equipaggiamento del veicolo.",
+  "h": "1502801c11"
+ },
+ {
+  "id": "kat:285:focus_keyword",
+  "typ": "text",
+  "cs": "vestavba Renault Master",
+  "en": "Renault Master van fit-out",
+  "it": "allestimento Renault Master",
+  "h": "2a5f6c34b5"
+ },
+ {
+  "id": "kat:286:name",
+  "typ": "text",
+  "cs": "Vestavby pro Opel",
+  "en": "Opel van fit-outs",
+  "it": "Allestimenti per Opel",
+  "h": "4a2f754eb2"
+ },
+ {
+  "id": "kat:286:nav_label",
+  "typ": "text",
+  "cs": "Vestavby pro Opel",
+  "en": "Opel van fit-outs",
+  "it": "Allestimenti per Opel",
+  "h": "4a2f754eb2"
+ },
+ {
+  "id": "kat:286:meta_title",
+  "typ": "text",
+  "cs": "Vestavby pro Opel Movano a Vivaro",
+  "en": "Opel Movano and Vivaro van fit-outs",
+  "it": "Allestimenti per Opel Movano e Vivaro",
+  "h": "a7f75924fe"
+ },
+ {
+  "id": "kat:286:meta_description",
+  "typ": "text",
+  "cs": "Vestavba do Opel Movano a Vivaro na míru – hliníkový regál na euroboxy podle vaší karoserie a vybavení.",
+  "en": "Made-to-measure fit-out for Opel Movano and Vivaro – an aluminium shelving unit for Euro boxes, designed around your vehicle body and your equipment.",
+  "it": "Allestimento su misura per Opel Movano e Vivaro: scaffale in alluminio per eurobox, realizzato in base alla carrozzeria e alle attrezzature del veicolo.",
+  "h": "d5a3f5658e"
+ },
+ {
+  "id": "kat:286:focus_keyword",
+  "typ": "text",
+  "cs": "vestavba Opel Movano",
+  "en": "Opel Movano van fit-out",
+  "it": "allestimento Opel Movano",
+  "h": "45415d26cc"
+ },
+ {
+  "id": "kat:287:name",
+  "typ": "text",
+  "cs": "Vestavby pro Iveco",
+  "en": "Iveco van fit-outs",
+  "it": "Allestimenti per Iveco",
+  "h": "0f3160975a"
+ },
+ {
+  "id": "kat:287:nav_label",
+  "typ": "text",
+  "cs": "Vestavby pro Iveco",
+  "en": "Iveco van fit-outs",
+  "it": "Allestimenti per Iveco",
+  "h": "0f3160975a"
+ },
+ {
+  "id": "kat:287:meta_title",
+  "typ": "text",
+  "cs": "Vestavby pro Iveco Daily",
+  "en": "Iveco Daily van fit-outs",
+  "it": "Allestimenti per Iveco Daily",
+  "h": "24161bac21"
+ },
+ {
+  "id": "kat:287:meta_description",
+  "typ": "text",
+  "cs": "Vestavba do Iveco Daily na míru – hliníkový regál na euroboxy podle vaší karoserie a vybavení. Od menšího po největší ložný prostor, montáž volitelná.",
+  "en": "Custom Iveco Daily fit-out – aluminium Euro box shelving for your vehicle body and equipment. From smaller to the largest cargo areas; installation optional.",
+  "it": "Allestimento su misura per Iveco Daily – scaffale in alluminio per eurobox secondo carrozzeria e dotazione. Dal vano più piccolo al maggiore; installazione opzionale.",
+  "h": "12ab246ec0"
+ },
+ {
+  "id": "kat:287:focus_keyword",
+  "typ": "text",
+  "cs": "vestavba Iveco Daily",
+  "en": "Iveco Daily van fit-out",
+  "it": "allestimento Iveco Daily",
+  "h": "61c76117c7"
+ },
+ {
+  "id": "kat:288:name",
+  "typ": "text",
+  "cs": "Vestavby pro Peugeot",
+  "en": "Peugeot van fit-outs",
+  "it": "Allestimenti per Peugeot",
+  "h": "76033391f1"
+ },
+ {
+  "id": "kat:288:nav_label",
+  "typ": "text",
+  "cs": "Vestavby pro Peugeot",
+  "en": "Peugeot van fit-outs",
+  "it": "Allestimenti per Peugeot",
+  "h": "76033391f1"
+ },
+ {
+  "id": "kat:288:meta_title",
+  "typ": "text",
+  "cs": "Vestavby pro Peugeot Expert a Partner",
+  "en": "Peugeot Expert and Partner van fit-outs",
+  "it": "Allestimenti per Peugeot Expert e Partner",
+  "h": "ec7fa13458"
+ },
+ {
+  "id": "kat:288:meta_description",
+  "typ": "text",
+  "cs": "Vestavba do Peugeot Expert a Partner na míru, na milimetr podle vašich kufrů a vercajku. Pro Peugeot Boxer máme samostatnou stránku Ducato/Jumper/Boxer.",
+  "en": "Custom fit-out for Peugeot Expert and Partner, to the millimetre for your cases and tools. For the Peugeot Boxer, see our separate Ducato/Jumper/Boxer page.",
+  "it": "Allestimento su misura per Peugeot Expert e Partner, al millimetro per valigette e attrezzi. Per Peugeot Boxer c'è una pagina dedicata Ducato/Jumper/Boxer.",
+  "h": "99409dfa77"
+ },
+ {
+  "id": "kat:288:focus_keyword",
+  "typ": "text",
+  "cs": "vestavba Peugeot Expert",
+  "en": "Peugeot Expert van fit-out",
+  "it": "allestimento Peugeot Expert",
+  "h": "f44d40b5c6"
+ },
+ {
+  "id": "kat:289:name",
+  "typ": "text",
+  "cs": "Řezací stojany",
+  "en": "Cutting stands",
+  "it": "Supporti per il taglio",
+  "h": "28becf0fff"
+ },
+ {
+  "id": "kat:289:nav_label",
+  "typ": "text",
+  "cs": "Řezací stojany",
+  "en": "Cutting stands",
+  "it": "Supporti per il taglio",
+  "h": "28becf0fff"
+ },
+ {
+  "id": "kat:289:meta_title",
+  "typ": "text",
+  "cs": "Řezací stojany",
+  "en": "Cutting stands",
+  "it": "Supporti per il taglio",
+  "h": "28becf0fff"
+ },
+ {
+  "id": "kat:289:meta_description",
+  "typ": "text",
+  "cs": "Řezací stojany a řezačky balicího materiálu pro balicí pracoviště: stretch fólie, bublinková fólie, papír. Standardní i individuální provedení na míru.",
+  "en": "Stands and cutters for packaging material at packing stations: stretch film, bubble wrap and paper. Standard versions and custom made-to-measure designs.",
+  "it": "Supporti e taglierine per materiale da imballaggio per postazioni di imballaggio: film estensibile, pluriball, carta. Versioni standard e su misura.",
+  "h": "9a395641de"
+ },
+ {
+  "id": "kat:289:focus_keyword",
+  "typ": "text",
+  "cs": "řezací stojany",
+  "en": "cutting stands",
+  "it": "supporti per il taglio",
+  "h": "165c5d4344"
+ },
+ {
+  "id": "kat:290:name",
+  "typ": "text",
+  "cs": "Kontrolní stoly a pracoviště",
+  "en": "Inspection tables and workstations",
+  "it": "Tavoli di controllo e postazioni di lavoro",
+  "h": "16d5cee70e"
+ },
+ {
+  "id": "kat:290:nav_label",
+  "typ": "text",
+  "cs": "Kontrolní stoly a pracoviště",
+  "en": "Inspection tables and workstations",
+  "it": "Tavoli di controllo e postazioni di lavoro",
+  "h": "16d5cee70e"
+ },
+ {
+  "id": "kat:290:meta_title",
+  "typ": "text",
+  "cs": "Kontrolní stoly a pracoviště",
+  "en": "Inspection tables and workstations",
+  "it": "Tavoli di controllo e postazioni di lavoro",
+  "h": "16d5cee70e"
+ },
+ {
+  "id": "kat:290:meta_description",
+  "typ": "text",
+  "cs": "Kontrolní stoly a pracoviště na míru z hliníkového stavebnicového systému: osvětlení, držáky VESA, LAN boxy i varianta s elektrickým nastavením výšky.",
+  "en": "Custom inspection tables and workstations from a modular aluminium system: lighting, VESA mounts, LAN boxes and an electric height-adjustment option.",
+  "it": "Tavoli di controllo e postazioni su misura in sistema modulare di alluminio: illuminazione, supporti VESA, box LAN e regolazione elettrica dell'altezza.",
+  "h": "d8a3f604db"
+ },
+ {
+  "id": "kat:290:focus_keyword",
+  "typ": "text",
+  "cs": "kontrolní stoly",
+  "en": "inspection tables",
+  "it": "tavoli di controllo",
+  "h": "e4f41d6e8e"
+ },
+ {
+  "id": "kat:291:name",
+  "typ": "text",
+  "cs": "Kuličkové ložiskové stoly",
+  "en": "Ball transfer tables",
+  "it": "Tavoli a sfere",
+  "h": "c8f0a8f1a4"
+ },
+ {
+  "id": "kat:291:nav_label",
+  "typ": "text",
+  "cs": "Kuličkové ložiskové stoly",
+  "en": "Ball transfer tables",
+  "it": "Tavoli a sfere",
+  "h": "c8f0a8f1a4"
+ },
+ {
+  "id": "kat:291:meta_title",
+  "typ": "text",
+  "cs": "Kuličkové ložiskové stoly",
+  "en": "Ball-bearing tables",
+  "it": "Tavoli a sfere",
+  "h": "c8f0a8f1a4"
+ },
+ {
+  "id": "kat:291:meta_description",
+  "typ": "text",
+  "cs": "Kuličkové ložiskové stoly z hliníkových profilů s kuličkovými jednotkami v pracovní ploše místo ruční manipulace s břemeny. Rozměry a vybavení na míru.",
+  "en": "Ball transfer tables made of aluminium profiles with ball units set in the worktop, replacing manual handling of loads. Custom dimensions and equipment.",
+  "it": "Tavoli a sfere in profili di alluminio con unità a sfere nel piano, al posto della movimentazione manuale dei carichi. Dimensioni e dotazioni su misura.",
+  "h": "1a7cbbf707"
+ },
+ {
+  "id": "kat:291:focus_keyword",
+  "typ": "text",
+  "cs": "kuličkové ložiskové stoly",
+  "en": "ball transfer tables",
+  "it": "tavoli a cuscinetti a sfera",
+  "h": "405cdd3bc3"
+ },
+ {
+  "id": "kat:292:name",
+  "typ": "text",
+  "cs": "Výsuvy z dodávky na míru",
+  "en": "Made-to-measure pull-outs for vans",
+  "it": "Estraibili su misura per furgoni",
+  "h": "eabfb24916"
+ },
+ {
+  "id": "kat:292:nav_label",
+  "typ": "text",
+  "cs": "Výsuvy z dodávky na míru",
+  "en": "Made-to-measure pull-outs for vans",
+  "it": "Estraibili su misura per furgoni",
+  "h": "eabfb24916"
+ },
+ {
+  "id": "kat:292:meta_title",
+  "typ": "text",
+  "cs": "Výsuvy z dodávky na míru",
+  "en": "Made-to-measure pull-outs for vans",
+  "it": "Estraibili su misura per furgoni",
+  "h": "eabfb24916"
+ },
+ {
+  "id": "kat:292:meta_description",
+  "typ": "text",
+  "cs": "Individuální výsuvy z dodávky na míru - z podlahy nebo z bočních dveří, pro elektrocentrály a jiné vybavení.",
+  "en": "Custom made-to-measure van pull-outs that extend from the floor or from the side doors, designed for carrying power generators and other equipment.",
+  "it": "Estraibili personalizzati su misura per furgoni, con estrazione dal pianale o dalle porte laterali, pensati per gruppi elettrogeni e altre attrezzature.",
+  "h": "ea727d6355"
+ },
+ {
+  "id": "kat:292:focus_keyword",
+  "typ": "text",
+  "cs": "výsuv z dodávky na míru",
+  "en": "custom van pull-out",
+  "it": "estraibile per furgone su misura",
+  "h": "7215ce2ca7"
+ },
+ {
+  "id": "kat:293:name",
+  "typ": "text",
+  "cs": "Vestavba dodávky Ford Custom",
+  "en": "Ford Custom van fit-out",
+  "it": "Allestimento furgone Ford Custom",
+  "h": "a4d37522a1"
+ },
+ {
+  "id": "kat:293:nav_label",
+  "typ": "text",
+  "cs": "Vestavba dodávky Ford Custom",
+  "en": "Ford Custom van fit-out",
+  "it": "Allestimento furgone Ford Custom",
+  "h": "a4d37522a1"
+ },
+ {
+  "id": "kat:293:meta_title",
+  "typ": "text",
+  "cs": "Vestavba dodávky Ford Custom",
+  "en": "Ford Custom van fit-out",
+  "it": "Allestimento furgone Ford Custom",
+  "h": "a4d37522a1"
+ },
+ {
+  "id": "kat:293:meta_description",
+  "typ": "text",
+  "cs": "Individuální vestavba do Ford Transit Custom na milimetr podle vašeho vybavení: upínací drážky, výsuvy s aretací na euroboxy, systainery i kufry.",
+  "en": "Custom Ford Transit Custom fit-out, accurate to the millimetre to suit your kit: mounting slots, pull-outs with locking for Euro boxes, Systainers and cases.",
+  "it": "Allestimento su misura per Ford Transit Custom, al millimetro: scanalature di fissaggio, estraibili con bloccaggio per eurobox, Systainer e valigette.",
+  "h": "f674c95010"
+ },
+ {
+  "id": "kat:293:focus_keyword",
+  "typ": "text",
+  "cs": "vestavba Ford Transit Custom",
+  "en": "Ford Transit Custom van fit-out",
+  "it": "allestimento Ford Transit Custom",
+  "h": "19615ed834"
+ },
+ {
+  "id": "kat:294:name",
+  "typ": "text",
+  "cs": "Vestavby pro Toyota ProAce",
+  "en": "Toyota ProAce van fit-outs",
+  "it": "Allestimenti per Toyota ProAce",
+  "h": "951d5a7ca9"
+ },
+ {
+  "id": "kat:294:nav_label",
+  "typ": "text",
+  "cs": "Vestavby pro Toyota ProAce",
+  "en": "Toyota ProAce van fit-outs",
+  "it": "Allestimenti per Toyota ProAce",
+  "h": "951d5a7ca9"
+ },
+ {
+  "id": "kat:294:meta_title",
+  "typ": "text",
+  "cs": "Vestavby pro Toyota ProAce",
+  "en": "Toyota ProAce van fit-outs",
+  "it": "Allestimenti per Toyota ProAce",
+  "h": "951d5a7ca9"
+ },
+ {
+  "id": "kat:294:meta_description",
+  "typ": "text",
+  "cs": "Pracovní, dílenská vestavba do Toyota ProAce na milimetr podle vašeho vybavení: výsuvné hliníkové rámy s aretací, euroboxy, montáž na klíč v Praze, Slavičíně.",
+  "en": "Toyota ProAce work van fit-out to the millimetre: aluminium pull-out frames with locking, Euro boxes, turnkey installation in Prague and Slavičín.",
+  "it": "Allestimento da lavoro per Toyota ProAce al millimetro: telai estraibili in alluminio con bloccaggio, eurobox, installazione chiavi in mano a Praga e Slavičín.",
+  "h": "236f8b6105"
+ },
+ {
+  "id": "kat:294:focus_keyword",
+  "typ": "text",
+  "cs": "vestavba Toyota ProAce",
+  "en": "Toyota ProAce van fit-out",
+  "it": "allestimento Toyota ProAce",
+  "h": "f9bb337f4f"
+ },
+ {
+  "id": "kat:295:name",
+  "typ": "text",
+  "cs": "Šuplíkové vestavby do aut TECNO",
+  "en": "TECNO drawer fit-outs for vehicles",
+  "it": "Allestimenti a cassetti TECNO per auto",
+  "h": "9165de973e"
+ },
+ {
+  "id": "kat:295:nav_label",
+  "typ": "text",
+  "cs": "Šuplíkové vestavby do aut TECNO",
+  "en": "TECNO drawer fit-outs for vehicles",
+  "it": "Allestimenti a cassetti TECNO per auto",
+  "h": "9165de973e"
+ },
+ {
+  "id": "kat:295:meta_title",
+  "typ": "text",
+  "cs": "Šuplíkové vestavby do aut TECNO",
+  "en": "TECNO drawer fit-outs for vehicles",
+  "it": "Allestimenti a cassetti TECNO per auto",
+  "h": "9165de973e"
+ },
+ {
+  "id": "kat:295:meta_description",
+  "typ": "text",
+  "cs": "Šuplíkové vestavby TECNO – ocelové šuplíky s aretací pro konkrétní modely vozidel (Renault, Mercedes-Benz a další). Výběr podle značky a modelu dodávky.",
+  "en": "TECNO drawer fit-outs – steel drawers with locking for specific vehicle models (Renault, Mercedes-Benz and others). Choose by van make and model.",
+  "it": "Allestimenti a cassetti TECNO – cassetti in acciaio con bloccaggio per modelli specifici (Renault, Mercedes-Benz e altri). Scelta per marca e modello del furgone.",
+  "h": "6f74fc569e"
+ },
+ {
+  "id": "kat:295:focus_keyword",
+  "typ": "text",
+  "cs": "šuplíkové vestavby TECNO",
+  "en": "TECNO drawer fit-outs",
+  "it": "allestimenti a cassetti TECNO",
+  "h": "5902166998"
+ },
+ {
+  "id": "kat:296:name",
+  "typ": "text",
+  "cs": "Vestavby dodávek pro elektrikáře",
+  "en": "Van fit-outs for electricians",
+  "it": "Allestimenti furgoni per elettricisti",
+  "h": "4665402c44"
+ },
+ {
+  "id": "kat:296:nav_label",
+  "typ": "text",
+  "cs": "Vestavby dodávek pro elektrikáře",
+  "en": "Van fit-outs for electricians",
+  "it": "Allestimenti furgoni per elettricisti",
+  "h": "4665402c44"
+ },
+ {
+  "id": "kat:296:meta_title",
+  "typ": "text",
+  "cs": "Vestavby dodávek pro elektrikáře",
+  "en": "Van fit-outs for electricians",
+  "it": "Allestimenti furgoni per elettricisti",
+  "h": "4665402c44"
+ },
+ {
+  "id": "kat:296:meta_description",
+  "typ": "text",
+  "cs": "Vestavba dodávky pro elektrikáře: organizéry na drobný materiál, kufříky a euroboxy na výsuvných rámech, navržené na míru podle vašeho vybavení.",
+  "en": "Van fit-out for electricians: organisers for small parts, cases and Euro boxes on pull-out frames, designed to measure to suit your equipment.",
+  "it": "Allestimento furgone per elettricisti: organizer per minuteria, valigette ed eurobox su telai estraibili, progettati su misura in base alla dotazione.",
+  "h": "2f3c2dd6b6"
+ },
+ {
+  "id": "kat:296:focus_keyword",
+  "typ": "text",
+  "cs": "vestavba dodávky pro elektrikáře",
+  "en": "van fit-out for electricians",
+  "it": "allestimento furgone per elettricisti",
+  "h": "bb740b5f40"
+ },
+ {
+  "id": "kat:297:name",
+  "typ": "text",
+  "cs": "Vestavby dodávek pro instalatéra",
+  "en": "Van fit-outs for plumbers",
+  "it": "Allestimenti furgoni per idraulici",
+  "h": "1a20065de0"
+ },
+ {
+  "id": "kat:297:nav_label",
+  "typ": "text",
+  "cs": "Vestavby dodávek pro instalatéra",
+  "en": "Van fit-outs for plumbers",
+  "it": "Allestimenti furgoni per idraulici",
+  "h": "1a20065de0"
+ },
+ {
+  "id": "kat:297:meta_title",
+  "typ": "text",
+  "cs": "Vestavby dodávek pro instalatéra",
+  "en": "Van fit-outs for plumbers",
+  "it": "Allestimenti furgoni per idraulici",
+  "h": "1a20065de0"
+ },
+ {
+  "id": "kat:297:meta_description",
+  "typ": "text",
+  "cs": "Vestavba dodávky pro instalatéra: úložné řešení na trubky, fitinky, armatury i lisovací techniku. Systém 30 do malých dodávek, řada 40 nebo 45 pro těžší výbavu.",
+  "en": "Van fit-out for plumbers: storage for pipes, fittings, valves and press tools. System 30 for small vans, 40 or 45 series for heavier equipment.",
+  "it": "Allestimento furgone per idraulici: spazio per tubi, raccordi, valvole e attrezzatura di pressatura. Sistema 30 per furgoni piccoli, serie 40 o 45 per dotazioni pesanti.",
+  "h": "627f088ec0"
+ },
+ {
+  "id": "kat:297:focus_keyword",
+  "typ": "text",
+  "cs": "vestavba dodávky pro instalatéra",
+  "en": "van fit-out for plumbers",
+  "it": "allestimento furgone per idraulici",
+  "h": "e55863b368"
+ },
+ {
+  "id": "kat:298:name",
+  "typ": "text",
+  "cs": "Naposledy přidané",
+  "en": "Recently added",
+  "it": "Aggiunti di recente",
+  "h": "eea8d57be7"
+ },
+ {
+  "id": "kat:298:nav_label",
+  "typ": "text",
+  "cs": "Naposledy přidané",
+  "en": "Recently added",
+  "it": "Aggiunti di recente",
+  "h": "eea8d57be7"
+ },
+ {
+  "id": "kat:298:meta_title",
+  "typ": "text",
+  "cs": "Naposledy přidané sestavy a produkty",
+  "en": "Recently added assemblies and products",
+  "it": "Composizioni e prodotti aggiunti di recente",
+  "h": "81f97b7b0c"
+ },
+ {
+  "id": "kat:298:meta_description",
+  "typ": "text",
+  "cs": "Posledních 10 nově zveřejněných sestav a produktů v e-shopu Logiman.",
+  "en": "See the 10 most recently published assemblies and products in the Logiman e-shop – a quick overview of the very newest additions to our range.",
+  "it": "Le 10 composizioni e i prodotti pubblicati più di recente nell'e-shop Logiman: una rapida panoramica delle ultime novità inserite nella nostra gamma.",
+  "h": "a465b50d7f"
+ },
+ {
+  "id": "kat:301:name",
+  "typ": "text",
+  "cs": "Vestavby pro Mercedes Sprinter",
+  "en": "Mercedes Sprinter van fit-outs",
+  "it": "Allestimenti per Mercedes Sprinter",
+  "h": "8b1fade55a"
+ },
+ {
+  "id": "kat:301:nav_label",
+  "typ": "text",
+  "cs": "Vestavby pro Mercedes Sprinter",
+  "en": "Mercedes Sprinter van fit-outs",
+  "it": "Allestimenti per Mercedes Sprinter",
+  "h": "8b1fade55a"
+ },
+ {
+  "id": "kat:301:meta_title",
+  "typ": "text",
+  "cs": "Vestavba Mercedes Sprinter na míru – L1 až L4",
+  "en": "Made-to-measure Mercedes Sprinter fit-out – L1 to L4",
+  "it": "Allestimento Mercedes Sprinter su misura – da L1 a L4",
+  "h": "d19b24411b"
+ },
+ {
+  "id": "kat:301:meta_description",
+  "typ": "text",
+  "cs": "Vestavba do Mercedes Sprinter 906, 907 i 910 na míru: hliníkový regál podle délky karoserie, úložný prostor v podlaze i výsuvná podlaha. Montáž volitelná.",
+  "en": "Made-to-measure Mercedes Sprinter 906, 907 and 910 fit-out: aluminium shelving by body length, floor storage and pull-out floor. Installation optional.",
+  "it": "Allestimento su misura Mercedes Sprinter 906, 907, 910: scaffale in alluminio per lunghezza, vano nel pianale e pianale estraibile. Installazione opzionale.",
+  "h": "e35ef857ac"
+ },
+ {
+  "id": "kat:301:focus_keyword",
+  "typ": "text",
+  "cs": "vestavba Mercedes Sprinter",
+  "en": "Mercedes Sprinter van fit-out",
+  "it": "allestimento Mercedes Sprinter",
+  "h": "a93e158710"
+ },
+ {
+  "id": "kat:302:name",
+  "typ": "text",
+  "cs": "Vestavby pro Volkswagen Crafter",
+  "en": "Volkswagen Crafter van fit-outs",
+  "it": "Allestimenti per Volkswagen Crafter",
+  "h": "cb1dd32206"
+ },
+ {
+  "id": "kat:302:nav_label",
+  "typ": "text",
+  "cs": "Vestavby pro Volkswagen Crafter",
+  "en": "Volkswagen Crafter van fit-outs",
+  "it": "Allestimenti per Volkswagen Crafter",
+  "h": "cb1dd32206"
+ },
+ {
+  "id": "kat:302:meta_title",
+  "typ": "text",
+  "cs": "Vestavba Volkswagen Crafter – regál na míru L3 až L5",
+  "en": "Volkswagen Crafter fit-out – custom shelving L3 to L5",
+  "it": "Allestimento Volkswagen Crafter – scaffale su misura L3-L5",
+  "h": "373700b47f"
+ },
+ {
+  "id": "kat:302:meta_description",
+  "typ": "text",
+  "cs": "Vestavba do Volkswagen Crafter na míru podle délky L3 až L5: regál z více sekcí, výsuvné rámy na euroboxy i úložný prostor v podlaze. Montáž volitelná.",
+  "en": "Custom Volkswagen Crafter fit-out by length L3 to L5: multi-section shelving, pull-out Euro box frames and underfloor storage. Installation optional.",
+  "it": "Allestimento su misura per Volkswagen Crafter da L3 a L5: scaffale a più sezioni, telai estraibili per eurobox e vano nel pianale. Installazione opzionale.",
+  "h": "158914e026"
+ },
+ {
+  "id": "kat:302:focus_keyword",
+  "typ": "text",
+  "cs": "vestavba Volkswagen Crafter",
+  "en": "Volkswagen Crafter van fit-out",
+  "it": "allestimento Volkswagen Crafter",
+  "h": "469d618ab4"
+ },
+ {
+  "id": "kat:303:name",
+  "typ": "text",
+  "cs": "Vestavby pro Volkswagen Transporter",
+  "en": "Volkswagen Transporter van fit-outs",
+  "it": "Allestimenti per Volkswagen Transporter",
+  "h": "26b11de9e7"
+ },
+ {
+  "id": "kat:303:nav_label",
+  "typ": "text",
+  "cs": "Vestavby pro Volkswagen Transporter",
+  "en": "Volkswagen Transporter van fit-outs",
+  "it": "Allestimenti per Volkswagen Transporter",
+  "h": "26b11de9e7"
+ },
+ {
+  "id": "kat:303:meta_title",
+  "typ": "text",
+  "cs": "Vestavba Volkswagen Transporter – T6 i T7 na míru",
+  "en": "Made-to-measure Volkswagen Transporter fit-out – T6, T7",
+  "it": "Allestimento Volkswagen Transporter su misura – T6 e T7",
+  "h": "b69b40df63"
+ },
+ {
+  "id": "kat:303:meta_description",
+  "typ": "text",
+  "cs": "Vestavba do Volkswagen Transporter T6 i T7 na míru: hliníkový regál podle vašeho nářadí, upínací drážky pro vlastní prvky, výměna jednotlivých dílů.",
+  "en": "Custom Volkswagen Transporter T6 and T7 fit-out: aluminium shelving to suit your tools, mounting slots for your own elements, individual parts replaceable.",
+  "it": "Allestimento su misura per Volkswagen Transporter T6 e T7: scaffale in alluminio in base agli attrezzi, scanalature per elementi propri, componenti sostituibili singolarmente.",
+  "h": "cd431f5414"
+ },
+ {
+  "id": "kat:303:focus_keyword",
+  "typ": "text",
+  "cs": "vestavba Volkswagen Transporter",
+  "en": "Volkswagen Transporter van fit-out",
+  "it": "allestimento Volkswagen Transporter",
+  "h": "7642598a23"
+ },
+ {
+  "id": "kat:304:name",
+  "typ": "text",
+  "cs": "Vestavby pro Ford Transit",
+  "en": "Ford Transit van fit-outs",
+  "it": "Allestimenti per Ford Transit",
+  "h": "356729634e"
+ },
+ {
+  "id": "kat:304:nav_label",
+  "typ": "text",
+  "cs": "Vestavby pro Ford Transit",
+  "en": "Ford Transit van fit-outs",
+  "it": "Allestimenti per Ford Transit",
+  "h": "356729634e"
+ },
+ {
+  "id": "kat:304:meta_title",
+  "typ": "text",
+  "cs": "Vestavba Ford Transit na míru – podle délky a pohonu",
+  "en": "Made-to-measure Ford Transit fit-out by length and drive",
+  "it": "Allestimento Ford Transit su misura per lunghezza e trazione",
+  "h": "41c0bdacc3"
+ },
+ {
+  "id": "kat:304:meta_description",
+  "typ": "text",
+  "cs": "Vestavba do Ford Transit na míru podle délky, výšky i pohonu, vč. E-Transit: hliníkový regál, vyjímatelná ložná plocha na palety, ocelové šuplíky TECNO.",
+  "en": "Made-to-measure Ford Transit fit-out by length, height and drive, incl. E-Transit: aluminium shelving, removable pallet load platform and TECNO steel drawers.",
+  "it": "Su misura per Ford Transit (lunghezza, altezza, trazione), anche E-Transit: scaffale in alluminio, piano pallet rimovibile e cassetti in acciaio TECNO.",
+  "h": "69aee9ea42"
+ },
+ {
+  "id": "kat:304:focus_keyword",
+  "typ": "text",
+  "cs": "vestavba Ford Transit",
+  "en": "Ford Transit van fit-out",
+  "it": "allestimento Ford Transit",
+  "h": "4af2dc6e94"
+ },
+ {
+  "id": "kat:305:name",
+  "typ": "text",
+  "cs": "Vestavby pro Renault Master",
+  "en": "Renault Master van fit-outs",
+  "it": "Allestimenti per Renault Master",
+  "h": "fea6bc7a8e"
+ },
+ {
+  "id": "kat:305:nav_label",
+  "typ": "text",
+  "cs": "Vestavby pro Renault Master",
+  "en": "Renault Master van fit-outs",
+  "it": "Allestimenti per Renault Master",
+  "h": "fea6bc7a8e"
+ },
+ {
+  "id": "kat:305:meta_title",
+  "typ": "text",
+  "cs": "Vestavba Renault Master na míru – od skici ke 3D",
+  "en": "Made-to-measure Renault Master fit-out – from sketch to 3D",
+  "it": "Allestimento Renault Master su misura – dallo schizzo al 3D",
+  "h": "544a4f545c"
+ },
+ {
+  "id": "kat:305:meta_description",
+  "typ": "text",
+  "cs": "Zakázková vestavba do Renault Master podle skici a 3D modelu: hliníkový regál nebo ocelové šuplíky TECNO přesně podle vašeho vybavení. Montáž je volitelná.",
+  "en": "Bespoke Renault Master fit-out from a sketch and 3D model: aluminium shelving or TECNO steel drawers made exactly to suit your equipment. Installation optional.",
+  "it": "Allestimento Renault Master su misura da schizzo e modello 3D: scaffale in alluminio o cassetti in acciaio TECNO secondo dotazione. Installazione opzionale.",
+  "h": "2784178031"
+ },
+ {
+  "id": "kat:305:focus_keyword",
+  "typ": "text",
+  "cs": "vestavba Renault Master",
+  "en": "Renault Master van fit-out",
+  "it": "allestimento Renault Master",
+  "h": "2a5f6c34b5"
+ },
+ {
+  "id": "kat:306:name",
+  "typ": "text",
+  "cs": "Vestavby pro Renault Trafic",
+  "en": "Renault Trafic van fit-outs",
+  "it": "Allestimenti per Renault Trafic",
+  "h": "6fb8554370"
+ },
+ {
+  "id": "kat:306:nav_label",
+  "typ": "text",
+  "cs": "Vestavby pro Renault Trafic",
+  "en": "Renault Trafic van fit-outs",
+  "it": "Allestimenti per Renault Trafic",
+  "h": "6fb8554370"
+ },
+ {
+  "id": "kat:306:meta_title",
+  "typ": "text",
+  "cs": "Vestavba Renault Trafic – regál na míru pro řemeslníky",
+  "en": "Renault Trafic fit-out – custom shelving for tradesmen",
+  "it": "Renault Trafic – scaffale su misura per artigiani",
+  "h": "192c636881"
+ },
+ {
+  "id": "kat:306:meta_description",
+  "typ": "text",
+  "cs": "Vestavba do Renault Trafic na zakázku z hliníkových profilů, vhodná i pro instalatéry: euroboxy na třídění fitinek, kotvení do zpevněných částí karoserie.",
+  "en": "Custom Renault Trafic fit-out from aluminium profiles, also suitable for plumbers: Euro boxes for sorting fittings, anchored to reinforced body sections.",
+  "it": "Allestimento Renault Trafic su misura in profili di alluminio, anche per idraulici: eurobox per i raccordi, fissaggio alle parti rinforzate della carrozzeria.",
+  "h": "8135f0f529"
+ },
+ {
+  "id": "kat:306:focus_keyword",
+  "typ": "text",
+  "cs": "vestavba Renault Trafic",
+  "en": "Renault Trafic van fit-out",
+  "it": "allestimento Renault Trafic",
+  "h": "72522cd299"
+ },
+ {
+  "id": "kat:307:name",
+  "typ": "text",
+  "cs": "Vestavby pro Opel Movano",
+  "en": "Opel Movano van fit-outs",
+  "it": "Allestimenti per Opel Movano",
+  "h": "401be2a618"
+ },
+ {
+  "id": "kat:307:nav_label",
+  "typ": "text",
+  "cs": "Vestavby pro Opel Movano",
+  "en": "Opel Movano van fit-outs",
+  "it": "Allestimenti per Opel Movano",
+  "h": "401be2a618"
+ },
+ {
+  "id": "kat:307:meta_title",
+  "typ": "text",
+  "cs": "Vestavba Opel Movano na míru – euroboxy se šuplíky",
+  "en": "Made-to-measure Opel Movano fit-out – Euro boxes, drawers",
+  "it": "Allestimento Opel Movano su misura – eurobox con cassetti",
+  "h": "faea5c773a"
+ },
+ {
+  "id": "kat:307:meta_description",
+  "typ": "text",
+  "cs": "Vestavba do Opel Movano na míru pro generace do 2020 i od 2021: hliníkový regál, euroboxy s kuličkovými výsuvy a aretací, montáž volitelná, i svépomocí.",
+  "en": "Made-to-measure Opel Movano fit-out up to 2020 and from 2021: aluminium shelving, Euro boxes on locking ball-bearing pull-outs. Installation optional, DIY too.",
+  "it": "Allestimento su misura Opel Movano fino al 2020 e dal 2021: scaffale in alluminio, eurobox su estraibili a sfere con blocco. Montaggio opzionale o fai da te.",
+  "h": "23c4272283"
+ },
+ {
+  "id": "kat:307:focus_keyword",
+  "typ": "text",
+  "cs": "vestavba Opel Movano",
+  "en": "Opel Movano van fit-out",
+  "it": "allestimento Opel Movano",
+  "h": "45415d26cc"
+ },
+ {
+  "id": "kat:308:name",
+  "typ": "text",
+  "cs": "Vestavby pro Opel Vivaro",
+  "en": "Opel Vivaro van fit-outs",
+  "it": "Allestimenti per Opel Vivaro",
+  "h": "8c2ee04540"
+ },
+ {
+  "id": "kat:308:nav_label",
+  "typ": "text",
+  "cs": "Vestavby pro Opel Vivaro",
+  "en": "Opel Vivaro van fit-outs",
+  "it": "Allestimenti per Opel Vivaro",
+  "h": "8c2ee04540"
+ },
+ {
+  "id": "kat:308:meta_title",
+  "typ": "text",
+  "cs": "Vestavba Opel Vivaro – regál na míru pro elektrikáře",
+  "en": "Opel Vivaro fit-out – custom shelving for electricians",
+  "it": "Opel Vivaro – scaffale su misura per elettricisti",
+  "h": "cc93788a87"
+ },
+ {
+  "id": "kat:308:meta_description",
+  "typ": "text",
+  "cs": "Vestavba do Opel Vivaro na míru pro starší i novější generaci a Vivaro Electric: organizéry a kufříky pro elektrikáře, dělení euroboxů podle zakázky.",
+  "en": "Made-to-measure Opel Vivaro fit-out for older and newer generations and the Vivaro Electric: organisers and cases for electricians, Euro box layout to order.",
+  "it": "Allestimento su misura per Opel Vivaro, vecchia e nuova generazione e Vivaro Electric: organizer e valigette per elettricisti, eurobox suddivisi su ordinazione.",
+  "h": "1948394318"
+ },
+ {
+  "id": "kat:308:focus_keyword",
+  "typ": "text",
+  "cs": "vestavba Opel Vivaro",
+  "en": "Opel Vivaro van fit-out",
+  "it": "allestimento Opel Vivaro",
+  "h": "fe22c00a4b"
+ },
+ {
+  "id": "kat:309:name",
+  "typ": "text",
+  "cs": "Vestavby pro Iveco Daily",
+  "en": "Iveco Daily van fit-outs",
+  "it": "Allestimenti per Iveco Daily",
+  "h": "24161bac21"
+ },
+ {
+  "id": "kat:309:nav_label",
+  "typ": "text",
+  "cs": "Vestavby pro Iveco Daily",
+  "en": "Iveco Daily van fit-outs",
+  "it": "Allestimenti per Iveco Daily",
+  "h": "24161bac21"
+ },
+ {
+  "id": "kat:309:meta_title",
+  "typ": "text",
+  "cs": "Vestavba Iveco Daily na míru – od L1H1 po L5H3",
+  "en": "Made-to-measure Iveco Daily fit-out – L1H1 to L5H3",
+  "it": "Allestimento Iveco Daily su misura – da L1H1 a L5H3",
+  "h": "2e627b9f40"
+ },
+ {
+  "id": "kat:309:meta_description",
+  "typ": "text",
+  "cs": "Vestavba do Iveco Daily na míru pro karoserie od L1H1 po L5H3: hliníkový regál z více sekcí nebo ocelové šuplíky TECNO s aretací. Montáž volitelná.",
+  "en": "Custom Iveco Daily fit-out for body versions from L1H1 to L5H3: multi-section aluminium shelving or TECNO steel drawers with locking. Installation optional.",
+  "it": "Allestimento su misura per Iveco Daily, da L1H1 a L5H3: scaffale in alluminio a più sezioni o cassetti in acciaio TECNO con bloccaggio. Installazione opzionale.",
+  "h": "95ea2c1e37"
+ },
+ {
+  "id": "kat:309:focus_keyword",
+  "typ": "text",
+  "cs": "vestavba Iveco Daily",
+  "en": "Iveco Daily van fit-out",
+  "it": "allestimento Iveco Daily",
+  "h": "61c76117c7"
+ },
+ {
+  "id": "kat:310:name",
+  "typ": "text",
+  "cs": "Vestavby pro Peugeot Expert",
+  "en": "Peugeot Expert van fit-outs",
+  "it": "Allestimenti per Peugeot Expert",
+  "h": "ea6939ba4a"
+ },
+ {
+  "id": "kat:310:nav_label",
+  "typ": "text",
+  "cs": "Vestavby pro Peugeot Expert",
+  "en": "Peugeot Expert van fit-outs",
+  "it": "Allestimenti per Peugeot Expert",
+  "h": "ea6939ba4a"
+ },
+ {
+  "id": "kat:310:meta_title",
+  "typ": "text",
+  "cs": "Vestavba Peugeot Expert – regál na euroboxy na míru",
+  "en": "Peugeot Expert fit-out – made-to-measure Euro box shelving",
+  "it": "Allestimento Peugeot Expert – scaffale per eurobox su misura",
+  "h": "c9342e8f9c"
+ },
+ {
+  "id": "kat:310:meta_description",
+  "typ": "text",
+  "cs": "Regál na euroboxy do Peugeot Expert na míru, na milimetr podle vašich kufrů a vercajku: Compact, Standard i Long, e-Expert, výsuvné rámy s pružinovou aretací.",
+  "en": "Custom Euro box shelving for Peugeot Expert, to the millimetre for your cases and tools: Compact, Standard, Long, e-Expert; spring-locked pull-out frames.",
+  "it": "Scaffale per eurobox su misura per Peugeot Expert, al millimetro: Compact, Standard e Long, e-Expert, telai estraibili con bloccaggio a molla.",
+  "h": "ad3bda28e9"
+ },
+ {
+  "id": "kat:310:focus_keyword",
+  "typ": "text",
+  "cs": "vestavba Peugeot Expert",
+  "en": "Peugeot Expert van fit-out",
+  "it": "allestimento Peugeot Expert",
+  "h": "f44d40b5c6"
+ },
+ {
+  "id": "kat:311:name",
+  "typ": "text",
+  "cs": "Robustní balicí stůl system 40",
+  "en": "Heavy-duty packing table system 40",
+  "it": "Tavolo da imballaggio robusto sistema 40",
+  "h": "3e97fbc7d6"
+ },
+ {
+  "id": "kat:311:meta_title",
+  "typ": "text",
+  "cs": "Robustní balicí stůl system 40 – generátor stolu ve 3D",
+  "en": "Robust packing table system 40 – 3D table generator",
+  "it": "Tavolo da imballaggio robusto sistema 40 – generatore 3D",
+  "h": "b608389e7b"
+ },
+ {
+  "id": "kat:311:meta_description",
+  "typ": "text",
+  "cs": "Balicí stůl s rámem z profilu 40×40: nastavte rozměry, police a příslušenství ve 3D a zjistěte orientační cenu. Pro balení, příjem a expedici.",
+  "en": "Packing table with a 40×40 profile frame: set dimensions, shelves and accessories in 3D and get an indicative price. For packing, receiving and dispatch.",
+  "it": "Tavolo da imballaggio con telaio in profilo 40×40: impostare dimensioni, ripiani e accessori in 3D e ottenere il prezzo indicativo. Per imballo e spedizione.",
+  "h": "379f172148"
+ },
+ {
+  "id": "kat:311:focus_keyword",
+  "typ": "text",
+  "cs": "robustní balicí stůl",
+  "en": "heavy-duty packing table",
+  "it": "tavolo da imballaggio robusto",
+  "h": "ae6493ec50"
+ },
+ {
+  "id": "kat:312:name",
+  "typ": "text",
+  "cs": "Ergonomický balicí stůl system 35",
+  "en": "Ergonomic packing table system 35",
+  "it": "Tavolo da imballaggio ergonomico sistema 35",
+  "h": "71be0103fd"
+ },
+ {
+  "id": "kat:312:meta_title",
+  "typ": "text",
+  "cs": "Ergonomický balicí stůl system 35 – generátor stolu",
+  "en": "Ergonomic packing table system 35 – table generator",
+  "it": "Tavolo ergonomico da imballaggio sistema 35 – generatore",
+  "h": "d1a85cf1c7"
+ },
+ {
+  "id": "kat:312:meta_description",
+  "typ": "text",
+  "cs": "Ergonomický balicí stůl s rámem z profilu 35×35 a návlekem z jeklu 40×40 pro mechanickou volbu výšky. Nastavte rozměry ve 3D a zjistěte orientační cenu.",
+  "en": "Ergonomic packing table: 35×35 profile frame with a 40×40 steel tube sleeve for mechanical height setting. Set the size in 3D and get an indicative price.",
+  "it": "Tavolo da imballaggio ergonomico: telaio in profilo 35×35 e tubolare 40×40 per la regolazione meccanica dell'altezza. Dimensioni in 3D e prezzo indicativo.",
+  "h": "d363dec1bd"
+ },
+ {
+  "id": "kat:312:focus_keyword",
+  "typ": "text",
+  "cs": "ergonomický balicí stůl",
+  "en": "ergonomic packing table",
+  "it": "tavolo da imballaggio ergonomico",
+  "h": "e91cf072a2"
+ },
+ {
+  "id": "kat:315:name",
+  "typ": "text",
+  "cs": "Vestavby pro MAN",
+  "en": "MAN van fit-outs",
+  "it": "Allestimenti per MAN",
+  "h": "545925a8f3"
+ },
+ {
+  "id": "kat:315:nav_label",
+  "typ": "text",
+  "cs": "Vestavby pro MAN",
+  "en": "MAN van fit-outs",
+  "it": "Allestimenti per MAN",
+  "h": "545925a8f3"
+ },
+ {
+  "id": "kat:315:meta_title",
+  "typ": "text",
+  "cs": "Vestavba MAN TGE – regál na míru L3 až L5",
+  "en": "MAN TGE fit-out – custom shelving L3 to L5",
+  "it": "Allestimento MAN TGE – scaffale su misura L3-L5",
+  "h": "ac3247fb04"
+ },
+ {
+  "id": "kat:315:meta_description",
+  "typ": "text",
+  "cs": "Vestavba do MAN TGE na míru: hliníkový regál podle délky L3 až L5 a výšky H2 až H4, hotová sestava pro L3H3 FWD. Montáž je volitelná, i svépomocí.",
+  "en": "Made-to-measure MAN TGE fit-out: aluminium shelving for lengths L3 to L5 and heights H2 to H4, ready-made assembly for L3H3 FWD. Installation optional, or DIY.",
+  "it": "Allestimento su misura MAN TGE: scaffale in alluminio per L3–L5 e H2–H4, composizione pronta L3H3 FWD. Installazione opzionale, anche fai da te.",
+  "h": "84a746ca24"
+ },
+ {
+  "id": "kat:315:focus_keyword",
+  "typ": "text",
+  "cs": "vestavba MAN TGE",
+  "en": "MAN TGE van fit-out",
+  "it": "allestimento MAN TGE",
+  "h": "07e4911b1e"
+ },
+ {
+  "id": "kat:323:name",
+  "typ": "text",
+  "cs": "Dopravníky bez pohonu",
+  "en": "Unpowered conveyors",
+  "it": "Trasportatori senza motore",
+  "h": "284e8956ba"
+ },
+ {
+  "id": "kat:323:nav_label",
+  "typ": "text",
+  "cs": "Dopravníky bez pohonu",
+  "en": "Unpowered conveyors",
+  "it": "Trasportatori senza motore",
+  "h": "284e8956ba"
+ },
+ {
+  "id": "kat:323:meta_title",
+  "typ": "text",
+  "cs": "Dopravníky bez pohonu – válečkové a díly",
+  "en": "Unpowered conveyors – roller conveyors and parts",
+  "it": "Trasportatori senza motore – a rulli e componenti",
+  "h": "ffbcdf4e09"
+ },
+ {
+  "id": "kat:323:meta_description",
+  "typ": "text",
+  "cs": "Válečkové dopravníky a díly bez pohonu: válečky, profily, nohy, spoje, boční vodítka a kuličkové jednotky. Bez motoru a bez elektřiny.",
+  "en": "Unpowered roller conveyors and parts: rollers, profiles, legs, joints, side guides and ball transfer units. Runs without a motor and without electricity.",
+  "it": "Trasportatori a rulli senza motore e componenti: rulli, profili, gambe, giunzioni, guide laterali e unità a sfere. Senza motore e senza elettricità.",
+  "h": "9afe092e96"
+ },
+ {
+  "id": "kat:323:focus_keyword",
+  "typ": "text",
+  "cs": "dopravníky bez pohonu",
+  "en": "unpowered conveyors",
+  "it": "trasportatori senza motore",
+  "h": "d7717f9503"
+ },
+ {
+  "id": "kat:324:name",
+  "typ": "text",
+  "cs": "Válečkové dopravníky",
+  "en": "Roller conveyors",
+  "it": "Trasportatori a rulli",
+  "h": "22f2dfc9d0"
+ },
+ {
+  "id": "kat:324:nav_label",
+  "typ": "text",
+  "cs": "Válečkové dopravníky",
+  "en": "Roller conveyors",
+  "it": "Trasportatori a rulli",
+  "h": "22f2dfc9d0"
+ },
+ {
+  "id": "kat:324:meta_title",
+  "typ": "text",
+  "cs": "Válečkový dopravník bez pohonu – 1 až 6 m",
+  "en": "Unpowered roller conveyor – 1 to 6 m",
+  "it": "Trasportatore a rulli senza motore – da 1 a 6 m",
+  "h": "a02adf9943"
+ },
+ {
+  "id": "kat:324:meta_description",
+  "typ": "text",
+  "cs": "Válečkové dopravníky bez pohonu s hliníkovými, ocelovými nebo vroubkovanými válečky, délka 1 až 6 m. Bez motoru a bez elektřiny.",
+  "en": "Unpowered roller conveyors with aluminium, steel or knurled rollers, in lengths from 1 to 6 m. No motor and no electricity required for operation.",
+  "it": "Trasportatori a rulli senza motore con rulli in alluminio, acciaio o zigrinati, lunghezza da 1 a 6 m. Nessun motore e nessuna alimentazione elettrica.",
+  "h": "d581fff505"
+ },
+ {
+  "id": "kat:324:focus_keyword",
+  "typ": "text",
+  "cs": "válečkový dopravník",
+  "en": "roller conveyor",
+  "it": "trasportatore a rulli",
+  "h": "6748281f0c"
+ },
+ {
+  "id": "kat:325:name",
+  "typ": "text",
+  "cs": "Válečky a hlavice válečků",
+  "en": "Rollers and roller heads",
+  "it": "Rulli e testine dei rulli",
+  "h": "81daa59065"
+ },
+ {
+  "id": "kat:325:nav_label",
+  "typ": "text",
+  "cs": "Válečky a hlavice válečků",
+  "en": "Rollers and roller heads",
+  "it": "Rulli e testine dei rulli",
+  "h": "81daa59065"
+ },
+ {
+  "id": "kat:325:meta_title",
+  "typ": "text",
+  "cs": "Válečky pro dopravníky – hliník, ocel, hlavice",
+  "en": "Conveyor rollers – aluminium, steel, roller heads",
+  "it": "Rulli per trasportatori – alluminio, acciaio, testine",
+  "h": "ce12af247b"
+ },
+ {
+  "id": "kat:325:meta_description",
+  "typ": "text",
+  "cs": "Válečky pro dopravníky bez pohonu: hliníkové, ocelové a vroubkované Ø50 a Ø51 mm, plastové hlavice válečků a ložisková pouzdra.",
+  "en": "Rollers for unpowered conveyors: aluminium, steel and knurled rollers in Ø50 and Ø51 mm, plus plastic roller heads and bearing housings.",
+  "it": "Rulli per trasportatori senza motore: in alluminio, acciaio e zigrinati Ø50 e Ø51 mm, testine in plastica per rulli e boccole per cuscinetti.",
+  "h": "c0e1c89702"
+ },
+ {
+  "id": "kat:325:focus_keyword",
+  "typ": "text",
+  "cs": "válečky pro dopravníky",
+  "en": "conveyor rollers",
+  "it": "rulli per trasportatori",
+  "h": "f892053fba"
+ },
+ {
+  "id": "kat:326:name",
+  "typ": "text",
+  "cs": "Podvozky a nohy dopravníků",
+  "en": "Conveyor stands and legs",
+  "it": "Supporti e gambe per trasportatori",
+  "h": "42e9f9f096"
+ },
+ {
+  "id": "kat:326:nav_label",
+  "typ": "text",
+  "cs": "Podvozky a nohy dopravníků",
+  "en": "Conveyor stands and legs",
+  "it": "Supporti e gambe per trasportatori",
+  "h": "42e9f9f096"
+ },
+ {
+  "id": "kat:326:meta_title",
+  "typ": "text",
+  "cs": "Podvozky a nohy dopravníků – nastavitelné",
+  "en": "Adjustable conveyor stands and legs",
+  "it": "Supporti e gambe regolabili per trasportatori",
+  "h": "89b4927956"
+ },
+ {
+  "id": "kat:326:meta_description",
+  "typ": "text",
+  "cs": "Nohy a podvozky pro dopravníky bez pohonu: kovové nohy s nastavitelnou výškou, sada pro profil 23×75, patky a úchyty rámu.",
+  "en": "Legs and stands for unpowered conveyors: metal legs with adjustable height, a kit for the 23×75 profile, plus feet and brackets for attaching the frame.",
+  "it": "Gambe e supporti per trasportatori senza motore: gambe in metallo con altezza regolabile, kit per profilo 23×75, piedini e attacchi del telaio.",
+  "h": "5deed8e103"
+ },
+ {
+  "id": "kat:326:focus_keyword",
+  "typ": "text",
+  "cs": "nohy dopravníku",
+  "en": "conveyor stands",
+  "it": "supporti per trasportatore",
+  "h": "dd1e74c559"
+ },
+ {
+  "id": "kat:327:name",
+  "typ": "text",
+  "cs": "Spoje a konzoly dopravníků",
+  "en": "Conveyor connectors and brackets",
+  "it": "Giunti e staffe per trasportatori",
+  "h": "c294035840"
+ },
+ {
+  "id": "kat:327:nav_label",
+  "typ": "text",
+  "cs": "Spoje a konzoly dopravníků",
+  "en": "Conveyor connectors and brackets",
+  "it": "Giunti e staffe per trasportatori",
+  "h": "c294035840"
+ },
+ {
+  "id": "kat:327:meta_title",
+  "typ": "text",
+  "cs": "Spoje a konzoly dopravníků – desky, držáky",
+  "en": "Conveyor connectors and brackets – plates, holders",
+  "it": "Giunti e staffe per trasportatori – piastre, supporti",
+  "h": "6df310f649"
+ },
+ {
+  "id": "kat:327:meta_description",
+  "typ": "text",
+  "cs": "Spoje a konzoly pro dopravníky bez pohonu: spojovací desky, úhlové desky s válečkem, držáky hřídelí Ø12 mm a konzolové spoje.",
+  "en": "Connectors and brackets for unpowered conveyors: connecting plates, angled plates with a roller, Ø12 mm shaft holders and bracket connections.",
+  "it": "Giunti e staffe per trasportatori senza motore: piastre di collegamento, piastre angolari con rullo, supporti albero Ø12 mm e giunti a mensola.",
+  "h": "06c19747c3"
+ },
+ {
+  "id": "kat:327:focus_keyword",
+  "typ": "text",
+  "cs": "spoje dopravníků",
+  "en": "conveyor joints",
+  "it": "giunzioni per trasportatori",
+  "h": "acdf3500f3"
+ },
+ {
+  "id": "kat:328:name",
+  "typ": "text",
+  "cs": "Boční vodítka dopravníků",
+  "en": "Conveyor side guides",
+  "it": "Guide laterali per trasportatori",
+  "h": "476f8f2378"
+ },
+ {
+  "id": "kat:328:nav_label",
+  "typ": "text",
+  "cs": "Boční vodítka dopravníků",
+  "en": "Conveyor side guides",
+  "it": "Guide laterali per trasportatori",
+  "h": "476f8f2378"
+ },
+ {
+  "id": "kat:328:meta_title",
+  "typ": "text",
+  "cs": "Boční vodítka dopravníků – profily a lišty",
+  "en": "Conveyor side guides – profiles and strips",
+  "it": "Guide laterali per trasportatori – profili e listelli",
+  "h": "8362559317"
+ },
+ {
+  "id": "kat:328:meta_description",
+  "typ": "text",
+  "cs": "Boční vodítka pro dopravníky bez pohonu: hliníkové profily 40 a 60, plastové lišty, barevné krytky a třecí plast.",
+  "en": "Side guides for unpowered conveyors: aluminium profiles 40 and 60, plastic strips, coloured caps and friction plastic for guiding goods along the conveyor.",
+  "it": "Guide laterali per trasportatori senza motore: profili in alluminio 40 e 60, listelli in plastica, tappi colorati e plastica ad attrito per guidare i prodotti.",
+  "h": "b2c400249d"
+ },
+ {
+  "id": "kat:328:focus_keyword",
+  "typ": "text",
+  "cs": "boční vodítka dopravníku",
+  "en": "conveyor side guides",
+  "it": "guide laterali per trasportatore",
+  "h": "ae6e1302f7"
+ },
+ {
+  "id": "kat:329:name",
+  "typ": "text",
+  "cs": "Kuličkové přepravní jednotky",
+  "en": "Ball transfer units",
+  "it": "Unità di trasferimento a sfere",
+  "h": "ff9beaf266"
+ },
+ {
+  "id": "kat:329:nav_label",
+  "typ": "text",
+  "cs": "Kuličkové přepravní jednotky",
+  "en": "Ball transfer units",
+  "it": "Unità di trasferimento a sfere",
+  "h": "ff9beaf266"
+ },
+ {
+  "id": "kat:329:meta_title",
+  "typ": "text",
+  "cs": "Kuličkové přepravní jednotky – 30 až 350 kg",
+  "en": "Ball transfer units – 30 to 350 kg",
+  "it": "Trasferitori a sfere – da 30 a 350 kg",
+  "h": "dc71157f50"
+ },
+ {
+  "id": "kat:329:meta_description",
+  "typ": "text",
+  "cs": "Kuličkové přepravní jednotky CP a SP s nosností 30 až 350 kg v ocelovém nebo nerezovém provedení pro posun zboží po stolech a dopravnících.",
+  "en": "CP and SP ball transfer units with a load capacity of 30 to 350 kg in steel or stainless steel, for moving goods across tables and conveyors.",
+  "it": "Unità a sfere di trasferimento CP e SP con portata da 30 a 350 kg, in acciaio o acciaio inox, per spostare le merci su tavoli e trasportatori.",
+  "h": "d57f9c8ea5"
+ },
+ {
+  "id": "kat:329:focus_keyword",
+  "typ": "text",
+  "cs": "kuličkové přepravní jednotky",
+  "en": "ball transfer units",
+  "it": "unità di trasferimento a sfere",
+  "h": "40c34db67d"
+ },
+ {
+  "id": "kat:330:name",
+  "typ": "text",
+  "cs": "Robustní balicí stůl system 45",
+  "en": "Heavy-duty packing table system 45",
+  "it": "Tavolo da imballaggio robusto sistema 45",
+  "h": "71e12c3f21"
+ }
+]

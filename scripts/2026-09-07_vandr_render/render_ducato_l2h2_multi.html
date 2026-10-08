@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vandr render: Ducato L2H2 - 2 nohy + 4 ruzne komponenty</title>
+<style>html,body{margin:0;padding:0;background:#e8ecf0;overflow:hidden;}</style>
+</head>
+<body>
+<!--
+Ducato L2H2, Vandrawee, "vic komponentu ruznych" (Robert 2026-09-07,
+navazuje na render_ducato_l2h2.html). 4 RUZNE komponenty najednou,
+stejne 2 nohy jako predtim (Noha.1.Ducato.H2.1700.459, DB legs.id=121,
+components_list_id=10):
+
+1. Suplik.ocel.200.1057.459 (id=101, ocelovy zasuvny box) - hlavni zona,
+   na podlaze.
+2. Police.door.20.200.1057.459 (id=6, sklopna dvirka vysoka) - hlavni
+   zona, volne zvolena vyska nad supliku.
+3. Stul.A.1057.459 (id=57, stolek/pracovni deska) - hlavni zona, volne
+   zvolena vyska nad dvirky.
+4. Police.1D.1057.414.top (id=45, "vana horni") - HORNI zona (is_top=1),
+   JINA (mensi, 414mm) hloubka i JINA (asymetricka) zadni stena -
+   zarovnava se PODLE PREDNI steny (VANDR_SKLADANI_REGALU.md "top
+   komponenta se nevystreduje symetricky"), NE stredem.
+
+Vsechny 4 jsou v DB (vandrawee_work.components_components_lists) pro
+components_list_id=10, min_width=max_width=967 - presne sedi na
+967mm mezeru z render_ducato_l2h2.html.
+
+window.__DEBUG__ - vsechny gapy/mezery musi byt ~0 (main-zone flush),
+Y-rozsahy jednotlivych komponentu se NESMI prekryvat, top komponenta
+musi zacinat nad MAIN_ZONE_TOP.
+-->
+<script type="importmap">
+{ "imports": {
+  "three": "../../node_modules/three/build/three.module.js",
+  "three/addons/loaders/FBXLoader.js": "../../node_modules/three/examples/jsm/loaders/FBXLoader.js"
+} }
+</script>
+<script type="module">
+import * as THREE from 'three';
+import { FBXLoader } from 'three/addons/loaders/FBXLoader.js';
+import {
+  colorize, structuralZRange, innerWallZRangeOf, endBracketOf, mainZoneTopOf,
+  makeTextSprite, dimensionLine,
+} from './vandr_geometry_lib.js';
+
+const W = 1700, H = 1150;
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0xe8ecf0);
+const camera = new THREE.PerspectiveCamera(30, W / H, 1, 20000);
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setSize(W, H);
+document.body.appendChild(renderer.domElement);
+scene.add(new THREE.AmbientLight(0xffffff, 0.75));
+const dir1 = new THREE.DirectionalLight(0xffffff, 0.9);
+dir1.position.set(900, 1600, 1300);
+scene.add(dir1);
+const dir2 = new THREE.DirectionalLight(0xffffff, 0.4);
+dir2.position.set(-700, 900, -900);
+scene.add(dir2);
+scene.add(new THREE.GridHelper(2500, 25, 0x999999, 0xcccccc));
+
+const loader = new FBXLoader();
+function loadFbx(path) { return new Promise((resolve, reject) => loader.load(path, resolve, undefined, reject)); }
+
+const debug = { items: [] };
+const INNER_GAP_TARGET = 967;
+const CLEARANCE = 40; // mm - volna rezerva mezi volne stohovanymi komponenty v hlavni zone (nejde o flush-stack na sebe)
+
+(async () => {
+  try {
+    const leg1 = await loadFbx('./fbx/ducato_leg1.fbx');
+    colorize(leg1);
+    leg1.rotation.x = -Math.PI / 2;
+    leg1.updateMatrixWorld(true);
+    const legBox1 = new THREE.Box3().setFromObject(leg1);
+    leg1.position.y -= legBox1.min.y;
+    leg1.position.x -= legBox1.min.x;
+    leg1.updateMatrixWorld(true);
+    const legBox1f = new THREE.Box3().setFromObject(leg1);
+
+    const leg2 = await loadFbx('./fbx/ducato_leg2.fbx');
+    colorize(leg2);
+    leg2.rotation.x = -Math.PI / 2;
+    leg2.updateMatrixWorld(true);
+    const legBox2raw = new THREE.Box3().setFromObject(leg2);
+    leg2.position.x += legBox1f.max.x + INNER_GAP_TARGET - legBox2raw.min.x;
+    leg2.position.y -= legBox2raw.min.y;
+    leg2.updateMatrixWorld(true);
+    const legBox2f = new THREE.Box3().setFromObject(leg2);
+    scene.add(leg1); scene.add(leg2);
+
+    const _sLbl1 = makeTextSprite('NOHA 1', { color: '#1a3a5c' });
+    _sLbl1.position.set((legBox1f.min.x + legBox1f.max.x) / 2, legBox1f.max.y + 120, (legBox1f.min.z + legBox1f.max.z) / 2);
+    scene.add(_sLbl1);
+    const _sLbl2 = makeTextSprite('NOHA 2', { color: '#1a3a5c' });
+    _sLbl2.position.set((legBox2f.min.x + legBox2f.max.x) / 2, legBox2f.max.y + 120, (legBox2f.min.z + legBox2f.max.z) / 2);
+    scene.add(_sLbl2);
+
+    const centerX = (legBox1f.max.x + legBox2f.min.x) / 2;
+    const legWallZ = innerWallZRangeOf(leg1); // hlavni zona - vnitrni stena sloupku (VANDR_SKLADANI_REGALU.md nalez 2026-09-07)
+    const centerZ = (legWallZ.min + legWallZ.max) / 2;
+    const MAIN_ZONE_TOP = mainZoneTopOf(leg1);
+    debug.legWallZ = legWallZ;
+    debug.mainZoneTop = MAIN_ZONE_TOP;
+    debug.innerGapMeasured = legBox2f.min.x - legBox1f.max.x;
+
+    // Hlavni-zona komponenta: stredena Z podle endBracketu vuci legWallZ
+    // (jako u render_ducato_l2h2.html), Y = volne zvolena (yBottomTarget).
+    async function placeMainZoneComponent(path, yBottomTarget, label) {
+      const comp = await loadFbx(path);
+      colorize(comp);
+      comp.rotation.x = -Math.PI / 2;
+      comp.updateMatrixWorld(true);
+      const raw = new THREE.Box3().setFromObject(comp);
+      const endBracketRaw = endBracketOf(comp);
+      comp.position.x += centerX - raw.getCenter(new THREE.Vector3()).x;
+      comp.position.z += centerZ - endBracketRaw.getCenter(new THREE.Vector3()).z;
+      // Y-referencí je CELÝ bbox (raw.min.y), NE endBracket - u šuplíku
+      // (Suplik.ocel.200.1057.459) sedí boční montážní nosník výš než
+      // skutečné dno krabice (rail je určený pro zavěšení do zóny, ne pro
+      // dosednutí na podlahu), takže endBracket.min.y jako "podlahová"
+      // reference nechá tělo šuplíku viset ~90mm POD podlahou nohy
+      // (reálně chycená chyba, 2026-09-07, Ducato + Suplik.ocel.200).
+      comp.position.y += yBottomTarget - raw.min.y;
+      comp.updateMatrixWorld(true);
+      const boxF = new THREE.Box3().setFromObject(comp);
+      const endBracketF = endBracketOf(comp);
+      scene.add(comp);
+      const _s = makeTextSprite(label, { color: '#1a3a5c' });
+    _s.position.set(centerX, boxF.max.y + 70, boxF.max.z + 70);
+    scene.add(_s);
+      const gapFront = +(legWallZ.max - endBracketF.max.z).toFixed(3);
+      const gapRear = +(endBracketF.min.z - legWallZ.min).toFixed(3);
+      debug.items.push({ label, minY: +boxF.min.y.toFixed(1), maxY: +boxF.max.y.toFixed(1), gapFront, gapRear });
+      return boxF;
+    }
+
+    // 1. Suplik na podlaze
+    const box1 = await placeMainZoneComponent('./fbx/ducato_suplik.fbx', 0, 'SUPLIK - Suplik.ocel.200.1057.459');
+
+    // 2. Dvirka - volne zvolena vyska nad suplikem (+CLEARANCE)
+    const box2 = await placeMainZoneComponent('./fbx/ducato_door.fbx', box1.max.y + CLEARANCE, 'DVIRKA - Police.door.20.200.1057.459');
+
+    // 3. Uzka police - volne zvolena vyska nad dvirky (+CLEARANCE)
+    const box3 = await placeMainZoneComponent('./fbx/ducato_stul.fbx', box2.max.y + CLEARANCE, 'STUL - Stul.A.1057.459');
+
+    debug.mainZoneTopMargin = +(MAIN_ZONE_TOP - box3.max.y).toFixed(1); // musi byt > 0 - vsechno se vejde pod strop hlavni zony
+
+    // 4. TOP komponenta (is_top=1, JINA hloubka 414mm i JINA zadni stena) -
+    // NEcentrovat symetricky, zarovnat PREDNI cело na legWallZ.max (stejne
+    // jako hlavni telo - predni sloupek saha po cele vysce), viz
+    // VANDR_SKLADANI_REGALU.md "DULEZITA past - vrchni blok ma vlastni
+    // asymetrickou zadni stenu".
+    const topComp = await loadFbx('./fbx/ducato_top.fbx');
+    colorize(topComp);
+    topComp.rotation.x = -Math.PI / 2;
+    topComp.updateMatrixWorld(true);
+    const topRaw = new THREE.Box3().setFromObject(topComp);
+    const topEndBracketRaw = endBracketOf(topComp);
+    topComp.position.x += centerX - topRaw.getCenter(new THREE.Vector3()).x;
+    topComp.position.z += legWallZ.max - topEndBracketRaw.max.z; // PREDNI cело <-> legWallZ.max
+    const TOP_ZONE_CLEARANCE = 30;
+    topComp.position.y += (MAIN_ZONE_TOP + TOP_ZONE_CLEARANCE) - topEndBracketRaw.min.y;
+    topComp.updateMatrixWorld(true);
+    const topBoxF = new THREE.Box3().setFromObject(topComp);
+    const topEndBracketF = endBracketOf(topComp);
+    scene.add(topComp);
+    const _sLblTop = makeTextSprite('TOP - Police.1D.1057.414.top', { color: '#7a1a3a' });
+    _sLblTop.position.set(centerX, topBoxF.max.y + 70, topBoxF.max.z + 70);
+    scene.add(_sLblTop);
+    debug.topItem = {
+      minY: +topBoxF.min.y.toFixed(1), maxY: +topBoxF.max.y.toFixed(1),
+      gapFront: +(legWallZ.max - topEndBracketF.max.z).toFixed(3), // musi byt 0 (zarovnano)
+      restsAboveMainZone: topBoxF.min.y >= MAIN_ZONE_TOP,
+      // zadni cело TOP komponenty NEsedi na legWallZ.min (jina, asymetricka
+      // zadni stena) - jen zmereno pro info, ne porovnavano proti hlavni zone
+      rearFaceZ: +topEndBracketF.min.z.toFixed(1),
+    };
+
+    // kolize mezi hlavni-zonovymi polozkami na ose Y (zadny prekryv)
+    const yRanges = [box1, box2, box3].map(b => ({ min: b.min.y, max: b.max.y }));
+    debug.mainZoneOverlapOk = yRanges.every((r, i) => i === 0 || r.min >= yRanges[i - 1].max);
+
+    // --- kotovani ---
+    const zFront = Math.max(legBox1f.max.z, legBox2f.max.z) + 60;
+    scene.add(dimensionLine(
+      new THREE.Vector3(legBox1f.max.x, 0, zFront), new THREE.Vector3(legBox2f.min.x, 0, zFront),
+      `${Math.round(debug.innerGapMeasured)} mm (volna mezera)`, new THREE.Vector3(0, 0, 1), 120));
+    scene.add(dimensionLine(
+      new THREE.Vector3(legBox1f.min.x, 0, zFront), new THREE.Vector3(legBox1f.min.x, MAIN_ZONE_TOP, zFront),
+      `hlavni zona (do ${Math.round(MAIN_ZONE_TOP)} mm)`, new THREE.Vector3(-1, 0, 0), 300));
+    scene.add(dimensionLine(
+      new THREE.Vector3(legBox1f.min.x, 0, zFront), new THREE.Vector3(legBox1f.min.x, legBox1f.max.y, zFront),
+      `${Math.round(legBox1f.max.y)} mm (vyska nohy)`, new THREE.Vector3(-1, 0, 0), 480));
+
+    window.__DEBUG__ = debug;
+
+    const overallBox = new THREE.Box3().setFromObject(scene);
+    const overallSize = overallBox.getSize(new THREE.Vector3());
+    const overallCenter = overallBox.getCenter(new THREE.Vector3());
+    const maxDim = Math.max(overallSize.x, overallSize.y, overallSize.z);
+    const dist = maxDim * 1.5;
+    window.__setView__ = function (view) {
+      if (view === 'iso') {
+        camera.position.set(overallCenter.x, overallCenter.y + dist * 0.5, overallCenter.z + dist * 1.05);
+        camera.lookAt(overallCenter.x, overallCenter.y * 0.75, overallCenter.z);
+      } else if (view === 'front') {
+        camera.position.set(overallCenter.x, overallCenter.y, overallCenter.z + dist * 1.4);
+        camera.lookAt(overallCenter.x, overallCenter.y, overallCenter.z);
+      } else if (view === 'side') {
+        camera.position.set(overallCenter.x + dist * 1.4, overallCenter.y, overallCenter.z);
+        camera.lookAt(overallCenter.x, overallCenter.y, overallCenter.z);
+      } else if (view === 'top') {
+        camera.up.set(0, 0, -1);
+        camera.position.set(overallCenter.x, overallCenter.y + dist * 1.6, overallCenter.z + 0.001);
+        camera.lookAt(overallCenter.x, overallCenter.y, overallCenter.z);
+        camera.up.set(0, 1, 0);
+      }
+      renderer.render(scene, camera);
+    };
+    window.__setView__('iso');
+    window.__RENDER_DONE__ = true;
+  } catch (e) {
+    window.__RENDER_ERROR__ = (e && e.message) || String(e);
+  }
+})();
+</script>
+</body>
+</html>

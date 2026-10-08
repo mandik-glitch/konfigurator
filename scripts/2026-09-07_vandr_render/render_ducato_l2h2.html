@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vandr render: Ducato L2H2 - 2 nohy + 1 police</title>
+<style>html,body{margin:0;padding:0;background:#e8ecf0;overflow:hidden;}</style>
+</head>
+<body>
+<!--
+Ducato L2H2, systemu Vandrawee, "libovolny platny regal" (Robert 2026-09-07).
+Postup je v ../../VANDR_RENDER_HOWTO.md. Shrnuti:
+
+1. FBX zdroje (NEJSOU v gitu, ./fbx/ je gitignored):
+   - fbx/ducato_leg1.fbx, fbx/ducato_leg2.fbx <-
+     /opt/vandrawee/unity/Assets/Models/vandrawee/Legs/Ducato-Jumper-Boxer/
+     Noha.1.Ducato.H2.1700.459.fbx (normalni noha, bez vyrezu - staci pro
+     "libovolny platny" pripad)
+   - fbx/police_1057.fbx <-
+     /opt/vandrawee/unity/Assets/Models/vandrawee/Components/1057/
+     Police.1D.1057.459.fbx
+   DB overeno (vandrawee_work): legs.id=121 "Nohy.2.Ducato.H2.1700.459"
+   (normal_leg_id=3, replacement_leg_id=6), components_list_id=10
+   ("Nohy 45x45"). Police.1D.1057.459 (component id=4) je take v
+   components_components_lists pro list_id=10, is_universal=0,
+   min_width=max_width=967 - stejny profil (45x45) i hloubka (459mm)
+   jako u noh, presne jako uz overeny par Jumpy H1.1180.459 +
+   Police.1D.1057.459 z VANDR_RENDER_HOWTO.md.
+
+2. Serveruj z KORENE repa (viz HOWTO krok 2) a otevri v Playwright.
+
+3. window.__DEBUG__ po dokonceni obsahuje vsechny zmerene mezery
+   (gapFront/gapRear/floorGap) - VSECHNY musi byt 0.
+   window.__setView__('iso'|'front'|'side'|'top') pro screenshot.
+-->
+<script type="importmap">
+{ "imports": {
+  "three": "../../node_modules/three/build/three.module.js",
+  "three/addons/loaders/FBXLoader.js": "../../node_modules/three/examples/jsm/loaders/FBXLoader.js"
+} }
+</script>
+<script type="module">
+import * as THREE from 'three';
+import { FBXLoader } from 'three/addons/loaders/FBXLoader.js';
+import {
+  colorize, structuralZRange, innerWallZRangeOf, endBracketOf, mainZoneTopOf,
+  makeTextSprite, dimensionLine, makeAspectCorrectOrtho,
+} from './vandr_geometry_lib.js';
+
+const W = 1600, H = 1100;
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0xe8ecf0);
+const camera = new THREE.PerspectiveCamera(32, W / H, 1, 20000);
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setSize(W, H);
+document.body.appendChild(renderer.domElement);
+scene.add(new THREE.AmbientLight(0xffffff, 0.75));
+const dir1 = new THREE.DirectionalLight(0xffffff, 0.9);
+dir1.position.set(900, 1600, 1300);
+scene.add(dir1);
+const dir2 = new THREE.DirectionalLight(0xffffff, 0.4);
+dir2.position.set(-700, 900, -900);
+scene.add(dir2);
+scene.add(new THREE.GridHelper(2500, 25, 0x999999, 0xcccccc));
+
+const loader = new FBXLoader();
+function loadFbx(path) { return new Promise((resolve, reject) => loader.load(path, resolve, undefined, reject)); }
+
+const debug = {};
+const INNER_GAP_TARGET = 967; // mm - DB min_width=max_width u Police.1D.1057.459 (id=4, list_id=10)
+
+(async () => {
+  try {
+    const leg1 = await loadFbx('./fbx/ducato_leg1.fbx');
+    colorize(leg1);
+    leg1.rotation.x = -Math.PI / 2; // FBX Z-up -> Three.js Y-up
+    leg1.updateMatrixWorld(true);
+    const legBox1 = new THREE.Box3().setFromObject(leg1);
+    leg1.position.y -= legBox1.min.y;
+    leg1.position.x -= legBox1.min.x;
+    leg1.updateMatrixWorld(true);
+    const legBox1f = new THREE.Box3().setFromObject(leg1);
+
+    const leg2 = await loadFbx('./fbx/ducato_leg2.fbx');
+    colorize(leg2);
+    leg2.rotation.x = -Math.PI / 2;
+    leg2.updateMatrixWorld(true);
+    const legBox2raw = new THREE.Box3().setFromObject(leg2);
+    leg2.position.x += legBox1f.max.x + INNER_GAP_TARGET - legBox2raw.min.x;
+    leg2.position.y -= legBox2raw.min.y;
+    leg2.updateMatrixWorld(true);
+    const legBox2f = new THREE.Box3().setFromObject(leg2);
+    scene.add(leg1); scene.add(leg2);
+
+    const label1 = makeTextSprite('NOHA 1 - Ducato H2.1700.459', { color: '#1a3a5c' });
+    label1.position.set((legBox1f.min.x + legBox1f.max.x) / 2, legBox1f.max.y + 120, (legBox1f.min.z + legBox1f.max.z) / 2);
+    scene.add(label1);
+    const label2 = makeTextSprite('NOHA 2 - Ducato H2.1700.459', { color: '#1a3a5c' });
+    label2.position.set((legBox2f.min.x + legBox2f.max.x) / 2, legBox2f.max.y + 120, (legBox2f.min.z + legBox2f.max.z) / 2);
+    scene.add(label2);
+
+    const centerX = (legBox1f.max.x + legBox2f.min.x) / 2;
+    const legStructZ = structuralZRange(leg1); // celkova obalka nohy (459mm) - JEN pro info, ne pro flush-check
+    const legWallZ = innerWallZRangeOf(leg1); // dotykova stena predni/zadni sloupku (369mm) - tohle je spravna referencer
+    const centerZ = (legWallZ.min + legWallZ.max) / 2;
+    const MAIN_ZONE_TOP = mainZoneTopOf(leg1);
+    debug.legStructZ = legStructZ;
+    debug.legWallZ = legWallZ;
+    debug.innerGapMeasured = legBox2f.min.x - legBox1f.max.x;
+    debug.outerSpanMeasured = legBox2f.max.x - legBox1f.min.x;
+    debug.mainZoneTop = MAIN_ZONE_TOP;
+
+    // Police.1D.1057.459 (vana) - polozena PRIMO NA PODLAHU (Y=0), obe
+    // nohy jsou normalni (bez vyrezu) -> hlavni zona zacina od podlahy,
+    // zadna rezerva (VANDR_SKLADANI_REGALU.md "dosednuti plati i svisle").
+    const comp = await loadFbx('./fbx/police_1057.fbx');
+    colorize(comp);
+    comp.rotation.x = -Math.PI / 2;
+    comp.updateMatrixWorld(true);
+    const raw = new THREE.Box3().setFromObject(comp);
+    const endBracketRaw = endBracketOf(comp);
+    comp.position.x += centerX - raw.getCenter(new THREE.Vector3()).x;
+    comp.position.z += centerZ - endBracketRaw.getCenter(new THREE.Vector3()).z; // stredit podle koncoveho nosniku (HOWTO 3f)
+    comp.position.y += 0 - endBracketRaw.min.y; // podlaha
+    comp.updateMatrixWorld(true);
+    const boxF = new THREE.Box3().setFromObject(comp);
+    const endBracketF = endBracketOf(comp);
+    scene.add(comp);
+    const lblC = makeTextSprite('POLICE - Police.1D.1057.459', { color: '#1a3a5c' });
+    lblC.position.set(centerX, boxF.max.y + 90, boxF.max.z + 80);
+    scene.add(lblC);
+
+    function aluBreakdown(obj) {
+      const out = [];
+      obj.traverse(n => {
+        if (n.isMesh && n.parent && n.parent.name === 'alu') {
+          const b = new THREE.Box3().setFromObject(n);
+          out.push({ name: n.name, minz: +b.min.z.toFixed(1), maxz: +b.max.z.toFixed(1), minx: +b.min.x.toFixed(1), maxx: +b.max.x.toFixed(1) });
+        }
+      });
+      return out;
+    }
+    debug.legAluBreakdown = aluBreakdown(leg1);
+    debug.compAluBreakdown = aluBreakdown(comp);
+    debug.gapFront = +(legWallZ.max - endBracketF.max.z).toFixed(3); // musi byt 0
+    debug.gapRear = +(endBracketF.min.z - legWallZ.min).toFixed(3); // musi byt 0
+    debug.floorGap = +(endBracketF.min.y - 0).toFixed(3); // musi byt 0
+    debug.compBox = { min: boxF.min, max: boxF.max };
+
+    // --- kotovani ---
+    const zFront = Math.max(legBox1f.max.z, legBox2f.max.z) + 60;
+    scene.add(dimensionLine(
+      new THREE.Vector3(legBox1f.max.x, 0, zFront), new THREE.Vector3(legBox2f.min.x, 0, zFront),
+      `${Math.round(debug.innerGapMeasured)} mm (volna mezera)`, new THREE.Vector3(0, 0, 1), 120));
+    scene.add(dimensionLine(
+      new THREE.Vector3(legBox1f.min.x, 0, zFront), new THREE.Vector3(legBox1f.min.x, legBox1f.max.y, zFront),
+      `${Math.round(legBox1f.max.y)} mm (vyska nohy)`, new THREE.Vector3(-1, 0, 0), 150));
+    scene.add(dimensionLine(
+      new THREE.Vector3(legBox1f.min.x, 0, zFront), new THREE.Vector3(legBox1f.min.x, MAIN_ZONE_TOP, zFront),
+      `hlavni zona (do ${Math.round(MAIN_ZONE_TOP)} mm)`, new THREE.Vector3(-1, 0, 0), 300));
+
+    window.__DEBUG__ = debug;
+
+    const overallBox = new THREE.Box3().setFromObject(scene);
+    const overallSize = overallBox.getSize(new THREE.Vector3());
+    const overallCenter = overallBox.getCenter(new THREE.Vector3());
+    const maxDim = Math.max(overallSize.x, overallSize.y, overallSize.z);
+    const dist = maxDim * 1.5;
+    window.__setView__ = function (view) {
+      if (view === 'iso') {
+        camera.position.set(overallCenter.x, overallCenter.y + dist * 0.55, overallCenter.z + dist * 1.05);
+        camera.lookAt(overallCenter.x, overallCenter.y * 0.7, overallCenter.z);
+      } else if (view === 'front') {
+        camera.position.set(overallCenter.x, overallCenter.y, overallCenter.z + dist * 1.4);
+        camera.lookAt(overallCenter.x, overallCenter.y, overallCenter.z);
+      } else if (view === 'side') {
+        camera.position.set(overallCenter.x + dist * 1.4, overallCenter.y, overallCenter.z);
+        camera.lookAt(overallCenter.x, overallCenter.y, overallCenter.z);
+      } else if (view === 'top') {
+        camera.position.set(overallCenter.x, overallCenter.y + dist * 1.6, overallCenter.z + 0.001);
+        camera.up.set(0, 0, -1);
+        camera.lookAt(overallCenter.x, overallCenter.y, overallCenter.z);
+        camera.up.set(0, 1, 0);
+      }
+      renderer.render(scene, camera);
+    };
+    window.__setView__('iso');
+    window.__RENDER_DONE__ = true;
+  } catch (e) {
+    window.__RENDER_ERROR__ = (e && e.message) || String(e);
+  }
+})();
+</script>
+</body>
+</html>

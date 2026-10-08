@@ -1,0 +1,60 @@
+{
+ "asm": 285,
+ "legsPresent": {
+  "leg0_plain": true,
+  "leg1_plain": true,
+  "leg1_vyrez": true
+ },
+ "OLD_YNEW": 291.0001220703125,
+ "NEW_YNEW": 301.0001220703125,
+ "counts": {
+  "cLeg0": 15,
+  "cLeg1Plna": 11,
+  "cLeg1Vyrez": 8,
+  "cRailFront": 3,
+  "cRailBack": 3,
+  "cSpojSloupec": 9,
+  "cEurobox": 6,
+  "cBoundaryUnchanged": 3,
+  "cUnchanged": 3,
+  "total": 61
+ },
+ "dorovnaniNeeded": true,
+ "floorShifts": [
+  {
+   "floorIdx": 0,
+   "shift": 11.000083967504793,
+   "floorOldY": 335.0001220703125
+  },
+  {
+   "floorIdx": 1,
+   "shift": 5.500041983752396,
+   "floorOldY": 603.0001220703125
+  },
+  {
+   "floorIdx": 2,
+   "shift": 0,
+   "floorOldY": 821.0001220703125
+  }
+ ],
+ "satMeasured": 58,
+ "satCollisions": 0,
+ "satList": [],
+ "seamChecks": [
+  {
+   "seam": "leg1-sloupek-svislice",
+   "gap": 0
+  },
+  {
+   "seam": "sloupec0-p0-floor-vs-leg1",
+   "gap": 29.999815315116905
+  }
+ ],
+ "baselineSelfCollisions": 0,
+ "baselineSelfList": [],
+ "afterSelfCollisions": 0,
+ "afterSelfList": [],
+ "newOrGrownSelfCollisions": 0,
+ "newOrGrownList": [],
+ "touchedCount": 76
+}

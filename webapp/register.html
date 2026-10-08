@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <script src="/js/client-errors.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Registrace – Hliníkový konstrukční stavebnicový systém s drážkami</title>
+<style>
+  :root {
+    --bg: #494b50; --panel-bg: #22262e; --border: #3a3f4a; --border-soft: #333333;
+    --text: #e8eaed; --text-muted: #9aa4b2; --text-faint: #6b7280;
+    --accent: #9fd0ff; --accent-focus: #6fa8ff;
+    --btn-bg: #3a5a7a; --btn-bg-hover: #4a6a8a; --error: #e07070;
+  }
+  [data-theme="light"] {
+    --bg: #eef1f5; --panel-bg: #ffffff; --border: #d7dce3; --border-soft: #e3e7ec;
+    --text: #1b1e24; --text-muted: #5c6570; --text-faint: #97a0ab;
+    --accent: #1a6fd4; --accent-focus: #2d6cdf;
+    --btn-bg: #2f6690; --btn-bg-hover: #3a76a0; --error: #c23b3b;
+  }
+  * { box-sizing: border-box; }
+  /* Logo znacky: vklada ho skript hned pod <body>, jen kdyz ho server vrati pro tenhle host (GET /api/site-brand,
+     api/site_brand.py). Stranka se servi i z domen, kde znacka byt nesmi, proto v HTML neni zadne jmeno ani logo.
+     Misto je vyhrazene predem, aby se karta po vlozeni loga neposunula. Vzhled loga: /css/brand-logo.css. */
+  body { flex-direction: column; }
+  .site-logo-slot { min-height: 34px; margin-bottom: 18px; display: flex; justify-content: center; }
+  body {
+    background: var(--bg); color: var(--text); font-family: var(--font-main, -apple-system, "Segoe UI", Roboto, Arial, sans-serif);
+    margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center;
+    padding: 24px 20px;
+  }
+  .box {
+    background: var(--panel-bg); border: 1px solid var(--border-soft); border-radius: 10px;
+    padding: 32px; width: 320px; max-width: 100%;
+  }
+  h1 { font-size: 18px; margin: 0 0 20px; text-align: center; }
+  label { display: block; font-size: 12px; color: var(--text-muted); margin-bottom: 4px; }
+  input {
+    width: 100%; background: var(--bg); border: 1px solid var(--border); color: var(--text);
+    border-radius: 6px; padding: 9px 10px; font-size: 14px; margin-bottom: 14px;
+  }
+  input:focus { outline: 1px solid var(--accent-focus); }
+  .hint { font-size: 11.5px; color: var(--text-faint); margin: -10px 0 14px; }
+  button {
+    width: 100%; background: var(--btn-bg); color: #fff; border: none; border-radius: 6px;
+    padding: 10px; font-size: 14px; cursor: pointer;
+  }
+  button:hover { background: var(--btn-bg-hover); }
+  button:disabled { background: var(--border); cursor: default; }
+  #err { color: var(--error); font-size: 13px; margin-bottom: 12px; min-height: 16px; }
+</style>
+</head>
+<body>
+  <div id="siteLogoSlot" class="site-logo-slot"></div>
+  <script>
+  // logo znacky ze serveru (jen pro hosty, kde se smi ukazat; jinak stranka zustane bez nej) - viz komentar u .site-logo-slot
+  (function () {
+    var slot = document.getElementById("siteLogoSlot");
+    function nacti(url, kdyzSelze, hotovo) {
+      var l = document.createElement("link");
+      l.rel = "stylesheet"; l.href = url; l.onload = hotovo; l.onerror = kdyzSelze;
+      document.head.appendChild(l);
+    }
+    fetch("/api/site-brand").then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
+      if (!d || !d.logo) return;
+      var g = d.logo, zbyva = g.font_css ? 2 : 1;
+      // logo se vlozi az kdyz je nacteny jeho vzhled i pismo webu (stejne jako na homepage) - neukaze se v nahradnim pismu
+      function hotovo() { if (--zbyva === 0) slot.innerHTML = g.html; }
+      if (g.font_stack) slot.style.setProperty("--font-main", g.font_stack);
+      nacti(g.css, function () {}, hotovo);
+      if (g.font_css) nacti(g.font_css, hotovo, hotovo);
+    }).catch(function () {});
+  })();
+  </script>
+  <div class="box">
+    <h1>Vytvořit účet</h1>
+    <div id="err"></div>
+    <!-- Robert 2026-08-11 ("Na mobilu se mi nenabízí heslo uložené pro
+         přihlášení"): stejna oprava jako login.html/capture.html - name=
+         vedle autocomplete=, jinak nabidku ulozeni/generovani hesla
+         nekteri mobilni spravci hesel neukazi. -->
+    <form id="registerForm">
+      <label for="name">Jméno</label>
+      <input type="text" id="name" name="name" autocomplete="name" placeholder="Jméno a příjmení">
+      <label for="email">E-mail</label>
+      <input type="email" id="email" name="username" autocomplete="username" required autofocus placeholder="email@example.cz">
+      <label for="password">Heslo</label>
+      <input type="password" id="password" name="new-password" autocomplete="new-password" required>
+      <div class="hint">Alespoň 8 znaků, kombinace aspoň dvou druhů znaků (velká/malá písmena, číslice, symboly).</div>
+      <button type="submit" id="btn">Zaregistrovat se</button>
+    </form>
+    <p id="registerDone" style="display:none;font-size:14px;line-height:1.4;text-align:center;"></p>
+    <a href="/login.html" style="display:block;text-align:center;margin-top:14px;font-size:12.5px;color:var(--accent);text-decoration:none;">Už máš účet? Přihlásit se</a>
+  </div>
+
+<script>
+(function () {
+  try {
+    var t = localStorage.getItem("shopTheme");
+    if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+  } catch (e) {}
+})();
+fetch("/api/theme-colors?surface=eshop").then(r => r.ok ? r.json() : null).then(data => {
+  if (!data) return;
+  var theme = document.documentElement.getAttribute("data-theme") === "light" ? "light" : "dark";
+  var palette = data[theme];
+  Object.keys(palette).forEach(function (key) {
+    document.documentElement.style.setProperty("--" + key.replace(/_/g, "-"), palette[key]);
+  });
+}).catch(function () {});
+</script>
+<script>
+document.getElementById("registerForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const btn = document.getElementById("btn");
+  const err = document.getElementById("err");
+  err.textContent = "";
+  btn.disabled = true;
+  btn.textContent = "Zakládám účet…";
+  try {
+    const r = await fetch("/api/auth/register", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: document.getElementById("name").value.trim(),
+        email: document.getElementById("email").value.trim(),
+        password: document.getElementById("password").value,
+      }),
+    });
+    const data = await r.json();
+    if (!r.ok) {
+      err.textContent = data.error || "Registrace se nezdařila.";
+      btn.disabled = false;
+      btn.textContent = "Zaregistrovat se";
+      return;
+    }
+    // Ucet neni rovnou aktivni (bot13, 2026-08-23, bezpecnostni review
+    // Modulu 11 bod 1 - overeni e-mailu) - misto presmerovani do appky
+    // zobrazime instrukci, ze na e-mail dorazil potvrzovaci odkaz.
+    document.getElementById("registerForm").style.display = "none";
+    const done = document.getElementById("registerDone");
+    done.textContent = data.message || "Pokud e-mail ještě není zaregistrovaný, poslali jsme na něj potvrzovací odkaz. Klikni na něj a účet se aktivuje.";
+    done.style.display = "block";
+  } catch (e) {
+    err.textContent = "Chyba spojení se serverem.";
+    btn.disabled = false;
+    btn.textContent = "Zaregistrovat se";
+  }
+});
+</script>
+</body>
+</html>

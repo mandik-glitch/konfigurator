@@ -1,0 +1,900 @@
+{
+ "_navod": "Vyplň pole \"hu\" (maďarština) u každé položky v `polozky`. Zdroj = cs / en / sk (en je referenční, sk je vzor pro odbornou terminologii). Pravidla: (1) placeholdery ve složených závorkách ({n} {d} {w} {h} {u} {k} {v} {t1} {t2} {prah} {mezera} {name} {site}) zachovej PŘESNĚ jako v poli `placeholdery` (pořadí ve větě smíš změnit); (2) žádná značka ani interní slova: Logiman, konfigurátor / konfigurator (i německy „Konfigurator“), vandrawee; (3) prodej jen firmám (B2B), neutrální věcný tón, bez značky; (4) povolená písmena jazyka: ASCII + áéíóöőúüűÁÉÍÓÖŐÚÜŰ - jakýkoli jiný znak (např. česká písmena ě š č ř ž ý ů ť ď ň ľ) vyřadí `miniweb_jazyk_sestav.py`; (5) mezeru / středník / tečku na začátku nebo konci u šablon (navazují na `zaklad`) ZACHOVEJ stejně jako v en; (6) terminologie jednotně v celém shopu (i18n, SEO, katalog): drážka profilu = v angličtině „slot“ -> ekvivalent v jazyce určí bot7; (7) plurálové položky (`typ`: plural): `hu` je objekt, vyplň tvary other (`one` je volitelné, stačí `other`); (8) hotové soubory ověř příkazem `scripts/miniweb_jazyk_sestav.py --lang hu` (bez --apply jen kontrola) a pak jazyk zapíše `--apply`.",
+ "_sekce": "Hlášky konfigurátoru stolu: důvody, proč volba nejde, upozornění, nabídky „Odebrat …“, názvy dílů ve větách, ano/ne v souhrnu voleb.",
+ "lang": "hu",
+ "sekce": "stul_zpravy",
+ "polozky": [
+  {
+   "id": "stul_shop.DUVODY.panels",
+   "poznamka": "důvod, proč volbu nelze zapnout / proč se sama odebrala (slot = panels)",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Ani nejkratší perforovaný panel (1190 mm) se sem nevejde – potřebuje volné místo mezi zadními stojkami a dost vysoké stojky.",
+   "en": "Not even the shortest perforated panel (1190 mm) fits here – it needs free space between the rear uprights and tall enough uprights.",
+   "sk": "Ani najkratší perforovaný panel (1190 mm) sa sem nezmestí – potrebuje voľné miesto medzi zadnými stojkami a dosť vysoké stojky.",
+   "hu": "A lyukasztott szerszámtábla (1190 mm) nem fér el itt – szabad helyre van szüksége a hátsó oszlopok között, és az oszlopoknak elég magasnak kell lenniük."
+  },
+  {
+   "id": "stul_shop.DUVODY.socketup",
+   "poznamka": "důvod, proč volbu nelze zapnout / proč se sama odebrala (slot = socketup)",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Elektrožlab se musí dotýkat panelu nebo profilu a vejít se na stůl – posuňte ho zpět (výška / do stran).",
+   "en": "The power strip must touch a panel or a profile and fit on the table – move it back (height / sideways).",
+   "sk": "Napájacia lišta sa musí dotýkať panela alebo profilu a zmestiť sa na stôl – posuňte ju späť (výška / do strán).",
+   "hu": "Az elosztósornak hozzá kell érnie egy szerszámtáblához vagy profilhoz, és el kell férnie az asztalon – tolja vissza (magasság / oldalirány)."
+  },
+  {
+   "id": "stul_shop.DUVODY.socketside",
+   "poznamka": "důvod, proč volbu nelze zapnout / proč se sama odebrala (slot = socketside)",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Elektrožlab se musí dotýkat panelu nebo profilu a vejít se na stůl – posuňte ho zpět (výška / do stran).",
+   "en": "The power strip must touch a panel or a profile and fit on the table – move it back (height / sideways).",
+   "sk": "Napájacia lišta sa musí dotýkať panela alebo profilu a zmestiť sa na stôl – posuňte ju späť (výška / do strán).",
+   "hu": "Az elosztósornak hozzá kell érnie egy szerszámtáblához vagy profilhoz, és el kell férnie az asztalon – tolja vissza (magasság / oldalirány)."
+  },
+  {
+   "id": "stul_shop.DUVODY.led",
+   "poznamka": "důvod, proč volbu nelze zapnout / proč se sama odebrala (slot = led)",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "LED osvětlení (1,2 m) se na tuto šířku stolu nevejde – potřebuje šířku aspoň 1200 mm.",
+   "en": "The LED light (1.2 m) does not fit this table width – at least 1200 mm is needed.",
+   "sk": "LED osvetlenie (1,2 m) sa na túto šírku stola nezmestí – potrebuje šírku aspoň 1200 mm.",
+   "hu": "A LED-világítás (1,2 m) nem fér el ezen az asztalszélességen – legalább 1200 mm szélesség szükséges."
+  },
+  {
+   "id": "stul_shop.DUVODY.drawers",
+   "poznamka": "důvod, proč volbu nelze zapnout / proč se sama odebrala (slot = drawers)",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Šuplíky se při těchto rozměrech nevejdou (potřebují hloubku aspoň 620 mm, šířku aspoň 700 mm a dostatečnou výšku desky).",
+   "en": "The drawers do not fit these dimensions (they need a depth of at least 620 mm, a width of at least 700 mm and enough worktop height).",
+   "sk": "Zásuvky sa pri týchto rozmeroch nezmestia (potrebujú hĺbku aspoň 620 mm, šírku aspoň 700 mm a dostatočnú výšku dosky).",
+   "hu": "A fiókok nem férnek el ezekkel a méretekkel (legalább 620 mm mélység, legalább 700 mm szélesség és elegendő munkalap-magasság szükséges)."
+  },
+  {
+   "id": "stul_shop.DUVODY.socket",
+   "poznamka": "důvod, proč volbu nelze zapnout / proč se sama odebrala (slot = socket)",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Elektrožlab se montuje na perforovaný panel – bez panelů ho nelze zvolit.",
+   "en": "The power strip is mounted on the perforated panel – it cannot be chosen without panels.",
+   "sk": "Napájacia lišta sa montuje na perforovaný panel – bez panelov ju nie je možné zvoliť.",
+   "hu": "Az elosztósor a lyukasztott szerszámtáblára van szerelve – szerszámtáblák nélkül nem választható."
+  },
+  {
+   "id": "stul_shop.DUVODY.wheels",
+   "poznamka": "důvod, proč volbu nelze zapnout / proč se sama odebrala (slot = wheels)",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Kolečka se při této výšce stolu nevejdou.",
+   "en": "The castors do not fit this table height.",
+   "sk": "Kolieska sa pri tejto výške stola nezmestia.",
+   "hu": "A görgők nem férnek el ennél az asztalmagasságnál."
+  },
+  {
+   "id": "stul_shop.DUVODY.feet",
+   "poznamka": "důvod, proč volbu nelze zapnout / proč se sama odebrala (slot = feet)",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Stavitelné patky jdou jen u stolu bez koleček a nevejdou se do příliš nízkého stolu.",
+   "en": "Adjustable feet only fit a table without castors and not a very low one.",
+   "sk": "Nastaviteľné nožičky sa dajú použiť len pri stole bez koliesok a pri príliš nízkom stole sa nezmestia.",
+   "hu": "Az állítható lábak csak görgők nélküli asztalnál használhatók, és nagyon alacsony asztalnál nem férnek el."
+  },
+  {
+   "id": "stul_shop.DUVODY.pet",
+   "poznamka": "důvod, proč volbu nelze zapnout / proč se sama odebrala (slot = pet)",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Držák PET lahve se při této výšce nevejde.",
+   "en": "The PET bottle holder does not fit this table height.",
+   "sk": "Držiak na PET fľašu sa pri tejto výške nezmestí.",
+   "hu": "A PET-palack tartó nem fér el ennél az asztalmagasságnál."
+  },
+  {
+   "id": "stul_shop.DUVODY.shelf",
+   "poznamka": "důvod, proč volbu nelze zapnout / proč se sama odebrala (slot = shelf)",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Spodní police se při této výšce nevejde.",
+   "en": "The lower shelf does not fit this table height.",
+   "sk": "Dolná polica sa pri tejto výške nezmestí.",
+   "hu": "Az alsó polc nem fér el ennél az asztalmagasságnál."
+  },
+  {
+   "id": "stul_shop.DUVODY.shelfboard",
+   "poznamka": "důvod, proč volbu nelze zapnout / proč se sama odebrala (slot = shelfboard)",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Volba platí jen se spodní policí.",
+   "en": "This option only applies together with a lower shelf.",
+   "sk": "Voľba platí len so spodnou policou.",
+   "hu": "Ez a beállítás csak alsó polccal együtt érvényes."
+  },
+  {
+   "id": "stul_shop.DUVODY.posts",
+   "poznamka": "důvod, proč volbu nelze zapnout / proč se sama odebrala (slot = posts)",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Zadní stojky nelze vypnout, dokud jsou zapnuté panely, LED nebo elektrožlab.",
+   "en": "The rear uprights cannot be removed while the panels, LED or power strip are on.",
+   "sk": "Zadné stojky nemožno vypnúť, kým sú zapnuté panely, LED alebo napájacia lišta.",
+   "hu": "A hátsó oszlopok nem távolíthatók el, amíg a szerszámtáblák, a LED-világítás vagy az elosztósor be van kapcsolva."
+  },
+  {
+   "id": "stul_shop.DUVODY.braces",
+   "poznamka": "důvod, proč volbu nelze zapnout / proč se sama odebrala (slot = braces)",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Šikmé vzpěry se při těchto rozměrech nevejdou – potřebují zadní stojky, LED osvětlení, volné místo před stojkami a dost dlouhé rameno LED.",
+   "en": "The angled braces do not fit these dimensions – they need the rear uprights, the LED light, free space in front of the uprights and a long enough LED arm.",
+   "sk": "Šikmé vzpery sa pri týchto rozmeroch nezmestia – potrebujú zadné stojky, LED osvetlenie, voľné miesto pred stojkami a dostatočne dlhé rameno LED.",
+   "hu": "A ferde merevítők nem férnek el ezekkel a méretekkel – szükség van a hátsó oszlopokra, a LED-világításra, szabad helyre az oszlopok előtt és elég hosszú LED-karra."
+  },
+  {
+   "id": "stul_shop.DUVODY._default",
+   "poznamka": "obecná věta, když pro volbu není konkrétní důvod",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Tuhle kombinaci rozměrů nelze vyrobit.",
+   "en": "This combination cannot be built.",
+   "sk": "Túto kombináciu rozmerov nie je možné vyrobiť.",
+   "hu": "Ez a méretkombináció nem gyártható."
+  },
+  {
+   "id": "stul_shop.DUVODY.cut1",
+   "poznamka": "důvod, proč volbu nelze zapnout / proč se sama odebrala (slot = cut1)",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Výřezy se překrývají nebo jsou blíž než 30 mm od sebe – posuň je, zmenši nebo jeden z nich odeber.",
+   "en": "The cutouts overlap or are closer than 30 mm to each other – move or shrink them, or remove one of them.",
+   "sk": "Výrezy sa prekrývajú alebo sú bližšie ako 30 mm od seba – posuňte ich, zmenšite ich, alebo jeden z nich odstráňte.",
+   "hu": "A kivágások átfedik egymást, vagy 30 mm-nél közelebb vannak egymáshoz – mozgassa el őket, csökkentse a méretüket, vagy távolítsa el az egyiket."
+  },
+  {
+   "id": "stul_shop.DUVODY.cut2",
+   "poznamka": "důvod, proč volbu nelze zapnout / proč se sama odebrala (slot = cut2)",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Výřezy se překrývají nebo jsou blíž než 30 mm od sebe – posuň je, zmenši nebo jeden z nich odeber.",
+   "en": "The cutouts overlap or are closer than 30 mm to each other – move or shrink them, or remove one of them.",
+   "sk": "Výrezy sa prekrývajú alebo sú bližšie ako 30 mm od seba – posuňte ich, zmenšite ich, alebo jeden z nich odstráňte.",
+   "hu": "A kivágások átfedik egymást, vagy 30 mm-nél közelebb vannak egymáshoz – mozgassa el őket, csökkentse a méretüket, vagy távolítsa el az egyiket."
+  },
+  {
+   "id": "stul_shop.DUVODY.cut3",
+   "poznamka": "důvod, proč volbu nelze zapnout / proč se sama odebrala (slot = cut3)",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Výřezy se překrývají nebo jsou blíž než 30 mm od sebe – posuň je, zmenši nebo jeden z nich odeber.",
+   "en": "The cutouts overlap or are closer than 30 mm to each other – move or shrink them, or remove one of them.",
+   "sk": "Výrezy sa prekrývajú alebo sú bližšie ako 30 mm od seba – posuňte ich, zmenšite ich, alebo jeden z nich odstráňte.",
+   "hu": "A kivágások átfedik egymást, vagy 30 mm-nél közelebb vannak egymáshoz – mozgassa el őket, csökkentse a méretüket, vagy távolítsa el az egyiket."
+  },
+  {
+   "id": "stul_shop.DUVODY.cut1shelf",
+   "poznamka": "důvod, proč volbu nelze zapnout / proč se sama odebrala (slot = cut1shelf)",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Police pod výřezem se při těchto rozměrech nebo poloze nevejde – narazila by na nohu, šuplíky nebo jiný díl, případně je stůl příliš nízký. Posuň výřez, zmenši ho, nebo polici odeber.",
+   "en": "The shelf under the cutout does not fit these dimensions or this position – it would hit a leg, the drawers or another part, or the table is too low. Move or shrink the cutout, or remove the shelf.",
+   "sk": "Polica pod výrezom sa pri týchto rozmeroch alebo polohe nezmestí – narazila by na nohu, zásuvky alebo iný diel, prípadne je stôl príliš nízky. Posuňte výrez, zmenšite ho, alebo policu odstráňte.",
+   "hu": "A kivágás alatti polc nem fér el ezekkel a méretekkel vagy ebben a helyzetben – lábnak, a fiókoknak vagy más alkatrésznek ütközne, vagy az asztal túl alacsony. Mozgassa el a kivágást, csökkentse a méretét, vagy távolítsa el a polcot."
+  },
+  {
+   "id": "stul_shop.DUVODY.cut1shelfoff",
+   "poznamka": "důvod, proč volbu nelze zapnout / proč se sama odebrala (slot = cut1shelfoff)",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Nejdřív zapni výřez – police se montuje přímo pod něj.",
+   "en": "Switch the cutout on first – the shelf is mounted right under it.",
+   "sk": "Najprv zapnite výrez – polica sa montuje priamo pod neho.",
+   "hu": "Először kapcsolja be a kivágást – a polc közvetlenül alatta van felszerelve."
+  },
+  {
+   "id": "stul_shop.DUVODY.cut2shelf",
+   "poznamka": "důvod, proč volbu nelze zapnout / proč se sama odebrala (slot = cut2shelf)",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Police pod výřezem se při těchto rozměrech nebo poloze nevejde – narazila by na nohu, šuplíky nebo jiný díl, případně je stůl příliš nízký. Posuň výřez, zmenši ho, nebo polici odeber.",
+   "en": "The shelf under the cutout does not fit these dimensions or this position – it would hit a leg, the drawers or another part, or the table is too low. Move or shrink the cutout, or remove the shelf.",
+   "sk": "Polica pod výrezom sa pri týchto rozmeroch alebo polohe nezmestí – narazila by na nohu, zásuvky alebo iný diel, prípadne je stôl príliš nízky. Posuňte výrez, zmenšite ho, alebo policu odstráňte.",
+   "hu": "A kivágás alatti polc nem fér el ezekkel a méretekkel vagy ebben a helyzetben – lábnak, a fiókoknak vagy más alkatrésznek ütközne, vagy az asztal túl alacsony. Mozgassa el a kivágást, csökkentse a méretét, vagy távolítsa el a polcot."
+  },
+  {
+   "id": "stul_shop.DUVODY.cut2shelfoff",
+   "poznamka": "důvod, proč volbu nelze zapnout / proč se sama odebrala (slot = cut2shelfoff)",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Nejdřív zapni výřez – police se montuje přímo pod něj.",
+   "en": "Switch the cutout on first – the shelf is mounted right under it.",
+   "sk": "Najprv zapnite výrez – polica sa montuje priamo pod neho.",
+   "hu": "Először kapcsolja be a kivágást – a polc közvetlenül alatta van felszerelve."
+  },
+  {
+   "id": "stul_shop.DUVODY.cut3shelf",
+   "poznamka": "důvod, proč volbu nelze zapnout / proč se sama odebrala (slot = cut3shelf)",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Police pod výřezem se při těchto rozměrech nebo poloze nevejde – narazila by na nohu, šuplíky nebo jiný díl, případně je stůl příliš nízký. Posuň výřez, zmenši ho, nebo polici odeber.",
+   "en": "The shelf under the cutout does not fit these dimensions or this position – it would hit a leg, the drawers or another part, or the table is too low. Move or shrink the cutout, or remove the shelf.",
+   "sk": "Polica pod výrezom sa pri týchto rozmeroch alebo polohe nezmestí – narazila by na nohu, zásuvky alebo iný diel, prípadne je stôl príliš nízky. Posuňte výrez, zmenšite ho, alebo policu odstráňte.",
+   "hu": "A kivágás alatti polc nem fér el ezekkel a méretekkel vagy ebben a helyzetben – lábnak, a fiókoknak vagy más alkatrésznek ütközne, vagy az asztal túl alacsony. Mozgassa el a kivágást, csökkentse a méretét, vagy távolítsa el a polcot."
+  },
+  {
+   "id": "stul_shop.DUVODY.cut3shelfoff",
+   "poznamka": "důvod, proč volbu nelze zapnout / proč se sama odebrala (slot = cut3shelfoff)",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Nejdřív zapni výřez – police se montuje přímo pod něj.",
+   "en": "Switch the cutout on first – the shelf is mounted right under it.",
+   "sk": "Najprv zapnite výrez – polica sa montuje priamo pod neho.",
+   "hu": "Először kapcsolja be a kivágást – a polc közvetlenül alatta van felszerelve."
+  },
+  {
+   "id": "stul_shop.DUVODY.bearpitch",
+   "poznamka": "důvod, proč volbu nelze zapnout / proč se sama odebrala (slot = bearpitch)",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Příliš mnoho ložiskových jednotek (nejvýše 500 ks) – zvětši rozteč nebo vzdálenost od okraje.",
+   "en": "Too many ball transfer units (at most 500) – increase the spacing or the distance from the edge.",
+   "sk": "Príliš veľa ložiskových jednotiek (najviac 500 ks) – zväčšite rozstup alebo vzdialenosť od okraja.",
+   "hu": "Túl sok golyósgörgő (legfeljebb 500 db) – növelje a köztük lévő távolságot vagy a széltől mért távolságot."
+  },
+  {
+   "id": "stul_shop.DUVODY.bearings",
+   "poznamka": "důvod, proč volbu nelze zapnout / proč se sama odebrala (slot = bearings)",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Příliš mnoho ložiskových jednotek (nejvýše 500 ks) – zvětši rozteč nebo vzdálenost od okraje.",
+   "en": "Too many ball transfer units (at most 500) – increase the spacing or the distance from the edge.",
+   "sk": "Príliš veľa ložiskových jednotiek (najviac 500 ks) – zväčšite rozstup alebo vzdialenosť od okraja.",
+   "hu": "Túl sok golyósgörgő (legfeljebb 500 db) – növelje a köztük lévő távolságot vagy a széltől mért távolságot."
+  },
+  {
+   "id": "stul_shop.DUVODY.sleeve",
+   "poznamka": "důvod, proč volbu nelze zapnout / proč se sama odebrala (slot = sleeve)",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Návlek se při této výšce stolu nevejde – nad jeho horním koncem musí zůstat volné místo a pak spodek rámu (u stolu s policí i police).",
+   "en": "The sleeve does not fit this table height – there must be free space above its top end and then the underside of the frame (and of the shelf if there is one).",
+   "sk": "Návlek sa pri tejto výške stola nezmestí – nad jeho horným koncom musí zostať voľné miesto a potom spodok rámu (pri stole s policou aj polica).",
+   "hu": "A hüvely nem fér el ennél az asztalmagasságnál – a felső vége felett szabad helynek kell maradnia, majd a keret alja következik (polcos asztalnál a polc alja is)."
+  },
+  {
+   "id": "stul_shop.DUVODY.sleeve_nahrazuje",
+   "poznamka": "důvod, proč volbu nelze zapnout / proč se sama odebrala (slot = sleeve_nahrazuje)",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Návlek nahrazuje kolečka, záslepky i patky – nejdřív ho vypněte.",
+   "en": "The sleeves replace the castors, end caps and feet – switch them off first.",
+   "sk": "Návleky nahrádzajú kolieska, záslepky aj nožičky – najprv ich vypnite.",
+   "hu": "A hüvelyek helyettesítik a görgőket, a záródugókat és az állítható lábakat – először kapcsolja ki őket."
+  },
+  {
+   "id": "stul_shop.DUVODY.sleeve_kolize",
+   "poznamka": "důvod, proč volbu nelze zapnout / proč se sama odebrala (slot = sleeve_kolize)",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "V úrovni návleku nesmí být žádný jiný komponent (police, držák PET lahve, šuplíky…) – zkraťte návlek, zvyšte stůl nebo komponent přesuňte výš.",
+   "en": "No other component can be at the level of the sleeve (shelf, PET bottle holder, drawers…) – shorten the sleeve, make the table taller or move the component higher.",
+   "sk": "V úrovni návleku nesmie byť žiadny iný komponent (polica, držiak na PET fľašu, zásuvky…) – skráťte návlek, zvýšte stôl alebo komponent presuňte vyššie.",
+   "hu": "A hüvely szintjén nem lehet más alkatrész (polc, PET-palack tartó, fiókok…) – rövidítse le a hüvelyt, emelje meg az asztalt, vagy helyezze feljebb az alkatrészt."
+  },
+  {
+   "id": "stul_shop.DUVODY.sleeve_orezano",
+   "poznamka": "důvod, proč volbu nelze zapnout / proč se sama odebrala (slot = sleeve_orezano)",
+   "typ": "text",
+   "placeholdery": [
+    "{v}"
+   ],
+   "cs": "Délka návleku snížena na {v} mm – delší se pod stůl této výšky nevejde.",
+   "en": "Sleeve length reduced to {v} mm – a longer one does not fit under a table of this height.",
+   "sk": "Dĺžka návleku znížená na {v} mm – dlhší sa pod stôl tejto výšky nezmestí.",
+   "hu": "A hüvely hossza {v} mm-re csökkent – hosszabb nem fér el ilyen magasságú asztal alatt."
+  },
+  {
+   "id": "stul_shop.DUVODY.upshelf",
+   "poznamka": "důvod, proč volbu nelze zapnout / proč se sama odebrala (slot = upshelf)",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Police mezi zadními stojkami se sem nevejde – potřebuje zadní stojky a místo mezi panely (nebo deskou) a ramenem LED; zvyšte stojky, snižte počet panelů, nebo ji vypněte.",
+   "en": "The shelf between the rear uprights does not fit here – it needs the rear uprights and space between the panels (or the worktop) and the LED arm; raise the uprights, reduce the panels or switch it off.",
+   "sk": "Polica medzi zadnými stojkami sa sem nezmestí – potrebuje zadné stojky a miesto medzi panelmi (alebo doskou) a ramenom LED; zvýšte stojky, znížte počet panelov, alebo ju vypnite.",
+   "hu": "A hátsó oszlopok közötti polc itt nem fér el – hátsó oszlopokra, valamint a szerszámtáblák (vagy a munkalap) és a LED-kar közötti helyre van szüksége; emelje meg az oszlopokat, csökkentse a szerszámtáblák számát, vagy kapcsolja ki."
+  },
+  {
+   "id": "stul_shop.DUVODY.upshelf_deska_ram",
+   "poznamka": "důvod, proč volbu nelze zapnout / proč se sama odebrala (slot = upshelf_deska_ram)",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Rámová police nemá desku.",
+   "en": "A frame-only shelf has no board.",
+   "sk": "Rámová polica nemá dosku.",
+   "hu": "A csak keretes polcnak nincs lapja."
+  },
+  {
+   "id": "stul_shop.DUVODY.upshelf_deska_drazka",
+   "poznamka": "důvod, proč volbu nelze zapnout / proč se sama odebrala (slot = upshelf_deska_drazka)",
+   "typ": "text",
+   "placeholdery": [
+    "{d}"
+   ],
+   "cs": "Do drážky jde jen deska {d}.",
+   "en": "Only the {d} board goes into the slot.",
+   "sk": "Do drážky ide len doska {d}.",
+   "hu": "A horonyba csak a(z) {d} lap kerülhet."
+  },
+  {
+   "id": "stul_shop.DUVODY.upshelf_deska_shora",
+   "poznamka": "důvod, proč volbu nelze zapnout / proč se sama odebrala (slot = upshelf_deska_shora)",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Deska do drážky jde jen u rámu s deskou v drážce a s přepážkami.",
+   "en": "A board in the slot is only for the frame with a board in the slot and the frame with dividers.",
+   "sk": "Doska do drážky ide len pri ráme s doskou v drážke a s priehradkami.",
+   "hu": "Horonyba helyezett lap csak a horonyban lévő lapos keretnél és a válaszfalas keretnél lehetséges."
+  },
+  {
+   "id": "stul_shop.DUVODY.upshelf_deska_nabidka",
+   "poznamka": "důvod, proč volbu nelze zapnout / proč se sama odebrala (slot = upshelf_deska_nabidka)",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Tahle deska teď není v nabídce.",
+   "en": "This board is not available at the moment.",
+   "sk": "Táto doska teraz nie je v ponuke.",
+   "hu": "Ez a lap jelenleg nincs a kínálatban."
+  },
+  {
+   "id": "stul_shop.DUVODY.upshelf_typ_nabidka",
+   "poznamka": "důvod, proč volbu nelze zapnout / proč se sama odebrala (slot = upshelf_typ_nabidka)",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Tahle varianta police teď není v nabídce.",
+   "en": "This shelf variant is not available at the moment.",
+   "sk": "Táto varianta police teraz nie je v ponuke.",
+   "hu": "Ez a polcváltozat jelenleg nincs a kínálatban."
+  },
+  {
+   "id": "stul_shop.DUVODY.upshelf_typ_nevejde",
+   "poznamka": "důvod, proč volbu nelze zapnout / proč se sama odebrala (slot = upshelf_typ_nevejde)",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Tenhle typ police se sem nevejde – nad rámem potřebuje víc volného místa (zvyšte zadní stojky nebo snižte počet panelů).",
+   "en": "This shelf type does not fit here – it needs more free room above the frame (raise the rear uprights or reduce the panels).",
+   "sk": "Tento typ police sa sem nezmestí – nad rámom potrebuje viac voľného miesta (zvýšte zadné stojky alebo znížte počet panelov).",
+   "hu": "Ez a polctípus itt nem fér el – több szabad helyre van szüksége a keret felett (emelje meg a hátsó oszlopokat, vagy csökkentse a szerszámtáblák számát)."
+  },
+  {
+   "id": "stul_shop.DUVODY.upshelf_typ_sekce",
+   "poznamka": "důvod, proč volbu nelze zapnout / proč se sama odebrala (slot = upshelf_typ_sekce)",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Šikmá police zatím nejde u stolu se střední zadní nohou (na jednu stojku by se nevešly dvě konzole) – zvolte vestavěný rám, nebo jiný typ police.",
+   "en": "The sloped shelf is not available yet for a table with a rear centre leg (two brackets would not fit on one upright) – choose the built-in frame or another shelf type.",
+   "sk": "Šikmá polica zatiaľ nejde pri stole so strednou zadnou nohou (na jednu stojku by sa nezmestili dve konzoly) – zvoľte vstavaný rám, alebo iný typ police.",
+   "hu": "A dőlt polc hátsó középső lábas asztalhoz még nem érhető el (két konzol nem férne el egy oszlopon) – válassza a beépített keretet vagy másik polctípust."
+  },
+  {
+   "id": "stul_shop.zpravy.AUTO_VZPERY",
+   "poznamka": "hláška konfigurátoru",
+   "typ": "text",
+   "placeholdery": [
+    "{prah}"
+   ],
+   "cs": "Rameno LED je delší než {prah} mm – přidány šikmé vzpěry (jdou vypnout).",
+   "en": "The LED arm is longer than {prah} mm – angled braces added (they can be switched off).",
+   "sk": "Rameno LED je dlhšie ako {prah} mm – pridané šikmé vzpery (dajú sa vypnúť).",
+   "hu": "A LED-kar hosszabb, mint {prah} mm – ferde merevítők hozzáadva (kikapcsolhatók)."
+  },
+  {
+   "id": "stul_shop.zpravy.DESKA_MIMO_TABULI",
+   "poznamka": "hláška konfigurátoru",
+   "typ": "text",
+   "placeholdery": [
+    "{t1}",
+    "{t2}"
+   ],
+   "cs": "Deska se nevejde do standardního formátu desky ({t1} × {t2} mm) – zmenšete rozměr stolu, nebo ho nechte přes střední nohu rozdělit na dvě desky.",
+   "en": "The worktop does not fit the standard board size ({t1} × {t2} mm) – reduce the table size or have it split into two boards at the centre leg.",
+   "sk": "Doska sa nezmestí do štandardného formátu dosky ({t1} × {t2} mm) – zmenšite rozmer stola, alebo ho nechajte rozdeliť cez strednú nohu na dve dosky.",
+   "hu": "A munkalap nem fér bele a szabványos lapméretbe ({t1} × {t2} mm) – csökkentse az asztal méretét, vagy a középső lábnál ossza két lapra."
+  },
+  {
+   "id": "stul_shop.zpravy.KOLIZE_PET",
+   "poznamka": "hláška konfigurátoru",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Držák PET lahve na zvoleném místě naráží do jiného dílu (např. šuplíků) – zvol jinou nohu nebo stranu profilu, posuň ho výš či níž, nebo ho odeber.",
+   "en": "The PET bottle holder collides with another part (e.g. the drawers) at the chosen place – pick another leg or side of the profile, move it up or down, or remove it.",
+   "sk": "Držiak na PET fľašu na zvolenom mieste naráža do iného dielu (napr. zásuviek) – zvoľte inú nohu alebo stranu profilu, posuňte ho vyššie či nižšie, alebo ho odoberte.",
+   "hu": "A PET-palack tartó a kiválasztott helyen ütközik egy másik alkatrésszel (pl. a fiókokkal) – válasszon másik lábat vagy profiloldalt, mozgassa feljebb vagy lejjebb, vagy távolítsa el."
+  },
+  {
+   "id": "stul_shop.zpravy.LEDLEN_NEVEJDE",
+   "poznamka": "hláška konfigurátoru",
+   "typ": "text",
+   "placeholdery": [
+    "{l}",
+    "{w}"
+   ],
+   "cs": "LED svítidlo {l} mm se sem nevejde – potřebuje stůl široký aspoň {w} mm.",
+   "en": "A {l} mm LED light does not fit here – it needs a table at least {w} mm wide.",
+   "sk": "LED svietidlo {l} mm sa sem nezmestí – potrebuje stôl široký aspoň {w} mm.",
+   "hu": "A(z) {l} mm-es LED-világítás itt nem fér el – legalább {w} mm széles asztalt igényel."
+  },
+  {
+   "id": "stul_shop.zpravy.LEDPOCET_OREZANO",
+   "poznamka": "hláška konfigurátoru",
+   "typ": "text",
+   "placeholdery": [
+    "{n}"
+   ],
+   "cs": "Počet svítidel LED snížen na {n} – víc se jich sem nevejde vedle sebe (užší stůl nebo delší svítidla).",
+   "en": "Number of LED lights reduced to {n} – more will not fit side by side (a narrower table or longer lights).",
+   "sk": "Počet svietidiel LED znížený na {n} – viac sa ich sem nezmestí vedľa seba (užší stôl alebo dlhšie svietidlá).",
+   "hu": "A LED-világítótestek új száma: {n} – több nem fér el egymás mellett (keskenyebb asztal vagy hosszabb világítótestek)."
+  },
+  {
+   "id": "stul_shop.zpravy.LED_NENI_V_NABIDCE",
+   "poznamka": "hláška konfigurátoru",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Tahle délka LED svítidla teď není v nabídce.",
+   "en": "This LED light length is not available at the moment.",
+   "sk": "Táto dĺžka LED svietidla teraz nie je v ponuke.",
+   "hu": "Ez a LED-hossz jelenleg nincs a kínálatban."
+  },
+  {
+   "id": "stul_shop.zpravy.MIDSUPPORT_RAM_AUTO",
+   "poznamka": "hláška konfigurátoru",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Střední nohu nahradil vestavěný rám, aby se vešel panel.",
+   "en": "A built-in frame replaces the centre leg so that the panel fits.",
+   "sk": "Strednú nohu nahradil vstavaný rám, aby sa zmestil panel.",
+   "hu": "A középső lábat beépített keret váltotta fel, hogy a szerszámtábla elférjen."
+  },
+  {
+   "id": "stul_shop.zpravy.MIDSUPPORT_RAM_POLICE",
+   "poznamka": "hláška konfigurátoru",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Vestavěný rám potřebuje spodní polici.",
+   "en": "The built-in frame needs a lower shelf.",
+   "sk": "Vstavaný rám potrebuje spodnú policu.",
+   "hu": "A beépített kerethez alsó polc szükséges."
+  },
+  {
+   "id": "stul_shop.zpravy.NENI_V_NABIDCE",
+   "poznamka": "hláška konfigurátoru",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Tahle délka panelu teď není v nabídce.",
+   "en": "This panel length is not available at the moment.",
+   "sk": "Táto dĺžka panela teraz nie je v ponuke.",
+   "hu": "Ez a táblahossz jelenleg nincs a kínálatban."
+  },
+  {
+   "id": "stul_shop.zpravy.PANELLEN_NEVEJDE",
+   "poznamka": "hláška konfigurátoru",
+   "typ": "text",
+   "placeholdery": [
+    "{l}",
+    "{w}"
+   ],
+   "cs": "Panel {l} mm se sem nevejde – mezi zadní stojky potřebuje stůl široký aspoň {w} mm.",
+   "en": "A {l} mm panel does not fit here – between the rear uprights it needs a table at least {w} mm wide.",
+   "sk": "Panel {l} mm sa sem nezmestí – medzi zadné stojky potrebuje stôl široký aspoň {w} mm.",
+   "hu": "A(z) {l} mm-es tábla nem fér el itt – a hátsó oszlopok között legalább {w} mm széles asztalt igényel."
+  },
+  {
+   "id": "stul_shop.zpravy.PANELLEN_NEVEJDE_NOHY",
+   "poznamka": "hláška konfigurátoru",
+   "typ": "text",
+   "placeholdery": [
+    "{l}",
+    "{w}"
+   ],
+   "cs": "Panel {l} mm se sem nevejde – střední nohy dělí zadní stranu na dva úseky; potřebuje vestavěný rám místo středních noh (jen se spodní policí) a stůl široký aspoň {w} mm.",
+   "en": "A {l} mm panel does not fit here – the centre legs split the rear side into two sections; it needs the built-in frame instead of the centre legs (only with a lower shelf) and a table at least {w} mm wide.",
+   "sk": "Panel {l} mm sa sem nezmestí – stredné nohy delia zadnú stranu na dva úseky; potrebuje vstavaný rám namiesto stredných nôh (len so spodnou policou) a stôl široký aspoň {w} mm.",
+   "hu": "A(z) {l} mm-es tábla nem fér el itt – a középső lábak két szakaszra osztják a hátoldalt; a középső lábak helyett beépített keretet igényel (csak alsó polccal), és legalább {w} mm széles asztalt."
+  },
+  {
+   "id": "stul_shop.zpravy.PANELLEN_NEVEJDE_STOJKY",
+   "poznamka": "hláška konfigurátoru",
+   "typ": "text",
+   "placeholdery": [
+    "{h}",
+    "{l}"
+   ],
+   "cs": "Panel {l} mm se sem nevejde – zadní stojky musí být aspoň {h} mm nad deskou.",
+   "en": "A {l} mm panel does not fit here – the rear uprights must be at least {h} mm above the worktop.",
+   "sk": "Panel {l} mm sa sem nezmestí – zadné stojky musia byť aspoň {h} mm nad doskou.",
+   "hu": "A(z) {l} mm-es tábla nem fér el itt – a hátsó oszlopoknak legalább {h} mm-rel a munkalap fölé kell nyúlniuk."
+  },
+  {
+   "id": "stul_shop.zpravy.PANELY_OREZANO",
+   "poznamka": "hláška konfigurátoru",
+   "typ": "text",
+   "placeholdery": [
+    "{n}"
+   ],
+   "cs": "Počet panelů snížen na {n} – víc se sem nevejde (širší stůl, vyšší stojky nebo vestavěný rám).",
+   "en": "Number of panels reduced to {n} – more will not fit (a wider table, taller uprights or a built-in frame).",
+   "sk": "Počet panelov znížený na {n} – viac sa sem nezmestí (širší stôl, vyššie stojky alebo vstavaný rám).",
+   "hu": "A szerszámtáblák száma csökkent, új érték: {n} – több nem fér el ide (szélesebb asztal, magasabb oszlopok vagy beépített keret szükséges)."
+  },
+  {
+   "id": "stul_shop.zpravy.PANELY_ZKRACENO",
+   "poznamka": "hláška konfigurátoru",
+   "typ": "text",
+   "placeholdery": [
+    "{l}"
+   ],
+   "cs": "Délka panelů snížena na {l} mm – delší se sem nevejde (širší stůl, vyšší stojky nebo vestavěný rám).",
+   "en": "Panel length reduced to {l} mm – a longer one does not fit here (a wider table, taller uprights or the built-in frame).",
+   "sk": "Dĺžka panelov znížená na {l} mm – dlhší sa sem nezmestí (širší stôl, vyššie stojky alebo vstavaný rám).",
+   "hu": "A táblák hossza {l} mm-re csökkent – hosszabb itt nem fér el (szélesebb asztal, magasabb oszlopok vagy beépített keret)."
+  },
+  {
+   "id": "stul_shop.zpravy.PANEL_NEVEJDE",
+   "poznamka": "hláška konfigurátoru",
+   "typ": "text",
+   "placeholdery": [
+    "{h}",
+    "{l}",
+    "{w}"
+   ],
+   "cs": "Ani nejkratší perforovaný panel ({l} mm) se sem nevejde – mezi zadní stojky potřebuje stůl široký aspoň {w} mm a zadní stojky aspoň {h} mm nad deskou.",
+   "en": "Not even the shortest perforated panel ({l} mm) fits here – between the rear uprights it needs a table at least {w} mm wide and rear uprights at least {h} mm above the worktop.",
+   "sk": "Ani najkratší perforovaný panel ({l} mm) sa sem nezmestí – medzi zadné stojky potrebuje stôl široký aspoň {w} mm a zadné stojky aspoň {h} mm nad doskou.",
+   "hu": "Még a legrövidebb lyukasztott szerszámtábla ({l} mm) sem fér el itt – a hátsó oszlopok között legalább {w} mm széles asztalra, és a munkalap felett legalább {h} mm magas hátsó oszlopokra van szüksége."
+  },
+  {
+   "id": "stul_shop.zpravy.PANEL_NEVEJDE_NOHY",
+   "poznamka": "hláška konfigurátoru",
+   "typ": "text",
+   "placeholdery": [
+    "{h}",
+    "{l}",
+    "{u}",
+    "{w}"
+   ],
+   "cs": "Ani nejkratší perforovaný panel ({l} mm) se sem nevejde – střední nohy dělí zadní stranu na dva úseky a do žádného se panel nevejde (úsek musí mít aspoň {u} mm, tedy stůl se středními nohami aspoň {w} mm). Zvolte vestavěný rám místo středních noh (potřebuje spodní polici) nebo panel odeberte; zadní stojky musí být aspoň {h} mm nad deskou.",
+   "en": "Not even the shortest perforated panel ({l} mm) fits here – the centre legs split the rear side into two sections and the panel fits into neither (a section needs at least {u} mm, i.e. a table with centre legs at least {w} mm wide). Choose the built-in frame instead of the centre legs (it needs a lower shelf) or remove the panel; the rear uprights must be at least {h} mm above the worktop.",
+   "sk": "Ani najkratší perforovaný panel ({l} mm) sa sem nezmestí – stredné nohy delia zadnú stranu na dva úseky a do žiadneho sa panel nezmestí (úsek musí mať aspoň {u} mm, teda stôl so strednými nohami aspoň {w} mm). Zvoľte vstavaný rám namiesto stredných nôh (potrebuje spodnú policu) alebo panel odstráňte; zadné stojky musia byť aspoň {h} mm nad doskou.",
+   "hu": "Még a legrövidebb lyukasztott szerszámtábla ({l} mm) sem fér el itt – a középső lábak két szakaszra osztják a hátsó oldalt, és egyikbe sem fér bele a szerszámtábla (egy szakasznak legalább {u} mm hosszúnak kell lennie, vagyis a középső lábakkal ellátott asztalnak legalább {w} mm szélesnek). Válasszon beépített keretet a középső lábak helyett (alsó polcot igényel), vagy távolítsa el a szerszámtáblát; a hátsó oszlopoknak legalább {h} mm-rel a munkalap felett kell lenniük."
+  },
+  {
+   "id": "stul_shop.zpravy.PET_BEZ_STREDNI",
+   "poznamka": "hláška konfigurátoru",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Střední nohy má až širší stůl.",
+   "en": "Centre legs only exist on a wider table.",
+   "sk": "Stredné nohy má až širší stôl.",
+   "hu": "Középső lábak csak szélesebb asztalnál vannak."
+  },
+  {
+   "id": "stul_shop.zpravy.PET_NOHA_NENI",
+   "poznamka": "hláška konfigurátoru",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Držák PET lahve nemůže viset na střední noze – tenhle stůl ji nemá. Vyber jinou nohu.",
+   "en": "The PET bottle holder cannot hang on a centre leg – this table has none. Pick another leg.",
+   "sk": "Držiak na PET fľašu nemôže visieť na strednej nohe – tento stôl ju nemá. Vyberte inú nohu.",
+   "hu": "A PET-palack tartó nem lóghat középső lábon – ennek az asztalnak nincs ilyen. Válasszon másik lábat."
+  },
+  {
+   "id": "stul_shop.zpravy.POTREBUJE_STOJKY",
+   "poznamka": "hláška konfigurátoru",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Potřebuje zadní stojky – nejdřív je zapni.",
+   "en": "Needs the rear uprights – switch them on first.",
+   "sk": "Potrebuje zadné stojky – najprv ich zapnite.",
+   "hu": "Hátsó oszlopokat igényel – először kapcsolja be őket."
+  },
+  {
+   "id": "stul_shop.zpravy.SUPLIKY_OREZANO",
+   "poznamka": "hláška konfigurátoru",
+   "typ": "text",
+   "placeholdery": [
+    "{n}"
+   ],
+   "cs": "Počet šuplíků snížen na {n} – box s víc šuplíky se sem nevejde (vyšší stůl nebo nižší police).",
+   "en": "Number of drawers reduced to {n} – a unit with more drawers will not fit here (a taller table or a lower shelf).",
+   "sk": "Počet zásuviek znížený na {n} – box s viac zásuvkami sa sem nezmestí (vyšší stôl alebo nižšia polica).",
+   "hu": "A fiókok száma csökkent, új érték: {n} – több fiókot tartalmazó doboz nem fér el ide (magasabb asztal vagy lejjebb helyezett polc szükséges)."
+  },
+  {
+   "id": "stul_shop.zpravy.SUPLIK_PRAHY",
+   "poznamka": "hláška konfigurátoru",
+   "typ": "text",
+   "placeholdery": [
+    "{d}",
+    "{w}"
+   ],
+   "cs": "Šuplíky se při těchto rozměrech nevejdou (potřebují hloubku aspoň {d} mm, šířku aspoň {w} mm a dostatečnou výšku desky).",
+   "en": "The drawers do not fit these dimensions (they need a depth of at least {d} mm, a width of at least {w} mm and enough worktop height).",
+   "sk": "Zásuvky sa pri týchto rozmeroch nezmestia (potrebujú hĺbku aspoň {d} mm, šírku aspoň {w} mm a dostatočnú výšku dosky).",
+   "hu": "A fiókok nem férnek el ezekkel a méretekkel (legalább {d} mm mélység, legalább {w} mm szélesség és elegendő munkalap-magasság szükséges)."
+  },
+  {
+   "id": "stul_shop.zpravy.VZPERY_NENI",
+   "poznamka": "hláška konfigurátoru",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Šikmé vzpěry ramen LED zatím nejsou pro tento systém profilu k dispozici.",
+   "en": "Angled LED arm braces are not available for this profile system yet.",
+   "sk": "Šikmé vzpery ramien LED zatiaľ nie sú pre tento systém profilu k dispozícii.",
+   "hu": "A LED-karok ferde merevítői ehhez a profilrendszerhez még nem érhetők el."
+  },
+  {
+   "id": "stul_shop.NAZVY_SLOTU.drawers",
+   "poznamka": "název dílu ve větě („Automaticky odebráno: <název> - důvod“; v angličtině s členem the)",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "šuplíky",
+   "en": "the drawers",
+   "sk": "zásuvky",
+   "hu": "a fiókok"
+  },
+  {
+   "id": "stul_shop.NAZVY_SLOTU.panels",
+   "poznamka": "název dílu ve větě („Automaticky odebráno: <název> - důvod“; v angličtině s členem the)",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "panely",
+   "en": "the panels",
+   "sk": "panely",
+   "hu": "a szerszámtáblák"
+  },
+  {
+   "id": "stul_shop.NAZVY_SLOTU.led",
+   "poznamka": "název dílu ve větě („Automaticky odebráno: <název> - důvod“; v angličtině s členem the)",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "LED osvětlení",
+   "en": "the LED light",
+   "sk": "LED osvetlenie",
+   "hu": "a LED-világítás"
+  },
+  {
+   "id": "stul_shop.NAZVY_SLOTU.socket",
+   "poznamka": "název dílu ve větě („Automaticky odebráno: <název> - důvod“; v angličtině s členem the)",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "elektrožlab",
+   "en": "the power strip",
+   "sk": "napájacia lišta",
+   "hu": "az elosztósor"
+  },
+  {
+   "id": "stul_shop.NAZVY_SLOTU.pet",
+   "poznamka": "název dílu ve větě („Automaticky odebráno: <název> - důvod“; v angličtině s členem the)",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "držák PET lahve",
+   "en": "the PET bottle holder",
+   "sk": "držiak na PET fľašu",
+   "hu": "a PET-palack tartó"
+  },
+  {
+   "id": "stul_shop.NAZVY_SLOTU.wheels",
+   "poznamka": "název dílu ve větě („Automaticky odebráno: <název> - důvod“; v angličtině s členem the)",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "kolečka",
+   "en": "the castors",
+   "sk": "kolieska",
+   "hu": "a görgők"
+  },
+  {
+   "id": "stul_shop.NAZVY_SLOTU.feet",
+   "poznamka": "název dílu ve větě („Automaticky odebráno: <název> - důvod“; v angličtině s členem the)",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "stavitelné patky",
+   "en": "the adjustable feet",
+   "sk": "nastaviteľné nožičky",
+   "hu": "az állítható lábak"
+  },
+  {
+   "id": "stul_shop.NAZVY_SLOTU.braces",
+   "poznamka": "název dílu ve větě („Automaticky odebráno: <název> - důvod“; v angličtině s členem the)",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "šikmé vzpěry ramen LED",
+   "en": "the angled LED arm braces",
+   "sk": "šikmé vzpery ramien LED",
+   "hu": "a LED-karok ferde merevítői"
+  },
+  {
+   "id": "stul_shop.NAZVY_SLOTU.sleeve",
+   "poznamka": "název dílu ve větě („Automaticky odebráno: <název> - důvod“; v angličtině s členem the)",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "návlek nohou",
+   "en": "the leg sleeves",
+   "sk": "návleky nôh",
+   "hu": "a lábhüvelyek"
+  },
+  {
+   "id": "stul_shop.NAZVY_SLOTU.cut1",
+   "poznamka": "název dílu ve větě („Automaticky odebráno: <název> - důvod“; v angličtině s členem the)",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "výřez 1",
+   "en": "cutout 1",
+   "sk": "výrez 1",
+   "hu": "1. kivágás"
+  },
+  {
+   "id": "stul_shop.NAZVY_SLOTU.cut1shelf",
+   "poznamka": "název dílu ve větě („Automaticky odebráno: <název> - důvod“; v angličtině s členem the)",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "polici pod výřezem 1",
+   "en": "the shelf under cutout 1",
+   "sk": "polica pod výrezom 1",
+   "hu": "az 1. kivágás alatti polc"
+  },
+  {
+   "id": "stul_shop.NAZVY_SLOTU.cut2",
+   "poznamka": "název dílu ve větě („Automaticky odebráno: <název> - důvod“; v angličtině s členem the)",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "výřez 2",
+   "en": "cutout 2",
+   "sk": "výrez 2",
+   "hu": "2. kivágás"
+  },
+  {
+   "id": "stul_shop.NAZVY_SLOTU.cut2shelf",
+   "poznamka": "název dílu ve větě („Automaticky odebráno: <název> - důvod“; v angličtině s členem the)",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "polici pod výřezem 2",
+   "en": "the shelf under cutout 2",
+   "sk": "polica pod výrezom 2",
+   "hu": "a 2. kivágás alatti polc"
+  },
+  {
+   "id": "stul_shop.NAZVY_SLOTU.cut3",
+   "poznamka": "název dílu ve větě („Automaticky odebráno: <název> - důvod“; v angličtině s členem the)",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "výřez 3",
+   "en": "cutout 3",
+   "sk": "výrez 3",
+   "hu": "3. kivágás"
+  },
+  {
+   "id": "stul_shop.NAZVY_SLOTU.cut3shelf",
+   "poznamka": "název dílu ve větě („Automaticky odebráno: <název> - důvod“; v angličtině s členem the)",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "polici pod výřezem 3",
+   "en": "the shelf under cutout 3",
+   "sk": "polica pod výrezom 3",
+   "hu": "a 3. kivágás alatti polc"
+  },
+  {
+   "id": "stul_shop.NAZVY_SLOTU.upshelf",
+   "poznamka": "název dílu ve větě („Automaticky odebráno: <název> - důvod“; v angličtině s členem the)",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "polici mezi zadními stojkami",
+   "en": "the shelf between the rear uprights",
+   "sk": "policu medzi zadnými stojkami",
+   "hu": "a hátsó oszlopok közötti polc"
+  },
+  {
+   "id": "stul_shop.TEXTY_AKCI.odebrano",
+   "poznamka": "text tlačítka / předpona nabídky",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Automaticky odebráno: ",
+   "en": "Automatically removed: ",
+   "sk": "Automaticky odstránené: ",
+   "hu": "Automatikusan eltávolítva: "
+  },
+  {
+   "id": "stul_shop.TEXTY_AKCI.odebrat",
+   "poznamka": "text tlačítka / předpona nabídky",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Odebrat ",
+   "en": "Remove ",
+   "sk": "Odstrániť: ",
+   "hu": "Eltávolítás: "
+  },
+  {
+   "id": "stul_shop.TEXTY_AKCI.roztahnout_w",
+   "poznamka": "text tlačítka / předpona nabídky",
+   "typ": "text",
+   "placeholdery": [
+    "{v}"
+   ],
+   "cs": "Roztáhnout stůl na šířku {v} mm a zapnout",
+   "en": "Widen the table to {v} mm and switch on",
+   "sk": "Rozšíriť stôl na šírku {v} mm a zapnúť",
+   "hu": "Asztal szélesítése {v} mm-re és bekapcsolás"
+  },
+  {
+   "id": "stul_shop.TEXTY_AKCI.roztahnout_d",
+   "poznamka": "text tlačítka / předpona nabídky",
+   "typ": "text",
+   "placeholdery": [
+    "{v}"
+   ],
+   "cs": "Roztáhnout stůl na hloubku {v} mm a zapnout",
+   "en": "Make the table {v} mm deep and switch on",
+   "sk": "Zväčšiť hĺbku stola na {v} mm a zapnúť",
+   "hu": "Mélység növelése {v} mm-re és bekapcsolás"
+  },
+  {
+   "id": "stul_shop.TEXTY_AKCI.roztahnout_h",
+   "poznamka": "text tlačítka / předpona nabídky",
+   "typ": "text",
+   "placeholdery": [
+    "{v}"
+   ],
+   "cs": "Zvýšit zadní stojky na {v} mm a zapnout",
+   "en": "Raise the rear uprights to {v} mm and switch on",
+   "sk": "Zvýšiť zadné stojky na {v} mm a zapnúť",
+   "hu": "Hátsó oszlopok emelése {v} mm-re és bekapcsolás"
+  },
+  {
+   "id": "stul_shop.TEXTY_AKCI.led_kratsi",
+   "poznamka": "text tlačítka / předpona nabídky",
+   "typ": "text",
+   "placeholdery": [
+    "{v}"
+   ],
+   "cs": "Zapnout kratší LED {v} mm",
+   "en": "Switch on the shorter {v} mm LED light",
+   "sk": "Zapnúť kratšie LED {v} mm",
+   "hu": "A rövidebb, {v} mm-es LED-világítás bekapcsolása"
+  },
+  {
+   "id": "stul_shop_sse.DUVOD_SUPLIKY",
+   "poznamka": "SSE stůl",
+   "typ": "text",
+   "placeholdery": [
+    "{d}",
+    "{w}"
+   ],
+   "cs": "Šuplíky se při těchto rozměrech nevejdou (potřebují hloubku stolu aspoň {d} mm a šířku aspoň {w} mm).",
+   "en": "The drawers do not fit these dimensions (they need a table depth of at least {d} mm and a width of at least {w} mm).",
+   "sk": "Zásuvky sa pri týchto rozmeroch nezmestia (potrebujú hĺbku stola aspoň {d} mm a šírku aspoň {w} mm).",
+   "hu": "A fiókok nem férnek el ezekkel a méretekkel (legalább {d} mm asztalmélység és legalább {w} mm szélesség szükséges)."
+  },
+  {
+   "id": "ano_ne.ano",
+   "poznamka": "hodnota zapnutého přepínače v souhrnu voleb (slovenský kód dnes používá yes/no)",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "ano",
+   "en": "yes",
+   "sk": "yes",
+   "hu": "igen"
+  },
+  {
+   "id": "ano_ne.ne",
+   "poznamka": "hodnota vypnutého přepínače v souhrnu voleb",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "ne",
+   "en": "no",
+   "sk": "no",
+   "hu": "nem"
+  }
+ ]
+}

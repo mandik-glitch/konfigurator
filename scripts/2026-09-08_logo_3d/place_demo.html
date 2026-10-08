@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Logo LOGIMAN.CZ na profilu - demo umisteni</title>
+<style>html,body{margin:0;padding:0;background:#e8ecf0;overflow:hidden;}</style>
+</head>
+<body>
+<script type="importmap">
+{ "imports": { "three": "../../node_modules/three/build/three.module.js" } }
+</script>
+<script type="module">
+import * as THREE from 'three';
+import { GLTFLoader } from '../../node_modules/three/examples/jsm/loaders/GLTFLoader.js';
+
+const W = 1500, H = 1000;
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0xe8ecf0);
+const camera = new THREE.PerspectiveCamera(32, W / H, 0.1, 5000);
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setSize(W, H);
+document.body.appendChild(renderer.domElement);
+scene.add(new THREE.AmbientLight(0xffffff, 0.75));
+const dir1 = new THREE.DirectionalLight(0xffffff, 1.0);
+dir1.position.set(300, 500, 600);
+scene.add(dir1);
+const dir2 = new THREE.DirectionalLight(0xffffff, 0.35);
+dir2.position.set(-300, 200, -300);
+scene.add(dir2);
+
+const loader = new GLTFLoader();
+function loadGlb(path) { return new Promise((res, rej) => loader.load(path, g => res(g.scene), undefined, rej)); }
+
+(async () => {
+  try {
+    // profil (Object_7): 30x30 prurez, delka 1000mm podel Y
+    const profil = await loadGlb('../../webapp/katalog/Object_7.glb');
+    profil.traverse(n => { if (n.isMesh) n.material = new THREE.MeshStandardMaterial({ color: 0xb9c2cc, metalness: 0.55, roughness: 0.45 }); });
+    scene.add(profil);
+    const pb = new THREE.Box3().setFromObject(profil);
+
+    // logo: ulozen v prirozene orientaci (radek podel X, vyska podel Y,
+    // tloustka rytiny podel Z) - na profil se otoci o 90 stupnu kolem Z,
+    // aby radek textu bezel podel DELKY profilu (Y), vyska textu (4,5mm)
+    // podel SIRKY profilu (30mm) - a umisti se na plochu Z=+15 (predni
+    // stena), protrhle 0,75mm (polovina tloustky) nad povrch.
+    const logo = await loadGlb('../../webapp/katalog/logo_logiman_cz.glb');
+    logo.traverse(n => { if (n.isMesh) n.material = new THREE.MeshStandardMaterial({ color: 0x2a2f36, metalness: 0.3, roughness: 0.5 }); });
+    const q = new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(0, 0, 1), Math.PI / 2);
+    logo.quaternion.copy(q);
+    logo.updateMatrixWorld(true);
+    const lb0 = new THREE.Box3().setFromObject(logo);
+    const thickness = lb0.max.y - lb0.min.y; // po otoceni je tloustka (puvodni Z) v ktere ose? zmerime
+    // Umisti na stred profilu (Y=0), na predni stenu (Z=15 + pul tloustky)
+    logo.position.set(0, 0, pb.max.z);
+    logo.updateMatrixWorld(true);
+    const lb = new THREE.Box3().setFromObject(logo);
+    // posun tak, aby VNITRNI plocha (blize profilu) byla presne na povrchu (Z=pb.max.z)
+    logo.position.z += (pb.max.z - lb.min.z);
+    logo.updateMatrixWorld(true);
+    scene.add(logo);
+
+    const lbFinal = new THREE.Box3().setFromObject(logo);
+    window.__DEBUG__ = {
+      profilBox: { min: pb.min, max: pb.max },
+      logoBox: { min: lbFinal.min, max: lbFinal.max },
+      gapToSurface: +(lbFinal.min.z - pb.max.z).toFixed(4),
+    };
+
+    const overall = new THREE.Box3();
+    overall.union(pb); overall.union(lbFinal);
+    const center = overall.getCenter(new THREE.Vector3());
+    const size = overall.getSize(new THREE.Vector3());
+    const maxDim = Math.max(size.x, size.y, size.z);
+
+    window.__setView__ = function (view) {
+      const dist = maxDim * 1.6;
+      if (view === 'closeup') {
+        const lc = lbFinal.getCenter(new THREE.Vector3());
+        const ld = Math.max(lbFinal.getSize(new THREE.Vector3()).x, lbFinal.getSize(new THREE.Vector3()).y) * 2.2;
+        camera.position.set(lc.x + ld * 0.5, lc.y + ld * 0.35, lc.z + ld * 1.1);
+        camera.lookAt(lc.x, lc.y, lc.z);
+      } else {
+        camera.position.set(center.x + dist * 0.55, center.y + dist * 0.35, center.z + dist * 0.85);
+        camera.lookAt(center.x, center.y, center.z);
+      }
+      renderer.render(scene, camera);
+    };
+    window.__setView__('overview');
+    window.__RENDER_DONE__ = true;
+  } catch (e) {
+    window.__RENDER_ERROR__ = (e && e.message) || String(e);
+    console.error(e);
+  }
+})();
+</script>
+</body>
+</html>

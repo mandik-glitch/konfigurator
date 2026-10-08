@@ -1,0 +1,20 @@
+-- bot9 2026-09-17
+-- Oprava aktivniho bugu: `last_seen_value DECIMAL(20,4)` zaokrouhloval
+-- cenu (USD, ~15 platnych cislic v syrove Prometheus hodnote, napr.
+-- 4.509180199999999) na 4 desetinna mista. Zaokrouhlena hodnota casto
+-- vychazela mirne VYSSI nez ziva hodnota pri dalsim ctenim, coz delta-
+-- logiku (scripts/2026-09-12_bot_token_usage_sync.py) chybne presvedcilo,
+-- ze counter "spadl na nulu" (restart session) - a pri KAZDEM tiku
+-- casovace (2 min) se tak cela hodnota pricetla ZNOVA. Token pocty (cela
+-- cisla) tímto netrpely, cena ano - bot8 behem ~12 min vyrostl z realnych
+-- ~$4,7 na zobrazenych $28 (~6x nadhodnoceno).
+--
+-- DOUBLE ma dost presnosti na presnou shodu se scrapovanym Python floatem
+-- - zadne dalsi zaokrouhlovani pri ukladani "posledni videne hodnoty".
+-- Jde jen o vnitrni bookkeeping tabulku (ne uzivatelsky zobrazovana cena),
+-- float presnost je tu v poradku.
+--
+-- Aplikovano uz primo 2026-09-17 (pred timhle souborem) - viz
+-- AGENTS_LOG.md pro postup opravy dat v `bot_token_usage`
+-- (bot9, konzultovano a potvrzeno bot3).
+ALTER TABLE bot_token_usage_series MODIFY last_seen_value DOUBLE NOT NULL DEFAULT 0;

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>3D logo LOGIMAN.CZ - build + export GLB</title>
+<style>html,body{margin:0;padding:0;background:#e8ecf0;overflow:hidden;}</style>
+</head>
+<body>
+<!--
+POZOR - TENHLE SOUBOR UZ NENI ZDROJ PRODUKCNIHO LOGA (bot9 2026-09-11).
+Logo se dnes vyrabi dvojici:
+    node gen_logo_text.js 'LOGiMAN.CZ' /tmp/logo.obj
+    /opt/blender-5.2/blender -b -P dokonci_logo.py -- /tmp/logo.obj logo.glb
+Tady zustava mala velka "I" (LOGIMAN.CZ), kdezto produkcni logo ma od
+2026-09-10 male "i", a hlavne je tu `bevelEnabled: true` s bevelSegments 2.
+Prave ten obly bevel tri kola branil tomu, aby slo hrany srazit primkou,
+jak chtel Robert - Blenderuv clamp pak meril zadany 1 mm proti jeho
+mikro-hranam a nechal z nej 0,013 mm. Kdyby se odtud nekdy generovalo
+znovu, bevel musi zustat VYPNUTY. Vysvetleni v hlavicce gen_logo_text.js.
+
+Robert 2026-09-08: "vyrob geometricky text LOGIMAN.CZ jako 3d logo,
+bude umistovano na profily produktovych sestav jako ochrana" - text je
+SKUTECNA 3D geometrie (extrudovana, ne textura/decal), aby slo o
+geometricke znaceni odolne proti pouhemu odstraneni textury pri
+zneuziti 3D modelu (viz project_ochrana_3d_modelu_sestav pamet/rozhodnuti
+Roberta 2026-09-06 o vrstvach ochrany 3D modelu sestav).
+
+Geometrie ulozena v PRIROZENE (horizontalni) orientaci - radek textu
+podel X, vyska textu podel Y (4mm - pohodlne se vejde na 30mm cross-
+section plochu profilu), ryti/extruze (hloubka 1.2mm) podel Z - stejna
+konvence jako "DESKA" katalogovy dil (vlastni tloustka v Z, hlavni
+rozmery v rovine XY). Otoceni na konkretni misto/smer pri UMISTENI na
+konkretni profil resi quaternion tehle instance v sestave, ne
+geometrie samotna.
+-->
+<script type="importmap">
+{ "imports": { "three": "../../node_modules/three/build/three.module.js" } }
+</script>
+<script type="module">
+import * as THREE from 'three';
+import { GLTFExporter } from '../../node_modules/three/examples/jsm/exporters/GLTFExporter.js';
+
+const W = 1400, H = 900;
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0xe8ecf0);
+const camera = new THREE.PerspectiveCamera(35, W / H, 0.1, 2000);
+const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
+renderer.setSize(W, H);
+document.body.appendChild(renderer.domElement);
+scene.add(new THREE.AmbientLight(0xffffff, 0.7));
+const dir1 = new THREE.DirectionalLight(0xffffff, 1.1);
+dir1.position.set(40, 80, 120);
+scene.add(dir1);
+const dir2 = new THREE.DirectionalLight(0xffffff, 0.4);
+dir2.position.set(-60, 30, -60);
+scene.add(dir2);
+
+const TEXT = 'LOGIMAN.CZ';
+const HEIGHT_MM = 28;     // vyska pismen (Robert 2026-09-08: "velikost vyska loga 28mm")
+const DEPTH_MM = 1.2;     // hloubka extruze (ryti)
+
+const loader = new THREE.FontLoader();
+loader.load('./fonts/helvetiker_bold.typeface.json', (font) => {
+  const geo = new THREE.TextGeometry(TEXT, {
+    font,
+    size: HEIGHT_MM,
+    height: DEPTH_MM,
+    curveSegments: 6,
+    bevelEnabled: true,
+    bevelThickness: 0.15,
+    bevelSize: 0.12,
+    bevelSegments: 2,
+  });
+  geo.computeBoundingBox();
+  const bb = geo.boundingBox;
+  const cx = (bb.max.x + bb.min.x) / 2;
+  const cy = (bb.max.y + bb.min.y) / 2;
+  const cz = (bb.max.z + bb.min.z) / 2;
+  geo.translate(-cx, -cy, -cz);
+  // Ulozeno v PRIROZENE (horizontalni, citelne) orientaci - radek textu
+  // podel X, vyska podel Y, ryti/extruze podel Z (stejna konvence jako
+  // "DESKA" katalogovy dil - vlastni tloustka v Z, hlavni rozmery v XY).
+  // Otoceni na konkretni plochu/smer PRI UMISTENI na profil resi
+  // quaternion tehle instance v sestave, ne geometrie samotna - stejny
+  // princip jako u kazdeho jineho katalogoveho dilu v teto sestave.
+  //
+  // KOREKCE VYSKY: TextGeometry "size" param NEODPOVIDA presne vyslednemu
+  // bounding-boxu (bevel + font metriky pridavaji navic, zmereno 30,17mm
+  // pro pozadovanych 28mm) - proto se po zmereni SKUTECNE vysky dodatecne
+  // preskaluje presne na HEIGHT_MM, misto spolehnuti na "size" parametr.
+  const meritY = bb.max.y - bb.min.y;
+  const korekce = HEIGHT_MM / meritY;
+  geo.scale(korekce, korekce, korekce);
+
+  const mat = new THREE.MeshStandardMaterial({ color: 0xb9c2cc, metalness: 0.75, roughness: 0.35 });
+  const mesh = new THREE.Mesh(geo, mat);
+  mesh.name = 'logo_logiman_cz';
+  scene.add(mesh);
+
+  geo.computeBoundingBox();
+  const size = new THREE.Vector3();
+  geo.boundingBox.getSize(size);
+  window.__SIZE__ = { x: +size.x.toFixed(2), y: +size.y.toFixed(2), z: +size.z.toFixed(2) };
+
+  const maxDim = Math.max(size.x, size.y, size.z);
+  const dist = maxDim * 2.4;
+  window.__setView__ = function (view) {
+    if (view === 'persp') {
+      camera.position.set(dist * 0.55, dist * 0.15, dist * 0.75);
+    } else if (view === 'front') {
+      camera.position.set(0, 0, dist * 0.9);
+    } else if (view === 'top') {
+      camera.position.set(0, dist * 0.9, 0.001);
+    }
+    camera.lookAt(0, 0, 0);
+    renderer.render(scene, camera);
+  };
+  window.__setView__('persp');
+
+  // POZOR - tato verze three (0.128.0) ma GLTFExporter.parse(input, onDone,
+  // options) - JEN 3 parametry, zadny samostatny onError (novejsi three ma
+  // 4). Realne chyceno 2026-09-08: puvodni kod predal error-handler jako
+  // 3. argument, cimz se options={binary:true} posunuly na IGNOROVANY 4.
+  // argument - exporter tise spustil JSON-vetev (options.binary undefined),
+  // vysledek byl obycejny Object, ne ArrayBuffer, a nasledny Uint8Array()
+  // na nem dal prazdne pole (0 bytu), beze zjevne chyby.
+  try {
+    const exporter = new GLTFExporter();
+    exporter.parse(mesh, (result) => {
+      window.__RESULT_TYPE__ = Object.prototype.toString.call(result);
+      const bytes = new Uint8Array(result);
+      let binary = '';
+      const chunk = 0x8000;
+      for (let i = 0; i < bytes.length; i += chunk) {
+        binary += String.fromCharCode.apply(null, bytes.subarray(i, i + chunk));
+      }
+      window.__GLB_BASE64__ = btoa(binary);
+      window.__EXPORT_DONE__ = true;
+    }, { binary: true });
+  } catch (e) {
+    window.__EXPORT_ERROR__ = String(e && e.message || e);
+  }
+}, undefined, (err) => {
+  window.__RENDER_ERROR__ = 'font load failed: ' + String(err);
+});
+</script>
+</body>
+</html>

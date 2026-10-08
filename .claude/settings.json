@@ -1,0 +1,32 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PROJECT_DIR}/.claude/hooks/bot_checkin.sh",
+            "async": true
+          }
+        ]
+      }
+    ]
+  },
+  "permissions": {
+    "allow": [
+      "Bash(curl -s http://127.0.0.1:8090/api/health)",
+      "Bash(curl -s http://127.0.0.1:8092/api/health)",
+      "Bash(journalctl -u konfigurator*)",
+      "Bash(curl -s --unix-socket api/konfigurator.sock http://localhost/api/health)",
+      "Bash(systemctl is-active konfigurator*)",
+      "Bash(curl -sk https://80-211-210-103.sslip.io:8092/api/health)",
+      "Bash(curl -s http://127.0.0.1:8091/api/health)",
+      "Bash(nginx -t*)",
+      "Bash(journalctl -u vybaveni-uzitkovych-vozidel*)",
+      "Bash(curl -s https://80-211-210-103.sslip.io/api/health)",
+      "Bash(scripts/2026-09-03_bot16_mysql_apply.sh*)",
+      "Bash(/opt/konfigurator/scripts/2026-09-03_bot16_mysql_apply.sh*)"
+    ]
+  }
+}

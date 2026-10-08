@@ -1,0 +1,29 @@
+--- a/2026-10-07_police_bez_desky/test_police_bez_desky.py
++++ b/2026-10-07_police_bez_desky/test_police_bez_desky.py
+@@ -111,7 +111,7 @@
+ for p in vybrano:
+     ted = C.otisky(S, G, K, C.vysledek(S, p), zlato.get("klice_parametru"))
+     z = zlato["mrizka"][C.klic_konfigurace(p)]
+-    if ted != z:
++    if not C.shoduje(ted, z):
+         spatne.append((p, [k for k in set(ted) | set(z) if ted.get(k) != z.get(k)]))
+     if not isinstance(C.vysledek(S, p), str):                                                              # vyslovne True = vychozi (stejne dily i hash)
+         a = C.vysledek(S, {**p, "police_deska": True})
+@@ -125,7 +125,7 @@
+     if p.get("system") == 41 or p.get("vyrez1"):
+         continue
+     import hashlib  # noqa: E402
+-    r = S.sestav_stul(**p)
++    r = C.vysledek(S, p)
+     check(hashlib.sha256(G.model_pro_parametry(r["parametry"])[1]).hexdigest()[:20] == h, f"B2: GLB vychoziho stolu {kl} beze zmeny")
+ 
+ # ---------------------------------------------------------------------------------------------------------------------
+@@ -146,7 +146,7 @@
+         return
+     ja = f"{json.dumps(p, sort_keys=True)}"
+     try:
+-        b = S.sestav_stul(**{**p, "police_deska": False})
++        b = S.sestav_stul(**{**C.stary_pocet(S), **p, "police_deska": False})
+     except S.StulChyba as e:
+         chyby_c.append((ja, f"bez desky StulChyba: {e}"))
+         return

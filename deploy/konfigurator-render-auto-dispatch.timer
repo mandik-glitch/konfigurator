@@ -1,0 +1,16 @@
+[Unit]
+Description=Casovac automatu pro kontinualni zarazovani renderu (kazdych 20 minut)
+# 20 minut ~= typicka delka jedne davky (54 snimku, viz PRODUKTOVE_RENDERY.md)
+# na JEDINE GPU stanici - zadny duvod plnit frontu rychleji, nez ji worker
+# stiha vyprazdnovat. Vypinac je v app_settings['render_auto_dispatch_povoleno']
+# (cte se na zacatku kazdeho behu) - zastaveni timeru neni jedina cesta, jak
+# automat vypnout, ale jde taky (systemctl stop/disable
+# konfigurator-render-auto-dispatch.timer).
+
+[Timer]
+OnCalendar=*-*-* *:00/20:00
+Persistent=true
+RandomizedDelaySec=120
+
+[Install]
+WantedBy=timers.target

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <script src="/js/client-errors.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stránka nenalezena – Hliníkový konstrukční stavebnicový systém s drážkami</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="/css/brand-logo.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap">
+<style>
+  :root {
+    --bg: #494b50;
+    --panel-bg: #22262e;
+    --panel-bg-2: #1f232a;
+    --border: #3a3f4a;
+    --border-soft: #333333;
+    --border-card: #2c313a;
+    --text: #e8eaed;
+    --text2: #c7ccd4;
+    --text-muted: #8b93a1;
+    --accent: #9fd0ff;
+  }
+  [data-theme="light"] {
+    --bg: #eef1f5;
+    --panel-bg: #ffffff;
+    --panel-bg-2: #f6f8fa;
+    --border: #d7dce3;
+    --border-soft: #e3e7ec;
+    --border-card: #dde2e8;
+    --text: #1b1e24;
+    --text2: #3a3f4a;
+    --text-muted: #5c6570;
+    --accent: #1a6fd4;
+  }
+  * { box-sizing:border-box; }
+  html, body { margin:0; padding:0; min-height:100%; font-family:var(--font-main, -apple-system, "Segoe UI", Roboto, Arial, sans-serif); background:var(--bg); color:var(--text); font-size:14px; }
+  a { color:var(--accent); }
+  header { display:flex; align-items:center; justify-content:space-between; gap:14px; padding:12px 20px; border-bottom:1px solid var(--border-soft); background:var(--panel-bg); }
+  header .brand { color:var(--text); font-weight:700; text-decoration:none; font-size:14px; }
+  /* Textove logo (.brand-logo*): sdilene CSS /css/brand-logo.css, nacitane v <head> - vzhled a zduvodneni upravuj JEN tam. */
+  /* Pismo loga: stranka je staticka (bez SSR, nedostava --font-main z volby admina), logo by bylo v systemovem pismu a
+     vypadalo jinak nez na homepage. Proto natvrdo Manrope (= dnesni volba pisma webu, site_font.py) + <link> v <head>;
+     pri zmene volby pisma v adminu je treba upravit oboji (QA static_page_font_stale to ohlasi). Text stranky se nemeni. */
+  .brand-logo { --font-main: "Manrope", -apple-system, "Segoe UI", Roboto, Arial, sans-serif; }
+  /* HOME tlacitko (Robert primo, 2026-09-15 pres bot3: "stylove HUD
+     tlacitko Domu na vsech strankach, vedle loga") - stejny vizualni
+     jazyk jako #pdAddCartBtn v product.html (useknuty roh, --accent
+     obrys). Zadny sdileny JS/CSS soubor mezi strankami - kopie na
+     kazdou stranku. */
+  .home-hud-btn {
+    display:inline-flex; align-items:center; justify-content:center;
+    width:30px; height:30px; flex:none; box-sizing:border-box;
+    background:transparent; color:var(--accent); border:1px solid var(--accent); border-radius:0;
+    clip-path:polygon(0 0, calc(100% - 7px) 0, 100% 7px, 100% 100%, 7px 100%, 0 calc(100% - 7px));
+    font-size:15px; line-height:1; text-decoration:none; cursor:pointer;
+    transition:background-color .15s ease, color .15s ease;
+  }
+  .home-hud-btn:hover { background:var(--accent); color:#06140c; }
+  #themeToggleBtn { background:var(--panel-bg-2); color:var(--text-muted); border:1px solid var(--border); border-radius:14px; padding:5px 10px; cursor:pointer; font-size:13px; }
+  .page-wrap { max-width:640px; margin:0 auto; padding:60px 18px 80px; text-align:center; }
+  .nf-code { font-size:15px; color:var(--text-muted); letter-spacing:.08em; margin-bottom:10px; }
+  h1 { font-size:26px; margin:0 0 14px; }
+  .nf-text { color:var(--text2); font-size:14px; line-height:1.7; margin:0 0 28px; }
+  .nf-actions { display:flex; gap:10px; justify-content:center; flex-wrap:wrap; }
+  .nf-actions a { display:inline-block; padding:10px 20px; border-radius:8px; border:1px solid var(--border-card); background:var(--panel-bg-2); color:var(--text2); text-decoration:none; font-size:14.5px; }
+  .nf-actions a:first-child { background:var(--accent); color:#0d1520; border-color:var(--accent); font-weight:600; }
+  footer { text-align:center; color:var(--text-muted); font-size:12.5px; padding:24px 18px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div style="display:flex; align-items:center; gap:10px;">
+    <a href="/" class="home-hud-btn" title="Domů" aria-label="Domů">⌂</a>
+    <a class="brand-logo" href="/" aria-label="Logiman"><span class="brand-logo-hl">LOGi</span><span class="brand-logo-lt">MAN</span></a>
+    <a class="brand" href="/">Hliníkový konstrukční stavebnicový systém s drážkami</a>
+  </div>
+  <button id="themeToggleBtn" type="button" title="Přepnout barevné schéma" onclick="toggleShopTheme()"></button>
+</header>
+
+<div class="page-wrap">
+  <div class="nf-code">CHYBA 404</div>
+  <h1>Stránka nenalezena</h1>
+  <p class="nf-text">Odkaz, na který jste přišli, buď nikdy neexistoval, nebo už byl přesunut/smazán. Zkuste se vrátit na hlavní stránku nebo si vyhledat produkt v katalogu.</p>
+  <div class="nf-actions">
+    <a href="/">Zpět na hlavní stránku</a>
+    <a href="/kontakt.html">Kontakt</a>
+  </div>
+</div>
+
+<footer>
+  Hliníkový konstrukční stavebnicový systém s drážkami
+</footer>
+
+<script>
+(function () {
+  try {
+    var t = localStorage.getItem("shopTheme");
+    if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+  } catch (e) {}
+})();
+function applyShopTheme(theme) {
+  theme = theme === "light" ? "light" : "dark";
+  document.documentElement.setAttribute("data-theme", theme);
+  try { localStorage.setItem("shopTheme", theme); } catch (e) {}
+  var btn = document.getElementById("themeToggleBtn");
+  if (btn) btn.textContent = theme === "light" ? "🌙" : "☀️";
+}
+function toggleShopTheme() {
+  var current = document.documentElement.getAttribute("data-theme") === "light" ? "light" : "dark";
+  applyShopTheme(current === "light" ? "dark" : "light");
+}
+document.addEventListener("DOMContentLoaded", function () {
+  var btn = document.getElementById("themeToggleBtn");
+  if (btn) btn.textContent = (document.documentElement.getAttribute("data-theme") === "light") ? "🌙" : "☀️";
+});
+</script>
+
+</body>
+</html>

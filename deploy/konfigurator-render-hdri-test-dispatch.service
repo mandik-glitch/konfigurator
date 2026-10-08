@@ -1,0 +1,15 @@
+[Unit]
+Description=Konfigurator - automat: vyridi frontu jednorazovych testovacich HDRI renderu z adminu
+After=network.target mysql.service
+
+[Service]
+Type=oneshot
+# User=root (stejny duvod jako ostatni render-dispatch automaty): potrebuje
+# KONFIGURATOR_RENDER_KLIC_SOUBOR=/root/.konfigurator_render_klic, ktery je
+# schvalne cist jen root - www-data (jak bezi samotny admin endpoint) ho
+# precist NESMI, aby web sluzba sama nemohla renderovaci frontu zaradit.
+User=root
+Group=root
+WorkingDirectory=/opt/konfigurator
+EnvironmentFile=/opt/konfigurator/api/.env
+ExecStart=/opt/konfigurator/api/venv/bin/python3 /opt/konfigurator/scripts/2026-09-24_render_hdri_test_dispatch.py

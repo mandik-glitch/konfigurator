@@ -1,0 +1,41 @@
+{
+ "asm": 185,
+ "legsPresent": {
+  "leg0": true,
+  "leg1": true
+ },
+ "OLD_YNEW": 141.00018310546875,
+ "NEW_YNEW": 151.00018310546875,
+ "counts": {
+  "cFront": 15,
+  "cRampInterp": 27,
+  "cLeg1Y": 8,
+  "cUnchanged": 17,
+  "total": 67
+ },
+ "floorShifts": [],
+ "satMeasured": 64,
+ "satCollisions": 0,
+ "satList": [],
+ "seamChecks": [
+  {
+   "seam": "leg1-sloupek-svislice",
+   "gap": 0,
+   "requireZero": true
+  },
+  {
+   "seam": "patro0-vs-leg1-Ynew",
+   "gap": 168.9996100436041,
+   "requireZero": false
+  },
+  {
+   "seam": "leg0-nosnik-vs-svislice",
+   "gap": -0.0003899564048879256,
+   "requireZero": true
+  }
+ ],
+ "self_collisions": 0,
+ "selfList": [],
+ "touchedCount": 50,
+ "gaps_bad": 0
+}

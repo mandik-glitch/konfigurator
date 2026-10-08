@@ -1,0 +1,10 @@
+{
+ "0": {
+  "collisionY": 924,
+  "maxSafeBoxTop": 922
+ },
+ "1": {
+  "collisionY": 926,
+  "maxSafeBoxTop": 924
+ }
+}

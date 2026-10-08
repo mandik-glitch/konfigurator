@@ -1,0 +1,11 @@
+[Unit]
+Description=Konfigurator - prepocet priznaku koliznich uhelniku na sestavach
+After=network.target mysql.service
+
+[Service]
+Type=oneshot
+User=www-data
+Group=www-data
+WorkingDirectory=/opt/konfigurator
+EnvironmentFile=/opt/konfigurator/api/.env
+ExecStart=/opt/konfigurator/api/venv/bin/python3 /opt/konfigurator/scripts/2026-09-11_prepocet_kolize.py

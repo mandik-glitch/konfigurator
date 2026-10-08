@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Připni cokoli | Stavebnice z hliníkových profilů</title>
+<meta name="description" content="Do drážek hliníkového profilu zasunete matici, přitáhnete šroub a máte pevný spoj. Podívejte se ve 3D, jak jednoduše se stavebnice skládá.">
+<link rel="canonical" href="https://autovestavby.logiman.cz/pripni-cokoli.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Připni cokoli | Stavebnice z hliníkových profilů">
+<meta property="og:description" content="Do drážek hliníkového profilu zasunete matici, přitáhnete šroub a máte pevný spoj. Podívejte se ve 3D, jak jednoduše se stavebnice skládá.">
+<meta property="og:image" content="https://autovestavby.logiman.cz/pripni-cokoli/nahled.jpg">
+<meta name="theme-color" content="#0f1722">
+<meta name="robots" content="noindex">   <!-- NÁVRH: zatím neindexovat; odstranit po schválení Robertem a SEO (bot7) -->
+<link rel="stylesheet" href="/css/v3d.css?v=f244e9e21e">
+<style>
+/* "Připni cokoli": tmavá stránka s jedním velkým živým 3D modelem, popiskem a ovládáním (přehrát/pauza, časová osa, kroky). */
+:root { --pc-bg:#0f1722; --pc-card:#162231; --pc-ink:#e8eff6; --pc-muted:#9fb0c0; --pc-line:#2a3a4b; --pc-acc:#2fe07a; --pc-hot:#ff7a3d;
+  --pc-font:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; color-scheme:dark; }
+* { box-sizing:border-box }
+html,body { margin:0 }
+body { background:var(--pc-bg); color:var(--pc-ink); font:16px/1.5 var(--pc-font); padding-inline:16px; padding-block:clamp(14px,3vw,32px) 40px;
+  min-height:100vh }
+.pc { max-width:1100px; margin-inline:auto; display:flex; flex-direction:column; gap:18px }
+.pc-head { display:flex; flex-direction:column; gap:6px }
+h1 { margin:0; font-size:clamp(30px,6.4vw,54px); line-height:1.05; letter-spacing:-.01em; font-weight:700; text-wrap:balance }
+.lead { margin:0; color:var(--pc-muted); max-width:60ch; font-size:clamp(16px,2.2vw,19px) }
+.pc-stage { display:flex; flex-direction:column; gap:12px }
+.pc-viewer { position:relative; width:100%; aspect-ratio:4/3; max-height:72vh; min-height:320px; background:radial-gradient(120% 90% at 50% 20%,#1f3144 0%,#0f1722 70%);
+  border:1px solid var(--pc-line); overflow:hidden }
+.pc-viewer .v3d-tl, .pc-viewer .v3d-tr { display:none }       /* ukázka nepotřebuje pohledy ani Skutečný/Drátěný */
+.pc-viewer .v3d-root { background:transparent }
+.pc-cap { min-height:3.1em; font-size:clamp(17px,2.4vw,22px); line-height:1.35; font-weight:600; padding:2px 2px; text-wrap:balance }
+.pc-cap.empty { visibility:hidden }
+.pc-ctl { display:flex; flex-wrap:wrap; align-items:center; gap:10px 12px }
+.btn { -webkit-appearance:none; appearance:none; width:48px; height:48px; display:inline-grid; place-items:center; border:1px solid var(--pc-line); background:var(--pc-card);
+  color:var(--pc-ink); border-radius:0; cursor:pointer; clip-path:polygon(0 0,calc(100% - 9px) 0,100% 9px,100% 100%,9px 100%,0 calc(100% - 9px)) }
+.btn:hover { border-color:var(--pc-acc) } .btn:focus-visible, .chip:focus-visible, #pcScrub:focus-visible, #pcLang:focus-visible, .cta:focus-visible { outline:2px solid var(--pc-acc); outline-offset:2px }
+#pcScrub { flex:1 1 220px; min-width:140px; height:44px; accent-color:var(--pc-acc); background:transparent; margin:0 }
+#pcSteps { display:flex; flex-wrap:wrap; gap:8px; flex:1 1 100%; }
+.chip { -webkit-appearance:none; appearance:none; min-height:44px; padding:0 16px; border:1px solid var(--pc-line); background:var(--pc-card); color:var(--pc-ink); font:600 15px var(--pc-font);
+  cursor:pointer; white-space:pre; clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,8px 100%,0 calc(100% - 8px)) }
+.chip:hover { border-color:var(--pc-acc) } .chip.on { background:var(--pc-hot); border-color:var(--pc-hot); color:#fff }
+.pc-foot { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px }
+.cta { display:inline-flex; align-items:center; min-height:48px; padding:0 22px; background:var(--pc-acc); color:#05140b; font-weight:700; text-decoration:none;
+  clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px)) }
+.cta:hover { filter:brightness(1.08) }
+#pcLang { min-height:44px; padding:0 10px; background:var(--pc-card); color:var(--pc-ink); border:1px solid var(--pc-line); font:600 15px var(--pc-font) }
+body.embed { padding:0 } body.embed .pc { max-width:none; gap:10px } body.embed .pc-head, body.embed .pc-foot { display:none }
+body.embed .pc-viewer { max-height:none; aspect-ratio:auto; height:calc(100vh - 150px); min-height:260px; border-left:0; border-right:0 }
+body.embed .pc-cap, body.embed .pc-ctl { padding-inline:12px }
+body.failed .pc-ctl { display:none }
+.pc-preview { background:var(--pc-hot); color:#fff; font-weight:700; padding:10px 14px; font-size:15px; line-height:1.35 }
+.pc-other { display:flex; flex-direction:column; gap:12px; margin-top:6px }
+.pc-other h2 { margin:0; font-size:clamp(21px,3.6vw,30px); line-height:1.15; font-weight:700; text-wrap:balance }
+.pc-other .lead { font-size:clamp(15px,2vw,17px) }
+.pc-sch { display:grid; grid-template-columns:1fr 1fr; gap:16px }
+.pc-sch figure { margin:0; background:var(--pc-card); border:1px solid var(--pc-line); padding:12px 12px 14px; display:flex; flex-direction:column; gap:10px }
+.pc-sch img { display:block; width:100%; height:auto; max-height:340px; object-fit:contain }
+.pc-sch figcaption { color:var(--pc-muted); font-size:15px; line-height:1.4 }
+.pc-sch figcaption strong { display:block; color:var(--pc-ink); font-size:17px; margin-bottom:2px }
+body.embed .pc-other { display:none }
+@media (max-width:700px) { .pc-sch { grid-template-columns:1fr } }
+noscript .msg { color:var(--pc-hot); font-weight:600 }
+@media (max-width:560px) { .pc-viewer { aspect-ratio:1/1.05; max-height:none } .chip { flex:1 1 calc(50% - 8px); padding:0 8px } }
+@media (prefers-reduced-motion: reduce) { * { animation:none !important; transition:none !important } }
+</style>
+</head>
+<body>
+<main class="pc">
+  <header class="pc-head">
+    <h1 id="pcH1">Připni cokoli</h1>
+    <p class="lead" id="pcLead">Do drážek hliníkového profilu zasunete matici, přitáhnete šroub a máte pevný spoj. Bez vrtání, bez svařování.</p>
+  </header>
+  <section class="pc-stage">
+    <div id="pcViewer" class="pc-viewer" role="img" aria-label="Animovaný 3D model: připevnění dílů do drážky profilu"></div>
+    <noscript><p class="msg">Pro 3D ukázku je potřeba JavaScript.</p></noscript>
+    <div class="pc-cap empty" id="pcCap" aria-live="polite"></div>
+    <div class="pc-ctl">
+      <button type="button" class="btn" id="pcPlay" aria-label="Pozastavit"></button>
+      <button type="button" class="btn" id="pcRestart" aria-label="Od začátku"></button>
+      <input type="range" id="pcScrub" min="0" max="1000" value="0" step="1" aria-label="Časová osa ukázky" disabled>
+      <div id="pcSteps" role="group" aria-label="Kroky"></div>
+    </div>
+  </section>
+  <section class="pc-other" id="pcOther" aria-labelledby="pcOtherH">
+    <h2 id="pcOtherH">Stejný princip platí pro další profily</h2>
+    <p class="lead" id="pcOtherLead">Profily v naší nabídce mají T-drážku. Mění se jen její šířka a velikost matice, postup je stejný: zasunout matici, přitáhnout šroub.</p>
+    <div class="pc-sch">
+      <figure><img id="pcImg40" src="/pripni-cokoli/schema-40x40-d10.svg?v=adacb35a" width="460" height="460" alt="Průřez profilu 40×40 s drážkou 10 mm" loading="lazy" decoding="async"><figcaption><strong id="pcF40t">Profil 40×40, drážka 10 mm</strong><span id="pcF40n">Profil z ukázky nahoře.</span></figcaption></figure>
+      <figure><img id="pcImg30" src="/pripni-cokoli/schema-30x30-d8.svg?v=adacb35a" width="460" height="460" alt="Průřez profilu 30×30 s drážkou 8 mm" loading="lazy" decoding="async"><figcaption><strong id="pcF30t">Profil 30×30, drážka 8 mm</strong><span id="pcF30n">Menší profil, stejný princip.</span></figcaption></figure>
+    </div>
+  </section>
+  <footer class="pc-foot">
+    <a class="cta" id="pcCta" href="/">Zobrazit profily a příslušenství</a>
+    <select id="pcLang"><option value="cs">Čeština</option><option value="en">English</option><option value="sk">Slovenčina</option><option value="de">Deutsch</option><option value="pl">Polski</option></select>
+  </footer>
+</main>
+<script>window.PC_V = '6683bb3e-6fec006b-a047f9a5'; window.PC_VIEWER_V = 'a9878ebae8'; window.PC_PLUGIN_V = '9553530c75';</script>
+<script src="/js/pripni-cokoli-page.js?v=9b945ba112"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+-- Perzistence geometricky vypocitaneho predniho azimutu Vandr karty
+-- (WORKFLOW.md pravidlo 52, Robert: "nikdy nic se nesmi odkladat" +
+-- "toto je na pravou stranu auta... tak to je problem, udelej co je
+-- potreba" - bot3 2026-09-24 zjistil, ze render Vandr karet VZDY pada
+-- na globalni fallback FRONT_AZIMUTH_DEG=270, protoze monoliticky
+-- import nema role-tagovane dily (compute_front_azimuth_deg() vraci
+-- vzdy None) - u 55 karet oznacenych jako RP (pravy) by to ukazalo
+-- SPATNOU stranu regalu).
+--
+-- scripts/2026-09-23_vandr_razitka_spocitat.py uz tenhle azimut PRO
+-- KAZDOU kartu pocita GEOMETRICKY primo z monolitickeho GLB (karoserie/
+-- podlaha proximita + kovani jako krizova kontrola, viz Krok 3d) -
+-- overeno na vsech 17 kartach s GLB v teto session. Hodnota se
+-- doposud jen tiskla (SOUHRN_JSON.predni_azimut_rig), nikde se
+-- nezapisovala - render tak o ni nevedel. Tenhle sloupec ji perzistuje,
+-- aby ji `scripts/2026-09-09_turntable_job.py::build_job_vandr()`
+-- mohl pouzit MISTO fallbacku.
+--
+-- NULL = jeste nespocitano (karta bez GLB, nebo pred timhle patchem) -
+-- build_job_vandr() v tom pripade zustava na puvodnim fallbacku 270,
+-- nikdy nehada.
+ALTER TABLE shop_products
+  ADD COLUMN vandr_predni_azimut_deg SMALLINT NULL;

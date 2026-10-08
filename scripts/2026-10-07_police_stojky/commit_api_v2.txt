@@ -1,0 +1,8 @@
+Sikma horni police na boxy se sklonem 5-30 st. na naklapecich konzolach #3323 / #3324 ve vsech generatorech stolu (30/35/40/45) (bot8, Robert 2026-10-07)
+
+Sesty typ police `sikma` (verejne `slope`) + parametr `hpolice_sklon` (vychozi 15 st.; do kodu a hashe vstupuje jen u sikme police, vychozi stav stolu beze zmeny - zlaty otisk 661 konfiguraci):
+ram jako u lemu NAKLONENY tuhe kolem osy zadni pricky (vpredu nizsi), deska lamino 18 / 12 mm, vpredu lem z PR10 na uhelnicich, bocni profily drzi na zadnich stojkach 2 Uhlove naklapeci
+konzole (#3323 drazka 8 = systemy 30/35, #3324 drazka 10 = 40/45; spoj stojka - bok se pocita jako spoj profilu). Presna kontrola kolizi (SAT OBB) pro naklonene dily, vzpery ramen LED
+se prizpusobi (pro_vzpery), jen jeden usek mezi stojkami (se stredni zadni nohou se typ nenabizi). Meze vysky / hloubky / sklonu, automaticke odebrani, 3D menu (typ, sklon +-5),
+cena (konzoly + spojovaci material - NAVRH 4+4), vyrobni vypis, slot upshelftilt ve verejnem API s texty cs / en / sk. Testy: test_hpolice_sikma.py, rozsirene test_hpolice.py /
+test_hpolice_shop.py, mutace_hpolice.py (151 mutaci).

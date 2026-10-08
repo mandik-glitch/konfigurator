@@ -1,0 +1,18 @@
+[Unit]
+Description=Konfigurator - automat: zaradi do renderovaci fronty Vandr karty s hotovym GLB a aktualnimi razitky
+After=network.target mysql.service
+
+[Service]
+Type=oneshot
+# User=root (stejne jako sesterske konfigurator-render-auto-dispatch pro
+# nativni vetev, DUVOD STEJNY): 2026-09-09_turntable_render.py vyzaduje
+# KONFIGURATOR_RENDER_KLIC_SOUBOR=/root/.konfigurator_render_klic, ktery
+# je schvalne cist jen root (0600) - www-data (jak bezi ostatni Vandr
+# automaty v tomhle retezci - watcher/konverze/card-activate/razitka) by
+# ho precist NESMEL, presne aby web sluzba sama nemohla renderovaci
+# frontu zaradit z vlastni iniciativy.
+User=root
+Group=root
+WorkingDirectory=/opt/konfigurator
+EnvironmentFile=/opt/konfigurator/api/.env
+ExecStart=/opt/konfigurator/api/venv/bin/python3 /opt/konfigurator/scripts/2026-09-23_vandr_render_auto_dispatch.py

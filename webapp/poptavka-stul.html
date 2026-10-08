@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <script src="/js/client-errors.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Poptávka stolu na míru – Hliníkový konstrukční stavebnicový systém s drážkami</title>
+<meta name="description" content="Poptejte si výškově stavitelný nebo balicí stůl na míru - vyberte typ, rozměry, materiál a příslušenství.">
+<link rel="stylesheet" href="/css/brand-logo.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap">
+<style>
+  :root {
+    --bg: #494b50;
+    --panel-bg: #22262e;
+    --panel-bg-2: #1f232a;
+    --border: #3a3f4a;
+    --border-soft: #333333;
+    --border-card: #2c313a;
+    --text: #e8eaed;
+    --text2: #c7ccd4;
+    --text-muted: #8b93a1;
+    --accent: #9fd0ff;
+    --btn-bg: #3a5a7a;
+    --btn-bg-hover: #4a6a8a;
+    --btn-ghost-bg: #2b3038;
+    --error: #e07070;
+    --success: #7ed49a;
+  }
+  [data-theme="light"] {
+    --bg: #eef1f5;
+    --panel-bg: #ffffff;
+    --panel-bg-2: #f6f8fa;
+    --border: #d7dce3;
+    --border-soft: #e3e7ec;
+    --border-card: #dde2e8;
+    --text: #1b1e24;
+    --text2: #3a3f4a;
+    --text-muted: #5c6570;
+    --accent: #1a6fd4;
+    --btn-bg: #2f6690;
+    --btn-bg-hover: #3a76a0;
+    --btn-ghost-bg: #e8ebef;
+    --error: #c23b3b;
+    --success: #2f9e5c;
+  }
+  * { box-sizing:border-box; }
+  html, body { margin:0; padding:0; min-height:100%; font-family:var(--font-main, -apple-system, "Segoe UI", Roboto, Arial, sans-serif); background:var(--bg); color:var(--text); font-size:14px; }
+  a { color:var(--accent); }
+  header { display:flex; align-items:center; justify-content:space-between; gap:14px; padding:12px 20px; border-bottom:1px solid var(--border-soft); background:var(--panel-bg); }
+  header .brand { color:var(--text); font-weight:700; text-decoration:none; font-size:14px; }
+  /* Textove logo (.brand-logo*): sdilene CSS /css/brand-logo.css, nacitane v <head> - vzhled a zduvodneni upravuj JEN tam. */
+  /* Pismo loga: stranka je staticka (bez SSR, nedostava --font-main z volby admina), logo by bylo v systemovem pismu a
+     vypadalo jinak nez na homepage. Proto natvrdo Manrope (= dnesni volba pisma webu, site_font.py) + <link> v <head>;
+     pri zmene volby pisma v adminu je treba upravit oboji (QA static_page_font_stale to ohlasi). Text stranky se nemeni. */
+  .brand-logo { --font-main: "Manrope", -apple-system, "Segoe UI", Roboto, Arial, sans-serif; }
+  /* HOME tlacitko (Robert primo, 2026-09-15 pres bot3: "stylove HUD
+     tlacitko Domu na vsech strankach, vedle loga") - stejny vizualni
+     jazyk jako #pdAddCartBtn v product.html (useknuty roh, --accent
+     obrys). Zadny sdileny JS/CSS soubor mezi strankami - kopie na
+     kazdou stranku. */
+  .home-hud-btn {
+    display:inline-flex; align-items:center; justify-content:center;
+    width:30px; height:30px; flex:none; box-sizing:border-box;
+    background:transparent; color:var(--accent); border:1px solid var(--accent); border-radius:0;
+    clip-path:polygon(0 0, calc(100% - 7px) 0, 100% 7px, 100% 100%, 7px 100%, 0 calc(100% - 7px));
+    font-size:15px; line-height:1; text-decoration:none; cursor:pointer;
+    transition:background-color .15s ease, color .15s ease;
+  }
+  .home-hud-btn:hover { background:var(--accent); color:#06140c; }
+  #themeToggleBtn { background:var(--panel-bg-2); color:var(--text-muted); border:1px solid var(--border); border-radius:14px; padding:5px 10px; cursor:pointer; font-size:13px; }
+  .page-wrap { max-width:760px; margin:0 auto; padding:24px 18px 60px; }
+  .breadcrumb { font-size:13px; color:var(--text-muted); margin-bottom:14px; }
+  .breadcrumb a { color:var(--text-muted); text-decoration:none; }
+  .breadcrumb a:hover { text-decoration:underline; }
+  h1 { font-size:24px; margin:0 0 8px; }
+  .intro { color:var(--text2); line-height:1.75; margin-bottom:24px; }
+  .pf-steps { display:flex; gap:6px; margin-bottom:22px; }
+  .pf-step-dot { flex:1; height:4px; border-radius:2px; background:var(--border-card); }
+  .pf-step-dot.done, .pf-step-dot.active { background:var(--accent); }
+  .pf-panel { display:none; }
+  .pf-panel.active { display:block; }
+  .pf-field { margin-bottom:18px; }
+  .pf-field label.pf-label { display:block; font-size:14px; color:var(--text2); margin-bottom:6px; font-weight:600; }
+  .pf-hint { font-size:12.5px; color:var(--text-muted); margin-top:4px; }
+  .pf-input, .pf-textarea {
+    width:100%; font-family:inherit; font-size:14px; padding:9px 11px; border-radius:6px;
+    border:1px solid var(--border); background:var(--panel-bg-2); color:var(--text);
+  }
+  .pf-textarea { min-height:90px; resize:vertical; }
+  .pf-row { display:flex; gap:14px; flex-wrap:wrap; }
+  .pf-row .pf-field { flex:1; min-width:160px; }
+  .pf-error { color:var(--error); font-size:13px; margin-top:4px; display:none; }
+  .pf-field.pf-invalid .pf-input, .pf-field.pf-invalid .pf-textarea { border-color:var(--error); }
+  .pf-field.pf-invalid .pf-error { display:block; }
+
+  /* obrazkove vybery (typ stolu / prislusenstvi) - responzivni mrizka,
+     ne pevny pocet sloupcu, at se prizpusobi sirce okna/mobilu. */
+  .pf-picker-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(150px, 1fr)); gap:10px; }
+  .pf-picker-grid.pf-picker-wide { grid-template-columns:repeat(auto-fill, minmax(210px, 1fr)); }
+  .pf-picker-card {
+    position:relative; border:2px solid var(--border-card); border-radius:8px; overflow:hidden;
+    cursor:pointer; background:var(--panel-bg-2); transition:border-color .12s;
+  }
+  .pf-picker-card:hover { border-color:var(--accent); }
+  .pf-picker-card.selected { border-color:var(--accent); box-shadow:0 0 0 1px var(--accent); }
+  .pf-picker-card input { position:absolute; opacity:0; pointer-events:none; }
+  .pf-picker-card img { width:100%; height:110px; object-fit:contain; background:#fff; display:block; }
+  .pf-picker-card .pf-picker-label { font-size:13px; line-height:1.35; color:var(--text2); padding:8px 10px; text-align:center; }
+  .pf-picker-card .pf-picker-check {
+    position:absolute; top:6px; right:6px; width:20px; height:20px; border-radius:50%;
+    background:var(--accent); color:#0b1420; font-size:13px; display:none; align-items:center; justify-content:center; font-weight:700;
+  }
+  .pf-picker-card.selected .pf-picker-check { display:flex; }
+
+  .pf-choice-list { display:flex; flex-direction:column; gap:8px; }
+  .pf-choice-list label { display:flex; align-items:flex-start; gap:8px; font-size:14px; color:var(--text2); cursor:pointer; padding:8px 10px; border:1px solid var(--border-card); border-radius:6px; background:var(--panel-bg-2); }
+  .pf-choice-list label:hover { border-color:var(--accent); }
+  .pf-choice-list input { margin-top:3px; }
+
+  .pf-nav { display:flex; justify-content:space-between; gap:10px; margin-top:26px; }
+  .pf-btn { font-family:inherit; font-size:14px; padding:10px 22px; border-radius:6px; border:none; cursor:pointer; }
+  .pf-btn-primary { background:var(--btn-bg); color:#fff; }
+  .pf-btn-primary:hover { background:var(--btn-bg-hover); }
+  .pf-btn-ghost { background:var(--btn-ghost-bg); color:var(--text2); }
+  .pf-btn-primary:disabled { opacity:.55; cursor:default; }
+
+  .pf-summary { margin-bottom:20px; padding:14px 16px; border:1px solid var(--border-card); border-radius:8px; background:var(--panel-bg-2); }
+  .pf-summary-row { font-size:14px; line-height:1.6; color:var(--text2); }
+  .pf-summary-row + .pf-summary-row { margin-top:2px; }
+  .pf-summary-label { color:var(--text-muted); margin-right:6px; }
+
+  .pf-done { display:none; text-align:center; padding:40px 10px; }
+  .pf-done h2 { font-size:22px; margin-bottom:10px; }
+  .pf-done p { color:var(--text2); line-height:1.6; }
+  .pf-submit-error { color:var(--error); font-size:14px; margin-top:14px; display:none; }
+</style>
+<script src="/track.js" defer></script>
+</head>
+<body>
+
+<div id="rekonstrukceBanner" style="background:#b3541e; color:#fff; text-align:center; padding:8px 14px; font-size:14px; font-weight:600; letter-spacing:.02em;">&#9888;&#65039; Web je v rekonstrukci &mdash; omluvte pros&iacute;m do&#269;asn&eacute; nedostatky.</div>
+<header>
+  <div style="display:flex; align-items:center; gap:10px;">
+    <a href="/" class="home-hud-btn" title="Domů" aria-label="Domů">⌂</a>
+    <a class="brand-logo" href="/" aria-label="Logiman"><span class="brand-logo-hl">LOGi</span><span class="brand-logo-lt">MAN</span></a>
+    <a class="brand" href="/">Hliníkový konstrukční stavebnicový systém s drážkami</a>
+  </div>
+  <button id="themeToggleBtn" type="button" title="Přepnout barevné schéma" onclick="toggleShopTheme()"></button>
+</header>
+
+<div class="page-wrap">
+  <div class="breadcrumb"><a href="/">Kategorie</a> <span>›</span> <a href="/pracovni-stoly-na-miru">Pracovní stoly na míru</a> <span>›</span> Poptávka stolu</div>
+  <h1>Poptávka stolu na míru</h1>
+  <p class="intro">Vyrobíme vám výškově stavitelný nebo balicí stůl přesně podle zadání. Vyplňte pár kroků níže a ozveme se vám s návrhem a cenou.</p>
+
+  <div class="pf-steps">
+    <div class="pf-step-dot active" data-dot="1"></div>
+    <div class="pf-step-dot" data-dot="2"></div>
+    <div class="pf-step-dot" data-dot="3"></div>
+  </div>
+
+  <form id="pfForm" novalidate>
+    <!-- Krok 1: typ stolu + rozmery -->
+    <div class="pf-panel active" data-panel="1">
+      <div class="pf-field" id="fTableType">
+        <label class="pf-label">Vyberte typ výškově stavitelného stolu</label>
+        <div class="pf-picker-grid" id="tableTypeGrid"></div>
+        <div class="pf-error">Vyberte prosím jeden z typů stolu.</div>
+      </div>
+      <div class="pf-row">
+        <div class="pf-field" id="fLength">
+          <label class="pf-label" for="lengthInput">Délka pracovní desky (mm)</label>
+          <input class="pf-input" type="number" min="1" max="20000" id="lengthInput" name="length_mm" required>
+          <div class="pf-error">Zadejte délku v mm.</div>
+        </div>
+        <div class="pf-field" id="fWidth">
+          <label class="pf-label" for="widthInput">Šířka pracovní desky (mm)</label>
+          <input class="pf-input" type="number" min="1" max="20000" id="widthInput" name="width_mm" required>
+          <div class="pf-error">Zadejte šířku v mm.</div>
+        </div>
+        <div class="pf-field" id="fHeight">
+          <label class="pf-label" for="heightInput">Rozsah výškové stavitelnosti (mm)</label>
+          <input class="pf-input" type="number" min="1" max="20000" id="heightInput" name="height_range_mm" required>
+          <div class="pf-error">Zadejte rozsah výšky v mm.</div>
+        </div>
+      </div>
+      <div class="pf-nav">
+        <span></span>
+        <button type="button" class="pf-btn pf-btn-primary" data-next>Pokračovat</button>
+      </div>
+    </div>
+
+    <!-- Krok 2: kontakt -->
+    <div class="pf-panel" data-panel="2">
+      <div class="pf-field" id="fName">
+        <label class="pf-label" for="nameInput">Jméno</label>
+        <input class="pf-input" type="text" id="nameInput" name="name" required maxlength="255">
+        <div class="pf-error">Zadejte jméno.</div>
+      </div>
+      <div class="pf-field" id="fEmail">
+        <label class="pf-label" for="emailInput">E-mail</label>
+        <input class="pf-input" type="email" id="emailInput" name="email" required maxlength="255">
+        <div class="pf-error">Zadejte platný e-mail.</div>
+      </div>
+      <div class="pf-field" id="fPhone">
+        <label class="pf-label" for="phoneInput">Telefon</label>
+        <input class="pf-input" type="tel" id="phoneInput" name="phone" required maxlength="50">
+        <div class="pf-error">Zadejte telefon.</div>
+      </div>
+      <div class="pf-field">
+        <label class="pf-label" for="noteInput">Doplňující informace</label>
+        <textarea class="pf-textarea" id="noteInput" name="note" maxlength="2000"></textarea>
+      </div>
+      <div class="pf-field">
+        <label class="pf-label" for="fileInput">Nahrát soubor (náčrt, foto prostoru...)</label>
+        <input class="pf-input" type="file" id="fileInput" name="file">
+        <div class="pf-hint">Max. 15 MB.</div>
+      </div>
+      <div class="pf-nav">
+        <button type="button" class="pf-btn pf-btn-ghost" data-prev>Zpět</button>
+        <button type="button" class="pf-btn pf-btn-primary" data-next>Pokračovat</button>
+      </div>
+    </div>
+
+    <!-- Krok 3: specifikace -->
+    <div class="pf-panel" data-panel="3">
+      <!-- Robert pres bot3, 2026-08-27 - krok 3 dosud vubec nezobrazoval,
+           co uzivatel zadal v kroku 1 (typ stolu + rozmery), takze pri
+           odesilani nevidel rekapitulaci. Staticky shrnovaci blok (zadna
+           editace tady - na to je tlacitko Zpet), naplnuje ho
+           renderStep3Summary() pri kazdem vstupu do kroku 3. -->
+      <div class="pf-summary" id="pfSummary"></div>
+      <div class="pf-field" id="fMaterial">
+        <label class="pf-label">Standardní pracovní desky</label>
+        <div class="pf-choice-list" id="materialList"></div>
+        <div class="pf-error">Vyberte materiál pracovní desky.</div>
+      </div>
+      <div class="pf-field">
+        <label class="pf-label">Vyberte příslušenství</label>
+        <div class="pf-picker-grid pf-picker-wide" id="accessoriesGrid"></div>
+      </div>
+      <div class="pf-field">
+        <label class="pf-label">Balicí materiál pro řezačku</label>
+        <div class="pf-choice-list" id="packagingList"></div>
+      </div>
+      <div class="pf-field">
+        <label class="pf-label" for="tableCountInput">Počet stolů</label>
+        <input class="pf-input" type="text" id="tableCountInput" name="table_count" maxlength="50">
+      </div>
+      <div class="pf-nav">
+        <button type="button" class="pf-btn pf-btn-ghost" data-prev>Zpět</button>
+        <button type="submit" class="pf-btn pf-btn-primary" id="pfSubmitBtn">Odeslat poptávku</button>
+      </div>
+      <div class="pf-submit-error" id="pfSubmitError"></div>
+    </div>
+  </form>
+
+  <div class="pf-done" id="pfDone">
+    <h2>Děkujeme za poptávku</h2>
+    <p>Poptávku jsme přijali a brzy se vám ozveme s návrhem řešení a cenou.</p>
+  </div>
+</div>
+
+<script>
+(function () {
+  try {
+    var t = localStorage.getItem("shopTheme");
+    if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+  } catch (e) {}
+  try {
+    var cached = JSON.parse(localStorage.getItem("shopThemeColorsCache") || "null");
+    if (cached) {
+      var theme = document.documentElement.getAttribute("data-theme") === "light" ? "light" : "dark";
+      var palette = cached[theme];
+      if (palette) {
+        Object.keys(palette).forEach(function (key) {
+          document.documentElement.style.setProperty("--" + key.replace(/_/g, "-"), palette[key]);
+        });
+      }
+    }
+  } catch (e) {}
+})();
+
+function applyShopThemeColors() {
+  fetch("/api/theme-colors?surface=eshop").then(function (r) { return r.ok ? r.json() : null; }).then(function (data) {
+    if (!data) return;
+    window.__themeColors = data;
+    try { localStorage.setItem("shopThemeColorsCache", JSON.stringify(data)); } catch (e) {}
+    var theme = document.documentElement.getAttribute("data-theme") === "light" ? "light" : "dark";
+    var palette = data[theme];
+    Object.keys(palette).forEach(function (key) {
+      document.documentElement.style.setProperty("--" + key.replace(/_/g, "-"), palette[key]);
+    });
+  }).catch(function () {});
+}
+applyShopThemeColors();
+function applyShopTheme(theme, opts) {
+  opts = opts || {};
+  theme = theme === "light" ? "light" : "dark";
+  document.documentElement.setAttribute("data-theme", theme);
+  try { localStorage.setItem("shopTheme", theme); } catch (e) {}
+  if (window.__themeColors) {
+    var palette = window.__themeColors[theme];
+    Object.keys(palette).forEach(function (key) {
+      document.documentElement.style.setProperty("--" + key.replace(/_/g, "-"), palette[key]);
+    });
+  }
+  var btn = document.getElementById("themeToggleBtn");
+  if (btn) btn.textContent = theme === "light" ? "🌙" : "☀️";
+}
+function toggleShopTheme() {
+  var current = document.documentElement.getAttribute("data-theme") === "light" ? "light" : "dark";
+  applyShopTheme(current === "light" ? "dark" : "light");
+  fetch("/api/auth/theme", {
+    method: "PUT", headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ scope: "shop", theme: current === "light" ? "dark" : "light" }),
+  }).catch(function () {});
+}
+document.addEventListener("DOMContentLoaded", function () {
+  var btn = document.getElementById("themeToggleBtn");
+  if (btn) btn.textContent = (document.documentElement.getAttribute("data-theme") === "light") ? "🌙" : "☀️";
+});
+
+// bot6 2026-08-08: data + logika formulare "Poptavam stul" (podle
+// https://www.logiman.cz/poptavam-stul/ - Fillout formular, rozklicovano
+// z jeho verejneho __NEXT_DATA__ JSON). Obrazky stazene a ulozene lokalne
+// (webapp/content-files/inquiry-forms/stul/), zadna zavislost na externim
+// Fillout uctu/CDN.
+const IMG_BASE = "/content-files/inquiry-forms/stul/";
+
+const TABLE_TYPES = [
+  { label: "Stůl a police spolu", caption: "typ SSE1", img: "stul-a-police-spolu.png" },
+  { label: "Stůl a police odděleně", caption: "typ SSE2", img: "stul-a-police-oddelene.png" },
+  { label: "Stůl s neměnnou výškou", caption: "typ ALU", img: "stul-s-nemennou-vyskou.png" },
+  { label: "Elektricky nastavitelná výška stolu", caption: "typ ESSE1", img: "elektricky-nastavitelna-vyska-stolu.png" },
+];
+
+const MATERIALS = [
+  "Laminovaná dřevotříska síly 18 / 25mm",
+  "Březová nebo buková překližka 30 / 40 mm",
+  "Oděruodolná vrstva HPL 0,8mm",
+];
+
+const ACCESSORIES = [
+  { label: "Spodní police", img: "spodni-police.png" },
+  { label: "Dělící příčky na kartony", caption: "1565 × 300 mm, 30 kg", img: "delici-pricky-na-kartony.png" },
+  { label: "Ergonomické police", caption: "1565 × 400 mm, 30 kg", img: "ergonomicke-police.png" },
+  { label: "Výsuvné plastové boxy s případným zámkem", img: "vysuvne-plastove-boxy-s-pripadnym-zamkem.png" },
+  { label: "Dělící příčky pod stolem", img: "delici-pricky-pod-stolem.png" },
+  { label: "Přídavná plocha stolu, sklopná", img: "pridavna-plocha-stolu-sklopna.png" },
+  { label: "Řezačka balicího materiálu", img: "rezacka-baliciho-materialu.png" },
+  { label: "Háky na pytle", img: "haky-na-pytle.png" },
+  { label: "Výsuv na klávesnici apod.", img: "vysuv-na-klavesnici-apd.png" },
+  { label: "Polohovací držák dokumentů", img: "polohovaci-drzak-dokumentu.png" },
+  { label: "Tyč pro bublinkovou roli", img: "tyc-pro-bublinkovovou-roli.png" },
+  { label: "Kolečka", img: "kolecka.png" },
+  { label: "Výřez desky pro váhu nebo skener", img: "vyrez-desky-pro-vahu-nebo-skener.png" },
+];
+
+const PACKAGING_MATERIALS = ["Bublinková folie", "Strečová folie", "Papír"];
+
+function escapeHtml(s) {
+  return String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[c]));
+}
+
+function renderImagePicker(containerId, items, inputName, multi) {
+  const grid = document.getElementById(containerId);
+  grid.innerHTML = items.map((it, i) => `
+    <label class="pf-picker-card" data-value="${escapeHtml(it.label)}">
+      <input type="${multi ? "checkbox" : "radio"}" name="${inputName}" value="${escapeHtml(it.label)}">
+      <img src="${IMG_BASE}${it.img}" alt="${escapeHtml(it.label)}" loading="lazy">
+      <div class="pf-picker-label">${escapeHtml(it.label)}${it.caption ? `<br><span style="color:var(--text-muted);font-size:11px;">${escapeHtml(it.caption)}</span>` : ""}</div>
+      <div class="pf-picker-check">✓</div>
+    </label>
+  `).join("");
+  grid.querySelectorAll(".pf-picker-card").forEach(card => {
+    card.addEventListener("click", (e) => {
+      if (e.target.tagName !== "INPUT") e.preventDefault();
+      const input = card.querySelector("input");
+      if (multi) {
+        input.checked = !input.checked;
+        card.classList.toggle("selected", input.checked);
+      } else {
+        grid.querySelectorAll(".pf-picker-card").forEach(c => c.classList.remove("selected"));
+        input.checked = true;
+        card.classList.add("selected");
+      }
+    });
+  });
+}
+
+function renderChoiceList(containerId, items, inputName, multi) {
+  const wrap = document.getElementById(containerId);
+  wrap.innerHTML = items.map(label => `
+    <label>
+      <input type="${multi ? "checkbox" : "radio"}" name="${inputName}" value="${escapeHtml(label)}">
+      <span>${escapeHtml(label)}</span>
+    </label>
+  `).join("");
+}
+
+renderImagePicker("tableTypeGrid", TABLE_TYPES, "table_type", false);
+renderChoiceList("materialList", MATERIALS, "material", false);
+renderImagePicker("accessoriesGrid", ACCESSORIES, "accessories", true);
+renderChoiceList("packagingList", PACKAGING_MATERIALS, "packaging_material", true);
+
+let currentStep = 1;
+const TOTAL_STEPS = 3;
+
+function renderStep3Summary() {
+  const box = document.getElementById("pfSummary");
+  const typeInput = document.querySelector('input[name="table_type"]:checked');
+  const typeItem = typeInput ? TABLE_TYPES.find(t => t.label === typeInput.value) : null;
+  const typeText = typeItem
+    ? `${escapeHtml(typeItem.label)}${typeItem.caption ? ` (${escapeHtml(typeItem.caption)})` : ""}`
+    : "-";
+  const length = document.getElementById("lengthInput").value;
+  const width = document.getElementById("widthInput").value;
+  const height = document.getElementById("heightInput").value;
+  box.innerHTML = `
+    <div class="pf-summary-row"><span class="pf-summary-label">Typ stolu:</span>${typeText}</div>
+    <div class="pf-summary-row"><span class="pf-summary-label">Rozměry pracovní desky:</span>${escapeHtml(length)} × ${escapeHtml(width)} mm</div>
+    <div class="pf-summary-row"><span class="pf-summary-label">Rozsah výškové stavitelnosti:</span>${escapeHtml(height)} mm</div>
+  `;
+}
+
+function showStep(n) {
+  document.querySelectorAll(".pf-panel").forEach(p => p.classList.toggle("active", Number(p.dataset.panel) === n));
+  document.querySelectorAll(".pf-step-dot").forEach(d => {
+    const idx = Number(d.dataset.dot);
+    d.classList.toggle("active", idx === n);
+    d.classList.toggle("done", idx < n);
+  });
+  if (n === 3) renderStep3Summary();
+  currentStep = n;
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function setFieldError(fieldId, invalid) {
+  const el = document.getElementById(fieldId);
+  if (el) el.classList.toggle("pf-invalid", invalid);
+}
+
+function validateStep(n) {
+  let ok = true;
+  if (n === 1) {
+    const typeChecked = document.querySelector('input[name="table_type"]:checked');
+    setFieldError("fTableType", !typeChecked); if (!typeChecked) ok = false;
+    [["fLength", "lengthInput"], ["fWidth", "widthInput"], ["fHeight", "heightInput"]].forEach(([fid, iid]) => {
+      const v = document.getElementById(iid).value;
+      const invalid = !v || Number(v) <= 0;
+      setFieldError(fid, invalid);
+      if (invalid) ok = false;
+    });
+  } else if (n === 2) {
+    const name = document.getElementById("nameInput").value.trim();
+    setFieldError("fName", !name); if (!name) ok = false;
+    const email = document.getElementById("emailInput").value.trim();
+    const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    setFieldError("fEmail", !emailOk); if (!emailOk) ok = false;
+    const phone = document.getElementById("phoneInput").value.trim();
+    setFieldError("fPhone", !phone); if (!phone) ok = false;
+  } else if (n === 3) {
+    const materialChecked = document.querySelector('input[name="material"]:checked');
+    setFieldError("fMaterial", !materialChecked); if (!materialChecked) ok = false;
+  }
+  return ok;
+}
+
+document.querySelectorAll("[data-next]").forEach(btn => {
+  btn.addEventListener("click", () => {
+    if (!validateStep(currentStep)) return;
+    if (currentStep < TOTAL_STEPS) showStep(currentStep + 1);
+  });
+});
+document.querySelectorAll("[data-prev]").forEach(btn => {
+  btn.addEventListener("click", () => {
+    if (currentStep > 1) showStep(currentStep - 1);
+  });
+});
+
+document.getElementById("pfForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  if (!validateStep(3)) return;
+  const submitBtn = document.getElementById("pfSubmitBtn");
+  const errBox = document.getElementById("pfSubmitError");
+  errBox.style.display = "none";
+  submitBtn.disabled = true;
+  submitBtn.textContent = "Odesílám…";
+  try {
+    const fd = new FormData();
+    fd.append("table_type", document.querySelector('input[name="table_type"]:checked').value);
+    fd.append("length_mm", document.getElementById("lengthInput").value);
+    fd.append("width_mm", document.getElementById("widthInput").value);
+    fd.append("height_range_mm", document.getElementById("heightInput").value);
+    fd.append("name", document.getElementById("nameInput").value.trim());
+    fd.append("email", document.getElementById("emailInput").value.trim());
+    fd.append("phone", document.getElementById("phoneInput").value.trim());
+    fd.append("note", document.getElementById("noteInput").value.trim());
+    fd.append("material", document.querySelector('input[name="material"]:checked').value);
+    document.querySelectorAll('input[name="accessories"]:checked').forEach(i => fd.append("accessories", i.value));
+    document.querySelectorAll('input[name="packaging_material"]:checked').forEach(i => fd.append("packaging_material", i.value));
+    fd.append("table_count", document.getElementById("tableCountInput").value.trim());
+    const file = document.getElementById("fileInput").files[0];
+    if (file) fd.append("file", file);
+
+    const res = await fetch("/api/inquiries/custom-table", { method: "POST", body: fd });
+    if (!res.ok) {
+      const data = await res.json().catch(() => ({}));
+      throw new Error(data.error || "Odeslání se nezdařilo.");
+    }
+    document.getElementById("pfForm").style.display = "none";
+    document.querySelector(".pf-steps").style.display = "none";
+    document.getElementById("pfDone").style.display = "block";
+  } catch (err) {
+    errBox.textContent = err.message || "Odeslání se nezdařilo, zkuste to prosím znovu.";
+    errBox.style.display = "block";
+    submitBtn.disabled = false;
+    submitBtn.textContent = "Odeslat poptávku";
+  }
+});
+</script>
+
+</body>
+</html>

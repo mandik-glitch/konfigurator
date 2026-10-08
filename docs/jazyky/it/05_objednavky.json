@@ -1,0 +1,63 @@
+{
+ "_navod": "Vyplň pole \"it\" (italština) u každé položky v `polozky`. Zdroj = cs / en / sk (en je referenční, sk je vzor pro odbornou terminologii). Pravidla: (1) placeholdery ve složených závorkách ({n} {d} {w} {h} {u} {k} {v} {t1} {t2} {prah} {mezera} {name} {site}) zachovej PŘESNĚ jako v poli `placeholdery` (pořadí ve větě smíš změnit); (2) žádná značka ani interní slova: Logiman, konfigurátor / konfigurator (i německy „Konfigurator“), vandrawee; (3) prodej jen firmám (B2B), neutrální věcný tón, bez značky; (4) povolená písmena jazyka: ASCII + àèéìòùÀÈÉÌÒÙ - jakýkoli jiný znak (např. česká písmena ě š č ř ž ý ů ť ď ň ľ) vyřadí `miniweb_jazyk_sestav.py`; (5) mezeru / středník / tečku na začátku nebo konci u šablon (navazují na `zaklad`) ZACHOVEJ stejně jako v en; (6) terminologie jednotně v celém shopu (i18n, SEO, katalog): drážka profilu = v angličtině „slot“ -> ekvivalent v jazyce určí bot7; (7) plurálové položky (`typ`: plural): `it` je objekt, vyplň tvary one, other; (8) hotové soubory ověř příkazem `scripts/miniweb_jazyk_sestav.py --lang it` (bez --apply jen kontrola) a pak jazyk zapíše `--apply`.",
+ "_sekce": "Štítky dopravy v košíku mini-shopu a (volitelně) šablona potvrzení poptávky.",
+ "lang": "it",
+ "sekce": "objednavky",
+ "polozky": [
+  {
+   "id": "objednavky.toptrans",
+   "poznamka": "štítek způsobu dopravy v košíku",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Doprava Toptrans",
+   "en": "Toptrans delivery",
+   "sk": "Doprava Toptrans",
+   "it": "Consegna Toptrans"
+  },
+  {
+   "id": "objednavky.quote",
+   "poznamka": "štítek způsobu dopravy v košíku",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Doprava po dohodě (cenu upřesníme)",
+   "en": "Delivery by agreement (we will confirm the price)",
+   "sk": "Doprava po dohode (cenu upresnime)",
+   "it": "Consegna da concordare (confermeremo il prezzo)"
+  },
+  {
+   "id": "objednavky.pickup",
+   "poznamka": "štítek způsobu dopravy v košíku",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Osobní odběr",
+   "en": "Personal pickup",
+   "sk": "Osobny odber",
+   "it": "Ritiro in sede"
+  },
+  {
+   "id": "potvrzeni.predmet",
+   "poznamka": "VOLITELNÉ (potvrzení poptávky je zatím vypnuté; vyplň předmět i tělo společně, nebo obojí nech prázdné): předmět e-mailu",
+   "volitelne": true,
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "",
+   "en": "Inquiry received",
+   "sk": "",
+   "it": "Richiesta ricevuta"
+  },
+  {
+   "id": "potvrzeni.telo",
+   "poznamka": "VOLITELNÉ (společně s předmětem): tělo e-mailu; {name} = jméno zákazníka, {site} = název webu",
+   "volitelne": true,
+   "typ": "text",
+   "placeholdery": [
+    "{name}",
+    "{site}"
+   ],
+   "cs": "",
+   "en": "Dear {name},\n\nthank you for your inquiry via {site}.\n\nWe will get back to you shortly with further information.\n\nKind regards",
+   "sk": "",
+   "it": "Gentile {name},\n\ngrazie per la Sua richiesta tramite {site}.\n\nLa ricontatteremo a breve con ulteriori informazioni.\n\nCordiali saluti"
+  }
+ ]
+}

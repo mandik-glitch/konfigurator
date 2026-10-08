@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="cs" data-theme="dark" data-system="40">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Generátor stolu 02 systém 40</title>
+<link rel="icon" href="data:,">
+<!-- GENERATOR STOLU 02 = SYSTEM 40 (profil SuperLight 40x40; bot10, 2026-10-04): tatez stranka jako generator 01 (system 30), system dava atribut data-system na <html> (js/stul-host.js).
+     STEJNA STRUKTURA JAKO STRANKA PRODUKTU MINI-SHOPU (baliace-stoly): mrizka oken (js/pdc-layout.js, css miniweb.css) nad spolecnym modulem voleb (js/product-configurator.js).
+     Tady jen zamestnanecke veci: cena z kusovniku, kusovnik s cenami, vyrobni odkazy, "Vlozit do Sceny" (js/stul-host.js, js/stul-do-sceny.js). -->
+<link rel="stylesheet" href="/miniweb/miniweb.css?v=7f702de1f3">
+<style>
+  /* akcent hlavniho webu (oranzova), ne akcent mini-shopu */
+  :root { --accent: #ff7b29; --accent-glow: #ffa05c; --orange: #ff7b29; }
+  .sh-nav-r { margin-left: auto; display: flex; gap: 1rem; align-items: center; }
+  .sh-nav-r a { color: var(--text-soft); text-decoration: none; } .sh-nav-r a:hover { color: var(--accent); }
+  #login { display: none; margin: 14px 0; padding: 12px; border: 1px solid var(--warn); color: var(--warn); }
+  #login a { color: var(--accent); }
+  /* staff okna navic: kusovnik (siroke) misto "doprava/priloha" */
+  @media (min-width: 900px) {
+    .mw-pdg { grid-template-areas:
+      "stage stage stage stage stage stage stage stage side side side side"
+      "cfg cfg cfg cfg cfg cfg cfg cfg cfg cfg cfg cfg"
+      "dim dim dim dim frame frame frame frame extras extras extras extras"
+      "bom bom bom bom bom bom bom bom col3 col3 col3 col3"; }
+    .mw-win-bom { grid-area: bom; }
+  }
+  #stageMsg { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; text-align: center; padding: 24px; color: var(--muted); pointer-events: none; z-index: 1; }
+  .mw-win-stage .mw-win-b { position: relative; }
+  /* cena a tlacitka */
+  #staffPrice .big { font-size: 1.7rem; font-weight: 700; } #staffPrice .small { color: var(--muted); font-size: .8rem; }
+  .sh-btns { display: flex; gap: .6rem; flex-wrap: wrap; }
+  .sh-btns button { cursor: pointer; }
+  button.sh-ghost { background: transparent; color: var(--text-soft); border: 1px solid var(--line); padding: .5rem .8rem; font: inherit; }
+  button.sh-ghost:hover { color: var(--accent); border-color: var(--accent); }
+  #sceneBtn { padding: .55rem 1rem; background: var(--accent); color: #1a1208; border: 0; font: 700 .85rem var(--mono); letter-spacing: .06em; text-transform: uppercase; clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 0 100%); }
+  #sceneBtn:hover { background: var(--accent-glow); }
+  #sceneStatus { font-size: .8rem; color: var(--muted); min-height: 1em; } #sceneStatus a { margin-left: 6px; color: var(--accent); }
+  #staffProblems { font-size: .85rem; color: var(--error); } #staffProblems:empty { display: none; }
+  #staffLinks { display: flex; gap: .8rem; flex-wrap: wrap; } #staffLinks a { color: var(--accent); font-size: .85rem; }
+  #staffCode { color: var(--muted); font-size: .8rem; }
+  /* kusovnik */
+  #bomBody { overflow-x: auto; }
+  #bomBody table { width: 100%; border-collapse: collapse; font-size: .8rem; }
+  #bomBody th, #bomBody td { padding: 4px 6px; border-bottom: 1px solid var(--line); text-align: right; vertical-align: top; }
+  #bomBody th:first-child, #bomBody td:first-child { text-align: left; }
+  #bomBody td:nth-child(n+2), #bomBody th:nth-child(n+2) { white-space: nowrap; }
+  #bomBody tr.sum td:nth-child(2) { white-space: nowrap; }
+  #bomBody th { color: var(--muted); font-weight: 600; }
+  #bomBody tr.sec td { text-align: left; color: var(--muted); font-weight: 600; padding-top: 10px; border-bottom: none; }
+  #bomBody tr.sum td { font-weight: 700; border-bottom: none; }
+  #bomBody tr.grp td { font-weight: 600; } #bomBody tr.grp td:first-child { text-align: left; }
+  #bomBody .bom-tog { all: unset; cursor: pointer; color: var(--text); display: inline-flex; gap: 4px; align-items: baseline; } #bomBody .bom-tog:hover, #bomBody .bom-tog:focus-visible { color: var(--accent); }
+  #bomBody .bom-chev { display: inline-block; width: 1em; color: var(--muted); }
+  #bomBody tr.det td:first-child { padding-left: 24px; color: var(--text-soft); }
+  #bomBody .note { color: var(--muted); font-size: .8rem; margin-top: 6px; }
+</style>
+</head>
+<body>
+<header>
+  <nav class="mw-nav" aria-label="Hlavní">
+    <a class="mw-brand" href="/stul-konfigurator-40.html"><span class="mw-mark" aria-hidden="true"></span><span>Generátor stolu 02 systém 40</span></a>
+    <span class="mw-muted">interní nástroj</span>
+    <span class="sh-nav-r"><span id="sysSwitch" hidden></span><a href="/scene.html">Scéna</a></span>
+  </nav>
+</header>
+<main id="shMain" tabindex="-1">
+  <div id="login">Pro zobrazení se přihlas. <a id="loginLink" href="/login.html">Přihlášení</a></div>
+  <div class="mw-pd-title"><h1>Generátor stolu 02 systém 40</h1><p class="mw-muted">Kód konfigurace: <span id="titleCode">…</span></p></div>
+  <div id="shGrid"></div>
+</main>
+<script src="/js/product-configurator.js?v=a4afaf457d"></script>
+<script src="/js/pdc-layout.js?v=fc42710501"></script>
+<script src="/js/stul-montaz-staff.js?v=199a252a62"></script>
+<script src="/js/stul-nabidka.js?v=7493559a80"></script>
+<script src="/js/stul-karta.js?v=b1535b21ce"></script>
+<script src="/js/stul-luxy.js?v=3cc78f2ac8"></script>
+<script src="/js/stul-host.js?v=91bfceb975"></script>
+<script src="/js/stul-do-sceny.js?v=bf48a72659"></script>
+</body>
+</html>

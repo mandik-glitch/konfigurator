@@ -1,0 +1,182 @@
+zdroj,id,sku,nazev,kategorie,color_hex,layer,aktivni,navrzeny_klic,pravidlo,stav
+cfg,kontrolni-doblo-zjednoduseny-test,kontrolni-doblo-zjednoduseny-test,Doblo FI22-B zjednodušený (test 15.9.),layer:(prazdny),#ff8800,,0,,kontrolni pomucka - bez materialu,VYNECHANO
+cfg,dvirka_40_20_test,dvirka_40_20_test,"Dvířka 40x20 - drobný hardware (TEST, neidentifikováno)",layer:(prazdny),,,0,cub_seda,"TEST neidentifikovany hardware, material_label ""box sv. seda"" (Vandr plastova seda) - navrh cub_seda nebo vynechat",ROZHODNE ROBERT
+cfg,deska_mdf_seda_8,deska_mdf_seda_8,MDF deska Steel Grey 8mm,layer:(prazdny),,,1,,duplikat - v katalogu ho zastupuje shop_products 3939 (fetch_katalog_parts ho preskoci),VYNECHANO
+cfg,kontrolni-oblozeni-bok-levy,kontrolni-oblozeni-bok-levy,Obložení K-075 - bok levý (kontrola),layer:(prazdny),#ff8800,,0,,kontrolni pomucka - bez materialu,VYNECHANO
+cfg,kontrolni-oblozeni-bok-pravy,kontrolni-oblozeni-bok-pravy,Obložení K-075 - bok pravý (kontrola),layer:(prazdny),#ff8800,,0,,kontrolni pomucka - bez materialu,VYNECHANO
+cfg,kontrolni-oblozeni-podlaha-predni,kontrolni-oblozeni-podlaha-predni,Obložení K-075 - podlaha přední (kontrola),layer:(prazdny),#ff8800,,0,,kontrolni pomucka - bez materialu,VYNECHANO
+cfg,kontrolni-oblozeni-podlaha-zadni,kontrolni-oblozeni-podlaha-zadni,Obložení K-075 - podlaha zadní (kontrola),layer:(prazdny),#ff8800,,0,,kontrolni pomucka - bez materialu,VYNECHANO
+cfg,deska_plast_8,deska_plast_8,Plastová deska 8mm,layer:(prazdny),#63656a,,1,,duplikat - v katalogu ho zastupuje shop_products 3950 (fetch_katalog_parts ho preskoci),VYNECHANO
+cfg,sipka_posuvne_celo,sipka_posuvne_celo,Šipka posuvné čelo (obousměrná značka),layer:(prazdny),#2ECC71,,0,,znacka/sipka - bez materialu,VYNECHANO
+cfg,deska_lam_seda_25,deska_lam_seda_25,Laminovaná deska šedá 25mm,layer:alu,,alu,1,,duplikat - v katalogu ho zastupuje shop_products 3671 (fetch_katalog_parts ho preskoci); POZOR layer=alu u nehlinikoveho dilu,VYNECHANO
+cfg,logo_logiman_cz,logo_logiman_cz,Logo LOGIMAN.CZ,layer:alu,#EB8E23,alu,0,,logo - bez materialu,VYNECHANO
+cfg,pr10,pr10,PR10,layer:alu,,alu,1,,duplikat - v katalogu ho zastupuje shop_products 3539 (fetch_katalog_parts ho preskoci); POZOR layer=alu u nehlinikoveho dilu,VYNECHANO
+cfg,profil_20x20,profil_20x20,Profil 20x20mm,layer:alu,,alu,1,alumi2,cfg layer=alu (profil/vypln drazky) -> alumi2,OK
+cfg,profil_20x20_radius,profil_20x20_radius,Profil 20x20mm (radius),layer:alu,,alu,0,alumi2,cfg layer=alu (profil/vypln drazky) -> alumi2,OK
+cfg,profil_20x40,profil_20x40,Profil 20x40mm,layer:alu,,alu,1,alumi2,cfg layer=alu (profil/vypln drazky) -> alumi2,OK
+cfg,profil_20x80,profil_20x80,Profil 20x80mm,layer:alu,,alu,1,alumi2,cfg layer=alu (profil/vypln drazky) -> alumi2,OK
+cfg,profil_25x25,profil_25x25,Profil 25x25mm,layer:alu,,alu,0,alumi2,cfg layer=alu (profil/vypln drazky) -> alumi2,OK
+cfg,Object_7,Object_7,Profil 30x30mm,layer:alu,,alu,1,alumi2,cfg layer=alu (profil/vypln drazky) -> alumi2,OK
+cfg,profil_30x30_radius,profil_30x30_radius,Profil 30x30mm (radius),layer:alu,,alu,0,alumi2,cfg layer=alu (profil/vypln drazky) -> alumi2,OK
+cfg,profil_30x30_uzavreny,profil_30x30_uzavreny,Profil 30x30mm (uzavřený),layer:alu,,alu,1,alumi2,cfg layer=alu (profil/vypln drazky) -> alumi2,OK
+cfg,Object_1,Object_1,Profil 30x60mm,layer:alu,,alu,1,alumi2,cfg layer=alu (profil/vypln drazky) -> alumi2,OK
+cfg,profil_35x35,profil_35x35,Profil 35x35mm,layer:alu,,alu,1,alumi2,cfg layer=alu (profil/vypln drazky) -> alumi2,OK
+cfg,Object_11,Object_11,Profil 40x40mm,layer:alu,#dcdc50,alu,1,alumi2,cfg layer=alu (profil/vypln drazky) -> alumi2,OK
+cfg,profil_40x40_light_s10,profil_40x40_light_s10,Profil 40x40mm (Light S10),layer:alu,,alu,0,alumi2,cfg layer=alu (profil/vypln drazky) -> alumi2,OK
+cfg,profil_40x40_uzavreny_s10,profil_40x40_uzavreny_s10,Profil 40x40mm (Uzavřený S10),layer:alu,,alu,0,alumi2,cfg layer=alu (profil/vypln drazky) -> alumi2,OK
+cfg,profil_40x40_zkoseny_s10,profil_40x40_zkoseny_s10,Profil 40x40mm (zkosený S10),layer:alu,,alu,0,alumi2,cfg layer=alu (profil/vypln drazky) -> alumi2,OK
+cfg,Object_14,Object_14,Profil 40x80mm,layer:alu,,alu,1,alumi2,cfg layer=alu (profil/vypln drazky) -> alumi2,OK
+cfg,profil_40x80_light_s10,profil_40x80_light_s10,Profil 40x80mm (Light S10),layer:alu,,alu,0,alumi2,cfg layer=alu (profil/vypln drazky) -> alumi2,OK
+cfg,Object_2,Object_2,Profil 45x45mm,layer:alu,,alu,1,alumi2,cfg layer=alu (profil/vypln drazky) -> alumi2,OK
+cfg,profil_45x45_light_s10,profil_45x45_light_s10,Profil 45x45mm (Light S10),layer:alu,,alu,0,alumi2,cfg layer=alu (profil/vypln drazky) -> alumi2,OK
+cfg,profil_45x45_radius,profil_45x45_radius,Profil 45x45mm (radius),layer:alu,,alu,0,alumi2,cfg layer=alu (profil/vypln drazky) -> alumi2,OK
+cfg,profil_45x45_uzavreny_s10,profil_45x45_uzavreny_s10,Profil 45x45mm (uzavřený S10),layer:alu,,alu,0,alumi2,cfg layer=alu (profil/vypln drazky) -> alumi2,OK
+cfg,profil_45x90_light_s10,profil_45x90_light_s10,Profil 45x90mm (Light S10),layer:alu,,alu,0,alumi2,cfg layer=alu (profil/vypln drazky) -> alumi2,OK
+cfg,profil_45x90_superlight_s10,profil_45x90_superlight_s10,Profil 45x90mm (Super Light S10),layer:alu,,alu,0,alumi2,cfg layer=alu (profil/vypln drazky) -> alumi2,OK
+cfg,vypln_placka,vypln_placka,"Výplň drážky (10mm, Vandr) - zapuštěný čep pod razítko",layer:alu,,alu,0,alumi2,cfg layer=alu (profil/vypln drazky) -> alumi2,OK
+cfg,vypln_placka_30,vypln_placka_30,"Výplň drážky (8,2mm, Vandr 30×30) - zapuštěný čep pod razítko",layer:alu,,alu,0,alumi2,cfg layer=alu (profil/vypln drazky) -> alumi2,OK
+cfg,vypln_drazky_30,vypln_drazky_30,Výplň drážky 30,layer:alu,,alu,0,alumi2,cfg layer=alu (profil/vypln drazky) -> alumi2,OK
+cfg,pin_valecek_10x20,pin_valecek_10x20,Váleček/pin 10x20mm,layer:black,#1a1a1a,black,0,black,layer black #1a1a1a -> black,OK
+cfg,placka_slot_dira_22x30x3,placka_slot_dira_22x30x3,Deska se slotem a dírou 22x30x3,layer:kov,#999a9e,kov,0,grey,kov neurceno #999a9e - navrh grey (zinkova placka); alternativa alumi2 kdyz hlinik,ROZHODNE ROBERT
+cfg,doraz_dvirek,doraz_dvirek,"Doraz dvířek (Robertův model, z čela)",layer:kov,#c0392b,kov,0,black,"#c0392b = cervena znacka dorazu (Vandr konvence cervene plosky), ne skutecna barva - navrh black (plastovy doraz)",ROZHODNE ROBERT
+cfg,sroub_disk_7x1,sroub_disk_7x1,"Imitace šroubu (kotouček) 7x1mm, kovový lesk",layer:kov,#c9ccce,kov,0,chrome,imitace sroubu -> chrome,OK
+cfg,kvadr_zaobleny_0.6mm_1x1x1,kvadr_zaobleny_0.6mm_1x1x1,Kvádr zaoblený 60x22x7 (radius 0.6mm),layer:plast,#2e8b3d,plast,0,black,obecny blok neurceno (#2e8b3d zelena = pomocna barva) - navrh black,ROZHODNE ROBERT
+cfg,kvadr_plny_1x1x1,kvadr_plny_1x1x1,Plný kvádr (obecný blok),layer:plast,#8c8c94,plast,0,grey,obecny blok neurceno #8c8c94 - navrh grey,ROZHODNE ROBERT
+product,3539,PR10,PR10,,#64393a,,1,brown,PR10 -> brown,OK
+product,3788,eurobox_400x300x120,eurobox_400x300x120,,#575c62,,1,grey,eurobox #575c62 -> grey,OK
+product,3793,eurobox_400x300x170,eurobox_400x300x170,,#575c62,,1,grey,eurobox #575c62 -> grey,OK
+product,3794,eurobox_400x300x220,eurobox_400x300x220,,#575c62,,1,grey,eurobox #575c62 -> grey,OK
+product,3795,eurobox_400x300x270,eurobox_400x300x270,,#575c62,,1,grey,eurobox #575c62 -> grey,OK
+product,3796,eurobox_400x300x320,eurobox_400x300x320,,#575c62,,1,grey,eurobox #575c62 -> grey,OK
+product,3958,multibox_296x93,Multibox 296x93,,,,1,multibox,multibox -> multibox,OK
+product,3959,multibox_296x186,Multibox 296x186,,,,1,multibox,multibox -> multibox,OK
+product,4606,SSE.vzor.01,SSE stůl vzor,,,,1,,SSE stul vzor - cela sestava stolu v 1 meshi; navrh nepriradit (rendrovat po dilech) nebo alumi2 jako prevazujici profily,ROZHODNE ROBERT
+product,4899,VD-TEST-trafic-9f570c6e,"TEST: Renault Trafic L2H1 (rekonstrukce v3, noha/komponenta vcelku)",,,,0,,"neaktivni Vandr testovaci/exportni sestava, nese vlastni Vandr materialy (ALU, blue KLT, preklizka...) - ponechat nativni",VYNECHANO
+product,4900,VD-TEST-transporter-001ec27e,"TEST: VW Transporter T6 L1 (rekonstrukce v3, cista)",,,,0,,"neaktivni Vandr testovaci/exportni sestava, nese vlastni Vandr materialy (ALU, blue KLT, preklizka...) - ponechat nativni",VYNECHANO
+product,4901,VD-TEST-ducato-01279cf5,"TEST: Fiat Ducato L1H1 (rekonstrukce v3, 2 chybejici FBX v katalogu)",,,,0,,"neaktivni Vandr testovaci/exportni sestava, nese vlastni Vandr materialy (ALU, blue KLT, preklizka...) - ponechat nativni",VYNECHANO
+product,4902,VD-EXPORT-trafic-2f89b425,EXPORT (realny FBX z appky): Renault Trafic L2H1 - leva police,,,,0,,"neaktivni Vandr testovaci/exportni sestava, nese vlastni Vandr materialy (ALU, blue KLT, preklizka...) - ponechat nativni",VYNECHANO
+product,4916,Pojedove.kolo.brza.75mm.60kg.01,Pojezdové kolo brza 75mm 60kg,,,,1,black,"pojezdove kolo s brzdou 75mm - 1 mesh (3 ostrovy: vidlice, kolo, naboj); navrh black (kolo), vidlice by byla chrome po rozdeleni",ROZHODNE ROBERT
+product,3641,2.3.001.40120.01,Krytka profilu 40x120 K10,150 Příslušenství profilů,#242424,,1,black,cerna/guma #242424 -> black,OK
+product,3259,2.2.005.3060.10,Upínač patky 30x60 M10,151 Konektory pro patky,#4d4d4d,,1,grey,zinek #4d4d4d -> grey,OK
+product,3313,2.2.005.4590.12,Upínač patky 45x90 M12,151 Konektory pro patky,#4d4d4d,,1,grey,zinek #4d4d4d -> grey,OK
+product,3355,2.2.002.040045.00.10,Spojovací kus rohová patka,151 Konektory pro patky,#4d4d4d,,1,grey,zinek #4d4d4d -> grey,OK
+product,3381,2.2.002.00.00,Upevňovací kus patky (varianta 2.2.002.00.00),151 Konektory pro patky,#4d4d4d,,1,grey,VICETELESOVY (2 teles) - cely dil grey; navrh po castech viz souhrn.md | zinek #4d4d4d -> grey,ROZHODNE ROBERT
+product,3413,2.2.002.045045.00.10,Upínač patky k podlaze 45x45,151 Konektory pro patky,#4d4d4d,,1,grey,VICETELESOVY (4 teles) - cely dil grey; navrh po castech viz souhrn.md | zinek #4d4d4d -> grey,ROZHODNE ROBERT
+product,3420,2.2.002.045090.00.10,Upínač patky k podlaze 45x90,151 Konektory pro patky,#4d4d4d,,1,grey,VICETELESOVY (4 teles) - cely dil grey; navrh po castech viz souhrn.md | zinek #4d4d4d -> grey,ROZHODNE ROBERT
+product,3214,2.2.002.06.2025.02,Dvoucestná spojovací deska 20x25,153 Plotna rohové spoje,#4d4d4d,,1,grey,"plotna #4d4d4d - navrh grey (podle barvy ve scene); POZOR popis karty rika ""vysokopevnostni plast (HRP)"" (3357 ocel) - pokud plast, pak black",ROZHODNE ROBERT
+product,3235,2.2.002.08.3030.02,Dvoucestná spojovací deska 30x30,153 Plotna rohové spoje,#4d4d4d,,1,grey,"plotna #4d4d4d - navrh grey (podle barvy ve scene); POZOR popis karty rika ""vysokopevnostni plast (HRP)"" (3357 ocel) - pokud plast, pak black",ROZHODNE ROBERT
+product,3276,2.2.002.10.4040.02,Dvoucestná spojovací deska 40X40,153 Plotna rohové spoje,#4d4d4d,,1,grey,"plotna #4d4d4d - navrh grey (podle barvy ve scene); POZOR popis karty rika ""vysokopevnostni plast (HRP)"" (3357 ocel) - pokud plast, pak black",ROZHODNE ROBERT
+product,3295,2.2.002.10.4545.02,Dvoucestná spojovací deska 45x45,153 Plotna rohové spoje,#4d4d4d,,1,grey,"plotna #4d4d4d - navrh grey (podle barvy ve scene); POZOR popis karty rika ""vysokopevnostni plast (HRP)"" (3357 ocel) - pokud plast, pak black",ROZHODNE ROBERT
+product,3384,2.2.002.10.4590.02,Dvoucestná spojovací deska 45x90,153 Plotna rohové spoje,#4d4d4d,,1,grey,"plotna #4d4d4d - navrh grey (podle barvy ve scene); POZOR popis karty rika ""vysokopevnostni plast (HRP)"" (3357 ocel) - pokud plast, pak black",ROZHODNE ROBERT
+product,3229,2.2.002.06.2025.03,Třícestná spojovací deska 20x25,155 Plotna pro T spoje,#4d4d4d,,1,grey,"plotna #4d4d4d - navrh grey (podle barvy ve scene); POZOR popis karty rika ""vysokopevnostni plast (HRP)"" (3357 ocel) - pokud plast, pak black",ROZHODNE ROBERT
+product,3279,2.2.002.08.3030.03,Plochá spojka T systém 30,155 Plotna pro T spoje,#4d4d4d,,1,grey,"plotna #4d4d4d - navrh grey (podle barvy ve scene); POZOR popis karty rika ""vysokopevnostni plast (HRP)"" (3357 ocel) - pokud plast, pak black",ROZHODNE ROBERT
+product,3300,2.2.002.10.4040.03,Třícestná spojovací deska 40x40,155 Plotna pro T spoje,#4d4d4d,,1,grey,"plotna #4d4d4d - navrh grey (podle barvy ve scene); POZOR popis karty rika ""vysokopevnostni plast (HRP)"" (3357 ocel) - pokud plast, pak black",ROZHODNE ROBERT
+product,3309,2.2.002.10.4545.03,Třícestná spojovací deska 45x45,155 Plotna pro T spoje,#4d4d4d,,1,grey,"plotna #4d4d4d - navrh grey (podle barvy ve scene); POZOR popis karty rika ""vysokopevnostni plast (HRP)"" (3357 ocel) - pokud plast, pak black",ROZHODNE ROBERT
+product,3362,2.2.002.10.4590.03,Třícestná spojovací deska 45x90,155 Plotna pro T spoje,#4d4d4d,,1,grey,"plotna #4d4d4d - navrh grey (podle barvy ve scene); POZOR popis karty rika ""vysokopevnostni plast (HRP)"" (3357 ocel) - pokud plast, pak black",ROZHODNE ROBERT
+product,3206,2.2.001.06.2020.05,Rohová spojka trojcestná radius 20 x 20,161 Rožky trojcestné oblé,#4d4d4d,,1,grey,VICETELESOVY (2 teles) - cely dil grey; navrh po castech viz souhrn.md | zinek #4d4d4d -> grey,ROZHODNE ROBERT
+product,3237,2.2.001.08.3030.05,Rohová spojka trojcestná radius 30 x 30,161 Rožky trojcestné oblé,#4d4d4d,,1,grey,VICETELESOVY (2 teles) - cely dil grey; navrh po castech viz souhrn.md | zinek #4d4d4d -> grey,ROZHODNE ROBERT
+product,3320,2.2.001.10.4545.05,Zaoblená rohová spojka 45x45,161 Rožky trojcestné oblé,#4d4d4d,,1,grey,zinek #4d4d4d -> grey,OK
+product,3319,2.2.001.06.2020.08,Trojcestná kostka rohová spojka 20x20,162 Spojovací kostky,#4d4d4d,,1,grey,zinek #4d4d4d -> grey,OK
+product,3328,2.2.001.08.3030.10,Dvoucestná kostka rohová spojka 30x30,162 Spojovací kostky,#4d4d4d,,1,grey,zinek #4d4d4d -> grey,OK
+product,3345,2.2.001.08.3030.08,Trojcestná kostka rohová spojka 30x30,162 Spojovací kostky,#4d4d4d,,1,grey,zinek #4d4d4d -> grey,OK
+product,3361,2.2.001.10.4040.10,"Dvoucestná kostka rohová spojka 40x40 (hmotnost cca 104,9 g)",162 Spojovací kostky,#4d4d4d,,1,grey,zinek #4d4d4d -> grey,OK
+product,3365,2.2.001.10.4040.08,Trojcestná kostka rohová spojka K10 40x40,162 Spojovací kostky,#4d4d4d,,1,grey,zinek #4d4d4d -> grey,OK
+product,3369,2.2.001.10.4545.10,Dvoucestná kostka rohová spojka 45x45,162 Spojovací kostky,#4d4d4d,,1,grey,zinek #4d4d4d -> grey,OK
+product,3371,2.2.001.08.4040.10,"Dvoucestná kostka rohová spojka 40x40 (hmotnost cca 106,4 g)",162 Spojovací kostky,#4d4d4d,,1,grey,zinek #4d4d4d -> grey,OK
+product,3376,2.2.001.10.4545.08,Trojcestná kostka rohová spojka 45x45,162 Spojovací kostky,#4d4d4d,,1,grey,zinek #4d4d4d -> grey,OK
+product,3378,2.2.001.08.4040.08,Trojcestná kostka rohová spojka K8 40x40,162 Spojovací kostky,#4d4d4d,,1,grey,zinek #4d4d4d -> grey,OK
+product,3284,2.2.002.06.2025.04,Čtyřcestná spojovací deska 20x25,163 Plotna pro křížové spoje,#4d4d4d,,1,grey,"plotna #4d4d4d - navrh grey (podle barvy ve scene); POZOR popis karty rika ""vysokopevnostni plast (HRP)"" (3357 ocel) - pokud plast, pak black",ROZHODNE ROBERT
+product,3316,2.2.002.08.3030.04,Čtyřcestná spojovací deska 30x30,163 Plotna pro křížové spoje,#4d4d4d,,1,grey,"plotna #4d4d4d - navrh grey (podle barvy ve scene); POZOR popis karty rika ""vysokopevnostni plast (HRP)"" (3357 ocel) - pokud plast, pak black",ROZHODNE ROBERT
+product,3329,2.2.002.10.4040.04,Čtyřcestná spojovací deska 40x40,163 Plotna pro křížové spoje,#4d4d4d,,1,grey,"plotna #4d4d4d - navrh grey (podle barvy ve scene); POZOR popis karty rika ""vysokopevnostni plast (HRP)"" (3357 ocel) - pokud plast, pak black",ROZHODNE ROBERT
+product,3366,2.2.002.10.4545.04,Čtyřcestná spojovací deska 45x45,163 Plotna pro křížové spoje,#4d4d4d,,1,grey,"plotna #4d4d4d - navrh grey (podle barvy ve scene); POZOR popis karty rika ""vysokopevnostni plast (HRP)"" (3357 ocel) - pokud plast, pak black",ROZHODNE ROBERT
+product,3165,2.2.010.2025,Závěsná sada 20x25,164 Závěsné karabiny,#4d4d4d,,1,grey,VICETELESOVY (2 teles) - cely dil grey; navrh po castech viz souhrn.md | zinek #4d4d4d -> grey,ROZHODNE ROBERT
+product,3175,2.2.010.3045,Závěsná sada 30x45,164 Závěsné karabiny,#4d4d4d,,1,grey,zinek #4d4d4d -> grey,OK
+product,3335,2.2.004.2520,Plastová kuličková pojistka 20x25,165 Zámky,#242424,,1,black,cerna/guma #242424 -> black,OK
+product,3348,2.2.004.4545,Plastová kuličková pojistka 30x45,165 Zámky,#242424,,1,black,VICETELESOVY (2 teles) - cely dil black; navrh po castech viz souhrn.md | cerna/guma #242424 -> black,ROZHODNE ROBERT
+product,3423,2.2.014.01.000,Bezpečnostní zámek (malý),165 Zámky,#242424,,1,black,VICETELESOVY (17 teles) - cely dil black; navrh po castech viz souhrn.md | cerna/guma #242424 -> black,ROZHODNE ROBERT
+product,3093,2.2.001.06.2025.33,Rohová spojka 20 x 25,166 Rožky standardní,#4d4d4d,,1,grey,zinek #4d4d4d -> grey,OK
+product,3120,2.2.001.06.2025.03,Široká rohová spojka 20x25,166 Rožky standardní,#4d4d4d,,1,grey,zinek #4d4d4d -> grey,OK
+product,3158,2.2.001.08.3030.33,Rohová spojka 30 x 30,166 Rožky standardní,#4d4d4d,,1,grey,zinek #4d4d4d -> grey,OK
+product,3176,2.2.001.10.4040.33,40x40 Rohová spojka,166 Rožky standardní,#4d4d4d,,1,grey,zinek #4d4d4d -> grey,OK
+product,3186,2.2.001.08.3030.03,Široká rohová spojka 30x30,166 Rožky standardní,#4d4d4d,,1,grey,zinek #4d4d4d -> grey,OK
+product,3187,2.2.001.08.4040.03,Široká rohová spojka (K8) 40x40,166 Rožky standardní,#4d4d4d,,1,grey,zinek #4d4d4d -> grey,OK
+product,3205,2.2.001.10.4545.33,Rohová spojka 45 x 45,166 Rožky standardní,#4d4d4d,,1,grey,zinek #4d4d4d -> grey,OK
+product,3208,2.2.001.06.2040.04,Dlouhá rohová spojka 20x40,167 Rožky velké,#4d4d4d,,1,grey,zinek #4d4d4d -> grey,OK
+product,3227,2.2.001.08.3060.04,Rohová spojka 60 x 60 systém 30,167 Rožky velké,#4d4d4d,,1,grey,zinek #4d4d4d -> grey,OK
+product,3274,2.2.001.10.4080.04,Rohová spojka 80 x 80 systému 40 S10,167 Rožky velké,#4d4d4d,,1,grey,zinek #4d4d4d -> grey,OK
+product,3293,2.2.001.10.4590.04,Rohová spojka 90 x 90 systému 45 S10,167 Rožky velké,#4d4d4d,,1,grey,zinek #4d4d4d -> grey,OK
+product,3070,2.3.001.2020.01,Záslepka 20x20,170 Plastové záslepky profilů,#242424,,1,black,cerna/guma #242424 -> black,OK
+product,3071,2.3.001.3030.01,Záslepka 30x30,170 Plastové záslepky profilů,#242424,,1,black,cerna/guma #242424 -> black,OK
+product,3074,2.3.001.4045.01,Odstupňovaná záslepka profilu 40x40,170 Plastové záslepky profilů,#242424,,1,black,cerna/guma #242424 -> black,OK
+product,3088,2.3.001.2020.03,Záslepka 20x20 radius,170 Plastové záslepky profilů,#242424,,1,black,cerna/guma #242424 -> black,OK
+product,3090,2.3.001.3535.01,Záslepka 35 x 35,170 Plastové záslepky profilů,#242424,,1,black,cerna/guma #242424 -> black,OK
+product,3091,2.3.001.4040.01,Záslepka 40x40 S10,170 Plastové záslepky profilů,#242424,,1,black,cerna/guma #242424 -> black,OK
+product,3092,2.3.001.4545.01,Záslepka 45x45 L černá,170 Plastové záslepky profilů,#242424,,1,black,cerna/guma #242424 -> black,OK
+product,3107,2.3.001.4080.01,Záslepka 40x80 S10,170 Plastové záslepky profilů,#242424,,1,black,cerna/guma #242424 -> black,OK
+product,3118,2.3.001.3030.03,Záslepka 30 x 30 radius,170 Plastové záslepky profilů,#242424,,1,black,cerna/guma #242424 -> black,OK
+product,3119,2.3.001.4545.03,Záslepka 45 x 45 radius,170 Plastové záslepky profilů,#242424,,1,black,cerna/guma #242424 -> black,OK
+product,3130,2.3.001.2080.01,Záslepka 20x80,170 Plastové záslepky profilů,#242424,,1,black,cerna/guma #242424 -> black,OK
+product,3150,2.3.001.2040.01,Záslepka 20x40,170 Plastové záslepky profilů,#242424,,1,black,cerna/guma #242424 -> black,OK
+product,3151,2.3.001.3060.01,Záslepka 30x60,170 Plastové záslepky profilů,#242424,,1,black,cerna/guma #242424 -> black,OK
+product,3152,2.3.001.4040.02,Záslepka 40x40 S8 Light,170 Plastové záslepky profilů,#242424,,1,black,cerna/guma #242424 -> black,OK
+product,3153,2.3.001.4590.01,Záslepka 45x90,170 Plastové záslepky profilů,#242424,,1,black,cerna/guma #242424 -> black,OK
+product,3219,2.2.003.3030,Plastový pant 3030,171 Panty plastové,#202224,,1,black,VICETELESOVY (3 teles) - cely dil black; navrh po castech viz souhrn.md | cerna/guma #202224 -> black,ROZHODNE ROBERT
+product,3192,2.2.001.08.3030.07,Rohová spojka 55 x 55 systém 30,173 Rožky úzké,#4d4d4d,,1,grey,zinek #4d4d4d -> grey,OK
+product,3198,2.2.001.10.4545.07,Rohová spojka 60 x 60 systému 45 S10,173 Rožky úzké,#4d4d4d,,1,grey,zinek #4d4d4d -> grey,OK
+product,3045,2.2.001.08.3030.01,Úhelníková spojka 30x30,174 Úhelníky,#4d4d4d,,1,grey,zinek #4d4d4d -> grey,OK
+product,3207,2.2.001.10.4040.01,Úhelníková spojka 40x40,174 Úhelníky,#4d4d4d,,1,grey,zinek #4d4d4d -> grey,OK
+product,3216,2.2.001.10.4545.01,Úhelníková spojka 45x45,174 Úhelníky,#4d4d4d,,1,grey,zinek #4d4d4d -> grey,OK
+product,3395,2.2.009.08.3030,Pohyblivý kloub (tuzemský) 30x30,176 Spojovací klouby s páčkou,#4d4d4d,,1,grey,VICETELESOVY (6 teles) - cely dil grey; navrh po castech viz souhrn.md | zinek #4d4d4d -> grey,ROZHODNE ROBERT
+product,3411,2.2.009.10.4040,Kloub s aretací 40 x 40,176 Spojovací klouby s páčkou,#4d4d4d,,1,grey,VICETELESOVY (16 teles) - cely dil grey; navrh po castech viz souhrn.md | zinek #4d4d4d -> grey,ROZHODNE ROBERT
+product,3415,2.2.009.10.4545,Kloub s aretací 45 x 45,176 Spojovací klouby s páčkou,#4d4d4d,,1,grey,zinek #4d4d4d -> grey,OK
+product,3386,2.2.015.08.010,Posuvné kolečko - drážka 8,177 Vodící kolečka,#242424,,1,black,VICETELESOVY (4 teles) - cely dil black; navrh po castech viz souhrn.md | cerna/guma #242424 -> black,ROZHODNE ROBERT
+product,3404,2.2.015.10.010,Posuvné kolečko - drážka 10,177 Vodící kolečka,#242424,,1,black,VICETELESOVY (4 teles) - cely dil black; navrh po castech viz souhrn.md | cerna/guma #242424 -> black,ROZHODNE ROBERT
+product,3425,2.2.014.08.3030.04,Sada kluzáků do drážky - drážka 8 30x30,177 Vodící kolečka,#242424,,1,black,VICETELESOVY (7 teles) - cely dil black; navrh po castech viz souhrn.md | cerna/guma #242424 -> black,ROZHODNE ROBERT
+product,3430,2.2.014.10.4040.04,Sada kluzáků do drážky 40x40 - drážka 10,177 Vodící kolečka,#242424,,1,black,VICETELESOVY (5 teles) - cely dil black; navrh po castech viz souhrn.md | cerna/guma #242424 -> black,ROZHODNE ROBERT
+product,3436,2.2.014.10.4545.04,Sada kluzáků do drážky 45x45,177 Vodící kolečka,#242424,,1,black,VICETELESOVY (7 teles) - cely dil black; navrh po castech viz souhrn.md | cerna/guma #242424 -> black,ROZHODNE ROBERT
+product,3170,2.3.008.03,"Plastové madlo, tenká řada",180 Madla,#242424,,1,black,cerna/guma #242424 -> black,OK
+product,3197,2.3.008.00,Madlo 2.3.008.00,180 Madla,#242424,,1,black,cerna/guma #242424 -> black,OK
+product,3080,2.2.012.10.002,Držák kabelu bez krytky S10,185 Držáky kabelů,#242424,,1,black,cerna/guma #242424 -> black,OK
+product,3081,2.2.012.08.002,Držák kabelu bez krytky S8,185 Držáky kabelů,#242424,,1,black,cerna/guma #242424 -> black,OK
+product,3288,2.2.008.08.02,Čep k drážce 8 mm,186 Drážkové čepy,#242424,,1,black,VICETELESOVY (3 teles) - cely dil black; navrh po castech viz souhrn.md | cerna/guma #242424 -> black,ROZHODNE ROBERT
+product,3315,2.2.008.10.02,Čep k drážce 10 mm,186 Drážkové čepy,#242424,,1,black,VICETELESOVY (2 teles) - cely dil black; navrh po castech viz souhrn.md | cerna/guma #242424 -> black,ROZHODNE ROBERT
+product,3240,2.3.010.00,Spojovací kus plynové vzpěry,187 Plynové vzpěry,#242424,,1,black,cerna/guma #242424 -> black,OK
+product,3372,2.3.010.105150,Plynová vzpěra (zdvih 105 mm) F150N,187 Plynové vzpěry,#242424,,1,black,VICETELESOVY (3 teles) - cely dil black; navrh po castech viz souhrn.md | cerna/guma #242424 -> black,ROZHODNE ROBERT
+product,3171,2.3.006.08.01.01,U lišta  3000 mm pro drážku 8mm,196 Krycí lišty drážek,#242424,,1,black,cerna/guma #242424 -> black,OK
+product,3184,2.3.006.10.01.01,U lišta  3000 mm pro drážku 10mm,196 Krycí lišty drážek,#242424,,1,black,cerna/guma #242424 -> black,OK
+product,3209,2.3.006.00.02.00,"Těsnicí páska 2-2,5 mm",196 Krycí lišty drážek,#1c1c1e,,1,black,cerna/guma #1c1c1e -> black,OK
+product,3213,2.3.006.08.00.00,Těsnicí kanálek s hadičkou - drážka 8,196 Krycí lišty drážek,#1c1c1e,,1,black,cerna/guma #1c1c1e -> black,OK
+product,3233,2.3.006.10.00.00,Těsnicí kanálek s hadičkou - drážka 10,196 Krycí lišty drážek,#1c1c1e,,1,black,cerna/guma #1c1c1e -> black,OK
+product,3278,2.3.007.10.00.01,"Krycí guma profilů 45, 40",196 Krycí lišty drážek,#1c1c1e,,1,black,cerna/guma #1c1c1e -> black,OK
+product,4928,Drzak.PET,Držák PET lahve,"200 Komponenty, polotovary a části stolů",,,1,black,drzak PET lahve (dratena konstrukce) - navrh black (lakovany drat); alternativa chrome,ROZHODNE ROBERT
+product,4929,LED1200,"Osvětlení LED 1,2m 33W 3960lm","200 Komponenty, polotovary a části stolů",,,1,alumi2,"LED 1,2m - hlinikove teleso + mlecny difuzor v 1 meshi; navrh alumi2 (teleso), difuzor by chtel bila po rozdeleni",ROZHODNE ROBERT
+product,4930,Dvojsuplik.ocel.440137,Ocelové šuplíky 2ks ke stolům,"200 Komponenty, polotovary a části stolů",,,1,bila,ocelove supliky ke stolum - barva v DB neni; navrh bila (lakovany ocelovy plech) nebo grey; korpus+cela v 1 meshi,ROZHODNE ROBERT
+product,4931,Perfopanel.1190x460.seda,Perforovaný ocelový panel na nářadí 1190 x 460mm,"200 Komponenty, polotovary a části stolů",,,1,grey,perfopanel -> grey (Robert),OK
+product,4932,Elektrozlab.4x230V.600mm,Elektrožlab 4 x 230 V,"200 Komponenty, polotovary a části stolů",,,1,bila,"elektrozlab -> bila (Robert); vystupky modre = klt1 NELZE bez rozdeleni meshe (GLB = 1 mesh, 1 primitiv, bez materialu)",OK
+product,3283,2.3.002.1050,Vyrovnávací šroubovací patka M10,202 Stavitelné patky,#4d4d4d,,1,grey,zinek #4d4d4d -> grey,OK
+product,3367,2.3.001.0650,Kovová patka M6x45,202 Stavitelné patky,#4d4d4d,,1,grey,VICETELESOVY (2 teles) - cely dil grey; navrh po castech viz souhrn.md | zinek #4d4d4d -> grey,ROZHODNE ROBERT
+product,3368,2.3.001.0850,Kovová patka M8x50,202 Stavitelné patky,#4d4d4d,,1,grey,VICETELESOVY (2 teles) - cely dil grey; navrh po castech viz souhrn.md | zinek #4d4d4d -> grey,ROZHODNE ROBERT
+product,3304,2.2.008.08.03,Kluzák k drážce 8 mm,203 Plastové kluzáky,#242424,,1,black,cerna/guma #242424 -> black,OK
+product,3330,2.2.008.10.03,Kluzák k drážce 10 mm,203 Plastové kluzáky,#242424,,1,black,cerna/guma #242424 -> black,OK
+product,3671,Laminodeska.SEDA.25,Laminovaná deska šedá 25mm,207 Laminovaná dřevotříska,#a5a5a5,,1,cub_seda,laminodeska -> cub_seda (Robert: jako plastove vyplne CUB),OK
+product,4933,Laminodeska.SEDA.18,Laminovaná dřevotříska 18mm,207 Laminovaná dřevotříska,#a5a5a5,,1,cub_seda,laminodeska -> cub_seda (Robert: jako plastove vyplne CUB),OK
+product,3317,2.2.004.2025,Sada magnetů - drážka 6,209 Magnety,#242424,,1,black,cerna/guma #242424 -> black,OK
+product,3322,2.2.004.3035,Sada magnetů - drážka 8,209 Magnety,#242424,,1,black,cerna/guma #242424 -> black,OK
+product,3327,2.2.004.4045,Sada magnetů - drážka 10,209 Magnety,#242424,,1,black,VICETELESOVY (6 teles) - cely dil black; navrh po castech viz souhrn.md | cerna/guma #242424 -> black,ROZHODNE ROBERT
+product,3116,2.2.013.10.002,Držák plexiskla s maticí S10,217 Držáky plexiskla,#242424,,1,black,VICETELESOVY (4 teles) - cely dil black; navrh po castech viz souhrn.md | cerna/guma #242424 -> black,ROZHODNE ROBERT
+product,3117,2.2.013.08.002,Držák plexiskla s maticí S8,217 Držáky plexiskla,#242424,,1,black,cerna/guma #242424 -> black,OK
+product,3318,2.2.002.10.4080.01,Plochá spojka obdelník systém 40,218 Obdélníkové plotny,#4d4d4d,,1,grey,"plotna #4d4d4d - navrh grey (podle barvy ve scene); POZOR popis karty rika ""vysokopevnostni plast (HRP)"" (3357 ocel) - pokud plast, pak black",ROZHODNE ROBERT
+product,3357,2.2.002.10.4590.01,Plochá spojka obdelník systém 45,218 Obdélníkové plotny,#4d4d4d,,1,grey,"plotna #4d4d4d - navrh grey (podle barvy ve scene); POZOR popis karty rika ""vysokopevnostni plast (HRP)"" (3357 ocel) - pokud plast, pak black",ROZHODNE ROBERT
+product,3220,2.2.006.4040.08,Spojka úhel 45° systém 40,227 Spojka s úhlem 45,#4d4d4d,,1,grey,zinek #4d4d4d -> grey,OK
+product,3238,2.2.006.4545.10,Spojka úhel 45° systém 45,227 Spojka s úhlem 45,#4d4d4d,,1,grey,zinek #4d4d4d -> grey,OK
+product,3254,2.2.001.08.3030.06,Spojka úhel 45° systém 30,227 Spojka s úhlem 45,#4d4d4d,,1,grey,zinek #4d4d4d -> grey,OK
+product,3323,2.2.007.08,Úhlová naklápěcí konzole,232 Plynule stavitelné úhlové konzole,#4d4d4d,,1,grey,zinek #4d4d4d -> grey,OK
+product,3324,2.2.007.10,Úhlová naklápěcí konzole system 40,232 Plynule stavitelné úhlové konzole,#4d4d4d,,1,grey,zinek #4d4d4d -> grey,OK
+product,3574,2.2.001.00.3035.06,Stavitelná úhlová konzole 30x35,232 Plynule stavitelné úhlové konzole,#4d4d4d,,1,grey,zinek #4d4d4d -> grey,OK
+product,3575,2.2.001.00.4045.06,Stavitelná úhlová konzole 40x45,232 Plynule stavitelné úhlové konzole,#4d4d4d,,1,grey,zinek #4d4d4d -> grey,OK
+product,3164,2.1.010.06.00,Vnitřní rohová spojka v drážce 6 mm,234 Vnitřní spojky uhel 90,#4d4d4d,,1,grey,zinek #4d4d4d -> grey,OK
+product,3190,2.1.010.08.00,Vnitřní rohová spojka v drážce 8 mm,234 Vnitřní spojky uhel 90,#4d4d4d,,1,grey,zinek #4d4d4d -> grey,OK
+product,3228,2.1.010.10.00,Vnitřní rohová spojka v drážce 10 mm,234 Vnitřní spojky uhel 90,#4d4d4d,,1,grey,zinek #4d4d4d -> grey,OK
+product,3221,2.2.002.10.180180.10,Zavěšovací vidlice pro drážku 10 mm,236 Zavěšovací vidlice,#242424,,1,black,cerna/guma #242424 -> black,OK
+product,3939,382223,MDF deska Steel Grey 8mm,261 (kategorie neexistuje),#494b50,,1,grey,MDF Steel Grey 8mm #494b50 (tmava seda) - navrh grey; alternativa cub_seda jako laminodesky,ROZHODNE ROBERT
+product,3950,PLASTDESKA8-TEMP,Plastová deska 8mm,261 (kategorie neexistuje),#63656a,,1,cub_seda,"plastova deska svetle seda #63656a (placeholder, sdili GLB s MDF) - navrh cub_seda (plastova vypln jako CUB)",ROZHODNE ROBERT

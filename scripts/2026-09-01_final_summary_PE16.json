@@ -1,0 +1,17 @@
+{
+ "key": "PE16",
+ "carCollisionProfiles": false,
+ "euroboxCarCollision": false,
+ "badEurobox": [],
+ "unexpected": 0,
+ "expected": 57,
+ "totalParts": 68,
+ "dims": {
+  "widthX": 349.00000762939453,
+  "heightY": 1183.0001063436318,
+  "lengthZ": 1752.000018119812
+ },
+ "railContainmentOk": true,
+ "railIssues": [],
+ "passesGate": true
+}

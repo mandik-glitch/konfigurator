@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "family": "packstations",
+  "lang": "en",
+  "documents": [
+    {
+      "kind": "terms",
+      "title": "Operator and orders",
+      "body": "Operator and seller\nLOGIMAN s.r.o.\nRegistered office: Husinecká 903/10, 130 00 Prague, Czech Republic\nCompany ID (IČO): 28337638\nVAT ID (DIČ): CZ28337638\nRegistered in the Commercial Register kept by the Municipal Court in Prague, section C, file 352112.\nPhone: +420 603 230 059\nContact: the form on the Contact page.\nThe address above is the registered office, not a shop or workshop.\n\nOrder\nAn order is placed by submitting the checkout and is binding. We send the proforma invoice including shipping to you by e-mail after the order is confirmed.\n\nQuestions\nThe contact form on the Contact page is for questions. Sending a question is not an order."
+    },
+    {
+      "kind": "privacy",
+      "title": "Privacy",
+      "body": "Who processes your data\nThe controller of personal data is LOGIMAN s.r.o., company ID 28337638, Husinecká 903/10, 130 00 Prague, Czech Republic. Contact: the form on the Contact page or phone +420 603 230 059.\n\nWhat data and why\nWhen you send an order or a message we process the data you give us: name, e-mail address, phone, company name, company ID, VAT ID (if you give it), country, delivery address, the text of your message and the content of your order including the table configuration. Giving us this data is voluntary, but without your name, e-mail, company and company ID we cannot handle the order. We use the data to handle your order and message, prepare the proforma invoice and deliver. If you save a table configuration, we process the company ID, e-mail, phone and the selected configuration; we verify the company ID in a public register (ARES, RPO) and the e-mail by checking its format and domain. We store the configuration so that you can return to it and so that we can contact you about it; the legal basis is your consent (Article 6(1)(a) GDPR), which you can withdraw at any time. For an order or a message the legal basis is taking steps at your request before entering into a contract and performing the contract (Article 6(1)(b) GDPR) and complying with legal obligations, in particular accounting and tax rules (point (c)).\n\nHow long we keep it\nMessages, orders, documents and saved configurations are kept without a time limit until we decide otherwise. Data from orders and documents is always kept at least for the period required by law, in particular accounting and tax rules. You have the right to erasure (see Your rights).\n\nWho receives it\nWe do not sell your data and do not use it for marketing. It is processed only by providers of services needed to run the website, handle your order and deliver it.\n\nYour rights\nYou have the right to access your data, to have it corrected or erased, to restrict processing, to data portability and to object. Use the form on the Contact page or write to the controller's address. If you believe we process your data incorrectly you can complain to a supervisory authority: in Slovakia the Office for Personal Data Protection of the Slovak Republic (dataprotection.gov.sk), in the Czech Republic the Office for Personal Data Protection (uoou.gov.cz).\n\nCookies\nThis website uses no tracking or advertising cookies and no analytics tools. It only stores the content of your cart and settings needed for its operation in your browser."
+    }
+  ]
+}

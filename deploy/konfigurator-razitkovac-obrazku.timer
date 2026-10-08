@@ -1,0 +1,17 @@
+[Unit]
+Description=Casovac 2D vodoznaku na obrazky (kazdych 10 minut)
+# POZOR (bot10 2026-09-11): PUT /api/gallery-items/<id> prepina is_public
+# 0->1 PO nahrani ("nahraju soukrome, po revizi zverejnim" je BEZNA
+# cesta) - upload-hook v momente nahrani soubor jeste vidi jako soukromy
+# a nema duvod ho otisknout. U gallery-items/ proto tenhle timer NENI
+# zachranna sit, je to HLAVNI cesta, jak se nove verejne fotky vubec
+# orazitkuji - 10 minut je kompromis mezi "brzy po zverejneni" a
+# zatezenim serveru, ne nahodne cislo.
+
+[Timer]
+OnCalendar=*-*-* *:00/10:00
+Persistent=true
+RandomizedDelaySec=60
+
+[Install]
+WantedBy=timers.target

@@ -1,0 +1,36 @@
+{
+  "en": {
+    "b2b.notice": "Prices are shown excl. VAT.",
+    "footer.tagline": "Configurable packing stations and workbenches.",
+    "inq.company": "Company name",
+    "inq.company_id": "Company registration number",
+    "inq.vat_id": "VAT ID (needed for VAT-exempt delivery within the EU)",
+    "inq.b2b_confirm": "I confirm that I am sending this inquiry on behalf of a business.",
+    "err.company_required": "Please enter the company name.",
+    "err.company_id_required": "Please enter the company registration number.",
+    "err.b2b_confirm_required": "Please confirm that you are inquiring on behalf of a business.",
+    "err.vat_id_invalid": "The VAT ID is not valid or could not be verified.",
+    "nav.legal": "Legal information",
+    "legal.title": "Legal information",
+    "legal.terms": "Operator and orders",
+    "legal.privacy": "Privacy"
+  },
+  "sk": {
+    "b2b.notice": "Ceny sú uvedené bez DPH.",
+    "footer.tagline": "Konfigurovateľné baliace a pracovné stoly.",
+    "inq.company": "Názov firmy",
+    "inq.company_id": "IČO",
+    "inq.vat_id": "IČ DPH (potrebné pre dodanie bez DPH v rámci EÚ)",
+    "inq.b2b_confirm": "Potvrdzujem, že dopyt odosielam v mene podnikateľa (firmy).",
+    "inq.controller": "Prevádzkovateľ osobných údajov: {seller}.",
+    "err.company_required": "Zadajte prosím názov firmy.",
+    "err.company_id_required": "Zadajte prosím IČO firmy.",
+    "err.b2b_confirm_required": "Potvrďte prosím, že dopyt odosielate v mene podnikateľa.",
+    "err.vat_id_invalid": "IČ DPH nemá platný tvar alebo ho nepodarilo overiť.",
+    "nav.legal": "Právne informácie",
+    "legal.title": "Právne informácie",
+    "legal.terms": "Prevádzkovateľ a objednávka",
+    "legal.privacy": "Ochrana osobných údajov"
+  },
+  "poznamka": "Zmeny/nove klice vuci ZIVYM webapp/miniweb/i18n/en.json a sk.json (bot16). Pole a kody chyb musi podporit API (bot5): company a company_id povinne, vat_id volitelne. Slovensky 'Správca' je cechismus, spravne 'Prevádzkovateľ'. Volitelne: 'home.step3.t.inquiry' = '3. Odošlite dopyt' misto '3. Dopýtajte sa'. AKTUALIZACE: pravni dokumenty jsou jen 2 (terms = provozovatel a poptavka, privacy), legal.returns se nepouziva - stranka ma vykreslit jen dokumenty, ktere API vraci (zadne placeholdery pro returns), nadpis podle title dokumentu nebo klicu legal.terms/legal.privacy."
+}

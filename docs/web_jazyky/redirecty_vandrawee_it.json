@@ -1,0 +1,45 @@
+{
+ "_pozn": "301 mapa starych adres vandrawee.it (Aruba web, stav 2026-10-08) -> nove cesty IT webu; plati az po prepnuti DNS vandrawee.it. bot16 zaradi do PATHS.",
+ "redirecty": [
+  {
+   "z": "/scaffali-a-parete-per-furgoni",
+   "cil_kat": 247,
+   "pozn": "scaffali a parete per furgoni -> Regaly do auta",
+   "cil": "/scaffali-per-veicoli",
+   "cil_slug_it": "scaffali-per-veicoli"
+  },
+  {
+   "z": "/box-estraibili-dal-pianale",
+   "cil_kat": 248,
+   "pozn": "box estraibili dal pianale (eurobox) -> Vysuvny system euroboxu",
+   "cil": "/sistema-estraibile-per-eurobox",
+   "cil_slug_it": "sistema-estraibile-per-eurobox"
+  },
+  {
+   "z": "/cassetti-estraibili-dalle-porte",
+   "cil_kat": 292,
+   "pozn": "cassetti estraibili dalle porte -> Vysuvy z dodavky na miru",
+   "cil": "/estraibili-su-misura-per-furgoni",
+   "cil_slug_it": "estraibili-su-misura-per-furgoni"
+  },
+  {
+   "z": "/estrattore-personalizzato-per-generatore",
+   "cil_kat": 292,
+   "pozn": "estrattore per generatore -> Vysuvy z dodavky na miru",
+   "cil": "/estraibili-su-misura-per-furgoni",
+   "cil_slug_it": "estraibili-su-misura-per-furgoni"
+  },
+  {
+   "z": "/modeli-3d",
+   "cil_kat": 184,
+   "pozn": "esempi modelli 3D -> Vestavby do dodavek, aut",
+   "cil": "/allestimenti-per-furgoni-e-auto",
+   "cil_slug_it": "allestimenti-per-furgoni-e-auto"
+  },
+  {
+   "z": "/contatti",
+   "cil": "/contatti",
+   "pozn": "kontakt: stejna cesta na novem webu (PATHS contact it = /contatti)"
+  }
+ ]
+}

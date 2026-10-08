@@ -1,0 +1,14 @@
+[Unit]
+Description=Planovane nasazeni serveroveho kodu bez vypadku (gunicorn HUP) - scripts/restart_konfigurator.sh --planovane
+After=network.target konfigurator.service
+
+[Service]
+Type=oneshot
+User=root
+Group=root
+Nice=5
+# Tvrdy strop (WORKFLOW.md pravidlo 28): cekani na blokatory max 30 min + preflight/nabeh/kontroly.
+# Bez Restart=: selhani se NEZKOUSI znovu ve smycce, dalsi pokus je dalsi termin.
+TimeoutStartSec=50min
+WorkingDirectory=/opt/konfigurator
+ExecStart=/opt/konfigurator/scripts/restart_konfigurator.sh --planovane

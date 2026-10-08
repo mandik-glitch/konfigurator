@@ -1,0 +1,43 @@
+--- a/2026-10-07_led600_generator/test_led_delka.py
++++ b/2026-10-07_led600_generator/test_led_delka.py
+@@ -21,6 +21,12 @@
+ S, G = C.nacti_generator()
+ import numpy as np  # noqa: E402
+ import stul_osvetleni  # noqa: E402
++
++# Od 2026-10-08 je pocet svitidel LED RUCNI (`led_pocet`, vychozi 1; svitidla se uz nepridavaji sama podle sirky stolu). Tento test overuje rozlozeni svitidel podle sirky stolu (DRIVEJSI automaticky
++# pocet = nejvic svitidel, co se vejde), proto jim zadava `led_pocet` na nejvic (generator ho orizne na pocet, ktery se vejde). Hash sirokych stolu se zmenil (nese klic poctu) - viz sekce C.
++if hasattr(S, "LED_MAX"):
++    _sestav_orig = S.sestav_stul
++    S.sestav_stul = lambda **kw: _sestav_orig(**{"led_pocet": S.LED_MAX, **kw})
+ import trimesh  # noqa: E402
+ 
+ OK, FAILS = 0, []
+@@ -106,7 +112,8 @@
+ print("C) vychozi delka = VSE BEZE ZMENY (zlaty otisk konfiguraci pred zavedenim volby)")
+ g0 = json.load(open(C.GOLDEN, encoding="utf-8"))
+ g1_ = C.vypocti(S, G, C.mrizka())
+-rozdil = [k for k in g0 if g0[k] != g1_.get(k)]
++bez_hashe = lambda k, z: {x: y for x, y in z.items() if not (x == "hash" and g0[k]["led"] >= 2)}          # noqa: E731 - hash stolu, kde drive vznikalo vic svitidel automaticky, se zmenil (nese klic poctu)
++rozdil = [k for k in g0 if bez_hashe(k, g0[k]) != bez_hashe(k, g1_.get(k, {}))]
+ check(len(g0) >= 400 and not rozdil and set(g0) == set(g1_), f"zlaty otisk {len(g0)} konfiguraci: rozdilnych {len(rozdil)} {rozdil[:2]}")
+ g1200 = C.vypocti(S, G, C.mrizka(), led_delka=1200)
+ check(g1200 == g1_, "vypocet s explicitni led_delka=1200 = vypocet bez ni (vsech 465 konfiguraci)")
+@@ -194,7 +201,7 @@
+     a = G.kanonicky_hash(S.sestav_stul(sirka=1500, **p_off)["parametry"])
+     b = G.kanonicky_hash(S.sestav_stul(sirka=1500, led_delka=600, **p_off)["parametry"])
+     check(a == b, f"bez svitidla {p_off}: led_delka 600 hash nemeni")
+-check(G.kanonicky_hash({"sirka": 1500, "led_delka": 600}) == h_6 and G.kanonicky_hash({"led_delka": 1200}) == G.kanonicky_hash({}), "kanonicky_hash i z nenormalizovanych parametru (vstup bez efektivnich)")
++check(G.kanonicky_hash({"sirka": 1500, "led_delka": 600, "led_pocet": 2}) == h_6 and G.kanonicky_hash({"led_delka": 1200}) == G.kanonicky_hash({}), "kanonicky_hash i z nenormalizovanych parametru (vstup bez efektivnich)")
+ for p_off in ({"led": False}, {"led_svetlo": False}, {"stojky": False}):                       # hash i ze SUROVYCH parametru (staff API: kanonicky_hash(parametry) z dotazu, ne z efektivnich)
+     check(G.kanonicky_hash({"sirka": 1500, "led_delka": 600, **p_off}) == G.kanonicky_hash({"sirka": 1500, **p_off}), f"surove parametry {p_off}: led_delka 600 bez svitidla hash nemeni")
+ check(G.kanonicky_hash({"sirka": 1500, "led_delka": 600}) != G.kanonicky_hash({"sirka": 1500}) and G.kanonicky_hash({"sirka": 1500, "led_delka": 1200}) == G.kanonicky_hash({"sirka": 1500}), "surove parametry: 600 se svitidlem hash meni, 1200 ne")
+@@ -239,7 +246,7 @@
+ pol600 = [m for m in c["menu"] if m["text"] == "Zvolit LED 600 mm"][0]
+ check(pol600["nastav"] == {"led_delka": 600.0} and not pol600["zakazano"], f"polozka 'Zvolit LED 600 mm': nastaveni {pol600['nastav']}")
+ r_zpet = S.sestav_stul(**{**r["parametry"], **pol600["nastav"]})
+-check(G.kanonicky_hash(r_zpet["parametry"]) == G.kanonicky_hash(S.sestav_stul(sirka=1500, led_delka=600)["parametry"]) and len(led_dily(r_zpet)) == pocet_pri(1500, 600), "pouziti nastaveni z menu dava konfiguraci s LED 600")
++check(G.kanonicky_hash(r_zpet["parametry"]) == G.kanonicky_hash(S.sestav_stul(sirka=1500, led_delka=600, led_pocet=1)["parametry"]) and len(led_dily(r_zpet)) == 1, "pouziti nastaveni z menu dava konfiguraci s LED 600 (pocet svitidel se prepnutim delky nemeni: 1)")
+ c6 = cast_led(r_zpet)
+ tx6 = [m["text"] for m in c6["menu"]]
+ check("Zvolit LED 1200 mm" in tx6 and "Zvolit LED 600 mm" not in tx6, f"u 600: menu nabizi 1200, ne 600 ({tx6})")

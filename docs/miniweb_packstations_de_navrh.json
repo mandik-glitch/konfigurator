@@ -1,0 +1,108 @@
+{
+  "version": 1,
+  "family": "packstations",
+  "lang": "de",
+  "categories": [
+    {
+      "slug": "packing-tables-and-workbenches",
+      "url_slug": "pack-und-arbeitstische",
+      "parent": null,
+      "sort": 1,
+      "name": "Pack- und Arbeitstische"
+    },
+    {
+      "slug": "ergonomic-packing-table-system-35",
+      "url_slug": "ergonomischer-packtisch-system-35",
+      "parent": null,
+      "sort": 2,
+      "name": "Ergonomischer Packtisch System 35"
+    },
+    {
+      "slug": "robust-packing-table-system-40",
+      "url_slug": "robuster-packtisch-system-40",
+      "parent": null,
+      "sort": 3,
+      "name": "Robuster Packtisch System 40"
+    }
+  ],
+  "products": [
+    {
+      "slug": "configurable-packing-station-and-workbench",
+      "url_slug": "konfigurierbarer-pack-und-arbeitstisch",
+      "sku": "PWB-001",
+      "category": "packing-tables-and-workbenches",
+      "sort": 1,
+      "configurator": {
+        "available": true,
+        "shop_product_id": 4934,
+        "default_view": "configurator"
+      },
+      "name": "Konfigurierbarer Pack- und Arbeitstisch",
+      "summary": "Pack- und Arbeitstisch mit Rahmen aus Aluminiumprofilen, nach Maß gefertigt. Wählen Sie Abmessungen, Fachböden und Zubehör und sehen Sie das Ergebnis in 3D.",
+      "description": "Nach Maß gefertigt\nDieser Arbeitstisch wird auf Bestellung gefertigt. Sie wählen nicht aus festen Größen: Sie legen Breite, Tiefe und Höhe der Arbeitsplatte fest, entscheiden, wie viele Fachböden Sie brauchen, und ergänzen das Zubehör, das Ihre Arbeit erfordert. Die 3D-Ansicht zeigt das Ergebnis bei jeder Änderung.\n\nBei jeder Änderung geprüft\nDer Rahmen wird nach jeder Änderung automatisch neu berechnet. Eine Kombination, die sich nicht fertigen lässt, wird nicht akzeptiert. So ist jede gültige Konfiguration ein Tisch, der tatsächlich gebaut werden kann.\n\nRahmen aus Aluminiumprofilen\nDer Rahmen besteht aus einem Baukastensystem aus Aluminiumprofilen mit einem Querschnitt von 30 × 30 mm und einer 8-mm-Nut, verbunden mit Eckverbindern. Mit den Nuten entlang der Profile lassen sich Fachböden und Zubehör verstellen.\n\nFür Packplatz und Werkstatt\nDer Tisch eignet sich für Pack- und Versandplätze, für Arbeitsplätze mit Montagearbeiten und für Werkstätten. Da Sie die Höhe der Arbeitsplatte selbst wählen, lässt sich der Tisch an die Personen anpassen, die daran arbeiten. Zubehör für Beleuchtung, Stromversorgung, Ablage und Beweglichkeit fügen Sie bei der Konfiguration des Tisches hinzu.\n\nLieferung, Montage und Versand\nDer Tisch wird auf Bestellung gefertigt, die Lieferzeit beträgt 3–5 Wochen. Die Montage ist eine optionale Dienstleistung: Mit Montage liefern wir den Tisch montiert, ohne Montage zerlegt (demontiert), und Sie bauen ihn selbst auf. Der Versandpreis hängt davon ab, ob Sie die Montage wählen; wir legen ihn nach der Bestellung fest und bestätigen ihn Ihnen, bevor die Proforma-Rechnung ausgestellt wird.",
+      "delivery": "Auf Bestellung gefertigt. Lieferzeit 3–5 Wochen. Montage optional: mit Montage liefern wir den Tisch montiert, ohne Montage zerlegt (demontiert). Den Versandpreis legen wir nach der Bestellung fest und bestätigen ihn vor der Proforma-Rechnung.",
+      "specs": [
+        {
+          "name": "Rahmen",
+          "value": "Aluminiumprofile 30 × 30 mm mit 8-mm-Nut, Eckverbinder"
+        }
+      ]
+    },
+    {
+      "slug": "configurable-ergonomic-packing-table-system-35",
+      "url_slug": "konfigurierbarer-ergonomischer-packtisch",
+      "sku": "PWB-003",
+      "category": "ergonomic-packing-table-system-35",
+      "sort": 2,
+      "configurator": {
+        "available": true,
+        "shop_product_id": 4955,
+        "default_view": "configurator"
+      },
+      "name": "Konfigurierbarer ergonomischer Packtisch",
+      "summary": "Ergonomischer Packtisch mit Rahmen aus Aluminiumprofilen 35 × 35 mm und mechanisch einstellbarer Höhe, nach Maß gefertigt. Wählen Sie Abmessungen, Fachböden und Zubehör und sehen Sie das Ergebnis in 3D.",
+      "description": "Rahmen aus Profilen 35 × 35 mm\nDer Rahmen dieses Tisches besteht aus Aluminiumprofilen mit einem Querschnitt von 35 × 35 mm und einer 8-mm-Nut. Er liegt zwischen unseren beiden anderen Rahmengrößen, 30 × 30 mm und 40 × 40 mm, und dieselbe Konfiguration lässt sich in der 3D-Ansicht zwischen allen dreien umschalten.\n\nHöhe passend zur Arbeit\nAuf die Beine dieses Tisches wird eine Überhülse aus Vierkantrohr 40 × 40 mm (Wandstärke 2 mm) mit Endkappe unten aufgesetzt, in RAL 7016 (Anthrazitgrau, glänzend); sie ersetzt Rollen, Stellfüße und Endkappen. Die Überhülse ist standardmäßig aktiviert und 300 mm lang; Sie können sie ausschalten oder ihre Länge von 200 bis 400 mm einstellen. Das Bein reicht mindestens 70 mm in die Überhülse hinein, sodass sich die Höhe des Tisches mechanisch ändern lässt.\n\nEigene Abmessungen\nBreite der Platte (500 bis 3000 mm), Tiefe (400 bis 1500 mm) und Höhe wählen Sie selbst. Untere Fachböden, Rollen oder Stellfüße, Lochplatten für Werkzeug, LED-Beleuchtung, Stahlschubladen, eine Steckdosenleiste, einen Flaschenhalter (PET) und Ausschnitte in der Arbeitsplatte fügen Sie genauso hinzu wie bei den beiden anderen Tischen.\n\nJede Kombination wird geprüft\nNach jeder Änderung wird der Rahmen neu berechnet. Eine Kombination, die sich nicht fertigen lässt, nimmt das System nicht an und zeigt den Grund an.\n\nLieferung, Montage und Versand\nDer Tisch wird auf Bestellung gefertigt, die Lieferzeit beträgt 3–5 Wochen. Die Montage ist eine optionale Dienstleistung: Mit Montage liefern wir den Tisch montiert, ohne Montage zerlegt (demontiert), und Sie bauen ihn selbst auf. Der Versandpreis hängt davon ab, ob Sie die Montage wählen; wir legen ihn nach der Bestellung fest und bestätigen ihn Ihnen, bevor die Proforma-Rechnung ausgestellt wird.",
+      "delivery": "Auf Bestellung gefertigt. Lieferzeit 3–5 Wochen. Montage optional: mit Montage liefern wir den Tisch montiert, ohne Montage zerlegt (demontiert). Den Versandpreis legen wir nach der Bestellung fest und bestätigen ihn vor der Proforma-Rechnung.",
+      "specs": [
+        {
+          "name": "Rahmen",
+          "value": "Aluminiumprofile 35 × 35 mm mit 8-mm-Nut"
+        },
+        {
+          "name": "Überhülse für Beine",
+          "value": "Vierkantrohr 40 × 40 mm, Wandstärke 2 mm, RAL 7016 glänzend, Länge 200–400 mm (standardmäßig 300 mm)"
+        },
+        {
+          "name": "Abmessungen",
+          "value": "Breite 500–3000 mm, Tiefe 400–1500 mm"
+        }
+      ]
+    },
+    {
+      "slug": "configurable-robust-packing-table-system-40",
+      "url_slug": "konfigurierbarer-robuster-packtisch",
+      "sku": "PWB-002",
+      "category": "robust-packing-table-system-40",
+      "sort": 3,
+      "configurator": {
+        "available": true,
+        "shop_product_id": 4954,
+        "default_view": "configurator"
+      },
+      "name": "Konfigurierbarer robuster Packtisch",
+      "summary": "Robuster Packtisch mit Rahmen aus Aluminiumprofilen 40 × 40 mm, nach Maß gefertigt. Wählen Sie Abmessungen, Fachböden und Zubehör und sehen Sie es in 3D.",
+      "description": "Rahmen aus Profilen 40 × 40 mm\nDer Rahmen dieses Tisches besteht aus Aluminiumprofilen mit einem Querschnitt von 40 × 40 mm und einer 10-mm-Nut, verbunden mit Eckverbindern. Er ist die größte unserer drei Rahmengrößen; die anderen Tische haben Profile von 30 × 30 mm und 35 × 35 mm.\n\nEigene Abmessungen\nBreite, Tiefe und Höhe der Arbeitsplatte wählen Sie selbst. Die Breite kann 500 bis 3000 mm betragen, die Tiefe 400 bis 1500 mm. Bei einer Breite über 1500 mm kommt vorn und hinten je ein mittleres Bein hinzu.\n\nFachböden und Zubehör\nSie können untere Fachböden hinzufügen (höchstens 10, je nach Höhe des Tisches) und Rollen, Lochplatten für Werkzeug, LED-Beleuchtung, Stahlschubladen, eine Steckdosenleiste und einen Flaschenhalter (PET) wählen. In der Arbeitsplatte können Sie außerdem Ausschnitte festlegen.\n\nJede Kombination wird geprüft\nNach jeder Änderung wird der Rahmen neu berechnet. Eine Kombination, die sich nicht fertigen lässt, nimmt das System nicht an und zeigt den Grund an.\n\nLieferung, Montage und Versand\nDer Tisch wird auf Bestellung gefertigt, die Lieferzeit beträgt 3–5 Wochen. Die Montage ist eine optionale Dienstleistung: Mit Montage liefern wir den Tisch montiert, ohne Montage zerlegt (demontiert), und Sie bauen ihn selbst auf. Der Versandpreis hängt davon ab, ob Sie die Montage wählen; wir legen ihn nach der Bestellung fest und bestätigen ihn Ihnen, bevor die Proforma-Rechnung ausgestellt wird.",
+      "delivery": "Auf Bestellung gefertigt. Lieferzeit 3–5 Wochen. Montage optional: mit Montage liefern wir den Tisch montiert, ohne Montage zerlegt (demontiert). Den Versandpreis legen wir nach der Bestellung fest und bestätigen ihn vor der Proforma-Rechnung.",
+      "specs": [
+        {
+          "name": "Rahmen",
+          "value": "Aluminiumprofile 40 × 40 mm mit 10-mm-Nut, Eckverbinder"
+        },
+        {
+          "name": "Abmessungen",
+          "value": "Breite 500–3000 mm, Tiefe 400–1500 mm"
+        }
+      ]
+    }
+  ]
+}

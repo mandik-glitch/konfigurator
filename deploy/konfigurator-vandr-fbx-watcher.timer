@@ -1,0 +1,15 @@
+[Unit]
+Description=Casovac Vandr FBX watcheru (kazdych 15 minut)
+# Oddeleny cas od konfigurator-card-auto-link.timer (:05) a
+# konfigurator-card-auto-activate.timer (:00) - jina, samostatna Vandr
+# vetev (PLAN_TVORBY_SESTAV.md "Vandr sestavy na eshopu"), ale stejny
+# 15minutovy rytmus at Robertuv FBX upload nemusi cekat dlouho na
+# zpracovani. Bezi PRED konfigurator-vandr-card-activate.timer (:12),
+# aby nove zalozena karta uz existovala, az render dobehne.
+[Timer]
+OnCalendar=*-*-* *:10/15:00
+Persistent=true
+RandomizedDelaySec=60
+
+[Install]
+WantedBy=timers.target

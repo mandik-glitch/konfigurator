@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <script src="/js/client-errors.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Přihlášení – Hliníkový konstrukční stavebnicový systém s drážkami</title>
+<style>
+  :root {
+    --bg: #494b50; --panel-bg: #22262e; --border: #3a3f4a; --border-soft: #333333;
+    --text: #e8eaed; --text-muted: #9aa4b2; --accent: #9fd0ff; --accent-focus: #6fa8ff;
+    --btn-bg: #3a5a7a; --btn-bg-hover: #4a6a8a; --error: #e07070;
+  }
+  [data-theme="light"] {
+    --bg: #eef1f5; --panel-bg: #ffffff; --border: #d7dce3; --border-soft: #e3e7ec;
+    --text: #1b1e24; --text-muted: #5c6570; --accent: #1a6fd4; --accent-focus: #2d6cdf;
+    --btn-bg: #2f6690; --btn-bg-hover: #3a76a0; --error: #c23b3b;
+  }
+  * { box-sizing: border-box; }
+  /* Logo znacky: vklada ho skript hned pod <body>, jen kdyz ho server vrati pro tenhle host (GET /api/site-brand,
+     api/site_brand.py). Stranka se servi i z domen, kde znacka byt nesmi, proto v HTML neni zadne jmeno ani logo.
+     Misto je vyhrazene predem, aby se karta po vlozeni loga neposunula. Vzhled loga: /css/brand-logo.css. */
+  body { flex-direction: column; }
+  .site-logo-slot { min-height: 34px; margin-bottom: 18px; display: flex; justify-content: center; }
+  body {
+    background: var(--bg); color: var(--text); font-family: var(--font-main, -apple-system, "Segoe UI", Roboto, Arial, sans-serif);
+    margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center;
+    padding: 20px; box-sizing: border-box;
+  }
+  .box {
+    background: var(--panel-bg); border: 1px solid var(--border-soft); border-radius: 10px;
+    padding: 32px; width: 320px; max-width: 100%;
+  }
+  h1 { font-size: 18px; margin: 0 0 20px; text-align: center; }
+  label { display: block; font-size: 12px; color: var(--text-muted); margin-bottom: 4px; }
+  input {
+    width: 100%; background: var(--bg); border: 1px solid var(--border); color: var(--text);
+    border-radius: 6px; padding: 9px 10px; font-size: 14px; margin-bottom: 14px;
+  }
+  input:focus { outline: 1px solid var(--accent-focus); }
+  button {
+    width: 100%; background: var(--btn-bg); color: #fff; border: none; border-radius: 6px;
+    padding: 10px; font-size: 14px; cursor: pointer;
+  }
+  button:hover { background: var(--btn-bg-hover); }
+  button:disabled { background: var(--border); cursor: default; }
+  #err { color: var(--error); font-size: 13px; margin-bottom: 12px; min-height: 16px; }
+</style>
+</head>
+<body>
+  <div id="siteLogoSlot" class="site-logo-slot"></div>
+  <script>
+  // logo znacky ze serveru (jen pro hosty, kde se smi ukazat; jinak stranka zustane bez nej) - viz komentar u .site-logo-slot
+  (function () {
+    var slot = document.getElementById("siteLogoSlot");
+    function nacti(url, kdyzSelze, hotovo) {
+      var l = document.createElement("link");
+      l.rel = "stylesheet"; l.href = url; l.onload = hotovo; l.onerror = kdyzSelze;
+      document.head.appendChild(l);
+    }
+    fetch("/api/site-brand").then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
+      if (!d || !d.logo) return;
+      var g = d.logo, zbyva = g.font_css ? 2 : 1;
+      // logo se vlozi az kdyz je nacteny jeho vzhled i pismo webu (stejne jako na homepage) - neukaze se v nahradnim pismu
+      function hotovo() { if (--zbyva === 0) slot.innerHTML = g.html; }
+      if (g.font_stack) slot.style.setProperty("--font-main", g.font_stack);
+      nacti(g.css, function () {}, hotovo);
+      if (g.font_css) nacti(g.font_css, hotovo, hotovo);
+    }).catch(function () {});
+  })();
+  </script>
+  <div class="box" id="loginBox" style="display:none;">
+    <h1>Hliníkový konstrukční stavebnicový systém s drážkami</h1>
+    <div id="err"></div>
+    <!-- Robert 2026-08-11 ("Na mobilu se mi nenabízí heslo uložené pro
+         přihlášení"): pole měla jen id, žádné name - autocomplete="username"/
+         "current-password" samo některým mobilním prohlížečům/správcům
+         hesel na nabídnutí uložení nestačí, name= vyžadují taky (stejny
+         vzor uz mel reset-password.html, tady chybel). -->
+    <form id="loginForm">
+      <label for="email">E-mail</label>
+      <input type="email" id="email" name="username" autocomplete="username" required autofocus placeholder="email@example.cz">
+      <label for="password">Heslo</label>
+      <input type="password" id="password" name="current-password" autocomplete="current-password" required>
+      <button type="submit" id="btn">Přihlásit se</button>
+    </form>
+    <a href="/forgot-password.html" style="display:block;text-align:center;margin-top:14px;font-size:12.5px;color:var(--accent);text-decoration:none;">Zapomenuté heslo?</a>
+    <a href="/register.html" id="registerLink" style="display:block;text-align:center;margin-top:8px;font-size:12.5px;color:var(--accent);text-decoration:none;">Nemáš účet? Zaregistruj se</a>
+  </div>
+  <div class="box" id="magicBox">
+    <h1>Hliníkový konstrukční stavebnicový systém s drážkami</h1>
+    <p style="text-align:center;color:var(--text-muted);font-size:13px;">Přihlašuji přes trvalý odkaz…</p>
+  </div>
+
+<script>
+(function () {
+  try {
+    var t = localStorage.getItem("shopTheme");
+    if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+  } catch (e) {}
+})();
+fetch("/api/theme-colors?surface=eshop").then(r => r.ok ? r.json() : null).then(data => {
+  if (!data) return;
+  var theme = document.documentElement.getAttribute("data-theme") === "light" ? "light" : "dark";
+  var palette = data[theme];
+  Object.keys(palette).forEach(function (key) {
+    document.documentElement.style.setProperty("--" + key.replace(/_/g, "-"), palette[key]);
+  });
+}).catch(function () {});
+// Modul 11 (bot13, 2026-08-19) - login.html je sdílená napříč celou
+// platformou (e-shop/admin/Řemeslo), takže odkaz "Zaregistruj se" musí
+// mířit na správnou registraci podle kontextu - app.remeslnik.pro nebo
+// next=/remeslo.html znamená řemeslníka, jinak zůstává e-shopová
+// /register.html (výchozí href v HTML).
+(function () {
+  var next = new URLSearchParams(location.search).get("next") || "";
+  if (location.hostname === "app.remeslnik.pro" || next.indexOf("/remeslo") === 0) {
+    document.getElementById("registerLink").href = "/remeslo-register.html";
+  }
+})();
+// Vychozi cil PO prihlaseni, kdyz neni v URL zadne ?next= (napr. rucni
+// navigace na /login.html, PWA zkratka) - hardcoded "/scene.html" 404uje
+// na app.remeslnik.pro (ta domena ma jen whitelist Remeslo stranek, viz
+// nginx sites-available/remeslnik-pro), stejny princip jako registerLink
+// vyse (bot13, hloubkova kontrola Remesla 2026-08-20 - zive nalezeno:
+// primy login bez next parametru skoncil po uspesnem přihlášení na 404).
+var DEFAULT_NEXT_PATH = (location.hostname === "app.remeslnik.pro") ? "/remeslo.html" : "/scene.html";
+</script>
+<script>
+// Robert 2026-08-08 ("problémy s tím přihlašováním pořád dokola" ->
+// misto vypnuti hesla pro CELY verejne dostupny system radeji trvaly
+// odkaz jen pro jeho ucet - viz "Trvalý odkaz bez hesla" v admin.html
+// tab Nastavení): stejny princip, jaky uz capture.html mel jen pro
+// sebe (?magic=<token> v URL, api/app.py::auth_magic_login) - ted
+// funguje na SDILENE prihlasovaci strance, takze staci jeden ulozeny
+// odkaz na admin.html/scene.html misto psani hesla pokazde znovu.
+(async function tryMagicLogin() {
+  const params = new URLSearchParams(window.location.search);
+  const token = params.get("magic");
+  if (!token) {
+    document.getElementById("loginBox").style.display = "";
+    document.getElementById("magicBox").style.display = "none";
+    return;
+  }
+  try {
+    const r = await fetch("/api/auth/magic-login", {
+      method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ token }),
+    });
+    if (r.ok) {
+      window.location.href = params.get("next") || DEFAULT_NEXT_PATH;
+      return;
+    }
+  } catch (e) { /* padne do fallbacku nize */ }
+  // Neplatny/zneplatneny token - ukaz bezny formular s vysvetlenim.
+  document.getElementById("magicBox").style.display = "none";
+  document.getElementById("loginBox").style.display = "";
+  document.getElementById("err").textContent = "Odkaz bez hesla je neplatný nebo už byl zneplatněný novým - přihlas se prosím heslem.";
+})();
+
+document.getElementById("loginForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const btn = document.getElementById("btn");
+  const err = document.getElementById("err");
+  err.textContent = "";
+  btn.disabled = true;
+  btn.textContent = "Přihlašuji…";
+  try {
+    const r = await fetch("/api/auth/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        email: document.getElementById("email").value.trim(),
+        password: document.getElementById("password").value,
+      }),
+    });
+    const data = await r.json();
+    if (!r.ok) {
+      err.textContent = data.error || "Přihlášení se nezdařilo.";
+      btn.disabled = false;
+      btn.textContent = "Přihlásit se";
+      return;
+    }
+    const params = new URLSearchParams(window.location.search);
+    window.location.href = params.get("next") || DEFAULT_NEXT_PATH;
+  } catch (e) {
+    err.textContent = "Chyba spojení se serverem.";
+    btn.disabled = false;
+    btn.textContent = "Přihlásit se";
+  }
+});
+</script>
+</body>
+</html>

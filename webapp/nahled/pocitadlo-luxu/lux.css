@@ -1,0 +1,8 @@
+.lux-overlay{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:4;font:13px/1.4 system-ui,sans-serif;color:#eaf8ff}
+.lux-hud{position:absolute;left:18px;top:18px;max-width:330px;padding:12px 16px;background:rgba(11,25,36,.88);border:1px solid #487d85;border-radius:12px;box-shadow:0 8px 30px #0004}
+.lux-hud strong,.lux-hud small,.lux-main-number{display:block}.lux-hud small{color:#cfdee8;font-size:11px;margin-top:4px}.lux-main-number{font-size:26px;font-weight:700;color:#87edcc;margin:5px 0}
+.lux-point{position:absolute;transform:translate(-50%,-50%);font-size:12px;white-space:nowrap;padding:4px 8px;border-radius:20px;background:#142b39e8;border:1px solid #65d7b6;color:#fff;box-shadow:0 3px 10px #0005}
+.lux-hover{position:absolute;right:14px;top:14px;bottom:14px;width:min(370px,calc(100% - 28px));box-sizing:border-box;padding:18px;overflow-y:auto;pointer-events:auto;background:rgba(14,31,44,.92);backdrop-filter:blur(12px);border:1px solid #72dfbf;border-radius:14px;box-shadow:0 10px 40px #0005}
+.lux-panel-title{font-weight:700;margin:8px 0}.lux-hover small{display:block;font-size:11px;color:#d0dee5}.lux-hover a{color:#a6f2db;text-decoration:underline}.lux-note{font-size:12px;color:#e5d6ac}.lux-task{padding:8px 0;border-top:1px solid #ffffff25}.lux-task small{margin-top:3px}
+[hidden]{display:none!important}
+@media(max-width:600px){.lux-hud{top:8px;left:8px;padding:8px 10px;max-width:290px}.lux-main-number{font-size:20px}.lux-point{font-size:10px;padding:3px 5px}.lux-hover{top:8px;bottom:8px;right:8px;width:calc(100% - 16px)}}

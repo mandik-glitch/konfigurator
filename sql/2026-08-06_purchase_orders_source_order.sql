@@ -1,0 +1,24 @@
+-- Nakupni objednavky: vazba na puvodni (spoustejici) prodejni objednavku
+-- (bot3, 2026-08-06).
+--
+-- Robert (screenshot NO-2026-00030/00031, oba "Neznamy dodavatel"):
+-- "porad vznikaji objednavky nakupni, psal jsem že se to má opravit".
+-- Diagnoza: _autocreate_supplier_orders() v api/orders.py (Robert
+-- 2026-07-31, viz git log adbb60f) zaklada pri kazdem checkoutu s
+-- chybejicim skladem NOVOU nakupni objednavku, bez ohledu na to, jestli
+-- uz existuje otevrena (navrh) NO pro stejneho dodavatele - opakovane
+-- testovani checkoutu tak zaplavuje seznam NO duplicitami. Navic pri
+-- smazani puvodni prodejni objednavky (shop_orders) zustavala navazana
+-- auto-zalozena NO osirela (NO-30/31 odkazuji v poznamce na uz smazane
+-- OBJ-2026-00093/94).
+--
+-- source_order_id umoznuje (a) dohledat/aktualizovat existujici otevrenou
+-- NO misto zalozeni dalsi duplicity, (b) pri smazani prodejni objednavky
+-- smazat i navazanou auto-zalozenou NO (viz _delete_orders_cascade).
+--
+-- ZAMERNE BEZ FOREIGN KEY (stejna konvence jako shop_emails.purchase_order_id
+-- - viz komentar u _delete_one_purchase_order v api/purchase_orders.py) -
+-- cisteni navazanych radku resi explicitne aplikacni kod, ne DB
+-- ON DELETE CASCADE/SET NULL, protoze mazani NO ma vedlejsi ucinky
+-- (vraceni skladu u jiz prijatych NO), ktere DB-level cascade neumi.
+ALTER TABLE shop_purchase_orders ADD COLUMN source_order_id INT NULL AFTER created_by;

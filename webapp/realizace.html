@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <script src="/js/client-errors.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Foto realizací – vestavby a pracovní stoly na míru | Logiman</title>
+<meta name="description" content="Fotogalerie realizovaných zakázek: hliníkové vestavby do dodávek, regály a výsuvy do aut, ergonomické pracovní a balicí stoly na míru.">
+<meta name="robots" content="index, follow">
+<!-- canonical + OG/twitter (bot15 2026-09-02, QA seo.py) - stejny vzor jako kontakt.html. -->
+<link rel="canonical" href="https://autovestavby.logiman.cz/realizace.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Hliníkový konstrukční stavebnicový systém s drážkami">
+<meta property="og:locale" content="cs_CZ">
+<meta property="og:title" content="Foto realizací – vestavby a pracovní stoly na míru | Logiman">
+<meta property="og:description" content="Fotogalerie realizovaných zakázek: hliníkové vestavby do dodávek, regály a výsuvy do aut, ergonomické pracovní a balicí stoly na míru.">
+<meta property="og:url" content="https://autovestavby.logiman.cz/realizace.html">
+<meta property="og:image" content="https://autovestavby.logiman.cz/content-files/og/site-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Foto realizací – vestavby a pracovní stoly na míru | Logiman">
+<meta name="twitter:description" content="Fotogalerie realizovaných zakázek: hliníkové vestavby do dodávek, regály a výsuvy do aut, ergonomické pracovní a balicí stoly na míru.">
+<meta name="twitter:image" content="https://autovestavby.logiman.cz/content-files/og/site-default.jpg">
+<link rel="stylesheet" href="/css/brand-logo.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap">
+<style>
+  :root {
+    --bg: #494b50;
+    --panel-bg: #22262e;
+    --border: #3a3f4a;
+    --border-soft: #333333;
+    --text: #e8eaed;
+    --text2: #c7ccd4;
+    --text-muted: #8b93a1;
+    --accent: #9fd0ff;
+    --btn-bg: #3a5a7a;
+    --btn-bg-hover: #4a6a8a;
+    /* page-specific tokens (no matching canonical role) */
+    --heading-text: #f2f4f7;
+    --card-border: #2c313a;
+    --footer-border: #262a32;
+    --footer-muted: #666666;
+    --btn-secondary-hover: #2b3038;
+    --chat-brand: #2d6cdf;
+    --chat-panel-bg: #2b3038ee;
+    --chat-border: #3a4049;
+    --chat-hover-bg: #3a4553;
+    --chat-input-bg: #1e2128;
+  }
+  [data-theme="light"] {
+    --bg: #eef1f5;
+    --panel-bg: #ffffff;
+    --border: #d7dce3;
+    --border-soft: #e3e7ec;
+    --text: #1b1e24;
+    --text2: #3a3f4a;
+    --text-muted: #5c6570;
+    --accent: #1a6fd4;
+    --btn-bg: #2f6690;
+    --btn-bg-hover: #3a76a0;
+    --heading-text: #0d0f13;
+    --card-border: #dde2e8;
+    --footer-border: #e6eaef;
+    --footer-muted: #767f8a;
+    --btn-secondary-hover: #e2e6ec;
+    --chat-brand: #1a6fd4;
+    --chat-panel-bg: #ffffffee;
+    --chat-border: #d9dee5;
+    --chat-hover-bg: #e7ebf0;
+    --chat-input-bg: #f3f5f8;
+  }
+  * { box-sizing:border-box; }
+  html, body { margin:0; padding:0; min-height:100%; font-family:var(--font-main, -apple-system, "Segoe UI", Roboto, Arial, sans-serif); background:var(--bg); color:var(--text); font-size:14px; }
+  /* Robert 2026-08-07 ("mě šlo hlavně o to pozadí!!") - jemna texturovana
+     zare na pozadi (screenshot "Můj počítač" - tmave pozadi s neonovymi
+     prstenci) - navazano na --accent aktualne aktivniho motivu (color-mix),
+     takze automaticky ladi s libovolnym tmavym presetem, ne jen s Neon. */
+  [data-theme="dark"] body {
+    background-image:
+      radial-gradient(circle at 15% 15%, color-mix(in srgb, var(--accent) 16%, transparent) 0%, transparent 38%),
+      radial-gradient(circle at 85% 25%, color-mix(in srgb, var(--accent) 11%, transparent) 0%, transparent 42%),
+      radial-gradient(circle at 50% 95%, color-mix(in srgb, var(--accent) 9%, transparent) 0%, transparent 45%),
+      repeating-linear-gradient(45deg, transparent 0 42px, rgba(255,255,255,0.10) 42px 43px),
+      repeating-linear-gradient(-45deg, transparent 0 42px, rgba(255,255,255,0.10) 42px 43px);
+    background-attachment: fixed;
+  }
+  body { display:flex; flex-direction:column; min-height:100vh; }
+  header {
+    height:56px; background:var(--panel-bg); border-bottom:1px solid var(--border-soft); display:flex;
+    align-items:center; justify-content:space-between; padding:0 20px; position:relative; z-index:100; flex-shrink:0;
+  }
+  header .brand { font-size:14px; color:var(--text); font-weight:600; text-decoration:none; }
+  /* Textove logo (.brand-logo*): sdilene CSS /css/brand-logo.css, nacitane v <head> - vzhled a zduvodneni upravuj JEN tam. */
+  /* Pismo loga: stranka je staticka (bez SSR, nedostava --font-main z volby admina), logo by bylo v systemovem pismu a
+     vypadalo jinak nez na homepage. Proto natvrdo Manrope (= dnesni volba pisma webu, site_font.py) + <link> v <head>;
+     pri zmene volby pisma v adminu je treba upravit oboji (QA static_page_font_stale to ohlasi). Text stranky se nemeni. */
+  .brand-logo { --font-main: "Manrope", -apple-system, "Segoe UI", Roboto, Arial, sans-serif; }
+  /* HOME tlacitko (Robert primo, 2026-09-15 pres bot3: "stylove HUD
+     tlacitko Domu na vsech strankach, vedle loga") - stejny vizualni
+     jazyk jako #pdAddCartBtn v product.html (useknuty roh, --accent
+     obrys). Zadny sdileny JS/CSS soubor mezi strankami (stejny vzor
+     jako uz existujici renderAreaSwitch) - kopie na kazdou stranku. */
+  .home-hud-btn {
+    display:inline-flex; align-items:center; justify-content:center;
+    width:30px; height:30px; flex:none; box-sizing:border-box;
+    background:transparent; color:var(--accent); border:1px solid var(--accent); border-radius:0;
+    clip-path:polygon(0 0, calc(100% - 7px) 0, 100% 7px, 100% 100%, 7px 100%, 0 calc(100% - 7px));
+    font-size:15px; line-height:1; text-decoration:none; cursor:pointer;
+    transition:background-color .15s ease, color .15s ease;
+  }
+  .home-hud-btn:hover { background:var(--accent); color:#06140c; }
+  header nav { display:flex; align-items:center; gap:18px; }
+  header nav a { color:var(--text2); font-size:13px; text-decoration:none; }
+  header nav a:hover { color:var(--accent); }
+  header nav a.active { color:var(--accent); font-weight:600; }
+  #areaSwitch { display:flex; align-items:center; gap:2px; background:rgba(127,127,127,.15); border-radius:14px; padding:3px; }
+  #areaSwitch .as-item { padding:5px 10px; border-radius:11px; font-size:12px; text-decoration:none; color:var(--text2); }
+  #areaSwitch a.as-item:hover { color:var(--accent); }
+  #areaSwitch .as-item.active { background:var(--btn-bg); color:#fff; font-weight:600; }
+  #userBox { display:flex; align-items:center; gap:10px; font-size:12.5px; color:var(--text-muted); }
+  #userBox a, #userBox button { color:#fff; background:var(--btn-bg); border:none; border-radius:5px; padding:7px 14px; cursor:pointer; font-size:12.5px; text-decoration:none; }
+  #userBox a:hover, #userBox button:hover { background:var(--btn-bg-hover); }
+  #userBox .logout-btn { background:none; border:1px solid var(--border); color:var(--text2); }
+  #userBox .logout-btn:hover { background:var(--btn-secondary-hover); }
+
+  main { flex:1; max-width:1200px; margin:0 auto; padding:40px 24px 60px; width:100%; }
+  .page-head { text-align:center; margin-bottom:34px; }
+  .page-head h1 { font-size:28px; margin:0 0 12px; color:var(--heading-text); }
+  .page-head p { color:var(--text-muted); font-size:14px; max-width:680px; margin:0 auto; line-height:1.75; }
+
+  .gal-tabs { display:flex; justify-content:center; gap:8px; margin-bottom:30px; flex-wrap:wrap; }
+  .gal-tab-btn {
+    background:var(--panel-bg); border:1px solid var(--card-border); color:var(--text2); border-radius:20px;
+    padding:8px 18px; font-size:13px; cursor:pointer;
+  }
+  .gal-tab-btn:hover { border-color:var(--btn-bg); color:var(--text); }
+  .gal-tab-btn.active { background:var(--btn-bg); border-color:var(--btn-bg); color:#fff; font-weight:600; }
+
+  .gal-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(240px, 1fr)); gap:16px; }
+  .gal-item {
+    position:relative; border-radius:10px; overflow:hidden; background:var(--panel-bg); border:1px solid var(--card-border);
+    cursor:pointer; aspect-ratio:4/3;
+  }
+  .gal-item img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .2s ease; }
+  .gal-item:hover img { transform:scale(1.05); }
+  .gal-item .gi-caption {
+    position:absolute; left:0; right:0; bottom:0; background:linear-gradient(transparent, rgba(0,0,0,.75));
+    color:#fff; font-size:12px; padding:18px 10px 8px; opacity:0; transition:opacity .2s ease;
+  }
+  .gal-item:hover .gi-caption { opacity:1; }
+  .gal-empty { text-align:center; color:var(--text-muted); padding:60px 0; font-size:14px; }
+
+  #lightbox {
+    display:none; position:fixed; inset:0; background:rgba(10,12,16,.94); z-index:500;
+    align-items:center; justify-content:center; flex-direction:column; padding:24px;
+  }
+  #lightbox.open { display:flex; }
+  #lightbox img { max-width:min(1100px, 92vw); max-height:76vh; border-radius:6px; box-shadow:0 10px 40px rgba(0,0,0,.5); }
+  #lightboxCaption { color:var(--text2); font-size:13.5px; margin-top:14px; max-width:800px; text-align:center; }
+  #lightboxClose {
+    position:absolute; top:18px; right:24px; background:none; border:none; color:var(--text2);
+    font-size:30px; cursor:pointer; line-height:1;
+  }
+  #lightboxClose:hover { color:#fff; }
+  .lb-nav { position:absolute; top:50%; transform:translateY(-50%); background:rgba(255,255,255,.08);
+    border:none; color:#fff; font-size:26px; width:48px; height:48px; border-radius:50%; cursor:pointer; }
+  .lb-nav:hover { background:rgba(255,255,255,.18); }
+  #lbPrev { left:16px; }
+  #lbNext { right:16px; }
+
+  footer { border-top:1px solid var(--footer-border); padding:24px; text-align:center; color:var(--footer-muted); font-size:12px; flex-shrink:0; }
+
+  /* --- Podpora (zivy chat) - bot1, 2026-07-25. Widget i pro anonymni
+     navstevniky (tato stranka NENI za loginem) - viz api/support.py
+     _support_identity() a "requires_email" v odpovedi GET /api/support/conversation. --- */
+  #supportChatTab {
+    position:fixed; bottom:20px; right:20px; z-index:300; width:56px; height:56px;
+    border-radius:50%; background:var(--chat-brand); border:none; color:#fff; font-size:24px;
+    cursor:pointer; box-shadow:0 2px 10px rgba(0,0,0,.4); display:flex; align-items:center;
+    justify-content:center; transition: filter .15s ease;
+  }
+  #supportChatTab:hover { filter:brightness(1.15); }
+  #supportChatTab #supportChatBadge {
+    position:absolute; top:-4px; right:-4px; background:#e0473c; color:#fff; font-size:11px;
+    font-weight:700; border-radius:9px; min-width:18px; height:18px; line-height:18px;
+    text-align:center; padding:0 4px; display:none;
+  }
+  #supportChatPanel {
+    position:fixed; bottom:86px; right:20px; z-index:300; width:320px; max-width:88vw;
+    height:420px; max-height:70vh; background:var(--chat-panel-bg); border:1px solid var(--chat-border);
+    border-radius:10px; display:none; flex-direction:column; box-shadow:0 4px 20px rgba(0,0,0,.5);
+  }
+  #supportChatPanel.open { display:flex; }
+  #supportChatHeader {
+    display:flex; align-items:center; justify-content:space-between; padding:10px 12px;
+    border-bottom:1px solid var(--chat-border); flex:0 0 auto;
+  }
+  #supportChatHeader h3 { margin:0; font-size:13px; color:var(--accent); }
+  #supportChatCloseBtn {
+    background:none; border:1px solid var(--chat-border); color:var(--text-muted); border-radius:5px; width:20px; height:20px;
+    line-height:1; font-size:12px; cursor:pointer; flex:0 0 auto; padding:0;
+  }
+  #supportChatCloseBtn:hover { background:var(--chat-hover-bg); color:var(--text); }
+  #supportChatLog {
+    flex:1 1 auto; overflow-y:auto; padding:10px 12px; font-size:12px; display:flex;
+    flex-direction:column; gap:8px;
+  }
+  #supportChatLog .support-msg-empty { font-size:11px; color:var(--text-muted); }
+  #supportChatLog .support-msg { max-width:85%; padding:6px 9px; border-radius:8px; line-height:1.4; white-space:pre-wrap; word-break:break-word; }
+  #supportChatLog .support-msg.customer { align-self:flex-end; background:var(--chat-brand); color:#fff; }
+  #supportChatLog .support-msg.operator { align-self:flex-start; background:var(--chat-border); color:var(--text); }
+  #supportChatLog .support-msg .support-msg-meta { font-size:9.5px; opacity:.7; margin-top:2px; display:block; }
+  #supportChatEmailRow { display:none; flex-direction:column; gap:6px; padding:10px 12px 0; flex:0 0 auto; }
+  #supportChatEmailRow.show { display:flex; }
+  #supportChatEmailRow input {
+    background:var(--chat-input-bg); color:var(--text); border:1px solid var(--chat-border); border-radius:6px;
+    padding:6px 8px; font-size:12px; font-family:inherit;
+  }
+  #supportChatEmailHint { font-size:10.5px; color:var(--text-muted); padding:0 12px; flex:0 0 auto; }
+  #supportChatInputRow { display:flex; gap:6px; padding:10px 12px; border-top:1px solid var(--chat-border); flex:0 0 auto; }
+  #supportChatInput {
+    flex:1 1 auto; resize:none; min-height:34px; max-height:80px; background:var(--chat-input-bg); color:var(--text);
+    border:1px solid var(--chat-border); border-radius:6px; padding:6px 8px; font-size:12px; font-family:inherit;
+  }
+  #btnSupportChatSend {
+    flex:0 0 auto; background:var(--chat-brand); border:none; color:#fff; border-radius:6px; padding:0 14px;
+    font-size:12px; cursor:pointer;
+  }
+  #btnSupportChatSend:hover { filter:brightness(1.15); }
+  #btnSupportChatSend:disabled { opacity:.5; cursor:default; filter:none; }
+
+  /* ---- Mobilni responzivita (Robert 2026-07-26) ---- */
+  @media (max-width:600px) {
+    /* Robert 2026-08-11 ("zkus pro mobil deaktivovat uplne 3D scenu
+       jakoby nebyla") - scene.html zustava desktop-only (drivejsi
+       rozhodnuti), takze odkaz na ni v mobilnim prepinaci Eshop/3D
+       scena nema smysl zobrazovat. */
+    a.as-item[href="/scene.html"] { display:none; }
+    header { flex-wrap:wrap; height:auto; min-height:56px; padding:10px 14px; row-gap:8px; }
+    header nav { gap:12px; }
+    #userBox span { max-width:120px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+    main { padding:28px 16px 44px; }
+    .page-head h1 { font-size:22px; }
+    .page-head p { font-size:13.5px; }
+    .gal-grid { grid-template-columns:repeat(auto-fill, minmax(150px,1fr)); gap:10px; }
+    #supportChatPanel { right:10px; bottom:80px; width:calc(100vw - 20px); max-width:340px; }
+    #supportChatTab { right:14px; bottom:16px; }
+  }
+</style>
+<script src="/track.js" defer></script>
+</head>
+<body>
+
+<div id="rekonstrukceBanner" style="background:#b3541e; color:#fff; text-align:center; padding:8px 14px; font-size:14px; font-weight:600; letter-spacing:.02em;">&#9888;&#65039; Web je v rekonstrukci &mdash; omluvte pros&iacute;m do&#269;asn&eacute; nedostatky.</div>
+<header>
+  <div style="display:flex; align-items:center; gap:18px;">
+    <a href="/" class="home-hud-btn" title="Domů" aria-label="Domů">⌂</a>
+    <a class="brand-logo" href="/" aria-label="Logiman"><span class="brand-logo-hl">LOGi</span><span class="brand-logo-lt">MAN</span></a>
+    <a class="brand" href="/">Hliníkový konstrukční stavebnicový systém s drážkami</a>
+    <nav>
+      <a href="/">Úvod</a>
+      <a href="/realizace.html" class="active">Foto realizací</a>
+    </nav>
+  </div>
+  <div style="display:flex; align-items:center; gap:14px;">
+    <div id="areaSwitch"></div>
+    <div id="userBox"></div>
+    <button id="themeToggleBtn" type="button" title="Přepnout barevné schéma" onclick="toggleShopTheme()" style="background:var(--panel-bg-alt, var(--panel-bg));color:var(--text-muted);border:1px solid var(--border);border-radius:14px;padding:5px 10px;cursor:pointer;font-size:13px;"></button>
+  </div>
+</header>
+
+<main>
+  <div class="page-head">
+    <h1>Foto realizací</h1>
+    <p>Vybrané realizované zakázky — hliníkové vestavby do dodávek a užitkových vozidel a ergonomické pracovní
+      a balicí stoly na míru. Klikněte na fotografii pro zvětšení.</p>
+  </div>
+
+  <div class="gal-tabs" id="galTabs"></div>
+  <div class="gal-grid" id="galGrid"></div>
+  <div class="gal-empty" id="galEmpty" style="display:none;">Zatím tu nejsou žádné fotografie.</div>
+</main>
+
+<footer>
+  Hliníkový konstrukční stavebnicový systém s drážkami
+</footer>
+
+<button id="supportChatTab" title="Podpora - napište nám">
+  💬<span id="supportChatBadge"></span>
+</button>
+<div id="supportChatPanel">
+  <div id="supportChatHeader">
+    <h3>Podpora</h3>
+    <button id="supportChatCloseBtn" title="Zavřít">&#10005;</button>
+  </div>
+  <div id="supportChatLog"><div class="support-msg-empty">Napište nám, poradíme s výběrem realizace na míru.</div></div>
+  <div id="supportChatEmailRow">
+    <input type="text" id="supportChatName" placeholder="Jméno (nepovinné)">
+    <input type="email" id="supportChatEmail" placeholder="E-mail (ať se vám můžeme ozvat)">
+  </div>
+  <div id="supportChatEmailHint"></div>
+  <div id="supportChatInputRow">
+    <textarea id="supportChatInput" placeholder="napište zprávu…"></textarea>
+    <button id="btnSupportChatSend">Odeslat</button>
+  </div>
+</div>
+<div id="lightbox">
+  <button id="lightboxClose">&times;</button>
+  <button class="lb-nav" id="lbPrev">&#8249;</button>
+  <img id="lightboxImg" src="" alt="">
+  <button class="lb-nav" id="lbNext">&#8250;</button>
+  <div id="lightboxCaption"></div>
+</div>
+
+<script>
+(function () {
+  try {
+    var t = localStorage.getItem("shopTheme");
+    if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+  } catch (e) {}
+})();
+function applyShopThemeColors() {
+  fetch("/api/theme-colors?surface=eshop").then(function (r) { return r.ok ? r.json() : null; }).then(function (data) {
+    if (!data) return;
+    window.__themeColors = data;
+    var theme = document.documentElement.getAttribute("data-theme") === "light" ? "light" : "dark";
+    var palette = data[theme];
+    Object.keys(palette).forEach(function (key) {
+      document.documentElement.style.setProperty("--" + key.replace(/_/g, "-"), palette[key]);
+    });
+  }).catch(function () {});
+}
+applyShopThemeColors();
+function applyShopTheme(theme, opts) {
+  opts = opts || {};
+  theme = theme === "light" ? "light" : "dark";
+  document.documentElement.setAttribute("data-theme", theme);
+  try { localStorage.setItem("shopTheme", theme); } catch (e) {}
+  if (window.__themeColors) {
+    var palette = window.__themeColors[theme];
+    Object.keys(palette).forEach(function (key) {
+      document.documentElement.style.setProperty("--" + key.replace(/_/g, "-"), palette[key]);
+    });
+  }
+  var btn = document.getElementById("themeToggleBtn");
+  if (btn) btn.textContent = theme === "light" ? "🌙" : "☀️";
+  if (opts.persist) {
+    fetch("/api/auth/theme", {
+      method: "PUT", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ scope: "shop", theme: theme }),
+    }).catch(function () {});
+  }
+}
+function toggleShopTheme() {
+  var current = document.documentElement.getAttribute("data-theme") === "light" ? "light" : "dark";
+  applyShopTheme(current === "light" ? "dark" : "light", { persist: true });
+}
+document.addEventListener("DOMContentLoaded", function () {
+  var btn = document.getElementById("themeToggleBtn");
+  if (btn) btn.textContent = (document.documentElement.getAttribute("data-theme") === "light") ? "🌙" : "☀️";
+});
+
+// Snadne prepinani mezi Eshop/3D scena/Administrace (Robert 2026-08-06:
+// "potřebuju snadné přepínání mezi eshopem, administrací a scénou, vpravo
+// nahoře") - stejna funkce zkopirovana do index/category/product/
+// realizace/scene.html (projekt nema sdileny JS soubor mezi strankami).
+// bot16, 2026-09-30 (Robert pres bot3: "nevidi vstup do administrace" -
+// drive natvrdo role==="admin", zadna jina admin-panelova role se sem
+// nemela jak dostat. `permissions` = /api/auth/me:user.permissions,
+// jedno misto pravdy misto dalsiho seznamu roli - viz index.html pro
+// plne vysvetleni. "Řemeslo" NEMENENO - bot3: nehadat.
+function renderAreaSwitch(role, current, permissions) {
+  const items = [
+    { key: "eshop", href: "/index.html", label: "Eshop" },
+    { key: "scene", href: "/scene.html", label: "3D scéna" },
+  ];
+  if (permissions) items.push({ key: "admin", href: "/admin.html", label: "Administrace" });
+  if (role === "admin") items.push({ key: "remeslo", href: "/remeslo.html", label: "Řemeslo" });
+  return items.map(it => it.key === current
+    ? `<span class="as-item active">${it.label}</span>`
+    : `<a class="as-item" href="${it.href}">${it.label}</a>`
+  ).join("");
+}
+
+fetch("/api/auth/me").then(r => r.ok ? r.json() : { user: null }).then(data => {
+  const user = data.user;
+  const box = document.getElementById("userBox");
+  if (user) {
+    document.getElementById("areaSwitch").innerHTML = renderAreaSwitch(user.role, "eshop", user.permissions);
+    const roleLabel = { admin: "admin", manager: "manager", user: "uživatel", skladnik: "mistr", ucetni: "asistent", monter: "montér", sklad: "skladník" }[user.role] || user.role;
+    box.innerHTML = `<span>${user.name || user.email} (${roleLabel})</span>` +
+      '<a href="/moje-objednavky.html" style="margin:0 8px;">Moje objednávky</a>' +
+      '<button class="logout-btn" id="btnLogout">Odhlásit se</button>';
+    document.getElementById("btnLogout").onclick = () => {
+      fetch("/api/auth/logout", { method: "POST" }).then(() => window.location.reload());
+    };
+    var storedTheme = (function () { try { return localStorage.getItem("shopTheme"); } catch (e) { return null; } })();
+    applyShopTheme(user.theme_shop || storedTheme, { persist: false });
+  } else {
+    box.innerHTML = '<a href="/login.html">Přihlásit se</a>';
+  }
+});
+
+// --- Podpora (zivy chat) - bot1, 2026-07-25. Tato stranka NENI za loginem
+// (na rozdil od scene.html) - widget proto pocita s anonymnimi navstevniky,
+// identifikovanymi Flask session cookie (viz api/support.py). Pri prvni
+// zprave anonymniho navstevnika server vyzaduje e-mail (requires_email).
+let supportChatOpen = false;
+let supportChatPollTimer = null;
+let supportChatRequiresEmail = false;
+
+function supportChatFormatTime(iso) {
+  if (!iso) return "";
+  const d = new Date(iso);
+  return d.toLocaleString("cs-CZ", { day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" });
+}
+
+function supportChatRender(data) {
+  const log = document.getElementById("supportChatLog");
+  const messages = data.messages || [];
+  if (!messages.length) {
+    log.innerHTML = '<div class="support-msg-empty">Napište nám, poradíme s výběrem realizace na míru.</div>';
+  } else {
+    log.innerHTML = messages.map(m => {
+      const cls = m.sender_type === "operator" ? "operator" : "customer";
+      const who = m.sender_type === "operator" ? (m.sender_name || "Podpora") : "Vy";
+      const esc = (m.body || "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+      return `<div class="support-msg ${cls}">${esc}<span class="support-msg-meta">${who} · ${supportChatFormatTime(m.created_at)}</span></div>`;
+    }).join("");
+    log.scrollTop = log.scrollHeight;
+  }
+  supportChatRequiresEmail = !!data.requires_email;
+  document.getElementById("supportChatEmailRow").classList.toggle("show", supportChatRequiresEmail);
+  document.getElementById("supportChatEmailHint").textContent =
+    supportChatRequiresEmail ? "Vyplňte prosím e-mail, ať se vám můžeme ozvat zpět." : "";
+}
+
+function supportChatUpdateBadge(data) {
+  const badge = document.getElementById("supportChatBadge");
+  const hasUnread = !!(data.conversation && data.conversation.unread_by_customer) && !supportChatOpen;
+  badge.style.display = hasUnread ? "block" : "none";
+}
+
+function supportChatLoad() {
+  fetch("/api/support/conversation")
+    .then(r => r.ok ? r.json() : { conversation: null, messages: [], requires_email: true })
+    .then(data => {
+      supportChatUpdateBadge(data);
+      if (supportChatOpen) supportChatRender(data);
+    })
+    .catch(() => {});
+}
+
+function supportChatSend() {
+  const input = document.getElementById("supportChatInput");
+  const body = input.value.trim();
+  if (!body) return;
+  const email = document.getElementById("supportChatEmail").value.trim();
+  const name = document.getElementById("supportChatName").value.trim();
+  if (supportChatRequiresEmail && !email) {
+    document.getElementById("supportChatEmailHint").textContent = "Pro odeslání prosím vyplňte e-mail.";
+    document.getElementById("supportChatEmail").focus();
+    return;
+  }
+  const btn = document.getElementById("btnSupportChatSend");
+  btn.disabled = true;
+  fetch("/api/support/messages", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ body, email, name, source: "widget_realizace" }),
+  })
+    .then(r => r.json().then(d => ({ ok: r.ok, d })))
+    .then(({ ok, d }) => {
+      if (!ok) {
+        document.getElementById("supportChatEmailHint").textContent = d.error || "Odeslání se nezdařilo.";
+        return;
+      }
+      input.value = "";
+      supportChatLoad();
+    })
+    .finally(() => { btn.disabled = false; });
+}
+
+function supportChatSetOpen(open) {
+  supportChatOpen = open;
+  document.getElementById("supportChatPanel").classList.toggle("open", open);
+  if (open) {
+    supportChatLoad();
+    document.getElementById("supportChatBadge").style.display = "none";
+  }
+}
+
+function initSupportWidget() {
+  document.getElementById("supportChatTab").onclick = () => supportChatSetOpen(!supportChatOpen);
+  document.getElementById("supportChatCloseBtn").onclick = () => supportChatSetOpen(false);
+  document.getElementById("btnSupportChatSend").onclick = supportChatSend;
+  document.getElementById("supportChatInput").addEventListener("keydown", (e) => {
+    if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); supportChatSend(); }
+  });
+  supportChatLoad();
+  supportChatPollTimer = setInterval(supportChatLoad, 4000);
+}
+
+initSupportWidget();
+
+let galFilter = "";
+let galImages = [];
+let galVisible = [];
+let lbIndex = 0;
+
+function escapeHtmlGal(s) {
+  return (s || "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+}
+
+// Robert 2026-08-10 ("tato nová bude pouze pro stoly... z predeslé pro
+// vestvaby") - dlazdice homepage mozaiky odkazuji primo na jednu
+// kategorii (/realizace.html?category=vestavby_dodavek apod), stranka
+// se pak rovnou otevre s tim tabem aktivnim. Validovano az proti
+// skutecne vracenym kategoriim z /api/gallery (ne natvrdo tady).
+const galInitialCategoryParam = new URLSearchParams(location.search).get("category") || "";
+
+async function loadGalleryPublic() {
+  try {
+    const r = await fetch("/api/gallery");
+    const data = await r.json();
+    galImages = data.images || [];
+    const categories = data.categories || [];
+    if (galInitialCategoryParam && categories.some(c => c.key === galInitialCategoryParam)) {
+      galFilter = galInitialCategoryParam;
+    }
+    renderGalTabs(categories);
+    applyGalFilter();
+  } catch (e) {
+    document.getElementById("galEmpty").style.display = "block";
+    document.getElementById("galEmpty").textContent = "Fotogalerii se nepodařilo načíst.";
+  }
+}
+
+function renderGalTabs(categories) {
+  const wrap = document.getElementById("galTabs");
+  const defs = [{ key: "", label: "Vše" }, ...categories.map(c => ({ key: c.key, label: c.label }))];
+  wrap.innerHTML = defs.map(d =>
+    `<button type="button" class="gal-tab-btn${galFilter === d.key ? " active" : ""}" data-key="${d.key}">${escapeHtmlGal(d.label)}</button>`
+  ).join("");
+  wrap.querySelectorAll(".gal-tab-btn").forEach(btn => {
+    btn.onclick = () => {
+      galFilter = btn.dataset.key;
+      wrap.querySelectorAll(".gal-tab-btn").forEach(b => b.classList.toggle("active", b === btn));
+      applyGalFilter();
+    };
+  });
+}
+
+function applyGalFilter() {
+  galVisible = galFilter ? galImages.filter(i => i.category === galFilter) : galImages;
+  renderGalGrid();
+}
+
+function renderGalGrid() {
+  const grid = document.getElementById("galGrid");
+  const empty = document.getElementById("galEmpty");
+  if (!galVisible.length) {
+    grid.innerHTML = "";
+    empty.style.display = "block";
+    empty.textContent = "Zatím tu nejsou žádné fotografie.";
+    return;
+  }
+  empty.style.display = "none";
+  grid.innerHTML = galVisible.map((img, i) => `
+    <div class="gal-item" data-i="${i}">
+      <img src="${img.url}" alt="${escapeHtmlGal(img.alt_text || img.title || "")}" loading="lazy">
+      <div class="gi-caption">${escapeHtmlGal(img.title || "")}</div>
+    </div>
+  `).join("");
+  grid.querySelectorAll(".gal-item").forEach(el => {
+    el.onclick = () => openLightbox(parseInt(el.dataset.i, 10));
+  });
+}
+
+function openLightbox(i) {
+  lbIndex = i;
+  showLightboxImage();
+  document.getElementById("lightbox").classList.add("open");
+}
+function showLightboxImage() {
+  const img = galVisible[lbIndex];
+  if (!img) return;
+  document.getElementById("lightboxImg").src = img.url;
+  document.getElementById("lightboxImg").alt = img.alt_text || img.title || "";
+  document.getElementById("lightboxCaption").textContent = img.title || "";
+}
+document.getElementById("lightboxClose").onclick = () => document.getElementById("lightbox").classList.remove("open");
+document.getElementById("lightbox").addEventListener("click", (e) => {
+  if (e.target.id === "lightbox") document.getElementById("lightbox").classList.remove("open");
+});
+document.getElementById("lbPrev").onclick = () => { lbIndex = (lbIndex - 1 + galVisible.length) % galVisible.length; showLightboxImage(); };
+document.getElementById("lbNext").onclick = () => { lbIndex = (lbIndex + 1) % galVisible.length; showLightboxImage(); };
+document.addEventListener("keydown", (e) => {
+  if (!document.getElementById("lightbox").classList.contains("open")) return;
+  if (e.key === "Escape") document.getElementById("lightbox").classList.remove("open");
+  if (e.key === "ArrowLeft") document.getElementById("lbPrev").click();
+  if (e.key === "ArrowRight") document.getElementById("lbNext").click();
+});
+
+loadGalleryPublic();
+</script>
+
+</body>
+</html>

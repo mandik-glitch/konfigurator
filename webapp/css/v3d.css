@@ -1,0 +1,265 @@
+/* v3d.css - HUD sdileneho 3D prohlizece (webapp/js/v3d/viewer3d.js).
+   WORKFLOW 34 (HUD styl): tokeny z nabidka-online.html (:root r. 29-30 -
+   --accent / --accent-glow, --orange = aktivni stav, --mono), hranate rohy,
+   useknuty roh jako .cn-btn-*, systemove pismo 14 px, dotykove plochy >= 44 px.
+   Vse pod prefixem .v3d-, nic globalniho. */
+
+.v3d-root {
+  --v3d-accent: var(--accent, #1f9e5c);
+  --v3d-glow: var(--accent-glow, #2fe07a);
+  --v3d-active: var(--orange, #ff7a3d);
+  --v3d-ink: #e9f3ee;
+  --v3d-panel: rgba(13, 22, 36, 0.84);  /* bez backdrop-filter: rozmazani nad stale prekreslovanym WebGL je na slabsich telefonech drahe */
+  --v3d-line: rgba(47, 224, 122, 0.42);
+  --v3d-font: var(--font-main, -apple-system, "Segoe UI", Roboto, Arial, sans-serif);
+  --v3d-mono: var(--mono, "SF Mono", "Cascadia Code", "Consolas", monospace);
+  --v3d-gap: 10px;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: var(--v3d-font);
+  font-size: 14px;
+  color: var(--v3d-ink);
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  background: var(--card-bg, #f4f8fb);
+  box-sizing: border-box;
+}
+.v3d-root *, .v3d-root *::before, .v3d-root *::after { box-sizing: border-box; }
+.v3d-root [hidden] { display: none !important; }
+
+/* Skutecny vzhled: pozadi = svisly prechod namereny z renderu otocky
+   (pruzkum C, karta 4925 a150.jpg) - v souradnicich obrazovky jako Window Y
+   v Blenderu; HDRI se jako pozadi nikdy nezobrazuje. */
+.v3d-root.v3d-mode-real {
+  background: linear-gradient(to bottom, #c1c1c1 0%, #bebebe 15%, #a8a9a8 40%, #77787a 60%, #232323 75%, #000 85%);
+}
+/* Drateny vzhled: svetla karta jako dnes (tmave hrany musi byt videt). */
+.v3d-root.v3d-mode-wire { background: var(--card-bg, #f4f8fb); }
+
+.v3d-stage { position: absolute; top: 0; right: 0; bottom: 0; left: 0; }
+.v3d-canvas { display: block; width: 100%; height: 100%; touch-action: none; cursor: grab; outline: none; }
+.v3d-canvas:active { cursor: grabbing; }
+.v3d-labels { position: absolute; top: 0; left: 0; pointer-events: none; }
+
+/* Popisky kot (CSS2DRenderer - konstantni velikost v px), vzhled jako
+   dnesni stitek makeDimLabelSprite: tmavy podklad, tenky zeleny ramecek, mono. */
+.v3d-dim {
+  font: 600 12px/1 var(--v3d-mono);
+  color: var(--v3d-glow);
+  background: rgba(13, 22, 36, 0.84);
+  border: 1.25px solid var(--v3d-glow);
+  border-radius: 5px;
+  padding: 4px 7px 3px;
+  white-space: nowrap;
+  pointer-events: none;
+  font-variant-numeric: tabular-nums;
+}
+.v3d-dim--minor { font-size: 11px; padding: 3px 6px 2px; opacity: 0.92; }
+
+/* ---------------- HUD ---------------- */
+.v3d-hud { position: absolute; top: 0; right: 0; bottom: 0; left: 0; pointer-events: none; z-index: 2; }
+.v3d-hud button, .v3d-chips { pointer-events: auto; }
+.v3d-loading .v3d-tl, .v3d-loading .v3d-tr, .v3d-loading .v3d-br, .v3d-loading .v3d-bottom,
+.v3d-failed .v3d-tl, .v3d-failed .v3d-tr, .v3d-failed .v3d-br, .v3d-failed .v3d-bottom { display: none; }
+
+.v3d-tl { position: absolute; top: var(--v3d-gap); left: var(--v3d-gap); display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
+.v3d-tr { position: absolute; top: var(--v3d-gap); right: var(--v3d-gap); display: flex; gap: 6px; }
+.v3d-br { position: absolute; right: var(--v3d-gap); bottom: var(--v3d-gap); display: flex; flex-direction: column; gap: 6px; }
+.v3d-has-chips .v3d-br { bottom: calc(var(--v3d-gap) + var(--v3d-chips-h, 52px)); }
+.v3d-bottom {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  padding: 0 var(--v3d-gap) var(--v3d-gap);
+  display: flex; flex-direction: column; align-items: flex-start; gap: 6px;
+  pointer-events: none;
+}
+.v3d-root:not(.v3d-has-chips) .v3d-bottom { right: 70px; }
+
+/* Tlacitko: tmavy pruhledny HUD panel, zeleny obrys v klidu, oranzova = aktivni
+   (stejny jazyk jako .bom-chip / .view2d-btn na strance nabidky). */
+.v3d-b {
+  -webkit-appearance: none; appearance: none;
+  min-width: 44px; min-height: 44px; margin: 0;
+  padding: 0 12px;
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  border: 1px solid var(--v3d-line);
+  border-radius: 0;
+  background: var(--v3d-panel);
+  color: var(--v3d-ink);
+  font: 600 14px/1 var(--v3d-font);
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 0.15s, border-color 0.15s, color 0.15s;
+}
+.v3d-b:hover { border-color: var(--v3d-glow); color: #fff; }
+.v3d-b:focus-visible { outline: 2px solid var(--v3d-glow); outline-offset: -3px; }
+.v3d-b.is-on { background: var(--v3d-active); border-color: var(--v3d-active); color: #fff; }
+.v3d-b svg { display: block; flex: 0 0 auto; }
+.v3d-ico { width: 44px; padding: 0; }
+
+/* Segment (pohledy / koty / vzhled) - useknuty roh jako .cn-btn-primary */
+.v3d-seg {
+  display: inline-flex; align-items: stretch;
+  clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
+}
+.v3d-seg > .v3d-b + .v3d-b { border-left-width: 0; }
+.v3d-seg__cap {
+  display: inline-flex; align-items: center;
+  padding: 0 10px;
+  font: 700 11px/1 var(--v3d-mono);
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--v3d-glow);
+  background: var(--v3d-panel);
+  border: 1px solid var(--v3d-line); border-right: 0;
+}
+
+/* Cipy pohybu (Suplik 1, Dvirka 2, KLT box 3, Multibox 1, Eurobox 2, Otevrit/Zavrit vse); cipy jednoho druhu
+   (u boxu i druhu boxu) tvori skupinu, skupiny oddeluje tenka cara; Otevrit/Zavrit vse zustavaji u praveho okraje */
+.v3d-chips {
+  display: flex; gap: 6px; max-width: 100%;
+  overflow-x: auto; overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  touch-action: pan-x;
+  padding-bottom: 2px;
+}
+.v3d-chip { flex: 0 0 auto; padding: 0 14px; }
+.v3d-chip[data-motion]::before {
+  content: ""; width: 9px; height: 9px; flex: 0 0 auto;
+  border: 1.5px solid var(--v3d-glow);
+  transition: background-color 0.15s;
+}
+.v3d-chip.is-open { border-color: var(--v3d-glow); box-shadow: inset 0 0 0 1px var(--v3d-glow); }
+.v3d-chip.is-open::before { background: var(--v3d-glow); }
+.v3d-chip.is-sel { border-color: var(--v3d-active); box-shadow: inset 0 0 0 1px var(--v3d-active); }       /* vybrany komponent (zobrazuje svoje rozmery) */
+.v3d-chip--all { font-family: var(--v3d-mono); font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
+.v3d-chipgrp { display: flex; align-items: center; gap: 6px; flex: 0 0 auto; padding-left: 8px; border-left: 1px solid var(--v3d-line); }
+.v3d-chipgrp:first-child { padding-left: 0; border-left: 0; }
+.v3d-chipall { display: flex; gap: 6px; flex: 0 0 auto; position: sticky; right: 0; z-index: 3; padding-left: 8px;
+  background: linear-gradient(to right, rgba(13, 22, 36, 0), rgba(13, 22, 36, 0.92) 8px); }
+
+/* Cipy pohybu ve vice radach podle strany (motions[].g; spolecna nabidka): radek = popisek strany + cipy jeji strany + Otevrit/Zavrit vse jen pro stranu; barva strany se predava cipum pres --v3d-glow */
+.v3d-chips--rows { flex-direction: column; align-items: flex-start; overflow: visible; touch-action: auto; gap: 6px; }
+.v3d-chiprow { display: flex; align-items: center; gap: 6px; max-width: 100%; overflow-x: auto; overflow-y: hidden; -webkit-overflow-scrolling: touch; scrollbar-width: thin; touch-action: pan-x; padding-bottom: 2px; }
+.v3d-chiprow--left { --v3d-glow: #2fe07a; --v3d-side: #2fe07a; }
+.v3d-chiprow--right { --v3d-glow: #ffb15c; --v3d-side: #ffb15c; }
+.v3d-chiprow--bulkhead { --v3d-glow: #8fb2ff; --v3d-side: #8fb2ff; }
+.v3d-chiprow__lbl { flex: 0 0 auto; display: flex; align-items: center; min-height: 36px; padding: 0 10px; border-left: 3px solid var(--v3d-side, var(--v3d-glow)); background: var(--v3d-panel);
+  color: var(--v3d-side, var(--v3d-ink)); font-family: var(--v3d-mono); font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; white-space: nowrap; }
+.v3d-chiprow .v3d-chipgrp:first-of-type { padding-left: 8px; border-left: 1px solid var(--v3d-line); }
+.v3d-chiprow--left .v3d-chip--all, .v3d-chiprow--right .v3d-chip--all, .v3d-chiprow--bulkhead .v3d-chip--all { border-color: var(--v3d-side); color: var(--v3d-side); }
+.v3d-dim--sel { border-color: var(--v3d-active, #ff7a3d); color: #fff; background: rgba(255, 122, 61, 0.88); }
+.v3d-chiprow__lbl { position: sticky; left: 0; z-index: 2; }                                  /* popisek strany zustane videt pri posouvani dlouhe rady */
+.v3d-narrow .v3d-chiprow .v3d-chipall { position: static; background: none; padding-left: 0; }        /* uzky displej: Otevrit/Zavrit vse jedou s cipy, ne pres ne */
+.v3d-narrow .v3d-chiprow__lbl { padding: 0 8px; font-size: 10px; min-height: 36px; }
+
+.v3d-hint {
+  font-size: 12px; line-height: 1.35;
+  color: #fff; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.65);
+  opacity: 0.92; transition: opacity 0.6s ease;
+  max-width: calc(100% - 56px);   /* nezajet pod sloupec +/-/cela obrazovka vpravo */
+  pointer-events: none;
+}
+.v3d-mode-wire .v3d-hint { color: var(--muted, #5f6b7a); text-shadow: none; }
+.v3d-hint.is-gone { opacity: 0; }
+
+.v3d-msg {
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  padding: 10px 16px;
+  font: 600 13px/1.3 var(--v3d-mono);
+  letter-spacing: 0.04em;
+  color: var(--v3d-glow);
+  background: var(--v3d-panel);
+  border: 1px solid var(--v3d-line);
+  display: none;
+}
+.v3d-loading .v3d-msg, .v3d-failed .v3d-msg { display: block; }
+
+/* Vyzva ke kliknuti pri najeti mysi na pohyblivy dil (viewer 1.13.0, opts.hoverHint): popisek u kurzoru, nikdy nezachytava mys */
+.v3d-tip {
+  position: absolute; left: 0; top: 0; z-index: 6; pointer-events: none;
+  display: flex; flex-direction: column; gap: 3px;
+  max-width: min(280px, calc(100% - 12px));
+  padding: 7px 12px 8px 11px;
+  background: var(--v3d-panel);
+  border: 1px solid var(--v3d-active, #ff7a3d); border-left-width: 3px;
+  color: var(--v3d-ink);
+  clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
+  opacity: 0; visibility: hidden; transition: opacity 0.12s ease, visibility 0s linear 0.12s;
+  will-change: transform;
+}
+.v3d-tip.is-on { opacity: 1; visibility: visible; transition: opacity 0.12s ease; }
+.v3d-tip__name { font: 700 11px/1.2 var(--v3d-mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--v3d-active, #ff7a3d); white-space: nowrap; }
+.v3d-tip__act { display: flex; align-items: center; gap: 7px; font: 600 14px/1.2 var(--v3d-font); color: #fff; white-space: nowrap; }
+.v3d-tip__ico { display: inline-flex; flex: 0 0 auto; color: var(--v3d-active, #ff7a3d); }
+.v3d-narrow .v3d-tip__act { font-size: 13px; }
+
+/* ---------------- uzky displej (< 640 px, prepina JS) ---------------- */
+.v3d-narrow { --v3d-gap: 8px; }
+.v3d-narrow .v3d-tr { left: var(--v3d-gap); }
+.v3d-narrow .v3d-seg--views { flex: 1 1 auto; }
+.v3d-narrow .v3d-seg--views > .v3d-b { flex: 1 1 0; min-width: 0; padding: 0 4px; font-size: 13px; }
+.v3d-narrow .v3d-tl { top: calc(var(--v3d-gap) + 52px); }
+/* Koty/Vzhled: ukazat jen aktivni volbu, klepnuti prepne na dalsi */
+.v3d-narrow .v3d-seg--cycle > .v3d-b:not(.is-on) { display: none; }
+.v3d-narrow .v3d-seg--cycle > .v3d-b.is-on { background: var(--v3d-panel); border-color: var(--v3d-line); color: var(--v3d-ink); }
+.v3d-narrow .v3d-seg--cycle > .v3d-b.is-on::after { content: "\25B8"; color: var(--v3d-glow); font-size: 12px; }
+.v3d-narrow .v3d-hint { font-size: 11px; }
+
+/* ---------------- HUD v pruhu NAD platnem (opts.hudDock: 'top', viewer 1.6.1) ----------------
+   Tlacitka nezakryvaji model: root je sloupec (pruh tlacitek, pod nim platno). Pruh se podle sirky zalomi do dvou radku. */
+.v3d-dock-top { display: flex; flex-direction: column; }
+.v3d-dock-top > .v3d-stage { position: relative; top: auto; right: auto; bottom: auto; left: auto; flex: 1 1 auto; min-height: 0; order: 2; }
+.v3d-dock-top > .v3d-hud {
+  position: static; order: 1; flex: 0 0 auto; z-index: 3;
+  display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px;
+  padding: 6px var(--v3d-gap); background: var(--v3d-dock-bg, #1b2028); pointer-events: auto;
+}
+.v3d-dock-top .v3d-tl, .v3d-dock-top .v3d-tr, .v3d-dock-top .v3d-br {
+  position: static; flex-direction: row; align-items: center; gap: 6px; top: auto; right: auto; bottom: auto; left: auto;
+}
+.v3d-dock-top .v3d-tr { order: 1; }
+.v3d-dock-top .v3d-tl { order: 2; }
+.v3d-dock-top .v3d-br { order: 3; margin-left: auto; }
+.v3d-dock-top .v3d-seg--views, .v3d-narrow.v3d-dock-top .v3d-seg--views { flex: 0 0 auto; }
+.v3d-dock-top .v3d-b { min-height: 40px; min-width: 40px; }
+.v3d-dock-top .v3d-ico { width: 40px; }
+.v3d-dock-top.v3d-narrow .v3d-b, .v3d-dock-top .v3d-seg--views > .v3d-b { padding: 0 9px; font-size: 13px; }
+.v3d-dock-top.v3d-narrow .v3d-ico { padding: 0; }
+.v3d-dock-top .v3d-bottom { position: absolute; left: 0; right: 0; bottom: 0; }
+/* uzky displej: bez popisku "KOTY/VZHLED" (volba sama rika Rozmery / Skutecny), aby se pruh vesel na dva radky */
+.v3d-dock-top.v3d-narrow .v3d-seg__cap { display: none; }
+.v3d-dock-top.v3d-narrow .v3d-hint { display: none; }   /* nahore uz neni misto na napovedu a prekryvala by kotu */
+
+/* ---------------- cela obrazovka ---------------- */
+.v3d-root:fullscreen { width: 100vw; height: 100vh; }
+.v3d-root:-webkit-full-screen { width: 100vw; height: 100vh; }
+/* neaktivni .slide stranky nabidky ma pointer-events:none, ktere se dedi i do
+   top layer - na cele obrazovce musi prohlizec reagovat vzdy (kontrola F11) */
+.v3d-root.v3d-is-fs, .v3d-root:fullscreen { pointer-events: auto; }
+/* zaloha (iPhone nema Fullscreen API pro div): root se presune do body */
+.v3d-root.v3d-fs-css {
+  position: fixed; top: 0; left: 0;
+  width: 100vw; height: 100vh; height: 100dvh;
+  z-index: 2147483000;
+}
+.v3d-root.v3d-fs-css .v3d-hud {
+  top: env(safe-area-inset-top, 0px); right: env(safe-area-inset-right, 0px);
+  bottom: env(safe-area-inset-bottom, 0px); left: env(safe-area-inset-left, 0px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .v3d-root *, .v3d-root *::before { transition: none !important; }
+}
+@media print {
+  .v3d-root { display: none !important; }
+}
+
+/* ladeni (opts.ladeni): volba Prostredi a Hliniku v HUD (kontrolni scena) */
+.v3d-ladeni .v3d-tl { max-width: calc(100% - 390px); }
+.v3d-seg--ladeni { flex-wrap: wrap; }
+.v3d-seg--ladeni > .v3d-b { min-height: 40px; padding: 0 10px; font-size: 13px; }
+.v3d-narrow.v3d-ladeni .v3d-tl { max-width: calc(100% - 20px); }

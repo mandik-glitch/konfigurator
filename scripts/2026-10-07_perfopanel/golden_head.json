@@ -1,0 +1,4214 @@
+{
+"{\"hloubka\": 1200, \"panely_pocet\": 4, \"police\": 2, \"sirka\": 3000, \"system\": 40}": {
+"hash": "87e1e1cd4e6d563f",
+"otisk": "274326f3fcb482fde80c",
+"panelu": 4,
+"problemu": 0
+},
+"{\"panely\": false, \"system\": 35}": {
+"hash": "7dd80f0cb614f478",
+"otisk": "60cb4dfc4d0fdf4898f7",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 0, \"sirka\": 1280, \"stredni_opora\": \"auto\", \"system\": 30}": {
+"hash": "d97b48d761dfc9c0",
+"otisk": "c7c3683028e30c562053",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 0, \"sirka\": 1280, \"stredni_opora\": \"auto\", \"system\": 35}": {
+"hash": "c4d583c8450fd2e2",
+"otisk": "81c838be01e16eb99453",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 0, \"sirka\": 1280, \"stredni_opora\": \"auto\", \"system\": 40}": {
+"hash": "f1a7002fd0a6b035",
+"otisk": "dace87df69edb2bf837b",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 0, \"sirka\": 1280, \"stredni_opora\": \"noha\", \"system\": 30}": {
+"hash": "d97b48d761dfc9c0",
+"otisk": "c7c3683028e30c562053",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 0, \"sirka\": 1280, \"stredni_opora\": \"noha\", \"system\": 35}": {
+"hash": "c4d583c8450fd2e2",
+"otisk": "81c838be01e16eb99453",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 0, \"sirka\": 1280, \"stredni_opora\": \"noha\", \"system\": 40}": {
+"hash": "f1a7002fd0a6b035",
+"otisk": "dace87df69edb2bf837b",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 0, \"sirka\": 1280, \"stredni_opora\": \"ram\", \"system\": 30}": {
+"hash": "d97b48d761dfc9c0",
+"otisk": "c7c3683028e30c562053",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 0, \"sirka\": 1280, \"stredni_opora\": \"ram\", \"system\": 35}": {
+"hash": "c4d583c8450fd2e2",
+"otisk": "81c838be01e16eb99453",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 0, \"sirka\": 1280, \"stredni_opora\": \"ram\", \"system\": 40}": {
+"hash": "f1a7002fd0a6b035",
+"otisk": "dace87df69edb2bf837b",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 0, \"sirka\": 1500, \"stredni_opora\": \"auto\", \"system\": 30}": {
+"hash": "4a6d73aa6d4bf650",
+"otisk": "361f9bd23b74859e040d",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 0, \"sirka\": 1500, \"stredni_opora\": \"auto\", \"system\": 35}": {
+"hash": "bcf990571fbeb601",
+"otisk": "f03e9530492d16798821",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 0, \"sirka\": 1500, \"stredni_opora\": \"auto\", \"system\": 40}": {
+"hash": "f1904d0cbe4d7f50",
+"otisk": "7cbe9a80b4684f22c931",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 0, \"sirka\": 1500, \"stredni_opora\": \"noha\", \"system\": 30}": {
+"hash": "4a6d73aa6d4bf650",
+"otisk": "361f9bd23b74859e040d",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 0, \"sirka\": 1500, \"stredni_opora\": \"noha\", \"system\": 35}": {
+"hash": "bcf990571fbeb601",
+"otisk": "f03e9530492d16798821",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 0, \"sirka\": 1500, \"stredni_opora\": \"noha\", \"system\": 40}": {
+"hash": "f1904d0cbe4d7f50",
+"otisk": "7cbe9a80b4684f22c931",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 0, \"sirka\": 1500, \"stredni_opora\": \"ram\", \"system\": 30}": {
+"hash": "4a6d73aa6d4bf650",
+"otisk": "361f9bd23b74859e040d",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 0, \"sirka\": 1500, \"stredni_opora\": \"ram\", \"system\": 35}": {
+"hash": "bcf990571fbeb601",
+"otisk": "f03e9530492d16798821",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 0, \"sirka\": 1500, \"stredni_opora\": \"ram\", \"system\": 40}": {
+"hash": "f1904d0cbe4d7f50",
+"otisk": "7cbe9a80b4684f22c931",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 0, \"sirka\": 1600, \"stredni_opora\": \"auto\", \"system\": 30}": {
+"hash": "b5239614b02b66cd",
+"otisk": "17469643ed5a7c0cc1be",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 0, \"sirka\": 1600, \"stredni_opora\": \"auto\", \"system\": 35}": {
+"hash": "66dd75049606b522",
+"otisk": "befc0ab44a8a1a7e2fca",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 0, \"sirka\": 1600, \"stredni_opora\": \"auto\", \"system\": 40}": {
+"hash": "feb785b5ea2c50f8",
+"otisk": "e89e47ea11630b6f20e9",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 0, \"sirka\": 1600, \"stredni_opora\": \"noha\", \"system\": 30}": {
+"hash": "36aa85d6d11fc2b5",
+"otisk": "17469643ed5a7c0cc1be",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 0, \"sirka\": 1600, \"stredni_opora\": \"noha\", \"system\": 35}": {
+"hash": "93c3fa0f50e4430e",
+"otisk": "befc0ab44a8a1a7e2fca",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 0, \"sirka\": 1600, \"stredni_opora\": \"noha\", \"system\": 40}": {
+"hash": "8dcc673e6f8a5d0c",
+"otisk": "e89e47ea11630b6f20e9",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 0, \"sirka\": 1600, \"stredni_opora\": \"ram\", \"system\": 30}": {
+"hash": "2ad278327b9592dd",
+"otisk": "17469643ed5a7c0cc1be",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 0, \"sirka\": 1600, \"stredni_opora\": \"ram\", \"system\": 35}": {
+"hash": "2bb04b3bd77e8aae",
+"otisk": "befc0ab44a8a1a7e2fca",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 0, \"sirka\": 1600, \"stredni_opora\": \"ram\", \"system\": 40}": {
+"hash": "b7c30c956aed9c70",
+"otisk": "e89e47ea11630b6f20e9",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 0, \"sirka\": 2100, \"stredni_opora\": \"auto\", \"system\": 30}": {
+"hash": "da160214bcfaf880",
+"otisk": "307e784f7568a6b57d6f",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 0, \"sirka\": 2100, \"stredni_opora\": \"auto\", \"system\": 35}": {
+"hash": "9e922f8ca671b736",
+"otisk": "58e4c40a64fadc1c33b0",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 0, \"sirka\": 2100, \"stredni_opora\": \"auto\", \"system\": 40}": {
+"hash": "5c9750a83b89da0f",
+"otisk": "7f8f90be23bdf0574852",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 0, \"sirka\": 2100, \"stredni_opora\": \"noha\", \"system\": 30}": {
+"hash": "94a08eae6122f55b",
+"otisk": "307e784f7568a6b57d6f",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 0, \"sirka\": 2100, \"stredni_opora\": \"noha\", \"system\": 35}": {
+"hash": "ef7a87b2c8dc4624",
+"otisk": "58e4c40a64fadc1c33b0",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 0, \"sirka\": 2100, \"stredni_opora\": \"noha\", \"system\": 40}": {
+"hash": "82dfc299c2551523",
+"otisk": "7f8f90be23bdf0574852",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 0, \"sirka\": 2100, \"stredni_opora\": \"ram\", \"system\": 30}": {
+"hash": "f2d55e2cdcf69fcf",
+"otisk": "307e784f7568a6b57d6f",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 0, \"sirka\": 2100, \"stredni_opora\": \"ram\", \"system\": 35}": {
+"hash": "ab3ec2ef3a77d6db",
+"otisk": "58e4c40a64fadc1c33b0",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 0, \"sirka\": 2100, \"stredni_opora\": \"ram\", \"system\": 40}": {
+"hash": "61830a928ea7b886",
+"otisk": "7f8f90be23bdf0574852",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 0, \"sirka\": 2800, \"stredni_opora\": \"auto\", \"system\": 30}": {
+"hash": "1f574552ff9bc626",
+"otisk": "9c9a159ba21c45d4bd01",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 0, \"sirka\": 2800, \"stredni_opora\": \"auto\", \"system\": 35}": {
+"hash": "64d247e87f0775d4",
+"otisk": "b2899fb29b2a019cb463",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 0, \"sirka\": 2800, \"stredni_opora\": \"auto\", \"system\": 40}": {
+"hash": "af0b2e230043fa0e",
+"otisk": "f2ec97d235c9076c4a66",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 0, \"sirka\": 2800, \"stredni_opora\": \"noha\", \"system\": 30}": {
+"hash": "1d193c30a451d600",
+"otisk": "9c9a159ba21c45d4bd01",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 0, \"sirka\": 2800, \"stredni_opora\": \"noha\", \"system\": 35}": {
+"hash": "ef865cd6d181df8c",
+"otisk": "b2899fb29b2a019cb463",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 0, \"sirka\": 2800, \"stredni_opora\": \"noha\", \"system\": 40}": {
+"hash": "90ab86d9be2b556e",
+"otisk": "f2ec97d235c9076c4a66",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 0, \"sirka\": 2800, \"stredni_opora\": \"ram\", \"system\": 30}": {
+"hash": "145be20d441f77d4",
+"otisk": "9c9a159ba21c45d4bd01",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 0, \"sirka\": 2800, \"stredni_opora\": \"ram\", \"system\": 35}": {
+"hash": "0104c5c38d731888",
+"otisk": "b2899fb29b2a019cb463",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 0, \"sirka\": 2800, \"stredni_opora\": \"ram\", \"system\": 40}": {
+"hash": "3756dae37ba24c9a",
+"otisk": "f2ec97d235c9076c4a66",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 1, \"sirka\": 1280, \"stredni_opora\": \"auto\", \"system\": 30}": {
+"hash": "4776371ca6de0bb5",
+"otisk": "f0b2f017b4f132aa4c6b",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 1, \"sirka\": 1280, \"stredni_opora\": \"auto\", \"system\": 35}": {
+"hash": "7dd80f0cb614f478",
+"otisk": "60cb4dfc4d0fdf4898f7",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 1, \"sirka\": 1280, \"stredni_opora\": \"auto\", \"system\": 40}": {
+"hash": "f7dad4f6ecf0e609",
+"otisk": "203a1a3ceb4a8e496922",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 1, \"sirka\": 1280, \"stredni_opora\": \"noha\", \"system\": 30}": {
+"hash": "4776371ca6de0bb5",
+"otisk": "f0b2f017b4f132aa4c6b",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 1, \"sirka\": 1280, \"stredni_opora\": \"noha\", \"system\": 35}": {
+"hash": "7dd80f0cb614f478",
+"otisk": "60cb4dfc4d0fdf4898f7",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 1, \"sirka\": 1280, \"stredni_opora\": \"noha\", \"system\": 40}": {
+"hash": "f7dad4f6ecf0e609",
+"otisk": "203a1a3ceb4a8e496922",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 1, \"sirka\": 1280, \"stredni_opora\": \"ram\", \"system\": 30}": {
+"hash": "4776371ca6de0bb5",
+"otisk": "f0b2f017b4f132aa4c6b",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 1, \"sirka\": 1280, \"stredni_opora\": \"ram\", \"system\": 35}": {
+"hash": "7dd80f0cb614f478",
+"otisk": "60cb4dfc4d0fdf4898f7",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 1, \"sirka\": 1280, \"stredni_opora\": \"ram\", \"system\": 40}": {
+"hash": "f7dad4f6ecf0e609",
+"otisk": "203a1a3ceb4a8e496922",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 1, \"sirka\": 1500, \"stredni_opora\": \"auto\", \"system\": 30}": {
+"hash": "96300478f20986de",
+"otisk": "09a22df334e5ea2e5c49",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 1, \"sirka\": 1500, \"stredni_opora\": \"auto\", \"system\": 35}": {
+"hash": "676f8884c0d3e8c9",
+"otisk": "4a0824d526c1960a72a2",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 1, \"sirka\": 1500, \"stredni_opora\": \"auto\", \"system\": 40}": {
+"hash": "d42cde331c5b14f2",
+"otisk": "2b1c32f2c6977f9f1504",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 1, \"sirka\": 1500, \"stredni_opora\": \"noha\", \"system\": 30}": {
+"hash": "96300478f20986de",
+"otisk": "09a22df334e5ea2e5c49",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 1, \"sirka\": 1500, \"stredni_opora\": \"noha\", \"system\": 35}": {
+"hash": "676f8884c0d3e8c9",
+"otisk": "4a0824d526c1960a72a2",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 1, \"sirka\": 1500, \"stredni_opora\": \"noha\", \"system\": 40}": {
+"hash": "d42cde331c5b14f2",
+"otisk": "2b1c32f2c6977f9f1504",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 1, \"sirka\": 1500, \"stredni_opora\": \"ram\", \"system\": 30}": {
+"hash": "96300478f20986de",
+"otisk": "09a22df334e5ea2e5c49",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 1, \"sirka\": 1500, \"stredni_opora\": \"ram\", \"system\": 35}": {
+"hash": "676f8884c0d3e8c9",
+"otisk": "4a0824d526c1960a72a2",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 1, \"sirka\": 1500, \"stredni_opora\": \"ram\", \"system\": 40}": {
+"hash": "d42cde331c5b14f2",
+"otisk": "2b1c32f2c6977f9f1504",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 1, \"sirka\": 1600, \"stredni_opora\": \"auto\", \"system\": 30}": {
+"hash": "1294f114f7df68e0",
+"otisk": "f3c4133c5699c4907a8d",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 1, \"sirka\": 1600, \"stredni_opora\": \"auto\", \"system\": 35}": {
+"hash": "0f39a068d5900e9e",
+"otisk": "2e7b171cc32a68043f35",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 1, \"sirka\": 1600, \"stredni_opora\": \"auto\", \"system\": 40}": {
+"hash": "03b129b6470506be",
+"otisk": "8c9ae7159a6fad956eac",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 1, \"sirka\": 1600, \"stredni_opora\": \"noha\", \"system\": 30}": {
+"hash": "782c6721195b0da2",
+"otisk": "f3c4133c5699c4907a8d",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 1, \"sirka\": 1600, \"stredni_opora\": \"noha\", \"system\": 35}": {
+"hash": "71c435228fc55d97",
+"otisk": "2e7b171cc32a68043f35",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 1, \"sirka\": 1600, \"stredni_opora\": \"noha\", \"system\": 40}": {
+"hash": "7f836b70b35634cc",
+"otisk": "8c9ae7159a6fad956eac",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 1, \"sirka\": 1600, \"stredni_opora\": \"ram\", \"system\": 30}": {
+"hash": "b0c0681136b8b5b0",
+"otisk": "4d56eb8b42b8bacca232",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 1, \"sirka\": 1600, \"stredni_opora\": \"ram\", \"system\": 35}": {
+"hash": "3fbab539b3fdd275",
+"otisk": "215919704fa6ab6164c3",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 1, \"sirka\": 1600, \"stredni_opora\": \"ram\", \"system\": 40}": {
+"hash": "b6501954ec0e11d2",
+"otisk": "98cf9ba7fc7431472cff",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 1, \"sirka\": 2100, \"stredni_opora\": \"auto\", \"system\": 30}": {
+"hash": "1db59665d9ebde40",
+"otisk": "5d6d85bad949ef37faeb",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 1, \"sirka\": 2100, \"stredni_opora\": \"auto\", \"system\": 35}": {
+"hash": "3b2ebd1db87e4858",
+"otisk": "c8fef8ada8c7c5d54123",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 1, \"sirka\": 2100, \"stredni_opora\": \"auto\", \"system\": 40}": {
+"hash": "7f5be767c3d5f662",
+"otisk": "771d192bdfb1adc610a1",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 1, \"sirka\": 2100, \"stredni_opora\": \"noha\", \"system\": 30}": {
+"hash": "838414d87b476259",
+"otisk": "5d6d85bad949ef37faeb",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 1, \"sirka\": 2100, \"stredni_opora\": \"noha\", \"system\": 35}": {
+"hash": "9f6648e753825e65",
+"otisk": "c8fef8ada8c7c5d54123",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 1, \"sirka\": 2100, \"stredni_opora\": \"noha\", \"system\": 40}": {
+"hash": "f2de5bbabb260f1d",
+"otisk": "771d192bdfb1adc610a1",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 1, \"sirka\": 2100, \"stredni_opora\": \"ram\", \"system\": 30}": {
+"hash": "d720e7a1275e503d",
+"otisk": "56b937a636fca87d81f5",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 1, \"sirka\": 2100, \"stredni_opora\": \"ram\", \"system\": 35}": {
+"hash": "85b8e6a280265bab",
+"otisk": "f24c68651dc151acd830",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 1, \"sirka\": 2100, \"stredni_opora\": \"ram\", \"system\": 40}": {
+"hash": "1143d6f4320556a9",
+"otisk": "7440e7a845d7abdd23ef",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 1, \"sirka\": 2800, \"stredni_opora\": \"auto\", \"system\": 30}": {
+"hash": "f4f1b23059c97e04",
+"otisk": "501b69afd8082a967bba",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 1, \"sirka\": 2800, \"stredni_opora\": \"auto\", \"system\": 35}": {
+"hash": "6bca51957d106c10",
+"otisk": "313a0a54925cec17f744",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 1, \"sirka\": 2800, \"stredni_opora\": \"auto\", \"system\": 40}": {
+"hash": "60790973744db339",
+"otisk": "98b0e5762327b28672e4",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 1, \"sirka\": 2800, \"stredni_opora\": \"noha\", \"system\": 30}": {
+"hash": "213b118d43c94fec",
+"otisk": "501b69afd8082a967bba",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 1, \"sirka\": 2800, \"stredni_opora\": \"noha\", \"system\": 35}": {
+"hash": "96c4d7241cd045ca",
+"otisk": "313a0a54925cec17f744",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 1, \"sirka\": 2800, \"stredni_opora\": \"noha\", \"system\": 40}": {
+"hash": "43be7742169a782f",
+"otisk": "98b0e5762327b28672e4",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 1, \"sirka\": 2800, \"stredni_opora\": \"ram\", \"system\": 30}": {
+"hash": "c71921fe95f31a0c",
+"otisk": "975cb5ae633f93cf49ab",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 1, \"sirka\": 2800, \"stredni_opora\": \"ram\", \"system\": 35}": {
+"hash": "a80dc009f47167ff",
+"otisk": "fd8a7df30fb4048572cd",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 1, \"sirka\": 2800, \"stredni_opora\": \"ram\", \"system\": 40}": {
+"hash": "1289e64708341d5b",
+"otisk": "8cd778d8aea9ebad1dcc",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 2, \"sirka\": 1280, \"stredni_opora\": \"auto\", \"system\": 30}": {
+"hash": "4776371ca6de0bb5",
+"otisk": "f0b2f017b4f132aa4c6b",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 2, \"sirka\": 1280, \"stredni_opora\": \"auto\", \"system\": 35}": {
+"hash": "7dd80f0cb614f478",
+"otisk": "60cb4dfc4d0fdf4898f7",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 2, \"sirka\": 1280, \"stredni_opora\": \"auto\", \"system\": 40}": {
+"hash": "f7dad4f6ecf0e609",
+"otisk": "203a1a3ceb4a8e496922",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 2, \"sirka\": 1280, \"stredni_opora\": \"noha\", \"system\": 30}": {
+"hash": "4776371ca6de0bb5",
+"otisk": "f0b2f017b4f132aa4c6b",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 2, \"sirka\": 1280, \"stredni_opora\": \"noha\", \"system\": 35}": {
+"hash": "7dd80f0cb614f478",
+"otisk": "60cb4dfc4d0fdf4898f7",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 2, \"sirka\": 1280, \"stredni_opora\": \"noha\", \"system\": 40}": {
+"hash": "f7dad4f6ecf0e609",
+"otisk": "203a1a3ceb4a8e496922",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 2, \"sirka\": 1280, \"stredni_opora\": \"ram\", \"system\": 30}": {
+"hash": "4776371ca6de0bb5",
+"otisk": "f0b2f017b4f132aa4c6b",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 2, \"sirka\": 1280, \"stredni_opora\": \"ram\", \"system\": 35}": {
+"hash": "7dd80f0cb614f478",
+"otisk": "60cb4dfc4d0fdf4898f7",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 2, \"sirka\": 1280, \"stredni_opora\": \"ram\", \"system\": 40}": {
+"hash": "f7dad4f6ecf0e609",
+"otisk": "203a1a3ceb4a8e496922",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 2, \"sirka\": 1500, \"stredni_opora\": \"auto\", \"system\": 30}": {
+"hash": "96300478f20986de",
+"otisk": "09a22df334e5ea2e5c49",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 2, \"sirka\": 1500, \"stredni_opora\": \"auto\", \"system\": 35}": {
+"hash": "676f8884c0d3e8c9",
+"otisk": "4a0824d526c1960a72a2",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 2, \"sirka\": 1500, \"stredni_opora\": \"auto\", \"system\": 40}": {
+"hash": "d42cde331c5b14f2",
+"otisk": "2b1c32f2c6977f9f1504",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 2, \"sirka\": 1500, \"stredni_opora\": \"noha\", \"system\": 30}": {
+"hash": "96300478f20986de",
+"otisk": "09a22df334e5ea2e5c49",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 2, \"sirka\": 1500, \"stredni_opora\": \"noha\", \"system\": 35}": {
+"hash": "676f8884c0d3e8c9",
+"otisk": "4a0824d526c1960a72a2",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 2, \"sirka\": 1500, \"stredni_opora\": \"noha\", \"system\": 40}": {
+"hash": "d42cde331c5b14f2",
+"otisk": "2b1c32f2c6977f9f1504",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 2, \"sirka\": 1500, \"stredni_opora\": \"ram\", \"system\": 30}": {
+"hash": "96300478f20986de",
+"otisk": "09a22df334e5ea2e5c49",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 2, \"sirka\": 1500, \"stredni_opora\": \"ram\", \"system\": 35}": {
+"hash": "676f8884c0d3e8c9",
+"otisk": "4a0824d526c1960a72a2",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 2, \"sirka\": 1500, \"stredni_opora\": \"ram\", \"system\": 40}": {
+"hash": "d42cde331c5b14f2",
+"otisk": "2b1c32f2c6977f9f1504",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 2, \"sirka\": 1600, \"stredni_opora\": \"auto\", \"system\": 30}": {
+"hash": "1294f114f7df68e0",
+"otisk": "f3c4133c5699c4907a8d",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 2, \"sirka\": 1600, \"stredni_opora\": \"auto\", \"system\": 35}": {
+"hash": "0f39a068d5900e9e",
+"otisk": "2e7b171cc32a68043f35",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 2, \"sirka\": 1600, \"stredni_opora\": \"auto\", \"system\": 40}": {
+"hash": "03b129b6470506be",
+"otisk": "8c9ae7159a6fad956eac",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 2, \"sirka\": 1600, \"stredni_opora\": \"noha\", \"system\": 30}": {
+"hash": "782c6721195b0da2",
+"otisk": "f3c4133c5699c4907a8d",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 2, \"sirka\": 1600, \"stredni_opora\": \"noha\", \"system\": 35}": {
+"hash": "71c435228fc55d97",
+"otisk": "2e7b171cc32a68043f35",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 2, \"sirka\": 1600, \"stredni_opora\": \"noha\", \"system\": 40}": {
+"hash": "7f836b70b35634cc",
+"otisk": "8c9ae7159a6fad956eac",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 2, \"sirka\": 1600, \"stredni_opora\": \"ram\", \"system\": 30}": {
+"hash": "b0c0681136b8b5b0",
+"otisk": "4d56eb8b42b8bacca232",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 2, \"sirka\": 1600, \"stredni_opora\": \"ram\", \"system\": 35}": {
+"hash": "3fbab539b3fdd275",
+"otisk": "215919704fa6ab6164c3",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 2, \"sirka\": 1600, \"stredni_opora\": \"ram\", \"system\": 40}": {
+"hash": "b6501954ec0e11d2",
+"otisk": "98cf9ba7fc7431472cff",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 2, \"sirka\": 2100, \"stredni_opora\": \"auto\", \"system\": 30}": {
+"hash": "1db59665d9ebde40",
+"otisk": "5d6d85bad949ef37faeb",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 2, \"sirka\": 2100, \"stredni_opora\": \"auto\", \"system\": 35}": {
+"hash": "3b2ebd1db87e4858",
+"otisk": "c8fef8ada8c7c5d54123",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 2, \"sirka\": 2100, \"stredni_opora\": \"auto\", \"system\": 40}": {
+"hash": "7f5be767c3d5f662",
+"otisk": "771d192bdfb1adc610a1",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 2, \"sirka\": 2100, \"stredni_opora\": \"noha\", \"system\": 30}": {
+"hash": "838414d87b476259",
+"otisk": "5d6d85bad949ef37faeb",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 2, \"sirka\": 2100, \"stredni_opora\": \"noha\", \"system\": 35}": {
+"hash": "9f6648e753825e65",
+"otisk": "c8fef8ada8c7c5d54123",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 2, \"sirka\": 2100, \"stredni_opora\": \"noha\", \"system\": 40}": {
+"hash": "f2de5bbabb260f1d",
+"otisk": "771d192bdfb1adc610a1",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 2, \"sirka\": 2100, \"stredni_opora\": \"ram\", \"system\": 30}": {
+"hash": "d720e7a1275e503d",
+"otisk": "56b937a636fca87d81f5",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 2, \"sirka\": 2100, \"stredni_opora\": \"ram\", \"system\": 35}": {
+"hash": "85b8e6a280265bab",
+"otisk": "f24c68651dc151acd830",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 2, \"sirka\": 2100, \"stredni_opora\": \"ram\", \"system\": 40}": {
+"hash": "1143d6f4320556a9",
+"otisk": "7440e7a845d7abdd23ef",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 2, \"sirka\": 2800, \"stredni_opora\": \"auto\", \"system\": 30}": {
+"hash": "f4f1b23059c97e04",
+"otisk": "501b69afd8082a967bba",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 2, \"sirka\": 2800, \"stredni_opora\": \"auto\", \"system\": 35}": {
+"hash": "6bca51957d106c10",
+"otisk": "313a0a54925cec17f744",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 2, \"sirka\": 2800, \"stredni_opora\": \"auto\", \"system\": 40}": {
+"hash": "60790973744db339",
+"otisk": "98b0e5762327b28672e4",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 2, \"sirka\": 2800, \"stredni_opora\": \"noha\", \"system\": 30}": {
+"hash": "213b118d43c94fec",
+"otisk": "501b69afd8082a967bba",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 2, \"sirka\": 2800, \"stredni_opora\": \"noha\", \"system\": 35}": {
+"hash": "96c4d7241cd045ca",
+"otisk": "313a0a54925cec17f744",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 2, \"sirka\": 2800, \"stredni_opora\": \"noha\", \"system\": 40}": {
+"hash": "43be7742169a782f",
+"otisk": "98b0e5762327b28672e4",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 2, \"sirka\": 2800, \"stredni_opora\": \"ram\", \"system\": 30}": {
+"hash": "c71921fe95f31a0c",
+"otisk": "975cb5ae633f93cf49ab",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 2, \"sirka\": 2800, \"stredni_opora\": \"ram\", \"system\": 35}": {
+"hash": "a80dc009f47167ff",
+"otisk": "fd8a7df30fb4048572cd",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 0, \"police\": 2, \"sirka\": 2800, \"stredni_opora\": \"ram\", \"system\": 40}": {
+"hash": "1289e64708341d5b",
+"otisk": "8cd778d8aea9ebad1dcc",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 0, \"sirka\": 1280, \"stredni_opora\": \"auto\", \"system\": 30}": {
+"hash": "e2238c9629f90739",
+"otisk": "a0ff8f7a05a4497eafdb",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 0, \"sirka\": 1280, \"stredni_opora\": \"auto\", \"system\": 35}": {
+"hash": "f2b06eff1c9bb9dd",
+"otisk": "c922def7d402c66f69b4",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 0, \"sirka\": 1280, \"stredni_opora\": \"auto\", \"system\": 40}": {
+"hash": "1f969df3fc794c25",
+"otisk": "f6a42eee75e221082d84",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 0, \"sirka\": 1280, \"stredni_opora\": \"noha\", \"system\": 30}": {
+"hash": "e2238c9629f90739",
+"otisk": "a0ff8f7a05a4497eafdb",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 0, \"sirka\": 1280, \"stredni_opora\": \"noha\", \"system\": 35}": {
+"hash": "f2b06eff1c9bb9dd",
+"otisk": "c922def7d402c66f69b4",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 0, \"sirka\": 1280, \"stredni_opora\": \"noha\", \"system\": 40}": {
+"hash": "1f969df3fc794c25",
+"otisk": "f6a42eee75e221082d84",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 0, \"sirka\": 1280, \"stredni_opora\": \"ram\", \"system\": 30}": {
+"hash": "e2238c9629f90739",
+"otisk": "a0ff8f7a05a4497eafdb",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 0, \"sirka\": 1280, \"stredni_opora\": \"ram\", \"system\": 35}": {
+"hash": "f2b06eff1c9bb9dd",
+"otisk": "c922def7d402c66f69b4",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 0, \"sirka\": 1280, \"stredni_opora\": \"ram\", \"system\": 40}": {
+"hash": "1f969df3fc794c25",
+"otisk": "f6a42eee75e221082d84",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 0, \"sirka\": 1500, \"stredni_opora\": \"auto\", \"system\": 30}": {
+"hash": "81a82b82448ac7ec",
+"otisk": "eb98f65f12a55c15a934",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 0, \"sirka\": 1500, \"stredni_opora\": \"auto\", \"system\": 35}": {
+"hash": "463d2699acf2d520",
+"otisk": "2e7516a2daf841c005e3",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 0, \"sirka\": 1500, \"stredni_opora\": \"auto\", \"system\": 40}": {
+"hash": "35b21b8e1ed84cfc",
+"otisk": "662c674a46b230dcb1c1",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 0, \"sirka\": 1500, \"stredni_opora\": \"noha\", \"system\": 30}": {
+"hash": "81a82b82448ac7ec",
+"otisk": "eb98f65f12a55c15a934",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 0, \"sirka\": 1500, \"stredni_opora\": \"noha\", \"system\": 35}": {
+"hash": "463d2699acf2d520",
+"otisk": "2e7516a2daf841c005e3",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 0, \"sirka\": 1500, \"stredni_opora\": \"noha\", \"system\": 40}": {
+"hash": "35b21b8e1ed84cfc",
+"otisk": "662c674a46b230dcb1c1",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 0, \"sirka\": 1500, \"stredni_opora\": \"ram\", \"system\": 30}": {
+"hash": "81a82b82448ac7ec",
+"otisk": "eb98f65f12a55c15a934",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 0, \"sirka\": 1500, \"stredni_opora\": \"ram\", \"system\": 35}": {
+"hash": "463d2699acf2d520",
+"otisk": "2e7516a2daf841c005e3",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 0, \"sirka\": 1500, \"stredni_opora\": \"ram\", \"system\": 40}": {
+"hash": "35b21b8e1ed84cfc",
+"otisk": "662c674a46b230dcb1c1",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 0, \"sirka\": 1600, \"stredni_opora\": \"auto\", \"system\": 30}": {
+"hash": "b5239614b02b66cd",
+"otisk": "17469643ed5a7c0cc1be",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 0, \"sirka\": 1600, \"stredni_opora\": \"auto\", \"system\": 35}": {
+"hash": "66dd75049606b522",
+"otisk": "befc0ab44a8a1a7e2fca",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 0, \"sirka\": 1600, \"stredni_opora\": \"auto\", \"system\": 40}": {
+"hash": "feb785b5ea2c50f8",
+"otisk": "e89e47ea11630b6f20e9",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 0, \"sirka\": 1600, \"stredni_opora\": \"noha\", \"system\": 30}": {
+"hash": "36aa85d6d11fc2b5",
+"otisk": "17469643ed5a7c0cc1be",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 0, \"sirka\": 1600, \"stredni_opora\": \"noha\", \"system\": 35}": {
+"hash": "93c3fa0f50e4430e",
+"otisk": "befc0ab44a8a1a7e2fca",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 0, \"sirka\": 1600, \"stredni_opora\": \"noha\", \"system\": 40}": {
+"hash": "8dcc673e6f8a5d0c",
+"otisk": "e89e47ea11630b6f20e9",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 0, \"sirka\": 1600, \"stredni_opora\": \"ram\", \"system\": 30}": {
+"hash": "2ad278327b9592dd",
+"otisk": "17469643ed5a7c0cc1be",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 0, \"sirka\": 1600, \"stredni_opora\": \"ram\", \"system\": 35}": {
+"hash": "2bb04b3bd77e8aae",
+"otisk": "befc0ab44a8a1a7e2fca",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 0, \"sirka\": 1600, \"stredni_opora\": \"ram\", \"system\": 40}": {
+"hash": "b7c30c956aed9c70",
+"otisk": "e89e47ea11630b6f20e9",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 0, \"sirka\": 2100, \"stredni_opora\": \"auto\", \"system\": 30}": {
+"hash": "da160214bcfaf880",
+"otisk": "307e784f7568a6b57d6f",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 0, \"sirka\": 2100, \"stredni_opora\": \"auto\", \"system\": 35}": {
+"hash": "9e922f8ca671b736",
+"otisk": "58e4c40a64fadc1c33b0",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 0, \"sirka\": 2100, \"stredni_opora\": \"auto\", \"system\": 40}": {
+"hash": "5c9750a83b89da0f",
+"otisk": "7f8f90be23bdf0574852",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 0, \"sirka\": 2100, \"stredni_opora\": \"noha\", \"system\": 30}": {
+"hash": "94a08eae6122f55b",
+"otisk": "307e784f7568a6b57d6f",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 0, \"sirka\": 2100, \"stredni_opora\": \"noha\", \"system\": 35}": {
+"hash": "ef7a87b2c8dc4624",
+"otisk": "58e4c40a64fadc1c33b0",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 0, \"sirka\": 2100, \"stredni_opora\": \"noha\", \"system\": 40}": {
+"hash": "82dfc299c2551523",
+"otisk": "7f8f90be23bdf0574852",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 0, \"sirka\": 2100, \"stredni_opora\": \"ram\", \"system\": 30}": {
+"hash": "f2d55e2cdcf69fcf",
+"otisk": "307e784f7568a6b57d6f",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 0, \"sirka\": 2100, \"stredni_opora\": \"ram\", \"system\": 35}": {
+"hash": "ab3ec2ef3a77d6db",
+"otisk": "58e4c40a64fadc1c33b0",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 0, \"sirka\": 2100, \"stredni_opora\": \"ram\", \"system\": 40}": {
+"hash": "61830a928ea7b886",
+"otisk": "7f8f90be23bdf0574852",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 0, \"sirka\": 2800, \"stredni_opora\": \"auto\", \"system\": 30}": {
+"hash": "c73739b9a32cb798",
+"otisk": "260a73685d224468c822",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 0, \"sirka\": 2800, \"stredni_opora\": \"auto\", \"system\": 35}": {
+"hash": "b7905c6a8479567f",
+"otisk": "e4664f7f65b4f9a30578",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 0, \"sirka\": 2800, \"stredni_opora\": \"auto\", \"system\": 40}": {
+"hash": "43884c729fb6607d",
+"otisk": "0b6db4c44a2bb88abd4d",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 0, \"sirka\": 2800, \"stredni_opora\": \"noha\", \"system\": 30}": {
+"hash": "e877471f51bdb55b",
+"otisk": "260a73685d224468c822",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 0, \"sirka\": 2800, \"stredni_opora\": \"noha\", \"system\": 35}": {
+"hash": "1e68207aff954d9f",
+"otisk": "e4664f7f65b4f9a30578",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 0, \"sirka\": 2800, \"stredni_opora\": \"noha\", \"system\": 40}": {
+"hash": "9b8a352736c8b227",
+"otisk": "0b6db4c44a2bb88abd4d",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 0, \"sirka\": 2800, \"stredni_opora\": \"ram\", \"system\": 30}": {
+"hash": "eb7d9f63f1b93a0e",
+"otisk": "260a73685d224468c822",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 0, \"sirka\": 2800, \"stredni_opora\": \"ram\", \"system\": 35}": {
+"hash": "2cb2c9978c732e88",
+"otisk": "e4664f7f65b4f9a30578",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 0, \"sirka\": 2800, \"stredni_opora\": \"ram\", \"system\": 40}": {
+"hash": "25869ef2c2959006",
+"otisk": "0b6db4c44a2bb88abd4d",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 1, \"sirka\": 1280, \"stredni_opora\": \"auto\", \"system\": 30}": {
+"hash": "87a80526a7ae21aa",
+"otisk": "963e0fc9c850975f9cfc",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 1, \"sirka\": 1280, \"stredni_opora\": \"auto\", \"system\": 35}": {
+"hash": "135bc3448e3d8746",
+"otisk": "a4f4cb19b604e83cfdb9",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 1, \"sirka\": 1280, \"stredni_opora\": \"auto\", \"system\": 40}": {
+"hash": "e434a7a62768f32e",
+"otisk": "6da630a88bbcf7ca8238",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 1, \"sirka\": 1280, \"stredni_opora\": \"noha\", \"system\": 30}": {
+"hash": "87a80526a7ae21aa",
+"otisk": "963e0fc9c850975f9cfc",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 1, \"sirka\": 1280, \"stredni_opora\": \"noha\", \"system\": 35}": {
+"hash": "135bc3448e3d8746",
+"otisk": "a4f4cb19b604e83cfdb9",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 1, \"sirka\": 1280, \"stredni_opora\": \"noha\", \"system\": 40}": {
+"hash": "e434a7a62768f32e",
+"otisk": "6da630a88bbcf7ca8238",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 1, \"sirka\": 1280, \"stredni_opora\": \"ram\", \"system\": 30}": {
+"hash": "87a80526a7ae21aa",
+"otisk": "963e0fc9c850975f9cfc",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 1, \"sirka\": 1280, \"stredni_opora\": \"ram\", \"system\": 35}": {
+"hash": "135bc3448e3d8746",
+"otisk": "a4f4cb19b604e83cfdb9",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 1, \"sirka\": 1280, \"stredni_opora\": \"ram\", \"system\": 40}": {
+"hash": "e434a7a62768f32e",
+"otisk": "6da630a88bbcf7ca8238",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 1, \"sirka\": 1500, \"stredni_opora\": \"auto\", \"system\": 30}": {
+"hash": "6f2c61f073b91175",
+"otisk": "f9b8a2acb754905ef2d3",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 1, \"sirka\": 1500, \"stredni_opora\": \"auto\", \"system\": 35}": {
+"hash": "a6c092a7792da765",
+"otisk": "a8987ff35954d31e70b9",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 1, \"sirka\": 1500, \"stredni_opora\": \"auto\", \"system\": 40}": {
+"hash": "91a3004b4b0f5408",
+"otisk": "9bda0667938e397ddf58",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 1, \"sirka\": 1500, \"stredni_opora\": \"noha\", \"system\": 30}": {
+"hash": "6f2c61f073b91175",
+"otisk": "f9b8a2acb754905ef2d3",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 1, \"sirka\": 1500, \"stredni_opora\": \"noha\", \"system\": 35}": {
+"hash": "a6c092a7792da765",
+"otisk": "a8987ff35954d31e70b9",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 1, \"sirka\": 1500, \"stredni_opora\": \"noha\", \"system\": 40}": {
+"hash": "91a3004b4b0f5408",
+"otisk": "9bda0667938e397ddf58",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 1, \"sirka\": 1500, \"stredni_opora\": \"ram\", \"system\": 30}": {
+"hash": "6f2c61f073b91175",
+"otisk": "f9b8a2acb754905ef2d3",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 1, \"sirka\": 1500, \"stredni_opora\": \"ram\", \"system\": 35}": {
+"hash": "a6c092a7792da765",
+"otisk": "a8987ff35954d31e70b9",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 1, \"sirka\": 1500, \"stredni_opora\": \"ram\", \"system\": 40}": {
+"hash": "91a3004b4b0f5408",
+"otisk": "9bda0667938e397ddf58",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 1, \"sirka\": 1600, \"stredni_opora\": \"auto\", \"system\": 30}": {
+"hash": "804ec4c5e59578ec",
+"otisk": "a1d894eeefe202bf4b37",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 1, \"sirka\": 1600, \"stredni_opora\": \"auto\", \"system\": 35}": {
+"hash": "920c3cc6ade2d6c1",
+"otisk": "2a503f745b077007b30f",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 1, \"sirka\": 1600, \"stredni_opora\": \"auto\", \"system\": 40}": {
+"hash": "96bc9aa85a4c146d",
+"otisk": "936b694077bc4deabc0b",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 1, \"sirka\": 1600, \"stredni_opora\": \"noha\", \"system\": 30}": {
+"hash": "782c6721195b0da2",
+"otisk": "f3c4133c5699c4907a8d",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 1, \"sirka\": 1600, \"stredni_opora\": \"noha\", \"system\": 35}": {
+"hash": "71c435228fc55d97",
+"otisk": "2e7b171cc32a68043f35",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 1, \"sirka\": 1600, \"stredni_opora\": \"noha\", \"system\": 40}": {
+"hash": "7f836b70b35634cc",
+"otisk": "8c9ae7159a6fad956eac",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 1, \"sirka\": 1600, \"stredni_opora\": \"ram\", \"system\": 30}": {
+"hash": "78470a3ee7ce37c9",
+"otisk": "a1d894eeefe202bf4b37",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 1, \"sirka\": 1600, \"stredni_opora\": \"ram\", \"system\": 35}": {
+"hash": "a021bc7b7bf4fa52",
+"otisk": "2a503f745b077007b30f",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 1, \"sirka\": 1600, \"stredni_opora\": \"ram\", \"system\": 40}": {
+"hash": "4a13f3a7a719fd2f",
+"otisk": "936b694077bc4deabc0b",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 1, \"sirka\": 2100, \"stredni_opora\": \"auto\", \"system\": 30}": {
+"hash": "92068e7798475619",
+"otisk": "387ad1908da24456c2cd",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 1, \"sirka\": 2100, \"stredni_opora\": \"auto\", \"system\": 35}": {
+"hash": "13c9d51fb68f37a7",
+"otisk": "bb612d5ae84b67ce93ca",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 1, \"sirka\": 2100, \"stredni_opora\": \"auto\", \"system\": 40}": {
+"hash": "6fce86c109a5125c",
+"otisk": "d0e290fdc68a3eab3670",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 1, \"sirka\": 2100, \"stredni_opora\": \"noha\", \"system\": 30}": {
+"hash": "838414d87b476259",
+"otisk": "5d6d85bad949ef37faeb",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 1, \"sirka\": 2100, \"stredni_opora\": \"noha\", \"system\": 35}": {
+"hash": "9f6648e753825e65",
+"otisk": "c8fef8ada8c7c5d54123",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 1, \"sirka\": 2100, \"stredni_opora\": \"noha\", \"system\": 40}": {
+"hash": "f2de5bbabb260f1d",
+"otisk": "771d192bdfb1adc610a1",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 1, \"sirka\": 2100, \"stredni_opora\": \"ram\", \"system\": 30}": {
+"hash": "ddf5069f083d12cc",
+"otisk": "387ad1908da24456c2cd",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 1, \"sirka\": 2100, \"stredni_opora\": \"ram\", \"system\": 35}": {
+"hash": "29b7926a7f46dd3a",
+"otisk": "bb612d5ae84b67ce93ca",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 1, \"sirka\": 2100, \"stredni_opora\": \"ram\", \"system\": 40}": {
+"hash": "71ee84988188bc01",
+"otisk": "d0e290fdc68a3eab3670",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 1, \"sirka\": 2800, \"stredni_opora\": \"auto\", \"system\": 30}": {
+"hash": "7bedd12bfa9ddb88",
+"otisk": "7cc2e76c19facf860b1b",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 1, \"sirka\": 2800, \"stredni_opora\": \"auto\", \"system\": 35}": {
+"hash": "fd88434cc4d0a713",
+"otisk": "f2f6e0e9de4b42a9d183",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 1, \"sirka\": 2800, \"stredni_opora\": \"auto\", \"system\": 40}": {
+"hash": "7474f4b190da001f",
+"otisk": "6ca9ac86b9b83676e4cf",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 1, \"sirka\": 2800, \"stredni_opora\": \"noha\", \"system\": 30}": {
+"hash": "620716a2e3e57c98",
+"otisk": "7cc2e76c19facf860b1b",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 1, \"sirka\": 2800, \"stredni_opora\": \"noha\", \"system\": 35}": {
+"hash": "52954bf9d9b410ff",
+"otisk": "f2f6e0e9de4b42a9d183",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 1, \"sirka\": 2800, \"stredni_opora\": \"noha\", \"system\": 40}": {
+"hash": "74af659cf36eab78",
+"otisk": "6ca9ac86b9b83676e4cf",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 1, \"sirka\": 2800, \"stredni_opora\": \"ram\", \"system\": 30}": {
+"hash": "dc205262360055be",
+"otisk": "badec0b666757133877e",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 1, \"sirka\": 2800, \"stredni_opora\": \"ram\", \"system\": 35}": {
+"hash": "e36091f01e5bc101",
+"otisk": "a5aea4b7a99c3e41ebe7",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 1, \"sirka\": 2800, \"stredni_opora\": \"ram\", \"system\": 40}": {
+"hash": "2bfbb9ac5d8beefb",
+"otisk": "5ffda5175458548009fb",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 2, \"sirka\": 1280, \"stredni_opora\": \"auto\", \"system\": 30}": {
+"hash": "87a80526a7ae21aa",
+"otisk": "963e0fc9c850975f9cfc",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 2, \"sirka\": 1280, \"stredni_opora\": \"auto\", \"system\": 35}": {
+"hash": "135bc3448e3d8746",
+"otisk": "a4f4cb19b604e83cfdb9",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 2, \"sirka\": 1280, \"stredni_opora\": \"auto\", \"system\": 40}": {
+"hash": "e434a7a62768f32e",
+"otisk": "6da630a88bbcf7ca8238",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 2, \"sirka\": 1280, \"stredni_opora\": \"noha\", \"system\": 30}": {
+"hash": "87a80526a7ae21aa",
+"otisk": "963e0fc9c850975f9cfc",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 2, \"sirka\": 1280, \"stredni_opora\": \"noha\", \"system\": 35}": {
+"hash": "135bc3448e3d8746",
+"otisk": "a4f4cb19b604e83cfdb9",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 2, \"sirka\": 1280, \"stredni_opora\": \"noha\", \"system\": 40}": {
+"hash": "e434a7a62768f32e",
+"otisk": "6da630a88bbcf7ca8238",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 2, \"sirka\": 1280, \"stredni_opora\": \"ram\", \"system\": 30}": {
+"hash": "87a80526a7ae21aa",
+"otisk": "963e0fc9c850975f9cfc",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 2, \"sirka\": 1280, \"stredni_opora\": \"ram\", \"system\": 35}": {
+"hash": "135bc3448e3d8746",
+"otisk": "a4f4cb19b604e83cfdb9",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 2, \"sirka\": 1280, \"stredni_opora\": \"ram\", \"system\": 40}": {
+"hash": "e434a7a62768f32e",
+"otisk": "6da630a88bbcf7ca8238",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 2, \"sirka\": 1500, \"stredni_opora\": \"auto\", \"system\": 30}": {
+"hash": "6f2c61f073b91175",
+"otisk": "f9b8a2acb754905ef2d3",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 2, \"sirka\": 1500, \"stredni_opora\": \"auto\", \"system\": 35}": {
+"hash": "a6c092a7792da765",
+"otisk": "a8987ff35954d31e70b9",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 2, \"sirka\": 1500, \"stredni_opora\": \"auto\", \"system\": 40}": {
+"hash": "91a3004b4b0f5408",
+"otisk": "9bda0667938e397ddf58",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 2, \"sirka\": 1500, \"stredni_opora\": \"noha\", \"system\": 30}": {
+"hash": "6f2c61f073b91175",
+"otisk": "f9b8a2acb754905ef2d3",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 2, \"sirka\": 1500, \"stredni_opora\": \"noha\", \"system\": 35}": {
+"hash": "a6c092a7792da765",
+"otisk": "a8987ff35954d31e70b9",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 2, \"sirka\": 1500, \"stredni_opora\": \"noha\", \"system\": 40}": {
+"hash": "91a3004b4b0f5408",
+"otisk": "9bda0667938e397ddf58",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 2, \"sirka\": 1500, \"stredni_opora\": \"ram\", \"system\": 30}": {
+"hash": "6f2c61f073b91175",
+"otisk": "f9b8a2acb754905ef2d3",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 2, \"sirka\": 1500, \"stredni_opora\": \"ram\", \"system\": 35}": {
+"hash": "a6c092a7792da765",
+"otisk": "a8987ff35954d31e70b9",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 2, \"sirka\": 1500, \"stredni_opora\": \"ram\", \"system\": 40}": {
+"hash": "91a3004b4b0f5408",
+"otisk": "9bda0667938e397ddf58",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 2, \"sirka\": 1600, \"stredni_opora\": \"auto\", \"system\": 30}": {
+"hash": "804ec4c5e59578ec",
+"otisk": "a1d894eeefe202bf4b37",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 2, \"sirka\": 1600, \"stredni_opora\": \"auto\", \"system\": 35}": {
+"hash": "920c3cc6ade2d6c1",
+"otisk": "2a503f745b077007b30f",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 2, \"sirka\": 1600, \"stredni_opora\": \"auto\", \"system\": 40}": {
+"hash": "96bc9aa85a4c146d",
+"otisk": "936b694077bc4deabc0b",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 2, \"sirka\": 1600, \"stredni_opora\": \"noha\", \"system\": 30}": {
+"hash": "782c6721195b0da2",
+"otisk": "f3c4133c5699c4907a8d",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 2, \"sirka\": 1600, \"stredni_opora\": \"noha\", \"system\": 35}": {
+"hash": "71c435228fc55d97",
+"otisk": "2e7b171cc32a68043f35",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 2, \"sirka\": 1600, \"stredni_opora\": \"noha\", \"system\": 40}": {
+"hash": "7f836b70b35634cc",
+"otisk": "8c9ae7159a6fad956eac",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 2, \"sirka\": 1600, \"stredni_opora\": \"ram\", \"system\": 30}": {
+"hash": "78470a3ee7ce37c9",
+"otisk": "a1d894eeefe202bf4b37",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 2, \"sirka\": 1600, \"stredni_opora\": \"ram\", \"system\": 35}": {
+"hash": "a021bc7b7bf4fa52",
+"otisk": "2a503f745b077007b30f",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 2, \"sirka\": 1600, \"stredni_opora\": \"ram\", \"system\": 40}": {
+"hash": "4a13f3a7a719fd2f",
+"otisk": "936b694077bc4deabc0b",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 2, \"sirka\": 2100, \"stredni_opora\": \"auto\", \"system\": 30}": {
+"hash": "92068e7798475619",
+"otisk": "387ad1908da24456c2cd",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 2, \"sirka\": 2100, \"stredni_opora\": \"auto\", \"system\": 35}": {
+"hash": "13c9d51fb68f37a7",
+"otisk": "bb612d5ae84b67ce93ca",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 2, \"sirka\": 2100, \"stredni_opora\": \"auto\", \"system\": 40}": {
+"hash": "6fce86c109a5125c",
+"otisk": "d0e290fdc68a3eab3670",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 2, \"sirka\": 2100, \"stredni_opora\": \"noha\", \"system\": 30}": {
+"hash": "838414d87b476259",
+"otisk": "5d6d85bad949ef37faeb",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 2, \"sirka\": 2100, \"stredni_opora\": \"noha\", \"system\": 35}": {
+"hash": "9f6648e753825e65",
+"otisk": "c8fef8ada8c7c5d54123",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 2, \"sirka\": 2100, \"stredni_opora\": \"noha\", \"system\": 40}": {
+"hash": "f2de5bbabb260f1d",
+"otisk": "771d192bdfb1adc610a1",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 2, \"sirka\": 2100, \"stredni_opora\": \"ram\", \"system\": 30}": {
+"hash": "ddf5069f083d12cc",
+"otisk": "387ad1908da24456c2cd",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 2, \"sirka\": 2100, \"stredni_opora\": \"ram\", \"system\": 35}": {
+"hash": "29b7926a7f46dd3a",
+"otisk": "bb612d5ae84b67ce93ca",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 2, \"sirka\": 2100, \"stredni_opora\": \"ram\", \"system\": 40}": {
+"hash": "71ee84988188bc01",
+"otisk": "d0e290fdc68a3eab3670",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 2, \"sirka\": 2800, \"stredni_opora\": \"auto\", \"system\": 30}": {
+"hash": "7bedd12bfa9ddb88",
+"otisk": "7cc2e76c19facf860b1b",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 2, \"sirka\": 2800, \"stredni_opora\": \"auto\", \"system\": 35}": {
+"hash": "fd88434cc4d0a713",
+"otisk": "f2f6e0e9de4b42a9d183",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 2, \"sirka\": 2800, \"stredni_opora\": \"auto\", \"system\": 40}": {
+"hash": "7474f4b190da001f",
+"otisk": "6ca9ac86b9b83676e4cf",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 2, \"sirka\": 2800, \"stredni_opora\": \"noha\", \"system\": 30}": {
+"hash": "620716a2e3e57c98",
+"otisk": "7cc2e76c19facf860b1b",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 2, \"sirka\": 2800, \"stredni_opora\": \"noha\", \"system\": 35}": {
+"hash": "52954bf9d9b410ff",
+"otisk": "f2f6e0e9de4b42a9d183",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 2, \"sirka\": 2800, \"stredni_opora\": \"noha\", \"system\": 40}": {
+"hash": "74af659cf36eab78",
+"otisk": "6ca9ac86b9b83676e4cf",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 2, \"sirka\": 2800, \"stredni_opora\": \"ram\", \"system\": 30}": {
+"hash": "dc205262360055be",
+"otisk": "badec0b666757133877e",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 2, \"sirka\": 2800, \"stredni_opora\": \"ram\", \"system\": 35}": {
+"hash": "e36091f01e5bc101",
+"otisk": "a5aea4b7a99c3e41ebe7",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 1, \"police\": 2, \"sirka\": 2800, \"stredni_opora\": \"ram\", \"system\": 40}": {
+"hash": "2bfbb9ac5d8beefb",
+"otisk": "5ffda5175458548009fb",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 0, \"sirka\": 1280, \"stredni_opora\": \"auto\", \"system\": 30}": {
+"hash": "6860d3a50b77147c",
+"otisk": "cabc220ee93bae8ed15a",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 0, \"sirka\": 1280, \"stredni_opora\": \"auto\", \"system\": 35}": {
+"hash": "d632aa4c91f6db93",
+"otisk": "8389e731f96ca3ae089a",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 0, \"sirka\": 1280, \"stredni_opora\": \"auto\", \"system\": 40}": {
+"hash": "91774050a1cf7429",
+"otisk": "dab557ae00253b91dc3d",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 0, \"sirka\": 1280, \"stredni_opora\": \"noha\", \"system\": 30}": {
+"hash": "6860d3a50b77147c",
+"otisk": "cabc220ee93bae8ed15a",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 0, \"sirka\": 1280, \"stredni_opora\": \"noha\", \"system\": 35}": {
+"hash": "d632aa4c91f6db93",
+"otisk": "8389e731f96ca3ae089a",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 0, \"sirka\": 1280, \"stredni_opora\": \"noha\", \"system\": 40}": {
+"hash": "91774050a1cf7429",
+"otisk": "dab557ae00253b91dc3d",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 0, \"sirka\": 1280, \"stredni_opora\": \"ram\", \"system\": 30}": {
+"hash": "6860d3a50b77147c",
+"otisk": "cabc220ee93bae8ed15a",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 0, \"sirka\": 1280, \"stredni_opora\": \"ram\", \"system\": 35}": {
+"hash": "d632aa4c91f6db93",
+"otisk": "8389e731f96ca3ae089a",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 0, \"sirka\": 1280, \"stredni_opora\": \"ram\", \"system\": 40}": {
+"hash": "91774050a1cf7429",
+"otisk": "dab557ae00253b91dc3d",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 0, \"sirka\": 1500, \"stredni_opora\": \"auto\", \"system\": 30}": {
+"hash": "6f07c4fc379dcd7a",
+"otisk": "de89e140d5d7a5e86d01",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 0, \"sirka\": 1500, \"stredni_opora\": \"auto\", \"system\": 35}": {
+"hash": "a42f097649ecd7e5",
+"otisk": "8f359a456d06da87c691",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 0, \"sirka\": 1500, \"stredni_opora\": \"auto\", \"system\": 40}": {
+"hash": "7a6b6e7586e70763",
+"otisk": "9af4518c17c41c7f767c",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 0, \"sirka\": 1500, \"stredni_opora\": \"noha\", \"system\": 30}": {
+"hash": "6f07c4fc379dcd7a",
+"otisk": "de89e140d5d7a5e86d01",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 0, \"sirka\": 1500, \"stredni_opora\": \"noha\", \"system\": 35}": {
+"hash": "a42f097649ecd7e5",
+"otisk": "8f359a456d06da87c691",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 0, \"sirka\": 1500, \"stredni_opora\": \"noha\", \"system\": 40}": {
+"hash": "7a6b6e7586e70763",
+"otisk": "9af4518c17c41c7f767c",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 0, \"sirka\": 1500, \"stredni_opora\": \"ram\", \"system\": 30}": {
+"hash": "6f07c4fc379dcd7a",
+"otisk": "de89e140d5d7a5e86d01",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 0, \"sirka\": 1500, \"stredni_opora\": \"ram\", \"system\": 35}": {
+"hash": "a42f097649ecd7e5",
+"otisk": "8f359a456d06da87c691",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 0, \"sirka\": 1500, \"stredni_opora\": \"ram\", \"system\": 40}": {
+"hash": "7a6b6e7586e70763",
+"otisk": "9af4518c17c41c7f767c",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 0, \"sirka\": 1600, \"stredni_opora\": \"auto\", \"system\": 30}": {
+"hash": "b5239614b02b66cd",
+"otisk": "17469643ed5a7c0cc1be",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 0, \"sirka\": 1600, \"stredni_opora\": \"auto\", \"system\": 35}": {
+"hash": "66dd75049606b522",
+"otisk": "befc0ab44a8a1a7e2fca",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 0, \"sirka\": 1600, \"stredni_opora\": \"auto\", \"system\": 40}": {
+"hash": "feb785b5ea2c50f8",
+"otisk": "e89e47ea11630b6f20e9",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 0, \"sirka\": 1600, \"stredni_opora\": \"noha\", \"system\": 30}": {
+"hash": "36aa85d6d11fc2b5",
+"otisk": "17469643ed5a7c0cc1be",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 0, \"sirka\": 1600, \"stredni_opora\": \"noha\", \"system\": 35}": {
+"hash": "93c3fa0f50e4430e",
+"otisk": "befc0ab44a8a1a7e2fca",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 0, \"sirka\": 1600, \"stredni_opora\": \"noha\", \"system\": 40}": {
+"hash": "8dcc673e6f8a5d0c",
+"otisk": "e89e47ea11630b6f20e9",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 0, \"sirka\": 1600, \"stredni_opora\": \"ram\", \"system\": 30}": {
+"hash": "2ad278327b9592dd",
+"otisk": "17469643ed5a7c0cc1be",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 0, \"sirka\": 1600, \"stredni_opora\": \"ram\", \"system\": 35}": {
+"hash": "2bb04b3bd77e8aae",
+"otisk": "befc0ab44a8a1a7e2fca",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 0, \"sirka\": 1600, \"stredni_opora\": \"ram\", \"system\": 40}": {
+"hash": "b7c30c956aed9c70",
+"otisk": "e89e47ea11630b6f20e9",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 0, \"sirka\": 2100, \"stredni_opora\": \"auto\", \"system\": 30}": {
+"hash": "da160214bcfaf880",
+"otisk": "307e784f7568a6b57d6f",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 0, \"sirka\": 2100, \"stredni_opora\": \"auto\", \"system\": 35}": {
+"hash": "9e922f8ca671b736",
+"otisk": "58e4c40a64fadc1c33b0",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 0, \"sirka\": 2100, \"stredni_opora\": \"auto\", \"system\": 40}": {
+"hash": "5c9750a83b89da0f",
+"otisk": "7f8f90be23bdf0574852",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 0, \"sirka\": 2100, \"stredni_opora\": \"noha\", \"system\": 30}": {
+"hash": "94a08eae6122f55b",
+"otisk": "307e784f7568a6b57d6f",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 0, \"sirka\": 2100, \"stredni_opora\": \"noha\", \"system\": 35}": {
+"hash": "ef7a87b2c8dc4624",
+"otisk": "58e4c40a64fadc1c33b0",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 0, \"sirka\": 2100, \"stredni_opora\": \"noha\", \"system\": 40}": {
+"hash": "82dfc299c2551523",
+"otisk": "7f8f90be23bdf0574852",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 0, \"sirka\": 2100, \"stredni_opora\": \"ram\", \"system\": 30}": {
+"hash": "f2d55e2cdcf69fcf",
+"otisk": "307e784f7568a6b57d6f",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 0, \"sirka\": 2100, \"stredni_opora\": \"ram\", \"system\": 35}": {
+"hash": "ab3ec2ef3a77d6db",
+"otisk": "58e4c40a64fadc1c33b0",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 0, \"sirka\": 2100, \"stredni_opora\": \"ram\", \"system\": 40}": {
+"hash": "61830a928ea7b886",
+"otisk": "7f8f90be23bdf0574852",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 0, \"sirka\": 2800, \"stredni_opora\": \"auto\", \"system\": 30}": {
+"hash": "75afac00c1a15888",
+"otisk": "d8b5bad9f7da5edb75a5",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 0, \"sirka\": 2800, \"stredni_opora\": \"auto\", \"system\": 35}": {
+"hash": "505e4c825c1a1537",
+"otisk": "a6f41fe144b4a9cbf4dd",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 0, \"sirka\": 2800, \"stredni_opora\": \"auto\", \"system\": 40}": {
+"hash": "c176f11d46499d98",
+"otisk": "7b95769948e2e88410a2",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 0, \"sirka\": 2800, \"stredni_opora\": \"noha\", \"system\": 30}": {
+"hash": "8eb6596a67f29881",
+"otisk": "d8b5bad9f7da5edb75a5",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 0, \"sirka\": 2800, \"stredni_opora\": \"noha\", \"system\": 35}": {
+"hash": "40162111556806c1",
+"otisk": "a6f41fe144b4a9cbf4dd",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 0, \"sirka\": 2800, \"stredni_opora\": \"noha\", \"system\": 40}": {
+"hash": "3c1efadbbc892c97",
+"otisk": "7b95769948e2e88410a2",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 0, \"sirka\": 2800, \"stredni_opora\": \"ram\", \"system\": 30}": {
+"hash": "be1c9aeba839cce0",
+"otisk": "d8b5bad9f7da5edb75a5",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 0, \"sirka\": 2800, \"stredni_opora\": \"ram\", \"system\": 35}": {
+"hash": "f66414a0c69c6830",
+"otisk": "a6f41fe144b4a9cbf4dd",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 0, \"sirka\": 2800, \"stredni_opora\": \"ram\", \"system\": 40}": {
+"hash": "94e60d7616318c57",
+"otisk": "7b95769948e2e88410a2",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 1, \"sirka\": 1280, \"stredni_opora\": \"auto\", \"system\": 30}": {
+"hash": "20ca867b1c891e71",
+"otisk": "f1dbf624974081cc7987",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 1, \"sirka\": 1280, \"stredni_opora\": \"auto\", \"system\": 35}": {
+"hash": "8a3f39153321e95f",
+"otisk": "1ad189812ef86ff4b1f6",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 1, \"sirka\": 1280, \"stredni_opora\": \"auto\", \"system\": 40}": {
+"hash": "43a2d7c6bed6c5f3",
+"otisk": "0cd0e4aac433547a3124",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 1, \"sirka\": 1280, \"stredni_opora\": \"noha\", \"system\": 30}": {
+"hash": "20ca867b1c891e71",
+"otisk": "f1dbf624974081cc7987",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 1, \"sirka\": 1280, \"stredni_opora\": \"noha\", \"system\": 35}": {
+"hash": "8a3f39153321e95f",
+"otisk": "1ad189812ef86ff4b1f6",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 1, \"sirka\": 1280, \"stredni_opora\": \"noha\", \"system\": 40}": {
+"hash": "43a2d7c6bed6c5f3",
+"otisk": "0cd0e4aac433547a3124",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 1, \"sirka\": 1280, \"stredni_opora\": \"ram\", \"system\": 30}": {
+"hash": "20ca867b1c891e71",
+"otisk": "f1dbf624974081cc7987",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 1, \"sirka\": 1280, \"stredni_opora\": \"ram\", \"system\": 35}": {
+"hash": "8a3f39153321e95f",
+"otisk": "1ad189812ef86ff4b1f6",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 1, \"sirka\": 1280, \"stredni_opora\": \"ram\", \"system\": 40}": {
+"hash": "43a2d7c6bed6c5f3",
+"otisk": "0cd0e4aac433547a3124",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 1, \"sirka\": 1500, \"stredni_opora\": \"auto\", \"system\": 30}": {
+"hash": "8696ff4791884458",
+"otisk": "f1ec4ea34f40160c5df9",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 1, \"sirka\": 1500, \"stredni_opora\": \"auto\", \"system\": 35}": {
+"hash": "6e1f8e2538f0d164",
+"otisk": "115c08f8c46cdcbd8c60",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 1, \"sirka\": 1500, \"stredni_opora\": \"auto\", \"system\": 40}": {
+"hash": "2930559966bd876c",
+"otisk": "7f6b158d277bf3dedbd8",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 1, \"sirka\": 1500, \"stredni_opora\": \"noha\", \"system\": 30}": {
+"hash": "8696ff4791884458",
+"otisk": "f1ec4ea34f40160c5df9",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 1, \"sirka\": 1500, \"stredni_opora\": \"noha\", \"system\": 35}": {
+"hash": "6e1f8e2538f0d164",
+"otisk": "115c08f8c46cdcbd8c60",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 1, \"sirka\": 1500, \"stredni_opora\": \"noha\", \"system\": 40}": {
+"hash": "2930559966bd876c",
+"otisk": "7f6b158d277bf3dedbd8",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 1, \"sirka\": 1500, \"stredni_opora\": \"ram\", \"system\": 30}": {
+"hash": "8696ff4791884458",
+"otisk": "f1ec4ea34f40160c5df9",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 1, \"sirka\": 1500, \"stredni_opora\": \"ram\", \"system\": 35}": {
+"hash": "6e1f8e2538f0d164",
+"otisk": "115c08f8c46cdcbd8c60",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 1, \"sirka\": 1500, \"stredni_opora\": \"ram\", \"system\": 40}": {
+"hash": "2930559966bd876c",
+"otisk": "7f6b158d277bf3dedbd8",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 1, \"sirka\": 1600, \"stredni_opora\": \"auto\", \"system\": 30}": {
+"hash": "1ca9aa102923fe02",
+"otisk": "8c85cef2cc9341882c3b",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 1, \"sirka\": 1600, \"stredni_opora\": \"auto\", \"system\": 35}": {
+"hash": "917e953f27f7c73e",
+"otisk": "a94e9f6ee704f40fdfd1",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 1, \"sirka\": 1600, \"stredni_opora\": \"auto\", \"system\": 40}": {
+"hash": "dfcafedb2ae1a0ae",
+"otisk": "f6ad773de99752d22750",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 1, \"sirka\": 1600, \"stredni_opora\": \"noha\", \"system\": 30}": {
+"hash": "782c6721195b0da2",
+"otisk": "f3c4133c5699c4907a8d",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 1, \"sirka\": 1600, \"stredni_opora\": \"noha\", \"system\": 35}": {
+"hash": "71c435228fc55d97",
+"otisk": "2e7b171cc32a68043f35",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 1, \"sirka\": 1600, \"stredni_opora\": \"noha\", \"system\": 40}": {
+"hash": "7f836b70b35634cc",
+"otisk": "8c9ae7159a6fad956eac",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 1, \"sirka\": 1600, \"stredni_opora\": \"ram\", \"system\": 30}": {
+"hash": "1a21c3e6c4644852",
+"otisk": "8c85cef2cc9341882c3b",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 1, \"sirka\": 1600, \"stredni_opora\": \"ram\", \"system\": 35}": {
+"hash": "dc18970b7ca8dd23",
+"otisk": "a94e9f6ee704f40fdfd1",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 1, \"sirka\": 1600, \"stredni_opora\": \"ram\", \"system\": 40}": {
+"hash": "c5fcc38c6c6ca5e7",
+"otisk": "f6ad773de99752d22750",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 1, \"sirka\": 2100, \"stredni_opora\": \"auto\", \"system\": 30}": {
+"hash": "3f0dbd734ba78633",
+"otisk": "485b58009262bb3d28fa",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 1, \"sirka\": 2100, \"stredni_opora\": \"auto\", \"system\": 35}": {
+"hash": "7a595deda814e483",
+"otisk": "6fda5d586496fb8d9de8",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 1, \"sirka\": 2100, \"stredni_opora\": \"auto\", \"system\": 40}": {
+"hash": "d08bd68141f2f1fd",
+"otisk": "65cbf1bb01e0a7e55b3d",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 1, \"sirka\": 2100, \"stredni_opora\": \"noha\", \"system\": 30}": {
+"hash": "838414d87b476259",
+"otisk": "5d6d85bad949ef37faeb",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 1, \"sirka\": 2100, \"stredni_opora\": \"noha\", \"system\": 35}": {
+"hash": "9f6648e753825e65",
+"otisk": "c8fef8ada8c7c5d54123",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 1, \"sirka\": 2100, \"stredni_opora\": \"noha\", \"system\": 40}": {
+"hash": "f2de5bbabb260f1d",
+"otisk": "771d192bdfb1adc610a1",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 1, \"sirka\": 2100, \"stredni_opora\": \"ram\", \"system\": 30}": {
+"hash": "bbb353e17e43c218",
+"otisk": "485b58009262bb3d28fa",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 1, \"sirka\": 2100, \"stredni_opora\": \"ram\", \"system\": 35}": {
+"hash": "20b7350c1f08016b",
+"otisk": "6fda5d586496fb8d9de8",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 1, \"sirka\": 2100, \"stredni_opora\": \"ram\", \"system\": 40}": {
+"hash": "89d62045fa458483",
+"otisk": "65cbf1bb01e0a7e55b3d",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 1, \"sirka\": 2800, \"stredni_opora\": \"auto\", \"system\": 30}": {
+"hash": "4e3a77bc1935732c",
+"otisk": "fb340dd77eb530de7a5b",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 1, \"sirka\": 2800, \"stredni_opora\": \"auto\", \"system\": 35}": {
+"hash": "6f905c0bc61a2d24",
+"otisk": "73dfe0090077962e9d4b",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 1, \"sirka\": 2800, \"stredni_opora\": \"auto\", \"system\": 40}": {
+"hash": "91e77af33acf436b",
+"otisk": "8b58c6d8acf6ea36870a",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 1, \"sirka\": 2800, \"stredni_opora\": \"noha\", \"system\": 30}": {
+"hash": "ac82de078fb1f0ee",
+"otisk": "fb340dd77eb530de7a5b",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 1, \"sirka\": 2800, \"stredni_opora\": \"noha\", \"system\": 35}": {
+"hash": "cdfccf143f460c75",
+"otisk": "73dfe0090077962e9d4b",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 1, \"sirka\": 2800, \"stredni_opora\": \"noha\", \"system\": 40}": {
+"hash": "b736fd58d05803a4",
+"otisk": "8b58c6d8acf6ea36870a",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 1, \"sirka\": 2800, \"stredni_opora\": \"ram\", \"system\": 30}": {
+"hash": "ec521de2495ff7e3",
+"otisk": "10287ea55fdd5961acbc",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 1, \"sirka\": 2800, \"stredni_opora\": \"ram\", \"system\": 35}": {
+"hash": "4c418915b128936c",
+"otisk": "42e4236b623187f52e1a",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 1, \"sirka\": 2800, \"stredni_opora\": \"ram\", \"system\": 40}": {
+"hash": "bafe10dbb4f01609",
+"otisk": "be1cd5cffb182eb5e622",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 2, \"sirka\": 1280, \"stredni_opora\": \"auto\", \"system\": 30}": {
+"hash": "20ca867b1c891e71",
+"otisk": "f1dbf624974081cc7987",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 2, \"sirka\": 1280, \"stredni_opora\": \"auto\", \"system\": 35}": {
+"hash": "8a3f39153321e95f",
+"otisk": "1ad189812ef86ff4b1f6",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 2, \"sirka\": 1280, \"stredni_opora\": \"auto\", \"system\": 40}": {
+"hash": "43a2d7c6bed6c5f3",
+"otisk": "0cd0e4aac433547a3124",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 2, \"sirka\": 1280, \"stredni_opora\": \"noha\", \"system\": 30}": {
+"hash": "20ca867b1c891e71",
+"otisk": "f1dbf624974081cc7987",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 2, \"sirka\": 1280, \"stredni_opora\": \"noha\", \"system\": 35}": {
+"hash": "8a3f39153321e95f",
+"otisk": "1ad189812ef86ff4b1f6",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 2, \"sirka\": 1280, \"stredni_opora\": \"noha\", \"system\": 40}": {
+"hash": "43a2d7c6bed6c5f3",
+"otisk": "0cd0e4aac433547a3124",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 2, \"sirka\": 1280, \"stredni_opora\": \"ram\", \"system\": 30}": {
+"hash": "20ca867b1c891e71",
+"otisk": "f1dbf624974081cc7987",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 2, \"sirka\": 1280, \"stredni_opora\": \"ram\", \"system\": 35}": {
+"hash": "8a3f39153321e95f",
+"otisk": "1ad189812ef86ff4b1f6",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 2, \"sirka\": 1280, \"stredni_opora\": \"ram\", \"system\": 40}": {
+"hash": "43a2d7c6bed6c5f3",
+"otisk": "0cd0e4aac433547a3124",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 2, \"sirka\": 1500, \"stredni_opora\": \"auto\", \"system\": 30}": {
+"hash": "8696ff4791884458",
+"otisk": "f1ec4ea34f40160c5df9",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 2, \"sirka\": 1500, \"stredni_opora\": \"auto\", \"system\": 35}": {
+"hash": "6e1f8e2538f0d164",
+"otisk": "115c08f8c46cdcbd8c60",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 2, \"sirka\": 1500, \"stredni_opora\": \"auto\", \"system\": 40}": {
+"hash": "2930559966bd876c",
+"otisk": "7f6b158d277bf3dedbd8",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 2, \"sirka\": 1500, \"stredni_opora\": \"noha\", \"system\": 30}": {
+"hash": "8696ff4791884458",
+"otisk": "f1ec4ea34f40160c5df9",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 2, \"sirka\": 1500, \"stredni_opora\": \"noha\", \"system\": 35}": {
+"hash": "6e1f8e2538f0d164",
+"otisk": "115c08f8c46cdcbd8c60",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 2, \"sirka\": 1500, \"stredni_opora\": \"noha\", \"system\": 40}": {
+"hash": "2930559966bd876c",
+"otisk": "7f6b158d277bf3dedbd8",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 2, \"sirka\": 1500, \"stredni_opora\": \"ram\", \"system\": 30}": {
+"hash": "8696ff4791884458",
+"otisk": "f1ec4ea34f40160c5df9",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 2, \"sirka\": 1500, \"stredni_opora\": \"ram\", \"system\": 35}": {
+"hash": "6e1f8e2538f0d164",
+"otisk": "115c08f8c46cdcbd8c60",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 2, \"sirka\": 1500, \"stredni_opora\": \"ram\", \"system\": 40}": {
+"hash": "2930559966bd876c",
+"otisk": "7f6b158d277bf3dedbd8",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 2, \"sirka\": 1600, \"stredni_opora\": \"auto\", \"system\": 30}": {
+"hash": "1ca9aa102923fe02",
+"otisk": "8c85cef2cc9341882c3b",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 2, \"sirka\": 1600, \"stredni_opora\": \"auto\", \"system\": 35}": {
+"hash": "917e953f27f7c73e",
+"otisk": "a94e9f6ee704f40fdfd1",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 2, \"sirka\": 1600, \"stredni_opora\": \"auto\", \"system\": 40}": {
+"hash": "dfcafedb2ae1a0ae",
+"otisk": "f6ad773de99752d22750",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 2, \"sirka\": 1600, \"stredni_opora\": \"noha\", \"system\": 30}": {
+"hash": "782c6721195b0da2",
+"otisk": "f3c4133c5699c4907a8d",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 2, \"sirka\": 1600, \"stredni_opora\": \"noha\", \"system\": 35}": {
+"hash": "71c435228fc55d97",
+"otisk": "2e7b171cc32a68043f35",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 2, \"sirka\": 1600, \"stredni_opora\": \"noha\", \"system\": 40}": {
+"hash": "7f836b70b35634cc",
+"otisk": "8c9ae7159a6fad956eac",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 2, \"sirka\": 1600, \"stredni_opora\": \"ram\", \"system\": 30}": {
+"hash": "1a21c3e6c4644852",
+"otisk": "8c85cef2cc9341882c3b",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 2, \"sirka\": 1600, \"stredni_opora\": \"ram\", \"system\": 35}": {
+"hash": "dc18970b7ca8dd23",
+"otisk": "a94e9f6ee704f40fdfd1",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 2, \"sirka\": 1600, \"stredni_opora\": \"ram\", \"system\": 40}": {
+"hash": "c5fcc38c6c6ca5e7",
+"otisk": "f6ad773de99752d22750",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 2, \"sirka\": 2100, \"stredni_opora\": \"auto\", \"system\": 30}": {
+"hash": "3f0dbd734ba78633",
+"otisk": "485b58009262bb3d28fa",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 2, \"sirka\": 2100, \"stredni_opora\": \"auto\", \"system\": 35}": {
+"hash": "7a595deda814e483",
+"otisk": "6fda5d586496fb8d9de8",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 2, \"sirka\": 2100, \"stredni_opora\": \"auto\", \"system\": 40}": {
+"hash": "d08bd68141f2f1fd",
+"otisk": "65cbf1bb01e0a7e55b3d",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 2, \"sirka\": 2100, \"stredni_opora\": \"noha\", \"system\": 30}": {
+"hash": "838414d87b476259",
+"otisk": "5d6d85bad949ef37faeb",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 2, \"sirka\": 2100, \"stredni_opora\": \"noha\", \"system\": 35}": {
+"hash": "9f6648e753825e65",
+"otisk": "c8fef8ada8c7c5d54123",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 2, \"sirka\": 2100, \"stredni_opora\": \"noha\", \"system\": 40}": {
+"hash": "f2de5bbabb260f1d",
+"otisk": "771d192bdfb1adc610a1",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 2, \"sirka\": 2100, \"stredni_opora\": \"ram\", \"system\": 30}": {
+"hash": "bbb353e17e43c218",
+"otisk": "485b58009262bb3d28fa",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 2, \"sirka\": 2100, \"stredni_opora\": \"ram\", \"system\": 35}": {
+"hash": "20b7350c1f08016b",
+"otisk": "6fda5d586496fb8d9de8",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 2, \"sirka\": 2100, \"stredni_opora\": \"ram\", \"system\": 40}": {
+"hash": "89d62045fa458483",
+"otisk": "65cbf1bb01e0a7e55b3d",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 2, \"sirka\": 2800, \"stredni_opora\": \"auto\", \"system\": 30}": {
+"hash": "4e3a77bc1935732c",
+"otisk": "fb340dd77eb530de7a5b",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 2, \"sirka\": 2800, \"stredni_opora\": \"auto\", \"system\": 35}": {
+"hash": "6f905c0bc61a2d24",
+"otisk": "73dfe0090077962e9d4b",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 2, \"sirka\": 2800, \"stredni_opora\": \"auto\", \"system\": 40}": {
+"hash": "91e77af33acf436b",
+"otisk": "8b58c6d8acf6ea36870a",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 2, \"sirka\": 2800, \"stredni_opora\": \"noha\", \"system\": 30}": {
+"hash": "ac82de078fb1f0ee",
+"otisk": "fb340dd77eb530de7a5b",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 2, \"sirka\": 2800, \"stredni_opora\": \"noha\", \"system\": 35}": {
+"hash": "cdfccf143f460c75",
+"otisk": "73dfe0090077962e9d4b",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 2, \"sirka\": 2800, \"stredni_opora\": \"noha\", \"system\": 40}": {
+"hash": "b736fd58d05803a4",
+"otisk": "8b58c6d8acf6ea36870a",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 2, \"sirka\": 2800, \"stredni_opora\": \"ram\", \"system\": 30}": {
+"hash": "ec521de2495ff7e3",
+"otisk": "10287ea55fdd5961acbc",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 2, \"sirka\": 2800, \"stredni_opora\": \"ram\", \"system\": 35}": {
+"hash": "4c418915b128936c",
+"otisk": "42e4236b623187f52e1a",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 2, \"police\": 2, \"sirka\": 2800, \"stredni_opora\": \"ram\", \"system\": 40}": {
+"hash": "bafe10dbb4f01609",
+"otisk": "be1cd5cffb182eb5e622",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 0, \"sirka\": 1280, \"stredni_opora\": \"auto\", \"system\": 30}": {
+"hash": "6860d3a50b77147c",
+"otisk": "cabc220ee93bae8ed15a",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 0, \"sirka\": 1280, \"stredni_opora\": \"auto\", \"system\": 35}": {
+"hash": "d632aa4c91f6db93",
+"otisk": "8389e731f96ca3ae089a",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 0, \"sirka\": 1280, \"stredni_opora\": \"auto\", \"system\": 40}": {
+"hash": "91774050a1cf7429",
+"otisk": "dab557ae00253b91dc3d",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 0, \"sirka\": 1280, \"stredni_opora\": \"noha\", \"system\": 30}": {
+"hash": "6860d3a50b77147c",
+"otisk": "cabc220ee93bae8ed15a",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 0, \"sirka\": 1280, \"stredni_opora\": \"noha\", \"system\": 35}": {
+"hash": "d632aa4c91f6db93",
+"otisk": "8389e731f96ca3ae089a",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 0, \"sirka\": 1280, \"stredni_opora\": \"noha\", \"system\": 40}": {
+"hash": "91774050a1cf7429",
+"otisk": "dab557ae00253b91dc3d",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 0, \"sirka\": 1280, \"stredni_opora\": \"ram\", \"system\": 30}": {
+"hash": "6860d3a50b77147c",
+"otisk": "cabc220ee93bae8ed15a",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 0, \"sirka\": 1280, \"stredni_opora\": \"ram\", \"system\": 35}": {
+"hash": "d632aa4c91f6db93",
+"otisk": "8389e731f96ca3ae089a",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 0, \"sirka\": 1280, \"stredni_opora\": \"ram\", \"system\": 40}": {
+"hash": "91774050a1cf7429",
+"otisk": "dab557ae00253b91dc3d",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 0, \"sirka\": 1500, \"stredni_opora\": \"auto\", \"system\": 30}": {
+"hash": "6f07c4fc379dcd7a",
+"otisk": "de89e140d5d7a5e86d01",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 0, \"sirka\": 1500, \"stredni_opora\": \"auto\", \"system\": 35}": {
+"hash": "a42f097649ecd7e5",
+"otisk": "8f359a456d06da87c691",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 0, \"sirka\": 1500, \"stredni_opora\": \"auto\", \"system\": 40}": {
+"hash": "7a6b6e7586e70763",
+"otisk": "9af4518c17c41c7f767c",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 0, \"sirka\": 1500, \"stredni_opora\": \"noha\", \"system\": 30}": {
+"hash": "6f07c4fc379dcd7a",
+"otisk": "de89e140d5d7a5e86d01",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 0, \"sirka\": 1500, \"stredni_opora\": \"noha\", \"system\": 35}": {
+"hash": "a42f097649ecd7e5",
+"otisk": "8f359a456d06da87c691",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 0, \"sirka\": 1500, \"stredni_opora\": \"noha\", \"system\": 40}": {
+"hash": "7a6b6e7586e70763",
+"otisk": "9af4518c17c41c7f767c",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 0, \"sirka\": 1500, \"stredni_opora\": \"ram\", \"system\": 30}": {
+"hash": "6f07c4fc379dcd7a",
+"otisk": "de89e140d5d7a5e86d01",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 0, \"sirka\": 1500, \"stredni_opora\": \"ram\", \"system\": 35}": {
+"hash": "a42f097649ecd7e5",
+"otisk": "8f359a456d06da87c691",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 0, \"sirka\": 1500, \"stredni_opora\": \"ram\", \"system\": 40}": {
+"hash": "7a6b6e7586e70763",
+"otisk": "9af4518c17c41c7f767c",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 0, \"sirka\": 1600, \"stredni_opora\": \"auto\", \"system\": 30}": {
+"hash": "b5239614b02b66cd",
+"otisk": "17469643ed5a7c0cc1be",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 0, \"sirka\": 1600, \"stredni_opora\": \"auto\", \"system\": 35}": {
+"hash": "66dd75049606b522",
+"otisk": "befc0ab44a8a1a7e2fca",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 0, \"sirka\": 1600, \"stredni_opora\": \"auto\", \"system\": 40}": {
+"hash": "feb785b5ea2c50f8",
+"otisk": "e89e47ea11630b6f20e9",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 0, \"sirka\": 1600, \"stredni_opora\": \"noha\", \"system\": 30}": {
+"hash": "36aa85d6d11fc2b5",
+"otisk": "17469643ed5a7c0cc1be",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 0, \"sirka\": 1600, \"stredni_opora\": \"noha\", \"system\": 35}": {
+"hash": "93c3fa0f50e4430e",
+"otisk": "befc0ab44a8a1a7e2fca",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 0, \"sirka\": 1600, \"stredni_opora\": \"noha\", \"system\": 40}": {
+"hash": "8dcc673e6f8a5d0c",
+"otisk": "e89e47ea11630b6f20e9",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 0, \"sirka\": 1600, \"stredni_opora\": \"ram\", \"system\": 30}": {
+"hash": "2ad278327b9592dd",
+"otisk": "17469643ed5a7c0cc1be",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 0, \"sirka\": 1600, \"stredni_opora\": \"ram\", \"system\": 35}": {
+"hash": "2bb04b3bd77e8aae",
+"otisk": "befc0ab44a8a1a7e2fca",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 0, \"sirka\": 1600, \"stredni_opora\": \"ram\", \"system\": 40}": {
+"hash": "b7c30c956aed9c70",
+"otisk": "e89e47ea11630b6f20e9",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 0, \"sirka\": 2100, \"stredni_opora\": \"auto\", \"system\": 30}": {
+"hash": "da160214bcfaf880",
+"otisk": "307e784f7568a6b57d6f",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 0, \"sirka\": 2100, \"stredni_opora\": \"auto\", \"system\": 35}": {
+"hash": "9e922f8ca671b736",
+"otisk": "58e4c40a64fadc1c33b0",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 0, \"sirka\": 2100, \"stredni_opora\": \"auto\", \"system\": 40}": {
+"hash": "5c9750a83b89da0f",
+"otisk": "7f8f90be23bdf0574852",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 0, \"sirka\": 2100, \"stredni_opora\": \"noha\", \"system\": 30}": {
+"hash": "94a08eae6122f55b",
+"otisk": "307e784f7568a6b57d6f",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 0, \"sirka\": 2100, \"stredni_opora\": \"noha\", \"system\": 35}": {
+"hash": "ef7a87b2c8dc4624",
+"otisk": "58e4c40a64fadc1c33b0",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 0, \"sirka\": 2100, \"stredni_opora\": \"noha\", \"system\": 40}": {
+"hash": "82dfc299c2551523",
+"otisk": "7f8f90be23bdf0574852",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 0, \"sirka\": 2100, \"stredni_opora\": \"ram\", \"system\": 30}": {
+"hash": "f2d55e2cdcf69fcf",
+"otisk": "307e784f7568a6b57d6f",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 0, \"sirka\": 2100, \"stredni_opora\": \"ram\", \"system\": 35}": {
+"hash": "ab3ec2ef3a77d6db",
+"otisk": "58e4c40a64fadc1c33b0",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 0, \"sirka\": 2100, \"stredni_opora\": \"ram\", \"system\": 40}": {
+"hash": "61830a928ea7b886",
+"otisk": "7f8f90be23bdf0574852",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 0, \"sirka\": 2800, \"stredni_opora\": \"auto\", \"system\": 30}": {
+"hash": "f4558f2c1894b603",
+"otisk": "c2fcb244cbbd98e3d7c8",
+"panelu": 3,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 0, \"sirka\": 2800, \"stredni_opora\": \"auto\", \"system\": 35}": {
+"hash": "df5a4224c036984b",
+"otisk": "71c31cef1c188416bf62",
+"panelu": 3,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 0, \"sirka\": 2800, \"stredni_opora\": \"auto\", \"system\": 40}": {
+"hash": "18ac1ddfc92a9f5b",
+"otisk": "12aeb2dd26a770399500",
+"panelu": 3,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 0, \"sirka\": 2800, \"stredni_opora\": \"noha\", \"system\": 30}": {
+"hash": "ce4b87ae126f2ef8",
+"otisk": "c2fcb244cbbd98e3d7c8",
+"panelu": 3,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 0, \"sirka\": 2800, \"stredni_opora\": \"noha\", \"system\": 35}": {
+"hash": "4ec324525bf3eb31",
+"otisk": "71c31cef1c188416bf62",
+"panelu": 3,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 0, \"sirka\": 2800, \"stredni_opora\": \"noha\", \"system\": 40}": {
+"hash": "0d155be09da282b7",
+"otisk": "12aeb2dd26a770399500",
+"panelu": 3,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 0, \"sirka\": 2800, \"stredni_opora\": \"ram\", \"system\": 30}": {
+"hash": "30ea80f29bbaef7b",
+"otisk": "c2fcb244cbbd98e3d7c8",
+"panelu": 3,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 0, \"sirka\": 2800, \"stredni_opora\": \"ram\", \"system\": 35}": {
+"hash": "4fd2de5978989a24",
+"otisk": "71c31cef1c188416bf62",
+"panelu": 3,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 0, \"sirka\": 2800, \"stredni_opora\": \"ram\", \"system\": 40}": {
+"hash": "41436d743a49b51f",
+"otisk": "12aeb2dd26a770399500",
+"panelu": 3,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 1, \"sirka\": 1280, \"stredni_opora\": \"auto\", \"system\": 30}": {
+"hash": "20ca867b1c891e71",
+"otisk": "f1dbf624974081cc7987",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 1, \"sirka\": 1280, \"stredni_opora\": \"auto\", \"system\": 35}": {
+"hash": "8a3f39153321e95f",
+"otisk": "1ad189812ef86ff4b1f6",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 1, \"sirka\": 1280, \"stredni_opora\": \"auto\", \"system\": 40}": {
+"hash": "43a2d7c6bed6c5f3",
+"otisk": "0cd0e4aac433547a3124",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 1, \"sirka\": 1280, \"stredni_opora\": \"noha\", \"system\": 30}": {
+"hash": "20ca867b1c891e71",
+"otisk": "f1dbf624974081cc7987",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 1, \"sirka\": 1280, \"stredni_opora\": \"noha\", \"system\": 35}": {
+"hash": "8a3f39153321e95f",
+"otisk": "1ad189812ef86ff4b1f6",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 1, \"sirka\": 1280, \"stredni_opora\": \"noha\", \"system\": 40}": {
+"hash": "43a2d7c6bed6c5f3",
+"otisk": "0cd0e4aac433547a3124",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 1, \"sirka\": 1280, \"stredni_opora\": \"ram\", \"system\": 30}": {
+"hash": "20ca867b1c891e71",
+"otisk": "f1dbf624974081cc7987",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 1, \"sirka\": 1280, \"stredni_opora\": \"ram\", \"system\": 35}": {
+"hash": "8a3f39153321e95f",
+"otisk": "1ad189812ef86ff4b1f6",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 1, \"sirka\": 1280, \"stredni_opora\": \"ram\", \"system\": 40}": {
+"hash": "43a2d7c6bed6c5f3",
+"otisk": "0cd0e4aac433547a3124",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 1, \"sirka\": 1500, \"stredni_opora\": \"auto\", \"system\": 30}": {
+"hash": "8696ff4791884458",
+"otisk": "f1ec4ea34f40160c5df9",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 1, \"sirka\": 1500, \"stredni_opora\": \"auto\", \"system\": 35}": {
+"hash": "6e1f8e2538f0d164",
+"otisk": "115c08f8c46cdcbd8c60",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 1, \"sirka\": 1500, \"stredni_opora\": \"auto\", \"system\": 40}": {
+"hash": "2930559966bd876c",
+"otisk": "7f6b158d277bf3dedbd8",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 1, \"sirka\": 1500, \"stredni_opora\": \"noha\", \"system\": 30}": {
+"hash": "8696ff4791884458",
+"otisk": "f1ec4ea34f40160c5df9",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 1, \"sirka\": 1500, \"stredni_opora\": \"noha\", \"system\": 35}": {
+"hash": "6e1f8e2538f0d164",
+"otisk": "115c08f8c46cdcbd8c60",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 1, \"sirka\": 1500, \"stredni_opora\": \"noha\", \"system\": 40}": {
+"hash": "2930559966bd876c",
+"otisk": "7f6b158d277bf3dedbd8",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 1, \"sirka\": 1500, \"stredni_opora\": \"ram\", \"system\": 30}": {
+"hash": "8696ff4791884458",
+"otisk": "f1ec4ea34f40160c5df9",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 1, \"sirka\": 1500, \"stredni_opora\": \"ram\", \"system\": 35}": {
+"hash": "6e1f8e2538f0d164",
+"otisk": "115c08f8c46cdcbd8c60",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 1, \"sirka\": 1500, \"stredni_opora\": \"ram\", \"system\": 40}": {
+"hash": "2930559966bd876c",
+"otisk": "7f6b158d277bf3dedbd8",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 1, \"sirka\": 1600, \"stredni_opora\": \"auto\", \"system\": 30}": {
+"hash": "1ca9aa102923fe02",
+"otisk": "8c85cef2cc9341882c3b",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 1, \"sirka\": 1600, \"stredni_opora\": \"auto\", \"system\": 35}": {
+"hash": "917e953f27f7c73e",
+"otisk": "a94e9f6ee704f40fdfd1",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 1, \"sirka\": 1600, \"stredni_opora\": \"auto\", \"system\": 40}": {
+"hash": "dfcafedb2ae1a0ae",
+"otisk": "f6ad773de99752d22750",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 1, \"sirka\": 1600, \"stredni_opora\": \"noha\", \"system\": 30}": {
+"hash": "782c6721195b0da2",
+"otisk": "f3c4133c5699c4907a8d",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 1, \"sirka\": 1600, \"stredni_opora\": \"noha\", \"system\": 35}": {
+"hash": "71c435228fc55d97",
+"otisk": "2e7b171cc32a68043f35",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 1, \"sirka\": 1600, \"stredni_opora\": \"noha\", \"system\": 40}": {
+"hash": "7f836b70b35634cc",
+"otisk": "8c9ae7159a6fad956eac",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 1, \"sirka\": 1600, \"stredni_opora\": \"ram\", \"system\": 30}": {
+"hash": "1a21c3e6c4644852",
+"otisk": "8c85cef2cc9341882c3b",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 1, \"sirka\": 1600, \"stredni_opora\": \"ram\", \"system\": 35}": {
+"hash": "dc18970b7ca8dd23",
+"otisk": "a94e9f6ee704f40fdfd1",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 1, \"sirka\": 1600, \"stredni_opora\": \"ram\", \"system\": 40}": {
+"hash": "c5fcc38c6c6ca5e7",
+"otisk": "f6ad773de99752d22750",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 1, \"sirka\": 2100, \"stredni_opora\": \"auto\", \"system\": 30}": {
+"hash": "3f0dbd734ba78633",
+"otisk": "485b58009262bb3d28fa",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 1, \"sirka\": 2100, \"stredni_opora\": \"auto\", \"system\": 35}": {
+"hash": "7a595deda814e483",
+"otisk": "6fda5d586496fb8d9de8",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 1, \"sirka\": 2100, \"stredni_opora\": \"auto\", \"system\": 40}": {
+"hash": "d08bd68141f2f1fd",
+"otisk": "65cbf1bb01e0a7e55b3d",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 1, \"sirka\": 2100, \"stredni_opora\": \"noha\", \"system\": 30}": {
+"hash": "838414d87b476259",
+"otisk": "5d6d85bad949ef37faeb",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 1, \"sirka\": 2100, \"stredni_opora\": \"noha\", \"system\": 35}": {
+"hash": "9f6648e753825e65",
+"otisk": "c8fef8ada8c7c5d54123",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 1, \"sirka\": 2100, \"stredni_opora\": \"noha\", \"system\": 40}": {
+"hash": "f2de5bbabb260f1d",
+"otisk": "771d192bdfb1adc610a1",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 1, \"sirka\": 2100, \"stredni_opora\": \"ram\", \"system\": 30}": {
+"hash": "bbb353e17e43c218",
+"otisk": "485b58009262bb3d28fa",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 1, \"sirka\": 2100, \"stredni_opora\": \"ram\", \"system\": 35}": {
+"hash": "20b7350c1f08016b",
+"otisk": "6fda5d586496fb8d9de8",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 1, \"sirka\": 2100, \"stredni_opora\": \"ram\", \"system\": 40}": {
+"hash": "89d62045fa458483",
+"otisk": "65cbf1bb01e0a7e55b3d",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 1, \"sirka\": 2800, \"stredni_opora\": \"auto\", \"system\": 30}": {
+"hash": "523c70e2ca526997",
+"otisk": "64b7fb18f98a0d5bae3e",
+"panelu": 3,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 1, \"sirka\": 2800, \"stredni_opora\": \"auto\", \"system\": 35}": {
+"hash": "cc56ca2f233d386e",
+"otisk": "b75d70be448eb113292b",
+"panelu": 3,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 1, \"sirka\": 2800, \"stredni_opora\": \"auto\", \"system\": 40}": {
+"hash": "6b846b5059e23dd0",
+"otisk": "a46fe8fd999661d0e18a",
+"panelu": 3,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 1, \"sirka\": 2800, \"stredni_opora\": \"noha\", \"system\": 30}": {
+"hash": "d2b0830d862970db",
+"otisk": "64b7fb18f98a0d5bae3e",
+"panelu": 3,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 1, \"sirka\": 2800, \"stredni_opora\": \"noha\", \"system\": 35}": {
+"hash": "2c714d6b00d2cbcb",
+"otisk": "b75d70be448eb113292b",
+"panelu": 3,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 1, \"sirka\": 2800, \"stredni_opora\": \"noha\", \"system\": 40}": {
+"hash": "5940fcb9b2adfdf0",
+"otisk": "a46fe8fd999661d0e18a",
+"panelu": 3,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 1, \"sirka\": 2800, \"stredni_opora\": \"ram\", \"system\": 30}": {
+"hash": "ec521de2495ff7e3",
+"otisk": "10287ea55fdd5961acbc",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 1, \"sirka\": 2800, \"stredni_opora\": \"ram\", \"system\": 35}": {
+"hash": "4c418915b128936c",
+"otisk": "42e4236b623187f52e1a",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 1, \"sirka\": 2800, \"stredni_opora\": \"ram\", \"system\": 40}": {
+"hash": "bafe10dbb4f01609",
+"otisk": "be1cd5cffb182eb5e622",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 2, \"sirka\": 1280, \"stredni_opora\": \"auto\", \"system\": 30}": {
+"hash": "20ca867b1c891e71",
+"otisk": "f1dbf624974081cc7987",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 2, \"sirka\": 1280, \"stredni_opora\": \"auto\", \"system\": 35}": {
+"hash": "8a3f39153321e95f",
+"otisk": "1ad189812ef86ff4b1f6",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 2, \"sirka\": 1280, \"stredni_opora\": \"auto\", \"system\": 40}": {
+"hash": "43a2d7c6bed6c5f3",
+"otisk": "0cd0e4aac433547a3124",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 2, \"sirka\": 1280, \"stredni_opora\": \"noha\", \"system\": 30}": {
+"hash": "20ca867b1c891e71",
+"otisk": "f1dbf624974081cc7987",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 2, \"sirka\": 1280, \"stredni_opora\": \"noha\", \"system\": 35}": {
+"hash": "8a3f39153321e95f",
+"otisk": "1ad189812ef86ff4b1f6",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 2, \"sirka\": 1280, \"stredni_opora\": \"noha\", \"system\": 40}": {
+"hash": "43a2d7c6bed6c5f3",
+"otisk": "0cd0e4aac433547a3124",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 2, \"sirka\": 1280, \"stredni_opora\": \"ram\", \"system\": 30}": {
+"hash": "20ca867b1c891e71",
+"otisk": "f1dbf624974081cc7987",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 2, \"sirka\": 1280, \"stredni_opora\": \"ram\", \"system\": 35}": {
+"hash": "8a3f39153321e95f",
+"otisk": "1ad189812ef86ff4b1f6",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 2, \"sirka\": 1280, \"stredni_opora\": \"ram\", \"system\": 40}": {
+"hash": "43a2d7c6bed6c5f3",
+"otisk": "0cd0e4aac433547a3124",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 2, \"sirka\": 1500, \"stredni_opora\": \"auto\", \"system\": 30}": {
+"hash": "8696ff4791884458",
+"otisk": "f1ec4ea34f40160c5df9",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 2, \"sirka\": 1500, \"stredni_opora\": \"auto\", \"system\": 35}": {
+"hash": "6e1f8e2538f0d164",
+"otisk": "115c08f8c46cdcbd8c60",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 2, \"sirka\": 1500, \"stredni_opora\": \"auto\", \"system\": 40}": {
+"hash": "2930559966bd876c",
+"otisk": "7f6b158d277bf3dedbd8",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 2, \"sirka\": 1500, \"stredni_opora\": \"noha\", \"system\": 30}": {
+"hash": "8696ff4791884458",
+"otisk": "f1ec4ea34f40160c5df9",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 2, \"sirka\": 1500, \"stredni_opora\": \"noha\", \"system\": 35}": {
+"hash": "6e1f8e2538f0d164",
+"otisk": "115c08f8c46cdcbd8c60",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 2, \"sirka\": 1500, \"stredni_opora\": \"noha\", \"system\": 40}": {
+"hash": "2930559966bd876c",
+"otisk": "7f6b158d277bf3dedbd8",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 2, \"sirka\": 1500, \"stredni_opora\": \"ram\", \"system\": 30}": {
+"hash": "8696ff4791884458",
+"otisk": "f1ec4ea34f40160c5df9",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 2, \"sirka\": 1500, \"stredni_opora\": \"ram\", \"system\": 35}": {
+"hash": "6e1f8e2538f0d164",
+"otisk": "115c08f8c46cdcbd8c60",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 2, \"sirka\": 1500, \"stredni_opora\": \"ram\", \"system\": 40}": {
+"hash": "2930559966bd876c",
+"otisk": "7f6b158d277bf3dedbd8",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 2, \"sirka\": 1600, \"stredni_opora\": \"auto\", \"system\": 30}": {
+"hash": "1ca9aa102923fe02",
+"otisk": "8c85cef2cc9341882c3b",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 2, \"sirka\": 1600, \"stredni_opora\": \"auto\", \"system\": 35}": {
+"hash": "917e953f27f7c73e",
+"otisk": "a94e9f6ee704f40fdfd1",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 2, \"sirka\": 1600, \"stredni_opora\": \"auto\", \"system\": 40}": {
+"hash": "dfcafedb2ae1a0ae",
+"otisk": "f6ad773de99752d22750",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 2, \"sirka\": 1600, \"stredni_opora\": \"noha\", \"system\": 30}": {
+"hash": "782c6721195b0da2",
+"otisk": "f3c4133c5699c4907a8d",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 2, \"sirka\": 1600, \"stredni_opora\": \"noha\", \"system\": 35}": {
+"hash": "71c435228fc55d97",
+"otisk": "2e7b171cc32a68043f35",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 2, \"sirka\": 1600, \"stredni_opora\": \"noha\", \"system\": 40}": {
+"hash": "7f836b70b35634cc",
+"otisk": "8c9ae7159a6fad956eac",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 2, \"sirka\": 1600, \"stredni_opora\": \"ram\", \"system\": 30}": {
+"hash": "1a21c3e6c4644852",
+"otisk": "8c85cef2cc9341882c3b",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 2, \"sirka\": 1600, \"stredni_opora\": \"ram\", \"system\": 35}": {
+"hash": "dc18970b7ca8dd23",
+"otisk": "a94e9f6ee704f40fdfd1",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 2, \"sirka\": 1600, \"stredni_opora\": \"ram\", \"system\": 40}": {
+"hash": "c5fcc38c6c6ca5e7",
+"otisk": "f6ad773de99752d22750",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 2, \"sirka\": 2100, \"stredni_opora\": \"auto\", \"system\": 30}": {
+"hash": "3f0dbd734ba78633",
+"otisk": "485b58009262bb3d28fa",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 2, \"sirka\": 2100, \"stredni_opora\": \"auto\", \"system\": 35}": {
+"hash": "7a595deda814e483",
+"otisk": "6fda5d586496fb8d9de8",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 2, \"sirka\": 2100, \"stredni_opora\": \"auto\", \"system\": 40}": {
+"hash": "d08bd68141f2f1fd",
+"otisk": "65cbf1bb01e0a7e55b3d",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 2, \"sirka\": 2100, \"stredni_opora\": \"noha\", \"system\": 30}": {
+"hash": "838414d87b476259",
+"otisk": "5d6d85bad949ef37faeb",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 2, \"sirka\": 2100, \"stredni_opora\": \"noha\", \"system\": 35}": {
+"hash": "9f6648e753825e65",
+"otisk": "c8fef8ada8c7c5d54123",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 2, \"sirka\": 2100, \"stredni_opora\": \"noha\", \"system\": 40}": {
+"hash": "f2de5bbabb260f1d",
+"otisk": "771d192bdfb1adc610a1",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 2, \"sirka\": 2100, \"stredni_opora\": \"ram\", \"system\": 30}": {
+"hash": "bbb353e17e43c218",
+"otisk": "485b58009262bb3d28fa",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 2, \"sirka\": 2100, \"stredni_opora\": \"ram\", \"system\": 35}": {
+"hash": "20b7350c1f08016b",
+"otisk": "6fda5d586496fb8d9de8",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 2, \"sirka\": 2100, \"stredni_opora\": \"ram\", \"system\": 40}": {
+"hash": "89d62045fa458483",
+"otisk": "65cbf1bb01e0a7e55b3d",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 2, \"sirka\": 2800, \"stredni_opora\": \"auto\", \"system\": 30}": {
+"hash": "523c70e2ca526997",
+"otisk": "64b7fb18f98a0d5bae3e",
+"panelu": 3,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 2, \"sirka\": 2800, \"stredni_opora\": \"auto\", \"system\": 35}": {
+"hash": "cc56ca2f233d386e",
+"otisk": "b75d70be448eb113292b",
+"panelu": 3,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 2, \"sirka\": 2800, \"stredni_opora\": \"auto\", \"system\": 40}": {
+"hash": "6b846b5059e23dd0",
+"otisk": "a46fe8fd999661d0e18a",
+"panelu": 3,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 2, \"sirka\": 2800, \"stredni_opora\": \"noha\", \"system\": 30}": {
+"hash": "d2b0830d862970db",
+"otisk": "64b7fb18f98a0d5bae3e",
+"panelu": 3,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 2, \"sirka\": 2800, \"stredni_opora\": \"noha\", \"system\": 35}": {
+"hash": "2c714d6b00d2cbcb",
+"otisk": "b75d70be448eb113292b",
+"panelu": 3,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 2, \"sirka\": 2800, \"stredni_opora\": \"noha\", \"system\": 40}": {
+"hash": "5940fcb9b2adfdf0",
+"otisk": "a46fe8fd999661d0e18a",
+"panelu": 3,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 2, \"sirka\": 2800, \"stredni_opora\": \"ram\", \"system\": 30}": {
+"hash": "ec521de2495ff7e3",
+"otisk": "10287ea55fdd5961acbc",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 2, \"sirka\": 2800, \"stredni_opora\": \"ram\", \"system\": 35}": {
+"hash": "4c418915b128936c",
+"otisk": "42e4236b623187f52e1a",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 3, \"police\": 2, \"sirka\": 2800, \"stredni_opora\": \"ram\", \"system\": 40}": {
+"hash": "bafe10dbb4f01609",
+"otisk": "be1cd5cffb182eb5e622",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 0, \"sirka\": 1280, \"stredni_opora\": \"auto\", \"system\": 30}": {
+"hash": "6860d3a50b77147c",
+"otisk": "cabc220ee93bae8ed15a",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 0, \"sirka\": 1280, \"stredni_opora\": \"auto\", \"system\": 35}": {
+"hash": "d632aa4c91f6db93",
+"otisk": "8389e731f96ca3ae089a",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 0, \"sirka\": 1280, \"stredni_opora\": \"auto\", \"system\": 40}": {
+"hash": "91774050a1cf7429",
+"otisk": "dab557ae00253b91dc3d",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 0, \"sirka\": 1280, \"stredni_opora\": \"noha\", \"system\": 30}": {
+"hash": "6860d3a50b77147c",
+"otisk": "cabc220ee93bae8ed15a",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 0, \"sirka\": 1280, \"stredni_opora\": \"noha\", \"system\": 35}": {
+"hash": "d632aa4c91f6db93",
+"otisk": "8389e731f96ca3ae089a",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 0, \"sirka\": 1280, \"stredni_opora\": \"noha\", \"system\": 40}": {
+"hash": "91774050a1cf7429",
+"otisk": "dab557ae00253b91dc3d",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 0, \"sirka\": 1280, \"stredni_opora\": \"ram\", \"system\": 30}": {
+"hash": "6860d3a50b77147c",
+"otisk": "cabc220ee93bae8ed15a",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 0, \"sirka\": 1280, \"stredni_opora\": \"ram\", \"system\": 35}": {
+"hash": "d632aa4c91f6db93",
+"otisk": "8389e731f96ca3ae089a",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 0, \"sirka\": 1280, \"stredni_opora\": \"ram\", \"system\": 40}": {
+"hash": "91774050a1cf7429",
+"otisk": "dab557ae00253b91dc3d",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 0, \"sirka\": 1500, \"stredni_opora\": \"auto\", \"system\": 30}": {
+"hash": "6f07c4fc379dcd7a",
+"otisk": "de89e140d5d7a5e86d01",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 0, \"sirka\": 1500, \"stredni_opora\": \"auto\", \"system\": 35}": {
+"hash": "a42f097649ecd7e5",
+"otisk": "8f359a456d06da87c691",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 0, \"sirka\": 1500, \"stredni_opora\": \"auto\", \"system\": 40}": {
+"hash": "7a6b6e7586e70763",
+"otisk": "9af4518c17c41c7f767c",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 0, \"sirka\": 1500, \"stredni_opora\": \"noha\", \"system\": 30}": {
+"hash": "6f07c4fc379dcd7a",
+"otisk": "de89e140d5d7a5e86d01",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 0, \"sirka\": 1500, \"stredni_opora\": \"noha\", \"system\": 35}": {
+"hash": "a42f097649ecd7e5",
+"otisk": "8f359a456d06da87c691",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 0, \"sirka\": 1500, \"stredni_opora\": \"noha\", \"system\": 40}": {
+"hash": "7a6b6e7586e70763",
+"otisk": "9af4518c17c41c7f767c",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 0, \"sirka\": 1500, \"stredni_opora\": \"ram\", \"system\": 30}": {
+"hash": "6f07c4fc379dcd7a",
+"otisk": "de89e140d5d7a5e86d01",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 0, \"sirka\": 1500, \"stredni_opora\": \"ram\", \"system\": 35}": {
+"hash": "a42f097649ecd7e5",
+"otisk": "8f359a456d06da87c691",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 0, \"sirka\": 1500, \"stredni_opora\": \"ram\", \"system\": 40}": {
+"hash": "7a6b6e7586e70763",
+"otisk": "9af4518c17c41c7f767c",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 0, \"sirka\": 1600, \"stredni_opora\": \"auto\", \"system\": 30}": {
+"hash": "b5239614b02b66cd",
+"otisk": "17469643ed5a7c0cc1be",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 0, \"sirka\": 1600, \"stredni_opora\": \"auto\", \"system\": 35}": {
+"hash": "66dd75049606b522",
+"otisk": "befc0ab44a8a1a7e2fca",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 0, \"sirka\": 1600, \"stredni_opora\": \"auto\", \"system\": 40}": {
+"hash": "feb785b5ea2c50f8",
+"otisk": "e89e47ea11630b6f20e9",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 0, \"sirka\": 1600, \"stredni_opora\": \"noha\", \"system\": 30}": {
+"hash": "36aa85d6d11fc2b5",
+"otisk": "17469643ed5a7c0cc1be",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 0, \"sirka\": 1600, \"stredni_opora\": \"noha\", \"system\": 35}": {
+"hash": "93c3fa0f50e4430e",
+"otisk": "befc0ab44a8a1a7e2fca",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 0, \"sirka\": 1600, \"stredni_opora\": \"noha\", \"system\": 40}": {
+"hash": "8dcc673e6f8a5d0c",
+"otisk": "e89e47ea11630b6f20e9",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 0, \"sirka\": 1600, \"stredni_opora\": \"ram\", \"system\": 30}": {
+"hash": "2ad278327b9592dd",
+"otisk": "17469643ed5a7c0cc1be",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 0, \"sirka\": 1600, \"stredni_opora\": \"ram\", \"system\": 35}": {
+"hash": "2bb04b3bd77e8aae",
+"otisk": "befc0ab44a8a1a7e2fca",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 0, \"sirka\": 1600, \"stredni_opora\": \"ram\", \"system\": 40}": {
+"hash": "b7c30c956aed9c70",
+"otisk": "e89e47ea11630b6f20e9",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 0, \"sirka\": 2100, \"stredni_opora\": \"auto\", \"system\": 30}": {
+"hash": "da160214bcfaf880",
+"otisk": "307e784f7568a6b57d6f",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 0, \"sirka\": 2100, \"stredni_opora\": \"auto\", \"system\": 35}": {
+"hash": "9e922f8ca671b736",
+"otisk": "58e4c40a64fadc1c33b0",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 0, \"sirka\": 2100, \"stredni_opora\": \"auto\", \"system\": 40}": {
+"hash": "5c9750a83b89da0f",
+"otisk": "7f8f90be23bdf0574852",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 0, \"sirka\": 2100, \"stredni_opora\": \"noha\", \"system\": 30}": {
+"hash": "94a08eae6122f55b",
+"otisk": "307e784f7568a6b57d6f",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 0, \"sirka\": 2100, \"stredni_opora\": \"noha\", \"system\": 35}": {
+"hash": "ef7a87b2c8dc4624",
+"otisk": "58e4c40a64fadc1c33b0",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 0, \"sirka\": 2100, \"stredni_opora\": \"noha\", \"system\": 40}": {
+"hash": "82dfc299c2551523",
+"otisk": "7f8f90be23bdf0574852",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 0, \"sirka\": 2100, \"stredni_opora\": \"ram\", \"system\": 30}": {
+"hash": "f2d55e2cdcf69fcf",
+"otisk": "307e784f7568a6b57d6f",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 0, \"sirka\": 2100, \"stredni_opora\": \"ram\", \"system\": 35}": {
+"hash": "ab3ec2ef3a77d6db",
+"otisk": "58e4c40a64fadc1c33b0",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 0, \"sirka\": 2100, \"stredni_opora\": \"ram\", \"system\": 40}": {
+"hash": "61830a928ea7b886",
+"otisk": "7f8f90be23bdf0574852",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 0, \"sirka\": 2800, \"stredni_opora\": \"auto\", \"system\": 30}": {
+"hash": "21c3d9353070eb3d",
+"otisk": "42a7554536a70142aed7",
+"panelu": 4,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 0, \"sirka\": 2800, \"stredni_opora\": \"auto\", \"system\": 35}": {
+"hash": "b7e421a6d3db026c",
+"otisk": "b8610b2dba1d28a6d8e3",
+"panelu": 4,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 0, \"sirka\": 2800, \"stredni_opora\": \"auto\", \"system\": 40}": {
+"hash": "fd9678ff24151a0a",
+"otisk": "30e463c5d5d2e77e55b9",
+"panelu": 4,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 0, \"sirka\": 2800, \"stredni_opora\": \"noha\", \"system\": 30}": {
+"hash": "e7d365bf7ea5da84",
+"otisk": "42a7554536a70142aed7",
+"panelu": 4,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 0, \"sirka\": 2800, \"stredni_opora\": \"noha\", \"system\": 35}": {
+"hash": "84fa2b644e96bbd7",
+"otisk": "b8610b2dba1d28a6d8e3",
+"panelu": 4,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 0, \"sirka\": 2800, \"stredni_opora\": \"noha\", \"system\": 40}": {
+"hash": "aac0f989a33b9828",
+"otisk": "30e463c5d5d2e77e55b9",
+"panelu": 4,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 0, \"sirka\": 2800, \"stredni_opora\": \"ram\", \"system\": 30}": {
+"hash": "0f07ca8a670cd4ac",
+"otisk": "42a7554536a70142aed7",
+"panelu": 4,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 0, \"sirka\": 2800, \"stredni_opora\": \"ram\", \"system\": 35}": {
+"hash": "f28cd403088d1d08",
+"otisk": "b8610b2dba1d28a6d8e3",
+"panelu": 4,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 0, \"sirka\": 2800, \"stredni_opora\": \"ram\", \"system\": 40}": {
+"hash": "0af28b1fcd6aa39a",
+"otisk": "30e463c5d5d2e77e55b9",
+"panelu": 4,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 1, \"sirka\": 1280, \"stredni_opora\": \"auto\", \"system\": 30}": {
+"hash": "20ca867b1c891e71",
+"otisk": "f1dbf624974081cc7987",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 1, \"sirka\": 1280, \"stredni_opora\": \"auto\", \"system\": 35}": {
+"hash": "8a3f39153321e95f",
+"otisk": "1ad189812ef86ff4b1f6",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 1, \"sirka\": 1280, \"stredni_opora\": \"auto\", \"system\": 40}": {
+"hash": "43a2d7c6bed6c5f3",
+"otisk": "0cd0e4aac433547a3124",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 1, \"sirka\": 1280, \"stredni_opora\": \"noha\", \"system\": 30}": {
+"hash": "20ca867b1c891e71",
+"otisk": "f1dbf624974081cc7987",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 1, \"sirka\": 1280, \"stredni_opora\": \"noha\", \"system\": 35}": {
+"hash": "8a3f39153321e95f",
+"otisk": "1ad189812ef86ff4b1f6",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 1, \"sirka\": 1280, \"stredni_opora\": \"noha\", \"system\": 40}": {
+"hash": "43a2d7c6bed6c5f3",
+"otisk": "0cd0e4aac433547a3124",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 1, \"sirka\": 1280, \"stredni_opora\": \"ram\", \"system\": 30}": {
+"hash": "20ca867b1c891e71",
+"otisk": "f1dbf624974081cc7987",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 1, \"sirka\": 1280, \"stredni_opora\": \"ram\", \"system\": 35}": {
+"hash": "8a3f39153321e95f",
+"otisk": "1ad189812ef86ff4b1f6",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 1, \"sirka\": 1280, \"stredni_opora\": \"ram\", \"system\": 40}": {
+"hash": "43a2d7c6bed6c5f3",
+"otisk": "0cd0e4aac433547a3124",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 1, \"sirka\": 1500, \"stredni_opora\": \"auto\", \"system\": 30}": {
+"hash": "8696ff4791884458",
+"otisk": "f1ec4ea34f40160c5df9",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 1, \"sirka\": 1500, \"stredni_opora\": \"auto\", \"system\": 35}": {
+"hash": "6e1f8e2538f0d164",
+"otisk": "115c08f8c46cdcbd8c60",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 1, \"sirka\": 1500, \"stredni_opora\": \"auto\", \"system\": 40}": {
+"hash": "2930559966bd876c",
+"otisk": "7f6b158d277bf3dedbd8",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 1, \"sirka\": 1500, \"stredni_opora\": \"noha\", \"system\": 30}": {
+"hash": "8696ff4791884458",
+"otisk": "f1ec4ea34f40160c5df9",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 1, \"sirka\": 1500, \"stredni_opora\": \"noha\", \"system\": 35}": {
+"hash": "6e1f8e2538f0d164",
+"otisk": "115c08f8c46cdcbd8c60",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 1, \"sirka\": 1500, \"stredni_opora\": \"noha\", \"system\": 40}": {
+"hash": "2930559966bd876c",
+"otisk": "7f6b158d277bf3dedbd8",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 1, \"sirka\": 1500, \"stredni_opora\": \"ram\", \"system\": 30}": {
+"hash": "8696ff4791884458",
+"otisk": "f1ec4ea34f40160c5df9",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 1, \"sirka\": 1500, \"stredni_opora\": \"ram\", \"system\": 35}": {
+"hash": "6e1f8e2538f0d164",
+"otisk": "115c08f8c46cdcbd8c60",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 1, \"sirka\": 1500, \"stredni_opora\": \"ram\", \"system\": 40}": {
+"hash": "2930559966bd876c",
+"otisk": "7f6b158d277bf3dedbd8",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 1, \"sirka\": 1600, \"stredni_opora\": \"auto\", \"system\": 30}": {
+"hash": "1ca9aa102923fe02",
+"otisk": "8c85cef2cc9341882c3b",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 1, \"sirka\": 1600, \"stredni_opora\": \"auto\", \"system\": 35}": {
+"hash": "917e953f27f7c73e",
+"otisk": "a94e9f6ee704f40fdfd1",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 1, \"sirka\": 1600, \"stredni_opora\": \"auto\", \"system\": 40}": {
+"hash": "dfcafedb2ae1a0ae",
+"otisk": "f6ad773de99752d22750",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 1, \"sirka\": 1600, \"stredni_opora\": \"noha\", \"system\": 30}": {
+"hash": "782c6721195b0da2",
+"otisk": "f3c4133c5699c4907a8d",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 1, \"sirka\": 1600, \"stredni_opora\": \"noha\", \"system\": 35}": {
+"hash": "71c435228fc55d97",
+"otisk": "2e7b171cc32a68043f35",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 1, \"sirka\": 1600, \"stredni_opora\": \"noha\", \"system\": 40}": {
+"hash": "7f836b70b35634cc",
+"otisk": "8c9ae7159a6fad956eac",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 1, \"sirka\": 1600, \"stredni_opora\": \"ram\", \"system\": 30}": {
+"hash": "1a21c3e6c4644852",
+"otisk": "8c85cef2cc9341882c3b",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 1, \"sirka\": 1600, \"stredni_opora\": \"ram\", \"system\": 35}": {
+"hash": "dc18970b7ca8dd23",
+"otisk": "a94e9f6ee704f40fdfd1",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 1, \"sirka\": 1600, \"stredni_opora\": \"ram\", \"system\": 40}": {
+"hash": "c5fcc38c6c6ca5e7",
+"otisk": "f6ad773de99752d22750",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 1, \"sirka\": 2100, \"stredni_opora\": \"auto\", \"system\": 30}": {
+"hash": "3f0dbd734ba78633",
+"otisk": "485b58009262bb3d28fa",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 1, \"sirka\": 2100, \"stredni_opora\": \"auto\", \"system\": 35}": {
+"hash": "7a595deda814e483",
+"otisk": "6fda5d586496fb8d9de8",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 1, \"sirka\": 2100, \"stredni_opora\": \"auto\", \"system\": 40}": {
+"hash": "d08bd68141f2f1fd",
+"otisk": "65cbf1bb01e0a7e55b3d",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 1, \"sirka\": 2100, \"stredni_opora\": \"noha\", \"system\": 30}": {
+"hash": "838414d87b476259",
+"otisk": "5d6d85bad949ef37faeb",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 1, \"sirka\": 2100, \"stredni_opora\": \"noha\", \"system\": 35}": {
+"hash": "9f6648e753825e65",
+"otisk": "c8fef8ada8c7c5d54123",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 1, \"sirka\": 2100, \"stredni_opora\": \"noha\", \"system\": 40}": {
+"hash": "f2de5bbabb260f1d",
+"otisk": "771d192bdfb1adc610a1",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 1, \"sirka\": 2100, \"stredni_opora\": \"ram\", \"system\": 30}": {
+"hash": "bbb353e17e43c218",
+"otisk": "485b58009262bb3d28fa",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 1, \"sirka\": 2100, \"stredni_opora\": \"ram\", \"system\": 35}": {
+"hash": "20b7350c1f08016b",
+"otisk": "6fda5d586496fb8d9de8",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 1, \"sirka\": 2100, \"stredni_opora\": \"ram\", \"system\": 40}": {
+"hash": "89d62045fa458483",
+"otisk": "65cbf1bb01e0a7e55b3d",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 1, \"sirka\": 2800, \"stredni_opora\": \"auto\", \"system\": 30}": {
+"hash": "55fc5dfe8e37a5df",
+"otisk": "273c2742934aad08b528",
+"panelu": 4,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 1, \"sirka\": 2800, \"stredni_opora\": \"auto\", \"system\": 35}": {
+"hash": "9d0eb15b1ddd6214",
+"otisk": "8611afef4865168c5e11",
+"panelu": 4,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 1, \"sirka\": 2800, \"stredni_opora\": \"auto\", \"system\": 40}": {
+"hash": "4639c3c930cfb8c2",
+"otisk": "edde511c76d23848e5f3",
+"panelu": 4,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 1, \"sirka\": 2800, \"stredni_opora\": \"noha\", \"system\": 30}": {
+"hash": "d78ca98e15aeacbd",
+"otisk": "273c2742934aad08b528",
+"panelu": 4,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 1, \"sirka\": 2800, \"stredni_opora\": \"noha\", \"system\": 35}": {
+"hash": "4423c3c0f506cbfc",
+"otisk": "8611afef4865168c5e11",
+"panelu": 4,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 1, \"sirka\": 2800, \"stredni_opora\": \"noha\", \"system\": 40}": {
+"hash": "6f935efe038a8e6f",
+"otisk": "edde511c76d23848e5f3",
+"panelu": 4,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 1, \"sirka\": 2800, \"stredni_opora\": \"ram\", \"system\": 30}": {
+"hash": "ec521de2495ff7e3",
+"otisk": "10287ea55fdd5961acbc",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 1, \"sirka\": 2800, \"stredni_opora\": \"ram\", \"system\": 35}": {
+"hash": "4c418915b128936c",
+"otisk": "42e4236b623187f52e1a",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 1, \"sirka\": 2800, \"stredni_opora\": \"ram\", \"system\": 40}": {
+"hash": "bafe10dbb4f01609",
+"otisk": "be1cd5cffb182eb5e622",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 2, \"sirka\": 1280, \"stredni_opora\": \"auto\", \"system\": 30}": {
+"hash": "20ca867b1c891e71",
+"otisk": "f1dbf624974081cc7987",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 2, \"sirka\": 1280, \"stredni_opora\": \"auto\", \"system\": 35}": {
+"hash": "8a3f39153321e95f",
+"otisk": "1ad189812ef86ff4b1f6",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 2, \"sirka\": 1280, \"stredni_opora\": \"auto\", \"system\": 40}": {
+"hash": "43a2d7c6bed6c5f3",
+"otisk": "0cd0e4aac433547a3124",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 2, \"sirka\": 1280, \"stredni_opora\": \"noha\", \"system\": 30}": {
+"hash": "20ca867b1c891e71",
+"otisk": "f1dbf624974081cc7987",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 2, \"sirka\": 1280, \"stredni_opora\": \"noha\", \"system\": 35}": {
+"hash": "8a3f39153321e95f",
+"otisk": "1ad189812ef86ff4b1f6",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 2, \"sirka\": 1280, \"stredni_opora\": \"noha\", \"system\": 40}": {
+"hash": "43a2d7c6bed6c5f3",
+"otisk": "0cd0e4aac433547a3124",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 2, \"sirka\": 1280, \"stredni_opora\": \"ram\", \"system\": 30}": {
+"hash": "20ca867b1c891e71",
+"otisk": "f1dbf624974081cc7987",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 2, \"sirka\": 1280, \"stredni_opora\": \"ram\", \"system\": 35}": {
+"hash": "8a3f39153321e95f",
+"otisk": "1ad189812ef86ff4b1f6",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 2, \"sirka\": 1280, \"stredni_opora\": \"ram\", \"system\": 40}": {
+"hash": "43a2d7c6bed6c5f3",
+"otisk": "0cd0e4aac433547a3124",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 2, \"sirka\": 1500, \"stredni_opora\": \"auto\", \"system\": 30}": {
+"hash": "8696ff4791884458",
+"otisk": "f1ec4ea34f40160c5df9",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 2, \"sirka\": 1500, \"stredni_opora\": \"auto\", \"system\": 35}": {
+"hash": "6e1f8e2538f0d164",
+"otisk": "115c08f8c46cdcbd8c60",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 2, \"sirka\": 1500, \"stredni_opora\": \"auto\", \"system\": 40}": {
+"hash": "2930559966bd876c",
+"otisk": "7f6b158d277bf3dedbd8",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 2, \"sirka\": 1500, \"stredni_opora\": \"noha\", \"system\": 30}": {
+"hash": "8696ff4791884458",
+"otisk": "f1ec4ea34f40160c5df9",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 2, \"sirka\": 1500, \"stredni_opora\": \"noha\", \"system\": 35}": {
+"hash": "6e1f8e2538f0d164",
+"otisk": "115c08f8c46cdcbd8c60",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 2, \"sirka\": 1500, \"stredni_opora\": \"noha\", \"system\": 40}": {
+"hash": "2930559966bd876c",
+"otisk": "7f6b158d277bf3dedbd8",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 2, \"sirka\": 1500, \"stredni_opora\": \"ram\", \"system\": 30}": {
+"hash": "8696ff4791884458",
+"otisk": "f1ec4ea34f40160c5df9",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 2, \"sirka\": 1500, \"stredni_opora\": \"ram\", \"system\": 35}": {
+"hash": "6e1f8e2538f0d164",
+"otisk": "115c08f8c46cdcbd8c60",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 2, \"sirka\": 1500, \"stredni_opora\": \"ram\", \"system\": 40}": {
+"hash": "2930559966bd876c",
+"otisk": "7f6b158d277bf3dedbd8",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 2, \"sirka\": 1600, \"stredni_opora\": \"auto\", \"system\": 30}": {
+"hash": "1ca9aa102923fe02",
+"otisk": "8c85cef2cc9341882c3b",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 2, \"sirka\": 1600, \"stredni_opora\": \"auto\", \"system\": 35}": {
+"hash": "917e953f27f7c73e",
+"otisk": "a94e9f6ee704f40fdfd1",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 2, \"sirka\": 1600, \"stredni_opora\": \"auto\", \"system\": 40}": {
+"hash": "dfcafedb2ae1a0ae",
+"otisk": "f6ad773de99752d22750",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 2, \"sirka\": 1600, \"stredni_opora\": \"noha\", \"system\": 30}": {
+"hash": "782c6721195b0da2",
+"otisk": "f3c4133c5699c4907a8d",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 2, \"sirka\": 1600, \"stredni_opora\": \"noha\", \"system\": 35}": {
+"hash": "71c435228fc55d97",
+"otisk": "2e7b171cc32a68043f35",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 2, \"sirka\": 1600, \"stredni_opora\": \"noha\", \"system\": 40}": {
+"hash": "7f836b70b35634cc",
+"otisk": "8c9ae7159a6fad956eac",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 2, \"sirka\": 1600, \"stredni_opora\": \"ram\", \"system\": 30}": {
+"hash": "1a21c3e6c4644852",
+"otisk": "8c85cef2cc9341882c3b",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 2, \"sirka\": 1600, \"stredni_opora\": \"ram\", \"system\": 35}": {
+"hash": "dc18970b7ca8dd23",
+"otisk": "a94e9f6ee704f40fdfd1",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 2, \"sirka\": 1600, \"stredni_opora\": \"ram\", \"system\": 40}": {
+"hash": "c5fcc38c6c6ca5e7",
+"otisk": "f6ad773de99752d22750",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 2, \"sirka\": 2100, \"stredni_opora\": \"auto\", \"system\": 30}": {
+"hash": "3f0dbd734ba78633",
+"otisk": "485b58009262bb3d28fa",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 2, \"sirka\": 2100, \"stredni_opora\": \"auto\", \"system\": 35}": {
+"hash": "7a595deda814e483",
+"otisk": "6fda5d586496fb8d9de8",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 2, \"sirka\": 2100, \"stredni_opora\": \"auto\", \"system\": 40}": {
+"hash": "d08bd68141f2f1fd",
+"otisk": "65cbf1bb01e0a7e55b3d",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 2, \"sirka\": 2100, \"stredni_opora\": \"noha\", \"system\": 30}": {
+"hash": "838414d87b476259",
+"otisk": "5d6d85bad949ef37faeb",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 2, \"sirka\": 2100, \"stredni_opora\": \"noha\", \"system\": 35}": {
+"hash": "9f6648e753825e65",
+"otisk": "c8fef8ada8c7c5d54123",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 2, \"sirka\": 2100, \"stredni_opora\": \"noha\", \"system\": 40}": {
+"hash": "f2de5bbabb260f1d",
+"otisk": "771d192bdfb1adc610a1",
+"panelu": 0,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 2, \"sirka\": 2100, \"stredni_opora\": \"ram\", \"system\": 30}": {
+"hash": "bbb353e17e43c218",
+"otisk": "485b58009262bb3d28fa",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 2, \"sirka\": 2100, \"stredni_opora\": \"ram\", \"system\": 35}": {
+"hash": "20b7350c1f08016b",
+"otisk": "6fda5d586496fb8d9de8",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 2, \"sirka\": 2100, \"stredni_opora\": \"ram\", \"system\": 40}": {
+"hash": "89d62045fa458483",
+"otisk": "65cbf1bb01e0a7e55b3d",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 2, \"sirka\": 2800, \"stredni_opora\": \"auto\", \"system\": 30}": {
+"hash": "55fc5dfe8e37a5df",
+"otisk": "273c2742934aad08b528",
+"panelu": 4,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 2, \"sirka\": 2800, \"stredni_opora\": \"auto\", \"system\": 35}": {
+"hash": "9d0eb15b1ddd6214",
+"otisk": "8611afef4865168c5e11",
+"panelu": 4,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 2, \"sirka\": 2800, \"stredni_opora\": \"auto\", \"system\": 40}": {
+"hash": "4639c3c930cfb8c2",
+"otisk": "edde511c76d23848e5f3",
+"panelu": 4,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 2, \"sirka\": 2800, \"stredni_opora\": \"noha\", \"system\": 30}": {
+"hash": "d78ca98e15aeacbd",
+"otisk": "273c2742934aad08b528",
+"panelu": 4,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 2, \"sirka\": 2800, \"stredni_opora\": \"noha\", \"system\": 35}": {
+"hash": "4423c3c0f506cbfc",
+"otisk": "8611afef4865168c5e11",
+"panelu": 4,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 2, \"sirka\": 2800, \"stredni_opora\": \"noha\", \"system\": 40}": {
+"hash": "6f935efe038a8e6f",
+"otisk": "edde511c76d23848e5f3",
+"panelu": 4,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 2, \"sirka\": 2800, \"stredni_opora\": \"ram\", \"system\": 30}": {
+"hash": "ec521de2495ff7e3",
+"otisk": "10287ea55fdd5961acbc",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 2, \"sirka\": 2800, \"stredni_opora\": \"ram\", \"system\": 35}": {
+"hash": "4c418915b128936c",
+"otisk": "42e4236b623187f52e1a",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_pocet\": 4, \"police\": 2, \"sirka\": 2800, \"stredni_opora\": \"ram\", \"system\": 40}": {
+"hash": "bafe10dbb4f01609",
+"otisk": "be1cd5cffb182eb5e622",
+"panelu": 2,
+"problemu": 0
+},
+"{\"panely_posun\": 0, \"panely_z\": 0, \"police\": 1, \"sirka\": 1400, \"system\": 30}": {
+"hash": "2c1637478e73a0cb",
+"otisk": "24abfbcf8583028f23b9",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_posun\": 0, \"panely_z\": 0, \"police\": 1, \"sirka\": 1400, \"system\": 40}": {
+"hash": "b45560827c75c8a4",
+"otisk": "3688167bfbd7488a6e15",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_posun\": 0, \"panely_z\": 0, \"police\": 1, \"sirka\": 1700, \"system\": 30}": {
+"hash": "bf8efce4a53b41c6",
+"otisk": "0c4245914be404218819",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_posun\": 0, \"panely_z\": 0, \"police\": 1, \"sirka\": 1700, \"system\": 40}": {
+"hash": "5006a41c95ef4b43",
+"otisk": "53e68760b3f8570a22f1",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_posun\": 0, \"panely_z\": 0, \"police\": 1, \"sirka\": 2600, \"system\": 30}": {
+"hash": "b3e946d9ac522134",
+"otisk": "3048e8de451aa45cc02a",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_posun\": 0, \"panely_z\": 0, \"police\": 1, \"sirka\": 2600, \"system\": 40}": {
+"hash": "8c1fab8cc434bdc8",
+"otisk": "4492cfe182f11a8416f1",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_posun\": 0, \"panely_z\": 7, \"police\": 1, \"sirka\": 1400, \"system\": 30}": {
+"hash": "cdabaa8cc25c4e78",
+"otisk": "0a7b79fd60c3ace20990",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_posun\": 0, \"panely_z\": 7, \"police\": 1, \"sirka\": 1400, \"system\": 40}": {
+"hash": "3feaf53ab6f591e9",
+"otisk": "efd0598cd5dd55fa4f73",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_posun\": 0, \"panely_z\": 7, \"police\": 1, \"sirka\": 1700, \"system\": 30}": {
+"hash": "1c67a1169703aceb",
+"otisk": "d98e859f60dd72d9c51c",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_posun\": 0, \"panely_z\": 7, \"police\": 1, \"sirka\": 1700, \"system\": 40}": {
+"hash": "abd0057d64d47801",
+"otisk": "277b86ae6e329033e456",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_posun\": 0, \"panely_z\": 7, \"police\": 1, \"sirka\": 2600, \"system\": 30}": {
+"hash": "b9a8559cc519e758",
+"otisk": "9edc35db6efbdb2c810a",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_posun\": 0, \"panely_z\": 7, \"police\": 1, \"sirka\": 2600, \"system\": 40}": {
+"hash": "cca6dbcdf5c996cc",
+"otisk": "092b7e136d2f473836d1",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_posun\": 200, \"panely_z\": 0, \"police\": 1, \"sirka\": 1400, \"system\": 30}": {
+"hash": "a25cc2f74481b508",
+"otisk": "7029018074059648ef91",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_posun\": 200, \"panely_z\": 0, \"police\": 1, \"sirka\": 1400, \"system\": 40}": {
+"hash": "a13e5a3dd80567e9",
+"otisk": "cc6aeea9ccfc4ff9a3ed",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_posun\": 200, \"panely_z\": 0, \"police\": 1, \"sirka\": 1700, \"system\": 30}": {
+"hash": "e6f147316b01287b",
+"otisk": "1e870690d8a7c014578e",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_posun\": 200, \"panely_z\": 0, \"police\": 1, \"sirka\": 1700, \"system\": 40}": {
+"hash": "be7930d4211fc74e",
+"otisk": "0203560e3fe0be265aed",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_posun\": 200, \"panely_z\": 0, \"police\": 1, \"sirka\": 2600, \"system\": 30}": {
+"hash": "ae244cddb4f9f5c9",
+"otisk": "79abe8f5008baf1e9422",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_posun\": 200, \"panely_z\": 0, \"police\": 1, \"sirka\": 2600, \"system\": 40}": {
+"hash": "527db4094a4692e0",
+"otisk": "babb25cfc3eb5cc068f5",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_posun\": 200, \"panely_z\": 7, \"police\": 1, \"sirka\": 1400, \"system\": 30}": {
+"hash": "6aa538a338589f34",
+"otisk": "b0389fbd2cd14c06524c",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_posun\": 200, \"panely_z\": 7, \"police\": 1, \"sirka\": 1400, \"system\": 40}": {
+"hash": "e7a4410853477cbd",
+"otisk": "392732261dbc97ffdede",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_posun\": 200, \"panely_z\": 7, \"police\": 1, \"sirka\": 1700, \"system\": 30}": {
+"hash": "61098af62a564d0e",
+"otisk": "0f75443fa041298526e0",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_posun\": 200, \"panely_z\": 7, \"police\": 1, \"sirka\": 1700, \"system\": 40}": {
+"hash": "a4dba145047a230e",
+"otisk": "59a3c94c59ff5cee5b07",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_posun\": 200, \"panely_z\": 7, \"police\": 1, \"sirka\": 2600, \"system\": 30}": {
+"hash": "42e7f03b747c301b",
+"otisk": "1be897ec2029c05ef1f0",
+"panelu": 1,
+"problemu": 0
+},
+"{\"panely_posun\": 200, \"panely_z\": 7, \"police\": 1, \"sirka\": 2600, \"system\": 40}": {
+"hash": "819b6588004809f9",
+"otisk": "d98ec782ce62a8383d04",
+"panelu": 1,
+"problemu": 0
+},
+"{\"stojky\": false, \"system\": 30}": {
+"hash": "20a7bac8cd324bba",
+"otisk": "84bfe7ff878ee2f92e73",
+"panelu": 0,
+"problemu": 0
+}
+}

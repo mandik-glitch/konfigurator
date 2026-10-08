@@ -1,0 +1,1452 @@
+[
+ {
+  "role": "predni-svislice",
+  "part_id": "Object_7",
+  "kind": "front-leg0-Z-shift",
+  "before": {
+   "position": [
+    -440,
+    595.5000915527344,
+    -1522.500114440918
+   ],
+   "scale": [
+    1,
+    1.1889998168945313,
+    1
+   ]
+  },
+  "after": {
+   "position": [
+    -440,
+    595.5000915527344,
+    -1514.500114440918
+   ],
+   "scale": [
+    1,
+    1.1889998168945313,
+    1
+   ]
+  }
+ },
+ {
+  "role": "spojnice-dolni",
+  "part_id": "Object_7",
+  "kind": "front-leg0-Z-shift",
+  "before": {
+   "position": [
+    -588,
+    16.00018310546875,
+    -1522.500114440918
+   ],
+   "scale": [
+    1,
+    0.266,
+    1
+   ]
+  },
+  "after": {
+   "position": [
+    -588,
+    16.00018310546875,
+    -1514.500114440918
+   ],
+   "scale": [
+    1,
+    0.266,
+    1
+   ]
+  }
+ },
+ {
+  "role": "spojnice-horni",
+  "part_id": "Object_7",
+  "kind": "front-leg0-Z-shift",
+  "before": {
+   "position": [
+    -588,
+    906.0001831054688,
+    -1522.500114440918
+   ],
+   "scale": [
+    1,
+    0.266,
+    1
+   ]
+  },
+  "after": {
+   "position": [
+    -588,
+    906.0001831054688,
+    -1514.500114440918
+   ],
+   "scale": [
+    1,
+    0.266,
+    1
+   ]
+  }
+ },
+ {
+  "role": "zadni-svislice-dolni",
+  "part_id": "Object_7",
+  "kind": "front-leg0-Z-shift",
+  "before": {
+   "position": [
+    -736,
+    461.00018310546875,
+    -1522.500114440918
+   ],
+   "scale": [
+    1,
+    0.92,
+    1
+   ]
+  },
+  "after": {
+   "position": [
+    -736,
+    461.00018310546875,
+    -1514.500114440918
+   ],
+   "scale": [
+    1,
+    0.92,
+    1
+   ]
+  }
+ },
+ {
+  "role": "cap",
+  "part_id": "Object_7",
+  "kind": "front-leg0-Z-shift",
+  "before": {
+   "position": [
+    -666,
+    1055.5000915527344,
+    -1522.500114440918
+   ],
+   "scale": [
+    1,
+    0.26899981689453123,
+    1
+   ]
+  },
+  "after": {
+   "position": [
+    -666,
+    1055.5000915527344,
+    -1514.500114440918
+   ],
+   "scale": [
+    1,
+    0.26899981689453123,
+    1
+   ]
+  }
+ },
+ {
+  "role": "zaslepka",
+  "part_id": "product_3071",
+  "kind": "front-leg0-Z-shift",
+  "before": {
+   "position": [
+    -440,
+    1193,
+    -1522.500114440918
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ]
+  },
+  "after": {
+   "position": [
+    -440,
+    1193,
+    -1514.500114440918
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ]
+  }
+ },
+ {
+  "role": "zaslepka",
+  "part_id": "product_3071",
+  "kind": "front-leg0-Z-shift",
+  "before": {
+   "position": [
+    -736,
+    924.0001831054688,
+    -1522.500114440918
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ]
+  },
+  "after": {
+   "position": [
+    -736,
+    924.0001831054688,
+    -1514.500114440918
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ]
+  }
+ },
+ {
+  "role": "zaslepka",
+  "part_id": "product_3071",
+  "kind": "front-leg0-Z-shift",
+  "before": {
+   "position": [
+    -666,
+    1193,
+    -1522.500114440918
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ]
+  },
+  "after": {
+   "position": [
+    -666,
+    1193,
+    -1514.500114440918
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ]
+  }
+ },
+ {
+  "role": "sloupek-pred-podbehem",
+  "part_id": "Object_7",
+  "kind": "leg1-sloupek-resize",
+  "before": {
+   "position": [
+    -612,
+    71.00018310546875,
+    -260.50011444091797
+   ],
+   "scale": [
+    1,
+    0.14,
+    1
+   ]
+  },
+  "after": {
+   "position": [
+    -612,
+    76.00018310546875,
+    -260.50011444091797
+   ],
+   "scale": [
+    1,
+    0.15,
+    1
+   ]
+  }
+ },
+ {
+  "role": "pricka-uzavreni-vyrezu",
+  "part_id": "Object_7",
+  "kind": "leg1-pricka-reposition",
+  "before": {
+   "position": [
+    -588,
+    156.00018310546875,
+    -260.50011444091797
+   ],
+   "scale": [
+    1,
+    0.266,
+    1
+   ]
+  },
+  "after": {
+   "position": [
+    -588,
+    166.00018310546875,
+    -260.50011444091797
+   ],
+   "scale": [
+    1,
+    0.266,
+    1
+   ]
+  }
+ },
+ {
+  "role": "zadni-svislice-nad-zarezem",
+  "part_id": "Object_7",
+  "kind": "leg1-svislice-resize",
+  "before": {
+   "position": [
+    -736,
+    531.0001831054688,
+    -260.50011444091797
+   ],
+   "scale": [
+    1,
+    0.78,
+    1
+   ]
+  },
+  "after": {
+   "position": [
+    -736,
+    536.0001831054688,
+    -260.50011444091797
+   ],
+   "scale": [
+    1,
+    0.77,
+    1
+   ]
+  }
+ },
+ {
+  "role": "nosnik-sloupec0-patro0",
+  "part_id": "Object_7",
+  "kind": "nosnik-sloupec0-resize",
+  "before": {
+   "position": [
+    -440,
+    335.00018310546875,
+    -891.500114440918
+   ],
+   "scale": [
+    1,
+    1.232,
+    1
+   ]
+  },
+  "after": {
+   "position": [
+    -440,
+    335.00018310546875,
+    -887.500114440918
+   ],
+   "scale": [
+    1,
+    1.224,
+    1
+   ]
+  }
+ },
+ {
+  "role": "nosnik-sloupec0-patro0",
+  "part_id": "Object_7",
+  "kind": "nosnik-sloupec0-resize",
+  "before": {
+   "position": [
+    -736,
+    335.00018310546875,
+    -891.500114440918
+   ],
+   "scale": [
+    1,
+    1.232,
+    1
+   ]
+  },
+  "after": {
+   "position": [
+    -736,
+    335.00018310546875,
+    -887.500114440918
+   ],
+   "scale": [
+    1,
+    1.224,
+    1
+   ]
+  }
+ },
+ {
+  "role": "spojnice-sloupec0-patro0",
+  "part_id": "Object_7",
+  "kind": "spojnice-sloupec0-ramp-Z-interp",
+  "before": {
+   "position": [
+    -588,
+    335.00018310546875,
+    -290.50011444091797
+   ],
+   "scale": [
+    1,
+    0.266,
+    1
+   ]
+  },
+  "after": {
+   "position": [
+    -588,
+    335.00018310546875,
+    -290.30994011445205
+   ],
+   "scale": [
+    1,
+    0.266,
+    1
+   ]
+  }
+ },
+ {
+  "role": "spojnice-sloupec0-patro0",
+  "part_id": "Object_7",
+  "kind": "spojnice-sloupec0-ramp-Z-interp",
+  "before": {
+   "position": [
+    -588,
+    335.00018310546875,
+    -691.500114440918
+   ],
+   "scale": [
+    1,
+    0.266,
+    1
+   ]
+  },
+  "after": {
+   "position": [
+    -588,
+    335.00018310546875,
+    -688.7679432840241
+   ],
+   "scale": [
+    1,
+    0.266,
+    1
+   ]
+  }
+ },
+ {
+  "role": "spojnice-sloupec0-patro0",
+  "part_id": "Object_7",
+  "kind": "spojnice-sloupec0-ramp-Z-interp",
+  "before": {
+   "position": [
+    -588,
+    335.00018310546875,
+    -1092.500114440918
+   ],
+   "scale": [
+    1,
+    0.266,
+    1
+   ]
+  },
+  "after": {
+   "position": [
+    -588,
+    335.00018310546875,
+    -1087.2259464535962
+   ],
+   "scale": [
+    1,
+    0.266,
+    1
+   ]
+  }
+ },
+ {
+  "role": "spojnice-sloupec0-patro0",
+  "part_id": "Object_7",
+  "kind": "spojnice-sloupec0-ramp-Z-interp",
+  "before": {
+   "position": [
+    -588,
+    335.00018310546875,
+    -1492.500114440918
+   ],
+   "scale": [
+    1,
+    0.266,
+    1
+   ]
+  },
+  "after": {
+   "position": [
+    -588,
+    335.00018310546875,
+    -1484.690288767384
+   ],
+   "scale": [
+    1,
+    0.266,
+    1
+   ]
+  }
+ },
+ {
+  "role": "eurobox-sloupec0-patro0",
+  "part_id": "product_3793",
+  "kind": "eurobox-sloupec0-ramp-Z-interp",
+  "before": {
+   "position": [
+    -587.9800720214844,
+    313.7328526678967,
+    -491.00002184893367
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ]
+  },
+  "after": {
+   "position": [
+    -587.9800720214844,
+    313.7328526678967,
+    -489.5388496942077
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ]
+  }
+ },
+ {
+  "role": "eurobox-sloupec0-patro0",
+  "part_id": "product_3793",
+  "kind": "eurobox-sloupec0-ramp-Z-interp",
+  "before": {
+   "position": [
+    -587.9800720214844,
+    313.7328526678967,
+    -892.0000218489337
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ]
+  },
+  "after": {
+   "position": [
+    -587.9800720214844,
+    313.7328526678967,
+    -887.9968528637798
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ]
+  }
+ },
+ {
+  "role": "eurobox-sloupec0-patro0",
+  "part_id": "product_3793",
+  "kind": "eurobox-sloupec0-ramp-Z-interp",
+  "before": {
+   "position": [
+    -587.9800720214844,
+    313.7328526678967,
+    -1292.5000218489336
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ]
+  },
+  "after": {
+   "position": [
+    -587.9800720214844,
+    313.7328526678967,
+    -1285.9580256054596
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ]
+  }
+ },
+ {
+  "role": "nosnik-sloupec0-patro1",
+  "part_id": "Object_7",
+  "kind": "nosnik-sloupec0-resize",
+  "before": {
+   "position": [
+    -440,
+    553.0001831054688,
+    -891.500114440918
+   ],
+   "scale": [
+    1,
+    1.232,
+    1
+   ]
+  },
+  "after": {
+   "position": [
+    -440,
+    553.0001831054688,
+    -887.500114440918
+   ],
+   "scale": [
+    1,
+    1.224,
+    1
+   ]
+  }
+ },
+ {
+  "role": "nosnik-sloupec0-patro1",
+  "part_id": "Object_7",
+  "kind": "nosnik-sloupec0-resize",
+  "before": {
+   "position": [
+    -736,
+    553.0001831054688,
+    -891.500114440918
+   ],
+   "scale": [
+    1,
+    1.232,
+    1
+   ]
+  },
+  "after": {
+   "position": [
+    -736,
+    553.0001831054688,
+    -887.500114440918
+   ],
+   "scale": [
+    1,
+    1.224,
+    1
+   ]
+  }
+ },
+ {
+  "role": "spojnice-sloupec0-patro1",
+  "part_id": "Object_7",
+  "kind": "spojnice-sloupec0-ramp-Z-interp",
+  "before": {
+   "position": [
+    -588,
+    553.0001831054688,
+    -290.50011444091797
+   ],
+   "scale": [
+    1,
+    0.266,
+    1
+   ]
+  },
+  "after": {
+   "position": [
+    -588,
+    553.0001831054688,
+    -290.30994011445205
+   ],
+   "scale": [
+    1,
+    0.266,
+    1
+   ]
+  }
+ },
+ {
+  "role": "spojnice-sloupec0-patro1",
+  "part_id": "Object_7",
+  "kind": "spojnice-sloupec0-ramp-Z-interp",
+  "before": {
+   "position": [
+    -588,
+    553.0001831054688,
+    -691.500114440918
+   ],
+   "scale": [
+    1,
+    0.266,
+    1
+   ]
+  },
+  "after": {
+   "position": [
+    -588,
+    553.0001831054688,
+    -688.7679432840241
+   ],
+   "scale": [
+    1,
+    0.266,
+    1
+   ]
+  }
+ },
+ {
+  "role": "spojnice-sloupec0-patro1",
+  "part_id": "Object_7",
+  "kind": "spojnice-sloupec0-ramp-Z-interp",
+  "before": {
+   "position": [
+    -588,
+    553.0001831054688,
+    -1092.500114440918
+   ],
+   "scale": [
+    1,
+    0.266,
+    1
+   ]
+  },
+  "after": {
+   "position": [
+    -588,
+    553.0001831054688,
+    -1087.2259464535962
+   ],
+   "scale": [
+    1,
+    0.266,
+    1
+   ]
+  }
+ },
+ {
+  "role": "spojnice-sloupec0-patro1",
+  "part_id": "Object_7",
+  "kind": "spojnice-sloupec0-ramp-Z-interp",
+  "before": {
+   "position": [
+    -588,
+    553.0001831054688,
+    -1492.500114440918
+   ],
+   "scale": [
+    1,
+    0.266,
+    1
+   ]
+  },
+  "after": {
+   "position": [
+    -588,
+    553.0001831054688,
+    -1484.690288767384
+   ],
+   "scale": [
+    1,
+    0.266,
+    1
+   ]
+  }
+ },
+ {
+  "role": "eurobox-sloupec0-patro1",
+  "part_id": "product_3788",
+  "kind": "eurobox-sloupec0-ramp-Z-interp",
+  "before": {
+   "position": [
+    -445.013277053833,
+    1137.0869100727991,
+    -98.4429617697894
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ]
+  },
+  "after": {
+   "position": [
+    -445.013277053833,
+    1137.0869100727991,
+    -99.47026543173
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ]
+  }
+ },
+ {
+  "role": "eurobox-sloupec0-patro1",
+  "part_id": "product_3788",
+  "kind": "eurobox-sloupec0-ramp-Z-interp",
+  "before": {
+   "position": [
+    -445.013277053833,
+    1137.0869100727991,
+    -499.4429617697894
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ]
+  },
+  "after": {
+   "position": [
+    -445.013277053833,
+    1137.0869100727991,
+    -497.9282686013021
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ]
+  }
+ },
+ {
+  "role": "eurobox-sloupec0-patro1",
+  "part_id": "product_3788",
+  "kind": "eurobox-sloupec0-ramp-Z-interp",
+  "before": {
+   "position": [
+    -445.013277053833,
+    1137.0869100727991,
+    -899.9429617697895
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ]
+  },
+  "after": {
+   "position": [
+    -445.013277053833,
+    1137.0869100727991,
+    -895.8894413429821
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ]
+  }
+ },
+ {
+  "role": "nosnik-sloupec0-patro2",
+  "part_id": "Object_7",
+  "kind": "nosnik-sloupec0-resize",
+  "before": {
+   "position": [
+    -440,
+    721.0001831054688,
+    -891.500114440918
+   ],
+   "scale": [
+    1,
+    1.232,
+    1
+   ]
+  },
+  "after": {
+   "position": [
+    -440,
+    721.0001831054688,
+    -887.500114440918
+   ],
+   "scale": [
+    1,
+    1.224,
+    1
+   ]
+  }
+ },
+ {
+  "role": "nosnik-sloupec0-patro2",
+  "part_id": "Object_7",
+  "kind": "nosnik-sloupec0-resize",
+  "before": {
+   "position": [
+    -736,
+    721.0001831054688,
+    -891.500114440918
+   ],
+   "scale": [
+    1,
+    1.232,
+    1
+   ]
+  },
+  "after": {
+   "position": [
+    -736,
+    721.0001831054688,
+    -887.500114440918
+   ],
+   "scale": [
+    1,
+    1.224,
+    1
+   ]
+  }
+ },
+ {
+  "role": "spojnice-sloupec0-patro2",
+  "part_id": "Object_7",
+  "kind": "spojnice-sloupec0-ramp-Z-interp",
+  "before": {
+   "position": [
+    -588,
+    721.0001831054688,
+    -290.50011444091797
+   ],
+   "scale": [
+    1,
+    0.266,
+    1
+   ]
+  },
+  "after": {
+   "position": [
+    -588,
+    721.0001831054688,
+    -290.30994011445205
+   ],
+   "scale": [
+    1,
+    0.266,
+    1
+   ]
+  }
+ },
+ {
+  "role": "spojnice-sloupec0-patro2",
+  "part_id": "Object_7",
+  "kind": "spojnice-sloupec0-ramp-Z-interp",
+  "before": {
+   "position": [
+    -588,
+    721.0001831054688,
+    -691.500114440918
+   ],
+   "scale": [
+    1,
+    0.266,
+    1
+   ]
+  },
+  "after": {
+   "position": [
+    -588,
+    721.0001831054688,
+    -688.7679432840241
+   ],
+   "scale": [
+    1,
+    0.266,
+    1
+   ]
+  }
+ },
+ {
+  "role": "spojnice-sloupec0-patro2",
+  "part_id": "Object_7",
+  "kind": "spojnice-sloupec0-ramp-Z-interp",
+  "before": {
+   "position": [
+    -588,
+    721.0001831054688,
+    -1092.500114440918
+   ],
+   "scale": [
+    1,
+    0.266,
+    1
+   ]
+  },
+  "after": {
+   "position": [
+    -588,
+    721.0001831054688,
+    -1087.2259464535962
+   ],
+   "scale": [
+    1,
+    0.266,
+    1
+   ]
+  }
+ },
+ {
+  "role": "spojnice-sloupec0-patro2",
+  "part_id": "Object_7",
+  "kind": "spojnice-sloupec0-ramp-Z-interp",
+  "before": {
+   "position": [
+    -588,
+    721.0001831054688,
+    -1492.500114440918
+   ],
+   "scale": [
+    1,
+    0.266,
+    1
+   ]
+  },
+  "after": {
+   "position": [
+    -588,
+    721.0001831054688,
+    -1484.690288767384
+   ],
+   "scale": [
+    1,
+    0.266,
+    1
+   ]
+  }
+ },
+ {
+  "role": "eurobox-sloupec0-patro2",
+  "part_id": "product_3788",
+  "kind": "eurobox-sloupec0-ramp-Z-interp",
+  "before": {
+   "position": [
+    -445.013277053833,
+    1305.0869100727991,
+    -98.4429617697894
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ]
+  },
+  "after": {
+   "position": [
+    -445.013277053833,
+    1305.0869100727991,
+    -99.47026543173
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ]
+  }
+ },
+ {
+  "role": "eurobox-sloupec0-patro2",
+  "part_id": "product_3788",
+  "kind": "eurobox-sloupec0-ramp-Z-interp",
+  "before": {
+   "position": [
+    -445.013277053833,
+    1305.0869100727991,
+    -499.4429617697894
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ]
+  },
+  "after": {
+   "position": [
+    -445.013277053833,
+    1305.0869100727991,
+    -497.9282686013021
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ]
+  }
+ },
+ {
+  "role": "eurobox-sloupec0-patro2",
+  "part_id": "product_3788",
+  "kind": "eurobox-sloupec0-ramp-Z-interp",
+  "before": {
+   "position": [
+    -445.013277053833,
+    1305.0869100727991,
+    -899.9429617697895
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ]
+  },
+  "after": {
+   "position": [
+    -445.013277053833,
+    1305.0869100727991,
+    -895.8894413429821
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ]
+  }
+ },
+ {
+  "role": "uhelnik-noha0",
+  "part_id": "product_3045",
+  "kind": "front-leg0-Z-shift",
+  "before": {
+   "position": [
+    -455.00000762939493,
+    31.000267072973514,
+    -1508.5001215934753
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ]
+  },
+  "after": {
+   "position": [
+    -455.00000762939493,
+    31.000267072973514,
+    -1500.5001215934753
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ]
+  }
+ },
+ {
+  "role": "uhelnik-noha0",
+  "part_id": "product_3045",
+  "kind": "front-leg0-Z-shift",
+  "before": {
+   "position": [
+    -455.00000762939453,
+    891.0000838791655,
+    -1536.5001215934753
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ]
+  },
+  "after": {
+   "position": [
+    -455.00000762939453,
+    891.0000838791655,
+    -1528.5001215934753
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ]
+  }
+ },
+ {
+  "role": "uhelnik-noha0",
+  "part_id": "product_3045",
+  "kind": "front-leg0-Z-shift",
+  "before": {
+   "position": [
+    -455.00000762939453,
+    921.0002670729735,
+    -1508.5001215934753
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ]
+  },
+  "after": {
+   "position": [
+    -455.00000762939453,
+    921.0002670729735,
+    -1500.5001215934753
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ]
+  }
+ },
+ {
+  "role": "uhelnik-noha0",
+  "part_id": "product_3045",
+  "kind": "front-leg0-Z-shift",
+  "before": {
+   "position": [
+    -721.0000076293942,
+    31.00026707297352,
+    -1536.5001215934753
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ]
+  },
+  "after": {
+   "position": [
+    -721.0000076293942,
+    31.00026707297352,
+    -1528.5001215934753
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ]
+  }
+ },
+ {
+  "role": "uhelnik-noha0",
+  "part_id": "product_3045",
+  "kind": "front-leg0-Z-shift",
+  "before": {
+   "position": [
+    -721.0000076293945,
+    891.0000838791655,
+    -1508.5001215934753
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ]
+  },
+  "after": {
+   "position": [
+    -721.0000076293945,
+    891.0000838791655,
+    -1500.5001215934753
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ]
+  }
+ },
+ {
+  "role": "uhelnik-noha0",
+  "part_id": "product_3045",
+  "kind": "front-leg0-Z-shift",
+  "before": {
+   "position": [
+    -650.9998467160929,
+    921.0003103959583,
+    -1508.5001215934753
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ]
+  },
+  "after": {
+   "position": [
+    -650.9998467160929,
+    921.0003103959583,
+    -1500.5001215934753
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ]
+  }
+ },
+ {
+  "role": "uhelnik-noha0",
+  "part_id": "product_3045",
+  "kind": "front-leg0-Z-shift",
+  "before": {
+   "position": [
+    -681.0000076294618,
+    921.0002918289302,
+    -1536.5001215934753
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ]
+  },
+  "after": {
+   "position": [
+    -681.0000076294618,
+    921.0002918289302,
+    -1528.5001215934753
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ]
+  }
+ },
+ {
+  "role": "uhelnik-noha1",
+  "part_id": "product_3045",
+  "kind": "leg1-uhelnik-seam-Y-shift",
+  "before": {
+   "position": [
+    -455.00000762939493,
+    141.00008387916546,
+    -274.50012159347534
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ]
+  },
+  "after": {
+   "position": [
+    -455.00000762939493,
+    151.00008387916546,
+    -274.50012159347534
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ]
+  }
+ },
+ {
+  "role": "uhelnik-noha1",
+  "part_id": "product_3045",
+  "kind": "leg1-uhelnik-seam-Y-shift",
+  "before": {
+   "position": [
+    -455.00000762939493,
+    171.00026707297351,
+    -246.50012159347534
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ]
+  },
+  "after": {
+   "position": [
+    -455.00000762939493,
+    181.00026707297351,
+    -246.50012159347534
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ]
+  }
+ },
+ {
+  "role": "uhelnik-noha1",
+  "part_id": "product_3045",
+  "kind": "leg1-uhelnik-seam-Y-shift",
+  "before": {
+   "position": [
+    -597.0000076292788,
+    140.9999959956423,
+    -274.50012159347534
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ]
+  },
+  "after": {
+   "position": [
+    -597.0000076292788,
+    150.9999959956423,
+    -274.50012159347534
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ]
+  }
+ },
+ {
+  "role": "uhelnik-noha1",
+  "part_id": "product_3045",
+  "kind": "leg1-uhelnik-seam-Y-shift",
+  "before": {
+   "position": [
+    -627.0000942749336,
+    140.99997742866017,
+    -246.50012159347534
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ]
+  },
+  "after": {
+   "position": [
+    -627.0000942749336,
+    150.99997742866017,
+    -246.50012159347534
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ]
+  }
+ },
+ {
+  "role": "uhelnik-noha1",
+  "part_id": "product_3045",
+  "kind": "leg1-uhelnik-seam-Y-shift",
+  "before": {
+   "position": [
+    -721.0000076293943,
+    171.00026707297351,
+    -274.50012159347534
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ]
+  },
+  "after": {
+   "position": [
+    -721.0000076293943,
+    181.00026707297351,
+    -274.50012159347534
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ]
+  }
+ }
+]

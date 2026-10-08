@@ -1,0 +1,49 @@
+{
+ "v": 1,
+ "_pozn": "Vychozi hodnoty pohybu ve 3D nabidce (bot10, 2026-10-01). Plati, dokud Robert nerozhodne (otevrene otazky: uhel dvirek, plny vysuv, mechanismus pinu, choreografie boxu). Cte je scripts/v3d/vandr_motions.py pres ctx.json (build_ctx.py) a stejny soubor ma cist i nativni modul. Zmena se projevi pri dalsim sestaveni modelu. Hodnoty 'overeno': false se do geom.json propisuji jako varovani.",
+ "stav": "vychozi - neovereno Robertem",
+ "suplik": {
+  "_pozn": "Suplik, vysuv (KLT/Multibox/Eurobox), kufrik: draha = delka kolejnice z kusovniku Pojezdy.<delka> (plny vysuv) x podil.",
+  "podil": 1.0,
+  "ms": 1200,
+  "overeno": false
+ },
+ "dvirka": {
+  "_pozn": "Sklopna dvirka police: Robert 2026-10-01 - 120 stupnu (180 je moc). Omezi se sweepem kolizi po 5 st. (nejnize 90) proti statickym dilum a proti plne vysunutym supliku/vysuvum (vc. boxu na nich); vlastni pant neni prekazka.",
+  "uhel_deg": -120,
+  "ms": 1600,
+  "overeno": true
+ },
+ "podlahova_dvirka": {
+  "_pozn": "Podlahova dvirka (osa = kluzne srouby M10).",
+  "uhel_deg": -90,
+  "ms": 1600,
+  "overeno": false
+ },
+ "pin": {
+  "_pozn": "HYPOTEZA z geometrie: odjisteni = posun zapadky s kolikem a knoflikem podel osy X komponenty smerem dovnitr (od nohy). Pred sklopenim dvirek.",
+  "posun_mm": 16,
+  "ms": 500,
+  "overeno": false
+ },
+ "box_na_vysuvu": {
+  "_pozn": "Box (KLT, Multibox, Eurobox) na vysuvu: po vysunuti zvednout. Kdyz je nad vysunutym boxem jiny dil (napr. madlo vysuvu nad nim), zdvih se zkrati na volne misto - 2 mm; pod min_zdvih_mm box jede jen s vysuvem (varovani).",
+  "zdvih_mm": 60,
+  "min_zdvih_mm": 12,
+  "ms": 900,
+  "overeno": false
+ },
+ "box_na_polici": {
+  "_pozn": "Box primo na polici (bez kolejnic): zvednout nad predni listu (vyska listy + rezerva, jen kdyz je nad boxem misto), vytahnout pred regal (hloubka + presah) a dozvednout na zdvih_mm celkem.",
+  "rezerva_mm": 5,
+  "presah_mm": 30,
+  "zdvih_mm": 60,
+  "ms": 1200,
+  "overeno": false
+ },
+ "typ_z_geometrie": {
+  "_pozn": "Kdyz kusovnik komponenty ve Vandr DB neuvadi pant/zapadku, ale komponenta je podle jmena dvirka (Police.door) a model ma pojmenovane panty a klouby na jedne primce, dvirka se animuji a do geom.json jde varovani.",
+  "povolit": true
+ },
+ "_plynulost": "Robert 2026-10-01: pohyby plynule, ne jen pocatecni a koncova poloha - delsi casy, prohlizec ignoruje systemove 'omezit animace'."
+}

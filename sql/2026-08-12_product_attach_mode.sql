@@ -1,0 +1,11 @@
+-- Robert 2026-08-12: "musim te naucit osazovat profily prislusenstvim a
+-- spojkami stejne jako u uhelniku... pripravit klikaci prostredi pro
+-- odklikavani spravnych postupu, postupne pro vsechny produkty katalogu".
+-- Explicitni rezim napojeni per produkt (misto driveji hadaneho z nazvu).
+--   corner  = kolmy roh mezi 2 profily (existujici mechanika UhelnikAut,
+--             viz accessory_conn_enabled + uhelnik_pose)
+--   endcap  = volne celo 1 profilu (existujici mechanika ZaslepkaAut)
+--   none    = jen rucni napojeni, Place All se pro dil vubec nepouzije
+-- NULL = jeste nenauceno (Place All zatim pada zpet na puvodni hadani
+-- podle nazvu, at se nic nerozbije, co uz funguje).
+ALTER TABLE shop_products ADD COLUMN attach_mode VARCHAR(20) DEFAULT NULL

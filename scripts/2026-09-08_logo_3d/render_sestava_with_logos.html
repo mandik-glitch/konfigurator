@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Logo LOGIMAN.CZ na profilech - Doblo A</title>
+<style>html,body{margin:0;padding:0;background:#e8ecf0;overflow:hidden;}
+#lbl{position:fixed;top:14px;left:14px;font:bold 20px Arial;color:#111;background:rgba(255,255,255,0.88);padding:8px 14px;border-radius:4px;}
+</style>
+</head>
+<body>
+<div id="lbl">-</div>
+<script type="importmap">
+{ "imports": { "three": "../../node_modules/three/build/three.module.js" } }
+</script>
+<script type="module">
+import * as THREE from 'three';
+import { GLTFLoader } from '../../node_modules/three/examples/jsm/loaders/GLTFLoader.js';
+
+const KAT = '../../webapp/katalog/';
+const GLB_MAP = { 'product_3045': 'product_2895.glb', 'product_3939': 'deska_mdf_seda_8.glb' };
+function glbSoubor(pid) { return KAT + (GLB_MAP[pid] || pid + '.glb'); }
+
+const W = 1600, H = 1100;
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0xe8ecf0);
+const camera = new THREE.PerspectiveCamera(35, W / H, 1, 20000);
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setSize(W, H);
+document.body.appendChild(renderer.domElement);
+scene.add(new THREE.AmbientLight(0xffffff, 0.85));
+const dir1 = new THREE.DirectionalLight(0xffffff, 0.9);
+dir1.position.set(600, 1200, 900);
+scene.add(dir1);
+const dir2 = new THREE.DirectionalLight(0xffffff, 0.35);
+dir2.position.set(-500, 600, -500);
+scene.add(dir2);
+
+const loader = new GLTFLoader();
+const cache = {};
+function loadGlb(path) {
+  if (cache[path]) return cache[path].then(g => g.clone());
+  const p = new Promise((res, rej) => loader.load(path, gltf => res(gltf.scene), undefined, rej));
+  cache[path] = p;
+  return p.then(g => g.clone());
+}
+
+(async () => {
+  try {
+    const parts = await fetch('./demo_sestava_with_logos.json').then(r => r.json());
+    // car body zaklad
+    const carBase = 'car_bodies/Fiat_Doblo_FI14_2010-2022';
+    for (const suf of ['_L', '_R_D', '_B']) {
+      const cb = await loadGlb(KAT + carBase + suf + '.glb');
+      cb.traverse(n => { if (n.isMesh) n.material = new THREE.MeshStandardMaterial({ color: 0xdfe3e8, transparent: true, opacity: 0.25, depthWrite: false }); });
+      scene.add(cb);
+    }
+    const logoGroup = [];
+    for (const p of parts) {
+      if (String(p.part_id).startsWith('car_body_')) continue;
+      const isLogo = p.part_id === 'logo_logiman_cz';
+      let obj;
+      try { obj = await loadGlb(glbSoubor(p.part_id)); } catch (e) { continue; }
+      obj.position.set(...p.position);
+      obj.quaternion.set(...p.quaternion);
+      obj.scale.set(...p.scale);
+      // Robert 2026-09-08: "logo nebude cervene ale jakoby soucast profilu" -
+      // STEJNY material jako hlinikovy profil (ne odlisny akcentovy odstin),
+      // aby vypadalo jako vyrazena/vytlacena cast profilu samotneho, ne
+      // nalepka. "necha vystupuje z profilu" - uz reseno pozici (vnitrni
+      // plocha flush s povrchem, vnejsi vyckuje o celou tloustku ven).
+      obj.traverse(n => { if (n.isMesh) n.material = new THREE.MeshStandardMaterial({ color: 0xaab4c0, metalness: 0.5, roughness: 0.55 }); });
+      scene.add(obj);
+      if (isLogo) logoGroup.push(obj);
+    }
+
+    const overall = new THREE.Box3();
+    parts.forEach(() => {}); // noop, use scene bbox instead
+    const sceneBox = new THREE.Box3().setFromObject(scene);
+    const center = sceneBox.getCenter(new THREE.Vector3());
+    const size = sceneBox.getSize(new THREE.Vector3());
+    const maxDim = Math.max(size.x, size.y, size.z);
+    const dist = maxDim * 1.3;
+    const lbl = document.getElementById('lbl');
+
+    window.__setView__ = function (view) {
+      if (view === 'overview') {
+        camera.position.set(center.x + dist * 0.6, center.y + dist * 0.45, center.z + dist * 0.85);
+        camera.lookAt(center.x, center.y, center.z);
+        lbl.textContent = 'Doblo K-075 A - cela sestava s logem LOGIMAN.CZ (4x)';
+      } else if (view.startsWith('closeup')) {
+        const idx = +view.split('-')[1];
+        const lb = new THREE.Box3().setFromObject(logoGroup[idx]);
+        const lc = lb.getCenter(new THREE.Vector3());
+        const ld = Math.max(lb.getSize(new THREE.Vector3()).x, lb.getSize(new THREE.Vector3()).y, lb.getSize(new THREE.Vector3()).z) * 5;
+        camera.position.set(lc.x + ld * 0.6, lc.y + ld * 0.3, lc.z + ld * 0.9);
+        camera.lookAt(lc.x, lc.y, lc.z);
+        lbl.textContent = 'logo-ochrana-' + idx + ' detail';
+      } else if (view.startsWith('turntable-')) {
+        const deg = +view.split('-')[1];
+        const rad = deg * Math.PI / 180;
+        const r = dist * 0.95;
+        camera.position.set(center.x + r * Math.sin(rad), center.y + dist * 0.32, center.z + r * Math.cos(rad));
+        camera.lookAt(center.x, center.y, center.z);
+        lbl.textContent = 'Doblo K-075 A - otocka ' + deg + ' stupnu';
+      }
+      renderer.render(scene, camera);
+    };
+    window.__setView__('overview');
+    window.__RENDER_DONE__ = true;
+  } catch (e) {
+    window.__RENDER_ERROR__ = (e && e.message) || String(e);
+    console.error(e);
+  }
+})();
+</script>
+</body>
+</html>

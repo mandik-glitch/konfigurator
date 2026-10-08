@@ -1,0 +1,40 @@
+{
+  "shop": "packstations",
+  "lang": "en",
+  "locale": "en-IE",
+  "currency": "EUR",
+  "accent": "#2dd4bf",
+  "countries": [
+    "CZ",
+    "SK",
+    "DE",
+    "AT",
+    "PL"
+  ],
+  "vat": {
+    "display": "excl",
+    "rates": {
+      "CZ": 21,
+      "SK": 23,
+      "DE": 19,
+      "AT": 20,
+      "PL": 23
+    }
+  },
+  "shipping": {
+    "CZ": 49,
+    "SK": 69,
+    "DE": 89,
+    "AT": 89,
+    "PL": 79
+  },
+  "contact": {
+    "phone": "",
+    "hours": ""
+  },
+  "alternates": [],
+  "price_mode": "shown",
+  "checkout_mode": "order",
+  "preview": true,
+  "inquiry_only": false
+}

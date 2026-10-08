@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "family": "packstations",
+  "lang": "en",
+  "categories": [
+    {
+      "slug": "packing-tables-and-workbenches",
+      "url_slug": "packing-tables-and-workbenches",
+      "parent": null,
+      "sort": 1,
+      "name": "Packing tables and workbenches"
+    }
+  ],
+  "products": [
+    {
+      "slug": "configurable-packing-station-and-workbench",
+      "url_slug": "configurable-packing-station-and-workbench",
+      "sku": "PWB-001",
+      "category": "packing-tables-and-workbenches",
+      "sort": 1,
+      "configurator": {
+        "available": true,
+        "shop_product_id": 4934,
+        "default_view": "configurator"
+      },
+      "name": "Configurable packing station and workbench",
+      "summary": "Packing station and workbench with an aluminium profile frame, made to your size. Choose dimensions, shelves and accessories and see it in 3D.",
+      "description": "Made to your size\nThis work table is made to order. Instead of choosing from fixed sizes, you set the worktop width, depth and height, decide how many shelves you need and add the accessories your work requires. The 3D view shows the result as you change it.\n\nChecked at every change\nThe frame is recalculated automatically each time you change something. A combination that cannot be built is not accepted, so every valid configuration is a table that can really be made.\n\nAluminium profile frame\nThe frame is a modular system of aluminium profiles with a 30 × 30 mm cross-section and an 8 mm slot, joined with corner connectors. The slots along the profiles make it possible to adjust shelves and accessories.\n\nFor packing and workshop use\nThe table suits packing and dispatch areas, workplaces for assembly work and workshops. Because you choose the worktop height, the table can be set to suit the people who use it. Accessories for lighting, power, storage and mobility are added in the configurator.\n\nDelivery, assembly and shipping\nThe table is made to order and delivery takes 3–5 weeks. Assembly is an optional service: with it the table is delivered assembled, without it disassembled, and you assemble it yourself. The shipping price depends on whether you choose assembly; we set it after the order and confirm it with you before the proforma invoice is issued.",
+      "delivery": "Made to order. Delivery in 3–5 weeks. Assembly is an optional service: with it the table is delivered assembled, without it disassembled. We set the shipping price after the order and confirm it before the proforma invoice is issued.",
+      "specs": [
+        {
+          "name": "Frame",
+          "value": "Aluminium profiles 30 × 30 mm with 8 mm slot, corner connectors"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,594 @@
+{
+ "accepted": null,
+ "configuration": {
+  "bom": [
+   {
+    "mnozstvi": 1,
+    "nazev": "LED osvětlení",
+    "rozmer": null
+   },
+   {
+    "mnozstvi": 82,
+    "nazev": "Ozubená matice M6 - drážka 8",
+    "rozmer": null
+   },
+   {
+    "mnozstvi": 1,
+    "nazev": "držák PET lahve",
+    "rozmer": null
+   },
+   {
+    "mnozstvi": 1,
+    "nazev": "elektrožlab",
+    "rozmer": null
+   },
+   {
+    "mnozstvi": 1,
+    "nazev": "laminodeska",
+    "rozmer": "800 × 1164 mm"
+   },
+   {
+    "mnozstvi": 1,
+    "nazev": "laminodeska",
+    "rozmer": "800 × 732 mm"
+   },
+   {
+    "mnozstvi": 1,
+    "nazev": "laminodeska",
+    "rozmer": "950 × 1211 mm"
+   },
+   {
+    "mnozstvi": 1,
+    "nazev": "laminodeska",
+    "rozmer": "950 × 779 mm"
+   },
+   {
+    "mnozstvi": 2,
+    "nazev": "perforovaný panel",
+    "rozmer": null
+   },
+   {
+    "mnozstvi": 7,
+    "nazev": "profil 30×30",
+    "rozmer": "1930 mm"
+   },
+   {
+    "mnozstvi": 2,
+    "nazev": "profil 30×30",
+    "rozmer": "1940 mm"
+   },
+   {
+    "mnozstvi": 1,
+    "nazev": "profil 30×30",
+    "rozmer": "1990 mm"
+   },
+   {
+    "mnozstvi": 2,
+    "nazev": "profil 30×30",
+    "rozmer": "210 mm"
+   },
+   {
+    "mnozstvi": 4,
+    "nazev": "profil 30×30",
+    "rozmer": "446 mm"
+   },
+   {
+    "mnozstvi": 2,
+    "nazev": "profil 30×30",
+    "rozmer": "520 mm"
+   },
+   {
+    "mnozstvi": 2,
+    "nazev": "profil 30×30",
+    "rozmer": "742 mm"
+   },
+   {
+    "mnozstvi": 2,
+    "nazev": "profil 30×30",
+    "rozmer": "777 mm"
+   },
+   {
+    "mnozstvi": 8,
+    "nazev": "profil 30×30",
+    "rozmer": "890 mm"
+   },
+   {
+    "mnozstvi": 37,
+    "nazev": "rohová spojka",
+    "rozmer": null
+   },
+   {
+    "mnozstvi": 4,
+    "nazev": "stavitelná patka",
+    "rozmer": null
+   },
+   {
+    "mnozstvi": 74,
+    "nazev": "Šroub imbus s válcovou hlavou M6x12",
+    "rozmer": null
+   },
+   {
+    "mnozstvi": 8,
+    "nazev": "Šroub imbus se zápustnou hlavou M6×14 (délka včetně hlavy)",
+    "rozmer": null
+   },
+   {
+    "mnozstvi": 4,
+    "nazev": "šikmá spojka 45° (30)",
+    "rozmer": null
+   },
+   {
+    "mnozstvi": 1,
+    "nazev": "šuplíkový box",
+    "rozmer": null
+   }
+  ],
+  "kod": "STL-DDC88E",
+  "summary": [
+   {
+    "label": "Šířka desky",
+    "value": "1990 mm"
+   },
+   {
+    "label": "Hloubka desky",
+    "value": "950 mm"
+   },
+   {
+    "label": "Výška pracovní desky",
+    "value": "840 mm"
+   },
+   {
+    "label": "Přesah desky vpředu přes čelní profil",
+    "value": "30 mm"
+   },
+   {
+    "label": "Poloha střední nohy (od levé)",
+    "value": "61 %"
+   },
+   {
+    "label": "Zadní stojky (svislé profily nahoru)",
+    "value": "ano"
+   },
+   {
+    "label": "Výška zadních stojek nad deskou",
+    "value": "1163.0 mm"
+   },
+   {
+    "label": "Počet spodních polic",
+    "value": "1 ks"
+   },
+   {
+    "label": "Kolečka",
+    "value": "ne"
+   },
+   {
+    "label": "Stavitelné patky (místo záslepek)",
+    "value": "ano"
+   },
+   {
+    "label": "Ocelové šuplíky",
+    "value": "ano"
+   },
+   {
+    "label": "Počet šuplíků v boxu",
+    "value": "2 ks"
+   },
+   {
+    "label": "Šuplíky na levé straně (jinak vpravo)",
+    "value": "ne"
+   },
+   {
+    "label": "Posun šuplíků po šířce",
+    "value": "0 mm"
+   },
+   {
+    "label": "Perforované panely na nářadí",
+    "value": "ano"
+   },
+   {
+    "label": "Počet panelů",
+    "value": "2 ks"
+   },
+   {
+    "label": "Výška panelů (posun po zadních stojkách)",
+    "value": "30 mm"
+   },
+   {
+    "label": "Panely do stran (posun mezi nohama)",
+    "value": "-369 mm"
+   },
+   {
+    "label": "LED osvětlení",
+    "value": "ano"
+   },
+   {
+    "label": "Svítidlo LED (bez něj zůstanou ramena a profily)",
+    "value": "ano"
+   },
+   {
+    "label": "Elektrožlab (zásuvky)",
+    "value": "ano"
+   },
+   {
+    "label": "Elektrožlab: posun nahoru",
+    "value": "-110 mm"
+   },
+   {
+    "label": "Elektrožlab: posun do stran",
+    "value": "1170 mm"
+   },
+   {
+    "label": "Držák PET lahve",
+    "value": "ano"
+   },
+   {
+    "label": "Výška držáku PET lahve na noze",
+    "value": "0 mm"
+   },
+   {
+    "label": "Délka ramene LED od zadních stojek",
+    "value": "520 mm"
+   },
+   {
+    "label": "Šikmé vzpěry ramen LED (podepření)",
+    "value": "ano"
+   },
+   {
+    "label": "Délka vzpěry",
+    "value": "210 mm"
+   },
+   {
+    "label": "Výřez 1",
+    "value": "ne"
+   },
+   {
+    "label": "Výřez 2",
+    "value": "ne"
+   },
+   {
+    "label": "Výřez 3",
+    "value": "ne"
+   },
+   {
+    "label": "Ložiskové jednotky (kuličkové)",
+    "value": "ne"
+   }
+  ]
+ },
+ "created_at": "2026-10-06T21:23:25",
+ "customer_name": "testovaci",
+ "declined": null,
+ "editable_text": {
+  "patka": "Nabídka je platná 30 dní od data vystavení. Ceny jsou uvedeny bez DPH i včetně DPH 21 %. Platební podmínky a dodací lhůta budou upřesněny po odsouhlasení nabídky.",
+  "popis": "Na základě Vaší poptávky Vám předkládáme cenovou nabídku na konstrukci z hliníkových stavebnicových profilů dle přiloženého 3D návrhu. Veškeré rozměry odpovídají uvedeným kótám."
+ },
+ "expires_at": "2026-11-05T21:23:26",
+ "has_3d_model": true,
+ "has_ghost_views": false,
+ "hdri": null,
+ "image_urls": {
+  "bokorys": "/api/public/offers/TESTTOKEN/image/bokorys",
+  "narys": "/api/public/offers/TESTTOKEN/image/narys",
+  "pudorys": "/api/public/offers/TESTTOKEN/image/pudorys",
+  "view3d_a": "/api/public/offers/TESTTOKEN/image/view3d_a",
+  "view3d_b": "/api/public/offers/TESTTOKEN/image/view3d_b"
+ },
+ "items": [
+  {
+   "config_hash": "ddc88ea26d584937",
+   "configuration_code": "STL-DDC88E",
+   "dim": "",
+   "name": "Pracovní stůl systém 30 – konfigurovatelný – 1990 × 950 × 840 mm (STL-DDC88E)",
+   "product_id": null,
+   "qty": 1,
+   "total": 38195.0,
+   "unit_price": 38195.0
+  }
+ ],
+ "last_edited_at": null,
+ "markups": [],
+ "model_url": "/api/public/offers/TESTTOKEN/model",
+ "montaz_pct": 12.0,
+ "montaz_volba": true,
+ "offer_number": "Logiman0124",
+ "offer_options": {
+  "config": {
+   "bom": [
+    {
+     "mnozstvi": 1,
+     "nazev": "LED osvětlení",
+     "rozmer": null
+    },
+    {
+     "mnozstvi": 82,
+     "nazev": "Ozubená matice M6 - drážka 8",
+     "rozmer": null
+    },
+    {
+     "mnozstvi": 1,
+     "nazev": "držák PET lahve",
+     "rozmer": null
+    },
+    {
+     "mnozstvi": 1,
+     "nazev": "elektrožlab",
+     "rozmer": null
+    },
+    {
+     "mnozstvi": 1,
+     "nazev": "laminodeska",
+     "rozmer": "800 × 1164 mm"
+    },
+    {
+     "mnozstvi": 1,
+     "nazev": "laminodeska",
+     "rozmer": "800 × 732 mm"
+    },
+    {
+     "mnozstvi": 1,
+     "nazev": "laminodeska",
+     "rozmer": "950 × 1211 mm"
+    },
+    {
+     "mnozstvi": 1,
+     "nazev": "laminodeska",
+     "rozmer": "950 × 779 mm"
+    },
+    {
+     "mnozstvi": 2,
+     "nazev": "perforovaný panel",
+     "rozmer": null
+    },
+    {
+     "mnozstvi": 7,
+     "nazev": "profil 30×30",
+     "rozmer": "1930 mm"
+    },
+    {
+     "mnozstvi": 2,
+     "nazev": "profil 30×30",
+     "rozmer": "1940 mm"
+    },
+    {
+     "mnozstvi": 1,
+     "nazev": "profil 30×30",
+     "rozmer": "1990 mm"
+    },
+    {
+     "mnozstvi": 2,
+     "nazev": "profil 30×30",
+     "rozmer": "210 mm"
+    },
+    {
+     "mnozstvi": 4,
+     "nazev": "profil 30×30",
+     "rozmer": "446 mm"
+    },
+    {
+     "mnozstvi": 2,
+     "nazev": "profil 30×30",
+     "rozmer": "520 mm"
+    },
+    {
+     "mnozstvi": 2,
+     "nazev": "profil 30×30",
+     "rozmer": "742 mm"
+    },
+    {
+     "mnozstvi": 2,
+     "nazev": "profil 30×30",
+     "rozmer": "777 mm"
+    },
+    {
+     "mnozstvi": 8,
+     "nazev": "profil 30×30",
+     "rozmer": "890 mm"
+    },
+    {
+     "mnozstvi": 37,
+     "nazev": "rohová spojka",
+     "rozmer": null
+    },
+    {
+     "mnozstvi": 4,
+     "nazev": "stavitelná patka",
+     "rozmer": null
+    },
+    {
+     "mnozstvi": 74,
+     "nazev": "Šroub imbus s válcovou hlavou M6x12",
+     "rozmer": null
+    },
+    {
+     "mnozstvi": 8,
+     "nazev": "Šroub imbus se zápustnou hlavou M6×14 (délka včetně hlavy)",
+     "rozmer": null
+    },
+    {
+     "mnozstvi": 4,
+     "nazev": "šikmá spojka 45° (30)",
+     "rozmer": null
+    },
+    {
+     "mnozstvi": 1,
+     "nazev": "šuplíkový box",
+     "rozmer": null
+    }
+   ],
+   "delivery_country": "CZ",
+   "kod": "STL-DDC88E",
+   "pocet_spoju": 50,
+   "qty": 1,
+   "souhrn": [
+    {
+     "label": "Šířka desky",
+     "value": "1990 mm"
+    },
+    {
+     "label": "Hloubka desky",
+     "value": "950 mm"
+    },
+    {
+     "label": "Výška pracovní desky",
+     "value": "840 mm"
+    },
+    {
+     "label": "Přesah desky vpředu přes čelní profil",
+     "value": "30 mm"
+    },
+    {
+     "label": "Poloha střední nohy (od levé)",
+     "value": "61 %"
+    },
+    {
+     "label": "Zadní stojky (svislé profily nahoru)",
+     "value": "ano"
+    },
+    {
+     "label": "Výška zadních stojek nad deskou",
+     "value": "1163.0 mm"
+    },
+    {
+     "label": "Počet spodních polic",
+     "value": "1 ks"
+    },
+    {
+     "label": "Kolečka",
+     "value": "ne"
+    },
+    {
+     "label": "Stavitelné patky (místo záslepek)",
+     "value": "ano"
+    },
+    {
+     "label": "Ocelové šuplíky",
+     "value": "ano"
+    },
+    {
+     "label": "Počet šuplíků v boxu",
+     "value": "2 ks"
+    },
+    {
+     "label": "Šuplíky na levé straně (jinak vpravo)",
+     "value": "ne"
+    },
+    {
+     "label": "Posun šuplíků po šířce",
+     "value": "0 mm"
+    },
+    {
+     "label": "Perforované panely na nářadí",
+     "value": "ano"
+    },
+    {
+     "label": "Počet panelů",
+     "value": "2 ks"
+    },
+    {
+     "label": "Výška panelů (posun po zadních stojkách)",
+     "value": "30 mm"
+    },
+    {
+     "label": "Panely do stran (posun mezi nohama)",
+     "value": "-369 mm"
+    },
+    {
+     "label": "LED osvětlení",
+     "value": "ano"
+    },
+    {
+     "label": "Svítidlo LED (bez něj zůstanou ramena a profily)",
+     "value": "ano"
+    },
+    {
+     "label": "Elektrožlab (zásuvky)",
+     "value": "ano"
+    },
+    {
+     "label": "Elektrožlab: posun nahoru",
+     "value": "-110 mm"
+    },
+    {
+     "label": "Elektrožlab: posun do stran",
+     "value": "1170 mm"
+    },
+    {
+     "label": "Držák PET lahve",
+     "value": "ano"
+    },
+    {
+     "label": "Výška držáku PET lahve na noze",
+     "value": "0 mm"
+    },
+    {
+     "label": "Délka ramene LED od zadních stojek",
+     "value": "520 mm"
+    },
+    {
+     "label": "Šikmé vzpěry ramen LED (podepření)",
+     "value": "ano"
+    },
+    {
+     "label": "Délka vzpěry",
+     "value": "210 mm"
+    },
+    {
+     "label": "Výřez 1",
+     "value": "ne"
+    },
+    {
+     "label": "Výřez 2",
+     "value": "ne"
+    },
+    {
+     "label": "Výřez 3",
+     "value": "ne"
+    },
+    {
+     "label": "Ložiskové jednotky (kuličkové)",
+     "value": "ne"
+    }
+   ]
+  },
+  "delivery_term": null,
+  "fixed_deposit_pct": null,
+  "hidden_delivery_state": null,
+  "hidden_payment_method": "dobirka",
+  "hide_bom_prices": false,
+  "is_vehicle_assembly": false,
+  "manual_assembled_shipping_czk": null,
+  "montaz_pct": 12.0,
+  "show_qr": true,
+  "source": "configurator"
+ },
+ "order_prefs": null,
+ "pages": [
+  "cover",
+  "intro",
+  "drawings_1",
+  "drawings_2",
+  "view_3d",
+  "renders",
+  "pricing",
+  "closing"
+ ],
+ "payment_qr_url": "/api/public/offers/TESTTOKEN/payment-qr",
+ "pdf_url": null,
+ "renders": [],
+ "revision_number": 1,
+ "source": "configurator",
+ "supplier": {
+  "bank_account": "2100198113/2010",
+  "city": "13000 Praha",
+  "country": "Česká republika",
+  "dic": "CZ28337638",
+  "email": "mandik@logiman.cz",
+  "ico": "28337638",
+  "name": "LOGIMAN s.r.o.",
+  "phone": "+420 603 230 059",
+  "street": "Husinecká 903/10",
+  "web": "https://www.logiman.cz"
+ },
+ "total_price": 38195,
+ "viewer_role": "client"
+}

@@ -1,0 +1,12 @@
+-- Vychozi barva produktu ve 3D scene (bot7, 2026-08-07).
+--
+-- Robert: "potřebuji dát produktu barvu ve scéně, aby se objevil rovnou
+-- zbarvený" - upresnil "jen konkretni produkty" (ne vsechny profily
+-- cfg_dily plosne, jen shop_products, a jen podle potreby u kazde
+-- konkretni karty). NULL = beze zmeny (dil se ve scene chova jako
+-- dnes - vychozi barva podle vrstvy alu/black/zinc), nastavena hodnota
+-- = 3D scena pouzije tuhle barvu HNED pri vlozeni dilu (misto obecne
+-- barvy vrstvy), stejnym zpusobem, jako kdyby ho uzivatel rucne obarvil
+-- pres "Obarvit díl" (viz scene.html placeAtOrigin/refreshAllMaterials).
+-- Netyka se e-shopu/fotek produktu - vyhradne 3D scena.
+ALTER TABLE shop_products ADD COLUMN color_hex VARCHAR(7) NULL AFTER glb_file;

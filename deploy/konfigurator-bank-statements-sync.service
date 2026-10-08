@@ -1,0 +1,11 @@
+[Unit]
+Description=Konfigurator 3D objektu - denni synchronizace bankovnich vypisu FIO
+After=network.target
+
+[Service]
+Type=oneshot
+User=www-data
+Group=www-data
+WorkingDirectory=/opt/konfigurator/api
+EnvironmentFile=/opt/konfigurator/api/.env
+ExecStart=/opt/konfigurator/api/venv/bin/python3 /opt/konfigurator/api/app.py bank-statements-sync

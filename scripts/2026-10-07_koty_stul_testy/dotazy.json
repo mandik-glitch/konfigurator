@@ -1,0 +1,22 @@
+[
+ {
+  "nazev": "nabidka126",
+  "dotaz": "sirka=1550&hloubka=800&vyska=840&presah=30&led_rameno=560&stojky=1&kolecka=0&panely=1&led=1&led_svetlo=0&suplik=0&suplik_vlevo=0&elektrozlab=0&drzak_pet=1&patky=1&vzpery=1&police=1&suplik_pocet=2&panely_pocet=1&panely_posun=130&panely_delka=1481.0&panely_z=0&stredni_opora=auto&stojky_vyska=1073.0&elzlab_y=0.0&elzlab_z=0.0&police_h1=380.3&vyrez1=0&vyrez1_w=200.0&vyrez1_d=150.0&vyrez1_x=100.0&vyrez1_z=100.0&vyrez1_police=0&vyrez2=0&vyrez2_w=200.0&vyrez2_d=150.0&vyrez2_x=100.0&vyrez2_z=360.0&vyrez2_police=0&vyrez3=0&vyrez3_w=200.0&vyrez3_d=150.0&vyrez3_x=100.0&vyrez3_z=620.0&vyrez3_police=0&loz=0&loz_rozteca=200&loz_okraj=100&vzpera_delka=300&suplik_posun=0.0&pet_noha=PL&pet_strana=vpravo&pet_posun=0"
+ },
+ {
+  "nazev": "stul30_vychozi",
+  "dotaz": "sirka=1280&hloubka=800&vyska=840&presah=30&led_rameno=560&stojky=1&kolecka=1&panely=1&led=1&led_svetlo=1&suplik=1&suplik_vlevo=0&elektrozlab=1&drzak_pet=1&patky=0&vzpery=0&police=1&suplik_pocet=2&panely_pocet=1&panely_posun=0&panely_z=0&stredni_opora=auto&stojky_vyska=1073.0&elzlab_y=0&elzlab_z=0&vyrez1=0&vyrez1_w=200.0&vyrez1_d=150.0&vyrez1_x=100.0&vyrez1_z=100.0&vyrez1_police=0&vyrez2=0&vyrez2_w=200.0&vyrez2_d=150.0&vyrez2_x=100.0&vyrez2_z=360.0&vyrez2_police=0&vyrez3=0&vyrez3_w=200.0&vyrez3_d=150.0&vyrez3_x=100.0&vyrez3_z=620.0&vyrez3_police=0&loz=0&loz_rozteca=200&loz_okraj=100&vzpera_delka=300&suplik_posun=0&pet_noha=PL&pet_strana=vpravo&pet_posun=0"
+ },
+ {
+  "nazev": "stul35_vychozi",
+  "dotaz": "system=35&sirka=1280&hloubka=800&vyska=840&presah=30&led_rameno=560&stojky=1&kolecka=0&panely=1&led=1&led_svetlo=1&suplik=1&suplik_vlevo=0&elektrozlab=1&drzak_pet=1&patky=0&vzpery=0&navlek=1&navlek_delka=300.0&police=1&suplik_pocet=2&panely_pocet=1&panely_posun=0&panely_z=0&stredni_opora=auto&stojky_vyska=1073.0&elzlab_y=0&elzlab_z=0&vyrez1=0&vyrez1_w=200.0&vyrez1_d=150.0&vyrez1_x=110.0&vyrez1_z=100.0&vyrez1_police=0&vyrez2=0&vyrez2_w=200.0&vyrez2_d=150.0&vyrez2_x=110.0&vyrez2_z=360.0&vyrez2_police=0&vyrez3=0&vyrez3_w=200.0&vyrez3_d=150.0&vyrez3_x=110.0&vyrez3_z=620.0&vyrez3_police=0&loz=0&loz_rozteca=200&loz_okraj=100&vzpera_delka=300&suplik_posun=0&pet_noha=PL&pet_strana=vpravo&pet_posun=0"
+ },
+ {
+  "nazev": "stul40_vychozi",
+  "dotaz": "system=40&sirka=1280&hloubka=800&vyska=840&presah=30&led_rameno=560&stojky=1&kolecka=1&panely=1&led=1&led_svetlo=1&suplik=1&suplik_vlevo=0&elektrozlab=1&drzak_pet=1&patky=0&vzpery=0&police=1&suplik_pocet=2&panely_pocet=1&panely_posun=0&panely_z=0&stredni_opora=auto&stojky_vyska=1073.0&elzlab_y=0&elzlab_z=0&vyrez1=0&vyrez1_w=200.0&vyrez1_d=150.0&vyrez1_x=110.0&vyrez1_z=100.0&vyrez1_police=0&vyrez2=0&vyrez2_w=200.0&vyrez2_d=150.0&vyrez2_x=110.0&vyrez2_z=360.0&vyrez2_police=0&vyrez3=0&vyrez3_w=200.0&vyrez3_d=150.0&vyrez3_x=110.0&vyrez3_z=620.0&vyrez3_police=0&loz=0&loz_rozteca=200&loz_okraj=100&vzpera_delka=300&suplik_posun=0&pet_noha=PL&pet_strana=vpravo&pet_posun=0"
+ },
+ {
+  "nazev": "stul30_plny",
+  "dotaz": "sirka=2000&hloubka=700&vyska=900&presah=30&led_rameno=560&stojky=1&kolecka=1&panely=1&led=1&led_svetlo=1&suplik=1&suplik_vlevo=0&elektrozlab=1&drzak_pet=1&patky=0&vzpery=1&police=2&suplik_pocet=2&panely_pocet=1&panely_posun=0&panely_z=0&stredni_opora=auto&stojky_vyska=1073.0&elzlab_y=0&elzlab_z=0&vyrez1=1&vyrez1_w=200.0&vyrez1_d=150.0&vyrez1_x=100.0&vyrez1_z=100.0&vyrez1_police=0&vyrez2=1&vyrez2_w=200.0&vyrez2_d=150.0&vyrez2_x=100.0&vyrez2_z=360.0&vyrez2_police=0&vyrez3=0&vyrez3_w=200.0&vyrez3_d=150.0&vyrez3_x=100.0&vyrez3_z=620.0&vyrez3_police=0&loz=0&loz_rozteca=200&loz_okraj=100&vzpera_delka=300&suplik_posun=0&pet_noha=PL&pet_strana=vpravo&pet_posun=0"
+ }
+]

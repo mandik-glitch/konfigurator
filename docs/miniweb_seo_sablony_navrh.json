@@ -1,0 +1,260 @@
+{
+  "poznamka": "NAVRH bot7 -> bot16 (implementacia) a bot5 (texty v DB). Nic sa nenahrava. SK je kompletne, EN rovnaka struktura prida bot7 neskor. Rezim shopu: kosik, host bez uctu, platba vopred na zalohovu fakturu. INDEXACIA: Robert chce zapnut hned po dodani server-side meta (bez dalsieho pokynu); do tej doby noindex + robots.txt Disallow: /.",
+  "implementacia": {
+    "server_side": "Pages sa renderuju v JS (HTML shell ma <title>…</title>, noindex a <html lang=en>). Server MUSI do HTML vlozit: <html lang=sk>, title, meta description, meta robots, canonical, hreflang, og/twitter, JSON-LD a idealne aj H1 + uvodny text + FAQ (staticky, JS ich len prevezme). Bez toho Google indexuje pomaly a casto len prazdny shell.",
+    "adresy": "Dnes /miniweb/product.html?id=1 (parametre). Odporucanie: pekne adresy / , /kategoria/{slug}, /produkt/{slug}, /kontakt, /pravne-informacie (nginx rewrite na shell + API podla slugu; slugy su spolocne pre vsetky jazyky). Ak to nepojde: canonical nesie len ?id= (alebo ?slug=), bez shop/lang/drafts/demo.",
+    "canonical_a_parametre": "Canonical vzdy na https://baliace-stoly.top + kanonicka cesta, bez ?shop=, ?lang=, ?drafts=, ?demo=, ?preview=. Stranky s ostatnymi parametrami (okrem id/slug) -> canonical bez nich."
+  },
+  "kriteria": {
+    "title": "<= 60 znakov",
+    "description": "<= 160 znakov, jazyk shopu, bez ceny, bez znacky prevadzkovatela",
+    "zakazane": "ponk, Logiman, konfigurator, vandr, dogus, packstation, veta o podnikateloch"
+  },
+  "sk": {
+    "host": "baliace-stoly.top",
+    "brand": "Baliace a pracovné stoly",
+    "locale": "sk_SK",
+    "lang": "sk",
+    "home": {
+      "title": "Baliace a pracovné stoly – Navrhnite si vlastný baliaci stôl",
+      "description": "Baliace a pracovné stoly na mieru z hliníkových profilov. Nastavte rozmery a príslušenstvo, pozrite si 3D a objednajte. Ceny bez DPH.",
+      "h1_key": "home.h1",
+      "robots": "index,follow"
+    },
+    "category": {
+      "title": "{category.name} – Baliace a pracovné stoly",
+      "description": "Pracovné a baliace stoly z hliníkových profilov: vlastná šírka, hĺbka a výška, police a príslušenstvo. Dodanie 3–5 týždňov.",
+      "robots": "index,follow"
+    },
+    "product": {
+      "title": "{product.name}",
+      "description": "{product.summary}",
+      "robots": "index,follow",
+      "poznamka": "title = product.name (41 znakov), bez pripony brandu; description = product.summary (<= 160, aktualne 130 znakov)"
+    },
+    "contact": {
+      "title": "Kontakt – Baliace a pracovné stoly",
+      "description": "Máte otázku k baliacemu alebo pracovnému stolu? Napíšte nám cez formulár a odpovieme vám.",
+      "robots": "index,follow"
+    },
+    "legal": {
+      "title": "Právne informácie – Baliace a pracovné stoly",
+      "description": "Informácie o prevádzkovateľovi, objednávke a ochrane osobných údajov.",
+      "robots": "index,follow"
+    },
+    "cart": {
+      "title": "Košík – Baliace a pracovné stoly",
+      "description": "Obsah košíka.",
+      "robots": "noindex,nofollow"
+    },
+    "inquiry": {
+      "title": "Dopyt – Baliace a pracovné stoly",
+      "description": "Odoslanie dopytu.",
+      "robots": "noindex,nofollow"
+    },
+    "not_found": {
+      "title": "Stránka sa nenašla – Baliace a pracovné stoly",
+      "description": "Požadovaná stránka neexistuje.",
+      "robots": "noindex,follow",
+      "http_status": 404
+    },
+    "og": {
+      "site_name": "Baliace a pracovné stoly",
+      "type_home": "website",
+      "type_product": "product",
+      "locale": "sk_SK",
+      "title": "= title stránky",
+      "description": "= meta description stránky",
+      "url": "= canonical",
+      "image": "VYNECHANE. Karta 4934 nema ziadny obrazok ani otocku (bot4 2026-10-03); otocky inych kariet nesu ochranne razitko s logom. og:image sa nepouzije, kym nevznikne samostatny render bez razitok (zadava len automat/Robert). Nikdy logo obchodu ani prevadzkovatela.",
+      "image_alt": "nepouziva sa (bez og:image)"
+    },
+    "twitter": {
+      "card": "summary (bez obrazka)",
+      "title": "= og:title",
+      "description": "= og:description",
+      "image": "nepouziva sa",
+      "image_alt": "nepouziva sa",
+      "site": "nevypĺňať (žiadny účet)"
+    },
+    "checkout": {
+      "title": "Dokončenie objednávky – Baliace a pracovné stoly",
+      "description": "Dokončenie objednávky.",
+      "robots": "noindex,nofollow"
+    },
+    "order_done": {
+      "title": "Objednávka prijatá – Baliace a pracovné stoly",
+      "description": "Objednávka bola prijatá.",
+      "robots": "noindex,nofollow"
+    }
+  },
+  "keywords_sk": {
+    "zdroj": "Navrhovac Googlu (hl=sk, gl=sk), 2026-10-03, relativne; slovensky dopyt je tenky. Meta keywords sa nepouziva (Google ho ignoruje): slova patria do H1, uvodu, nadpisov a alt textov.",
+    "hlavne": [
+      "pracovný stôl",
+      "pracovné stoly",
+      "pracovné stoly do dielne",
+      "stôl do dielne"
+    ],
+    "doplnkove_presna_zhoda": [
+      "baliaci stôl",
+      "baliace stoly",
+      "pracovný stôl na mieru",
+      "stôl na balenie balíkov",
+      "montážny stôl"
+    ],
+    "komponenty": [
+      "hliníkové profily 30x30",
+      "pracovný stôl s kolieskami",
+      "pracovný stôl s policou",
+      "pracovný stôl s LED osvetlením"
+    ],
+    "nepouzivat": [
+      "baliace pracovisko, baliaca stanica (nie su Robertove slova)",
+      "packstation (DHL boxy)",
+      "dielenský stôl (spotrebitelsky, Güde)",
+      "konfigurátor",
+      "ponk"
+    ],
+    "rozlozenie": {
+      "H1": "Baliace a pracovné stoly na mieru",
+      "title": "Baliace a pracovné stoly – Navrhnite si vlastný baliaci stôl",
+      "uvod": "baliaci a pracovný stôl, hliníkové profily, 3D, bez DPH",
+      "nadpisy": "Rozmery na mieru; Hliníkový rám 30 × 30 mm; Príslušenstvo"
+    }
+  },
+  "jsonld": {
+    "pravidlo": "Bez brand/manufacturer/seller a bez LOGIMAN. Organization nesie len nazov obchodu a url. Product bez ratingu a recenzii.",
+    "home": [
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "{brand}",
+        "url": "https://{host}/",
+        "inLanguage": "{lang}"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "{brand}",
+        "url": "https://{host}/"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": "[pre n=1..8: {\"@type\":\"Question\",\"name\": faq.n.q, \"acceptedAnswer\":{\"@type\":\"Answer\",\"text\": faq.n.a}}] -- LEN ak je FAQ viditelne na stranke a texty su doslovne rovnake"
+      }
+    ],
+    "category": [
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "{nav.home}",
+            "item": "https://{host}/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "{category.name}",
+            "item": "{canonical}"
+          }
+        ]
+      }
+    ],
+    "product": [
+      {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "{product.name}",
+        "description": "{product.summary}",
+        "sku": "{product.sku}",
+        "category": "{category.name}",
+        "url": "{canonical}",
+        "image": "vynechat, kym bot4 neoveri rendery bez loga",
+        "offers_volitelne": {
+          "@type": "AggregateOffer",
+          "lowPrice": "{product.price_from}",
+          "priceCurrency": "{currency}",
+          "priceSpecification": {
+            "@type": "PriceSpecification",
+            "valueAddedTaxIncluded": false
+          },
+          "poznamka": "LEN ak je na stranke viditelne 'od X € bez DPH' (price_mode=shown) a hodnota je rovnaka; inak offers vynechat"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "{nav.home}",
+            "item": "https://{host}/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "{category.name}",
+            "item": "{category.canonical}"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "{product.name}",
+            "item": "{canonical}"
+          }
+        ]
+      }
+    ],
+    "contact_legal": [
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "{title}",
+        "url": "{canonical}"
+      }
+    ],
+    "cart_inquiry": "ziadne JSON-LD"
+  },
+  "robots_txt": {
+    "po_spusteni_indexacie": "User-agent: *\nDisallow: /miniweb/cart.html\nDisallow: /*?*drafts=\nDisallow: /*?*shop=\nDisallow: /*?*preview=\nSitemap: https://{host}/sitemap.xml\n",
+    "poznamka": "NEBLOKOVAT /miniweb/ (CSS, JS) ani /api/miniweb/ (obsah sa nacitava cez API; blokovanie by znefunkcnilo vykreslenie pre Google). Dnes nginx vracia 'Disallow: /' -- pri spusteni zmenit v gen_miniweb_vhost.py."
+  },
+  "sitemap_xml": {
+    "adresa": "https://{host}/sitemap.xml (generuje API z kategorii a produktov v stave approved; nginx location = /sitemap.xml)",
+    "obsah": "home, kategorie, produkty, kontakt, pravne informacie; NIE kosik, dopyt, nahlady, drafty",
+    "polia": "loc = canonical; lastmod len ak je v DB skutocny cas poslednej zmeny textu, inak vynechat; priority/changefreq nepouzivat",
+    "hreflang": "ak je alternativny shop LIVE: pre kazdu URL xhtml:link rel=alternate hreflang=sk a en (+ x-default=en) na rovnaku cestu druhej domeny"
+  },
+  "hreflang": "jen kdyz je alternativni shop LIVE (config.alternates): <link rel=alternate hreflang=sk href=https://baliace-stoly.top{path}> a hreflang=en href=https://packing-tables.top{path} + self-reference + x-default=en; slugy jsou spolecne, takze {path} je stejna",
+  "en": {
+    "host": "packing-tables.top",
+    "brand": "Packing Stations & Workbenches",
+    "locale": "en_IE",
+    "home": {
+      "title": "Packing Stations & Workbenches – Design your own",
+      "description": "Configurable packing stations and aluminium workbenches, made to your size. Set dimensions and accessories, see 3D and order. Prices excl. VAT."
+    },
+    "category": {
+      "title": "{category.name} – Packing Stations & Workbenches",
+      "description": "Packing tables and workbenches, from aluminium profiles: your own size, shelves and accessories. Delivery in 3–5 weeks."
+    },
+    "product": {
+      "title": "{product.name}",
+      "description": "{product.summary}"
+    },
+    "contact": {
+      "title": "Contact – Packing Stations & Workbenches",
+      "description": "Questions about a packing table or workbench? Write to us through the form and we will reply."
+    },
+    "legal": {
+      "title": "Legal information – Packing Stations & Workbenches",
+      "description": "Information about the operator, the order and privacy."
+    }
+  }
+}

@@ -1,0 +1,323 @@
+{
+  "source_file": "Profiles.fbx",
+  "unit": "mm",
+  "note": "Ceny a hustoty jsou PLACEHOLDER - nutno potvrdit se skutecnymi hodnotami. Objem u geometrie, ktera neni watertight, je pouze priblizny (convex hull).",
+  "parts": [
+    {
+      "id": "Object_1",
+      "name": "Object_1",
+      "layer": "alu",
+      "dims_mm": [
+        30.0,
+        1000.0,
+        60.0
+      ],
+      "vertices": 132,
+      "faces": 66,
+      "watertight": false,
+      "file": "Object_1.glb",
+      "material_label": "Hlinik (elox)",
+      "volume_mm3": 1796465.2,
+      "volume_method": "convex_hull_approx",
+      "density_kg_m3": 2700,
+      "weight_kg_approx": 4.8505,
+      "price_per_kg_czk_placeholder": 250,
+      "price_czk_approx_PLACEHOLDER": 1212.62
+    },
+    {
+      "id": "Object_2",
+      "name": "Object_2",
+      "layer": "alu",
+      "dims_mm": [
+        45.0,
+        1000.0,
+        45.0
+      ],
+      "vertices": 84,
+      "faces": 42,
+      "watertight": false,
+      "file": "Object_2.glb",
+      "material_label": "Hlinik (elox)",
+      "volume_mm3": 1665343.9,
+      "volume_method": "convex_hull_approx",
+      "density_kg_m3": 2700,
+      "weight_kg_approx": 4.4964,
+      "price_per_kg_czk_placeholder": 250,
+      "price_czk_approx_PLACEHOLDER": 1124.1
+    },
+    {
+      "id": "Object_3",
+      "name": "Object_3",
+      "layer": "alu",
+      "dims_mm": [
+        45.0,
+        1000.0,
+        45.0
+      ],
+      "vertices": 96,
+      "faces": 48,
+      "watertight": false,
+      "file": "Object_3.glb",
+      "material_label": "Hlinik (elox)",
+      "volume_mm3": 2016999.9,
+      "volume_method": "convex_hull_approx",
+      "density_kg_m3": 2700,
+      "weight_kg_approx": 5.4459,
+      "price_per_kg_czk_placeholder": 250,
+      "price_czk_approx_PLACEHOLDER": 1361.47
+    },
+    {
+      "id": "Object_4",
+      "name": "Object_4",
+      "layer": "alu",
+      "dims_mm": [
+        20.0,
+        1000.0,
+        80.0
+      ],
+      "vertices": 220,
+      "faces": 110,
+      "watertight": false,
+      "file": "Object_4.glb",
+      "material_label": "Hlinik (elox)",
+      "volume_mm3": 1598424.9,
+      "volume_method": "convex_hull_approx",
+      "density_kg_m3": 2700,
+      "weight_kg_approx": 4.3157,
+      "price_per_kg_czk_placeholder": 250,
+      "price_czk_approx_PLACEHOLDER": 1078.92
+    },
+    {
+      "id": "Object_5",
+      "name": "Object_5",
+      "layer": "alu",
+      "dims_mm": [
+        20.0,
+        1000.0,
+        20.0
+      ],
+      "vertices": 96,
+      "faces": 48,
+      "watertight": false,
+      "file": "Object_5.glb",
+      "material_label": "Hlinik (elox)",
+      "volume_mm3": 398427.0,
+      "volume_method": "convex_hull_approx",
+      "density_kg_m3": 2700,
+      "weight_kg_approx": 1.0758,
+      "price_per_kg_czk_placeholder": 250,
+      "price_czk_approx_PLACEHOLDER": 268.95
+    },
+    {
+      "id": "20x40x100",
+      "name": "20x40x100",
+      "layer": "alu",
+      "dims_mm": [
+        20.0,
+        1000.0,
+        40.0
+      ],
+      "vertices": 144,
+      "faces": 72,
+      "watertight": false,
+      "file": "20x40x100.glb",
+      "material_label": "Hlinik (elox)",
+      "volume_mm3": 798426.0,
+      "volume_method": "convex_hull_approx",
+      "density_kg_m3": 2700,
+      "weight_kg_approx": 2.1558,
+      "price_per_kg_czk_placeholder": 250,
+      "price_czk_approx_PLACEHOLDER": 538.95
+    },
+    {
+      "id": "Object_6",
+      "name": "Object_6",
+      "layer": "alu",
+      "dims_mm": [
+        10.0,
+        1000.0,
+        40.0
+      ],
+      "vertices": 64,
+      "faces": 32,
+      "watertight": false,
+      "file": "Object_6.glb",
+      "material_label": "Hlinik (elox)",
+      "volume_mm3": 400000.0,
+      "volume_method": "convex_hull_approx",
+      "density_kg_m3": 2700,
+      "weight_kg_approx": 1.08,
+      "price_per_kg_czk_placeholder": 250,
+      "price_czk_approx_PLACEHOLDER": 270.0
+    },
+    {
+      "id": "Object_7",
+      "name": "Object_7",
+      "layer": "alu",
+      "dims_mm": [
+        30.0,
+        1000.0,
+        30.0
+      ],
+      "vertices": 84,
+      "faces": 42,
+      "watertight": false,
+      "file": "Object_7.glb",
+      "material_label": "Hlinik (elox)",
+      "volume_mm3": 740150.7,
+      "volume_method": "convex_hull_approx",
+      "density_kg_m3": 2700,
+      "weight_kg_approx": 1.9984,
+      "price_per_kg_czk_placeholder": 250,
+      "price_czk_approx_PLACEHOLDER": 499.6
+    },
+    {
+      "id": "Object_8",
+      "name": "Object_8",
+      "layer": "alu",
+      "dims_mm": [
+        30.0,
+        1000.0,
+        30.0
+      ],
+      "vertices": 100,
+      "faces": 50,
+      "watertight": false,
+      "file": "Object_8.glb",
+      "material_label": "Hlinik (elox)",
+      "volume_mm3": 896461.9,
+      "volume_method": "convex_hull_approx",
+      "density_kg_m3": 2700,
+      "weight_kg_approx": 2.4204,
+      "price_per_kg_czk_placeholder": 250,
+      "price_czk_approx_PLACEHOLDER": 605.1
+    },
+    {
+      "id": "Object_9",
+      "name": "Object_9",
+      "layer": "alu",
+      "dims_mm": [
+        30.0,
+        1000.0,
+        30.0
+      ],
+      "vertices": 64,
+      "faces": 32,
+      "watertight": false,
+      "file": "Object_9.glb",
+      "material_label": "Hlinik (elox)",
+      "volume_mm3": 896461.9,
+      "volume_method": "convex_hull_approx",
+      "density_kg_m3": 2700,
+      "weight_kg_approx": 2.4204,
+      "price_per_kg_czk_placeholder": 250,
+      "price_czk_approx_PLACEHOLDER": 605.1
+    },
+    {
+      "id": "Object_10",
+      "name": "Object_10",
+      "layer": "alu",
+      "dims_mm": [
+        35.0,
+        1000.0,
+        35.0
+      ],
+      "vertices": 116,
+      "faces": 58,
+      "watertight": false,
+      "file": "Object_10.glb",
+      "material_label": "Hlinik (elox)",
+      "volume_mm3": 1220160.4,
+      "volume_method": "convex_hull_approx",
+      "density_kg_m3": 2700,
+      "weight_kg_approx": 3.2944,
+      "price_per_kg_czk_placeholder": 250,
+      "price_czk_approx_PLACEHOLDER": 823.6
+    },
+    {
+      "id": "Object_11",
+      "name": "Object_11",
+      "layer": "alu",
+      "dims_mm": [
+        40.0,
+        1000.0,
+        40.0
+      ],
+      "vertices": 100,
+      "faces": 50,
+      "watertight": false,
+      "file": "Object_11.glb",
+      "material_label": "Hlinik (elox)",
+      "volume_mm3": 1593660.5,
+      "volume_method": "convex_hull_approx",
+      "density_kg_m3": 2700,
+      "weight_kg_approx": 4.3029,
+      "price_per_kg_czk_placeholder": 250,
+      "price_czk_approx_PLACEHOLDER": 1075.73
+    },
+    {
+      "id": "Object_12",
+      "name": "Object_12",
+      "layer": "alu",
+      "dims_mm": [
+        40.0,
+        1000.0,
+        40.0
+      ],
+      "vertices": 96,
+      "faces": 48,
+      "watertight": false,
+      "file": "Object_12.glb",
+      "material_label": "Hlinik (elox)",
+      "volume_mm3": 1593655.5,
+      "volume_method": "convex_hull_approx",
+      "density_kg_m3": 2700,
+      "weight_kg_approx": 4.3029,
+      "price_per_kg_czk_placeholder": 250,
+      "price_czk_approx_PLACEHOLDER": 1075.73
+    },
+    {
+      "id": "Object_13",
+      "name": "Object_13",
+      "layer": "alu",
+      "dims_mm": [
+        45.0,
+        1000.0,
+        90.0
+      ],
+      "vertices": 128,
+      "faces": 64,
+      "watertight": false,
+      "file": "Object_13.glb",
+      "material_label": "Hlinik (elox)",
+      "volume_mm3": 4041999.9,
+      "volume_method": "convex_hull_approx",
+      "density_kg_m3": 2700,
+      "weight_kg_approx": 10.9134,
+      "price_per_kg_czk_placeholder": 250,
+      "price_czk_approx_PLACEHOLDER": 2728.35
+    },
+    {
+      "id": "Object_14",
+      "name": "Object_14",
+      "layer": "alu",
+      "dims_mm": [
+        40.0,
+        1000.0,
+        80.0
+      ],
+      "vertices": 300,
+      "faces": 124,
+      "watertight": false,
+      "file": "Object_14.glb",
+      "material_label": "Hlinik (elox)",
+      "volume_mm3": 3193653.8,
+      "volume_method": "convex_hull_approx",
+      "density_kg_m3": 2700,
+      "weight_kg_approx": 8.6229,
+      "price_per_kg_czk_placeholder": 250,
+      "price_czk_approx_PLACEHOLDER": 2155.72
+    }
+  ],
+  "skipped_reference_geometry": []
+}

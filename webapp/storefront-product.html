@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <script src="/js/client-errors.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title id="pageTitleTag">Produkt</title>
+<!-- OG_TAGS_PLACEHOLDER -->
+<style>
+  /* Detail produktu (bot16, 2026-09-16) - stejna paleta/vzor jako
+     storefront-default.html (--sf-* promenne, zadny sdileny CSS/JS
+     soubor mezi storefront sablonami, viz jejich hlavicky). */
+  :root {
+    --sf-bg: #14181f;
+    --sf-panel: #1d232c;
+    --sf-border: #2c3340;
+    --sf-text: #eef1f5;
+    --sf-text-muted: #9aa4b5;
+    --sf-accent: #ff8a3d;
+    --sf-accent-hover: #ff9d5c;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--sf-bg);
+    color: var(--sf-text);
+    font-family: var(--font-main, -apple-system, "Segoe UI", Roboto, Arial, sans-serif);
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  a { color: var(--sf-accent); }
+  .sf-header {
+    background: var(--sf-panel);
+    border-bottom: 1px solid var(--sf-border);
+    padding: 16px 20px;
+  }
+  .sf-back-link { color: var(--sf-text-muted); text-decoration: none; font-size: 14px; }
+  .sf-back-link:hover { color: var(--sf-accent); }
+  main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 28px 20px 60px;
+  }
+  .sf-pd-layout {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 32px;
+    align-items: start;
+  }
+  @media (max-width: 720px) {
+    .sf-pd-layout { grid-template-columns: 1fr; }
+  }
+  #sfPdHero {
+    background: var(--sf-panel);
+    border: 1px solid var(--sf-border);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  #sfPdHero:empty { display: none; }
+  #sfPdHero img { display: block; width: 100%; height: auto; }
+  #sfPdTitle { margin: 0 0 14px; font-size: 26px; line-height: 1.3; font-weight: 700; }
+  /* Prepinac variant (assembly - viz komentar u _storefront_product_page_response
+     v api/car_storefronts.py) - stejny vzor pilulek jako #sfVariantNav
+     na prehledove strance, jen jina URL cilova skupina. */
+  #sfPdVariants {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+  #sfPdVariants:empty { display: none; margin-bottom: 0; }
+  .sf-pd-variant-link {
+    display: inline-block;
+    padding: 7px 14px;
+    border-radius: 999px;
+    border: 1px solid var(--sf-border);
+    background: var(--sf-bg);
+    color: var(--sf-text);
+    text-decoration: none;
+    font-size: 13.5px;
+    white-space: nowrap;
+  }
+  .sf-pd-variant-link:hover { border-color: var(--sf-accent); color: var(--sf-accent); }
+  .sf-pd-variant-link.sf-pd-variant-active {
+    background: var(--sf-accent);
+    border-color: var(--sf-accent);
+    color: #fff;
+  }
+  .sf-pd-buy {
+    background: var(--sf-panel);
+    border: 1px solid var(--sf-border);
+    border-radius: 10px;
+    padding: 20px;
+  }
+  #sfPdPrice { font-size: 24px; font-weight: 700; margin-bottom: 4px; }
+  .sf-pd-vat { color: var(--sf-text-muted); font-weight: 400; font-size: 14px; }
+  #sfPdAvailability { color: var(--sf-text-muted); font-size: 13.5px; margin-bottom: 14px; }
+  #sfPdAvailability:empty { display: none; margin-bottom: 0; }
+  #sfPdCartBtn .sf-add-cart-btn {
+    width: 100%;
+    padding: 13px 14px;
+    border: none;
+    border-radius: 6px;
+    background: var(--sf-accent);
+    color: #fff;
+    font-size: 15.5px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  #sfPdCartBtn .sf-add-cart-btn:hover { background: var(--sf-accent-hover); }
+  #sfPdCartBtn .sf-add-cart-btn:disabled { opacity: 0.6; cursor: default; }
+  /* Souvisejici priklady realizace (bot16, 2026-10-07; Robert: "v kazde sestave do aut ... musi byt ukazana realna fotografie 4ks a odkaz na fotogalerii vestaveb, ty 4 fotky se musi tocit, kolovat"):
+     4 fotky z verejne galerie (modul js/realizace-foto.js, podle cisla karty a tydne ruzne) + odkaz na neutralni fotogalerii bez znacky (storefront-galerie.html). */
+  .sf-realizace { margin-top: 40px; --rf-text: var(--sf-text); --rf-muted: var(--sf-text-muted); --rf-border: var(--sf-border); --rf-panel: var(--sf-panel); --rf-accent: var(--sf-accent); --rf-btn: var(--sf-accent); --rf-btn-h: var(--sf-accent-hover); }
+  .sf-realizace[hidden] { display: none; }
+  .sf-realizace h2 { margin: 0 0 12px; font-size: 20px; font-weight: 700; }
+  .sf-footer { text-align: center; padding: 24px 20px; color: var(--sf-text-muted); font-size: 13px; }
+  .sf-cart-msg {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--sf-accent);
+    color: #fff;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-size: 14px;
+    display: none;
+    z-index: 100;
+  }
+</style>
+</head>
+<body>
+  <header class="sf-header">
+    <a class="sf-back-link" href="/">← Zpět na přehled</a>
+  </header>
+  <main>
+    <div class="sf-pd-layout">
+      <div id="sfPdHero"></div>
+      <div>
+        <h1 id="sfPdTitle">Načítám…</h1>
+        <div id="sfPdVariants"></div>
+        <div class="sf-pd-buy">
+          <div id="sfPdPrice"></div>
+          <div id="sfPdAvailability"></div>
+          <div id="sfPdCartBtn"></div>
+        </div>
+      </div>
+    </div>
+    <section class="sf-realizace" id="sfRealizace" hidden>
+      <h2>Související příklady realizací</h2>
+      <div id="sfRealizaceBody"></div>
+    </section>
+  </main>
+  <div class="sf-footer" id="sfFooter"></div>
+  <div class="sf-cart-msg" id="sfCartMsg"></div>
+
+  <script src="/js/realizace-foto.js?v=19f4c823b2"></script>
+  <script>
+    (function () {
+      // Priklady realizaci: 4 fotky vestaveb (bez tech s nazvem se znackou) + odkaz na neutralni fotogalerii; seed = cislo karty z tlacitka Do kosiku (SSR), jinak adresa.
+      var wrap = document.getElementById("sfRealizace"), body = document.getElementById("sfRealizaceBody");
+      if (!wrap || !body || !window.RealizaceFoto) return;
+      var b = document.querySelector("[data-product-id]");
+      window.RealizaceFoto.mount(body, { typ: "vestavby", seed: "s" + (b ? b.getAttribute("data-product-id") : location.pathname), bezZnacky: true, href: "/storefront-galerie.html" }).then(function (ok) { wrap.hidden = !ok; });
+    })();
+  </script>
+  <script>
+    // Progresivni vylepseni SSR obsahu - stejny vzor jako
+    // storefront-default.html (tam okomentovano podrobne). Tenhle
+    // skript NENI potreba pro zobrazeni/indexaci, jen pro funkcni
+    // "Do košíku".
+    document.addEventListener("click", function (ev) {
+      var btn = ev.target.closest(".sf-add-cart-btn");
+      if (!btn) return;
+      var productId = btn.getAttribute("data-product-id");
+      if (!productId) return;
+      btn.disabled = true;
+      var originalText = btn.textContent;
+      btn.textContent = "Přidávám…";
+      fetch("/api/cart/items", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ product_id: parseInt(productId, 10), qty: 1 }),
+      })
+        .then(function (r) {
+          if (r.status === 401) {
+            window.location.href = "/login.html?next=" + encodeURIComponent(window.location.href);
+            return null;
+          }
+          return r.json().then(function (data) { return { ok: r.ok, data: data }; });
+        })
+        .then(function (result) {
+          if (!result) return;
+          btn.disabled = false;
+          btn.textContent = originalText;
+          var msg = document.getElementById("sfCartMsg");
+          if (result.ok) {
+            msg.textContent = "Přidáno do košíku.";
+          } else {
+            msg.textContent = (result.data && result.data.error) || "Přidání do košíku selhalo.";
+          }
+          msg.style.display = "block";
+          setTimeout(function () { msg.style.display = "none"; }, 2500);
+        })
+        .catch(function () {
+          btn.disabled = false;
+          btn.textContent = originalText;
+        });
+    });
+  </script>
+</body>
+</html>

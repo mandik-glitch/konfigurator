@@ -1,0 +1,17 @@
+[Unit]
+Description=Casovac automatu pro aktivaci karet po dokoncenem renderu (kazdych 15 minut)
+# 15 minut - o neco castejsi nez konfigurator-render-auto-dispatch.timer
+# (20 min), at aktivace prijde brzy po tom, co render dobehne, ne az v
+# dalsim 20minutovem cyklu renderovaciho zaraceni. Vypinac je v
+# app_settings['card_auto_activate_povoleno'] (cte se na zacatku
+# kazdeho behu) - zastaveni timeru neni jedina cesta, jak automat
+# vypnout, ale jde taky (systemctl stop/disable
+# konfigurator-card-auto-activate.timer).
+
+[Timer]
+OnCalendar=*-*-* *:00/15:00
+Persistent=true
+RandomizedDelaySec=90
+
+[Install]
+WantedBy=timers.target

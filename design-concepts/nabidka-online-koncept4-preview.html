@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Náhled - Online nabídka podle Konceptu 4</title>
+<style>
+  :root {
+    --navy-dark: #0f2138; --navy: #16324f; --navy-light: #1c4a6b;
+    --accent: #1f9e5c; --accent-glow: #2fe07a; --warn: #ff7a3d;
+    --card-bg: #f4f8fb; --ink: #1b2430; --ink-soft: #2a3646; --muted: #7a8798;
+    --border: #e2e8ee;
+    --interactive-bg: #eafcf1; --interactive-border: #9be3bb; --interactive-text: var(--navy);
+    --mono: "SF Mono","Cascadia Code","Consolas",monospace;
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:-apple-system,"Segoe UI",Roboto,Arial,sans-serif; background:#333; color:var(--ink); }
+  .note {
+    background:#1b1e24; color:#c7ccd4; font-family:var(--mono); font-size:12.5px; line-height:1.7;
+    padding:14px 22px; border-bottom:2px solid var(--accent-glow);
+  }
+  .note b { color:#fff; }
+  .slide-frame { max-width:1400px; margin:26px auto; box-shadow:0 12px 40px rgba(0,0,0,.4); }
+  .slide-label {
+    font-family:var(--mono); font-size:11px; letter-spacing:.1em; text-transform:uppercase;
+    color:#8b93a1; background:#1b1e24; padding:8px 18px; border-bottom:1px solid #333;
+  }
+
+  /* ============ COVER ============ */
+  @keyframes hudScan { 0% { transform:translateY(-100%); } 100% { transform:translateY(2400%); } }
+  @keyframes hudBlink { 0%,100% { opacity:1; } 50% { opacity:.25; } }
+  @keyframes hudFlicker { 0%,100% { opacity:.9; } 45% { opacity:.9; } 46% { opacity:.4; } 47% { opacity:.9; } }
+  .cover {
+    position:relative; overflow:hidden;
+    background:linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 55%, var(--navy-light) 100%);
+    color:#fff; padding:9vh 6vw 8vh; min-height:560px;
+    border:1px solid color-mix(in srgb, var(--accent-glow) 45%, transparent);
+  }
+  .cover::before {
+    content:""; position:absolute; inset:0; pointer-events:none;
+    background-image:
+      radial-gradient(circle at 12% 18%, color-mix(in srgb, var(--accent-glow) 20%, transparent) 0%, transparent 40%),
+      radial-gradient(circle at 88% 12%, color-mix(in srgb, var(--accent-glow) 14%, transparent) 0%, transparent 44%),
+      repeating-linear-gradient(0deg, rgba(47,224,122,.05) 0px 1px, transparent 1px 28px),
+      repeating-linear-gradient(90deg, rgba(47,224,122,.05) 0px 1px, transparent 1px 28px),
+      repeating-linear-gradient(115deg, rgba(255,255,255,.035) 0px 1px, transparent 1px 34px),
+      repeating-linear-gradient(25deg, rgba(255,255,255,.025) 0px 1px, transparent 1px 34px);
+  }
+  /* animovana skenovaci linka pres cely cover */
+  .cover::after {
+    content:""; position:absolute; left:0; right:0; height:120px; pointer-events:none;
+    background:linear-gradient(180deg, transparent 0%, color-mix(in srgb, var(--accent-glow) 10%, transparent) 45%, transparent 100%);
+    animation:hudScan 7s linear infinite;
+  }
+  .hud-frame-label {
+    position:absolute; font-family:var(--mono); font-size:10px; letter-spacing:.12em; color:color-mix(in srgb, var(--accent-glow) 70%, #fff 30%);
+    text-transform:uppercase; opacity:.85; pointer-events:none;
+  }
+  .hud-frame-label.top-left { top:14px; left:18px; }
+  .hud-frame-label.top-right { top:14px; right:18px; text-align:right; }
+  .hud-frame-label.bottom-left { bottom:14px; left:18px; }
+  .hud-frame-label.bottom-right { bottom:14px; right:18px; text-align:right; }
+  .hud-frame-label .live-dot { display:inline-block; width:6px; height:6px; border-radius:50%; background:var(--accent-glow); box-shadow:0 0 6px var(--accent-glow); margin-right:6px; animation:hudBlink 1.6s ease-in-out infinite; vertical-align:1px; }
+  .cover-inner { position:relative; max-width:760px; }
+  .cover .eyebrow {
+    font-family:var(--mono); font-size:12.5px; letter-spacing:.3em; text-transform:uppercase; color:var(--accent-glow); font-weight:700;
+    margin-bottom:20px; display:flex; align-items:center; gap:10px;
+  }
+  .cover .eyebrow::before { content:""; width:22px; height:1px; background:var(--accent-glow); box-shadow:0 0 6px var(--accent-glow); }
+  .cover h1 {
+    font-size:clamp(32px,6vw,56px); font-weight:900; line-height:1.08; margin:0 0 28px; text-wrap:balance;
+    text-shadow:0 0 30px color-mix(in srgb, var(--accent-glow) 25%, transparent);
+  }
+  .cover .offer-meta { font-family:var(--mono); font-size:14.5px; color:#cfe0ee; line-height:2.1; border-left:2px solid color-mix(in srgb, var(--accent-glow) 50%, transparent); padding-left:16px; }
+  .cover .offer-meta b { color:#fff; }
+  .cover .offer-meta .k { color:var(--accent-glow); opacity:.8; }
+  .cover .brand { margin-top:52px; font-size:14px; font-weight:700; letter-spacing:.06em; color:#fff; display:flex; align-items:center; gap:10px; }
+  .cover .brand .dot { width:8px; height:8px; background:var(--accent-glow); box-shadow:0 0 8px var(--accent-glow); animation:hudBlink 2.2s ease-in-out infinite; }
+  .cover .brand span { color:var(--accent-glow); }
+
+  /* HUD corner brackety - stejny vzor jako .cat-product-card ve zbytku e-shopu,
+     ted i s "targeting" tečkou uprostřed hrany a jemným glow. */
+  .hud-card { position:relative; }
+  .hud-card::before, .hud-card::after { content:""; position:absolute; width:20px; height:20px; pointer-events:none; filter:drop-shadow(0 0 3px color-mix(in srgb, var(--accent-glow) 70%, transparent)); }
+  .hud-card::before { top:-1px; right:-1px; border-top:2px solid var(--accent-glow); border-right:2px solid var(--accent-glow); }
+  .hud-card::after { bottom:-1px; left:-1px; border-bottom:2px solid var(--accent-glow); border-left:2px solid var(--accent-glow); }
+
+  .recipient-grid { display:flex; gap:18px; margin-top:40px; flex-wrap:wrap; position:relative; }
+  .recipient-card {
+    flex:1 1 260px; background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.18);
+    clip-path:polygon(0 10px, 10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
+    padding:18px 20px; backdrop-filter:blur(2px);
+  }
+  .recipient-card .label { font-family:var(--mono); font-size:10.5px; text-transform:uppercase; letter-spacing:.2em; color:var(--accent-glow); font-weight:700; margin-bottom:10px; display:flex; align-items:center; gap:8px; }
+  .recipient-card .label::after { content:""; flex:1; height:1px; background:linear-gradient(90deg, color-mix(in srgb, var(--accent-glow) 60%, transparent), transparent); }
+  .recipient-card .line { font-size:14px; line-height:1.7; color:#dfe6ef; }
+  .recipient-card .tag { font-family:var(--mono); font-size:10px; color:color-mix(in srgb, var(--accent-glow) 55%, #fff 20%); opacity:.7; margin-top:10px; }
+
+  /* ============ TECHNICKE VYKRESY ============ */
+  @keyframes hudPulse { 0%,100% { opacity:.6; } 50% { opacity:1; } }
+  .content-slide { position:relative; background:#eef1f5; padding:5vh 4vw; overflow:hidden; }
+  .content-slide::before {
+    content:""; position:absolute; inset:0; pointer-events:none; opacity:.5;
+    background-image:
+      repeating-linear-gradient(0deg, rgba(31,158,92,.05) 0px 1px, transparent 1px 40px),
+      repeating-linear-gradient(90deg, rgba(31,158,92,.05) 0px 1px, transparent 1px 40px);
+  }
+  .slide-title { position:relative; display:flex; align-items:baseline; gap:16px; margin-bottom:26px; }
+  .slide-title .num { font-family:var(--mono); font-size:30px; font-weight:900; color:var(--accent); text-shadow:0 0 14px color-mix(in srgb, var(--accent) 40%, transparent); }
+  .slide-title h2 { font-size:24px; font-weight:700; color:var(--navy); margin:0; }
+  .slide-title .rule { flex:1; height:2px; background:linear-gradient(90deg, var(--border) 0%, transparent 100%); position:relative; }
+  .slide-title .readout { font-family:var(--mono); font-size:10.5px; color:var(--muted); letter-spacing:.08em; }
+  .slide-title .readout b { color:var(--accent); }
+
+  .drawings-layout { position:relative; display:flex; align-items:stretch; gap:20px; }
+
+  /* Panel "Profily v rezu" - hlinikova/technicka textura jako .sidebar zbytku eshopu,
+     ted s pulzujicimi rohovymi znackami a terminalovym readout radkem. */
+  .xsec-panel {
+    flex:0 0 210px; position:relative; padding:16px 16px 20px;
+    background:
+      linear-gradient(115deg, transparent 24%, rgba(255,255,255,.85) 38%, rgba(255,255,255,.3) 48%, transparent 60%),
+      repeating-linear-gradient(97deg, rgba(255,255,255,.09) 0px 1px, transparent 1px 3px),
+      linear-gradient(155deg, #9fb0c6 0%, #c7d3e3 20%, #eef3f9 42%, #d3dced 62%, #a9b8cf 100%);
+    border:1px solid rgba(70,86,110,.35);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.55), inset 0 -1px 0 rgba(20,28,40,.2), 0 4px 18px rgba(0,0,0,.16);
+  }
+  .corner-mark { position:absolute; width:9px; height:9px; pointer-events:none; animation:hudPulse 2.4s ease-in-out infinite; }
+  .corner-mark::before, .corner-mark::after { content:""; position:absolute; background:var(--accent); box-shadow:0 0 4px color-mix(in srgb, var(--accent) 70%, transparent); }
+  .corner-mark::before { top:50%; left:0; right:0; height:1px; transform:translateY(-50%); }
+  .corner-mark::after { left:50%; top:0; bottom:0; width:1px; transform:translateX(-50%); }
+  .corner-mark.tl { top:-4px; left:-4px; } .corner-mark.tr { top:-4px; right:-4px; animation-delay:.3s; }
+  .corner-mark.bl { bottom:-4px; left:-4px; animation-delay:.6s; } .corner-mark.br { bottom:-4px; right:-4px; animation-delay:.9s; }
+  .xsec-panel-title { font-family:var(--mono); font-size:10.5px; text-transform:uppercase; letter-spacing:.15em; color:#1d5c37; font-weight:700; }
+  .xsec-panel-title small { display:block; text-transform:none; letter-spacing:0; font-weight:400; color:#5c6a7d; font-size:11px; margin-top:4px; font-family:-apple-system,sans-serif; }
+  .xsec-readout { font-family:var(--mono); font-size:9.5px; color:#1d5c37; opacity:.65; margin-top:8px; padding-top:8px; border-top:1px dashed rgba(29,92,55,.35); letter-spacing:.05em; }
+  .xsec-list { display:flex; flex-direction:column; gap:10px; margin-top:12px; }
+  .xsec-item {
+    position:relative; border:1px solid var(--interactive-border); background:var(--interactive-bg); color:var(--interactive-text);
+    padding:10px 10px 8px; display:flex; flex-direction:column; align-items:center; gap:8px; cursor:pointer;
+  }
+  .xsec-item.active { background:var(--warn); border-color:var(--warn); color:#fff; box-shadow:0 0 0 1px var(--warn), 0 0 14px color-mix(in srgb, var(--warn) 55%, transparent); }
+  .xsec-item.active::before, .xsec-item.active::after { content:""; position:absolute; width:10px; height:10px; border-color:#fff; pointer-events:none; }
+  .xsec-item.active::before { top:-1px; left:-1px; border-top:2px solid #fff; border-left:2px solid #fff; }
+  .xsec-item.active::after { bottom:-1px; right:-1px; border-bottom:2px solid #fff; border-right:2px solid #fff; }
+  .xsec-shape-wrap { width:56px; height:56px; display:flex; align-items:center; justify-content:center; }
+  .xsec-shape-img { width:52px; height:52px; object-fit:contain; background:#fff; border:1px solid var(--border); }
+  .xsec-label { font-size:11.5px; text-align:center; line-height:1.3; }
+  .xsec-qty { display:block; font-family:var(--mono); font-size:11px; opacity:.75; margin-top:2px; }
+
+  .views-grid { flex:1; display:flex; gap:18px; }
+  .view-card {
+    position:relative; flex:1; background:#fff; border:1px solid var(--border); box-shadow:0 4px 18px rgba(22,50,79,0.1);
+    display:flex; flex-direction:column; height:56vh;
+    clip-path:polygon(0 14px, 14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%);
+  }
+  .view-card .img-wrap {
+    position:relative; flex:1; min-height:0; display:flex; align-items:center; justify-content:center; padding:14px;
+    background-color:#f4f8fb;
+    background-image:
+      repeating-linear-gradient(0deg, rgba(22,50,79,.05) 0px 1px, transparent 1px 24px),
+      repeating-linear-gradient(90deg, rgba(22,50,79,.05) 0px 1px, transparent 1px 24px);
+  }
+  .view-card .img-wrap::before, .view-card .img-wrap::after {
+    content:""; position:absolute; width:22px; height:22px; pointer-events:none;
+    filter:drop-shadow(0 0 3px color-mix(in srgb, var(--accent) 60%, transparent));
+  }
+  .view-card .img-wrap::before { top:8px; left:8px; border-top:2px solid var(--accent); border-left:2px solid var(--accent); }
+  .view-card .img-wrap::after { bottom:8px; right:8px; border-bottom:2px solid var(--accent); border-right:2px solid var(--accent); }
+  .view-card .img-wrap svg { max-width:100%; max-height:100%; position:relative; z-index:1; }
+  .view-card .crosshair { position:absolute; top:50%; left:50%; width:26px; height:26px; transform:translate(-50%,-50%); pointer-events:none; opacity:.35; }
+  .view-card .crosshair::before, .view-card .crosshair::after { content:""; position:absolute; background:var(--navy); }
+  .view-card .crosshair::before { top:50%; left:0; right:0; height:1px; }
+  .view-card .crosshair::after { left:50%; top:0; bottom:0; width:1px; }
+  .view-card .caption {
+    padding:10px 16px; font-family:var(--mono); font-size:12.5px; font-weight:700; color:var(--navy);
+    border-top:3px solid var(--accent); background:var(--card-bg); display:flex; justify-content:space-between; align-items:center;
+  }
+  .view-card .caption small { font-weight:400; color:var(--muted); font-family:-apple-system,sans-serif; font-size:11px; }
+  .view-card .caption .scale { color:var(--accent); opacity:.8; }
+
+  /* ============ SOUHRN / CENA (HUD-readout) ============ */
+  .summary-slide { position:relative; background:#fff; padding:5vh 4vw; }
+  .price-panel { position:relative; max-width:760px; }
+  .price-panel::before, .price-panel::after { content:""; position:absolute; width:22px; height:22px; pointer-events:none; filter:drop-shadow(0 0 3px color-mix(in srgb, var(--accent) 55%, transparent)); }
+  .price-panel::before { top:-10px; left:-10px; border-top:2px solid var(--accent); border-left:2px solid var(--accent); }
+  .price-panel::after { bottom:-10px; right:-10px; border-bottom:2px solid var(--accent); border-right:2px solid var(--accent); }
+  .price-table { width:100%; border-collapse:collapse; }
+  .price-table th { font-family:var(--mono); font-size:10.5px; text-transform:uppercase; letter-spacing:.1em; color:var(--muted); text-align:left; padding:8px 10px; border-bottom:2px solid var(--navy); }
+  .price-table td { padding:11px 10px; border-bottom:1px solid var(--border); font-size:14.5px; }
+  .price-table td.mono { font-family:var(--mono); }
+  .price-table td.idx { font-family:var(--mono); color:var(--accent); font-size:11.5px; opacity:.75; width:1%; white-space:nowrap; }
+  .price-table tr:hover td { background:var(--card-bg); }
+  .price-table .total-row td { border-top:2px solid var(--navy); border-bottom:none; font-weight:700; font-size:17px; padding-top:16px; }
+  .price-table .total-row .amount { font-family:var(--mono); color:var(--accent); font-weight:900; text-shadow:0 0 12px color-mix(in srgb, var(--accent) 35%, transparent); }
+  .price-readout { display:flex; justify-content:space-between; font-family:var(--mono); font-size:10.5px; color:var(--muted); letter-spacing:.05em; margin-top:10px; padding-top:10px; border-top:1px dashed var(--border); }
+  .price-readout b { color:var(--accent); }
+</style>
+</head>
+<body>
+
+<div class="note">
+  <b>NÁHLED – nepoužívá živá data, jen ukázka stylu.</b> Aplikuje barevný jazyk
+  a HUD prvky "Konceptu 4" (živý e-shop: index/category/product.html) na
+  šablonu online nabídky - useknuté rohy (clip-path), zelený HUD akcent
+  (oranžová jen na hover/interakci - stejná role jako dnes), monospace
+  písmo pro technická data (kódy, ceny, kóty), hliníková textura panelu
+  "Profily v řezu" stejná jako boční panel Kategorie v e-shopu. Zbytek
+  (typografie obsahu, rozvržení karet, funkce) beze změny oproti dnešní
+  online nabídce - jde jen o barevný/vizuální jazyk.
+</div>
+
+<div class="slide-frame">
+  <div class="slide-label">01 · Titulní strana (cover)</div>
+  <div class="cover">
+    <div class="hud-frame-label top-left"><span class="live-dot"></span>SYS://ONLINE</div>
+    <div class="hud-frame-label top-right">REF · LOGIMAN0068<br>09.08.2026</div>
+    <div class="hud-frame-label bottom-left">KONFIGURÁTOR 3D · v4.0</div>
+    <div class="hud-frame-label bottom-right">STATUS: PLATNÁ<br>DOC.TYPE: NABÍDKA</div>
+    <div class="cover-inner">
+      <div class="eyebrow">Cenová nabídka</div>
+      <h1>Nabídka<br>č. LOGIMAN0068</h1>
+      <div class="offer-meta">
+        <span class="k">DATE_ISSUED ·</span> Datum vystavení: <b>9. 8. 2026</b><br>
+        <span class="k">DATE_EXPIRE ·</span> Platnost nabídky do: <b>10. 8. 2026</b><br>
+        <span class="k">AUTHOR ·</span> Vypracoval: <b>Logiman</b>
+      </div>
+      <div class="recipient-grid">
+        <div class="recipient-card hud-card">
+          <div class="label">Dodavatel</div>
+          <div class="line"><b>Logiman s.r.o.</b><br>Slavičín, Divnice<br>IČ: 12345678 · DIČ: CZ12345678<br>+420 603 230 059 · info@logiman.cz</div>
+          <div class="tag">// ID:SUPPLIER-001</div>
+        </div>
+        <div class="recipient-card hud-card">
+          <div class="label">Odběratel</div>
+          <div class="line">Jan Novák</div>
+          <div class="tag">// ID:CLIENT-0068</div>
+        </div>
+      </div>
+      <div class="brand"><span class="dot"></span>LOGI<span>MAN</span> · 3D konfigurátor hliníkových konstrukcí</div>
+    </div>
+  </div>
+</div>
+
+<div class="slide-frame">
+  <div class="slide-label">02 · Technické výkresy</div>
+  <div class="content-slide">
+    <div class="slide-title"><span class="num">02</span><h2>Technické výkresy</h2><div class="rule"></div><span class="readout">SCALE <b>1:20</b> · UNITS <b>MM</b></span></div>
+    <div class="drawings-layout">
+      <div class="xsec-panel">
+        <span class="corner-mark tl"></span><span class="corner-mark tr"></span><span class="corner-mark bl"></span><span class="corner-mark br"></span>
+        <div class="xsec-panel-title">Profily v řezu<small>Najetím myší nebo kliknutím zvýrazníte pozici profilu ve výkresu.</small></div>
+        <div class="xsec-list">
+          <div class="xsec-item active">
+            <div class="xsec-shape-wrap"><svg class="xsec-shape-img" viewBox="0 0 60 60"><rect x="6" y="6" width="48" height="48" fill="#fff" stroke="#334" stroke-width="2"/><circle cx="30" cy="30" r="9" fill="none" stroke="#334" stroke-width="1.5"/><line x1="6" y1="6" x2="24" y2="24" stroke="#334" stroke-width="1"/><line x1="54" y1="6" x2="36" y2="24" stroke="#334" stroke-width="1"/><line x1="6" y1="54" x2="24" y2="36" stroke="#334" stroke-width="1"/><line x1="54" y1="54" x2="36" y2="36" stroke="#334" stroke-width="1"/></svg></div>
+            <div class="xsec-label">Profil 40x40mm (alu)<span class="xsec-qty">4 ks</span></div>
+          </div>
+          <div class="xsec-item">
+            <div class="xsec-shape-wrap"><svg class="xsec-shape-img" viewBox="0 0 60 60"><rect x="6" y="6" width="48" height="48" fill="#fff" stroke="#334" stroke-width="2"/><circle cx="30" cy="30" r="9" fill="none" stroke="#334" stroke-width="1.5"/><line x1="6" y1="6" x2="24" y2="24" stroke="#334" stroke-width="1"/><line x1="54" y1="6" x2="36" y2="24" stroke="#334" stroke-width="1"/><line x1="6" y1="54" x2="24" y2="36" stroke="#334" stroke-width="1"/><line x1="54" y1="54" x2="36" y2="36" stroke="#334" stroke-width="1"/></svg></div>
+            <div class="xsec-label">Profil 40x40mm (alu)<span class="xsec-qty">2 ks</span></div>
+          </div>
+          <div class="xsec-item">
+            <div class="xsec-shape-wrap"><svg class="xsec-shape-img" viewBox="0 0 60 60"><rect x="6" y="6" width="48" height="48" fill="#fff" stroke="#334" stroke-width="2"/><circle cx="30" cy="30" r="9" fill="none" stroke="#334" stroke-width="1.5"/><line x1="6" y1="6" x2="24" y2="24" stroke="#334" stroke-width="1"/><line x1="54" y1="6" x2="36" y2="24" stroke="#334" stroke-width="1"/><line x1="6" y1="54" x2="24" y2="36" stroke="#334" stroke-width="1"/><line x1="54" y1="54" x2="36" y2="36" stroke="#334" stroke-width="1"/></svg></div>
+            <div class="xsec-label">Profil 40x40mm (alu)<span class="xsec-qty">2 ks</span></div>
+          </div>
+        </div>
+        <div class="xsec-readout">GROUPS: 3<br>TOTAL PCS: 8</div>
+      </div>
+      <div class="views-grid">
+        <div class="view-card">
+          <div class="img-wrap">
+            <span class="crosshair"></span>
+            <svg viewBox="0 0 300 400"><rect x="30" y="20" width="60" height="360" fill="none" stroke="#16324f" stroke-width="3"/><rect x="90" y="150" width="150" height="60" fill="none" stroke="#16324f" stroke-width="3"/><rect x="200" y="20" width="60" height="130" fill="none" stroke="#16324f" stroke-width="3"/></svg>
+          </div>
+          <div class="caption">Nárys<small>s kótami</small><span class="scale">01/03</span></div>
+        </div>
+        <div class="view-card">
+          <div class="img-wrap">
+            <span class="crosshair"></span>
+            <svg viewBox="0 0 300 400"><rect x="60" y="20" width="180" height="360" fill="none" stroke="#16324f" stroke-width="3"/><rect x="60" y="150" width="180" height="60" fill="none" stroke="#16324f" stroke-width="3"/></svg>
+          </div>
+          <div class="caption">Bokorys<small>s kótami</small><span class="scale">02/03</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="slide-frame">
+  <div class="slide-label">05 · Souhrn a cena</div>
+  <div class="summary-slide">
+    <div class="slide-title"><span class="num">05</span><h2>Souhrn a cena</h2><div class="rule"></div></div>
+    <div class="price-panel">
+      <table class="price-table">
+        <thead><tr><th></th><th>Položka</th><th>Rozměr</th><th>Ks</th><th>Cena/ks</th><th>Celkem</th></tr></thead>
+        <tbody>
+          <tr><td class="idx">01</td><td>Profil 40x40mm (alu)</td><td class="mono">1180 mm</td><td class="mono">4</td><td class="mono">312 Kč</td><td class="mono">1 248 Kč</td></tr>
+          <tr><td class="idx">02</td><td>Profil 40x40mm (alu)</td><td class="mono">920 mm</td><td class="mono">2</td><td class="mono">243 Kč</td><td class="mono">486 Kč</td></tr>
+          <tr><td class="idx">03</td><td>30 x 30 Rohová spojka kostka</td><td class="mono">–</td><td class="mono">8</td><td class="mono">42 Kč</td><td class="mono">336 Kč</td></tr>
+          <tr><td class="idx">04</td><td>Cena řezů</td><td class="mono">–</td><td class="mono">–</td><td class="mono">–</td><td class="mono">180 Kč</td></tr>
+          <tr class="total-row"><td></td><td colspan="4">Celkem bez DPH</td><td class="amount">2 250 Kč</td></tr>
+        </tbody>
+      </table>
+      <div class="price-readout">POLOŽEK: <b>4</b> · MĚNA: <b>CZK</b> · SAZBA DPH: <b>21 %</b></div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

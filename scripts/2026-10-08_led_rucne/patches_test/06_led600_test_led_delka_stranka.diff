@@ -1,0 +1,23 @@
+--- a/2026-10-07_led600_generator/test_led_delka_stranka.js
++++ b/2026-10-07_led600_generator/test_led_delka_stranka.js
+@@ -72,7 +72,7 @@
+     await cekejDelku(A.page, "600");
+     const p1 = await payload(A.page);
+     const st1 = await A.page.evaluate(() => ({ hash: location.hash, valid: window.__pdcState.last.valid, errors: window.__pdcState.last.errors.length }));
+-    t("A4 po vyberu 600: 2 svitidla typu led_600 (1280 mm = 2 x 647), platna konfigurace, cena jina, delka v odkazu (#...ledlen=600)", p1.o.lights.length === 2 && p1.o.lights.every(l => l.typ === "led_600" && l.nominalLengthMm === 600 && l.housingLengthMm === 647) && st1.valid && st1.errors === 0 && p1.price !== p0.price && /ledlen=600/.test(st1.hash), { typ: p1.o.lights.map(l => l.typ), st1, price: [p0.price, p1.price] });
++    t("A4 po vyberu 600: 1 svitidlo typu led_600 (od 2026-10-08 je pocet svitidel RUCNI, vychozi 1), platna konfigurace, cena jina, delka v odkazu (#...ledlen=600)", p1.o.lights.length === 1 && p1.o.lights.every(l => l.typ === "led_600" && l.nominalLengthMm === 600 && l.housingLengthMm === 647) && st1.valid && st1.errors === 0 && p1.price !== p0.price && /ledlen=600/.test(st1.hash), { typ: p1.o.lights.map(l => l.typ), st1, price: [p0.price, p1.price] });
+     if (SNIMKY) { require("fs").mkdirSync(SNIMKY, { recursive: true }); await A.page.screenshot({ path: SNIMKY + "/stranka_led600.png" }); }
+     const menu = await A.page.evaluate(() => { const w = window.__pdcState.last.vodici && window.__pdcState.last.vodici.ovladani; return w ? w.casti.filter(c => c.id === "led").map(c => c.menu.map(m => m.text)) : null; });
+     t("A5 3D menu svitidla nabizi 'Zvolit LED 1200 mm' (a ne 600, ktera je vybrana)", !!menu && menu[0].includes("Zvolit LED 1200 mm") && !menu[0].includes("Zvolit LED 600 mm"), menu);
+@@ -129,9 +129,9 @@
+     await C.ctx.close();
+ 
+     console.log("\n## D) siroky stul a mobil");
+-    const D = await otevri(browser, "#w=2000&ledlen=600");
++    const D = await otevri(browser, "#w=2000&ledlen=600&ledcount=3");
+     const pd = await payload(D.page);
+-    t("D1 odkaz #w=2000&ledlen=600: 3 svitidla 600", pd.o && pd.o.lights.length === 3 && pd.o.lights.every(l => l.typ === "led_600") && pd.sel.ledlen === "600", pd.o && pd.o.lights.length);
++    t("D1 odkaz #w=2000&ledlen=600&ledcount=3: 3 svitidla 600", pd.o && pd.o.lights.length === 3 && pd.o.lights.every(l => l.typ === "led_600") && pd.sel.ledlen === "600", pd.o && pd.o.lights.length);
+     await D.ctx.close();
+     const M = await otevri(browser, "#w=2000", { width: 360, height: 800 });
+     const mob = await slotInfo(M.page);

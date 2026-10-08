@@ -1,0 +1,16 @@
+--- a/api/app.py
++++ b/api/app.py
+@@ -899,6 +899,8 @@
+     "uzivatele", "nastaveni", "audit_log", "kosiky", "galerie", "emaily_prichozi", "crm",
+     "nabidky", "sdileny_disk", "kniha_jizd", "prijate_doklady", "bankovni_vypisy",
+     "mini_eshopy", "zakreslene_pripominky", "reklamace", "vyroba_sestav",
++    # bot5, 2026-10-03 (bot16 + Robert pres bot3: zalozka "Mini-shopy" se stejnymi ucty a pravy): shopy/poptavky/objednavky mini-shopu a (zvlast) schvalovani jejich textu
++    "miniweb", "miniweb_schvalovani",
+     # bot16, 2026-09-29 (Robert pres bot3, "rozsekat kategorie_obsah/
+     # ceny_prislusenstvi/produkty_sklad na dnesni granularitu zalozek" -
+     # tyhle 3 sirokych sekce od zalozeni RBAC pobraly postupne mnoho
+@@ -5380,3 +5382,4 @@
+ import miniweb_admin  # noqa: F401 - registruje import a schvalovani textu mini-shopu /api/admin/miniweb/* (jen admin; bot5, Robert pres bot3 2026-10-02, viz miniweb_admin.py + webapp/miniweb-schvaleni.html), MUSI byt az po miniweb
+ import miniweb_objednavky  # noqa: F401 - registruje kosik a objednavku mini-shopu /api/miniweb/quote|orders|vat-check (faze 3 SK; bot5, Robert pres bot3 2026-10-03, viz miniweb_objednavky.py)
+ import miniweb_objednavky_admin  # noqa: F401 - registruje schvaleni dopravy objednavky mini-shopu /api/admin/orders/<id>/shipping (krok 2; bot5, 2026-10-03)
++import miniweb_shops_admin  # noqa: F401 - registruje admin API Mini-shopy /api/admin/miniweb/shops|inquiries|orders (RBAC miniweb; bot5, 2026-10-03, viz miniweb_shops_admin.py)

@@ -1,0 +1,29 @@
+{
+  "poznamka": "NAVRH bot7 pre bot16: opravy slovenskych retazcov pokladne a stitky. 'sk' = nahradit/pridat v i18n/sk.json. 'kontaktny_formular_len_ak_kluce_inq_zostavaju' = nahradit AK sa inq.* este pouzivaju pre kontaktny formular, inak mazat inq.*, nav.inquiry, pd.add_inquiry, pd.added_inquiry (slovo 'dopyt' uz nema byt nikde viditelne). badge.* su stitky: nazvy klucov si prisposob.",
+  "sk": {
+    "badge.groove": "Drážka 8 mm",
+    "badge.delivery": "Dodanie 3–5 týždňov",
+    "cart.cfg_all": "Celá konfigurácia (parametrov: {n})",
+    "co.ship_note": "Cenu dopravy vypočítame podľa PSČ dodacej adresy a pred vystavením zálohovej faktúry vám ju potvrdíme.",
+    "quote.note.proforma_after_shipping_confirmation": "Zálohovú faktúru s cenou dopravy vám pošleme e-mailom po potvrdení objednávky.",
+    "co.consent": "Beriem na vedomie informácie o spracúvaní osobných údajov (Ochrana osobných údajov).",
+    "err.consent_required": "Potvrďte prosím, že beriete na vedomie informácie o spracúvaní osobných údajov.",
+    "err.payload_too_large": "Objednávka je príliš veľká. Odstráňte niektoré položky.",
+    "err.items_invalid": "Niektorá položka vo vašom košíku už nie je dostupná. Odstráňte ju a skúste to znova.",
+    "err.inquiry_disabled": "Objednávky zatiaľ nie sú otvorené.",
+    "err.too_many_inquiries": "Dosiahli ste denný limit objednávok pre túto e-mailovú adresu.",
+    "err.rules_changed": "Dostupné voľby sa zmenili. Otvorte konfiguráciu znova.",
+    "err.b2b_confirm_required": "Potvrďte prosím, že objednávku odosielate v mene podnikateľa."
+  },
+  "kontaktny_formular_len_ak_kluce_inq_zostavaju": {
+    "inq.title": "Vaša správa",
+    "inq.empty": "Vaša správa je prázdna.",
+    "inq.send": "Odoslať správu",
+    "inq.consent": "Súhlasím so spracovaním svojich údajov na vybavenie tejto správy.",
+    "inq.sent": "Ďakujeme, správu sme prijali. Ozveme sa vám.",
+    "inq.error": "Správu sa nepodarilo odoslať. Skúste to prosím neskôr.",
+    "inq.demo_done": "Ukážka: správa sa neodoslala.",
+    "inq.preview_done": "Náhľad: správa bola skontrolovaná, ale neuložila sa.",
+    "inq.b2b_confirm": "Potvrdzujem, že správu odosielam v mene podnikateľa (firmy)."
+  }
+}

@@ -1,0 +1,82 @@
+# Whitelist znamych falesnych hlaseni pyflakes pro scripts/qa/static.py
+# (bot5, 2026-09-02, ukol C - "kontrolni mechanismy" od Roberta pres bot3).
+#
+# Format: jeden radek "<soubor><TAB><presny text hlaseni pyflakes bez
+# "soubor:radek:sloupec: " prefixu>". Cislo radku se ZAMERNE neporovnava
+# (kdyby se app.py zmenil, presunuty import by porovnanim jen podle
+# souboru+textu porad spravne matchnul, misto aby zbytecne znovu vyplaval
+# jako "novy" nalez jen kvuli posunu radku).
+#
+# Co je tu a proc: api/app.py na konci importuje vsechny blueprint moduly
+# JEN kvuli vedlejsimu efektu (registrace Flask routes pri importu, viz
+# hlavicka kazdeho modulu - napr. "Aktivace: `import turntable` na konci
+# app.py"). Kazdy radek uz MA `# noqa: F401` komentar v kodu - ale
+# pyflakes (na rozdil od flake8) noqa komentare vubec nectory/neresi,
+# proto samostatny whitelist tady. Overeno 2026-09-02: presne tenhle
+# seznam modulu odpovida bloku "import X  # noqa: F401 - registruje..."
+# na konci api/app.py.
+api/app.py	'customers' imported but unused
+api/app.py	'documents' imported but unused
+api/app.py	'purchase_orders' imported but unused
+api/app.py	'emails' imported but unused
+api/app.py	'system_emails' imported but unused
+api/app.py	'gallery' imported but unused
+api/app.py	'gallery_items' imported but unused
+api/app.py	'products' imported but unused
+api/app.py	'orders' imported but unused
+api/app.py	'cart' imported but unused
+api/app.py	'car_storefronts' imported but unused
+api/app.py	'support' imported but unused
+api/app.py	'cutting' imported but unused
+api/app.py	'crm' imported but unused
+api/app.py	'quotes' imported but unused
+api/app.py	'drive' imported but unused
+api/app.py	'incoming_documents' imported but unused
+api/app.py	'approvals' imported but unused
+api/app.py	'scene_offers' imported but unused
+api/app.py	'fleet' imported but unused
+api/app.py	'leg_fbx_import' imported but unused
+api/app.py	'dimension_match_fbx' imported but unused
+api/app.py	'hdri' imported but unused
+api/app.py	'rendering_settings' imported but unused
+api/app.py	'blender_render' imported but unused
+api/app.py	'render_worker' imported but unused
+api/app.py	'inquiries' imported but unused
+api/app.py	'qa_audit' imported but unused
+api/app.py	'remeslo' imported but unused
+api/app.py	'bank_statements' imported but unused
+api/app.py	'tracking' imported but unused
+api/app.py	'system_pipeline' imported but unused
+api/app.py	'product_markups' imported but unused
+api/app.py	'turntable' imported but unused
+api/app.py	'client_errors' imported but unused
+api/app.py	'social_posts' imported but unused
+api/app.py	'cms_blocks' imported but unused
+api/app.py	'accessories' imported but unused
+api/app.py	'internal_chat' imported but unused
+api/app.py	'audit_log' imported but unused
+api/app.py	'price_scraping' imported but unused
+api/app.py	'admin_users' imported but unused
+api/app.py	'custom_shapes' imported but unused
+api/app.py	'product_assemblies' imported but unused
+api/app.py	'cars' imported but unused
+api/app.py	'admin_profily' imported but unused
+api/app.py	'admin_settings' imported but unused
+api/app.py	'storefront_pages' imported but unused
+api/app.py	'categories' imported but unused
+api/app.py	'shop_api' imported but unused
+api/app.py	'returns' imported but unused
+api/remeslo.py	'remeslo_weather_alerts' imported but unused
+api/remeslo.py	'remeslo_suppliers' imported but unused
+api/remeslo.py	'remeslo_worklog' imported but unused
+api/remeslo.py	'remeslo_daily' imported but unused
+api/remeslo.py	'remeslo_media' imported but unused
+api/remeslo.py	'remeslo_public_profile' imported but unused
+api/remeslo.py	'remeslo_collaborators' imported but unused
+api/remeslo.py	'remeslo_pricelist' imported but unused
+api/remeslo.py	'remeslo_offers' imported but unused
+api/remeslo.py	'remeslo_finance' imported but unused
+api/remeslo.py	'remeslo_moderator' imported but unused
+api/remeslo.py	'remeslo_derivation' imported but unused
+api/app.py	redefinition of unused 'categories' from line 4481
+api/app.py	redefinition of unused 'products' from line 4437

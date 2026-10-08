@@ -1,0 +1,40 @@
+[
+ {
+  "colIdx": 0,
+  "N": 3,
+  "floorY": 213,
+  "physCeil": 922,
+  "levels": 4,
+  "boxHeights": [
+   120,
+   120,
+   120,
+   120
+  ],
+  "topBoxOverhangsPast920": false,
+  "topBoxTop": 903,
+  "boxesPerLevel": 3,
+  "totalBoxes": 12,
+  "railZFrom": -2343,
+  "railZTo": -1111,
+  "railLen": 1232
+ },
+ {
+  "colIdx": 1,
+  "N": 2,
+  "floorY": 318,
+  "physCeil": 924,
+  "levels": 2,
+  "boxHeights": [
+   270,
+   220
+  ],
+  "topBoxOverhangsPast920": false,
+  "topBoxTop": 898,
+  "boxesPerLevel": 2,
+  "totalBoxes": 4,
+  "railZFrom": -1081,
+  "railZTo": -249,
+  "railLen": 832
+ }
+]

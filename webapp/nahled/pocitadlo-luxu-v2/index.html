@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">   <!-- NÁHLED k posouzení Robertem (pravidlo 60): neindexovat, bez odkazu z webu -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' file:; script-src 'self' file:; style-src 'self' file: 'unsafe-inline'; connect-src 'none'; img-src 'self' file: data:; object-src 'none'">
+  <title>Počítadlo luxů · pracovní ukázka (v2)</title>
+  <link rel="stylesheet" href="lux.css"><link rel="stylesheet" href="demo.css">
+</head>
+<body>
+  <main>
+    <header><div><p class="eyebrow">JOHN · 05. 10. 2026</p><h1 data-text="title">Světlo na pracovní ploše</h1><p data-text="subtitle"></p></div>
+      <label>CS / SK / EN <select id="language"><option value="cs">Česky</option><option value="sk">Slovensky</option><option value="en">English</option></select></label></header>
+    <div class="layout">
+      <section><div id="preview" aria-label="3D"><canvas id="scene"></canvas></div><p class="guide" data-text="guide"></p>
+        <p class="notice" data-text="assumption"></p><p class="notice" data-text="caveat"></p>
+        <p class="legend">300 lx · 500 lx · 750 lx · 1 000 lx <span class="ramp"></span></p>
+      </section>
+      <aside><form id="controls">
+        <label><span data-text="width"></span> <output for="width"></output><input id="width" type="range" min="500" max="3000" step="10" value="1200"></label>
+        <label><span data-text="depth"></span> <output for="depth"></output><input id="depth" type="range" min="400" max="1500" step="10" value="800"></label>
+        <label><span data-text="height"></span> <output for="height"></output><input id="height" type="range" min="140" max="1200" step="10" value="840"></label>
+        <label><span data-text="arm"></span> <output for="arm"></output><input id="arm" type="range" min="200" max="1500" step="10" value="560"></label>
+        <label><span data-text="gap"></span> <output for="gap"></output><input id="gap" type="range" min="100" max="2000" step="1" value="973"></label>
+        <label><span data-text="count"></span><select id="count"><option value="auto">Auto</option><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select></label>
+        <label><span data-text="type"></span><select id="type"><option value="LED1200" data-text="known"></option><option value="CUSTOM-LINE" data-text="custom"></option><option value="CUSTOM-POINT" data-text="customPoint"></option></select></label>
+        <div id="power-inputs">
+          <label><span data-text="powerMode"></span><select id="power-mode"><option value="33W" data-text="mode33"></option><option value="21W" data-text="mode21"></option></select></label>
+          <p class="notice" data-text="nonDimmable"></p>
+        </div>
+        <div id="custom-inputs" hidden>
+          <p class="notice" data-text="manual"></p>
+          <label><span data-text="flux"></span><input id="flux" type="number" min="0" max="100000" step="10" value="3960"></label>
+          <label><span data-text="length"></span><input id="length" type="number" min="10" max="3000" step="10" value="1200"></label>
+        </div>
+        <label id="dimming-input"><span data-text="dimming"></span> <output for="dimming"></output><input id="dimming" type="range" min="0" max="100" value="100"></label>
+        <p id="error" role="alert"></p>
+      </form><p class="small"><a href="README.html">README</a> · <a href="OVERENI_NOREM.html">Normy a ověření</a> · <a href="ZDROJE_A_VYPOCET.html">Vzorce</a> · <a href="overene_priklady.html">Příklady</a> · <a href="HOVER_PANEL.html">Obsah panelu</a></p></aside>
+    </div>
+  </main>
+  <script src="vendor/three.min.js"></script><script src="lux-core.js"></script><script src="lux-data.js"></script>
+  <script src="geometry-fixture.js"></script><script src="demo-adapter.js"></script><script src="lux-plugin.js"></script><script src="demo.js"></script>
+</body>
+</html>

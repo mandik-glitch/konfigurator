@@ -1,0 +1,17 @@
+[Unit]
+Description=Casovac denni synchronizace bankovnich vypisu FIO (1x denne)
+# Robert primo (pres bot3, 2026-09-17): "bankovni vypisy (FIO) se maji
+# automaticky obnovovat 1x denne." FIO doporucuje min. 30s mezi dotazy
+# na stejny token (viz api/bank_statements.py hlavicka) - 1x/den je
+# radove bezpecne. Samostatny, nezavisly pozadavek "kontrola uhrad pri
+# kazdem otevreni Objednavek" resi jiny mechanismus (POST /api/admin/
+# bank-transactions/rematch, cist DB-only, na FIO vubec nesaha, zadny
+# timer netreba) - tenhle timer se tyka jen samotneho stahovani z FIO.
+
+[Timer]
+OnCalendar=*-*-* 06:15:00
+Persistent=true
+RandomizedDelaySec=300
+
+[Install]
+WantedBy=timers.target

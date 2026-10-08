@@ -1,0 +1,11 @@
+--- a/2026-10-07_led600_generator/test_led_delka_lux.py
++++ b/2026-10-07_led600_generator/test_led_delka_lux.py
+@@ -29,7 +29,7 @@
+ 
+ 
+ def payload(**kw):
+-    r = S.sestav_stul(**kw)
++    r = S.sestav_stul(**{"led_pocet": getattr(S, "LED_MAX", 1), **kw})                     # od 2026-10-08 RUCNI pocet svitidel: tento test overuje svitidla podle sirky = nejvic, co se vejde
+     return stul_osvetleni.osvetleni(r, G._transformuj)
+ 
+ 

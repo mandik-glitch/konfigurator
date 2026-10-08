@@ -1,0 +1,13 @@
+# /etc/logrotate.d/ram-watchdog - log RAM watchdogu (deploy/ram-watchdog.sh)
+# skript loguje appendem pres >> a soubor neotvira trvale -> copytruncate neni
+# potreba, staci create; tydne, 4 kopie (viz SERVER_RAM_WATCHDOG.md)
+/var/log/ram-watchdog.log {
+    su root root
+    weekly
+    rotate 4
+    missingok
+    notifempty
+    compress
+    delaycompress
+    create 0640 root adm
+}

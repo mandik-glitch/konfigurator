@@ -1,0 +1,1330 @@
+{
+  "126": {
+    "name": "Caddy Cargo PHEV K-021 A - boxy43-270x1-220x1-170x1",
+    "legs": [
+      {
+        "z": -1462.0114669799805,
+        "isPlain": true,
+        "isVyrez": false,
+        "oldYnew": null,
+        "gap": null
+      },
+      {
+        "z": -1002.0114669799805,
+        "isPlain": true,
+        "isVyrez": false,
+        "oldYnew": null,
+        "gap": null
+      },
+      {
+        "z": -104.01146697998047,
+        "isPlain": false,
+        "isVyrez": true,
+        "oldYnew": 565.4924926757812,
+        "gap": 0
+      }
+    ],
+    "columns": [
+      {
+        "prefix": "col0",
+        "zLow": -1462.0114669799805,
+        "zHigh": -1002.0114669799805
+      },
+      {
+        "prefix": "col1",
+        "zLow": -1002.0114669799805,
+        "zHigh": -104.01146697998047
+      }
+    ],
+    "log": {
+      "wallLegRigid": 15,
+      "vyrezShift": 3,
+      "vyrezAssocShift": 5,
+      "colWallEnd": 8,
+      "colWallMid": 12,
+      "colOtherEnd": 4,
+      "colOtherMid": 6,
+      "dorovnani": 0,
+      "carBody": 3,
+      "unaffected": 29
+    },
+    "dorovnaniByCol": {
+      "col1": {
+        "levels": [
+          "p0",
+          "p1"
+        ],
+        "deficit": 10,
+        "rawDeficit": 10,
+        "capped": false
+      }
+    },
+    "verify": {
+      "satCollisions": 0,
+      "skipped": 0,
+      "satDetail": [],
+      "selfSusp": 33,
+      "selfDetail": [
+        {
+          "a": "predni-svislice",
+          "b": "zaslepka-predni-svislice",
+          "vol": 5400
+        },
+        {
+          "a": "zadni-svislice-dolni",
+          "b": "zaslepka-zadni-svislice-dolni",
+          "vol": 5400
+        },
+        {
+          "a": "cap",
+          "b": "zaslepka-cap",
+          "vol": 5400
+        },
+        {
+          "a": "predni-svislice",
+          "b": "zaslepka-predni-svislice",
+          "vol": 5400
+        },
+        {
+          "a": "zadni-svislice-dolni",
+          "b": "zaslepka-zadni-svislice-dolni",
+          "vol": 5400
+        },
+        {
+          "a": "cap",
+          "b": "zaslepka-cap",
+          "vol": 5400
+        },
+        {
+          "a": "predni-svislice",
+          "b": "zaslepka-predni-svislice",
+          "vol": 5400
+        },
+        {
+          "a": "cap",
+          "b": "zaslepka-cap",
+          "vol": 5400
+        },
+        {
+          "a": "zadni-svislice-nad-zarezem",
+          "b": "zaslepka-zadni-svislice-nad-zarezem",
+          "vol": 5400
+        },
+        {
+          "a": "nosnik-col0-p0",
+          "b": "eurobox-col0-p0",
+          "vol": 23940
+        },
+        {
+          "a": "nosnik-col0-p0",
+          "b": "eurobox-col0-p0",
+          "vol": 23940
+        },
+        {
+          "a": "spojnice-col0-p0",
+          "b": "eurobox-col0-p0",
+          "vol": 64159
+        },
+        {
+          "a": "spojnice-col0-p0",
+          "b": "eurobox-col0-p0",
+          "vol": 64159
+        },
+        {
+          "a": "nosnik-col0-p1",
+          "b": "eurobox-col0-p1",
+          "vol": 23940
+        },
+        {
+          "a": "nosnik-col0-p1",
+          "b": "eurobox-col0-p1",
+          "vol": 23940
+        },
+        {
+          "a": "spojnice-col0-p1",
+          "b": "eurobox-col0-p1",
+          "vol": 64159
+        },
+        {
+          "a": "spojnice-col0-p1",
+          "b": "eurobox-col0-p1",
+          "vol": 64159
+        },
+        {
+          "a": "nosnik-col0-p2",
+          "b": "eurobox-col0-p2",
+          "vol": 23940
+        },
+        {
+          "a": "nosnik-col0-p2",
+          "b": "eurobox-col0-p2",
+          "vol": 23940
+        },
+        {
+          "a": "spojnice-col0-p2",
+          "b": "eurobox-col0-p2",
+          "vol": 64159
+        },
+        {
+          "a": "spojnice-col0-p2",
+          "b": "eurobox-col0-p2",
+          "vol": 64159
+        },
+        {
+          "a": "nosnik-col1-p0",
+          "b": "eurobox-col1-p0",
+          "vol": 23941
+        },
+        {
+          "a": "nosnik-col1-p0",
+          "b": "eurobox-col1-p0",
+          "vol": 23941
+        },
+        {
+          "a": "spojnice-col1-p0",
+          "b": "eurobox-col1-p0",
+          "vol": 50287
+        },
+        {
+          "a": "spojnice-col1-p0",
+          "b": "eurobox-col1-p0",
+          "vol": 50287
+        },
+        {
+          "a": "nosnik-col0-p3",
+          "b": "eurobox-col0-p3",
+          "vol": 23940
+        },
+        {
+          "a": "nosnik-col0-p3",
+          "b": "eurobox-col0-p3",
+          "vol": 23940
+        },
+        {
+          "a": "spojnice-col0-p3",
+          "b": "eurobox-col0-p3",
+          "vol": 64159
+        },
+        {
+          "a": "spojnice-col0-p3",
+          "b": "eurobox-col0-p3",
+          "vol": 64159
+        },
+        {
+          "a": "nosnik-col1-p1",
+          "b": "eurobox-col1-p1",
+          "vol": 23941
+        },
+        {
+          "a": "nosnik-col1-p1",
+          "b": "eurobox-col1-p1",
+          "vol": 23941
+        },
+        {
+          "a": "spojnice-col1-p1",
+          "b": "eurobox-col1-p1",
+          "vol": 50287
+        },
+        {
+          "a": "spojnice-col1-p1",
+          "b": "eurobox-col1-p1",
+          "vol": 50287
+        }
+      ],
+      "checked": 82
+    },
+    "newPartsCount": 85,
+    "origPartsCount": 85
+  },
+  "143": {
+    "name": "Caddy Cargo PHEV K-021 B - boxy43-270x1-220x1-120x1",
+    "legs": [
+      {
+        "z": -1462.0114669799805,
+        "isPlain": true,
+        "isVyrez": false,
+        "oldYnew": null,
+        "gap": null
+      },
+      {
+        "z": -1002.0114669799805,
+        "isPlain": true,
+        "isVyrez": false,
+        "oldYnew": null,
+        "gap": null
+      },
+      {
+        "z": -104.01146697998047,
+        "isPlain": false,
+        "isVyrez": true,
+        "oldYnew": 565.4924926757812,
+        "gap": 0
+      }
+    ],
+    "columns": [
+      {
+        "prefix": "col0",
+        "zLow": -1462.0114669799805,
+        "zHigh": -1002.0114669799805
+      },
+      {
+        "prefix": "col1",
+        "zLow": -1002.0114669799805,
+        "zHigh": -104.01146697998047
+      }
+    ],
+    "log": {
+      "wallLegRigid": 15,
+      "vyrezShift": 3,
+      "vyrezAssocShift": 5,
+      "colWallEnd": 10,
+      "colWallMid": 15,
+      "colOtherEnd": 6,
+      "colOtherMid": 9,
+      "dorovnani": 0,
+      "carBody": 3,
+      "unaffected": 29
+    },
+    "dorovnaniByCol": {
+      "col1": {
+        "levels": [
+          "p0",
+          "p1",
+          "p2"
+        ],
+        "deficit": 10,
+        "rawDeficit": 10,
+        "capped": false
+      }
+    },
+    "verify": {
+      "satCollisions": 0,
+      "skipped": 0,
+      "satDetail": [],
+      "selfSusp": 41,
+      "selfDetail": [
+        {
+          "a": "predni-svislice",
+          "b": "zaslepka-predni-svislice",
+          "vol": 5400
+        },
+        {
+          "a": "zadni-svislice-dolni",
+          "b": "zaslepka-zadni-svislice-dolni",
+          "vol": 5400
+        },
+        {
+          "a": "cap",
+          "b": "zaslepka-cap",
+          "vol": 5400
+        },
+        {
+          "a": "predni-svislice",
+          "b": "zaslepka-predni-svislice",
+          "vol": 5400
+        },
+        {
+          "a": "zadni-svislice-dolni",
+          "b": "zaslepka-zadni-svislice-dolni",
+          "vol": 5400
+        },
+        {
+          "a": "cap",
+          "b": "zaslepka-cap",
+          "vol": 5400
+        },
+        {
+          "a": "predni-svislice",
+          "b": "zaslepka-predni-svislice",
+          "vol": 5400
+        },
+        {
+          "a": "cap",
+          "b": "zaslepka-cap",
+          "vol": 5400
+        },
+        {
+          "a": "zadni-svislice-nad-zarezem",
+          "b": "zaslepka-zadni-svislice-nad-zarezem",
+          "vol": 5400
+        },
+        {
+          "a": "nosnik-col0-p0",
+          "b": "eurobox-col0-p0",
+          "vol": 23940
+        },
+        {
+          "a": "nosnik-col0-p0",
+          "b": "eurobox-col0-p0",
+          "vol": 23940
+        },
+        {
+          "a": "spojnice-col0-p0",
+          "b": "eurobox-col0-p0",
+          "vol": 64159
+        },
+        {
+          "a": "spojnice-col0-p0",
+          "b": "eurobox-col0-p0",
+          "vol": 64159
+        },
+        {
+          "a": "nosnik-col0-p1",
+          "b": "eurobox-col0-p1",
+          "vol": 23940
+        },
+        {
+          "a": "nosnik-col0-p1",
+          "b": "eurobox-col0-p1",
+          "vol": 23940
+        },
+        {
+          "a": "spojnice-col0-p1",
+          "b": "eurobox-col0-p1",
+          "vol": 64159
+        },
+        {
+          "a": "spojnice-col0-p1",
+          "b": "eurobox-col0-p1",
+          "vol": 64159
+        },
+        {
+          "a": "nosnik-col0-p2",
+          "b": "eurobox-col0-p2",
+          "vol": 23940
+        },
+        {
+          "a": "nosnik-col0-p2",
+          "b": "eurobox-col0-p2",
+          "vol": 23940
+        },
+        {
+          "a": "spojnice-col0-p2",
+          "b": "eurobox-col0-p2",
+          "vol": 64159
+        },
+        {
+          "a": "spojnice-col0-p2",
+          "b": "eurobox-col0-p2",
+          "vol": 64159
+        },
+        {
+          "a": "nosnik-col1-p0",
+          "b": "eurobox-col1-p0",
+          "vol": 23941
+        },
+        {
+          "a": "nosnik-col1-p0",
+          "b": "eurobox-col1-p0",
+          "vol": 23941
+        },
+        {
+          "a": "spojnice-col1-p0",
+          "b": "eurobox-col1-p0",
+          "vol": 50287
+        },
+        {
+          "a": "spojnice-col1-p0",
+          "b": "eurobox-col1-p0",
+          "vol": 50287
+        },
+        {
+          "a": "nosnik-col0-p3",
+          "b": "eurobox-col0-p3",
+          "vol": 23940
+        },
+        {
+          "a": "nosnik-col0-p3",
+          "b": "eurobox-col0-p3",
+          "vol": 23940
+        },
+        {
+          "a": "spojnice-col0-p3",
+          "b": "eurobox-col0-p3",
+          "vol": 64159
+        },
+        {
+          "a": "spojnice-col0-p3",
+          "b": "eurobox-col0-p3",
+          "vol": 64159
+        },
+        {
+          "a": "nosnik-col0-p4",
+          "b": "eurobox-col0-p4",
+          "vol": 23940
+        },
+        {
+          "a": "nosnik-col0-p4",
+          "b": "eurobox-col0-p4",
+          "vol": 23940
+        },
+        {
+          "a": "spojnice-col0-p4",
+          "b": "eurobox-col0-p4",
+          "vol": 64159
+        },
+        {
+          "a": "spojnice-col0-p4",
+          "b": "eurobox-col0-p4",
+          "vol": 64159
+        },
+        {
+          "a": "nosnik-col1-p1",
+          "b": "eurobox-col1-p1",
+          "vol": 23941
+        },
+        {
+          "a": "nosnik-col1-p1",
+          "b": "eurobox-col1-p1",
+          "vol": 23941
+        },
+        {
+          "a": "spojnice-col1-p1",
+          "b": "eurobox-col1-p1",
+          "vol": 50287
+        },
+        {
+          "a": "spojnice-col1-p1",
+          "b": "eurobox-col1-p1",
+          "vol": 50287
+        },
+        {
+          "a": "nosnik-col1-p2",
+          "b": "eurobox-col1-p2",
+          "vol": 23941
+        },
+        {
+          "a": "nosnik-col1-p2",
+          "b": "eurobox-col1-p2",
+          "vol": 23941
+        },
+        {
+          "a": "spojnice-col1-p2",
+          "b": "eurobox-col1-p2",
+          "vol": 50287
+        },
+        {
+          "a": "spojnice-col1-p2",
+          "b": "eurobox-col1-p2",
+          "vol": 50287
+        }
+      ],
+      "checked": 92
+    },
+    "newPartsCount": 95,
+    "origPartsCount": 95
+  },
+  "144": {
+    "name": "Caddy Cargo PHEV K-021 C - boxy43-220x1-170x1-120x1",
+    "legs": [
+      {
+        "z": -1462.0114669799805,
+        "isPlain": true,
+        "isVyrez": false,
+        "oldYnew": null,
+        "gap": null
+      },
+      {
+        "z": -1002.0114669799805,
+        "isPlain": true,
+        "isVyrez": false,
+        "oldYnew": null,
+        "gap": null
+      },
+      {
+        "z": -104.01146697998047,
+        "isPlain": false,
+        "isVyrez": true,
+        "oldYnew": 565.4924926757812,
+        "gap": 0
+      }
+    ],
+    "columns": [
+      {
+        "prefix": "col0",
+        "zLow": -1462.0114669799805,
+        "zHigh": -1002.0114669799805
+      },
+      {
+        "prefix": "col1",
+        "zLow": -1002.0114669799805,
+        "zHigh": -104.01146697998047
+      }
+    ],
+    "log": {
+      "wallLegRigid": 15,
+      "vyrezShift": 3,
+      "vyrezAssocShift": 5,
+      "colWallEnd": 10,
+      "colWallMid": 15,
+      "colOtherEnd": 6,
+      "colOtherMid": 9,
+      "dorovnani": 0,
+      "carBody": 3,
+      "unaffected": 29
+    },
+    "dorovnaniByCol": {
+      "col1": {
+        "levels": [
+          "p0",
+          "p1",
+          "p2"
+        ],
+        "deficit": 10,
+        "rawDeficit": 10,
+        "capped": false
+      }
+    },
+    "verify": {
+      "satCollisions": 0,
+      "skipped": 0,
+      "satDetail": [],
+      "selfSusp": 41,
+      "selfDetail": [
+        {
+          "a": "predni-svislice",
+          "b": "zaslepka-predni-svislice",
+          "vol": 5400
+        },
+        {
+          "a": "zadni-svislice-dolni",
+          "b": "zaslepka-zadni-svislice-dolni",
+          "vol": 5400
+        },
+        {
+          "a": "cap",
+          "b": "zaslepka-cap",
+          "vol": 5400
+        },
+        {
+          "a": "predni-svislice",
+          "b": "zaslepka-predni-svislice",
+          "vol": 5400
+        },
+        {
+          "a": "zadni-svislice-dolni",
+          "b": "zaslepka-zadni-svislice-dolni",
+          "vol": 5400
+        },
+        {
+          "a": "cap",
+          "b": "zaslepka-cap",
+          "vol": 5400
+        },
+        {
+          "a": "predni-svislice",
+          "b": "zaslepka-predni-svislice",
+          "vol": 5400
+        },
+        {
+          "a": "cap",
+          "b": "zaslepka-cap",
+          "vol": 5400
+        },
+        {
+          "a": "zadni-svislice-nad-zarezem",
+          "b": "zaslepka-zadni-svislice-nad-zarezem",
+          "vol": 5400
+        },
+        {
+          "a": "nosnik-col0-p0",
+          "b": "eurobox-col0-p0",
+          "vol": 23940
+        },
+        {
+          "a": "nosnik-col0-p0",
+          "b": "eurobox-col0-p0",
+          "vol": 23940
+        },
+        {
+          "a": "spojnice-col0-p0",
+          "b": "eurobox-col0-p0",
+          "vol": 64159
+        },
+        {
+          "a": "spojnice-col0-p0",
+          "b": "eurobox-col0-p0",
+          "vol": 64159
+        },
+        {
+          "a": "nosnik-col0-p1",
+          "b": "eurobox-col0-p1",
+          "vol": 23940
+        },
+        {
+          "a": "nosnik-col0-p1",
+          "b": "eurobox-col0-p1",
+          "vol": 23940
+        },
+        {
+          "a": "spojnice-col0-p1",
+          "b": "eurobox-col0-p1",
+          "vol": 64159
+        },
+        {
+          "a": "spojnice-col0-p1",
+          "b": "eurobox-col0-p1",
+          "vol": 64159
+        },
+        {
+          "a": "nosnik-col0-p2",
+          "b": "eurobox-col0-p2",
+          "vol": 23940
+        },
+        {
+          "a": "nosnik-col0-p2",
+          "b": "eurobox-col0-p2",
+          "vol": 23940
+        },
+        {
+          "a": "spojnice-col0-p2",
+          "b": "eurobox-col0-p2",
+          "vol": 64159
+        },
+        {
+          "a": "spojnice-col0-p2",
+          "b": "eurobox-col0-p2",
+          "vol": 64159
+        },
+        {
+          "a": "nosnik-col1-p0",
+          "b": "eurobox-col1-p0",
+          "vol": 23941
+        },
+        {
+          "a": "nosnik-col1-p0",
+          "b": "eurobox-col1-p0",
+          "vol": 23941
+        },
+        {
+          "a": "spojnice-col1-p0",
+          "b": "eurobox-col1-p0",
+          "vol": 50287
+        },
+        {
+          "a": "spojnice-col1-p0",
+          "b": "eurobox-col1-p0",
+          "vol": 50287
+        },
+        {
+          "a": "nosnik-col0-p3",
+          "b": "eurobox-col0-p3",
+          "vol": 23940
+        },
+        {
+          "a": "nosnik-col0-p3",
+          "b": "eurobox-col0-p3",
+          "vol": 23940
+        },
+        {
+          "a": "spojnice-col0-p3",
+          "b": "eurobox-col0-p3",
+          "vol": 64159
+        },
+        {
+          "a": "spojnice-col0-p3",
+          "b": "eurobox-col0-p3",
+          "vol": 64159
+        },
+        {
+          "a": "nosnik-col0-p4",
+          "b": "eurobox-col0-p4",
+          "vol": 23940
+        },
+        {
+          "a": "nosnik-col0-p4",
+          "b": "eurobox-col0-p4",
+          "vol": 23940
+        },
+        {
+          "a": "spojnice-col0-p4",
+          "b": "eurobox-col0-p4",
+          "vol": 64159
+        },
+        {
+          "a": "spojnice-col0-p4",
+          "b": "eurobox-col0-p4",
+          "vol": 64159
+        },
+        {
+          "a": "nosnik-col1-p1",
+          "b": "eurobox-col1-p1",
+          "vol": 23941
+        },
+        {
+          "a": "nosnik-col1-p1",
+          "b": "eurobox-col1-p1",
+          "vol": 23941
+        },
+        {
+          "a": "spojnice-col1-p1",
+          "b": "eurobox-col1-p1",
+          "vol": 50287
+        },
+        {
+          "a": "spojnice-col1-p1",
+          "b": "eurobox-col1-p1",
+          "vol": 50287
+        },
+        {
+          "a": "nosnik-col1-p2",
+          "b": "eurobox-col1-p2",
+          "vol": 23941
+        },
+        {
+          "a": "nosnik-col1-p2",
+          "b": "eurobox-col1-p2",
+          "vol": 23941
+        },
+        {
+          "a": "spojnice-col1-p2",
+          "b": "eurobox-col1-p2",
+          "vol": 50287
+        },
+        {
+          "a": "spojnice-col1-p2",
+          "b": "eurobox-col1-p2",
+          "vol": 50287
+        }
+      ],
+      "checked": 92
+    },
+    "newPartsCount": 95,
+    "origPartsCount": 95
+  },
+  "165": {
+    "name": "Caddy Cargo PHEV K-021 D - boxy43-220x1-170x1-120x1",
+    "legs": [
+      {
+        "z": -1462.0114669799805,
+        "isPlain": true,
+        "isVyrez": false,
+        "oldYnew": null,
+        "gap": null
+      },
+      {
+        "z": -1002.0114669799805,
+        "isPlain": true,
+        "isVyrez": false,
+        "oldYnew": null,
+        "gap": null
+      },
+      {
+        "z": -104.01146697998047,
+        "isPlain": false,
+        "isVyrez": true,
+        "oldYnew": 565.4924926757812,
+        "gap": 0
+      }
+    ],
+    "columns": [
+      {
+        "prefix": "col0",
+        "zLow": -1462.0114669799805,
+        "zHigh": -1002.0114669799805
+      },
+      {
+        "prefix": "col1",
+        "zLow": -1002.0114669799805,
+        "zHigh": -104.01146697998047
+      }
+    ],
+    "log": {
+      "wallLegRigid": 15,
+      "vyrezShift": 3,
+      "vyrezAssocShift": 5,
+      "colWallEnd": 10,
+      "colWallMid": 15,
+      "colOtherEnd": 4,
+      "colOtherMid": 6,
+      "dorovnani": 0,
+      "carBody": 3,
+      "unaffected": 29
+    },
+    "dorovnaniByCol": {
+      "col1": {
+        "levels": [
+          "p0",
+          "p1"
+        ],
+        "deficit": 10,
+        "rawDeficit": 10,
+        "capped": false
+      }
+    },
+    "verify": {
+      "satCollisions": 0,
+      "skipped": 0,
+      "satDetail": [],
+      "selfSusp": 37,
+      "selfDetail": [
+        {
+          "a": "predni-svislice",
+          "b": "zaslepka-predni-svislice",
+          "vol": 5400
+        },
+        {
+          "a": "zadni-svislice-dolni",
+          "b": "zaslepka-zadni-svislice-dolni",
+          "vol": 5400
+        },
+        {
+          "a": "cap",
+          "b": "zaslepka-cap",
+          "vol": 5400
+        },
+        {
+          "a": "predni-svislice",
+          "b": "zaslepka-predni-svislice",
+          "vol": 5400
+        },
+        {
+          "a": "zadni-svislice-dolni",
+          "b": "zaslepka-zadni-svislice-dolni",
+          "vol": 5400
+        },
+        {
+          "a": "cap",
+          "b": "zaslepka-cap",
+          "vol": 5400
+        },
+        {
+          "a": "predni-svislice",
+          "b": "zaslepka-predni-svislice",
+          "vol": 5400
+        },
+        {
+          "a": "cap",
+          "b": "zaslepka-cap",
+          "vol": 5400
+        },
+        {
+          "a": "zadni-svislice-nad-zarezem",
+          "b": "zaslepka-zadni-svislice-nad-zarezem",
+          "vol": 5400
+        },
+        {
+          "a": "nosnik-col0-p0",
+          "b": "eurobox-col0-p0",
+          "vol": 23940
+        },
+        {
+          "a": "nosnik-col0-p0",
+          "b": "eurobox-col0-p0",
+          "vol": 23940
+        },
+        {
+          "a": "spojnice-col0-p0",
+          "b": "eurobox-col0-p0",
+          "vol": 64159
+        },
+        {
+          "a": "spojnice-col0-p0",
+          "b": "eurobox-col0-p0",
+          "vol": 64159
+        },
+        {
+          "a": "nosnik-col0-p1",
+          "b": "eurobox-col0-p1",
+          "vol": 23940
+        },
+        {
+          "a": "nosnik-col0-p1",
+          "b": "eurobox-col0-p1",
+          "vol": 23940
+        },
+        {
+          "a": "spojnice-col0-p1",
+          "b": "eurobox-col0-p1",
+          "vol": 64159
+        },
+        {
+          "a": "spojnice-col0-p1",
+          "b": "eurobox-col0-p1",
+          "vol": 64159
+        },
+        {
+          "a": "nosnik-col0-p2",
+          "b": "eurobox-col0-p2",
+          "vol": 23940
+        },
+        {
+          "a": "nosnik-col0-p2",
+          "b": "eurobox-col0-p2",
+          "vol": 23940
+        },
+        {
+          "a": "spojnice-col0-p2",
+          "b": "eurobox-col0-p2",
+          "vol": 64159
+        },
+        {
+          "a": "spojnice-col0-p2",
+          "b": "eurobox-col0-p2",
+          "vol": 64159
+        },
+        {
+          "a": "nosnik-col1-p0",
+          "b": "eurobox-col1-p0",
+          "vol": 23941
+        },
+        {
+          "a": "nosnik-col1-p0",
+          "b": "eurobox-col1-p0",
+          "vol": 23941
+        },
+        {
+          "a": "spojnice-col1-p0",
+          "b": "eurobox-col1-p0",
+          "vol": 50287
+        },
+        {
+          "a": "spojnice-col1-p0",
+          "b": "eurobox-col1-p0",
+          "vol": 50287
+        },
+        {
+          "a": "nosnik-col0-p3",
+          "b": "eurobox-col0-p3",
+          "vol": 23940
+        },
+        {
+          "a": "nosnik-col0-p3",
+          "b": "eurobox-col0-p3",
+          "vol": 23940
+        },
+        {
+          "a": "spojnice-col0-p3",
+          "b": "eurobox-col0-p3",
+          "vol": 64159
+        },
+        {
+          "a": "spojnice-col0-p3",
+          "b": "eurobox-col0-p3",
+          "vol": 64159
+        },
+        {
+          "a": "nosnik-col0-p4",
+          "b": "eurobox-col0-p4",
+          "vol": 23940
+        },
+        {
+          "a": "nosnik-col0-p4",
+          "b": "eurobox-col0-p4",
+          "vol": 23940
+        },
+        {
+          "a": "spojnice-col0-p4",
+          "b": "eurobox-col0-p4",
+          "vol": 64159
+        },
+        {
+          "a": "spojnice-col0-p4",
+          "b": "eurobox-col0-p4",
+          "vol": 64159
+        },
+        {
+          "a": "nosnik-col1-p1",
+          "b": "eurobox-col1-p1",
+          "vol": 23941
+        },
+        {
+          "a": "nosnik-col1-p1",
+          "b": "eurobox-col1-p1",
+          "vol": 23941
+        },
+        {
+          "a": "spojnice-col1-p1",
+          "b": "eurobox-col1-p1",
+          "vol": 50287
+        },
+        {
+          "a": "spojnice-col1-p1",
+          "b": "eurobox-col1-p1",
+          "vol": 50287
+        }
+      ],
+      "checked": 87
+    },
+    "newPartsCount": 90,
+    "origPartsCount": 90
+  },
+  "166": {
+    "name": "Caddy Cargo PHEV K-021 E - boxy43-220x2-170x1",
+    "legs": [
+      {
+        "z": -1462.0114669799805,
+        "isPlain": true,
+        "isVyrez": false,
+        "oldYnew": null,
+        "gap": null
+      },
+      {
+        "z": -1002.0114669799805,
+        "isPlain": true,
+        "isVyrez": false,
+        "oldYnew": null,
+        "gap": null
+      },
+      {
+        "z": -104.01146697998047,
+        "isPlain": false,
+        "isVyrez": true,
+        "oldYnew": 565.4924926757812,
+        "gap": 0
+      }
+    ],
+    "columns": [
+      {
+        "prefix": "col0",
+        "zLow": -1462.0114669799805,
+        "zHigh": -1002.0114669799805
+      },
+      {
+        "prefix": "col1",
+        "zLow": -1002.0114669799805,
+        "zHigh": -104.01146697998047
+      }
+    ],
+    "log": {
+      "wallLegRigid": 15,
+      "vyrezShift": 3,
+      "vyrezAssocShift": 5,
+      "colWallEnd": 10,
+      "colWallMid": 15,
+      "colOtherEnd": 6,
+      "colOtherMid": 9,
+      "dorovnani": 0,
+      "carBody": 3,
+      "unaffected": 29
+    },
+    "dorovnaniByCol": {
+      "col1": {
+        "levels": [
+          "p0",
+          "p1",
+          "p2"
+        ],
+        "deficit": 10,
+        "rawDeficit": 10,
+        "capped": false
+      }
+    },
+    "verify": {
+      "satCollisions": 0,
+      "skipped": 0,
+      "satDetail": [],
+      "selfSusp": 41,
+      "selfDetail": [
+        {
+          "a": "predni-svislice",
+          "b": "zaslepka-predni-svislice",
+          "vol": 5400
+        },
+        {
+          "a": "zadni-svislice-dolni",
+          "b": "zaslepka-zadni-svislice-dolni",
+          "vol": 5400
+        },
+        {
+          "a": "cap",
+          "b": "zaslepka-cap",
+          "vol": 5400
+        },
+        {
+          "a": "predni-svislice",
+          "b": "zaslepka-predni-svislice",
+          "vol": 5400
+        },
+        {
+          "a": "zadni-svislice-dolni",
+          "b": "zaslepka-zadni-svislice-dolni",
+          "vol": 5400
+        },
+        {
+          "a": "cap",
+          "b": "zaslepka-cap",
+          "vol": 5400
+        },
+        {
+          "a": "predni-svislice",
+          "b": "zaslepka-predni-svislice",
+          "vol": 5400
+        },
+        {
+          "a": "cap",
+          "b": "zaslepka-cap",
+          "vol": 5400
+        },
+        {
+          "a": "zadni-svislice-nad-zarezem",
+          "b": "zaslepka-zadni-svislice-nad-zarezem",
+          "vol": 5400
+        },
+        {
+          "a": "nosnik-col0-p0",
+          "b": "eurobox-col0-p0",
+          "vol": 23940
+        },
+        {
+          "a": "nosnik-col0-p0",
+          "b": "eurobox-col0-p0",
+          "vol": 23940
+        },
+        {
+          "a": "spojnice-col0-p0",
+          "b": "eurobox-col0-p0",
+          "vol": 64159
+        },
+        {
+          "a": "spojnice-col0-p0",
+          "b": "eurobox-col0-p0",
+          "vol": 64159
+        },
+        {
+          "a": "nosnik-col0-p1",
+          "b": "eurobox-col0-p1",
+          "vol": 23940
+        },
+        {
+          "a": "nosnik-col0-p1",
+          "b": "eurobox-col0-p1",
+          "vol": 23940
+        },
+        {
+          "a": "spojnice-col0-p1",
+          "b": "eurobox-col0-p1",
+          "vol": 64159
+        },
+        {
+          "a": "spojnice-col0-p1",
+          "b": "eurobox-col0-p1",
+          "vol": 64159
+        },
+        {
+          "a": "nosnik-col0-p2",
+          "b": "eurobox-col0-p2",
+          "vol": 23940
+        },
+        {
+          "a": "nosnik-col0-p2",
+          "b": "eurobox-col0-p2",
+          "vol": 23940
+        },
+        {
+          "a": "spojnice-col0-p2",
+          "b": "eurobox-col0-p2",
+          "vol": 64159
+        },
+        {
+          "a": "spojnice-col0-p2",
+          "b": "eurobox-col0-p2",
+          "vol": 64159
+        },
+        {
+          "a": "nosnik-col1-p0",
+          "b": "eurobox-col1-p0",
+          "vol": 23941
+        },
+        {
+          "a": "nosnik-col1-p0",
+          "b": "eurobox-col1-p0",
+          "vol": 23941
+        },
+        {
+          "a": "spojnice-col1-p0",
+          "b": "eurobox-col1-p0",
+          "vol": 50287
+        },
+        {
+          "a": "spojnice-col1-p0",
+          "b": "eurobox-col1-p0",
+          "vol": 50287
+        },
+        {
+          "a": "nosnik-col0-p3",
+          "b": "eurobox-col0-p3",
+          "vol": 23940
+        },
+        {
+          "a": "nosnik-col0-p3",
+          "b": "eurobox-col0-p3",
+          "vol": 23940
+        },
+        {
+          "a": "spojnice-col0-p3",
+          "b": "eurobox-col0-p3",
+          "vol": 64159
+        },
+        {
+          "a": "spojnice-col0-p3",
+          "b": "eurobox-col0-p3",
+          "vol": 64159
+        },
+        {
+          "a": "nosnik-col0-p4",
+          "b": "eurobox-col0-p4",
+          "vol": 23940
+        },
+        {
+          "a": "nosnik-col0-p4",
+          "b": "eurobox-col0-p4",
+          "vol": 23940
+        },
+        {
+          "a": "spojnice-col0-p4",
+          "b": "eurobox-col0-p4",
+          "vol": 64159
+        },
+        {
+          "a": "spojnice-col0-p4",
+          "b": "eurobox-col0-p4",
+          "vol": 64159
+        },
+        {
+          "a": "nosnik-col1-p1",
+          "b": "eurobox-col1-p1",
+          "vol": 23941
+        },
+        {
+          "a": "nosnik-col1-p1",
+          "b": "eurobox-col1-p1",
+          "vol": 23941
+        },
+        {
+          "a": "spojnice-col1-p1",
+          "b": "eurobox-col1-p1",
+          "vol": 50287
+        },
+        {
+          "a": "spojnice-col1-p1",
+          "b": "eurobox-col1-p1",
+          "vol": 50287
+        },
+        {
+          "a": "nosnik-col1-p2",
+          "b": "eurobox-col1-p2",
+          "vol": 23941
+        },
+        {
+          "a": "nosnik-col1-p2",
+          "b": "eurobox-col1-p2",
+          "vol": 23941
+        },
+        {
+          "a": "spojnice-col1-p2",
+          "b": "eurobox-col1-p2",
+          "vol": 50287
+        },
+        {
+          "a": "spojnice-col1-p2",
+          "b": "eurobox-col1-p2",
+          "vol": 50287
+        }
+      ],
+      "checked": 92
+    },
+    "newPartsCount": 95,
+    "origPartsCount": 95
+  }
+}

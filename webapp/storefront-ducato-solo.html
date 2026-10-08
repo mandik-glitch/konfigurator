@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <script src="/js/client-errors.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title id="pageTitleTag">Technické parametry karoserie</title>
+<!-- OG_TAGS_PLACEHOLDER -->
+<style>
+  /* bot14 2026-09-01: vlastni sablona - "spec sheet" karta misto
+     centrovaneho banneru, aby domeny zustaly vizualne nezavisle (viz
+     WORKFLOW.md bod 21 + AGENTS_LOG.md, varianta C). Stejna HTML
+     id/trida jmena jako ostatni storefront sablony -
+     api/car_storefronts.py._storefront_page_response je vyplnuje
+     string-replacem beze zmeny kodu. POZOR: tenhle komentar konci v
+     <style> = servime ho verejne, nepsat sem zadne cizi domeny/nazvy. */
+  :root {
+    --sf-bg: #10151c;
+    --sf-panel: #171e27;
+    --sf-border: #29323f;
+    --sf-text: #e7ecf3;
+    --sf-text-muted: #8b97a8;
+    --sf-accent: #4ea8de;
+    --sf-accent-hover: #6cb9e8;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--sf-bg);
+    color: var(--sf-text);
+    font-family: var(--font-main, "Segoe UI", Roboto, Arial, sans-serif);
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  a { color: var(--sf-accent); }
+  .sf-header {
+    background: linear-gradient(180deg, var(--sf-panel), var(--sf-bg));
+    border-bottom: 3px solid var(--sf-accent);
+    padding: 40px 20px 28px;
+  }
+  #sfHeroTitle {
+    max-width: 900px;
+    margin: 0 auto 14px;
+    font-size: 28px;
+    line-height: 1.25;
+    font-weight: 800;
+    letter-spacing: 0.2px;
+    text-transform: uppercase;
+  }
+  #sfHeroText {
+    max-width: 900px;
+    margin: 0 auto;
+    color: var(--sf-text-muted);
+    font-size: 15px;
+    line-height: 1.7;
+  }
+  #sfHeroText:empty { display: none; }
+  #sfHeroText p { margin: 0 0 16px; }
+  .sf-variant-desc {
+    text-align: left;
+    max-width: 900px;
+    margin: 20px auto 0;
+    padding-top: 20px;
+    border-top: 1px solid var(--sf-border);
+    color: var(--sf-text);
+  }
+  .sf-tech-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 0 20px;
+    font-size: 14px;
+    background: var(--sf-panel);
+    border: 1px solid var(--sf-border);
+  }
+  .sf-tech-table th, .sf-tech-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--sf-border);
+    text-align: left;
+  }
+  @media (max-width: 640px) {
+    .sf-tech-table { font-size: 12px; }
+    .sf-tech-table th, .sf-tech-table td { padding: 7px 8px; }
+  }
+  .sf-tech-table th {
+    color: var(--sf-accent);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.3px;
+  }
+  .sf-tech-table tr:last-child td { border-bottom: none; }
+  .sf-tech-table-wrap { overflow-x: auto; margin-bottom: 16px; }
+  #sfHeroImage:empty { display: none; }
+  .sf-hero-img {
+    max-width: 100%;
+    max-height: 360px;
+    margin: 16px 0;
+    display: block;
+    border: 1px solid var(--sf-border);
+  }
+  #sfVariantNav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    justify-content: center;
+    padding: 18px 20px;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  .sf-variant-link {
+    display: inline-block;
+    padding: 7px 14px;
+    border: 1px solid var(--sf-border);
+    background: var(--sf-panel);
+    color: var(--sf-text);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .sf-variant-link:hover { border-color: var(--sf-accent); color: var(--sf-accent); }
+  .sf-variant-link.sf-variant-active {
+    background: var(--sf-accent);
+    border-color: var(--sf-accent);
+    color: #0d1117;
+  }
+  main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 8px 20px 60px;
+  }
+  #sfProductGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 14px;
+  }
+  .sf-card {
+    background: var(--sf-panel);
+    border: 1px solid var(--sf-border);
+    border-left: 3px solid var(--sf-accent);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  /* bot16, 2026-09-16: chybelo tohle pravidlo - <img> bez max-width se
+     vykreslil v puvodni pixelove velikosti (render ~1024px), prekryl
+     karty vpravo/prevalil se pres sirku mrizky. Ctverec + object-fit:
+     cover drzi nahled poradku bez ohledu na skutecny pomer stran zdroje. */
+  .sf-card-img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 4px;
+    background: var(--sf-bg);
+    display: block;
+  }
+  /* bot16, 2026-09-27 (Robert pres bot3: "hover efekt na vsech kartach
+     napric e-shopem" - dosud jen category.html/.cp-*) - port stejneho
+     mechanismu (skryta cena, po najeti mysi cena + jiny render), viz
+     api/car_storefronts.py::_storefront_page_response. Drz synchronni
+     pri kazde zmene. */
+  .sf-card-media { position: relative; border-radius: 4px; }
+  .sf-card-img-hover {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    aspect-ratio: 1 / 1; object-fit: cover; border-radius: inherit;
+    opacity: 0; transition: opacity .15s ease;
+  }
+  .sf-card.sf-card-hover-mode:hover .sf-card-img-hover,
+  .sf-card.sf-card-hover-mode:focus-within .sf-card-img-hover,
+  .sf-card.sf-card-hover-mode.sf-card-touch-revealed .sf-card-img-hover { opacity: 1; }
+  .sf-card-name-row { position: relative; }
+  .sf-card.sf-card-hover-mode .sf-card-name-row { display: grid; }
+  .sf-card.sf-card-hover-mode .sf-card-name-row > * { grid-area: 1/1; transition: opacity .15s ease; }
+  .sf-card-name-price { opacity: 0; align-self: center; font-size: 14px; font-weight: 700; color: var(--sf-accent); }
+  .sf-card.sf-card-hover-mode:hover .sf-card-name-row .sf-card-name,
+  .sf-card.sf-card-hover-mode:focus-within .sf-card-name-row .sf-card-name,
+  .sf-card.sf-card-hover-mode.sf-card-touch-revealed .sf-card-name-row .sf-card-name { opacity: 0; }
+  .sf-card.sf-card-hover-mode:hover .sf-card-name-row .sf-card-name-price,
+  .sf-card.sf-card-hover-mode:focus-within .sf-card-name-row .sf-card-name-price,
+  .sf-card.sf-card-hover-mode.sf-card-touch-revealed .sf-card-name-row .sf-card-name-price { opacity: 1; }
+  .sf-card-hover-panel {
+    position: absolute; left: 0; right: 0; bottom: 0; padding: 8px 10px;
+    background: linear-gradient(0deg, rgba(0,0,0,.72) 45%, transparent);
+    border-radius: 0 0 4px 4px;
+    opacity: 0; transform: translateY(4px); pointer-events: none;
+    transition: opacity .15s ease, transform .15s ease;
+  }
+  .sf-card.sf-card-hover-mode:hover .sf-card-hover-panel,
+  .sf-card.sf-card-hover-mode:focus-within .sf-card-hover-panel,
+  .sf-card.sf-card-hover-mode.sf-card-touch-revealed .sf-card-hover-panel { opacity: 1; transform: translateY(0); }
+  .sf-card-avail { font-size: 12px; color: #d8dde3; }
+  @media (prefers-reduced-motion: reduce) {
+    .sf-card-img-hover, .sf-card.sf-card-hover-mode .sf-card-name-row > *, .sf-card-hover-panel { transition: none; }
+  }
+  .sf-card-name { font-size: 14px; line-height: 1.4; font-weight: 600; }
+  .sf-card-price { font-size: 14px; line-height: 1.4; color: var(--sf-accent); font-weight: 700; }
+  .sf-card-vat { color: var(--sf-text-muted); font-weight: 400; font-size: 14px; }
+  .sf-add-cart-btn {
+    margin-top: auto;
+    padding: 10px 14px;
+    border: none;
+    background: var(--sf-accent);
+    color: #0d1117;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .sf-add-cart-btn:hover { background: var(--sf-accent-hover); }
+  .sf-add-cart-btn:disabled { opacity: 0.6; cursor: default; }
+  .sf-empty { color: var(--sf-text-muted); font-size: 15px; line-height: 1.7; }
+  .sf-footer { text-align: center; padding: 24px 20px; color: var(--sf-text-muted); font-size: 12px; border-top: 1px solid var(--sf-border); }
+  .sf-cart-msg {
+    position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+    background: var(--sf-accent); color: #0d1117; padding: 10px 18px; font-size: 14px; display: none; z-index: 100;
+  }
+  .sf-lead {
+    max-width: 560px; margin: 40px auto 0; background: var(--sf-panel);
+    border: 1px solid var(--sf-border); border-top: 3px solid var(--sf-accent); padding: 24px;
+  }
+  .sf-lead h2 { margin: 0 0 6px; font-size: 19px; line-height: 1.4; }
+  .sf-lead p.sf-lead-sub { margin: 0 0 16px; color: var(--sf-text-muted); font-size: 14px; line-height: 1.5; }
+  .sf-lead label { display: block; font-size: 13px; color: var(--sf-text-muted); margin: 12px 0 4px; }
+  .sf-lead label:first-of-type { margin-top: 0; }
+  .sf-lead input[type=text], .sf-lead input[type=email], .sf-lead input[type=tel], .sf-lead textarea {
+    width: 100%; box-sizing: border-box; padding: 8px 10px; border: 1px solid var(--sf-border);
+    background: var(--sf-bg); color: var(--sf-text); font-family: inherit; font-size: 14px;
+  }
+  .sf-lead textarea { min-height: 90px; resize: vertical; }
+  .sf-lead-submit {
+    margin-top: 16px; padding: 10px 18px; border: none; background: var(--sf-accent);
+    color: #0d1117; font-weight: 700; font-size: 15px; cursor: pointer;
+  }
+  .sf-lead-submit:hover { background: var(--sf-accent-hover); }
+  .sf-lead-submit:disabled { opacity: 0.6; cursor: default; }
+  .sf-lead-msg { margin-top: 10px; font-size: 14px; line-height: 1.5; }
+  .sf-lead-msg.sf-lead-ok { color: #3ddc84; }
+  .sf-lead-msg.sf-lead-err { color: #ff7a70; }
+</style>
+</head>
+<body>
+  <header class="sf-header">
+    <h1 id="sfHeroTitle">Načítám…</h1>
+    <div id="sfHeroImage"></div>
+    <div id="sfHeroText"></div>
+  </header>
+  <nav id="sfVariantNav"></nav>
+  <main>
+    <div id="sfProductGrid"></div>
+
+    <section class="sf-lead">
+      <h2>Nezávazná poptávka</h2>
+      <p class="sf-lead-sub">Napište nám, o co máte zájem - ozveme se s dalšími informacemi.</p>
+      <form id="sfLeadForm">
+        <input type="hidden" id="sfLeadCarModelId" value="__CAR_MODEL_ID__">
+        <!-- Honeypot proti botum (bot3/revize kodu 2026-09-02) - vizualne
+             skryte pole, clovek ho nikdy nevyplni. Vyplnene = bot, server
+             (api/car_storefronts.py::storefront_lead_create) se tvari, ze
+             vse probehlo v poradku, ale nic neuklada. -->
+        <div style="position:absolute;left:-9999px;top:-9999px;" aria-hidden="true">
+          <label for="sfLeadWebsite">Nevyplňujte toto pole</label>
+          <input type="text" id="sfLeadWebsite" name="website" tabindex="-1" autocomplete="off">
+        </div>
+        <label for="sfLeadName">Jméno</label>
+        <input type="text" id="sfLeadName" required>
+        <label for="sfLeadEmail">E-mail</label>
+        <input type="email" id="sfLeadEmail" required>
+        <label for="sfLeadPhone">Telefon (nepovinné)</label>
+        <input type="tel" id="sfLeadPhone">
+        <label for="sfLeadMessage">O co máte zájem?</label>
+        <textarea id="sfLeadMessage" required></textarea>
+        <button type="submit" class="sf-lead-submit">Odeslat poptávku</button>
+        <div class="sf-lead-msg" id="sfLeadMsg"></div>
+      </form>
+    </section>
+  </main>
+  <div class="sf-footer" id="sfFooter"></div>
+  <div class="sf-cart-msg" id="sfCartMsg"></div>
+
+  <script>
+    document.addEventListener("click", function (ev) {
+      var btn = ev.target.closest(".sf-add-cart-btn");
+      if (!btn) return;
+      var productId = btn.getAttribute("data-product-id");
+      if (!productId) return;
+      btn.disabled = true;
+      var originalText = btn.textContent;
+      btn.textContent = "Přidávám…";
+      fetch("/api/cart/items", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ product_id: parseInt(productId, 10), qty: 1 }),
+      })
+        .then(function (r) {
+          if (r.status === 401) {
+            window.location.href = "/login.html?next=" + encodeURIComponent(window.location.href);
+            return null;
+          }
+          return r.json().then(function (data) { return { ok: r.ok, data: data }; });
+        })
+        .then(function (result) {
+          if (!result) return;
+          btn.disabled = false;
+          btn.textContent = originalText;
+          var msg = document.getElementById("sfCartMsg");
+          if (result.ok) {
+            msg.textContent = "Přidáno do košíku.";
+          } else {
+            msg.textContent = (result.data && result.data.error) || "Přidání do košíku selhalo.";
+          }
+          msg.style.display = "block";
+          setTimeout(function () { msg.style.display = "none"; }, 2500);
+        })
+        .catch(function () {
+          btn.disabled = false;
+          btn.textContent = originalText;
+        });
+    });
+
+    // Hover efekt na dotykovych zarizenich (bot16, 2026-09-27, port
+    // stejneho vzoru z category.html) - "hover" bez mysi neexistuje,
+    // prvni klik/tap na kartu ho jen ODHALI (cena/jiny render), az
+    // druhy klik skutecne otevre odkaz na produkt.
+    document.addEventListener("click", function (ev) {
+      if (window.matchMedia("(hover: hover)").matches) return;
+      var card = ev.target.closest(".sf-card.sf-card-hover-mode");
+      if (!card) return;
+      if (!card.classList.contains("sf-card-touch-revealed")) {
+        ev.preventDefault();
+        document.querySelectorAll(".sf-card.sf-card-touch-revealed").forEach(function (c) {
+          if (c !== card) c.classList.remove("sf-card-touch-revealed");
+        });
+        card.classList.add("sf-card-touch-revealed");
+      }
+    });
+
+    document.getElementById("sfLeadForm").addEventListener("submit", function (ev) {
+      ev.preventDefault();
+      var msgEl = document.getElementById("sfLeadMsg");
+      var submitBtn = ev.target.querySelector(".sf-lead-submit");
+      var carModelIdRaw = document.getElementById("sfLeadCarModelId").value;
+      var carModelId = /^\d+$/.test(carModelIdRaw) ? parseInt(carModelIdRaw, 10) : null;
+      var payload = {
+        name: document.getElementById("sfLeadName").value.trim(),
+        email: document.getElementById("sfLeadEmail").value.trim(),
+        phone: document.getElementById("sfLeadPhone").value.trim(),
+        message: document.getElementById("sfLeadMessage").value.trim(),
+        car_model_id: carModelId,
+        website: document.getElementById("sfLeadWebsite").value.trim(),
+      };
+      submitBtn.disabled = true;
+      msgEl.className = "sf-lead-msg";
+      msgEl.textContent = "Odesílám…";
+      fetch("/api/storefront/lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      })
+        .then(function (r) { return r.json().then(function (data) { return { ok: r.ok, data: data }; }); })
+        .then(function (result) {
+          submitBtn.disabled = false;
+          if (result.ok) {
+            msgEl.className = "sf-lead-msg sf-lead-ok";
+            msgEl.textContent = "Díky, poptávku jsme přijali. Ozveme se co nejdřív.";
+            ev.target.reset();
+          } else {
+            msgEl.className = "sf-lead-msg sf-lead-err";
+            msgEl.textContent = (result.data && result.data.error) || "Odeslání se nepodařilo, zkuste to prosím znovu.";
+          }
+        })
+        .catch(function () {
+          submitBtn.disabled = false;
+          msgEl.className = "sf-lead-msg sf-lead-err";
+          msgEl.textContent = "Odeslání se nepodařilo, zkuste to prosím znovu.";
+        });
+    });
+  </script>
+</body>
+</html>

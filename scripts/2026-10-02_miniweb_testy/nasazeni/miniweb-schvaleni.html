@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Schvalování textů shopu</title>
+<style>
+  :root { --bg: #f3f5f7; --card: #ffffff; --text: #16202a; --muted: #566676; --line: #d6dde4; --accent: #0b64c0; --accent-text: #ffffff; --ok: #176b41; --ok-bg: #e3f4ea; --warn: #8a4b06; --warn-bg: #fdf0dc; --bad: #a1271b; --bad-bg: #fde7e4; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #11161b; --card: #1a222a; --text: #e8edf2; --muted: #a2b2c1; --line: #2c3743; --accent: #5aa9ff; --accent-text: #08121c; --ok: #5fd19a; --ok-bg: #16352a; --warn: #f2b06a; --warn-bg: #3a2a14; --bad: #ff8a7e; --bad-bg: #3c1d1a; }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.45 -apple-system, "Segoe UI", Roboto, sans-serif; }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 14px 14px calc(28px + env(safe-area-inset-bottom)); }
+  h1 { font-size: 1.35rem; margin: 6px 0 4px; }
+  h2 { font-size: 1.1rem; margin: 0; overflow-wrap: anywhere; }
+  p { margin: 0 0 8px; }
+  .muted { color: var(--muted); }
+  .small { font-size: .875rem; }
+  .box { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 12px 14px; margin: 10px 0; }
+  .shop { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; justify-content: space-between; }
+  .shop + .shop { margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--line); }
+  .msg { border-radius: 12px; padding: 10px 14px; margin: 10px 0; border: 1px solid var(--line); background: var(--card); }
+  .msg.ok { background: var(--ok-bg); color: var(--ok); border-color: transparent; }
+  .msg.warn { background: var(--warn-bg); color: var(--warn); border-color: transparent; }
+  .msg.bad { background: var(--bad-bg); color: var(--bad); border-color: transparent; }
+  .tabs { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0; }
+  .tab { min-height: 44px; padding: 0 16px; border-radius: 999px; border: 1px solid var(--line); background: var(--card); color: var(--text); font: inherit; cursor: pointer; }
+  .tab[aria-pressed="true"] { background: var(--accent); color: var(--accent-text); border-color: var(--accent); }
+  button, a.btn { font: inherit; min-height: 48px; min-width: 48px; padding: 0 18px; border-radius: 12px; border: 1px solid var(--line); background: var(--card); color: var(--text); cursor: pointer; display: inline-flex; align-items: center; justify-content: center; text-decoration: none; }
+  button.primary { background: var(--accent); color: var(--accent-text); border-color: var(--accent); font-weight: 600; }
+  button.danger { background: var(--bad); color: #fff; border-color: var(--bad); font-weight: 600; }
+  button:disabled { opacity: .5; cursor: default; }
+  .actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+  .actions > * { flex: 1 1 140px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 14px; margin: 12px 0; }
+  .card.is-approved { border-left: 5px solid var(--ok); }
+  .card.is-blocked { border-left: 5px solid var(--bad); }
+  .card.is-draft { border-left: 5px solid var(--warn); }
+  .top { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; margin-bottom: 6px; font-size: .8125rem; }
+  .chip { display: inline-block; padding: 2px 10px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); white-space: nowrap; }
+  .chip.ok { background: var(--ok-bg); color: var(--ok); border-color: transparent; }
+  .chip.warn { background: var(--warn-bg); color: var(--warn); border-color: transparent; }
+  .chip.bad { background: var(--bad-bg); color: var(--bad); border-color: transparent; }
+  .desc { white-space: pre-line; overflow-wrap: anywhere; margin: 8px 0; }
+  .summary { font-weight: 600; margin: 4px 0; overflow-wrap: anywhere; }
+  dl.specs { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: 4px 12px; margin: 8px 0; font-size: .9375rem; }
+  dl.specs dt { color: var(--muted); overflow-wrap: anywhere; }
+  dl.specs dd { margin: 0; overflow-wrap: anywhere; }
+  .note { font-size: .875rem; margin: 6px 0; padding: 8px 10px; border-radius: 10px; background: var(--warn-bg); color: var(--warn); }
+  .note.bad { background: var(--bad-bg); color: var(--bad); }
+  .note.info { background: transparent; color: var(--muted); padding: 0; }
+  .empty { text-align: center; padding: 28px 8px; }
+  a { color: var(--accent); }
+  noscript { display: block; padding: 14px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Schvalování textů shopu</h1>
+  <p class="muted small">Zde se schvalují texty, které uvidí zákazníci. Schválením se text ještě nezveřejní, shop se spouští zvlášť.</p>
+  <div id="app"><p class="muted">Načítám…</p></div>
+</div>
+<noscript>Stránka potřebuje zapnutý JavaScript.</noscript>
+<script>
+(function () {
+  "use strict";
+  var API = "/api/admin/miniweb/";
+  var KIND = { product: "Produkt", category: "Kategorie" };
+  var state = { data: null, lang: null, filter: "draft", confirmAll: false, busy: false, message: null, mode: "loading" };
+  var root = document.getElementById("app");
+
+  function h(tag, props) {
+    var node = document.createElement(tag);
+    props = props || {};
+    Object.keys(props).forEach(function (k) {
+      var v = props[k];
+      if (v === null || v === undefined || v === false) return;
+      if (k === "class") node.className = v;
+      else if (k === "text") node.textContent = v;
+      else if (k.slice(0, 2) === "on") node.addEventListener(k.slice(2), v);
+      else node.setAttribute(k, v === true ? "" : v);
+    });
+    for (var i = 2; i < arguments.length; i++) {
+      var c = arguments[i];
+      if (c === null || c === undefined || c === false) continue;
+      node.appendChild(typeof c === "string" ? document.createTextNode(c) : c);
+    }
+    return node;
+  }
+  function pl(n, one, few, many) { return n + " " + (n === 1 ? one : (n >= 2 && n <= 4 ? few : many)); }
+  function request(url, opts) {
+    return fetch(url, Object.assign({ credentials: "same-origin", headers: { "Accept": "application/json" } }, opts || {}))
+      .then(function (r) { return r.json().catch(function () { return null; }).then(function (b) { return { status: r.status, body: b }; }); })
+      .catch(function () { return { status: 0, body: null }; });
+  }
+  function postJSON(path, body) {
+    return request(API + path, { method: "POST", headers: { "Accept": "application/json", "Content-Type": "application/json" }, body: JSON.stringify(body) });
+  }
+
+  // ---------------------------------------------------------------- data
+  function langs() { return state.data ? state.data.langs : []; }
+  function itemsOfLang() { return state.data.items.filter(function (i) { return i.lang === state.lang; }); }
+  function approvable(i) { return i.status === "draft" && !i.blocking.length; }
+  function counts() {
+    var list = itemsOfLang();
+    return { draft: list.filter(function (i) { return i.status === "draft"; }).length, approved: list.filter(function (i) { return i.status === "approved"; }).length, all: list.length,
+             ready: list.filter(approvable).length };
+  }
+  function visible() {
+    return itemsOfLang().filter(function (i) { return state.filter === "all" || i.status === state.filter; });
+  }
+  function ref(i) { return { kind: i.kind, id: i.id, lang: i.lang, rev: i.rev }; }
+
+  function load(keepMessage) {
+    return request(API + "overview").then(function (r) {
+      if (r.status === 401) { state.mode = "login"; return render(); }
+      if (r.status === 403) { state.mode = "forbidden"; return render(); }
+      if (r.status !== 200 || !r.body) { state.mode = "error"; return render(); }
+      state.data = r.body;
+      state.mode = "ready";
+      if (!state.lang || langs().indexOf(state.lang) < 0) state.lang = langs().indexOf("en") >= 0 ? "en" : (langs()[0] || null);
+      if (!keepMessage) state.message = null;
+      state.confirmAll = false;
+      state.busy = false;
+      render();
+    });
+  }
+
+  function change(path, items, okText) {
+    if (state.busy || !items.length) return;
+    state.busy = true;
+    state.confirmAll = false;
+    render();
+    postJSON(path, { items: items }).then(function (r) {
+      if (r.status === 200 && r.body) {
+        var skipped = r.body.skipped || [];
+        var changed = skipped.filter(function (s) { return s.reason === "changed"; }).length;
+        var blocked = skipped.filter(function (s) { return s.reason === "blocked"; }).length;
+        var text = okText(r.body.changed);
+        var type = "ok";
+        if (changed) { text += " " + pl(changed, "text se", "texty se", "textů se") + " mezitím změnil, nic jsem neschválil. Zkontrolujte nové znění a schvalte znovu."; type = "warn"; }
+        if (blocked) { text += " " + pl(blocked, "text nejde", "texty nejdou", "textů nejde") + " schválit (značka nebo chybějící název)."; type = "warn"; }
+        state.message = { type: type, text: text };
+        return load(true);
+      }
+      state.busy = false;
+      state.message = { type: "bad", text: r.status === 403 ? "K tomu je potřeba přihlášení jako administrátor." : (r.status === 401 ? "Přihlášení vypršelo, přihlaste se znovu." : "Uložení se nepovedlo, nic se nezměnilo. Zkuste to znovu.") };
+      render();
+    });
+  }
+  function approve(items) { change("approve", items, function (n) { return n ? "Schváleno: " + pl(n, "text", "texty", "textů") + "." : "Nic se neschválilo."; }); }
+  function unapprove(items) { change("unapprove", items.map(function (i) { return { kind: i.kind, id: i.id, lang: i.lang }; }), function (n) { return "Vráceno do návrhu: " + pl(n, "text", "texty", "textů") + "."; }); }
+
+  // ---------------------------------------------------------------- vykresleni
+  function shopsBox() {
+    if (!state.data.shops.length) return h("div", { class: "box small muted", text: "Zatím není založený žádný shop. Texty se dají schvalovat i bez něj." });
+    var live = state.data.shops.some(function (s) { return s.status === "live"; });
+    var draft = state.data.shops.some(function (s) { return s.status !== "live"; });
+    var box = h("div", { class: "box" });
+    state.data.shops.forEach(function (s) {
+      var link = "/miniweb/index.html?shop=" + encodeURIComponent(s.slug) + "&lang=" + encodeURIComponent(s.lang) + "&drafts=1";
+      box.appendChild(h("div", { class: "shop" },
+        h("div", null, h("strong", { text: s.domain }), " ", h("span", { class: "chip " + (s.status === "live" ? "ok" : "warn"), text: s.status === "live" ? "živý" : "koncept" }), " ", h("span", { class: "chip", text: s.lang }),
+          s.price_mode === "hidden" ? h("span", { class: "chip", text: "bez cen" }) : null),
+        h("a", { class: "btn", href: link, text: "Náhled shopu" })));
+    });
+    box.appendChild(h("p", { class: "small muted", style: "margin-top:10px", text: draft && !live ? "Shop je zatím koncept: zákazníkům se nic neukazuje, schválené texty se zobrazí až po jeho spuštění." : (live && !draft ? "Shop je živý: schválený text je hned veřejný." : "Část shopů je živá: u nich je schválený text hned veřejný.") }));
+    return box;
+  }
+  function langTabs() {
+    if (langs().length < 2) return null;
+    var row = h("div", { class: "tabs", role: "group", "aria-label": "Jazyk" });
+    langs().forEach(function (l) {
+      row.appendChild(h("button", { class: "tab", type: "button", "aria-pressed": state.lang === l ? "true" : "false", text: l.toUpperCase(), onclick: function () { state.lang = l; state.confirmAll = false; render(); } }));
+    });
+    return row;
+  }
+  function filterTabs() {
+    var c = counts();
+    var row = h("div", { class: "tabs", role: "group", "aria-label": "Filtr" });
+    [["draft", "Čeká na schválení", c.draft], ["approved", "Schváleno", c.approved], ["all", "Vše", c.all]].forEach(function (f) {
+      row.appendChild(h("button", { class: "tab", type: "button", "aria-pressed": state.filter === f[0] ? "true" : "false", text: f[1] + " (" + f[2] + ")", onclick: function () { state.filter = f[0]; render(); } }));
+    });
+    return row;
+  }
+  function bulkBox() {
+    var c = counts();
+    if (!c.ready) return null;
+    var box = h("div", { class: "box" });
+    if (!state.confirmAll) {
+      box.appendChild(h("button", { class: "primary", type: "button", style: "width:100%", disabled: state.busy, text: "Schválit všechny návrhy (" + c.ready + ")", onclick: function () { state.confirmAll = true; render(); } }));
+      return box;
+    }
+    box.appendChild(h("p", { text: "Opravdu schválit " + pl(c.ready, "text", "texty", "textů") + " v jazyce " + state.lang.toUpperCase() + "? Zákazníci je uvidí po spuštění shopu." }));
+    box.appendChild(h("div", { class: "actions" },
+      h("button", { class: "primary", type: "button", disabled: state.busy, text: "Ano, schválit", onclick: function () { approve(itemsOfLang().filter(approvable).map(ref)); } }),
+      h("button", { type: "button", text: "Zrušit", onclick: function () { state.confirmAll = false; render(); } })));
+    return box;
+  }
+  function card(i) {
+    var blocked = i.blocking.length > 0;
+    var cls = "card " + (blocked ? "is-blocked" : (i.status === "approved" ? "is-approved" : "is-draft"));
+    var c = h("article", { class: cls });
+    var top = h("div", { class: "top" }, h("span", { class: "chip", text: KIND[i.kind] || i.kind }),
+      h("span", { class: "chip " + (blocked ? "bad" : (i.status === "approved" ? "ok" : "warn")), text: blocked ? "Nelze schválit" : (i.status === "approved" ? "Schváleno" : "Návrh") }));
+    if (i.sku) top.appendChild(h("span", { class: "chip", text: i.sku }));
+    if (i.category) top.appendChild(h("span", { class: "chip", text: i.category }));
+    c.appendChild(top);
+    c.appendChild(h("h2", { text: i.name || "(bez názvu)" }));
+    if (i.summary) c.appendChild(h("p", { class: "summary", text: i.summary }));
+    if (i.description) c.appendChild(h("div", { class: "desc", text: i.description }));
+    if (i.delivery) c.appendChild(h("p", { class: "small muted", text: "Dodání: " + i.delivery }));
+    if (i.specs && i.specs.length) {
+      var dl = h("dl", { class: "specs" });
+      i.specs.forEach(function (s) { dl.appendChild(h("dt", { text: s.name })); dl.appendChild(h("dd", { text: s.value })); });
+      c.appendChild(dl);
+    }
+    if (i.blocking.indexOf("brand") >= 0) c.appendChild(h("div", { class: "note bad", text: "Text obsahuje značku nebo dodavatele, to se na webu nesmí. Opravte ho u zdroje a nahrajte znovu." }));
+    if (i.blocking.indexOf("no_name") >= 0) c.appendChild(h("div", { class: "note bad", text: "Chybí název. Doplňte ho u zdroje a nahrajte znovu." }));
+    if (i.info.indexOf("no_description") >= 0) c.appendChild(h("div", { class: "note", text: "Produkt nemá popis." }));
+    if (i.info.indexOf("cleaned") >= 0) c.appendChild(h("div", { class: "note info", text: "Z textu bylo odstraněno HTML, zákazník uvidí přesně tohle znění." }));
+    if (i.status === "approved" && !i.public) c.appendChild(h("div", { class: "note", text: "Schváleno, ale zatím by nebylo veřejné: schvalte i všechny nadřazené kategorie (a u produktu jeho kategorii)." }));
+    if (i.status === "approved") c.appendChild(h("div", { class: "actions" }, h("button", { type: "button", disabled: state.busy, text: "Vrátit do návrhu", onclick: function () { unapprove([i]); } })));
+    else if (!blocked) c.appendChild(h("div", { class: "actions" }, h("button", { class: "primary", type: "button", disabled: state.busy, text: "Schválit", onclick: function () { approve([ref(i)]); } })));
+    return c;
+  }
+  function render() {
+    var frag = document.createDocumentFragment();
+    if (state.mode === "loading") frag.appendChild(h("p", { class: "muted", text: "Načítám…" }));
+    else if (state.mode === "login") {
+      frag.appendChild(h("div", { class: "box" }, h("p", { text: "Pro schvalování se přihlaste jako administrátor." }),
+        h("a", { class: "btn primary", href: "/login.html?next=" + encodeURIComponent(location.pathname), text: "Přihlásit se" })));
+    } else if (state.mode === "forbidden") {
+      frag.appendChild(h("div", { class: "msg bad", text: "Schvalovat texty může jen administrátor. Tento účet k tomu nemá oprávnění." }));
+    } else if (state.mode === "error") {
+      frag.appendChild(h("div", { class: "msg bad", text: "Texty se nepodařilo načíst." }));
+      frag.appendChild(h("button", { type: "button", text: "Zkusit znovu", onclick: function () { state.mode = "loading"; render(); load(); } }));
+    } else {
+      if (state.message) frag.appendChild(h("div", { class: "msg " + state.message.type, role: "status", text: state.message.text }));
+      frag.appendChild(shopsBox());
+      if (!state.data.items.length) {
+        frag.appendChild(h("div", { class: "box empty" }, h("p", { text: "Zatím tu nejsou žádné texty." }), h("p", { class: "small muted", text: "Texty se sem nahrávají importem jako návrhy, potom je tady schválíte." })));
+      } else {
+        var tabs = langTabs();
+        if (tabs) frag.appendChild(tabs);
+        frag.appendChild(filterTabs());
+        var bulk = bulkBox();
+        if (bulk) frag.appendChild(bulk);
+        var list = visible();
+        if (!list.length) frag.appendChild(h("div", { class: "box empty muted", text: state.filter === "draft" ? "Nic nečeká na schválení." : "Tady nic není." }));
+        list.forEach(function (i) { frag.appendChild(card(i)); });
+      }
+    }
+    root.textContent = "";
+    root.appendChild(frag);
+  }
+
+  // ---------------------------------------------------------------- start
+  render();
+  request("/api/auth/me").then(function (r) {
+    if (r.status !== 200 || !r.body || !r.body.user) { state.mode = "login"; return render(); }
+    if (r.body.user.role !== "admin") { state.mode = "forbidden"; return render(); }
+    return load();
+  });
+})();
+</script>
+</body>
+</html>

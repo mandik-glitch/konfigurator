@@ -1,0 +1,842 @@
+{
+  "109": {
+    "name": "Custom K-253 A - boxy43-270x3-220x3",
+    "legs": [
+      {
+        "z": -1484.000228881836,
+        "isPlain": true,
+        "isVyrez": false,
+        "oldYnew": null,
+        "gap": null
+      },
+      {
+        "z": -222.00022888183594,
+        "isPlain": false,
+        "isVyrez": true,
+        "oldYnew": 263.00018310546875,
+        "gap": 0
+      }
+    ],
+    "columns": [
+      {
+        "prefix": "sloupec0",
+        "zLow": -1484.000228881836,
+        "zHigh": -222.00022888183594
+      }
+    ],
+    "log": {
+      "wallLegRigid": 15,
+      "vyrezShift": 3,
+      "vyrezAssocShift": 5,
+      "colWallEnd": 6,
+      "colWallMid": 21,
+      "colOtherEnd": 0,
+      "colOtherMid": 0,
+      "dorovnani": 0,
+      "carBody": 3,
+      "unaffected": 14
+    },
+    "dorovnaniByCol": {},
+    "verify": {
+      "satCollisions": 0,
+      "skipped": 0,
+      "satDetail": [],
+      "selfSusp": 42,
+      "selfDetail": [
+        {
+          "a": "predni-svislice",
+          "b": "zaslepka",
+          "vol": 5400
+        },
+        {
+          "a": "zadni-svislice-dolni",
+          "b": "zaslepka",
+          "vol": 5400
+        },
+        {
+          "a": "cap",
+          "b": "zaslepka",
+          "vol": 5400
+        },
+        {
+          "a": "predni-svislice",
+          "b": "zaslepka",
+          "vol": 5400
+        },
+        {
+          "a": "cap",
+          "b": "zaslepka",
+          "vol": 5400
+        },
+        {
+          "a": "zadni-svislice-nad-zarezem",
+          "b": "zaslepka",
+          "vol": 5400
+        },
+        {
+          "a": "nosnik-sloupec0-patro0",
+          "b": "eurobox-sloupec0-patro0",
+          "vol": 79005
+        },
+        {
+          "a": "nosnik-sloupec0-patro0",
+          "b": "eurobox-sloupec0-patro0",
+          "vol": 79005
+        },
+        {
+          "a": "nosnik-sloupec0-patro0",
+          "b": "eurobox-sloupec0-patro0",
+          "vol": 79005
+        },
+        {
+          "a": "nosnik-sloupec0-patro0",
+          "b": "eurobox-sloupec0-patro0",
+          "vol": 79005
+        },
+        {
+          "a": "nosnik-sloupec0-patro0",
+          "b": "eurobox-sloupec0-patro0",
+          "vol": 79005
+        },
+        {
+          "a": "nosnik-sloupec0-patro0",
+          "b": "eurobox-sloupec0-patro0",
+          "vol": 79005
+        },
+        {
+          "a": "spojnice-sloupec0-patro0",
+          "b": "eurobox-sloupec0-patro0",
+          "vol": 59053
+        },
+        {
+          "a": "spojnice-sloupec0-patro0",
+          "b": "eurobox-sloupec0-patro0",
+          "vol": 46285
+        },
+        {
+          "a": "spojnice-sloupec0-patro0",
+          "b": "eurobox-sloupec0-patro0",
+          "vol": 44689
+        },
+        {
+          "a": "spojnice-sloupec0-patro0",
+          "b": "eurobox-sloupec0-patro0",
+          "vol": 44689
+        },
+        {
+          "a": "spojnice-sloupec0-patro0",
+          "b": "eurobox-sloupec0-patro0",
+          "vol": 44689
+        },
+        {
+          "a": "spojnice-sloupec0-patro0",
+          "b": "eurobox-sloupec0-patro0",
+          "vol": 57457
+        },
+        {
+          "a": "nosnik-sloupec0-patro1",
+          "b": "eurobox-sloupec0-patro1",
+          "vol": 79005
+        },
+        {
+          "a": "nosnik-sloupec0-patro1",
+          "b": "eurobox-sloupec0-patro1",
+          "vol": 79005
+        },
+        {
+          "a": "nosnik-sloupec0-patro1",
+          "b": "eurobox-sloupec0-patro1",
+          "vol": 79005
+        },
+        {
+          "a": "nosnik-sloupec0-patro1",
+          "b": "eurobox-sloupec0-patro1",
+          "vol": 79005
+        },
+        {
+          "a": "nosnik-sloupec0-patro1",
+          "b": "eurobox-sloupec0-patro1",
+          "vol": 79005
+        },
+        {
+          "a": "nosnik-sloupec0-patro1",
+          "b": "eurobox-sloupec0-patro1",
+          "vol": 79005
+        },
+        {
+          "a": "spojnice-sloupec0-patro1",
+          "b": "eurobox-sloupec0-patro1",
+          "vol": 59053
+        },
+        {
+          "a": "spojnice-sloupec0-patro1",
+          "b": "eurobox-sloupec0-patro1",
+          "vol": 46285
+        },
+        {
+          "a": "spojnice-sloupec0-patro1",
+          "b": "eurobox-sloupec0-patro1",
+          "vol": 44689
+        },
+        {
+          "a": "spojnice-sloupec0-patro1",
+          "b": "eurobox-sloupec0-patro1",
+          "vol": 44689
+        },
+        {
+          "a": "spojnice-sloupec0-patro1",
+          "b": "eurobox-sloupec0-patro1",
+          "vol": 44689
+        },
+        {
+          "a": "spojnice-sloupec0-patro1",
+          "b": "eurobox-sloupec0-patro1",
+          "vol": 57457
+        },
+        {
+          "a": "nosnik-sloupec0-patro2",
+          "b": "eurobox-sloupec0-patro2",
+          "vol": 79005
+        },
+        {
+          "a": "nosnik-sloupec0-patro2",
+          "b": "eurobox-sloupec0-patro2",
+          "vol": 79005
+        },
+        {
+          "a": "nosnik-sloupec0-patro2",
+          "b": "eurobox-sloupec0-patro2",
+          "vol": 79005
+        },
+        {
+          "a": "nosnik-sloupec0-patro2",
+          "b": "eurobox-sloupec0-patro2",
+          "vol": 79005
+        },
+        {
+          "a": "nosnik-sloupec0-patro2",
+          "b": "eurobox-sloupec0-patro2",
+          "vol": 79005
+        },
+        {
+          "a": "nosnik-sloupec0-patro2",
+          "b": "eurobox-sloupec0-patro2",
+          "vol": 79005
+        },
+        {
+          "a": "spojnice-sloupec0-patro2",
+          "b": "eurobox-sloupec0-patro2",
+          "vol": 59053
+        },
+        {
+          "a": "spojnice-sloupec0-patro2",
+          "b": "eurobox-sloupec0-patro2",
+          "vol": 46285
+        },
+        {
+          "a": "spojnice-sloupec0-patro2",
+          "b": "eurobox-sloupec0-patro2",
+          "vol": 44689
+        },
+        {
+          "a": "spojnice-sloupec0-patro2",
+          "b": "eurobox-sloupec0-patro2",
+          "vol": 44689
+        },
+        {
+          "a": "spojnice-sloupec0-patro2",
+          "b": "eurobox-sloupec0-patro2",
+          "vol": 44689
+        },
+        {
+          "a": "spojnice-sloupec0-patro2",
+          "b": "eurobox-sloupec0-patro2",
+          "vol": 57457
+        }
+      ],
+      "checked": 64
+    },
+    "newPartsCount": 67,
+    "origPartsCount": 67
+  },
+  "205": {
+    "name": "Custom K-253 B - boxy43-120x12",
+    "legs": [
+      {
+        "z": -1484.000228881836,
+        "isPlain": true,
+        "isVyrez": false,
+        "oldYnew": null,
+        "gap": null
+      },
+      {
+        "z": -222.00022888183594,
+        "isPlain": false,
+        "isVyrez": true,
+        "oldYnew": 263.00018310546875,
+        "gap": 0
+      }
+    ],
+    "columns": [
+      {
+        "prefix": "sloupec0",
+        "zLow": -1484.000228881836,
+        "zHigh": -222.00022888183594
+      }
+    ],
+    "log": {
+      "wallLegRigid": 15,
+      "vyrezShift": 3,
+      "vyrezAssocShift": 5,
+      "colWallEnd": 8,
+      "colWallMid": 28,
+      "colOtherEnd": 0,
+      "colOtherMid": 0,
+      "dorovnani": 0,
+      "carBody": 3,
+      "unaffected": 14
+    },
+    "dorovnaniByCol": {},
+    "verify": {
+      "satCollisions": 0,
+      "skipped": 0,
+      "satDetail": [],
+      "selfSusp": 54,
+      "selfDetail": [
+        {
+          "a": "predni-svislice",
+          "b": "zaslepka",
+          "vol": 5400
+        },
+        {
+          "a": "zadni-svislice-dolni",
+          "b": "zaslepka",
+          "vol": 5400
+        },
+        {
+          "a": "cap",
+          "b": "zaslepka",
+          "vol": 5400
+        },
+        {
+          "a": "predni-svislice",
+          "b": "zaslepka",
+          "vol": 5400
+        },
+        {
+          "a": "cap",
+          "b": "zaslepka",
+          "vol": 5400
+        },
+        {
+          "a": "zadni-svislice-nad-zarezem",
+          "b": "zaslepka",
+          "vol": 5400
+        },
+        {
+          "a": "nosnik-sloupec0-patro0",
+          "b": "eurobox-sloupec0-patro0",
+          "vol": 79005
+        },
+        {
+          "a": "nosnik-sloupec0-patro0",
+          "b": "eurobox-sloupec0-patro0",
+          "vol": 79005
+        },
+        {
+          "a": "nosnik-sloupec0-patro0",
+          "b": "eurobox-sloupec0-patro0",
+          "vol": 79005
+        },
+        {
+          "a": "nosnik-sloupec0-patro0",
+          "b": "eurobox-sloupec0-patro0",
+          "vol": 79005
+        },
+        {
+          "a": "nosnik-sloupec0-patro0",
+          "b": "eurobox-sloupec0-patro0",
+          "vol": 79005
+        },
+        {
+          "a": "nosnik-sloupec0-patro0",
+          "b": "eurobox-sloupec0-patro0",
+          "vol": 79005
+        },
+        {
+          "a": "spojnice-sloupec0-patro0",
+          "b": "eurobox-sloupec0-patro0",
+          "vol": 59053
+        },
+        {
+          "a": "spojnice-sloupec0-patro0",
+          "b": "eurobox-sloupec0-patro0",
+          "vol": 46285
+        },
+        {
+          "a": "spojnice-sloupec0-patro0",
+          "b": "eurobox-sloupec0-patro0",
+          "vol": 44689
+        },
+        {
+          "a": "spojnice-sloupec0-patro0",
+          "b": "eurobox-sloupec0-patro0",
+          "vol": 44689
+        },
+        {
+          "a": "spojnice-sloupec0-patro0",
+          "b": "eurobox-sloupec0-patro0",
+          "vol": 44689
+        },
+        {
+          "a": "spojnice-sloupec0-patro0",
+          "b": "eurobox-sloupec0-patro0",
+          "vol": 57457
+        },
+        {
+          "a": "nosnik-sloupec0-patro1",
+          "b": "eurobox-sloupec0-patro1",
+          "vol": 79005
+        },
+        {
+          "a": "nosnik-sloupec0-patro1",
+          "b": "eurobox-sloupec0-patro1",
+          "vol": 79005
+        },
+        {
+          "a": "nosnik-sloupec0-patro1",
+          "b": "eurobox-sloupec0-patro1",
+          "vol": 79005
+        },
+        {
+          "a": "nosnik-sloupec0-patro1",
+          "b": "eurobox-sloupec0-patro1",
+          "vol": 79005
+        },
+        {
+          "a": "nosnik-sloupec0-patro1",
+          "b": "eurobox-sloupec0-patro1",
+          "vol": 79005
+        },
+        {
+          "a": "nosnik-sloupec0-patro1",
+          "b": "eurobox-sloupec0-patro1",
+          "vol": 79005
+        },
+        {
+          "a": "spojnice-sloupec0-patro1",
+          "b": "eurobox-sloupec0-patro1",
+          "vol": 59053
+        },
+        {
+          "a": "spojnice-sloupec0-patro1",
+          "b": "eurobox-sloupec0-patro1",
+          "vol": 46285
+        },
+        {
+          "a": "spojnice-sloupec0-patro1",
+          "b": "eurobox-sloupec0-patro1",
+          "vol": 44689
+        },
+        {
+          "a": "spojnice-sloupec0-patro1",
+          "b": "eurobox-sloupec0-patro1",
+          "vol": 44689
+        },
+        {
+          "a": "spojnice-sloupec0-patro1",
+          "b": "eurobox-sloupec0-patro1",
+          "vol": 44689
+        },
+        {
+          "a": "spojnice-sloupec0-patro1",
+          "b": "eurobox-sloupec0-patro1",
+          "vol": 57457
+        },
+        {
+          "a": "nosnik-sloupec0-patro2",
+          "b": "eurobox-sloupec0-patro2",
+          "vol": 79005
+        },
+        {
+          "a": "nosnik-sloupec0-patro2",
+          "b": "eurobox-sloupec0-patro2",
+          "vol": 79005
+        },
+        {
+          "a": "nosnik-sloupec0-patro2",
+          "b": "eurobox-sloupec0-patro2",
+          "vol": 79005
+        },
+        {
+          "a": "nosnik-sloupec0-patro2",
+          "b": "eurobox-sloupec0-patro2",
+          "vol": 79005
+        },
+        {
+          "a": "nosnik-sloupec0-patro2",
+          "b": "eurobox-sloupec0-patro2",
+          "vol": 79005
+        },
+        {
+          "a": "nosnik-sloupec0-patro2",
+          "b": "eurobox-sloupec0-patro2",
+          "vol": 79005
+        },
+        {
+          "a": "spojnice-sloupec0-patro2",
+          "b": "eurobox-sloupec0-patro2",
+          "vol": 59053
+        },
+        {
+          "a": "spojnice-sloupec0-patro2",
+          "b": "eurobox-sloupec0-patro2",
+          "vol": 46285
+        },
+        {
+          "a": "spojnice-sloupec0-patro2",
+          "b": "eurobox-sloupec0-patro2",
+          "vol": 44689
+        },
+        {
+          "a": "spojnice-sloupec0-patro2",
+          "b": "eurobox-sloupec0-patro2",
+          "vol": 44689
+        },
+        {
+          "a": "spojnice-sloupec0-patro2",
+          "b": "eurobox-sloupec0-patro2",
+          "vol": 44689
+        },
+        {
+          "a": "spojnice-sloupec0-patro2",
+          "b": "eurobox-sloupec0-patro2",
+          "vol": 57457
+        },
+        {
+          "a": "nosnik-sloupec0-patro3",
+          "b": "eurobox-sloupec0-patro3",
+          "vol": 79005
+        },
+        {
+          "a": "nosnik-sloupec0-patro3",
+          "b": "eurobox-sloupec0-patro3",
+          "vol": 79005
+        },
+        {
+          "a": "nosnik-sloupec0-patro3",
+          "b": "eurobox-sloupec0-patro3",
+          "vol": 79005
+        },
+        {
+          "a": "nosnik-sloupec0-patro3",
+          "b": "eurobox-sloupec0-patro3",
+          "vol": 79005
+        },
+        {
+          "a": "nosnik-sloupec0-patro3",
+          "b": "eurobox-sloupec0-patro3",
+          "vol": 79005
+        },
+        {
+          "a": "nosnik-sloupec0-patro3",
+          "b": "eurobox-sloupec0-patro3",
+          "vol": 79005
+        },
+        {
+          "a": "spojnice-sloupec0-patro3",
+          "b": "eurobox-sloupec0-patro3",
+          "vol": 59053
+        },
+        {
+          "a": "spojnice-sloupec0-patro3",
+          "b": "eurobox-sloupec0-patro3",
+          "vol": 46285
+        },
+        {
+          "a": "spojnice-sloupec0-patro3",
+          "b": "eurobox-sloupec0-patro3",
+          "vol": 44689
+        },
+        {
+          "a": "spojnice-sloupec0-patro3",
+          "b": "eurobox-sloupec0-patro3",
+          "vol": 44689
+        },
+        {
+          "a": "spojnice-sloupec0-patro3",
+          "b": "eurobox-sloupec0-patro3",
+          "vol": 44689
+        },
+        {
+          "a": "spojnice-sloupec0-patro3",
+          "b": "eurobox-sloupec0-patro3",
+          "vol": 57457
+        }
+      ],
+      "checked": 73
+    },
+    "newPartsCount": 76,
+    "origPartsCount": 76
+  },
+  "275": {
+    "name": "Custom K-253 C - boxy43-220x3-170x3-120x3",
+    "legs": [
+      {
+        "z": -1484.000228881836,
+        "isPlain": true,
+        "isVyrez": false,
+        "oldYnew": null,
+        "gap": null
+      },
+      {
+        "z": -222.00022888183594,
+        "isPlain": false,
+        "isVyrez": true,
+        "oldYnew": 263.00018310546875,
+        "gap": 0
+      }
+    ],
+    "columns": [
+      {
+        "prefix": "sloupec0",
+        "zLow": -1484.000228881836,
+        "zHigh": -222.00022888183594
+      }
+    ],
+    "log": {
+      "wallLegRigid": 15,
+      "vyrezShift": 3,
+      "vyrezAssocShift": 5,
+      "colWallEnd": 6,
+      "colWallMid": 21,
+      "colOtherEnd": 0,
+      "colOtherMid": 0,
+      "dorovnani": 0,
+      "carBody": 3,
+      "unaffected": 14
+    },
+    "dorovnaniByCol": {},
+    "verify": {
+      "satCollisions": 0,
+      "skipped": 0,
+      "satDetail": [],
+      "selfSusp": 42,
+      "selfDetail": [
+        {
+          "a": "predni-svislice",
+          "b": "zaslepka",
+          "vol": 5400
+        },
+        {
+          "a": "zadni-svislice-dolni",
+          "b": "zaslepka",
+          "vol": 5400
+        },
+        {
+          "a": "cap",
+          "b": "zaslepka",
+          "vol": 5400
+        },
+        {
+          "a": "predni-svislice",
+          "b": "zaslepka",
+          "vol": 5400
+        },
+        {
+          "a": "cap",
+          "b": "zaslepka",
+          "vol": 5400
+        },
+        {
+          "a": "zadni-svislice-nad-zarezem",
+          "b": "zaslepka",
+          "vol": 5400
+        },
+        {
+          "a": "nosnik-sloupec0-patro0",
+          "b": "eurobox-sloupec0-patro0",
+          "vol": 79005
+        },
+        {
+          "a": "nosnik-sloupec0-patro0",
+          "b": "eurobox-sloupec0-patro0",
+          "vol": 79005
+        },
+        {
+          "a": "nosnik-sloupec0-patro0",
+          "b": "eurobox-sloupec0-patro0",
+          "vol": 79005
+        },
+        {
+          "a": "nosnik-sloupec0-patro0",
+          "b": "eurobox-sloupec0-patro0",
+          "vol": 79005
+        },
+        {
+          "a": "nosnik-sloupec0-patro0",
+          "b": "eurobox-sloupec0-patro0",
+          "vol": 79005
+        },
+        {
+          "a": "nosnik-sloupec0-patro0",
+          "b": "eurobox-sloupec0-patro0",
+          "vol": 79005
+        },
+        {
+          "a": "spojnice-sloupec0-patro0",
+          "b": "eurobox-sloupec0-patro0",
+          "vol": 59053
+        },
+        {
+          "a": "spojnice-sloupec0-patro0",
+          "b": "eurobox-sloupec0-patro0",
+          "vol": 46285
+        },
+        {
+          "a": "spojnice-sloupec0-patro0",
+          "b": "eurobox-sloupec0-patro0",
+          "vol": 44689
+        },
+        {
+          "a": "spojnice-sloupec0-patro0",
+          "b": "eurobox-sloupec0-patro0",
+          "vol": 44689
+        },
+        {
+          "a": "spojnice-sloupec0-patro0",
+          "b": "eurobox-sloupec0-patro0",
+          "vol": 44689
+        },
+        {
+          "a": "spojnice-sloupec0-patro0",
+          "b": "eurobox-sloupec0-patro0",
+          "vol": 57457
+        },
+        {
+          "a": "nosnik-sloupec0-patro1",
+          "b": "eurobox-sloupec0-patro1",
+          "vol": 79005
+        },
+        {
+          "a": "nosnik-sloupec0-patro1",
+          "b": "eurobox-sloupec0-patro1",
+          "vol": 79005
+        },
+        {
+          "a": "nosnik-sloupec0-patro1",
+          "b": "eurobox-sloupec0-patro1",
+          "vol": 79005
+        },
+        {
+          "a": "nosnik-sloupec0-patro1",
+          "b": "eurobox-sloupec0-patro1",
+          "vol": 79005
+        },
+        {
+          "a": "nosnik-sloupec0-patro1",
+          "b": "eurobox-sloupec0-patro1",
+          "vol": 79005
+        },
+        {
+          "a": "nosnik-sloupec0-patro1",
+          "b": "eurobox-sloupec0-patro1",
+          "vol": 79005
+        },
+        {
+          "a": "spojnice-sloupec0-patro1",
+          "b": "eurobox-sloupec0-patro1",
+          "vol": 59053
+        },
+        {
+          "a": "spojnice-sloupec0-patro1",
+          "b": "eurobox-sloupec0-patro1",
+          "vol": 46285
+        },
+        {
+          "a": "spojnice-sloupec0-patro1",
+          "b": "eurobox-sloupec0-patro1",
+          "vol": 44689
+        },
+        {
+          "a": "spojnice-sloupec0-patro1",
+          "b": "eurobox-sloupec0-patro1",
+          "vol": 44689
+        },
+        {
+          "a": "spojnice-sloupec0-patro1",
+          "b": "eurobox-sloupec0-patro1",
+          "vol": 44689
+        },
+        {
+          "a": "spojnice-sloupec0-patro1",
+          "b": "eurobox-sloupec0-patro1",
+          "vol": 57457
+        },
+        {
+          "a": "nosnik-sloupec0-patro2",
+          "b": "eurobox-sloupec0-patro2",
+          "vol": 79005
+        },
+        {
+          "a": "nosnik-sloupec0-patro2",
+          "b": "eurobox-sloupec0-patro2",
+          "vol": 79005
+        },
+        {
+          "a": "nosnik-sloupec0-patro2",
+          "b": "eurobox-sloupec0-patro2",
+          "vol": 79005
+        },
+        {
+          "a": "nosnik-sloupec0-patro2",
+          "b": "eurobox-sloupec0-patro2",
+          "vol": 79005
+        },
+        {
+          "a": "nosnik-sloupec0-patro2",
+          "b": "eurobox-sloupec0-patro2",
+          "vol": 79005
+        },
+        {
+          "a": "nosnik-sloupec0-patro2",
+          "b": "eurobox-sloupec0-patro2",
+          "vol": 79005
+        },
+        {
+          "a": "spojnice-sloupec0-patro2",
+          "b": "eurobox-sloupec0-patro2",
+          "vol": 59053
+        },
+        {
+          "a": "spojnice-sloupec0-patro2",
+          "b": "eurobox-sloupec0-patro2",
+          "vol": 46285
+        },
+        {
+          "a": "spojnice-sloupec0-patro2",
+          "b": "eurobox-sloupec0-patro2",
+          "vol": 44689
+        },
+        {
+          "a": "spojnice-sloupec0-patro2",
+          "b": "eurobox-sloupec0-patro2",
+          "vol": 44689
+        },
+        {
+          "a": "spojnice-sloupec0-patro2",
+          "b": "eurobox-sloupec0-patro2",
+          "vol": 44689
+        },
+        {
+          "a": "spojnice-sloupec0-patro2",
+          "b": "eurobox-sloupec0-patro2",
+          "vol": 57457
+        }
+      ],
+      "checked": 64
+    },
+    "newPartsCount": 67,
+    "origPartsCount": 67
+  }
+}

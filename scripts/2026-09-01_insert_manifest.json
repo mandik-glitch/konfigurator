@@ -1,0 +1,146 @@
+[
+ {
+  "key": "PE12",
+  "status": "QUEUED",
+  "name": "Peugeot Expert PE12 (2007-2015) - boxy43-270x2-220x4-170x4",
+  "totalParts": 63,
+  "totalBoxes": 10,
+  "distinctHeights": 3
+ },
+ {
+  "key": "PE13",
+  "status": "QUEUED",
+  "name": "Peugeot Expert PE13 (2007-2015) - boxy43-270x2-220x5-170x5",
+  "totalParts": 66,
+  "totalBoxes": 12,
+  "distinctHeights": 3
+ },
+ {
+  "key": "PE14",
+  "status": "QUEUED",
+  "name": "Peugeot Expert PE14 (2007-2015) - boxy43-270x2-220x5-170x5",
+  "totalParts": 66,
+  "totalBoxes": 12,
+  "distinctHeights": 3
+ },
+ {
+  "key": "PE15",
+  "status": "QUEUED",
+  "name": "Peugeot Expert PE15 (2016-) - boxy43-270x3-220x3",
+  "totalParts": 38,
+  "totalBoxes": 6,
+  "distinctHeights": 2
+ },
+ {
+  "key": "PE16",
+  "status": "QUEUED",
+  "name": "Peugeot Expert PE16 (2016-) - boxy43-270x3-220x4-170x4-120x1",
+  "totalParts": 71,
+  "totalBoxes": 12,
+  "distinctHeights": 4
+ },
+ {
+  "key": "PE17",
+  "status": "QUEUED",
+  "name": "Peugeot Expert PE17 (2016-) - boxy43-270x3-220x5-170x5-120x2",
+  "totalParts": 77,
+  "totalBoxes": 15,
+  "distinctHeights": 4
+ },
+ {
+  "key": "PE20",
+  "status": "QUEUED",
+  "name": "Peugeot Expert PE20 (2016-) - boxy43-270x3-220x3",
+  "totalParts": 38,
+  "totalBoxes": 6,
+  "distinctHeights": 2
+ },
+ {
+  "key": "PE21",
+  "status": "QUEUED",
+  "name": "Peugeot Expert PE21 (2016-) - boxy43-270x2-220x2",
+  "totalParts": 34,
+  "totalBoxes": 4,
+  "distinctHeights": 2
+ },
+ {
+  "key": "PE25",
+  "status": "QUEUED",
+  "name": "Peugeot e-Expert L1 PE25 (2021-) - boxy43-270x3-220x3",
+  "totalParts": 38,
+  "totalBoxes": 6,
+  "distinctHeights": 2
+ },
+ {
+  "key": "PE26",
+  "status": "QUEUED",
+  "name": "Peugeot e-Expert L2 PE26 (2021-) - boxy43-270x3-220x4-170x4-120x1",
+  "totalParts": 71,
+  "totalBoxes": 12,
+  "distinctHeights": 4
+ },
+ {
+  "key": "PE27",
+  "status": "QUEUED",
+  "name": "Peugeot e-Expert L3 PE27 (2021-) - boxy43-270x3-220x5-170x5-120x2",
+  "totalParts": 77,
+  "totalBoxes": 15,
+  "distinctHeights": 4
+ },
+ {
+  "key": "MB17",
+  "status": "QUEUED",
+  "name": "Mercedes Vito Compact MB17 (2014-) - boxy43-270x3-220x4-170x1-120x1",
+  "totalParts": 60,
+  "totalBoxes": 9,
+  "distinctHeights": 4
+ },
+ {
+  "key": "MB18",
+  "status": "QUEUED",
+  "name": "Mercedes Vito Long MB18 (2014-) - boxy43-270x3-220x5-170x2-120x2",
+  "totalParts": 66,
+  "totalBoxes": 12,
+  "distinctHeights": 4
+ },
+ {
+  "key": "MB19",
+  "status": "QUEUED",
+  "name": "Mercedes Vito Extra Long MB19 (2014-) - boxy43-270x3-220x5-170x5-120x2",
+  "totalParts": 75,
+  "totalBoxes": 15,
+  "distinctHeights": 4
+ },
+ {
+  "key": "MB24",
+  "status": "QUEUED",
+  "name": "Mercedes Vito Mixto Long MB24 (2014-) - boxy43-270x2-220x2",
+  "totalParts": 33,
+  "totalBoxes": 4,
+  "distinctHeights": 2
+ },
+ {
+  "key": "MB25",
+  "status": "QUEUED",
+  "name": "Mercedes Vito MB25 (2014-) - boxy43-270x3-220x3",
+  "totalParts": 37,
+  "totalBoxes": 6,
+  "distinctHeights": 2
+ },
+ {
+  "key": "MB46",
+  "status": "QUEUED",
+  "name": "Mercedes Vito MB46 (2014-) - boxy43-270x3-220x5-170x2-120x2",
+  "totalParts": 66,
+  "totalBoxes": 12,
+  "distinctHeights": 4
+ },
+ {
+  "key": "MB47",
+  "status": "QUEUED",
+  "name": "Mercedes Vito MB47 (2014-) - boxy43-270x3-220x5-170x5-120x2",
+  "totalParts": 75,
+  "totalBoxes": 15,
+  "distinctHeights": 4
+ }
+]

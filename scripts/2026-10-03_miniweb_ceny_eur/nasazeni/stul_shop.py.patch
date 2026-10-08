@@ -1,0 +1,25 @@
+--- a/api/stul_shop.py
++++ b/api/stul_shop.py
+@@ -28,6 +28,7 @@
+ from flask import Response, jsonify, request
+ 
+ from app import app, get_conn, _client_ip, _rate_limited
++import miniweb_cena
+ import stul_api
+ import stul_glb
+ import stul_konfigurator as S
+@@ -811,7 +812,13 @@
+     if rv and rv != stul_glb.RULES_VERSION:
+         return jsonify({"error": "rules_changed"}), 409
+     try:
+-        return jsonify(resolve(body.get("selection"), _lang(body.get("lang")), skryt_cenu=_skryt_cenu(body)))
++        skryt = _skryt_cenu(body)
++        out = resolve(body.get("selection"), _lang(body.get("lang")), skryt_cenu=skryt)
++        if not skryt:
++            eur, cfg = miniweb_cena.pro_host(request.host, get_conn)      # mini-shop s price_mode 'shown': cena v EUR (kurz + marze), bez nastaveni zadna cena
++            if eur:
++                out = miniweb_cena.na_eur(out, cfg)
++        return jsonify(out)
+     except (S.StulChyba, stul_glb.GlbChyba) as e:
+         app.logger.error("stul_shop: resolve selhal: %s", e)
+         return jsonify({"error": "server_error"}), 500

@@ -1,0 +1,66 @@
+{
+ "key": "MB24",
+ "ok": true,
+ "family": "vito",
+ "base": "Mercedes_Vito_MB24_2014-",
+ "offsetX": -453.5,
+ "offsetY": 1,
+ "H": 1200,
+ "CAP_H": 300,
+ "CUTOUT_H": 350,
+ "uskok": 175,
+ "capOffsetFromW": 79,
+ "legs": [
+  {
+   "anchorZ": -1179.9999771118164,
+   "type": "plain"
+  },
+  {
+   "anchorZ": -317.9999771118164,
+   "type": "plain"
+  }
+ ],
+ "columns": [
+  {
+   "legFromIdx": 0,
+   "legToIdx": 1,
+   "width": 832,
+   "N": 2
+  }
+ ],
+ "legExtensions": {},
+ "columnPlans": [
+  {
+   "colIdx": 0,
+   "legFromIdx": 0,
+   "legToIdx": 1,
+   "N": 2,
+   "floorY": 345,
+   "railZFrom": -1149.9999771118164,
+   "railZTo": -317.9999771118164,
+   "railZCenter": -733.9999771118164,
+   "railLen": 832,
+   "crossLen": 289,
+   "crossXCenter": 174.5
+  }
+ ],
+ "columnLevels": [
+  {
+   "colIdx": 0,
+   "levels": [
+    {
+     "railYCenter": 360,
+     "boxH": 270,
+     "boxTop": 645
+    },
+    {
+     "railYCenter": 690,
+     "boxH": 220,
+     "boxTop": 925
+    }
+   ]
+  }
+ ],
+ "rearLimitZ": -1168.9999771118164,
+ "elapsedMs": 4625
+}

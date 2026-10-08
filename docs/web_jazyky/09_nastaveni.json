@@ -1,0 +1,74 @@
+[
+ {
+  "id": "nast:homepage_intro_html:html",
+  "typ": "html",
+  "cs": "<p>Pracovní <strong>vestavby do užitkových vozidel</strong>, které přizpůsobíme <strong>na milimetr Vašim kufrům a vybavení</strong>. Zpracujeme 3D model a ten spolu upravujeme dokud není <strong>přesně dle Vaší představy. </strong><span style=\"background-color: rgb(255, 255, 255); color: rgb(0, 0, 255);\">Homologace HP-0579</span></p><p>Pracovní <strong>ergonomické průmyslové stoly zcela na míru. </strong>Realizujeme na klíč včetně montáže na místě celý projekt pro celou halu, nebo třeba jen jeden kus.&nbsp;Balicí stoly a pracoviště, montážní stoly, <strong>hliníkové konstrukce</strong> na míru, individuální specializovaná pracoviště.&nbsp;Sofistikované řešení vybavení pro váš provoz, dílnu i sklad zcela na míru.</p><p><br></p><p>Navrhneme Vám kompletní moderní pracovní vybavení s důrazem na ergonomii.&nbsp;Respektujeme individuální požadavky klientů.&nbsp;</p>",
+  "en": "<p>Custom <strong>work van fit-outs</strong> tailored <strong>to the millimetre to your cases and equipment</strong>. We prepare a 3D model and refine it together until it is <strong>exactly what you have in mind. </strong><span style=\"background-color: rgb(255, 255, 255); color: rgb(0, 0, 255);\">Homologation HP-0579</span></p><p>Ergonomic <strong>industrial work tables made entirely to measure. </strong>We deliver turnkey projects, including on-site assembly, for an entire hall or just a single piece.&nbsp;Packing tables and workstations, assembly tables, custom <strong>aluminium structures</strong>, individual specialised workstations.&nbsp;A sophisticated equipment solution for your operation, workshop and warehouse, made entirely to measure.</p><p><br></p><p>We design complete, modern work equipment with a focus on ergonomics.&nbsp;We respect the individual requirements of our clients.&nbsp;</p>",
+  "it": "<p><strong>Allestimenti di lavoro per veicoli commerciali</strong> adattati <strong>al millimetro alle vostre valigette e attrezzature</strong>. Realizziamo il modello 3D e lo modifichiamo insieme finché non è <strong>esattamente come lo desiderate. </strong><span style=\"background-color: rgb(255, 255, 255); color: rgb(0, 0, 255);\">Omologazione HP-0579</span></p><p><strong>Tavoli da lavoro industriali ergonomici completamente su misura. </strong>Realizziamo progetti chiavi in mano, montaggio in loco incluso, per un intero capannone o anche per un solo pezzo.&nbsp;Tavoli da imballaggio e postazioni di lavoro, tavoli di montaggio, <strong>strutture in alluminio</strong> su misura, postazioni specializzate individuali.&nbsp;Una soluzione di attrezzatura sofisticata per la vostra attività, officina e magazzino, completamente su misura.</p><p><br></p><p>Progettiamo attrezzature di lavoro complete e moderne con particolare attenzione all'ergonomia.&nbsp;Rispettiamo le esigenze individuali dei clienti.&nbsp;</p>",
+  "h": "ce226006ce"
+ },
+ {
+  "id": "nast:product_field_labels:category_path",
+  "typ": "text",
+  "cs": "Kategorie",
+  "en": "Category",
+  "it": "Categoria",
+  "h": "358210386a"
+ },
+ {
+  "id": "nast:product_field_options:warranty.0",
+  "typ": "text",
+  "cs": "24 měsíců",
+  "en": "24 months",
+  "it": "24 mesi",
+  "h": "623fdfdd07"
+ },
+ {
+  "id": "nast:product_field_options:warranty.1",
+  "typ": "text",
+  "cs": "60 měsíců",
+  "en": "60 months",
+  "it": "60 mesi",
+  "h": "80421508a1"
+ },
+ {
+  "id": "nast:product_field_options:availability_text.0",
+  "typ": "text",
+  "cs": "skladem",
+  "en": "in stock",
+  "it": "disponibile a magazzino",
+  "h": "b5790a170b"
+ },
+ {
+  "id": "nast:product_field_options:availability_text.1",
+  "typ": "text",
+  "cs": "do týdne",
+  "en": "within a week",
+  "it": "entro una settimana",
+  "h": "d5bc9a8d6a"
+ },
+ {
+  "id": "nast:product_field_options:availability_text.2",
+  "typ": "text",
+  "cs": "2 týdny",
+  "en": "2 weeks",
+  "it": "2 settimane",
+  "h": "ed82cf3a3d"
+ },
+ {
+  "id": "nast:product_field_options:availability_text.3",
+  "typ": "text",
+  "cs": "2-5 týdnů",
+  "en": "2-5 weeks",
+  "it": "2-5 settimane",
+  "h": "5eb2b27397"
+ },
+ {
+  "id": "nast:vandrawee_cena_obsahuje_text:text",
+  "typ": "text",
+  "cs": "Cena obsahuje:\n- výrobu stavebnice\n- dodání ve zcela rozloženém stavu, profily v ochranné fólii\n- obecný montážní návod v PDF a ručně doplněné popisy v  3D náhledech",
+  "en": "Price includes:\n- production of the kit\n- delivery fully disassembled, profiles in protective film\n- general assembly instructions in PDF and hand-added descriptions in the 3D previews",
+  "it": "Il prezzo comprende:\n- la produzione del kit\n- la consegna completamente smontata, profili con pellicola protettiva\n- istruzioni di montaggio generali in PDF e descrizioni aggiunte a mano nelle anteprime 3D",
+  "h": "030e6d2129"
+ }
+]

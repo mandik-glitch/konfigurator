@@ -1,0 +1,55 @@
+--- a/webapp/miniweb-schvaleni.html
++++ b/webapp/miniweb-schvaleni.html
+@@ -45,6 +45,9 @@
+   .chip.warn { background: var(--warn-bg); color: var(--warn); border-color: transparent; }
+   .chip.bad { background: var(--bad-bg); color: var(--bad); border-color: transparent; }
+   .desc { white-space: pre-line; overflow-wrap: anywhere; margin: 8px 0; }
++  details.doc { margin: 8px 0; }
++  details.doc > summary { min-height: 44px; display: flex; align-items: center; cursor: pointer; color: var(--accent); font-weight: 600; }
++  details.doc[open] > summary { margin-bottom: 4px; }
+   .summary { font-weight: 600; margin: 4px 0; overflow-wrap: anywhere; }
+   dl.specs { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: 4px 12px; margin: 8px 0; font-size: .9375rem; }
+   dl.specs dt { color: var(--muted); overflow-wrap: anywhere; }
+@@ -68,7 +71,8 @@
+ (function () {
+   "use strict";
+   var API = "/api/admin/miniweb/";
+-  var KIND = { product: "Produkt", category: "Kategorie" };
++  var KIND = { product: "Produkt", category: "Kategorie", document: "Dokument" };
++  var DOC = { terms: "Obchodní podmínky", privacy: "Ochrana osobních údajů", returns: "Vrácení zboží", shipping: "Doprava", cookies: "Cookies" };
+   var state = { data: null, lang: null, filter: "draft", confirmAll: false, busy: false, message: null, mode: "loading" };
+   var root = document.getElementById("app");
+ 
+@@ -206,12 +210,17 @@
+     var c = h("article", { class: cls });
+     var top = h("div", { class: "top" }, h("span", { class: "chip", text: KIND[i.kind] || i.kind }),
+       h("span", { class: "chip " + (blocked ? "bad" : (i.status === "approved" ? "ok" : "warn")), text: blocked ? "Nelze schválit" : (i.status === "approved" ? "Schváleno" : "Návrh") }));
++    if (i.kind === "document") top.appendChild(h("span", { class: "chip", text: DOC[i.slug] || i.slug }));
+     if (i.sku) top.appendChild(h("span", { class: "chip", text: i.sku }));
+     if (i.category) top.appendChild(h("span", { class: "chip", text: i.category }));
+     c.appendChild(top);
+     c.appendChild(h("h2", { text: i.name || "(bez názvu)" }));
+     if (i.summary) c.appendChild(h("p", { class: "summary", text: i.summary }));
+-    if (i.description) c.appendChild(h("div", { class: "desc", text: i.description }));
++    if (i.description && i.kind === "document") {
++      var long = i.description.length > 400;
++      c.appendChild(h("div", { class: "desc", text: long ? i.description.slice(0, 400) + "…" : i.description }));
++      if (long) c.appendChild(h("details", { class: "doc" }, h("summary", { text: "Zobrazit celé znění (" + i.description.length + " znaků)" }), h("div", { class: "desc", text: i.description })));
++    } else if (i.description) c.appendChild(h("div", { class: "desc", text: i.description }));
+     if (i.delivery) c.appendChild(h("p", { class: "small muted", text: "Dodání: " + i.delivery }));
+     if (i.specs && i.specs.length) {
+       var dl = h("dl", { class: "specs" });
+@@ -219,10 +228,11 @@
+       c.appendChild(dl);
+     }
+     if (i.blocking.indexOf("brand") >= 0) c.appendChild(h("div", { class: "note bad", text: "Text obsahuje značku nebo dodavatele, to se na webu nesmí. Opravte ho u zdroje a nahrajte znovu." }));
+-    if (i.blocking.indexOf("no_name") >= 0) c.appendChild(h("div", { class: "note bad", text: "Chybí název. Doplňte ho u zdroje a nahrajte znovu." }));
++    if (i.blocking.indexOf("placeholder") >= 0) c.appendChild(h("div", { class: "note bad", text: "Dokument obsahuje zástupné značky [DOPLNIŤ] nebo [OVERIŤ] či označení návrhu k právní kontrole, nejde schválit. Nahraďte ho finální verzí po kontrole právníkem a nahrajte znovu." }));
++    if (i.blocking.indexOf("no_name") >= 0) c.appendChild(h("div", { class: "note bad", text: i.kind === "document" ? "Chybí název nebo text dokumentu. Doplňte ho u zdroje a nahrajte znovu." : "Chybí název. Doplňte ho u zdroje a nahrajte znovu." }));
+     if (i.info.indexOf("no_description") >= 0) c.appendChild(h("div", { class: "note", text: "Produkt nemá popis." }));
+     if (i.info.indexOf("cleaned") >= 0) c.appendChild(h("div", { class: "note info", text: "Z textu bylo odstraněno HTML, zákazník uvidí přesně tohle znění." }));
+-    if (i.status === "approved" && !i.public) c.appendChild(h("div", { class: "note", text: "Schváleno, ale zatím by nebylo veřejné: schvalte i všechny nadřazené kategorie (a u produktu jeho kategorii)." }));
++    if (i.status === "approved" && !i.public && i.kind !== "document") c.appendChild(h("div", { class: "note", text: "Schváleno, ale zatím by nebylo veřejné: schvalte i všechny nadřazené kategorie (a u produktu jeho kategorii)." }));
+     if (i.status === "approved") c.appendChild(h("div", { class: "actions" }, h("button", { type: "button", disabled: state.busy, text: "Vrátit do návrhu", onclick: function () { unapprove([i]); } })));
+     else if (!blocked) c.appendChild(h("div", { class: "actions" }, h("button", { class: "primary", type: "button", disabled: state.busy, text: "Schválit", onclick: function () { approve([ref(i)]); } })));
+     return c;

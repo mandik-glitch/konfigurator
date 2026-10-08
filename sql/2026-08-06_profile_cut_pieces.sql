@@ -1,0 +1,24 @@
+-- Prirezy profilu na e-shopu (bot3, 2026-08-06).
+--
+-- Robert: "u kazdeho profilu v eshopu musi byt uvedeno: 1ks = 3000mm,
+-- moznost zadat prirezy, napr: 1100mm 3ks, 222mm 4ks" - upresneno v
+-- konverzaci: cena podle poctu CELYCH spotrebovanych tyci (dopoctenych
+-- bin-packingem z prirezu, viz api/cutting_algo.py::pack_1d - stejna
+-- funkce jako pouziva admin rezny plan v api/cutting.py), objednavat
+-- lze jen cele tyce (nasobky 3m), zbytky patri klientovi.
+--
+-- cut_pieces_json = [{"length_mm": 1100, "qty": 3}, {"length_mm": 222,
+-- "qty": 4}, ...] nebo NULL (bezna polozka bez prirezu - beze zmeny
+-- chovani). qty na radku (shop_cart_items.qty / shop_order_items.qty)
+-- je pri vyplnenem cut_pieces_json VZDY pocet celych 3000mm tyci
+-- potrebnych pro tyhle prirezy (min. 1 kus, viz api/cart.py invariant),
+-- ne pocet prirezu samotnych.
+--
+-- Vedome NEnapojeno na shop_order_items.cut_kind/material_key/length_mm
+-- (existujici sloupce z sql/2026-07-25_cutting_plans.sql, ktere cte
+-- api/cutting.py pro hromadny rezny plan dilny) - tenhle sloupec je jen
+-- CITELNA data u polozky objednavky (co si zakaznik prál narezat),
+-- napojeni na admin rezny plan je vedome odlozena navazujici prace
+-- (viz NAVRH_REZNE_PLANY.md sekce 5 bod 3).
+ALTER TABLE shop_cart_items  ADD COLUMN cut_pieces_json MEDIUMTEXT NULL AFTER qty;
+ALTER TABLE shop_order_items ADD COLUMN cut_pieces_json MEDIUMTEXT NULL AFTER qty;

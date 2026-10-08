@@ -1,0 +1,5075 @@
+[
+ {
+  "id": "ui:64794ed90534:hlaska",
+  "typ": "text",
+  "cs": "(+{0} Kč)",
+  "en": "(+{0} EUR)",
+  "it": "(+{0} EUR)",
+  "h": "64794ed905"
+ },
+ {
+  "id": "ui:6c33980c41d2:hlaska",
+  "typ": "text",
+  "cs": "(dle PSČ a hmotnosti)",
+  "en": "(by postcode and weight)",
+  "it": "(in base a CAP e peso)",
+  "h": "6c33980c41"
+ },
+ {
+  "id": "ui:3710d62135e9:hlaska",
+  "typ": "text",
+  "cs": "(max-width: 760px)",
+  "en": "(max-width: 760px)",
+  "it": "(max-width: 760px)",
+  "h": "3710d62135"
+ },
+ {
+  "id": "ui:be62c29b0d41:hlaska",
+  "typ": "text",
+  "cs": "(nevyplněno)",
+  "en": "(not filled in)",
+  "it": "(non compilato)",
+  "h": "be62c29b0d"
+ },
+ {
+  "id": "ui:50b93ea3438d:hlaska",
+  "typ": "text",
+  "cs": "(z toho {0}× tyč navíc bez řezu)",
+  "en": "(of which {0}× extra bar without a cut)",
+  "it": "(di cui {0}× barra in più senza taglio)",
+  "h": "50b93ea343"
+ },
+ {
+  "id": "ui:e8467319fa8b:hlaska",
+  "typ": "text",
+  "cs": "+ Do košíku",
+  "en": "+ Add to basket",
+  "it": "+ Al carrello",
+  "h": "e8467319fa"
+ },
+ {
+  "id": "ui:a8620deb9c5c:tlacitko",
+  "typ": "text",
+  "cs": "+ přidat přířez",
+  "en": "+ add cut piece",
+  "it": "+ aggiungere pezzo tagliato",
+  "h": "a8620deb9c"
+ },
+ {
+  "id": "ui:ea6e9559f918:hlaska",
+  "typ": "text",
+  "cs": "+ řezy {0}× {1} Kč = {2} Kč",
+  "en": "+ cuts {0}× {1} EUR = {2} EUR",
+  "it": "+ tagli {0}× {1} EUR = {2} EUR",
+  "h": "ea6e9559f9"
+ },
+ {
+  "id": "ui:9c622404b7ce:placeholder",
+  "typ": "text",
+  "cs": "+{n} xxx xxx xxx",
+  "en": "+{n} xxx xxx xxx",
+  "it": "+{n} xxx xxx xxx",
+  "h": "9c622404b7"
+ },
+ {
+  "id": "ui:c86491022ffe:text",
+  "typ": "text",
+  "cs": "/* HUD styl (Robert {n}-{n}-{n}: \"styl okna HUD\") - stejny jazyk jako zbytek webapp/product.html: useknute rohy (clip-path), --accent obrys s vyplnovaci animaci u primarnich tlacitek, monospace pro funkcni/technicke popisky, --panel-bg-{n}/--border-soft misto napevno zapsanych hex barev (tenhle soubor je pouzity jen v product.html, viz overeni pred restylem - zadne jine misto v projektu ho nesdili, takze CSS promenne stranky jsou vzdy dostupne). Modul zustava self-contained (vlastni",
+  "en": "/* HUD style (Robert {n}-{n}-{n}: \"HUD window style\") - same look as the rest of webapp/product.html: truncated corners (clip-path), --accent outline with a fill animation on primary buttons, monospace for functional/technical labels, --panel-bg-{n}/--border-soft instead of hard-coded hex colours (this file is used only in product.html, see the check before the restyle - no other place in the project shares it, so the page CSS variables are always available). The module remains self-contained (own",
+  "it": "/* Stile HUD (Robert {n}-{n}-{n}: \"stile finestra HUD\") - stesso aspetto del resto di webapp/product.html: angoli tagliati (clip-path), contorno --accent con animazione di riempimento sui pulsanti primari, monospace per le etichette funzionali/tecniche, --panel-bg-{n}/--border-soft al posto dei colori esadecimali scritti a mano (questo file è usato solo in product.html, vedi la verifica prima del restyling - nessun altro punto del progetto lo condivide, quindi le variabili CSS della pagina sono sempre disponibili). Il modulo resta autonomo (proprio",
+  "h": "c86491022f"
+ },
+ {
+  "id": "ui:8764c5dfe062:tlacitko",
+  "typ": "text",
+  "cs": "3D model",
+  "en": "3D model",
+  "it": "Modello 3D",
+  "h": "8764c5dfe0"
+ },
+ {
+  "id": "ui:b91485b3a913:text",
+  "typ": "text",
+  "cs": "3D model se nepodařilo načíst.",
+  "en": "The 3D model could not be loaded.",
+  "it": "Impossibile caricare il modello 3D.",
+  "h": "b91485b3a9"
+ },
+ {
+  "id": "ui:928c5c86b520:hlaska",
+  "typ": "text",
+  "cs": "3D náhled",
+  "en": "3D preview",
+  "it": "Anteprima 3D",
+  "h": "928c5c86b5"
+ },
+ {
+  "id": "ui:3c88102f300e:hlaska",
+  "typ": "text",
+  "cs": "3D pohledy z našich snímků",
+  "en": "3D views from our own images",
+  "it": "Viste 3D dalle nostre immagini",
+  "h": "3c88102f30"
+ },
+ {
+  "id": "ui:6cf9c4d35a2b:hlaska",
+  "typ": "text",
+  "cs": "3D scéna",
+  "en": "3D scene",
+  "it": "Scena 3D",
+  "h": "6cf9c4d35a"
+ },
+ {
+  "id": "ui:9458daa76033:hlaska",
+  "typ": "text",
+  "cs": ":scope > .plus-gallery-item > a",
+  "en": ":scope>.plus-gallery-item>a",
+  "it": ":scope>.plus-gallery-item>a",
+  "h": "9458daa760"
+ },
+ {
+  "id": "ui:4af1204d018e:text",
+  "typ": "html",
+  "cs": "<1>Kategorie</1> <2>›</2> <3>Pracovní stoly na míru</3> <4>›</4> Poptávka stolu",
+  "en": "<1>Categories</1> <2>›</2> <3>Made-to-measure workbenches</3> <4>›</4> Table enquiry",
+  "it": "<1>Categorie</1> <2>›</2> <3>Banchi da lavoro su misura</3> <4>›</4> Richiesta di offerta per tavolo",
+  "h": "4af1204d01"
+ },
+ {
+  "id": "ui:a50b2b1bfbe9:text",
+  "typ": "html",
+  "cs": "<1>Kategorie</1> <2>›</2> Kontakt",
+  "en": "<1>Categories</1> <2>›</2> Contact",
+  "it": "<1>Categorie</1> <2>›</2> Contatti",
+  "h": "a50b2b1bfb"
+ },
+ {
+  "id": "ui:8154a56b0b3e:text",
+  "typ": "html",
+  "cs": "<1>Kategorie</1> <2>›</2> Moje objednávky",
+  "en": "<1>Categories</1> <2>›</2> My orders",
+  "it": "<1>Categorie</1> <2>›</2> I miei ordini",
+  "h": "8154a56b0b"
+ },
+ {
+  "id": "ui:db367efa9184:text",
+  "typ": "html",
+  "cs": "<1>Rozměry pracovní desky:</1>{1} × {2} mm",
+  "en": "<1>Worktop dimensions:</1>{1} × {2} mm",
+  "it": "<1>Dimensioni del piano di lavoro:</1>{1} × {2} mm",
+  "h": "db367efa91"
+ },
+ {
+  "id": "ui:1be5969ccaa0:text",
+  "typ": "html",
+  "cs": "<1>Rozsah výškové stavitelnosti:</1>{3} mm",
+  "en": "<1>Height adjustment range:</1>{3} mm",
+  "it": "<1>Intervallo di regolazione in altezza:</1>{3} mm",
+  "h": "1be5969cca"
+ },
+ {
+  "id": "ui:6adac517c59f:text",
+  "typ": "html",
+  "cs": "<1>Typ stolu:</1>{0}",
+  "en": "<1>Table type:</1>{0}",
+  "it": "<1>Tipo di tavolo:</1>{0}",
+  "h": "6adac517c5"
+ },
+ {
+  "id": "ui:513257319b43:hlaska",
+  "typ": "text",
+  "cs": "@media (max-width: 640px) { .rf-grid { grid-template-columns: repeat({n}, minmax({n}, 1fr)); gap: 8px; } .rf-link { display: block; text-align: center; } }",
+  "en": "@media (max-width:640px){.rf-grid{grid-template-columns:repeat({n},minmax({n},1fr));gap:8px}.rf-link{display:block;text-align:center}}",
+  "it": "@media (max-width:640px){.rf-grid{grid-template-columns:repeat({n},minmax({n},1fr));gap:8px}.rf-link{display:block;text-align:center}}",
+  "h": "513257319b"
+ },
+ {
+  "id": "ui:35eb218d117b:hlaska",
+  "typ": "text",
+  "cs": "@media (max-width: 640px) { .rf-grid.rf-vse { grid-template-columns: repeat({n}, minmax({n}, 1fr)); } }",
+  "en": "@media (max-width:640px){.rf-grid.rf-vse{grid-template-columns:repeat({n},minmax({n},1fr))}}",
+  "it": "@media (max-width:640px){.rf-grid.rf-vse{grid-template-columns:repeat({n},minmax({n},1fr))}}",
+  "h": "35eb218d11"
+ },
+ {
+  "id": "ui:6386b36b3e80:hlaska",
+  "typ": "text",
+  "cs": "@media (prefers-reduced-motion: reduce){.tt-hint,.tt-progress,.tt-btns{transition:none}}",
+  "en": "@media (prefers-reduced-motion:reduce){.tt-hint,.tt-progress,.tt-btns{transition:none}}",
+  "it": "@media (prefers-reduced-motion:reduce){.tt-hint,.tt-progress,.tt-btns{transition:none}}",
+  "h": "6386b36b3e"
+ },
+ {
+  "id": "ui:61e7f14134ef:hlaska",
+  "typ": "text",
+  "cs": "@media print { .rf-lb { display: none !important; } .rf-foto img { transition: none; } }",
+  "en": "@media print{.rf-lb{display:none !important}.rf-foto img{transition:none}}",
+  "it": "@media print{.rf-lb{display:none !important}.rf-foto img{transition:none}}",
+  "h": "61e7f14134"
+ },
+ {
+  "id": "ui:bb14103fc9eb:hlaska",
+  "typ": "text",
+  "cs": "a, .plus-gallery-item, .cat-gallery, .cg-embed-gallery, .carousel",
+  "en": "a,.plus-gallery-item,.cat-gallery,.cg-embed-gallery,.carousel",
+  "it": "a,.plus-gallery-item,.cat-gallery,.cg-embed-gallery,.carousel",
+  "h": "bb14103fc9"
+ },
+ {
+  "id": "ui:4e7afebcfbae:text",
+  "typ": "text",
+  "cs": "Admin",
+  "en": "Admin",
+  "it": "Admin",
+  "h": "4e7afebcfb"
+ },
+ {
+  "id": "ui:7420133a2446:text",
+  "typ": "text",
+  "cs": "Admin: průhlednost oken textu kategorie",
+  "en": "Admin: transparency of category text windows",
+  "it": "Admin: trasparenza delle finestre di testo della categoria",
+  "h": "7420133a24"
+ },
+ {
+  "id": "ui:e994f8e3b932:text",
+  "typ": "text",
+  "cs": "Admin: průhlednost podkladu popisu",
+  "en": "Admin: transparency of the description background",
+  "it": "Admin: trasparenza dello sfondo della descrizione",
+  "h": "e994f8e3b9"
+ },
+ {
+  "id": "ui:6f4e789c646b:text",
+  "typ": "text",
+  "cs": "Adresa",
+  "en": "Address",
+  "it": "Indirizzo",
+  "h": "6f4e789c64"
+ },
+ {
+  "id": "ui:030a4f7ffeb0:hlaska",
+  "typ": "text",
+  "cs": "Akční cena",
+  "en": "Special offer price",
+  "it": "Prezzo promozionale",
+  "h": "030a4f7ffe"
+ },
+ {
+  "id": "ui:f5ddb95b398f:text",
+  "typ": "text",
+  "cs": "Alespoň {n} znaků, kombinace aspoň dvou druhů znaků (velká/malá písmena, číslice, symboly).",
+  "en": "At least {n} characters, combining at least two types of character (upper/lower case letters, digits, symbols).",
+  "it": "Almeno {n} caratteri, con una combinazione di almeno due tipi di caratteri (lettere maiuscole/minuscole, cifre, simboli).",
+  "h": "f5ddb95b39"
+ },
+ {
+  "id": "ui:545a99990e0a:hlaska",
+  "typ": "text",
+  "cs": "Alternativní kódy",
+  "en": "Alternative codes",
+  "it": "Codici alternativi",
+  "h": "545a99990e"
+ },
+ {
+  "id": "ui:29ee6031e504:tlacitko",
+  "typ": "text",
+  "cs": "Ano, vytvořit",
+  "en": "Yes, create",
+  "it": "Sì, creare",
+  "h": "29ee6031e5"
+ },
+ {
+  "id": "ui:f2b6bd143d87:text",
+  "typ": "text",
+  "cs": "Balicí materiál pro řezačku",
+  "en": "Packing material for the cutter",
+  "it": "Materiale d'imballaggio per la taglierina",
+  "h": "f2b6bd143d"
+ },
+ {
+  "id": "ui:c79602b062bc:text",
+  "typ": "text",
+  "cs": "Barva",
+  "en": "Colour",
+  "it": "Colore",
+  "h": "c79602b062"
+ },
+ {
+  "id": "ui:11bd864fc03c:title",
+  "typ": "text",
+  "cs": "Barvy, lesk, AO, HDRI a hliník ve 3D online nabídkách (jedno nastavení pro všechny nabídky)",
+  "en": "Colours, gloss, AO, HDRI and aluminium in 3D online quotations (one setting for all quotations)",
+  "it": "Colori, lucentezza, AO, HDRI e alluminio nei preventivi online 3D (un'unica impostazione per tutti i preventivi)",
+  "h": "11bd864fc0"
+ },
+ {
+  "id": "ui:48de5f1d19d8:hlaska",
+  "typ": "text",
+  "cs": "Bez boxů (mám vlastní boxy Auer/TBA, −{0} Kč)",
+  "en": "Without boxes (I have my own Auer/TBA boxes, −{0} EUR)",
+  "it": "Senza box (box Auer/TBA già disponibili, −{0} EUR)",
+  "h": "48de5f1d19"
+ },
+ {
+  "id": "ui:cea7774a90a8:text",
+  "typ": "text",
+  "cs": "bez DPH",
+  "en": "excl. VAT",
+  "it": "IVA esclusa",
+  "h": "cea7774a90"
+ },
+ {
+  "id": "ui:51c87b73c54c:hlaska",
+  "typ": "text",
+  "cs": "Bez vodítka",
+  "en": "Without guide",
+  "it": "Senza guida",
+  "h": "51c87b73c5"
+ },
+ {
+  "id": "ui:099c4a1cee77:hlaska",
+  "typ": "text",
+  "cs": "Boční vodítko",
+  "en": "Side guide",
+  "it": "Guida laterale",
+  "h": "099c4a1cee"
+ },
+ {
+  "id": "ui:2a8240e565b2:hlaska",
+  "typ": "text",
+  "cs": "Bublinková folie",
+  "en": "Bubble wrap",
+  "it": "Pellicola a bolle d'aria",
+  "h": "2a8240e565"
+ },
+ {
+  "id": "ui:f88b45a3be1c:hlaska",
+  "typ": "text",
+  "cs": "Březová nebo buková překližka {n} / {n} mm",
+  "en": "Birch or beech plywood {n} / {n} mm",
+  "it": "Compensato di betulla o faggio {n} / {n} mm",
+  "h": "f88b45a3be"
+ },
+ {
+  "id": "ui:e80c88bd3fca:nadpis",
+  "typ": "text",
+  "cs": "Celkem",
+  "en": "Total",
+  "it": "Totale",
+  "h": "e80c88bd3f"
+ },
+ {
+  "id": "ui:f185a5629e90:hlaska",
+  "typ": "text",
+  "cs": "Cena bez DPH",
+  "en": "Price excl. VAT",
+  "it": "Prezzo IVA esclusa",
+  "h": "f185a5629e"
+ },
+ {
+  "id": "ui:0bca5bf7f5db:text",
+  "typ": "text",
+  "cs": "Cena bez DPH: {0}",
+  "en": "Price excl. VAT: {0}",
+  "it": "Prezzo IVA esclusa: {0}",
+  "h": "0bca5bf7f5"
+ },
+ {
+  "id": "ui:d32baab54ba3:text",
+  "typ": "html",
+  "cs": "Cena montáže této varianty (nabízená služba, není součástí ceny sestavy): <1>{0} Kč</1> bez DPH",
+  "en": "Price of assembly for this variant (service offered, not included in the price of the set): <1>{0} EUR</1> excl. VAT",
+  "it": "Prezzo del montaggio di questa variante (servizio offerto, non incluso nel prezzo della composizione): <1>{0} EUR</1> IVA esclusa",
+  "h": "d32baab54b"
+ },
+ {
+  "id": "ui:5e252eb00077:hlaska",
+  "typ": "text",
+  "cs": "Cena na dotaz",
+  "en": "Price on request",
+  "it": "Prezzo su richiesta",
+  "h": "5e252eb000"
+ },
+ {
+  "id": "ui:f916f46a6d19:hlaska",
+  "typ": "text",
+  "cs": "Cena po uplatnění kupónu",
+  "en": "Price after coupon",
+  "it": "Prezzo dopo l'applicazione del coupon",
+  "h": "f916f46a6d"
+ },
+ {
+  "id": "ui:6041edb1ce02:hlaska",
+  "typ": "text",
+  "cs": "Cena s DPH",
+  "en": "Price incl. VAT",
+  "it": "Prezzo IVA inclusa",
+  "h": "6041edb1ce"
+ },
+ {
+  "id": "ui:59b4f92a0faa:hlaska",
+  "typ": "text",
+  "cs": "Cena s rámcovou slevou",
+  "en": "Price with framework discount",
+  "it": "Prezzo con sconto quadro",
+  "h": "59b4f92a0f"
+ },
+ {
+  "id": "ui:9c92f01041ba:text",
+  "typ": "text",
+  "cs": "Cena vč. DPH",
+  "en": "Price incl. VAT",
+  "it": "Prezzo IVA inclusa",
+  "h": "9c92f01041"
+ },
+ {
+  "id": "ui:5fec3aa9ea5a:nadpis",
+  "typ": "text",
+  "cs": "Cena za m.j.",
+  "en": "Unit price",
+  "it": "Prezzo unitario",
+  "h": "5fec3aa9ea"
+ },
+ {
+  "id": "ui:5e680c19a493:text",
+  "typ": "html",
+  "cs": "Cena za m²: <1>{0} Kč</1> {1} Kč / m² (−{2} %) (bez DPH)",
+  "en": "Price per m²: <1>{0} EUR</1> {1} EUR / m² (−{2} %) (excl. VAT)",
+  "it": "Prezzo al m²: <1>{0} EUR</1> {1} EUR / m² (−{2} %) (IVA esclusa)",
+  "h": "5e680c19a4"
+ },
+ {
+  "id": "ui:c6c82469ca8a:hlaska",
+  "typ": "text",
+  "cs": "Cena za m²: {0} Kč / m² (bez DPH)",
+  "en": "Price per m²: {0} EUR / m² (excl. VAT)",
+  "it": "Prezzo al m²: {0} EUR / m² (IVA esclusa)",
+  "h": "c6c82469ca"
+ },
+ {
+  "id": "ui:424bb7004fab:nadpis",
+  "typ": "text",
+  "cs": "Cena/ks",
+  "en": "Price/pc",
+  "it": "Prezzo/pz",
+  "h": "424bb7004f"
+ },
+ {
+  "id": "ui:583960c4106b:text",
+  "typ": "text",
+  "cs": "Cena: od nejnižší",
+  "en": "Price: low to high",
+  "it": "Prezzo: dal più basso",
+  "h": "583960c410"
+ },
+ {
+  "id": "ui:cce9d0742636:hlaska",
+  "typ": "text",
+  "cs": "Cena: od nejvyšší",
+  "en": "Price: highest first",
+  "it": "Prezzo: dal più alto",
+  "h": "cce9d07426"
+ },
+ {
+  "id": "ui:95e4846238e9:hlaska",
+  "typ": "text",
+  "cs": "Cenu dopravy stanovíme po objednávce podle toho, zda zvolíte montáž; uvidíte ji ke schválení před zálohovou fakturou.",
+  "en": "We will determine the shipping cost after you place the order, depending on whether you choose installation; you will see it for approval before the proforma invoice.",
+  "it": "Il costo di spedizione verrà stabilito dopo l'ordine, in base alla scelta dell'installazione; sarà sottoposto all'approvazione prima della fattura proforma.",
+  "h": "95e4846238"
+ },
+ {
+  "id": "ui:da19867f7f15:text",
+  "typ": "text",
+  "cs": "Ceny jsou uvedeny bez DPH ({2} %).{3}",
+  "en": "Prices are shown excluding VAT ({2} %).{3}",
+  "it": "I prezzi sono indicati IVA esclusa ({2} %).{3}",
+  "h": "da19867f7f"
+ },
+ {
+  "id": "ui:cdb07faeda48:hlaska",
+  "typ": "text",
+  "cs": "Ceny jsou uvedeny bez DPH; cena s DPH je vypočtena se sazbou {n} %. Šířka odpovídá délce válečku, délka je délka dopravníku.",
+  "en": "Prices are shown excluding VAT; the price including VAT is calculated at a rate of {n}%. Width corresponds to the roller length; length is the length of the conveyor.",
+  "it": "I prezzi sono indicati IVA esclusa; il prezzo IVA inclusa è calcolato con l'aliquota del {n}%. La larghezza corrisponde alla lunghezza del rullo, la lunghezza è quella del trasportatore.",
+  "h": "cdb07faeda"
+ },
+ {
+  "id": "ui:684528206fe8:hlaska",
+  "typ": "text",
+  "cs": "Chyba při načítání objednávky.",
+  "en": "Error loading the order.",
+  "it": "Errore durante il caricamento dell'ordine.",
+  "h": "684528206f"
+ },
+ {
+  "id": "ui:7e4494455779:hlaska",
+  "typ": "text",
+  "cs": "Chyba spojení se serverem.",
+  "en": "Error connecting to the server.",
+  "it": "Errore di connessione al server.",
+  "h": "7e44944557"
+ },
+ {
+  "id": "ui:17b69350b0bc:hlaska",
+  "typ": "text",
+  "cs": "Chyba spojení.",
+  "en": "Connection error.",
+  "it": "Errore di connessione.",
+  "h": "17b69350b0"
+ },
+ {
+  "id": "ui:f29040395460:hlaska",
+  "typ": "text",
+  "cs": "Chyba výpočtu (chyba spojení).",
+  "en": "Calculation error (connection error).",
+  "it": "Errore di calcolo (errore di connessione).",
+  "h": "f290403954"
+ },
+ {
+  "id": "ui:b58b08f4bad1:hlaska",
+  "typ": "text",
+  "cs": "Chyba výpočtu.",
+  "en": "Calculation error.",
+  "it": "Errore di calcolo.",
+  "h": "b58b08f4ba"
+ },
+ {
+  "id": "ui:a8fa911024ab:text",
+  "typ": "text",
+  "cs": "CHYBA {n}",
+  "en": "ERROR {n}",
+  "it": "ERRORE {n}",
+  "h": "a8fa911024"
+ },
+ {
+  "id": "ui:028b8aab643a:text",
+  "typ": "text",
+  "cs": "Chybí ID kategorie.",
+  "en": "Category ID is missing.",
+  "it": "ID categoria mancante.",
+  "h": "028b8aab64"
+ },
+ {
+  "id": "ui:8fa60acf1a86:hlaska",
+  "typ": "text",
+  "cs": "Chybí ID produktu.",
+  "en": "The product ID is missing.",
+  "it": "ID prodotto mancante.",
+  "h": "8fa60acf1a"
+ },
+ {
+  "id": "ui:7c571b086da4:hlaska",
+  "typ": "text",
+  "cs": "Chybí odkaz - vyžádej si prosím nový přes \"Zapomenuté heslo\".",
+  "en": "The link is missing – please request a new one via \"Forgotten password\".",
+  "it": "Link mancante: richiedere un nuovo link tramite \"Password dimenticata\".",
+  "h": "7c571b086d"
+ },
+ {
+  "id": "ui:c554e4a22e61:hlaska",
+  "typ": "text",
+  "cs": "Chybí odkaz - zkontroluj prosím, že jsi klikl/a na celý odkaz z e-mailu.",
+  "en": "The link is missing – please check that you clicked the whole link from the email.",
+  "it": "Link mancante: verificare di aver cliccato sul link completo ricevuto via e-mail.",
+  "h": "c554e4a22e"
+ },
+ {
+  "id": "ui:7e396ece1a30:hlaska",
+  "typ": "text",
+  "cs": "Co byste chtěli jinak?",
+  "en": "What would you like to change?",
+  "it": "Cosa vorrebbe modificare?",
+  "h": "7e396ece1a"
+ },
+ {
+  "id": "ui:6fea464f1ba5:text",
+  "typ": "text",
+  "cs": "CZ28337638",
+  "en": "CZ28337638",
+  "it": "CZ28337638",
+  "h": "6fea464f1b"
+ },
+ {
+  "id": "ui:807ce3c3414a:hlaska",
+  "typ": "text",
+  "cs": "Další",
+  "en": "Next",
+  "it": "Successivo",
+  "h": "807ce3c341"
+ },
+ {
+  "id": "ui:8a1934745b7f:title",
+  "typ": "text",
+  "cs": "Další (→)",
+  "en": "Next (→)",
+  "it": "Avanti (→)",
+  "h": "8a1934745b"
+ },
+ {
+  "id": "ui:c6f7256351bd:hlaska",
+  "typ": "text",
+  "cs": "Další fotografie",
+  "en": "Next photo",
+  "it": "Foto successiva",
+  "h": "c6f7256351"
+ },
+ {
+  "id": "ui:be1704cfca65:hlaska",
+  "typ": "text",
+  "cs": "Data e-shopu se nepodařilo načíst.",
+  "en": "The shop data could not be loaded.",
+  "it": "Impossibile caricare i dati dello shop.",
+  "h": "be1704cfca"
+ },
+ {
+  "id": "ui:68d08ca18128:hlaska",
+  "typ": "text",
+  "cs": "Dealerská cena",
+  "en": "Dealer price",
+  "it": "Prezzo rivenditore",
+  "h": "68d08ca181"
+ },
+ {
+  "id": "ui:8028fdbbe522:hlaska",
+  "typ": "text",
+  "cs": "Detail produktu: {0}, šířka {1} mm, délka {2}",
+  "en": "Product detail: {0}, width {1} mm, length {2}",
+  "it": "Dettaglio prodotto: {0}, larghezza {1} mm, lunghezza {2}",
+  "h": "8028fdbbe5"
+ },
+ {
+  "id": "ui:949bd4e13ef5:nadpis",
+  "typ": "text",
+  "cs": "DIČ",
+  "en": "VAT number",
+  "it": "Partita IVA",
+  "h": "949bd4e13e"
+ },
+ {
+  "id": "ui:1c72002f0373:hlaska",
+  "typ": "text",
+  "cs": "dle doručovací adresy",
+  "en": "depending on the delivery address",
+  "it": "in base all'indirizzo di consegna",
+  "h": "1c72002f03"
+ },
+ {
+  "id": "ui:ee50ff2e9f90:tlacitko",
+  "typ": "text",
+  "cs": "Do košíku",
+  "en": "Add to basket",
+  "it": "Aggiungere al carrello",
+  "h": "ee50ff2e9f"
+ },
+ {
+  "id": "ui:0179fbe32806:tlacitko",
+  "typ": "text",
+  "cs": "Do scény…",
+  "en": "Insert into scene…",
+  "it": "Inserire nella scena…",
+  "h": "0179fbe328"
+ },
+ {
+  "id": "ui:fa87415303ac:nadpis",
+  "typ": "text",
+  "cs": "Dodací adresa",
+  "en": "Delivery address",
+  "it": "Indirizzo di consegna",
+  "h": "fa87415303"
+ },
+ {
+  "id": "ui:abc529ca0a63:text",
+  "typ": "text",
+  "cs": "Dodací adresa stejná jako fakturační",
+  "en": "Delivery address same as billing address",
+  "it": "Indirizzo di consegna uguale a quello di fatturazione",
+  "h": "abc529ca0a"
+ },
+ {
+  "id": "ui:7c06f50cf94b:hlaska",
+  "typ": "text",
+  "cs": "Dokončení objednávky",
+  "en": "Complete your order",
+  "it": "Completamento dell'ordine",
+  "h": "7c06f50cf9"
+ },
+ {
+  "id": "ui:e21b9783f687:title",
+  "typ": "text",
+  "cs": "Domů",
+  "en": "Home",
+  "it": "Home",
+  "h": "e21b9783f6"
+ },
+ {
+  "id": "ui:42ed756c287d:text",
+  "typ": "text",
+  "cs": "Doplňující informace",
+  "en": "Additional information",
+  "it": "Informazioni aggiuntive",
+  "h": "42ed756c28"
+ },
+ {
+  "id": "ui:7c5ab92c3273:hlaska",
+  "typ": "text",
+  "cs": "Doprava ({0}): dle {1}.",
+  "en": "Shipping ({0}): by {1}.",
+  "it": "Spedizione ({0}): in base a {1}.",
+  "h": "7c5ab92c32"
+ },
+ {
+  "id": "ui:a138a1147a3b:hlaska",
+  "typ": "text",
+  "cs": "Doprava ({0}): u tohoto zboží zatím nelze spočítat - zvolte prosím osobní odběr, nebo nás kontaktujte.",
+  "en": "Shipping ({0}): cannot be calculated for this item yet – please choose personal collection or contact us.",
+  "it": "Spedizione ({0}): per questo articolo non è ancora calcolabile; scegliere il ritiro di persona oppure contattarci.",
+  "h": "a138a1147a"
+ },
+ {
+  "id": "ui:e86c91fdc189:hlaska",
+  "typ": "text",
+  "cs": "Doprava ({0}): zadejte PSČ pro výpočet ceny",
+  "en": "Shipping ({0}): enter the postcode to calculate the price",
+  "it": "Spedizione ({0}): inserire il CAP per calcolare il prezzo",
+  "h": "e86c91fdc1"
+ },
+ {
+  "id": "ui:46816953006e:hlaska",
+  "typ": "text",
+  "cs": "Doprava ({0}): zdarma",
+  "en": "Shipping ({0}): free",
+  "it": "Spedizione ({0}): gratuita",
+  "h": "4681695300"
+ },
+ {
+  "id": "ui:33186e3b6ba0:hlaska",
+  "typ": "text",
+  "cs": "Doprava ({0}): {1}",
+  "en": "Shipping ({0}): {1}",
+  "it": "Spedizione ({0}): {1}",
+  "h": "33186e3b6b"
+ },
+ {
+  "id": "ui:7b9435543620:nadpis",
+  "typ": "text",
+  "cs": "Doprava a platba",
+  "en": "Shipping and payment",
+  "it": "Spedizione e pagamento",
+  "h": "7b94355436"
+ },
+ {
+  "id": "ui:8c1f4fee031b:hlaska",
+  "typ": "text",
+  "cs": "Doprava se doúčtuje podle doručovací adresy.",
+  "en": "Shipping will be added according to the delivery address.",
+  "it": "La spedizione verrà addebitata a parte in base all'indirizzo di consegna.",
+  "h": "8c1f4fee03"
+ },
+ {
+  "id": "ui:a78fc9413e83:nadpis",
+  "typ": "text",
+  "cs": "Dostupnost",
+  "en": "Availability",
+  "it": "Disponibilità",
+  "h": "a78fc9413e"
+ },
+ {
+  "id": "ui:6ef5e12aa6ef:hlaska",
+  "typ": "text",
+  "cs": "dostupné ({0})",
+  "en": "available ({0})",
+  "it": "disponibile ({0})",
+  "h": "6ef5e12aa6"
+ },
+ {
+  "id": "ui:18e242c27147:hlaska",
+  "typ": "text",
+  "cs": "Dotaz se nepodařilo odeslat, zkuste to prosím znovu.",
+  "en": "Your enquiry could not be sent; please try again.",
+  "it": "Impossibile inviare la richiesta. Riprovare.",
+  "h": "18e242c271"
+ },
+ {
+  "id": "ui:ef4e942d2a6c:hlaska",
+  "typ": "text",
+  "cs": "Dotaz se nepodařilo odeslat.",
+  "en": "Your enquiry could not be sent.",
+  "it": "Impossibile inviare la richiesta.",
+  "h": "ef4e942d2a"
+ },
+ {
+  "id": "ui:2b2ab484d576:hlaska",
+  "typ": "text",
+  "cs": "Dvojitá podlaha",
+  "en": "Double floor",
+  "it": "Doppio pavimento",
+  "h": "2b2ab484d5"
+ },
+ {
+  "id": "ui:eda71b4f8117:hlaska",
+  "typ": "text",
+  "cs": "Délka",
+  "en": "Length",
+  "it": "Lunghezza",
+  "h": "eda71b4f81"
+ },
+ {
+  "id": "ui:a510143ba1bf:hlaska",
+  "typ": "text",
+  "cs": "Délka (m)",
+  "en": "Length (m)",
+  "it": "Lunghezza (m)",
+  "h": "a510143ba1"
+ },
+ {
+  "id": "ui:7bd6608154d9:placeholder",
+  "typ": "text",
+  "cs": "délka (mm)",
+  "en": "length (mm)",
+  "it": "lunghezza (mm)",
+  "h": "7bd6608154"
+ },
+ {
+  "id": "ui:bd7c593cb9bb:hlaska",
+  "typ": "text",
+  "cs": "Délka dopravníku",
+  "en": "Conveyor length",
+  "it": "Lunghezza del trasportatore",
+  "h": "bd7c593cb9"
+ },
+ {
+  "id": "ui:845934efe5c1:hlaska",
+  "typ": "text",
+  "cs": "Délka dopravníku (mm)",
+  "en": "Conveyor length (mm)",
+  "it": "Lunghezza del trasportatore (mm)",
+  "h": "845934efe5"
+ },
+ {
+  "id": "ui:5639101a3107:hlaska",
+  "typ": "text",
+  "cs": "Délka dopravníku {0} mm",
+  "en": "Conveyor length {0} mm",
+  "it": "Lunghezza del trasportatore {0} mm",
+  "h": "5639101a31"
+ },
+ {
+  "id": "ui:50e4cb145604:text",
+  "typ": "text",
+  "cs": "Délka pracovní desky (mm)",
+  "en": "Worktop length (mm)",
+  "it": "Lunghezza del piano di lavoro (mm)",
+  "h": "50e4cb1456"
+ },
+ {
+  "id": "ui:feba1b056fe2:hlaska",
+  "typ": "text",
+  "cs": "Délka tyče (mm)",
+  "en": "Bar length (mm)",
+  "it": "Lunghezza barra (mm)",
+  "h": "feba1b056f"
+ },
+ {
+  "id": "ui:095b3cb6a0fc:hlaska",
+  "typ": "text",
+  "cs": "Délka válečku (mm)",
+  "en": "Roller length (mm)",
+  "it": "Lunghezza del rullo (mm)",
+  "h": "095b3cb6a0"
+ },
+ {
+  "id": "ui:c7842ef369bc:hlaska",
+  "typ": "text",
+  "cs": "Délka válečku {0} mm",
+  "en": "Roller length {0} mm",
+  "it": "Lunghezza del rullo {0} mm",
+  "h": "c7842ef369"
+ },
+ {
+  "id": "ui:049f8310c311:hlaska",
+  "typ": "text",
+  "cs": "Délka: od nejdelší",
+  "en": "Length: longest first",
+  "it": "Lunghezza: dalla più lunga",
+  "h": "049f8310c3"
+ },
+ {
+  "id": "ui:56d44b99cc67:hlaska",
+  "typ": "text",
+  "cs": "Délka: od nejkratší",
+  "en": "Length: shortest first",
+  "it": "Lunghezza: dalla più corta",
+  "h": "56d44b99cc"
+ },
+ {
+  "id": "ui:54fd7e2678eb:nadpis",
+  "typ": "text",
+  "cs": "Děkujeme za poptávku",
+  "en": "Thank you for your enquiry",
+  "it": "Grazie per la richiesta",
+  "h": "54fd7e2678"
+ },
+ {
+  "id": "ui:3a724250dd2b:hlaska",
+  "typ": "text",
+  "cs": "Děkujeme, dotaz jsme přijali. Ozveme se vám na uvedený e-mail.",
+  "en": "Thank you, we have received your enquiry. We will reply to the email address you provided.",
+  "it": "Grazie, abbiamo ricevuto la richiesta. Risponderemo all'indirizzo e-mail indicato.",
+  "h": "3a724250dd"
+ },
+ {
+  "id": "ui:dbd82102661c:hlaska",
+  "typ": "text",
+  "cs": "Děkujeme, ozveme se.",
+  "en": "Thank you, we will be in touch.",
+  "it": "Grazie, ci metteremo in contatto.",
+  "h": "dbd8210266"
+ },
+ {
+  "id": "ui:86ebe8b567de:hlaska",
+  "typ": "text",
+  "cs": "Dělící příčky na kartony",
+  "en": "Dividers for cartons",
+  "it": "Divisori per cartoni",
+  "h": "86ebe8b567"
+ },
+ {
+  "id": "ui:e2eb511ca9e9:hlaska",
+  "typ": "text",
+  "cs": "Dělící příčky pod stolem",
+  "en": "Dividers under the table",
+  "it": "Divisori sotto il tavolo",
+  "h": "e2eb511ca9"
+ },
+ {
+  "id": "ui:0d01e2e86669:text",
+  "typ": "text",
+  "cs": "E-mail",
+  "en": "Email",
+  "it": "E-mail",
+  "h": "0d01e2e866"
+ },
+ {
+  "id": "ui:eface70c9a8f:placeholder",
+  "typ": "text",
+  "cs": "E-mail (ať se vám můžeme ozvat)",
+  "en": "Email (so that we can get back to you)",
+  "it": "E-mail (per poterLa ricontattare)",
+  "h": "eface70c9a"
+ },
+ {
+  "id": "ui:a3fb038d23d1:nadpis",
+  "typ": "text",
+  "cs": "E-mail *",
+  "en": "Email *",
+  "it": "E-mail *",
+  "h": "a3fb038d23"
+ },
+ {
+  "id": "ui:313f5553fc8b:hlaska",
+  "typ": "text",
+  "cs": "E-mail potvrzen, účet je aktivní. Jsi přihlášen/a.",
+  "en": "Email confirmed, your account is active. You are logged in.",
+  "it": "E-mail confermata, account attivo. Accesso effettuato.",
+  "h": "313f5553fc"
+ },
+ {
+  "id": "ui:80136fd1cb4e:alt",
+  "typ": "text",
+  "cs": "e-mailová adresa (obrázek kvůli ochraně před spam roboty, opište ručně)",
+  "en": "email address (image to protect against spam bots – please copy it manually)",
+  "it": "indirizzo e-mail (immagine a protezione dagli spam bot: trascriverlo manualmente)",
+  "h": "80136fd1cb"
+ },
+ {
+  "id": "ui:ee741822b76e:text",
+  "typ": "text",
+  "cs": "Efekty se při najetí myší střídají (pruh / sken).",
+  "en": "Effects alternate on mouse hover (stripe / scan).",
+  "it": "Gli effetti si alternano al passaggio del mouse (banda / scansione).",
+  "h": "ee741822b7"
+ },
+ {
+  "id": "ui:d6a8ea60253a:hlaska",
+  "typ": "text",
+  "cs": "Elektricky nastavitelná výška stolu",
+  "en": "Electrically height-adjustable table",
+  "it": "Tavolo con altezza regolabile elettricamente",
+  "h": "d6a8ea6025"
+ },
+ {
+  "id": "ui:1eabd87307d6:placeholder",
+  "typ": "text",
+  "cs": "email@example.cz",
+  "en": "email@example.com",
+  "it": "email@example.com",
+  "h": "1eabd87307"
+ },
+ {
+  "id": "ui:7965d097ef8d:hlaska",
+  "typ": "text",
+  "cs": "Ergonomické police",
+  "en": "Ergonomic shelves",
+  "it": "Ripiani ergonomici",
+  "h": "7965d097ef"
+ },
+ {
+  "id": "ui:5dbd1d8d5df4:hlaska",
+  "typ": "text",
+  "cs": "Expedovaná",
+  "en": "Dispatched",
+  "it": "Spedito",
+  "h": "5dbd1d8d5d"
+ },
+ {
+  "id": "ui:1729e89ab611:nadpis",
+  "typ": "text",
+  "cs": "Fakturační adresa",
+  "en": "Billing address",
+  "it": "Indirizzo di fatturazione",
+  "h": "1729e89ab6"
+ },
+ {
+  "id": "ui:65529d6e3c35:hlaska",
+  "typ": "text",
+  "cs": "Fakturovaná",
+  "en": "Invoiced",
+  "it": "Fatturato",
+  "h": "65529d6e3c"
+ },
+ {
+  "id": "ui:439145df6937:text",
+  "typ": "text",
+  "cs": "Firma",
+  "en": "Company",
+  "it": "Azienda",
+  "h": "439145df69"
+ },
+ {
+  "id": "ui:2a4978c8ab82:text",
+  "typ": "text",
+  "cs": "Firma / živnostník",
+  "en": "Company / sole trader",
+  "it": "Azienda / ditta individuale",
+  "h": "2a4978c8ab"
+ },
+ {
+  "id": "ui:00ea8b1e916e:tlacitko",
+  "typ": "text",
+  "cs": "Fotky",
+  "en": "Photos",
+  "it": "Foto",
+  "h": "00ea8b1e91"
+ },
+ {
+  "id": "ui:b0979cb16097:nadpis",
+  "typ": "text",
+  "cs": "Foto realizací",
+  "en": "Project photos",
+  "it": "Foto delle realizzazioni",
+  "h": "b0979cb160"
+ },
+ {
+  "id": "ui:3ff01b75854b:meta",
+  "typ": "text",
+  "cs": "Foto realizací – vestavby a pracovní stoly na míru | Logiman",
+  "en": "Project photos – fit-outs and custom workbenches | Logiman",
+  "it": "Foto progetti – allestimenti e banchi su misura | Logiman",
+  "h": "3ff01b7585"
+ },
+ {
+  "id": "ui:89249991940b:meta",
+  "typ": "text",
+  "cs": "Fotogalerie realizovaných zakázek: hliníkové vestavby do dodávek, regály a výsuvy do aut, ergonomické pracovní a balicí stoly na míru.",
+  "en": "Photo gallery of completed projects: aluminium van fit-outs, shelving and pull-outs for vehicles, ergonomic custom workbenches and packing tables.",
+  "it": "Galleria di realizzazioni: allestimenti in alluminio per furgoni, scaffali ed estraibili per auto, banchi da lavoro e da imballaggio ergonomici su misura.",
+  "h": "8924999194"
+ },
+ {
+  "id": "ui:cc67a5c2d791:hlaska",
+  "typ": "text",
+  "cs": "Fotogalerii se nepodařilo načíst.",
+  "en": "The photo gallery could not be loaded.",
+  "it": "Impossibile caricare la galleria fotografica.",
+  "h": "cc67a5c2d7"
+ },
+ {
+  "id": "ui:f7d1e377fdc1:hlaska",
+  "typ": "text",
+  "cs": "Fotografie realizace",
+  "en": "Project photo",
+  "it": "Fotografia di una realizzazione",
+  "h": "f7d1e377fd"
+ },
+ {
+  "id": "ui:6d7d2aa52d5c:hlaska",
+  "typ": "text",
+  "cs": "Fotografie tohoto provedení se připravuje",
+  "en": "Photos of this version are being prepared",
+  "it": "Le fotografie di questa versione sono in preparazione",
+  "h": "6d7d2aa52d"
+ },
+ {
+  "id": "ui:d7f181af6693:text",
+  "typ": "text",
+  "cs": "Galerie je prázdná.",
+  "en": "The gallery is empty.",
+  "it": "La galleria è vuota.",
+  "h": "d7f181af66"
+ },
+ {
+  "id": "ui:02175bb81eb0:title",
+  "typ": "text",
+  "cs": "Generátor stolu – systém {n}",
+  "en": "Table generator – system {n}",
+  "it": "Generatore di tavoli – sistema {n}",
+  "h": "02175bb81e"
+ },
+ {
+  "id": "ui:7b00a9e1526f:hlaska",
+  "typ": "text",
+  "cs": "Hesla se neshodují.",
+  "en": "The passwords do not match.",
+  "it": "Le password non coincidono.",
+  "h": "7b00a9e152"
+ },
+ {
+  "id": "ui:894f36e5fe63:text",
+  "typ": "text",
+  "cs": "Heslo",
+  "en": "Password",
+  "it": "Password",
+  "h": "894f36e5fe"
+ },
+ {
+  "id": "ui:bdbf12800510:hlaska",
+  "typ": "text",
+  "cs": "Heslo bylo nastaveno. Přesměrovávám na přihlášení…",
+  "en": "The password has been set. Redirecting to the login page…",
+  "it": "La password è stata impostata. Reindirizzamento alla pagina di accesso…",
+  "h": "bdbf128005"
+ },
+ {
+  "id": "ui:d64ed7464855:title",
+  "typ": "text",
+  "cs": "Hledat",
+  "en": "Search",
+  "it": "Ricerca",
+  "h": "d64ed74648"
+ },
+ {
+  "id": "ui:431a5e624a34:aria",
+  "typ": "text",
+  "cs": "Hledat produkty a kategorie",
+  "en": "Search products and categories",
+  "it": "Cerca prodotti e categorie",
+  "h": "431a5e624a"
+ },
+ {
+  "id": "ui:34c192bdafc2:placeholder",
+  "typ": "text",
+  "cs": "Hledat produkty, kategorie…",
+  "en": "Search products, categories…",
+  "it": "Ricerca di prodotti, categorie…",
+  "h": "34c192bdaf"
+ },
+ {
+  "id": "ui:11cc9c09334f:text",
+  "typ": "text",
+  "cs": "Hledám…",
+  "en": "Searching…",
+  "it": "Ricerca in corso…",
+  "h": "11cc9c0933"
+ },
+ {
+  "id": "ui:d2cd02eec1ab:hlaska",
+  "typ": "text",
+  "cs": "Hliník hladký",
+  "en": "Smooth aluminium",
+  "it": "In alluminio liscio",
+  "h": "d2cd02eec1"
+ },
+ {
+  "id": "ui:796ed6993d75:hlaska",
+  "typ": "text",
+  "cs": "Hliník vroubkovaný",
+  "en": "Knurled aluminium",
+  "it": "Alluminio zigrinato",
+  "h": "796ed6993d"
+ },
+ {
+  "id": "ui:b6d7822059b2:hlaska",
+  "typ": "text",
+  "cs": "Hliníkový",
+  "en": "Aluminium",
+  "it": "In alluminio",
+  "h": "b6d7822059"
+ },
+ {
+  "id": "ui:9d56837de796:nadpis",
+  "typ": "text",
+  "cs": "Hliníkový konstrukční stavebnicový systém s drážkami",
+  "en": "Modular aluminium construction system with slots",
+  "it": "Sistema costruttivo modulare in alluminio con scanalature",
+  "h": "9d56837de7"
+ },
+ {
+  "id": "ui:8f8466a689c9:hlaska",
+  "typ": "text",
+  "cs": "Hliníkový vroubkovaný",
+  "en": "Knurled aluminium",
+  "it": "In alluminio zigrinato",
+  "h": "8f8466a689"
+ },
+ {
+  "id": "ui:80d53a5eccec:hlaska",
+  "typ": "text",
+  "cs": "Hmotnost (g)",
+  "en": "Weight (g)",
+  "it": "Peso (g)",
+  "h": "80d53a5ecc"
+ },
+ {
+  "id": "ui:353bb76d3c4f:hlaska",
+  "typ": "text",
+  "cs": "Horní blok",
+  "en": "Upper block",
+  "it": "Blocco superiore",
+  "h": "353bb76d3c"
+ },
+ {
+  "id": "ui:950a39b6c293:text",
+  "typ": "text",
+  "cs": "html",
+  "en": "html",
+  "it": "html",
+  "h": "950a39b6c2"
+ },
+ {
+  "id": "ui:7bbb14c7d2fa:hlaska",
+  "typ": "text",
+  "cs": "Husinecká {n}/{n}",
+  "en": "Husinecká {n}/{n}",
+  "it": "Husinecká {n}/{n}",
+  "h": "7bbb14c7d2"
+ },
+ {
+  "id": "ui:40db2b893ccc:text",
+  "typ": "text",
+  "cs": "Husinecká {n}/{n}, {n} Praha, Česká republika",
+  "en": "Husinecká {n}/{n}, {n} Prague, Czech Republic",
+  "it": "Husinecká {n}/{n}, {n} Praga, Repubblica Ceca",
+  "h": "40db2b893c"
+ },
+ {
+  "id": "ui:457c28160cb0:hlaska",
+  "typ": "text",
+  "cs": "Háky na pytle",
+  "en": "Sack hooks",
+  "it": "Ganci per sacchi",
+  "h": "457c28160c"
+ },
+ {
+  "id": "ui:fae777d93ac9:text",
+  "typ": "text",
+  "cs": "Ilustrace, jak se spojky a příslušenství v praxi montují na profil.",
+  "en": "Illustration of how connectors and accessories are fitted to the profile in practice.",
+  "it": "Illustrazione di come giunti e accessori vengono montati sul profilo nella pratica.",
+  "h": "fae777d93a"
+ },
+ {
+  "id": "ui:6571326ff6fc:hlaska",
+  "typ": "text",
+  "cs": "Informace o vás",
+  "en": "Your details",
+  "it": "I Suoi dati",
+  "h": "6571326ff6"
+ },
+ {
+  "id": "ui:fddadf3161b0:nadpis",
+  "typ": "text",
+  "cs": "IČO",
+  "en": "Company ID",
+  "it": "N. identificativo impresa",
+  "h": "fddadf3161"
+ },
+ {
+  "id": "ui:4c279e8d5a3e:text",
+  "typ": "text",
+  "cs": "Jméno",
+  "en": "Name",
+  "it": "Nome",
+  "h": "4c279e8d5a"
+ },
+ {
+  "id": "ui:e9ca5f948860:placeholder",
+  "typ": "text",
+  "cs": "Jméno (nepovinné)",
+  "en": "Name (optional)",
+  "it": "Nome (facoltativo)",
+  "h": "e9ca5f9488"
+ },
+ {
+  "id": "ui:182eb77f9576:hlaska",
+  "typ": "text",
+  "cs": "Jméno a e-mail jsou povinné.",
+  "en": "Name and email address are required.",
+  "it": "Nome ed e-mail sono obbligatori.",
+  "h": "182eb77f95"
+ },
+ {
+  "id": "ui:42ad96bfa717:placeholder",
+  "typ": "text",
+  "cs": "Jméno a příjmení",
+  "en": "First name and surname",
+  "it": "Nome e cognome",
+  "h": "42ad96bfa7"
+ },
+ {
+  "id": "ui:ba752ba48b97:nadpis",
+  "typ": "text",
+  "cs": "Jméno a příjmení *",
+  "en": "First and last name *",
+  "it": "Nome e cognome *",
+  "h": "ba752ba48b"
+ },
+ {
+  "id": "ui:9770b787cfaf:text",
+  "typ": "text",
+  "cs": "K uhrazení naskenujte QR kód bankovní aplikací:",
+  "en": "To pay, scan the QR code with your banking app:",
+  "it": "Per pagare, scansionare il codice QR con l'app della propria banca:",
+  "h": "9770b787cf"
+ },
+ {
+  "id": "ui:358210386a4f:nadpis",
+  "typ": "text",
+  "cs": "Kategorie",
+  "en": "Categories",
+  "it": "Categorie",
+  "h": "358210386a"
+ },
+ {
+  "id": "ui:58d395d7f147:hlaska",
+  "typ": "text",
+  "cs": "Kategorie nenalezena",
+  "en": "Category not found",
+  "it": "Categoria non trovata",
+  "h": "58d395d7f1"
+ },
+ {
+  "id": "ui:895a3d7758bb:meta",
+  "typ": "text",
+  "cs": "Kategorie – Hliníkový konstrukční stavebnicový systém s drážkami",
+  "en": "Category – Modular aluminium construction system",
+  "it": "Categoria – Sistema costruttivo modulare in alluminio",
+  "h": "895a3d7758"
+ },
+ {
+  "id": "ui:fc37a335c571:title",
+  "typ": "text",
+  "cs": "Kliknutím zvětšíte",
+  "en": "Click to enlarge",
+  "it": "Cliccare per ingrandire",
+  "h": "fc37a335c5"
+ },
+ {
+  "id": "ui:637c75fe3717:hlaska",
+  "typ": "text",
+  "cs": "Kolečka",
+  "en": "Castors",
+  "it": "Ruote",
+  "h": "637c75fe37"
+ },
+ {
+  "id": "ui:298b453e08b9:text",
+  "typ": "text",
+  "cs": "Kolik je ? + ??",
+  "en": "What is ? + ??",
+  "it": "Quanto fa ? + ??",
+  "h": "298b453e08"
+ },
+ {
+  "id": "ui:631d66dba1c4:hlaska",
+  "typ": "text",
+  "cs": "Kolik je {0} + {1}?",
+  "en": "What is {0} + {1}?",
+  "it": "Quanto fa {0} + {1}?",
+  "h": "631d66dba1"
+ },
+ {
+  "id": "ui:c380a02d02f4:aria",
+  "typ": "text",
+  "cs": "Kompatibilita ověřena pouze s boxy výrobce Auer a TBA.",
+  "en": "Compatibility verified only with boxes from the manufacturers Auer and TBA.",
+  "it": "Compatibilità verificata solo con i box dei produttori Auer e TBA.",
+  "h": "c380a02d02"
+ },
+ {
+  "id": "ui:43f262f8e544:text",
+  "typ": "text",
+  "cs": "Konfigurace už neodpovídá aktuálním pravidlům. Odeberte položku a nakonfigurujte stůl znovu v generátoru.",
+  "en": "The configuration no longer meets the current rules. Remove the item and configure the table again in the generator.",
+  "it": "La configurazione non è più conforme alle regole attuali. Rimuovere l'articolo e configurare di nuovo il tavolo nel generatore.",
+  "h": "43f262f8e5"
+ },
+ {
+  "id": "ui:a92b9bcb1665:nadpis",
+  "typ": "text",
+  "cs": "Kontakt",
+  "en": "Contact",
+  "it": "Contatti",
+  "h": "a92b9bcb16"
+ },
+ {
+  "id": "ui:dd5f4b045461:meta",
+  "typ": "text",
+  "cs": "Kontakt | Logiman",
+  "en": "Contact | Logiman",
+  "it": "Contatti | Logiman",
+  "h": "dd5f4b0454"
+ },
+ {
+  "id": "ui:79ce0b6e1a8e:meta",
+  "typ": "text",
+  "cs": "Kontakt – Hliníkový konstrukční stavebnicový systém s drážkami",
+  "en": "Contact – Modular aluminium construction system",
+  "it": "Contatti – Sistema costruttivo modulare in alluminio",
+  "h": "79ce0b6e1a"
+ },
+ {
+  "id": "ui:888c900e460b:nadpis",
+  "typ": "text",
+  "cs": "Kontaktní údaje",
+  "en": "Contact details",
+  "it": "Dati di contatto",
+  "h": "888c900e46"
+ },
+ {
+  "id": "ui:d11fe9043ee8:meta",
+  "typ": "text",
+  "cs": "Kontaktní údaje LOGIMAN s.r.o. – Husinecká {n}/{n}, Praha. IČO {n}, telefon +{n}.",
+  "en": "Contact details of LOGIMAN s.r.o. – Husinecká {n}/{n}, Prague. Company ID {n}, phone +{n}.",
+  "it": "Dati di contatto di LOGIMAN s.r.o. – Husinecká {n}/{n}, Praga. N. identificativo impresa {n}, telefono +{n}.",
+  "h": "d11fe9043e"
+ },
+ {
+  "id": "ui:5a306ee2f937:hlaska",
+  "typ": "text",
+  "cs": "Kontrolní příklad se nepodařilo načíst.",
+  "en": "The verification question could not be loaded.",
+  "it": "Impossibile caricare la domanda di verifica.",
+  "h": "5a306ee2f9"
+ },
+ {
+  "id": "ui:263a0854c312:hlaska",
+  "typ": "text",
+  "cs": "Kopírovat odkaz",
+  "en": "Copy link",
+  "it": "Copiare il link",
+  "h": "263a0854c3"
+ },
+ {
+  "id": "ui:c13f5a7ea2dd:nadpis",
+  "typ": "text",
+  "cs": "Kotvení",
+  "en": "Anchoring",
+  "it": "Ancoraggio",
+  "h": "c13f5a7ea2"
+ },
+ {
+  "id": "ui:f9cb1a027a5a:nadpis",
+  "typ": "text",
+  "cs": "Košík",
+  "en": "Basket",
+  "it": "Carrello",
+  "h": "f9cb1a027a"
+ },
+ {
+  "id": "ui:c3407310e14e:hlaska",
+  "typ": "text",
+  "cs": "Košík je dočasně nedostupný.",
+  "en": "The basket is temporarily unavailable.",
+  "it": "Il carrello è temporaneamente non disponibile.",
+  "h": "c3407310e1"
+ },
+ {
+  "id": "ui:2ab7c5ec7bff:text",
+  "typ": "text",
+  "cs": "Košík je prázdný.",
+  "en": "Your basket is empty.",
+  "it": "Il carrello è vuoto.",
+  "h": "2ab7c5ec7b"
+ },
+ {
+  "id": "ui:f4c09364677a:hlaska",
+  "typ": "text",
+  "cs": "Kreslicí nástroj se ještě načítá, zkuste to prosím za chvíli.",
+  "en": "The drawing tool is still loading; please try again in a moment.",
+  "it": "Lo strumento di disegno è ancora in caricamento. Riprovare tra qualche istante.",
+  "h": "f4c0936467"
+ },
+ {
+  "id": "ui:bd1b8567951c:hlaska",
+  "typ": "text",
+  "cs": "Kroužek",
+  "en": "Circle",
+  "it": "Cerchio",
+  "h": "bd1b856795"
+ },
+ {
+  "id": "ui:10133f797b03:placeholder",
+  "typ": "text",
+  "cs": "ks",
+  "en": "pcs",
+  "it": "pz",
+  "h": "10133f797b"
+ },
+ {
+  "id": "ui:1363c20e8e3f:nadpis",
+  "typ": "text",
+  "cs": "Ks",
+  "en": "Pcs",
+  "it": "Pz",
+  "h": "1363c20e8e"
+ },
+ {
+  "id": "ui:4712357c97f4:hlaska",
+  "typ": "text",
+  "cs": "kt-num kt-cena",
+  "en": "kt-num kt-cena",
+  "it": "kt-num kt-cena",
+  "h": "4712357c97"
+ },
+ {
+  "id": "ui:ebf2934e106e:hlaska",
+  "typ": "text",
+  "cs": "kt-num kt-cena-vat",
+  "en": "kt-num kt-cena-vat",
+  "it": "kt-num kt-cena-vat",
+  "h": "ebf2934e10"
+ },
+ {
+  "id": "ui:9bad19c9089e:hlaska",
+  "typ": "text",
+  "cs": "kurz nedostupný",
+  "en": "exchange rate unavailable",
+  "it": "cambio non disponibile",
+  "h": "9bad19c908"
+ },
+ {
+  "id": "ui:0906618d42cd:hlaska",
+  "typ": "text",
+  "cs": "kurz nedostupný (chyba spojení)",
+  "en": "exchange rate unavailable (connection error)",
+  "it": "cambio non disponibile (errore di connessione)",
+  "h": "0906618d42"
+ },
+ {
+  "id": "ui:8ab97f04e8ea:text",
+  "typ": "text",
+  "cs": "Kód konfigurace: {0}",
+  "en": "Configuration code: {0}",
+  "it": "Codice di configurazione: {0}",
+  "h": "8ab97f04e8"
+ },
+ {
+  "id": "ui:74166473e67c:hlaska",
+  "typ": "text",
+  "cs": "Kód produktu",
+  "en": "Product code",
+  "it": "Codice prodotto",
+  "h": "74166473e6"
+ },
+ {
+  "id": "ui:16de4a99e749:hlaska",
+  "typ": "text",
+  "cs": "Kód se nepodařilo ověřit.",
+  "en": "The code could not be verified.",
+  "it": "Impossibile verificare il codice.",
+  "h": "16de4a99e7"
+ },
+ {
+  "id": "ui:7126a89082cf:hlaska",
+  "typ": "text",
+  "cs": "Kód uplatněn ✓",
+  "en": "Code applied ✓",
+  "it": "Codice applicato ✓",
+  "h": "7126a89082"
+ },
+ {
+  "id": "ui:ef2f19488d0f:hlaska",
+  "typ": "text",
+  "cs": "Kč",
+  "en": "EUR",
+  "it": "EUR",
+  "h": "ef2f19488d"
+ },
+ {
+  "id": "ui:f66186578247:hlaska",
+  "typ": "text",
+  "cs": "Laminovaná dřevotříska síly {n} / 25mm",
+  "en": "Laminated chipboard, thickness {n} / 25mm",
+  "it": "Truciolare laminato, spessore {n} / 25mm",
+  "h": "f661865782"
+ },
+ {
+  "id": "ui:b3d592042651:hlaska",
+  "typ": "text",
+  "cs": "Levá",
+  "en": "Left",
+  "it": "Sinistra",
+  "h": "b3d5920426"
+ },
+ {
+  "id": "ui:abf1d6f91751:odkaz",
+  "typ": "text",
+  "cs": "LOGi",
+  "en": "LOGi",
+  "it": "LOGi",
+  "h": "abf1d6f917"
+ },
+ {
+  "id": "ui:ef4c62a19da0:aria",
+  "typ": "text",
+  "cs": "Logiman",
+  "en": "Logiman",
+  "it": "Logiman",
+  "h": "ef4c62a19d"
+ },
+ {
+  "id": "ui:605e6a37eab0:text",
+  "typ": "text",
+  "cs": "LOGIMAN s.r.o.",
+  "en": "LOGIMAN s.r.o.",
+  "it": "LOGIMAN s.r.o.",
+  "h": "605e6a37ea"
+ },
+ {
+  "id": "ui:2377901559d8:text",
+  "typ": "html",
+  "cs": "LOGIMAN s.r.o. · Praha · IČO {n} · <1>+{n}</1> · <2>Kontakt</2>",
+  "en": "LOGIMAN s.r.o. · Prague · Company ID {n} · <1>+{n}</1> · <2>Contact</2>",
+  "it": "LOGIMAN s.r.o. · Praga · ID azienda {n} · <1>+{n}</1> · <2>Contatti</2>",
+  "h": "2377901559"
+ },
+ {
+  "id": "ui:56ceb1686268:odkaz",
+  "typ": "text",
+  "cs": "MAN",
+  "en": "MAN",
+  "it": "MAN",
+  "h": "56ceb16862"
+ },
+ {
+  "id": "ui:6806d49386f0:hlaska",
+  "typ": "text",
+  "cs": "Materiál",
+  "en": "Material",
+  "it": "Materiale",
+  "h": "6806d49386"
+ },
+ {
+  "id": "ui:c2d6d66afe39:hlaska",
+  "typ": "text",
+  "cs": "Max. {0} pohledů dosaženo",
+  "en": "Maximum of {0} views reached",
+  "it": "Raggiunto il massimo di {0} viste",
+  "h": "c2d6d66afe"
+ },
+ {
+  "id": "ui:4ee09eb8d49c:text",
+  "typ": "text",
+  "cs": "Max. {n} MB.",
+  "en": "Max. {n} MB.",
+  "it": "Max. {n} MB.",
+  "h": "4ee09eb8d4"
+ },
+ {
+  "id": "ui:5e0140612543:aria",
+  "typ": "text",
+  "cs": "Menu kategorií",
+  "en": "Category menu",
+  "it": "Menu delle categorie",
+  "h": "5e01406125"
+ },
+ {
+  "id": "ui:7922d323d7eb:text",
+  "typ": "text",
+  "cs": "mm ×",
+  "en": "mm ×",
+  "it": "mm ×",
+  "h": "7922d323d7"
+ },
+ {
+  "id": "ui:6c0c4b331417:nadpis",
+  "typ": "text",
+  "cs": "Množství",
+  "en": "Quantity",
+  "it": "Quantità",
+  "h": "6c0c4b3314"
+ },
+ {
+  "id": "ui:5f9f5c7f6411:hlaska",
+  "typ": "text",
+  "cs": "modrá",
+  "en": "blue",
+  "it": "blu",
+  "h": "5f9f5c7f64"
+ },
+ {
+  "id": "ui:cb8afe8bedd7:nadpis",
+  "typ": "text",
+  "cs": "Moje objednávky",
+  "en": "My orders",
+  "it": "I miei ordini",
+  "h": "cb8afe8bed"
+ },
+ {
+  "id": "ui:8f6c3d8156b4:meta",
+  "typ": "text",
+  "cs": "Moje objednávky – Hliníkový konstrukční stavebnicový systém s drážkami",
+  "en": "My orders – Modular aluminium construction system",
+  "it": "I miei ordini – Sistema costruttivo modulare in alluminio",
+  "h": "8f6c3d8156"
+ },
+ {
+  "id": "ui:5e2998f387da:hlaska",
+  "typ": "text",
+  "cs": "Moment setrvačnosti Ix",
+  "en": "Moment of inertia Ix",
+  "it": "Momento d'inerzia Ix",
+  "h": "5e2998f387"
+ },
+ {
+  "id": "ui:956152f9f9d0:hlaska",
+  "typ": "text",
+  "cs": "Moment setrvačnosti Iy",
+  "en": "Moment of inertia Iy",
+  "it": "Momento d'inerzia Iy",
+  "h": "956152f9f9"
+ },
+ {
+  "id": "ui:9038a204b769:nadpis",
+  "typ": "text",
+  "cs": "Montáž",
+  "en": "Installation",
+  "it": "Installazione",
+  "h": "9038a204b7"
+ },
+ {
+  "id": "ui:de24c898a21e:hlaska",
+  "typ": "text",
+  "cs": "Montáž (+{0} Kč)",
+  "en": "Installation (+{0} EUR)",
+  "it": "Installazione (+{0} EUR)",
+  "h": "de24c898a2"
+ },
+ {
+  "id": "ui:4b065d03978c:hlaska",
+  "typ": "text",
+  "cs": "montér",
+  "en": "installer",
+  "it": "installatore",
+  "h": "4b065d0397"
+ },
+ {
+  "id": "ui:22a276a92e67:nadpis",
+  "typ": "text",
+  "cs": "Máte dotaz k této kategorii?",
+  "en": "Have a question about this category?",
+  "it": "Ha una domanda su questa categoria?",
+  "h": "22a276a92e"
+ },
+ {
+  "id": "ui:06e718955a55:aria",
+  "typ": "text",
+  "cs": "Místo montáže",
+  "en": "Installation location",
+  "it": "Luogo di installazione",
+  "h": "06e718955a"
+ },
+ {
+  "id": "ui:264c0538eacc:text",
+  "typ": "html",
+  "cs": "Měrná cena: <1>{0} Kč</1> {1} Kč / {n} m (−{2} %) (bez DPH)",
+  "en": "Unit price: <1>{0} EUR</1> {1} EUR / {n} m (−{2} %) (excl. VAT)",
+  "it": "Prezzo unitario: <1>{0} EUR</1> {1} EUR / {n} m (−{2} %) (IVA esclusa)",
+  "h": "264c0538ea"
+ },
+ {
+  "id": "ui:7c2524a0775b:hlaska",
+  "typ": "text",
+  "cs": "Měrná cena: {0} Kč / {n} m (bez DPH)",
+  "en": "Price per metre: {0} EUR / {n} m (excl. VAT)",
+  "it": "Prezzo al metro: {0} EUR / {n} m (IVA esclusa)",
+  "h": "7c2524a077"
+ },
+ {
+  "id": "ui:eccfe515d786:hlaska",
+  "typ": "text",
+  "cs": "Můžete zakreslit maximálně {0} pohledů.",
+  "en": "You can mark up a maximum of {0} views.",
+  "it": "È possibile disegnare al massimo {0} viste.",
+  "h": "eccfe515d7"
+ },
+ {
+  "id": "ui:ff6ae17319b3:hlaska",
+  "typ": "text",
+  "cs": "na dotaz",
+  "en": "on request",
+  "it": "su richiesta",
+  "h": "ff6ae17319"
+ },
+ {
+  "id": "ui:6ede9b47a4a2:text",
+  "typ": "text",
+  "cs": "na skladu ({0} {1})",
+  "en": "in stock ({0} {1})",
+  "it": "disponibile a magazzino ({0} {1})",
+  "h": "6ede9b47a4"
+ },
+ {
+  "id": "ui:88a38dfc6930:text",
+  "typ": "text",
+  "cs": "na zakázku",
+  "en": "made to order",
+  "it": "su ordinazione",
+  "h": "88a38dfc69"
+ },
+ {
+  "id": "ui:3bb9f44edc59:hlaska",
+  "typ": "text",
+  "cs": "Nabídka {0} vytvořena.",
+  "en": "Quotation {0} created.",
+  "it": "Preventivo {0} creato.",
+  "h": "3bb9f44edc"
+ },
+ {
+  "id": "ui:feeee6c2b0f0:hlaska",
+  "typ": "text",
+  "cs": "Nabídku se nepodařilo vytvořit (HTTP {0}).",
+  "en": "The quotation could not be created (HTTP {0}).",
+  "it": "Impossibile creare il preventivo (HTTP {0}).",
+  "h": "feeee6c2b0"
+ },
+ {
+  "id": "ui:f97604c1d377:text",
+  "typ": "text",
+  "cs": "Nahrát soubor (náčrt, foto prostoru...)",
+  "en": "Upload a file (sketch, photo of the space...)",
+  "it": "Caricare un file (schizzo, foto dello spazio...)",
+  "h": "f97604c1d3"
+ },
+ {
+  "id": "ui:9fabdd27ae20:hlaska",
+  "typ": "text",
+  "cs": "Nalezeno {0} z {1} variant",
+  "en": "Found {0} of {1} variants",
+  "it": "Trovate {0} varianti su {1}",
+  "h": "9fabdd27ae"
+ },
+ {
+  "id": "ui:ba571c5d3025:odkaz",
+  "typ": "text",
+  "cs": "Napište nám pro cenu",
+  "en": "Write to us for a price",
+  "it": "Ci scriva per conoscere il prezzo",
+  "h": "ba571c5d30"
+ },
+ {
+  "id": "ui:1ad478770f0f:text",
+  "typ": "text",
+  "cs": "Napište nám, ozveme se vám na uvedený e-mail.",
+  "en": "Write to us and we will reply to the email address you provided.",
+  "it": "Ci scriva: Le risponderemo all'indirizzo e-mail indicato.",
+  "h": "1ad478770f"
+ },
+ {
+  "id": "ui:290f0ad2c02d:text",
+  "typ": "text",
+  "cs": "Napište nám, poradíme s výběrem realizace na míru.",
+  "en": "Write to us and we will help you choose a made-to-measure solution.",
+  "it": "Ci scriva: La aiuteremo a scegliere una soluzione su misura.",
+  "h": "290f0ad2c0"
+ },
+ {
+  "id": "ui:32ebc9f6d3dd:placeholder",
+  "typ": "text",
+  "cs": "napište zprávu…",
+  "en": "write a message…",
+  "it": "scrivere un messaggio…",
+  "h": "32ebc9f6d3"
+ },
+ {
+  "id": "ui:78f9ef4923d6:placeholder",
+  "typ": "text",
+  "cs": "např. CZ12345678",
+  "en": "e.g. CZ12345678",
+  "it": "ad es. CZ12345678",
+  "h": "78f9ef4923"
+ },
+ {
+  "id": "ui:b0a4b0d52417:text",
+  "typ": "text",
+  "cs": "Naskenujte QR kód bankovní aplikací a rovnou zaplaťte:",
+  "en": "Scan the QR code with your banking app and pay straight away:",
+  "it": "Scansionare il codice QR con l'app della propria banca e pagare subito:",
+  "h": "b0a4b0d524"
+ },
+ {
+  "id": "ui:59fb94471d28:title",
+  "typ": "text",
+  "cs": "Nastavení hover efektů karet",
+  "en": "Card hover effect settings",
+  "it": "Impostazioni degli effetti hover delle schede",
+  "h": "59fb94471d"
+ },
+ {
+  "id": "ui:e517978b0250:tlacitko",
+  "typ": "text",
+  "cs": "Nastavit heslo",
+  "en": "Set password",
+  "it": "Impostare la password",
+  "h": "e517978b02"
+ },
+ {
+  "id": "ui:718599f28791:nadpis",
+  "typ": "text",
+  "cs": "Nastavit nové heslo",
+  "en": "Set a new password",
+  "it": "Impostare una nuova password",
+  "h": "718599f287"
+ },
+ {
+  "id": "ui:66d93ce0028d:meta",
+  "typ": "text",
+  "cs": "Nastavit nové heslo – Hliníkový konstrukční stavebnicový systém s drážkami",
+  "en": "Set new password – Modular aluminium construction system",
+  "it": "Nuova password – Sistema costruttivo modulare in alluminio",
+  "h": "66d93ce002"
+ },
+ {
+  "id": "ui:5a6164659c5c:nadpis",
+  "typ": "text",
+  "cs": "Navrhněte si stůl podle svých rozměrů",
+  "en": "Design a table to your own dimensions",
+  "it": "Progettare il tavolo secondo le proprie misure",
+  "h": "5a6164659c"
+ },
+ {
+  "id": "ui:9ca2606f32ad:hlaska",
+  "typ": "text",
+  "cs": "Načítám příklad…",
+  "en": "Loading question…",
+  "it": "Caricamento della domanda…",
+  "h": "9ca2606f32"
+ },
+ {
+  "id": "ui:fb4acf45b6a6:hlaska",
+  "typ": "text",
+  "cs": "Načítám varianty…",
+  "en": "Loading variants…",
+  "it": "Caricamento delle varianti…",
+  "h": "fb4acf45b6"
+ },
+ {
+  "id": "ui:5ee635c92db9:nadpis",
+  "typ": "text",
+  "cs": "Načítám…",
+  "en": "Loading…",
+  "it": "Caricamento…",
+  "h": "5ee635c92d"
+ },
+ {
+  "id": "ui:2658fb938c99:odkaz",
+  "typ": "text",
+  "cs": "Nemáš účet? Zaregistruj se",
+  "en": "Don't have an account? Register",
+  "it": "Non ha ancora un account? Registrarsi",
+  "h": "2658fb938c"
+ },
+ {
+  "id": "ui:de4e8cc16f0f:text",
+  "typ": "text",
+  "cs": "není dostupné",
+  "en": "not available",
+  "it": "non disponibile",
+  "h": "de4e8cc16f"
+ },
+ {
+  "id": "ui:acc358bf97c9:text",
+  "typ": "text",
+  "cs": "neplatná konfigurace",
+  "en": "invalid configuration",
+  "it": "configurazione non valida",
+  "h": "acc358bf97"
+ },
+ {
+  "id": "ui:4e77a334638d:hlaska",
+  "typ": "text",
+  "cs": "Neplatný nebo neaktivní kód.",
+  "en": "Invalid or inactive code.",
+  "it": "Codice non valido o non attivo.",
+  "h": "4e77a33463"
+ },
+ {
+  "id": "ui:a53e6bf8bb5e:hlaska",
+  "typ": "text",
+  "cs": "Nepodařilo se nastavit heslo.",
+  "en": "The password could not be set.",
+  "it": "Impossibile impostare la password.",
+  "h": "a53e6bf8bb"
+ },
+ {
+  "id": "ui:949cf07ebfad:hlaska",
+  "typ": "text",
+  "cs": "Nepodařilo se načíst detail objednávky.",
+  "en": "The order details could not be loaded.",
+  "it": "Impossibile caricare i dettagli dell'ordine.",
+  "h": "949cf07ebf"
+ },
+ {
+  "id": "ui:d21666c7106a:text",
+  "typ": "text",
+  "cs": "Nepodařilo se načíst objednávky.",
+  "en": "Failed to load orders.",
+  "it": "Impossibile caricare gli ordini.",
+  "h": "d21666c710"
+ },
+ {
+  "id": "ui:3bccc7a5aa36:hlaska",
+  "typ": "text",
+  "cs": "Nepodařilo se načíst snímek otočného náhledu, zkuste to prosím znovu.",
+  "en": "The rotating preview image could not be loaded; please try again.",
+  "it": "Impossibile caricare l'immagine dell'anteprima rotante. Riprovare.",
+  "h": "3bccc7a5aa"
+ },
+ {
+  "id": "ui:ccf20c0b0a17:text",
+  "typ": "text",
+  "cs": "Nepodařilo se načíst.",
+  "en": "Failed to load.",
+  "it": "Impossibile caricare.",
+  "h": "ccf20c0b0a"
+ },
+ {
+  "id": "ui:149594fc235a:hlaska",
+  "typ": "text",
+  "cs": "Nepodařilo se odeslat žádost.",
+  "en": "The request could not be submitted.",
+  "it": "Impossibile inviare la richiesta.",
+  "h": "149594fc23"
+ },
+ {
+  "id": "ui:48c43f7cc5a2:hlaska",
+  "typ": "text",
+  "cs": "Nepodařilo se vytvořit nákupní objednávku.",
+  "en": "The purchase order could not be created.",
+  "it": "Impossibile creare l'ordine di acquisto.",
+  "h": "48c43f7cc5"
+ },
+ {
+  "id": "ui:9624d76aee48:text",
+  "typ": "text",
+  "cs": "Nevíte si rady s rozměry nebo provedením? Poptejte stůl na míru a my vám ho navrhneme.",
+  "en": "Not sure about the dimensions or design? Request a made-to-measure table and we will design it for you.",
+  "it": "Ha dubbi su dimensioni o esecuzione? Richieda un tavolo su misura e lo progetteremo per Lei.",
+  "h": "9624d76aee"
+ },
+ {
+  "id": "ui:732393fb93b3:text",
+  "typ": "text",
+  "cs": "Nic nenalezeno.",
+  "en": "Nothing found.",
+  "it": "Nessun risultato.",
+  "h": "732393fb93"
+ },
+ {
+  "id": "ui:165704aa4475:hlaska",
+  "typ": "text",
+  "cs": "Nová",
+  "en": "New",
+  "it": "Nuovo",
+  "h": "165704aa44"
+ },
+ {
+  "id": "ui:87a296671841:text",
+  "typ": "text",
+  "cs": "Nové heslo (alespoň {n} znaků)",
+  "en": "New password (at least {n} characters)",
+  "it": "Nuova password (almeno {n} caratteri)",
+  "h": "87a2966718"
+ },
+ {
+  "id": "ui:4d0a8b327b33:hlaska",
+  "typ": "text",
+  "cs": "Náhledy se připravují",
+  "en": "Previews are being prepared",
+  "it": "Le anteprime sono in preparazione",
+  "h": "4d0a8b327b"
+ },
+ {
+  "id": "ui:ada0737ab03c:hlaska",
+  "typ": "text",
+  "cs": "náhrada - {0}",
+  "en": "replacement - {0}",
+  "it": "sostituzione - {0}",
+  "h": "ada0737ab0"
+ },
+ {
+  "id": "ui:9cdbf97bcf2a:hlaska",
+  "typ": "text",
+  "cs": "Nákupní košík",
+  "en": "Shopping basket",
+  "it": "Carrello",
+  "h": "9cdbf97bcf"
+ },
+ {
+  "id": "ui:ab2e4197011a:hlaska",
+  "typ": "text",
+  "cs": "Nákupní objednávka {0} vytvořena.",
+  "en": "Purchase order {0} created.",
+  "it": "Ordine di acquisto {0} creato.",
+  "h": "ab2e419701"
+ },
+ {
+  "id": "ui:fabfc4310724:placeholder",
+  "typ": "text",
+  "cs": "Název firmy",
+  "en": "Company name",
+  "it": "Nome dell'azienda",
+  "h": "fabfc43107"
+ },
+ {
+  "id": "ui:4f6811771d2f:nadpis",
+  "typ": "text",
+  "cs": "Název firmy *",
+  "en": "Company name *",
+  "it": "Ragione sociale *",
+  "h": "4f6811771d"
+ },
+ {
+  "id": "ui:fa06997e15b6:hlaska",
+  "typ": "text",
+  "cs": "Objednávka {0}",
+  "en": "Order {0}",
+  "it": "Ordine {0}",
+  "h": "fa06997e15"
+ },
+ {
+  "id": "ui:9f82819f0f78:hlaska",
+  "typ": "text",
+  "cs": "Objednávka {0} byla úspěšně vytvořena. Potvrzení jsme poslali na e-mail.",
+  "en": "Order {0} was created successfully. We have sent a confirmation to your email address.",
+  "it": "L'ordine {0} è stato creato con successo. La conferma è stata inviata via e-mail.",
+  "h": "9f82819f0f"
+ },
+ {
+  "id": "ui:1bd6ffeee131:hlaska",
+  "typ": "text",
+  "cs": "Objednávku se nepodařilo odeslat (chyba spojení).",
+  "en": "The order could not be submitted (connection error).",
+  "it": "Impossibile inviare l'ordine (errore di connessione).",
+  "h": "1bd6ffeee1"
+ },
+ {
+  "id": "ui:a381005e1bba:hlaska",
+  "typ": "text",
+  "cs": "Objednávku se nepodařilo odeslat.",
+  "en": "The order could not be submitted.",
+  "it": "Impossibile inviare l'ordine.",
+  "h": "a381005e1b"
+ },
+ {
+  "id": "ui:391957f0412e:text",
+  "typ": "text",
+  "cs": "Objednávky přes košík jsou dočasně pozastaveny.",
+  "en": "Orders via the basket are temporarily suspended.",
+  "it": "Gli ordini tramite carrello sono temporaneamente sospesi.",
+  "h": "391957f041"
+ },
+ {
+  "id": "ui:06919be20549:hlaska",
+  "typ": "text",
+  "cs": "Obrázky: {0}.",
+  "en": "Images: {0}.",
+  "it": "Immagini: {0}.",
+  "h": "06919be205"
+ },
+ {
+  "id": "ui:b2ee29a1c2d0:text",
+  "typ": "text",
+  "cs": "Obsah košíku se nezaloží jako prodejní objednávka od zákazníka, ale jako nákupní objednávka Logimanu jeho dodavateli - košík se po založení vyprázdní.",
+  "en": "The basket contents will not be created as a sales order from the customer, but as a purchase order from Logiman to its supplier. The basket is emptied once the order has been created.",
+  "it": "Il contenuto del carrello non viene registrato come ordine di vendita del cliente, ma come ordine di acquisto di Logiman al proprio fornitore. Dopo la registrazione il carrello viene svuotato.",
+  "h": "b2ee29a1c2"
+ },
+ {
+  "id": "ui:e39d75ba996b:hlaska",
+  "typ": "text",
+  "cs": "Ocelový",
+  "en": "Steel",
+  "it": "In acciaio",
+  "h": "e39d75ba99"
+ },
+ {
+  "id": "ui:744ed93af119:title",
+  "typ": "text",
+  "cs": "Odebrat",
+  "en": "Remove",
+  "it": "Rimuovere",
+  "h": "744ed93af1"
+ },
+ {
+  "id": "ui:f5ac0d80edb8:hlaska",
+  "typ": "text",
+  "cs": "Odebrat pohled: {0}",
+  "en": "Remove view: {0}",
+  "it": "Rimuovere la vista: {0}",
+  "h": "f5ac0d80ed"
+ },
+ {
+  "id": "ui:835d10e46a44:tlacitko",
+  "typ": "text",
+  "cs": "Odeslat",
+  "en": "Send",
+  "it": "Inviare",
+  "h": "835d10e46a"
+ },
+ {
+  "id": "ui:5d386c1988cb:hlaska",
+  "typ": "text",
+  "cs": "Odeslat ({0})",
+  "en": "Send ({0})",
+  "it": "Inviare ({0})",
+  "h": "5d386c1988"
+ },
+ {
+  "id": "ui:22912ed4d68e:tlacitko",
+  "typ": "text",
+  "cs": "Odeslat ({n})",
+  "en": "Send ({n})",
+  "it": "Inviare ({n})",
+  "h": "22912ed4d6"
+ },
+ {
+  "id": "ui:a3f00f37f315:tlacitko",
+  "typ": "text",
+  "cs": "Odeslat dotaz",
+  "en": "Send enquiry",
+  "it": "Inviare la richiesta",
+  "h": "a3f00f37f3"
+ },
+ {
+  "id": "ui:f28982baea21:tlacitko",
+  "typ": "text",
+  "cs": "Odeslat objednávku",
+  "en": "Place order",
+  "it": "Inviare l'ordine",
+  "h": "f28982baea"
+ },
+ {
+  "id": "ui:7e499f6385f1:tlacitko",
+  "typ": "text",
+  "cs": "Odeslat odkaz",
+  "en": "Send link",
+  "it": "Inviare il link",
+  "h": "7e499f6385"
+ },
+ {
+  "id": "ui:e8d84291b862:tlacitko",
+  "typ": "text",
+  "cs": "Odeslat poptávku",
+  "en": "Send enquiry",
+  "it": "Inviare la richiesta di offerta",
+  "h": "e8d84291b8"
+ },
+ {
+  "id": "ui:ffc75a1a57a5:hlaska",
+  "typ": "text",
+  "cs": "Odeslat připomínku",
+  "en": "Send feedback",
+  "it": "Inviare il commento",
+  "h": "ffc75a1a57"
+ },
+ {
+  "id": "ui:d10c36c89f72:tlacitko",
+  "typ": "text",
+  "cs": "Odeslat žádost",
+  "en": "Submit request",
+  "it": "Inviare la richiesta",
+  "h": "d10c36c89f"
+ },
+ {
+  "id": "ui:c43fe374b6b9:hlaska",
+  "typ": "text",
+  "cs": "Odesláno",
+  "en": "Sent",
+  "it": "Inviato",
+  "h": "c43fe374b6"
+ },
+ {
+  "id": "ui:b537d18094e8:hlaska",
+  "typ": "text",
+  "cs": "Odeslání se nepodařilo.",
+  "en": "Sending failed.",
+  "it": "Invio non riuscito.",
+  "h": "b537d18094"
+ },
+ {
+  "id": "ui:4eababbf6ac0:hlaska",
+  "typ": "text",
+  "cs": "Odeslání se nepovedlo, zkus to prosím znovu.",
+  "en": "Sending failed; please try again.",
+  "it": "Invio non riuscito. Riprovare.",
+  "h": "4eababbf6a"
+ },
+ {
+  "id": "ui:d4dc33159dcb:hlaska",
+  "typ": "text",
+  "cs": "Odeslání se nezdařilo, zkuste to prosím znovu.",
+  "en": "Sending failed; please try again.",
+  "it": "Invio non riuscito. Riprovare.",
+  "h": "d4dc33159d"
+ },
+ {
+  "id": "ui:2744056e57b4:hlaska",
+  "typ": "text",
+  "cs": "Odeslání se nezdařilo.",
+  "en": "Sending failed.",
+  "it": "Invio non riuscito.",
+  "h": "2744056e57"
+ },
+ {
+  "id": "ui:c2aadbf2c1b4:hlaska",
+  "typ": "text",
+  "cs": "Odesílám…",
+  "en": "Sending…",
+  "it": "Invio in corso…",
+  "h": "c2aadbf2c1"
+ },
+ {
+  "id": "ui:37a5d87f37b7:tlacitko",
+  "typ": "text",
+  "cs": "Odhlásit se",
+  "en": "Log out",
+  "it": "Disconnettersi",
+  "h": "37a5d87f37"
+ },
+ {
+  "id": "ui:56ec9339079a:hlaska",
+  "typ": "text",
+  "cs": "Odkaz bez hesla je neplatný nebo už byl zneplatněný novým - přihlas se prosím heslem.",
+  "en": "The passwordless login link is invalid or has already been replaced by a newer one – please log in with your password.",
+  "it": "Il link di accesso senza password non è valido o è già stato sostituito da uno più recente: accedere con la password.",
+  "h": "56ec933907"
+ },
+ {
+  "id": "ui:21a3dcc1d7b9:hlaska",
+  "typ": "text",
+  "cs": "Odkaz je neplatný nebo už byl použitý.",
+  "en": "The link is invalid or has already been used.",
+  "it": "Il link non è valido o è già stato utilizzato.",
+  "h": "21a3dcc1d7"
+ },
+ {
+  "id": "ui:21fdc4f7497a:hlaska",
+  "typ": "text",
+  "cs": "Odkaz na nabídku:",
+  "en": "Link to the quotation:",
+  "it": "Link al preventivo:",
+  "h": "21fdc4f749"
+ },
+ {
+  "id": "ui:7ba3beb1f16e:text",
+  "typ": "text",
+  "cs": "Odkaz, na který jste přišli, buď nikdy neexistoval, nebo už byl přesunut/smazán. Zkuste se vrátit na hlavní stránku nebo si vyhledat produkt v katalogu.",
+  "en": "The link you followed either never existed or has since been moved or deleted. Try going back to the home page or searching for a product in the catalogue.",
+  "it": "Il link seguito non è mai esistito oppure è stato spostato o eliminato. Provi a tornare alla home page o a cercare un prodotto nel catalogo.",
+  "h": "7ba3beb1f1"
+ },
+ {
+  "id": "ui:62f4c13d6494:hlaska",
+  "typ": "text",
+  "cs": "Odstoupení od smlouvy",
+  "en": "Withdrawal from contract",
+  "it": "Recesso dal contratto",
+  "h": "62f4c13d64"
+ },
+ {
+  "id": "ui:6b65578565bc:text",
+  "typ": "text",
+  "cs": "Odstoupení od smlouvy (do {n} dní od převzetí)",
+  "en": "Withdrawal from the contract (within {n} days of receipt)",
+  "it": "Recesso dal contratto (entro {n} giorni dal ricevimento)",
+  "h": "6b65578565"
+ },
+ {
+  "id": "ui:14579a7a7c65:hlaska",
+  "typ": "text",
+  "cs": "Oděruodolná vrstva HPL {n},8mm",
+  "en": "Abrasion-resistant HPL layer {n}.8mm",
+  "it": "Strato HPL resistente all'abrasione {n},8mm",
+  "h": "14579a7a7c"
+ },
+ {
+  "id": "ui:1103d9d8da80:hlaska",
+  "typ": "text",
+  "cs": "Otevřít nabídku",
+  "en": "Open quotation",
+  "it": "Aprire il preventivo",
+  "h": "1103d9d8da"
+ },
+ {
+  "id": "ui:0dca42843fed:hlaska",
+  "typ": "text",
+  "cs": "Otočit doleva",
+  "en": "Rotate left",
+  "it": "Rotazione a sinistra",
+  "h": "0dca42843f"
+ },
+ {
+  "id": "ui:52d15e258668:hlaska",
+  "typ": "text",
+  "cs": "Otočit doprava",
+  "en": "Rotate right",
+  "it": "Rotazione a destra",
+  "h": "52d15e2586"
+ },
+ {
+  "id": "ui:1a751ed6aade:hlaska",
+  "typ": "text",
+  "cs": "Otočný náhled",
+  "en": "Rotating preview",
+  "it": "Anteprima rotante",
+  "h": "1a751ed6aa"
+ },
+ {
+  "id": "ui:1c45bfd92fac:hlaska",
+  "typ": "text",
+  "cs": "otočný náhled",
+  "en": "rotating preview",
+  "it": "anteprima rotante",
+  "h": "1c45bfd92f"
+ },
+ {
+  "id": "ui:f1bc82063ae9:hlaska",
+  "typ": "text",
+  "cs": "Otočný náhled, azimut {0}°{1}{2}. Šipkami otáčejte.",
+  "en": "Rotatable preview, azimuth {0}°{1}{2}. Use the arrow keys to rotate.",
+  "it": "Anteprima rotante, azimut {0}°{1}{2}. Utilizzare le frecce per ruotare.",
+  "h": "f1bc82063a"
+ },
+ {
+  "id": "ui:ae7c86af3e4d:text",
+  "typ": "text",
+  "cs": "Ověřuji…",
+  "en": "Verifying…",
+  "it": "Verifica in corso…",
+  "h": "ae7c86af3e"
+ },
+ {
+  "id": "ui:23cc59cb9680:hlaska",
+  "typ": "text",
+  "cs": "Papír",
+  "en": "Paper",
+  "it": "Carta",
+  "h": "23cc59cb96"
+ },
+ {
+  "id": "ui:c9da676750c1:text",
+  "typ": "text",
+  "cs": "Piš aspoň {n} znaky…",
+  "en": "Type at least {n} characters…",
+  "it": "Digitare almeno {n} caratteri…",
+  "h": "c9da676750"
+ },
+ {
+  "id": "ui:4d7dd064ad74:hlaska",
+  "typ": "text",
+  "cs": "Platba a doprava",
+  "en": "Payment and shipping",
+  "it": "Pagamento e spedizione",
+  "h": "4d7dd064ad"
+ },
+ {
+  "id": "ui:88b1214679c5:hlaska",
+  "typ": "text",
+  "cs": "Plocha průřezu",
+  "en": "Cross-sectional area",
+  "it": "Area della sezione",
+  "h": "88b1214679"
+ },
+ {
+  "id": "ui:c5559ea6a459:nadpis",
+  "typ": "text",
+  "cs": "Podkategorie",
+  "en": "Subcategories",
+  "it": "Sottocategorie",
+  "h": "c5559ea6a4"
+ },
+ {
+  "id": "ui:4c22c239a7cd:text",
+  "typ": "text",
+  "cs": "Podle názvu",
+  "en": "By name",
+  "it": "Per nome",
+  "h": "4c22c239a7"
+ },
+ {
+  "id": "ui:29befa5dc592:nadpis",
+  "typ": "text",
+  "cs": "Podpora",
+  "en": "Support",
+  "it": "Supporto",
+  "h": "29befa5dc5"
+ },
+ {
+  "id": "ui:247f60151f20:title",
+  "typ": "text",
+  "cs": "Podpora - napište nám",
+  "en": "Support - write to us",
+  "it": "Assistenza - ci scriva",
+  "h": "247f60151f"
+ },
+ {
+  "id": "ui:a71c71451ca6:hlaska",
+  "typ": "text",
+  "cs": "Pohled více shora",
+  "en": "View from higher up",
+  "it": "Vista più dall'alto",
+  "h": "a71c71451c"
+ },
+ {
+  "id": "ui:7596d9a72aa2:hlaska",
+  "typ": "text",
+  "cs": "Pohled více zdola",
+  "en": "View from lower down",
+  "it": "Vista più dal basso",
+  "h": "7596d9a72a"
+ },
+ {
+  "id": "ui:659f12c8e6ae:tlacitko",
+  "typ": "text",
+  "cs": "Pokračovat",
+  "en": "Continue",
+  "it": "Continuare",
+  "h": "659f12c8e6"
+ },
+ {
+  "id": "ui:07f29ccb5d6e:tlacitko",
+  "typ": "text",
+  "cs": "Pokračovat →",
+  "en": "Continue →",
+  "it": "Continuare →",
+  "h": "07f29ccb5d"
+ },
+ {
+  "id": "ui:3507b12d8348:hlaska",
+  "typ": "text",
+  "cs": "Pokud e-mail existuje, byl odeslán odkaz.",
+  "en": "If the email address exists, a link has been sent.",
+  "it": "Se l'indirizzo e-mail esiste, è stato inviato un link.",
+  "h": "3507b12d83"
+ },
+ {
+  "id": "ui:f27a27451ded:hlaska",
+  "typ": "text",
+  "cs": "Pokud e-mail ještě není zaregistrovaný, poslali jsme na něj potvrzovací odkaz. Klikni na něj a účet se aktivuje.",
+  "en": "If the email address is not yet registered, we have sent a confirmation link to it. Click the link and your account will be activated.",
+  "it": "Se l'indirizzo e-mail non è ancora registrato, è stato inviato un link di conferma. Cliccando sul link l'account verrà attivato.",
+  "h": "f27a27451d"
+ },
+ {
+  "id": "ui:ba89a753e50c:hlaska",
+  "typ": "text",
+  "cs": "Polohovací držák dokumentů",
+  "en": "Adjustable document holder",
+  "it": "Porta documenti regolabile",
+  "h": "ba89a753e5"
+ },
+ {
+  "id": "ui:9c801d7fafe0:nadpis",
+  "typ": "text",
+  "cs": "Položka",
+  "en": "Item",
+  "it": "Articolo",
+  "h": "9c801d7faf"
+ },
+ {
+  "id": "ui:88fca5f9e1e9:nadpis",
+  "typ": "text",
+  "cs": "Položky",
+  "en": "Items",
+  "it": "Articoli",
+  "h": "88fca5f9e1"
+ },
+ {
+  "id": "ui:153a95cd470b:hlaska",
+  "typ": "text",
+  "cs": "Popiš prosím krátce, co bys chtěl/a jinak (aspoň pár slov).",
+  "en": "Please briefly describe what you would like changed (at least a few words).",
+  "it": "Descrivere brevemente cosa si desidera modificare (almeno poche parole).",
+  "h": "153a95cd47"
+ },
+ {
+  "id": "ui:29b1dd55a80a:placeholder",
+  "typ": "text",
+  "cs": "Popište prosím důvod (nepovinné)",
+  "en": "Please describe the reason (optional)",
+  "it": "Descriva il motivo (facoltativo)",
+  "h": "29b1dd55a8"
+ },
+ {
+  "id": "ui:6ab5173238b9:tlacitko",
+  "typ": "text",
+  "cs": "Poptat stůl na míru",
+  "en": "Request a made-to-measure table",
+  "it": "Richiedere un tavolo su misura",
+  "h": "6ab5173238"
+ },
+ {
+  "id": "ui:72c6ec9a02cc:meta",
+  "typ": "text",
+  "cs": "Poptejte si výškově stavitelný nebo balicí stůl na míru - vyberte typ, rozměry, materiál a příslušenství.",
+  "en": "Enquire about a custom height-adjustable or packing table: choose the type, dimensions, material and accessories.",
+  "it": "Richiedere un tavolo su misura regolabile in altezza o da imballaggio: scelta di tipo, dimensioni, materiale e accessori.",
+  "h": "72c6ec9a02"
+ },
+ {
+  "id": "ui:8c5345390e77:nadpis",
+  "typ": "text",
+  "cs": "Poptávka stolu na míru",
+  "en": "Custom table enquiry",
+  "it": "Richiesta di offerta per tavolo su misura",
+  "h": "8c5345390e"
+ },
+ {
+  "id": "ui:89646240f45f:meta",
+  "typ": "text",
+  "cs": "Poptávka stolu na míru – Hliníkový konstrukční stavebnicový systém s drážkami",
+  "en": "Custom table enquiry – Modular aluminium construction system",
+  "it": "Richiesta tavolo su misura | Logiman",
+  "h": "89646240f4"
+ },
+ {
+  "id": "ui:deeebd7d1140:text",
+  "typ": "text",
+  "cs": "Poptávku jsme přijali a brzy se vám ozveme s návrhem řešení a cenou.",
+  "en": "We have received your enquiry and will get back to you shortly with a proposed solution and a price.",
+  "it": "Abbiamo ricevuto la Sua richiesta e Le invieremo a breve una proposta di soluzione con il prezzo.",
+  "h": "deeebd7d11"
+ },
+ {
+  "id": "ui:0580a01b020b:hlaska",
+  "typ": "text",
+  "cs": "Posuzováno",
+  "en": "Under review",
+  "it": "In esame",
+  "h": "0580a01b02"
+ },
+ {
+  "id": "ui:25d66dc53870:hlaska",
+  "typ": "text",
+  "cs": "Potvrzená",
+  "en": "Confirmed",
+  "it": "Confermato",
+  "h": "25d66dc538"
+ },
+ {
+  "id": "ui:a11c075716b2:nadpis",
+  "typ": "text",
+  "cs": "Potvrzení e-mailu",
+  "en": "Email confirmation",
+  "it": "Conferma dell'e-mail",
+  "h": "a11c075716"
+ },
+ {
+  "id": "ui:25ead202c923:meta",
+  "typ": "text",
+  "cs": "Potvrzení e-mailu – Hliníkový konstrukční stavebnicový systém s drážkami",
+  "en": "Email confirmation – Modular aluminium construction system",
+  "it": "Conferma e-mail – Sistema costruttivo modulare in alluminio",
+  "h": "25ead202c9"
+ },
+ {
+  "id": "ui:e45b6206296b:hlaska",
+  "typ": "text",
+  "cs": "Potřeba: {0} × tabule = {1} Kč ({2} řezů)",
+  "en": "Required: {0} × sheet = {1} EUR ({2} cuts)",
+  "it": "Necessari: {0} × lastra = {1} EUR ({2} tagli)",
+  "h": "e45b620629"
+ },
+ {
+  "id": "ui:782897597bbd:hlaska",
+  "typ": "text",
+  "cs": "Potřeba: {0} × tyč ({n} mm) = {1} Kč{2}{3}{4}",
+  "en": "Required: {0} × bar ({n} mm) = {1} EUR{2}{3}{4}",
+  "it": "Necessari: {0} × barra ({n} mm) = {1} EUR{2}{3}{4}",
+  "h": "782897597b"
+ },
+ {
+  "id": "ui:79828a86e0e7:hlaska",
+  "typ": "text",
+  "cs": "Pozn.: 3D pohyby v nabídce nejsou{0}, nabídka je platná se statickým modelem.",
+  "en": "Note: 3D movements are not available in the quotation{0}; the quotation is valid with a static model.",
+  "it": "Nota: i movimenti 3D non sono disponibili nel preventivo{0}; il preventivo è valido con un modello statico.",
+  "h": "79828a86e0"
+ },
+ {
+  "id": "ui:ca37c8c491de:nadpis",
+  "typ": "text",
+  "cs": "Poznámka",
+  "en": "Note",
+  "it": "Nota",
+  "h": "ca37c8c491"
+ },
+ {
+  "id": "ui:74f9898fa247:nadpis",
+  "typ": "text",
+  "cs": "Počet",
+  "en": "Quantity",
+  "it": "Quantità",
+  "h": "74f9898fa2"
+ },
+ {
+  "id": "ui:a55c55873e4e:hlaska",
+  "typ": "text",
+  "cs": "Počet celých tyčí (bez přířezu)",
+  "en": "Number of whole bars (uncut)",
+  "it": "Numero di barre intere (senza taglio)",
+  "h": "a55c55873e"
+ },
+ {
+  "id": "ui:5f3c20172fc1:title",
+  "typ": "text",
+  "cs": "Počet kusů",
+  "en": "Quantity",
+  "it": "Quantità",
+  "h": "5f3c20172f"
+ },
+ {
+  "id": "ui:ae97481e8bc5:text",
+  "typ": "text",
+  "cs": "Počet stolů",
+  "en": "Number of tables",
+  "it": "Numero di tavoli",
+  "h": "ae97481e8b"
+ },
+ {
+  "id": "ui:b0f845558d67:hlaska",
+  "typ": "text",
+  "cs": "Požadováno",
+  "en": "Requested",
+  "it": "Richiesto",
+  "h": "b0f845558d"
+ },
+ {
+  "id": "ui:b73a8e22e40e:hlaska",
+  "typ": "text",
+  "cs": "Pravá",
+  "en": "Right",
+  "it": "Destra",
+  "h": "b73a8e22e4"
+ },
+ {
+  "id": "ui:3b7c9c8f05f8:hlaska",
+  "typ": "text",
+  "cs": "Pro dopravu {0} je nutné zadat platné PSČ ({n} číslic) dodací nebo fakturační adresy.",
+  "en": "For {0} shipping, a valid postcode ({n} digits) of the delivery or billing address is required.",
+  "it": "Per la spedizione {0} è necessario inserire un CAP valido ({n} cifre) dell'indirizzo di consegna o di fatturazione.",
+  "h": "3b7c9c8f05"
+ },
+ {
+  "id": "ui:280243c101ba:text",
+  "typ": "html",
+  "cs": "Pro nákup se prosím <1>přihlas</1>.",
+  "en": "Please <1>log in</1> to buy.",
+  "it": "Per acquistare, si prega di <1>accedere</1>.",
+  "h": "280243c101"
+ },
+ {
+  "id": "ui:829079c70d9d:hlaska",
+  "typ": "text",
+  "cs": "Pro odeslání prosím vyplňte e-mail.",
+  "en": "Please enter your email address to send.",
+  "it": "Per inviare, inserire l'indirizzo e-mail.",
+  "h": "829079c70d"
+ },
+ {
+  "id": "ui:7505b412a5bc:text",
+  "typ": "html",
+  "cs": "Pro zobrazení objednávek se prosím <1>přihlaste</1>.",
+  "en": "Please <1>log in</1> to view your orders.",
+  "it": "Per visualizzare gli ordini è necessario <1>accedere</1>.",
+  "h": "7505b412a5"
+ },
+ {
+  "id": "ui:aa73509bfdc0:hlaska",
+  "typ": "text",
+  "cs": "Produkt nenalezen",
+  "en": "Product not found",
+  "it": "Prodotto non trovato",
+  "h": "aa73509bfd"
+ },
+ {
+  "id": "ui:ecf9d8fa6a9f:hlaska",
+  "typ": "text",
+  "cs": "Produkt se nepodařilo přidat do košíku (chyba spojení).",
+  "en": "The product could not be added to the basket (connection error).",
+  "it": "Impossibile aggiungere il prodotto al carrello (errore di connessione).",
+  "h": "ecf9d8fa6a"
+ },
+ {
+  "id": "ui:195b71d3b943:hlaska",
+  "typ": "text",
+  "cs": "Produkt se nepodařilo přidat do košíku.",
+  "en": "The product could not be added to the basket.",
+  "it": "Impossibile aggiungere il prodotto al carrello.",
+  "h": "195b71d3b9"
+ },
+ {
+  "id": "ui:2c56acb076e0:meta",
+  "typ": "text",
+  "cs": "Produkt – Hliníkový konstrukční stavebnicový systém s drážkami",
+  "en": "Product – Modular aluminium construction system",
+  "it": "Prodotto – Sistema costruttivo modulare in alluminio",
+  "h": "2c56acb076"
+ },
+ {
+  "id": "ui:7ac9c1c8a204:nadpis",
+  "typ": "text",
+  "cs": "Produkty",
+  "en": "Products",
+  "it": "Prodotti",
+  "h": "7ac9c1c8a2"
+ },
+ {
+  "id": "ui:0251179dbc81:hlaska",
+  "typ": "text",
+  "cs": "Prodává se po celých tabulích, zadejte přířezy",
+  "en": "Sold in full sheets; enter your cut-to-size pieces",
+  "it": "Venduto a lastre intere: indicare i pezzi da tagliare su misura",
+  "h": "0251179dbc"
+ },
+ {
+  "id": "ui:4c2fdc8e8b41:hlaska",
+  "typ": "text",
+  "cs": "Provedení",
+  "en": "Version",
+  "it": "Versione",
+  "h": "4c2fdc8e8b"
+ },
+ {
+  "id": "ui:49bd14f34ab1:hlaska",
+  "typ": "text",
+  "cs": "Provedení {0}",
+  "en": "Version {0}",
+  "it": "Versione {0}",
+  "h": "49bd14f34a"
+ },
+ {
+  "id": "ui:5cf61a875185:hlaska",
+  "typ": "text",
+  "cs": "Provedení {0} — náhled se připravuje",
+  "en": "Version {0} — preview is being prepared",
+  "it": "Versione {0} — anteprima in preparazione",
+  "h": "5cf61a8751"
+ },
+ {
+  "id": "ui:882d601a2bc9:text",
+  "typ": "text",
+  "cs": "Pruh (diagonální)",
+  "en": "Stripe (diagonal)",
+  "it": "Banda (diagonale)",
+  "h": "882d601a2b"
+ },
+ {
+  "id": "ui:069db946b66c:text",
+  "typ": "text",
+  "cs": "Průhlednost",
+  "en": "Transparency",
+  "it": "Trasparenza",
+  "h": "069db946b6"
+ },
+ {
+  "id": "ui:cd6cca493b50:hlaska",
+  "typ": "text",
+  "cs": "Průměr válečku",
+  "en": "Roller diameter",
+  "it": "Diametro del rullo",
+  "h": "cd6cca493b"
+ },
+ {
+  "id": "ui:68fd9e7134ce:hlaska",
+  "typ": "text",
+  "cs": "Průřez",
+  "en": "Cross-section",
+  "it": "Sezione",
+  "h": "68fd9e7134"
+ },
+ {
+  "id": "ui:501c1c4578b3:hlaska",
+  "typ": "text",
+  "cs": "Průřezový modul Wx",
+  "en": "Section modulus Wx",
+  "it": "Modulo di resistenza Wx",
+  "h": "501c1c4578"
+ },
+ {
+  "id": "ui:50b86b95de2f:hlaska",
+  "typ": "text",
+  "cs": "Průřezový modul Wy",
+  "en": "Section modulus Wy",
+  "it": "Modulo di resistenza Wy",
+  "h": "50b86b95de"
+ },
+ {
+  "id": "ui:a51cbf4ce83d:nadpis",
+  "typ": "text",
+  "cs": "PSČ (fakturační)",
+  "en": "Postcode (billing)",
+  "it": "CAP (fatturazione)",
+  "h": "a51cbf4ce8"
+ },
+ {
+  "id": "ui:fd104675ab16:nadpis",
+  "typ": "text",
+  "cs": "PSČ dodací adresy",
+  "en": "Delivery address postcode",
+  "it": "CAP dell'indirizzo di consegna",
+  "h": "fd104675ab"
+ },
+ {
+  "id": "ui:117a2132245d:text",
+  "typ": "text",
+  "cs": "PSČ je povinné u dopravy, kde se cena počítá podle PSČ a hmotnosti (např. Toptrans).",
+  "en": "The postcode is required for shipping methods where the price is calculated by postcode and weight (e.g. Toptrans).",
+  "it": "Il CAP è obbligatorio per i metodi di spedizione in cui il prezzo viene calcolato in base a CAP e peso (ad es. Toptrans).",
+  "h": "117a213224"
+ },
+ {
+  "id": "ui:a06ac6c0acad:hlaska",
+  "typ": "text",
+  "cs": "Předchozí",
+  "en": "Previous",
+  "it": "Precedente",
+  "h": "a06ac6c0ac"
+ },
+ {
+  "id": "ui:36305861693a:title",
+  "typ": "text",
+  "cs": "Předchozí (←)",
+  "en": "Previous (←)",
+  "it": "Precedente (←)",
+  "h": "3630586169"
+ },
+ {
+  "id": "ui:d25452e65d6f:hlaska",
+  "typ": "text",
+  "cs": "Předchozí fotografie",
+  "en": "Previous photo",
+  "it": "Foto precedente",
+  "h": "d25452e65d"
+ },
+ {
+  "id": "ui:6be67ecfb818:title",
+  "typ": "text",
+  "cs": "Přepnout barevné schéma",
+  "en": "Switch colour scheme",
+  "it": "Cambiare lo schema dei colori",
+  "h": "6be67ecfb8"
+ },
+ {
+  "id": "ui:e940d57a24ce:odkaz",
+  "typ": "text",
+  "cs": "Přeskočit na obsah",
+  "en": "Skip to content",
+  "it": "Passare al contenuto",
+  "h": "e940d57a24"
+ },
+ {
+  "id": "ui:0c6b9d30e748:hlaska",
+  "typ": "text",
+  "cs": "Přidáno do košíku.",
+  "en": "Added to basket.",
+  "it": "Aggiunto al carrello.",
+  "h": "0c6b9d30e7"
+ },
+ {
+  "id": "ui:e94ab622cfd5:text",
+  "typ": "text",
+  "cs": "Přihlašuji přes trvalý odkaz…",
+  "en": "Logging in via permanent link…",
+  "it": "Accesso tramite link permanente in corso…",
+  "h": "e94ab622cf"
+ },
+ {
+  "id": "ui:c522e43b101a:hlaska",
+  "typ": "text",
+  "cs": "Přihlašuji…",
+  "en": "Logging in…",
+  "it": "Accesso in corso…",
+  "h": "c522e43b10"
+ },
+ {
+  "id": "ui:36f5888e75c9:tlacitko",
+  "typ": "text",
+  "cs": "Přihlásit se",
+  "en": "Log in",
+  "it": "Accedere",
+  "h": "36f5888e75"
+ },
+ {
+  "id": "ui:1abff91ad41a:hlaska",
+  "typ": "text",
+  "cs": "Přihlášení se nezdařilo.",
+  "en": "Login failed.",
+  "it": "Accesso non riuscito.",
+  "h": "1abff91ad4"
+ },
+ {
+  "id": "ui:9030bf5d7f3b:meta",
+  "typ": "text",
+  "cs": "Přihlášení – Hliníkový konstrukční stavebnicový systém s drážkami",
+  "en": "Login – Modular aluminium construction system",
+  "it": "Accesso – Sistema costruttivo modulare in alluminio",
+  "h": "9030bf5d7f"
+ },
+ {
+  "id": "ui:a68a5978ff2c:hlaska",
+  "typ": "text",
+  "cs": "Přijato zpět",
+  "en": "Received back",
+  "it": "Reso ricevuto",
+  "h": "a68a5978ff"
+ },
+ {
+  "id": "ui:9cc42de4ad9b:hlaska",
+  "typ": "text",
+  "cs": "Připomínka je příliš velká (moc pohledů nebo velké kresby) - zkuste odeslat méně pohledů.",
+  "en": "The feedback is too large (too many views or large drawings) – try sending fewer views.",
+  "it": "Il commento è troppo grande (troppe viste o disegni di grandi dimensioni): provare a inviare meno viste.",
+  "h": "9cc42de4ad"
+ },
+ {
+  "id": "ui:c4f4f96dac5c:hlaska",
+  "typ": "text",
+  "cs": "Připravuje se",
+  "en": "In preparation",
+  "it": "In preparazione",
+  "h": "c4f4f96dac"
+ },
+ {
+  "id": "ui:7916e76b04bf:hlaska",
+  "typ": "text",
+  "cs": "Přídavná plocha stolu, sklopná",
+  "en": "Additional table surface, fold-down",
+  "it": "Piano aggiuntivo del tavolo, ribaltabile",
+  "h": "7916e76b04"
+ },
+ {
+  "id": "ui:8d4ddfeae12e:text",
+  "typ": "text",
+  "cs": "Přířezy (volitelné)",
+  "en": "Cut pieces (optional)",
+  "it": "Pezzi tagliati (facoltativo)",
+  "h": "8d4ddfeae1"
+ },
+ {
+  "id": "ui:bbe636301938:text",
+  "typ": "text",
+  "cs": "Přířezy: {0}",
+  "en": "Cut pieces: {0}",
+  "it": "Pezzi tagliati: {0}",
+  "h": "bbe6363019"
+ },
+ {
+  "id": "ui:7e4fd27932f3:alt",
+  "typ": "text",
+  "cs": "QR platba",
+  "en": "QR payment",
+  "it": "Pagamento con QR code",
+  "h": "7e4fd27932"
+ },
+ {
+  "id": "ui:74edf75f2353:hlaska",
+  "typ": "text",
+  "cs": "Registrace se nezdařila.",
+  "en": "Registration failed.",
+  "it": "Registrazione non riuscita.",
+  "h": "74edf75f23"
+ },
+ {
+  "id": "ui:bcbce1866815:meta",
+  "typ": "text",
+  "cs": "Registrace – Hliníkový konstrukční stavebnicový systém s drážkami",
+  "en": "Registration – Modular aluminium construction system",
+  "it": "Registrazione – Sistema costruttivo modulare in alluminio",
+  "h": "bcbce18668"
+ },
+ {
+  "id": "ui:1e102faac45a:text",
+  "typ": "text",
+  "cs": "Reklamace (zboží je vadné/poškozené)",
+  "en": "Complaint (goods are faulty/damaged)",
+  "it": "Reclamo (merce difettosa/danneggiata)",
+  "h": "1e102faac4"
+ },
+ {
+  "id": "ui:50c88de72626:nadpis",
+  "typ": "text",
+  "cs": "Reklamace a vratky",
+  "en": "Complaints and returns",
+  "it": "Reclami e resi",
+  "h": "50c88de726"
+ },
+ {
+  "id": "ui:fa39c1590547:text",
+  "typ": "text",
+  "cs": "Reklamaci/vratku lze založit až po expedici objednávky.",
+  "en": "A complaint/return can only be created after the order has been dispatched.",
+  "it": "Un reclamo/reso può essere registrato solo dopo la spedizione dell'ordine.",
+  "h": "fa39c15905"
+ },
+ {
+  "id": "ui:b2fc84500c2f:hlaska",
+  "typ": "text",
+  "cs": "Reálné fotografie našich stolů a pracovišť",
+  "en": "Real photographs of our tables and workstations",
+  "it": "Fotografie reali dei nostri tavoli e postazioni di lavoro",
+  "h": "b2fc84500c"
+ },
+ {
+  "id": "ui:9a13ee2912a9:hlaska",
+  "typ": "text",
+  "cs": "Reálné fotografie našich vestaveb",
+  "en": "Real photographs of our van fit-outs",
+  "it": "Fotografie reali dei nostri allestimenti per furgoni",
+  "h": "9a13ee2912"
+ },
+ {
+  "id": "ui:83b4918b00fe:hlaska",
+  "typ": "text",
+  "cs": "rf-grid rf-vse",
+  "en": "rf-grid rf-vse",
+  "it": "rf-grid rf-vse",
+  "h": "83b4918b00"
+ },
+ {
+  "id": "ui:2d32904700e4:nadpis",
+  "typ": "text",
+  "cs": "Rozměr boxu (Š × H × V)",
+  "en": "Box size (W × D × H)",
+  "it": "Dimensioni del box (L × P × A)",
+  "h": "2d32904700"
+ },
+ {
+  "id": "ui:f03d1fece976:text",
+  "typ": "text",
+  "cs": "Rozsah výškové stavitelnosti (mm)",
+  "en": "Height adjustment range (mm)",
+  "it": "Intervallo di regolazione in altezza (mm)",
+  "h": "f03d1fece9"
+ },
+ {
+  "id": "ui:9d4449ca9111:hlaska",
+  "typ": "text",
+  "cs": "Rozteč os válečků (mm)",
+  "en": "Roller pitch (mm)",
+  "it": "Interasse dei rulli (mm)",
+  "h": "9d4449ca91"
+ },
+ {
+  "id": "ui:2b59968c4232:text",
+  "typ": "text",
+  "cs": "Rychlost",
+  "en": "Speed",
+  "it": "Velocità",
+  "h": "2b59968c42"
+ },
+ {
+  "id": "ui:a4e5f87758f2:hlaska",
+  "typ": "text",
+  "cs": "Schváleno",
+  "en": "Approved",
+  "it": "Approvato",
+  "h": "a4e5f87758"
+ },
+ {
+  "id": "ui:190f43df876f:text",
+  "typ": "text",
+  "cs": "Sdílené",
+  "en": "Shared",
+  "it": "Comuni",
+  "h": "190f43df87"
+ },
+ {
+  "id": "ui:dc21db802e16:hlaska",
+  "typ": "text",
+  "cs": "Server je dočasně nedostupný, zkuste to prosím za chvíli znovu.",
+  "en": "The server is temporarily unavailable; please try again in a moment.",
+  "it": "Il server è temporaneamente non disponibile. Riprovare tra qualche istante.",
+  "h": "dc21db802e"
+ },
+ {
+  "id": "ui:7ce53cdca701:hlaska",
+  "typ": "text",
+  "cs": "Sestavuji nabídku… (může to trvat i minutu)",
+  "en": "Preparing the quotation… (this can take up to a minute)",
+  "it": "Preparazione del preventivo… (può richiedere fino a un minuto)",
+  "h": "7ce53cdca7"
+ },
+ {
+  "id": "ui:5c6e79e1afb7:text",
+  "typ": "text",
+  "cs": "Sken (svislý)",
+  "en": "Scan (vertical)",
+  "it": "Scansione (verticale)",
+  "h": "5c6e79e1af"
+ },
+ {
+  "id": "ui:c554369c3475:hlaska",
+  "typ": "text",
+  "cs": "Skladba boxů",
+  "en": "Box arrangement",
+  "it": "Disposizione dei box",
+  "h": "c554369c34"
+ },
+ {
+  "id": "ui:6da2317e12f0:text",
+  "typ": "text",
+  "cs": "skladem {0} {1}",
+  "en": "in stock {0} {1}",
+  "it": "disponibile a magazzino {0} {1}",
+  "h": "6da2317e12"
+ },
+ {
+  "id": "ui:4dd533ccf657:hlaska",
+  "typ": "text",
+  "cs": "skladník",
+  "en": "warehouse worker",
+  "it": "magazziniere",
+  "h": "4dd533ccf6"
+ },
+ {
+  "id": "ui:d4a5ee0a197b:text",
+  "typ": "text",
+  "cs": "Slevové kódy jsou momentálně nedostupné.",
+  "en": "Discount codes are currently unavailable.",
+  "it": "I codici sconto non sono al momento disponibili.",
+  "h": "d4a5ee0a19"
+ },
+ {
+  "id": "ui:45e022318523:placeholder",
+  "typ": "text",
+  "cs": "Slevový kód",
+  "en": "Discount code",
+  "it": "Codice sconto",
+  "h": "45e0223185"
+ },
+ {
+  "id": "ui:bfef09575f2d:title",
+  "typ": "text",
+  "cs": "Sloučit s dalšími stranami téhož vozu (levá, pravá, přepážka) do jedné online nabídky",
+  "en": "Merge with the other sides of the same vehicle (left, right, partition) into one online quotation",
+  "it": "Unire con gli altri lati dello stesso veicolo (sinistro, destro, paratia) in un unico preventivo online",
+  "h": "bfef09575f"
+ },
+ {
+  "id": "ui:4d2af414b7bf:hlaska",
+  "typ": "text",
+  "cs": "Snímek {0}",
+  "en": "Frame {0}",
+  "it": "Fotogramma {0}",
+  "h": "4d2af414b7"
+ },
+ {
+  "id": "ui:ec7f629fed0d:text",
+  "typ": "text",
+  "cs": "Soukromá osoba",
+  "en": "Private individual",
+  "it": "Privato",
+  "h": "ec7f629fed"
+ },
+ {
+  "id": "ui:686b644eb3f7:nadpis",
+  "typ": "text",
+  "cs": "Související dokumenty",
+  "en": "Related documents",
+  "it": "Documenti correlati",
+  "h": "686b644eb3"
+ },
+ {
+  "id": "ui:267d9e15e240:nadpis",
+  "typ": "text",
+  "cs": "Související produkty",
+  "en": "Related products",
+  "it": "Prodotti correlati",
+  "h": "267d9e15e2"
+ },
+ {
+  "id": "ui:e4e5993f51f0:nadpis",
+  "typ": "text",
+  "cs": "Související příklady realizací",
+  "en": "Related project examples",
+  "it": "Esempi di realizzazioni correlati",
+  "h": "e4e5993f51"
+ },
+ {
+  "id": "ui:9d757deb58f8:nadpis",
+  "typ": "text",
+  "cs": "Součet",
+  "en": "Total",
+  "it": "Totale",
+  "h": "9d757deb58"
+ },
+ {
+  "id": "ui:c5c2e6877bda:hlaska",
+  "typ": "text",
+  "cs": "Spodní police",
+  "en": "Lower shelf",
+  "it": "Ripiano inferiore",
+  "h": "c5c2e6877b"
+ },
+ {
+  "id": "ui:6d28c3a91470:hlaska",
+  "typ": "text",
+  "cs": "Spojení se serverem selhalo, nabídka možná vznikla - zkontrolujte seznam nabídek.",
+  "en": "Connection to the server failed; the quotation may have been created – check the list of quotations.",
+  "it": "Connessione al server non riuscita: il preventivo potrebbe essere stato creato. Controllare l'elenco dei preventivi.",
+  "h": "6d28c3a914"
+ },
+ {
+  "id": "ui:bf07d73eb9fe:text",
+  "typ": "text",
+  "cs": "Spojky a doplňky, které pasují na profily v této kategorii.",
+  "en": "Connectors and accessories that fit the profiles in this category.",
+  "it": "Giunti e accessori adatti ai profili di questa categoria.",
+  "h": "bf07d73eb9"
+ },
+ {
+  "id": "ui:d09b637cb578:text",
+  "typ": "text",
+  "cs": "Spojky a doplňky, které pasují na slot tohoto profilu.",
+  "en": "Connectors and accessories that fit the slot of this profile.",
+  "it": "Giunti e accessori adatti alla scanalatura di questo profilo.",
+  "h": "d09b637cb5"
+ },
+ {
+  "id": "ui:7ec9bf3526d5:tlacitko",
+  "typ": "text",
+  "cs": "Společná nabídka…",
+  "en": "Combined quotation…",
+  "it": "Preventivo combinato…",
+  "h": "7ec9bf3526"
+ },
+ {
+  "id": "ui:aed409bb9781:text",
+  "typ": "text",
+  "cs": "Standardní pracovní desky",
+  "en": "Standard worktops",
+  "it": "Piani di lavoro standard",
+  "h": "aed409bb97"
+ },
+ {
+  "id": "ui:593329aea33f:hlaska",
+  "typ": "text",
+  "cs": "Stav: {0} · Založeno {1}",
+  "en": "Status: {0} · Created {1}",
+  "it": "Stato: {0} · Creato il {1}",
+  "h": "593329aea3"
+ },
+ {
+  "id": "ui:dc35039766b9:hlaska",
+  "typ": "text",
+  "cs": "Strečová folie",
+  "en": "Stretch film",
+  "it": "Film estensibile",
+  "h": "dc35039766"
+ },
+ {
+  "id": "ui:ba4c46650489:nadpis",
+  "typ": "text",
+  "cs": "Stránka nenalezena",
+  "en": "Page not found",
+  "it": "Pagina non trovata",
+  "h": "ba4c466504"
+ },
+ {
+  "id": "ui:1f6f046881c5:meta",
+  "typ": "text",
+  "cs": "Stránka nenalezena – Hliníkový konstrukční stavebnicový systém s drážkami",
+  "en": "Page not found – Modular aluminium construction system",
+  "it": "Pagina non trovata – Sistema costruttivo in alluminio",
+  "h": "1f6f046881"
+ },
+ {
+  "id": "ui:8d36439fe38c:hlaska",
+  "typ": "text",
+  "cs": "Stůl a police odděleně",
+  "en": "Table and shelves separately",
+  "it": "Tavolo e ripiani separati",
+  "h": "8d36439fe3"
+ },
+ {
+  "id": "ui:52907daf9f74:hlaska",
+  "typ": "text",
+  "cs": "Stůl a police spolu",
+  "en": "Table and shelves together",
+  "it": "Tavolo e ripiani insieme",
+  "h": "52907daf9f"
+ },
+ {
+  "id": "ui:4cce49c07b31:hlaska",
+  "typ": "text",
+  "cs": "Stůl s neměnnou výškou",
+  "en": "Fixed-height table",
+  "it": "Tavolo ad altezza fissa",
+  "h": "4cce49c07b"
+ },
+ {
+  "id": "ui:1a5b85333351:text",
+  "typ": "text",
+  "cs": "Síla (tloušťka čáry)",
+  "en": "Thickness (line width)",
+  "it": "Spessore (larghezza della linea)",
+  "h": "1a5b853333"
+ },
+ {
+  "id": "ui:5698de1b8748:text",
+  "typ": "text",
+  "cs": "Síla (šířka pruhu)",
+  "en": "Thickness (stripe width)",
+  "it": "Spessore (larghezza della banda)",
+  "h": "5698de1b87"
+ },
+ {
+  "id": "ui:40fdf9e6179d:text",
+  "typ": "text",
+  "cs": "Tato kategorie neexistuje nebo byla smazána.",
+  "en": "This category does not exist or has been deleted.",
+  "it": "Questa categoria non esiste o è stata eliminata.",
+  "h": "40fdf9e617"
+ },
+ {
+  "id": "ui:40314f882822:nadpis",
+  "typ": "text",
+  "cs": "Telefon",
+  "en": "Phone",
+  "it": "Telefono",
+  "h": "40314f8828"
+ },
+ {
+  "id": "ui:446534263131:hlaska",
+  "typ": "text",
+  "cs": "Tento produkt neexistuje nebo byl smazán.",
+  "en": "This product does not exist or has been deleted.",
+  "it": "Questo prodotto non esiste o è stato eliminato.",
+  "h": "4465342631"
+ },
+ {
+  "id": "ui:559da25a5b97:hlaska",
+  "typ": "text",
+  "cs": "Tento produkt už není dostupný.",
+  "en": "This product is no longer available.",
+  "it": "Questo prodotto non è più disponibile.",
+  "h": "559da25a5b"
+ },
+ {
+  "id": "ui:87cd9aaf0e22:text",
+  "typ": "text",
+  "cs": "Text kategorií",
+  "en": "Category text",
+  "it": "Testo delle categorie",
+  "h": "87cd9aaf0e"
+ },
+ {
+  "id": "ui:6fc72648bcb7:hlaska",
+  "typ": "text",
+  "cs": "Text…",
+  "en": "Text…",
+  "it": "Testo…",
+  "h": "6fc72648bc"
+ },
+ {
+  "id": "ui:e2ef84263597:hlaska",
+  "typ": "text",
+  "cs": "Turntable.mount: meta.available=false nebo prazdne rings",
+  "en": "Turntable.mount: meta.available=false or empty rings",
+  "it": "Turntable.mount: meta.available=false o rings vuoti",
+  "h": "e2ef842635"
+ },
+ {
+  "id": "ui:d4387d8ee68c:hlaska",
+  "typ": "text",
+  "cs": "Turntable.mount: zadne tiery",
+  "en": "Turntable.mount: no tiers",
+  "it": "Turntable.mount: nessun tier",
+  "h": "d4387d8ee6"
+ },
+ {
+  "id": "ui:bea3431957ba:hlaska",
+  "typ": "text",
+  "cs": "Turntable: prvni snimek nejde nacist",
+  "en": "Turntable: the first frame cannot be loaded",
+  "it": "Turntable: impossibile caricare il primo fotogramma",
+  "h": "bea3431957"
+ },
+ {
+  "id": "ui:ae2e2f13ee18:hlaska",
+  "typ": "text",
+  "cs": "Tužka",
+  "en": "Pencil",
+  "it": "Matita",
+  "h": "ae2e2f13ee"
+ },
+ {
+  "id": "ui:0b9966dacffe:hlaska",
+  "typ": "text",
+  "cs": "typ ESSE1",
+  "en": "type ESSE1",
+  "it": "tipo ESSE1",
+  "h": "0b9966dacf"
+ },
+ {
+  "id": "ui:ab0a918f18f2:hlaska",
+  "typ": "text",
+  "cs": "Typ válečku",
+  "en": "Roller type",
+  "it": "Tipo di rullo",
+  "h": "ab0a918f18"
+ },
+ {
+  "id": "ui:ac873dcc926d:nadpis",
+  "typ": "text",
+  "cs": "Typ zákazníka",
+  "en": "Customer type",
+  "it": "Tipo di cliente",
+  "h": "ac873dcc92"
+ },
+ {
+  "id": "ui:4a5a57b348ed:hlaska",
+  "typ": "text",
+  "cs": "tyč ({n} mm)",
+  "en": "bar ({n} mm)",
+  "it": "barra ({n} mm)",
+  "h": "4a5a57b348"
+ },
+ {
+  "id": "ui:312be44c04e9:hlaska",
+  "typ": "text",
+  "cs": "Tyč pro bublinkovou roli",
+  "en": "Bar for the bubble wrap roll",
+  "it": "Barra per rotolo di pluriball",
+  "h": "312be44c04"
+ },
+ {
+  "id": "ui:640c187af006:hlaska",
+  "typ": "text",
+  "cs": "Táhněte pro otočení",
+  "en": "Drag to rotate",
+  "it": "Trascinare per ruotare",
+  "h": "640c187af0"
+ },
+ {
+  "id": "ui:7b906cd6e392:hlaska",
+  "typ": "text",
+  "cs": "Táhněte pro otočení · svisle pro náklon",
+  "en": "Drag to rotate · drag vertically to tilt",
+  "it": "Trascinare per ruotare · in verticale per inclinare",
+  "h": "7b906cd6e3"
+ },
+ {
+  "id": "ui:699e4c5eee34:hlaska",
+  "typ": "text",
+  "cs": "U firmy je povinný název firmy.",
+  "en": "For companies, the company name is required.",
+  "it": "Per le aziende il nome dell'azienda è obbligatorio.",
+  "h": "699e4c5eee"
+ },
+ {
+  "id": "ui:c7933e485e4f:hlaska",
+  "typ": "text",
+  "cs": "Ukládám…",
+  "en": "Saving…",
+  "it": "Salvataggio in corso…",
+  "h": "c7933e485e"
+ },
+ {
+  "id": "ui:6769af2dc3af:nadpis",
+  "typ": "text",
+  "cs": "Ukázka použití",
+  "en": "Example of use",
+  "it": "Esempio di utilizzo",
+  "h": "6769af2dc3"
+ },
+ {
+  "id": "ui:b1d80291ff49:placeholder",
+  "typ": "text",
+  "cs": "Ulice, číslo, město",
+  "en": "Street, number, town",
+  "it": "Via, numero civico, città",
+  "h": "b1d80291ff"
+ },
+ {
+  "id": "ui:f3f36bdc895f:text",
+  "typ": "text",
+  "cs": "Uložit jako výchozí profil pro příště",
+  "en": "Save as default profile for next time",
+  "it": "Salvare come profilo predefinito per la prossima volta",
+  "h": "f3f36bdc89"
+ },
+ {
+  "id": "ui:7a051fb7f948:tlacitko",
+  "typ": "text",
+  "cs": "Uplatnit",
+  "en": "Apply",
+  "it": "Applicare",
+  "h": "7a051fb7f9"
+ },
+ {
+  "id": "ui:4f7a18e17af6:hlaska",
+  "typ": "text",
+  "cs": "určí se po objednávce",
+  "en": "determined after ordering",
+  "it": "da determinare dopo l'ordine",
+  "h": "4f7a18e17a"
+ },
+ {
+  "id": "ui:2a1b845ad046:odkaz",
+  "typ": "text",
+  "cs": "Už máš účet? Přihlásit se",
+  "en": "Already have an account? Log in",
+  "it": "Ha già un account? Acceda",
+  "h": "2a1b845ad0"
+ },
+ {
+  "id": "ui:cbaa5eb84569:hlaska",
+  "typ": "text",
+  "cs": "uživatel",
+  "en": "user",
+  "it": "utente",
+  "h": "cbaa5eb845"
+ },
+ {
+  "id": "ui:5d419779589a:hlaska",
+  "typ": "text",
+  "cs": "V košíku je konfigurace, která už není platná - odeberte ji a nakonfigurujte znovu.",
+  "en": "The basket contains a configuration that is no longer valid – remove it and set it up again.",
+  "it": "Nel carrello è presente una configurazione non più valida: rimuoverla e configurare di nuovo.",
+  "h": "5d41977958"
+ },
+ {
+  "id": "ui:963769bc74a9:hlaska",
+  "typ": "text",
+  "cs": "Varianty se nepodařilo načíst.",
+  "en": "The variants could not be loaded.",
+  "it": "Impossibile caricare le varianti.",
+  "h": "963769bc74"
+ },
+ {
+  "id": "ui:10fbe0e6afdd:hlaska",
+  "typ": "text",
+  "cs": "Varianty válečkových dopravníků",
+  "en": "Roller conveyor variants",
+  "it": "Varianti di trasportatori a rulli",
+  "h": "10fbe0e6af"
+ },
+ {
+  "id": "ui:317bca460b42:hlaska",
+  "typ": "text",
+  "cs": "Varování (admin): {0}",
+  "en": "Warning (admin): {0}",
+  "it": "Avviso (admin): {0}",
+  "h": "317bca460b"
+ },
+ {
+  "id": "ui:163d2797467f:nadpis",
+  "typ": "text",
+  "cs": "Vhodné příslušenství",
+  "en": "Suitable accessories",
+  "it": "Accessori adatti",
+  "h": "163d279746"
+ },
+ {
+  "id": "ui:8cee48a06d2b:title",
+  "typ": "text",
+  "cs": "Vložit celý model do hlavní Scény a do karoserie z knihovny (jen pomůcka, mimo kusovník a cenu)",
+  "en": "Insert the whole model into the main Scene and into the vehicle body from the library (aid only, not included in the bill of materials or price)",
+  "it": "Inserire l'intero modello nella Scena principale e nella carrozzeria della libreria (solo come ausilio, escluso da distinta base e prezzo)",
+  "h": "8cee48a06d"
+ },
+ {
+  "id": "ui:f8668dc3a98b:hlaska",
+  "typ": "text",
+  "cs": "Vnější rozměry",
+  "en": "External dimensions",
+  "it": "Dimensioni esterne",
+  "h": "f8668dc3a9"
+ },
+ {
+  "id": "ui:95e3a67c755c:placeholder",
+  "typ": "text",
+  "cs": "Volitelná poznámka k objednávce",
+  "en": "Optional note on the order",
+  "it": "Nota facoltativa sull'ordine",
+  "h": "95e3a67c75"
+ },
+ {
+  "id": "ui:47421ac31ae2:hlaska",
+  "typ": "text",
+  "cs": "Vyber dodavatele.",
+  "en": "Select a supplier.",
+  "it": "Selezionare il fornitore.",
+  "h": "47421ac31a"
+ },
+ {
+  "id": "ui:f4424afe321e:hlaska",
+  "typ": "text",
+  "cs": "Vyberte délku, šířku a typ válečku – tabulka ukazuje všech {0} variant najednou, ceny bez DPH i s DPH.",
+  "en": "Select the length, width and roller type – the table shows all {0} variants at once, with prices excl. VAT and incl. VAT.",
+  "it": "Selezionare lunghezza, larghezza e tipo di rullo – la tabella mostra contemporaneamente tutte le {0} varianti, con prezzi IVA esclusa e IVA inclusa.",
+  "h": "f4424afe32"
+ },
+ {
+  "id": "ui:1eb4542aac9f:hlaska",
+  "typ": "text",
+  "cs": "Vyberte délku, šířku a typ válečku – tabulka ukazuje všechny varianty najednou, ceny bez DPH i s DPH.",
+  "en": "Select the length, width and roller type – the table shows all variants at once, with prices excl. and incl. VAT.",
+  "it": "Scegliere lunghezza, larghezza e tipo di rullo: la tabella mostra tutte le varianti contemporaneamente, con prezzi IVA esclusa e IVA inclusa.",
+  "h": "1eb4542aac"
+ },
+ {
+  "id": "ui:42277cc7a159:text",
+  "typ": "text",
+  "cs": "Vyberte materiál pracovní desky.",
+  "en": "Select the worktop material.",
+  "it": "Selezionare il materiale del piano di lavoro.",
+  "h": "42277cc7a1"
+ },
+ {
+  "id": "ui:761632496e1b:hlaska",
+  "typ": "text",
+  "cs": "Vyberte místo montáže.",
+  "en": "Please select the installation location.",
+  "it": "Selezionare il luogo di installazione.",
+  "h": "761632496e"
+ },
+ {
+  "id": "ui:a7b36403cf92:hlaska",
+  "typ": "text",
+  "cs": "Vyberte prosím aspoň {n} položku.",
+  "en": "Please select at least {n} item.",
+  "it": "Selezionare almeno {n} elemento.",
+  "h": "a7b36403cf"
+ },
+ {
+  "id": "ui:47348ae8c682:text",
+  "typ": "text",
+  "cs": "Vyberte prosím jeden z typů stolu.",
+  "en": "Please select one of the table types.",
+  "it": "Selezionare uno dei tipi di tavolo.",
+  "h": "47348ae8c6"
+ },
+ {
+  "id": "ui:719a5544e299:hlaska",
+  "typ": "text",
+  "cs": "Vyberte prosím způsob dopravy i platby.",
+  "en": "Please select a shipping method and a payment method.",
+  "it": "Selezionare il metodo di spedizione e di pagamento.",
+  "h": "719a5544e2"
+ },
+ {
+  "id": "ui:70cc3937adef:text",
+  "typ": "text",
+  "cs": "Vyberte příslušenství",
+  "en": "Select accessories",
+  "it": "Selezionare gli accessori",
+  "h": "70cc3937ad"
+ },
+ {
+  "id": "ui:02fdd0681f56:text",
+  "typ": "text",
+  "cs": "Vyberte typ výškově stavitelného stolu",
+  "en": "Select the type of height-adjustable table",
+  "it": "Selezionare il tipo di tavolo regolabile in altezza",
+  "h": "02fdd0681f"
+ },
+ {
+  "id": "ui:bab4b0615419:text",
+  "typ": "text",
+  "cs": "Vybrané realizované zakázky — hliníkové vestavby do dodávek a užitkových vozidel a ergonomické pracovní a balicí stoly na míru. Klikněte na fotografii pro zvětšení.",
+  "en": "Selected completed projects — aluminium fit-outs for vans and commercial vehicles, and ergonomic made-to-measure workbenches and packing tables. Click a photo to enlarge.",
+  "it": "Progetti realizzati selezionati — allestimenti in alluminio per furgoni e veicoli commerciali, banchi da lavoro e tavoli da imballaggio ergonomici su misura. Cliccare sulla fotografia per ingrandire.",
+  "h": "bab4b06154"
+ },
+ {
+  "id": "ui:9b8c1cae2d84:hlaska",
+  "typ": "text",
+  "cs": "Vymazat všechny značky?",
+  "en": "Clear all marks?",
+  "it": "Cancellare tutti i segni?",
+  "h": "9b8c1cae2d"
+ },
+ {
+  "id": "ui:f76ebf482ff1:hlaska",
+  "typ": "text",
+  "cs": "Vyplňte prosím e-mail, ať se vám můžeme ozvat zpět.",
+  "en": "Please enter your email address so that we can get back to you.",
+  "it": "Inserire l'indirizzo e-mail per poter essere ricontattati.",
+  "h": "f76ebf482f"
+ },
+ {
+  "id": "ui:c67731a1f666:hlaska",
+  "typ": "text",
+  "cs": "Vyplňte prosím všechna pole.",
+  "en": "Please fill in all fields.",
+  "it": "Compilare tutti i campi.",
+  "h": "c67731a1f6"
+ },
+ {
+  "id": "ui:20fad4b0c02e:text",
+  "typ": "text",
+  "cs": "Vyrobíme vám výškově stavitelný nebo balicí stůl přesně podle zadání. Vyplňte pár kroků níže a ozveme se vám s návrhem a cenou.",
+  "en": "We will make a height-adjustable table or packing table exactly to your specification. Complete the few steps below and we will get back to you with a proposal and a price.",
+  "it": "Realizziamo tavoli regolabili in altezza o tavoli da imballaggio esattamente secondo le Sue specifiche. Completi i pochi passaggi riportati di seguito e Le invieremo una proposta con il prezzo.",
+  "h": "20fad4b0c0"
+ },
+ {
+  "id": "ui:4db56e1e9e87:hlaska",
+  "typ": "text",
+  "cs": "Vytvořit další z této karty",
+  "en": "Create another from this product",
+  "it": "Creare un altro da questo prodotto",
+  "h": "4db56e1e9e"
+ },
+ {
+  "id": "ui:6a4921e26abb:text",
+  "typ": "text",
+  "cs": "Vytvořit novou online nabídku z této karty?",
+  "en": "Create a new online quotation from this product?",
+  "it": "Creare un nuovo preventivo online da questo prodotto?",
+  "h": "6a4921e26a"
+ },
+ {
+  "id": "ui:ba0356eeb8b8:tlacitko",
+  "typ": "text",
+  "cs": "Vytvořit nákupní objednávku",
+  "en": "Create purchase order",
+  "it": "Creare ordine di acquisto",
+  "h": "ba0356eeb8"
+ },
+ {
+  "id": "ui:dee8132dc030:tlacitko",
+  "typ": "text",
+  "cs": "Vytvořit online nabídku",
+  "en": "Create online quotation",
+  "it": "Creare preventivo online",
+  "h": "dee8132dc0"
+ },
+ {
+  "id": "ui:d4bc76b18a79:nadpis",
+  "typ": "text",
+  "cs": "Vytvořit účet",
+  "en": "Create an account",
+  "it": "Creare un account",
+  "h": "d4bc76b18a"
+ },
+ {
+  "id": "ui:d51f006fabeb:hlaska",
+  "typ": "text",
+  "cs": "Vyřízeno",
+  "en": "Completed",
+  "it": "Evaso",
+  "h": "d51f006fab"
+ },
+ {
+  "id": "ui:95ceb84c5965:tlacitko",
+  "typ": "text",
+  "cs": "Vzhled online nabídek…",
+  "en": "Online quotation appearance…",
+  "it": "Aspetto dei preventivi online…",
+  "h": "95ceb84c59"
+ },
+ {
+  "id": "ui:3b9f98985d7d:placeholder",
+  "typ": "text",
+  "cs": "Váš dotaz...",
+  "en": "Your question...",
+  "it": "La Sua domanda...",
+  "h": "3b9f98985d"
+ },
+ {
+  "id": "ui:2e22628fc753:placeholder",
+  "typ": "text",
+  "cs": "Váš e-mail",
+  "en": "Your email",
+  "it": "La Sua e-mail",
+  "h": "2e22628fc7"
+ },
+ {
+  "id": "ui:9aaae1573cbe:hlaska",
+  "typ": "text",
+  "cs": "Výchozí",
+  "en": "Default",
+  "it": "Predefinito",
+  "h": "9aaae1573c"
+ },
+ {
+  "id": "ui:16aea9203b53:hlaska",
+  "typ": "text",
+  "cs": "výkres z našeho 3D modelu",
+  "en": "drawing from our 3D model",
+  "it": "disegno dal nostro modello 3D",
+  "h": "16aea9203b"
+ },
+ {
+  "id": "ui:8f6169f896ea:hlaska",
+  "typ": "text",
+  "cs": "Výrobce",
+  "en": "Manufacturer",
+  "it": "Produttore",
+  "h": "8f6169f896"
+ },
+ {
+  "id": "ui:94bede9a1abd:hlaska",
+  "typ": "text",
+  "cs": "Výsuv na klávesnici apod.",
+  "en": "Pull-out for keyboard, etc.",
+  "it": "Estraibile per tastiera e simili",
+  "h": "94bede9a1a"
+ },
+ {
+  "id": "ui:072c5c5f560a:hlaska",
+  "typ": "text",
+  "cs": "Výsuv – boční dveře",
+  "en": "Pull-out – side door",
+  "it": "Estraibile – porta laterale",
+  "h": "072c5c5f56"
+ },
+ {
+  "id": "ui:fe70a2756a9a:hlaska",
+  "typ": "text",
+  "cs": "Výsuv – zadní dveře",
+  "en": "Pull-out – rear door",
+  "it": "Estraibile – porta posteriore",
+  "h": "fe70a2756a"
+ },
+ {
+  "id": "ui:172436b19ac0:hlaska",
+  "typ": "text",
+  "cs": "Výsuvná podlaha",
+  "en": "Pull-out floor",
+  "it": "Pavimento estraibile",
+  "h": "172436b19a"
+ },
+ {
+  "id": "ui:92272e6a330f:hlaska",
+  "typ": "text",
+  "cs": "Výsuvné plastové boxy s případným zámkem",
+  "en": "Pull-out plastic boxes with optional lock",
+  "it": "Box in plastica estraibili con eventuale serratura",
+  "h": "92272e6a33"
+ },
+ {
+  "id": "ui:691dc5493459:hlaska",
+  "typ": "text",
+  "cs": "Výřez desky pro váhu nebo skener",
+  "en": "Worktop cut-out for scales or scanner",
+  "it": "Ritaglio nel piano di lavoro per bilancia o scanner",
+  "h": "691dc54934"
+ },
+ {
+  "id": "ui:387c5854be20:hlaska",
+  "typ": "text",
+  "cs": "Výška (mm)",
+  "en": "Height (mm)",
+  "it": "Altezza (mm)",
+  "h": "387c5854be"
+ },
+ {
+  "id": "ui:dc6ff5ea0d39:placeholder",
+  "typ": "text",
+  "cs": "výška (mm)",
+  "en": "height (mm)",
+  "it": "altezza (mm)",
+  "h": "dc6ff5ea0d"
+ },
+ {
+  "id": "ui:af75a8ec17f4:text",
+  "typ": "text",
+  "cs": "Včetně montáže: {0} bez DPH",
+  "en": "Including assembly: {0} excl. VAT",
+  "it": "Montaggio incluso: {0} IVA esclusa",
+  "h": "af75a8ec17"
+ },
+ {
+  "id": "ui:8807d7ac126e:hlaska",
+  "typ": "text",
+  "cs": "Vše",
+  "en": "All",
+  "it": "Tutti",
+  "h": "8807d7ac12"
+ },
+ {
+  "id": "ui:be82b43a60c0:hlaska",
+  "typ": "text",
+  "cs": "width=\"{0}\" height=\"{1}\"",
+  "en": "width=\"{0}\" height=\"{1}\"",
+  "it": "width=\"{0}\" height=\"{1}\"",
+  "h": "be82b43a60"
+ },
+ {
+  "id": "ui:94331dffc163:hlaska",
+  "typ": "text",
+  "cs": "YouTube video",
+  "en": "YouTube video",
+  "it": "Video YouTube",
+  "h": "94331dffc1"
+ },
+ {
+  "id": "ui:425fa303126c:text",
+  "typ": "text",
+  "cs": "Zadej e-mail, na který ti pošleme odkaz pro nastavení nového hesla.",
+  "en": "Enter the email address to which we will send a link to set a new password.",
+  "it": "Inserire l'indirizzo e-mail a cui invieremo il link per impostare una nuova password.",
+  "h": "425fa30312"
+ },
+ {
+  "id": "ui:14a97d1852c1:hlaska",
+  "typ": "text",
+  "cs": "Zadej prosím platné telefonní číslo (aspoň {n} číslic).",
+  "en": "Please enter a valid phone number (at least {n} digits).",
+  "it": "Inserire un numero di telefono valido (almeno {n} cifre).",
+  "h": "14a97d1852"
+ },
+ {
+  "id": "ui:212cf8f17e49:hlaska",
+  "typ": "text",
+  "cs": "Zadej prosím platný e-mail.",
+  "en": "Please enter a valid email address.",
+  "it": "Inserire un indirizzo e-mail valido.",
+  "h": "212cf8f17e"
+ },
+ {
+  "id": "ui:71d3c9f79942:text",
+  "typ": "text",
+  "cs": "Zadejte délku v mm.",
+  "en": "Enter the length in mm.",
+  "it": "Inserire la lunghezza in mm.",
+  "h": "71d3c9f799"
+ },
+ {
+  "id": "ui:92e2866c41bb:text",
+  "typ": "text",
+  "cs": "Zadejte jméno.",
+  "en": "Enter your name.",
+  "it": "Inserire il nome.",
+  "h": "92e2866c41"
+ },
+ {
+  "id": "ui:c8814bb17a8a:text",
+  "typ": "text",
+  "cs": "Zadejte platný e-mail.",
+  "en": "Enter a valid email address.",
+  "it": "Inserire un indirizzo e-mail valido.",
+  "h": "c8814bb17a"
+ },
+ {
+  "id": "ui:c6941fac08e4:text",
+  "typ": "text",
+  "cs": "Zadejte rozsah výšky v mm.",
+  "en": "Enter the height range in mm.",
+  "it": "Inserire l'intervallo di altezza in mm.",
+  "h": "c6941fac08"
+ },
+ {
+  "id": "ui:6463b8179593:text",
+  "typ": "text",
+  "cs": "Zadejte telefon.",
+  "en": "Enter a phone number.",
+  "it": "Inserire il numero di telefono.",
+  "h": "6463b81795"
+ },
+ {
+  "id": "ui:6bd3b244afc9:text",
+  "typ": "text",
+  "cs": "Zadejte šířku v mm.",
+  "en": "Enter the width in mm.",
+  "it": "Inserire la larghezza in mm.",
+  "h": "6bd3b244af"
+ },
+ {
+  "id": "ui:6611442887b3:hlaska",
+  "typ": "text",
+  "cs": "Zahodit zákres?",
+  "en": "Discard the drawing?",
+  "it": "Scartare il disegno?",
+  "h": "6611442887"
+ },
+ {
+  "id": "ui:fbac9a402b96:hlaska",
+  "typ": "text",
+  "cs": "Zakládám účet…",
+  "en": "Creating account…",
+  "it": "Creazione dell'account in corso…",
+  "h": "fbac9a402b"
+ },
+ {
+  "id": "ui:754be16777a6:hlaska",
+  "typ": "text",
+  "cs": "Zamítnuto",
+  "en": "Rejected",
+  "it": "Respinto",
+  "h": "754be16777"
+ },
+ {
+  "id": "ui:d1acea0cea96:nadpis",
+  "typ": "text",
+  "cs": "Zapomenuté heslo",
+  "en": "Forgotten password",
+  "it": "Password dimenticata",
+  "h": "d1acea0cea"
+ },
+ {
+  "id": "ui:f5b7b4af9e51:meta",
+  "typ": "text",
+  "cs": "Zapomenuté heslo – Hliníkový konstrukční stavebnicový systém s drážkami",
+  "en": "Forgotten password – Modular aluminium construction system",
+  "it": "Password dimenticata – Sistema costruttivo in alluminio",
+  "h": "f5b7b4af9e"
+ },
+ {
+  "id": "ui:a23d87243ed7:odkaz",
+  "typ": "text",
+  "cs": "Zapomenuté heslo?",
+  "en": "Forgotten password?",
+  "it": "Password dimenticata?",
+  "h": "a23d87243e"
+ },
+ {
+  "id": "ui:f474cc04fc0d:tlacitko",
+  "typ": "text",
+  "cs": "Zaregistrovat se",
+  "en": "Register",
+  "it": "Registrarsi",
+  "h": "f474cc04fc"
+ },
+ {
+  "id": "ui:4031d54fd5f8:text",
+  "typ": "text",
+  "cs": "Zatím bez obsahu.",
+  "en": "No content yet.",
+  "it": "Ancora nessun contenuto.",
+  "h": "4031d54fd5"
+ },
+ {
+  "id": "ui:99c171a07403:text",
+  "typ": "text",
+  "cs": "Zatím tu nejsou žádné fotografie.",
+  "en": "There are no photos here yet.",
+  "it": "Non ci sono ancora fotografie.",
+  "h": "99c171a074"
+ },
+ {
+  "id": "ui:46c023425c69:text",
+  "typ": "text",
+  "cs": "Zatím tu nejsou žádné kategorie.",
+  "en": "There are no categories here yet.",
+  "it": "Non ci sono ancora categorie.",
+  "h": "46c023425c"
+ },
+ {
+  "id": "ui:5e48481889f8:hlaska",
+  "typ": "text",
+  "cs": "Zatím žádné fotky.",
+  "en": "No photos yet.",
+  "it": "Ancora nessuna foto.",
+  "h": "5e48481889"
+ },
+ {
+  "id": "ui:8ff83411f1ec:hlaska",
+  "typ": "text",
+  "cs": "Zatím žádné objednávky.",
+  "en": "No orders yet.",
+  "it": "Ancora nessun ordine.",
+  "h": "8ff83411f1"
+ },
+ {
+  "id": "ui:ae2883a526af:tlacitko",
+  "typ": "text",
+  "cs": "Zavřít",
+  "en": "Close",
+  "it": "Chiudere",
+  "h": "ae2883a526"
+ },
+ {
+  "id": "ui:2e3b9888809c:title",
+  "typ": "text",
+  "cs": "Zavřít (Esc)",
+  "en": "Close (Esc)",
+  "it": "Chiudere (Esc)",
+  "h": "2e3b988880"
+ },
+ {
+  "id": "ui:cf38a16ac9bc:aria",
+  "typ": "text",
+  "cs": "Zavřít menu kategorií",
+  "en": "Close category menu",
+  "it": "Chiudere il menu delle categorie",
+  "h": "cf38a16ac9"
+ },
+ {
+  "id": "ui:1fb52f49bd65:text",
+  "typ": "text",
+  "cs": "Zaškrtni, kde se má hledat.",
+  "en": "Tick where to search.",
+  "it": "Selezionare dove cercare.",
+  "h": "1fb52f49bd"
+ },
+ {
+  "id": "ui:f6b79cb2c6e5:text",
+  "typ": "text",
+  "cs": "Zbytky pro vás: {0}",
+  "en": "Offcuts left for you: {0}",
+  "it": "Sfridi per Lei: {0}",
+  "h": "f6b79cb2c6"
+ },
+ {
+  "id": "ui:1eec4eed4ee2:text",
+  "typ": "text",
+  "cs": "Zbytky z tyčí zůstávají vám.",
+  "en": "Offcuts from the bars remain yours.",
+  "it": "Gli sfridi delle barre restano al cliente.",
+  "h": "1eec4eed4e"
+ },
+ {
+  "id": "ui:65eda8e7b523:hlaska",
+  "typ": "text",
+  "cs": "Zkopírováno",
+  "en": "Copied",
+  "it": "Copiato",
+  "h": "65eda8e7b5"
+ },
+ {
+  "id": "ui:3ce0f49251e0:hlaska",
+  "typ": "text",
+  "cs": "Zkusit znovu",
+  "en": "Try again",
+  "it": "Riprovare",
+  "h": "3ce0f49251"
+ },
+ {
+  "id": "ui:27971d43d206:hlaska",
+  "typ": "text",
+  "cs": "Zobrazení",
+  "en": "View",
+  "it": "Visualizzazione",
+  "h": "27971d43d2"
+ },
+ {
+  "id": "ui:47f6418fa5bc:hlaska",
+  "typ": "text",
+  "cs": "Zobrazit fotogalerii stolů",
+  "en": "View the table photo gallery",
+  "it": "Visualizzare la galleria fotografica dei tavoli",
+  "h": "47f6418fa5"
+ },
+ {
+  "id": "ui:136f97f861c1:hlaska",
+  "typ": "text",
+  "cs": "Zobrazit fotogalerii vestaveb",
+  "en": "View the van fit-out photo gallery",
+  "it": "Visualizzare la galleria fotografica degli allestimenti per furgoni",
+  "h": "136f97f861"
+ },
+ {
+  "id": "ui:0d078d54eb80:text",
+  "typ": "text",
+  "cs": "Zopakuj heslo",
+  "en": "Repeat password",
+  "it": "Ripetere la password",
+  "h": "0d078d54eb"
+ },
+ {
+  "id": "ui:7a77a032e052:tlacitko",
+  "typ": "text",
+  "cs": "Zpět",
+  "en": "Back",
+  "it": "Indietro",
+  "h": "7a77a032e0"
+ },
+ {
+  "id": "ui:37c027ba655c:odkaz",
+  "typ": "text",
+  "cs": "Zpět na hlavní stránku",
+  "en": "Back to the home page",
+  "it": "Tornare alla home page",
+  "h": "37c027ba65"
+ },
+ {
+  "id": "ui:dd6247c70962:nadpis",
+  "typ": "text",
+  "cs": "Způsob dopravy",
+  "en": "Shipping method",
+  "it": "Metodo di spedizione",
+  "h": "dd6247c709"
+ },
+ {
+  "id": "ui:c704ee457c87:nadpis",
+  "typ": "text",
+  "cs": "Způsob platby",
+  "en": "Payment method",
+  "it": "Metodo di pagamento",
+  "h": "c704ee457c"
+ },
+ {
+  "id": "ui:960f05e6d98b:hlaska",
+  "typ": "text",
+  "cs": "Zrušeno",
+  "en": "Cancelled",
+  "it": "Annullato",
+  "h": "960f05e6d9"
+ },
+ {
+  "id": "ui:950ea014836c:hlaska",
+  "typ": "text",
+  "cs": "Zrušená",
+  "en": "Cancelled",
+  "it": "Annullato",
+  "h": "950ea01483"
+ },
+ {
+  "id": "ui:9bd5ed7e6ef7:tlacitko",
+  "typ": "text",
+  "cs": "Zrušit",
+  "en": "Cancel",
+  "it": "Annullare",
+  "h": "9bd5ed7e6e"
+ },
+ {
+  "id": "ui:d09458b857be:tlacitko",
+  "typ": "text",
+  "cs": "Zrušit filtr",
+  "en": "Clear filter",
+  "it": "Rimuovere il filtro",
+  "h": "d09458b857"
+ },
+ {
+  "id": "ui:b4e272fbb222:hlaska",
+  "typ": "text",
+  "cs": "Zrušit filtry",
+  "en": "Clear filters",
+  "it": "Azzerare i filtri",
+  "h": "b4e272fbb2"
+ },
+ {
+  "id": "ui:a1eceaa47310:tlacitko",
+  "typ": "text",
+  "cs": "Zvolené parametry ({0})",
+  "en": "Selected parameters ({0})",
+  "it": "Parametri selezionati ({0})",
+  "h": "a1eceaa473"
+ },
+ {
+  "id": "ui:9d3ba8588165:hlaska",
+  "typ": "text",
+  "cs": "Zvětšit fotografii: {0}",
+  "en": "Enlarge photo: {0}",
+  "it": "Ingrandire la foto: {0}",
+  "h": "9d3ba85881"
+ },
+ {
+  "id": "ui:ef558b4b4215:hlaska",
+  "typ": "text",
+  "cs": "Záruka",
+  "en": "Warranty",
+  "it": "Garanzia",
+  "h": "ef558b4b42"
+ },
+ {
+  "id": "ui:551ce0287014:hlaska",
+  "typ": "text",
+  "cs": "{0} Kč",
+  "en": "{0} EUR",
+  "it": "{0} EUR",
+  "h": "551ce02870"
+ },
+ {
+  "id": "ui:1b072d83324e:text",
+  "typ": "html",
+  "cs": "{0} Kč / {1}{2} <1>bez DPH</1>",
+  "en": "{0} EUR / {1}{2} <1>excl. VAT</1>",
+  "it": "{0} EUR / {1}{2} <1>IVA esclusa</1>",
+  "h": "1b072d8332"
+ },
+ {
+  "id": "ui:1d0ea53bc096:hlaska",
+  "typ": "text",
+  "cs": "{0} Kč/$ = {1} Kč",
+  "en": "{0} EUR/$ = {1} EUR",
+  "it": "{0} EUR/$ = {1} EUR",
+  "h": "1d0ea53bc0"
+ },
+ {
+  "id": "ui:92d73c1bded7:hlaska",
+  "typ": "text",
+  "cs": "{0} | Logiman",
+  "en": "{0} | Logiman",
+  "it": "{0} | Logiman",
+  "h": "92d73c1bde"
+ },
+ {
+  "id": "ui:5ebeca597e0e:hlaska",
+  "typ": "text",
+  "cs": "{0} – Hliníkový konstrukční stavebnicový systém s drážkami",
+  "en": "{0} – Modular aluminium construction system",
+  "it": "{0} – Sistema costruttivo modulare in alluminio",
+  "h": "5ebeca597e"
+ },
+ {
+  "id": "ui:1d86487d8053:hlaska",
+  "typ": "text",
+  "cs": "{0} — náhled se připravuje",
+  "en": "{0} — preview is being prepared",
+  "it": "{0} — anteprima in preparazione",
+  "h": "1d86487d80"
+ },
+ {
+  "id": "ui:06791fd9157b:text",
+  "typ": "html",
+  "cs": "{10}<1/><2>za {11}</2>",
+  "en": "{10}<1/><2>per {11}</2>",
+  "it": "{10}<1/><2>per {11}</2>",
+  "h": "06791fd915"
+ },
+ {
+  "id": "ui:da05207b76a8:text",
+  "typ": "text",
+  "cs": "{2} (max {3} ks)",
+  "en": "{2} (max {3} pcs)",
+  "it": "{2} (max {3} pz)",
+  "h": "da05207b76"
+ },
+ {
+  "id": "ui:486a66efa3ef:text",
+  "typ": "html",
+  "cs": "{3}<1/><2>za řez</2>",
+  "en": "{3}<1/><2>per cut</2>",
+  "it": "{3}<1/><2>per taglio</2>",
+  "h": "486a66efa3"
+ },
+ {
+  "id": "ui:b5fe19ade8d1:hlaska",
+  "typ": "text",
+  "cs": "{n} - {n} týdnů",
+  "en": "{n}–{n} weeks",
+  "it": "{n}–{n} settimane",
+  "h": "b5fe19ade8"
+ },
+ {
+  "id": "ui:ee749d13e168:text",
+  "typ": "text",
+  "cs": "{n} ks = {n} mm",
+  "en": "{n} pcs = {n} mm",
+  "it": "{n} pz = {n} mm",
+  "h": "ee749d13e1"
+ },
+ {
+  "id": "ui:e811e9d99b77:hlaska",
+  "typ": "text",
+  "cs": "{n} {0}px -apple-system, \"Segoe UI\", Roboto, Arial, sans-serif",
+  "en": "{n} {0}px -apple-system,\"Segoe UI\",Roboto,Arial,sans-serif",
+  "it": "{n} {0}px -apple-system,\"Segoe UI\",Roboto,Arial,sans-serif",
+  "h": "e811e9d99b"
+ },
+ {
+  "id": "ui:0b41829c0790:placeholder",
+  "typ": "text",
+  "cs": "{n} číslic, např. {n}",
+  "en": "{n} digits, e.g. {n}",
+  "it": "{n} cifre, ad es. {n}",
+  "h": "0b41829c07"
+ },
+ {
+  "id": "ui:9451ee47b014:hlaska",
+  "typ": "text",
+  "cs": "Ø válečku",
+  "en": "Roller Ø",
+  "it": "Ø rullo",
+  "h": "9451ee47b0"
+ },
+ {
+  "id": "ui:7a2ab4c7b479:hlaska",
+  "typ": "text",
+  "cs": "Ø{0} · šířka {1} mm · délka {2}",
+  "en": "Ø{0} · width {1} mm · length {2}",
+  "it": "Ø{0} · larghezza {1} mm · lunghezza {2}",
+  "h": "7a2ab4c7b4"
+ },
+ {
+  "id": "ui:a591171020ee:text",
+  "typ": "text",
+  "cs": "Úhel sklonu",
+  "en": "Tilt angle",
+  "it": "Angolo di inclinazione",
+  "h": "a591171020"
+ },
+ {
+  "id": "ui:47d27ccae58e:odkaz",
+  "typ": "text",
+  "cs": "Úvod",
+  "en": "Home",
+  "it": "Home",
+  "h": "47d27ccae5"
+ },
+ {
+  "id": "ui:84197db2ea3f:text",
+  "typ": "text",
+  "cs": "Účet",
+  "en": "Account",
+  "it": "Account",
+  "h": "84197db2ea"
+ },
+ {
+  "id": "ui:128a2f585af6:hlaska",
+  "typ": "text",
+  "cs": "Čeká na zboží",
+  "en": "Awaiting goods",
+  "it": "In attesa della merce",
+  "h": "128a2f585a"
+ },
+ {
+  "id": "ui:ae4a09a2e821:hlaska",
+  "typ": "text",
+  "cs": "červená",
+  "en": "red",
+  "it": "rosso",
+  "h": "ae4a09a2e8"
+ },
+ {
+  "id": "ui:e96c7de78ed0:hlaska",
+  "typ": "text",
+  "cs": "Řazení",
+  "en": "Sort by",
+  "it": "Ordinamento",
+  "h": "e96c7de78e"
+ },
+ {
+  "id": "ui:aa0221b0a59a:aria",
+  "typ": "text",
+  "cs": "Řazení produktů",
+  "en": "Sort products",
+  "it": "Ordinamento dei prodotti",
+  "h": "aa0221b0a5"
+ },
+ {
+  "id": "ui:135a84749575:hlaska",
+  "typ": "text",
+  "cs": "Řemeslo",
+  "en": "Craft",
+  "it": "Artigianato",
+  "h": "135a847495"
+ },
+ {
+  "id": "ui:78cff21133ac:hlaska",
+  "typ": "text",
+  "cs": "Řez profilu {0}×{1}",
+  "en": "Profile cut {0}×{1}",
+  "it": "Taglio profilo {0}×{1}",
+  "h": "78cff21133"
+ },
+ {
+  "id": "ui:b637a05b6de7:text",
+  "typ": "text",
+  "cs": "Řez profilu – {0}",
+  "en": "Profile cross-section – {0}",
+  "it": "Sezione del profilo – {0}",
+  "h": "b637a05b6d"
+ },
+ {
+  "id": "ui:d64d6a93576b:hlaska",
+  "typ": "text",
+  "cs": "Řezačka balicího materiálu",
+  "en": "Packaging material cutter",
+  "it": "Taglierina per materiale da imballaggio",
+  "h": "d64d6a9357"
+ },
+ {
+  "id": "ui:8de24a75bea1:hlaska",
+  "typ": "text",
+  "cs": "Šipka",
+  "en": "Arrow",
+  "it": "Freccia",
+  "h": "8de24a75be"
+ },
+ {
+  "id": "ui:58bb841911bd:hlaska",
+  "typ": "text",
+  "cs": "Škrtnout",
+  "en": "Cross out",
+  "it": "Barrare",
+  "h": "58bb841911"
+ },
+ {
+  "id": "ui:7484ba947aef:hlaska",
+  "typ": "text",
+  "cs": "Šířka",
+  "en": "Width",
+  "it": "Larghezza",
+  "h": "7484ba947a"
+ },
+ {
+  "id": "ui:8f3f1fd61d08:placeholder",
+  "typ": "text",
+  "cs": "šířka (mm)",
+  "en": "width (mm)",
+  "it": "larghezza (mm)",
+  "h": "8f3f1fd61d"
+ },
+ {
+  "id": "ui:f8ea03a4e535:hlaska",
+  "typ": "text",
+  "cs": "Šířka (mm)",
+  "en": "Width (mm)",
+  "it": "Larghezza (mm)",
+  "h": "f8ea03a4e5"
+ },
+ {
+  "id": "ui:bbd54df67320:hlaska",
+  "typ": "text",
+  "cs": "Šířka dopravníku (délka válečku)",
+  "en": "Conveyor width (roller length)",
+  "it": "Larghezza del trasportatore (lunghezza del rullo)",
+  "h": "bbd54df673"
+ },
+ {
+  "id": "ui:9a10e978e68e:text",
+  "typ": "text",
+  "cs": "Šířka pracovní desky (mm)",
+  "en": "Worktop width (mm)",
+  "it": "Larghezza del piano di lavoro (mm)",
+  "h": "9a10e978e6"
+ },
+ {
+  "id": "ui:4bcad6943216:hlaska",
+  "typ": "text",
+  "cs": "Šířka: od nejužší",
+  "en": "Width: narrowest first",
+  "it": "Larghezza: dalla più stretta",
+  "h": "4bcad69432"
+ },
+ {
+  "id": "ui:19c4daa76a94:hlaska",
+  "typ": "text",
+  "cs": "Šířka: od nejširší",
+  "en": "Width: widest first",
+  "it": "Larghezza: dalla più larga",
+  "h": "19c4daa76a"
+ },
+ {
+  "id": "ui:34fef2bda4b3:hlaska",
+  "typ": "text",
+  "cs": "žlutá",
+  "en": "yellow",
+  "it": "giallo",
+  "h": "34fef2bda4"
+ },
+ {
+  "id": "ui:7b2b4dcc84e2:hlaska",
+  "typ": "text",
+  "cs": "Žádná varianta neodpovídá vybraným filtrům.",
+  "en": "No variant matches the selected filters.",
+  "it": "Nessuna variante corrisponde ai filtri selezionati.",
+  "h": "7b2b4dcc84"
+ },
+ {
+  "id": "ui:e8cab0913ab1:text",
+  "typ": "text",
+  "cs": "Žádné dosud založené.",
+  "en": "None created yet.",
+  "it": "Nessun reclamo o reso registrato finora.",
+  "h": "e8cab0913a"
+ },
+ {
+  "id": "ui:6b5f134bebe4:text",
+  "typ": "text",
+  "cs": "— nezvoleno —",
+  "en": "— not selected —",
+  "it": "— non selezionato —",
+  "h": "6b5f134beb"
+ },
+ {
+  "id": "ui:e4ab86882fcd:text",
+  "typ": "text",
+  "cs": "— vyber dodavatele —",
+  "en": "— select a supplier —",
+  "it": "— selezionare il fornitore —",
+  "h": "e4ab86882f"
+ },
+ {
+  "id": "ui:e30aceaaf4bd:hlaska",
+  "typ": "text",
+  "cs": "• Zbytky pro vás: {0}",
+  "en": "• Offcuts for you: {0}",
+  "it": "• Rimanenze per Lei: {0}",
+  "h": "e30aceaaf4"
+ },
+ {
+  "id": "ui:e4195243c7b4:tlacitko",
+  "typ": "text",
+  "cs": "← Zpět",
+  "en": "← Back",
+  "it": "← Indietro",
+  "h": "e4195243c7"
+ },
+ {
+  "id": "ui:e55c040cd931:odkaz",
+  "typ": "text",
+  "cs": "← Zpět do kategorie",
+  "en": "← Back to category",
+  "it": "← Indietro alla categoria",
+  "h": "e55c040cd9"
+ },
+ {
+  "id": "ui:26c14074ecff:odkaz",
+  "typ": "text",
+  "cs": "← zpět na přihlášení",
+  "en": "← back to login",
+  "it": "← indietro all'accesso",
+  "h": "26c14074ec"
+ },
+ {
+  "id": "ui:ebf6786f50bc:odkaz",
+  "typ": "text",
+  "cs": "← Zpět na seznam objednávek",
+  "en": "← Back to the order list",
+  "it": "← Tornare all'elenco degli ordini",
+  "h": "ebf6786f50"
+ },
+ {
+  "id": "ui:1214ad364417:hlaska",
+  "typ": "text",
+  "cs": "↩️ Zpět",
+  "en": "↩️ Back",
+  "it": "↩️ Indietro",
+  "h": "1214ad3644"
+ },
+ {
+  "id": "ui:8ad2cfc0a9fb:text",
+  "typ": "text",
+  "cs": "◎ Závit M{0}",
+  "en": "◎ Thread M{0}",
+  "it": "◎ Filetto M{0}",
+  "h": "8ad2cfc0a9"
+ },
+ {
+  "id": "ui:4293c266cf8c:text",
+  "typ": "text",
+  "cs": "⚠️ Web je v rekonstrukci — omluvte prosím dočasné nedostatky.",
+  "en": "⚠️ The website is being rebuilt — please excuse any temporary shortcomings.",
+  "it": "⚠️ Il sito è in fase di ristrutturazione — ci scusiamo per eventuali disagi temporanei.",
+  "h": "4293c266cf"
+ },
+ {
+  "id": "ui:a6160361c9f4:tlacitko",
+  "typ": "text",
+  "cs": "⚡ Efekty",
+  "en": "⚡ Effects",
+  "it": "⚡ Effetti",
+  "h": "a6160361c9"
+ },
+ {
+  "id": "ui:06839a2c87c8:tlacitko",
+  "typ": "text",
+  "cs": "✏️ Zakreslit myší ve vybraném snímku požadované změny.",
+  "en": "✏️ Mark the required changes with the mouse in the selected image.",
+  "it": "✏️ Contrassegnare con il mouse le modifiche richieste nell'immagine selezionata.",
+  "h": "06839a2c87"
+ },
+ {
+  "id": "ui:728c721ada82:hlaska",
+  "typ": "text",
+  "cs": "✓ Přidáno",
+  "en": "✓ Added",
+  "it": "✓ Aggiunto",
+  "h": "728c721ada"
+ },
+ {
+  "id": "ui:39419024a8ae:hlaska",
+  "typ": "text",
+  "cs": "✕ Zavřít",
+  "en": "✕ Close",
+  "it": "✕ Chiudere",
+  "h": "39419024a8"
+ },
+ {
+  "id": "ui:9193570c79e6:hlaska",
+  "typ": "text",
+  "cs": "➕ Zakreslit další pohled",
+  "en": "➕ Draw another view",
+  "it": "➕ Disegnare un'altra vista",
+  "h": "9193570c79"
+ },
+ {
+  "id": "ui:3e666e0aa1e4:odkaz",
+  "typ": "text",
+  "cs": "⬇ Stáhnout 3D model (STP)",
+  "en": "⬇ Download 3D model (STP)",
+  "it": "⬇ Scaricare il modello 3D (STP)",
+  "h": "3e666e0aa1"
+ },
+ {
+  "id": "ui:26c7781182f9:text",
+  "typ": "text",
+  "cs": "⬡ Slot {1}mm{2}",
+  "en": "⬡ Slot {1}mm{2}",
+  "it": "⬡ Scanalatura {1}mm{2}",
+  "h": "26c7781182"
+ },
+ {
+  "id": "ui:97c0f2cdc58c:text",
+  "typ": "text",
+  "cs": "📑 Nebo založit jako nákupní objednávku dodavateli",
+  "en": "📑 Or create as a purchase order to the supplier",
+  "it": "📑 Oppure creare come ordine di acquisto al fornitore",
+  "h": "97c0f2cdc5"
+ },
+ {
+  "id": "ui:a7630b1fbb81:tlacitko",
+  "typ": "html",
+  "cs": "🛒 Košík<1>{n}</1>",
+  "en": "🛒 Basket<1>{n}</1>",
+  "it": "🛒 Carrello<1>{n}</1>",
+  "h": "a7630b1fbb"
+ },
+ {
+  "id": "ui:701253da2158:text",
+  "typ": "text",
+  "cs": "\">přihlas.",
+  "en": "\">log in.",
+  "it": "\">accedere.",
+  "h": "701253da21",
+  "zastarale": true
+ },
+ {
+  "id": "ui:5d8bcf515e39:hlaska",
+  "typ": "text",
+  "cs": ", nabídka je platná se statickým modelem.",
+  "en": ", the quotation is valid with a static model.",
+  "it": ", il preventivo è valido con il modello statico.",
+  "h": "5d8bcf515e",
+  "zastarale": true
+ },
+ {
+  "id": "ui:266aa4ed22db:hlaska",
+  "typ": "text",
+  "cs": ", šířka",
+  "en": ", width",
+  "it": ", larghezza",
+  "h": "266aa4ed22",
+  "zastarale": true
+ },
+ {
+  "id": "ui:ed3aeec4d649:hlaska",
+  "typ": "text",
+  "cs": ". Šipkami otáčejte.",
+  "en": ". Use the arrow keys to rotate.",
+  "it": ". Usare le frecce per ruotare.",
+  "h": "ed3aeec4d6",
+  "zastarale": true
+ },
+ {
+  "id": "ui:fc9092cf2664:hlaska",
+  "typ": "text",
+  "cs": "Detail produktu:",
+  "en": "Product details:",
+  "it": "Dettaglio prodotto:",
+  "h": "fc9092cf26",
+  "zastarale": true
+ },
+ {
+  "id": "ui:eff3fc927027:hlaska",
+  "typ": "text",
+  "cs": "Délka válečku",
+  "en": "Roller length",
+  "it": "Lunghezza del rullo",
+  "h": "eff3fc9270",
+  "zastarale": true
+ },
+ {
+  "id": "ui:6a35f4ee03f1:hlaska",
+  "typ": "text",
+  "cs": "mm · délka",
+  "en": "mm · length",
+  "it": "mm · lunghezza",
+  "h": "6a35f4ee03",
+  "zastarale": true
+ },
+ {
+  "id": "ui:171b7a672f9c:hlaska",
+  "typ": "text",
+  "cs": "mm, délka",
+  "en": "mm, length",
+  "it": "mm, lunghezza",
+  "h": "171b7a672f",
+  "zastarale": true
+ },
+ {
+  "id": "ui:36f7fb9a0b81:hlaska",
+  "typ": "text",
+  "cs": "Nabídka",
+  "en": "Quotation",
+  "it": "Preventivo",
+  "h": "36f7fb9a0b",
+  "zastarale": true
+ },
+ {
+  "id": "ui:8efb3d12e333:hlaska",
+  "typ": "text",
+  "cs": "Nabídku se nepodařilo vytvořit (HTTP",
+  "en": "The quotation could not be created (HTTP",
+  "it": "Impossibile creare il preventivo (HTTP",
+  "h": "8efb3d12e3",
+  "zastarale": true
+ },
+ {
+  "id": "ui:31e14e9c157b:hlaska",
+  "typ": "text",
+  "cs": "náhrada -",
+  "en": "substitute –",
+  "it": "sostituzione –",
+  "h": "31e14e9c15",
+  "zastarale": true
+ },
+ {
+  "id": "ui:3b1ce9643dce:hlaska",
+  "typ": "text",
+  "cs": "Obrázky:",
+  "en": "Images:",
+  "it": "Immagini:",
+  "h": "3b1ce9643d",
+  "zastarale": true
+ },
+ {
+  "id": "ui:a7b67fba63b1:hlaska",
+  "typ": "text",
+  "cs": "Otočný náhled, azimut",
+  "en": "Rotating preview, azimuth",
+  "it": "Anteprima rotante, azimut",
+  "h": "a7b67fba63",
+  "zastarale": true
+ },
+ {
+  "id": "ui:db3a8c8f5d8b:hlaska",
+  "typ": "text",
+  "cs": "Pozn.: 3D pohyby v nabídce nejsou",
+  "en": "Note: there are no 3D movements in the quotation",
+  "it": "Nota: nel preventivo non sono presenti movimenti 3D",
+  "h": "db3a8c8f5d",
+  "zastarale": true
+ },
+ {
+  "id": "ui:39499e2a8f8f:text",
+  "typ": "text",
+  "cs": "Pro nákup se prosím",
+  "en": "To buy, please",
+  "it": "Per acquistare è necessario",
+  "h": "39499e2a8f",
+  "zastarale": true
+ },
+ {
+  "id": "ui:ca76264c8bb1:hlaska",
+  "typ": "text",
+  "cs": "Snímek",
+  "en": "Slide",
+  "it": "Diapositiva",
+  "h": "ca76264c8b",
+  "zastarale": true
+ },
+ {
+  "id": "ui:45e9c01337b0:hlaska",
+  "typ": "text",
+  "cs": "variant najednou, ceny bez DPH i s DPH.",
+  "en": "variants at once, with prices excl. and incl. VAT.",
+  "it": "varianti contemporaneamente, con prezzi IVA esclusa e IVA inclusa.",
+  "h": "45e9c01337",
+  "zastarale": true
+ },
+ {
+  "id": "ui:2a4bfed55c23:hlaska",
+  "typ": "text",
+  "cs": "Varování (admin):",
+  "en": "Warning (admin):",
+  "it": "Avviso (admin):",
+  "h": "2a4bfed55c",
+  "zastarale": true
+ },
+ {
+  "id": "ui:34400b5eed68:hlaska",
+  "typ": "text",
+  "cs": "Vyberte délku, šířku a typ válečku – tabulka ukazuje všech",
+  "en": "Select the length, width and roller type – the table shows all",
+  "it": "Scegliere lunghezza, larghezza e tipo di rullo: la tabella mostra tutte le",
+  "h": "34400b5eed",
+  "zastarale": true
+ },
+ {
+  "id": "ui:49a796362e31:hlaska",
+  "typ": "text",
+  "cs": "vytvořena.",
+  "en": "created.",
+  "it": "creato.",
+  "h": "49a796362e",
+  "zastarale": true
+ },
+ {
+  "id": "ui:6606efa97372:hlaska",
+  "typ": "text",
+  "cs": "Zvětšit fotografii:",
+  "en": "Enlarge photo:",
+  "it": "Ingrandire la foto:",
+  "h": "6606efa973",
+  "zastarale": true
+ },
+ {
+  "id": "ui:95f685bfabc5:hlaska",
+  "typ": "text",
+  "cs": "| Logiman",
+  "en": "| Logiman",
+  "it": "| Logiman",
+  "h": "95f685bfab",
+  "zastarale": true
+ },
+ {
+  "id": "ui:9d710b990ff2:hlaska",
+  "typ": "text",
+  "cs": "· šířka",
+  "en": "· width",
+  "it": "· larghezza",
+  "h": "9d710b990f",
+  "zastarale": true
+ },
+ {
+  "id": "ui:c25fc7bc2df3:hlaska",
+  "typ": "text",
+  "cs": "– Hliníkový konstrukční stavebnicový systém s drážkami",
+  "en": "– Modular aluminium construction system",
+  "it": "– Sistema costruttivo modulare in alluminio",
+  "h": "c25fc7bc2d",
+  "zastarale": true
+ },
+ {
+  "id": "ui:391f6ef5af09:hlaska",
+  "typ": "text",
+  "cs": "— náhled se připravuje",
+  "en": "— preview in preparation",
+  "it": "— anteprima in preparazione",
+  "h": "391f6ef5af",
+  "zastarale": true
+ }
+]

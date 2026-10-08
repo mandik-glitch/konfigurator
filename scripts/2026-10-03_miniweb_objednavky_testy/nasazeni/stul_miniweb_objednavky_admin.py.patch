@@ -1,0 +1,14 @@
+--- a/api/miniweb_objednavky_admin.py
++++ b/api/miniweb_objednavky_admin.py
+@@ -82,10 +82,7 @@
+             if not order:
+                 conn.rollback()
+                 return _err(404, "not_found", "Objednávka neexistuje.")
+-            if not order.get("order_host"):
+-                conn.rollback()
+-                return _err(409, "not_miniweb_order", "Schválení dopravy se týká jen objednávek z mini-shopu.")
+-            if not order.get("shipping_review"):
++            if not order.get("shipping_review"):               # od 2026-10-04 i objednavky hlavniho e-shopu (konfigurace stolu s neuplnou hmotnosti, hostovska objednavka stolu)
+                 conn.rollback()
+                 return _err(409, "shipping_not_in_review", "Doprava u této objednávky už je schválená (nebo nebyla ke schválení).")
+             if approve:

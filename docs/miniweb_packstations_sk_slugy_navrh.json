@@ -1,0 +1,11 @@
+{
+  "poznamka": "SCHVALENO bot3 2026-10-03. Klic je 'url_slug' (bot5, volitelny, vedla 'slug'; parser ho pozna az po nasadeni sady). Hotovy SK katalog s url_slug je v miniweb_packstations_sk_navrh_s_url_slug.json: po 'nasazeno' od bot5 ho bot7 prepise na miniweb_packstations_sk_navrh.json. Zmena url_slug u schvaleneho textu vracia text do draftu (schvaluje sa znova).",
+  "sk": {
+    "categories": {
+      "packing-tables-and-workbenches": "baliace-a-pracovne-stoly"
+    },
+    "products": {
+      "configurable-packing-station-and-workbench": "konfigurovatelny-baliaci-a-pracovny-stol"
+    }
+  }
+}

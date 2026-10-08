@@ -1,0 +1,11 @@
+--- a/api/miniweb.py
++++ b/api/miniweb.py
+@@ -408,7 +408,7 @@
+     countries = [c for c in (x.strip().upper() for x in (shop["countries"] or "").split(",")) if _COUNTRY_RE.match(c)]
+     locale = shop["locale"] if shop["locale"] and _LOCALE_RE.match(shop["locale"]) else ctx["lang"]
+     return _respond({"shop": _shop_slug(sf), "lang": ctx["lang"], "locale": locale, "currency": _currency(shop), "accent": accent, "countries": countries,
+-                     "contact": contact, "price_mode": shop["price_mode"], "inquiry_only": True, "inquiry_enabled": bool(shop["inquiry_enabled"]), "alternates": alternates,
++                     "contact": contact, "price_mode": shop["price_mode"], "checkout_mode": "order" if shop.get("orders_enabled") else "inquiry", "inquiry_only": True, "inquiry_enabled": bool(shop["inquiry_enabled"]), "alternates": alternates,
+                      "preview": not ctx["live"]}, ctx)
+ 
+ 

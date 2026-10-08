@@ -1,0 +1,13 @@
+[Unit]
+Description=Casovac hlidace nevyrizenych FBX->GLB konverznich hlaseni (kazdych 15 minut)
+# :13 - po konverznim dispatchi (:11, prevede/zapise pripadnou chybu do
+# bot_ukoly) a pred razitky (:14), stejny 15min stagger jako zbytek Vandr
+# pipeline (viz konfigurator-vandr-fbx-konverze-dispatch.timer).
+
+[Timer]
+OnCalendar=*-*-* *:13/15:00
+Persistent=true
+RandomizedDelaySec=60
+
+[Install]
+WantedBy=timers.target

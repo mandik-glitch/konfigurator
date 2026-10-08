@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <script src="/js/client-errors.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title id="pageTitleTag">Vestavby na míru</title>
+<!-- OG_TAGS_PLACEHOLDER -->
+<style>
+  :root {
+    --hub-bg: #14181f;
+    --hub-panel: #1d232c;
+    --hub-border: #2c3340;
+    --hub-text: #eef1f5;
+    --hub-text-muted: #9aa4b5;
+    --hub-accent: #ff8a3d;
+    --hub-accent-hover: #ff9d5c;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--hub-bg);
+    color: var(--hub-text);
+    font-family: var(--font-main, -apple-system, "Segoe UI", Roboto, Arial, sans-serif);
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  a { color: var(--hub-accent); }
+  .sf-hub-header {
+    padding: 56px 20px 40px;
+    text-align: center;
+    max-width: 780px;
+    margin: 0 auto;
+  }
+  #sfHubTitle {
+    margin: 0 0 16px;
+    font-size: 36px;
+    line-height: 1.2;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+  #sfHubText {
+    color: var(--hub-text-muted);
+    font-size: 14px;
+    line-height: 1.75;
+  }
+  #sfHubText:empty { display: none; }
+  main {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 20px 60px;
+  }
+  #sfHubGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+  }
+  .sf-hub-card {
+    position: relative;
+    overflow: hidden;
+    background: var(--hub-panel);
+    border: 1px solid var(--hub-border);
+    border-radius: 14px;
+    padding: 24px;
+    text-decoration: none;
+    color: var(--hub-text);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: border-color 0.15s, transform 0.15s;
+  }
+  .sf-hub-card:hover {
+    border-color: var(--hub-accent);
+    transform: translateY(-2px);
+  }
+  .sf-hub-card-title {
+    font-size: 22px;
+    font-weight: 700;
+    position: relative;
+    z-index: 1;
+  }
+  .sf-hub-card-text {
+    color: var(--hub-text-muted);
+    font-size: 14px;
+    line-height: 1.5;
+    flex: 1;
+    position: relative;
+    z-index: 1;
+  }
+  .sf-hub-card-cta {
+    color: var(--hub-accent);
+    font-weight: 600;
+    font-size: 14px;
+    position: relative;
+    z-index: 1;
+  }
+  /* Robert (pres toscanaccio-0b, 2026-08-30 noc): hover = "prujezd auta"
+     rostouci velikosti pres karty zleva doprava - male auto u nejmensiho
+     modelu (Doblo), velke u nejvetsiho (Ducato). Velikost siluety rika
+     --sf-car-scale (0..1), nastaveny primo v HTML podle poradi mezi
+     clenskymi storefronty (viz api/car_storefronts.py::_hub_page_response).
+     Cista CSS silueta (zadny obrazek) - obdelnikove telo + kabinka +
+     2 kolecka, barva --hub-accent. Umistena diskretne dole v karte,
+     hlavni obsah (nazev/text/CTA) ma vlastni z-index nad ni. */
+  .sf-hub-card-drive {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 16px;
+    height: 0;
+    pointer-events: none;
+  }
+  .sf-hub-car-icon {
+    position: absolute;
+    bottom: 0;
+    left: -18%;
+    width: calc(18px + var(--sf-car-scale, 0) * 20px);
+    height: calc(9px + var(--sf-car-scale, 0) * 10px);
+    background: var(--hub-accent);
+    border-radius: 2px 5px 2px 2px;
+    opacity: 0;
+  }
+  .sf-hub-car-icon::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: 32%;
+    width: 46%;
+    height: 60%;
+    background: inherit;
+    border-radius: 3px 5px 0 0;
+  }
+  .sf-hub-car-icon::after {
+    content: "";
+    position: absolute;
+    bottom: -18%;
+    left: 12%;
+    width: 20%;
+    height: 20%;
+    border-radius: 50%;
+    background: var(--hub-bg);
+    box-shadow: 58% 0 0 var(--hub-bg);
+  }
+  .sf-hub-card:hover .sf-hub-car-icon {
+    animation: sf-hub-car-drive 1.7s cubic-bezier(.4,0,.2,1) forwards;
+  }
+  @keyframes sf-hub-car-drive {
+    0%   { left: -18%; opacity: 0; }
+    12%  { opacity: 0.95; }
+    88%  { opacity: 0.95; }
+    100% { left: 104%; opacity: 0; }
+  }
+  .sf-empty {
+    color: var(--hub-text-muted);
+    font-size: 14px;
+    line-height: 1.75;
+    text-align: center;
+  }
+  .sf-hub-footer {
+    text-align: center;
+    padding: 24px 20px 40px;
+    color: var(--hub-text-muted);
+    font-size: 13px;
+  }
+</style>
+</head>
+<body>
+  <header class="sf-hub-header">
+    <h1 id="sfHubTitle">Načítám…</h1>
+    <div id="sfHubText"></div>
+  </header>
+  <main>
+    <div id="sfHubGrid"></div>
+  </main>
+  <div class="sf-hub-footer" id="sfHubFooter"></div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+--- a/2026-10-07_police_bez_desky/test_police_bez_desky_zlato.py
++++ b/2026-10-07_police_bez_desky/test_police_bez_desky_zlato.py
+@@ -32,18 +32,18 @@
+     kl = C.klic_konfigurace(p)
+     ted = C.otisky(S, G, K, C.vysledek(S, p), zlato.get("klice_parametru"))
+     z = zlato["mrizka"][kl]
+-    if ted != z:
++    if not C.shoduje(ted, z):
+         rozdily.append((kl, sorted(k for k in set(ted) | set(z) if ted.get(k) != z.get(k))))
+     r_true = C.vysledek(S, {**p, "police_deska": True})
+     if not isinstance(r_true, str):
+         o2 = C.otisky(S, G, K, r_true, zlato.get("klice_parametru"))
+-        if o2 != z:
++        if not C.shoduje(o2, z):
+             rozdily_true.append((kl, sorted(k for k in set(o2) | set(z) if o2.get(k) != z.get(k))))
+ check(not rozdily, f"Z1: vychozi chovani: {len(rozdily)} z {len(konf)} konfiguraci se lisi od stavu pred zavedenim volby", str(rozdily[:3]))
+ check(not rozdily_true, f"Z2: police_deska=True: {len(rozdily_true)} z {len(konf)} konfiguraci se lisi", str(rozdily_true[:3]))
+ for kl, h in zlato["glb"].items():
+     p = json.loads(kl)
+-    r = S.sestav_stul(**p)
++    r = C.vysledek(S, p)
+     check(hashlib.sha256(G.model_pro_parametry(r["parametry"])[1]).hexdigest()[:20] == h, f"Z3: GLB vychoziho stolu {kl} beze zmeny")
+ print(f"   ({len(konf)} konfiguraci, {len(zlato['glb'])} GLB)")
+ print(f"\n==> {OK}/{OK + len(FAILS)} kontrol OK" + (f", SELHALO {len(FAILS)}: " + "; ".join(FAILS[:5]) if FAILS else ""))

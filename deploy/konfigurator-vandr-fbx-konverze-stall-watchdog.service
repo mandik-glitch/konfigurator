@@ -1,0 +1,14 @@
+[Unit]
+Description=Konfigurator - hlidac nevyrizenych FBX->GLB konverznich hlaseni ve Vandr pipeline (jen detekce a hlaseni, nic neopravuje)
+After=network.target mysql.service
+
+[Service]
+Type=oneshot
+# User=root - stejny duvod jako konfigurator-render-stall-watchdog: potrebuje
+# zapisovat do AGENTS_LOG.md (root:root, www-data nema pravo zapisu). Cte jen
+# bot_ukoly, nic nekonvertuje, nepotrebuje pristup ke katalogu/GLB.
+User=root
+Group=root
+WorkingDirectory=/opt/konfigurator
+EnvironmentFile=/opt/konfigurator/api/.env
+ExecStart=/opt/konfigurator/api/venv/bin/python3 /opt/konfigurator/scripts/2026-09-25_vandr_fbx_konverze_stall_watchdog.py

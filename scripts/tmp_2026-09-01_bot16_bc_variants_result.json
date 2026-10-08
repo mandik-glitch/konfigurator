@@ -1,0 +1,7378 @@
+{
+ "berlingo": {
+  "B": {
+   "parts": [
+    {
+     "part_id": "car_body_153",
+     "position": [
+      0,
+      0,
+      0
+     ],
+     "quaternion": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ]
+    },
+    {
+     "part_id": "car_body_154",
+     "position": [
+      0,
+      0,
+      0
+     ],
+     "quaternion": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ]
+    },
+    {
+     "part_id": "car_body_155",
+     "position": [
+      0,
+      0,
+      0
+     ],
+     "quaternion": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ]
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -264.99915336235426,
+      542,
+      -1358.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1.08,
+      1
+     ],
+     "role": "predni-svislice"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -583.9991533623543,
+      542,
+      -1358.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1.08,
+      1
+     ],
+     "role": "zadni-svislice"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -424.49915336235426,
+      17,
+      -1358.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-dolni"
+    },
+    {
+     "part_id": "product_3071",
+     "position": [
+      -264.99915336235426,
+      1085,
+      -1358.2286376953125
+     ],
+     "quaternion": [
+      0.7071067811865475,
+      0,
+      0,
+      0.7071067811865475
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "zaslepka-predni-svislice"
+    },
+    {
+     "part_id": "product_3071",
+     "position": [
+      -583.9991533623543,
+      1085,
+      -1358.2286376953125
+     ],
+     "quaternion": [
+      0.7071067811865475,
+      0,
+      0,
+      0.7071067811865475
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "zaslepka-zadni-svislice"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -264.99915336235426,
+      542,
+      -96.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1.08,
+      1
+     ],
+     "role": "predni-svislice"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -583.9991533623543,
+      542,
+      -96.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1.08,
+      1
+     ],
+     "role": "zadni-svislice"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -424.49915336235426,
+      17,
+      -96.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-dolni"
+    },
+    {
+     "part_id": "product_3071",
+     "position": [
+      -264.99915336235426,
+      1085,
+      -96.2286376953125
+     ],
+     "quaternion": [
+      0.7071067811865475,
+      0,
+      0,
+      0.7071067811865475
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "zaslepka-predni-svislice"
+    },
+    {
+     "part_id": "product_3071",
+     "position": [
+      -583.9991533623543,
+      1085,
+      -96.2286376953125
+     ],
+     "quaternion": [
+      0.7071067811865475,
+      0,
+      0,
+      0.7071067811865475
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "zaslepka-zadni-svislice"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -264.99915336235426,
+      17,
+      -727.2286376953125
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1.232,
+      1
+     ],
+     "role": "nosnik-sloupec0-patro0"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -583.9991533623543,
+      17,
+      -727.2286376953125
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1.232,
+      1
+     ],
+     "role": "nosnik-sloupec0-patro0"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -424.49915336235426,
+      17,
+      -1328.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro0"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -424.49915336235426,
+      17,
+      -928.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro0"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -424.49915336235426,
+      17,
+      -527.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro0"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -424.49915336235426,
+      17,
+      -126.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro0"
+    },
+    {
+     "part_id": "product_3795",
+     "position": [
+      -567.4858763085213,
+      1002.134522,
+      -1520.7859921565966
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "eurobox-sloupec0-patro0"
+    },
+    {
+     "part_id": "product_3795",
+     "position": [
+      -567.4858763085213,
+      1002.134522,
+      -1120.2859921565966
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "eurobox-sloupec0-patro0"
+    },
+    {
+     "part_id": "product_3795",
+     "position": [
+      -567.4858763085213,
+      1002.134522,
+      -719.2859921565966
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "eurobox-sloupec0-patro0"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -264.99915336235426,
+      347,
+      -727.2286376953125
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1.232,
+      1
+     ],
+     "role": "nosnik-sloupec0-patro1"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -583.9991533623543,
+      347,
+      -727.2286376953125
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1.232,
+      1
+     ],
+     "role": "nosnik-sloupec0-patro1"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -424.49915336235426,
+      347,
+      -1328.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro1"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -424.49915336235426,
+      347,
+      -928.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro1"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -424.49915336235426,
+      347,
+      -527.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro1"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -424.49915336235426,
+      347,
+      -126.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro1"
+    },
+    {
+     "part_id": "product_3794",
+     "position": [
+      -567.4858763085213,
+      1043.567632,
+      -1520.7859921565966
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "eurobox-sloupec0-patro1"
+    },
+    {
+     "part_id": "product_3794",
+     "position": [
+      -567.4858763085213,
+      1043.567632,
+      -1120.2859921565966
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "eurobox-sloupec0-patro1"
+    },
+    {
+     "part_id": "product_3794",
+     "position": [
+      -567.4858763085213,
+      1043.567632,
+      -719.2859921565966
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "eurobox-sloupec0-patro1"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -264.99915336235426,
+      627,
+      -727.2286376953125
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1.232,
+      1
+     ],
+     "role": "nosnik-sloupec0-patro2"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -583.9991533623543,
+      627,
+      -727.2286376953125
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1.232,
+      1
+     ],
+     "role": "nosnik-sloupec0-patro2"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -424.49915336235426,
+      627,
+      -1328.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro2"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -424.49915336235426,
+      627,
+      -928.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro2"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -424.49915336235426,
+      627,
+      -527.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro2"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -424.49915336235426,
+      627,
+      -126.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro2"
+    },
+    {
+     "part_id": "product_3793",
+     "position": [
+      -424.5190783085212,
+      605.73267,
+      -1128.2288931565968
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "eurobox-sloupec0-patro2"
+    },
+    {
+     "part_id": "product_3793",
+     "position": [
+      -424.5190783085212,
+      605.73267,
+      -727.7288931565967
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "eurobox-sloupec0-patro2"
+    },
+    {
+     "part_id": "product_3793",
+     "position": [
+      -424.5190783085212,
+      605.73267,
+      -326.72889315659665
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "eurobox-sloupec0-patro2"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -264.99915336235426,
+      857,
+      -727.2286376953125
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1.232,
+      1
+     ],
+     "role": "nosnik-sloupec0-patro3"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -583.9991533623543,
+      857,
+      -727.2286376953125
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1.232,
+      1
+     ],
+     "role": "nosnik-sloupec0-patro3"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -424.49915336235426,
+      857,
+      -1328.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro3"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -424.49915336235426,
+      857,
+      -928.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro3"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -424.49915336235426,
+      857,
+      -527.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro3"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -424.49915336235426,
+      857,
+      -126.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro3"
+    },
+    {
+     "part_id": "product_3788",
+     "position": [
+      -567.4858763085213,
+      1441.0867269999999,
+      -1520.7859921565966
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "eurobox-sloupec0-patro3"
+    },
+    {
+     "part_id": "product_3788",
+     "position": [
+      -567.4858763085213,
+      1441.0867269999999,
+      -1120.2859921565966
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "eurobox-sloupec0-patro3"
+    },
+    {
+     "part_id": "product_3788",
+     "position": [
+      -567.4858763085213,
+      1441.0867269999999,
+      -719.2859921565966
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "eurobox-sloupec0-patro3"
+    }
+   ],
+   "verify": {
+    "name": "berlingo",
+    "tag": "B",
+    "dims": {
+     "lengthZ": 1292.000018119812,
+     "depthX": 349.00000762939453,
+     "heightY": 1083.0003924319894
+    },
+    "errors": [],
+    "ok": true,
+    "boxCount": 46,
+    "boxesCollide": false,
+    "unexpectedSelfCollisions": 0
+   },
+   "plan": [
+    270,
+    220,
+    170,
+    120
+   ]
+  },
+  "C": {
+   "parts": [
+    {
+     "part_id": "car_body_153",
+     "position": [
+      0,
+      0,
+      0
+     ],
+     "quaternion": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ]
+    },
+    {
+     "part_id": "car_body_154",
+     "position": [
+      0,
+      0,
+      0
+     ],
+     "quaternion": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ]
+    },
+    {
+     "part_id": "car_body_155",
+     "position": [
+      0,
+      0,
+      0
+     ],
+     "quaternion": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ]
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -264.99915336235426,
+      542,
+      -1358.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1.08,
+      1
+     ],
+     "role": "predni-svislice"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -583.9991533623543,
+      542,
+      -1358.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1.08,
+      1
+     ],
+     "role": "zadni-svislice"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -424.49915336235426,
+      17,
+      -1358.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-dolni"
+    },
+    {
+     "part_id": "product_3071",
+     "position": [
+      -264.99915336235426,
+      1085,
+      -1358.2286376953125
+     ],
+     "quaternion": [
+      0.7071067811865475,
+      0,
+      0,
+      0.7071067811865475
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "zaslepka-predni-svislice"
+    },
+    {
+     "part_id": "product_3071",
+     "position": [
+      -583.9991533623543,
+      1085,
+      -1358.2286376953125
+     ],
+     "quaternion": [
+      0.7071067811865475,
+      0,
+      0,
+      0.7071067811865475
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "zaslepka-zadni-svislice"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -264.99915336235426,
+      542,
+      -96.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1.08,
+      1
+     ],
+     "role": "predni-svislice"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -583.9991533623543,
+      542,
+      -96.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1.08,
+      1
+     ],
+     "role": "zadni-svislice"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -424.49915336235426,
+      17,
+      -96.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-dolni"
+    },
+    {
+     "part_id": "product_3071",
+     "position": [
+      -264.99915336235426,
+      1085,
+      -96.2286376953125
+     ],
+     "quaternion": [
+      0.7071067811865475,
+      0,
+      0,
+      0.7071067811865475
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "zaslepka-predni-svislice"
+    },
+    {
+     "part_id": "product_3071",
+     "position": [
+      -583.9991533623543,
+      1085,
+      -96.2286376953125
+     ],
+     "quaternion": [
+      0.7071067811865475,
+      0,
+      0,
+      0.7071067811865475
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "zaslepka-zadni-svislice"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -264.99915336235426,
+      17,
+      -727.2286376953125
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1.232,
+      1
+     ],
+     "role": "nosnik-sloupec0-patro0"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -583.9991533623543,
+      17,
+      -727.2286376953125
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1.232,
+      1
+     ],
+     "role": "nosnik-sloupec0-patro0"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -424.49915336235426,
+      17,
+      -1328.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro0"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -424.49915336235426,
+      17,
+      -928.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro0"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -424.49915336235426,
+      17,
+      -527.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro0"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -424.49915336235426,
+      17,
+      -126.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro0"
+    },
+    {
+     "part_id": "product_3794",
+     "position": [
+      -567.4858763085213,
+      713.567632,
+      -1520.7859921565966
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "eurobox-sloupec0-patro0"
+    },
+    {
+     "part_id": "product_3794",
+     "position": [
+      -567.4858763085213,
+      713.567632,
+      -1120.2859921565966
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "eurobox-sloupec0-patro0"
+    },
+    {
+     "part_id": "product_3794",
+     "position": [
+      -567.4858763085213,
+      713.567632,
+      -719.2859921565966
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "eurobox-sloupec0-patro0"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -264.99915336235426,
+      347,
+      -727.2286376953125
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1.232,
+      1
+     ],
+     "role": "nosnik-sloupec0-patro1"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -583.9991533623543,
+      347,
+      -727.2286376953125
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1.232,
+      1
+     ],
+     "role": "nosnik-sloupec0-patro1"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -424.49915336235426,
+      347,
+      -1328.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro1"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -424.49915336235426,
+      347,
+      -928.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro1"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -424.49915336235426,
+      347,
+      -527.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro1"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -424.49915336235426,
+      347,
+      -126.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro1"
+    },
+    {
+     "part_id": "product_3793",
+     "position": [
+      -424.5190783085212,
+      325.73267,
+      -1128.2288931565968
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "eurobox-sloupec0-patro1"
+    },
+    {
+     "part_id": "product_3793",
+     "position": [
+      -424.5190783085212,
+      325.73267,
+      -727.7288931565967
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "eurobox-sloupec0-patro1"
+    },
+    {
+     "part_id": "product_3793",
+     "position": [
+      -424.5190783085212,
+      325.73267,
+      -326.72889315659665
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "eurobox-sloupec0-patro1"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -264.99915336235426,
+      627,
+      -727.2286376953125
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1.232,
+      1
+     ],
+     "role": "nosnik-sloupec0-patro2"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -583.9991533623543,
+      627,
+      -727.2286376953125
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1.232,
+      1
+     ],
+     "role": "nosnik-sloupec0-patro2"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -424.49915336235426,
+      627,
+      -1328.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro2"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -424.49915336235426,
+      627,
+      -928.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro2"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -424.49915336235426,
+      627,
+      -527.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro2"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -424.49915336235426,
+      627,
+      -126.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro2"
+    },
+    {
+     "part_id": "product_3793",
+     "position": [
+      -424.5190783085212,
+      605.73267,
+      -1128.2288931565968
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "eurobox-sloupec0-patro2"
+    },
+    {
+     "part_id": "product_3793",
+     "position": [
+      -424.5190783085212,
+      605.73267,
+      -727.7288931565967
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "eurobox-sloupec0-patro2"
+    },
+    {
+     "part_id": "product_3793",
+     "position": [
+      -424.5190783085212,
+      605.73267,
+      -326.72889315659665
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "eurobox-sloupec0-patro2"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -264.99915336235426,
+      857,
+      -727.2286376953125
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1.232,
+      1
+     ],
+     "role": "nosnik-sloupec0-patro3"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -583.9991533623543,
+      857,
+      -727.2286376953125
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1.232,
+      1
+     ],
+     "role": "nosnik-sloupec0-patro3"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -424.49915336235426,
+      857,
+      -1328.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro3"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -424.49915336235426,
+      857,
+      -928.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro3"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -424.49915336235426,
+      857,
+      -527.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro3"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -424.49915336235426,
+      857,
+      -126.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro3"
+    },
+    {
+     "part_id": "product_3788",
+     "position": [
+      -567.4858763085213,
+      1441.0867269999999,
+      -1520.7859921565966
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "eurobox-sloupec0-patro3"
+    },
+    {
+     "part_id": "product_3788",
+     "position": [
+      -567.4858763085213,
+      1441.0867269999999,
+      -1120.2859921565966
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "eurobox-sloupec0-patro3"
+    },
+    {
+     "part_id": "product_3788",
+     "position": [
+      -567.4858763085213,
+      1441.0867269999999,
+      -719.2859921565966
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "eurobox-sloupec0-patro3"
+    }
+   ],
+   "verify": {
+    "name": "berlingo",
+    "tag": "C",
+    "dims": {
+     "lengthZ": 1292.000018119812,
+     "depthX": 349.00000762939453,
+     "heightY": 1083.0003924319894
+    },
+    "errors": [],
+    "ok": true,
+    "boxCount": 46,
+    "boxesCollide": false,
+    "unexpectedSelfCollisions": 0
+   },
+   "plan": [
+    220,
+    170,
+    170,
+    120
+   ]
+  }
+ },
+ "partner": {
+  "B": {
+   "parts": [
+    {
+     "part_id": "car_body_726",
+     "position": [
+      0,
+      0,
+      0
+     ],
+     "quaternion": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ]
+    },
+    {
+     "part_id": "car_body_727",
+     "position": [
+      0,
+      0,
+      0
+     ],
+     "quaternion": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ]
+    },
+    {
+     "part_id": "car_body_728",
+     "position": [
+      0,
+      0,
+      0
+     ],
+     "quaternion": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ]
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -264.99915336235426,
+      542,
+      -1358.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1.08,
+      1
+     ],
+     "role": "predni-svislice"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -583.9991533623543,
+      542,
+      -1358.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1.08,
+      1
+     ],
+     "role": "zadni-svislice"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -424.49915336235426,
+      17,
+      -1358.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-dolni"
+    },
+    {
+     "part_id": "product_3071",
+     "position": [
+      -264.99915336235426,
+      1085,
+      -1358.2286376953125
+     ],
+     "quaternion": [
+      0.7071067811865475,
+      0,
+      0,
+      0.7071067811865475
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "zaslepka-predni-svislice"
+    },
+    {
+     "part_id": "product_3071",
+     "position": [
+      -583.9991533623543,
+      1085,
+      -1358.2286376953125
+     ],
+     "quaternion": [
+      0.7071067811865475,
+      0,
+      0,
+      0.7071067811865475
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "zaslepka-zadni-svislice"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -264.99915336235426,
+      542,
+      -96.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1.08,
+      1
+     ],
+     "role": "predni-svislice"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -583.9991533623543,
+      542,
+      -96.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1.08,
+      1
+     ],
+     "role": "zadni-svislice"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -424.49915336235426,
+      17,
+      -96.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-dolni"
+    },
+    {
+     "part_id": "product_3071",
+     "position": [
+      -264.99915336235426,
+      1085,
+      -96.2286376953125
+     ],
+     "quaternion": [
+      0.7071067811865475,
+      0,
+      0,
+      0.7071067811865475
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "zaslepka-predni-svislice"
+    },
+    {
+     "part_id": "product_3071",
+     "position": [
+      -583.9991533623543,
+      1085,
+      -96.2286376953125
+     ],
+     "quaternion": [
+      0.7071067811865475,
+      0,
+      0,
+      0.7071067811865475
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "zaslepka-zadni-svislice"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -264.99915336235426,
+      17,
+      -727.2286376953125
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1.232,
+      1
+     ],
+     "role": "nosnik-sloupec0-patro0"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -583.9991533623543,
+      17,
+      -727.2286376953125
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1.232,
+      1
+     ],
+     "role": "nosnik-sloupec0-patro0"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -424.49915336235426,
+      17,
+      -1328.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro0"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -424.49915336235426,
+      17,
+      -928.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro0"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -424.49915336235426,
+      17,
+      -527.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro0"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -424.49915336235426,
+      17,
+      -126.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro0"
+    },
+    {
+     "part_id": "product_3795",
+     "position": [
+      -567.4858763085213,
+      1002.134522,
+      -1520.7859921565966
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "eurobox-sloupec0-patro0"
+    },
+    {
+     "part_id": "product_3795",
+     "position": [
+      -567.4858763085213,
+      1002.134522,
+      -1120.2859921565966
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "eurobox-sloupec0-patro0"
+    },
+    {
+     "part_id": "product_3795",
+     "position": [
+      -567.4858763085213,
+      1002.134522,
+      -719.2859921565966
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "eurobox-sloupec0-patro0"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -264.99915336235426,
+      347,
+      -727.2286376953125
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1.232,
+      1
+     ],
+     "role": "nosnik-sloupec0-patro1"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -583.9991533623543,
+      347,
+      -727.2286376953125
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1.232,
+      1
+     ],
+     "role": "nosnik-sloupec0-patro1"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -424.49915336235426,
+      347,
+      -1328.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro1"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -424.49915336235426,
+      347,
+      -928.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro1"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -424.49915336235426,
+      347,
+      -527.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro1"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -424.49915336235426,
+      347,
+      -126.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro1"
+    },
+    {
+     "part_id": "product_3794",
+     "position": [
+      -567.4858763085213,
+      1043.567632,
+      -1520.7859921565966
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "eurobox-sloupec0-patro1"
+    },
+    {
+     "part_id": "product_3794",
+     "position": [
+      -567.4858763085213,
+      1043.567632,
+      -1120.2859921565966
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "eurobox-sloupec0-patro1"
+    },
+    {
+     "part_id": "product_3794",
+     "position": [
+      -567.4858763085213,
+      1043.567632,
+      -719.2859921565966
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "eurobox-sloupec0-patro1"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -264.99915336235426,
+      627,
+      -727.2286376953125
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1.232,
+      1
+     ],
+     "role": "nosnik-sloupec0-patro2"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -583.9991533623543,
+      627,
+      -727.2286376953125
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1.232,
+      1
+     ],
+     "role": "nosnik-sloupec0-patro2"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -424.49915336235426,
+      627,
+      -1328.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro2"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -424.49915336235426,
+      627,
+      -928.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro2"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -424.49915336235426,
+      627,
+      -527.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro2"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -424.49915336235426,
+      627,
+      -126.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro2"
+    },
+    {
+     "part_id": "product_3793",
+     "position": [
+      -424.5190783085212,
+      605.73267,
+      -1128.2288931565968
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "eurobox-sloupec0-patro2"
+    },
+    {
+     "part_id": "product_3793",
+     "position": [
+      -424.5190783085212,
+      605.73267,
+      -727.7288931565967
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "eurobox-sloupec0-patro2"
+    },
+    {
+     "part_id": "product_3793",
+     "position": [
+      -424.5190783085212,
+      605.73267,
+      -326.72889315659665
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "eurobox-sloupec0-patro2"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -264.99915336235426,
+      857,
+      -727.2286376953125
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1.232,
+      1
+     ],
+     "role": "nosnik-sloupec0-patro3"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -583.9991533623543,
+      857,
+      -727.2286376953125
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1.232,
+      1
+     ],
+     "role": "nosnik-sloupec0-patro3"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -424.49915336235426,
+      857,
+      -1328.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro3"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -424.49915336235426,
+      857,
+      -928.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro3"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -424.49915336235426,
+      857,
+      -527.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro3"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -424.49915336235426,
+      857,
+      -126.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro3"
+    },
+    {
+     "part_id": "product_3788",
+     "position": [
+      -567.4858763085213,
+      1441.0867269999999,
+      -1520.7859921565966
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "eurobox-sloupec0-patro3"
+    },
+    {
+     "part_id": "product_3788",
+     "position": [
+      -567.4858763085213,
+      1441.0867269999999,
+      -1120.2859921565966
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "eurobox-sloupec0-patro3"
+    },
+    {
+     "part_id": "product_3788",
+     "position": [
+      -567.4858763085213,
+      1441.0867269999999,
+      -719.2859921565966
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "eurobox-sloupec0-patro3"
+    }
+   ],
+   "verify": {
+    "name": "partner",
+    "tag": "B",
+    "dims": {
+     "lengthZ": 1292.000018119812,
+     "depthX": 349.00000762939453,
+     "heightY": 1083.0003924319894
+    },
+    "errors": [],
+    "ok": true,
+    "boxCount": 46,
+    "boxesCollide": false,
+    "unexpectedSelfCollisions": 0
+   },
+   "plan": [
+    270,
+    220,
+    170,
+    120
+   ]
+  },
+  "C": {
+   "parts": [
+    {
+     "part_id": "car_body_726",
+     "position": [
+      0,
+      0,
+      0
+     ],
+     "quaternion": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ]
+    },
+    {
+     "part_id": "car_body_727",
+     "position": [
+      0,
+      0,
+      0
+     ],
+     "quaternion": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ]
+    },
+    {
+     "part_id": "car_body_728",
+     "position": [
+      0,
+      0,
+      0
+     ],
+     "quaternion": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ]
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -264.99915336235426,
+      542,
+      -1358.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1.08,
+      1
+     ],
+     "role": "predni-svislice"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -583.9991533623543,
+      542,
+      -1358.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1.08,
+      1
+     ],
+     "role": "zadni-svislice"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -424.49915336235426,
+      17,
+      -1358.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-dolni"
+    },
+    {
+     "part_id": "product_3071",
+     "position": [
+      -264.99915336235426,
+      1085,
+      -1358.2286376953125
+     ],
+     "quaternion": [
+      0.7071067811865475,
+      0,
+      0,
+      0.7071067811865475
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "zaslepka-predni-svislice"
+    },
+    {
+     "part_id": "product_3071",
+     "position": [
+      -583.9991533623543,
+      1085,
+      -1358.2286376953125
+     ],
+     "quaternion": [
+      0.7071067811865475,
+      0,
+      0,
+      0.7071067811865475
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "zaslepka-zadni-svislice"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -264.99915336235426,
+      542,
+      -96.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1.08,
+      1
+     ],
+     "role": "predni-svislice"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -583.9991533623543,
+      542,
+      -96.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1.08,
+      1
+     ],
+     "role": "zadni-svislice"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -424.49915336235426,
+      17,
+      -96.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-dolni"
+    },
+    {
+     "part_id": "product_3071",
+     "position": [
+      -264.99915336235426,
+      1085,
+      -96.2286376953125
+     ],
+     "quaternion": [
+      0.7071067811865475,
+      0,
+      0,
+      0.7071067811865475
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "zaslepka-predni-svislice"
+    },
+    {
+     "part_id": "product_3071",
+     "position": [
+      -583.9991533623543,
+      1085,
+      -96.2286376953125
+     ],
+     "quaternion": [
+      0.7071067811865475,
+      0,
+      0,
+      0.7071067811865475
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "zaslepka-zadni-svislice"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -264.99915336235426,
+      17,
+      -727.2286376953125
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1.232,
+      1
+     ],
+     "role": "nosnik-sloupec0-patro0"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -583.9991533623543,
+      17,
+      -727.2286376953125
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1.232,
+      1
+     ],
+     "role": "nosnik-sloupec0-patro0"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -424.49915336235426,
+      17,
+      -1328.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro0"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -424.49915336235426,
+      17,
+      -928.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro0"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -424.49915336235426,
+      17,
+      -527.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro0"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -424.49915336235426,
+      17,
+      -126.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro0"
+    },
+    {
+     "part_id": "product_3794",
+     "position": [
+      -567.4858763085213,
+      713.567632,
+      -1520.7859921565966
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "eurobox-sloupec0-patro0"
+    },
+    {
+     "part_id": "product_3794",
+     "position": [
+      -567.4858763085213,
+      713.567632,
+      -1120.2859921565966
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "eurobox-sloupec0-patro0"
+    },
+    {
+     "part_id": "product_3794",
+     "position": [
+      -567.4858763085213,
+      713.567632,
+      -719.2859921565966
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "eurobox-sloupec0-patro0"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -264.99915336235426,
+      347,
+      -727.2286376953125
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1.232,
+      1
+     ],
+     "role": "nosnik-sloupec0-patro1"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -583.9991533623543,
+      347,
+      -727.2286376953125
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1.232,
+      1
+     ],
+     "role": "nosnik-sloupec0-patro1"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -424.49915336235426,
+      347,
+      -1328.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro1"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -424.49915336235426,
+      347,
+      -928.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro1"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -424.49915336235426,
+      347,
+      -527.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro1"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -424.49915336235426,
+      347,
+      -126.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro1"
+    },
+    {
+     "part_id": "product_3793",
+     "position": [
+      -424.5190783085212,
+      325.73267,
+      -1128.2288931565968
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "eurobox-sloupec0-patro1"
+    },
+    {
+     "part_id": "product_3793",
+     "position": [
+      -424.5190783085212,
+      325.73267,
+      -727.7288931565967
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "eurobox-sloupec0-patro1"
+    },
+    {
+     "part_id": "product_3793",
+     "position": [
+      -424.5190783085212,
+      325.73267,
+      -326.72889315659665
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "eurobox-sloupec0-patro1"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -264.99915336235426,
+      627,
+      -727.2286376953125
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1.232,
+      1
+     ],
+     "role": "nosnik-sloupec0-patro2"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -583.9991533623543,
+      627,
+      -727.2286376953125
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1.232,
+      1
+     ],
+     "role": "nosnik-sloupec0-patro2"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -424.49915336235426,
+      627,
+      -1328.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro2"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -424.49915336235426,
+      627,
+      -928.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro2"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -424.49915336235426,
+      627,
+      -527.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro2"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -424.49915336235426,
+      627,
+      -126.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro2"
+    },
+    {
+     "part_id": "product_3793",
+     "position": [
+      -424.5190783085212,
+      605.73267,
+      -1128.2288931565968
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "eurobox-sloupec0-patro2"
+    },
+    {
+     "part_id": "product_3793",
+     "position": [
+      -424.5190783085212,
+      605.73267,
+      -727.7288931565967
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "eurobox-sloupec0-patro2"
+    },
+    {
+     "part_id": "product_3793",
+     "position": [
+      -424.5190783085212,
+      605.73267,
+      -326.72889315659665
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "eurobox-sloupec0-patro2"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -264.99915336235426,
+      857,
+      -727.2286376953125
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1.232,
+      1
+     ],
+     "role": "nosnik-sloupec0-patro3"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -583.9991533623543,
+      857,
+      -727.2286376953125
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1.232,
+      1
+     ],
+     "role": "nosnik-sloupec0-patro3"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -424.49915336235426,
+      857,
+      -1328.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro3"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -424.49915336235426,
+      857,
+      -928.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro3"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -424.49915336235426,
+      857,
+      -527.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro3"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -424.49915336235426,
+      857,
+      -126.2286376953125
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro3"
+    },
+    {
+     "part_id": "product_3788",
+     "position": [
+      -567.4858763085213,
+      1441.0867269999999,
+      -1520.7859921565966
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "eurobox-sloupec0-patro3"
+    },
+    {
+     "part_id": "product_3788",
+     "position": [
+      -567.4858763085213,
+      1441.0867269999999,
+      -1120.2859921565966
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "eurobox-sloupec0-patro3"
+    },
+    {
+     "part_id": "product_3788",
+     "position": [
+      -567.4858763085213,
+      1441.0867269999999,
+      -719.2859921565966
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "eurobox-sloupec0-patro3"
+    }
+   ],
+   "verify": {
+    "name": "partner",
+    "tag": "C",
+    "dims": {
+     "lengthZ": 1292.000018119812,
+     "depthX": 349.00000762939453,
+     "heightY": 1083.0003924319894
+    },
+    "errors": [],
+    "ok": true,
+    "boxCount": 46,
+    "boxesCollide": false,
+    "unexpectedSelfCollisions": 0
+   },
+   "plan": [
+    220,
+    170,
+    170,
+    120
+   ]
+  }
+ },
+ "trafic": {
+  "B": {
+   "parts": [
+    {
+     "part_id": "car_body_774",
+     "position": [
+      0,
+      0,
+      0
+     ],
+     "quaternion": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ]
+    },
+    {
+     "part_id": "car_body_775",
+     "position": [
+      0,
+      0,
+      0
+     ],
+     "quaternion": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ]
+    },
+    {
+     "part_id": "car_body_776",
+     "position": [
+      0,
+      0,
+      0
+     ],
+     "quaternion": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ]
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -340.8357410430908,
+      627,
+      -2064.29443359375
+     ],
+     "quaternion": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1.25,
+      1
+     ],
+     "role": "predni-svislice"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -659.8357410430908,
+      627,
+      -2064.29443359375
+     ],
+     "quaternion": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1.25,
+      1
+     ],
+     "role": "zadni-svislice"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -500.3357410430908,
+      17,
+      -2064.29443359375
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-dolni"
+    },
+    {
+     "part_id": "product_3071",
+     "position": [
+      -340.8357410430908,
+      1255,
+      -2064.29443359375
+     ],
+     "quaternion": [
+      0.7071067811865475,
+      0,
+      0,
+      0.7071067811865475
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "zaslepka-predni-svislice"
+    },
+    {
+     "part_id": "product_3071",
+     "position": [
+      -659.8357410430908,
+      1255,
+      -2064.29443359375
+     ],
+     "quaternion": [
+      0.7071067811865475,
+      0,
+      0,
+      0.7071067811865475
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "zaslepka-zadni-svislice"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -340.8357410430908,
+      627,
+      -1202.29443359375
+     ],
+     "quaternion": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1.25,
+      1
+     ],
+     "role": "predni-svislice"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -659.8357410430908,
+      627,
+      -1202.29443359375
+     ],
+     "quaternion": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1.25,
+      1
+     ],
+     "role": "zadni-svislice"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -500.3357410430908,
+      17,
+      -1202.29443359375
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-dolni"
+    },
+    {
+     "part_id": "product_3071",
+     "position": [
+      -340.8357410430908,
+      1255,
+      -1202.29443359375
+     ],
+     "quaternion": [
+      0.7071067811865475,
+      0,
+      0,
+      0.7071067811865475
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "zaslepka-predni-svislice"
+    },
+    {
+     "part_id": "product_3071",
+     "position": [
+      -659.8357410430908,
+      1255,
+      -1202.29443359375
+     ],
+     "quaternion": [
+      0.7071067811865475,
+      0,
+      0,
+      0.7071067811865475
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "zaslepka-zadni-svislice"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -340.8357410430908,
+      17,
+      -1633.29443359375
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.832,
+      1
+     ],
+     "role": "nosnik-sloupec0-patro0"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -659.8357410430908,
+      17,
+      -1633.29443359375
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.832,
+      1
+     ],
+     "role": "nosnik-sloupec0-patro0"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -500.3357410430908,
+      17,
+      -2034.29443359375
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro0"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -500.3357410430908,
+      17,
+      -1634.29443359375
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro0"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -500.3357410430908,
+      17,
+      -1233.29443359375
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro0"
+    },
+    {
+     "part_id": "product_3794",
+     "position": [
+      -643.3224639892578,
+      713.567632,
+      -2226.851788055034
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "eurobox-sloupec0-patro0"
+    },
+    {
+     "part_id": "product_3794",
+     "position": [
+      -643.3224639892578,
+      713.567632,
+      -1826.3517880550341
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "eurobox-sloupec0-patro0"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -340.8357410430908,
+      347,
+      -1633.29443359375
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.832,
+      1
+     ],
+     "role": "nosnik-sloupec0-patro1"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -659.8357410430908,
+      347,
+      -1633.29443359375
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.832,
+      1
+     ],
+     "role": "nosnik-sloupec0-patro1"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -500.3357410430908,
+      347,
+      -2034.29443359375
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro1"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -500.3357410430908,
+      347,
+      -1634.29443359375
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro1"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -500.3357410430908,
+      347,
+      -1233.29443359375
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro1"
+    },
+    {
+     "part_id": "product_3794",
+     "position": [
+      -643.3224639892578,
+      1043.567632,
+      -2226.851788055034
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "eurobox-sloupec0-patro1"
+    },
+    {
+     "part_id": "product_3794",
+     "position": [
+      -643.3224639892578,
+      1043.567632,
+      -1826.3517880550341
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "eurobox-sloupec0-patro1"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -340.8357410430908,
+      627,
+      -1633.29443359375
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.832,
+      1
+     ],
+     "role": "nosnik-sloupec0-patro2"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -659.8357410430908,
+      627,
+      -1633.29443359375
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.832,
+      1
+     ],
+     "role": "nosnik-sloupec0-patro2"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -500.3357410430908,
+      627,
+      -2034.29443359375
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro2"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -500.3357410430908,
+      627,
+      -1634.29443359375
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro2"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -500.3357410430908,
+      627,
+      -1233.29443359375
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro2"
+    },
+    {
+     "part_id": "product_3793",
+     "position": [
+      -500.3556659892578,
+      605.73267,
+      -1834.2946890550338
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "eurobox-sloupec0-patro2"
+    },
+    {
+     "part_id": "product_3793",
+     "position": [
+      -500.3556659892578,
+      605.73267,
+      -1433.7946890550343
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "eurobox-sloupec0-patro2"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -340.8357410430908,
+      857,
+      -1633.29443359375
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.832,
+      1
+     ],
+     "role": "nosnik-sloupec0-patro3"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -659.8357410430908,
+      857,
+      -1633.29443359375
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.832,
+      1
+     ],
+     "role": "nosnik-sloupec0-patro3"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -500.3357410430908,
+      857,
+      -2034.29443359375
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro3"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -500.3357410430908,
+      857,
+      -1634.29443359375
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro3"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -500.3357410430908,
+      857,
+      -1233.29443359375
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro3"
+    },
+    {
+     "part_id": "product_3788",
+     "position": [
+      -643.3224639892578,
+      1441.0867269999999,
+      -2226.851788055034
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "eurobox-sloupec0-patro3"
+    },
+    {
+     "part_id": "product_3788",
+     "position": [
+      -643.3224639892578,
+      1441.0867269999999,
+      -1826.3517880550341
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "eurobox-sloupec0-patro3"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -340.8357410430908,
+      1037,
+      -1633.29443359375
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.832,
+      1
+     ],
+     "role": "nosnik-sloupec0-patro4"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -659.8357410430908,
+      1037,
+      -1633.29443359375
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.832,
+      1
+     ],
+     "role": "nosnik-sloupec0-patro4"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -500.3357410430908,
+      1037,
+      -2034.29443359375
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro4"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -500.3357410430908,
+      1037,
+      -1634.29443359375
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro4"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -500.3357410430908,
+      1037,
+      -1233.29443359375
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro4"
+    },
+    {
+     "part_id": "product_3788",
+     "position": [
+      -643.3224639892578,
+      1621.0867269999999,
+      -2226.851788055034
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "eurobox-sloupec0-patro4"
+    },
+    {
+     "part_id": "product_3788",
+     "position": [
+      -643.3224639892578,
+      1621.0867269999999,
+      -1826.3517880550341
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "eurobox-sloupec0-patro4"
+    }
+   ],
+   "verify": {
+    "name": "trafic",
+    "tag": "B",
+    "dims": {
+     "lengthZ": 892.000018119812,
+     "depthX": 349.00000762939453,
+     "heightY": 1253.0002686523894
+    },
+    "errors": [],
+    "ok": true,
+    "boxCount": 45,
+    "boxesCollide": false,
+    "unexpectedSelfCollisions": 0
+   },
+   "plan": [
+    220,
+    220,
+    170,
+    120,
+    120
+   ]
+  },
+  "C": {
+   "parts": [
+    {
+     "part_id": "car_body_774",
+     "position": [
+      0,
+      0,
+      0
+     ],
+     "quaternion": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ]
+    },
+    {
+     "part_id": "car_body_775",
+     "position": [
+      0,
+      0,
+      0
+     ],
+     "quaternion": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ]
+    },
+    {
+     "part_id": "car_body_776",
+     "position": [
+      0,
+      0,
+      0
+     ],
+     "quaternion": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ]
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -340.8357410430908,
+      627,
+      -2064.29443359375
+     ],
+     "quaternion": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1.25,
+      1
+     ],
+     "role": "predni-svislice"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -659.8357410430908,
+      627,
+      -2064.29443359375
+     ],
+     "quaternion": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1.25,
+      1
+     ],
+     "role": "zadni-svislice"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -500.3357410430908,
+      17,
+      -2064.29443359375
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-dolni"
+    },
+    {
+     "part_id": "product_3071",
+     "position": [
+      -340.8357410430908,
+      1255,
+      -2064.29443359375
+     ],
+     "quaternion": [
+      0.7071067811865475,
+      0,
+      0,
+      0.7071067811865475
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "zaslepka-predni-svislice"
+    },
+    {
+     "part_id": "product_3071",
+     "position": [
+      -659.8357410430908,
+      1255,
+      -2064.29443359375
+     ],
+     "quaternion": [
+      0.7071067811865475,
+      0,
+      0,
+      0.7071067811865475
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "zaslepka-zadni-svislice"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -340.8357410430908,
+      627,
+      -1202.29443359375
+     ],
+     "quaternion": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1.25,
+      1
+     ],
+     "role": "predni-svislice"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -659.8357410430908,
+      627,
+      -1202.29443359375
+     ],
+     "quaternion": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1.25,
+      1
+     ],
+     "role": "zadni-svislice"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -500.3357410430908,
+      17,
+      -1202.29443359375
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-dolni"
+    },
+    {
+     "part_id": "product_3071",
+     "position": [
+      -340.8357410430908,
+      1255,
+      -1202.29443359375
+     ],
+     "quaternion": [
+      0.7071067811865475,
+      0,
+      0,
+      0.7071067811865475
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "zaslepka-predni-svislice"
+    },
+    {
+     "part_id": "product_3071",
+     "position": [
+      -659.8357410430908,
+      1255,
+      -1202.29443359375
+     ],
+     "quaternion": [
+      0.7071067811865475,
+      0,
+      0,
+      0.7071067811865475
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "zaslepka-zadni-svislice"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -340.8357410430908,
+      17,
+      -1633.29443359375
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.832,
+      1
+     ],
+     "role": "nosnik-sloupec0-patro0"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -659.8357410430908,
+      17,
+      -1633.29443359375
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.832,
+      1
+     ],
+     "role": "nosnik-sloupec0-patro0"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -500.3357410430908,
+      17,
+      -2034.29443359375
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro0"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -500.3357410430908,
+      17,
+      -1634.29443359375
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro0"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -500.3357410430908,
+      17,
+      -1233.29443359375
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro0"
+    },
+    {
+     "part_id": "product_3795",
+     "position": [
+      -643.3224639892578,
+      1002.134522,
+      -2226.851788055034
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "eurobox-sloupec0-patro0"
+    },
+    {
+     "part_id": "product_3795",
+     "position": [
+      -643.3224639892578,
+      1002.134522,
+      -1826.3517880550341
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "eurobox-sloupec0-patro0"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -340.8357410430908,
+      347,
+      -1633.29443359375
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.832,
+      1
+     ],
+     "role": "nosnik-sloupec0-patro1"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -659.8357410430908,
+      347,
+      -1633.29443359375
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.832,
+      1
+     ],
+     "role": "nosnik-sloupec0-patro1"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -500.3357410430908,
+      347,
+      -2034.29443359375
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro1"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -500.3357410430908,
+      347,
+      -1634.29443359375
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro1"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -500.3357410430908,
+      347,
+      -1233.29443359375
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro1"
+    },
+    {
+     "part_id": "product_3793",
+     "position": [
+      -500.3556659892578,
+      325.73267,
+      -1834.2946890550338
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "eurobox-sloupec0-patro1"
+    },
+    {
+     "part_id": "product_3793",
+     "position": [
+      -500.3556659892578,
+      325.73267,
+      -1433.7946890550343
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "eurobox-sloupec0-patro1"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -340.8357410430908,
+      627,
+      -1633.29443359375
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.832,
+      1
+     ],
+     "role": "nosnik-sloupec0-patro2"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -659.8357410430908,
+      627,
+      -1633.29443359375
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.832,
+      1
+     ],
+     "role": "nosnik-sloupec0-patro2"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -500.3357410430908,
+      627,
+      -2034.29443359375
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro2"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -500.3357410430908,
+      627,
+      -1634.29443359375
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro2"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -500.3357410430908,
+      627,
+      -1233.29443359375
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro2"
+    },
+    {
+     "part_id": "product_3793",
+     "position": [
+      -500.3556659892578,
+      605.73267,
+      -1834.2946890550338
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "eurobox-sloupec0-patro2"
+    },
+    {
+     "part_id": "product_3793",
+     "position": [
+      -500.3556659892578,
+      605.73267,
+      -1433.7946890550343
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "eurobox-sloupec0-patro2"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -340.8357410430908,
+      857,
+      -1633.29443359375
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.832,
+      1
+     ],
+     "role": "nosnik-sloupec0-patro3"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -659.8357410430908,
+      857,
+      -1633.29443359375
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.832,
+      1
+     ],
+     "role": "nosnik-sloupec0-patro3"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -500.3357410430908,
+      857,
+      -2034.29443359375
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro3"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -500.3357410430908,
+      857,
+      -1634.29443359375
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro3"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -500.3357410430908,
+      857,
+      -1233.29443359375
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro3"
+    },
+    {
+     "part_id": "product_3788",
+     "position": [
+      -643.3224639892578,
+      1441.0867269999999,
+      -2226.851788055034
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "eurobox-sloupec0-patro3"
+    },
+    {
+     "part_id": "product_3788",
+     "position": [
+      -643.3224639892578,
+      1441.0867269999999,
+      -1826.3517880550341
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "eurobox-sloupec0-patro3"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -340.8357410430908,
+      1037,
+      -1633.29443359375
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.832,
+      1
+     ],
+     "role": "nosnik-sloupec0-patro4"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -659.8357410430908,
+      1037,
+      -1633.29443359375
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.832,
+      1
+     ],
+     "role": "nosnik-sloupec0-patro4"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -500.3357410430908,
+      1037,
+      -2034.29443359375
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro4"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -500.3357410430908,
+      1037,
+      -1634.29443359375
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro4"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -500.3357410430908,
+      1037,
+      -1233.29443359375
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-sloupec0-patro4"
+    },
+    {
+     "part_id": "product_3788",
+     "position": [
+      -643.3224639892578,
+      1621.0867269999999,
+      -2226.851788055034
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "eurobox-sloupec0-patro4"
+    },
+    {
+     "part_id": "product_3788",
+     "position": [
+      -643.3224639892578,
+      1621.0867269999999,
+      -1826.3517880550341
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "eurobox-sloupec0-patro4"
+    }
+   ],
+   "verify": {
+    "name": "trafic",
+    "tag": "C",
+    "dims": {
+     "lengthZ": 892.000018119812,
+     "depthX": 349.00000762939453,
+     "heightY": 1253.0002686523894
+    },
+    "errors": [],
+    "ok": true,
+    "boxCount": 45,
+    "boxesCollide": false,
+    "unexpectedSelfCollisions": 0
+   },
+   "plan": [
+    270,
+    170,
+    170,
+    120,
+    120
+   ]
+  }
+ },
+ "caddy": {
+  "B": {
+   "parts": [
+    {
+     "part_id": "car_body_846",
+     "position": [
+      0,
+      0,
+      0
+     ],
+     "quaternion": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ]
+    },
+    {
+     "part_id": "car_body_847",
+     "position": [
+      0,
+      0,
+      0
+     ],
+     "quaternion": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ]
+    },
+    {
+     "part_id": "car_body_848",
+     "position": [
+      0,
+      0,
+      0
+     ],
+     "quaternion": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ]
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -349.5,
+      2192.9924926757812,
+      -1462.0114669799805
+     ],
+     "quaternion": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1.08,
+      1
+     ],
+     "role": "predni-svislice"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -668.5,
+      2072.9924926757812,
+      -1462.0114669799805
+     ],
+     "quaternion": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      0.84,
+      1
+     ],
+     "role": "zadni-svislice-dolni"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -509,
+      1667.9924926757812,
+      -1462.0114669799805
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-dolni"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -509,
+      2477.9924926757812,
+      -1462.0114669799805
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-horni"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -579.5,
+      2612.9924926757812,
+      -1462.0114669799805
+     ],
+     "quaternion": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      0.24,
+      1
+     ],
+     "role": "cap"
+    },
+    {
+     "part_id": "product_3071",
+     "position": [
+      -349.5,
+      2735.9924926757812,
+      -1462.0114669799805
+     ],
+     "quaternion": [
+      0.7071067811865475,
+      0,
+      0,
+      0.7071067811865475
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "zaslepka-predni-svislice"
+    },
+    {
+     "part_id": "product_3071",
+     "position": [
+      -668.5,
+      2495.9924926757812,
+      -1462.0114669799805
+     ],
+     "quaternion": [
+      0.7071067811865475,
+      0,
+      0,
+      0.7071067811865475
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "zaslepka-zadni-svislice-dolni"
+    },
+    {
+     "part_id": "product_3071",
+     "position": [
+      -579.5,
+      2735.9924926757812,
+      -1462.0114669799805
+     ],
+     "quaternion": [
+      0.7071067811865475,
+      0,
+      0,
+      0.7071067811865475
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "zaslepka-cap"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -349.5,
+      2192.9924926757812,
+      -1002.0114669799805
+     ],
+     "quaternion": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1.08,
+      1
+     ],
+     "role": "predni-svislice"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -668.5,
+      2072.9924926757812,
+      -1002.0114669799805
+     ],
+     "quaternion": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      0.84,
+      1
+     ],
+     "role": "zadni-svislice-dolni"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -509,
+      1667.9924926757812,
+      -1002.0114669799805
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-dolni"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -509,
+      2477.9924926757812,
+      -1002.0114669799805
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-horni"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -579.5,
+      2612.9924926757812,
+      -1002.0114669799805
+     ],
+     "quaternion": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      0.24,
+      1
+     ],
+     "role": "cap"
+    },
+    {
+     "part_id": "product_3071",
+     "position": [
+      -349.5,
+      2735.9924926757812,
+      -1002.0114669799805
+     ],
+     "quaternion": [
+      0.7071067811865475,
+      0,
+      0,
+      0.7071067811865475
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "zaslepka-predni-svislice"
+    },
+    {
+     "part_id": "product_3071",
+     "position": [
+      -668.5,
+      2495.9924926757812,
+      -1002.0114669799805
+     ],
+     "quaternion": [
+      0.7071067811865475,
+      0,
+      0,
+      0.7071067811865475
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "zaslepka-zadni-svislice-dolni"
+    },
+    {
+     "part_id": "product_3071",
+     "position": [
+      -579.5,
+      2735.9924926757812,
+      -1002.0114669799805
+     ],
+     "quaternion": [
+      0.7071067811865475,
+      0,
+      0,
+      0.7071067811865475
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "zaslepka-cap"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -349.5,
+      1667.9924926757812,
+      -1232.0114669799805
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.43,
+      1
+     ],
+     "role": "nosnik-col0-p0"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -668.5,
+      1667.9924926757812,
+      -1232.0114669799805
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.43,
+      1
+     ],
+     "role": "nosnik-col0-p0"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -509,
+      1667.9924926757812,
+      -1432.0114669799805
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-col0-p0"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -509,
+      1667.9924926757812,
+      -1032.0114669799805
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-col0-p0"
+    },
+    {
+     "part_id": "product_3795",
+     "position": [
+      -651.986722946167,
+      2653.127014675781,
+      -1624.5688214412646
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "eurobox-col0-p0"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -349.5,
+      1997.9924926757812,
+      -1232.0114669799805
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.43,
+      1
+     ],
+     "role": "nosnik-col0-p1"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -668.5,
+      1997.9924926757812,
+      -1232.0114669799805
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.43,
+      1
+     ],
+     "role": "nosnik-col0-p1"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -509,
+      1997.9924926757812,
+      -1432.0114669799805
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-col0-p1"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -509,
+      1997.9924926757812,
+      -1032.0114669799805
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-col0-p1"
+    },
+    {
+     "part_id": "product_3794",
+     "position": [
+      -651.986722946167,
+      2694.5601246757815,
+      -1624.5688214412646
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "eurobox-col0-p1"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -349.5,
+      2277.9924926757812,
+      -1232.0114669799805
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.43,
+      1
+     ],
+     "role": "nosnik-col0-p2"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -668.5,
+      2277.9924926757812,
+      -1232.0114669799805
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.43,
+      1
+     ],
+     "role": "nosnik-col0-p2"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -509,
+      2277.9924926757812,
+      -1432.0114669799805
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-col0-p2"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -509,
+      2277.9924926757812,
+      -1032.0114669799805
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-col0-p2"
+    },
+    {
+     "part_id": "product_3788",
+     "position": [
+      -651.986722946167,
+      2862.079219675781,
+      -1624.5688214412646
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "eurobox-col0-p2"
+    }
+   ],
+   "verify": {
+    "name": "caddy",
+    "tag": "B",
+    "dims": {
+     "lengthZ": 490.000018119812,
+     "depthX": 349.00000762939453,
+     "heightY": 1083.0001442538912
+    },
+    "errors": [],
+    "ok": true,
+    "boxCount": 31,
+    "boxesCollide": false,
+    "unexpectedSelfCollisions": 0
+   },
+   "plan": [
+    270,
+    220,
+    120
+   ]
+  },
+  "C": {
+   "parts": [
+    {
+     "part_id": "car_body_846",
+     "position": [
+      0,
+      0,
+      0
+     ],
+     "quaternion": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ]
+    },
+    {
+     "part_id": "car_body_847",
+     "position": [
+      0,
+      0,
+      0
+     ],
+     "quaternion": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ]
+    },
+    {
+     "part_id": "car_body_848",
+     "position": [
+      0,
+      0,
+      0
+     ],
+     "quaternion": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ]
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -349.5,
+      2192.9924926757812,
+      -1462.0114669799805
+     ],
+     "quaternion": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1.08,
+      1
+     ],
+     "role": "predni-svislice"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -668.5,
+      2072.9924926757812,
+      -1462.0114669799805
+     ],
+     "quaternion": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      0.84,
+      1
+     ],
+     "role": "zadni-svislice-dolni"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -509,
+      1667.9924926757812,
+      -1462.0114669799805
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-dolni"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -509,
+      2477.9924926757812,
+      -1462.0114669799805
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-horni"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -579.5,
+      2612.9924926757812,
+      -1462.0114669799805
+     ],
+     "quaternion": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      0.24,
+      1
+     ],
+     "role": "cap"
+    },
+    {
+     "part_id": "product_3071",
+     "position": [
+      -349.5,
+      2735.9924926757812,
+      -1462.0114669799805
+     ],
+     "quaternion": [
+      0.7071067811865475,
+      0,
+      0,
+      0.7071067811865475
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "zaslepka-predni-svislice"
+    },
+    {
+     "part_id": "product_3071",
+     "position": [
+      -668.5,
+      2495.9924926757812,
+      -1462.0114669799805
+     ],
+     "quaternion": [
+      0.7071067811865475,
+      0,
+      0,
+      0.7071067811865475
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "zaslepka-zadni-svislice-dolni"
+    },
+    {
+     "part_id": "product_3071",
+     "position": [
+      -579.5,
+      2735.9924926757812,
+      -1462.0114669799805
+     ],
+     "quaternion": [
+      0.7071067811865475,
+      0,
+      0,
+      0.7071067811865475
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "zaslepka-cap"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -349.5,
+      2192.9924926757812,
+      -1002.0114669799805
+     ],
+     "quaternion": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1.08,
+      1
+     ],
+     "role": "predni-svislice"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -668.5,
+      2072.9924926757812,
+      -1002.0114669799805
+     ],
+     "quaternion": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      0.84,
+      1
+     ],
+     "role": "zadni-svislice-dolni"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -509,
+      1667.9924926757812,
+      -1002.0114669799805
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-dolni"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -509,
+      2477.9924926757812,
+      -1002.0114669799805
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-horni"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -579.5,
+      2612.9924926757812,
+      -1002.0114669799805
+     ],
+     "quaternion": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      0.24,
+      1
+     ],
+     "role": "cap"
+    },
+    {
+     "part_id": "product_3071",
+     "position": [
+      -349.5,
+      2735.9924926757812,
+      -1002.0114669799805
+     ],
+     "quaternion": [
+      0.7071067811865475,
+      0,
+      0,
+      0.7071067811865475
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "zaslepka-predni-svislice"
+    },
+    {
+     "part_id": "product_3071",
+     "position": [
+      -668.5,
+      2495.9924926757812,
+      -1002.0114669799805
+     ],
+     "quaternion": [
+      0.7071067811865475,
+      0,
+      0,
+      0.7071067811865475
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "zaslepka-zadni-svislice-dolni"
+    },
+    {
+     "part_id": "product_3071",
+     "position": [
+      -579.5,
+      2735.9924926757812,
+      -1002.0114669799805
+     ],
+     "quaternion": [
+      0.7071067811865475,
+      0,
+      0,
+      0.7071067811865475
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "zaslepka-cap"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -349.5,
+      1667.9924926757812,
+      -1232.0114669799805
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.43,
+      1
+     ],
+     "role": "nosnik-col0-p0"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -668.5,
+      1667.9924926757812,
+      -1232.0114669799805
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.43,
+      1
+     ],
+     "role": "nosnik-col0-p0"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -509,
+      1667.9924926757812,
+      -1432.0114669799805
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-col0-p0"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -509,
+      1667.9924926757812,
+      -1032.0114669799805
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-col0-p0"
+    },
+    {
+     "part_id": "product_3794",
+     "position": [
+      -651.986722946167,
+      2364.5601246757815,
+      -1624.5688214412646
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "eurobox-col0-p0"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -349.5,
+      1997.9924926757812,
+      -1232.0114669799805
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.43,
+      1
+     ],
+     "role": "nosnik-col0-p1"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -668.5,
+      1997.9924926757812,
+      -1232.0114669799805
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.43,
+      1
+     ],
+     "role": "nosnik-col0-p1"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -509,
+      1997.9924926757812,
+      -1432.0114669799805
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-col0-p1"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -509,
+      1997.9924926757812,
+      -1032.0114669799805
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-col0-p1"
+    },
+    {
+     "part_id": "product_3793",
+     "position": [
+      -509.01992494616695,
+      1976.7251626757813,
+      -1232.0117224412647
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "eurobox-col0-p1"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -349.5,
+      2277.9924926757812,
+      -1232.0114669799805
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.43,
+      1
+     ],
+     "role": "nosnik-col0-p2"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -668.5,
+      2277.9924926757812,
+      -1232.0114669799805
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.43,
+      1
+     ],
+     "role": "nosnik-col0-p2"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -509,
+      2277.9924926757812,
+      -1432.0114669799805
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-col0-p2"
+    },
+    {
+     "part_id": "Object_7",
+     "position": [
+      -509,
+      2277.9924926757812,
+      -1032.0114669799805
+     ],
+     "quaternion": [
+      0,
+      0,
+      -0.707107,
+      0.707107
+     ],
+     "scale": [
+      1,
+      0.289,
+      1
+     ],
+     "role": "spojnice-col0-p2"
+    },
+    {
+     "part_id": "product_3788",
+     "position": [
+      -651.986722946167,
+      2862.079219675781,
+      -1624.5688214412646
+     ],
+     "quaternion": [
+      -0.707107,
+      0,
+      0,
+      0.707107
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "role": "eurobox-col0-p2"
+    }
+   ],
+   "verify": {
+    "name": "caddy",
+    "tag": "C",
+    "dims": {
+     "lengthZ": 490.000018119812,
+     "depthX": 349.00000762939453,
+     "heightY": 1083.0001442538912
+    },
+    "errors": [],
+    "ok": true,
+    "boxCount": 31,
+    "boxesCollide": false,
+    "unexpectedSelfCollisions": 0
+   },
+   "plan": [
+    220,
+    170,
+    120
+   ]
+  }
+ }
+}

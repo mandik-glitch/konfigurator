@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <script src="/js/client-errors.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Potvrzení e-mailu – Hliníkový konstrukční stavebnicový systém s drážkami</title>
+<style>
+  :root {
+    --bg: #494b50; --panel-bg: #22262e; --border-soft: #333333;
+    --text: #e8eaed; --text-muted: #9aa4b2;
+    --accent: #9fd0ff;
+    --btn-bg: #3a5a7a; --btn-bg-hover: #4a6a8a; --error: #e07070; --success: #7ed49a;
+  }
+  [data-theme="light"] {
+    --bg: #eef1f5; --panel-bg: #ffffff; --border-soft: #e3e7ec;
+    --text: #1b1e24; --text-muted: #5c6570;
+    --accent: #1a6fd4;
+    --btn-bg: #2f6690; --btn-bg-hover: #3a76a0; --error: #c23b3b; --success: #2f9e5c;
+  }
+  * { box-sizing: border-box; }
+  /* Logo znacky: vklada ho skript hned pod <body>, jen kdyz ho server vrati pro tenhle host (GET /api/site-brand,
+     api/site_brand.py). Stranka se servi i z domen, kde znacka byt nesmi, proto v HTML neni zadne jmeno ani logo.
+     Misto je vyhrazene predem, aby se karta po vlozeni loga neposunula. Vzhled loga: /css/brand-logo.css. */
+  body { flex-direction: column; }
+  .site-logo-slot { min-height: 34px; margin-bottom: 18px; display: flex; justify-content: center; }
+  body {
+    background: var(--bg); color: var(--text); font-family: var(--font-main, -apple-system, "Segoe UI", Roboto, Arial, sans-serif);
+    margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center;
+    padding: 20px;
+  }
+  .box { background: var(--panel-bg); border: 1px solid var(--border-soft); border-radius: 10px; padding: 32px; width: 340px; max-width: 100%; text-align: center; }
+  h1 { font-size: 17px; margin: 0 0 18px; }
+  #msg { font-size: 14px; line-height: 1.5; color: var(--text-muted); min-height: 20px; }
+  #msg.ok { color: var(--success); }
+  #msg.err { color: var(--error); }
+  button {
+    width: 100%; background: var(--btn-bg); color: #fff; border: none; border-radius: 6px;
+    padding: 10px; font-size: 14px; cursor: pointer; margin-top: 18px; display: none;
+  }
+  button:hover { background: var(--btn-bg-hover); }
+  .back { display: block; text-align: center; margin-top: 14px; font-size: 12.5px; color: var(--accent); text-decoration: none; }
+</style>
+</head>
+<body>
+  <div id="siteLogoSlot" class="site-logo-slot"></div>
+  <script>
+  // logo znacky ze serveru (jen pro hosty, kde se smi ukazat; jinak stranka zustane bez nej) - viz komentar u .site-logo-slot
+  (function () {
+    var slot = document.getElementById("siteLogoSlot");
+    function nacti(url, kdyzSelze, hotovo) {
+      var l = document.createElement("link");
+      l.rel = "stylesheet"; l.href = url; l.onload = hotovo; l.onerror = kdyzSelze;
+      document.head.appendChild(l);
+    }
+    fetch("/api/site-brand").then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
+      if (!d || !d.logo) return;
+      var g = d.logo, zbyva = g.font_css ? 2 : 1;
+      // logo se vlozi az kdyz je nacteny jeho vzhled i pismo webu (stejne jako na homepage) - neukaze se v nahradnim pismu
+      function hotovo() { if (--zbyva === 0) slot.innerHTML = g.html; }
+      if (g.font_stack) slot.style.setProperty("--font-main", g.font_stack);
+      nacti(g.css, function () {}, hotovo);
+      if (g.font_css) nacti(g.font_css, hotovo, hotovo);
+    }).catch(function () {});
+  })();
+  </script>
+  <div class="box">
+    <h1>Potvrzení e-mailu</h1>
+    <div id="msg">Ověřuji…</div>
+    <button type="button" id="continueBtn">Pokračovat</button>
+    <a href="/login.html" class="back">← zpět na přihlášení</a>
+  </div>
+
+<script>
+(function () {
+  try {
+    var t = localStorage.getItem("shopTheme");
+    if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+  } catch (e) {}
+})();
+fetch("/api/theme-colors?surface=eshop").then(r => r.ok ? r.json() : null).then(data => {
+  if (!data) return;
+  var theme = document.documentElement.getAttribute("data-theme") === "light" ? "light" : "dark";
+  var palette = data[theme];
+  Object.keys(palette).forEach(function (key) {
+    document.documentElement.style.setProperty("--" + key.replace(/_/g, "-"), palette[key]);
+  });
+}).catch(function () {});
+</script>
+<script>
+const msg = document.getElementById("msg");
+const continueBtn = document.getElementById("continueBtn");
+const params = new URLSearchParams(window.location.search);
+const token = params.get("token");
+
+// Overeni je zamerne POST (ne GET) s tokenem az v telem requestu - GET
+// odkaz by mohl "kliknout" i automaticky prefetch/scanner e-mailoveho
+// klienta a token tim jednorazove spotrebovat drive, nez ho stihne
+// pouzit skutecny uzivatel (stejny princip jako reset-password.html).
+if (!token) {
+  msg.className = "err";
+  msg.textContent = "Chybí odkaz - zkontroluj prosím, že jsi klikl/a na celý odkaz z e-mailu.";
+} else {
+  fetch("/api/auth/verify-email", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ token }),
+  })
+    .then(async (r) => ({ ok: r.ok, data: await r.json().catch(() => ({})) }))
+    .then(({ ok, data }) => {
+      if (!ok) {
+        msg.className = "err";
+        msg.textContent = data.error || "Odkaz je neplatný nebo už byl použitý.";
+        return;
+      }
+      msg.className = "ok";
+      msg.textContent = "E-mail potvrzen, účet je aktivní. Jsi přihlášen/a.";
+      const nextUrl = data.user && data.user.role === "remeslnik" ? "/remeslo.html" : "/scene.html";
+      continueBtn.style.display = "block";
+      continueBtn.onclick = () => { window.location.href = nextUrl; };
+      setTimeout(() => { window.location.href = nextUrl; }, 2000);
+    })
+    .catch(() => {
+      msg.className = "err";
+      msg.textContent = "Chyba spojení se serverem.";
+    });
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+{
+  "shop": "packstations",
+  "lang": "cs",
+  "locale": "cs-CZ",
+  "currency": "CZK",
+  "accent": "#2dd4bf",
+  "countries": [
+    "CZ",
+    "SK"
+  ],
+  "vat": {
+    "display": "excl",
+    "rates": {
+      "CZ": 21,
+      "SK": 23
+    }
+  },
+  "contact": {
+    "phone": "",
+    "hours": ""
+  },
+  "alternates": [],
+  "preview": true,
+  "inquiry_only": true,
+  "price_mode": "shown",
+  "configurator_source": "server",
+  "configurator_product_id": 4934,
+  "fraction_digits": 0
+}

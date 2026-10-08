@@ -1,0 +1,111 @@
+{
+ "key": "PE12",
+ "ok": true,
+ "family": "expert",
+ "base": "Peugeot_Expert_PE12_2007-2015",
+ "offsetX": -435.5,
+ "offsetY": 2,
+ "H": 1180,
+ "CAP_H": 260,
+ "CUTOUT_H": 395,
+ "uskok": 225,
+ "capOffsetFromW": 70,
+ "legs": [
+  {
+   "anchorZ": -1837.999168395996,
+   "type": "plain"
+  },
+  {
+   "anchorZ": -975.9991683959961,
+   "type": "plain"
+  },
+  {
+   "anchorZ": -113.9991683959961,
+   "type": "vyrez"
+  }
+ ],
+ "columns": [
+  {
+   "legFromIdx": 0,
+   "legToIdx": 1,
+   "width": 832,
+   "N": 2
+  },
+  {
+   "legFromIdx": 1,
+   "legToIdx": 2,
+   "width": 832,
+   "N": 2
+  }
+ ],
+ "legExtensions": {
+  "2": 27
+ },
+ "columnPlans": [
+  {
+   "colIdx": 0,
+   "legFromIdx": 0,
+   "legToIdx": 1,
+   "N": 2,
+   "floorY": 200,
+   "railZFrom": -1807.999168395996,
+   "railZTo": -975.9991683959961,
+   "railZCenter": -1391.999168395996,
+   "railLen": 832,
+   "crossLen": 289,
+   "crossXCenter": 174.5
+  },
+  {
+   "colIdx": 1,
+   "legFromIdx": 1,
+   "legToIdx": 2,
+   "N": 2,
+   "floorY": 458,
+   "railZFrom": -945.9991683959961,
+   "railZTo": -113.9991683959961,
+   "railZCenter": -529.9991683959961,
+   "railLen": 832,
+   "crossLen": 289,
+   "crossXCenter": 174.5
+  }
+ ],
+ "columnLevels": [
+  {
+   "colIdx": 0,
+   "levels": [
+    {
+     "railYCenter": 215,
+     "boxH": 270,
+     "boxTop": 500
+    },
+    {
+     "railYCenter": 545,
+     "boxH": 220,
+     "boxTop": 780
+    },
+    {
+     "railYCenter": 825,
+     "boxH": 170,
+     "boxTop": 1010
+    }
+   ]
+  },
+  {
+   "colIdx": 1,
+   "levels": [
+    {
+     "railYCenter": 473,
+     "boxH": 220,
+     "boxTop": 708
+    },
+    {
+     "railYCenter": 753,
+     "boxH": 170,
+     "boxTop": 938
+    }
+   ]
+  }
+ ],
+ "rearLimitZ": -968.9991683959961,
+ "elapsedMs": 10142
+}

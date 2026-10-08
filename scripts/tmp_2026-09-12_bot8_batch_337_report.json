@@ -1,0 +1,81 @@
+{
+ "asm": 337,
+ "legsPresent": {
+  "leg0": true,
+  "leg1": true,
+  "leg2": true
+ },
+ "OLD_YNEW": {
+  "leg1": 101.50017929077148,
+  "leg2": 53.500179290771484
+ },
+ "counts": {
+  "cFront": 26,
+  "cCol0Interp": 30,
+  "cLeg1Y": 8,
+  "cLeg2Y": 6,
+  "cLogo": 1,
+  "cUnchanged": 74,
+  "total": 145
+ },
+ "dorovnaniColumns": [
+  0,
+  1
+ ],
+ "floorShifts": [
+  {
+   "col": 0,
+   "floorIdx": 0,
+   "shift": 10,
+   "floorOldY": 116.50017929077148
+  },
+  {
+   "col": 0,
+   "floorIdx": 1,
+   "shift": 6.666666666666667,
+   "floorOldY": 384.5001792907715
+  },
+  {
+   "col": 0,
+   "floorIdx": 2,
+   "shift": 3.3333333333333335,
+   "floorOldY": 602.5001792907715
+  },
+  {
+   "col": 0,
+   "floorIdx": 3,
+   "shift": 0,
+   "floorOldY": 770.5001792907715
+  }
+ ],
+ "satMeasured": 142,
+ "satCollisions": 0,
+ "satList": [],
+ "seamChecks": [
+  {
+   "legKey": "leg1",
+   "gap": 0
+  },
+  {
+   "legKey": "leg2",
+   "gap": 0
+  },
+  {
+   "col": 0,
+   "floor": 0,
+   "gap": -0.00014177829785921858
+  },
+  {
+   "col": 1,
+   "floor": 0,
+   "gap": 318.9997307287141
+  }
+ ],
+ "baselineSelfCollisions": 0,
+ "baselineSelfList": [],
+ "afterSelfCollisions": 0,
+ "afterSelfList": [],
+ "newOrGrownSelfCollisions": 0,
+ "newOrGrownList": [],
+ "touchedCount": 101
+}

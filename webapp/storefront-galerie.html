@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <script src="/js/client-errors.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fotogalerie vestaveb do dodávek</title>
+<meta name="description" content="Reálné fotografie vestaveb do dodávek a užitkových vozidel – regály, šuplíky, výsuvy a pracovní moduly na míru.">
+<style>
+  /* Fotogalerie vestaveb pro storefronty (bot16, 2026-10-07; Robert: "v kazde sestave do aut ... musi byt ukazana realna fotografie 4ks a odkaz na fotogalerii vestaveb"): sdilena staticka stranka
+     bez znacky (TEXT_FILTR pravidlo 5 - kontrola static_page_brand_leak skenuje storefront-*.html i nacitane .js/.css), stejna paleta (--sf-*) jako storefront-product.html. Fotky se berou z verejne
+     galerie (GET /api/gallery) bez tech, co maji v nazvu znacku (modul js/realizace-foto.js, mountGalerie s bezZnacky). */
+  :root {
+    --sf-bg: #14181f;
+    --sf-panel: #1d232c;
+    --sf-border: #2c3340;
+    --sf-text: #eef1f5;
+    --sf-text-muted: #9aa4b5;
+    --sf-accent: #ff8a3d;
+    --sf-accent-hover: #ff9d5c;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--sf-bg); color: var(--sf-text); font-family: var(--font-main, -apple-system, "Segoe UI", Roboto, Arial, sans-serif); font-size: 14px; line-height: 1.4; }
+  a { color: var(--sf-accent); }
+  .sf-header { background: var(--sf-panel); border-bottom: 1px solid var(--sf-border); padding: 16px 20px; }
+  .sf-back-link { color: var(--sf-text-muted); text-decoration: none; font-size: 14px; }
+  .sf-back-link:hover { color: var(--sf-accent); }
+  main { max-width: 1200px; margin: 0 auto; padding: 28px 20px 60px; }
+  h1 { margin: 0 0 8px; font-size: 26px; line-height: 1.3; font-weight: 700; }
+  .sf-lead { margin: 0 0 22px; color: var(--sf-text-muted); max-width: 70ch; }
+  #sfGalerie { --rf-text: var(--sf-text); --rf-muted: var(--sf-text-muted); --rf-border: var(--sf-border); --rf-panel: var(--sf-panel); --rf-accent: var(--sf-accent); --rf-btn: var(--sf-accent); --rf-btn-h: var(--sf-accent-hover); }
+  #sfGalerieStav { color: var(--sf-text-muted); }
+</style>
+</head>
+<body>
+  <header class="sf-header">
+    <a class="sf-back-link" id="sfZpet" href="/">← Zpět</a>
+  </header>
+  <main>
+    <h1>Fotogalerie vestaveb do dodávek</h1>
+    <p class="sf-lead">Reálné fotografie našich vestaveb. Kliknutím na fotografii ji zvětšíte.</p>
+    <div id="sfGalerie"></div>
+    <p id="sfGalerieStav">Načítám fotografie…</p>
+  </main>
+  <script src="/js/realizace-foto.js?v=19f4c823b2"></script>
+  <script>
+    (function () {
+      // Zpět = na předchozí stránku (typicky karta sestavy), jinak na přehled.
+      var zpet = document.getElementById("sfZpet");
+      zpet.addEventListener("click", function (e) { if (window.history.length > 1 && document.referrer && document.referrer.indexOf(location.origin) === 0) { e.preventDefault(); window.history.back(); } });
+      window.RealizaceFoto.mountGalerie(document.getElementById("sfGalerie"), { typ: "vestavby", bezZnacky: true }).then(function (ok) {
+        document.getElementById("sfGalerieStav").textContent = ok ? "" : "Fotografie se nepodařilo načíst. Zkuste to prosím později.";
+      });
+    })();
+  </script>
+</body>
+</html>

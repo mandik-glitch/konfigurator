@@ -1,0 +1,14 @@
+[Unit]
+Description=Prepocita priznak koliznich uhelniku kazdych 15 minut
+# Proc casovac a ne jen hacek v API: boti meni product_assemblies.data
+# primo v SQL (mazaci skripty), takze hacek pri zalozeni sestavy je sam
+# o sobe deravy. Prepocet celeho katalogu stoji 3.8 s, takze je levnejsi
+# merit vsechno znovu nez vymyslet, co merit nemusim.
+
+[Timer]
+OnCalendar=*-*-* *:00/15:00
+Persistent=true
+RandomizedDelaySec=120
+
+[Install]
+WantedBy=timers.target

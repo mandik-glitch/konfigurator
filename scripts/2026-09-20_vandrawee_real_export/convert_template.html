@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<script type="importmap">
+{ "imports": { "three": "./three.module.js" } }
+</script>
+</head>
+<body>
+<script type="module">
+import * as THREE from 'three';
+import { FBXLoader } from './jsm/loaders/FBXLoader.js';
+import { GLTFExporter } from './jsm/exporters/GLTFExporter.js';
+
+window.__DEBUG__ = {};
+window.__RENDER_DONE__ = false;
+
+// Measured empirically (this session): raw units already = meters (FBX
+// GlobalSettings.UnitScaleFactor=100 = 1 native unit = 100cm = 1m, and this
+// runtime exporter writes Unity's raw world-space values directly, unlike
+// the individually-authored catalog assets which needed a per-file
+// UnitScaleFactor correction). Confirmed against real Renault Trafic L2
+// cargo-bay length (~2.937m official vs 2.9803m measured on "karoserie").
+// Also already Y-up (z=length dominant, y=height smallest) - no rotation
+// needed, unlike catalog assets (Z-up, needed -90 deg X rotation).
+
+// NOTE (corrected after visual check): "colliders" is NOT a physics-helper
+// group in this file - it's the actual container Unity used for the whole
+// placed leg/component tree ("colliders" > "left"/"right" > every real
+// Noha/Police/Multibox node). Excluding it by name deleted the entire
+// shelf. Only the leaf dimension/text annotation nodes are genuinely
+// content-free (confirmed: 0 meshes, 0-size bbox) and safe to drop.
+// Robert 2026-09-20: "renderujeme vzdy bez karoserie" (trvale pravidlo,
+// zapsano do VANDR_RENDER_HOWTO.md) - karoserie se do exportu NIKDY
+// nezahrnuje, jen regal samotny.
+const EXCLUDE_NAME_RE = /^dimensions?$|^text$|^karoserie$/i;
+
+const loader = new FBXLoader();
+loader.load('./model.fbx', (obj) => {
+  const excluded = [];
+  const toRemove = [];
+  obj.traverse(n => {
+    if (EXCLUDE_NAME_RE.test(n.name)) toRemove.push(n);
+  });
+  toRemove.forEach(n => {
+    if (n.parent) {
+      excluded.push(n.name);
+      n.parent.remove(n);
+    }
+  });
+  window.__DEBUG__.excludedGroups = excluded;
+
+  obj.updateMatrixWorld(true);
+  const box = new THREE.Box3().setFromObject(obj);
+  const size = box.getSize(new THREE.Vector3());
+  window.__DEBUG__.finalSize = { x: size.x, y: size.y, z: size.z };
+  window.__DEBUG__.finalMin = { x: box.min.x, y: box.min.y, z: box.min.z };
+
+  let meshCount = 0;
+  obj.traverse(n => { if (n.isMesh) meshCount++; });
+  window.__DEBUG__.finalMeshCount = meshCount;
+
+  // FIX 2026-09-20 (bot4: Blender render came out flat gray-blue, "not
+  // real materials from the FBX"): GLTFExporter's own warning
+  // ("Use MeshStandardMaterial or MeshBasicMaterial for best results")
+  // was the clue - FBXLoader builds MeshPhongMaterial for this file's
+  // Phong-shaded content, and GLTFExporter does not properly translate
+  // a Phong material's `color` into glTF's PBR `baseColorFactor` (it's
+  // built around Standard/Physical/Basic materials). Convert every
+  // Phong material to a MeshStandardMaterial carrying over the SAME
+  // authored color/opacity/emissive from the source FBX (not inventing
+  // new colors) before export, matching the well-known pattern for this
+  // exact GLTFExporter limitation.
+  const materialCache = new Map();
+  let convertedMaterials = 0;
+  obj.traverse((n) => {
+    if (! n.isMesh || ! n.material) return;
+    const convertOne = (mat) => {
+      if (mat.isMeshStandardMaterial || mat.isMeshBasicMaterial) return mat;
+      if (materialCache.has(mat)) return materialCache.get(mat);
+      // FIX 2026-09-20 (bot4, 2nd pass: render looked "flat/cheap" even
+      // after real colors came through) - my first version hardcoded
+      // roughness:1/metalness:0 for EVERY material regardless of the
+      // source data, which is why bot4 found all 216 materials identical
+      // on that axis. FBXLoader DOES parse a Phong `shininess` (from
+      // FBX's ShininessExponent/Shininess) onto the resulting
+      // MeshPhongMaterial (three@0.128, ~line 587) - use the REAL value
+      // it carries (even if that's just three's own class default,
+      // that's still more informed than a blanket 1.0) via the standard
+      // Blinn-Phong-exponent -> GGX-roughness approximation
+      // roughness = sqrt(2/(shininess+2)) (shininess 0 -> roughness 1,
+      // fully matte; shininess -> high -> roughness -> low, glossy).
+      // Metalness has no Phong equivalent to read - Phong's own
+      // "reflectivity" template default (1) is NOT reliably present per-
+      // material in this export (checked: only the FBX PropertyTemplate
+      // declares it once, not each material), so inventing a metalness
+      // NUMBER from it would be guessing. The one exception: a material
+      // literally NAMED "alu" is aluminium by the source's own label,
+      // not my assumption - real aluminium extrusion is semi-reflective,
+      // so give ONLY that named case a modest, disclosed metalness bump.
+      const shininess = (mat.shininess != null) ? mat.shininess : 30;
+      const roughness = Math.min(1, Math.max(0.05, Math.sqrt(2 / (shininess + 2))));
+      const isAlu = /\balu\b/i.test(mat.name || '');
+      const std = new THREE.MeshStandardMaterial({
+        name: mat.name,
+        color: mat.color ? mat.color.clone() : new THREE.Color(0xcccccc),
+        emissive: mat.emissive ? mat.emissive.clone() : new THREE.Color(0x000000),
+        opacity: mat.opacity != null ? mat.opacity : 1,
+        transparent: !! mat.transparent,
+        side: mat.side,
+        roughness: isAlu ? Math.min(roughness, 0.4) : roughness,
+        metalness: isAlu ? 0.6 : 0.0,
+      });
+      materialCache.set(mat, std);
+      convertedMaterials++;
+      return std;
+    };
+    n.material = Array.isArray(n.material) ? n.material.map(convertOne) : convertOne(n.material);
+  });
+  window.__DEBUG__.convertedMaterials = convertedMaterials;
+
+  const exporter = new GLTFExporter();
+  try {
+    exporter.parse(obj, (result) => {
+      try {
+        // binary GLB comes back as ArrayBuffer
+        const bytes = new Uint8Array(result);
+        let binary = '';
+        const chunk = 0x8000;
+        for (let i = 0; i < bytes.length; i += chunk) {
+          binary += String.fromCharCode.apply(null, bytes.subarray(i, i + chunk));
+        }
+        window.__GLB_BASE64__ = btoa(binary);
+        window.__DEBUG__.glbBytes = bytes.length;
+      } catch (packErr) {
+        window.__DEBUG__.packError = String(packErr && packErr.stack || packErr);
+      }
+      window.__RENDER_DONE__ = true;
+    }, { binary: true, onlyVisible: false });
+  } catch (syncErr) {
+    window.__DEBUG__.exportSyncError = String(syncErr && syncErr.stack || syncErr);
+    window.__RENDER_DONE__ = true;
+  }
+
+}, undefined, (err) => {
+  window.__DEBUG__.error = String(err && err.message || err);
+  window.__RENDER_DONE__ = true;
+});
+window.addEventListener('error', (e) => {
+  window.__DEBUG__.windowError = e.message;
+  window.__DEBUG__.windowErrorStack = e.error && e.error.stack;
+  window.__RENDER_DONE__ = true;
+});
+</script>
+</body></html>

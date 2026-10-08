@@ -1,0 +1,195 @@
+--- a/api/miniweb_admin.py
++++ b/api/miniweb_admin.py
+@@ -43,15 +43,17 @@
+ TOP_KEYS = {"version", "family", "lang", "categories", "products", "documents"}
+ DOC_KEYS = {"kind", "title", "body"}
+ MAX_DOCUMENTS = 20
+-CAT_KEYS = {"slug", "parent", "sort", "name"}
+-PROD_KEYS = {"slug", "sku", "category", "sort", "configurator", "name", "summary", "description", "delivery", "specs"}
++CAT_KEYS = {"slug", "url_slug", "parent", "sort", "name"}
++PROD_KEYS = {"slug", "url_slug", "sku", "category", "sort", "configurator", "name", "summary", "description", "delivery", "specs"}
+ CONF_KEYS = {"available", "shop_product_id", "default_view"}
+ 
+ 
+ # ---------------------------------------------------------------------------------------------------------------- spolecne
+-def text_rev(name, summary, description, delivery, specs):
+-    """Otisk obsahu textu (uz ocisteneho): co admin videl, to schvaluje, zmena kterehokoli pole zmeni otisk."""
+-    blob = json.dumps([name or "", summary or "", description or "", delivery or "", specs or []], ensure_ascii=False, sort_keys=True, separators=(",", ":"))
++def text_rev(name, summary, description, delivery, specs, url_slug=None):
++    """Otisk obsahu textu (uz ocisteneho): co admin videl, to schvaluje, zmena kterehokoli pole zmeni otisk. URL slug v jazyce (bot5, 2026-10-03) je soucasti otisku JEN kdyz je zadany, takze otisky
++    textu bez slugu zustavaji stejne jako dosud."""
++    parts = [name or "", summary or "", description or "", delivery or "", specs or []] + ([url_slug] if url_slug else [])
++    blob = json.dumps(parts, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+     return hashlib.sha1(blob.encode("utf-8")).hexdigest()[:16]
+ 
+ 
+@@ -77,14 +79,14 @@
+ 
+ 
+ def _clean_product_text(t):
+-    return {"name": miniweb._plain(t["name"], LIMITS["name"]), "summary": miniweb._plain(t["summary"], LIMITS["summary"]),
++    return {"url_slug": t.get("url_slug") or None, "name": miniweb._plain(t["name"], LIMITS["name"]), "summary": miniweb._plain(t["summary"], LIMITS["summary"]),
+             "description": miniweb._plain(t["description"], LIMITS["description"], multiline=True), "delivery": miniweb._plain(t["delivery"], LIMITS["delivery"]), "specs": miniweb._specs(t["specs_json"])}
+ 
+ 
+ def _problems(clean, slug, sku, raw_changed):
+     """(blokujici, informativni) seznamy kodu problemu. Blokujici = nejde schvalit."""
+     blocking, info = [], []
+-    texts = [clean["name"], clean["summary"], clean["description"], clean["delivery"], slug, sku] + [x for s in clean["specs"] for x in (s["name"], s["value"])]
++    texts = [clean["name"], clean["summary"], clean["description"], clean["delivery"], slug, sku, clean.get("url_slug") or ""] + [x for s in clean["specs"] for x in (s["name"], s["value"])]
+     if dealers._brand_hit(*texts):
+         blocking.append("brand")
+     if not clean["name"]:
+@@ -138,6 +140,17 @@
+     return v
+ 
+ 
++def _url_slug(report, where, entry, regex):
++    """Volitelny URL slug v jazyce souboru (bot5, 2026-10-03; SEO adresy po jazycich): stejny tvar jako slug, bez znacky; jinak chyba. -> retezec nebo None."""
++    v = entry.get("url_slug")
++    if v is None or v == "":
++        return None
++    if not isinstance(v, str) or not regex.match(v) or dealers._brand_hit(v):
++        report["errors"].append(f"{where}: url_slug musí být malá písmena, číslice a pomlčky bez značky")
++        return None
++    return v
++
++
+ def _unknown(report, where, entry, allowed):
+     extra = sorted(set(entry) - allowed)
+     if extra:
+@@ -184,7 +197,7 @@
+         if parent is not None and (not isinstance(parent, str) or not _CAT_SLUG_RE.match(parent)):
+             report["errors"].append(f"{where}: parent musí být slug nadřazené kategorie nebo null")
+             parent = None
+-        cats.append({"slug": slug, "parent": parent, "sort": _int(report, where, c, "sort"), "name": _field(report, where, c, "name", required=True)})
++        cats.append({"slug": slug, "url_slug": _url_slug(report, where, c, _CAT_SLUG_RE), "parent": parent, "sort": _int(report, where, c, "sort"), "name": _field(report, where, c, "name", required=True)})
+     prods, seen_slug, seen_sku = [], set(), set()
+     for i, p in enumerate(prods_raw):
+         where = f"produkt[{i}]"
+@@ -239,7 +252,7 @@
+                 report["errors"].append(f"{where}: specs[{j}] zmiňuje značku/dodavatele (pravidlo 5)")
+             else:
+                 specs.append({"name": n, "value": v})
+-        prods.append({"slug": slug, "sku": sku, "category": p.get("category"), "sort": _int(report, where, p, "sort"), "configurator": conf_clean, "name": _field(report, where, p, "name", required=True),
++        prods.append({"slug": slug, "url_slug": _url_slug(report, where, p, _PROD_SLUG_RE), "sku": sku, "category": p.get("category"), "sort": _int(report, where, p, "sort"), "configurator": conf_clean, "name": _field(report, where, p, "name", required=True),
+                       "summary": _field(report, where, p, "summary"), "description": _field(report, where, p, "description", multiline=True), "delivery": _field(report, where, p, "delivery"), "specs": specs})
+     docs, seen_kind = [], set()
+     for i, d in enumerate(docs_raw):
+@@ -279,7 +292,29 @@
+ 
+ def _same_text(row, new):
+     cur_clean = _clean_product_text(row) if "specs_json" in row else {"name": miniweb._plain(row["name"], LIMITS["name"]), "summary": "", "description": "", "delivery": "", "specs": []}
+-    return text_rev(cur_clean["name"], cur_clean["summary"], cur_clean["description"], cur_clean["delivery"], cur_clean["specs"]) == text_rev(new["name"], new.get("summary", ""), new.get("description", ""), new.get("delivery", ""), new.get("specs", []))
++    cur_clean["url_slug"] = row.get("url_slug") or None
++    return text_rev(cur_clean["name"], cur_clean["summary"], cur_clean["description"], cur_clean["delivery"], cur_clean["specs"], cur_clean["url_slug"]) == text_rev(new["name"], new.get("summary", ""), new.get("description", ""), new.get("delivery", ""), new.get("specs", []), new.get("url_slug"))
++
++
++def _check_url_slugs(cur, report, parsed, family, lang):
++    """URL slugy po jazycich (bot5, 2026-10-03): potrebuji sloupec v DB a v ramci rodiny a jazyka musi byt efektivni slug (url_slug, jinak zakladni slug) kazde polozky UNIKATNI, i proti polozkam mimo soubor."""
++    if not any(x.get("url_slug") for x in parsed["categories"] + parsed["products"]):
++        return
++    if not (has_url_slug_column(cur, "miniweb_category_texts") and has_url_slug_column(cur, "miniweb_product_texts")):
++        report["errors"].append("url_slug: v databázi chybí sloupec url_slug (migrace sql/2026-10-03_miniweb_url_slug.py)")
++        return
++    for nazev, items, sql in (
++            ("kategorie", parsed["categories"], "SELECT b.slug AS base, t.url_slug FROM miniweb_categories b LEFT JOIN miniweb_category_texts t ON t.miniweb_category_id = b.id AND t.lang=%s WHERE b.family=%s"),
++            ("produkt", parsed["products"], "SELECT b.slug AS base, t.url_slug FROM miniweb_products b JOIN miniweb_categories c ON c.id = b.category_id "
++                                            "LEFT JOIN miniweb_product_texts t ON t.miniweb_product_id = b.id AND t.lang=%s WHERE c.family=%s")):
++        cur.execute(sql, (lang, family))
++        eff = {r["base"]: (r["url_slug"] or r["base"]) for r in cur.fetchall()}
++        eff.update({x["slug"]: (x.get("url_slug") or x["slug"]) for x in items})
++        seen = {}
++        for base, e in eff.items():
++            if e in seen:
++                report["errors"].append(f"{nazev}: URL slug '{e}' v jazyce {lang} by měly dvě položky ('{seen[e]}' a '{base}'), slug musí být v jazyce jedinečný")
++            seen[e] = base
+ 
+ 
+ def import_catalog(cur, data, apply=False, revise_approved=False, update_catalog=False):
+@@ -289,6 +324,7 @@
+     if parsed is None or report["errors"]:
+         return report
+     family, lang = parsed["family"], parsed["lang"]
++    _check_url_slugs(cur, report, parsed, family, lang)          # chyba url_slug (chybi sloupec, kolize v jazyce) zastavi zapis spolecnou kontrolou chyb nize
+ 
+     cur.execute("SELECT id, parent_id, slug, sort_order FROM miniweb_categories WHERE family=%s", (family,))
+     db_cats = {r["slug"]: r for r in cur.fetchall()}
+@@ -365,7 +401,7 @@
+             report["categories"]["differs"] += 1
+             report["warnings"].append(f"kategorie '{c['slug']}': katalogová data (nadřazená kategorie nebo pořadí) se liší od databáze, nezměněno (změní až update_catalog)")
+         _upsert_text(cur, report, apply, revise_approved, "miniweb_category_texts", "miniweb_category_id", cat_ids[c["slug"]], lang,
+-                     {"name": c["name"], "summary": "", "description": "", "delivery": "", "specs": []}, f"kategorie '{c['slug']}'", is_product=False)
++                     {"name": c["name"], "summary": "", "description": "", "delivery": "", "specs": [], "url_slug": c.get("url_slug")}, f"kategorie '{c['slug']}'", is_product=False)
+     for p in parsed["products"]:
+         ex = db_prods.get(p["slug"])
+         cat_id = cat_ids[p["category"]]
+@@ -448,7 +484,24 @@
+         _write_text(cur, table, idcol, item_id, lang, new, is_product, insert=False)
+ 
+ 
++_COL_CACHE = {}
++
++
++def has_url_slug_column(cur, table):
++    """Je v tabulce textu sloupec url_slug (sql/2026-10-03_miniweb_url_slug.py)? Pred migraci kod funguje beze zmeny."""
++    if table not in _COL_CACHE:
++        cur.execute(f"SHOW COLUMNS FROM `{table}` LIKE 'url_slug'")          # SHOW COLUMNS vidi i docasne tabulky (testy), information_schema ne
++        _COL_CACHE[table] = cur.fetchone() is not None
++    return _COL_CACHE[table]
++
++
+ def _write_text(cur, table, idcol, item_id, lang, new, is_product, insert):
++    _write_text_core(cur, table, idcol, item_id, lang, new, is_product, insert)
++    if has_url_slug_column(cur, table):
++        cur.execute(f"UPDATE {table} SET url_slug=%s WHERE {idcol}=%s AND lang=%s", (new.get("url_slug") or None, item_id, lang))
++
++
++def _write_text_core(cur, table, idcol, item_id, lang, new, is_product, insert):
+     if is_product:
+         vals = (new["name"], new["summary"] or None, new["description"] or None, new["delivery"] or None, _json_text(new["specs"]) if new["specs"] else None)
+         if insert:
+@@ -477,7 +530,7 @@
+     cur.execute("SELECT m.storefront_id, m.family, m.price_mode, m.inquiry_enabled, s.slug, s.primary_domain AS domain, s.status, s.lang FROM miniweb_shops m JOIN car_storefronts s ON s.id = m.storefront_id ORDER BY s.lang, s.id")
+     shops = [{"storefront_id": r["storefront_id"], "slug": r["slug"], "domain": r["domain"], "status": r["status"], "lang": r["lang"], "family": r["family"], "price_mode": r["price_mode"],
+               "inquiry_enabled": bool(r["inquiry_enabled"])} for r in cur.fetchall()]
+-    cur.execute("SELECT c.id, c.family, c.slug, c.sort_order, c.is_active, t.lang, t.name, t.status, t.approved_at, t.updated_at FROM miniweb_categories c "
++    cur.execute("SELECT c.id, c.family, c.slug, c.sort_order, c.is_active, t.lang, t.name, t.status, t.approved_at, t.updated_at" + (", t.url_slug" if has_url_slug_column(cur, "miniweb_category_texts") else "") + " FROM miniweb_categories c "
+                 "JOIN miniweb_category_texts t ON t.miniweb_category_id = c.id ORDER BY c.family, c.sort_order, c.id, t.lang")
+     cat_rows = cur.fetchall()
+     cat_name = {(r["id"], r["lang"]): miniweb._plain(r["name"], 200) for r in cat_rows}
+@@ -488,11 +541,11 @@
+     for r in cat_rows:
+         if only_lang and r["lang"] != only_lang:
+             continue
+-        clean = {"name": miniweb._plain(r["name"], LIMITS["name"]), "summary": "", "description": "", "delivery": "", "specs": []}
++        clean = {"name": miniweb._plain(r["name"], LIMITS["name"]), "summary": "", "description": "", "delivery": "", "specs": [], "url_slug": r.get("url_slug") or None}
+         blocking, info = _problems(clean, r["slug"], None, False)
+         _pids, public_cats = _public_sets(cur, memo, r["family"], r["lang"])
+         items.append({"kind": "category", "id": r["id"], "lang": r["lang"], "family": r["family"], "status": r["status"], "slug": r["slug"], "sku": None, "category": None, **clean,
+-                      "rev": text_rev(clean["name"], "", "", "", []), "blocking": blocking, "info": info, "active": bool(r["is_active"]), "public": r["id"] in public_cats,
++                      "rev": text_rev(clean["name"], "", "", "", [], clean["url_slug"]), "blocking": blocking, "info": info, "active": bool(r["is_active"]), "public": r["id"] in public_cats,
+                       "approved_at": r["approved_at"].isoformat(sep=" ", timespec="seconds") if r["approved_at"] else None, "updated_at": r["updated_at"].isoformat(sep=" ", timespec="seconds") if r["updated_at"] else None})
+     for r in prod_rows:
+         if only_lang and r["lang"] != only_lang:
+@@ -502,7 +555,7 @@
+         blocking, info = _problems(clean, r["slug"], r["public_sku"], raw_changed)
+         pub_prods, _c = _public_sets(cur, memo, r["family"], r["lang"])
+         items.append({"kind": "product", "id": r["id"], "lang": r["lang"], "family": r["family"], "status": r["status"], "slug": r["slug"], "sku": r["public_sku"],
+-                      "category": cat_name.get((r["category_id"], r["lang"])) or r["category_slug"], **clean, "rev": text_rev(clean["name"], clean["summary"], clean["description"], clean["delivery"], clean["specs"]),
++                      "category": cat_name.get((r["category_id"], r["lang"])) or r["category_slug"], **clean, "rev": text_rev(clean["name"], clean["summary"], clean["description"], clean["delivery"], clean["specs"], clean.get("url_slug")),
+                       "blocking": blocking, "info": info, "active": bool(r["is_active"]), "public": r["id"] in pub_prods,
+                       "approved_at": r["approved_at"].isoformat(sep=" ", timespec="seconds") if r["approved_at"] else None, "updated_at": r["updated_at"].isoformat(sep=" ", timespec="seconds") if r["updated_at"] else None})
+     cur.execute("SELECT * FROM miniweb_documents ORDER BY family, lang, id")
+@@ -566,9 +619,9 @@
+                 title, body = _clean_doc(row)
+                 blocking, rev_now = _doc_problems(title, body), doc_rev(title, body)
+             else:
+-                clean = _clean_product_text(row) if it["kind"] == "product" else {"name": miniweb._plain(row["name"], LIMITS["name"]), "summary": "", "description": "", "delivery": "", "specs": []}
++                clean = _clean_product_text(row) if it["kind"] == "product" else {"name": miniweb._plain(row["name"], LIMITS["name"]), "summary": "", "description": "", "delivery": "", "specs": [], "url_slug": row.get("url_slug") or None}
+                 blocking, _info = _problems(clean, row["slug"], row["public_sku"], False)
+-                rev_now = text_rev(clean["name"], clean["summary"], clean["description"], clean["delivery"], clean["specs"])
++                rev_now = text_rev(clean["name"], clean["summary"], clean["description"], clean["delivery"], clean["specs"], clean.get("url_slug"))
+             if blocking:
+                 skipped.append({**ref, "reason": "blocked"})
+             elif rev_now != it["rev"]:

@@ -1,0 +1,17 @@
+[Unit]
+Description=Konfigurator - uklid testovacich objednavek starsich 14 dnu (WORKFLOW.md bod 27)
+After=network.target
+# Nesmi bezet soubezne s generatorem - oba sahaji na tytez radky
+# (WORKFLOW.md bod 28: pojistka patri na spousteci vrstvu).
+Conflicts=konfigurator-test-orders.service
+
+[Service]
+Type=oneshot
+User=root
+Group=root
+Nice=15
+TimeoutStartSec=30min
+WorkingDirectory=/opt/konfigurator
+ExecStart=/opt/konfigurator/api/venv/bin/python3 /opt/konfigurator/scripts/2026-09-10_uklid_testovacich_objednavek.py
+# Zadny Restart= - kdyz uklid selze, ma to byt videt v `systemctl --failed`.
+# Tiche selhani uklidu je stejne zle jako tiche zdvojeni generatoru.

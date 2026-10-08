@@ -1,0 +1,27 @@
+--- a/2026-10-07_perfopanel/test_panely_delky.py
++++ b/2026-10-07_perfopanel/test_panely_delky.py
+@@ -555,8 +555,23 @@
+ zlato = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "golden_head.json"), encoding="utf-8"))
+ ted = GH.vypocti()
+ check(set(zlato) == set(ted), f"H: stejna mrizka konfiguraci ({len(zlato)} vs {len(ted)})")
+-spatne = [k for k in zlato if k in ted and zlato[k] != ted[k]]
++spatne = []
++automaticke = 0                                                                  # stoly, kde drive vznikalo VIC svitidel LED automaticky (od 2026-10-08 je pocet svitidel RUCNI, vychozi 1)
++for k in zlato:
++    if k not in ted or zlato[k] == ted[k]:
++        continue
++    if hasattr(GH.S, "LED_MAX"):
++        p_ = json.loads(k)
++        pp_ = GH.S.sestav_stul(**p_)["parametry"]
++        nmax_ = GH.S.led_max_pocet(pp_["sirka"], GH.S.led_telo_dilu(GH.S.LED_TYPY[GH.S._led_delka_int(pp_["led_delka"])])) if (pp_["led"] and pp_["stojky"] and pp_["led_svetlo"]) else 1
++        if nmax_ >= 2:
++            r2_ = GH.S.sestav_stul(**p_, led_pocet=nmax_)
++            if GH.otisk(r2_) == zlato[k]["otisk"] and (int(r2_["parametry"]["panely_pocet"]) if r2_["parametry"]["panely"] else 0) == zlato[k]["panelu"] and len(r2_["problemy"]) == zlato[k]["problemu"]:
++                automaticke += 1
++                continue
++    spatne.append(k)
+ check(not spatne, f"H: {len(spatne)} konfiguraci se lisi od stavu pred zavedenim delky, napr. {spatne[:2]} -> {[(zlato[k], ted[k]) for k in spatne[:1]]}")
++print(f"   ({automaticke} sirokych stolu s LED: drive automaticky pocet svitidel, ted led_pocet = drivejsi pocet da presne drivejsi otisk)")
+ print(f"   ({len(zlato)} konfiguraci)")
+ 
+ print()

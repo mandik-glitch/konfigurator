@@ -1,0 +1,168 @@
+{
+ "_navod": "Vyplň pole \"it\" (italština) u každé položky v `polozky`. Zdroj = cs / en / sk (en je referenční, sk je vzor pro odbornou terminologii). Pravidla: (1) placeholdery ve složených závorkách ({n} {d} {w} {h} {u} {k} {v} {t1} {t2} {prah} {mezera} {name} {site}) zachovej PŘESNĚ jako v poli `placeholdery` (pořadí ve větě smíš změnit); (2) žádná značka ani interní slova: Logiman, konfigurátor / konfigurator (i německy „Konfigurator“), vandrawee; (3) prodej jen firmám (B2B), neutrální věcný tón, bez značky; (4) povolená písmena jazyka: ASCII + àèéìòùÀÈÉÌÒÙ - jakýkoli jiný znak (např. česká písmena ě š č ř ž ý ů ť ď ň ľ) vyřadí `miniweb_jazyk_sestav.py`; (5) mezeru / středník / tečku na začátku nebo konci u šablon (navazují na `zaklad`) ZACHOVEJ stejně jako v en; (6) terminologie jednotně v celém shopu (i18n, SEO, katalog): drážka profilu = v angličtině „slot“ -> ekvivalent v jazyce určí bot7; (7) plurálové položky (`typ`: plural): `it` je objekt, vyplň tvary one, other; (8) hotové soubory ověř příkazem `scripts/miniweb_jazyk_sestav.py --lang it` (bez --apply jen kontrola) a pak jazyk zapíše `--apply`.",
+ "_sekce": "Informační věty s počtem kusů (podpěrné profily, dělení desky). Jsou to ŠABLONY: vyplň tvary podle počtu (one = 1 kus, other = jinak; u jazyků s víc tvary i few/many). Začátek šablony s mezerou nebo středníkem (navazuje na `zaklad`) je záměrný - zachovej ho.",
+ "lang": "it",
+ "sekce": "stul_info",
+ "polozky": [
+  {
+   "id": "stul_shop.info.podpery.zaklad",
+   "poznamka": "úvod věty: zkrácení desky spodní police; {h} = hloubka stolu v mm, {k} = zkrácení z každé strany v mm",
+   "typ": "text",
+   "placeholdery": [
+    "{h}",
+    "{k}"
+   ],
+   "cs": "Při hloubce nad {h} mm se deska spodní police zkrátí o {k} mm z každé strany (kvůli svislým profilům bočnic)",
+   "en": "Above {h} mm depth the lower shelf board is shortened by {k} mm on each side (clearance for the vertical profiles of the side frames)",
+   "sk": "Pri hĺbke nad {h} mm sa doska spodnej police skráti o {k} mm z každej strany (kvôli zvislým profilom bočníc)",
+   "it": "Oltre {h} mm di profondità il piano del ripiano inferiore viene accorciato di {k} mm per lato (gioco per i profili verticali dei telai laterali)"
+  },
+  {
+   "id": "stul_shop.info.podpery.bez",
+   "poznamka": "pokračování, když žádné podpěry nejsou potřeba",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "; podpěrné profily pod ni nejsou potřeba (rozpony jsou krátké, nebo ji podpírá střední noha).",
+   "en": "; no supporting profiles are needed under it (the spans are short or the middle leg supports it).",
+   "sk": "; podperné profily pod ňu nie sú potrebné (rozpony sú krátke alebo ju podopiera stredná noha).",
+   "it": "; sotto di esso non servono profili di supporto (le luci sono brevi oppure lo sostiene la gamba centrale)."
+  },
+  {
+   "id": "stul_shop.info.podpery.s_u1",
+   "poznamka": "pokračování, když je jedna police: {n} = počet podpěrných profilů",
+   "typ": "plural",
+   "placeholdery": [
+    "{n}"
+   ],
+   "cs": {
+    "one": " a pod ni přibyde {n} podpěrný profil.",
+    "few": " a pod ni přibyde {n} podpěrné profily.",
+    "other": " a pod ni přibyde {n} podpěrných profilů."
+   },
+   "en": {
+    "one": " and {n} supporting profile is added under it.",
+    "other": " and {n} supporting profiles are added under it."
+   },
+   "sk": {
+    "one": " a pod ňu pribudne {n} podperný profil.",
+    "few": " a pod ňu pribudnú {n} podperné profily.",
+    "other": " a pod ňu pribudnú {n} podperných profilov."
+   },
+   "it": {
+    "one": " e sotto di esso viene aggiunto {n} profilo di supporto.",
+    "other": " e sotto di esso vengono aggiunti {n} profili di supporto."
+   }
+  },
+  {
+   "id": "stul_shop.info.podpery.s_um",
+   "poznamka": "pokračování, když je polic víc („pod každou polici“): {n} = počet podpěrných profilů",
+   "typ": "plural",
+   "placeholdery": [
+    "{n}"
+   ],
+   "cs": {
+    "one": " a pod každou polici přibyde {n} podpěrný profil.",
+    "few": " a pod každou polici přibyde {n} podpěrné profily.",
+    "other": " a pod každou polici přibyde {n} podpěrných profilů."
+   },
+   "en": {
+    "one": " and {n} supporting profile is added under each shelf.",
+    "other": " and {n} supporting profiles are added under each shelf."
+   },
+   "sk": {
+    "one": " a pod každú policu pribudne {n} podperný profil.",
+    "few": " a pod každú policu pribudnú {n} podperné profily.",
+    "other": " a pod každú policu pribudnú {n} podperných profilov."
+   },
+   "it": {
+    "one": " e sotto ogni ripiano viene aggiunto {n} profilo di supporto.",
+    "other": " e sotto ogni ripiano vengono aggiunti {n} profili di supporto."
+   }
+  },
+  {
+   "id": "stul_shop.info.podpery_desky.zaklad",
+   "poznamka": "věta o podpěrách pod pracovní deskou: {h} = hloubka stolu, {n} = počet podpěrných profilů (bez tečky na konci)",
+   "typ": "plural",
+   "placeholdery": [
+    "{h}",
+    "{n}"
+   ],
+   "cs": {
+    "one": "Při hloubce nad {h} mm přibyde pod pracovní desku {n} podpěrný profil",
+    "few": "Při hloubce nad {h} mm přibyde pod pracovní desku {n} podpěrné profily",
+    "other": "Při hloubce nad {h} mm přibyde pod pracovní desku {n} podpěrných profilů"
+   },
+   "en": {
+    "one": "Above {h} mm depth {n} supporting profile is added under the work surface",
+    "other": "Above {h} mm depth {n} supporting profiles are added under the work surface"
+   },
+   "sk": {
+    "one": "Pri hĺbke nad {h} mm pod pracovnú dosku pribudne {n} podperný profil",
+    "few": "Pri hĺbke nad {h} mm pod pracovnú dosku pribudnú {n} podperné profily",
+    "other": "Pri hĺbke nad {h} mm pod pracovnú dosku pribudnú {n} podperných profilov"
+   },
+   "it": {
+    "one": "Oltre {h} mm di profondità viene aggiunto {n} profilo di supporto sotto il piano di lavoro",
+    "other": "Oltre {h} mm di profondità vengono aggiunti {n} profili di supporto sotto il piano di lavoro"
+   }
+  },
+  {
+   "id": "stul_shop.info.podpery_desky.konec",
+   "poznamka": "konec věty bez šuplíků",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": ".",
+   "en": ".",
+   "sk": ".",
+   "it": "."
+  },
+  {
+   "id": "stul_shop.info.podpery_desky.konec_suplik",
+   "poznamka": "konec věty, když desku podpírají i příčky šuplíků",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": " (desku podpírají i příčky šuplíků).",
+   "en": " (the drawer rails support the surface too).",
+   "sk": " (dosku podopierajú aj priečky zásuviek).",
+   "it": " (anche le guide dei cassetti sostengono il piano)."
+  },
+  {
+   "id": "stul_shop.info.desky_deleny.noha",
+   "poznamka": "věta, když se deska a police dělí u střední nohy: {t1} × {t2} = rozměr tabule desky v mm",
+   "typ": "text",
+   "placeholdery": [
+    "{t1}",
+    "{t2}"
+   ],
+   "cs": "Pracovní deska a police se u střední nohy dělí na dvě desky – každá se vejde do standardního formátu desky ({t1} × {t2} mm).",
+   "en": "The worktop and the shelves are split into two boards at the centre leg – each fits the standard board size ({t1} × {t2} mm).",
+   "sk": "Pracovná doska a police sa pri strednej nohe delia na dve dosky – každá sa zmestí do štandardného formátu dosky ({t1} × {t2} mm).",
+   "it": "Il piano di lavoro e i ripiani sono divisi in due pannelli in corrispondenza della gamba centrale: ciascuno rientra nel formato standard del pannello ({t1} × {t2} mm)."
+  },
+  {
+   "id": "stul_shop.info.desky_deleny.ram",
+   "poznamka": "věta, když se deska a police dělí u vestavěného rámu",
+   "typ": "text",
+   "placeholdery": [
+    "{t1}",
+    "{t2}"
+   ],
+   "cs": "Pracovní deska a police se u vestavěného rámu dělí na dvě desky – každá se vejde do standardního formátu desky ({t1} × {t2} mm).",
+   "en": "The worktop and the shelves are split into two boards at the built-in frame – each fits the standard board size ({t1} × {t2} mm).",
+   "sk": "Pracovná doska a police sa pri vstavanom ráme delia na dve dosky – každá sa zmestí do štandardného formátu dosky ({t1} × {t2} mm).",
+   "it": "Il piano di lavoro e i ripiani sono divisi in due pannelli in corrispondenza del telaio integrato: ciascuno rientra nel formato standard del pannello ({t1} × {t2} mm)."
+  },
+  {
+   "id": "stul_shop.info.desky_deleny.ram_navic",
+   "poznamka": "doplňující věta u rámu: {mezera} = o kolik mm jsou spodní police kratší",
+   "typ": "text",
+   "placeholdery": [
+    "{mezera}"
+   ],
+   "cs": " Spodní police jsou tam o {mezera} mm kratší, aby jimi mohl projít profil rámu.",
+   "en": " The lower shelves are {mezera} mm shorter there so that the frame profile can pass through.",
+   "sk": " Spodné police sú tam o {mezera} mm kratšie, aby cez ne mohol prejsť profil rámu.",
+   "it": " I ripiani inferiori sono lì più corti di {mezera} mm, in modo che il profilo del telaio possa passare."
+  }
+ ]
+}

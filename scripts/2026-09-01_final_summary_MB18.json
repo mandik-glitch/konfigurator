@@ -1,0 +1,17 @@
+{
+ "key": "MB18",
+ "carCollisionProfiles": false,
+ "euroboxCarCollision": false,
+ "badEurobox": [],
+ "unexpected": 0,
+ "expected": 57,
+ "totalParts": 63,
+ "dims": {
+  "widthX": 349.00000762939453,
+  "heightY": 1203.0001063436318,
+  "lengthZ": 2154.000018119812
+ },
+ "railContainmentOk": true,
+ "railIssues": [],
+ "passesGate": true
+}

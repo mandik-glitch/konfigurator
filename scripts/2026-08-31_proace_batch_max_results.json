@@ -1,0 +1,125 @@
+[
+ {
+  "name": "TO14",
+  "label": "Proace Max L2H2 24-",
+  "door": null,
+  "H": 1180,
+  "status": "inserted",
+  "insertOut": "product_assemblies.id=84 shop_product_id=3833 sku=SEST-PROACE-MAX-L2H2-24-BOXY43-270X220 name=Proace Max L2H2 24- - boxy43-270x220 dily=45",
+  "summary": {
+   "columns": 1,
+   "legs": 2,
+   "boxes": 9,
+   "heights": [
+    270,
+    220
+   ]
+  }
+ },
+ {
+  "name": "TO15",
+  "label": "Proace Max L3H2 24-",
+  "door": null,
+  "H": 1180,
+  "status": "inserted",
+  "insertOut": "product_assemblies.id=85 shop_product_id=3834 sku=SEST-PROACE-MAX-L3H2-24-BOXY43-270X220X170 name=Proace Max L3H2 24- - boxy43-270x220x170 dily=73",
+  "summary": {
+   "columns": 2,
+   "legs": 3,
+   "boxes": 15,
+   "heights": [
+    270,
+    220,
+    170
+   ]
+  }
+ },
+ {
+  "name": "TO16",
+  "label": "Proace Max L4H2 24-",
+  "door": null,
+  "H": 1180,
+  "status": "inserted",
+  "insertOut": "product_assemblies.id=86 shop_product_id=3835 sku=SEST-PROACE-MAX-L4H2-24-BOXY43-270X220X170 name=Proace Max L4H2 24- - boxy43-270x220x170 dily=73",
+  "summary": {
+   "columns": 2,
+   "legs": 3,
+   "boxes": 15,
+   "heights": [
+    270,
+    170,
+    220
+   ]
+  }
+ },
+ {
+  "name": "TO18",
+  "label": "Proace Max L2H1 24-",
+  "door": null,
+  "H": 1180,
+  "status": "inserted",
+  "insertOut": "product_assemblies.id=87 shop_product_id=3836 sku=SEST-PROACE-MAX-L2H1-24-BOXY43-270X220 name=Proace Max L2H1 24- - boxy43-270x220 dily=45",
+  "summary": {
+   "columns": 1,
+   "legs": 2,
+   "boxes": 9,
+   "heights": [
+    270,
+    220
+   ]
+  }
+ },
+ {
+  "name": "TO24",
+  "label": "Proace Max L3H3 24-",
+  "door": null,
+  "H": 1180,
+  "status": "inserted",
+  "insertOut": "product_assemblies.id=88 shop_product_id=3837 sku=SEST-PROACE-MAX-L3H3-24-BOXY43-270X220X170 name=Proace Max L3H3 24- - boxy43-270x220x170 dily=73",
+  "summary": {
+   "columns": 2,
+   "legs": 3,
+   "boxes": 15,
+   "heights": [
+    270,
+    220,
+    170
+   ]
+  }
+ },
+ {
+  "name": "TO25",
+  "label": "Proace Max L1H1 24-",
+  "door": null,
+  "H": 1180,
+  "status": "inserted",
+  "insertOut": "product_assemblies.id=89 shop_product_id=3838 sku=SEST-PROACE-MAX-L1H1-24-BOXY43-270X220 name=Proace Max L1H1 24- - boxy43-270x220 dily=39",
+  "summary": {
+   "columns": 1,
+   "legs": 2,
+   "boxes": 6,
+   "heights": [
+    270,
+    220
+   ]
+  }
+ },
+ {
+  "name": "TO26",
+  "label": "Proace Max L4H3 24-",
+  "door": null,
+  "H": 1180,
+  "status": "inserted",
+  "insertOut": "product_assemblies.id=90 shop_product_id=3839 sku=SEST-PROACE-MAX-L4H3-24-BOXY43-270X220X170 name=Proace Max L4H3 24- - boxy43-270x220x170 dily=73",
+  "summary": {
+   "columns": 2,
+   "legs": 3,
+   "boxes": 15,
+   "heights": [
+    270,
+    170,
+    220
+   ]
+  }
+ }
+]

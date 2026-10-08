@@ -1,0 +1,16 @@
+[
+ {"id":11,"code":"CI03","tag":"ci03","base":"/opt/konfigurator/webapp/katalog/car_bodies/Citro_n_Berlingo_CI03_2008-2018","H":1080,"legPolicy":"all-plain","family":"Berlingo"},
+ {"id":65,"code":"CI04","tag":"ci04","base":"/opt/konfigurator/webapp/katalog/car_bodies/Citro_n_Berlingo_CI04_2008-2018","H":1080,"legPolicy":"all-plain","family":"Berlingo"},
+ {"id":149,"code":"CI16","tag":"ci16","base":"/opt/konfigurator/webapp/katalog/car_bodies/Citroën_Berlingo_CI16_2019-","H":1080,"legPolicy":"all-plain","family":"Berlingo"},
+ {"id":152,"code":"CI17","tag":"ci17","base":"/opt/konfigurator/webapp/katalog/car_bodies/Citroën_Berlingo_CI17_2019-","H":1080,"legPolicy":"all-plain","family":"Berlingo"},
+ {"id":155,"code":"CI22","tag":"ci22","base":"/opt/konfigurator/webapp/katalog/car_bodies/Citroën_Berlingo_CI22_2021-","H":1080,"legPolicy":"all-plain","family":"Berlingo"},
+ {"id":158,"code":"CI23","tag":"ci23","base":"/opt/konfigurator/webapp/katalog/car_bodies/Citroën_Berlingo_CI23_2021-","H":1080,"legPolicy":"all-plain","family":"Berlingo"},
+ {"id":716,"code":"PE02","tag":"pe02","base":"/opt/konfigurator/webapp/katalog/car_bodies/Peugeot_Partner_PE02_2008-2018","H":1080,"legPolicy":"all-plain","family":"Partner"},
+ {"id":719,"code":"PE03","tag":"pe03","base":"/opt/konfigurator/webapp/katalog/car_bodies/Peugeot_Partner_PE03_2008-2018","H":1080,"legPolicy":"all-plain","family":"Partner"},
+ {"id":722,"code":"PE18","tag":"pe18","base":"/opt/konfigurator/webapp/katalog/car_bodies/Peugeot_Partner_PE18_2019-","H":1080,"legPolicy":"all-plain","family":"Partner"},
+ {"id":725,"code":"PE19","tag":"pe19","base":"/opt/konfigurator/webapp/katalog/car_bodies/Peugeot_Partner_PE19_2019-","H":1080,"legPolicy":"all-plain","family":"Partner"},
+ {"id":728,"code":"PE23","tag":"pe23","base":"/opt/konfigurator/webapp/katalog/car_bodies/Peugeot_Partner_PE23_2021-","H":1080,"legPolicy":"all-plain","family":"Partner"},
+ {"id":731,"code":"PE24","tag":"pe24","base":"/opt/konfigurator/webapp/katalog/car_bodies/Peugeot_Partner_PE24_2021-","H":1080,"legPolicy":"all-plain","family":"Partner"},
+ {"id":776,"code":"RE28","tag":"re28","base":"/opt/konfigurator/webapp/katalog/car_bodies/Renault_Trafic_RE28_2026-","H":1250,"legPolicy":"plain-then-vyrez","wallClearanceArch":70,"family":"Trafic"},
+ {"id":779,"code":"RE29","tag":"re29","base":"/opt/konfigurator/webapp/katalog/car_bodies/Renault_Trafic_RE29_2026-","H":1250,"legPolicy":"all-plain","family":"Trafic"}
+]

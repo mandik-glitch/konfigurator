@@ -1,0 +1,112 @@
+{
+ "key": "MB17",
+ "ok": true,
+ "family": "vito",
+ "base": "Mercedes_Vito_MB17_2014-",
+ "offsetX": -453.5,
+ "offsetY": 1,
+ "H": 1200,
+ "CAP_H": 300,
+ "CUTOUT_H": 350,
+ "uskok": 175,
+ "capOffsetFromW": 79,
+ "legs": [
+  {
+   "anchorZ": -1938.4999771118164,
+   "type": "plain"
+  },
+  {
+   "anchorZ": -676.4999771118164,
+   "type": "vyrez"
+  },
+  {
+   "anchorZ": -216.4999771118164,
+   "type": "vyrez"
+  }
+ ],
+ "columns": [
+  {
+   "legFromIdx": 0,
+   "legToIdx": 1,
+   "width": 1232,
+   "N": 3
+  },
+  {
+   "legFromIdx": 1,
+   "legToIdx": 2,
+   "width": 430,
+   "N": 1
+  }
+ ],
+ "legExtensions": {
+  "1": 308,
+  "2": 248
+ },
+ "columnPlans": [
+  {
+   "colIdx": 0,
+   "legFromIdx": 0,
+   "legToIdx": 1,
+   "N": 3,
+   "floorY": 308,
+   "railZFrom": -1908.4999771118164,
+   "railZTo": -676.4999771118164,
+   "railZCenter": -1292.4999771118164,
+   "railLen": 1232,
+   "crossLen": 289,
+   "crossXCenter": 174.5
+  },
+  {
+   "colIdx": 1,
+   "legFromIdx": 1,
+   "legToIdx": 2,
+   "N": 1,
+   "floorY": 345,
+   "railZFrom": -646.4999771118164,
+   "railZTo": -216.4999771118164,
+   "railZCenter": -431.4999771118164,
+   "railLen": 430,
+   "crossLen": 289,
+   "crossXCenter": 174.5
+  }
+ ],
+ "columnLevels": [
+  {
+   "colIdx": 0,
+   "levels": [
+    {
+     "railYCenter": 323,
+     "boxH": 270,
+     "boxTop": 608
+    },
+    {
+     "railYCenter": 653,
+     "boxH": 220,
+     "boxTop": 888
+    }
+   ]
+  },
+  {
+   "colIdx": 1,
+   "levels": [
+    {
+     "railYCenter": 360,
+     "boxH": 220,
+     "boxTop": 595
+    },
+    {
+     "railYCenter": 640,
+     "boxH": 170,
+     "boxTop": 825
+    },
+    {
+     "railYCenter": 870,
+     "boxH": 120,
+     "boxTop": 1005
+    }
+   ]
+  }
+ ],
+ "rearLimitZ": -931.4999771118164,
+ "elapsedMs": 10492
+}

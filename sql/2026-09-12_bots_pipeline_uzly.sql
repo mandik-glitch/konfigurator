@@ -1,0 +1,12 @@
+-- bot16 2026-09-12
+-- Robert (chat, nad screenshotem Pipeline diagramu): "tabulka botů musi
+-- zahrnovat navázání na pipeline diagram, co ktery bot bude mit na
+-- odpovednost".
+--
+-- Volny CSV seznam klicu uzlu (napr. "crm_poptavky,trideni_review") -
+-- kanonicky seznam klicu/popisku viz PIPELINE_UZLY v
+-- webapp/admin/js/prehledy-boti.js, 1:1 v poradi s boxy v
+-- renderPipelineDiagram (webapp/admin/js/crm-nabidky.js). Zadny FK/join
+-- tabulka - malo dat (nekolik botu, nekolik uzlu kazdy), stejna volna
+-- textova konvence jako uz existujici `specializace`.
+ALTER TABLE bots ADD COLUMN pipeline_uzly TEXT NULL AFTER specializace;

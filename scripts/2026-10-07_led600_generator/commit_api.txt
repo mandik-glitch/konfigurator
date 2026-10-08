@@ -1,0 +1,26 @@
+Generatory stolu: delka svitidla LED 1200 / 600 mm (parametr led_delka, slot ledlen; vychozi 1200 BEZ ZMENY - zlaty otisk 465 konfiguraci; LED 600 = karta #5359, model product_5359.glb; nabidka verejnosti jen s AKTIVNI kartou, zakazane delky s duvodem, nabidka "Zapnout kratsi LED 600 mm" u zakazaneho prepinace LED, 3D menu "Zvolit LED N mm", token K, lux typ led_600) + testy a mutace (bot8, Robert 2026-10-07)
+
+Robert: "LED 600 doplnit do generatoru". Podle vzoru delek perforovaneho panelu (b612347e): parametr led_delka
+(1200 | 600, vychozi 1200; jina hodnota = StulChyba mimo_rozsah), vsechna svitidla stolu stejne dlouha, rozteč =
+delka tělesa z GLB (1247 / 647 mm), pocet max(1, floor((sirka + 47) / telo)), skupina vystredena jako dosud
+(sablonovy clen LED se klonuje s dilem product_5359, ktery ma STEJNY stred bboxu jako 4929). Nevejde-li se
+zvolena delka, LED se odebere jako dosud (zadne tiche snizeni - chovani uzkych stolu bez volby se nemeni).
+led_info (typy + zda se vejdou), PREPINAC_DILU / _NAZVY / pevne (svitidla jedou s ramenem) / _CISLA pro oba
+dily; hash a token (klic K) a odkaz na vyrobni list se zmeni JEN u 600 se svitidlem na stole.
+Verejne API: slot ledlen (select za ledlight, depends_on posts + led + ledlight, cs/en/sk), options.ledlen
+(zakazane delky s duvodem a nejmensi sirkou, hidden kdyz je v nabidce jen 1200), nabidka kratsiho svitidla
+u zakazaneho prepinace LED (suggest {ledlen: "600"}), nabidka verejnosti jen s aktivni kartou #5359 (jinak jen
+1200; zamestnanec obe), shrnuti voleb jen u 600, klic cache resolve. 3D menu "Zvolit LED N mm" (EN/SK),
+parametr led_delka <-> slot ledlen. Pocitadlo luxu: stul_osvetleni posila typ led_600 (svitici cara 600 mm
+vystredena v telese 647 mm).
+
+Zaplaty jsou kotvene malé hunky (scripts/2026-10-07_led600_generator/apply.sh), slucitelne s police_bez_desky
+v obou poradich. Testy (scripts/2026-10-07_led600_generator): test_led_delka.py (3288), test_led_delka_zive.py
+(21), test_led_delka_shop.py (163), test_led_delka_lux.py (10, az po nasazeni JS), test_led_delka_stranka.js
+(Chromium), test_regrese_bez_led.py (4853 = regrese proti HEAD s odfiltrovanym prirustkem LED), mutace.py
+(60/60 chyceno); existujici sady beze zmeny kromě test_stul_shop.py (novy select ledlen) a run_all.sh (kroky).
+Dokumentace: KONTRAKT_KONFIGURATOR_UI.md (sekce Delka LED svitidla), MAPA_3D_A_GENERATORU.md. Nasazeni API:
+planovany reload 0:00/12:30 nebo na Robertuv pokyn; staticke JS (pocitadlo luxu) samostatnym commitem PRED reloadem.
+
+Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>
+Claude-Session: https://claude.ai/code/session_0117meq81TnjQhy1Mvk3fLRV

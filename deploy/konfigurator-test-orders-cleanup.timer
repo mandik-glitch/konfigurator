@@ -1,0 +1,12 @@
+[Unit]
+Description=Casovac uklidu testovacich objednavek (denne 05:50, WORKFLOW.md bod 27)
+
+[Timer]
+# 20 minut po generatoru (05:30), aby se nikdy nepotkaly. Dnesni davky se
+# uklid stejne netyka - maze az to, co je oznacene dele nez 14 dni.
+OnCalendar=*-*-* 05:50:00
+Persistent=true
+RandomizedDelaySec=120
+
+[Install]
+WantedBy=timers.target

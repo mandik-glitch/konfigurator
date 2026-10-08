@@ -1,0 +1,2124 @@
+{
+ "vznik": "2026-10-07 bot7",
+ "pozn": "Ceske nazvy a popisy dilu dopravniku; weight_g nahrazuje weight_g z crawlu (tisicova tecka v 'Weight (gr)', napr. 1.079 = 1079 g). Polozky s nejiste[] vyzaduji overeni.",
+ "polozky": [
+  {
+   "sku": "16.12.01.050.0300.1000.0",
+   "group_id": "5780",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s vroubkovanými válečky Ø50×300 mm, délka 1000 mm",
+   "description": "Válečkový dopravník s vroubkovanými válečky Ø50×300 mm, délka 1000 mm (průměr válečku Ø50 mm, délka válečku 300 mm, délka dopravníku 1000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": [
+    "nejasné: zda 'Height' je výška horní hrany válečků; 'Knurled' přeloženo jako vroubkované"
+   ]
+  },
+  {
+   "sku": "16.12.01.050.0300.2000.0",
+   "group_id": "5780",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s vroubkovanými válečky Ø50×300 mm, délka 2000 mm",
+   "description": "Válečkový dopravník s vroubkovanými válečky Ø50×300 mm, délka 2000 mm (průměr válečku Ø50 mm, délka válečku 300 mm, délka dopravníku 2000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": [
+    "nejasné: zda 'Height' je výška horní hrany válečků; 'Knurled' přeloženo jako vroubkované"
+   ]
+  },
+  {
+   "sku": "16.12.01.050.0300.3000.0",
+   "group_id": "5780",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s vroubkovanými válečky Ø50×300 mm, délka 3000 mm",
+   "description": "Válečkový dopravník s vroubkovanými válečky Ø50×300 mm, délka 3000 mm (průměr válečku Ø50 mm, délka válečku 300 mm, délka dopravníku 3000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": [
+    "nejasné: zda 'Height' je výška horní hrany válečků; 'Knurled' přeloženo jako vroubkované"
+   ]
+  },
+  {
+   "sku": "16.12.01.050.0300.4000.0",
+   "group_id": "5780",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s vroubkovanými válečky Ø50×300 mm, délka 4000 mm",
+   "description": "Válečkový dopravník s vroubkovanými válečky Ø50×300 mm, délka 4000 mm (průměr válečku Ø50 mm, délka válečku 300 mm, délka dopravníku 4000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": [
+    "nejasné: zda 'Height' je výška horní hrany válečků; 'Knurled' přeloženo jako vroubkované"
+   ]
+  },
+  {
+   "sku": "16.12.01.050.0300.5000.0",
+   "group_id": "5780",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s vroubkovanými válečky Ø50×300 mm, délka 5000 mm",
+   "description": "Válečkový dopravník s vroubkovanými válečky Ø50×300 mm, délka 5000 mm (průměr válečku Ø50 mm, délka válečku 300 mm, délka dopravníku 5000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": [
+    "nejasné: zda 'Height' je výška horní hrany válečků; 'Knurled' přeloženo jako vroubkované"
+   ]
+  },
+  {
+   "sku": "16.12.01.050.0300.6000.0",
+   "group_id": "5780",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s vroubkovanými válečky Ø50×300 mm, délka 6000 mm",
+   "description": "Válečkový dopravník s vroubkovanými válečky Ø50×300 mm, délka 6000 mm (průměr válečku Ø50 mm, délka válečku 300 mm, délka dopravníku 6000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": [
+    "nejasné: zda 'Height' je výška horní hrany válečků; 'Knurled' přeloženo jako vroubkované"
+   ]
+  },
+  {
+   "sku": "16.12.01.050.0450.1000.0",
+   "group_id": "5780",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s vroubkovanými válečky Ø50×450 mm, délka 1000 mm",
+   "description": "Válečkový dopravník s vroubkovanými válečky Ø50×450 mm, délka 1000 mm (průměr válečku Ø50 mm, délka válečku 450 mm, délka dopravníku 1000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": [
+    "nejasné: zda 'Height' je výška horní hrany válečků; 'Knurled' přeloženo jako vroubkované"
+   ]
+  },
+  {
+   "sku": "16.12.01.050.0450.2000.0",
+   "group_id": "5780",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s vroubkovanými válečky Ø50×450 mm, délka 2000 mm",
+   "description": "Válečkový dopravník s vroubkovanými válečky Ø50×450 mm, délka 2000 mm (průměr válečku Ø50 mm, délka válečku 450 mm, délka dopravníku 2000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": [
+    "nejasné: zda 'Height' je výška horní hrany válečků; 'Knurled' přeloženo jako vroubkované"
+   ]
+  },
+  {
+   "sku": "16.12.01.050.0450.3000.0",
+   "group_id": "5780",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s vroubkovanými válečky Ø50×450 mm, délka 3000 mm",
+   "description": "Válečkový dopravník s vroubkovanými válečky Ø50×450 mm, délka 3000 mm (průměr válečku Ø50 mm, délka válečku 450 mm, délka dopravníku 3000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": [
+    "nejasné: zda 'Height' je výška horní hrany válečků; 'Knurled' přeloženo jako vroubkované",
+    "tabulka zdroje je v rozporu se stock code (délka válečku/dopravníku); použito podle kódu"
+   ]
+  },
+  {
+   "sku": "16.12.01.050.0450.4000.0",
+   "group_id": "5780",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s vroubkovanými válečky Ø50×450 mm, délka 4000 mm",
+   "description": "Válečkový dopravník s vroubkovanými válečky Ø50×450 mm, délka 4000 mm (průměr válečku Ø50 mm, délka válečku 450 mm, délka dopravníku 4000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": [
+    "nejasné: zda 'Height' je výška horní hrany válečků; 'Knurled' přeloženo jako vroubkované"
+   ]
+  },
+  {
+   "sku": "16.12.01.050.0450.5000.0",
+   "group_id": "5780",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s vroubkovanými válečky Ø50×450 mm, délka 5000 mm",
+   "description": "Válečkový dopravník s vroubkovanými válečky Ø50×450 mm, délka 5000 mm (průměr válečku Ø50 mm, délka válečku 450 mm, délka dopravníku 5000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": [
+    "nejasné: zda 'Height' je výška horní hrany válečků; 'Knurled' přeloženo jako vroubkované"
+   ]
+  },
+  {
+   "sku": "16.12.01.050.0450.6000.0",
+   "group_id": "5780",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s vroubkovanými válečky Ø50×450 mm, délka 6000 mm",
+   "description": "Válečkový dopravník s vroubkovanými válečky Ø50×450 mm, délka 6000 mm (průměr válečku Ø50 mm, délka válečku 450 mm, délka dopravníku 6000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": [
+    "nejasné: zda 'Height' je výška horní hrany válečků; 'Knurled' přeloženo jako vroubkované"
+   ]
+  },
+  {
+   "sku": "16.12.01.050.0600.1000.0",
+   "group_id": "5780",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s vroubkovanými válečky Ø50×600 mm, délka 1000 mm",
+   "description": "Válečkový dopravník s vroubkovanými válečky Ø50×600 mm, délka 1000 mm (průměr válečku Ø50 mm, délka válečku 600 mm, délka dopravníku 1000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": [
+    "nejasné: zda 'Height' je výška horní hrany válečků; 'Knurled' přeloženo jako vroubkované"
+   ]
+  },
+  {
+   "sku": "16.12.01.050.0600.2000.0",
+   "group_id": "5780",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s vroubkovanými válečky Ø50×600 mm, délka 2000 mm",
+   "description": "Válečkový dopravník s vroubkovanými válečky Ø50×600 mm, délka 2000 mm (průměr válečku Ø50 mm, délka válečku 600 mm, délka dopravníku 2000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": [
+    "nejasné: zda 'Height' je výška horní hrany válečků; 'Knurled' přeloženo jako vroubkované"
+   ]
+  },
+  {
+   "sku": "16.12.01.050.0600.3000.0",
+   "group_id": "5780",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s vroubkovanými válečky Ø50×600 mm, délka 3000 mm",
+   "description": "Válečkový dopravník s vroubkovanými válečky Ø50×600 mm, délka 3000 mm (průměr válečku Ø50 mm, délka válečku 600 mm, délka dopravníku 3000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": [
+    "nejasné: zda 'Height' je výška horní hrany válečků; 'Knurled' přeloženo jako vroubkované",
+    "tabulka zdroje je v rozporu se stock code (délka válečku/dopravníku); použito podle kódu"
+   ]
+  },
+  {
+   "sku": "16.12.01.050.0600.4000.0",
+   "group_id": "5780",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s vroubkovanými válečky Ø50×600 mm, délka 4000 mm",
+   "description": "Válečkový dopravník s vroubkovanými válečky Ø50×600 mm, délka 4000 mm (průměr válečku Ø50 mm, délka válečku 600 mm, délka dopravníku 4000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": [
+    "nejasné: zda 'Height' je výška horní hrany válečků; 'Knurled' přeloženo jako vroubkované"
+   ]
+  },
+  {
+   "sku": "16.12.01.050.0600.5000.0",
+   "group_id": "5780",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s vroubkovanými válečky Ø50×600 mm, délka 5000 mm",
+   "description": "Válečkový dopravník s vroubkovanými válečky Ø50×600 mm, délka 5000 mm (průměr válečku Ø50 mm, délka válečku 600 mm, délka dopravníku 5000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": [
+    "nejasné: zda 'Height' je výška horní hrany válečků; 'Knurled' přeloženo jako vroubkované"
+   ]
+  },
+  {
+   "sku": "16.12.01.050.0600.6000.0",
+   "group_id": "5780",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s vroubkovanými válečky Ø50×600 mm, délka 6000 mm",
+   "description": "Válečkový dopravník s vroubkovanými válečky Ø50×600 mm, délka 6000 mm (průměr válečku Ø50 mm, délka válečku 600 mm, délka dopravníku 6000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": [
+    "nejasné: zda 'Height' je výška horní hrany válečků; 'Knurled' přeloženo jako vroubkované"
+   ]
+  },
+  {
+   "sku": "16.12.01.050.0800.1000.0",
+   "group_id": "5780",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s vroubkovanými válečky Ø50×800 mm, délka 1000 mm",
+   "description": "Válečkový dopravník s vroubkovanými válečky Ø50×800 mm, délka 1000 mm (průměr válečku Ø50 mm, délka válečku 800 mm, délka dopravníku 1000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": [
+    "nejasné: zda 'Height' je výška horní hrany válečků; 'Knurled' přeloženo jako vroubkované"
+   ]
+  },
+  {
+   "sku": "16.12.01.050.0800.2000.0",
+   "group_id": "5780",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s vroubkovanými válečky Ø50×800 mm, délka 2000 mm",
+   "description": "Válečkový dopravník s vroubkovanými válečky Ø50×800 mm, délka 2000 mm (průměr válečku Ø50 mm, délka válečku 800 mm, délka dopravníku 2000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": [
+    "nejasné: zda 'Height' je výška horní hrany válečků; 'Knurled' přeloženo jako vroubkované"
+   ]
+  },
+  {
+   "sku": "16.12.01.050.0800.3000.0",
+   "group_id": "5780",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s vroubkovanými válečky Ø50×800 mm, délka 3000 mm",
+   "description": "Válečkový dopravník s vroubkovanými válečky Ø50×800 mm, délka 3000 mm (průměr válečku Ø50 mm, délka válečku 800 mm, délka dopravníku 3000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": [
+    "nejasné: zda 'Height' je výška horní hrany válečků; 'Knurled' přeloženo jako vroubkované"
+   ]
+  },
+  {
+   "sku": "16.12.01.050.0800.4000.0",
+   "group_id": "5780",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s vroubkovanými válečky Ø50×800 mm, délka 4000 mm",
+   "description": "Válečkový dopravník s vroubkovanými válečky Ø50×800 mm, délka 4000 mm (průměr válečku Ø50 mm, délka válečku 800 mm, délka dopravníku 4000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": [
+    "nejasné: zda 'Height' je výška horní hrany válečků; 'Knurled' přeloženo jako vroubkované"
+   ]
+  },
+  {
+   "sku": "16.12.01.050.0800.5000.0",
+   "group_id": "5780",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s vroubkovanými válečky Ø50×800 mm, délka 5000 mm",
+   "description": "Válečkový dopravník s vroubkovanými válečky Ø50×800 mm, délka 5000 mm (průměr válečku Ø50 mm, délka válečku 800 mm, délka dopravníku 5000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": [
+    "nejasné: zda 'Height' je výška horní hrany válečků; 'Knurled' přeloženo jako vroubkované"
+   ]
+  },
+  {
+   "sku": "16.12.01.050.0800.6000.0",
+   "group_id": "5780",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s vroubkovanými válečky Ø50×800 mm, délka 6000 mm",
+   "description": "Válečkový dopravník s vroubkovanými válečky Ø50×800 mm, délka 6000 mm (průměr válečku Ø50 mm, délka válečku 800 mm, délka dopravníku 6000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": [
+    "nejasné: zda 'Height' je výška horní hrany válečků; 'Knurled' přeloženo jako vroubkované"
+   ]
+  },
+  {
+   "sku": "16.12.01.050.1000.1000.0",
+   "group_id": "5780",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s vroubkovanými válečky Ø50×1000 mm, délka 1000 mm",
+   "description": "Válečkový dopravník s vroubkovanými válečky Ø50×1000 mm, délka 1000 mm (průměr válečku Ø50 mm, délka válečku 1000 mm, délka dopravníku 1000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": [
+    "nejasné: zda 'Height' je výška horní hrany válečků; 'Knurled' přeloženo jako vroubkované"
+   ]
+  },
+  {
+   "sku": "16.12.01.050.1000.2000.0",
+   "group_id": "5780",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s vroubkovanými válečky Ø50×1000 mm, délka 2000 mm",
+   "description": "Válečkový dopravník s vroubkovanými válečky Ø50×1000 mm, délka 2000 mm (průměr válečku Ø50 mm, délka válečku 1000 mm, délka dopravníku 2000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": [
+    "nejasné: zda 'Height' je výška horní hrany válečků; 'Knurled' přeloženo jako vroubkované"
+   ]
+  },
+  {
+   "sku": "16.12.01.050.1000.3000.0",
+   "group_id": "5780",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s vroubkovanými válečky Ø50×1000 mm, délka 3000 mm",
+   "description": "Válečkový dopravník s vroubkovanými válečky Ø50×1000 mm, délka 3000 mm (průměr válečku Ø50 mm, délka válečku 1000 mm, délka dopravníku 3000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": [
+    "nejasné: zda 'Height' je výška horní hrany válečků; 'Knurled' přeloženo jako vroubkované"
+   ]
+  },
+  {
+   "sku": "16.12.01.050.1000.4000.0",
+   "group_id": "5780",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s vroubkovanými válečky Ø50×1000 mm, délka 4000 mm",
+   "description": "Válečkový dopravník s vroubkovanými válečky Ø50×1000 mm, délka 4000 mm (průměr válečku Ø50 mm, délka válečku 1000 mm, délka dopravníku 4000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": [
+    "nejasné: zda 'Height' je výška horní hrany válečků; 'Knurled' přeloženo jako vroubkované"
+   ]
+  },
+  {
+   "sku": "16.12.01.050.1000.5000.0",
+   "group_id": "5780",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s vroubkovanými válečky Ø50×1000 mm, délka 5000 mm",
+   "description": "Válečkový dopravník s vroubkovanými válečky Ø50×1000 mm, délka 5000 mm (průměr válečku Ø50 mm, délka válečku 1000 mm, délka dopravníku 5000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": [
+    "nejasné: zda 'Height' je výška horní hrany válečků; 'Knurled' přeloženo jako vroubkované"
+   ]
+  },
+  {
+   "sku": "16.12.01.050.1000.6000.0",
+   "group_id": "5780",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s vroubkovanými válečky Ø50×1000 mm, délka 6000 mm",
+   "description": "Válečkový dopravník s vroubkovanými válečky Ø50×1000 mm, délka 6000 mm (průměr válečku Ø50 mm, délka válečku 1000 mm, délka dopravníku 6000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": [
+    "nejasné: zda 'Height' je výška horní hrany válečků; 'Knurled' přeloženo jako vroubkované"
+   ]
+  },
+  {
+   "sku": "16.10.01.050.0300.1000.0",
+   "group_id": "1319",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s hliníkovými válečky Ø50×290 mm, délka 1000 mm",
+   "description": "Válečkový dopravník s hliníkovými válečky Ø50×290 mm, délka 1000 mm (průměr válečku Ø50 mm, délka válečku 290 mm, délka dopravníku 1000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": []
+  },
+  {
+   "sku": "16.10.01.050.0300.2000.0",
+   "group_id": "1319",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s hliníkovými válečky Ø50×290 mm, délka 2000 mm",
+   "description": "Válečkový dopravník s hliníkovými válečky Ø50×290 mm, délka 2000 mm (průměr válečku Ø50 mm, délka válečku 290 mm, délka dopravníku 2000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": []
+  },
+  {
+   "sku": "16.10.01.050.0300.3000.0",
+   "group_id": "1319",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s hliníkovými válečky Ø50×290 mm, délka 3000 mm",
+   "description": "Válečkový dopravník s hliníkovými válečky Ø50×290 mm, délka 3000 mm (průměr válečku Ø50 mm, délka válečku 290 mm, délka dopravníku 3000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": []
+  },
+  {
+   "sku": "16.10.01.050.0300.4000.0",
+   "group_id": "1319",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s hliníkovými válečky Ø50×290 mm, délka 4000 mm",
+   "description": "Válečkový dopravník s hliníkovými válečky Ø50×290 mm, délka 4000 mm (průměr válečku Ø50 mm, délka válečku 290 mm, délka dopravníku 4000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": []
+  },
+  {
+   "sku": "16.10.01.050.0300.5000.0",
+   "group_id": "1319",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s hliníkovými válečky Ø50×290 mm, délka 5000 mm",
+   "description": "Válečkový dopravník s hliníkovými válečky Ø50×290 mm, délka 5000 mm (průměr válečku Ø50 mm, délka válečku 290 mm, délka dopravníku 5000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": []
+  },
+  {
+   "sku": "16.10.01.050.0300.6000.0",
+   "group_id": "1319",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s hliníkovými válečky Ø50×290 mm, délka 6000 mm",
+   "description": "Válečkový dopravník s hliníkovými válečky Ø50×290 mm, délka 6000 mm (průměr válečku Ø50 mm, délka válečku 290 mm, délka dopravníku 6000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": []
+  },
+  {
+   "sku": "16.10.01.050.0450.1000.0",
+   "group_id": "1319",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s hliníkovými válečky Ø50×440 mm, délka 1000 mm",
+   "description": "Válečkový dopravník s hliníkovými válečky Ø50×440 mm, délka 1000 mm (průměr válečku Ø50 mm, délka válečku 440 mm, délka dopravníku 1000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": []
+  },
+  {
+   "sku": "16.10.01.050.0450.2000.0",
+   "group_id": "1319",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s hliníkovými válečky Ø50×440 mm, délka 2000 mm",
+   "description": "Válečkový dopravník s hliníkovými válečky Ø50×440 mm, délka 2000 mm (průměr válečku Ø50 mm, délka válečku 440 mm, délka dopravníku 2000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": []
+  },
+  {
+   "sku": "16.10.01.050.0450.3000.0",
+   "group_id": "1319",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s hliníkovými válečky Ø50×440 mm, délka 3000 mm",
+   "description": "Válečkový dopravník s hliníkovými válečky Ø50×440 mm, délka 3000 mm (průměr válečku Ø50 mm, délka válečku 440 mm, délka dopravníku 3000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": []
+  },
+  {
+   "sku": "16.10.01.050.0450.4000.0",
+   "group_id": "1319",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s hliníkovými válečky Ø50×440 mm, délka 4000 mm",
+   "description": "Válečkový dopravník s hliníkovými válečky Ø50×440 mm, délka 4000 mm (průměr válečku Ø50 mm, délka válečku 440 mm, délka dopravníku 4000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": []
+  },
+  {
+   "sku": "16.10.01.050.0450.5000.0",
+   "group_id": "1319",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s hliníkovými válečky Ø50×440 mm, délka 5000 mm",
+   "description": "Válečkový dopravník s hliníkovými válečky Ø50×440 mm, délka 5000 mm (průměr válečku Ø50 mm, délka válečku 440 mm, délka dopravníku 5000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": []
+  },
+  {
+   "sku": "16.10.01.050.0450.6000.0",
+   "group_id": "1319",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s hliníkovými válečky Ø50×440 mm, délka 6000 mm",
+   "description": "Válečkový dopravník s hliníkovými válečky Ø50×440 mm, délka 6000 mm (průměr válečku Ø50 mm, délka válečku 440 mm, délka dopravníku 6000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": []
+  },
+  {
+   "sku": "16.10.01.050.0600.1000.0",
+   "group_id": "1319",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s hliníkovými válečky Ø50×590 mm, délka 1000 mm",
+   "description": "Válečkový dopravník s hliníkovými válečky Ø50×590 mm, délka 1000 mm (průměr válečku Ø50 mm, délka válečku 590 mm, délka dopravníku 1000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": []
+  },
+  {
+   "sku": "16.10.01.050.0600.2000.0",
+   "group_id": "1319",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s hliníkovými válečky Ø50×590 mm, délka 2000 mm",
+   "description": "Válečkový dopravník s hliníkovými válečky Ø50×590 mm, délka 2000 mm (průměr válečku Ø50 mm, délka válečku 590 mm, délka dopravníku 2000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": []
+  },
+  {
+   "sku": "16.10.01.050.0600.3000.0",
+   "group_id": "1319",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s hliníkovými válečky Ø50×590 mm, délka 3000 mm",
+   "description": "Válečkový dopravník s hliníkovými válečky Ø50×590 mm, délka 3000 mm (průměr válečku Ø50 mm, délka válečku 590 mm, délka dopravníku 3000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": [
+    "tabulka zdroje je v rozporu se stock code (délka válečku/dopravníku); použito podle kódu"
+   ]
+  },
+  {
+   "sku": "16.10.01.050.0600.4000.0",
+   "group_id": "1319",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s hliníkovými válečky Ø50×590 mm, délka 4000 mm",
+   "description": "Válečkový dopravník s hliníkovými válečky Ø50×590 mm, délka 4000 mm (průměr válečku Ø50 mm, délka válečku 590 mm, délka dopravníku 4000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": []
+  },
+  {
+   "sku": "16.10.01.050.0600.5000.0",
+   "group_id": "1319",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s hliníkovými válečky Ø50×590 mm, délka 5000 mm",
+   "description": "Válečkový dopravník s hliníkovými válečky Ø50×590 mm, délka 5000 mm (průměr válečku Ø50 mm, délka válečku 590 mm, délka dopravníku 5000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": []
+  },
+  {
+   "sku": "16.10.01.050.0600.6000.0",
+   "group_id": "1319",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s hliníkovými válečky Ø50×590 mm, délka 6000 mm",
+   "description": "Válečkový dopravník s hliníkovými válečky Ø50×590 mm, délka 6000 mm (průměr válečku Ø50 mm, délka válečku 590 mm, délka dopravníku 6000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": []
+  },
+  {
+   "sku": "16.10.01.050.0800.1000.0",
+   "group_id": "1319",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s hliníkovými válečky Ø50×790 mm, délka 1000 mm",
+   "description": "Válečkový dopravník s hliníkovými válečky Ø50×790 mm, délka 1000 mm (průměr válečku Ø50 mm, délka válečku 790 mm, délka dopravníku 1000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": []
+  },
+  {
+   "sku": "16.10.01.050.0800.2000.0",
+   "group_id": "1319",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s hliníkovými válečky Ø50×790 mm, délka 2000 mm",
+   "description": "Válečkový dopravník s hliníkovými válečky Ø50×790 mm, délka 2000 mm (průměr válečku Ø50 mm, délka válečku 790 mm, délka dopravníku 2000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": []
+  },
+  {
+   "sku": "16.10.01.050.0800.3000.0",
+   "group_id": "1319",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s hliníkovými válečky Ø50×790 mm, délka 3000 mm",
+   "description": "Válečkový dopravník s hliníkovými válečky Ø50×790 mm, délka 3000 mm (průměr válečku Ø50 mm, délka válečku 790 mm, délka dopravníku 3000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": [
+    "tabulka zdroje je v rozporu se stock code (délka válečku/dopravníku); použito podle kódu"
+   ]
+  },
+  {
+   "sku": "16.10.01.050.0800.4000.0",
+   "group_id": "1319",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s hliníkovými válečky Ø50×790 mm, délka 4000 mm",
+   "description": "Válečkový dopravník s hliníkovými válečky Ø50×790 mm, délka 4000 mm (průměr válečku Ø50 mm, délka válečku 790 mm, délka dopravníku 4000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": []
+  },
+  {
+   "sku": "16.10.01.050.0800.5000.0",
+   "group_id": "1319",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s hliníkovými válečky Ø50×790 mm, délka 5000 mm",
+   "description": "Válečkový dopravník s hliníkovými válečky Ø50×790 mm, délka 5000 mm (průměr válečku Ø50 mm, délka válečku 790 mm, délka dopravníku 5000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": []
+  },
+  {
+   "sku": "16.10.01.050.0800.6000.0",
+   "group_id": "1319",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s hliníkovými válečky Ø50×790 mm, délka 6000 mm",
+   "description": "Válečkový dopravník s hliníkovými válečky Ø50×790 mm, délka 6000 mm (průměr válečku Ø50 mm, délka válečku 790 mm, délka dopravníku 6000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": []
+  },
+  {
+   "sku": "16.10.01.051.0300.1000.0",
+   "group_id": "1319",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s ocelovými válečky Ø51×290 mm, délka 1000 mm",
+   "description": "Válečkový dopravník s ocelovými válečky Ø51×290 mm, délka 1000 mm (průměr válečku Ø51 mm, délka válečku 290 mm, délka dopravníku 1000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": []
+  },
+  {
+   "sku": "16.10.01.051.0300.2000.0",
+   "group_id": "1319",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s ocelovými válečky Ø51×290 mm, délka 2000 mm",
+   "description": "Válečkový dopravník s ocelovými válečky Ø51×290 mm, délka 2000 mm (průměr válečku Ø51 mm, délka válečku 290 mm, délka dopravníku 2000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": []
+  },
+  {
+   "sku": "16.10.01.051.0300.3000.0",
+   "group_id": "1319",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s ocelovými válečky Ø51×290 mm, délka 3000 mm",
+   "description": "Válečkový dopravník s ocelovými válečky Ø51×290 mm, délka 3000 mm (průměr válečku Ø51 mm, délka válečku 290 mm, délka dopravníku 3000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": []
+  },
+  {
+   "sku": "16.10.01.051.0300.4000.0",
+   "group_id": "1319",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s ocelovými válečky Ø51×290 mm, délka 4000 mm",
+   "description": "Válečkový dopravník s ocelovými válečky Ø51×290 mm, délka 4000 mm (průměr válečku Ø51 mm, délka válečku 290 mm, délka dopravníku 4000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": []
+  },
+  {
+   "sku": "16.10.01.051.0300.5000.0",
+   "group_id": "1319",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s ocelovými válečky Ø51×290 mm, délka 5000 mm",
+   "description": "Válečkový dopravník s ocelovými válečky Ø51×290 mm, délka 5000 mm (průměr válečku Ø51 mm, délka válečku 290 mm, délka dopravníku 5000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": []
+  },
+  {
+   "sku": "16.10.01.051.0300.6000.0",
+   "group_id": "1319",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s ocelovými válečky Ø51×290 mm, délka 6000 mm",
+   "description": "Válečkový dopravník s ocelovými válečky Ø51×290 mm, délka 6000 mm (průměr válečku Ø51 mm, délka válečku 290 mm, délka dopravníku 6000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": []
+  },
+  {
+   "sku": "16.10.01.051.0450.1000.0",
+   "group_id": "1319",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s ocelovými válečky Ø51×440 mm, délka 1000 mm",
+   "description": "Válečkový dopravník s ocelovými válečky Ø51×440 mm, délka 1000 mm (průměr válečku Ø51 mm, délka válečku 440 mm, délka dopravníku 1000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": []
+  },
+  {
+   "sku": "16.10.01.051.0450.2000.0",
+   "group_id": "1319",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s ocelovými válečky Ø51×440 mm, délka 2000 mm",
+   "description": "Válečkový dopravník s ocelovými válečky Ø51×440 mm, délka 2000 mm (průměr válečku Ø51 mm, délka válečku 440 mm, délka dopravníku 2000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": []
+  },
+  {
+   "sku": "16.10.01.051.0450.3000.0",
+   "group_id": "1319",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s ocelovými válečky Ø51×440 mm, délka 3000 mm",
+   "description": "Válečkový dopravník s ocelovými válečky Ø51×440 mm, délka 3000 mm (průměr válečku Ø51 mm, délka válečku 440 mm, délka dopravníku 3000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": []
+  },
+  {
+   "sku": "16.10.01.051.0450.4000.0",
+   "group_id": "1319",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s ocelovými válečky Ø51×440 mm, délka 4000 mm",
+   "description": "Válečkový dopravník s ocelovými válečky Ø51×440 mm, délka 4000 mm (průměr válečku Ø51 mm, délka válečku 440 mm, délka dopravníku 4000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": []
+  },
+  {
+   "sku": "16.10.01.051.0450.5000.0",
+   "group_id": "1319",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s ocelovými válečky Ø51×440 mm, délka 5000 mm",
+   "description": "Válečkový dopravník s ocelovými válečky Ø51×440 mm, délka 5000 mm (průměr válečku Ø51 mm, délka válečku 440 mm, délka dopravníku 5000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": []
+  },
+  {
+   "sku": "16.10.01.051.0450.6000.0",
+   "group_id": "1319",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s ocelovými válečky Ø51×440 mm, délka 6000 mm",
+   "description": "Válečkový dopravník s ocelovými válečky Ø51×440 mm, délka 6000 mm (průměr válečku Ø51 mm, délka válečku 440 mm, délka dopravníku 6000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": []
+  },
+  {
+   "sku": "16.10.01.051.0600.1000.0",
+   "group_id": "1319",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s ocelovými válečky Ø51×590 mm, délka 1000 mm",
+   "description": "Válečkový dopravník s ocelovými válečky Ø51×590 mm, délka 1000 mm (průměr válečku Ø51 mm, délka válečku 590 mm, délka dopravníku 1000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": []
+  },
+  {
+   "sku": "16.10.01.051.0600.2000.0",
+   "group_id": "1319",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s ocelovými válečky Ø51×590 mm, délka 2000 mm",
+   "description": "Válečkový dopravník s ocelovými válečky Ø51×590 mm, délka 2000 mm (průměr válečku Ø51 mm, délka válečku 590 mm, délka dopravníku 2000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": []
+  },
+  {
+   "sku": "16.10.01.051.0600.3000.0",
+   "group_id": "1319",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s ocelovými válečky Ø51×590 mm, délka 3000 mm",
+   "description": "Válečkový dopravník s ocelovými válečky Ø51×590 mm, délka 3000 mm (průměr válečku Ø51 mm, délka válečku 590 mm, délka dopravníku 3000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": []
+  },
+  {
+   "sku": "16.10.01.051.0600.4000.0",
+   "group_id": "1319",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s ocelovými válečky Ø51×590 mm, délka 4000 mm",
+   "description": "Válečkový dopravník s ocelovými válečky Ø51×590 mm, délka 4000 mm (průměr válečku Ø51 mm, délka válečku 590 mm, délka dopravníku 4000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": []
+  },
+  {
+   "sku": "16.10.01.051.0600.5000.0",
+   "group_id": "1319",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s ocelovými válečky Ø51×590 mm, délka 5000 mm",
+   "description": "Válečkový dopravník s ocelovými válečky Ø51×590 mm, délka 5000 mm (průměr válečku Ø51 mm, délka válečku 590 mm, délka dopravníku 5000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": []
+  },
+  {
+   "sku": "16.10.01.051.0600.6000.0",
+   "group_id": "1319",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s ocelovými válečky Ø51×590 mm, délka 6000 mm",
+   "description": "Válečkový dopravník s ocelovými válečky Ø51×590 mm, délka 6000 mm (průměr válečku Ø51 mm, délka válečku 590 mm, délka dopravníku 6000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": []
+  },
+  {
+   "sku": "16.10.01.051.0800.1000.0",
+   "group_id": "1319",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s ocelovými válečky Ø51×790 mm, délka 1000 mm",
+   "description": "Válečkový dopravník s ocelovými válečky Ø51×790 mm, délka 1000 mm (průměr válečku Ø51 mm, délka válečku 790 mm, délka dopravníku 1000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": []
+  },
+  {
+   "sku": "16.10.01.051.0800.2000.0",
+   "group_id": "1319",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s ocelovými válečky Ø51×790 mm, délka 2000 mm",
+   "description": "Válečkový dopravník s ocelovými válečky Ø51×790 mm, délka 2000 mm (průměr válečku Ø51 mm, délka válečku 790 mm, délka dopravníku 2000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": []
+  },
+  {
+   "sku": "16.10.01.051.0800.3000.0",
+   "group_id": "1319",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s ocelovými válečky Ø51×790 mm, délka 3000 mm",
+   "description": "Válečkový dopravník s ocelovými válečky Ø51×790 mm, délka 3000 mm (průměr válečku Ø51 mm, délka válečku 790 mm, délka dopravníku 3000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": []
+  },
+  {
+   "sku": "16.10.01.051.0800.4000.0",
+   "group_id": "1319",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s ocelovými válečky Ø51×790 mm, délka 4000 mm",
+   "description": "Válečkový dopravník s ocelovými válečky Ø51×790 mm, délka 4000 mm (průměr válečku Ø51 mm, délka válečku 790 mm, délka dopravníku 4000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": []
+  },
+  {
+   "sku": "16.10.01.051.0800.5000.0",
+   "group_id": "1319",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s ocelovými válečky Ø51×790 mm, délka 5000 mm",
+   "description": "Válečkový dopravník s ocelovými válečky Ø51×790 mm, délka 5000 mm (průměr válečku Ø51 mm, délka válečku 790 mm, délka dopravníku 5000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": []
+  },
+  {
+   "sku": "16.10.01.051.0800.6000.0",
+   "group_id": "1319",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s ocelovými válečky Ø51×790 mm, délka 6000 mm",
+   "description": "Válečkový dopravník s ocelovými válečky Ø51×790 mm, délka 6000 mm (průměr válečku Ø51 mm, délka válečku 790 mm, délka dopravníku 6000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": []
+  },
+  {
+   "sku": "16.10.01.051.1000.1000.0",
+   "group_id": "1319",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s ocelovými válečky Ø51×990 mm, délka 1000 mm",
+   "description": "Válečkový dopravník s ocelovými válečky Ø51×990 mm, délka 1000 mm (průměr válečku Ø51 mm, délka válečku 990 mm, délka dopravníku 1000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": []
+  },
+  {
+   "sku": "16.10.01.051.1000.2000.0",
+   "group_id": "1319",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s ocelovými válečky Ø51×990 mm, délka 2000 mm",
+   "description": "Válečkový dopravník s ocelovými válečky Ø51×990 mm, délka 2000 mm (průměr válečku Ø51 mm, délka válečku 990 mm, délka dopravníku 2000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": [
+    "tabulka zdroje je v rozporu se stock code (délka válečku/dopravníku); použito podle kódu"
+   ]
+  },
+  {
+   "sku": "16.10.01.051.1000.3000.0",
+   "group_id": "1319",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s ocelovými válečky Ø51×990 mm, délka 3000 mm",
+   "description": "Válečkový dopravník s ocelovými válečky Ø51×990 mm, délka 3000 mm (průměr válečku Ø51 mm, délka válečku 990 mm, délka dopravníku 3000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": []
+  },
+  {
+   "sku": "16.10.01.051.1000.4000.0",
+   "group_id": "1319",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s ocelovými válečky Ø51×990 mm, délka 4000 mm",
+   "description": "Válečkový dopravník s ocelovými válečky Ø51×990 mm, délka 4000 mm (průměr válečku Ø51 mm, délka válečku 990 mm, délka dopravníku 4000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": []
+  },
+  {
+   "sku": "16.10.01.051.1000.5000.0",
+   "group_id": "1319",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s ocelovými válečky Ø51×990 mm, délka 5000 mm",
+   "description": "Válečkový dopravník s ocelovými válečky Ø51×990 mm, délka 5000 mm (průměr válečku Ø51 mm, délka válečku 990 mm, délka dopravníku 5000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": []
+  },
+  {
+   "sku": "16.10.01.051.1000.6000.0",
+   "group_id": "1319",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s ocelovými válečky Ø51×990 mm, délka 6000 mm",
+   "description": "Válečkový dopravník s ocelovými válečky Ø51×990 mm, délka 6000 mm (průměr válečku Ø51 mm, délka válečku 990 mm, délka dopravníku 6000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": []
+  },
+  {
+   "sku": "16.10.01.051.1200.1000.0",
+   "group_id": "1319",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s ocelovými válečky Ø51×1195 mm, délka 1000 mm",
+   "description": "Válečkový dopravník s ocelovými válečky Ø51×1195 mm, délka 1000 mm (průměr válečku Ø51 mm, délka válečku 1195 mm, délka dopravníku 1000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": []
+  },
+  {
+   "sku": "16.10.01.051.1200.2000.0",
+   "group_id": "1319",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s ocelovými válečky Ø51×1195 mm, délka 2000 mm",
+   "description": "Válečkový dopravník s ocelovými válečky Ø51×1195 mm, délka 2000 mm (průměr válečku Ø51 mm, délka válečku 1195 mm, délka dopravníku 2000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": []
+  },
+  {
+   "sku": "16.10.01.051.1200.3000.0",
+   "group_id": "1319",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s ocelovými válečky Ø51×1195 mm, délka 3000 mm",
+   "description": "Válečkový dopravník s ocelovými válečky Ø51×1195 mm, délka 3000 mm (průměr válečku Ø51 mm, délka válečku 1195 mm, délka dopravníku 3000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": []
+  },
+  {
+   "sku": "16.10.01.051.1200.4000.0",
+   "group_id": "1319",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s ocelovými válečky Ø51×1195 mm, délka 4000 mm",
+   "description": "Válečkový dopravník s ocelovými válečky Ø51×1195 mm, délka 4000 mm (průměr válečku Ø51 mm, délka válečku 1195 mm, délka dopravníku 4000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": []
+  },
+  {
+   "sku": "16.10.01.051.1200.5000.0",
+   "group_id": "1319",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s ocelovými válečky Ø51×1195 mm, délka 5000 mm",
+   "description": "Válečkový dopravník s ocelovými válečky Ø51×1195 mm, délka 5000 mm (průměr válečku Ø51 mm, délka válečku 1195 mm, délka dopravníku 5000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": []
+  },
+  {
+   "sku": "16.10.01.051.1200.6000.0",
+   "group_id": "1319",
+   "dogus_kat": "161",
+   "nase_kategorie": "valeckove-dopravniky",
+   "name": "Válečkový dopravník s ocelovými válečky Ø51×1195 mm, délka 6000 mm",
+   "description": "Válečkový dopravník s ocelovými válečky Ø51×1195 mm, délka 6000 mm (průměr válečku Ø51 mm, délka válečku 1195 mm, délka dopravníku 6000 mm, výška 800 mm, rozteč os válečků 150 mm, bez bočního vodítka). Válečkový dopravník bez pohonu s volnými válečky.",
+   "weight_g": null,
+   "nejiste": []
+  },
+  {
+   "sku": "3.009.03.50.290",
+   "group_id": "5700",
+   "dogus_kat": "195",
+   "nase_kategorie": "valecky-a-hlavice-valecku",
+   "name": "Vroubkovaný hliníkový váleček Ø50×290 mm",
+   "description": "Vroubkovaný hliníkový váleček Ø50×290 mm (průměr Ø50 mm, délka válečku 290 mm, celková délka 335 mm, materiál: hliník, hmotnost cca 880 g). Volný váleček pro válečkové dopravníky bez pohonu.",
+   "weight_g": 880,
+   "nejiste": [
+    "nosnost válečku neuvedena (zdroj bez jednotky)",
+    "význam sloupce 'AA' (8/14) neznámý, nepoužito"
+   ]
+  },
+  {
+   "sku": "3.009.03.50.440",
+   "group_id": "5700",
+   "dogus_kat": "195",
+   "nase_kategorie": "valecky-a-hlavice-valecku",
+   "name": "Vroubkovaný hliníkový váleček Ø50×440 mm",
+   "description": "Vroubkovaný hliníkový váleček Ø50×440 mm (průměr Ø50 mm, délka válečku 440 mm, celková délka 485 mm, materiál: hliník, hmotnost cca 1300 g). Volný váleček pro válečkové dopravníky bez pohonu.",
+   "weight_g": 1300,
+   "nejiste": [
+    "nosnost válečku neuvedena (zdroj bez jednotky)",
+    "význam sloupce 'AA' (8/14) neznámý, nepoužito"
+   ]
+  },
+  {
+   "sku": "3.009.03.50.590",
+   "group_id": "5700",
+   "dogus_kat": "195",
+   "nase_kategorie": "valecky-a-hlavice-valecku",
+   "name": "Vroubkovaný hliníkový váleček Ø50×590 mm",
+   "description": "Vroubkovaný hliníkový váleček Ø50×590 mm (průměr Ø50 mm, délka válečku 590 mm, celková délka 635 mm, materiál: hliník, hmotnost cca 1720 g). Volný váleček pro válečkové dopravníky bez pohonu.",
+   "weight_g": 1720,
+   "nejiste": [
+    "nosnost válečku neuvedena (zdroj bez jednotky)",
+    "význam sloupce 'AA' (8/14) neznámý, nepoužito"
+   ]
+  },
+  {
+   "sku": "3.009.03.50.790",
+   "group_id": "5700",
+   "dogus_kat": "195",
+   "nase_kategorie": "valecky-a-hlavice-valecku",
+   "name": "Vroubkovaný hliníkový váleček Ø50×790 mm",
+   "description": "Vroubkovaný hliníkový váleček Ø50×790 mm (průměr Ø50 mm, délka válečku 790 mm, celková délka 835 mm, materiál: hliník, hmotnost cca 2280 g). Volný váleček pro válečkové dopravníky bez pohonu.",
+   "weight_g": 2280,
+   "nejiste": [
+    "nosnost válečku neuvedena (zdroj bez jednotky)",
+    "význam sloupce 'AA' (8/14) neznámý, nepoužito"
+   ]
+  },
+  {
+   "sku": "3.009.01.50.290",
+   "group_id": "1387",
+   "dogus_kat": "195",
+   "nase_kategorie": "valecky-a-hlavice-valecku",
+   "name": "Hliníkový váleček Ø50×290 mm",
+   "description": "Hliníkový váleček Ø50×290 mm (průměr Ø50 mm, délka válečku 290 mm, celková délka 335 mm, materiál: hliník, hmotnost cca 584 g). Volný váleček pro válečkové dopravníky bez pohonu.",
+   "weight_g": 584,
+   "nejiste": [
+    "nosnost válečku neuvedena (zdroj bez jednotky)",
+    "význam sloupce 'AA' (8/14) neznámý, nepoužito"
+   ]
+  },
+  {
+   "sku": "3.009.01.50.440",
+   "group_id": "1387",
+   "dogus_kat": "195",
+   "nase_kategorie": "valecky-a-hlavice-valecku",
+   "name": "Hliníkový váleček Ø50×440 mm",
+   "description": "Hliníkový váleček Ø50×440 mm (průměr Ø50 mm, délka válečku 440 mm, celková délka 485 mm, materiál: hliník, hmotnost cca 816 g). Volný váleček pro válečkové dopravníky bez pohonu.",
+   "weight_g": 816,
+   "nejiste": [
+    "nosnost válečku neuvedena (zdroj bez jednotky)",
+    "význam sloupce 'AA' (8/14) neznámý, nepoužito"
+   ]
+  },
+  {
+   "sku": "3.009.01.50.590",
+   "group_id": "1387",
+   "dogus_kat": "195",
+   "nase_kategorie": "valecky-a-hlavice-valecku",
+   "name": "Hliníkový váleček Ø50×590 mm",
+   "description": "Hliníkový váleček Ø50×590 mm (průměr Ø50 mm, délka válečku 590 mm, celková délka 635 mm, materiál: hliník, hmotnost cca 1079 g). Volný váleček pro válečkové dopravníky bez pohonu.",
+   "weight_g": 1079,
+   "nejiste": [
+    "nosnost válečku neuvedena (zdroj bez jednotky)",
+    "význam sloupce 'AA' (8/14) neznámý, nepoužito"
+   ]
+  },
+  {
+   "sku": "3.009.01.50.790",
+   "group_id": "1387",
+   "dogus_kat": "195",
+   "nase_kategorie": "valecky-a-hlavice-valecku",
+   "name": "Hliníkový váleček Ø50×790 mm",
+   "description": "Hliníkový váleček Ø50×790 mm (průměr Ø50 mm, délka válečku 790 mm, celková délka 835 mm, materiál: hliník, hmotnost cca 1384 g). Volný váleček pro válečkové dopravníky bez pohonu.",
+   "weight_g": 1384,
+   "nejiste": [
+    "nosnost válečku neuvedena (zdroj bez jednotky)",
+    "význam sloupce 'AA' (8/14) neznámý, nepoužito"
+   ]
+  },
+  {
+   "sku": "3.009.02.51.290",
+   "group_id": "1389",
+   "dogus_kat": "195",
+   "nase_kategorie": "valecky-a-hlavice-valecku",
+   "name": "Ocelový váleček Ø51×290 mm",
+   "description": "Ocelový váleček Ø51×290 mm (průměr Ø51 mm, délka válečku 290 mm, celková délka 318 mm, hmotnost cca 1603 g). Volný váleček pro válečkové dopravníky bez pohonu.",
+   "weight_g": 1603,
+   "nejiste": [
+    "nosnost válečku neuvedena (zdroj bez jednotky)",
+    "význam sloupce 'AA' (8/14) neznámý, nepoužito"
+   ]
+  },
+  {
+   "sku": "3.009.02.51.440",
+   "group_id": "1389",
+   "dogus_kat": "195",
+   "nase_kategorie": "valecky-a-hlavice-valecku",
+   "name": "Ocelový váleček Ø51×440 mm",
+   "description": "Ocelový váleček Ø51×440 mm (průměr Ø51 mm, délka válečku 440 mm, celková délka 468 mm, hmotnost cca 2426 g). Volný váleček pro válečkové dopravníky bez pohonu.",
+   "weight_g": 2426,
+   "nejiste": [
+    "nosnost válečku neuvedena (zdroj bez jednotky)",
+    "význam sloupce 'AA' (8/14) neznámý, nepoužito"
+   ]
+  },
+  {
+   "sku": "3.009.02.51.590",
+   "group_id": "1389",
+   "dogus_kat": "195",
+   "nase_kategorie": "valecky-a-hlavice-valecku",
+   "name": "Ocelový váleček Ø51×590 mm",
+   "description": "Ocelový váleček Ø51×590 mm (průměr Ø51 mm, délka válečku 590 mm, celková délka 618 mm, hmotnost cca 3162 g). Volný váleček pro válečkové dopravníky bez pohonu.",
+   "weight_g": 3162,
+   "nejiste": [
+    "nosnost válečku neuvedena (zdroj bez jednotky)",
+    "význam sloupce 'AA' (8/14) neznámý, nepoužito"
+   ]
+  },
+  {
+   "sku": "3.009.02.51.790",
+   "group_id": "1389",
+   "dogus_kat": "195",
+   "nase_kategorie": "valecky-a-hlavice-valecku",
+   "name": "Ocelový váleček Ø51×790 mm",
+   "description": "Ocelový váleček Ø51×790 mm (průměr Ø51 mm, délka válečku 790 mm, celková délka 818 mm, hmotnost cca 3987 g). Volný váleček pro válečkové dopravníky bez pohonu.",
+   "weight_g": 3987,
+   "nejiste": [
+    "nosnost válečku neuvedena (zdroj bez jednotky)",
+    "význam sloupce 'AA' (8/14) neznámý, nepoužito"
+   ]
+  },
+  {
+   "sku": "3.009.02.51.990",
+   "group_id": "1389",
+   "dogus_kat": "195",
+   "nase_kategorie": "valecky-a-hlavice-valecku",
+   "name": "Ocelový váleček Ø51×990 mm",
+   "description": "Ocelový váleček Ø51×990 mm (průměr Ø51 mm, délka válečku 990 mm, celková délka 1018 mm, hmotnost cca 4812 g). Volný váleček pro válečkové dopravníky bez pohonu.",
+   "weight_g": 4812,
+   "nejiste": [
+    "nosnost válečku neuvedena (zdroj bez jednotky)",
+    "význam sloupce 'AA' (8/14) neznámý, nepoužito"
+   ]
+  },
+  {
+   "sku": "3.010.20.1",
+   "group_id": "5381",
+   "dogus_kat": "190",
+   "nase_kategorie": "valecky-a-hlavice-valecku",
+   "name": "Plastová hlavice válečku Ø20×1 mm",
+   "description": "Plastová hlavice válečku Ø20×1 mm (vnější průměr Ø20 mm, materiál: plast, hmotnost cca 6 g). Hlavice pro konec válečku válečkového dopravníku.",
+   "weight_g": 6,
+   "nejiste": [
+    "'x 1.5' = tloušťka stěny trubky válečku (odvozeno z rozměrů), ověřit"
+   ]
+  },
+  {
+   "sku": "3.010.30.1",
+   "group_id": "5383",
+   "dogus_kat": "190",
+   "nase_kategorie": "valecky-a-hlavice-valecku",
+   "name": "Plastová hlavice válečku Ø30×1 mm",
+   "description": "Plastová hlavice válečku Ø30×1 mm (vnější průměr Ø29,65 mm, materiál: plast, hmotnost cca 12 g). Hlavice pro konec válečku válečkového dopravníku.",
+   "weight_g": 12,
+   "nejiste": [
+    "'x 1.5' = tloušťka stěny trubky válečku (odvozeno z rozměrů), ověřit"
+   ]
+  },
+  {
+   "sku": "3.010.30.1.5",
+   "group_id": "5386",
+   "dogus_kat": "190",
+   "nase_kategorie": "valecky-a-hlavice-valecku",
+   "name": "Plastová hlavice válečku Ø30×1,5 mm",
+   "description": "Plastová hlavice válečku Ø30×1,5 mm (vnější průměr Ø29,7 mm, materiál: plast, hmotnost cca 11 g). Hlavice pro konec válečku válečkového dopravníku.",
+   "weight_g": 11,
+   "nejiste": [
+    "'x 1.5' = tloušťka stěny trubky válečku (odvozeno z rozměrů), ověřit"
+   ]
+  },
+  {
+   "sku": "3.010.40.1.5",
+   "group_id": "5388",
+   "dogus_kat": "190",
+   "nase_kategorie": "valecky-a-hlavice-valecku",
+   "name": "Plastová hlavice válečku Ø40×1,5 mm",
+   "description": "Plastová hlavice válečku Ø40×1,5 mm (vnější průměr Ø40 mm, materiál: plast, hmotnost cca 15 g). Hlavice pro konec válečku válečkového dopravníku.",
+   "weight_g": 15,
+   "nejiste": [
+    "'x 1.5' = tloušťka stěny trubky válečku (odvozeno z rozměrů), ověřit"
+   ]
+  },
+  {
+   "sku": "3.010.50.1",
+   "group_id": "5390",
+   "dogus_kat": "190",
+   "nase_kategorie": "valecky-a-hlavice-valecku",
+   "name": "Plastová hlavice válečku Ø50×1,5 mm",
+   "description": "Plastová hlavice válečku Ø50×1,5 mm (vnější průměr Ø50 mm, materiál: plast, hmotnost cca 60 g). Hlavice pro konec válečku válečkového dopravníku.",
+   "weight_g": 60,
+   "nejiste": [
+    "'x 1.5' = tloušťka stěny trubky válečku (odvozeno z rozměrů), ověřit"
+   ]
+  },
+  {
+   "sku": "3.010.50.1.1",
+   "group_id": "5465",
+   "dogus_kat": "190",
+   "nase_kategorie": "valecky-a-hlavice-valecku",
+   "name": "Plastová hlavice válečku Ø50×1,5 mm – provedení s otvorem Ø12, černé",
+   "description": "Plastová hlavice válečku Ø50×1,5 mm – provedení s otvorem Ø12, černé (vnější průměr Ø50 mm, materiál: plast, hmotnost cca 60 g). Hlavice pro konec válečku válečkového dopravníku.",
+   "weight_g": 60,
+   "nejiste": [
+    "'Ktr Black' = jen odhad (otvor Ø12, černá); ověřit",
+    "'x 1.5' = tloušťka stěny trubky válečku (odvozeno z rozměrů), ověřit"
+   ]
+  },
+  {
+   "sku": "3.006.01.50",
+   "group_id": "6879",
+   "dogus_kat": "191",
+   "nase_kategorie": "valecky-a-hlavice-valecku",
+   "name": "Nylonové ložiskové pouzdro válečku Ø50 mm",
+   "description": "Nylonové ložiskové pouzdro válečku Ø50 mm (materiál: nylon, hmotnost cca 11 g). Díl válečkového dopravníku.",
+   "weight_g": 11,
+   "nejiste": [
+    "'Roll Bed' přeloženo jako ložiskové pouzdro válečku — ověřit funkci"
+   ]
+  },
+  {
+   "sku": "3.006.01.51",
+   "group_id": "6879",
+   "dogus_kat": "191",
+   "nase_kategorie": "valecky-a-hlavice-valecku",
+   "name": "Nylonové ložiskové pouzdro válečku Ø51 mm",
+   "description": "Nylonové ložiskové pouzdro válečku Ø51 mm (materiál: nylon, hmotnost cca 15 g). Díl válečkového dopravníku.",
+   "weight_g": 15,
+   "nejiste": [
+    "'Roll Bed' přeloženo jako ložiskové pouzdro válečku — ověřit funkci"
+   ]
+  },
+  {
+   "sku": "3.006.01",
+   "group_id": "2913",
+   "dogus_kat": "191",
+   "nase_kategorie": "valecky-a-hlavice-valecku",
+   "name": "Ložisko vratného válečku",
+   "description": "Ložisko vratného válečku (materiál: hliník, hmotnost cca 66 g). Díl válečkového dopravníku.",
+   "weight_g": 66,
+   "nejiste": [
+    "'Bottom Return Roller Bearing' = ložisko vratného válečku; ověřit"
+   ]
+  },
+  {
+   "sku": "2.2.016.024.040.01",
+   "group_id": "7491",
+   "dogus_kat": "217",
+   "nase_kategorie": "valeckove-drahy",
+   "name": "Válečková dráha 40 mm, Ø24, hliníková",
+   "description": "Válečková dráha 40 mm, Ø24, hliníková (materiál: hliník, hmotnost 770 g/m). Díl systému válečkové dráhy.",
+   "weight_g": null,
+   "nejiste": [
+    "7491: prodejní jednotka metr vs kus ověřit (hmotnost 770 g/m)"
+   ]
+  },
+  {
+   "sku": "2.2.018.024.040.01",
+   "group_id": "7493",
+   "dogus_kat": "217",
+   "nase_kategorie": "valeckove-drahy",
+   "name": "Plastové víčko válečkové dráhy 40 mm, Ø24",
+   "description": "Plastové víčko válečkové dráhy 40 mm, Ø24 (materiál: plast, hmotnost cca 5 g). Díl systému válečkové dráhy.",
+   "weight_g": 5,
+   "nejiste": []
+  },
+  {
+   "sku": "2.2.016.027.037.01",
+   "group_id": "6822",
+   "dogus_kat": "217",
+   "nase_kategorie": "valeckove-drahy",
+   "name": "Válečková dráha, zinková",
+   "description": "Válečková dráha, zinková (materiál: zinek, hmotnost cca 959 g). Díl systému válečkové dráhy.",
+   "weight_g": 959,
+   "nejiste": []
+  },
+  {
+   "sku": "2.2.016.027.037.03",
+   "group_id": "7022",
+   "dogus_kat": "217",
+   "nase_kategorie": "valeckove-drahy",
+   "name": "Válečková dráha s bočním dorazem, zinková",
+   "description": "Válečková dráha s bočním dorazem, zinková (materiál: zinek, hmotnost cca 1000 g). Díl systému válečkové dráhy.",
+   "weight_g": 1000,
+   "nejiste": []
+  },
+  {
+   "sku": "2.2.017.000.037.01",
+   "group_id": "6824",
+   "dogus_kat": "217",
+   "nase_kategorie": "valeckove-drahy",
+   "name": "Spojovací plech válečkové dráhy, malý",
+   "description": "Spojovací plech válečkové dráhy, malý (materiál: ocelový plech (DKP), hmotnost cca 50 g). Díl systému válečkové dráhy.",
+   "weight_g": 50,
+   "nejiste": []
+  },
+  {
+   "sku": "2.2.017.001.037.01",
+   "group_id": "6824",
+   "dogus_kat": "217",
+   "nase_kategorie": "valeckove-drahy",
+   "name": "Spojovací plech válečkové dráhy, střední",
+   "description": "Spojovací plech válečkové dráhy, střední (materiál: ocelový plech (DKP), hmotnost cca 90 g). Díl systému válečkové dráhy.",
+   "weight_g": 90,
+   "nejiste": []
+  },
+  {
+   "sku": "2.2.017.030.037.01",
+   "group_id": "6826",
+   "dogus_kat": "217",
+   "nase_kategorie": "valeckove-drahy",
+   "name": "Upevňovací a zarážkový plech válečkové dráhy, malý",
+   "description": "Upevňovací a zarážkový plech válečkové dráhy, malý (materiál: ocelový plech (DKP), hmotnost cca 63 g). Díl systému válečkové dráhy.",
+   "weight_g": 63,
+   "nejiste": []
+  },
+  {
+   "sku": "2.2.017.030.039.01",
+   "group_id": "6826",
+   "dogus_kat": "217",
+   "nase_kategorie": "valeckove-drahy",
+   "name": "Upevňovací a zarážkový plech válečkové dráhy, střední",
+   "description": "Upevňovací a zarážkový plech válečkové dráhy, střední (materiál: ocelový plech (DKP), hmotnost cca 100 g). Díl systému válečkové dráhy.",
+   "weight_g": 100,
+   "nejiste": []
+  },
+  {
+   "sku": "2.2.017.000.055.01",
+   "group_id": "7518",
+   "dogus_kat": "217",
+   "nase_kategorie": "valeckove-drahy",
+   "name": "Spojovací plech válečkové dráhy pro regál Dynamic, malý",
+   "description": "Spojovací plech válečkové dráhy pro regál Dynamic, malý (materiál: ocelový plech (DKP), hmotnost cca 75 g). Díl systému válečkové dráhy.",
+   "weight_g": 75,
+   "nejiste": []
+  },
+  {
+   "sku": "2.2.017.035.055.01",
+   "group_id": "7520",
+   "dogus_kat": "217",
+   "nase_kategorie": "valeckove-drahy",
+   "name": "Spojovací a zarážkový plech válečkové dráhy pro regál Dynamic, malý",
+   "description": "Spojovací a zarážkový plech válečkové dráhy pro regál Dynamic, malý (materiál: ocelový plech (DKP), hmotnost cca 90 g). Díl systému válečkové dráhy.",
+   "weight_g": 90,
+   "nejiste": []
+  },
+  {
+   "sku": "3.003.23127.01",
+   "group_id": "1356",
+   "dogus_kat": "198",
+   "nase_kategorie": "spoje-a-konzoly-dopravniku",
+   "name": "T-spojovací deska",
+   "description": "T-spojovací deska (materiál: ocelový plech tl. 3 mm (HRP), hmotnost cca 283 g). Spojovací díl dopravníku.",
+   "weight_g": 283,
+   "nejiste": [
+    "překlad 'Graded/Attachment' odhadem; 3.003.23127.* patrně pro profil 23×127 (podle kódu)"
+   ]
+  },
+  {
+   "sku": "3.003.23127.03",
+   "group_id": "1355",
+   "dogus_kat": "198",
+   "nase_kategorie": "spoje-a-konzoly-dopravniku",
+   "name": "Stupňovitá T-spojovací deska",
+   "description": "Stupňovitá T-spojovací deska (materiál: ocelový plech tl. 3 mm (HRP), hmotnost cca 271 g). Spojovací díl dopravníku.",
+   "weight_g": 271,
+   "nejiste": [
+    "překlad 'Graded/Attachment' odhadem; 3.003.23127.* patrně pro profil 23×127 (podle kódu)"
+   ]
+  },
+  {
+   "sku": "3.003.23127.02",
+   "group_id": "1352",
+   "dogus_kat": "198",
+   "nase_kategorie": "spoje-a-konzoly-dopravniku",
+   "name": "Nástavná T-spojovací deska",
+   "description": "Nástavná T-spojovací deska (materiál: ocelový plech tl. 3 mm (HRP), hmotnost cca 601 g). Spojovací díl dopravníku.",
+   "weight_g": 601,
+   "nejiste": [
+    "překlad 'Graded/Attachment' odhadem; 3.003.23127.* patrně pro profil 23×127 (podle kódu)"
+   ]
+  },
+  {
+   "sku": "3.003.23127.04",
+   "group_id": "2904",
+   "dogus_kat": "198",
+   "nase_kategorie": "spoje-a-konzoly-dopravniku",
+   "name": "Přídavná rovná spojovací deska 180×100 mm",
+   "description": "Přídavná rovná spojovací deska 180×100 mm (materiál: ocelový plech (HRP), hmotnost cca 564 g). Spojovací díl dopravníku.",
+   "weight_g": 564,
+   "nejiste": [
+    "překlad 'Graded/Attachment' odhadem; 3.003.23127.* patrně pro profil 23×127 (podle kódu)"
+   ]
+  },
+  {
+   "sku": "3.003.23075.04",
+   "group_id": "2904",
+   "dogus_kat": "198",
+   "nase_kategorie": "spoje-a-konzoly-dopravniku",
+   "name": "Přímá spojovací deska 23×75, pozinkovaná, 150×65 mm",
+   "description": "Přímá spojovací deska 23×75, pozinkovaná, 150×65 mm (materiál: ocelový plech (HRP), hmotnost cca 292 g). Spojovací díl dopravníku.",
+   "weight_g": 292,
+   "nejiste": [
+    "překlad 'Graded/Attachment' odhadem; 3.003.23127.* patrně pro profil 23×127 (podle kódu)"
+   ]
+  },
+  {
+   "sku": "3.012.23075.00",
+   "group_id": "5860",
+   "dogus_kat": "199",
+   "nase_kategorie": "spoje-a-konzoly-dopravniku",
+   "name": "Úhlová spojovací deska s válečkem 23×75",
+   "description": "Úhlová spojovací deska s válečkem 23×75 (materiál: hliník, hmotnost cca 450 g). Spojovací díl dopravníku.",
+   "weight_g": 450,
+   "nejiste": [
+    "'Joint Plate and Roller' = úhlová spojovací deska s válečkem (podle názvu kategorie), ověřit"
+   ]
+  },
+  {
+   "sku": "3.012.23075.01",
+   "group_id": "5860",
+   "dogus_kat": "199",
+   "nase_kategorie": "spoje-a-konzoly-dopravniku",
+   "name": "Úhlová spojovací deska s válečkem 23×75, levá",
+   "description": "Úhlová spojovací deska s válečkem 23×75, levá (materiál: hliník, hmotnost cca 450 g). Spojovací díl dopravníku.",
+   "weight_g": 450,
+   "nejiste": [
+    "'Joint Plate and Roller' = úhlová spojovací deska s válečkem (podle názvu kategorie), ověřit"
+   ]
+  },
+  {
+   "sku": "3.012.2375.01",
+   "group_id": "5860",
+   "dogus_kat": "199",
+   "nase_kategorie": "spoje-a-konzoly-dopravniku",
+   "name": "Čep válečku Ø50 a spojovací kus 23×75",
+   "description": "Čep válečku Ø50 a spojovací kus 23×75 (materiál: hliník, hmotnost cca 100 g). Spojovací díl dopravníku.",
+   "weight_g": 100,
+   "nejiste": [
+    "'Joint Plate and Roller' = úhlová spojovací deska s válečkem (podle názvu kategorie), ověřit"
+   ]
+  },
+  {
+   "sku": "3.012.23127.00",
+   "group_id": "1383",
+   "dogus_kat": "199",
+   "nase_kategorie": "spoje-a-konzoly-dopravniku",
+   "name": "Úhlová spojovací deska s válečkem 23×127",
+   "description": "Úhlová spojovací deska s válečkem 23×127 (materiál: hliník, hmotnost cca 1289 g). Spojovací díl dopravníku.",
+   "weight_g": 1289,
+   "nejiste": [
+    "'Joint Plate and Roller' = úhlová spojovací deska s válečkem (podle názvu kategorie), ověřit"
+   ]
+  },
+  {
+   "sku": "3.012.23127.01",
+   "group_id": "1383",
+   "dogus_kat": "199",
+   "nase_kategorie": "spoje-a-konzoly-dopravniku",
+   "name": "Úhlová spojovací deska 23×127, levá",
+   "description": "Úhlová spojovací deska 23×127, levá (materiál: hliník, hmotnost cca 1289 g). Spojovací díl dopravníku.",
+   "weight_g": 1289,
+   "nejiste": [
+    "'Joint Plate and Roller' = úhlová spojovací deska s válečkem (podle názvu kategorie), ověřit"
+   ]
+  },
+  {
+   "sku": "3.012.02",
+   "group_id": "1383",
+   "dogus_kat": "199",
+   "nase_kategorie": "spoje-a-konzoly-dopravniku",
+   "name": "Čep válečku Ø50 a spojovací kus 23×127",
+   "description": "Čep válečku Ø50 a spojovací kus 23×127 (materiál: hliník, hmotnost cca 230 g). Spojovací díl dopravníku.",
+   "weight_g": 230,
+   "nejiste": [
+    "'Joint Plate and Roller' = úhlová spojovací deska s válečkem (podle názvu kategorie), ověřit"
+   ]
+  },
+  {
+   "sku": "3.012.04",
+   "group_id": "1383",
+   "dogus_kat": "199",
+   "nase_kategorie": "spoje-a-konzoly-dopravniku",
+   "name": "Vnitřní spojovací kus válečku pro výtahový dopravník 23×127",
+   "description": "Vnitřní spojovací kus válečku pro výtahový dopravník 23×127 (materiál: hliník, hmotnost cca 52 g). Spojovací díl dopravníku.",
+   "weight_g": 52,
+   "nejiste": [
+    "'Joint Plate and Roller' = úhlová spojovací deska s válečkem (podle názvu kategorie), ověřit",
+    "DÍL PRO VÝTAHOVÝ (motorový) DOPRAVNÍK — doporučuji NEIMPORTOVAT"
+   ]
+  },
+  {
+   "sku": "3.012.3030.00",
+   "group_id": "2916",
+   "dogus_kat": "199",
+   "nase_kategorie": "spoje-a-konzoly-dopravniku",
+   "name": "Úhlová spojovací deska s válečkem 30×30, miniaturní",
+   "description": "Úhlová spojovací deska s válečkem 30×30, miniaturní (materiál: hliník, hmotnost cca 129 g). Spojovací díl dopravníku.",
+   "weight_g": 129,
+   "nejiste": [
+    "'Joint Plate and Roller' = úhlová spojovací deska s válečkem (podle názvu kategorie), ověřit"
+   ]
+  },
+  {
+   "sku": "3.012.4545.00",
+   "group_id": "2917",
+   "dogus_kat": "199",
+   "nase_kategorie": "spoje-a-konzoly-dopravniku",
+   "name": "Úhlová spojovací deska s válečkem 45×45, miniaturní",
+   "description": "Úhlová spojovací deska s válečkem 45×45, miniaturní (materiál: hliník, hmotnost cca 343 g). Spojovací díl dopravníku.",
+   "weight_g": 343,
+   "nejiste": [
+    "'Joint Plate and Roller' = úhlová spojovací deska s válečkem (podle názvu kategorie), ověřit"
+   ]
+  },
+  {
+   "sku": "3.012.4545.01",
+   "group_id": "2917",
+   "dogus_kat": "199",
+   "nase_kategorie": "spoje-a-konzoly-dopravniku",
+   "name": "Čep válečku Ø50 a spojovací kus 45×45",
+   "description": "Čep válečku Ø50 a spojovací kus 45×45 (materiál: hliník, hmotnost cca 186 g). Spojovací díl dopravníku.",
+   "weight_g": 186,
+   "nejiste": [
+    "'Joint Plate and Roller' = úhlová spojovací deska s válečkem (podle názvu kategorie), ověřit"
+   ]
+  },
+  {
+   "sku": "3.004.03.01",
+   "group_id": "6928",
+   "dogus_kat": "200",
+   "nase_kategorie": "podvozky-a-nohy-dopravniku",
+   "name": "Sada kovových nohou 23×75, malá",
+   "description": "Sada kovových nohou 23×75, malá (nastavitelná výška 530–875 mm, materiál: ocel, hmotnost cca 2800 g). Noha dopravníku s nastavitelnou výškou.",
+   "weight_g": 2800,
+   "nejiste": [
+    "'Graduated' = nastavitelná výška v rozsahu L min–L max (odvozeno); ověřit"
+   ]
+  },
+  {
+   "sku": "3.004.02.01",
+   "group_id": "1353",
+   "dogus_kat": "200",
+   "nase_kategorie": "podvozky-a-nohy-dopravniku",
+   "name": "Kovová noha dopravníku, malá",
+   "description": "Kovová noha dopravníku, malá (nastavitelná výška 570–870 mm, materiál: ocel, hmotnost cca 3120 g). Noha dopravníku s nastavitelnou výškou.",
+   "weight_g": 3120,
+   "nejiste": [
+    "'Graduated' = nastavitelná výška v rozsahu L min–L max (odvozeno); ověřit"
+   ]
+  },
+  {
+   "sku": "3.004.01.01",
+   "group_id": "1354",
+   "dogus_kat": "200",
+   "nase_kategorie": "podvozky-a-nohy-dopravniku",
+   "name": "Kovová noha dopravníku, velká",
+   "description": "Kovová noha dopravníku, velká (nastavitelná výška 750–1200 mm, materiál: ocel, hmotnost cca 4820 g). Noha dopravníku s nastavitelnou výškou.",
+   "weight_g": 4820,
+   "nejiste": [
+    "'Graduated' = nastavitelná výška v rozsahu L min–L max (odvozeno); ověřit"
+   ]
+  },
+  {
+   "sku": "3.006.220.211.130",
+   "group_id": "4868",
+   "dogus_kat": "201",
+   "nase_kategorie": "podvozky-a-nohy-dopravniku",
+   "name": "Trojitá patka",
+   "description": "Trojitá patka (materiál: plast, hmotnost cca 1360 g). Díl podvozku dopravníku.",
+   "weight_g": 1360,
+   "nejiste": [
+    "překlad 'Triple Feet' / 'Mount' odhadem"
+   ]
+  },
+  {
+   "sku": "3.006.240.021.180",
+   "group_id": "4871",
+   "dogus_kat": "201",
+   "nase_kategorie": "podvozky-a-nohy-dopravniku",
+   "name": "Spodní spojovací úchyt rámu",
+   "description": "Spodní spojovací úchyt rámu (materiál: plast, hmotnost cca 344 g). Díl podvozku dopravníku.",
+   "weight_g": 344,
+   "nejiste": [
+    "překlad 'Triple Feet' / 'Mount' odhadem"
+   ]
+  },
+  {
+   "sku": "3.006.240.021.200",
+   "group_id": "4873",
+   "dogus_kat": "201",
+   "nase_kategorie": "podvozky-a-nohy-dopravniku",
+   "name": "Boční spojovací úchyt rámu",
+   "description": "Boční spojovací úchyt rámu (materiál: plast, hmotnost cca 486 g). Díl podvozku dopravníku.",
+   "weight_g": 486,
+   "nejiste": [
+    "překlad 'Triple Feet' / 'Mount' odhadem"
+   ]
+  },
+  {
+   "sku": "3.015.146103.08.90.10",
+   "group_id": "4929",
+   "dogus_kat": "202",
+   "nase_kategorie": "podvozky-a-nohy-dopravniku",
+   "name": "U-deska dopravníku",
+   "description": "U-deska dopravníku (materiál: ocelový plech (DKP), hmotnost cca 685 g). Díl podvozku dopravníku.",
+   "weight_g": 685,
+   "nejiste": [
+    "účel U-desky odhadem"
+   ]
+  },
+  {
+   "sku": "3.006.210.000.012",
+   "group_id": "4876",
+   "dogus_kat": "204",
+   "nase_kategorie": "spoje-a-konzoly-dopravniku",
+   "name": "Držák hřídele Ø12 mm, jednoduchý",
+   "description": "Držák hřídele Ø12 mm, jednoduchý (materiál: plast, hmotnost cca 24 g). Spojovací díl dopravníku.",
+   "weight_g": 24,
+   "nejiste": [
+    "'Consol/Console' = konzolový spoj; překlad odhadem"
+   ]
+  },
+  {
+   "sku": "3.006.210.011.100",
+   "group_id": "4870",
+   "dogus_kat": "204",
+   "nase_kategorie": "spoje-a-konzoly-dopravniku",
+   "name": "Držák hřídele Ø12 mm, dvojitý",
+   "description": "Držák hřídele Ø12 mm, dvojitý (materiál: plast, hmotnost cca 96 g). Spojovací díl dopravníku.",
+   "weight_g": 96,
+   "nejiste": [
+    "'Consol/Console' = konzolový spoj; překlad odhadem"
+   ]
+  },
+  {
+   "sku": "3.007.03.000",
+   "group_id": "1386",
+   "dogus_kat": "204",
+   "nase_kategorie": "spoje-a-konzoly-dopravniku",
+   "name": "Sada konzolového spoje, mini",
+   "description": "Sada konzolového spoje, mini (materiál: plast, hmotnost cca 38 g). Spojovací díl dopravníku.",
+   "weight_g": 38,
+   "nejiste": [
+    "'Consol/Console' = konzolový spoj; překlad odhadem"
+   ]
+  },
+  {
+   "sku": "3.007.00.000",
+   "group_id": "1386",
+   "dogus_kat": "204",
+   "nase_kategorie": "spoje-a-konzoly-dopravniku",
+   "name": "Sada konzolového spoje, malá",
+   "description": "Sada konzolového spoje, malá (materiál: plast, hmotnost cca 89 g). Spojovací díl dopravníku.",
+   "weight_g": 89,
+   "nejiste": [
+    "'Consol/Console' = konzolový spoj; překlad odhadem"
+   ]
+  },
+  {
+   "sku": "3.007.01.000",
+   "group_id": "1386",
+   "dogus_kat": "204",
+   "nase_kategorie": "spoje-a-konzoly-dopravniku",
+   "name": "Sada konzolového spoje, střední",
+   "description": "Sada konzolového spoje, střední (materiál: plast, hmotnost cca 94 g). Spojovací díl dopravníku.",
+   "weight_g": 94,
+   "nejiste": [
+    "'Consol/Console' = konzolový spoj; překlad odhadem"
+   ]
+  },
+  {
+   "sku": "3.007.02.000",
+   "group_id": "1386",
+   "dogus_kat": "204",
+   "nase_kategorie": "spoje-a-konzoly-dopravniku",
+   "name": "Sada konzolového spoje, velká",
+   "description": "Sada konzolového spoje, velká (materiál: plast, hmotnost cca 129 g). Spojovací díl dopravníku.",
+   "weight_g": 129,
+   "nejiste": [
+    "'Consol/Console' = konzolový spoj; překlad odhadem"
+   ]
+  },
+  {
+   "sku": "3.007.02.120",
+   "group_id": "1386",
+   "dogus_kat": "204",
+   "nase_kategorie": "spoje-a-konzoly-dopravniku",
+   "name": "Hřídel konzolového spoje Ø12×120 mm",
+   "description": "Hřídel konzolového spoje Ø12×120 mm (závit M8, materiál: nerezová ocel 303, hmotnost cca 103 g). Spojovací díl dopravníku.",
+   "weight_g": 103,
+   "nejiste": [
+    "'Consol/Console' = konzolový spoj; překlad odhadem"
+   ]
+  },
+  {
+   "sku": "3.007.02.150",
+   "group_id": "1386",
+   "dogus_kat": "204",
+   "nase_kategorie": "spoje-a-konzoly-dopravniku",
+   "name": "Hřídel konzolového spoje Ø12×150 mm",
+   "description": "Hřídel konzolového spoje Ø12×150 mm (závit M8, materiál: nerezová ocel 303, hmotnost cca 130 g). Spojovací díl dopravníku.",
+   "weight_g": 130,
+   "nejiste": [
+    "'Consol/Console' = konzolový spoj; překlad odhadem"
+   ]
+  },
+  {
+   "sku": "3.007.02.200",
+   "group_id": "1386",
+   "dogus_kat": "204",
+   "nase_kategorie": "spoje-a-konzoly-dopravniku",
+   "name": "Hřídel konzolového spoje Ø12×200 mm",
+   "description": "Hřídel konzolového spoje Ø12×200 mm (závit M8, materiál: nerezová ocel 303, hmotnost cca 175 g). Spojovací díl dopravníku.",
+   "weight_g": 175,
+   "nejiste": [
+    "'Consol/Console' = konzolový spoj; překlad odhadem"
+   ]
+  },
+  {
+   "sku": "3.006.214.151.012",
+   "group_id": "4875",
+   "dogus_kat": "204",
+   "nase_kategorie": "spoje-a-konzoly-dopravniku",
+   "name": "Křížový držák konzoly Ø12 mm",
+   "description": "Křížový držák konzoly Ø12 mm (materiál: plast, hmotnost cca 27 g). Spojovací díl dopravníku.",
+   "weight_g": 27,
+   "nejiste": [
+    "'Consol/Console' = konzolový spoj; překlad odhadem"
+   ]
+  },
+  {
+   "sku": "3.006.214.152.012",
+   "group_id": "4896",
+   "dogus_kat": "204",
+   "nase_kategorie": "spoje-a-konzoly-dopravniku",
+   "name": "Svorka pro připojení těla konzoly Ø12 mm",
+   "description": "Svorka pro připojení těla konzoly Ø12 mm (materiál: plast, hmotnost cca 32 g). Spojovací díl dopravníku.",
+   "weight_g": 32,
+   "nejiste": [
+    "'Consol/Console' = konzolový spoj; překlad odhadem"
+   ]
+  },
+  {
+   "sku": "1.2.00.017040.00",
+   "group_id": "2947",
+   "dogus_kat": "203",
+   "nase_kategorie": "bocni-voditka-dopravniku",
+   "name": "Profil bočního vodítka 40",
+   "description": "Profil bočního vodítka 40 (hmotnost 0,45 kg/m, materiál: hliníková slitina 6063 T5). Profil pro boční vodítko dopravníku.",
+   "weight_g": null,
+   "nejiste": [
+    "rozměr '40'/'60' = šířka profilu (odvozeno z názvu)"
+   ]
+  },
+  {
+   "sku": "1.2.00.016060.00",
+   "group_id": "2948",
+   "dogus_kat": "203",
+   "nase_kategorie": "bocni-voditka-dopravniku",
+   "name": "Profil bočního vodítka 60",
+   "description": "Profil bočního vodítka 60 (hmotnost 0,80 kg/m, materiál: hliníková slitina 6063 T5). Profil pro boční vodítko dopravníku.",
+   "weight_g": null,
+   "nejiste": [
+    "rozměr '40'/'60' = šířka profilu (odvozeno z názvu)"
+   ]
+  },
+  {
+   "sku": "3.001.00.1040",
+   "group_id": "3741",
+   "dogus_kat": "203",
+   "nase_kategorie": "bocni-voditka-dopravniku",
+   "name": "Plastová lišta bočního vodítka 10×40 mm",
+   "description": "Plastová lišta bočního vodítka 10×40 mm (hmotnost 0,26 kg/m, materiál: PVC). Lišta pro boční vodítko dopravníku.",
+   "weight_g": null,
+   "nejiste": []
+  },
+  {
+   "sku": "3.001.00.1040.01",
+   "group_id": "3741",
+   "dogus_kat": "203",
+   "nase_kategorie": "bocni-voditka-dopravniku",
+   "name": "Plastová lišta bočního vodítka 10×40 mm, bílá",
+   "description": "Plastová lišta bočního vodítka 10×40 mm, bílá (hmotnost 0,26 kg/m, materiál: PVC). Lišta pro boční vodítko dopravníku.",
+   "weight_g": null,
+   "nejiste": []
+  },
+  {
+   "sku": "3.001.00.1360",
+   "group_id": "3739",
+   "dogus_kat": "203",
+   "nase_kategorie": "bocni-voditka-dopravniku",
+   "name": "Plastová lišta bočního vodítka 13×60 mm",
+   "description": "Plastová lišta bočního vodítka 13×60 mm (hmotnost 0,35 kg/m, materiál: PVC). Lišta pro boční vodítko dopravníku.",
+   "weight_g": null,
+   "nejiste": []
+  },
+  {
+   "sku": "2.3.001.1040.00",
+   "group_id": "6818",
+   "dogus_kat": "203",
+   "nase_kategorie": "bocni-voditka-dopravniku",
+   "name": "Krytka bočního vodítka 40, oranžová",
+   "description": "Krytka bočního vodítka 40, oranžová (materiál: polyamid PA 6 se skelným vláknem, hmotnost cca 9 g). Krytka pro boční vodítko dopravníku.",
+   "weight_g": 9,
+   "nejiste": [
+    "účel krytky odhadem (kryt konce profilu vodítka)"
+   ]
+  },
+  {
+   "sku": "2.3.001.1040.01",
+   "group_id": "6818",
+   "dogus_kat": "203",
+   "nase_kategorie": "bocni-voditka-dopravniku",
+   "name": "Krytka bočního vodítka 40, zelená",
+   "description": "Krytka bočního vodítka 40, zelená (materiál: polyamid PA 6 se skelným vláknem, hmotnost cca 9 g). Krytka pro boční vodítko dopravníku.",
+   "weight_g": 9,
+   "nejiste": [
+    "účel krytky odhadem (kryt konce profilu vodítka)"
+   ]
+  },
+  {
+   "sku": "2.3.001.1040.02",
+   "group_id": "6818",
+   "dogus_kat": "203",
+   "nase_kategorie": "bocni-voditka-dopravniku",
+   "name": "Krytka bočního vodítka 40, černá",
+   "description": "Krytka bočního vodítka 40, černá (materiál: polyamid PA 6 se skelným vláknem, hmotnost cca 9 g). Krytka pro boční vodítko dopravníku.",
+   "weight_g": 9,
+   "nejiste": [
+    "účel krytky odhadem (kryt konce profilu vodítka)"
+   ]
+  },
+  {
+   "sku": "2.3.001.1360.00",
+   "group_id": "6820",
+   "dogus_kat": "203",
+   "nase_kategorie": "bocni-voditka-dopravniku",
+   "name": "Krytka bočního vodítka 60, oranžová",
+   "description": "Krytka bočního vodítka 60, oranžová (materiál: polyamid PA 6 se skelným vláknem, hmotnost cca 13 g). Krytka pro boční vodítko dopravníku.",
+   "weight_g": 13,
+   "nejiste": [
+    "účel krytky odhadem (kryt konce profilu vodítka)"
+   ]
+  },
+  {
+   "sku": "2.3.001.1360.01",
+   "group_id": "6820",
+   "dogus_kat": "203",
+   "nase_kategorie": "bocni-voditka-dopravniku",
+   "name": "Krytka bočního vodítka 60, zelená",
+   "description": "Krytka bočního vodítka 60, zelená (materiál: polyamid PA 6 se skelným vláknem, hmotnost cca 13 g). Krytka pro boční vodítko dopravníku.",
+   "weight_g": 13,
+   "nejiste": [
+    "účel krytky odhadem (kryt konce profilu vodítka)"
+   ]
+  },
+  {
+   "sku": "2.3.001.1360.02",
+   "group_id": "6820",
+   "dogus_kat": "203",
+   "nase_kategorie": "bocni-voditka-dopravniku",
+   "name": "Krytka bočního vodítka 60, černá",
+   "description": "Krytka bočního vodítka 60, černá (materiál: polyamid PA 6 se skelným vláknem, hmotnost cca 13 g). Krytka pro boční vodítko dopravníku.",
+   "weight_g": 13,
+   "nejiste": [
+    "účel krytky odhadem (kryt konce profilu vodítka)"
+   ]
+  },
+  {
+   "sku": "3.001.00.4575",
+   "group_id": "3285",
+   "dogus_kat": "203",
+   "nase_kategorie": "bocni-voditka-dopravniku",
+   "name": "Třecí plast",
+   "description": "Třecí plast (hmotnost 18 g/m). Třecí plast pro dopravník.",
+   "weight_g": null,
+   "nejiste": [
+    "účel třecího plastu a rozměr (45×75 podle kódu) neověřen"
+   ]
+  },
+  {
+   "sku": "4.035.01.012.002.01",
+   "group_id": "6993",
+   "dogus_kat": "230",
+   "nase_kategorie": "kulickove-prepravni-jednotky",
+   "name": "Kuličková přepravní jednotka CP12B",
+   "description": "Kuličková přepravní jednotka CP12B (nosnost 30 kg, materiál: ocel 20Cr, hmotnost cca 150 g). Kuličková přepravní jednotka pro snadný posun zboží.",
+   "weight_g": 150,
+   "nejiste": [
+    "7000 (CP12A FL) vynecháno – čeká na rozhodnutí bot5/Roberta"
+   ]
+  },
+  {
+   "sku": "4.035.01.015.002.01",
+   "group_id": "6993",
+   "dogus_kat": "230",
+   "nase_kategorie": "kulickove-prepravni-jednotky",
+   "name": "Kuličková přepravní jednotka CP15B",
+   "description": "Kuličková přepravní jednotka CP15B (nosnost 60 kg, materiál: ocel 20Cr, hmotnost cca 630 g). Kuličková přepravní jednotka pro snadný posun zboží.",
+   "weight_g": 630,
+   "nejiste": [
+    "7000 (CP12A FL) vynecháno – čeká na rozhodnutí bot5/Roberta"
+   ]
+  },
+  {
+   "sku": "4.035.01.015.003.01",
+   "group_id": "6993",
+   "dogus_kat": "230",
+   "nase_kategorie": "kulickove-prepravni-jednotky",
+   "name": "Kuličková přepravní jednotka CP15C",
+   "description": "Kuličková přepravní jednotka CP15C (nosnost 60 kg, materiál: nerezová ocel SUS 304, hmotnost cca 630 g). Kuličková přepravní jednotka pro snadný posun zboží.",
+   "weight_g": 630,
+   "nejiste": [
+    "7000 (CP12A FL) vynecháno – čeká na rozhodnutí bot5/Roberta"
+   ]
+  },
+  {
+   "sku": "4.035.02.022.002.01",
+   "group_id": "6993",
+   "dogus_kat": "230",
+   "nase_kategorie": "kulickove-prepravni-jednotky",
+   "name": "Kuličková přepravní jednotka SP22B",
+   "description": "Kuličková přepravní jednotka SP22B (nosnost 180 kg, materiál: ocel 20Cr, hmotnost cca 210 g). Kuličková přepravní jednotka pro snadný posun zboží.",
+   "weight_g": 210,
+   "nejiste": [
+    "7000 (CP12A FL) vynecháno – čeká na rozhodnutí bot5/Roberta"
+   ]
+  },
+  {
+   "sku": "4.035.02.022.003.01",
+   "group_id": "6993",
+   "dogus_kat": "230",
+   "nase_kategorie": "kulickove-prepravni-jednotky",
+   "name": "Kuličková přepravní jednotka SP22C",
+   "description": "Kuličková přepravní jednotka SP22C (nosnost 180 kg, materiál: nerezová ocel SUS 304, hmotnost cca 210 g). Kuličková přepravní jednotka pro snadný posun zboží.",
+   "weight_g": 210,
+   "nejiste": [
+    "7000 (CP12A FL) vynecháno – čeká na rozhodnutí bot5/Roberta"
+   ]
+  },
+  {
+   "sku": "4.035.02.030.002.01",
+   "group_id": "6993",
+   "dogus_kat": "230",
+   "nase_kategorie": "kulickove-prepravni-jednotky",
+   "name": "Kuličková přepravní jednotka SP30B",
+   "description": "Kuličková přepravní jednotka SP30B (nosnost 350 kg, materiál: ocel 20Cr, hmotnost cca 360 g). Kuličková přepravní jednotka pro snadný posun zboží.",
+   "weight_g": 360,
+   "nejiste": [
+    "7000 (CP12A FL) vynecháno – čeká na rozhodnutí bot5/Roberta"
+   ]
+  },
+  {
+   "sku": "2.3.004.050.01.00",
+   "group_id": "7433",
+   "dogus_kat": "99",
+   "nase_kategorie": "pojezdova-kola",
+   "name": "Kolo Ø50 mm, jednoduché",
+   "description": "Kolo Ø50 mm, jednoduché (nosnost 35 kg, materiál: polyamid, hmotnost cca 118 g). Kolo pro pojízdné provedení konstrukce.",
+   "weight_g": 118,
+   "nejiste": []
+  },
+  {
+   "sku": "2.3.004.050.01",
+   "group_id": "7433",
+   "dogus_kat": "99",
+   "nase_kategorie": "pojezdova-kola",
+   "name": "Kolo Ø50 mm, jednoduché – provedení B",
+   "description": "Kolo Ø50 mm, jednoduché – provedení B (nosnost 35 kg, materiál: polyamid, hmotnost cca 204 g). Kolo pro pojízdné provedení konstrukce.",
+   "weight_g": 204,
+   "nejiste": [
+    "původní název turecky (EMES); druhý SKU stejné velikosti, doporučuji import až po ověření (údaje nosnosti se liší)"
+   ]
+  },
+  {
+   "sku": "2.3.004.050.02.00",
+   "group_id": "7435",
+   "dogus_kat": "99",
+   "nase_kategorie": "pojezdova-kola",
+   "name": "Kolo Ø50 mm, dvojité",
+   "description": "Kolo Ø50 mm, dvojité (nosnost 55 kg, materiál: polyamid, hmotnost cca 264 g). Kolo pro pojízdné provedení konstrukce.",
+   "weight_g": 264,
+   "nejiste": []
+  },
+  {
+   "sku": "2.3.004.050.02",
+   "group_id": "7435",
+   "dogus_kat": "99",
+   "nase_kategorie": "pojezdova-kola",
+   "name": "Kolo Ø50 mm, dvojité – provedení B",
+   "description": "Kolo Ø50 mm, dvojité – provedení B (nosnost 55 kg, materiál: polyamid, hmotnost cca 277 g). Kolo pro pojízdné provedení konstrukce.",
+   "weight_g": 277,
+   "nejiste": [
+    "původní název turecky (EMES); druhý SKU stejné velikosti, doporučuji import až po ověření (údaje nosnosti se liší)"
+   ]
+  },
+  {
+   "sku": "2.3.004.075.01.00",
+   "group_id": "7437",
+   "dogus_kat": "99",
+   "nase_kategorie": "pojezdova-kola",
+   "name": "Kolo Ø75 mm, jednoduché",
+   "description": "Kolo Ø75 mm, jednoduché (nosnost 80 kg, materiál: polyamid, hmotnost cca 275 g). Kolo pro pojízdné provedení konstrukce.",
+   "weight_g": 275,
+   "nejiste": []
+  },
+  {
+   "sku": "2.3.004.075.01",
+   "group_id": "7437",
+   "dogus_kat": "99",
+   "nase_kategorie": "pojezdova-kola",
+   "name": "Kolo Ø75 mm, jednoduché – provedení B",
+   "description": "Kolo Ø75 mm, jednoduché – provedení B (nosnost 60 kg, materiál: polyamid, hmotnost cca 298 g). Kolo pro pojízdné provedení konstrukce.",
+   "weight_g": 298,
+   "nejiste": [
+    "původní název turecky (EMES); druhý SKU stejné velikosti, doporučuji import až po ověření (údaje nosnosti se liší)"
+   ]
+  },
+  {
+   "sku": "2.3.004.075.02.00",
+   "group_id": "7126",
+   "dogus_kat": "99",
+   "nase_kategorie": "pojezdova-kola",
+   "name": "Kolo Ø75 mm, dvojité",
+   "description": "Kolo Ø75 mm, dvojité (nosnost 80 kg, materiál: polyamid, hmotnost cca 527 g). Kolo pro pojízdné provedení konstrukce.",
+   "weight_g": 527,
+   "nejiste": []
+  },
+  {
+   "sku": "2.3.004.080.03",
+   "group_id": "6983",
+   "dogus_kat": "99",
+   "nase_kategorie": "pojezdova-kola",
+   "name": "Plastové kolo Ø80 mm bez brzdy",
+   "description": "Plastové kolo Ø80 mm bez brzdy (nosnost 70 kg, materiál: plast, hmotnost cca 140 g). Kolo pro pojízdné provedení konstrukce.",
+   "weight_g": 140,
+   "nejiste": []
+  },
+  {
+   "sku": "2.3.004.080.02",
+   "group_id": "6981",
+   "dogus_kat": "99",
+   "nase_kategorie": "pojezdova-kola",
+   "name": "Plastové kolo Ø80 mm s brzdou",
+   "description": "Plastové kolo Ø80 mm s brzdou (nosnost 70 kg, materiál: plast, hmotnost cca 150 g). Kolo pro pojízdné provedení konstrukce.",
+   "weight_g": 150,
+   "nejiste": []
+  },
+  {
+   "sku": "2.3.004.100.03.00",
+   "group_id": "7443",
+   "dogus_kat": "99",
+   "nase_kategorie": "pojezdova-kola",
+   "name": "Plastové kolo Ø100 mm bez brzdy",
+   "description": "Plastové kolo Ø100 mm bez brzdy (nosnost 90 kg, materiál: polyamid, hmotnost cca 429 g). Kolo pro pojízdné provedení konstrukce.",
+   "weight_g": 429,
+   "nejiste": []
+  },
+  {
+   "sku": "2.3.004.100.03",
+   "group_id": "7443",
+   "dogus_kat": "99",
+   "nase_kategorie": "pojezdova-kola",
+   "name": "Plastové kolo Ø100 mm bez brzdy – provedení B",
+   "description": "Plastové kolo Ø100 mm bez brzdy – provedení B (nosnost 90 kg, materiál: plast, hmotnost cca 450 g). Kolo pro pojízdné provedení konstrukce.",
+   "weight_g": 450,
+   "nejiste": [
+    "původní název turecky (EMES); druhý SKU stejné velikosti, doporučuji import až po ověření (údaje nosnosti se liší)"
+   ]
+  },
+  {
+   "sku": "2.3.004.100.02.00",
+   "group_id": "7441",
+   "dogus_kat": "99",
+   "nase_kategorie": "pojezdova-kola",
+   "name": "Plastové kolo Ø100 mm s brzdou",
+   "description": "Plastové kolo Ø100 mm s brzdou (nosnost 90 kg, materiál: polyamid, hmotnost cca 479 g). Kolo pro pojízdné provedení konstrukce.",
+   "weight_g": 479,
+   "nejiste": []
+  },
+  {
+   "sku": "2.3.004.100.02",
+   "group_id": "7441",
+   "dogus_kat": "99",
+   "nase_kategorie": "pojezdova-kola",
+   "name": "Plastové kolo Ø100 mm s brzdou – provedení B",
+   "description": "Plastové kolo Ø100 mm s brzdou – provedení B. Kolo pro pojízdné provedení konstrukce.",
+   "weight_g": null,
+   "nejiste": [
+    "původní název turecky (EMES); druhý SKU stejné velikosti, doporučuji import až po ověření (údaje nosnosti se liší)",
+    "chybí všechny údaje (SKU .100.02) – nejde popsat"
+   ]
+  },
+  {
+   "sku": "2.3.004.100.01.00",
+   "group_id": "7439",
+   "dogus_kat": "99",
+   "nase_kategorie": "pojezdova-kola",
+   "name": "Kolo Ø100 mm, jednoduché",
+   "description": "Kolo Ø100 mm, jednoduché (nosnost 90 kg, materiál: polyamid, hmotnost cca 674 g). Kolo pro pojízdné provedení konstrukce.",
+   "weight_g": 674,
+   "nejiste": []
+  },
+  {
+   "sku": "2.3.004.100.01",
+   "group_id": "7439",
+   "dogus_kat": "99",
+   "nase_kategorie": "pojezdova-kola",
+   "name": "Kolo Ø100 mm, jednoduché – provedení B",
+   "description": "Kolo Ø100 mm, jednoduché – provedení B (nosnost 140 kg, materiál: polyamid, hmotnost cca 719 g). Kolo pro pojízdné provedení konstrukce.",
+   "weight_g": 719,
+   "nejiste": [
+    "původní název turecky (EMES); druhý SKU stejné velikosti, doporučuji import až po ověření (údaje nosnosti se liší)"
+   ]
+  }
+ ]
+}

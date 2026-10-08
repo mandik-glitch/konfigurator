@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "family": "packstations",
+  "lang": "sk",
+  "categories": [
+    {
+      "slug": "robust-packing-table-system-40",
+      "url_slug": "robustny-baliaci-stol-system-40",
+      "parent": null,
+      "sort": 3,
+      "name": "Robustný baliaci stôl system 40"
+    }
+  ],
+  "products": [
+    {
+      "slug": "configurable-robust-packing-table-system-40",
+      "url_slug": "konfigurovatelny-robustny-baliaci-stol",
+      "sku": "PWB-002",
+      "category": "robust-packing-table-system-40",
+      "sort": 3,
+      "configurator": {
+        "available": true,
+        "shop_product_id": 4954,
+        "default_view": "configurator"
+      },
+      "name": "Konfigurovateľný robustný baliaci stôl",
+      "summary": "Robustný baliaci stôl s rámom z hliníkových profilov 40 × 40 mm, vyrobený na mieru. Zvoľte rozmery, police a príslušenstvo a pozrite si výsledok v 3D.",
+      "description": "Rám z profilov 40 × 40 mm\nRám stola je z hliníkových profilov s prierezom 40 × 40 mm a drážkou 10 mm, spojených rohovými spojkami. Je to najväčšia z našich troch veľkostí rámu; ostatné stoly majú profily 30 × 30 mm a 35 × 35 mm.\n\nVlastné rozmery\nŠírku, hĺbku a výšku pracovnej dosky si zvolíte sami. Šírka môže byť 500 až 3000 mm a hĺbka 400 až 1500 mm. Nad šírku 1500 mm pribudne predná aj zadná stredná noha.\n\nPolice a príslušenstvo\nPridať môžete dolné police (najviac 10, podľa výšky stola) a vybrať kolieska, perforované panely na náradie, LED osvetlenie, oceľové zásuvky, napájaciu lištu so zásuvkami a držiak na PET fľašu. Do pracovnej dosky môžete zadať aj výrezy.\n\nKaždá kombinácia sa kontroluje\nPo každej zmene sa rám prepočíta. Kombináciu, ktorú nie je možné vyrobiť, systém neprijme a napíše dôvod.\n\nDodanie, montáž a doprava\nStôl sa vyrába na objednávku, dodacia lehota je 3–5 týždňov. Montáž je voliteľná služba: s montážou dodáme stôl zmontovaný, bez nej demontovaný (rozložený) a zmontujete si ho sami. Cena dopravy sa mení podľa toho, či si montáž zvolíte; určíme ju po objednávke a pred vystavením zálohovej faktúry ju potvrdíme.",
+      "delivery": "Vyrába sa na objednávku. Dodacia lehota je 3–5 týždňov. Montáž je voliteľná služba: s montážou dodáme stôl zmontovaný, bez nej demontovaný (rozložený). Cenu dopravy určíme po objednávke a pred vystavením zálohovej faktúry ju potvrdíme.",
+      "specs": [
+        {
+          "name": "Rám",
+          "value": "Hliníkové profily 40 × 40 mm s drážkou 10 mm, rohové spojky"
+        },
+        {
+          "name": "Rozmery",
+          "value": "Šírka 500–3000 mm, hĺbka 400–1500 mm"
+        }
+      ]
+    }
+  ]
+}

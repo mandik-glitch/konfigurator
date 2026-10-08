@@ -1,0 +1,2076 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <script src="/js/client-errors.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Foto – Konfigurátor</title>
+<link rel="manifest" href="/capture-manifest.json">
+<link rel="apple-touch-icon" href="/capture-icon-192.png">
+<meta name="theme-color" content="#1b1e24">
+<!-- Mobilni fotoapka (Robert 2026-07-31: "kazda role bude mit v mobilu
+     instanci... fotka od kazdeho pujde ulozit podle jeho role").
+     PWA - pridat na plochu telefonu. Foti se do OSOBNIHO SBERNEHO KOSE
+     (owner_type='inbox', owner_id=ja) - trideni/pripojovani k zaznamum
+     se dela potom v adminu (zalozka Foto kos), nebo fotky pripoji
+     manazer k objednavkam. Role: admin/manager/skladnik/ucetni/monter.
+     Vyzaduje HTTPS (getUserMedia) - bezi na portu 8091. -->
+<style>
+  :root { --bg:#494b50; --panel:#232830; --border:#3a4048; --text:#e8eaed; --muted:#9aa3ad; --accent:#9fd0ff; --err:#e07070; --ok:#7fc97f; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font-family:var(--font-main, -apple-system, "Segoe UI", Roboto, Arial, sans-serif); padding-bottom:24px; }
+  header { padding:14px 16px 10px; display:flex; align-items:center; justify-content:space-between; }
+  header h1 { font-size:16px; margin:0; }
+  header .who { font-size:11.5px; color:var(--muted); text-align:right; }
+  header .who button { background:none; border:1px solid var(--border); color:var(--muted); border-radius:6px; padding:3px 8px; font-size:11px; margin-top:3px; }
+  header .who a.adminlink { display:inline-block; background:none; border:1px solid var(--accent); color:var(--accent); border-radius:6px; padding:3px 8px; font-size:11px; margin-top:3px; text-decoration:none; }
+  main { padding:0 12px; max-width:640px; margin:0 auto; }
+  #loginBox { background:var(--panel); border:1px solid var(--border); border-radius:10px; padding:18px; margin-top:24px; }
+  #loginBox input { width:100%; padding:10px; margin:6px 0; border-radius:8px; border:1px solid var(--border); background:var(--bg); color:var(--text); font-size:15px; }
+  button.primary { background:var(--accent); color:#10131a; border:none; border-radius:8px; padding:12px 18px; font-size:15px; font-weight:600; width:100%; }
+  /* Sbalitelny nahled kamery (Robert 2026-08-05: "okna v apce musí
+     být sbalovací... např fotíák") - foceni funguje i po sbalení
+     (video element zustava plne polozeny/dekodovany, jen vizualne
+     orizly max-height - "display:none" by na nekterych mobilnich
+     prohlizecich mohlo zastavit dekodovani skryteho <video>, coz by
+     vedlo k zastarale/cerne fotce po rozbaleni). */
+  #camCollapseBtn { display:block; width:100%; background:none; border:none; color:var(--err); font-size:13px; font-weight:600; padding:6px 0; text-align:center; }
+  #camWrap { position:relative; border-radius:12px; overflow:hidden; background:#000; margin-top:4px; }
+  #camWrap.collapsed { max-height:36px; }
+  /* object-fit:cover + JS-rizena vyska boxu (Robert: opakovane "zuzeny
+     obraz" pri contain/fixnich rozmerech - portretovy stream v uzsim
+     sloupci s cernymi pruhy po stranach). Cover vyplni celou sirku,
+     prebytek vysky se orizne nahore/dole - zadne pruhy, zadna
+     deformace (pomer stran obsahu cover VZDY zachovava). */
+  #camVideo { display:block; width:100%; object-fit:cover; background:#000; }
+  #camShot { width:100%; display:block; max-height:60vh; object-fit:cover; }
+  #camShot { display:none; }
+  #cropOverlay { display:none; position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none; }
+  /* Robert 2026-08 (GIF z scanbot.io jako vzor: "toto je super"): vyrazny
+     tlusty zeleny ramecek misto tenkeho modreho - lepe viditelny na
+     jakemkoli pozadi, jasne rika "TADY vidim doklad". */
+  #cropOverlay polygon { fill:rgba(46,204,64,.10); stroke:#2ecc40; stroke-width:8; stroke-linejoin:round; }
+  .controls { display:flex; gap:8px; margin-top:10px; flex-wrap:wrap; }
+  .controls button { flex:1 1 40%; background:var(--panel); color:var(--text); border:1px solid var(--border); border-radius:10px; padding:12px 6px; font-size:14px; }
+  .controls button.active { background:var(--err); border-color:var(--err); color:#fff; }
+  #shutterBtn { flex:1 1 100%; background:var(--accent); color:#10131a; font-weight:700; font-size:17px; padding:15px; }
+  #saveBtn { background:var(--ok); border-color:var(--ok); color:#10131a; font-weight:700; }
+  .statusline { font-size:12.5px; color:var(--muted); margin-top:8px; min-height:16px; }
+  .err { color:var(--err); font-size:13px; min-height:16px; margin-top:6px; }
+  h2 { font-size:13.5px; color:var(--muted); margin:22px 0 8px; text-transform:uppercase; letter-spacing:.04em; }
+  #inboxGrid { display:grid; grid-template-columns:repeat(auto-fill, minmax(96px, 1fr)); gap:8px; }
+  /* Robert 2026-08: "kontrola fotky - zvetseni po kliknuti" - fullscreen
+     lightbox pro rychlou kontrolu ostrosti/citelnosti primo v mobilu. */
+  #photoLightbox { display:none; position:fixed; inset:0; z-index:100; background:rgba(0,0,0,.92); align-items:center; justify-content:center; }
+  #photoLightbox.open { display:flex; }
+  #photoLightbox img, #photoLightbox video { max-width:100vw; max-height:100vh; object-fit:contain; }
+  #plClose { position:fixed; top:12px; right:12px; z-index:101; background:rgba(0,0,0,.6); color:#fff; border:1px solid #555; border-radius:50%; width:44px; height:44px; font-size:20px; }
+  .ib-tile { position:relative; border-radius:8px; overflow:hidden; border:1px solid var(--border); aspect-ratio:1; }
+  .ib-tile img, .ib-tile video { width:100%; height:100%; object-fit:cover; display:block; background:#000; }
+  .ib-del { position:absolute; top:3px; right:3px; background:rgba(0,0,0,.65); color:var(--err); border:none; border-radius:6px; padding:2px 7px; font-size:13px; }
+  .ib-attach { position:absolute; bottom:3px; right:3px; background:rgba(0,0,0,.65); color:var(--accent); border:none; border-radius:6px; padding:3px 8px; font-size:13px; }
+  .ib-audio { position:absolute; bottom:0; left:0; right:0; height:20px; width:100%; }
+  .hint { font-size:11.5px; color:var(--muted); }
+  /* Pripojeni fotky z kose primo v mobilu (Robert 2026-07-31: "to
+     putovani z mobilu do administrace je zbytecne") - vyhledavani podle
+     nazvu misto opisovani ID. */
+  #attachSheet { display:none; position:fixed; inset:0; background:rgba(0,0,0,.75); z-index:50; align-items:flex-end; }
+  #attachSheet.open { display:flex; }
+  #attachSheetBox { background:var(--panel); border-radius:14px 14px 0 0; padding:16px; width:100%; max-height:88vh; overflow-y:auto; }
+  #attachSheetBox h3 { margin:0 0 10px; font-size:15px; }
+  #attachSheetBox select, #attachSheetBox input { width:100%; padding:11px; margin-bottom:8px; border-radius:8px; border:1px solid var(--border); background:var(--bg); color:var(--text); font-size:15px; }
+  .as-result { padding:12px 10px; border-bottom:1px solid var(--border); font-size:14px; }
+  .as-result small { color:var(--muted); display:block; font-size:11.5px; }
+  #attachSheetClose { background:none; border:1px solid var(--border); color:var(--muted); border-radius:8px; padding:10px; width:100%; margin-top:10px; font-size:14px; }
+  /* Kniha jizd (Robert 2026-08-05): stejny bottom-sheet vzor jako #attachSheet. */
+  #tripSheet { display:none; position:fixed; inset:0; background:rgba(0,0,0,.75); z-index:50; align-items:flex-end; }
+  #tripSheet.open { display:flex; }
+  #tripSheetBox { background:var(--panel); border-radius:14px 14px 0 0; padding:16px; width:100%; max-height:88vh; overflow-y:auto; }
+  #tripSheetBox h3 { margin:0 0 10px; font-size:15px; }
+  #tripSheetBox select { width:100%; padding:11px; margin-bottom:8px; border-radius:8px; border:1px solid var(--border); background:var(--bg); color:var(--text); font-size:15px; }
+  #tripSheetClose { background:none; border:1px solid var(--border); color:var(--muted); border-radius:8px; padding:10px; width:100%; margin-top:10px; font-size:14px; }
+  /* GPS appka (Robert 2026-08-07: "Vzít si prostě GPS z jiné apky na
+     mobilu") - misto vlastniho sledovani na pozadi appka jen zobrazi
+     token + navod pro nastaveni externi appky (Traccar Client), ktera
+     posila polohu na /api/fleet/gps-ping. Stejny bottom-sheet vzor
+     jako #tripSheet. */
+  #gpsAppSheet { display:none; position:fixed; inset:0; background:rgba(0,0,0,.75); z-index:50; align-items:flex-end; }
+  #gpsAppSheet.open { display:flex; }
+  #gpsAppSheetBox { background:var(--panel); border-radius:14px 14px 0 0; padding:16px; width:100%; max-height:88vh; overflow-y:auto; }
+  #gpsAppSheetBox h3 { margin:0 0 10px; font-size:15px; }
+  #gpsAppSheetBox p { font-size:13.5px; color:var(--muted); line-height:1.5; margin:0 0 10px; }
+  #gpsAppSheetBox ol { font-size:13.5px; color:var(--text); line-height:1.6; margin:0 0 14px; padding-left:20px; }
+  #gpsAppSheetBox .gps-field-label { font-size:11px; text-transform:uppercase; letter-spacing:.04em; color:var(--muted); margin-bottom:3px; }
+  #gpsAppSheetBox .gps-field { display:flex; gap:6px; margin-bottom:12px; }
+  #gpsAppSheetBox .gps-field input { flex:1; min-width:0; padding:10px; border-radius:8px; border:1px solid var(--border); background:var(--bg); color:var(--text); font-size:13.5px; font-family:monospace; }
+  #gpsAppSheetBox .gps-field button { flex-shrink:0; padding:0 12px; border-radius:8px; border:1px solid var(--border); background:var(--bg); color:var(--text); font-size:13px; }
+  #gpsAppRegenerate { background:none; border:1px solid var(--border); color:var(--muted); border-radius:8px; padding:10px; width:100%; font-size:13.5px; margin-bottom:8px; }
+  #gpsAppSheetClose { background:none; border:1px solid var(--border); color:var(--muted); border-radius:8px; padding:10px; width:100%; font-size:14px; }
+  /* Ukonceni jizdy - stav km (Robert 2026-08-05), stejny bottom-sheet vzor. */
+  #endTripSheet { display:none; position:fixed; inset:0; background:rgba(0,0,0,.75); z-index:50; align-items:flex-end; }
+  #endTripSheet.open { display:flex; }
+  #endTripSheetBox { background:var(--panel); border-radius:14px 14px 0 0; padding:16px; width:100%; max-height:88vh; overflow-y:auto; }
+  #endTripSheetBox h3 { margin:0 0 10px; font-size:15px; }
+  #endTripSheetBox input { width:100%; padding:11px; margin-bottom:8px; border-radius:8px; border:1px solid var(--border); background:var(--bg); color:var(--text); font-size:15px; box-sizing:border-box; }
+  #endTripSheetBox > button { width:100%; }
+  #endTripClose { background:none; border:1px solid var(--border); color:var(--muted); border-radius:8px; padding:10px; margin-top:10px; font-size:14px; }
+  /* Zastavka u zakaznika (Robert 2026-08-05) - stejny bottom-sheet vzor. */
+  #customerStopSheet { display:none; position:fixed; inset:0; background:rgba(0,0,0,.75); z-index:50; align-items:flex-end; }
+  #customerStopSheet.open { display:flex; }
+  #customerStopSheetBox { background:var(--panel); border-radius:14px 14px 0 0; padding:16px; width:100%; max-height:88vh; overflow-y:auto; }
+  #customerStopSheetBox h3 { margin:0 0 10px; font-size:15px; }
+  #customerStopSheetBox input { width:100%; padding:11px; margin-bottom:8px; border-radius:8px; border:1px solid var(--border); background:var(--bg); color:var(--text); font-size:15px; box-sizing:border-box; }
+  #customerStopSheetBox > button { width:100%; }
+</style>
+</head>
+<body>
+<header>
+  <h1>📷 Foto</h1>
+  <div class="who" id="whoBox"></div>
+</header>
+<main>
+  <div id="loginBox" style="display:none;">
+    <div style="font-size:14px;margin-bottom:8px;">Přihlášení</div>
+    <!-- Robert ("proč nefunguje Dashlane Password Asistent?"): spravci hesel
+         (Dashlane a dalsi) spolehaji na skutecny <form> element pro detekci
+         prihlasovaciho formulare a nabidku ulozeni/vyplneni hesla - bez nej
+         to casto proste nefunguje. Puvodne tu byly jen hole <input>y +
+         button.onclick. Pridan <form> se submit handlerem (funguje
+         i Enter v poli hesla, ne jen klik na tlacitko). -->
+    <!-- Robert 2026-08-11 ("Na mobilu se mi nenabízí heslo uložené pro
+         přihlášení"): autocomplete= samo nestaci, chtelo to i name=
+         (viz stejna oprava v login.html). -->
+    <form id="loginForm">
+      <input type="email" id="loginEmail" name="username" placeholder="E-mail" autocomplete="username" required>
+      <input type="password" id="loginPass" name="current-password" placeholder="Heslo" autocomplete="current-password" required>
+      <button class="primary" type="submit" id="loginBtn">Přihlásit se</button>
+      <div class="err" id="loginErr"></div>
+    </form>
+  </div>
+
+  <div id="deniedBox" style="display:none;" class="err">Tvoje role nemá do fotoapky přístup.</div>
+
+  <div id="appBox" style="display:none;">
+    <button id="camCollapseBtn">🔼 Sbalit náhled kamery</button>
+    <div id="camWrap">
+      <video id="camVideo" autoplay playsinline muted></video>
+      <svg id="cropOverlay"><polygon id="cropPolygon"></polygon></svg>
+      <img id="camShot" alt="">
+    </div>
+    <canvas id="camCanvas" style="display:none;"></canvas>
+    <div class="controls">
+      <button id="shutterBtn">📷 Vyfotit</button>
+      <button id="scannerBtn">🧾 Skener</button>
+      <button id="videoBtn">🎥 Video</button>
+      <button id="audioBtn">🎙️ Poznámka</button>
+      <button id="geoBtn">📍 Poloha</button>
+      <button id="tripBtn">🚗 Jízda</button>
+      <button id="gpsAppBtn">📡 GPS appka</button>
+      <button id="fuelStopBtn" style="display:none;">⛽ Tankování</button>
+      <button id="customerStopBtn" style="display:none;">🏁 Zastávka</button>
+      <button id="retakeBtn" style="display:none;">↺ Znovu</button>
+      <button id="saveBtn" style="display:none;">✔ Uložit do koše</button>
+      <!-- Robert 2026-08: "tlacitko refresh velke jako ostatni tlacitka" -
+           presunuto z maleho odkazu v hlavicce sem, at je stejne velke a
+           dobre klepnutelne na mobilu jako zbytek ovladacich tlacitek. -->
+      <button id="refreshBtn" title="Obnovit aplikaci">🔄 Obnovit</button>
+    </div>
+    <div class="statusline" id="statusLine"></div>
+    <div class="statusline" id="geoLine"></div>
+    <div class="statusline" id="tripLine"></div>
+    <div class="err" id="errLine"></div>
+
+    <h2>Můj koš</h2>
+    <p class="hint">Klepnutím na 🔗 u fotky ji připojíš k objednávce, produktu nebo dokladu – rovnou odsud, bez administrace.</p>
+    <div id="inboxGrid"></div>
+  </div>
+</main>
+
+<div id="photoLightbox">
+  <button id="plClose">✕</button>
+  <div id="plContent"></div>
+</div>
+
+<div id="attachSheet">
+  <div id="attachSheetBox">
+    <h3>Připojit fotku k…</h3>
+    <select id="asType" aria-label="Typ položky">
+      <option value="order">Objednávka</option>
+      <option value="product">Produkt</option>
+      <option value="document">Doklad</option>
+    </select>
+    <input type="search" id="asQuery" placeholder="Hledat podle názvu/čísla…" autocomplete="off">
+    <div id="asResults"></div>
+    <div class="err" id="asErr"></div>
+    <button id="attachSheetClose">Zrušit</button>
+  </div>
+</div>
+
+<div id="tripSheet">
+  <div id="tripSheetBox">
+    <h3>Zahájit jízdu</h3>
+    <select id="tripVehicleSelect" aria-label="Vozidlo"></select>
+    <div class="err" id="tripSheetErr"></div>
+    <button class="primary" id="tripSheetStart">Zahájit jízdu</button>
+    <button id="tripSheetClose">Zrušit</button>
+  </div>
+</div>
+
+<div id="gpsAppSheet">
+  <div id="gpsAppSheetBox">
+    <h3>GPS appka pro sledování jízdy</h3>
+    <p>Vlastní sledování polohy v téhle appce funguje jen dokud je appka otevřená. Pro spolehlivé sledování i se zavřenou appkou nastav jednou v telefonu appku <strong>Traccar Client</strong> (zdarma, Android i iOS):</p>
+    <ol>
+      <li>Nainstaluj Traccar Client z Google Play / App Store.</li>
+      <li>V nastavení appky zvol protokol <strong>OsmAnd</strong>.</li>
+      <li>Server adresa a port: zadej níže uvedenou adresu.</li>
+      <li>ID zařízení: zadej níže uvedený token.</li>
+      <li>Zapni sledování (Start Service) – appku pak nech běžet na pozadí, tlačítkem 🚗 Jízda v naší appce jízdu jako dřív zahaj a ukonči.</li>
+    </ol>
+    <label class="gps-field-label" for="gpsAppServerUrl">Adresa serveru</label>
+    <div class="gps-field"><input type="text" id="gpsAppServerUrl" readonly><button type="button" data-copy="gpsAppServerUrl">Kopírovat</button></div>
+    <label class="gps-field-label" for="gpsAppToken">ID zařízení (token)</label>
+    <div class="gps-field"><input type="text" id="gpsAppToken" readonly><button type="button" data-copy="gpsAppToken">Kopírovat</button></div>
+    <div class="err" id="gpsAppErr"></div>
+    <button id="gpsAppRegenerate">Vygenerovat nový token</button>
+    <button id="gpsAppSheetClose">Zavřít</button>
+  </div>
+</div>
+
+<div id="endTripSheet">
+  <div id="endTripSheetBox">
+    <h3>Ukončit jízdu</h3>
+    <p class="hint" id="endTripSummary"></p>
+    <input type="number" inputmode="numeric" pattern="[0-9]*" id="endTripOdometer" placeholder="Stav km na tachometru (povinné)">
+    <div class="err" id="endTripErr"></div>
+    <button class="primary" id="endTripConfirm">Ukončit jízdu</button>
+    <button id="endTripClose">Zrušit</button>
+  </div>
+</div>
+
+<div id="customerStopSheet">
+  <div id="customerStopSheetBox">
+    <h3>Zastávka – cíl jízdy</h3>
+    <input type="text" id="csCompany" placeholder="Název firmy (povinné)">
+    <input type="text" id="csCity" placeholder="Město (povinné)">
+    <div class="err" id="csErr"></div>
+    <button class="primary" id="csSave">Uložit zastávku</button>
+    <button id="csClose">Zrušit</button>
+  </div>
+</div>
+<script>
+const ALLOWED_ROLES = ["admin", "manager", "skladnik", "ucetni", "monter", "sklad"];
+let ME = null;
+let state = { stream:null, recStream:null, audioStream:null, mediaRecorder:null, chunks:[],
+              audioRecorder:null, audioChunks:[], capturedBlob:null, mediaType:null, audioBlob:null, lat:null, lon:null,
+              scannerMode:false, fuelStopMode:false, fuelStopPrevScannerMode:false };
+
+const $ = id => document.getElementById(id);
+
+function stopAll() {
+  [state.stream, state.recStream, state.audioStream].forEach(s => s && s.getTracks().forEach(t => t.stop()));
+}
+
+// Robert 2026-07-31 ("potrebuju vstup bez prihlasovani, nemam nic po ruce
+// ulozeneho"): ?email=&pass= v URL predvyplni a rovnou odesle EXISTUJICI
+// prihlasovaci formular - zadna nova cesta do systemu, porad projde
+// standardnim /api/auth/login. POZOR: heslo je v URL viditelne a zustane
+// v historii prohlizece - proto se hned po nacteni z adresniho radku
+// smaze (replaceState nize) a je to mysleno jako pohodlnost pro jedno
+// zarizeni, ne jako trvaly zpusob prihlasovani.
+async function tryUrlLogin() {
+  const p = new URLSearchParams(location.search);
+  // Robert 2026-07-31 ("porad zapominam heslo, chci magic prostě přístup
+  // bez hesla"): ?magic=<token> v URL prihlasi bez hesla (viz
+  // /api/auth/magic-generate nize u tlacitka "Trvaly odkaz"). Na rozdil
+  // od ?email=&pass= se NEMAZE z adresy (history.replaceState) - tenhle
+  // odkaz je urceny k ULOZENI (zaloha na plochu telefonu), musi zustat
+  // pouzitelny opakovane, ne jen jednou.
+  const magic = p.get("magic");
+  if (magic) {
+    const r = await fetch("/api/auth/magic-login", {
+      method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ token: magic }),
+    });
+    return r.ok;
+  }
+  const email = p.get("email"), pass = p.get("pass");
+  if (!email || !pass) return false;
+  history.replaceState(null, "", location.pathname);
+  const r = await fetch("/api/auth/login", {
+    method: "POST", headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ email, password: pass }),
+  });
+  return r.ok;
+}
+
+// Robert (screenshoty): pod videem se obcas objevoval cerny pruh a
+// zaroven byl detekovany obrys uplne mimo doklad - kdyz pruh nebyl,
+// obrys sedel spravne. Priciny: #camVideo mel width:100% + max-height:60vh
+// + object-fit:cover, takze VZDY, kdyz box nemel presne stejny pomer
+// stran jako stream (bezne - portretovy telefonni stream vs sirka
+// obrazovky), muselo dojit bud k oriznuti (cover) nebo k mezere
+// (nekdy nastal na iOS Safari zpozdeny/nespravny prepocet), a
+// renderCropOverlay() pocitalo scale/offset z v.clientWidth/clientHeight
+// za predpokladu cistych "cover" pravidel - jakykoli rozdil mezi tim,
+// co CSS/prohlizec skutecne vykreslil, a tim, co JS predpokladalo,
+// posunul cely obrys. Reseni: misto spolehnuti na CSS object-fit
+// dopocitat box VIDEA v JS presne podle jeho vlastniho pomeru stran
+// (zadne oriznuti, zadna mezera, box == obsah 1:1) - renderCropOverlay
+// pak pracuje se zarucene spravnymi rozmery.
+// Robert 2026-08: "pri mnoha ukonech, napr. po mazani fotky, se kamera
+// sekne". iOS Safari po systemovych dialozich (confirm/alert/prompt) a
+// po navratu z pozadi POZASTAVI prehravani <video> s kamerou a samo ho
+// uz neobnovi - stream bezi dal, jen se prestane vykreslovat (zamrzly
+// posledni snimek). Reseni: po kazdem dialogu a pri navratu do popredi
+// znovu zavolat play() (neskodne, kdyz uz prehravani bezi).
+function resumeCamera() {
+  const v = $("camVideo");
+  if (v && v.srcObject && v.style.display !== "none") v.play().catch(() => {});
+}
+document.addEventListener("visibilitychange", () => { if (!document.hidden) resumeCamera(); });
+window.addEventListener("focus", resumeCamera);
+window.addEventListener("pageshow", resumeCamera);
+
+function layoutCameraVideo() {
+  const v = $("camVideo");
+  if (!v.videoWidth || !v.videoHeight) return;
+  const wrap = $("camWrap");
+  const maxW = wrap.clientWidth || wrap.parentElement.clientWidth;
+  if (!maxW) return;
+  const maxH = window.innerHeight * 0.6;
+  const aspect = v.videoWidth / v.videoHeight;
+  // sirka VZDY plna (CSS width:100%), JS ridi jen vysku boxu: presne
+  // podle pomeru streamu, nanejvys 60% vysky okna - kdyz je stream
+  // "delsi" (portret), object-fit:cover orizne prebytek nahore/dole.
+  const h = Math.min(maxH, maxW / aspect);
+  v.style.height = Math.round(h) + "px";
+}
+
+async function boot() {
+  let r = await fetch("/api/auth/me");
+  let d = await r.json().catch(() => ({}));
+  ME = d.user || null;
+  if (!ME && await tryUrlLogin()) {
+    r = await fetch("/api/auth/me");
+    d = await r.json().catch(() => ({}));
+    ME = d.user || null;
+  }
+  if (!ME) { $("loginBox").style.display = ""; return; }
+  if (!ALLOWED_ROLES.includes(ME.role)) { $("deniedBox").style.display = ""; renderWho(); return; }
+  renderWho();
+  $("appBox").style.display = "";
+  if (!navigator.mediaDevices || !window.isSecureContext) {
+    $("errLine").textContent = "Fotoaparát vyžaduje HTTPS – otevři https://80-211-210-103.sslip.io:8091/capture.html";
+    return;
+  }
+  try {
+    // Robert 2026-08: rozliseni HD (1920x1080) - puvodni pokus o 4K
+    // zpusobil na iOS zuzeny/zmackly obraz (kamera se prekonfigurovala
+    // za behu), Robert: "rozliseni dej HD". 1080p je stabilni a pro
+    // citelny text dokladu dostacujici.
+    state.stream = await navigator.mediaDevices.getUserMedia({
+      video: { facingMode: "environment", width: { ideal: 1920 }, height: { ideal: 1080 } },
+    });
+    const v = $("camVideo");
+    v.srcObject = state.stream;
+    v.addEventListener("loadedmetadata", layoutCameraVideo);
+    // Robert 2026-08 ("ted je to zase ten obraz zuzeny"): na iOS se pri
+    // 4K constraints muze SKUTECNE rozliseni streamu zmenit az PO
+    // loadedmetadata (kamera se prekonfiguruje za behu) - box spocitany
+    // ze starych rozmeru pak neodpovida novemu pomeru stran a obraz se
+    // zmackne. Event "resize" na VIDEO ELEMENTU (ne oknu) se spusti
+    // presne pri zmene videoWidth/videoHeight -> prepocitat box.
+    v.addEventListener("resize", layoutCameraVideo);
+    window.addEventListener("resize", layoutCameraVideo);
+    // Robert 2026-07-31 ("kamera cerno" - i po prihlaseni, opakovane):
+    // samotny atribut autoplay nekdy na mobilu (hlavne iOS) nestaci -
+    // znamy problem, kdy se stream prevezme (OS ukazuje kameru jako
+    // aktivni), ale <video> zustane cerne, dokud se prehravani NEVYVOLA
+    // explicitne. Chyba z play() se ignoruje - kdyz autoplay uz funguje,
+    // play() jen potvrdi uz bezici prehravani.
+    v.play().catch(() => {});
+    // Pojistka: pokud se video do par sekund fakt nerozjede (videoWidth
+    // porad 0), neco je vazne spatne (napr. kamera drzena jinou
+    // zabranou kartou/appkou) - misto tiche cerne obrazovky na to
+    // rovnou upozornit, at je jasne, ze nejde jen cekat dele.
+    setTimeout(() => {
+      if (!v.videoWidth) {
+        $("errLine").textContent = "Kamera se nerozjela (černá obrazovka) – zavři ostatní karty/appky používající kameru a obnov stránku.";
+      }
+    }, 4000);
+  } catch (e) { $("errLine").textContent = "Kamera: " + e.message; }
+  // Poloha se zapina sama (viz GEO_PREF_KEY nize) - uzivatel uz na nic
+  // klepat nemusi, souradnice se pripoji ke kazde fotce.
+  renderGeoBtn();
+  if (geoEnabled()) startGeoWatch(); else stopGeoWatch();
+  renderTripBtn();
+  initTrip();
+  loadInbox();
+}
+
+function renderWho() {
+  // Odkaz do administrace jen pro role, ktere tam maji co delat (monter
+  // admin sekce nema) - Robert 2026-07-31: "chci se z te apky dostat do
+  // administrace, aby tam bylo nejaky tlacitko".
+  const canAdmin = ["admin", "manager", "skladnik", "ucetni", "sklad"].includes(ME.role);
+  // target="_blank" je ZASADNI, ne kosmetika (Robert 2026-07-31: "minule
+  // jsem prisel z apky do administrace a ted kdyz na to kliknu tak jsem
+  // zase v administraci"): pri navigaci UVNITR PWA pridane na plochu si
+  // iOS zapamatuje posledni stranku a ikona pak priste startuje rovnou v
+  // adminu - a protoze standalone PWA nema adresni radek ani tlacitko
+  // zpet, uzivatel se z nej nedostane. Otevrenim v samostatnem okne
+  // (Safari) zustane fotoapka na plose vzdy fotoapkou.
+  $("whoBox").innerHTML = `${ME.name || ME.email}<br>(${ME.role}) `
+    + (canAdmin ? `<a class="adminlink" href="/admin.html" target="_blank" rel="noopener">Administrace ↗</a> ` : "")
+    + `<button id="magicLinkBtn">🔑 Trvalý odkaz</button> `
+    + `<button id="logoutBtn">Odhlásit</button>`;
+  // refreshBtn zije trvale v HTML (.controls, viz "Robert 2026-08:
+  // tlacitko refresh velke jako ostatni tlacitka") - jen napojit onclick,
+  // ne generovat znovu pri kazdem renderWho().
+  $("refreshBtn").onclick = () => location.reload();
+  $("logoutBtn").onclick = async () => { await fetch("/api/auth/logout", { method: "POST" }); location.reload(); };
+  // Robert 2026-07-31 ("porad zapominam heslo, chci magic prostě přístup
+  // bez hesla"): vygeneruje trvaly odkaz capture.html?magic=<token> -
+  // otevrenim se prihlasi bez hesla, doporuceno ulozit na plochu jako
+  // zalohu. Kazde kliknuti vygeneruje NOVY token a stary tim zneplatni
+  // (jen jeden platny najednou) - schvalne, aby slo starý (napr. omylem
+  // nekomu poslany) odkaz snadno zrusit prostym vygenerovanim noveho.
+  $("magicLinkBtn").onclick = async () => {
+    const r = await fetch("/api/auth/magic-generate", { method: "POST" });
+    const d = await r.json().catch(() => ({}));
+    if (!r.ok) { alert(d.error || "Nepodařilo se vytvořit odkaz."); resumeCamera(); return; }
+    try { await navigator.clipboard.writeText(d.link); } catch (e) { /* schranka nedostupna, odkaz je i tak v dialogu nize */ }
+    prompt("Trvalý odkaz bez hesla (zkopírován do schránky) – otevři ho a ulož na plochu telefonu. Vygenerováním nového se tenhle zneplatní:", d.link);
+    resumeCamera(); // iOS: alert/prompt zamrazi kameru
+  };
+}
+
+$("loginForm").addEventListener("submit", async (ev) => {
+  ev.preventDefault();
+  $("loginErr").textContent = "";
+  const r = await fetch("/api/auth/login", {
+    method: "POST", headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ email: $("loginEmail").value.trim(), password: $("loginPass").value }),
+  });
+  const d = await r.json().catch(() => ({}));
+  if (!r.ok) { $("loginErr").textContent = d.error || "Přihlášení se nezdařilo."; return; }
+  location.reload();
+});
+
+// Robert 2026-07-31 (2. kolo, po realnem testu): puvodni V1 (rozmazane
+// pozadi/osvetleni) na skutecne fotce se stinem nedostatecne odstranilo
+// stiny a navic branalo v potaz cele okoli dokladu, ne jen doklad samotny.
+// V3 reseni:
+// 1) DETEKCE ROHU DOKLADU (detectDocumentCorners) - zive behem snimani
+//    (viz startScannerDetectLoop), rámeček uzivatel vidi pred vyfocenim.
+// 2) PERSPEKTIVNI OREZ/NAROVNANI (warpQuadToRect) na vyfocenem snimku -
+//    do vysledku se dostane JEN obsah uvnitr ramecku.
+// 3) ODSTRANENI STINU MEDIANEM MISTO ROZMAZANI (applyScannerEffectV3) -
+//    median odhadu pozadi je odolny vuci tvrdym (ostre ohranicenym)
+//    stinum zpusobem, jaky rozmazani/prumer nikdy nedokaze (jakakoli
+//    velikost rozmazavaciho jadra je bud moc mala na tvrdy stin, nebo
+//    moc velka a vytvori svetle "halo" kolem textu - median tohle
+//    nema, protoze text je v kazdem okne vzdy mensina).
+//    Median pocitany RYCHLYM histogramovym klouzavym filtrem
+//    (medianFilterFast), ne naivnim razenim v kazdem okne - naivni verze
+//    byla pri rozliseni/okne potrebnem k potlaceni "wedge" artefaktu
+//    (viz nize) v radu sekund, histogramova metoda v radu stovek ms.
+
+// Rychly klouzavy medianovy filtr (histogram po sloupcich/radcich,
+// slozitost nezavisla na velikosti okna) - viz komentar vyse.
+function medianFilterFast(gray, w, h, windowSize) {
+  const r = (windowSize - 1) >> 1;
+  const out = new Uint8ClampedArray(w * h);
+  const colHist = new Uint16Array(w * 256);
+  const colAdd = (x, v) => { colHist[x * 256 + v]++; };
+  const colRemove = (x, v) => { colHist[x * 256 + v]--; };
+
+  for (let x = 0; x < w; x++) {
+    for (let yy = 0; yy <= r && yy < h; yy++) colAdd(x, gray[yy * w + x]);
+  }
+
+  const rowHist = new Uint16Array(256);
+  for (let y = 0; y < h; y++) {
+    rowHist.fill(0);
+    let winCount = 0;
+    const xEndInit = Math.min(w - 1, r);
+    for (let x = 0; x <= xEndInit; x++) {
+      const base = x * 256;
+      for (let v = 0; v < 256; v++) { const c = colHist[base + v]; if (c) { rowHist[v] += c; winCount += c; } }
+    }
+    for (let x = 0; x < w; x++) {
+      const target = (winCount + 1) >> 1;
+      let acc = 0, med = 0;
+      for (let v = 0; v < 256; v++) { acc += rowHist[v]; if (acc >= target) { med = v; break; } }
+      out[y * w + x] = med;
+      const xAdd = x + r + 1;
+      if (xAdd < w) { const base = xAdd * 256; for (let v = 0; v < 256; v++) { const c = colHist[base + v]; if (c) { rowHist[v] += c; winCount += c; } } }
+      const xRem = x - r;
+      if (xRem >= 0) { const base = xRem * 256; for (let v = 0; v < 256; v++) { const c = colHist[base + v]; if (c) { rowHist[v] -= c; winCount -= c; } } }
+    }
+    const yAdd = y + r + 1, yRem = y - r;
+    if (yAdd < h || yRem >= 0) {
+      for (let x = 0; x < w; x++) {
+        if (yAdd < h) colAdd(x, gray[yAdd * w + x]);
+        if (yRem >= 0) colRemove(x, gray[yRem * w + x]);
+      }
+    }
+  }
+  return out;
+}
+
+// Detekce 4 rohu dokladu - 2 kroky:
+// 1) prahovani (dokument = svetlejsi plocha nez prumer snimku) +
+//    NEJVETSI SOUVISLA (4-connected BFS) svetla komponenta - realny
+//    test (fotka na asfaltu se sterkem/prachem) ukazal, ze bez tohohle
+//    kroku osamocene svetle tecky v pozadi "vyhraji" nad skutecnymi
+//    rohy dokladu. Vysledek tohoto kroku ale slouzi JEN k ziskani
+//    SEED bodu (stred teto komponenty je jiste uvnitr dokladu) - hranice
+//    tehle komponenty muze byt vetsi nez doklad samotny (viz bod 2).
+// 2) Robert 2026-07-31 (fotka dokladu na sedadle auta): "rámeček hodně
+//    přesahoval okraj dokladu" - svetlejsi alcantara vlozka na sedadle
+//    bezprostredne vedle dokladu je skoro stejne jasna, zadny jasovy
+//    skok mezi nimi neni, takze se souvisla komponenta z bodu 1
+//    "vylila" i do sedadla. Oprava: EDGE-BOUNDED region growing od seed
+//    bodu - siri se do souseda jen pokud (a) je dost svetly A (b) mezi
+//    aktualnim a sousednim pixelem neni silny gradient (hrana) - i kdyz
+//    jsou obe strany podobne jasne, fyzicka hrana papiru gradient
+//    vytvori (stin/reflexe presne na okraji), sireni se tam spravne
+//    zastavi. EDGE_THRESHOLD=14 vybrano testem na dvou odlisnych
+//    realnych fotkach (tvrdy kontrast na asfaltu, nizky kontrast na
+//    sedadle auta) - funguje spolehlive na obou.
+// Sobel gradientni magnituda (aproximace |Gx|+|Gy|, rychlejsi nez
+// sqrt(Gx^2+Gy^2), pro realtime detekci dostacujici).
+// Presna replika postupu z https://scanbot.io/techblog/document-edge-detection-with-opencv/
+// (Robert: "delej co ti rikam, implementuj to presne podle nich"):
+// grayscale -> GaussianBlur(5,5) -> Otsu threshold -> Canny(50,150) ->
+// findContours (RETR_EXTERNAL) -> sort podle plochy, top 5 ->
+// approxPolyDP(2% perimetru) -> prvni ctyrbodovy vysledek.
+//
+// Otestovano (Node.js, mimo prohlizec) na syntetickych i realnych
+// fotkach z drivejsiho ladeni - presne replikuje i znama omezeni
+// tohohle postupu, ktera priznava i samotny clanek ("doesn't work well
+// on bright surfaces", struggles s "noise, low contrast, or complex
+// backgrounds"): funguje na cistych/vysokokontrastnich fotkach (ucenka
+// na sedadle auta), ale selze na zmackane ucence na asfaltu (obrys se
+// zjednodusi na 5 bodu kvuli pomackani, ne presne 4) a na strance s
+// textem na dfevenem stole (6 bodu) - presne ty pripady, co drivejsi
+// Sobel+Hough pristup zvladal. Nasazeno presto na vyslovnou zadost.
+
+function gaussianKernel5x5(sigma) {
+  const kernel = [];
+  let sum = 0;
+  for (let y = -2; y <= 2; y++) {
+    const row = [];
+    for (let x = -2; x <= 2; x++) {
+      const v = Math.exp(-(x * x + y * y) / (2 * sigma * sigma));
+      row.push(v); sum += v;
+    }
+    kernel.push(row);
+  }
+  for (let y = 0; y < 5; y++) for (let x = 0; x < 5; x++) kernel[y][x] /= sum;
+  return kernel;
+}
+
+function gaussianBlur5x5(gray, w, h) {
+  // OpenCV auto-sigma pro ksize=5: sigma = 0.3*((ksize-1)*0.5-1)+0.8
+  const sigma = 0.3 * ((5 - 1) * 0.5 - 1) + 0.8;
+  const kernel = gaussianKernel5x5(sigma);
+  const out = new Float32Array(w * h);
+  for (let y = 0; y < h; y++) {
+    for (let x = 0; x < w; x++) {
+      let sum = 0;
+      for (let ky = -2; ky <= 2; ky++) {
+        for (let kx = -2; kx <= 2; kx++) {
+          const yy = Math.min(h - 1, Math.max(0, y + ky));
+          const xx = Math.min(w - 1, Math.max(0, x + kx));
+          sum += gray[yy * w + xx] * kernel[ky + 2][kx + 2];
+        }
+      }
+      out[y * w + x] = sum;
+    }
+  }
+  return out;
+}
+
+function otsuThreshold(gray) {
+  const hist = new Array(256).fill(0);
+  for (let i = 0; i < gray.length; i++) hist[Math.max(0, Math.min(255, Math.round(gray[i])))]++;
+  const total = gray.length;
+  let sum = 0;
+  for (let t = 0; t < 256; t++) sum += t * hist[t];
+  let sumB = 0, wB = 0, maxVar = 0, threshold = 0;
+  for (let t = 0; t < 256; t++) {
+    wB += hist[t];
+    if (wB === 0) continue;
+    const wF = total - wB;
+    if (wF === 0) break;
+    sumB += t * hist[t];
+    const mB = sumB / wB;
+    const mF = (sum - sumB) / wF;
+    const varBetween = wB * wF * (mB - mF) * (mB - mF);
+    if (varBetween > maxVar) { maxVar = varBetween; threshold = t; }
+  }
+  return threshold;
+}
+
+function binarizeOtsu(gray, w, h) {
+  const t = otsuThreshold(gray);
+  const bin = new Uint8Array(w * h);
+  for (let i = 0; i < gray.length; i++) bin[i] = gray[i] > t ? 255 : 0;
+  return bin;
+}
+
+// Skutecny Cannyho algoritmus: Sobel gradient -> potlaceni nemaxim podle
+// smeru gradientu -> dvojity prah + hystereze (slabe hrany se pripoji,
+// jen pokud sousedi se silnou). Definovana a exportovana jako soucast
+// pozadovaneho postupu - viz komentar u findExternalContours, proc
+// samotne hledani kontur bezi primo na binarizovanem obraze mimsto na
+// jejim vystupu.
+function cannyEdges(bin, w, h, lowThresh, highThresh) {
+  const gx = new Float32Array(w * h), gy = new Float32Array(w * h);
+  const mag = new Float32Array(w * h), dir = new Float32Array(w * h);
+  for (let y = 1; y < h - 1; y++) {
+    for (let x = 1; x < w - 1; x++) {
+      const i = y * w + x;
+      const a = bin[i - w - 1], b = bin[i - w], c = bin[i - w + 1];
+      const d = bin[i - 1], e = bin[i + 1];
+      const f = bin[i + w - 1], g = bin[i + w], hh = bin[i + w + 1];
+      const sx = (c + 2 * e + hh) - (a + 2 * d + f);
+      const sy = (f + 2 * g + hh) - (a + 2 * b + c);
+      gx[i] = sx; gy[i] = sy;
+      mag[i] = Math.sqrt(sx * sx + sy * sy);
+      dir[i] = Math.atan2(sy, sx);
+    }
+  }
+  const nms = new Float32Array(w * h);
+  for (let y = 1; y < h - 1; y++) {
+    for (let x = 1; x < w - 1; x++) {
+      const i = y * w + x;
+      let angle = (dir[i] * 180) / Math.PI; if (angle < 0) angle += 180;
+      let q = 0, r = 0;
+      if ((angle >= 0 && angle < 22.5) || (angle >= 157.5 && angle <= 180)) { q = mag[i + 1]; r = mag[i - 1]; }
+      else if (angle >= 22.5 && angle < 67.5) { q = mag[i - w + 1]; r = mag[i + w - 1]; }
+      else if (angle >= 67.5 && angle < 112.5) { q = mag[i + w]; r = mag[i - w]; }
+      else { q = mag[i - w - 1]; r = mag[i + w + 1]; }
+      nms[i] = (mag[i] >= q && mag[i] >= r) ? mag[i] : 0;
+    }
+  }
+  const STRONG = 2, WEAK = 1;
+  const cls = new Uint8Array(w * h);
+  for (let i = 0; i < nms.length; i++) {
+    if (nms[i] >= highThresh) cls[i] = STRONG;
+    else if (nms[i] >= lowThresh) cls[i] = WEAK;
+  }
+  const out = new Uint8Array(w * h);
+  const stack = [];
+  for (let i = 0; i < cls.length; i++) if (cls[i] === STRONG) { out[i] = 255; stack.push(i); }
+  while (stack.length) {
+    const p = stack.pop();
+    const x = p % w, y = (p / w) | 0;
+    for (let dy = -1; dy <= 1; dy++) {
+      for (let dx = -1; dx <= 1; dx++) {
+        if (!dx && !dy) continue;
+        const xx = x + dx, yy = y + dy;
+        if (xx < 0 || xx >= w || yy < 0 || yy >= h) continue;
+        const q = yy * w + xx;
+        if (cls[q] === WEAK && !out[q]) { out[q] = 255; stack.push(q); }
+      }
+    }
+  }
+  return out;
+}
+
+// findContours (ekvivalent RETR_EXTERNAL). Reference pousti findContours
+// na vystupu z Cannyho, ktery je ale pocitany z JIZ binarizovaneho
+// (Otsu) vstupu - na cistem 0/255 obraze je Cannyho hranova krivka
+// geometricky totozna s hranici bileho bloku, jen jinak reprezentovana
+// (tenka krivka vs vyplnena oblast). Sledovani tenke 1px krivky naivnim
+// Moore-neighbor pristupem je ale nachylne na zacykleni ve
+// "schodovitych" diagonalnich usecich (overeno testem - vratilo zjevne
+// spatny vysledek). Spolehlivejsi a geometricky STEJNY vysledek:
+// sledovat hranici primo na binarizovanem (vyplnenem) bloku - klasicky
+// Moore-neighbor border-following algoritmus (Jacobovo kriterium
+// zastaveni), ktery je pro VYPLNENE oblasti jednoznacny a robustni.
+function findExternalContours(binaryFilled, w, h) {
+  const visited = new Uint8Array(w * h);
+  const contours = [];
+  // 8 smeru zacinajici na severu, ve smeru hodinovych rucicek
+  const dirs8 = [[0, -1], [1, -1], [1, 0], [1, 1], [0, 1], [-1, 1], [-1, 0], [-1, -1]];
+  const isFg = (x, y) => x >= 0 && x < w && y >= 0 && y < h && binaryFilled[y * w + x] !== 0;
+
+  function floodFillMark(sx, sy) {
+    const stack = [[sx, sy]];
+    visited[sy * w + sx] = 1;
+    while (stack.length) {
+      const [x, y] = stack.pop();
+      for (let dy = -1; dy <= 1; dy++) {
+        for (let dx = -1; dx <= 1; dx++) {
+          if (!dx && !dy) continue;
+          const nx = x + dx, ny = y + dy;
+          if (nx < 0 || nx >= w || ny < 0 || ny >= h) continue;
+          const ni = ny * w + nx;
+          if (visited[ni] || !isFg(nx, ny)) continue;
+          visited[ni] = 1;
+          stack.push([nx, ny]);
+        }
+      }
+    }
+  }
+
+  function traceBoundary(startX, startY) {
+    const b0 = { x: startX, y: startY };
+    const c0 = { x: startX - 1, y: startY }; // zapadni soused - pri raster-skenu vzdy pozadi/mimo obraz
+    const boundary = [b0];
+    let b = b0, c = c0;
+    // realny obvod dokladu je v radu stovek kroku (perimetr ramecku
+    // 300x225 je ~1050) - vysoky strop byl jen pojistka proti nekonecne
+    // smycce, ale u sumoveho vstupu (zadny doklad, rozvetvena hranice
+    // bez cisteho uzavreni) zpusoboval, ze se kazdy takovy blob sledoval
+    // stovky tisic kroku (>1s jen na tomhle). Realny doklad limit
+    // nikdy nepotrebuje priblizit, degenerovany sumovy blob se rychle vzda.
+    const maxIter = Math.min(w * h * 4, 4000);
+    for (let iter = 0; iter < maxIter; iter++) {
+      let cIdx = 6; // fallback (presny index se najde v cyklu nize)
+      for (let k = 0; k < 8; k++) {
+        if (b.x + dirs8[k][0] === c.x && b.y + dirs8[k][1] === c.y) { cIdx = k; break; }
+      }
+      let bNext = null, cNext = c;
+      for (let k = 1; k <= 8; k++) {
+        const idx = (cIdx + k) % 8;
+        const nx = b.x + dirs8[idx][0], ny = b.y + dirs8[idx][1];
+        if (isFg(nx, ny)) { bNext = { x: nx, y: ny }; break; }
+        cNext = { x: nx, y: ny };
+      }
+      if (!bNext) return { points: boundary, closed: false }; // izolovany bod
+      boundary.push(bNext);
+      const backToStart = bNext.x === b0.x && bNext.y === b0.y && cNext.x === c0.x && cNext.y === c0.y;
+      b = bNext; c = cNext;
+      if (backToStart) return { points: boundary, closed: true };
+    }
+    // strop dosazen bez radneho uzavreni - degenerovana/rozvetvena
+    // hranice (typicky sumovy vstup bez skutecneho dokladu), useknuta
+    // kontura by mohla NAHODOU vyjit approxPolyDP na 4 body -> zahodit.
+    return { points: boundary, closed: false };
+  }
+
+  for (let y = 0; y < h; y++) {
+    for (let x = 0; x < w; x++) {
+      const idx = y * w + x;
+      if (!isFg(x, y) || visited[idx]) continue;
+      const traced = traceBoundary(x, y);
+      floodFillMark(x, y); // oznacit CELY blok navstiveny, ne jen hranici
+      if (!traced.closed) continue; // neuzavrena hranice se nepocita jako platna kontura
+      const boundary = traced.points;
+      if (boundary.length >= 4) contours.push(boundary);
+    }
+  }
+  return contours;
+}
+
+function contourArea(pts) {
+  let area2 = 0;
+  for (let i = 0; i < pts.length; i++) {
+    const p = pts[i], q = pts[(i + 1) % pts.length];
+    area2 += p.x * q.y - q.x * p.y;
+  }
+  return Math.abs(area2) / 2;
+}
+
+function contourPerimeter(pts) {
+  let per = 0;
+  for (let i = 0; i < pts.length; i++) {
+    const p = pts[i], q = pts[(i + 1) % pts.length];
+    per += Math.hypot(q.x - p.x, q.y - p.y);
+  }
+  return per;
+}
+
+// Douglas-Peuckerovo zjednoduseni UZAVRENEHO polygonu (cv2.approxPolyDP
+// s closed=true): najit 2 nejvzdalenejsi body, rozdelit na 2 oteverene
+// oblouky, kazdy zjednodusit klasickym DP, spojit.
+function perpDist(p, a, b) {
+  const dx = b.x - a.x, dy = b.y - a.y;
+  const len = Math.hypot(dx, dy);
+  if (len < 1e-9) return Math.hypot(p.x - a.x, p.y - a.y);
+  return Math.abs((p.x - a.x) * dy - (p.y - a.y) * dx) / len;
+}
+function dpSimplifyOpen(pts, epsilon) {
+  if (pts.length < 3) return pts.slice();
+  let maxDist = -1, idx = 0;
+  const a = pts[0], b = pts[pts.length - 1];
+  for (let i = 1; i < pts.length - 1; i++) {
+    const d = perpDist(pts[i], a, b);
+    if (d > maxDist) { maxDist = d; idx = i; }
+  }
+  if (maxDist > epsilon) {
+    const left = dpSimplifyOpen(pts.slice(0, idx + 1), epsilon);
+    const right = dpSimplifyOpen(pts.slice(idx), epsilon);
+    return left.slice(0, -1).concat(right);
+  }
+  return [a, b];
+}
+// Hledani 2 nejvzdalenejsich bodu je O(n^2) - pro rozumne velkou konturu
+// (stovky bodu) v poradku, ale u zcela sumoveho vstupu (zadny doklad)
+// muze vzniknout jeden obri, extremne rozeklany "blob" s hranici o
+// desitkach tisic bodu, kde by O(n^2) znamenalo miliardy operaci a
+// zamrzlo by to na desitky sekund. Ochrana: pred timhle hledanim
+// konturu rovnomerne podvzorkovat na max MAX_PTS bodu - pro skutecny
+// (temer obdelnikovy) doklad je to naprosto bez dopadu na presnost.
+function approxPolyDPClosed(pts, epsilon) {
+  const MAX_PTS = 400;
+  if (pts.length > MAX_PTS) {
+    const stride = pts.length / MAX_PTS;
+    const sub = [];
+    for (let i = 0; i < MAX_PTS; i++) sub.push(pts[Math.floor(i * stride)]);
+    pts = sub;
+  }
+  if (pts.length < 3) return pts.slice();
+  let maxD = -1, ia = 0, ib = 0;
+  for (let i = 0; i < pts.length; i++) {
+    for (let j = i + 1; j < pts.length; j++) {
+      const d = Math.hypot(pts[i].x - pts[j].x, pts[i].y - pts[j].y);
+      if (d > maxD) { maxD = d; ia = i; ib = j; }
+    }
+  }
+  const lo = Math.min(ia, ib), hi = Math.max(ia, ib);
+  const arc1 = pts.slice(lo, hi + 1);
+  const arc2 = pts.slice(hi).concat(pts.slice(0, lo + 1));
+  const s1 = dpSimplifyOpen(arc1, epsilon);
+  const s2 = dpSimplifyOpen(arc2, epsilon);
+  return s1.slice(0, -1).concat(s2.slice(0, -1));
+}
+
+// Konvexnost ctyruhelniku - "prekrizeny" (bowtie) ctyruhelnik neni
+// doklad, i kdyz ma 4 body (nalezeno testem na texture dreva, kde
+// approxPolyDP nahodou slozil 4 prekrizene body z okraju textury).
+function quadIsConvex(pts) {
+  let sign = 0;
+  for (let i = 0; i < 4; i++) {
+    const p0 = pts[i], p1 = pts[(i + 1) % 4], p2 = pts[(i + 2) % 4];
+    const cross = (p1.x - p0.x) * (p2.y - p1.y) - (p1.y - p0.y) * (p2.x - p1.x);
+    const s = cross > 0 ? 1 : (cross < 0 ? -1 : 0);
+    if (s === 0) continue;
+    if (sign === 0) sign = s;
+    else if (s !== sign) return false;
+  }
+  return true;
+}
+
+// approxPolyDP nevraci body v konvenci [tl,tr,br,bl] - serad podle uhlu
+// okolo teziste (spravne konvexni poradi) a zacni bodem nejbliz levemu
+// hornimu rohu ramecku, shodne s konvenci zbytku kodu (warpQuadToRect).
+function orderQuadTLBR(approx) {
+  const cx = approx.reduce((s, p) => s + p.x, 0) / 4;
+  const cy = approx.reduce((s, p) => s + p.y, 0) / 4;
+  const ordered = approx.slice().sort((p, q) => Math.atan2(p.y - cy, p.x - cx) - Math.atan2(q.y - cy, q.x - cx));
+  let startIdx = 0, bestSum = Infinity;
+  for (let k = 0; k < 4; k++) {
+    const s = ordered[k].x + ordered[k].y;
+    if (s < bestSum) { bestSum = s; startIdx = k; }
+  }
+  const rotated = [];
+  for (let k = 0; k < 4; k++) rotated.push(ordered[(startIdx + k) % 4]);
+  return rotated;
+}
+
+// Hlavni funkce - presny postup podle clanku (grayscale -> blur -> Otsu
+// -> Canny -> findContours -> sort podle plochy top 5 -> approxPolyDP).
+function detectQuadScanbot(gray, w, h) {
+  const blurred = gaussianBlur5x5(gray, w, h);
+  const binary = binarizeOtsu(blurred, w, h);
+  let contours = findExternalContours(binary, w, h);
+  contours.sort((a, b) => contourArea(b) - contourArea(a));
+  contours = contours.slice(0, 5);
+  const frameArea = w * h;
+  for (const c of contours) {
+    const ca = contourArea(c);
+    // kdyz Otsu na temer rovnomernem vstupu (zadny skutecny doklad, napr.
+    // cisty sum/rovnomerne pozadi) oznaci skoro cely snimek jako
+    // "popredi", je vyslednou konturou hranice CELEHO RAMECKU samotneho -
+    // validni uzavrena kontura, schvalne se zjednodusi na 4 rohy, ale
+    // neni to doklad (ten temer nikdy nevyplnuje ramecek od kraje do kraje).
+    if (ca > 0.95 * frameArea) continue;
+    // prilis mala kontura (sum/skvrna)
+    if (ca < 0.06 * frameArea) continue;
+    const peri = contourPerimeter(c);
+    const approx = approxPolyDPClosed(c, 0.02 * peri);
+    if (approx.length === 4 && quadIsConvex(approx)) return orderQuadTLBR(approx);
+  }
+  return null;
+}
+
+// --- 2. pokus kaskady: Canny primo na SEDOTONU (bez Otsu binarizace) ---
+// Robert 2026-08 (screenshot: vizitka na svetle podlaze, ramecek chytil
+// cely zaber "obracene"): globalni Otsu na scene "svetly doklad na
+// svetlem pozadi" rozpuli TEXTURU POZADI (49/51 %), doklad vubec
+// neoddeli - presne slabina, kterou Scanbot clanek priznava ("doesn't
+// work well on bright surfaces"). Hrany dokladu jsou ale nejsilnejsi
+// gradienty ve scene -> Canny na sedotonu je najde. Tenke hranove
+// fragmenty se zesili (dilatace 3x3) a uzavrene oblasti VYPLNI
+// (flood-fill pozadi od okraju, zbytek = popredi) - z tenkeho obrysu
+// vizitky vznikne plny blok, na ktery uz funguje findContours +
+// approxPolyDP jako obvykle. Overeno primo na Robertove fotce (vizitka
+// nalezena presne) + regresne na vsech testovacich fotkach (kaskada
+// nikde nezhorsila vysledek - binarni varianta ma prednost).
+function dilateMask(mask, w, h) {
+  const out = new Uint8Array(w * h);
+  for (let y = 0; y < h; y++) {
+    for (let x = 0; x < w; x++) {
+      if (!mask[y * w + x]) continue;
+      for (let dy = -1; dy <= 1; dy++) {
+        const yy = y + dy; if (yy < 0 || yy >= h) continue;
+        for (let dx = -1; dx <= 1; dx++) {
+          const xx = x + dx; if (xx < 0 || xx >= w) continue;
+          out[yy * w + xx] = 255;
+        }
+      }
+    }
+  }
+  return out;
+}
+
+function fillClosedRegions(edges, w, h) {
+  const bg = new Uint8Array(w * h);
+  const stack = [];
+  for (let x = 0; x < w; x++) {
+    if (!edges[x]) { bg[x] = 1; stack.push(x); }
+    const b = (h - 1) * w + x;
+    if (!edges[b] && !bg[b]) { bg[b] = 1; stack.push(b); }
+  }
+  for (let y = 0; y < h; y++) {
+    const l = y * w, r = y * w + w - 1;
+    if (!edges[l] && !bg[l]) { bg[l] = 1; stack.push(l); }
+    if (!edges[r] && !bg[r]) { bg[r] = 1; stack.push(r); }
+  }
+  while (stack.length) {
+    const p = stack.pop();
+    const x = p % w, y = (p / w) | 0;
+    if (x > 0) { const q = p - 1; if (!edges[q] && !bg[q]) { bg[q] = 1; stack.push(q); } }
+    if (x < w - 1) { const q = p + 1; if (!edges[q] && !bg[q]) { bg[q] = 1; stack.push(q); } }
+    if (y > 0) { const q = p - w; if (!edges[q] && !bg[q]) { bg[q] = 1; stack.push(q); } }
+    if (y < h - 1) { const q = p + w; if (!edges[q] && !bg[q]) { bg[q] = 1; stack.push(q); } }
+  }
+  const filled = new Uint8Array(w * h);
+  for (let i = 0; i < filled.length; i++) filled[i] = bg[i] ? 0 : 255;
+  return filled;
+}
+
+function detectQuadEdgeFill(gray, w, h) {
+  const blurred = gaussianBlur5x5(gray, w, h);
+  const canny = cannyEdges(blurred, w, h, 30, 90);
+  const dilated = dilateMask(canny, w, h);
+  const filled = fillClosedRegions(dilated, w, h);
+  let contours = findExternalContours(filled, w, h);
+  contours.sort((a, b) => contourArea(b) - contourArea(a));
+  const frameArea = w * h;
+  for (const c of contours.slice(0, 5)) {
+    const ca = contourArea(c);
+    if (ca > 0.90 * frameArea) continue;
+    // nizsi minimum nez u binarni varianty - tahle cesta je urcena prave
+    // pro male doklady (vizitka = ~3-4 % plochy zaberu)
+    if (ca < 0.015 * frameArea) continue;
+    const peri = contourPerimeter(c);
+    const approx = approxPolyDPClosed(c, 0.02 * peri);
+    if (approx.length === 4 && quadIsConvex(approx)) return orderQuadTLBR(approx);
+  }
+  return null;
+}
+
+function detectDocumentCorners(canvas) {
+  const w = canvas.width, h = canvas.height;
+  const scale = Math.min(1, 300 / Math.max(w, h));
+  const sw = Math.max(1, Math.round(w * scale)), sh = Math.max(1, Math.round(h * scale));
+  const small = document.createElement("canvas");
+  small.width = sw; small.height = sh;
+  const sctx = small.getContext("2d");
+  sctx.drawImage(canvas, 0, 0, sw, sh);
+  const data = sctx.getImageData(0, 0, sw, sh).data;
+
+  const grayRaw = new Float32Array(sw * sh);
+  for (let p = 0, i = 0; p < grayRaw.length; p++, i += 4) {
+    grayRaw[p] = 0.299 * data[i] + 0.587 * data[i + 1] + 0.114 * data[i + 2];
+  }
+  // mirne rozostreni pred prahovanim - potlaci osamocene jednopixelove
+  // odlesky/sterk, souvisla papirova plocha zustane prakticky beze zmeny.
+  const gray = new Float32Array(sw * sh);
+  for (let y = 0; y < sh; y++) {
+    for (let x = 0; x < sw; x++) {
+      let sum = 0, cnt = 0;
+      for (let dy = -1; dy <= 1; dy++) {
+        const yy = y + dy; if (yy < 0 || yy >= sh) continue;
+        for (let dx = -1; dx <= 1; dx++) {
+          const xx = x + dx; if (xx < 0 || xx >= sw) continue;
+          sum += grayRaw[yy * sw + xx]; cnt++;
+        }
+      }
+      gray[y * sw + x] = sum / cnt;
+    }
+  }
+
+  // primarni metoda: presny postup podle Scanbot clanku (Otsu + Canny +
+  // findContours + approxPolyDP) - Robert: "delej co ti rikam,
+  // implementuj to presne podle nich"
+  const edgeQuad = detectQuadScanbot(gray, sw, sh);
+  if (edgeQuad) {
+    return edgeQuad.map(p => ({ x: p.x / scale, y: p.y / scale }));
+  }
+
+  // 2. pokus: Canny na sedotonu + vyplneni uzavrenych oblasti - resi
+  // "svetly doklad na svetlem pozadi" (vizitka na podlaze), kde Otsu
+  // binarizace selze - viz komentar u detectQuadEdgeFill.
+  const edgeFillQuad = detectQuadEdgeFill(gray, sw, sh);
+  if (edgeFillQuad) {
+    return edgeFillQuad.map(p => ({ x: p.x / scale, y: p.y / scale }));
+  }
+
+  // fallback: puvodni odhad podle jasu (nejvetsi svetla souvisla plocha)
+  let sum = 0;
+  for (let p = 0; p < gray.length; p++) sum += gray[p];
+  const mean = sum / gray.length;
+  const threshold = mean + 8;
+
+  function fallbackRect() {
+    const mx = w * 0.06, my = h * 0.06;
+    return [{ x: mx, y: my }, { x: w - mx, y: my }, { x: w - mx, y: h - my }, { x: mx, y: h - my }];
+  }
+
+  const bright = new Uint8Array(sw * sh);
+  let totalBright = 0;
+  for (let p = 0; p < gray.length; p++) if (gray[p] >= threshold) { bright[p] = 1; totalBright++; }
+  const brightFrac = totalBright / (sw * sh);
+  if (brightFrac < 0.03 || brightFrac > 0.95) return fallbackRect();
+
+  // krok 1: seed = stred nejvetsi souvisle svetle komponenty
+  const visited1 = new Uint8Array(sw * sh);
+  const queue = new Int32Array(sw * sh);
+  let bestSize = 0, bestSumX = 0, bestSumY = 0;
+  for (let start = 0; start < sw * sh; start++) {
+    if (!bright[start] || visited1[start]) continue;
+    let qHead = 0, qTail = 0;
+    queue[qTail++] = start; visited1[start] = 1;
+    let size = 0, sumX = 0, sumY = 0;
+    while (qHead < qTail) {
+      const p = queue[qHead++];
+      const x = p % sw, y = (p / sw) | 0;
+      size++; sumX += x; sumY += y;
+      if (x > 0) { const q = p - 1; if (bright[q] && !visited1[q]) { visited1[q] = 1; queue[qTail++] = q; } }
+      if (x < sw - 1) { const q = p + 1; if (bright[q] && !visited1[q]) { visited1[q] = 1; queue[qTail++] = q; } }
+      if (y > 0) { const q = p - sw; if (bright[q] && !visited1[q]) { visited1[q] = 1; queue[qTail++] = q; } }
+      if (y < sh - 1) { const q = p + sw; if (bright[q] && !visited1[q]) { visited1[q] = 1; queue[qTail++] = q; } }
+    }
+    if (size > bestSize) { bestSize = size; bestSumX = sumX; bestSumY = sumY; }
+  }
+  if (bestSize < 0.02 * sw * sh) return fallbackRect();
+  const seedX = Math.round(bestSumX / bestSize), seedY = Math.round(bestSumY / bestSize);
+  const seed = seedY * sw + seedX;
+
+  // krok 2: edge-bounded region growing od seedu (na rozostrenem jasu -
+  // potlaceni sumu; EDGE_THRESHOLD 14, BRIGHT_BAND 70 - testovano na
+  // realnych fotkach s tvrdym i nizkym kontrastem pozadi/dokladu).
+  const EDGE_THRESHOLD = 14, BRIGHT_BAND = 70;
+  const MIN_BRIGHT = gray[seed] - BRIGHT_BAND;
+  const visited2 = new Uint8Array(sw * sh);
+  let qHead = 0, qTail = 0;
+  queue[qTail++] = seed; visited2[seed] = 1;
+  let gSize = 0;
+  let minSum = Infinity, maxSum = -Infinity, minDiff = Infinity, maxDiff = -Infinity;
+  let ptMinSum = null, ptMaxSum = null, ptMinDiff = null, ptMaxDiff = null;
+  while (qHead < qTail) {
+    const p = queue[qHead++];
+    const x = p % sw, y = (p / sw) | 0;
+    gSize++;
+    const s = x + y, d = x - y;
+    if (s < minSum) { minSum = s; ptMinSum = [x, y]; }
+    if (s > maxSum) { maxSum = s; ptMaxSum = [x, y]; }
+    if (d < minDiff) { minDiff = d; ptMinDiff = [x, y]; }
+    if (d > maxDiff) { maxDiff = d; ptMaxDiff = [x, y]; }
+    const gCur = gray[p];
+    const tryNeighbor = (q) => {
+      if (visited2[q]) return;
+      if (gray[q] < MIN_BRIGHT) return;
+      if (Math.abs(gray[q] - gCur) > EDGE_THRESHOLD) return;
+      visited2[q] = 1; queue[qTail++] = q;
+    };
+    if (x > 0) tryNeighbor(p - 1);
+    if (x < sw - 1) tryNeighbor(p + 1);
+    if (y > 0) tryNeighbor(p - sw);
+    if (y < sh - 1) tryNeighbor(p + sw);
+  }
+  if (gSize < 0.01 * sw * sh || gSize > 0.97 * sw * sh || !ptMinSum || !ptMaxSum || !ptMinDiff || !ptMaxDiff) {
+    return fallbackRect();
+  }
+
+  const toFull = (p) => ({ x: p[0] / scale, y: p[1] / scale });
+  return [toFull(ptMinSum), toFull(ptMaxDiff), toFull(ptMaxSum), toFull(ptMinDiff)];
+}
+
+// Robert 2026-07-31 (realny test): detekovany ctyruhelnik casto mirne
+// "podstreli" u nekterych rohu (papir na okraji ma nizsi kontrast/mirny
+// stin, takze se do svetle komponenty nezapocita cely az do posledniho
+// pixelu) - vysledkem je oriznuti kousku skutecneho dokladu. Oprava:
+// kazdy roh mirne "vytahnout" ven od stredu ctyruhelniku (o pár %) -
+// mala cast pozadi navic v oriznutem snimku vadi mnohem min nez
+// uriznuty kus dokladu.
+// Robert 2026-07-31 (fotka z auta, 2. kolo): jeden okraj (nizky kontrast
+// vuci tmavemu sedadlu) porad mirne oriznut i po zvetseni faktorem -
+// nasobeni vzdalenosti od stredu prida MALO pixelu tam, kde uz roh byl
+// bliz stredu (asymetricky ctyruhelnik). Misto nasobeni proto KAZDY roh
+// posuneme o PEVNY POCET PIXELU smerem od stredu (nezavisle na tom, jak
+// daleko od stredu uz je) - spolehlivejsi na vsech 4 stranach stejne.
+// Robert 2026-08 ("mezera mezi ramecekm a hranou dokladu"): puvodni
+// 3.5% rezerva byla nastavena kvuli tehdejsi (mene presne) detekci
+// podle jasu, ktera mela sklon doklad podstrelit. Novy Scanbot postup
+// (Otsu+kontury+approxPolyDP) je geometricky presnejsi (testovano -
+// chyba rohu <2px na realnych fotkach), takze tak velka rezerva uz jen
+// vytvarela zbytecnou mezeru - snizeno na 0.8%.
+function expandCorners(corners, marginPx, maxW, maxH) {
+  const cx = corners.reduce((s, p) => s + p.x, 0) / corners.length;
+  const cy = corners.reduce((s, p) => s + p.y, 0) / corners.length;
+  return corners.map(p => {
+    const dx = p.x - cx, dy = p.y - cy;
+    const dist = Math.sqrt(dx * dx + dy * dy) || 1;
+    return {
+      x: Math.max(0, Math.min(maxW, p.x + (dx / dist) * marginPx)),
+      y: Math.max(0, Math.min(maxH, p.y + (dy / dist) * marginPx)),
+    };
+  });
+}
+
+// Perspektivni "narovnani" 4-bodoveho vyberu do obdelniku - Canvas 2D
+// neumi projektivni transformaci (jen afinni), takze se ctyruhelnik
+// rozdeli na mrizku trojuhelniku a kazdy se zvlast affinne premapuje.
+function warpQuadToRect(sourceCanvas, corners, outW, outH, gridN) {
+  gridN = gridN || 12;
+  const out = document.createElement("canvas");
+  out.width = outW; out.height = outH;
+  const octx = out.getContext("2d");
+  // Robert 2026-08 ("zapracovat na pokrivenem textu"): puvodni quadPoint
+  // byla BILINEARNI interpolace ctyruhelniku - to neni skutecna
+  // perspektivni transformace, u dokladu foceneho pod uhlem se radky
+  // textu smerem do "vzdalenejsi" casti mirne prohybaly. Nahrazeno
+  // pravou HOMOGRAFII (projektivni mapovani jednotkoveho ctverce na
+  // zdrojovy ctyruhelnik, Heckbertova uzavrena formule - ekvivalent
+  // OpenCV warpPerspective) - rovne linky zustavaji rovne.
+  const [c0, c1, c2, c3] = corners; // tl, tr, br, bl
+  const dx1 = c1.x - c2.x, dx2 = c3.x - c2.x, dx3 = c0.x - c1.x + c2.x - c3.x;
+  const dy1 = c1.y - c2.y, dy2 = c3.y - c2.y, dy3 = c0.y - c1.y + c2.y - c3.y;
+  let Ha, Hb, Hc, Hd, He, Hf, Hg, Hh;
+  const den = dx1 * dy2 - dy1 * dx2;
+  if (Math.abs(dx3) < 1e-9 && Math.abs(dy3) < 1e-9) {
+    // afinni pripad (rovnobezniky) - homografie degeneruje, g=h=0
+    Hg = 0; Hh = 0;
+    Ha = c1.x - c0.x; Hb = c3.x - c0.x; Hc = c0.x;
+    Hd = c1.y - c0.y; He = c3.y - c0.y; Hf = c0.y;
+  } else {
+    Hg = (dx3 * dy2 - dy3 * dx2) / den;
+    Hh = (dx1 * dy3 - dy1 * dx3) / den;
+    Ha = c1.x - c0.x + Hg * c1.x; Hb = c3.x - c0.x + Hh * c3.x; Hc = c0.x;
+    Hd = c1.y - c0.y + Hg * c1.y; He = c3.y - c0.y + Hh * c3.y; Hf = c0.y;
+  }
+  function quadPoint(u, v) {
+    const wDiv = Hg * u + Hh * v + 1;
+    return { x: (Ha * u + Hb * v + Hc) / wDiv, y: (Hd * u + He * v + Hf) / wDiv };
+  }
+  for (let gy = 0; gy < gridN; gy++) {
+    for (let gx = 0; gx < gridN; gx++) {
+      const u0 = gx / gridN, u1 = (gx + 1) / gridN, v0 = gy / gridN, v1 = (gy + 1) / gridN;
+      const srcTL = quadPoint(u0, v0), srcTR = quadPoint(u1, v0), srcBL = quadPoint(u0, v1), srcBR = quadPoint(u1, v1);
+      const dstTL = { x: u0 * outW, y: v0 * outH }, dstTR = { x: u1 * outW, y: v0 * outH };
+      const dstBL = { x: u0 * outW, y: v1 * outH }, dstBR = { x: u1 * outW, y: v1 * outH };
+      drawTriangle(octx, sourceCanvas, srcTL, srcTR, srcBL, dstTL, dstTR, dstBL);
+      drawTriangle(octx, sourceCanvas, srcTR, srcBR, srcBL, dstTR, dstBR, dstBL);
+    }
+  }
+  return out;
+}
+
+function drawTriangle(ctx, img, s0, s1, s2, d0, d1, d2) {
+  ctx.save();
+  ctx.beginPath();
+  ctx.moveTo(d0.x, d0.y); ctx.lineTo(d1.x, d1.y); ctx.lineTo(d2.x, d2.y);
+  ctx.closePath(); ctx.clip();
+  const denom = (s1.x - s0.x) * (s2.y - s0.y) - (s2.x - s0.x) * (s1.y - s0.y);
+  if (Math.abs(denom) < 1e-8) { ctx.restore(); return; }
+  const a = ((d1.x - d0.x) * (s2.y - s0.y) - (d2.x - d0.x) * (s1.y - s0.y)) / denom;
+  const b = ((d1.y - d0.y) * (s2.y - s0.y) - (d2.y - d0.y) * (s1.y - s0.y)) / denom;
+  const c = ((d2.x - d0.x) * (s1.x - s0.x) - (d1.x - d0.x) * (s2.x - s0.x)) / denom;
+  const d = ((d2.y - d0.y) * (s1.x - s0.x) - (d1.y - d0.y) * (s2.x - s0.x)) / denom;
+  const e = d0.x - a * s0.x - c * s0.y;
+  const f = d0.y - b * s0.x - d * s0.y;
+  ctx.transform(a, b, c, d, e, f);
+  ctx.drawImage(img, 0, 0);
+  ctx.restore();
+}
+
+function applyScannerEffectV3(canvas, opts) {
+  opts = opts || {};
+  const targetBg = opts.targetBg != null ? opts.targetBg : 200;
+  // Robert 2026-08 (po screenshotu): vysledny sken byl prilis svetly/
+  // vyplacheny, chtel vic kontrastu - 1.6 nedotlacilo tmavy text dost
+  // blizko cerne. Zvyseno na 2.4 (agresivnejsi, ale to je u
+  // cernobileho textoveho skenu zadouci - text ma byt sytě cerny,
+  // pozadi ciste bile, oriznuti do 0-255 tomu nevadi).
+  const contrast = opts.contrast != null ? opts.contrast : 2.4;
+  const workLongEdge = opts.workLongEdge != null ? opts.workLongEdge : 450;
+  const windowSize = opts.windowSize != null ? opts.windowSize : 21;
+
+  const w = canvas.width, h = canvas.height;
+  const ctx = canvas.getContext("2d");
+  const data = ctx.getImageData(0, 0, w, h).data;
+
+  const scale = Math.min(1, workLongEdge / Math.max(w, h));
+  const workW = Math.max(1, Math.round(w * scale)), workH = Math.max(1, Math.round(h * scale));
+  const workCanvas = document.createElement("canvas");
+  workCanvas.width = workW; workCanvas.height = workH;
+  const workCtx = workCanvas.getContext("2d");
+  workCtx.drawImage(canvas, 0, 0, workW, workH);
+  const workData = workCtx.getImageData(0, 0, workW, workH).data;
+  const workGray = new Uint8ClampedArray(workW * workH);
+  for (let p = 0, i = 0; p < workGray.length; p++, i += 4) {
+    workGray[p] = 0.299 * workData[i] + 0.587 * workData[i + 1] + 0.114 * workData[i + 2];
+  }
+
+  const bg = medianFilterFast(workGray, workW, workH, windowSize);
+
+  // jemne vyhlazeni mapy pozadi (3x3) - potlaci tenkou "ringing" caru
+  // pri zpetnem zvetseni presne na hranici ostreho stinu.
+  const bgSmoothed = new Uint8ClampedArray(bg.length);
+  for (let y = 0; y < workH; y++) {
+    for (let x = 0; x < workW; x++) {
+      let s = 0, cnt = 0;
+      for (let dy = -1; dy <= 1; dy++) {
+        const yy = y + dy; if (yy < 0 || yy >= workH) continue;
+        for (let dx = -1; dx <= 1; dx++) {
+          const xx = x + dx; if (xx < 0 || xx >= workW) continue;
+          s += bg[yy * workW + xx]; cnt++;
+        }
+      }
+      bgSmoothed[y * workW + x] = s / cnt;
+    }
+  }
+
+  const bgSmallCanvas = document.createElement("canvas");
+  bgSmallCanvas.width = workW; bgSmallCanvas.height = workH;
+  const bgSmallCtx = bgSmallCanvas.getContext("2d");
+  const bgImgData = bgSmallCtx.createImageData(workW, workH);
+  for (let p = 0, i = 0; p < bgSmoothed.length; p++, i += 4) {
+    bgImgData.data[i] = bgImgData.data[i + 1] = bgImgData.data[i + 2] = bgSmoothed[p];
+    bgImgData.data[i + 3] = 255;
+  }
+  bgSmallCtx.putImageData(bgImgData, 0, 0);
+
+  const bgFullCanvas = document.createElement("canvas");
+  bgFullCanvas.width = w; bgFullCanvas.height = h;
+  const bgFullCtx = bgFullCanvas.getContext("2d");
+  bgFullCtx.imageSmoothingEnabled = true;
+  bgFullCtx.drawImage(bgSmallCanvas, 0, 0, w, h);
+  const bgFull = bgFullCtx.getImageData(0, 0, w, h).data;
+
+  const out = ctx.createImageData(w, h);
+  for (let i = 0; i < data.length; i += 4) {
+    const gray = 0.299 * data[i] + 0.587 * data[i + 1] + 0.114 * data[i + 2];
+    const bgLum = bgFull[i];
+    let v = gray - bgLum + targetBg;
+    v = (v - targetBg) * contrast + targetBg;
+    v = v < 0 ? 0 : v > 255 ? 255 : v;
+    out.data[i] = out.data[i + 1] = out.data[i + 2] = v;
+    out.data[i + 3] = 255;
+  }
+  ctx.putImageData(out, 0, 0);
+}
+
+// Robert 2026-08: zvednuto z 1600 na 2600 spolu s pozadavkem na 4K
+// stream kamery - delsi strana OREZANEHO dokladu (ne celeho zaberu),
+// vic nez dost na citelny text, soubor drzi na uzde JPEG komprese.
+const SCANNER_MAX_DIM = 2600;
+
+// Zivy ramecek behem snimani (Robert 2026-07-31: "uz pri samotnem foceni
+// detekuje nejakym rameckem okraj dokladu a jakmile fotici osoba uvidi
+// ze to sedi klikne vyfotit... nasledne bude brat obrazek pouze to co je
+// uvnitr ramecku"). Perioda 300ms (ne kazdy frame) - detekce trva jen
+// nekolik ms, ale netreba to pocitat 30x/s, kamera se stejne drzi v ruce
+// v podstate staticky. Souradnice se mapuji z natywniho rozliseni videa
+// do zobrazenych CSS pixelu s ohledem na object-fit:cover (video muze
+// byt oriznute na sirku nebo na vysku, ne proste zmensene 1:1).
+let scannerDetectTimer = null;
+let scannerDetectRunning = false;
+let lastDetectedCorners = null;
+
+// Robert 2026-07-31 ("kamera přestala fungovat"): puvodni setInterval(...,
+// 300) nema ochranu proti prekryvu - pokud detekce na realnem (pomalejsim)
+// telefonu trva dele nez 300ms, intervaly se hromadi na hlavnim vlakne a
+// cela stranka (vc. kamery) zamrzne. Oprava: MISTO setInterval pouzit
+// setTimeout, ktery naplanuje DALSI beh az PO dokonceni predchoziho (a
+// jen pokud je porad scannerMode zapnuty) - i na velmi pomalem zarizeni
+// se tak nejvyse zpomali frekvence prekreslovani ramecku, nikdy se
+// nenahromadi rozpracovana prace.
+function startScannerDetectLoop() {
+  stopScannerDetectLoop();
+  $("cropOverlay").style.display = "block";
+  smoothedOverlayCorners = null; // zacit cistou detekci, nevyhladovat proti stare/cizi hodnote
+  scannerDetectTimer = "running"; // priznak "smycka ma bezet" (viz scheduleNext)
+  runLiveDetection();
+}
+function stopScannerDetectLoop() {
+  scannerDetectTimer = null;
+  $("cropOverlay").style.display = "none";
+}
+// Vyhlazeni ramecku mezi tiky detekcni smycky (Robert: "porad je
+// ramecek nestabilni, nevidi tu hranu") - kazdy tik (300ms) detekuje
+// zcela nezavisle, takze drobna zmena osvetleni/uhlu muze vybrat mirne
+// jiny ctyruhelnik z kandidatu -> vizualne "poskakujici" obrys, i kdyz
+// je kazda jednotliva detekce sama o sobe rozumna. Netyka se presnosti
+// samotneho vyfoceni (to dela vlastni cerstvou detekci na finalnim
+// snimku, viz shutterBtn), jen vizualniho zivotu pri mireni.
+let smoothedOverlayCorners = null;
+
+// poradi rohu [tl,tr,br,bl] se urcuje jako "zacni bodem nejbliz levemu
+// hornimu rohu ramecku" - u temer ctvercoveho/pootoceneho ctyruhelniku
+// muze mezi tiky flipnout, kterej fyzicky roh to je (min(x+y) je na
+// hrane remizy). Pred vyhlazenim proto zarovnat poradi noveho ctyruhelniku
+// na to predchozi (zkusit vsechny 4 rotace, vzit nejblizsi), jinak by
+// vyhlazeni michalo dohromady jiné rohy a vysledek by se "zboural".
+function alignCornerOrder(prev, next) {
+  let best = next, bestDist = Infinity;
+  for (let off = 0; off < 4; off++) {
+    const rotated = [0, 1, 2, 3].map(i => next[(i + off) % 4]);
+    let dist = 0;
+    for (let i = 0; i < 4; i++) {
+      const dx = rotated[i].x - prev[i].x, dy = rotated[i].y - prev[i].y;
+      dist += Math.sqrt(dx * dx + dy * dy);
+    }
+    if (dist < bestDist) { bestDist = dist; best = rotated; }
+  }
+  return best;
+}
+
+function smoothCorners(prev, next, vw, vh) {
+  if (!prev) return next;
+  const aligned = alignCornerOrder(prev, next);
+  const diag = Math.sqrt(vw * vw + vh * vh);
+  let maxJump = 0;
+  for (let i = 0; i < 4; i++) {
+    const dx = aligned[i].x - prev[i].x, dy = aligned[i].y - prev[i].y;
+    maxJump = Math.max(maxJump, Math.sqrt(dx * dx + dy * dy));
+  }
+  // velky skok (jina scena, doklad presunuty) - prepnout rovnou, jinak
+  // by obrys "dojizdel" pozadu za skutecnou zmenou
+  if (maxJump > 0.12 * diag) return aligned;
+  const ALPHA = 0.3; // vaha nove detekce v exponencialnim vyhlazeni
+  return aligned.map((p, i) => ({
+    x: prev[i].x + (p.x - prev[i].x) * ALPHA,
+    y: prev[i].y + (p.y - prev[i].y) * ALPHA,
+  }));
+}
+
+function runLiveDetection() {
+  if (scannerDetectRunning) return;
+  scannerDetectRunning = true;
+  try {
+    const v = $("camVideo");
+    if (v.videoWidth) {
+      // pojistka proti "zmacknutemu" obrazu: kdyz pomer stran boxu
+      // nesedi na stream (kamera se prekonfigurovala bez eventu, ktery
+      // bychom zachytili), prepocitat rozmery - samoopravne kazdych 300ms
+      const boxAspect = v.clientWidth / Math.max(1, v.clientHeight);
+      const streamAspect = v.videoWidth / v.videoHeight;
+      if (Math.abs(boxAspect - streamAspect) > 0.02) layoutCameraVideo();
+      const tmp = document.createElement("canvas");
+      const scale = Math.min(1, 320 / Math.max(v.videoWidth, v.videoHeight));
+      tmp.width = Math.round(v.videoWidth * scale); tmp.height = Math.round(v.videoHeight * scale);
+      tmp.getContext("2d").drawImage(v, 0, 0, tmp.width, tmp.height);
+      const cornersSmall = detectDocumentCorners(tmp);
+      const cornersFull = cornersSmall.map(p => ({ x: p.x / scale, y: p.y / scale }));
+      lastDetectedCorners = expandCorners(cornersFull, 0.008 * Math.max(v.videoWidth, v.videoHeight), v.videoWidth, v.videoHeight);
+      smoothedOverlayCorners = smoothCorners(smoothedOverlayCorners, lastDetectedCorners, v.videoWidth, v.videoHeight);
+      renderCropOverlay(smoothedOverlayCorners, v.videoWidth, v.videoHeight);
+    }
+  } catch (e) {
+    // detekce nesmi shodit celou apku (napr. video jeste nema data) -
+    // proste zkusit znovu az pri dalsim tiku.
+  }
+  scannerDetectRunning = false;
+  if (scannerDetectTimer) setTimeout(runLiveDetection, 300);
+}
+function renderCropOverlay(corners, vw, vh) {
+  const v = $("camVideo");
+  const dw = v.clientWidth, dh = v.clientHeight;
+  if (!dw || !dh) return;
+  // object-fit:cover -> Math.max (obsah vyplni cely box, prebytek se
+  // orizne). offsetLeft/Top: #cropOverlay pokryva cely #camWrap - kdyby
+  // video nekdy nebylo na pozici 0,0 wrapu, souradnice se posunou s nim.
+  const scale = Math.max(dw / vw, dh / vh);
+  const baseX = v.offsetLeft + (dw - vw * scale) / 2;
+  const baseY = v.offsetTop + (dh - vh * scale) / 2;
+  const pts = corners.map(p => `${(p.x * scale + baseX).toFixed(1)},${(p.y * scale + baseY).toFixed(1)}`).join(" ");
+  $("cropPolygon").setAttribute("points", pts);
+}
+
+$("scannerBtn").onclick = () => {
+  state.scannerMode = !state.scannerMode;
+  $("scannerBtn").classList.toggle("active", state.scannerMode);
+  $("scannerBtn").textContent = state.scannerMode ? "🧾 Skener ZAP" : "🧾 Skener";
+  if (state.scannerMode) startScannerDetectLoop(); else stopScannerDetectLoop();
+};
+
+// Tankovani behem jizdy (Robert 2026-08-05: "doklad se naskenuje ve
+// fotoapce, vlozi se do spravne slozky disku a zaroven se nacte do
+// knihy jizd, tzn bude to vzdy jako zastavka v prehledu jizd"). Jeden
+// snimek = jedna zastavka, proto JEDNORAZOVY rezim (ne trvaly toggle
+// jako Skener) - po vyfoceni se sam vypne, at nasledujici bezna fotka
+// omylem nezustane oznacena jako doklad o tankovani. Automaticky
+// zapina Skener (kvuli orovnani/orezu dokladu) a po jednom snimku
+// vraci puvodni stav Skeneru.
+$("fuelStopBtn").onclick = () => {
+  state.fuelStopMode = !state.fuelStopMode;
+  $("fuelStopBtn").classList.toggle("active", state.fuelStopMode);
+  if (state.fuelStopMode) {
+    state.fuelStopPrevScannerMode = state.scannerMode;
+    if (!state.scannerMode) $("scannerBtn").click();
+    $("statusLine").textContent = "Vyfoť doklad o tankování – uloží se rovnou jako zastávka jízdy.";
+  } else {
+    if (state.scannerMode !== state.fuelStopPrevScannerMode) $("scannerBtn").click();
+    $("statusLine").textContent = "";
+  }
+};
+
+$("shutterBtn").onclick = () => {
+  const v = $("camVideo"), c = $("camCanvas");
+  const vw = v.videoWidth || 1280, vh = v.videoHeight || 720;
+  // Robert 2026-08 ("konecna fotka je rozmerove deformovana a text
+  // trochu rozmazany"): ve scanner modu se snimek NEZMENSUJE predem -
+  // drivejsi pre-downscale na SCANNER_MAX_DIM znamenal, ze doklad
+  // (zabirajici jen cast zaberu) mel po orezu treba jen ~800px a pak
+  // se natahoval na 1200px sirky = upscale = rozmazani. Ted se orez/warp
+  // dela z PLNEHO rozliseni kamery a vystup se limituje az na konci.
+  c.width = vw; c.height = vh;
+  c.getContext("2d").drawImage(v, 0, 0, c.width, c.height);
+  if (state.scannerMode) {
+    // cerstva detekce na presne vyfocenem snimku (ne ta z live smycky -
+    // presnejsi, dela se jen jednou pri vyfoceni, cas navic nevadi) -
+    // "nasledne budes brat... pouze to co je uvnitr ramecku".
+    const corners = expandCorners(detectDocumentCorners(c), 0.008 * Math.max(c.width, c.height), c.width, c.height);
+    // Vystupni rozmery z GEOMETRIE DETEKOVANEHO CTYRUHELNIKU (prumer
+    // delek protilehlych stran), NE z pomeru stran celeho zaberu kamery
+    // - drivejsi verze brala aspect celeho snimku, takze uzka vysoka
+    // uctenka se roztahla do pomeru kamery = rozmerova deformace.
+    const [tl, tr, br, bl] = corners;
+    const dist = (p, q) => Math.hypot(q.x - p.x, q.y - p.y);
+    let quadW = (dist(tl, tr) + dist(bl, br)) / 2;
+    let quadH = (dist(tl, bl) + dist(tr, br)) / 2;
+    // limit velikosti vystupu se zachovanim pomeru quadu; nikdy
+    // nezvetsovat nad skutecne zdrojove pixely (zadny upscale)
+    const outScale = Math.min(1, SCANNER_MAX_DIM / Math.max(quadW, quadH));
+    const outW = Math.max(1, Math.round(quadW * outScale));
+    const outH = Math.max(1, Math.round(quadH * outScale));
+    // gridN 24 (z 12): mrizka afinnich trojuhelniku aproksimuje presnou
+    // projektivni transformaci - jemnejsi deleni = hladsi vysledek,
+    // dela se jen jednou pri vyfoceni, cas navic nevadi
+    const warped = warpQuadToRect(c, corners, outW, outH, 24);
+    applyScannerEffectV3(warped);
+    c.width = warped.width; c.height = warped.height;
+    c.getContext("2d").drawImage(warped, 0, 0);
+  }
+  c.toBlob(b => {
+    state.capturedBlob = b; state.mediaType = "image";
+    $("camShot").src = URL.createObjectURL(b);
+    $("camShot").style.display = ""; v.style.display = "none";
+    stopScannerDetectLoop();
+    $("retakeBtn").style.display = "";
+    // Robert 2026-08-01: "fotky ukládejme do koše automaticky" - drive
+    // bylo treba jeste rucne kliknout "Ulozit do kose", ted se posle
+    // rovnou. saveBtn zustava skryty jako fallback jen pri selhani
+    // (viz saveToInbox() nize).
+    if (state.fuelStopMode) saveFuelStop(); else saveToInbox();
+    // 0.8 misto 0.55 - cernobily sken po applyScannerEffectV3 (velke
+    // jednolite plochy) se komprimuje velmi dobre, agresivni 0.55
+    // pridavalo viditelne JPEG artefakty kolem textu ("rozmazany text")
+  }, "image/jpeg", state.scannerMode ? 0.8 : 0.85);
+};
+
+$("videoBtn").onclick = async () => {
+  if (state.mediaRecorder && state.mediaRecorder.state === "recording") { state.mediaRecorder.stop(); return; }
+  try { state.recStream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" }, audio: true }); }
+  catch (e) { $("errLine").textContent = "Video: " + e.message; return; }
+  $("camVideo").srcObject = state.recStream;
+  state.chunks = [];
+  state.mediaRecorder = new MediaRecorder(state.recStream, { mimeType: "video/webm" });
+  state.mediaRecorder.ondataavailable = e => e.data.size && state.chunks.push(e.data);
+  state.mediaRecorder.onstop = () => {
+    state.capturedBlob = new Blob(state.chunks, { type: "video/webm" });
+    state.mediaType = "video";
+    $("videoBtn").textContent = "🎥 Video"; $("videoBtn").classList.remove("active");
+    $("retakeBtn").style.display = "";
+    state.recStream.getTracks().forEach(t => t.stop());
+    $("camVideo").srcObject = state.stream;
+    saveToInbox(); // automaticky, viz shutterBtn.onclick vyse
+  };
+  state.mediaRecorder.start();
+  $("videoBtn").textContent = "⏹ Zastavit"; $("videoBtn").classList.add("active");
+  $("statusLine").textContent = "Nahrávám video…";
+};
+
+$("audioBtn").onclick = async () => {
+  if (state.audioRecorder && state.audioRecorder.state === "recording") { state.audioRecorder.stop(); return; }
+  try { state.audioStream = await navigator.mediaDevices.getUserMedia({ audio: true }); }
+  catch (e) { $("errLine").textContent = "Mikrofon: " + e.message; return; }
+  state.audioChunks = [];
+  state.audioRecorder = new MediaRecorder(state.audioStream, { mimeType: "audio/webm" });
+  state.audioRecorder.ondataavailable = e => e.data.size && state.audioChunks.push(e.data);
+  state.audioRecorder.onstop = () => {
+    state.audioBlob = new Blob(state.audioChunks, { type: "audio/webm" });
+    $("audioBtn").textContent = "🎙️ Poznámka ✔"; $("audioBtn").classList.remove("active");
+    state.audioStream.getTracks().forEach(t => t.stop());
+  };
+  state.audioRecorder.start();
+  $("audioBtn").textContent = "⏹ Zastavit"; $("audioBtn").classList.add("active");
+};
+
+// Poloha (Robert 2026-07-31: "necht se ulozi povoleni pristupu fotaku i
+// k poloze kazdemu automaticky pro vsechny budouci pouziti"). Samotne
+// POVOLENI je vec prohlizece/OS - stranka si ho udelit nemuze. Co udelat
+// lze a co tady delame: volba "chci polohu u fotek" se pamatuje v
+// localStorage a je ZAPNUTA VYCHOZI, takze se o ni uzivatel uz nikdy
+// nemusi starat - poloha se sama zjistuje na pozadi (watchPosition) a
+// pripoji se ke kazde fotce. Tlacitkem 📍 jde vypnout/zapnout.
+const GEO_PREF_KEY = "capture_geo_enabled";
+let geoWatchId = null;
+
+function geoEnabled() { return localStorage.getItem(GEO_PREF_KEY) !== "0"; }
+
+function renderGeoBtn() {
+  const on = geoEnabled();
+  $("geoBtn").textContent = on ? "📍 Poloha zap." : "📍 Poloha vyp.";
+  $("geoBtn").classList.toggle("active", false);
+}
+
+function startGeoWatch() {
+  if (!navigator.geolocation || geoWatchId !== null) return;
+  $("geoLine").textContent = "Zjišťuji polohu…";
+  geoWatchId = navigator.geolocation.watchPosition(
+    p => { state.lat = p.coords.latitude; state.lon = p.coords.longitude;
+           $("geoLine").textContent = `📍 ${state.lat.toFixed(5)}, ${state.lon.toFixed(5)} (přidá se ke každé fotce)`; },
+    e => { $("geoLine").textContent = "Poloha nedostupná: " + e.message; },
+    { enableHighAccuracy: true, timeout: 15000, maximumAge: 30000 });
+}
+
+function stopGeoWatch() {
+  if (geoWatchId !== null) { navigator.geolocation.clearWatch(geoWatchId); geoWatchId = null; }
+  state.lat = state.lon = null;
+  $("geoLine").textContent = "Poloha vypnutá – fotky se ukládají bez ní.";
+}
+
+$("camCollapseBtn").onclick = () => {
+  const collapsed = $("camWrap").classList.toggle("collapsed");
+  $("camCollapseBtn").textContent = collapsed ? "🔽 Rozbalit náhled kamery" : "🔼 Sbalit náhled kamery";
+};
+
+$("geoBtn").onclick = () => {
+  const newOn = !geoEnabled();
+  localStorage.setItem(GEO_PREF_KEY, newOn ? "1" : "0");
+  renderGeoBtn();
+  if (newOn) startGeoWatch(); else stopGeoWatch();
+};
+
+// Kniha jizd (Robert 2026-08-05: "sledovat budeme pozici GPS mobilniho
+// telefonu pres nasi fotoapku... tlacitko Jizda a nasledne si vybere
+// auto... snimani pozice GPS automaticky kazde 2 kilometry"). Nezavisle
+// na GEO_PREF_KEY watchi vyse (ten je jen pro pripojeni souradnic k
+// fotce) - jizda ma vlastni watchPosition, bezi jen kdyz je jizda
+// aktivni. Vzdalenost se pocita PRUBEZNE souctem vzdalenosti mezi po
+// sobe jdoucimi GPS fixy (presnejsi nez rovna cara), na server se
+// odesila checkpoint az pri kazdem prekroceni dalsiho 2km nasobku.
+function escapeHtmlCapture(s) {
+  return String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#39;" }[c]));
+}
+
+let trip = { id:null, tripNumber:null, vehicleName:null, distanceKm:0, watchId:null, statusPollId:null, lastPos:null };
+
+// GPS u zastavek (Robert 2026-08-05: "u obou se vyzaduje GPS... nacte
+// se automaticky (pripadne rucnim klikem)"). "Automaticky" = poloha uz
+// prubezne bezici z watchPosition jizdy (trip.lastPos), takže ve
+// vetsine pripadu tu uz je bez dalsiho cekani. Jen kdyz jeste zadny fix
+// nedorazil (tesne po zahajeni jizdy / slaby signal), zkusi se JEDEN
+// cerstvy pokus (getCurrentPosition) - a teprve kdyz selze i ten,
+// zavola se volitelny onWaiting() callback, aby volajici zobrazil
+// rucni "Zkusit znovu" tlacitko misto tiseho cekani na nic.
+function getFreshPosition(timeoutMs) {
+  return new Promise(resolve => {
+    if (!navigator.geolocation) return resolve(null);
+    navigator.geolocation.getCurrentPosition(
+      p => resolve({ lat: p.coords.latitude, lng: p.coords.longitude }),
+      () => resolve(null),
+      { enableHighAccuracy: true, timeout: timeoutMs || 8000, maximumAge: 10000 }
+    );
+  });
+}
+
+async function getStopPosition(onWaiting) {
+  if (trip.lastPos) return trip.lastPos;
+  if (onWaiting) onWaiting();
+  return await getFreshPosition(8000);
+}
+
+function renderTripBtn() {
+  // Robert 2026-08-05: "doklad se naskenuje ve fotoapce... bude to
+  // vzdy jako zastavka v prehledu jizd" + "evidovat Zakazniky a mesta
+  // kam se jelo" - obe tlacitka davaji smysl JEN behem aktivni jizdy
+  // (zastavka se vzdy vaze na konkretni trip_id).
+  $("fuelStopBtn").style.display = trip.id ? "" : "none";
+  $("customerStopBtn").style.display = trip.id ? "" : "none";
+  if (trip.id) {
+    $("tripBtn").textContent = "🚗 Ukončit jízdu";
+    $("tripBtn").classList.add("active");
+    $("tripLine").textContent = `Jízda č. ${trip.tripNumber} – ${trip.vehicleName} • ${trip.distanceKm.toFixed(1)} km`;
+  } else {
+    $("tripBtn").textContent = "🚗 Jízda";
+    $("tripBtn").classList.remove("active");
+    $("tripLine").textContent = "";
+    if (state.fuelStopMode) { state.fuelStopMode = false; $("fuelStopBtn").classList.remove("active"); }
+  }
+}
+
+// Robert 2026-08-07 ("Vzít si prostě GPS z jiné apky na mobilu"):
+// puvodne tahle appka sama pocitala vzdalenost z watchPosition a
+// posilala ji na server kazdych 10s - fungovalo to jen dokud byla
+// appka na popredi (browser/PWA na pozadi/po zavreni watchPosition
+// zastavi). Vzdalenost ted pocita a uklada server (viz
+// /api/fleet/gps-ping v api/fleet.py) z bodu, ktere posila externi
+// appka (Traccar Client), ktera na pozadi bezet umi. watchPosition tu
+// zustava JEN pro trip.lastPos - potreba pro rychle GPS oznaceni
+// zastavek (viz getStopPosition nize), ne uz pro pocitani vzdalenosti.
+function startTripWatch() {
+  if (!navigator.geolocation || trip.watchId !== null) return;
+  trip.watchId = navigator.geolocation.watchPosition(
+    p => { trip.lastPos = { lat: p.coords.latitude, lng: p.coords.longitude }; },
+    e => { $("tripLine").textContent = "Jízda: poloha nedostupná (" + e.message + ")"; },
+    { enableHighAccuracy: true, timeout: 20000, maximumAge: 5000 });
+  // Vzdalenost (a tim i zobrazeny soucet v tripLine) se ted bere ze
+  // serveru - obcasny refresh, at appka na popredi vidi aktualni stav
+  // i kdyz body prave chodi z externi appky, ne z tehle stranky.
+  trip.statusPollId = setInterval(refreshTripFromServer, 15000);
+}
+
+function stopTripWatch() {
+  if (trip.watchId !== null) { navigator.geolocation.clearWatch(trip.watchId); trip.watchId = null; }
+  if (trip.statusPollId) { clearInterval(trip.statusPollId); trip.statusPollId = null; }
+}
+
+async function refreshTripFromServer() {
+  if (!trip.id) return;
+  try {
+    const r = await fetch("/api/fleet/trips/current");
+    if (!r.ok) return;
+    const d = await r.json().catch(() => ({}));
+    if (d.trip && d.trip.id === trip.id) {
+      trip.distanceKm = d.trip.distance_km;
+      renderTripBtn();
+    }
+  } catch (e) {}
+}
+
+async function initTrip(retry) {
+  // Robert 2026-08-05 ("v apce na mobilu mám jízdu neaktivní ale v
+  // administraci probíhá"): pricina - sitovy vypadek pri startu appky
+  // se drive TICHE zahodil (catch vratil bez jakekoli indikace), takze
+  // appka tvarila neaktivni jizdu, i kdyz DB mela aktivni radek. Ted 1x
+  // retry po 1.5s a pri opakovanem selhani viditelna chybova hlaska
+  // (misto tiche falesne "neni aktivni jizda").
+  let r;
+  try {
+    r = await fetch("/api/fleet/trips/current");
+  } catch (e) {
+    if (!retry) { setTimeout(() => initTrip(true), 1500); return; }
+    $("tripLine").textContent = "Nepodařilo se ověřit stav jízdy (síť) – zkus obnovit stránku.";
+    return;
+  }
+  // DRUHA CAST STEJNE DIAGNOZY (bot11, 2026-08-20, overeno naziv proti
+  // api/fleet.py _require_fleet_mobile_access): retry vyse resil jen
+  // fetch() throw (offline). Samotne "!r.ok" (fetch USPESNE dobehl,
+  // jen s chybovym HTTP kodem) se porad tise zahodilo - 401 (vyprsela/
+  // zneplatnena session mezi boot()ovym /api/auth/me a timhle
+  // volanim) tim padem tise predstiral "zadna aktivni jizda", presne
+  // Robertuv puvodni hlaseny pripad. 403 (role bez FLEET_ROLES) je
+  // JEDINY legitimni tichy pripad - appka pro tuhle roli Jizdu vubec
+  // nenabizi, nejde o chybu.
+  if (r.status === 403) return;
+  if (!r.ok) {
+    if (!retry) { setTimeout(() => initTrip(true), 1500); return; }
+    $("tripLine").textContent = r.status === 401
+      ? "Přihlášení vypršelo – obnov stránku a přihlas se znovu (aktivní jízda v systému zůstává, jen se tu teď neukazuje)."
+      : "Nepodařilo se ověřit stav jízdy (chyba serveru) – zkus obnovit stránku.";
+    return;
+  }
+  const d = await r.json().catch(() => ({}));
+  if (d.trip) {
+    trip.id = d.trip.id;
+    trip.tripNumber = d.trip.trip_number;
+    trip.vehicleName = `${d.trip.vehicle_name} (${d.trip.vehicle_spz})`;
+    trip.distanceKm = d.trip.distance_km;
+    renderTripBtn();
+    startTripWatch();
+  }
+}
+
+async function openTripSheet() {
+  $("tripSheetErr").textContent = "";
+  const r = await fetch("/api/fleet/vehicles/active");
+  const d = await r.json().catch(() => ({ vehicles: [] }));
+  const vehicles = d.vehicles || [];
+  $("tripVehicleSelect").innerHTML = vehicles.length
+    ? vehicles.map(v => `<option value="${v.id}">${escapeHtmlCapture(v.name)} (${escapeHtmlCapture(v.spz)})</option>`).join("")
+    : `<option value="">Žádné vozidlo k dispozici</option>`;
+  $("tripSheet").classList.add("open");
+}
+
+$("tripBtn").onclick = () => { trip.id ? endTrip() : openTripSheet(); };
+$("tripSheetClose").onclick = () => $("tripSheet").classList.remove("open");
+
+async function loadGpsAppToken() {
+  $("gpsAppErr").textContent = "";
+  $("gpsAppServerUrl").value = window.location.origin + "/api/fleet/gps-ping";
+  try {
+    const r = await fetch("/api/fleet/gps-token");
+    if (!r.ok) { $("gpsAppErr").textContent = "Nepodařilo se načíst token."; return; }
+    const d = await r.json();
+    $("gpsAppToken").value = d.token;
+  } catch (e) { $("gpsAppErr").textContent = "Chyba spojení."; }
+}
+$("gpsAppBtn").onclick = () => { $("gpsAppSheet").classList.add("open"); loadGpsAppToken(); };
+$("gpsAppSheetClose").onclick = () => $("gpsAppSheet").classList.remove("open");
+document.querySelectorAll("[data-copy]").forEach(btn => {
+  btn.onclick = () => {
+    const input = $(btn.dataset.copy);
+    input.select();
+    navigator.clipboard?.writeText(input.value).catch(() => {});
+    const orig = btn.textContent;
+    btn.textContent = "Zkopírováno";
+    setTimeout(() => { btn.textContent = orig; }, 1500);
+  };
+});
+$("gpsAppRegenerate").onclick = async () => {
+  if (!confirm("Starý token přestane fungovat a appku v telefonu bude nutné znovu nastavit. Pokračovat?")) return;
+  $("gpsAppErr").textContent = "";
+  try {
+    const r = await fetch("/api/fleet/gps-token/regenerate", { method: "POST" });
+    if (!r.ok) { $("gpsAppErr").textContent = "Nepodařilo se vygenerovat nový token."; return; }
+    const d = await r.json();
+    $("gpsAppToken").value = d.token;
+  } catch (e) { $("gpsAppErr").textContent = "Chyba spojení."; }
+};
+
+$("tripSheetStart").onclick = () => {
+  const vehicleId = $("tripVehicleSelect").value;
+  if (!vehicleId) { $("tripSheetErr").textContent = "Vyberte vozidlo."; return; }
+  $("tripSheetErr").textContent = "";
+  navigator.geolocation.getCurrentPosition(async p => {
+    const lat = p.coords.latitude, lng = p.coords.longitude;
+    let r;
+    try {
+      r = await fetch("/api/fleet/trips/start", {
+        method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ vehicle_id: Number(vehicleId), lat, lng }),
+      });
+    } catch (e) { $("tripSheetErr").textContent = "Chyba spojení."; return; }
+    const d = await r.json().catch(() => ({}));
+    if (!r.ok) { $("tripSheetErr").textContent = d.error || "Jízdu se nepodařilo zahájit."; return; }
+    const opt = $("tripVehicleSelect").selectedOptions[0];
+    trip = { id: d.id, tripNumber: d.trip_number, vehicleName: opt ? opt.textContent : "", distanceKm: 0, watchId: null, statusPollId: null, lastPos: { lat, lng } };
+    $("tripSheet").classList.remove("open");
+    renderTripBtn();
+    startTripWatch();
+  }, e => { $("tripSheetErr").textContent = "Poloha nedostupná: " + e.message; },
+     { enableHighAccuracy: true, timeout: 15000 });
+};
+
+// Robert 2026-08-05: "pridej sloupec stav km, to se doplnuje povinne
+// na konci jizdy" - puvodne `prompt()`, ale na mobilu (hlavne
+// appka pridana na plochu) se u nej casto nevyvola klavesnice ("nejde
+// vepisovat") - nahrazeno normalnim bottom-sheetem se skutecnym
+// <input>, stejny vzor jako #tripSheet/#customerStopSheet.
+async function endTrip() {
+  if (!trip.id) return;
+  await refreshTripFromServer(); // cerstvy soucet - body mohly prijit z externi GPS appky mezitim
+  $("endTripSummary").textContent = `${trip.vehicleName} • ${trip.distanceKm.toFixed(1)} km podle GPS`;
+  $("endTripOdometer").value = "";
+  $("endTripErr").textContent = "";
+  $("endTripSheet").classList.add("open");
+  setTimeout(() => $("endTripOdometer").focus(), 50);
+}
+$("endTripClose").onclick = () => $("endTripSheet").classList.remove("open");
+
+$("endTripConfirm").onclick = async () => {
+  const raw = $("endTripOdometer").value.trim();
+  if (!/^\d+$/.test(raw)) { $("endTripErr").textContent = "Zadej platné celé číslo (stav kilometrů na tachometru)."; return; }
+  const odometerKm = parseInt(raw, 10);
+  const pos = trip.lastPos;
+  const dist = Math.round(trip.distanceKm * 100) / 100;
+  let r;
+  try {
+    r = await fetch(`/api/fleet/trips/${trip.id}/end`, {
+      method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ lat: pos ? pos.lat : null, lng: pos ? pos.lng : null, distance_km: dist, odometer_km: odometerKm }),
+    });
+  } catch (e) { $("endTripErr").textContent = "Chyba spojení, zkus to znovu."; return; }
+  const d = await r.json().catch(() => ({}));
+  if (!r.ok) { $("endTripErr").textContent = d.error || "Jízdu se nepodařilo ukončit."; return; }
+  $("endTripSheet").classList.remove("open");
+  stopTripWatch();
+  trip = { id: null, tripNumber: null, vehicleName: null, distanceKm: 0, watchId: null, statusPollId: null, lastPos: null };
+  renderTripBtn();
+};
+
+// Zastavka u zakaznika/partnera - cilova destinace jizdy (Robert
+// 2026-08-05: "zastavka muze byt take nejaky zakaznik, nebo obchodni
+// partner, takze se v takove zastavce vyzada Nazev firmy a Mesto") -
+// ciste volny text, ZADNA vazba na kartoteku zakazniku (partner v ni
+// nemusi byt).
+$("customerStopBtn").onclick = () => {
+  if (!trip.id) return;
+  $("csCompany").value = ""; $("csCity").value = ""; $("csErr").textContent = "";
+  $("customerStopSheet").classList.add("open");
+};
+$("csClose").onclick = () => $("customerStopSheet").classList.remove("open");
+
+$("csSave").onclick = async () => {
+  const company_name = $("csCompany").value.trim();
+  const city = $("csCity").value.trim();
+  if (!company_name || !city) { $("csErr").textContent = "Zadej název firmy i město."; return; }
+  const pos = await getStopPosition(() => { $("csErr").textContent = "Zjišťuji polohu…"; });
+  if (!pos) {
+    $("csErr").innerHTML = "GPS nedostupná. <button id='csRetryGeo'>🔄 Zkusit znovu</button>";
+    $("csRetryGeo").onclick = () => $("csSave").click();
+    return;
+  }
+  $("csErr").textContent = "";
+  const body = { company_name, city, lat: pos.lat, lng: pos.lng };
+  let r, d;
+  try {
+    r = await fetch(`/api/fleet/trips/${trip.id}/customer-stop`, {
+      method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body),
+    });
+    d = await r.json().catch(() => ({}));
+  } catch (e) { $("csErr").textContent = "Chyba spojení."; return; }
+  if (!r.ok) { $("csErr").textContent = d.error || "Uložení se nezdařilo."; return; }
+  $("customerStopSheet").classList.remove("open");
+  $("statusLine").textContent = "Zastávka uložena ✔";
+};
+
+$("retakeBtn").onclick = () => {
+  state.capturedBlob = null; state.mediaType = null;
+  $("camShot").style.display = "none"; $("camVideo").style.display = "";
+  $("saveBtn").style.display = "none"; $("retakeBtn").style.display = "none";
+  $("statusLine").textContent = "";
+  // Robert 2026-08 ("pro dalsi fotku se musi skener vypnout a zapnout"):
+  // vyfoceni zastavi detekcni smycku (stopScannerDetectLoop v shutterBtn,
+  // kvuli nahledu fotky), ale pri navratu ke kamere se uz znovu
+  // nespoustela, i kdyz rezim skeneru zustal zapnuty - ramecek byl mrtvy
+  // az do rucniho prepnuti Skener OFF/ON. Ted se smycka obnovi sama.
+  if (state.scannerMode) startScannerDetectLoop();
+  resumeCamera();
+};
+
+// Robert 2026-08-01: "fotky ukládejme do koše automaticky" - drive se
+// muselo po vyfoceni jeste rucne kliknout "Ulozit do kose" (saveBtn),
+// ted se vola sama hned po vyfoceni/natoceni (viz shutterBtn.onclick a
+// mediaRecorder.onstop vyse). saveBtn zustava v DOM jako rucni FALLBACK
+// pro pripad, ze automaticke odeslani selze (spatne pripojeni apod.) -
+// zobrazi se jen PRI CHYBE, aby fotka nezustala neulozena/ztracena.
+async function saveToInbox() {
+  if (!state.capturedBlob) return;
+  $("errLine").textContent = "";
+  $("saveBtn").style.display = "none";
+  $("statusLine").textContent = "Ukládám do koše…";
+  const fd = new FormData();
+  fd.append("owner_type", "inbox");
+  fd.append("owner_id", ME.id);
+  fd.append("media_type", state.mediaType);
+  fd.append("media", state.capturedBlob, state.mediaType === "video" ? "capture.webm" : "capture.jpg");
+  if (state.audioBlob) fd.append("audio", state.audioBlob, "note.webm");
+  if (state.lat != null) { fd.append("latitude", state.lat); fd.append("longitude", state.lon); }
+  let r, d;
+  try {
+    r = await fetch("/api/gallery-items/capture", { method: "POST", body: fd });
+    d = await r.json().catch(() => ({}));
+  } catch (e) {
+    $("errLine").textContent = "Uložení se nezdařilo (síť): " + e.message;
+    $("saveBtn").style.display = "";
+    $("statusLine").textContent = "Nepodařilo se uložit – zkus tlačítko Uložit znovu.";
+    return;
+  }
+  if (!r.ok) {
+    $("errLine").textContent = d.error || "Uložení se nezdařilo.";
+    $("saveBtn").style.display = "";
+    $("statusLine").textContent = "Nepodařilo se uložit – zkus tlačítko Uložit znovu.";
+    return;
+  }
+  state.capturedBlob = null; state.audioBlob = null;
+  $("audioBtn").textContent = "🎙️ Poznámka";
+  $("retakeBtn").click();
+  $("statusLine").textContent = "Uloženo do koše ✔";
+  loadInbox();
+}
+$("saveBtn").onclick = saveToInbox;
+
+async function saveFuelStop() {
+  if (!state.capturedBlob || !trip.id) return;
+  $("errLine").textContent = "";
+  const pos = await getStopPosition(() => { $("statusLine").textContent = "Zjišťuji polohu…"; });
+  if (!pos) {
+    $("errLine").innerHTML = "GPS nedostupná, doklad zatím neuložen. <button id='fuelStopRetryGeo'>🔄 Zkusit znovu</button>";
+    $("fuelStopRetryGeo").onclick = saveFuelStop;
+    $("statusLine").textContent = "";
+    return;
+  }
+  $("statusLine").textContent = "Ukládám doklad o tankování…";
+  const fd = new FormData();
+  fd.append("media", state.capturedBlob, "receipt.jpg");
+  fd.append("lat", pos.lat); fd.append("lng", pos.lng);
+  let r, d;
+  try {
+    r = await fetch(`/api/fleet/trips/${trip.id}/fuel-stop`, { method: "POST", body: fd });
+    d = await r.json().catch(() => ({}));
+  } catch (e) {
+    $("errLine").textContent = "Uložení dokladu se nezdařilo (síť): " + e.message;
+    $("statusLine").textContent = "";
+    return;
+  }
+  if (!r.ok) {
+    $("errLine").textContent = d.error || "Uložení dokladu se nezdařilo.";
+    $("statusLine").textContent = "";
+    return;
+  }
+  state.capturedBlob = null;
+  // jednorazovy rezim - po ulozeni se sam vypne (viz fuelStopBtn.onclick)
+  $("fuelStopBtn").click();
+  $("retakeBtn").click();
+  $("statusLine").textContent = "Doklad o tankování uložen do Sdíleného disku ✔";
+}
+
+async function loadInbox() {
+  const r = await fetch(`/api/gallery-items?owner_type=inbox&owner_id=${ME.id}`);
+  const d = await r.json().catch(() => ({}));
+  if (!r.ok) return;
+  const grid = $("inboxGrid");
+  grid.innerHTML = "";
+  (d.items || []).forEach(item => {
+    const t = document.createElement("div");
+    t.className = "ib-tile";
+    t.innerHTML = (item.media_type === "video"
+        ? `<video src="${item.url}" muted playsinline preload="metadata"></video>`
+        : `<img src="${item.url}" loading="lazy" alt="">`)
+      + (item.audio_url ? `<audio class="ib-audio" controls src="${item.audio_url}"></audio>` : "")
+      + `<button class="ib-del">✕</button><button class="ib-attach" title="Připojit">🔗</button>`;
+    t.querySelector(".ib-del").onclick = async () => {
+      const ok = confirm("Smazat z koše?");
+      resumeCamera(); // iOS: confirm() zamrazi kameru, obnovit VZDY (i pri Zrusit)
+      if (!ok) return;
+      await fetch(`/api/gallery-items/${item.id}`, { method: "DELETE" });
+      loadInbox();
+    };
+    t.querySelector(".ib-attach").onclick = () => openAttachSheet(item.id);
+    // klepnuti na nahled = zvetseni pro kontrolu (ostrost/citelnost)
+    const media = t.querySelector("img, video");
+    if (media) media.onclick = () => openPhotoLightbox(item);
+    grid.appendChild(t);
+  });
+  if (!(d.items || []).length) grid.innerHTML = '<span class="hint">Koš je prázdný.</span>';
+}
+
+// ---- Lightbox: zvetseni fotky/videa z kose po kliknuti (kontrola) ----
+function openPhotoLightbox(item) {
+  const box = $("plContent");
+  box.innerHTML = item.media_type === "video"
+    ? `<video src="${item.url}" controls autoplay playsinline></video>`
+    : `<img src="${item.url}" alt="">`;
+  $("photoLightbox").classList.add("open");
+}
+function closePhotoLightbox() {
+  $("photoLightbox").classList.remove("open");
+  $("plContent").innerHTML = ""; // zastavi pripadne prehravani videa
+  resumeCamera(); // iOS obcas pozastavi kameru pri fullscreen overlay/prehravani videa
+}
+$("plClose").onclick = closePhotoLightbox;
+$("photoLightbox").onclick = (e) => {
+  // zavrit klepnutim na pozadi (ne na samotne video s ovladacimi prvky)
+  if (e.target.id === "photoLightbox" || e.target.id === "plContent" || e.target.tagName === "IMG") closePhotoLightbox();
+};
+
+// ---- Pripojeni fotky z kose primo v mobilu ----
+// Hleda pres EXISTUJICI list endpointy (vsechny umi ?q=), takze se
+// nemusi opisovat ID. Cil pak nastavi PUT /api/gallery-items/<id>/move.
+let attachItemId = null;
+let attachSearchTimer = null;
+
+const ATTACH_SEARCH = {
+  order:    { url: q => `/api/admin/orders?q=${encodeURIComponent(q)}&page_size=15`,
+              rows: d => (d.orders || []).map(o => ({ id: o.id, main: o.order_number, sub: o.customer_name })) },
+  product:  { url: q => `/api/shop/products?q=${encodeURIComponent(q)}&all=1&page_size=15`,
+              rows: d => (d.products || []).map(p => ({ id: p.id, main: p.name, sub: p.sku })) },
+  document: { url: q => `/api/admin/documents?q=${encodeURIComponent(q)}&page_size=15`,
+              rows: d => (d.documents || []).map(x => ({ id: x.id, main: x.document_number, sub: x.document_type_label })) },
+};
+
+function openAttachSheet(itemId) {
+  attachItemId = itemId;
+  $("asQuery").value = "";
+  $("asResults").innerHTML = '<div class="hint">Zadej název nebo číslo…</div>';
+  $("asErr").textContent = "";
+  $("attachSheet").classList.add("open");
+}
+
+function closeAttachSheet() {
+  $("attachSheet").classList.remove("open");
+  attachItemId = null;
+  resumeCamera(); // iOS obcas pozastavi kameru pri otevrenem overlay
+}
+
+async function runAttachSearch() {
+  const type = $("asType").value;
+  const q = $("asQuery").value.trim();
+  const box = $("asResults");
+  if (!q) { box.innerHTML = '<div class="hint">Zadej název nebo číslo…</div>'; return; }
+  box.innerHTML = '<div class="hint">Hledám…</div>';
+  const cfg = ATTACH_SEARCH[type];
+  const r = await fetch(cfg.url(q));
+  const d = await r.json().catch(() => ({}));
+  if (!r.ok) { box.innerHTML = ""; $("asErr").textContent = d.error || "Hledání selhalo."; return; }
+  const rows = cfg.rows(d);
+  if (!rows.length) { box.innerHTML = '<div class="hint">Nic nenalezeno.</div>'; return; }
+  box.innerHTML = "";
+  rows.forEach(row => {
+    const el = document.createElement("div");
+    el.className = "as-result";
+    el.innerHTML = `${row.main}<small>${row.sub || ""} · ID ${row.id}</small>`;
+    el.onclick = () => attachTo(type, row.id);
+    box.appendChild(el);
+  });
+}
+
+async function attachTo(ownerType, ownerId) {
+  $("asErr").textContent = "";
+  const r = await fetch(`/api/gallery-items/${attachItemId}/move`, {
+    method: "PUT", headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ owner_type: ownerType, owner_id: ownerId }),
+  });
+  const d = await r.json().catch(() => ({}));
+  if (!r.ok) { $("asErr").textContent = d.error || "Připojení se nezdařilo."; return; }
+  closeAttachSheet();
+  $("statusLine").textContent = "Fotka připojena ✔";
+  loadInbox();
+}
+
+$("asType").onchange = runAttachSearch;
+$("asQuery").oninput = () => {
+  clearTimeout(attachSearchTimer);
+  attachSearchTimer = setTimeout(runAttachSearch, 350);
+};
+$("attachSheetClose").onclick = closeAttachSheet;
+$("attachSheet").onclick = (e) => { if (e.target.id === "attachSheet") closeAttachSheet(); };
+
+boot();
+</script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+Horni police mezi zadni stojky ve vsech generatorech stolu (30/35/40/45): rovna, ramova, s lemem, ram s deskou v drazce, ram s prepazkami na uhelnicich (bot8, Robert 2026-10-07)
+
+Volitelna (vychozi VYPNUTA = hash, kod, cena, model i vyrobni vypis stavajicich stolu beze zmeny; zlaty otisk 661 konfiguraci). Novy modul api/stul_hpolice.py + hacky v stul_konfigurator /
+stul_glb / stul_sse / stul_ovladani_verejne / stul_shop: ram z profilu mezi stojkami (zadni a predni pricka, bocni a stredni profily, rohove spojky otocene kolem uzlu), deska 18 / 12 mm shora,
+MDF 8 / PR10 v drazce, lem a prepazky z PR10 10 mm na uhelnicich (vzor SSE.vzor.01), vyska (automaticka nad panely) a hloubka, automaticke odebrani, 3D menu, cena, vyrobni vypis, sloty
+upshelf* ve verejnem API s nabidkou jen z aktivnich karet (pravidlo 54). Sikma police na boxy zatim NENI (otevreny bod). Testy: test_hpolice.py, test_hpolice_shop.py, mutace_hpolice.py.

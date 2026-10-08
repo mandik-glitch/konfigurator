@@ -1,0 +1,15 @@
+--- a/2026-10-02_stul_testy/test_stul_konfigurator.py
++++ b/2026-10-02_stul_testy/test_stul_konfigurator.py
+@@ -429,8 +429,10 @@
+       "panel (1190 mm, vsazeny mezi zadni stojky s mezerou 1 mm): od sirky 1252 mm, o mm mene uz ne")
+ check((n_pid(S.sestav_stul(sirka=2400, panely_pocet=2, **NOHA), "product_4931"), n_pid(S.sestav_stul(sirka=2474, panely_pocet=2, **NOHA), "product_4931"), n_pid(S.sestav_stul(sirka=3000, panely_pocet=4, **NOHA), "product_4931")) == (0 + 1 * 0 + 0, 2, 4)
+       or True, "(viz test_stul_panely.py: kapacita panelu podle sirky a opory)")
+-check((n_pid(S.sestav_stul(sirka=1200), "product_4929"), n_pid(S.sestav_stul(sirka=2446), "product_4929"), n_pid(S.sestav_stul(sirka=2447), "product_4929")) == (1, 1, 2),
+-      "LED: 1 do 2446 mm, 2 od 2447 (n x 1247 <= sirka + 47)")
++check((n_pid(S.sestav_stul(sirka=1200), "product_4929"), n_pid(S.sestav_stul(sirka=2446, led_pocet=2), "product_4929"), n_pid(S.sestav_stul(sirka=2447, led_pocet=2), "product_4929")) == (1, 1, 2),
++      "LED (pocet je od 2026-10-08 RUCNI, led_pocet): 2 svitidla se vejdou od 2447 mm (n x 1247 <= sirka + 47), na 2446 zustane 1")
++check((n_pid(S.sestav_stul(sirka=2446), "product_4929"), n_pid(S.sestav_stul(sirka=2447), "product_4929"), n_pid(S.sestav_stul(sirka=3000), "product_4929")) == (1, 1, 1),
++      "LED: vychozi je JEDNO svitidlo i na siroke desce (pridavaji se rucne)")
+ 
+ # hranice dostupnosti (zjistene z konstrukce)
+ check({"panely", "led"} <= {o["volba"] for o in S.sestav_stul(sirka=1100)["odebrano"]} and not S.sestav_stul(sirka=1100)["problemy"], "panely a LED se na sirku 1100 nevejdou = automaticky odebrany, bez chyby")

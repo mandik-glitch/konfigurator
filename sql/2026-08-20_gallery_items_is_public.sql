@@ -1,0 +1,22 @@
+-- Řemeslo - výběrové zveřejňování fotek zakázky (bot11, 2026-08-20).
+--
+-- Robertovo rozhodnutí k nálezu "fotky zakázek veřejně čitelné bez
+-- přihlášení" (hloubková kontrola, AGENTS_LOG.md "bot11 — Hloubková
+-- kontrola Řemeslo"): fotky budou veřejné POUZE VYBRANÉ, ne všechny a
+-- ne žádná. Řemeslník si u KAŽDÉ fotky sám zvolí, jestli může být
+-- veřejná - výchozí hodnota NEveřejná (bezpečné chybění, ne opt-out).
+--
+-- POZOR - stejná HLAVNÍ DB jako job_phase migrace výš (content_gallery_
+-- items tam zůstala i po přesunu Řemesla na vlastní DB "Remeslnik").
+-- Aplikovat: python api/db_migrate.py sql/2026-08-20_gallery_items_is_public.sql
+--
+-- Sloupec je obecný (platí pro celou tabulku, ne jen Řemeslo), ale
+-- REÁLNĚ řízen (a tímhle záznamem enforcovaný přes autentizovanou
+-- Flask cestu misto nginx static alias) je jen pro owner_type
+-- 'remeslo_job'/'remeslo_job_material' - viz api/gallery_items.py
+-- REMESLO_PRIVATE_OWNER_TYPES. U ostatních owner_type (kategorie/
+-- produkt/homepage_block/...) je sloupec bez funkčního významu -
+-- ty zůstávají servírované beze změny přes nginx static alias
+-- (byly a jsou VŽDY veřejné, jinou cestou než přes tenhle sloupec).
+ALTER TABLE content_gallery_items
+    ADD COLUMN is_public TINYINT(1) NOT NULL DEFAULT 0 AFTER job_phase;

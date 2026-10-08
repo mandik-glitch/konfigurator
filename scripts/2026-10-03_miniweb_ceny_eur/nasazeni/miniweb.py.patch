@@ -1,0 +1,41 @@
+--- a/api/miniweb.py
++++ b/api/miniweb.py
+@@ -34,6 +34,7 @@
+ import car_storefronts
+ import dealers
+ import documents
++import miniweb_cena
+ from app import app, get_conn, current_user, _client_ip, _rate_limited, PERMISSION_ROLES
+ 
+ READ_LIMIT_PER_MIN = 240
+@@ -307,6 +308,21 @@
+     return out
+ 
+ 
++def _price_from(p, shop):
++    """Cena konfigurace pro produkt v EUR bez DPH (celé EUR) pro shop s price_mode 'shown', jinak None (kurz, marže a zaokrouhlení v miniweb_cena, nic natvrdo)."""
++    if shop["price_mode"] != "shown" or not p["configurator_available"]:
++        return None
++    cfg = miniweb_cena.nastaveni(shop)
++    if cfg is None:
++        return None
++    try:
++        import stul_shop
++        czk = ((stul_shop.pro_objednavku({}) or {}).get("price") or {}).get("net")
++    except Exception:
++        return None
++    return miniweb_cena.cena_eur(czk, cfg)
++
++
+ def _product_json(p, t, ctx, shop):
+     """Produkt v tvaru z demo-api.js, nebo None (bez nazvu / se znackou v kterekoli z vydavanych hodnot = skryt, fail closed)."""
+     name, summary = _plain(t["name"], 200), _plain(t["summary"], 500)
+@@ -316,7 +332,7 @@
+         return None
+     available = bool(p["configurator_available"])
+     item = {"id": p["id"], "slug": p["slug"], "sku": p["public_sku"], "category_id": p["category_id"], "name": name, "summary": summary, "description": description,
+-            "price_from": None, "currency": _currency(shop), "delivery": delivery,
++            "price_from": _price_from(p, shop), "currency": _currency(shop), "delivery": delivery,
+             "configurator": {"available": available, "default_view": p["default_view"], "product_id": p["shop_product_id"] if available else None}, "specs": specs}
+     if ctx["include_draft"] and t["status"] == "draft":
+         item["text_status"] = "draft"

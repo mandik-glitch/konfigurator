@@ -1,0 +1,15 @@
+[Unit]
+Description=Konfigurator - automat: prevede Vandr FBX exporty na katalogove GLB
+After=network.target mysql.service
+
+[Service]
+Type=oneshot
+# User=root: potrebuje zapisovat do webapp/katalog/ (root-vlastnene) a
+# delat git commit (BOT_ID=bot4), na rozdil od www-data automatu jako
+# vandr-fbx-watcher/vandr-card-activate, ktere jen ctou/pisou DB.
+User=root
+Group=root
+WorkingDirectory=/opt/konfigurator
+EnvironmentFile=/opt/konfigurator/api/.env
+Environment=BOT_ID=bot4
+ExecStart=/opt/konfigurator/api/venv/bin/python3 /opt/konfigurator/scripts/2026-09-23_vandr_fbx_konverze_auto_dispatch.py

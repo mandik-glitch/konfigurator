@@ -1,0 +1,101 @@
+{
+ "v": 1,
+ "mena": "CZK",
+ "komponent": "Kufrik.3x43.vysuv.1057.459",
+ "zdroj": "DB Vandru (components, components_parts, parts, materials)",
+ "snimek": "2026-10-05",
+ "cena0": 4677.59,
+ "vaha0_g": 7363.94,
+ "radky": [
+  {
+   "dil": "45x45x369_Zx2",
+   "ks": 2,
+   "cena": 428.67,
+   "vaha": 428.04,
+   "material": {
+    "jmeno": "45x45x",
+    "cena_za_mm": 0.43,
+    "vaha_za_mm": 1.16,
+    "cena_materialu0": 158.67
+   }
+  },
+  {
+   "dil": "Zajistovaci_sroub_M6x35+matice-otocna_M6_S10",
+   "ks": 4,
+   "cena": 9.0,
+   "vaha": 8.0
+  },
+  {
+   "dil": "10x40x443",
+   "ks": 2,
+   "cena": 156.99,
+   "vaha": 243.65,
+   "material": {
+    "jmeno": "10x40x",
+    "cena_za_mm": 0.24152,
+    "vaha_za_mm": 0.55,
+    "cena_materialu0": 106.9934
+   }
+  },
+  {
+   "dil": "20x40x908_Zx4",
+   "ks": 2,
+   "cena": 774.22,
+   "vaha": 662.84,
+   "material": {
+    "jmeno": "20x40x",
+    "cena_za_mm": 0.31302,
+    "vaha_za_mm": 0.73,
+    "cena_materialu0": 284.2222
+   }
+  },
+  {
+   "dil": "CUB6_917x413",
+   "ks": 1,
+   "cena": 643.83,
+   "vaha": 1514.88,
+   "material": {
+    "jmeno": "CUB6_",
+    "cena_za_mm": 0.7021,
+    "vaha_za_mm": 1.652,
+    "cena_materialu0": 643.8257
+   }
+  },
+  {
+   "dil": "Kamen_M5_S6",
+   "ks": 6,
+   "cena": 6.0,
+   "vaha": 8.0
+  },
+  {
+   "dil": "Madlo.rucka",
+   "ks": 2,
+   "cena": 20.0,
+   "vaha": 50.0
+  },
+  {
+   "dil": "Kamen_M5_S10",
+   "ks": 6,
+   "cena": 9.0,
+   "vaha": 30.0
+  },
+  {
+   "dil": "Sroub_zapustny_M5x6",
+   "ks": 6,
+   "cena": 4.0,
+   "vaha": 10.0
+  },
+  {
+   "dil": "Sroub_zapustny_M5x12",
+   "ks": 6,
+   "cena": 4.0,
+   "vaha": 10.0
+  },
+  {
+   "dil": "Pojezdy.450.par.modra_pojistka",
+   "ks": 1,
+   "cena": 1100.0,
+   "vaha": 2700.0
+  }
+ ]
+}

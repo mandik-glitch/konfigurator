@@ -1,0 +1,35 @@
+--- a/api/miniweb_admin.py
++++ b/api/miniweb_admin.py
+@@ -29,7 +29,7 @@
+ 
+ import dealers
+ import miniweb
+-from app import app, get_conn, admin_required, current_user, log_audit
++from app import app, get_conn, admin_required, require_permission, current_user, log_audit
+ 
+ _FAMILY_RE = re.compile(r"^[a-z0-9][a-z0-9-]{0,39}\Z")
+ _CAT_SLUG_RE = re.compile(r"^[a-z0-9][a-z0-9-]{0,99}\Z")
+@@ -587,7 +587,7 @@
+ 
+ 
+ @app.get("/api/admin/miniweb/overview")
+-@admin_required
++@require_permission("miniweb_schvalovani", "zobrazit")      # bot5, 2026-10-03: RBAC misto jen role admin (admin ma vzdy pravo)
+ def admin_miniweb_overview():
+     lang = miniweb._clean_lang(request.args.get("lang")) if request.args.get("lang") else None
+     conn = get_conn()
+@@ -621,12 +621,12 @@
+ 
+ 
+ @app.post("/api/admin/miniweb/approve")
+-@admin_required
++@require_permission("miniweb_schvalovani", "upravit")      # bot5, 2026-10-03: RBAC misto jen role admin (admin ma vzdy pravo)
+ def admin_miniweb_approve():
+     return _status_change(True)
+ 
+ 
+ @app.post("/api/admin/miniweb/unapprove")
+-@admin_required
++@require_permission("miniweb_schvalovani", "upravit")      # bot5, 2026-10-03: RBAC misto jen role admin (admin ma vzdy pravo)
+ def admin_miniweb_unapprove():
+     return _status_change(False)

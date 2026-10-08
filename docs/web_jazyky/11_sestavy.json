@@ -1,0 +1,426 @@
+[
+ {
+  "id": "hbv:1:nazev",
+  "typ": "text",
+  "cs": "Bez horního bloku",
+  "en": "Without upper block",
+  "it": "Senza blocco superiore",
+  "h": "9b7b565211"
+ },
+ {
+  "id": "hbv:1:popis_zakaznicky",
+  "typ": "text",
+  "cs": "Regál je bez horního bloku — celý prostor nad euroboxy zůstává volný.",
+  "en": "The shelving unit has no upper block — the entire space above the Euro boxes remains free.",
+  "it": "Lo scaffale è privo di blocco superiore — tutto lo spazio sopra gli eurobox resta libero.",
+  "h": "146dd9420b"
+ },
+ {
+  "id": "hbv:2:nazev",
+  "typ": "text",
+  "cs": "Jedno pásmo - jen rám",
+  "en": "One band - frame only",
+  "it": "Una fascia - solo telaio",
+  "h": "9171d11017"
+ },
+ {
+  "id": "hbv:2:popis_zakaznicky",
+  "typ": "text",
+  "cs": "Nad euroboxy je jednoduchý rám jednoho patra, bez desek — lehčí provedení pro menší zátěž.",
+  "en": "Above the Euro boxes there is a simple one-tier frame, without boards — a lighter version for lighter loads.",
+  "it": "Sopra gli eurobox c'è un semplice telaio a un livello, senza pannelli — versione più leggera per carichi più leggeri.",
+  "h": "c08099ec23"
+ },
+ {
+  "id": "hbv:3:nazev",
+  "typ": "text",
+  "cs": "Jedno pásmo - rám + dna [ZÁKLAD]",
+  "en": "One band - frame + bases [BASIC]",
+  "it": "Una fascia - telaio + fondi [BASE]",
+  "h": "7f07ef9ee0"
+ },
+ {
+  "id": "hbv:3:popis_zakaznicky",
+  "typ": "text",
+  "cs": "Nad euroboxy je jedno patro s pevným dnem z MDF desky — hodí se na odkládání delších nebo plochých předmětů.",
+  "en": "Above the Euro boxes there is one tier with a fixed base made of MDF board — suitable for placing longer or flat items.",
+  "it": "Sopra gli eurobox c'è un livello con fondo fisso in pannello MDF — adatto per riporre oggetti più lunghi o piatti.",
+  "h": "8b9999c091"
+ },
+ {
+  "id": "hbv:4:nazev",
+  "typ": "text",
+  "cs": "Dvě pásma - jen rám, bez police",
+  "en": "Two bands - frame only, without shelf",
+  "it": "Due fasce - solo telaio, senza ripiano",
+  "h": "98c8269bc2"
+ },
+ {
+  "id": "hbv:4:popis_zakaznicky",
+  "typ": "text",
+  "cs": "Nad euroboxy jsou dvě patra rámové konstrukce bez desek a bez police — otevřený prostor pro dlouhé předměty uložené volně.",
+  "en": "Above the Euro boxes there are two tiers of frame structure without boards and without a shelf — an open space for long items stored loosely.",
+  "it": "Sopra gli eurobox ci sono due livelli di struttura a telaio senza pannelli e senza ripiano — uno spazio aperto per oggetti lunghi riposti liberamente.",
+  "h": "22362b914f"
+ },
+ {
+  "id": "hbv:5:nazev",
+  "typ": "text",
+  "cs": "Dvě pásma - police jen příčky, bez horních příček",
+  "en": "Two bands - shelf of crossbars only, without upper crossbars",
+  "it": "Due fasce - ripiano solo con traverse, senza traverse superiori",
+  "h": "5445392542"
+ },
+ {
+  "id": "hbv:5:popis_zakaznicky",
+  "typ": "text",
+  "cs": "Nad euroboxy jsou dvě patra s policí v polovině výšky - police tvoří nosné příčky doplněné dorazovou deskou u přepážky, která brání sklouznutí předmětů uložených přímo na profilech.",
+  "en": "Above the Euro boxes there are two tiers with a shelf at half height - the shelf is formed by supporting crossbars, complemented by a stop board at the bulkhead that prevents items placed directly on the profiles from sliding off.",
+  "it": "Sopra gli eurobox ci sono due livelli con un ripiano a metà altezza - il ripiano è formato da traverse di supporto, completate da un pannello di arresto in corrispondenza della paratia che impedisce agli oggetti appoggiati direttamente sui profili di scivolare.",
+  "h": "82087fb6a0"
+ },
+ {
+  "id": "hbv:6:nazev",
+  "typ": "text",
+  "cs": "Dvě pásma - plné výplně, bez police, horní příčka jen u přepážky",
+  "en": "Two bands - full infill panels, without shelf, upper crossbar only at the bulkhead",
+  "it": "Due fasce - pannelli di tamponamento pieni, senza ripiano, traversa superiore solo in corrispondenza della paratia",
+  "h": "20ee15b566"
+ },
+ {
+  "id": "hbv:6:popis_zakaznicky",
+  "typ": "text",
+  "cs": "Nad euroboxy je uzavřený horní prostor s plným opláštěním (dno, záda, čelo), bez police uprostřed.",
+  "en": "Above the Euro boxes there is an enclosed upper space with full cladding (base, back, front), without a shelf in the middle.",
+  "it": "Sopra gli eurobox c'è un vano superiore chiuso con rivestimento completo (fondo, schienale, frontale), senza ripiano al centro.",
+  "h": "cd501c712e"
+ },
+ {
+  "id": "hbv:7:nazev",
+  "typ": "text",
+  "cs": "Dvě pásma - plné výplně, s policí, horní příčka jen u přepážky",
+  "en": "Two bands - full infill panels, with shelf, upper crossbar only at the bulkhead",
+  "it": "Due fasce - pannelli di tamponamento pieni, con ripiano, traversa superiore solo in corrispondenza della paratia",
+  "h": "e3f469bedc"
+ },
+ {
+  "id": "hbv:7:popis_zakaznicky",
+  "typ": "text",
+  "cs": "Nad euroboxy je uzavřený horní prostor s plným opláštěním a policí uprostřed — dvě oddělená patra k uskladnění, nejbohatší provedení.",
+  "en": "Above the Euro boxes there is an enclosed upper space with full cladding and a shelf in the middle — two separate storage tiers, the most comprehensive version.",
+  "it": "Sopra gli eurobox c'è un vano superiore chiuso con rivestimento completo e un ripiano al centro — due livelli separati per l'immagazzinamento, la versione più completa.",
+  "h": "a2cd3ca749"
+ },
+ {
+  "id": "hbv:8:nazev",
+  "typ": "text",
+  "cs": "Jedno pásmo - rám + dna, s dorazovou deskou [ZÁKLAD]",
+  "en": "One band - frame + bases, with stop board [BASIC]",
+  "it": "Una fascia - telaio + fondi, con pannello di arresto [BASE]",
+  "h": "db2d163738"
+ },
+ {
+  "id": "hbv:8:popis_zakaznicky",
+  "typ": "text",
+  "cs": "Nad euroboxy je jedno patro s pevným dnem z MDF desky, doplněné dorazovou deskou u přepážky - brání sklouznutí předmětů uložených přímo na profilech k přepážce.",
+  "en": "Above the Euro boxes there is one tier with a fixed base made of MDF board, complemented by a stop board at the bulkhead - it prevents items placed directly on the profiles from sliding towards the bulkhead.",
+  "it": "Sopra gli eurobox c'è un livello con fondo fisso in pannello MDF, completato da un pannello di arresto in corrispondenza della paratia - impedisce agli oggetti appoggiati direttamente sui profili di scivolare verso la paratia.",
+  "h": "c4e40fd186"
+ },
+ {
+  "id": "hbv:9:nazev",
+  "typ": "text",
+  "cs": "Rám 5mm nad úhelníky, s bočnicemi",
+  "en": "Frame 5 mm above the angle brackets, with side panels",
+  "it": "Telaio 5 mm sopra le squadrette, con pannelli laterali",
+  "h": "12779f1fad"
+ },
+ {
+  "id": "hbv:9:popis_zakaznicky",
+  "typ": "text",
+  "cs": "Nízký zavřený box nad regálem se čtyřmi stěnami různé výšky - čelo nižší (plast), záda a boky vyšší (MDF).",
+  "en": "A low enclosed box above the shelving unit with four walls of different heights - the front is lower (plastic), the back and sides are higher (MDF).",
+  "it": "Box basso e chiuso sopra lo scaffale con quattro pareti di altezza diversa - il frontale è più basso (plastica), lo schienale e i lati sono più alti (MDF).",
+  "h": "6919e2201f"
+ },
+ {
+  "id": "hbv:10:nazev",
+  "typ": "text",
+  "cs": "Rám 5mm nad úhelníky, původní sloupce (bez zkracování noh)",
+  "en": "Frame 5 mm above the angle brackets, original columns (without shortening the legs)",
+  "it": "Telaio 5 mm sopra le squadrette, colonne originali (senza accorciare le gambe)",
+  "h": "4f1b59fb65"
+ },
+ {
+  "id": "hbv:10:popis_zakaznicky",
+  "typ": "text",
+  "cs": "Nízký zavřený box nad regálem, stejný jako varianta 05, jen konstrukčně navazuje na původní sloupce regálu.",
+  "en": "A low enclosed box above the shelving unit, the same as variant 05, but structurally it connects to the original columns of the shelving unit.",
+  "it": "Box basso e chiuso sopra lo scaffale, identico alla variante 05, ma strutturalmente si collega alle colonne originali dello scaffale.",
+  "h": "3e153af764"
+ },
+ {
+  "id": "hbv:11:nazev",
+  "typ": "text",
+  "cs": "Rám 5mm nad úhelníky, s dvířky místo plastových čel",
+  "en": "Frame 5 mm above the angle brackets, with doors instead of plastic fronts",
+  "it": "Telaio 5 mm sopra le squadrette, con sportelli al posto dei frontali in plastica",
+  "h": "b7891095b5"
+ },
+ {
+  "id": "hbv:11:popis_zakaznicky",
+  "typ": "text",
+  "cs": "Nad euroboxy je nizky uzavreny box se ctyrmi stenami, presni stenu ale tvori otevirtelna dvirka na pantech misto pevne desky - umoznuji snadny pristup k obsahu horniho bloku bez demontaze.",
+  "en": "Above the Euro boxes there is a low enclosed box with four walls, but the front wall is formed by openable doors on hinges instead of a fixed board - they allow easy access to the contents of the upper block without dismantling.",
+  "it": "Sopra gli eurobox c'è un box basso e chiuso con quattro pareti, ma la parete anteriore è formata da sportelli apribili su cerniere al posto di un pannello fisso - consentono un facile accesso al contenuto del blocco superiore senza smontaggio.",
+  "h": "d4a43f227d"
+ },
+ {
+  "id": "rum:1:nazev",
+  "typ": "text",
+  "cs": "Regál levý",
+  "en": "Left-hand shelving unit",
+  "it": "Scaffale sinistro",
+  "h": "89a722b255"
+ },
+ {
+  "id": "rum:1:montaz_zakaznicky",
+  "typ": "text",
+  "cs": "Montáž zahrnuje vrtání do těchto částí, v souladu s požadavky na homologaci.",
+  "en": "Installation includes drilling into these parts, in accordance with homologation requirements.",
+  "it": "L'installazione comprende la foratura di queste parti, in conformità ai requisiti di omologazione.",
+  "h": "68691f029f"
+ },
+ {
+  "id": "rum:1:kotveni_zakaznicky",
+  "typ": "text",
+  "cs": "Konstrukce se kotví do zpevněných částí karoserie (bočnice a podlaha).",
+  "en": "The structure is anchored to reinforced parts of the vehicle body (side walls and floor).",
+  "it": "La struttura viene ancorata alle parti rinforzate della carrozzeria (pareti laterali e pianale).",
+  "h": "4be6863834"
+ },
+ {
+  "id": "rum:2:nazev",
+  "typ": "text",
+  "cs": "Regál — kabina (za přepážkou)",
+  "en": "Shelving unit — cab (behind the bulkhead)",
+  "it": "Scaffale — cabina (dietro la paratia)",
+  "h": "112b223a92"
+ },
+ {
+  "id": "rum:2:montaz_zakaznicky",
+  "typ": "text",
+  "cs": "Montáž zahrnuje vrtání do těchto částí, v souladu s požadavky na homologaci.",
+  "en": "Installation includes drilling into these parts, in accordance with homologation requirements.",
+  "it": "L'installazione comprende la foratura di queste parti, in conformità ai requisiti di omologazione.",
+  "h": "68691f029f"
+ },
+ {
+  "id": "rum:2:kotveni_zakaznicky",
+  "typ": "text",
+  "cs": "Konstrukce se kotví do zpevněných částí karoserie (bočnice a podlaha).",
+  "en": "The structure is anchored to reinforced parts of the vehicle body (side walls and floor).",
+  "it": "La struttura viene ancorata alle parti rinforzate della carrozzeria (pareti laterali e pianale).",
+  "h": "4be6863834"
+ },
+ {
+  "id": "rum:3:nazev",
+  "typ": "text",
+  "cs": "Dvojitá podlaha",
+  "en": "Double floor",
+  "it": "Doppio pianale",
+  "h": "2b2ab484d5"
+ },
+ {
+  "id": "rum:3:montaz_zakaznicky",
+  "typ": "text",
+  "cs": "Montáž zahrnuje vrtání do těchto částí, v souladu s požadavky na homologaci.",
+  "en": "Installation includes drilling into these parts, in accordance with homologation requirements.",
+  "it": "L'installazione comprende la foratura di queste parti, in conformità ai requisiti di omologazione.",
+  "h": "68691f029f"
+ },
+ {
+  "id": "rum:3:kotveni_zakaznicky",
+  "typ": "text",
+  "cs": "Konstrukce se kotví do zpevněných částí karoserie (bočnice a podlaha).",
+  "en": "The structure is anchored to reinforced parts of the vehicle body (side walls and floor).",
+  "it": "La struttura viene ancorata alle parti rinforzate della carrozzeria (pareti laterali e pianale).",
+  "h": "4be6863834"
+ },
+ {
+  "id": "rum:4:nazev",
+  "typ": "text",
+  "cs": "Výsuvné bloky ze zadních dveří",
+  "en": "Pull-out blocks from the rear doors",
+  "it": "Blocchi estraibili dalle porte posteriori",
+  "h": "49603ac995"
+ },
+ {
+  "id": "rum:4:montaz_zakaznicky",
+  "typ": "text",
+  "cs": "Montáž zahrnuje vrtání do těchto částí, v souladu s požadavky na homologaci.",
+  "en": "Installation includes drilling into these parts, in accordance with homologation requirements.",
+  "it": "L'installazione comprende la foratura di queste parti, in conformità ai requisiti di omologazione.",
+  "h": "68691f029f"
+ },
+ {
+  "id": "rum:4:kotveni_zakaznicky",
+  "typ": "text",
+  "cs": "Konstrukce se kotví do zpevněných částí karoserie (bočnice a podlaha).",
+  "en": "The structure is anchored to reinforced parts of the vehicle body (side walls and floor).",
+  "it": "La struttura viene ancorata alle parti rinforzate della carrozzeria (pareti laterali e pianale).",
+  "h": "4be6863834"
+ },
+ {
+  "id": "rum:5:nazev",
+  "typ": "text",
+  "cs": "Výsuvné bloky z bočních dveří",
+  "en": "Pull-out blocks from the side doors",
+  "it": "Blocchi estraibili dalle porte laterali",
+  "h": "ab8c930c27"
+ },
+ {
+  "id": "rum:5:montaz_zakaznicky",
+  "typ": "text",
+  "cs": "Montáž zahrnuje vrtání do těchto částí, v souladu s požadavky na homologaci.",
+  "en": "Installation includes drilling into these parts, in accordance with homologation requirements.",
+  "it": "L'installazione comprende la foratura di queste parti, in conformità ai requisiti di omologazione.",
+  "h": "68691f029f"
+ },
+ {
+  "id": "rum:5:kotveni_zakaznicky",
+  "typ": "text",
+  "cs": "Konstrukce se kotví do zpevněných částí karoserie (bočnice a podlaha).",
+  "en": "The structure is anchored to reinforced parts of the vehicle body (side walls and floor).",
+  "it": "La struttura viene ancorata alle parti rinforzate della carrozzeria (pareti laterali e pianale).",
+  "h": "4be6863834"
+ },
+ {
+  "id": "rum:6:nazev",
+  "typ": "text",
+  "cs": "Výsuvná podlaha",
+  "en": "Pull-out floor",
+  "it": "Pianale estraibile",
+  "h": "172436b19a"
+ },
+ {
+  "id": "rum:6:montaz_zakaznicky",
+  "typ": "text",
+  "cs": "Montáž zahrnuje vrtání do těchto částí, v souladu s požadavky na homologaci.",
+  "en": "Installation includes drilling into these parts, in accordance with homologation requirements.",
+  "it": "L'installazione comprende la foratura di queste parti, in conformità ai requisiti di omologazione.",
+  "h": "68691f029f"
+ },
+ {
+  "id": "rum:6:kotveni_zakaznicky",
+  "typ": "text",
+  "cs": "Konstrukce se kotví do zpevněných částí karoserie (bočnice a podlaha).",
+  "en": "The structure is anchored to reinforced parts of the vehicle body (side walls and floor).",
+  "it": "La struttura viene ancorata alle parti rinforzate della carrozzeria (pareti laterali e pianale).",
+  "h": "4be6863834"
+ },
+ {
+  "id": "rum:7:nazev",
+  "typ": "text",
+  "cs": "Regál pravý",
+  "en": "Right-hand shelving unit",
+  "it": "Scaffale destro",
+  "h": "3b3d9fe748"
+ },
+ {
+  "id": "rum:7:montaz_zakaznicky",
+  "typ": "text",
+  "cs": "Montáž zahrnuje vrtání do těchto částí, náš systém je homologován pod číslem HP - 0579",
+  "en": "Installation includes drilling into these parts; our system is homologated under number HP - 0579",
+  "it": "L'installazione comprende la foratura di queste parti; il nostro sistema è omologato con il numero HP - 0579",
+  "h": "b945ea047f"
+ },
+ {
+  "id": "rum:7:kotveni_zakaznicky",
+  "typ": "text",
+  "cs": "Konstrukce se kotví do zpevněných částí karoserie a podlahy.",
+  "en": "The structure is anchored to reinforced parts of the vehicle body and floor.",
+  "it": "La struttura viene ancorata alle parti rinforzate della carrozzeria e del pianale.",
+  "h": "89ce1f9f58"
+ },
+ {
+  "id": "sest:fd7e7da6589e:fragment",
+  "typ": "text",
+  "cs": "bez police",
+  "en": "without shelf",
+  "it": "senza ripiano",
+  "h": "fd7e7da658"
+ },
+ {
+  "id": "sest:5299945cbcb7:fragment",
+  "typ": "text",
+  "cs": "dvě pásma",
+  "en": "two bands",
+  "it": "due fasce",
+  "h": "5299945cbc"
+ },
+ {
+  "id": "sest:17ca6774c74d:fragment",
+  "typ": "text",
+  "cs": "jedno pásmo",
+  "en": "one band",
+  "it": "una fascia",
+  "h": "17ca6774c7"
+ },
+ {
+  "id": "sest:7abc8949e111:fragment",
+  "typ": "text",
+  "cs": "plné výplně",
+  "en": "full infill panels",
+  "it": "pannelli di tamponamento pieni",
+  "h": "7abc8949e1"
+ },
+ {
+  "id": "sest:a3f23340e8ae:fragment",
+  "typ": "text",
+  "cs": "police jen příčky",
+  "en": "shelf of crossbars only",
+  "it": "ripiano solo con traverse",
+  "h": "a3f23340e8"
+ },
+ {
+  "id": "sest:9da9fdb8a212:fragment",
+  "typ": "text",
+  "cs": "původní sloupce",
+  "en": "original columns",
+  "it": "colonne originali",
+  "h": "9da9fdb8a2"
+ },
+ {
+  "id": "sest:714cbdfa74c6:fragment",
+  "typ": "text",
+  "cs": "původní sloupce + DVÍŘKA typ2 na 06-0+06-1 (misto plastoveho cela)",
+  "en": "original columns + DOORS type 2 on 06-0+06-1 (instead of plastic front)",
+  "it": "colonne originali + SPORTELLI tipo 2 su 06-0+06-1 (al posto del frontale in plastica)",
+  "h": "714cbdfa74"
+ },
+ {
+  "id": "sest:ce2af86d9439:fragment",
+  "typ": "text",
+  "cs": "rám + dna",
+  "en": "frame + bases",
+  "it": "telaio + fondi",
+  "h": "ce2af86d94"
+ },
+ {
+  "id": "sest:b6810c5b6e14:fragment",
+  "typ": "text",
+  "cs": "rám 5mm nad úhelníky",
+  "en": "frame 5 mm above the angle brackets",
+  "it": "telaio 5 mm sopra le squadrette",
+  "h": "b6810c5b6e"
+ },
+ {
+  "id": "sest:c1d433ddbda5:fragment",
+  "typ": "text",
+  "cs": "s policí",
+  "en": "with shelf",
+  "it": "con ripiano",
+  "h": "c1d433ddbd"
+ }
+]

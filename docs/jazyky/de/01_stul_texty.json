@@ -1,0 +1,1297 @@
+{
+ "_navod": "Vyplň pole \"de\" (němčina) u každé položky v `polozky`. Zdroj = cs / en / sk (en je referenční, sk je vzor pro odbornou terminologii). Pravidla: (1) placeholdery ve složených závorkách ({n} {d} {w} {h} {u} {k} {v} {t1} {t2} {prah} {mezera} {name} {site}) zachovej PŘESNĚ jako v poli `placeholdery` (pořadí ve větě smíš změnit); (2) žádná značka ani interní slova: Logiman, konfigurátor / konfigurator (i německy „Konfigurator“), vandrawee; (3) prodej jen firmám (B2B), neutrální věcný tón, bez značky; (4) povolená písmena jazyka: ASCII + äöüÄÖÜß - jakýkoli jiný znak (např. česká písmena ě š č ř ž ý ů ť ď ň ľ) vyřadí `miniweb_jazyk_sestav.py`; (5) mezeru / středník / tečku na začátku nebo konci u šablon (navazují na `zaklad`) ZACHOVEJ stejně jako v en; (6) terminologie jednotně v celém shopu (i18n, SEO, katalog): drážka profilu = v angličtině „slot“ -> ekvivalent v jazyce určí bot7; (7) plurálové položky (`typ`: plural): `de` je objekt, vyplň tvary one, other; (8) hotové soubory ověř příkazem `scripts/miniweb_jazyk_sestav.py --lang de` (bez --apply jen kontrola) a pak jazyk zapíše `--apply`.",
+ "_sekce": "Štítky a nápověda voleb konfigurátoru stolu (schéma voleb, to co zákazník vidí u posuvníků a přepínačů) + texty SSE stolu.",
+ "lang": "de",
+ "sekce": "stul_texty",
+ "polozky": [
+  {
+   "id": "stul_shop.TEXTY.g_size",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Rozměry",
+   "en": "Dimensions",
+   "sk": "Rozmery",
+   "de": "Abmessungen"
+  },
+  {
+   "id": "stul_shop.TEXTY.g_frame",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Konstrukce",
+   "en": "Frame",
+   "sk": "Konštrukcia",
+   "de": "Gestell"
+  },
+  {
+   "id": "stul_shop.TEXTY.g_extras",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Příslušenství",
+   "en": "Accessories",
+   "sk": "Príslušenstvo",
+   "de": "Zubehör"
+  },
+  {
+   "id": "stul_shop.TEXTY.w",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Šířka desky",
+   "en": "Worktop width",
+   "sk": "Šírka dosky",
+   "de": "Breite der Arbeitsplatte"
+  },
+  {
+   "id": "stul_shop.TEXTY.d",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Hloubka desky",
+   "en": "Worktop depth",
+   "sk": "Hĺbka dosky",
+   "de": "Tiefe der Arbeitsplatte"
+  },
+  {
+   "id": "stul_shop.TEXTY.h",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Výška pracovní desky",
+   "en": "Worktop height",
+   "sk": "Výška pracovnej dosky",
+   "de": "Höhe der Arbeitsplatte"
+  },
+  {
+   "id": "stul_shop.TEXTY.ov",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Přesah desky vpředu přes čelní profil",
+   "en": "Worktop overhang at the front",
+   "sk": "Presah dosky vpredu cez čelný profil",
+   "de": "Überstand der Arbeitsplatte vorn"
+  },
+  {
+   "id": "stul_shop.TEXTY.arm",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Délka ramene LED od zadních stojek",
+   "en": "LED arm length from the rear uprights",
+   "sk": "Dĺžka ramena LED od zadných stojok",
+   "de": "Länge des LED-Auslegers ab den hinteren Pfosten"
+  },
+  {
+   "id": "stul_shop.TEXTY.mid",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Poloha střední nohy (od levé)",
+   "en": "Centre leg position (from left)",
+   "sk": "Poloha strednej nohy (zľava)",
+   "de": "Position des mittleren Beins (von links)"
+  },
+  {
+   "id": "stul_shop.TEXTY.boxpos",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Posun šuplíků po šířce",
+   "en": "Drawer unit position",
+   "sk": "Poloha zásuvkového bloku",
+   "de": "Position der Schubladenbox"
+  },
+  {
+   "id": "stul_shop.TEXTY.drawleft",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Šuplíky na levé straně (jinak vpravo)",
+   "en": "Drawers on the left side (otherwise right)",
+   "sk": "Zásuvky na ľavej strane (inak vpravo)",
+   "de": "Schubladen auf der linken Seite (sonst rechts)"
+  },
+  {
+   "id": "stul_shop.TEXTY.petleg",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Držák PET lahve: na které noze",
+   "en": "PET bottle holder: on which leg",
+   "sk": "Držiak na PET fľašu: na ktorej nohe",
+   "de": "Flaschenhalter (PET): an welchem Bein"
+  },
+  {
+   "id": "stul_shop.TEXTY.petface",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Držák PET lahve: na které straně profilu",
+   "en": "PET bottle holder: on which side of the profile",
+   "sk": "Držiak na PET fľašu: na ktorej strane profilu",
+   "de": "Flaschenhalter (PET): an welcher Profilseite"
+  },
+  {
+   "id": "stul_shop.TEXTY.petleg_fl",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Přední levá",
+   "en": "Front left",
+   "sk": "Predná ľavá",
+   "de": "Vorne links"
+  },
+  {
+   "id": "stul_shop.TEXTY.petleg_fr",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Přední pravá",
+   "en": "Front right",
+   "sk": "Predná pravá",
+   "de": "Vorne rechts"
+  },
+  {
+   "id": "stul_shop.TEXTY.petleg_rl",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Zadní levá",
+   "en": "Rear left",
+   "sk": "Zadná ľavá",
+   "de": "Hinten links"
+  },
+  {
+   "id": "stul_shop.TEXTY.petleg_rr",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Zadní pravá",
+   "en": "Rear right",
+   "sk": "Zadná pravá",
+   "de": "Hinten rechts"
+  },
+  {
+   "id": "stul_shop.TEXTY.petleg_fm",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Přední střední",
+   "en": "Front centre",
+   "sk": "Predná stredná",
+   "de": "Vorne Mitte"
+  },
+  {
+   "id": "stul_shop.TEXTY.petleg_rm",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Zadní střední",
+   "en": "Rear centre",
+   "sk": "Zadná stredná",
+   "de": "Hinten Mitte"
+  },
+  {
+   "id": "stul_shop.TEXTY.petface_right",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Vpravo",
+   "en": "Right",
+   "sk": "Vpravo",
+   "de": "Rechts"
+  },
+  {
+   "id": "stul_shop.TEXTY.petface_left",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Vlevo",
+   "en": "Left",
+   "sk": "Vľavo",
+   "de": "Links"
+  },
+  {
+   "id": "stul_shop.TEXTY.petface_front",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Vpředu",
+   "en": "Front",
+   "sk": "Vpredu",
+   "de": "Vorne"
+  },
+  {
+   "id": "stul_shop.TEXTY.petface_back",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Vzadu",
+   "en": "Back",
+   "sk": "Vzadu",
+   "de": "Hinten"
+  },
+  {
+   "id": "stul_shop.TEXTY.ledlight",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Svítidlo LED (bez něj zůstanou ramena a profily)",
+   "en": "LED light fixture (without it the arms and profiles stay)",
+   "sk": "LED svietidlo (bez neho ostanú ramená a profily)",
+   "de": "LED-Leuchte (ohne sie bleiben Ausleger und Profile erhalten)"
+  },
+  {
+   "id": "stul_shop.TEXTY.petpos",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Výška držáku PET lahve na noze",
+   "en": "Height of the PET bottle holder on the leg",
+   "sk": "Výška držiaka PET fľaše na nohe",
+   "de": "Höhe des Flaschenhalters (PET) am Bein"
+  },
+  {
+   "id": "stul_shop.TEXTY.posts",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Zadní stojky (svislé profily nahoru)",
+   "en": "Rear uprights (vertical profiles going up)",
+   "sk": "Zadné stojky (zvislé profily nahor)",
+   "de": "Hintere Pfosten (senkrechte Profile nach oben)"
+  },
+  {
+   "id": "stul_shop.TEXTY.shelf",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Počet spodních polic",
+   "en": "Number of lower shelves",
+   "sk": "Počet dolných políc",
+   "de": "Anzahl der unteren Fachböden"
+  },
+  {
+   "id": "stul_shop.TEXTY.wheels",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Kolečka",
+   "en": "Castors",
+   "sk": "Kolieska",
+   "de": "Rollen"
+  },
+  {
+   "id": "stul_shop.TEXTY.feet",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Stavitelné patky (místo záslepek)",
+   "en": "Adjustable feet (instead of end caps)",
+   "sk": "Nastaviteľné nožičky (namiesto záslepiek)",
+   "de": "Stellfüße (statt Endkappen)"
+  },
+  {
+   "id": "stul_shop.TEXTY.panels",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Perforované panely na nářadí",
+   "en": "Perforated tool panels",
+   "sk": "Perforované panely na náradie",
+   "de": "Lochplatten für Werkzeug"
+  },
+  {
+   "id": "stul_shop.TEXTY.led",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "LED osvětlení",
+   "en": "LED lighting",
+   "sk": "LED osvetlenie",
+   "de": "LED-Beleuchtung"
+  },
+  {
+   "id": "stul_shop.TEXTY.drawers",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Ocelové šuplíky",
+   "en": "Steel drawers",
+   "sk": "Oceľové zásuvky",
+   "de": "Stahlschubladen"
+  },
+  {
+   "id": "stul_shop.TEXTY.socket",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Elektrožlab (zásuvky)",
+   "en": "Power strip",
+   "sk": "Napájacia lišta so zásuvkami",
+   "de": "Steckdosenleiste"
+  },
+  {
+   "id": "stul_shop.TEXTY.pet",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Držák PET lahve",
+   "en": "PET bottle holder",
+   "sk": "Držiak na PET fľašu",
+   "de": "Flaschenhalter (PET)"
+  },
+  {
+   "id": "stul_shop.TEXTY.braces",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Šikmé vzpěry ramen LED (podepření)",
+   "en": "Angled braces under the LED arms (support)",
+   "sk": "Šikmé vzpery ramien LED (podopretie)",
+   "de": "Schrägstreben unter den LED-Auslegern (Abstützung)"
+  },
+  {
+   "id": "stul_shop.TEXTY.bracelen",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Délka vzpěry",
+   "en": "Brace length",
+   "sk": "Dĺžka vzpery",
+   "de": "Länge der Strebe"
+  },
+  {
+   "id": "stul_shop.TEXTY.help_braces",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Šikmé vzpěry pod rameny LED slouží jako stabilizace při zatížení: tyč zvolené délky se šikmými koncovkami na obou koncích, mezi zadní stojkou a ramenem. Délku vzpěry určuje délka tyče.",
+   "en": "Angled braces under the LED arms stabilise them under load: a bar of the chosen length with angled end fittings at both ends, between the rear upright and the arm. The brace length is the length of the bar.",
+   "sk": "Šikmé vzpery pod ramenami LED slúžia ako stabilizácia pri zaťažení: tyč zvolenej dĺžky so šikmými koncovkami na oboch koncoch, medzi zadnou stojkou a ramenom. Dĺžku vzpery určuje dĺžka tyče.",
+   "de": "Schrägstreben unter den LED-Auslegern stabilisieren diese unter Last: eine Stange der gewählten Länge mit schrägen Endstücken an beiden Enden, zwischen hinterem Pfosten und Ausleger. Die Länge der Strebe entspricht der Länge der Stange."
+  },
+  {
+   "id": "stul_shop.TEXTY.help_mid",
+   "typ": "text",
+   "placeholdery": [
+    "{prah}"
+   ],
+   "cs": "Nad {prah} mm šířky přibývá přední i zadní střední noha. Posuň ji blíž k levé nebo pravé noze.",
+   "en": "Above {prah} mm width a front and a rear centre leg are added. Move it closer to the left or right leg.",
+   "sk": "Nad šírku {prah} mm pribudne predná aj zadná stredná noha. Posuňte ju bližšie k ľavej alebo pravej nohe.",
+   "de": "Bei mehr als {prah} mm Breite kommen ein vorderes und ein hinteres mittleres Bein hinzu. Verschieben Sie es näher an das linke oder rechte Bein."
+  },
+  {
+   "id": "stul_shop.TEXTY.help_box",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Šuplíkový box lze posunout po šířce stolu; zapnutá volba „Šuplíky na levé straně“ ho zrcadlově přehodí a posun se pak měří od levé nohy.",
+   "en": "The drawer unit can be moved along the width of the table; \"Drawers on the left side\" mirrors it and the position is then measured from the left leg.",
+   "sk": "Zásuvkový blok možno posúvať po šírke stola; voľba „Zásuvky na ľavej strane“ ho zrkadlovo prehodí a posun sa potom meria od ľavej nohy.",
+   "de": "Die Schubladenbox lässt sich über die Tischbreite verschieben; „Schubladen auf der linken Seite“ spiegelt sie, und die Position wird dann ab dem linken Bein gemessen."
+  },
+  {
+   "id": "stul_shop.TEXTY.help_petpos",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Držák PET lahve se posouvá po noze nahoru a dolů; meze dává délka nohy a okolní díly (např. šuplíky vlevo vyžadují držák níž).",
+   "en": "The PET bottle holder slides up and down the leg; the limits come from the leg length and the nearby parts (e.g. drawers on the left need the holder lower).",
+   "sk": "Držiak na PET fľašu sa posúva po nohe nahor a nadol; hranice dáva dĺžka nohy a okolité diely (napr. zásuvky vľavo vyžadujú držiak nižšie).",
+   "de": "Der Flaschenhalter (PET) lässt sich am Bein nach oben und unten verschieben; die Grenzen ergeben sich aus der Beinlänge und den umliegenden Teilen (z. B. Schubladen links erfordern einen tieferen Halter)."
+  },
+  {
+   "id": "stul_shop.TEXTY.help_shelf",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Police se rozloží po výšce rovnoměrně, mezi nimi je vždy aspoň 100 mm volného místa. Počet je omezen výškou stolu a šuplíky.",
+   "en": "The shelves are spread evenly over the height, with at least 100 mm of free space between them. The number is limited by the table height and the drawers.",
+   "sk": "Police sa rozložia rovnomerne po výške, medzi nimi zostane vždy aspoň 100 mm voľného miesta. Počet je obmedzený výškou stola a zásuvkami.",
+   "de": "Die Fachböden werden gleichmäßig über die Höhe verteilt, dazwischen bleiben immer mindestens 100 mm freier Raum. Die Anzahl ist durch die Tischhöhe und die Schubladen begrenzt."
+  },
+  {
+   "id": "stul_shop.TEXTY.shelfboard",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Desky na spodních policích",
+   "en": "Boards on the lower shelves",
+   "sk": "Dosky na spodných policiach",
+   "de": "Platten auf den unteren Fachböden"
+  },
+  {
+   "id": "stul_shop.TEXTY.help_shelfboard",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Bez desek zůstane z každé spodní police jen rám z profilů (bez desky a bez podpěr pod ní). Platí pro všechny spodní police.",
+   "en": "Without the boards each lower shelf is just a frame of profiles (no board and no supports under it). It applies to all lower shelves.",
+   "sk": "Bez dosiek ostane z každej spodnej police len rám z profilov (bez dosky a bez podpier pod ňou). Platí pre všetky spodné police.",
+   "de": "Ohne die Platten bleibt von jedem unteren Fachboden nur ein Rahmen aus Profilen (ohne Platte und ohne Stützen darunter). Gilt für alle unteren Fachböden."
+  },
+  {
+   "id": "stul_shop.TEXTY.drawercount",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Počet šuplíků v boxu",
+   "en": "Number of drawers in the unit",
+   "sk": "Počet zásuviek v boxe",
+   "de": "Anzahl der Schubladen in der Box"
+  },
+  {
+   "id": "stul_shop.TEXTY.help_drawercount",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Ocelový šuplíkový box má 1, 2 nebo 3 šuplíky (vnější výška 180 / 280 / 450 mm, visí pod pracovní deskou). Vyšší box potřebuje vyšší stůl nebo nižší polici; nevejde-li se, počet se sníží.",
+   "en": "The steel drawer unit has 1, 2 or 3 drawers (outer height 180 / 280 / 450 mm, hanging under the worktop). A taller unit needs a taller table or a lower shelf; if it does not fit, the number is reduced.",
+   "sk": "Oceľový zásuvkový box má 1, 2 alebo 3 zásuvky (vonkajšia výška 180 / 280 / 450 mm, visí pod pracovnou doskou). Vyšší box potrebuje vyšší stôl alebo nižšiu policu; ak sa nezmestí, počet sa zníži.",
+   "de": "Die Schubladenbox aus Stahl hat 1, 2 oder 3 Schubladen (Außenhöhe 180 / 280 / 450 mm, hängt unter der Arbeitsplatte). Eine höhere Box benötigt einen höheren Tisch oder einen niedrigeren Fachboden; passt sie nicht, wird die Anzahl reduziert."
+  },
+  {
+   "id": "stul_shop.TEXTY.bad_combo",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Tuhle kombinaci nelze vyrobit.",
+   "en": "This combination cannot be built.",
+   "sk": "Túto kombináciu nie je možné vyrobiť.",
+   "de": "Diese Kombination kann nicht hergestellt werden."
+  },
+  {
+   "id": "stul_shop.TEXTY.panelcount",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Počet panelů",
+   "en": "Number of panels",
+   "sk": "Počet panelov",
+   "de": "Anzahl der Lochplatten"
+  },
+  {
+   "id": "stul_shop.TEXTY.panelpos",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Výška panelů (posun po zadních stojkách)",
+   "en": "Panel height (slide along the rear uprights)",
+   "sk": "Výška panelov (posun po zadných stojkách)",
+   "de": "Höhe der Lochplatten (Verschieben entlang der hinteren Pfosten)"
+  },
+  {
+   "id": "stul_shop.TEXTY.panelside",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Panely do stran (posun mezi nohama)",
+   "en": "Panels sideways (slide between the legs)",
+   "sk": "Panely do strán (posun medzi nohami)",
+   "de": "Lochplatten seitlich (Verschieben zwischen den Beinen)"
+  },
+  {
+   "id": "stul_shop.TEXTY.midsupport",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Střední opora u širokého stolu",
+   "en": "Centre support on a wide table",
+   "sk": "Stredná opora pri širokom stole",
+   "de": "Mittlere Abstützung bei breitem Tisch"
+  },
+  {
+   "id": "stul_shop.TEXTY.midsupport_auto",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Automaticky",
+   "en": "Automatic",
+   "sk": "Automaticky",
+   "de": "Automatisch"
+  },
+  {
+   "id": "stul_shop.TEXTY.midsupport_legs",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Střední nohy",
+   "en": "Centre legs",
+   "sk": "Stredné nohy",
+   "de": "Mittlere Beine"
+  },
+  {
+   "id": "stul_shop.TEXTY.midsupport_frame",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Vestavěný rám",
+   "en": "Built-in frame",
+   "sk": "Vstavaný rám",
+   "de": "Integrierter Rahmen"
+  },
+  {
+   "id": "stul_shop.TEXTY.posth",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Výška zadních stojek nad deskou",
+   "en": "Height of the rear uprights above the worktop",
+   "sk": "Výška zadných stojok nad doskou",
+   "de": "Höhe der hinteren Pfosten über der Arbeitsplatte"
+  },
+  {
+   "id": "stul_shop.TEXTY.socketup",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Elektrožlab: posun nahoru",
+   "en": "Power strip: move up",
+   "sk": "Napájacia lišta: posun nahor",
+   "de": "Steckdosenleiste: nach oben verschieben"
+  },
+  {
+   "id": "stul_shop.TEXTY.socketside",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Elektrožlab: posun do stran",
+   "en": "Power strip: move sideways",
+   "sk": "Napájacia lišta: posun do strán",
+   "de": "Steckdosenleiste: seitlich verschieben"
+  },
+  {
+   "id": "stul_shop.TEXTY.help_panelcount",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Panel sedí mezi zadními stojkami, nad a pod ním je profil (mezera 1 mm). Další panely se přidávají po jednom kuse: vedle sebe, kde to šířka dovolí (mezi nimi je plná střední noha), jinak další řada nad.",
+   "en": "A panel sits between the rear uprights with a profile above and below it (1 mm gap). More panels are added one at a time: side by side where the width allows (a full centre leg stands between them), otherwise another row above.",
+   "sk": "Panel sedí medzi zadnými stojkami, nad ním a pod ním je profil (medzera 1 mm). Ďalšie panely sa pridávajú po jednom kuse: vedľa seba, kde to šírka dovolí (medzi nimi je plná stredná noha), inak ďalší rad nad ním.",
+   "de": "Eine Lochplatte (1190 mm) sitzt zwischen den hinteren Pfosten, darüber und darunter befindet sich ein Profil (Spalt 1 mm). Weitere Lochplatten werden einzeln hinzugefügt: nebeneinander, wo die Breite es erlaubt (dazwischen steht ein vollständiges mittleres Bein), sonst eine weitere Reihe darüber."
+  },
+  {
+   "id": "stul_shop.TEXTY.help_panelpos",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Panely s profily nad a pod nimi (a elektrožlab) se posouvají po zadních stojkách; dole leží spodní profil na zadní příčce rámu desky.",
+   "en": "The panels with the profiles above and below them (and the power strip) slide along the rear uprights; at the bottom the lower profile rests on the rear rail of the worktop frame.",
+   "sk": "Panely s profilmi nad a pod nimi (a napájacia lišta) sa posúvajú po zadných stojkách; dole leží spodný profil na zadnej priečke rámu dosky.",
+   "de": "Die Lochplatten mit den Profilen darüber und darunter (und die Steckdosenleiste) lassen sich an den hinteren Pfosten verschieben; unten liegt das untere Profil auf dem hinteren Querträger des Arbeitsplattenrahmens auf."
+  },
+  {
+   "id": "stul_shop.TEXTY.help_panelside",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Mají-li panely mezi nohama mezeru, dají se posouvat do stran (spolu s elektrožlabem); od nohy vždy zůstane aspoň 1 mm. Kladná hodnota = doprava, 0 = uprostřed.",
+   "en": "If the panels have a gap between the legs, they can be slid sideways (together with the power strip); at least 1 mm always stays between a panel and a leg. Positive = to the right, 0 = centred.",
+   "sk": "Ak majú panely medzi nohami medzeru, dajú sa posúvať do strán (spolu s napájacou lištou); od nohy vždy zostane aspoň 1 mm. Kladná hodnota = doprava, 0 = uprostred.",
+   "de": "Haben die Lochplatten zwischen den Beinen Spielraum, lassen sie sich seitlich verschieben (zusammen mit der Steckdosenleiste); zwischen Lochplatte und Bein bleibt immer mindestens 1 mm. Positiver Wert = nach rechts, 0 = mittig."
+  },
+  {
+   "id": "stul_shop.TEXTY.help_midsupport",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "U širokého stolu střední nohy, nebo vestavěný rám mezi podélníky (podélníky zůstanou celé; jen se spodní policí). Automaticky: nohy, rám jen když by se panel jinak nevešel.",
+   "en": "On a wide table: centre legs, or a built-in frame between the long rails (the rails stay unbroken; needs a lower shelf). Automatic: legs; a frame only when a panel would not fit otherwise.",
+   "sk": "Pri širokom stole sú buď stredné nohy, alebo vstavaný rám medzi pozdĺžnikmi (pozdĺžniky zostanú celé; len so spodnou policou). Automaticky: nohy, rám len ak by sa panel inak nezmestil.",
+   "de": "Bei einem breiten Tisch: mittlere Beine oder ein integrierter Rahmen zwischen den Längsträgern (die Längsträger bleiben durchgehend; nur mit unterem Fachboden). Automatisch: Beine; ein Rahmen nur, wenn eine Lochplatte sonst nicht passen würde."
+  },
+  {
+   "id": "stul_shop.TEXTY.help_posth",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Zadní stojky lze zkracovat i natahovat; rameno LED jede s nimi. Panely potřebují stojky aspoň tak vysoké, aby se pod rameno LED vešly.",
+   "en": "The rear uprights can be shortened or extended; the LED arm moves with them. The panels need uprights tall enough to fit below the LED arm.",
+   "sk": "Zadné stojky možno skracovať aj predlžovať; rameno LED sa posúva s nimi. Panely potrebujú stojky aspoň tak vysoké, aby sa pod rameno LED zmestili.",
+   "de": "Die hinteren Pfosten lassen sich kürzen und verlängern; der LED-Ausleger bewegt sich mit. Die Lochplatten benötigen Pfosten, die hoch genug sind, damit sie unter den LED-Ausleger passen."
+  },
+  {
+   "id": "stul_shop.TEXTY.help_socket",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Elektrožlab se vždy dotýká panelu nebo profilu; lze ho posouvat nahoru a dolů i do stran, meze dávají okolní díly.",
+   "en": "The power strip always touches a panel or a profile; it can be moved up and down and sideways, the limits come from the surrounding parts.",
+   "sk": "Napájacia lišta sa vždy dotýka panela alebo profilu; možno ju posúvať nahor a nadol aj do strán, hranice určujú okolité diely.",
+   "de": "Die Steckdosenleiste berührt immer eine Lochplatte oder ein Profil; sie lässt sich nach oben und unten sowie seitlich verschieben, die Grenzen ergeben sich aus den umliegenden Teilen."
+  },
+  {
+   "id": "stul_shop.TEXTY.sh1",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Police 1 (nejvyšší): odstup pod pracovní plochou",
+   "en": "Shelf 1 (top): distance below the worktop",
+   "sk": "Polica 1 (najvyššia): odstup pod pracovnou plochou",
+   "de": "Fachboden 1 (oben): Abstand unter der Arbeitsplatte"
+  },
+  {
+   "id": "stul_shop.TEXTY.sh2",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Mezera mezi policí 1 a 2",
+   "en": "Gap between shelf 1 and 2",
+   "sk": "Medzera medzi policou 1 a 2",
+   "de": "Abstand zwischen Fachboden 1 und 2"
+  },
+  {
+   "id": "stul_shop.TEXTY.sh3",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Mezera mezi policí 2 a 3",
+   "en": "Gap between shelf 2 and 3",
+   "sk": "Medzera medzi policou 2 a 3",
+   "de": "Abstand zwischen Fachboden 2 und 3"
+  },
+  {
+   "id": "stul_shop.TEXTY.sh4",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Mezera mezi policí 3 a 4",
+   "en": "Gap between shelf 3 and 4",
+   "sk": "Medzera medzi policou 3 a 4",
+   "de": "Abstand zwischen Fachboden 3 und 4"
+  },
+  {
+   "id": "stul_shop.TEXTY.sh5",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Mezera mezi policí 4 a 5",
+   "en": "Gap between shelf 4 and 5",
+   "sk": "Medzera medzi policou 4 a 5",
+   "de": "Abstand zwischen Fachboden 4 und 5"
+  },
+  {
+   "id": "stul_shop.TEXTY.sh6",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Mezera mezi policí 5 a 6",
+   "en": "Gap between shelf 5 and 6",
+   "sk": "Medzera medzi policou 5 a 6",
+   "de": "Abstand zwischen Fachboden 5 und 6"
+  },
+  {
+   "id": "stul_shop.TEXTY.sh7",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Mezera mezi policí 6 a 7",
+   "en": "Gap between shelf 6 and 7",
+   "sk": "Medzera medzi policou 6 a 7",
+   "de": "Abstand zwischen Fachboden 6 und 7"
+  },
+  {
+   "id": "stul_shop.TEXTY.sh8",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Mezera mezi policí 7 a 8",
+   "en": "Gap between shelf 7 and 8",
+   "sk": "Medzera medzi policou 7 a 8",
+   "de": "Abstand zwischen Fachboden 7 und 8"
+  },
+  {
+   "id": "stul_shop.TEXTY.sh9",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Mezera mezi policí 8 a 9",
+   "en": "Gap between shelf 8 and 9",
+   "sk": "Medzera medzi policou 8 a 9",
+   "de": "Abstand zwischen Fachboden 8 und 9"
+  },
+  {
+   "id": "stul_shop.TEXTY.sh10",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Mezera mezi policí 9 a 10",
+   "en": "Gap between shelf 9 and 10",
+   "sk": "Medzera medzi policou 9 a 10",
+   "de": "Abstand zwischen Fachboden 9 und 10"
+  },
+  {
+   "id": "stul_shop.TEXTY.help_shelfh",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Odstup se měří od spodní hrany podélníků, které podpírají pracovní plochu, k horní ploše desky nejvyšší police. Další police se nastavují mezerou mezi policemi (od horní plochy desky po spodek rámu police nad ní). Dokud nic nenastavíš, jsou police rozložené rovnoměrně.",
+   "en": "The distance is measured from the lower edge of the rails supporting the worktop to the top surface of the highest shelf board. Further shelves are set by the gap between shelves (from the top surface of the board to the underside of the shelf frame above). Until you set something, the shelves are spread evenly.",
+   "sk": "Odstup sa meria od spodnej hrany pozdĺžnikov, ktoré podopierajú pracovnú plochu, k hornej ploche dosky najvyššej police. Ďalšie police sa nastavujú medzerou medzi policami (od hornej plochy dosky po spodok rámu police nad ňou). Kým nič nenastavíte, police sú rozložené rovnomerne.",
+   "de": "Der Abstand wird von der Unterkante der Längsträger, die die Arbeitsplatte tragen, bis zur Oberseite des obersten Fachbodens gemessen. Weitere Fachböden werden über den Abstand zwischen den Fachböden eingestellt (von der Oberseite des Bodens bis zur Unterseite des Fachbodenrahmens darüber). Solange Sie nichts einstellen, sind die Fachböden gleichmäßig verteilt."
+  },
+  {
+   "id": "stul_shop.TEXTY.g_cuts",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Výřezy v pracovní desce",
+   "en": "Cutouts in the worktop",
+   "sk": "Výrezy v pracovnej doske",
+   "de": "Ausschnitte in der Arbeitsplatte"
+  },
+  {
+   "id": "stul_shop.TEXTY.help_cuts",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Výřez může mít libovolnou velikost a polohu. Od okraje desky zůstane aspoň 30 mm a mezi dvěma výřezy aspoň 30 mm.",
+   "en": "A cutout can have any size and position. At least 30 mm of the worktop stays at its edge and between two cutouts.",
+   "sk": "Výrez môže mať ľubovoľnú veľkosť a polohu. Od okraja dosky zostane aspoň 30 mm a medzi dvoma výrezmi aspoň 30 mm.",
+   "de": "Ein Ausschnitt kann beliebig groß sein und an beliebiger Stelle liegen. Zum Rand der Arbeitsplatte und zwischen zwei Ausschnitten bleiben mindestens 30 mm stehen."
+  },
+  {
+   "id": "stul_shop.TEXTY.g_bearings",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Ložiskové jednotky na desce",
+   "en": "Ball transfer units on the worktop",
+   "sk": "Ložiskové jednotky na doske",
+   "de": "Kugelrollen auf der Arbeitsplatte"
+  },
+  {
+   "id": "stul_shop.TEXTY.bearings",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Ložiskové jednotky (kuličkové)",
+   "en": "Ball transfer units",
+   "sk": "Ložiskové jednotky (guľôčkové)",
+   "de": "Kugelrollen"
+  },
+  {
+   "id": "stul_shop.TEXTY.bearpitch",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Rozteč jednotek",
+   "en": "Spacing of the units",
+   "sk": "Rozstup jednotiek",
+   "de": "Rasterabstand der Kugelrollen"
+  },
+  {
+   "id": "stul_shop.TEXTY.bearedge",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Vzdálenost jednotek od okraje desky",
+   "en": "Distance of the units from the worktop edge",
+   "sk": "Vzdialenosť jednotiek od okraja dosky",
+   "de": "Abstand der Kugelrollen vom Rand der Arbeitsplatte"
+  },
+  {
+   "id": "stul_shop.TEXTY.help_bearings",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Zadej rozteč jednotek a jejich vzdálenost od okraje desky – počet z toho vyplyne. V místě výřezu se jednotky vynechají.",
+   "en": "Enter the spacing of the units and their distance from the worktop edge – the number follows from that. Units are left out where there is a cutout.",
+   "sk": "Zadajte rozstup jednotiek a ich vzdialenosť od okraja dosky – počet z toho vyplynie. V mieste výrezu sa jednotky vynechajú.",
+   "de": "Geben Sie den Rasterabstand der Kugelrollen und ihren Abstand vom Rand der Arbeitsplatte ein – die Anzahl ergibt sich daraus. Im Bereich eines Ausschnitts entfallen die Kugelrollen."
+  },
+  {
+   "id": "stul_shop.TEXTY.cut1shelf",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Police pod výřezem 1",
+   "en": "Shelf under cutout 1",
+   "sk": "Polica pod výrezom 1",
+   "de": "Fachboden unter Ausschnitt 1"
+  },
+  {
+   "id": "stul_shop.TEXTY.cut1",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Výřez 1",
+   "en": "Cutout 1",
+   "sk": "Výrez 1",
+   "de": "Ausschnitt 1"
+  },
+  {
+   "id": "stul_shop.TEXTY.cut1w",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Šířka výřezu 1 (podél stolu)",
+   "en": "Cutout 1 width (along the table)",
+   "sk": "Šírka výrezu 1 (pozdĺž stola)",
+   "de": "Breite von Ausschnitt 1 (entlang des Tisches)"
+  },
+  {
+   "id": "stul_shop.TEXTY.cut1d",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Hloubka výřezu 1 (od předu dozadu)",
+   "en": "Cutout 1 depth (front to back)",
+   "sk": "Hĺbka výrezu 1 (spredu dozadu)",
+   "de": "Tiefe von Ausschnitt 1 (von vorn nach hinten)"
+  },
+  {
+   "id": "stul_shop.TEXTY.cut1x",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Vzdálenost výřezu 1 od předního okraje",
+   "en": "Cutout 1 distance from the front edge",
+   "sk": "Vzdialenosť výrezu 1 od predného okraja",
+   "de": "Abstand von Ausschnitt 1 zur Vorderkante"
+  },
+  {
+   "id": "stul_shop.TEXTY.cut1z",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Vzdálenost výřezu 1 od levého okraje",
+   "en": "Cutout 1 distance from the left edge",
+   "sk": "Vzdialenosť výrezu 1 od ľavého okraja",
+   "de": "Abstand von Ausschnitt 1 zur linken Kante"
+  },
+  {
+   "id": "stul_shop.TEXTY.cut2shelf",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Police pod výřezem 2",
+   "en": "Shelf under cutout 2",
+   "sk": "Polica pod výrezom 2",
+   "de": "Fachboden unter Ausschnitt 2"
+  },
+  {
+   "id": "stul_shop.TEXTY.cut2",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Výřez 2",
+   "en": "Cutout 2",
+   "sk": "Výrez 2",
+   "de": "Ausschnitt 2"
+  },
+  {
+   "id": "stul_shop.TEXTY.cut2w",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Šířka výřezu 2 (podél stolu)",
+   "en": "Cutout 2 width (along the table)",
+   "sk": "Šírka výrezu 2 (pozdĺž stola)",
+   "de": "Breite von Ausschnitt 2 (entlang des Tisches)"
+  },
+  {
+   "id": "stul_shop.TEXTY.cut2d",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Hloubka výřezu 2 (od předu dozadu)",
+   "en": "Cutout 2 depth (front to back)",
+   "sk": "Hĺbka výrezu 2 (spredu dozadu)",
+   "de": "Tiefe von Ausschnitt 2 (von vorn nach hinten)"
+  },
+  {
+   "id": "stul_shop.TEXTY.cut2x",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Vzdálenost výřezu 2 od předního okraje",
+   "en": "Cutout 2 distance from the front edge",
+   "sk": "Vzdialenosť výrezu 2 od predného okraja",
+   "de": "Abstand von Ausschnitt 2 zur Vorderkante"
+  },
+  {
+   "id": "stul_shop.TEXTY.cut2z",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Vzdálenost výřezu 2 od levého okraje",
+   "en": "Cutout 2 distance from the left edge",
+   "sk": "Vzdialenosť výrezu 2 od ľavého okraja",
+   "de": "Abstand von Ausschnitt 2 zur linken Kante"
+  },
+  {
+   "id": "stul_shop.TEXTY.cut3shelf",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Police pod výřezem 3",
+   "en": "Shelf under cutout 3",
+   "sk": "Polica pod výrezom 3",
+   "de": "Fachboden unter Ausschnitt 3"
+  },
+  {
+   "id": "stul_shop.TEXTY.cut3",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Výřez 3",
+   "en": "Cutout 3",
+   "sk": "Výrez 3",
+   "de": "Ausschnitt 3"
+  },
+  {
+   "id": "stul_shop.TEXTY.cut3w",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Šířka výřezu 3 (podél stolu)",
+   "en": "Cutout 3 width (along the table)",
+   "sk": "Šírka výrezu 3 (pozdĺž stola)",
+   "de": "Breite von Ausschnitt 3 (entlang des Tisches)"
+  },
+  {
+   "id": "stul_shop.TEXTY.cut3d",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Hloubka výřezu 3 (od předu dozadu)",
+   "en": "Cutout 3 depth (front to back)",
+   "sk": "Hĺbka výrezu 3 (spredu dozadu)",
+   "de": "Tiefe von Ausschnitt 3 (von vorn nach hinten)"
+  },
+  {
+   "id": "stul_shop.TEXTY.cut3x",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Vzdálenost výřezu 3 od předního okraje",
+   "en": "Cutout 3 distance from the front edge",
+   "sk": "Vzdialenosť výrezu 3 od predného okraja",
+   "de": "Abstand von Ausschnitt 3 zur Vorderkante"
+  },
+  {
+   "id": "stul_shop.TEXTY.cut3z",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Vzdálenost výřezu 3 od levého okraje",
+   "en": "Cutout 3 distance from the left edge",
+   "sk": "Vzdialenosť výrezu 3 od ľavého okraja",
+   "de": "Abstand von Ausschnitt 3 zur linken Kante"
+  },
+  {
+   "id": "stul_shop.TEXTY.panellen",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Délka panelu",
+   "en": "Panel length",
+   "sk": "Dĺžka panela",
+   "de": "Länge der Lochplatten"
+  },
+  {
+   "id": "stul_shop.TEXTY.panellen_1190",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "1190 mm",
+   "en": "1190 mm",
+   "sk": "1190 mm",
+   "de": "1190 mm"
+  },
+  {
+   "id": "stul_shop.TEXTY.panellen_1481",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "1481 mm",
+   "en": "1481 mm",
+   "sk": "1481 mm",
+   "de": "1481 mm"
+  },
+  {
+   "id": "stul_shop.TEXTY.panellen_1671",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "1671 mm",
+   "en": "1671 mm",
+   "sk": "1671 mm",
+   "de": "1671 mm"
+  },
+  {
+   "id": "stul_shop.TEXTY.panellen_1975",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "1975 mm",
+   "en": "1975 mm",
+   "sk": "1975 mm",
+   "de": "1975 mm"
+  },
+  {
+   "id": "stul_shop.TEXTY.help_panellen",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Perforované panely jsou v několika délkách; všechny panely stolu mají stejnou délku. Delší panel potřebuje širší stůl – délka, která se nevejde, je v nabídce zašedlá, a když se stůl zúží, délka se sama sníží na nejdelší, která se vejde.",
+   "en": "The perforated panels come in several lengths; all panels of a table have the same length. A longer panel needs a wider table – a length that does not fit is greyed out, and when the table is made narrower the length is reduced to the longest one that fits.",
+   "sk": "Perforované panely sú v niekoľkých dĺžkach; všetky panely stola majú rovnakú dĺžku. Dlhší panel potrebuje širší stôl – dĺžka, ktorá sa nezmestí, je v ponuke zašednutá, a keď sa stôl zúži, dĺžka sa sama zníži na najdlhšiu, ktorá sa zmestí.",
+   "de": "Die Lochplatten gibt es in mehreren Längen; alle Platten eines Tisches haben dieselbe Länge. Eine längere Platte braucht einen breiteren Tisch – eine Länge, die nicht passt, ist in der Auswahl ausgegraut, und wenn der Tisch schmaler wird, verkürzt sich die Länge automatisch auf die längste, die noch passt."
+  },
+  {
+   "id": "stul_shop.TEXTY.sleeve",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Návlek nohou (jekl 40×40×2) – mechanická výška",
+   "en": "Leg sleeves (40×40×2 steel box section) – mechanical height",
+   "sk": "Návleky nôh (jakl 40×40×2) – mechanická výška",
+   "de": "Überhülsen der Beine (Vierkantrohr 40×40×2) – mechanische Höhe"
+  },
+  {
+   "id": "stul_shop.TEXTY.sleevelen",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Délka návleku",
+   "en": "Sleeve length",
+   "sk": "Dĺžka návleku",
+   "de": "Länge der Überhülse"
+  },
+  {
+   "id": "stul_shop.TEXTY.help_sleeve",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Na spodek každé nohy se místo koleček, záslepek a patek nasadí jekl 40×40 se stěnou 2 mm a záslepkou dole (barva RAL 7016, lesk); noha v něm zajíždí nejméně 70 mm, takže výšku stolu lze mechanicky měnit. Délka návleku je 200 až 400 mm. V úrovni návleku nesmí být žádný jiný komponent, proto jsou police nad ním.",
+   "en": "A 40×40 steel box-section sleeve with a 2 mm wall and an end cap at the bottom (colour RAL 7016, gloss) is put on the foot of every leg instead of castors, end caps or feet; the leg goes into it at least 70 mm, so the height of the table can be changed mechanically. The sleeve is 200 to 400 mm long. No other component can be at the level of the sleeve, so the shelves are above it.",
+   "sk": "Na spodok každej nohy sa namiesto koliesok, záslepiek a nožičiek nasadí jakl 40×40 so stenou 2 mm a záslepkou dole (farba RAL 7016, lesk); noha v ňom zasahuje najmenej 70 mm, takže výšku stola možno mechanicky meniť. Dĺžka návleku je 200 až 400 mm. V úrovni návleku nesmie byť žiadny iný komponent, preto sú police nad ním.",
+   "de": "Anstelle von Rollen, Endkappen und Stellfüßen wird auf das untere Ende jedes Beins eine Überhülse aus Vierkantrohr 40×40 mit 2 mm Wandstärke und einer Endkappe unten aufgesetzt (Farbe RAL 7016, glänzend); das Bein ragt mindestens 70 mm hinein, sodass sich die Tischhöhe mechanisch verändern lässt. Die Länge der Überhülse beträgt 200 bis 400 mm. Auf Höhe der Überhülse darf sich keine andere Komponente befinden, deshalb liegen die Fachböden darüber."
+  },
+  {
+   "id": "stul_shop.TEXTY.upshelf",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Police mezi zadními stojkami",
+   "en": "Shelf between the rear uprights",
+   "sk": "Polica medzi zadnými stojkami",
+   "de": "Fachboden zwischen den hinteren Pfosten"
+  },
+  {
+   "id": "stul_shop.TEXTY.upshelftype",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Typ police",
+   "en": "Shelf type",
+   "sk": "Typ police",
+   "de": "Fachbodentyp"
+  },
+  {
+   "id": "stul_shop.TEXTY.upshelfboard",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Deska police",
+   "en": "Shelf board",
+   "sk": "Doska police",
+   "de": "Fachbodenplatte"
+  },
+  {
+   "id": "stul_shop.TEXTY.upshelfpos",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Výška police nad deskou stolu",
+   "en": "Shelf height above the worktop",
+   "sk": "Výška police nad doskou stola",
+   "de": "Höhe des Fachbodens über der Arbeitsplatte"
+  },
+  {
+   "id": "stul_shop.TEXTY.upshelfdepth",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Hloubka police",
+   "en": "Shelf depth",
+   "sk": "Hĺbka police",
+   "de": "Tiefe des Fachbodens"
+  },
+  {
+   "id": "stul_shop.TEXTY.upshelftype_flat",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Rovná, deska na rámu",
+   "en": "Flat, board on the frame",
+   "sk": "Rovná, doska na ráme",
+   "de": "Eben, Platte auf dem Rahmen"
+  },
+  {
+   "id": "stul_shop.TEXTY.upshelftype_frame",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Rámová, bez desky",
+   "en": "Frame only, no board",
+   "sk": "Rámová, bez dosky",
+   "de": "Nur Rahmen, ohne Platte"
+  },
+  {
+   "id": "stul_shop.TEXTY.upshelftype_groove",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Rám s deskou v drážce",
+   "en": "Frame with a board in the slot",
+   "sk": "Rám s doskou v drážke",
+   "de": "Rahmen mit Platte in der Nut"
+  },
+  {
+   "id": "stul_shop.TEXTY.upshelftype_lip",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "S lemem na přední hraně",
+   "en": "With a lip on the front edge",
+   "sk": "S lemom na prednej hrane",
+   "de": "Mit Anschlagleiste an der Vorderkante"
+  },
+  {
+   "id": "stul_shop.TEXTY.upshelftype_dividers",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Rám s přepážkami z překližky",
+   "en": "Frame with plywood dividers",
+   "sk": "Rám s priehradkami z preglejky",
+   "de": "Rahmen mit Trennwänden aus Sperrholz"
+  },
+  {
+   "id": "stul_shop.TEXTY.upshelfboard_lam18",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Laminodeska 18 mm",
+   "en": "Laminated chipboard 18 mm",
+   "sk": "Laminovaná drevotrieska 18 mm",
+   "de": "Melaminbeschichtete Spanplatte 18 mm"
+  },
+  {
+   "id": "stul_shop.TEXTY.upshelfboard_lam12",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Laminodeska 12 mm",
+   "en": "Laminated chipboard 12 mm",
+   "sk": "Laminovaná drevotrieska 12 mm",
+   "de": "Melaminbeschichtete Spanplatte 12 mm"
+  },
+  {
+   "id": "stul_shop.TEXTY.upshelfboard_mdf8",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "MDF 8 mm (do drážky)",
+   "en": "MDF 8 mm (in the slot)",
+   "sk": "MDF 8 mm (do drážky)",
+   "de": "MDF 8 mm (in der Nut)"
+  },
+  {
+   "id": "stul_shop.TEXTY.upshelfboard_pr10",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Překližka 10 mm (do drážky)",
+   "en": "Plywood 10 mm (in the slot)",
+   "sk": "Preglejka 10 mm (do drážky)",
+   "de": "Sperrholz 10 mm (in der Nut)"
+  },
+  {
+   "id": "stul_shop.TEXTY.help_upshelf",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Police se montuje mezi zadní stojky: rám z profilů (zadní a přední příčka, boční profily a u širších polic střední) a deska shora na rámu, nebo v drážce profilů. Rám s přepážkami má podlahu v drážce a svislé přepážky z překližky 10 mm na úhelnících; lem je pás z překližky na přední hraně. Výchozí výška je nad panely. Šikmá police na boxy je skloněná dopředu dolů (výchozí sklon 15°), vpředu má lem proti sjetí boxů a drží ji dvě naklápěcí konzole na zadních stojkách; výška je výška zadního okraje desky.",
+   "en": "The shelf is mounted between the rear uprights: a frame of profiles (rear and front cross-member, side profiles and, for wider shelves, centre profiles) and a board on top of the frame or in the slot of the profiles. The frame with dividers has the floor in the slot and vertical 10 mm plywood dividers on angle brackets; the lip is a plywood strip on the front edge. The default height is above the panels. The sloped shelf for boxes slopes down towards the front (default 15°), has a front lip so that boxes cannot slide off and is held by two tilting brackets on the rear uprights; the height is the height of the rear edge of the board.",
+   "sk": "Polica sa montuje medzi zadné stojky: rám z profilov (zadná a predná priečka, bočné profily a pri širších policiach stredné) a doska zhora na ráme, alebo v drážke profilov. Rám s priehradkami má podlahu v drážke a zvislé priehradky z preglejky 10 mm na uholníkoch; lem je pás z preglejky na prednej hrane. Predvolená výška je nad panelmi. Šikmá polica na boxy je naklonená dopredu nadol (predvolený sklon 15°), vpredu má lem proti zošmyknutiu boxov a drží ju dve naklápacie konzoly na zadných stojkách; výška je výška zadnej hrany dosky.",
+   "de": "Der Fachboden wird zwischen den hinteren Pfosten montiert: ein Rahmen aus Profilen (hinterer und vorderer Querträger, Seitenprofile und bei breiteren Fachböden Mittelprofile) und eine Platte oben auf dem Rahmen oder in der Nut der Profile. Der Rahmen mit Trennwänden hat den Boden in der Nut und senkrechte Trennwände aus 10 mm Sperrholz auf Winkeln; die Anschlagleiste ist ein Sperrholzstreifen an der Vorderkante. Die Standardhöhe liegt über den Lochplatten. Der schräge Fachboden für Kisten ist nach vorn geneigt (Standardneigung 15°), hat vorn eine Anschlagleiste, damit Kisten nicht abrutschen, und wird von zwei Kippkonsolen an den hinteren Pfosten gehalten; die Höhe ist die Höhe der Hinterkante der Platte."
+  },
+  {
+   "id": "stul_shop.TEXTY.upshelftilt",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Sklon police (vpředu níž)",
+   "en": "Shelf slope (lower at the front)",
+   "sk": "Sklon police (vpredu nižšie)",
+   "de": "Neigung des Fachbodens (vorn tiefer)"
+  },
+  {
+   "id": "stul_shop.TEXTY.upshelftype_slope",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Šikmá, na boxy (s lemem vpředu)",
+   "en": "Sloped, for boxes (with a front lip)",
+   "sk": "Šikmá, na boxy (s lemom vpredu)",
+   "de": "Schräg, für Kisten (mit Anschlagleiste vorn)"
+  },
+  {
+   "id": "stul_shop.TEXTY.ledlen",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Délka LED svítidla",
+   "en": "LED light length",
+   "sk": "Dĺžka LED svietidla",
+   "de": "Länge der LED-Leuchte"
+  },
+  {
+   "id": "stul_shop.TEXTY.ledlen_600",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "600 mm",
+   "en": "600 mm",
+   "sk": "600 mm",
+   "de": "600 mm"
+  },
+  {
+   "id": "stul_shop.TEXTY.ledlen_1200",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "1200 mm",
+   "en": "1200 mm",
+   "sk": "1200 mm",
+   "de": "1200 mm"
+  },
+  {
+   "id": "stul_shop.TEXTY.help_ledlen",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "LED svítidla jsou ve dvou délkách (1200 a 600 mm); všechna svítidla stolu mají stejnou délku; kolik jich je a kde leží, volíte níže. Kratší svítidlo se vejde i na užší stůl – délka, která se nevejde, je v nabídce zašedlá.",
+   "en": "The LED lights come in two lengths (1200 and 600 mm); all lights of a table have the same length; you choose below how many there are and where they sit. The shorter light also fits a narrower table – a length that does not fit is greyed out.",
+   "sk": "LED svietidlá sú v dvoch dĺžkach (1200 a 600 mm); všetky svietidlá stola majú rovnakú dĺžku; koľko ich je a kde ležia, volíte nižšie. Kratšie svietidlo sa zmestí aj na užší stôl – dĺžka, ktorá sa nezmestí, je v ponuke zašednutá.",
+   "de": "Die LED-Leuchten gibt es in zwei Längen (1200 und 600 mm); alle Leuchten eines Tisches haben dieselbe Länge; unten wählen Sie, wie viele es sind und wo sie sitzen. Die kürzere Leuchte passt auch an einen schmaleren Tisch – eine Länge, die nicht passt, ist in der Auswahl ausgegraut."
+  },
+  {
+   "id": "stul_shop.TEXTY.ledcount",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Počet svítidel LED",
+   "en": "Number of LED lights",
+   "sk": "Počet svietidiel LED",
+   "de": "Anzahl der LED-Leuchten"
+  },
+  {
+   "id": "stul_shop.TEXTY.help_ledcount",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Svítidla LED se samy nepřidávají podle šířky stolu: výchozí je jedno svítidlo a další si přidáváte sami – nejvíc tolik, kolik se jich vejde vedle sebe na šířku stolu.",
+   "en": "LED lights are not added automatically according to the table width: the default is one light and you add more yourself – as many as fit side by side across the table width.",
+   "sk": "Svietidlá LED sa samy nepridávajú podľa šírky stola: predvolené je jedno svietidlo a ďalšie si pridávate sami – najviac toľko, koľko sa ich zmestí vedľa seba na šírku stola.",
+   "de": "LED-Leuchten werden nicht automatisch nach der Tischbreite hinzugefügt: Standard ist eine Leuchte, weitere fügen Sie selbst hinzu – so viele, wie nebeneinander über die Tischbreite passen."
+  },
+  {
+   "id": "stul_shop.TEXTY.help_ledpos",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Poloha středu svítidla podél příčného profilu v mm od osy stolu (kladná hodnota = doprava, 0 = uprostřed). Svítidla se nemohou překrývat a aspoň 90 % délky každého musí ležet nad profilem. Svítidlo jde posouvat i přímo ve 3D tažením.",
+   "en": "Position of the centre of the light along the cross profile in mm from the table axis (positive = to the right, 0 = centred). The lights cannot overlap and at least 90 % of the length of each must lie over the profile. A light can also be moved directly in 3D by dragging.",
+   "sk": "Poloha stredu svietidla pozdĺž priečneho profilu v mm od osi stola (kladná hodnota = doprava, 0 = uprostred). Svietidlá sa nemôžu prekrývať a aspoň 90 % dĺžky každého musí ležať nad profilom. Svietidlo ide posúvať aj priamo v 3D ťahaním.",
+   "de": "Lage der Mitte der Leuchte entlang des Querprofils in mm von der Tischachse (positiv = nach rechts, 0 = mittig). Die Leuchten dürfen sich nicht überlappen, und mindestens 90 % der Länge jeder Leuchte müssen über dem Profil liegen. Eine Leuchte lässt sich auch direkt in 3D durch Ziehen verschieben."
+  },
+  {
+   "id": "stul_shop.TEXTY.ledpos1",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Poloha svítidla LED 1",
+   "en": "LED light 1 position",
+   "sk": "Poloha svietidla LED 1",
+   "de": "Position der LED-Leuchte 1"
+  },
+  {
+   "id": "stul_shop.TEXTY.ledpos2",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Poloha svítidla LED 2",
+   "en": "LED light 2 position",
+   "sk": "Poloha svietidla LED 2",
+   "de": "Position der LED-Leuchte 2"
+  },
+  {
+   "id": "stul_shop.TEXTY.ledpos3",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Poloha svítidla LED 3",
+   "en": "LED light 3 position",
+   "sk": "Poloha svietidla LED 3",
+   "de": "Position der LED-Leuchte 3"
+  },
+  {
+   "id": "stul_shop.TEXTY.ledpos4",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Poloha svítidla LED 4",
+   "en": "LED light 4 position",
+   "sk": "Poloha svietidla LED 4",
+   "de": "Position der LED-Leuchte 4"
+  },
+  {
+   "id": "stul_shop_sse.TEXTY.shelf",
+   "poznamka": "SSE stůl (ergonomický stůl s nohami SSE)",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Spodní police",
+   "en": "Lower shelf",
+   "sk": "Spodná polica",
+   "de": "Unterer Fachboden"
+  },
+  {
+   "id": "stul_shop_sse.TEXTY.help_shelf",
+   "poznamka": "SSE stůl (ergonomický stůl s nohami SSE)",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Police leží na jeklových spojnicích nohou; její výška se mění spolu s výškou stolu.",
+   "en": "The shelf rests on the steel cross-members of the legs; its height changes with the height of the table.",
+   "sk": "Polica leží na jaklových spojniciach nôh; jej výška sa mení spolu s výškou stola.",
+   "de": "Der Fachboden liegt auf den Stahl-Querstreben der Beine auf; seine Höhe ändert sich mit der Tischhöhe."
+  },
+  {
+   "id": "stul_shop_sse.TEXTY.help_w",
+   "poznamka": "SSE stůl (ergonomický stůl s nohami SSE)",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Délku stolu určuje podélník (je o 10 mm kratší než deska – záslepky); největší deska je 3000 mm.",
+   "en": "The length of the table is given by the rails (10 mm shorter than the worktop – end caps); the longest worktop is 3000 mm.",
+   "sk": "Dĺžku stola určuje pozdĺžnik (je o 10 mm kratší ako doska – záslepky); najväčšia doska je 3000 mm.",
+   "de": "Die Länge des Tisches bestimmen die Längsträger (10 mm kürzer als die Arbeitsplatte – Endkappen); die längste Arbeitsplatte beträgt 3000 mm."
+  },
+  {
+   "id": "stul_shop_sse.TEXTY.help_d",
+   "poznamka": "SSE stůl (ergonomický stůl s nohami SSE)",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Hloubku stolu určuje jeklová spojnice nohy (400 až 1100 mm) a dva jekly 40 mm – hloubka je tedy 480 až 1180 mm.",
+   "en": "The depth of the table is given by the steel cross-member of the leg (400 to 1100 mm) plus two 40 mm box sections – so the depth is 480 to 1180 mm.",
+   "sk": "Hĺbku stola určuje jaklová spojnica nohy (400 až 1100 mm) a dva jakly 40 mm – hĺbka je teda 480 až 1180 mm.",
+   "de": "Die Tiefe des Tisches ergibt sich aus der Stahl-Querstrebe des Beins (400 bis 1100 mm) plus zwei Vierkantrohre mit je 40 mm – die Tiefe beträgt also 480 bis 1180 mm."
+  },
+  {
+   "id": "stul_shop_sse.TEXTY.help_h",
+   "poznamka": "SSE stůl (ergonomický stůl s nohami SSE)",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Výška se nastavuje posunem jeklu nohy po vnitřním profilu 35×35 (700 až 1000 mm).",
+   "en": "The height is set by sliding the box section of the leg along the 35×35 inner tube (700 to 1000 mm).",
+   "sk": "Výška sa nastavuje posunom jakla nohy po vnútornom profile 35×35 (700 až 1000 mm).",
+   "de": "Die Höhe wird eingestellt, indem das Vierkantrohr des Beins auf dem inneren Rohr 35×35 verschoben wird (700 bis 1000 mm)."
+  },
+  {
+   "id": "stul_shop_sse.TEXTY.help_mid",
+   "poznamka": "SSE stůl (ergonomický stůl s nohami SSE)",
+   "typ": "text",
+   "placeholdery": [
+    "{prah}"
+   ],
+   "cs": "Nad {prah} mm šířky přibývá uprostřed další noha. Posuň ji blíž k levé nebo pravé noze; deska i police se v její ose dělí na dvě desky.",
+   "en": "Above {prah} mm width another leg is added in the middle. Move it closer to the left or right leg; the worktop and the shelf are split into two boards at its axis.",
+   "sk": "Nad šírku {prah} mm pribudne uprostred ďalšia noha. Posuňte ju bližšie k ľavej alebo pravej nohe; doska aj polica sa v jej osi delia na dve dosky.",
+   "de": "Bei mehr als {prah} mm Breite kommt in der Mitte ein weiteres Bein hinzu. Verschieben Sie es näher an das linke oder rechte Bein; Arbeitsplatte und Fachboden werden in seiner Achse in zwei Platten geteilt."
+  },
+  {
+   "id": "stul_shop_sse.TEXTY.help_box",
+   "poznamka": "SSE stůl (ergonomický stůl s nohami SSE)",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Šuplíkový box lze posunout po celé délce podélníků; zapnutá volba „Šuplíky na levé straně“ ho přehodí k levé noze a posun se pak měří od ní.",
+   "en": "The drawer unit can be moved along the whole length of the rails; \"Drawers on the left side\" moves it to the left leg and the position is then measured from it.",
+   "sk": "Zásuvkový blok možno posúvať po celej dĺžke pozdĺžnikov; voľba „Zásuvky na ľavej strane“ ho presunie k ľavej nohe a posun sa potom meria od nej.",
+   "de": "Die Schubladenbox lässt sich über die gesamte Länge der Längsträger verschieben; „Schubladen auf der linken Seite“ setzt sie ans linke Bein, und die Position wird dann von diesem aus gemessen."
+  }
+ ]
+}

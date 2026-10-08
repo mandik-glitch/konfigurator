@@ -1,0 +1,212 @@
+<title>Šipky galerie/lightboxu — 3 koncepty (HUD, větší)</title>
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: #0a0c0b; color: #eaf2ec; font-family: -apple-system, "Segoe UI", Roboto, Arial, sans-serif; }
+
+  .intro { max-width: 1000px; margin: 0 auto; padding: 40px 24px 6px; }
+  .intro .eyebrow { font-family: "SF Mono", "Cascadia Code", "Consolas", monospace; font-size: 11px; letter-spacing: .18em; color: #2fe07a; text-transform: uppercase; margin-bottom: 10px; }
+  .intro .eyebrow::before { content: "// "; opacity: .6; }
+  .intro h1 { font-size: 23px; margin: 0 0 10px; font-weight: 800; letter-spacing: -.01em; }
+  .intro p { font-size: 13.5px; line-height: 1.65; color: #8a978f; max-width: 680px; margin: 0; }
+
+  .tabbar { max-width: 1000px; margin: 26px auto 0; padding: 0 24px; display: flex; gap: 8px; flex-wrap: wrap; }
+  .tabbtn {
+    font-family: "SF Mono", "Cascadia Code", "Consolas", monospace; font-size: 12px; letter-spacing: .06em;
+    text-transform: uppercase; padding: 10px 18px; background: #14181a; border: 1px solid #2a3530;
+    color: #8a978f; cursor: pointer; transition: all .15s;
+  }
+  .tabbtn:hover { color: #eaf2ec; border-color: #4a5a52; }
+  .tabbtn.on { color: #0a0c0b; background: #2fe07a; border-color: #2fe07a; font-weight: 700; }
+  .concept-wrap { display: none; }
+  .concept-wrap.on { display: block; }
+
+  .stage-bg {
+    background-color: #0d1012;
+    background-image:
+      radial-gradient(circle at 12% 8%, rgba(47,224,122,.08) 0%, transparent 40%),
+      radial-gradient(circle at 90% 85%, rgba(255,122,61,.06) 0%, transparent 42%),
+      repeating-linear-gradient(45deg, transparent 0 42px, rgba(255,255,255,.05) 42px 43px),
+      repeating-linear-gradient(-45deg, transparent 0 42px, rgba(255,255,255,.05) 42px 43px);
+    padding: 40px 24px 60px;
+  }
+  .viewer { max-width: 1000px; margin: 0 auto; }
+  .viewer-frame {
+    position: relative; height: 380px; background: #fff; border: 1px solid #28322e;
+    display: flex; align-items: center; justify-content: center; overflow: hidden;
+  }
+  .viewer-frame svg { width: 55%; height: 55%; }
+  .viewer-caption {
+    font-family: "SF Mono", "Cascadia Code", "Consolas", monospace; font-size: 11px; color: #69766f;
+    text-align: center; margin-top: 14px; letter-spacing: .05em;
+  }
+  .viewer-caption b { color: #2fe07a; }
+
+  .compare-row { max-width: 1000px; margin: 30px auto 0; padding: 0 24px; display: flex; align-items: center; gap: 20px; }
+  .compare-label { font-family: "SF Mono", "Cascadia Code", "Consolas", monospace; font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: #69766f; }
+  .compare-old {
+    width: 56px; height: 56px; border-radius: 50%; background: rgba(255,255,255,.1); color: #fff;
+    display: flex; align-items: center; justify-content: center; font-size: 30px; flex-shrink: 0;
+  }
+
+  /* ============ KONCEPT 1 - BRACKET FRAME ============ */
+  .c1-arrow {
+    position: absolute; top: 50%; transform: translateY(-50%); width: 84px; height: 84px;
+    background: rgba(13,16,18,.55); backdrop-filter: blur(6px); border: 1px solid #374542;
+    display: flex; align-items: center; justify-content: center; cursor: pointer;
+    transition: border-color .18s, box-shadow .18s;
+  }
+  .c1-arrow::before, .c1-arrow::after { content: ""; position: absolute; width: 20px; height: 20px; pointer-events: none; transition: border-color .18s, box-shadow .18s; }
+  .c1-arrow::before { top: -1px; left: -1px; border-top: 2px solid #2fe07a; border-left: 2px solid #2fe07a; }
+  .c1-arrow::after { bottom: -1px; right: -1px; border-bottom: 2px solid #2fe07a; border-right: 2px solid #2fe07a; }
+  .c1-arrow.next::before { left: auto; right: -1px; border-left: none; border-right: 2px solid #2fe07a; }
+  .c1-arrow.next::after { right: auto; left: -1px; border-right: none; border-left: 2px solid #2fe07a; }
+  .c1-arrow:hover { border-color: #ff7a3d; box-shadow: 0 0 18px rgba(255,122,61,.35); }
+  .c1-arrow:hover::before, .c1-arrow:hover::after { border-color: #ff7a3d; box-shadow: 0 0 10px rgba(255,122,61,.6); }
+  .c1-arrow svg { width: 30px; height: 30px; stroke: #eaf2ec; transition: stroke .18s, transform .18s; }
+  .c1-arrow:hover svg { stroke: #ff7a3d; }
+  .c1-arrow.prev { left: 18px; }
+  .c1-arrow.prev:hover svg { transform: translateX(-4px); }
+  .c1-arrow.next { right: 18px; }
+  .c1-arrow.next:hover svg { transform: translateX(4px); }
+
+  /* ============ KONCEPT 2 - CUT CORNER (fill on hover) ============ */
+  .c2-arrow {
+    position: absolute; top: 50%; transform: translateY(-50%); width: 84px; height: 84px;
+    background-color: rgba(13,16,18,.55); backdrop-filter: blur(6px);
+    background-image: linear-gradient(#2fe07a, #2fe07a); background-size: 0% 100%; background-repeat: no-repeat;
+    border: 1px solid #2fe07a; cursor: pointer;
+    clip-path: polygon(0 14px, 14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%);
+    display: flex; align-items: center; justify-content: center;
+    transition: background-size .25s cubic-bezier(.7,0,.3,1), border-color .18s;
+  }
+  .c2-arrow:hover { background-size: 100% 100%; }
+  .c2-arrow svg { width: 30px; height: 30px; stroke: #2fe07a; transition: stroke .18s, transform .18s; position: relative; z-index: 1; }
+  .c2-arrow:hover svg { stroke: #06140c; }
+  .c2-arrow.prev { left: 18px; }
+  .c2-arrow.prev:hover svg { transform: translateX(-4px); }
+  .c2-arrow.next { right: 18px; }
+  .c2-arrow.next:hover svg { transform: translateX(4px); }
+
+  /* ============ KONCEPT 3 - RING HUD (radar/reticle) ============ */
+  .c3-arrow {
+    position: absolute; top: 50%; transform: translateY(-50%); width: 84px; height: 84px;
+    border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center;
+    background: rgba(13,16,18,.55); backdrop-filter: blur(6px);
+  }
+  .c3-arrow .ring { position: absolute; inset: 0; border-radius: 50%; border: 1px solid #374542; transition: border-color .18s; }
+  .c3-arrow .ring-seg {
+    position: absolute; inset: -1px; border-radius: 50%;
+    border: 1px solid transparent; border-top-color: #2fe07a; border-right-color: #2fe07a;
+    opacity: .55; transition: opacity .18s, border-color .18s;
+  }
+  .c3-arrow:hover .ring { border-color: #ff7a3d; }
+  .c3-arrow:hover .ring-seg { opacity: 1; border-top-color: #ff7a3d; border-right-color: #ff7a3d; animation: c3spin 2.4s linear infinite; }
+  @keyframes c3spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+  .c3-arrow svg { width: 28px; height: 28px; stroke: #eaf2ec; transition: stroke .18s, transform .18s; }
+  .c3-arrow:hover svg { stroke: #ff7a3d; }
+  .c3-arrow.prev { left: 18px; }
+  .c3-arrow.prev:hover svg { transform: translateX(-4px); }
+  .c3-arrow.next { right: 18px; }
+  .c3-arrow.next:hover svg { transform: translateX(4px); }
+  @media (prefers-reduced-motion: reduce) { .c3-arrow:hover .ring-seg { animation: none; } }
+
+  .notes { max-width: 1000px; margin: 20px auto 0; padding: 0 24px 40px; }
+  .notes h3 { font-size: 13px; color: #2fe07a; font-family: "SF Mono", "Cascadia Code", "Consolas", monospace; text-transform: uppercase; letter-spacing: .06em; margin: 0 0 8px; }
+  .notes p { font-size: 13px; line-height: 1.7; color: #a4b2ac; margin: 0 0 8px; max-width: 720px; }
+</style>
+
+<div class="intro">
+  <div class="eyebrow">koncepty · šipky galerie / lightboxu</div>
+  <h1>Větší HUD šipky pro listování obrázky</h1>
+  <p>Tři varianty, všechny výrazně větší než současný stav (84×84px místo 56×56px — srovnání vpravo dole u každého konceptu). Zkoušej najíždět myší přímo na šipky.</p>
+</div>
+<div class="tabbar">
+  <button class="tabbtn on" data-tab="1">Koncept 1 · Bracket Frame</button>
+  <button class="tabbtn" data-tab="2">Koncept 2 · Cut Corner</button>
+  <button class="tabbtn" data-tab="3">Koncept 3 · Ring HUD</button>
+</div>
+
+<!-- KONCEPT 1 -->
+<div class="concept-wrap on" id="wrap-1">
+  <div class="stage-bg">
+    <div class="viewer">
+      <div class="viewer-frame">
+        <button class="c1-arrow prev" aria-label="Předchozí"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
+        <svg viewBox="0 0 200 140"><rect x="30" y="55" width="140" height="30" fill="none" stroke="#333" stroke-width="3"/><circle cx="55" cy="70" r="8" fill="none" stroke="#333" stroke-width="2"/><circle cx="100" cy="70" r="8" fill="none" stroke="#333" stroke-width="2"/><circle cx="145" cy="70" r="8" fill="none" stroke="#333" stroke-width="2"/></svg>
+        <button class="c1-arrow next" aria-label="Další"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
+      </div>
+      <div class="viewer-caption">2 / 7 &nbsp;·&nbsp; <b>Hliníkový profil 20×80 mm</b></div>
+    </div>
+  </div>
+  <div class="compare-row">
+    <span class="compare-label">Současný stav:</span>
+    <span class="compare-old">‹</span>
+    <span class="compare-label">56×56px, jen kruh + tenké pozadí, bez HUD zvýraznění</span>
+  </div>
+  <div class="notes">
+    <h3>Bracket Frame</h3>
+    <p>Čtvercové sklo (84×84px) s HUD rohovými závorkami stejnými jako u karet produktů — stejný vizuální jazyk, jen zvětšený a použitý na navigační prvek. Zelené rohy v klidu, při hoveru se rozzáří oranžově a šipka se posune ve směru pohybu.</p>
+  </div>
+</div>
+
+<!-- KONCEPT 2 -->
+<div class="concept-wrap" id="wrap-2">
+  <div class="stage-bg">
+    <div class="viewer">
+      <div class="viewer-frame">
+        <button class="c2-arrow prev" aria-label="Předchozí"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
+        <svg viewBox="0 0 200 140"><rect x="60" y="30" width="30" height="90" fill="none" stroke="#333" stroke-width="3"/><circle cx="75" cy="50" r="6" fill="none" stroke="#333" stroke-width="2"/><circle cx="75" cy="90" r="6" fill="none" stroke="#333" stroke-width="2"/></svg>
+        <button class="c2-arrow next" aria-label="Další"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
+      </div>
+      <div class="viewer-caption">3 / 7 &nbsp;·&nbsp; <b>Hliníkový profil 30×30 mm</b></div>
+    </div>
+  </div>
+  <div class="compare-row">
+    <span class="compare-label">Současný stav:</span>
+    <span class="compare-old">‹</span>
+    <span class="compare-label">56×56px, jen kruh + tenké pozadí, bez HUD zvýraznění</span>
+  </div>
+  <div class="notes">
+    <h3>Cut Corner</h3>
+    <p>Useknuté rohy (clip-path) stejné jako tlačítko "Do košíku" na detailu produktu — a stejný "vyplň se zelenou při hoveru" efekt. Nejvíc sjednocené s existujícími tlačítky na webu, žádný nový vizuální prvek, jen aplikovaný na šipky a zvětšený.</p>
+  </div>
+</div>
+
+<!-- KONCEPT 3 -->
+<div class="concept-wrap" id="wrap-3">
+  <div class="stage-bg">
+    <div class="viewer">
+      <div class="viewer-frame">
+        <button class="c3-arrow prev" aria-label="Předchozí">
+          <span class="ring"></span><span class="ring-seg"></span>
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        </button>
+        <svg viewBox="0 0 200 140"><rect x="40" y="40" width="120" height="60" fill="none" stroke="#333" stroke-width="3"/><line x1="40" y1="70" x2="160" y2="70" stroke="#333" stroke-width="2"/></svg>
+        <button class="c3-arrow next" aria-label="Další">
+          <span class="ring"></span><span class="ring-seg"></span>
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
+      </div>
+      <div class="viewer-caption">4 / 7 &nbsp;·&nbsp; <b>Systém 30 — šuplíky</b></div>
+    </div>
+  </div>
+  <div class="compare-row">
+    <span class="compare-label">Současný stav:</span>
+    <span class="compare-old">‹</span>
+    <span class="compare-label">56×56px, jen kruh + tenké pozadí, bez HUD zvýraznění</span>
+  </div>
+  <div class="notes">
+    <h3>Ring HUD</h3>
+    <p>Kruhové sklo s jemným prstencem — při hoveru se část prstence rozsvítí oranžově a pomalu rotuje, jako radarový/zaměřovací HUD prvek. Nejvíc "technologický/futuristický" dojem ze všech tří, nejméně svázaný s existujícími hranatými tvary webu.</p>
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll(".tabbtn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      document.querySelectorAll(".tabbtn").forEach(b => b.classList.toggle("on", b === btn));
+      const n = btn.dataset.tab;
+      document.querySelectorAll(".concept-wrap").forEach(w => w.classList.toggle("on", w.id === "wrap-" + n));
+    });
+  });
+</script>

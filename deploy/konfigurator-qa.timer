@@ -1,0 +1,10 @@
+[Unit]
+Description=Casovac kontrolnich mechanismu na cely system konfiguratoru (denne 04:30)
+
+[Timer]
+OnCalendar=*-*-* 04:30:00
+Persistent=true
+RandomizedDelaySec=120
+
+[Install]
+WantedBy=timers.target

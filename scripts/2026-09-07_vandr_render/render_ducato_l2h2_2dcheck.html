@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>2D kontrola: Ducato L2H2 noha vs Police.1D.1057.459</title>
+<style>
+html,body{margin:0;padding:0;background:#e8ecf0;overflow:hidden;}
+#lbl{position:fixed;top:14px;left:14px;font:bold 22px Arial;color:#111;background:rgba(255,255,255,0.85);padding:8px 14px;border-radius:4px;}
+#legend{position:fixed;top:14px;right:14px;font:bold 18px Arial;background:rgba(255,255,255,0.85);padding:8px 14px;border-radius:4px;}
+</style>
+</head>
+<body>
+<div id="lbl">-</div>
+<div id="legend"><span style="color:#2255cc">modra = noha</span> &nbsp; <span style="color:#cc2222">cervena = Police.1D.1057.459</span></div>
+<!--
+Izolovana 2D wireframe kontrola (VANDR_RENDER_HOWTO.md 3d) k
+render_ducato_l2h2.html - stejne pozice dilu, jen orto kamera + wireframe,
+zoomle na roh dotyku. OBA konce (noha1 i noha2), plus cely celni pohled.
+-->
+<script type="importmap">
+{ "imports": {
+  "three": "../../node_modules/three/build/three.module.js",
+  "three/addons/loaders/FBXLoader.js": "../../node_modules/three/examples/jsm/loaders/FBXLoader.js"
+} }
+</script>
+<script type="module">
+import * as THREE from 'three';
+import { FBXLoader } from 'three/addons/loaders/FBXLoader.js';
+import { innerWallZRangeOf, endBracketOf, makeAspectCorrectOrtho } from './vandr_geometry_lib.js';
+
+const W = 1400, H = 1000;
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0xe8ecf0);
+const camera = makeAspectCorrectOrtho(W, H, 400);
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setSize(W, H);
+document.body.appendChild(renderer.domElement);
+
+const loader = new FBXLoader();
+function loadFbx(path) { return new Promise((resolve, reject) => loader.load(path, resolve, undefined, reject)); }
+function wireframe(obj, color) {
+  obj.traverse(n => { if (n.isMesh) n.material = new THREE.MeshBasicMaterial({ color, wireframe: true }); });
+}
+
+const INNER_GAP_TARGET = 967;
+
+(async () => {
+  try {
+    const leg1 = await loadFbx('./fbx/ducato_leg1.fbx');
+    wireframe(leg1, 0x2255cc);
+    leg1.rotation.x = -Math.PI / 2;
+    leg1.updateMatrixWorld(true);
+    const legBox1 = new THREE.Box3().setFromObject(leg1);
+    leg1.position.y -= legBox1.min.y;
+    leg1.position.x -= legBox1.min.x;
+    leg1.updateMatrixWorld(true);
+    const legBox1f = new THREE.Box3().setFromObject(leg1);
+
+    const leg2 = await loadFbx('./fbx/ducato_leg2.fbx');
+    wireframe(leg2, 0x2255cc);
+    leg2.rotation.x = -Math.PI / 2;
+    leg2.updateMatrixWorld(true);
+    const legBox2raw = new THREE.Box3().setFromObject(leg2);
+    leg2.position.x += legBox1f.max.x + INNER_GAP_TARGET - legBox2raw.min.x;
+    leg2.position.y -= legBox2raw.min.y;
+    leg2.updateMatrixWorld(true);
+    const legBox2f = new THREE.Box3().setFromObject(leg2);
+    scene.add(leg1); scene.add(leg2);
+
+    const centerX = (legBox1f.max.x + legBox2f.min.x) / 2;
+    const legWallZ = innerWallZRangeOf(leg1);
+    const centerZ = (legWallZ.min + legWallZ.max) / 2;
+
+    const comp = await loadFbx('./fbx/police_1057.fbx');
+    wireframe(comp, 0xcc2222);
+    comp.rotation.x = -Math.PI / 2;
+    comp.updateMatrixWorld(true);
+    const raw = new THREE.Box3().setFromObject(comp);
+    const endBracketRaw = endBracketOf(comp);
+    comp.position.x += centerX - raw.getCenter(new THREE.Vector3()).x;
+    comp.position.z += centerZ - endBracketRaw.getCenter(new THREE.Vector3()).z;
+    comp.position.y += 0 - endBracketRaw.min.y;
+    comp.updateMatrixWorld(true);
+    scene.add(comp);
+
+    const lbl = document.getElementById('lbl');
+    window.__setView__ = function (view) {
+      if (view === 'side-leg1') {
+        camera.left = -400 * (W / H); camera.right = 400 * (W / H); camera.top = 400; camera.bottom = -400;
+        camera.position.set(legBox1f.max.x + 2000, 250, 0);
+        camera.up.set(0, 1, 0); camera.lookAt(legBox1f.max.x, 250, 0);
+        lbl.textContent = 'NOHA 1 — BOKORYS (zoom na roh dotyku, Z vs Y)';
+      } else if (view === 'side-leg2') {
+        camera.position.set(legBox2f.min.x - 2000, 250, 0);
+        camera.up.set(0, 1, 0); camera.lookAt(legBox2f.min.x, 250, 0);
+        lbl.textContent = 'NOHA 2 — BOKORYS (zoom na roh dotyku, Z vs Y)';
+      } else if (view === 'front') {
+        camera.left = -700 * (W / H); camera.right = 700 * (W / H); camera.top = 700; camera.bottom = -700;
+        camera.position.set(centerX, 300, 2000);
+        camera.up.set(0, 1, 0); camera.lookAt(centerX, 300, 0);
+        lbl.textContent = 'CELNI POHLED — cely rozpon, obe nohy (X vs Y)';
+      }
+      camera.updateProjectionMatrix();
+      renderer.render(scene, camera);
+    };
+    window.__setView__('side-leg1');
+    window.__RENDER_DONE__ = true;
+  } catch (e) {
+    window.__RENDER_ERROR__ = (e && e.message) || String(e);
+  }
+})();
+</script>
+</body>
+</html>

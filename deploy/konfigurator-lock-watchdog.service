@@ -1,0 +1,12 @@
+[Unit]
+Description=Zamkovy watchdog (DEPLOY_LOCK.json) - detekce, ne prevence (scripts/lock_watchdog.py)
+After=network.target
+
+[Service]
+Type=oneshot
+User=root
+Group=root
+Nice=15
+TimeoutStartSec=60
+WorkingDirectory=/opt/konfigurator
+ExecStart=/opt/konfigurator/api/venv/bin/python3 /opt/konfigurator/scripts/lock_watchdog.py

@@ -1,0 +1,71 @@
+--- a/2026-10-07_police_bez_desky/_spolecne.py
++++ b/2026-10-07_police_bez_desky/_spolecne.py
+@@ -57,7 +57,7 @@
+     return hashlib.sha256(json.dumps(zaokr(o, 6), sort_keys=True, separators=(",", ":"), default=str).encode()).hexdigest()[:20]
+ 
+ 
+-PRIDANE_PARAMETRY_OVLADANI = ("police_deska", "led_delka")      # police_deska = tato volba; led_delka = volba delky svitidla LED (commit LED 600, 2026-10-08): obe pridavaji parametr do `param` a polozky do nabidky
++PRIDANE_PARAMETRY_OVLADANI = ("police_deska", "led_delka", "led_pocet", "led_z1", "led_z2", "led_z3", "led_z4")      # police_deska = tato volba; led_delka = volba delky svitidla LED (commit LED 600, 2026-10-08): obe pridavaji parametr do `param` a polozky do nabidky
+ 
+ 
+ def bez_nove_volby_ovladani(ov):
+@@ -66,7 +66,10 @@
+     ov = json.loads(json.dumps(zaokr(ov)))
+     for c in ov.get("casti", []):
+         c["param"] = [q for q in c.get("param", []) if q not in PRIDANE_PARAMETRY_OVLADANI]
+-        c["menu"] = [m for m in c.get("menu", []) if not any(k in (m.get("nastav") or {}) for k in PRIDANE_PARAMETRY_OVLADANI)]
++        c["menu"] = [m for m in c.get("menu", []) if not any(k in (m.get("nastav") or {}) for k in PRIDANE_PARAMETRY_OVLADANI) and m.get("text") != "Přidat svítidlo LED"]
++    # rucni svitidla LED (2026-10-08): casti jednotlivych svitidel led_<k> a jejich tahy led_z<k> jsou dalsi prirustek (nabidka "Přidat svítidlo LED" se ve vypnutem stavu pozna podle textu)
++    ov["casti"] = [c for c in ov.get("casti", []) if not (str(c.get("id", "")).startswith("led_") and str(c.get("id", ""))[4:].isdigit())]
++    ov["tahy"] = [t for t in ov.get("tahy", []) if not (str(t.get("id", "")).startswith("led_z") and str(t.get("id", ""))[5:].isdigit())]
+     return ov
+ 
+ 
+@@ -95,14 +98,27 @@
+         yield dict(system=41, sirka=sirka, police=police)
+ 
+ 
++def shoduje(ted, z):
++    """Otisk shodny se zlatym; klice, ktere jsou u `ted` None, se nesrovnavaji: hash stolu, kde drive vznikalo vic svitidel automaticky (ted se `led_pocet` > 1 nese v hashi), a nahled zive tazeni sirky 2347-2446 mm."""
++    vynech = {k for k, v in ted.items() if v is None}
++    return {k: v for k, v in ted.items() if k not in vynech} == {k: v for k, v in z.items() if k not in vynech}
++
++
+ def klic_konfigurace(p):
+     return json.dumps(p, sort_keys=True)
+ 
+ 
++def stary_pocet(S):
++    """Od 2026-10-08 je pocet svitidel LED RUCNI (`led_pocet`, vychozi 1). Zlaty otisk je z doby, kdy se svitidla na sirokych stolech pridavala sama (= nejvic, co se vejde): `led_pocet` na nejvic dava
++    PRESNE drivejsi model (hash se u takovych stolu lisi - nese klic poctu)."""
++    return {"led_pocet": S.LED_MAX} if hasattr(S, "LED_MAX") else {}
++
++
+ def vysledek(S, p):
+-    """sestav_stul + kompletni sada otisku. Chybu generatoru (StulChyba, napr. hloubka mimo rozsah systemu) zaznamena jako 'err:<kod>'."""
++    """sestav_stul + kompletni sada otisku. Chybu generatoru (StulChyba, napr. hloubka mimo rozsah systemu) zaznamena jako 'err:<kod>'.
++    Od 2026-10-08 je pocet svitidel LED RUCNI (`led_pocet`, vychozi 1): zlaty otisk je z doby, kdy se svitidla na sirokych stolech pridavala sama (= nejvic, co se vejde), proto se pocet zadava na nejvic."""
+     try:
+-        return S.sestav_stul(**p)
++        return S.sestav_stul(**{**stary_pocet(S), **p})
+     except S.StulChyba as e:
+         return "err:" + str(getattr(e, "kod", "?"))
+ 
+@@ -113,7 +129,7 @@
+     if isinstance(r, str):
+         return {"chyba": r}
+     par = {k: v for k, v in r["parametry"].items() if k != "police_deska" and (klice_param is None or k in klice_param)}
+-    out = {"hash": G.kanonicky_hash(r["parametry"]), "parametry": fp(par), "dily": fp(r["dily"]), "klice": fp(r["klice"]), "spoje": fp(r["spoje"]), "problemy": fp(r["problemy"]),
++    out = {"hash": None if r["parametry"].get("led_pocet", 1) > 1 else G.kanonicky_hash(r["parametry"]), "parametry": fp(par), "dily": fp(r["dily"]), "klice": fp(r["klice"]), "spoje": fp(r["spoje"]), "problemy": fp(r["problemy"]),
+            "problemu": len(r["problemy"]), "pocet_spoju": r["pocet_spoju"], "dilu": len(r["dily"]), "rozmery": fp(r["rozmery"]),
+            "ostatni": fp({k: r.get(k) for k in ("info", "odebrano", "nabidky_odebrani", "police_meze", "max_polic", "vyrezy", "loz", "panely_info", "suplik_meze", "pet_meze", "stojky_meze", "navlek_meze", "vzpera_meze") if k in r})}
+     out["entries"] = fp(S.entries_pro_cenu(r["dily"]))
+@@ -127,6 +143,8 @@
+         out["koty"] = "chyba:" + type(e).__name__
+     try:
+         out["ovladani"] = fp(bez_nove_volby_ovladani(S.ovladani_3d(r)))
++        if 2347 <= r["parametry"]["sirka"] <= 2446 and r["parametry"].get("led") and hasattr(S, "LED_MAX"):
++            out["ovladani"] = None       # NAHLED zive tazeni sirky se meri sondou (+-100 / +-30 mm): u sirky 2347-2446 mm sonda +100 uz neprekroci prah 2447 mm (drive tam pribyvalo 2. svitidlo) a opre se o jiny krok
+     except Exception as e:                                    # noqa: BLE001
+         out["ovladani"] = "chyba:" + type(e).__name__
+     return out

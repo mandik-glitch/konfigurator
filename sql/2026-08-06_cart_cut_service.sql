@@ -1,0 +1,20 @@
+-- Rezy jako samostatna polozka v kosiku/objednavce (bot3, 2026-08-06).
+--
+-- Robert: "vždy když klient zadá přířezy je nutné do objenávky přidat
+-- automaticky řezy, musí figurovat v košíku" - cena za rez uz existuje
+-- jako `cfg_dily.price_per_cut_czk` (Robert: "ceny řezů jsou v adminu u
+-- cen profilů" - stejne pole, ktere uz pouziva 3D scena pro cenu spoju),
+-- pocet rezu uz umi spocitat cutting_algo.pack_1d (stats.total_cuts).
+--
+-- cut_service_qty = pocet fyzickych rezu potrebnych na zadane prirezy
+-- (dopocteno stejnou pack_1d cestou jako qty/pocet tyci, viz api/cart.py).
+-- Cena samotna se NEukladá sem (na rozdil od qty tyci) - dopocitava se
+-- VZDY ZIVA az z cfg_dily.price_per_cut_czk (stejny princip jako
+-- unit_price_per_m_czk v api/app.py::shop_products_get - "něco už na
+-- skladových kartách máme tak to neduplikuj"), takze zmena ceny rezu v
+-- adminu se projevi i v jiz rozpracovanem kosiku.
+--
+-- NULL = bezna polozka bez prirezu, NEBO profil, ktery ma
+-- cfg_dily.price_per_cut_czk prazdne (cena rezu jeste nenastavena -
+-- radeji nic nepridavat, nez si vymyslet castku).
+ALTER TABLE shop_cart_items ADD COLUMN cut_service_qty INT NULL AFTER cut_pieces_json;

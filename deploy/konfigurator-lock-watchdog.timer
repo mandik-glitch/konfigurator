@@ -1,0 +1,10 @@
+[Unit]
+Description=Casovac zamkoveho watchdogu (kazdych 90s - detekce zapomenutych/dlouhych zamku a spinavych guarded souboru bez zamku)
+
+[Timer]
+OnBootSec=90s
+OnUnitActiveSec=90s
+AccuracySec=15s
+
+[Install]
+WantedBy=timers.target

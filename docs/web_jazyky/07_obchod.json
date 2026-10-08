@@ -1,0 +1,66 @@
+[
+ {
+  "id": "obch:doprava1:name",
+  "typ": "text",
+  "cs": "Osobní odběr",
+  "en": "Personal collection",
+  "it": "Ritiro personale",
+  "h": "5ec709491c"
+ },
+ {
+  "id": "obch:doprava4:name",
+  "typ": "text",
+  "cs": "Toptrans",
+  "en": "Toptrans",
+  "it": "Toptrans",
+  "h": "6654c58870"
+ },
+ {
+  "id": "obch:platba1:name",
+  "typ": "text",
+  "cs": "Platba předem",
+  "en": "Prepayment",
+  "it": "Pagamento anticipato",
+  "h": "a524a6c45b"
+ },
+ {
+  "id": "obch:platba2:name",
+  "typ": "text",
+  "cs": "Dobírka",
+  "en": "Cash on delivery",
+  "it": "Pagamento in contrassegno",
+  "h": "8fd0ba8309"
+ },
+ {
+  "id": "obch:platba4:name",
+  "typ": "text",
+  "cs": "QR platba",
+  "en": "QR payment",
+  "it": "Pagamento con QR code",
+  "h": "7e4fd27932"
+ },
+ {
+  "id": "obch:jednotka:unit:ks",
+  "typ": "text",
+  "cs": "ks",
+  "en": "pcs",
+  "it": "pz",
+  "h": "10133f797b"
+ },
+ {
+  "id": "obch:jednotka:unit:m",
+  "typ": "text",
+  "cs": "m",
+  "en": "m",
+  "it": "m",
+  "h": "6b0d31c0d5"
+ },
+ {
+  "id": "obch:jednotka:unit:m2",
+  "typ": "text",
+  "cs": "m2",
+  "en": "m²",
+  "it": "m²",
+  "h": "32d332da76"
+ }
+]

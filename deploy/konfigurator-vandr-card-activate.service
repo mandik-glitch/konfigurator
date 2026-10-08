@@ -1,0 +1,11 @@
+[Unit]
+Description=Konfigurator - automat, ktery aktivuje Vandr (vanDrawee) kartu, jakmile ma cenu I dokonceny render
+After=network.target mysql.service
+
+[Service]
+Type=oneshot
+User=www-data
+Group=www-data
+WorkingDirectory=/opt/konfigurator
+EnvironmentFile=/opt/konfigurator/api/.env
+ExecStart=/opt/konfigurator/api/venv/bin/python3 /opt/konfigurator/scripts/2026-09-22_vandr_card_activate.py --apply

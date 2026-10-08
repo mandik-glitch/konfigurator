@@ -1,0 +1,263 @@
+{
+ "jednotky": "mm",
+ "profil": "Hlinikovy stavebnicovy profil 40x40 mm SuperLight S10 (Dogus STEP 1.1.10.040040.03)",
+ "soustava_prurezu": "x = napric drazkou (osa drazky x = 0), y = nahoru (povrch profilu u horni drazky y = +20, stred profilu y = 0); ve scene GLB je Y = y + 20 (spodek profilu Y = 0, horni plocha Y = 40), X = podel profilu, Z = -x",
+ "odvozeni": [
+  "Rez: GLB profilu (z Dogus STEP) se protne rovinou kolmou k ose delky v polovine delky; segmenty rezu se spoji do 6 uzavrenych smycek (vnejsi obrys, stredovy otvor, 4 rohove dutiny), kolinearni body se vyhodi.",
+  "Vnejsi obrys obsahuje na kazde strane T-drazku jako vybeh; horni drazka = usek obrysu od horniho povrchu (y = 20, leva zem) pres zapusteni, krcek, strop komory, komoru a dno az zpet k hornimu povrchu (prava zem). Vsechny rozmery jsou presne souradnice vrcholu tohoto useku (zadne rastrovani); GLB je float32, hodnoty zaokrouhleny na 0,001 mm.",
+  "Struktura useku: (-a,20) (-a,18,5) (-b,18,5) (-b,14,0) (-C,14,0) (-C,10,969) (-fx,fy) dno ... : zapusteni 2 x a (hloubka 1,5), okraj nahore y = 18,5, krcek 2 x b, strop komory (spodek okraju) y = 14,0, komora 2 x C, svisla stena do y = 10,969, pote sikmina 45 st. k okraji dna (+-6,275; 7,195), dno je mirne zvlnene (7,188 u osy, 6,322 pri +-4,3, strednim zlabkem 6,764).",
+  "Vule matic: rozdily polosirek proti drazce; matice se z katalogu berou beze zmeny tvaru (kamen jen quadric decimaci na 3000 trojuhelniku, vrcholy zustavaji na puvodnich souradnicich)."
+ ],
+ "drazka": {
+  "povrch_y": 20.0,
+  "zapusteni_pul_sirka": 6.1,
+  "zapusteni_hloubka": 1.5,
+  "okraj_horni_y": 18.5,
+  "okraj_horni_sirka": 1.0,
+  "krcek_pul_sirka": 5.1,
+  "krcek_sirka": 10.2,
+  "krcek_hloubka": 4.5,
+  "strop_komory_y": 14.0,
+  "komora_pul_sirka": 10.05,
+  "komora_sirka": 20.1,
+  "komora_svisla_stena_dole_y": 10.969,
+  "komora_svisla_vyska": 3.031,
+  "sikmina_dole": [
+   6.275,
+   7.195
+  ],
+  "sikmina_uhel_deg": 45.0,
+  "dno_y_min": 6.322,
+  "dno_y_max": 7.195,
+  "dno_stred_y": 6.764,
+  "komora_hloubka_pod_stropem_max": 7.678,
+  "prurez_smycky": [
+   160,
+   315,
+   96,
+   96,
+   96,
+   96
+  ],
+  "profil_z_rozsah": [
+   -1000.0,
+   0.0
+  ],
+  "profil_vnejsi_pul_sirka": 20.0,
+  "plocha_materialu_mm2": 380.805,
+  "dno_nejvyssi_bod_pod_matici_y": 7.188,
+  "poznamka_dno": "dno_y_max je okraj sikminy (+-6,275); plocha spodek matice (+-5,4) lezi na hrebenech dna 7,188 u osy"
+ },
+ "drazka_polyline_levy_k_pravemu": [
+  [
+   -6.1,
+   20.0
+  ],
+  [
+   -6.1,
+   18.5
+  ],
+  [
+   -5.1,
+   18.5
+  ],
+  [
+   -5.1,
+   14.0
+  ],
+  [
+   -10.05,
+   14.0
+  ],
+  [
+   -10.05,
+   10.969
+  ],
+  [
+   -6.275,
+   7.195
+  ],
+  [
+   -5.708,
+   6.75
+  ],
+  [
+   -5.05,
+   6.453
+  ],
+  [
+   -4.341,
+   6.322
+  ],
+  [
+   -3.621,
+   6.363
+  ],
+  [
+   -2.932,
+   6.576
+  ],
+  [
+   -2.123,
+   6.88
+  ],
+  [
+   -1.282,
+   7.085
+  ],
+  [
+   -0.424,
+   7.188
+  ],
+  [
+   0.0,
+   6.764
+  ],
+  [
+   0.424,
+   7.188
+  ],
+  [
+   1.282,
+   7.085
+  ],
+  [
+   2.123,
+   6.88
+  ],
+  [
+   2.932,
+   6.576
+  ],
+  [
+   3.621,
+   6.363
+  ],
+  [
+   4.341,
+   6.322
+  ],
+  [
+   5.05,
+   6.453
+  ],
+  [
+   5.708,
+   6.75
+  ],
+  [
+   6.275,
+   7.195
+  ],
+  [
+   10.05,
+   10.969
+  ],
+  [
+   10.05,
+   14.0
+  ],
+  [
+   5.1,
+   14.0
+  ],
+  [
+   5.1,
+   18.5
+  ],
+  [
+   6.1,
+   18.5
+  ],
+  [
+   6.1,
+   20.0
+  ]
+ ],
+ "upevneni": [
+  {
+   "id": "kamen",
+   "x": -60.0,
+   "matice": {
+    "trojuhelniku": 3000,
+    "trojuhelniku_original": 8808,
+    "otvor_polomer_stredni": 2.743,
+    "vyska_celkem": 10.5,
+    "delka_x": 20.0,
+    "sirka_z": 19.7,
+    "druh": "slide",
+    "zdroj": "product_3592.glb",
+    "hlava_vyska": 5.5,
+    "hlava_sirka": 19.7,
+    "nabeh_sirka_pricne": 9.82,
+    "vule_hlava_na_stranu": 0.2,
+    "vule_nabeh_na_stranu": 0.19,
+    "poloha_y_posun_pod_dilem": 28.02,
+    "poloha_y_dotazeny_hlava_na_stropu": 28.42
+   },
+   "dil": {
+    "zdroj": "uhelnik_3045_vysoka_kvalita.glb",
+    "trojuhelniku": 2300,
+    "trojuhelniku_original": 2300,
+    "otvor_polomer": 3.25,
+    "dosedaci_vyska_sroubu_nad_dilem": 2.559,
+    "rozmer_obalu": [
+     29.0,
+     29.0,
+     28.0
+    ]
+   },
+   "sroub": {
+    "typ": "M6 imbus, hlava zapustna (ISO 10642, 90 st.)",
+    "delka": 12.0,
+    "stoupani_zavitu_vizualni": 1.99,
+    "otacek": 4,
+    "posuv_po_dotyku": 7.961,
+    "trojuhelniku": 2478
+   }
+  },
+  {
+   "id": "otocna",
+   "x": 140.0,
+   "matice": {
+    "trojuhelniku": 1900,
+    "trojuhelniku_original": 1900,
+    "otvor_polomer_stredni": 2.5,
+    "vyska_celkem": 8.7,
+    "delka_x": 19.0,
+    "sirka_z": 10.0,
+    "druh": "drop_turn",
+    "zdroj": "product_3582.glb",
+    "vyska_zuby_horni": 6.05,
+    "vystupek_v_krcku_pricne_po_otoceni": 9.5,
+    "vystupek_v_krcku_podel_po_otoceni": 10.0,
+    "vule_delka_do_komory_na_stranu": 0.55,
+    "vule_sirka_do_krcku_na_stranu": 0.1,
+    "poloha_y_na_dne_komory": 27.198,
+    "poloha_y_zaklesnuta_zuby_na_stropu": 27.95,
+    "stoupani_pri_dotahovani": 0.752,
+    "smysl_otaceni": "po smeru hodin pri pohledu shora (zaoblene rohy napred)"
+   },
+   "dil": {
+    "zdroj": "product_3325.glb",
+    "trojuhelniku": 8448,
+    "trojuhelniku_original": 8448,
+    "otvor_polomer": 3.25,
+    "dosedaci_vyska_sroubu_nad_dilem": 2.666,
+    "rozmer_obalu": [
+     50.0,
+     11.8,
+     38.5
+    ]
+   },
+   "sroub": {
+    "typ": "M6 imbus, hlava zapustna (ISO 10642, 90 st.)",
+    "delka": 14.0,
+    "stoupani_zavitu_vizualni": 1.808,
+    "otacek": 4,
+    "posuv_po_dotyku": 7.231,
+    "trojuhelniku": 2958
+   }
+  }
+ ]
+}

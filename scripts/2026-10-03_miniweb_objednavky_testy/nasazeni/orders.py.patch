@@ -1,0 +1,70 @@
+--- a/api/orders.py
++++ b/api/orders.py
+@@ -242,11 +242,25 @@
+         "dealer_id": row.get("dealer_id"),
+         "order_path": row.get("order_path"),
+         "dealer_external_ref": row.get("dealer_external_ref"),
++        # bot5, 2026-10-03 (Robert pres bot3: "priznak, odkud prisla, ve viditelnem sloupci"): puvod objednavky = host a jazyk mini-shopu (order_host, order_lang), NULL = hlavni e-shop;
++        # shipping_review = doprava ke schvaleni zamestnancem (mini-shop), vat_mode/vat_check = rezim DPH a vysledek overeni IC DPH (VIES). Jen admin serializace.
++        "order_host": row.get("order_host"),
++        "order_lang": row.get("order_lang"),
++        "origin_label": _origin_label(row),
++        "shipping_review": int(row.get("shipping_review") or 0),
++        "vat_mode": row.get("vat_mode"),
++        "vat_check": row.get("vat_check"),
+         "created_at": _dt(row["created_at"]),
+         "updated_at": _dt(row["updated_at"]),
+     }
+ 
+ 
++def _origin_label(row):
++    """Puvod pro admin prehled: 'host - jazyk' mini-shopu, hlavni e-shop = 'e-shop'."""
++    host = row.get("order_host")
++    return f"{host} \u00b7 {row.get('order_lang')}" if host and row.get("order_lang") else (host or "e-shop")
++
++
+ def _serialize_order_for_customer(row):
+     """Ozeznany podmnozina _serialize_order() pro zakaznickou self-service
+     cestu (bot18, 2026-09-05, "moje objednavky") - VYNECHAVA admin_note
+@@ -1881,6 +1895,8 @@
+     price_min = request.args.get("price_min", type=float)
+     price_max = request.args.get("price_max", type=float)
+     has_account = request.args.get("has_account")
++    origin = (request.args.get("origin") or "").strip()                 # bot5, 2026-10-03: eshop = hlavni e-shop (order_host NULL), jinak host mini-shopu
++    shipping_review = request.args.get("shipping_review") == "1"
+     # Testovaci objednavky (WORKFLOW.md bod 27) se do prehledu ani do poctu
+     # NEPOCITAJI - Robert 2026-09-10: "testovaci objednavky se nesmi pocitat
+     # do statistik a prehledu jako skutecne". Filtr je VIDITELNY a
+@@ -1930,6 +1946,13 @@
+         where.append("user_id IS NOT NULL")
+     elif has_account == "0":
+         where.append("user_id IS NULL")
++    if origin == "eshop":
++        where.append("order_host IS NULL")
++    elif origin:
++        where.append("order_host=%s")
++        params.append(origin[:255])
++    if shipping_review:
++        where.append("shipping_review=1")
+ 
+     # Stránkování (task #78/81) - admin-only, defaultně stránkuj.
+     page, page_size = get_pagination_args(default_page_size=50)
+@@ -1972,6 +1995,9 @@
+             urgent_count = cur.fetchone()["n"]
+             cur.execute(f"SELECT COUNT(*) AS n FROM shop_orders{test_where_sql}")
+             all_count = cur.fetchone()["n"]
++            # bot5, 2026-10-03: seznam puvodu pro filtr (hlavni e-shop + kazdy mini-shop, ze ktereho prisla aspon jedna objednavka)
++            cur.execute("SELECT order_host, order_lang, COUNT(*) AS n FROM shop_orders WHERE order_host IS NOT NULL" + ("" if include_test else " AND is_test=0") + " GROUP BY order_host, order_lang ORDER BY order_host, order_lang")
++            origins = [{"key": "eshop", "label": "e-shop"}] + [{"key": r["order_host"], "label": _origin_label(r), "count": r["n"]} for r in cur.fetchall()]
+     finally:
+         conn.close()
+ 
+@@ -1985,7 +2011,7 @@
+         o["invoices"] = invoices_by_order.get(r["id"], [])
+         serialized_orders.append(o)
+ 
+-    resp = {"orders": serialized_orders, "counts": counts}
++    resp = {"orders": serialized_orders, "counts": counts, "origins": origins}
+     if page_size:
+         resp.update(total=total, page=page, page_size=page_size)
+     return jsonify(resp)

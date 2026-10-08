@@ -1,0 +1,12 @@
+[Unit]
+Description=Casovac aktivace Vandr karet po dokoncenem renderu (kazdych 15 minut)
+# Samostatna implementace od konfigurator-card-auto-activate.timer
+# (Logiman, cte product_assemblies) - Vandr karty tenhle sloupec
+# nemaji. Vypinac: app_settings['vandr_card_activate_povoleno'].
+[Timer]
+OnCalendar=*-*-* *:12/15:00
+Persistent=true
+RandomizedDelaySec=60
+
+[Install]
+WantedBy=timers.target

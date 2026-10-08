@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Náhled: tabulka válečkových dopravníků</title>
+<link rel="stylesheet" href="/css/brand-logo.css">
+<style>
+  /* NÁHLED tabulky a štítků-filtrů pro kategorii #324 "Válečkové dopravníky" (bot16, 2026-10-07; Robert přes bot9: "chce to štítky pro rychlé filtrování podle délky… není příjemné
+     koukat na desítky stejných obrázků… v tom se nedá orientovat"). Samostatný statický soubor: čte ŽIVÉ API e-shopu (GET /api/shop/products?category_id=324&include=specs), nic nezapisuje.
+     Do category.html se vloží až po Robertově schválení (stejný kód pro #325 / #327 - jen kategorie s daty specs). Barvy a motiv stejně jako e-shop (shopTheme + /api/theme-colors). */
+  :root {
+    --bg: #494b50; --panel-bg: #22262e; --panel-bg-2: #1f232a; --border: #3a3f4a; --border-soft: #333333; --border-card: #2c313a;
+    --text: #e8eaed; --text2: #c7ccd4; --text-muted: #8b93a1; --accent: #9fd0ff; --btn-bg: #3a5a7a; --btn-bg-hover: #4a6a8a;
+    --error: #e07070; --success: #7ed49a; --warn: #e0a070;
+  }
+  [data-theme="light"] {
+    --bg: #eef1f5; --panel-bg: #ffffff; --panel-bg-2: #f6f8fa; --border: #d7dce3; --border-soft: #e3e7ec; --border-card: #dde2e8;
+    --text: #1b1e24; --text2: #3a3f4a; --text-muted: #5c6570; --accent: #1a6fd4; --btn-bg: #2f6690; --btn-bg-hover: #3a76a0;
+    --error: #c23b3b; --success: #2f9e5c; --warn: #b8721f;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; min-height: 100%; background: var(--bg); color: var(--text); font-family: var(--font-main, -apple-system, "Segoe UI", Roboto, Arial, sans-serif); font-size: 14px; line-height: 1.45; }
+  body { display: flex; flex-direction: column; min-height: 100vh; }
+  .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+  a { color: var(--accent); }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  .preview-banner { background: #b3541e; color: #fff; text-align: center; padding: 8px 14px; font-size: 13px; font-weight: 600; }
+  .preview-banner a { color: #fff; }
+  .preview-banner .short { display: none; }
+  header { min-height: 56px; background: var(--panel-bg); border-bottom: 1px solid var(--border-soft); display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 8px 20px; flex-wrap: wrap; }
+  header .brand { font-size: 14px; color: var(--text); font-weight: 600; text-decoration: none; }
+  header .left { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .home-btn { display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border: 1px solid var(--border); color: var(--text); text-decoration: none; background: var(--panel-bg-2); }
+  #themeBtn { background: var(--panel-bg-2); color: var(--text-muted); border: 1px solid var(--border); border-radius: 6px; padding: 6px 10px; cursor: pointer; font-size: 14px; }
+
+  main { width: 100%; max-width: 1320px; margin: 0 auto; padding: 18px 20px 40px; flex: 1; }
+  .hero { display: flex; align-items: center; gap: 16px; margin-bottom: 14px; }
+  .hero-img { width: 112px; height: 84px; flex: 0 0 auto; background: #fff; border: 1px solid var(--border-card); display: flex; align-items: center; justify-content: center; overflow: hidden; }
+  .hero-img img { max-width: 100%; max-height: 100%; object-fit: contain; display: block; }
+  .hero h1 { margin: 0 0 4px; font-size: 24px; line-height: 1.2; }
+  .hero p { margin: 0; color: var(--text2); max-width: 70ch; }
+
+  .panel { background: var(--panel-bg); border: 1px solid var(--border-card); padding: 14px 16px; margin-bottom: 14px; }
+  .filters-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 6px; }
+  .filters-head h2 { margin: 0; font-size: 13px; text-transform: uppercase; letter-spacing: .08em; color: var(--text-muted); }
+  details.filters-box > summary { list-style: none; cursor: pointer; display: none; align-items: center; justify-content: space-between; font-weight: 700; padding: 2px 0; }
+  details.filters-box > summary::-webkit-details-marker { display: none; }
+  details.filters-box > summary::after { content: "\25BE"; color: var(--accent); }
+  details.filters-box[open] > summary::after { content: "\25B4"; }
+  .fgroup { border: 0; margin: 0 0 10px; padding: 0; min-width: 0; display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+  .fgroup:last-of-type { margin-bottom: 0; }
+  .fgroup legend { float: left; width: 255px; padding: 0; margin: 0; font-weight: 700; color: var(--text2); }
+  @media (max-width: 1000px) { .fgroup legend { width: 190px; } }
+  .fgroup .chips { display: flex; flex-wrap: wrap; gap: 8px; flex: 1 1 0; min-width: 0; }
+  .chip { appearance: none; font: inherit; color: var(--text); background: var(--panel-bg-2); border: 1px solid var(--border); padding: 7px 12px; min-height: 36px; cursor: pointer; display: inline-flex; align-items: center; gap: 7px; border-radius: 0;
+          clip-path: polygon(0 7px, 7px 0, 100% 0, 100% 100%, 0 100%); }
+  .chip:hover { border-color: var(--accent); }
+  .chip .n { font-size: 11.5px; color: var(--text-muted); font-variant-numeric: tabular-nums; }
+  .chip[aria-pressed="true"] { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 24%, var(--panel-bg)); font-weight: 700; box-shadow: inset 0 0 0 1px var(--accent); }
+  .chip[aria-pressed="true"]::before { content: "\2713"; color: var(--accent); font-weight: 700; }
+  .chip[aria-disabled="true"] { opacity: .42; }
+  .chip[aria-disabled="true"]:hover { border-color: var(--border); }
+
+  .toolbar { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 10px; }
+  .toolbar .count { font-weight: 700; margin-right: auto; }
+  .toolbar .tools { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .toolbar label { color: var(--text-muted); display: inline-flex; align-items: center; gap: 6px; }
+  select, .seg button, .btn-reset { font: inherit; color: var(--text); background: var(--panel-bg-2); border: 1px solid var(--border); padding: 7px 10px; min-height: 36px; border-radius: 0; cursor: pointer; }
+  .seg { display: inline-flex; }
+  .seg button + button { border-left: 0; }
+  .seg button[aria-pressed="true"] { background: color-mix(in srgb, var(--accent) 24%, var(--panel-bg)); border-color: var(--accent); font-weight: 700; }
+  .btn-reset[hidden] { display: none; }
+
+  /* tabulka */
+  table.dop { width: 100%; border-collapse: collapse; background: var(--panel-bg); border: 1px solid var(--border-card); }
+  table.dop thead th { position: sticky; top: 0; z-index: 2; background: var(--panel-bg-2); text-align: left; font-size: 12px; text-transform: uppercase; letter-spacing: .05em; color: var(--text-muted); border-bottom: 2px solid var(--accent); padding: 0; }
+  table.dop thead th .h { display: block; padding: 10px 12px; }
+  table.dop thead th button { appearance: none; font: inherit; text-transform: inherit; letter-spacing: inherit; color: inherit; background: none; border: 0; width: 100%; text-align: inherit; padding: 10px 12px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; }
+  table.dop thead th.num, table.dop td.num { text-align: right; }
+  table.dop thead th.num button { justify-content: flex-end; }
+  table.dop thead th button .ar { opacity: .35; font-size: 11px; }
+  table.dop thead th[aria-sort="ascending"] button .ar, table.dop thead th[aria-sort="descending"] button .ar { opacity: 1; color: var(--accent); }
+  table.dop tbody td { padding: 9px 12px; border-bottom: 1px solid var(--border-soft); vertical-align: middle; }
+  table.dop tbody tr:nth-child(even) td { background: color-mix(in srgb, var(--text) 3%, transparent); }
+  table.dop tbody tr:hover td { background: color-mix(in srgb, var(--accent) 10%, transparent); }
+  td .typ { font-weight: 700; display: block; }
+  td .kod { display: block; font-size: 11.5px; color: var(--text-muted); font-family: "SF Mono", "Cascadia Code", Consolas, monospace; }
+  td.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+  td .u { display: none; }
+  td.cena { font-weight: 700; color: var(--success); font-family: "SF Mono", "Cascadia Code", Consolas, monospace; font-size: 15px; }
+  td.cena-vat { color: var(--text2); }
+  .btn-detail { display: inline-block; background: var(--btn-bg); color: #fff; text-decoration: none; padding: 7px 14px; font-weight: 600; clip-path: polygon(0 7px, 7px 0, 100% 0, 100% 100%, 0 100%); }
+  .btn-detail:hover { background: var(--btn-bg-hover); }
+
+  /* karty */
+  .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 14px; }
+  .dcard { background: var(--panel-bg); border: 1px solid var(--border-card); display: flex; flex-direction: column; }
+  .dcard .im { height: 150px; background: #fff; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+  .dcard .im img { max-width: 100%; max-height: 100%; object-fit: contain; }
+  .dcard .bd { padding: 10px 12px 12px; display: flex; flex-direction: column; gap: 4px; flex: 1; }
+  .dcard .t { font-weight: 700; }
+  .dcard .p { color: var(--text2); font-size: 13px; }
+  .dcard .cena { margin-top: auto; padding-top: 6px; font-weight: 700; color: var(--success); font-family: "SF Mono", "Cascadia Code", Consolas, monospace; font-size: 16px; }
+  .dcard .cena small { display: block; font-weight: 400; color: var(--text-muted); font-size: 12px; }
+  .dcard .btn-detail { margin-top: 8px; text-align: center; }
+
+  .state { padding: 28px 16px; text-align: center; color: var(--text2); background: var(--panel-bg); border: 1px solid var(--border-card); }
+  .state button { margin-top: 10px; }
+  .note { margin-top: 12px; color: var(--text-muted); font-size: 12.5px; }
+
+  /* mobil */
+  @media (max-width: 760px) {
+    .preview-banner .long { display: none; } .preview-banner .short { display: inline; }
+    header { padding: 8px 12px; flex-wrap: nowrap; }
+    header .brand { display: none; }
+    main { padding: 12px 12px 32px; }
+    .hero { gap: 12px; }
+    .hero-img { width: 84px; height: 64px; }
+    .hero h1 { font-size: 20px; }
+    .hero p { font-size: 13px; }
+    details.filters-box > summary { display: flex; }
+    details.filters-box:not([open]) .filters-body { display: none; }
+    .panel { padding: 10px 12px; }
+    .fgroup { display: block; margin-bottom: 12px; }
+    .fgroup legend { float: none; width: auto; margin-bottom: 6px; }
+    .chip { min-height: 40px; padding: 8px 12px; }
+    .toolbar { gap: 8px; }
+    .toolbar .count { flex: 1 1 auto; margin-right: 0; }
+    .toolbar .tools { width: 100%; justify-content: space-between; flex-wrap: nowrap; }
+    .toolbar .tools label { flex: 1 1 auto; min-width: 0; }
+    .toolbar .tools select { flex: 1 1 auto; min-width: 0; width: 100%; }
+    table.dop, table.dop tbody, table.dop td { display: block; width: 100%; }
+    table.dop thead { display: none; }
+    table.dop { background: transparent; border: 0; }
+    table.dop tbody tr { position: relative; background: var(--panel-bg); border: 1px solid var(--border-card); margin-bottom: 10px; padding: 10px 12px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 3px 10px; }
+    table.dop tbody td { border: 0; padding: 0; background: none !important; text-align: left; width: auto; }
+    table.dop tbody td.num { text-align: left; }
+    table.dop tbody td.c-typ { order: 1; flex: 1 1 100%; font-size: 15px; padding-right: 125px; min-height: 40px; }
+    table.dop tbody td.cena { position: absolute; top: 9px; right: 12px; font-size: 17px; }
+    table.dop tbody td.c-prumer { order: 3; }
+    table.dop tbody td.c-sirka { order: 4; }
+    table.dop tbody td.c-delka { order: 5; }
+    table.dop tbody td.cena-vat { position: absolute; top: 33px; right: 12px; font-size: 12.5px; }
+    table.dop tbody td .u { display: inline; }
+    table.dop tbody td.c-sirka::before, table.dop tbody td.c-delka::before, table.dop tbody td.cena-vat::before { content: attr(data-label) " "; color: var(--text-muted); font-size: 12px; font-weight: 400; }
+    table.dop tbody td.c-detail { order: 7; flex: 1 1 100%; padding-top: 8px; }
+    table.dop tbody td.c-detail .btn-detail { display: block; text-align: center; padding: 11px 14px; }
+    .cards { grid-template-columns: 1fr 1fr; gap: 10px; }
+    .dcard .im { height: 110px; }
+  }
+  @media (max-width: 420px) { .cards { grid-template-columns: 1fr; } }
+</style>
+<script>
+// Barevný motiv jako na e-shopu (uložený shopTheme a cache palety z /api/theme-colors) - aplikuje se před prvním vykreslením.
+(function () {
+  try { var t = localStorage.getItem("shopTheme"); if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t); } catch (e) {}
+  try {
+    var c = JSON.parse(localStorage.getItem("shopThemeColorsCache") || "null");
+    if (c) { var th = document.documentElement.getAttribute("data-theme") === "light" ? "light" : "dark"; var pal = c[th];
+      if (pal) Object.keys(pal).forEach(function (k) { document.documentElement.style.setProperty("--" + k.replace(/_/g, "-"), pal[k]); }); }
+  } catch (e) {}
+})();
+</script>
+</head>
+<body>
+<div class="preview-banner">NÁHLED<span class="long"> – tabulka a štítky-filtry kategorie Válečkové dopravníky (živá data e-shopu). Zatím jen ke kontrole, veřejná kategorie se nemění.</span><span class="short"> – jen ke kontrole (živá data)</span> · <a href="/valeckove-dopravniky">Dnešní výpis kategorie</a></div>
+<header>
+  <div class="left">
+    <a href="/" class="home-btn" title="Domů" aria-label="Domů">⌂</a>
+    <a class="brand-logo" href="/" aria-label="Logiman"><span class="brand-logo-hl">LOGi</span><span class="brand-logo-lt">MAN</span></a>
+    <a class="brand" href="/">Hliníkový konstrukční stavebnicový systém s drážkami</a>
+  </div>
+  <button id="themeBtn" type="button" title="Přepnout barevné schéma" aria-label="Přepnout barevné schéma">☀️</button>
+</header>
+<main>
+  <section class="hero" aria-labelledby="h1">
+    <div class="hero-img" id="heroImg" aria-hidden="true"></div>
+    <div>
+      <h1 id="h1">Válečkové dopravníky</h1>
+      <p id="heroText">Vyberte délku, šířku a typ válečku – tabulka ukazuje všechny varianty najednou, ceny bez DPH i s DPH.</p>
+    </div>
+  </section>
+
+  <section class="panel" aria-label="Filtry">
+    <details class="filters-box" id="filtersBox" open>
+      <summary><span>Filtry <span id="activeN"></span></span></summary>
+      <div class="filters-body" id="filters"></div>
+    </details>
+  </section>
+
+  <div class="toolbar">
+    <div class="count" id="count" role="status" aria-live="polite">Načítám varianty…</div>
+    <button type="button" class="btn-reset" id="resetBtn" hidden>Zrušit filtry</button>
+    <div class="tools"><label>Řazení
+      <select id="sortSel" aria-label="Řazení">
+        <option value="vychozi:asc">Výchozí (typ, šířka, délka)</option>
+        <option value="cena:asc">Cena: od nejnižší</option>
+        <option value="cena:desc">Cena: od nejvyšší</option>
+        <option value="delka:asc">Délka: od nejkratší</option>
+        <option value="delka:desc">Délka: od nejdelší</option>
+        <option value="sirka:asc">Šířka: od nejužší</option>
+        <option value="sirka:desc">Šířka: od nejširší</option>
+      </select>
+    </label>
+    <span class="seg" role="group" aria-label="Zobrazení">
+      <button type="button" id="viewTabulka" aria-pressed="true">Tabulka</button>
+      <button type="button" id="viewKarty" aria-pressed="false">Karty</button>
+    </span></div>
+  </div>
+
+  <div id="result"></div>
+  <p class="note">Ceny jsou uvedeny bez DPH; cena s DPH je vypočtena se sazbou 21 %. Šířka odpovídá délce válečku, délka je délka dopravníku.</p>
+</main>
+
+<script>
+(function () {
+  "use strict";
+  var API = "/api/shop/products?category_id=324&page_size=100&include=specs";
+  var VAT = 21;
+  // Zobrazované názvy typu válečku (bot7, 2026-10-07): hodnota ve specs ("Typ válečku") zůstává nezměněná a podle ní se filtruje i sestavuje adresa; v zobrazení Ocelový / Hliníkový / Hliníkový vroubkovaný
+  // ("hladký" není ve zdroji - nevymýšlíme vlastnost). Neznámá hodnota se zobrazí tak, jak je.
+  var TYP_LABEL = { "Ocel": "Ocelový", "Hliník hladký": "Hliníkový", "Hliník vroubkovaný": "Hliníkový vroubkovaný" };
+  function typLabel(v) { return TYP_LABEL[v] || v; }
+  var GROUPS = [
+    { key: "delka", label: "Délka dopravníku", fmt: fmtDelka, title: function (v) { return "Délka dopravníku " + v + " mm"; } },
+    { key: "sirka", label: "Šířka dopravníku (délka válečku)", fmt: function (v) { return v + " mm"; }, title: function (v) { return "Délka válečku " + v + " mm"; } },
+    { key: "typ", label: "Typ válečku", fmt: typLabel, title: typLabel }
+  ];
+  var state = { delka: {}, sirka: {}, typ: {}, sort: "vychozi", dir: "asc", view: "tabulka" };
+  var all = [];
+
+  function $(id) { return document.getElementById(id); }
+  function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+  function num(v) { var m = String(v == null ? "" : v).replace(",", ".").match(/-?\d+(\.\d+)?/); return m ? parseFloat(m[0]) : null; }
+  function fmtKc(n) { return Math.round(n).toLocaleString("cs-CZ") + " Kč"; }
+  function plVar(n) { n = Math.abs(n); return n + " " + (n === 1 ? "varianta" : (n >= 2 && n <= 4 ? "varianty" : "variant")); }      // 1 varianta, 2-4 varianty, 0 a 5+ variant
+  function fmtDelkaCislo(mm) { mm = Number(mm); return mm % 1000 === 0 ? String(mm / 1000) : String(mm / 1000).replace(".", ","); }
+  function fmtDelka(mm) { mm = Number(mm); return (mm % 1000 === 0 ? String(mm / 1000) : String(mm / 1000).replace(".", ",")) + " m"; }
+  function withVat(net) { return net + Math.round((net * VAT / 100 + 1e-9) * 100) / 100; }
+
+  function norm(p, i) {
+    var s = p.specs || {};
+    var m = /Ø(\d+)\s*[×x]\s*(\d+)\s*mm.*?délka\s*(\d+)\s*mm/i.exec(p.name || "") || [];       // záloha, kdyby specs chyběly
+    var typ = s["Typ válečku"] || "Neuvedeno";
+    return { idx: i, id: p.id, slug: p.slug, name: p.name, sku: s["Stock Code"] || p.sku || "", typ: typ, typL: typLabel(typ),
+      prumer: num(s["Roller"]) != null ? num(s["Roller"]) : num(m[1]), sirka: num(s["Roller length"]) != null ? num(s["Roller length"]) : num(m[2]),
+      delka: num(s["Conveyor Length"]) != null ? num(s["Conveyor Length"]) : num(m[3]), net: p.price_czk_placeholder, img: p.image_url || "" };
+  }
+
+  // ---------- stav v adrese (sdílitelné odkazy na nastavení filtrů)
+  function readUrl() {
+    var q = new URLSearchParams(location.search);
+    GROUPS.forEach(function (g) { (q.get(g.key) || "").split(",").forEach(function (v) { if (v !== "") state[g.key][g.key === "typ" ? v : Number(v)] = true; }); });
+    var r = (q.get("razeni") || "").split(":");
+    if (["vychozi", "cena", "delka", "sirka"].indexOf(r[0]) >= 0) { state.sort = r[0]; state.dir = r[1] === "desc" ? "desc" : "asc"; }
+    if (q.get("zobrazeni") === "karty") state.view = "karty";
+  }
+  function writeUrl() {
+    var q = new URLSearchParams();
+    GROUPS.forEach(function (g) { var v = Object.keys(state[g.key]); if (v.length) q.set(g.key, v.join(",")); });
+    if (state.sort !== "vychozi") q.set("razeni", state.sort + ":" + state.dir);
+    if (state.view === "karty") q.set("zobrazeni", "karty");
+    var s = q.toString();
+    try { history.replaceState(null, "", location.pathname + (s ? "?" + s : "")); } catch (e) {}
+  }
+
+  // ---------- filtrování
+  function passes(p, skipKey) {
+    return GROUPS.every(function (g) {
+      if (g.key === skipKey) return true;
+      var sel = state[g.key]; if (!Object.keys(sel).length) return true;
+      return sel[p[g.key]] === true;
+    });
+  }
+  function filtered() { return all.filter(function (p) { return passes(p, null); }); }
+  function activeCount() { return GROUPS.reduce(function (n, g) { return n + Object.keys(state[g.key]).length; }, 0); }
+
+  function sorted(list) {
+    var arr = list.slice(), d = state.dir === "desc" ? -1 : 1, k = state.sort;
+    arr.sort(function (a, b) {
+      var x, y;
+      if (k === "cena") { x = a.net; y = b.net; } else if (k === "delka") { x = a.delka; y = b.delka; } else if (k === "sirka") { x = a.sirka; y = b.sirka; } else { return a.idx - b.idx; }
+      return (x - y) * d || a.idx - b.idx;
+    });
+    return arr;
+  }
+
+  // ---------- vykreslení
+  function options(g) {
+    var seen = {}, out = [];
+    all.forEach(function (p) { var v = p[g.key]; if (v != null && !seen[v]) { seen[v] = true; out.push(v); } });
+    if (g.key !== "typ") out.sort(function (a, b) { return a - b; });
+    return out;
+  }
+  function renderFilters() {
+    var box = $("filters"); box.textContent = "";
+    GROUPS.forEach(function (g) {
+      var fs = el("fieldset", "fgroup"); fs.setAttribute("data-group", g.key);
+      fs.appendChild(el("legend", null, g.label));
+      var chips = el("div", "chips");
+      options(g).forEach(function (v) {
+        var n = all.filter(function (p) { return p[g.key] === v && passes(p, g.key); }).length;      // počet při ostatních aktivních filtrech
+        var on = state[g.key][v] === true;
+        var b = el("button", "chip"); b.type = "button"; b.setAttribute("data-val", String(v));
+        b.setAttribute("aria-pressed", on ? "true" : "false"); b.title = g.title(v);
+        if (n === 0 && !on) b.setAttribute("aria-disabled", "true");
+        b.appendChild(document.createTextNode(g.fmt(v)));
+        var c = el("span", "n", String(n)); c.setAttribute("aria-label", plVar(n)); b.appendChild(c);
+        b.addEventListener("click", function () { if (b.getAttribute("aria-disabled") === "true") return; if (on) delete state[g.key][v]; else state[g.key][v] = true; update(); });
+        chips.appendChild(b);
+      });
+      fs.appendChild(chips); box.appendChild(fs);
+    });
+    var n = activeCount(); $("activeN").textContent = n ? "(" + n + ")" : "";
+  }
+  function detailUrl(p) { return p.slug ? "/produkt/" + encodeURIComponent(p.slug) : "/product.html?id=" + p.id; }
+
+  function renderTable(list) {
+    var t = el("table", "dop"); t.appendChild(el("caption", "sr-only", "Varianty válečkových dopravníků"));
+    var thead = el("thead"), tr = el("tr");
+    [["typ", "Typ válečku", false, null], ["prumer", "Ø válečku", true, null], ["sirka", "Šířka (mm)", true, "sirka"], ["delka", "Délka (m)", true, "delka"], ["cena", "Cena bez DPH", true, "cena"], ["cena-vat", "Cena s DPH", true, null], ["detail", "", false, null]].forEach(function (c) {
+      var th = el("th"); th.scope = "col"; if (c[2]) th.className = "num";
+      if (c[3]) {
+        th.setAttribute("aria-sort", state.sort === c[3] ? (state.dir === "desc" ? "descending" : "ascending") : "none");
+        var b = el("button"); b.type = "button"; b.appendChild(document.createTextNode(c[1])); b.appendChild(el("span", "ar", state.sort === c[3] ? (state.dir === "desc" ? "▼" : "▲") : "↕"));
+        b.addEventListener("click", function () { if (state.sort === c[3]) state.dir = state.dir === "asc" ? "desc" : "asc"; else { state.sort = c[3]; state.dir = "asc"; } update(); });
+        th.appendChild(b);
+      } else if (c[1]) { th.appendChild(el("span", "h", c[1])); } else { th.appendChild(el("span", "sr-only", "Detail")); }
+      tr.appendChild(th);
+    });
+    thead.appendChild(tr); t.appendChild(thead);
+    var tb = el("tbody");
+    list.forEach(function (p) {
+      var r = el("tr"); r.setAttribute("data-id", String(p.id));
+      var c1 = el("td", "c-typ"); c1.appendChild(el("span", "typ", p.typL)); if (p.sku) c1.appendChild(el("span", "kod", p.sku)); r.appendChild(c1);
+      function cell(cls, label, text) { var td = el("td", cls, text); if (label) td.setAttribute("data-label", label); r.appendChild(td); return td; }
+      cell("num c-prumer", null, p.prumer != null ? "Ø" + p.prumer : "–");
+      var ts = cell("num c-sirka", "Šířka", p.sirka != null ? String(p.sirka) : "–"); if (p.sirka != null) ts.appendChild(el("span", "u", " mm"));        // jednotka je v záhlaví sloupce; na mobilu (bez záhlaví) se ukáže u hodnoty
+      var td2 = cell("num c-delka", "Délka", p.delka != null ? fmtDelkaCislo(p.delka) : "–"); if (p.delka != null) td2.appendChild(el("span", "u", " m"));
+      var net = p.net, hasP = typeof net === "number";
+      cell("num cena", null, hasP ? fmtKc(net) : "na dotaz");
+      cell("num cena-vat", "s DPH", hasP ? fmtKc(withVat(net)) : "–");
+      var td = el("td", "c-detail"), a = el("a", "btn-detail", "Detail"); a.href = detailUrl(p); a.setAttribute("aria-label", "Detail produktu: " + p.typL + ", šířka " + p.sirka + " mm, délka " + fmtDelka(p.delka).replace(" ", " ")); td.appendChild(a); r.appendChild(td);
+      tb.appendChild(r);
+    });
+    t.appendChild(tb); return t;
+  }
+  function renderCards(list) {
+    var g = el("div", "cards");
+    list.forEach(function (p) {
+      var c = el("article", "dcard"); c.setAttribute("data-id", String(p.id));
+      var im = el("div", "im"); if (p.img) { var i = el("img"); i.src = p.img; i.loading = "lazy"; i.alt = ""; im.appendChild(i); } c.appendChild(im);
+      var bd = el("div", "bd");
+      bd.appendChild(el("div", "t", p.typL));
+      bd.appendChild(el("div", "p", "Ø" + p.prumer + " · šířka " + p.sirka + " mm · délka " + fmtDelka(p.delka)));
+      var pr = el("div", "cena", typeof p.net === "number" ? fmtKc(p.net) : "na dotaz"); if (typeof p.net === "number") { pr.appendChild(document.createTextNode(" bez" + " " + "DPH")); pr.appendChild(el("small", null, fmtKc(withVat(p.net)) + " s" + " " + "DPH")); }
+      bd.appendChild(pr);
+      var a = el("a", "btn-detail", "Detail"); a.href = detailUrl(p); bd.appendChild(a);
+      c.appendChild(bd); g.appendChild(c);
+    });
+    return g;
+  }
+  function renderResult() {
+    var list = sorted(filtered()), res = $("result"); res.textContent = "";
+    $("count").textContent = "Nalezeno " + list.length + " z " + all.length + " variant";
+    $("resetBtn").hidden = activeCount() === 0;
+    if (!list.length) {
+      var s = el("div", "state", "Žádná varianta neodpovídá vybraným filtrům."); s.appendChild(document.createElement("br"));
+      var b = el("button", "btn-reset", "Zrušit filtry"); b.type = "button"; b.addEventListener("click", resetAll); s.appendChild(b); res.appendChild(s); return;
+    }
+    res.appendChild(state.view === "karty" ? renderCards(list) : renderTable(list));
+  }
+  function syncControls() {
+    $("sortSel").value = state.sort + ":" + (state.sort === "vychozi" ? "asc" : state.dir);
+    $("viewTabulka").setAttribute("aria-pressed", state.view === "tabulka" ? "true" : "false");
+    $("viewKarty").setAttribute("aria-pressed", state.view === "karty" ? "true" : "false");
+  }
+  function update() { renderFilters(); renderResult(); syncControls(); writeUrl(); }
+  function resetAll() { GROUPS.forEach(function (g) { state[g.key] = {}; }); update(); }
+
+  function loadAll() {
+    var rows = [], page = 1;
+    function next() {
+      return fetch(API.replace("page_size=100", "page_size=100&page=" + page)).then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); }).then(function (d) {
+        var pr = d.products || []; rows = rows.concat(pr);
+        if (pr.length && rows.length < (d.total || 0) && page < 20) { page++; return next(); }
+        return rows;
+      });
+    }
+    return next();
+  }
+  function showError() {
+    $("count").textContent = "Varianty se nepodařilo načíst.";
+    var s = el("div", "state", "Data e-shopu se nepodařilo načíst. "); var b = el("button", "btn-reset", "Zkusit znovu"); b.type = "button"; b.addEventListener("click", init); s.appendChild(b);
+    $("result").textContent = ""; $("result").appendChild(s);
+  }
+  function init() {
+    $("count").textContent = "Načítám varianty…";
+    loadAll().then(function (rows) {
+      all = rows.map(norm).filter(function (p) { return p.delka != null && p.sirka != null; });
+      var withImg = all.filter(function (p) { return p.img; })[0];
+      if (withImg) { $("heroImg").textContent = ""; var i = el("img"); i.src = withImg.img; i.alt = ""; $("heroImg").appendChild(i); }
+      $("heroText").textContent = "Vyberte délku, šířku a typ válečku – tabulka ukazuje všech " + all.length + " variant najednou, ceny bez DPH i s DPH.";
+      update();
+    }).catch(function () { showError(); });
+  }
+
+  // ovládání
+  $("resetBtn").addEventListener("click", resetAll);
+  $("sortSel").addEventListener("change", function () { var p = this.value.split(":"); state.sort = p[0]; state.dir = p[1] === "desc" ? "desc" : "asc"; update(); });
+  $("viewTabulka").addEventListener("click", function () { state.view = "tabulka"; update(); });
+  $("viewKarty").addEventListener("click", function () { state.view = "karty"; update(); });
+  $("themeBtn").addEventListener("click", function () {
+    var cur = document.documentElement.getAttribute("data-theme") === "light" ? "light" : "dark", nxt = cur === "light" ? "dark" : "light";
+    document.documentElement.setAttribute("data-theme", nxt);
+    try { localStorage.setItem("shopTheme", nxt); } catch (e) {}
+    if (window.__themeColors && window.__themeColors[nxt]) Object.keys(window.__themeColors[nxt]).forEach(function (k) { document.documentElement.style.setProperty("--" + k.replace(/_/g, "-"), window.__themeColors[nxt][k]); });
+    $("themeBtn").textContent = nxt === "light" ? "🌙" : "☀️";
+  });
+  (function themeInit() {
+    $("themeBtn").textContent = document.documentElement.getAttribute("data-theme") === "light" ? "🌙" : "☀️";
+    fetch("/api/theme-colors?surface=eshop").then(function (r) { return r.ok ? r.json() : null; }).then(function (data) {
+      if (!data) return; window.__themeColors = data;
+      try { localStorage.setItem("shopThemeColorsCache", JSON.stringify(data)); } catch (e) {}
+      var th = document.documentElement.getAttribute("data-theme") === "light" ? "light" : "dark", pal = data[th];
+      if (pal) Object.keys(pal).forEach(function (k) { document.documentElement.style.setProperty("--" + k.replace(/_/g, "-"), pal[k]); });
+    }).catch(function () {});
+  })();
+  // na mobilu jsou filtry sbalené, na počítači rozbalené
+  if (window.matchMedia && window.matchMedia("(max-width: 760px)").matches) $("filtersBox").removeAttribute("open");
+
+  readUrl();
+  init();
+})();
+</script>
+</body>
+</html>

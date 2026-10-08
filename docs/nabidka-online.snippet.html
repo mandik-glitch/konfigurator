@@ -1,0 +1,130 @@
+<!--
+  NÁVRH vložení sdíleného 3D prohlížeče do webapp/nabidka-online.html pro nabídky z karty Vandr (bot10, 2026-10-02).
+  APLIKOVÁNO 2026-10-06 (Robert: „dotáhni to do konce“) přímo do webapp/nabidka-online.html (bot10; v úpravě: sdílí loader `loadV3dLib` s větví konfigurace bota5, hák je jen pro nabídky mimo `source === "configurator"`, klávesy už stránka měla). Tenhle soubor zůstává jako dokumentace návrhu. Čtyři bloky níže se vkládají
+  do STÁVAJÍCÍ stránky; nic stávajícího se nemaže, dosavadní vestavěný prohlížeč (initViewer3d) zůstává pro modely bez spec v3d.
+  Kontrakt: docs/KONTRAKT_NABIDKA_3D.md. Test (Playwright, bez sítě, atrapy API, SKUTEČNÝ prohlížeč a skutečné modely):
+  scripts/2026-10-02_v3d_testy/harness_page.js aplikuje tyhle bloky na kopii živé stránky podle kotev uvedených níž a ověří je.
+
+  BLOK css      do stávajícího <style>, za pravidlo `#viewer3dHint { ... }` (řádek ~463).
+  BLOK funkce   do IIFE stránky těsně PŘED řádek `let viewer3dAttempted = false;`.
+  BLOK hacek    do initViewer3d(offer), HNED ZA řádek `viewer3dAttempted = true;`.
+  BLOK klavesy  tělo stávajícího `document.addEventListener("keydown", e => {` - nový první řádek.
+
+  KOTVY (přesný text, každá musí být ve stránce právě jednou - harness to kontroluje):
+    css:     "  #viewer3dHint { text-align: center; font-size: 12px; color: var(--muted); margin-top: 10px; }\n"
+    funkce:  "  let viewer3dAttempted = false;\n"
+    hacek:   "    viewer3dAttempted = true;\n"
+    klavesy: "  document.addEventListener(\"keydown\", e => {\n"
+-->
+
+<!--BLOCK css-->
+  /* 3D prohlizec V3D (viewer3d.js + /css/v3d.css): plovouci bubliny chatu a WhatsAppu (#offerChatBubble/#waBubble,
+     fixed vpravo dole) by na beznem notebooku (1366 px) zakryly sloupec +/-/cela obrazovka v HUD a konec listy cipu
+     pohybu - sloupec se posune vlevo od nich, lista dostane rezervu na konci. Na cele obrazovce bubliny nejsou videt.
+     Platno kontejneru (.v3d-canvas) ma stejna pravidla jako stavajici #viewer3dContainer canvas, nic dalsiho netreba. */
+  #viewer3dContainer .v3d-root:not(.v3d-is-fs) .v3d-br { right: 72px; }
+  #viewer3dContainer .v3d-root:not(.v3d-is-fs) .v3d-chips { padding-right: 72px; }
+  #viewer3dContainer .v3d-root:not(.v3d-is-fs) .v3d-hint { max-width: calc(100% - 128px); }
+<!--/BLOCK-->
+
+<!--BLOCK funkce-->
+  // ---- 3D model nabidky z karty Vandr: sdileny prohlizec V3D (/js/v3d/viewer3d.js, API v hlavicce souboru) ----
+  // Model s popisem v3d (scenes[0].extras.v3d - nese ho sam GLB, zadny druhy soubor) jde do V3D; GLB bez nej (staticky model
+  // pri v3d:false, nabidka 103) zustava na dosavadnim kodu initViewer3d beze zmeny.
+  // ?v= = prvnich 10 znaku sha256 souboru (dnes viewer3d.js df0e602026, v3d.css fdd405fc1d) - po zmene souboru prepsat.
+  const V3D_JS_URL = "/js/v3d/viewer3d.js?v=df0e602026";
+  const V3D_CSS_URL = "/css/v3d.css?v=fdd405fc1d";
+  let v3dExtrasPromise = null;
+  // three + OrbitControls + GLTFLoader uz nacita loadThreeJs(); V3D k nim potrebuje RoomEnvironment, CSS2DRenderer a dva blur shadery
+  // (presne poradi viz V3D.deps v hlavicce viewer3d.js), pak samotny prohlizec a CSS (paralelne).
+  function loadV3dExtras() {
+    if (v3dExtrasPromise) return v3dExtrasPromise;
+    const CDN = "https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/";
+    const urls = [CDN + "environments/RoomEnvironment.js", CDN + "renderers/CSS2DRenderer.js",
+                  CDN + "shaders/HorizontalBlurShader.js", CDN + "shaders/VerticalBlurShader.js", V3D_JS_URL];
+    const cssLoaded = new Promise((res) => {      // chyba CSS 3D neblokuje (HUD by jen nebyl nastylovany)
+      const l = document.createElement("link");
+      l.rel = "stylesheet"; l.href = V3D_CSS_URL; l.onload = res; l.onerror = res;
+      document.head.appendChild(l);
+    });
+    const scriptsLoaded = urls.reduce((p, url) => p.then(() => new Promise((res, rej) => {
+      const s = document.createElement("script");
+      s.src = url; s.onload = res; s.onerror = () => rej(new Error("nenacteno " + url));
+      document.head.appendChild(s);
+    })), Promise.resolve());
+    v3dExtrasPromise = Promise.all([scriptsLoaded, cssLoaded]);
+    return v3dExtrasPromise;
+  }
+  // Model nabidky (stejny token jako obrazky). Server posila Cache-Control: private, no-cache + ETag: dosavadni kod ho pri
+  // pripadnem druhem stazeni (staticky model) dostane jako 304. Selhani = null (dosavadni kod si poradi sam).
+  async function fetchOfferModel(offer) {
+    if (!offer || !offer.model_url) return null;
+    const r = await fetch(offer.model_url, { credentials: "same-origin" });
+    return r.ok ? await r.arrayBuffer() : null;
+  }
+  // true, kdyz GLB nese spec v3d (scenes[0].extras.v3d). Cte jen JSON chunk, nic nestavi.
+  function modelMaV3d(buf) {
+    try {
+      const dv = new DataView(buf);
+      if (buf.byteLength < 24 || dv.getUint32(0, true) !== 0x46546C67) return false;   // "glTF"
+      const len0 = dv.getUint32(12, true);
+      if (dv.getUint32(16, true) !== 0x4E4F534A || 20 + len0 > buf.byteLength) return false;   // 1. chunk = JSON
+      const json = JSON.parse(new TextDecoder("utf-8").decode(new Uint8Array(buf, 20, len0)));
+      const sc = json.scenes && json.scenes[0];
+      return !!(sc && sc.extras && typeof sc.extras.v3d === "object" && sc.extras.v3d !== null);
+    } catch (e) { return false; }
+  }
+  // Zalozni vetev: kontejner pryc, ploche obrazky zpet (totez, co dosavadni kod pri chybe modelu). Zakaznik nevidi zadnou chybu.
+  async function initViewer3dV3d(offer, buf) {
+    const container = document.getElementById("viewer3dContainer");
+    if (!container) return;
+    const fallback = document.getElementById("viewer3dFallback");
+    const hint = document.getElementById("viewer3dHint");
+    let api = null, padlo = false;
+    const showFallback = (err) => {
+      if (padlo) return;
+      padlo = true;
+      console.warn("3D model se nepodarilo nacist, zustavaji ploche nahledy:", err);
+      if (api) { try { api.dispose(); } catch (e) { /* uz uklizeno */ } api = null; }
+      container.style.display = "none";
+      if (hint) hint.style.display = "none";
+      if (fallback) fallback.style.display = "";
+    };
+    try {
+      await loadThreeJs();
+      await loadV3dExtras();
+      if (!window.V3D || typeof window.V3D.mount !== "function") throw new Error("viewer3d.js se nenacetl");
+      // Kontejner ma v CSS display:none - MUSI se odkryt PRED mountem (jinak by mel platno nulove rozmery).
+      container.style.display = "block";
+      if (fallback) fallback.style.display = "none";      // optimisticky - obnoveno v showFallback
+      if (hint) hint.style.display = "none";               // napoveda ovladani je v HUD prohlizece
+      api = window.V3D.mount(container, {
+        arrayBuffer: buf,                                  // uz stazeny model (zadne druhe stahovani)
+        mode: "real", allowReal: true,                     // Skutecny vzhled + prepinac Drateny
+        hudKoty: true,                                     // HUD s prepinacem Kot (u spec vychozi uroven 1)
+        hudDock: window.matchMedia && window.matchMedia("(max-width: 700px)").matches ? "top" : undefined,
+        track: (key) => trackClick(key),                   // interact_3d_model, v3d_view, v3d_dims, v3d_mode, v3d_anim
+        onError: showFallback,
+        // BEZ ladeni:true (jen kontrolni sceny), bez bom (Vandr nabidka ma 1 radek kusovniku bez mesh_group)
+      });
+      await api.ready;
+    } catch (err) {
+      showFallback(err);
+    }
+  }
+<!--/BLOCK-->
+
+<!--BLOCK hacek-->
+    // >>> 3D model s popisem v3d: sdileny prohlizec V3D; jinak (staticky model, v3d:false) dosavadni kod nize beze zmeny
+    try {
+      const v3dBuf = await fetchOfferModel(offer);
+      if (v3dBuf && modelMaV3d(v3dBuf)) { await initViewer3dV3d(offer, v3dBuf); return; }
+    } catch (err) { console.warn("3D model: kontrola formatu selhala, pouzije se dosavadni zobrazeni:", err); }
+    // <<<
+<!--/BLOCK-->
+
+<!--BLOCK klavesy-->
+    // 3D model na cele obrazovce: sipky nesmi pod nim prepnout slide (neaktivni .slide ma pointer-events:none, ktere se dedi i do
+    // cele obrazovky, takze by prohlizec prestal reagovat). Vlastni klavesy prohlizec nema (Esc celou obrazovku zavre).
+    if (window.V3D && typeof window.V3D.isFullscreen === "function" && window.V3D.isFullscreen()) return;
+<!--/BLOCK-->

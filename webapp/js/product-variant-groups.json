@@ -1,0 +1,26 @@
+{
+  "_comment": "Skupiny konfigurovatelných variant sestav (bot8 2026-09-06). Přidávání nové možnosti = jen nový záznam v 'options' + případně nová hodnota v 'axis_values', žádný zásah do kódu. Čte webapp/product.html (přepínač na stránce produktu), zdroj pravdy zůstává product_assemblies/shop_products - tenhle soubor jen říká, KTERÉ produkty patří k sobě jako varianty a jak se osy jmenují. DŮLEŽITÉ (bot8 2026-09-06, oprava po Robertově upozornění): K-122 a K-123e NEJSOU varianty téhož vozidla - 'e' přípona = elektrická verze (car_models.name formát [K-0XXe], viz AGENTS_LOG.md 'Teprve TED bezpecne prejmenovani' - pilot je 'Citroën ë-Jumpy L2 21- [K-123e]', K-122 je obyčejný Citroën Jumpy L2). Shodná skladba boxů je náhoda/podobná karoserie, NE důvod je řadit do jedné skupiny - každé auto = VLASTNÍ skupina.",
+  "groups": [
+    {
+      "id": "jumpy-l2-k123e-elektro-pilot",
+      "_note": "Citroën ë-Jumpy L2 (elektrická verze) - K-123e",
+      "axes": [
+        { "key": "box_vyska", "label": "Skladba výšek boxů" },
+        { "key": "horni_sekce", "label": "Horní sekce" }
+      ],
+      "axis_values": {
+        "box_vyska": {
+          "270x2-170x3-120x9": "270 mm × 2, 170 mm × 3, 120 mm × 9"
+        },
+        "horni_sekce": {
+          "bez": "Bez horní sekce",
+          "horni_ram_mdf": "Horní rám + výplně MDF (dlouhé předměty)"
+        }
+      },
+      "options": [
+        { "shop_product_id": 3937, "assembly_id": 187, "box_vyska": "270x2-170x3-120x9", "horni_sekce": "bez" },
+        { "shop_product_id": 3941, "assembly_id": 191, "box_vyska": "270x2-170x3-120x9", "horni_sekce": "horni_ram_mdf" }
+      ]
+    }
+  ]
+}

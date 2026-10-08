@@ -1,0 +1,9 @@
+--- a/api/app.py
++++ b/api/app.py
+@@ -5383,4 +5383,6 @@
+ import miniweb_objednavky  # noqa: F401 - registruje kosik a objednavku mini-shopu /api/miniweb/quote|orders|vat-check (faze 3 SK; bot5, Robert pres bot3 2026-10-03, viz miniweb_objednavky.py)
+ import miniweb_objednavky_admin  # noqa: F401 - registruje schvaleni dopravy objednavky mini-shopu /api/admin/orders/<id>/shipping (krok 2; bot5, 2026-10-03)
+ import miniweb_shops_admin  # noqa: F401 - registruje admin API Mini-shopy /api/admin/miniweb/shops|inquiries|orders (RBAC miniweb; bot5, 2026-10-03, viz miniweb_shops_admin.py)
++import stul_montaz  # noqa: F401 - sazba montaze stolu (app_settings stul_montaz_pct, GET/PUT /api/stul/montaz; bot5, Robert pres bot9 2026-10-04, viz stul_montaz.py)
++import stul_objednavka_host  # noqa: F401 - objednavka konfigurovaneho stolu HOSTEM bez registrace /api/shop/stul/quote|order (bot5, 2026-10-04, viz stul_objednavka_host.py)
+ import miniweb_seo  # noqa: F401 - server-side SEO verejneho mini-shopu: hezke adresy, title/description/canonical/hreflang/og/JSON-LD, sitemap.xml, robots.txt (bot16, Robert pres bot3 2026-10-03; sablony bot7 v miniweb_seo_sablony.json; indexace jen u live shopu), MUSI byt az po miniweb

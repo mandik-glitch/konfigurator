@@ -1,0 +1,13 @@
+[Unit]
+Description=Casovac planovaneho nasazeni serveroveho kodu (0:00 a 12:30 Europe/Prague; nocni termin od 2026-10-04 v pulnoci, ne v dobe zaloh 3:30-4:30)
+
+[Timer]
+# Terminy musi sedet s OKNA v scripts/nasazeni.py a api/deploy_runs.py.
+OnCalendar=*-*-* 00:00:00 Europe/Prague
+OnCalendar=*-*-* 12:30:00 Europe/Prague
+# Zameren BEZ Persistent: po vypadku stroje se nenasazuje "dohanenim" hned po startu.
+Persistent=false
+AccuracySec=1s
+
+[Install]
+WantedBy=timers.target

@@ -1,0 +1,1330 @@
+[
+ {
+  "id": "typ:1:nazev",
+  "typ": "text",
+  "cs": "Regál ke stěně (levá, pravá, za kabinou)",
+  "en": "Wall shelving unit (left, right, behind the cab)",
+  "it": "Scaffale a parete (sinistro, destro, dietro la cabina)",
+  "h": "571da095b2"
+ },
+ {
+  "id": "typ:1:popis_html",
+  "typ": "html",
+  "cs": "<p>Regál ke stěně (levý nebo pravý) vede podél boční stěny nákladového prostoru; regál za kabinou stojí hned za přepážkou oddělující kabinu od nákladového prostoru – na rozdíl od bočních regálů nemá u některých vozidel horní blok, místo něj přichází v úvahu spodní blok.</p>",
+  "en": "<p>The wall shelving unit (left or right) runs along the side wall of the cargo area; the shelving unit behind the cab stands directly behind the bulkhead separating the cab from the cargo area – unlike the side shelving units, on some vehicles it has no upper block, and a lower block can be used instead.</p>",
+  "it": "<p>Lo scaffale a parete (sinistro o destro) corre lungo la parete laterale del vano di carico; lo scaffale dietro la cabina si trova subito dietro la paratia che separa la cabina dal vano di carico – a differenza degli scaffali laterali, su alcuni veicoli non ha il blocco superiore e al suo posto è possibile utilizzare un blocco inferiore.</p>",
+  "h": "61043781dd"
+ },
+ {
+  "id": "typ:2:nazev",
+  "typ": "text",
+  "cs": "Dvojitá podlaha, úložný prostor v podlaze, výsuvná podlaha",
+  "en": "Double floor, floor storage space, pull-out floor",
+  "it": "Doppio pavimento, vano di stoccaggio nel pavimento, pavimento estraibile",
+  "h": "7cc45cb06e"
+ },
+ {
+  "id": "typ:2:popis_html",
+  "typ": "html",
+  "cs": "<p>V podlaze užitkového vozidla vzniká využitelný úložný prostor tam, kde potřebujete zachovat maximální velikost ložné plochy nad ním – typicky u vozidel s nízkým podvozkem, jako je Ford Transit nebo Mercedes Sprinter. Praktické jsou především euroboxy na výsuvech, jejichž skladbu zvolíte libovolně podle typu a množství materiálu; skladbu šuplíků v podlaze navrhneme podle 3D modelu na základě vaší specifikace – stačí poslat skicu od ruky nebo jednoduchý popis, jak chcete mít úložný prostor rozdělený. Výsuvnou podlahu vyrobíme přesně podle zadání – lze ji zkombinovat i se stávající vestavbou, například jako doplňkový výsuv na kolo.</p>",
+  "en": "<p>In the floor of a commercial vehicle, usable storage space is created where you need to keep the maximum size of the loading area above it – typically in vehicles with a low chassis, such as the Ford Transit or Mercedes Sprinter. Euro boxes on pull-outs are especially practical, and you can choose their arrangement freely according to the type and quantity of material; we design the arrangement of the drawers in the floor from a 3D model based on your specification – simply send a hand sketch or a simple description of how you want the storage space to be divided. We make the pull-out floor exactly to your brief – it can also be combined with an existing fit-out, for example as an additional pull-out for a bike.</p>",
+  "it": "<p>Nel pavimento di un veicolo commerciale si ricava uno spazio di stoccaggio utilizzabile dove occorre mantenere la massima superficie di carico sopra di esso – tipicamente nei veicoli con telaio ribassato, come il Ford Transit o il Mercedes Sprinter. Sono particolarmente pratici gli eurobox su estraibili, la cui disposizione si sceglie liberamente in base al tipo e alla quantità di materiale; la disposizione dei cassetti nel pavimento viene progettata sulla base di un modello 3D e delle specifiche del cliente – basta inviare uno schizzo a mano o una semplice descrizione di come si desidera suddividere lo spazio di stoccaggio. Il pavimento estraibile viene realizzato esattamente secondo le specifiche – può essere combinato anche con un allestimento esistente, ad esempio come estraibile supplementare per bicicletta.</p>",
+  "h": "59ff820d96"
+ },
+ {
+  "id": "typ:3:nazev",
+  "typ": "text",
+  "cs": "Výsuvné bloky a přídavná ložná plocha",
+  "en": "Pull-out units and additional loading surface",
+  "it": "Blocchi estraibili e superficie di carico aggiuntiva",
+  "h": "0e86f51858"
+ },
+ {
+  "id": "typ:3:popis_html",
+  "typ": "html",
+  "cs": "<p>Když je dodávka zaskládaná natolik, že se stává problémem vozit i palety s materiálem, řeší to vyjímatelná přídavná ložná plocha umístěná do zadního prostoru, mezi zadní a boční dveře, nad podběhy kol. Systém lze přizpůsobit každé dodávce: zvolit libovolnou nosnost, rozdělit plochu přepážkami, zvolit výšku bočních stojin napevno na milimetr nebo s možností nastavitelnosti. U menších dodávek řeší nepohodlný přístup individuální výsuvy z podlahy nebo z bočních dveří: výsuvné rámy na míru pro těžké elektrocentrály, jumbo šuplíky z bočních dveří na kufry, nebo výsuvné plato z podlahy plné euroboxů libovolných velikostí.</p>",
+  "en": "<p>When a van is so full that even carrying pallets of material becomes a problem, the solution is a removable additional load platform fitted in the rear area, between the rear and side doors, above the wheel arches. The system can be adapted to any van: choose any load capacity, divide the platform with partitions, and set the height of the side walls either fixed to the millimetre or adjustable. In smaller vans, awkward access is solved by individual pull-outs from the floor or from the side door: made-to-measure pull-out frames for heavy generators, jumbo drawers from the side door for cases, or a pull-out tray from the floor filled with Euro boxes of any size.</p>",
+  "it": "<p>Quando un furgone è così carico che diventa un problema persino trasportare pallet con il materiale, la soluzione è una superficie di carico supplementare estraibile, collocata nel vano posteriore, tra le porte posteriori e quelle laterali, sopra i passaruota. Il sistema può essere adattato a ogni furgone: è possibile scegliere qualsiasi portata, suddividere la superficie con delle paratie e impostare l'altezza delle pareti laterali fissa al millimetro oppure regolabile. Nei furgoni più piccoli l'accesso scomodo si risolve con estraibili individuali dal pianale o dalla porta laterale: telai estraibili su misura per generatori pesanti, cassetti jumbo dalla porta laterale per le valigie, oppure un piano estraibile dal pianale pieno di eurobox di qualsiasi dimensione.</p>",
+  "h": "5eccbef1f9"
+ },
+ {
+  "id": "typ:4:nazev",
+  "typ": "text",
+  "cs": "Individuální výsuvy na kola",
+  "en": "Custom pull-outs for bicycles",
+  "it": "Estraibili su misura per biciclette",
+  "h": "31f6f91401"
+ },
+ {
+  "id": "typ:4:popis_html",
+  "typ": "html",
+  "cs": "<p>Pro cyklisty, kteří chtějí mít kolo bezpečně uložené přímo v dodávce, navrhujeme individuální výsuvné plato na míru – stačí poslat e-mailem fotografii nákladové části vozidla a stručně popsat představu, jak má výsuv vypadat, ideálně s náčrtem od ruky a kótami. Konstrukci tvoří hliníkové profily s drážkami pro kotvení čehokoli kamkoli, v provedení elox přírodní nebo černý; spojovací kostky lze nastříkat do libovolného barevného odstínu. Plocha výsuvných plat nemusí být souvislá – standardním materiálem je foliovaná topolová překližka. Rozměry se navrhují vždy individuálně na milimetr pro libovolný podporovaný model dodávky.</p>",
+  "en": "<p>For cyclists who want to keep their bike securely stored right in the van, we design a custom made-to-measure pull-out platform – simply send us a photo of the vehicle's cargo area by e-mail and briefly describe how you imagine the pull-out, ideally with a hand sketch and dimensions. The structure consists of aluminium profiles with slots for anchoring anything anywhere, in a natural or black anodised finish; the connecting cubes can be spray-painted in any colour shade. The surface of the pull-out platforms does not have to be continuous – the standard material is film-faced poplar plywood. Dimensions are always designed individually to the millimetre for any supported van model.</p>",
+  "it": "<p>Per i ciclisti che desiderano riporre la bicicletta in modo sicuro direttamente nel furgone, progettiamo un piano estraibile personalizzato su misura – basta inviare via e-mail una fotografia del vano di carico del veicolo e descrivere brevemente come dovrebbe essere l'estraibile, idealmente con uno schizzo a mano e le quote. La struttura è composta da profili in alluminio con scanalature per l'ancoraggio di qualsiasi elemento in qualsiasi punto, nella finitura anodizzata naturale o nera; i cubi di collegamento possono essere verniciati a spruzzo in qualsiasi tonalità di colore. La superficie dei piani estraibili non deve essere continua – il materiale standard è il compensato di pioppo rivestito. Le dimensioni vengono sempre progettate individualmente al millimetro per qualsiasi modello di furgone supportato.</p>",
+  "h": "c2d4b7e612"
+ },
+ {
+  "id": "typ:5:nazev",
+  "typ": "text",
+  "cs": "Regál na euroboxy",
+  "en": "Euro box shelving unit",
+  "it": "Scaffale per eurobox",
+  "h": "2cb4ecbf9a"
+ },
+ {
+  "id": "typ:5:popis_html",
+  "typ": "html",
+  "cs": "<p>Regál na euroboxy má výsuvné hliníkové rámy (platy), které se přizpůsobí libovolné přepravce a jistí ji automatickou pružinovou aretací. Regál lze sestavit z více sekcí vedle sebe, takže lze v jednom vozidle kombinovat euroboxy různých velikostí podle potřeby.</p>",
+  "en": "<p>The Euro box shelving unit has pull-out aluminium frames (platforms) that adapt to any crate and secure it with an automatic spring-loaded lock. The shelving unit can be assembled from several sections side by side, so Euro boxes of different sizes can be combined in a single vehicle as needed.</p>",
+  "it": "<p>Lo scaffale per eurobox dispone di telai estraibili in alluminio (piani) che si adattano a qualsiasi cassetta e la bloccano con un fermo automatico a molla. Lo scaffale può essere composto da più sezioni affiancate, in modo da poter combinare nello stesso veicolo eurobox di dimensioni diverse secondo necessità.</p>",
+  "h": "18a49b1885"
+ },
+ {
+  "id": "typ:6:nazev",
+  "typ": "text",
+  "cs": "Univerzální regál",
+  "en": "Universal shelving unit",
+  "it": "Scaffale universale",
+  "h": "85dff91a13"
+ },
+ {
+  "id": "typ:6:popis_html",
+  "typ": "html",
+  "cs": "<p>Univerzální regál zahrnuje upínací police, police s organizéry, police s vanami a police se sklopnými dvířky. Samostatnou kapitolou je ukládání kufrů a batohů – řešení, které zabrání jejich sklouznutí nebo přesunu při jízdě.</p>",
+  "en": "<p>The universal shelving unit includes clamping shelves, shelves with organisers, shelves with trays and shelves with drop-down doors. Storing cases and backpacks is a topic in its own right – a solution that stops them from sliding or shifting while driving.</p>",
+  "it": "<p>Lo scaffale universale comprende ripiani di bloccaggio, ripiani con organizer, ripiani con vaschette e ripiani con sportelli ribaltabili. Un capitolo a parte è dedicato alla sistemazione di valigette e zaini – una soluzione che ne impedisce lo scivolamento o lo spostamento durante la guida.</p>",
+  "h": "1545cd888c"
+ },
+ {
+  "id": "typ:7:nazev",
+  "typ": "text",
+  "cs": "Ocelové šuplíky (univerzální i TECNO na míru)",
+  "en": "Steel drawers (universal and made-to-measure TECNO)",
+  "it": "Cassetti in acciaio (universali e TECNO su misura)",
+  "h": "c398b16c69"
+ },
+ {
+  "id": "typ:7:popis_html",
+  "typ": "html",
+  "cs": "<p>Ocelové šuplíky s aretací jsou univerzální komponenta stavebnice – na rozdíl od šuplíkových vestaveb TECNO je lze zakomponovat do libovolné sestavy Systému 30 nebo 45 bez ohledu na konkrétní model vozidla. Nabídka zahrnuje přes 10 velikostí, například šuplík 420×360×100 mm. Šuplíkové vestavby TECNO naproti tomu nabízí ocelové šuplíkové vestavby s aretací navržené přesně pro konkrétní modely užitkových vozidel podle značky (Renault, Mercedes-Benz, Fiat, Ford, Peugeot, Volkswagen, Opel, Citroën, Iveco, Nissan, Toyota, MAN, Dacia a další) – šuplíky jsou přizpůsobené skutečným rozměrům nákladového prostoru daného vozidla, ne univerzální šabloně.</p>",
+  "en": "<p>Steel drawers with a locking mechanism are a universal component of the modular system – unlike TECNO drawer fit-outs, they can be incorporated into any System 30 or 45 assembly regardless of the specific vehicle model. The range includes more than 10 sizes, for example a 420×360×100 mm drawer. TECNO drawer fit-outs, on the other hand, are steel drawer fit-outs with a locking mechanism designed precisely for specific light commercial vehicle models by make (Renault, Mercedes-Benz, Fiat, Ford, Peugeot, Volkswagen, Opel, Citroën, Iveco, Nissan, Toyota, MAN, Dacia and others) – the drawers are tailored to the actual dimensions of the cargo area of the given vehicle, not to a universal template.</p>",
+  "it": "<p>I cassetti in acciaio con blocco sono un componente universale del sistema modulare – a differenza degli allestimenti a cassetti TECNO, possono essere integrati in qualsiasi composizione del Sistema 30 o 45, indipendentemente dallo specifico modello di veicolo. L'offerta comprende oltre 10 misure, ad esempio un cassetto da 420×360×100 mm. Gli allestimenti a cassetti TECNO, invece, sono allestimenti a cassetti in acciaio con blocco progettati esattamente per specifici modelli di veicoli commerciali, suddivisi per marca (Renault, Mercedes-Benz, Fiat, Ford, Peugeot, Volkswagen, Opel, Citroën, Iveco, Nissan, Toyota, MAN, Dacia e altre) – i cassetti sono adattati alle dimensioni reali del vano di carico del veicolo in questione, non a un modello universale.</p>",
+  "h": "ec34cebcfc"
+ },
+ {
+  "id": "typ:8:nazev",
+  "typ": "text",
+  "cs": "Přívěsný vozík s úložným systémem",
+  "en": "Trailer with storage system",
+  "it": "Rimorchio con sistema di stoccaggio",
+  "h": "d72f0b6282"
+ },
+ {
+  "id": "typ:8:popis_html",
+  "typ": "html",
+  "cs": "<p>Přívěsné vozíky s úložným systémem zásuvek nabízíme v různých velikostech a zatíženích – příkladem realizace je vozík s vnějšími rozměry ložné plochy 1850×1750 mm, osazený stejným zásuvkovým systémem jako hliníková stavebnice do vozidel.</p>",
+  "en": "<p>We offer trailers with a drawer storage system in various sizes and load ratings – one example is a trailer with external load-area dimensions of 1850×1750 mm, fitted with the same drawer system as our modular aluminium system for vehicles.</p>",
+  "it": "<p>Offriamo rimorchi con sistema di cassetti per lo stoccaggio in diverse dimensioni e portate – un esempio realizzato è un rimorchio con dimensioni esterne del piano di carico di 1850×1750 mm, dotato dello stesso sistema di cassetti del sistema modulare in alluminio per veicoli.</p>",
+  "h": "4a256b017f"
+ },
+ {
+  "id": "typ:9:nazev",
+  "typ": "text",
+  "cs": "Podle vozidla / platformy",
+  "en": "By vehicle / platform",
+  "it": "Per veicolo / piattaforma",
+  "h": "ec8430ad9e"
+ },
+ {
+  "id": "typ:9:popis_html",
+  "typ": "html",
+  "cs": "<p>Vyrábíme individuální pracovní vestavby na milimetr podle vybavení řemeslníka pro nejběžnější dodávky na trhu. U vozidel sdílejících stejnou platformu (Fiat Ducato, Citroën Jumper, Peugeot Boxer) nabízíme shodný regálový systém rozpadající se podle strany a verze karoserie. U Ford Transit Custom a Toyota ProAce vyrábíme individuální pracovní vestavbu přizpůsobenou na milimetr rozměrům nákladového prostoru.</p>",
+  "en": "<p>We make custom work fit-outs to the millimetre, based on the tradesperson's equipment, for the most common vans on the market. For vehicles sharing the same platform (Fiat Ducato, Citroën Jumper, Peugeot Boxer) we offer an identical shelving system, broken down by side and body version. For the Ford Transit Custom and Toyota ProAce we make a custom work fit-out tailored to the millimetre to the dimensions of the cargo area.</p>",
+  "it": "<p>Realizziamo allestimenti da lavoro personalizzati al millimetro in base all'attrezzatura dell'artigiano per i furgoni più diffusi sul mercato. Per i veicoli che condividono la stessa piattaforma (Fiat Ducato, Citroën Jumper, Peugeot Boxer) offriamo un identico sistema di scaffalature, suddiviso per lato e versione di carrozzeria. Per Ford Transit Custom e Toyota ProAce realizziamo un allestimento da lavoro personalizzato, adattato al millimetro alle dimensioni del vano di carico.</p>",
+  "h": "ea5b7ba24e"
+ },
+ {
+  "id": "typ:10:nazev",
+  "typ": "text",
+  "cs": "Podle profese (elektrikář, instalatér)",
+  "en": "By trade (electrician, plumber)",
+  "it": "Per professione (elettricista, idraulico)",
+  "h": "204669ecc9"
+ },
+ {
+  "id": "typ:10:popis_html",
+  "typ": "html",
+  "cs": "<p>Elektrikář má v autě obvykle kombinaci nářadí, měřicích přístrojů, instalačního materiálu, kabeláže a ochranných pomůcek. Vhodný je především odlehčený Systém 30 s lehkou konstrukcí a výsuvnými rámy na libovolné euroboxy; nářadí, které chcete mít stále na očích, lze zavěsit na děrovaný plechový panel.</p><p>Instalatér vozí kombinaci ručního a aku nářadí, lisovací a řezací techniky, potrubních systémů a instalačního materiálu – PVC a HT trubky, PPR trubky a tvarovky, mosazné fitinky, armatury, ventily a těsnicí materiál. Vhodný je jak lehký Systém 30 pro menší dodávky, tak robustnější řada 40 nebo 45 pro náročnější vybavení.</p>",
+  "en": "<p>An electrician's vehicle usually carries a combination of tools, measuring instruments, installation material, cabling and protective equipment. A lightweight System 30 with a light construction and pull-out frames for any Euro boxes is a particularly good fit; tools you want to keep in plain sight can be hung on a perforated sheet-metal panel.</p><p>A plumber carries a combination of hand and cordless tools, pressing and cutting equipment, pipe systems and installation material – PVC and HT pipes, PPR pipes and fittings, brass fittings, taps, valves and sealing material. Both the light System 30 for smaller vans and the more robust 40 or 45 series for more demanding equipment are suitable.</p>",
+  "it": "<p>L'elettricista ha in auto di solito una combinazione di utensili, strumenti di misura, materiale d'installazione, cavi e dispositivi di protezione. È particolarmente indicato il Sistema 30 alleggerito, con struttura leggera e telai estraibili per eurobox di qualsiasi tipo; gli utensili che si desidera avere sempre in vista si possono appendere a un pannello forato in lamiera.</p><p>L'idraulico trasporta utensili manuali e a batteria, attrezzature per pressatura e taglio, sistemi di tubazioni e materiale d'installazione – tubi in PVC e HT, tubi e raccordi in PPR, raccordi in ottone, rubinetteria, valvole e materiale di tenuta. Sono adatti sia il leggero Sistema 30 per i furgoni più piccoli, sia la serie 40 o 45, più robusta, per dotazioni più impegnative.</p>",
+  "h": "32b05c1f40"
+ },
+ {
+  "id": "typ:11:nazev",
+  "typ": "text",
+  "cs": "Balicí a expediční stoly",
+  "en": "Packing and dispatch tables",
+  "it": "Tavoli per imballaggio e spedizione",
+  "h": "9db125f8ba"
+ },
+ {
+  "id": "typ:11:popis_html",
+  "typ": "html",
+  "cs": "<p>Ať už hledáte malé nebo komplexní řešení pro novou halu, přizpůsobíme konstrukci balicího a expedičního pracoviště vašim požadavkům. Nastavitelnost a flexibilita stolů, pracovních stanic (packstations) je možná díky všudypřítomným upínacím drážkám na profilech, ze kterých se konstrukce sestavuje – systém posuvných odkládacích polic se přizpůsobí vaší práci, police jsou posuvné nahoru a dolů, vpřed i vzad a plynule úhlově polohovací. </p><p><br></p><p>Lehký balicí stůl určený pro balení, příjem a expedici? Nebo robustní řešení namíru pro vratky ? </p><p>Balicí pracoviště lze doplnit například výsuvnými boxy, ocelovými šuplíky, řezačkami balicího materiálu, odkládacími policemi nad i pod stůl, sklopnými prodlužovacími pracovními deskami, LED osvětlením, držáky rolí, cokoli Vás napadne, jsme připraveni navrhnout a implementovat.</p><p><br></p><p>Realizujeme individuální otvory v pracovních deskách pro umístění váhy, skeneru apd. Osadíme pracovní plochu kuličkovými ložisky pro snadný pohyb krabic a přepravek.</p>",
+  "en": "<p>Whether you are looking for a small or a comprehensive solution for a new hall, we will adapt the design of the packing and dispatch workstation to your requirements. The adjustability and flexibility of the tables and workstations (pack stations) come from the clamping slots running throughout the profiles from which the structure is assembled – the system of sliding shelves adapts to your work: the shelves slide up and down, forwards and backwards, and are continuously adjustable in angle.</p><p><br></p><p>A lightweight packing table for packing, receiving and dispatch? Or a robust made-to-measure solution for returns?</p><p>The packing workstation can be extended with, for example, pull-out boxes, steel drawers, packaging material cutters, shelves above and below the table, fold-down extension worktops, LED lighting, roll holders – whatever you can think of, we are ready to design and implement it.</p><p><br></p><p>We make custom openings in worktops for a scale, scanner and the like. We can fit the work surface with ball bearings for easy movement of boxes and crates.</p>",
+  "it": "<p>Che si cerchi una soluzione piccola o complessa per un nuovo capannone, adatteremo la struttura della postazione di imballaggio e spedizione alle esigenze del cliente. La regolabilità e la flessibilità di tavoli e postazioni di lavoro (pack station) sono rese possibili dalle scanalature di fissaggio presenti su tutti i profili con cui si assembla la struttura – il sistema di ripiani d'appoggio scorrevoli si adatta al lavoro: i ripiani scorrono in alto e in basso, avanti e indietro e sono regolabili con continuità nell'inclinazione.</p><p><br></p><p>Un tavolo da imballaggio leggero per imballaggio, ricevimento e spedizione? Oppure una soluzione robusta su misura per i resi?</p><p>La postazione di imballaggio può essere completata, ad esempio, con box estraibili, cassetti in acciaio, taglierine per il materiale da imballaggio, ripiani d'appoggio sopra e sotto il tavolo, piani di lavoro supplementari ribaltabili, illuminazione LED, supporti per rotoli – qualunque cosa venga in mente, siamo pronti a progettarla e realizzarla.</p><p><br></p><p>Realizziamo aperture personalizzate nei piani di lavoro per l'alloggiamento di bilancia, scanner e simili. Dotiamo il piano di lavoro di cuscinetti a sfera per facilitare lo spostamento di scatole e cassette.</p>",
+  "h": "fce01beb2d"
+ },
+ {
+  "id": "typ:12:nazev",
+  "typ": "text",
+  "cs": "Ergonomické pracovní stoly",
+  "en": "Ergonomic workbenches",
+  "it": "Banchi da lavoro ergonomici",
+  "h": "7a114f654d"
+ },
+ {
+  "id": "typ:12:popis_html",
+  "typ": "html",
+  "cs": "<p><br></p><p>Cílíme na ergonomii.</p><p><br></p><p>Prioritou je Vaše pracovní pohodlí, a proto balicí stoly vyrábíme tak, aby se co nejlépe přizpůsobily balicímu procesu. Snadná přestavitelnost a spolehlivá stabilita – stavebnicový systém umožňuje plynulou výškovou přestavitelnost a přitom zajišťuje spolehlivou stabilitu stolů. Systém posuvných odkládacích polic – Vaší práci se maximálně přizpůsobí odkládací police, které jsou posuvné nahoru a dolů, vpřed i vzad a také plynule úhlově&nbsp;polohovací.</p>",
+  "en": "<p><br></p><p>We focus on ergonomics.</p><p><br></p><p>Your working comfort is the priority, which is why we build packing tables so that they adapt as well as possible to the packing process. Easy adjustment and reliable stability – the modular system allows continuous height adjustment while ensuring reliable stability of the tables. System of sliding shelves – the shelves adapt to your work to the fullest: they slide up and down, forwards and backwards, and are also continuously&nbsp;adjustable in angle.</p>",
+  "it": "<p><br></p><p>Puntiamo sull'ergonomia.</p><p><br></p><p>La priorità è il comfort di lavoro, ed è per questo che realizziamo i tavoli da imballaggio in modo che si adattino nel miglior modo possibile al processo di imballaggio. Facilità di regolazione e stabilità affidabile – il sistema modulare consente una regolazione continua dell'altezza garantendo al tempo stesso una stabilità affidabile dei tavoli. Sistema di ripiani d'appoggio scorrevoli – i ripiani si adattano al massimo al lavoro: scorrono in alto e in basso, avanti e indietro e sono inoltre regolabili con continuità&nbsp;nell'inclinazione.</p>",
+  "h": "73fe100b08"
+ },
+ {
+  "id": "typ:13:nazev",
+  "typ": "text",
+  "cs": "Elektricky výškově nastavitelné stoly ESSE",
+  "en": "ESSE electrically height-adjustable tables",
+  "it": "Tavoli ESSE a regolazione elettrica dell'altezza",
+  "h": "d60d321540"
+ },
+ {
+  "id": "typ:13:popis_html",
+  "typ": "html",
+  "cs": "<p>Elektricky ovládané stoly ESSE jsou řešením pro maximální ergonomii – výšková stavitelnost je zcela plynulá a tichá, se zcela zakázkovým provedením podle potřeby. Zvedací sloupky (elektrický pohon) umožňují plynulé nastavení pracovní výšky; vlastní elektrický zvedací systém polic lze využít i pro zvedání těžších přístrojů do velké výšky nad pracovním stolem, s nosností, velikostí i rychlostí přesně podle individuálních potřeb. Technicky jde o nízkou hladinu hluku, přesný posuv, rychlost zdvihu kolem 38 mm/s, provoz v teplotním rozsahu +10 °C až +40 °C a shodu s EN 60335-1 a UL 962.</p>",
+  "en": "<p>ESSE electrically operated tables are the solution for maximum ergonomics – height adjustment is completely smooth and quiet, with a fully custom design as required. The lifting columns (electric drive) allow smooth adjustment of the working height; our own electric shelf lifting system can also be used to raise heavier equipment to a considerable height above the workbench, with load capacity, size and speed tailored exactly to individual needs. Technically, this means a low noise level, precise travel, a lifting speed of around 38 mm/s, operation in a temperature range of +10 °C to +40 °C and compliance with EN 60335-1 and UL 962.</p>",
+  "it": "<p>I tavoli ESSE a comando elettrico sono la soluzione per la massima ergonomia – la regolazione in altezza è del tutto continua e silenziosa, con realizzazione interamente su misura in base alle necessità. Le colonne di sollevamento (azionamento elettrico) consentono la regolazione continua dell'altezza di lavoro; il sistema elettrico di sollevamento dei ripiani, di nostra produzione, può essere utilizzato anche per sollevare strumenti più pesanti ad altezze elevate sopra il banco da lavoro, con portata, dimensioni e velocità definite esattamente in base alle esigenze individuali. Dal punto di vista tecnico si tratta di un basso livello di rumorosità, uno spostamento preciso, una velocità di sollevamento di circa 38 mm/s, un funzionamento nell'intervallo di temperatura da +10 °C a +40 °C e la conformità a EN 60335-1 e UL 962.</p>",
+  "h": "77ec8385c4"
+ },
+ {
+  "id": "typ:14:nazev",
+  "typ": "text",
+  "cs": "Montážní stoly a pracoviště",
+  "en": "Assembly tables and workstations",
+  "it": "Tavoli di montaggio e postazioni di lavoro",
+  "h": "6f672179ff"
+ },
+ {
+  "id": "typ:14:popis_html",
+  "typ": "html",
+  "cs": "<p>Montážní pracoviště navrhujeme individuálně s důrazem na ergonomii – připravíme 3D vizualizaci a podle zájmu vyrobíme pracoviště přesně podle vašich nároků: elektrické polohovací stoly s osvětlením, montážní stoly s policemi a spádovými dráhami, pracovní stoly s lamino deskou, multiplexem nebo bukovou spárovkou, pojízdné i výškově nastavitelné stoly. </p><p><br></p><p>Robustní pracovní stůl 45 je stavěný na profilech Sigma, s vysokou stabilitou a tuhostí i přes montovanou konstrukci – lze ho doplnit polohovacími panely pro boxy, zásuvkovými kontejnery pod stůl, výškově stavitelnou rampou s LED osvětlením, polohovacími nebo úhlově nastavitelnými policemi, perforovanými panely na nářadí, magnetickými popisovacími tabulemi či upínacími hliníkovými deskami s drážkou 10 mm pro T-matice. Specializované pracovní stoly zahrnují upínací stoly a podstavce pro roboty i nerezová provedení, vždy na míru konkrétní operaci.</p><p><br></p><p>Nabízíme výrobu zcela individuálních řešení ergonomických pracovišť. Vyobrazené produkty jsou pouze ukázkou nejprodávanějších řešení.&nbsp;</p>",
+  "en": "<p>We design assembly workstations individually with an emphasis on ergonomics – we prepare a 3D visualisation and, if you are interested, build the workstation exactly to your requirements: electric height-adjustable tables with lighting, assembly tables with shelves and gravity tracks, workbenches with a laminated board, multiplex plywood or edge-glued beech panel, mobile and height-adjustable tables.</p><p><br></p><p>The robust workbench 45 is built on Sigma profiles, with high stability and rigidity despite its modular construction – it can be complemented with positioning panels for boxes, drawer units under the table, a height-adjustable ramp with LED lighting, positionable or angle-adjustable shelves, perforated tool panels, magnetic whiteboards, or clamping aluminium plates with a 10 mm slot for T-nuts. Specialised workbenches include clamping tables and robot stands, as well as stainless steel versions, always made to measure for a specific operation.</p><p><br></p><p>We offer the production of fully custom ergonomic workstation solutions. The products shown are only examples of our best-selling solutions.&nbsp;</p>",
+  "it": "<p>Progettiamo le postazioni di montaggio in modo individuale, con particolare attenzione all'ergonomia – prepariamo una visualizzazione 3D e, su richiesta, realizziamo la postazione esattamente secondo le esigenze del cliente: tavoli elettrici regolabili con illuminazione, tavoli di montaggio con ripiani e vie a gravità, banchi da lavoro con pannello laminato, multistrato o pannello di faggio lamellare, tavoli mobili e regolabili in altezza.</p><p><br></p><p>Il robusto banco da lavoro 45 è costruito su profili Sigma, con elevata stabilità e rigidità nonostante la struttura assemblata – può essere completato con pannelli di posizionamento per box, cassettiere sotto il tavolo, una rampa regolabile in altezza con illuminazione LED, ripiani posizionabili o orientabili, pannelli forati per utensili, lavagne magnetiche o piani di serraggio in alluminio con scanalatura da 10 mm per dadi a T. I banchi da lavoro specializzati comprendono tavoli di serraggio e basamenti per robot, oltre a versioni in acciaio inox, sempre su misura per la specifica operazione.</p><p><br></p><p>Offriamo la realizzazione di soluzioni completamente personalizzate di postazioni di lavoro ergonomiche. I prodotti illustrati sono solo un esempio delle soluzioni più vendute.&nbsp;</p>",
+  "h": "c2312cab83"
+ },
+ {
+  "id": "typ:15:nazev",
+  "typ": "text",
+  "cs": "Pojízdné pracovní stoly",
+  "en": "Mobile workbenches",
+  "it": "Banchi da lavoro mobili",
+  "h": "0de5aa3d9e"
+ },
+ {
+  "id": "typ:15:popis_html",
+  "typ": "html",
+  "cs": "<p>Libovolný stůl nebo konstrukci lze opatřit pojezdovými koly, aniž by ztratily na výškové stavitelnosti – řešení pro snadné přemístění po provozu.</p>",
+  "en": "<p>Any table or structure can be fitted with castors without losing its height adjustability – a solution for easy repositioning around the workplace.</p>",
+  "it": "<p>Qualsiasi tavolo o struttura può essere dotato di ruote senza perdere la regolazione in altezza: una soluzione per spostarlo facilmente all'interno dello stabilimento.</p>",
+  "h": "e17e0338b4"
+ },
+ {
+  "id": "typ:16:nazev",
+  "typ": "text",
+  "cs": "Kuličkové ložiskové stoly",
+  "en": "Ball-bearing tables",
+  "it": "Tavoli con cuscinetti a sfera",
+  "h": "c8f0a8f1a4"
+ },
+ {
+  "id": "typ:16:popis_html",
+  "typ": "html",
+  "cs": "<p>Kuličkové ložiskové stoly mají v pracovní desce zapuštěné kuličkové jednotky, díky kterým se i těžké výrobky nebo palety po ploše posouvají prakticky bez námahy – hodí se pro balicí a expediční pracoviště i konce dopravníkových linek, kde se manipuluje s objemnějším nebo těžším materiálem. Konstrukce je postavená na stejném hliníkovém profilovém systému jako ostatní pracovní stoly.</p>",
+  "en": "<p>Ball-transfer tables have ball units recessed into the worktop, so even heavy products or pallets glide across the surface with practically no effort. They suit packing and dispatch stations as well as the ends of conveyor lines, where bulkier or heavier material is handled. The frame is built on the same aluminium profile system as our other workbenches.</p>",
+  "it": "<p>I tavoli a sfere di trasferimento hanno unità a sfera incassate nel piano di lavoro, grazie alle quali anche prodotti pesanti o pallet scivolano sulla superficie praticamente senza sforzo. Sono adatti a postazioni di imballaggio e spedizione e alle estremità delle linee di trasportatori, dove si movimentano materiali più ingombranti o pesanti. La struttura è realizzata sullo stesso sistema di profili in alluminio degli altri banchi da lavoro.</p>",
+  "h": "6649ee8fc6"
+ },
+ {
+  "id": "typ:17:nazev",
+  "typ": "text",
+  "cs": "Vozíky a stojany",
+  "en": "Trolleys and stands",
+  "it": "Carrelli e supporti",
+  "h": "88cab6fec0"
+ },
+ {
+  "id": "typ:17:popis_html",
+  "typ": "html",
+  "cs": "<p>Manipulační, zásobovací a skladové vozíky a stojany navrhujeme na míru podle požadavků provozu. Ergonomické zásobovací vozíky mají plně a plynule polohovací police (výškově, úhlově, před/vzad), nosnost 120 nebo 200 kg, otočná kolečka s aretací a rozměry upravitelné na vaše stávající přepravky a boxy.</p>",
+  "en": "<p>We design custom handling, supply and storage trolleys and stands to suit the requirements of your operation. Ergonomic supply trolleys have fully and infinitely adjustable shelves (height, angle, forwards/backwards), a load capacity of 120 or 200 kg, lockable swivel castors and dimensions that can be adapted to your existing crates and boxes.</p>",
+  "it": "<p>Progettiamo su misura carrelli per la movimentazione, l'alimentazione e lo stoccaggio, oltre a supporti, in base alle esigenze dello stabilimento. I carrelli di alimentazione ergonomici hanno ripiani completamente e gradualmente regolabili (in altezza, inclinazione, avanti/indietro), portata di 120 o 200 kg, rotelle girevoli con blocco e dimensioni adattabili alle cassette e ai box già in uso.</p>",
+  "h": "abdea4e90b"
+ },
+ {
+  "id": "typ:18:nazev",
+  "typ": "text",
+  "cs": "Komponenty, polotovary a materiály desek",
+  "en": "Components, semi-finished parts and worktop materials",
+  "it": "Componenti, semilavorati e materiali per piani di lavoro",
+  "h": "636f85c7aa"
+ },
+ {
+  "id": "typ:18:popis_html",
+  "typ": "html",
+  "cs": "<p>Pro vlastní sestavení nebo náhradní díly nabízíme komponenty a polotovary pracovních stolů – zvedací sloupky, desky i doplňky. Pracovní desky dodáváme v laminované dřevotřísce (běžný dílenský provoz), březové nebo bukové překližce, případně dalších materiálech podle nároků provozu.</p>",
+  "en": "<p>For self-assembly or as spare parts, we offer workbench components and semi-finished parts – lifting columns, worktops and accessories. We supply worktops in laminated chipboard (standard workshop use), birch or beech plywood, or other materials depending on the demands of use.</p>",
+  "it": "<p>Per il montaggio in autonomia o come ricambi offriamo componenti e semilavorati per banchi da lavoro – colonne di sollevamento, piani e accessori. I piani di lavoro sono forniti in truciolare laminato (uso normale in officina), compensato di betulla o di faggio, oppure in altri materiali in base alle esigenze operative.</p>",
+  "h": "0d5b46c557"
+ },
+ {
+  "id": "typ:19:nazev",
+  "typ": "text",
+  "cs": "Hliníkové profily s drážkou 6 mm",
+  "en": "Aluminium profiles with 6 mm slot",
+  "it": "Profili in alluminio con scanalatura da 6 mm",
+  "h": "e51f731e10"
+ },
+ {
+  "id": "typ:19:popis_html",
+  "typ": "html",
+  "cs": "<p>Nejlehčí řada stavebnicových profilů (typicky rozměry 20×20 až 30×60 mm), s drážkou 6 mm. Vhodná pro lehké konstrukce, kde není potřeba vysoká nosnost – drobné stojany, kryty přístrojů, výstavní stojany, ochranné rámy a menší nábytkové konstrukce. Nízká hmotnost usnadňuje manipulaci i přenosné konstrukce. Drážku 6 mm volte u lehkých konstrukcí, kde hlavní výhodou je nízká hmotnost a snadná manipulace; pro cokoliv namáhanějšího nebo s větším rozponem přejděte na drážku 8 nebo 10 mm.</p>",
+  "en": "<p>The lightest series of modular profiles (typically sized 20×20 to 30×60 mm), with a 6 mm slot. Suitable for light structures where high load capacity is not required – small stands, equipment covers, display stands, protective frames and smaller furniture structures. Low weight makes handling easier, including for portable structures. Choose the 6 mm slot for light structures where the main advantage is low weight and easy handling; for anything subject to greater loads or with a longer span, move up to the 8 or 10 mm slot.</p>",
+  "it": "<p>La serie più leggera di profili modulari (dimensioni tipiche da 20×20 a 30×60 mm), con scanalatura da 6 mm. Adatta a strutture leggere in cui non è richiesta un'elevata portata – piccoli supporti, coperture per apparecchiature, espositori, telai di protezione e strutture d'arredo di dimensioni contenute. Il peso ridotto facilita la movimentazione, anche di strutture trasportabili. La scanalatura da 6 mm è da scegliere per strutture leggere in cui il vantaggio principale è il peso ridotto e la facilità di movimentazione; per qualsiasi applicazione più sollecitata o con luce maggiore, passare alla scanalatura da 8 o 10 mm.</p>",
+  "h": "f5dc47716a"
+ },
+ {
+  "id": "typ:20:nazev",
+  "typ": "text",
+  "cs": "Hliníkové profily s drážkou 8 mm",
+  "en": "Aluminium profiles with 8 mm slot",
+  "it": "Profili in alluminio con scanalatura da 8 mm",
+  "h": "55c42ccab4"
+ },
+ {
+  "id": "typ:20:popis_html",
+  "typ": "html",
+  "cs": "<p>Středně silná, univerzální řada profilů – běžný standard pro pracovní stoly, rámy strojů, montážní pracoviště a dopravníkové konstrukce. Dobrý poměr nosnosti a hmotnosti pro většinu průmyslových i dílenských aplikací. Drážka 8 mm je nejuniverzálnější volba pro běžné pracovní stoly, rámy strojů a montážní pracoviště – pokud si nejste jistí velikostí, tahle řada je bezpečný výchozí bod.</p>",
+  "en": "<p>A medium-strength, all-round profile series – the usual standard for workbenches, machine frames, assembly workstations and conveyor structures. A good ratio of load capacity to weight for most industrial and workshop applications. The 8 mm slot is the most versatile choice for ordinary workbenches, machine frames and assembly workstations – if you are not sure which size to choose, this series is a safe starting point.</p>",
+  "it": "<p>Serie di profili universale di resistenza media – lo standard abituale per banchi da lavoro, telai di macchine, postazioni di montaggio e strutture per trasportatori. Buon rapporto tra portata e peso per la maggior parte delle applicazioni industriali e d'officina. La scanalatura da 8 mm è la scelta più versatile per i comuni banchi da lavoro, i telai di macchine e le postazioni di montaggio – se non si è sicuri della misura, questa serie è un punto di partenza sicuro.</p>",
+  "h": "4291b12a69"
+ },
+ {
+  "id": "typ:21:nazev",
+  "typ": "text",
+  "cs": "Hliníkové profily s drážkou 10 mm",
+  "en": "Aluminium profiles with 10 mm slot",
+  "it": "Profili in alluminio con scanalatura da 10 mm",
+  "h": "635bfcb2ee"
+ },
+ {
+  "id": "typ:21:popis_html",
+  "typ": "html",
+  "cs": "<p>Nejsilnější řada stavebnicových profilů, určená pro těžké a namáhané konstrukce – velké rámy strojů, montážní linky, jeřábové a manipulační konstrukce, velké rozpony. Vyšší nosnost a tuhost za cenu vyšší hmotnosti profilu. Drážku 10 mm volte u konstrukcí s velkým rozponem, vyšším zatížením nebo tam, kde bude rám vystaven rázům a vibracím.</p>",
+  "en": "<p>The strongest series of modular profiles, intended for heavy and heavily loaded structures – large machine frames, assembly lines, crane and handling structures, large spans. Higher load capacity and rigidity at the cost of a higher profile weight. Choose the 10 mm slot for structures with a large span, a higher load, or where the frame will be exposed to shocks and vibrations.</p>",
+  "it": "<p>La serie più robusta di profili modulari, destinata a strutture pesanti e fortemente sollecitate – grandi telai di macchine, linee di montaggio, strutture per gru e movimentazione, grandi luci. Maggiore portata e rigidità a fronte di un peso più elevato del profilo. La scanalatura da 10 mm è da scegliere per strutture con grande luce, carichi più elevati o dove il telaio sarà esposto a urti e vibrazioni.</p>",
+  "h": "b222fcf5e3"
+ },
+ {
+  "id": "typ:22:nazev",
+  "typ": "text",
+  "cs": "Deskové hliníkové profily",
+  "en": "Aluminium panel profiles",
+  "it": "Profili a pannello in alluminio",
+  "h": "13d8e46b99"
+ },
+ {
+  "id": "typ:22:popis_html",
+  "typ": "html",
+  "cs": "<p>Ploché, deskové profily pro konstrukce, kde je potřeba širší nosná nebo krycí plocha než u standardního hranatého profilu – pracovní desky, boční stěny krytů, montážní panely. Zachovávají drážkový systém po obvodu pro snadné spojení s ostatními profily a příslušenstvím.</p>",
+  "en": "<p>Flat panel profiles for structures that need a wider load-bearing or covering surface than a standard square profile – worktops, side walls of covers, assembly panels. They keep the slot system around the perimeter for easy connection to other profiles and accessories.</p>",
+  "it": "<p>Profili piatti a pannello per strutture che richiedono una superficie portante o di copertura più ampia rispetto a un profilo quadrato standard – piani di lavoro, pareti laterali di coperture, pannelli di montaggio. Mantengono il sistema di scanalature lungo il perimetro per un facile collegamento con gli altri profili e accessori.</p>",
+  "h": "1c6cb4377f"
+ },
+ {
+  "id": "typ:23:nazev",
+  "typ": "text",
+  "cs": "Kulaté hliníkové profily",
+  "en": "Round aluminium profiles",
+  "it": "Profili tondi in alluminio",
+  "h": "1b15d1fb6a"
+ },
+ {
+  "id": "typ:23:popis_html",
+  "typ": "html",
+  "cs": "<p>Profily s kruhovým průřezem, vhodné tam, kde je potřeba konstrukce bez ostrých hran (madla, zábradlí, stojany v provozech s pohybem osob) nebo kde se má díl v uložení otáčet kolem své osy. Kombinují nosnost stavebnicového systému s hladkým, bezpečným povrchem; spojovací příslušenství zůstává kompatibilní s drážkovým systémem stavebnice.</p>",
+  "en": "<p>Round-section profiles, suited to places where a structure without sharp edges is needed (handrails, guard rails, stands in workplaces where people move about) or where a part has to rotate about its own axis in its mounting. They combine the load capacity of the modular system with a smooth, safe surface; the connecting accessories remain compatible with the slot system.</p>",
+  "it": "<p>Profili a sezione circolare, indicati dove serve una struttura senza spigoli vivi (maniglioni, parapetti, supporti in ambienti con movimento di persone) o dove un elemento deve ruotare attorno al proprio asse nella sua sede. Uniscono la portata del sistema modulare a una superficie liscia e sicura; gli accessori di collegamento restano compatibili con il sistema a scanalature.</p>",
+  "h": "b934fdabf0"
+ },
+ {
+  "id": "typ:24:nazev",
+  "typ": "text",
+  "cs": "Vodící hliníkové profily",
+  "en": "Aluminium guide profiles",
+  "it": "Profili guida in alluminio",
+  "h": "52a7efb9bf"
+ },
+ {
+  "id": "typ:24:popis_html",
+  "typ": "html",
+  "cs": "<p>Speciální profily s integrovaným kruhovým vedením pro uložení hřídelí a lineárních ložiskových jednotek. Používají se tam, kde konstrukce potřebuje kombinovat nosný rám stavebnicového systému s přesným lineárním pohybem – posuvné dveře, vozíky, dopravníky, polohovací zařízení.</p>",
+  "en": "<p>Special profiles with an integrated circular guide for mounting shafts and linear bearing units. They are used where a structure needs to combine the load-bearing frame of the modular system with precise linear motion – sliding doors, carriages, conveyors, positioning devices.</p>",
+  "it": "<p>Profili speciali con guida circolare integrata per l'alloggiamento di alberi e unità lineari a cuscinetti. Si impiegano dove la struttura deve combinare il telaio portante del sistema modulare con un movimento lineare preciso – porte scorrevoli, carrelli, trasportatori, dispositivi di posizionamento.</p>",
+  "h": "882574798e"
+ },
+ {
+  "id": "typ:25:nazev",
+  "typ": "text",
+  "cs": "Sigma profily",
+  "en": "Sigma profiles",
+  "it": "Profili Sigma",
+  "h": "f7ea74c979"
+ },
+ {
+  "id": "typ:25:popis_html",
+  "typ": "html",
+  "cs": "<p>Profily řady Sigma tvoří základ našich nejrobustnějších dílenských stolů a pracovišť – vykazují vysokou stabilitu a tuhost přestože jde o montovanou (nesvařovanou) konstrukci, díky drážkovanému systému nabízejí vysokou flexibilitu dovybavení.</p>",
+  "en": "<p>Sigma series profiles form the basis of our most robust workshop tables and workstations – they offer high stability and rigidity even though the structure is assembled (not welded), and thanks to the slotted system they offer a high degree of flexibility for adding equipment later.</p>",
+  "it": "<p>I profili della serie Sigma costituiscono la base dei nostri tavoli e postazioni da officina più robusti – offrono elevata stabilità e rigidità pur trattandosi di una struttura assemblata (non saldata) e, grazie al sistema a scanalature, un'elevata flessibilità per ampliamenti successivi dell'equipaggiamento.</p>",
+  "h": "70b0c8257f"
+ },
+ {
+  "id": "typ:26:nazev",
+  "typ": "text",
+  "cs": "Systém Dynamic (profily, příslušenství, spojovací prvky, válečkové dráhy)",
+  "en": "Dynamic system (profiles, accessories, connecting elements, roller tracks)",
+  "it": "Sistema Dynamic (profili, accessori, elementi di collegamento, vie a rulli)",
+  "h": "7c28a9ee1e"
+ },
+ {
+  "id": "typ:26:popis_html",
+  "typ": "html",
+  "cs": "<p>Konstrukční řada Dynamic je určená pro montážní linky, dopravníkové tratě a válečkové dráhy – zahrnuje profily, vlastní příslušenství, spojovací prvky i válečkové dráhy jako celek.</p>",
+  "en": "<p>The Dynamic construction series is designed for assembly lines, conveyor lines and roller tracks – it includes profiles, dedicated accessories, connecting elements and roller tracks as a complete solution.</p>",
+  "it": "<p>La serie costruttiva Dynamic è pensata per linee di montaggio, linee di trasporto e vie a rulli – comprende profili, accessori dedicati, elementi di collegamento e le vie a rulli come soluzione completa.</p>",
+  "h": "cb3e179cd0"
+ },
+ {
+  "id": "typ:27:nazev",
+  "typ": "text",
+  "cs": "Dopravníkové profily",
+  "en": "Conveyor profiles",
+  "it": "Profili per trasportatori",
+  "h": "88ab598b8c"
+ },
+ {
+  "id": "typ:27:popis_html",
+  "typ": "html",
+  "cs": "<p>Profily pro konstrukci dopravníkových tratí a válečkových drah – součást stejné rodiny jako systém Dynamic, pro pohyb výrobků na montážních linkách.</p>",
+  "en": "<p>Profiles for building conveyor lines and roller tracks – part of the same family as the Dynamic system, for moving products along assembly lines.</p>",
+  "it": "<p>Profili per la realizzazione di linee di trasporto e vie a rulli – parte della stessa famiglia del sistema Dynamic, per la movimentazione dei prodotti sulle linee di montaggio.</p>",
+  "h": "20fa2601fc"
+ },
+ {
+  "id": "typ:28:nazev",
+  "typ": "text",
+  "cs": "Příslušenství profilů",
+  "en": "Profile accessories",
+  "it": "Accessori per profili",
+  "h": "d742913164"
+ },
+ {
+  "id": "typ:28:popis_html",
+  "typ": "html",
+  "cs": "<p>Doplňkové díly, které dělají ze stavebnicových profilů kompletní konstrukci: plastové záslepky profilů a rožků, krycí lišty drážek, stavitelné a pojezdové patky, kolečka, panty, madla, držáky kabelů a plexiskla, plynové vzpěry, zámky, magnety a další drobný spojovací a montážní materiál. Nejdřív zkontrolujte velikost drážky vašeho profilu (6, 8 nebo 10 mm) – většina příslušenství je vyráběná přesně na konkrétní velikost drážky a nejde kombinovat mezi řadami. Záslepky a krytky se jen nasadí na konec profilu bez nářadí; stavitelné patky a kolečka se zašroubují do čela profilu přes vnitřní závit a délku nohy doladíte otáčením i po sestavení konstrukce.</p>",
+  "en": "<p>Supplementary parts that turn modular profiles into a complete structure: plastic end caps for profiles and corner connectors, slot cover strips, adjustable and rolling feet, wheels, hinges, handles, holders for cables and acrylic sheets, gas struts, locks, magnets and other small fasteners and assembly materials. First check the slot size of your profile (6, 8 or 10 mm) – most accessories are made for one specific slot size and cannot be combined across series. End caps and covers simply push onto the end of the profile without tools; adjustable feet and wheels screw into the end face of the profile via the internal thread, and you can fine-tune the leg length by turning, even after the structure has been assembled.</p>",
+  "it": "<p>Componenti complementari che trasformano i profili modulari in una struttura completa: tappi terminali in plastica per profili e giunti angolari, profili di copertura per scanalature, piedini regolabili e piedini con rotelle, rotelle, cerniere, maniglie, supporti per cavi e per lastre acriliche, molle a gas, serrature, magneti e altri piccoli elementi di collegamento e di montaggio. Verificare innanzitutto la dimensione della scanalatura del proprio profilo (6, 8 o 10 mm) – la maggior parte degli accessori è realizzata per una dimensione di scanalatura precisa e non può essere combinata tra serie diverse. I tappi e le coperture si inseriscono semplicemente sull'estremità del profilo senza utensili; i piedini regolabili e le rotelle si avvitano nella testata del profilo attraverso la filettatura interna e la lunghezza del piede si regola con precisione ruotandolo, anche dopo il montaggio della struttura.</p>",
+  "h": "d77a9d910b"
+ },
+ {
+  "id": "typ:29:nazev",
+  "typ": "text",
+  "cs": "Spojovací prvky",
+  "en": "Connecting elements",
+  "it": "Elementi di collegamento",
+  "h": "ce17f889ab"
+ },
+ {
+  "id": "typ:29:popis_html",
+  "typ": "html",
+  "cs": "<p>Kompletní sortiment pro pevné i rozebíratelné spoje mezi profily: rohové úhelníky a rožky (standardní, úzké, velké, trojcestné), spojovací kostky a klouby, plotny pro T-spoje a křížové spoje, úhlové spojky a konzole. Doplňují je T-matice (otočné, pružinové, s kloubem, dlouhé), T-šrouby, čtvercové a obdélníkové matice. Pro rychlou montáž bez předvrtání použijte úhelníky s T-maticemi zasunutými do drážky; pro maximální pevnost a minimální viditelnost spoje volte spojovací kostky nebo vnitřní spoje. Trojcestné rožky se hodí tam, kde se v jednom bodě potkávají tři profily (rohy rámů, nohy stolů).</p>",
+  "en": "<p>A complete range for both fixed and detachable joints between profiles: corner angle brackets and corner connectors (standard, narrow, large, three-way), connecting cubes and articulated joints, plates for T-joints and cross joints, angle connectors and brackets. They are complemented by T-nuts (rotating, spring-loaded, hinged, long), T-bolts, and square and rectangular nuts. For quick assembly without pre-drilling, use angle brackets with T-nuts inserted into the slot; for maximum strength and minimum visibility of the joint, choose connecting cubes or internal joints. Three-way corner connectors are suited to places where three profiles meet at a single point (frame corners, table legs).</p>",
+  "it": "<p>Assortimento completo per giunzioni fisse e smontabili tra profili: squadrette angolari e giunti angolari (standard, stretti, grandi, a tre vie), cubi di collegamento e giunti articolati, piastre per giunzioni a T e a croce, raccordi angolari e mensole. Completano l'offerta i dadi a T (girevoli, a molla, articolati, lunghi), le viti a T, i dadi quadrati e rettangolari. Per un montaggio rapido senza preforatura, utilizzare squadrette con dadi a T inseriti nella scanalatura; per la massima resistenza e la minima visibilità della giunzione, scegliere i cubi di collegamento o le giunzioni interne. I giunti angolari a tre vie sono adatti dove tre profili si incontrano in un unico punto (angoli dei telai, gambe dei tavoli).</p>",
+  "h": "acf96b4480"
+ },
+ {
+  "id": "typ:30:nazev",
+  "typ": "text",
+  "cs": "Montážní linky na míru",
+  "en": "Custom assembly lines",
+  "it": "Linee di montaggio su misura",
+  "h": "7076291311"
+ },
+ {
+  "id": "typ:30:popis_html",
+  "typ": "html",
+  "cs": "<p>Navrhujeme a realizujeme montážní linky s pohybem produktů po válečkových drahách posunem rukou, případně se spádovou (gravitační) dráhou. K dispozici je řada velikostí hliníkových profilů podle požadované nosnosti a rozpětí – od lehkých ergonomických montážních linek přes robustní sofistikované polohování produktů až po elektricky výškově stavitelná montážní místa. Výrobky mohou ležet na otočné montážní plotně, která se po dokončení operace vrací zpět na začátek dráhy vespod linky.</p>",
+  "en": "<p>We design and build assembly lines in which products move along roller tracks by hand, or along a gravity-fed track. A range of aluminium profile sizes is available according to the required load capacity and span – from light ergonomic assembly lines, through robust and sophisticated product positioning, to electrically height-adjustable assembly stations. Products can rest on a rotating assembly plate which, once the operation is completed, returns to the start of the track underneath the line.</p>",
+  "it": "<p>Progettiamo e realizziamo linee di montaggio in cui i prodotti si spostano su vie a rulli a spinta manuale oppure lungo un percorso a gravità. È disponibile una gamma di dimensioni di profili in alluminio in base alla portata e alla luce richieste – dalle linee di montaggio leggere ed ergonomiche, passando per un robusto e sofisticato posizionamento dei prodotti, fino alle postazioni di montaggio regolabili elettricamente in altezza. I prodotti possono poggiare su una piastra di montaggio girevole che, al termine dell'operazione, ritorna all'inizio del percorso nella parte inferiore della linea.</p>",
+  "h": "9109554dbd"
+ },
+ {
+  "id": "typ:31:nazev",
+  "typ": "text",
+  "cs": "Bezpečnostní ochranné oplocení",
+  "en": "Safety protective fencing",
+  "it": "Recinzioni protettive di sicurezza",
+  "h": "4d993153f2"
+ },
+ {
+  "id": "typ:31:popis_html",
+  "typ": "html",
+  "cs": "<p>Ochranné oplocení strojů a montážních linek stavíme ze stejného hliníkového profilového systému jako ostatní konstrukce – lze ho tedy kdykoli rozšířit nebo upravit podle změny provozu, doplnit o dveře, průhledné výplně nebo bezpečnostní senzory.</p>",
+  "en": "<p>We build protective fencing for machines and assembly lines from the same aluminium profile system as our other structures – so it can be extended or modified at any time as operations change, and supplemented with doors, transparent infill panels or safety sensors.</p>",
+  "it": "<p>Realizziamo le recinzioni di protezione per macchine e linee di montaggio con lo stesso sistema di profili in alluminio delle altre strutture – per questo possono essere ampliate o modificate in qualsiasi momento in base ai cambiamenti dell'attività e completate con porte, riempimenti trasparenti o sensori di sicurezza.</p>",
+  "h": "aafb02b5a8"
+ },
+ {
+  "id": "typ:32:nazev",
+  "typ": "text",
+  "cs": "Konstrukce strojů",
+  "en": "Machine structures",
+  "it": "Strutture per macchine",
+  "h": "7957f26797"
+ },
+ {
+  "id": "typ:32:popis_html",
+  "typ": "html",
+  "cs": "<p>[Obor zatím bez jednoznačné shody s existujícím katalogem - podle shrnutí z 2026-09-27 jde o téma, které Robert zmínil jako součást oboru 4, ale nespecifikoval, jde-li o novou produktovou linku, nebo o stávající sortiment vedený pod jiným názvem. Text doplnit, až bude upřesnění.]</p>",
+  "en": "<p>[Field not yet clearly matched to the existing catalogue – according to the summary of 2026-09-27, this is a topic that Robert mentioned as part of field 4, but did not specify whether it is a new product line or an existing range listed under a different name. Text to be added once clarified.]</p>",
+  "it": "<p>[Settore non ancora associato con certezza al catalogo esistente – secondo il riepilogo del 2026-09-27 si tratta di un tema che Robert ha indicato come parte del settore 4, ma senza specificare se si tratti di una nuova linea di prodotti o di una gamma esistente con un altro nome. Testo da completare non appena sarà chiarito.]</p>",
+  "h": "2aed739b54"
+ },
+ {
+  "id": "typ:33:nazev",
+  "typ": "text",
+  "cs": "Návody a postupy",
+  "en": "Guides and procedures",
+  "it": "Guide e procedure",
+  "h": "d8735d44fc"
+ },
+ {
+  "id": "typ:33:popis_html",
+  "typ": "html",
+  "cs": "<p>Návody a postupy k práci s konfigurátorem, montáži konstrukce a přehled instruktážních videí a katalogu profilů (PDF) - dokumentace k webu a montáži, ne prodejní kategorie. Kategorie 7 (Montáž konstrukce) má už dnes dobrý, schválený text - při redistribuci se nepřepisuje.</p>",
+  "en": "<p>Guides and procedures for working with the design generator and for assembling the structure, plus an overview of instructional videos and the profile catalogue (PDF) – documentation for the website and for assembly, not a sales category. Category 7 (Structure assembly) already has good, approved text – it is not rewritten during redistribution.</p>",
+  "it": "<p>Guide e procedure per l'utilizzo del generatore di progettazione e per il montaggio della struttura, oltre a una panoramica dei video istruttivi e del catalogo dei profili (PDF) – documentazione relativa al sito e al montaggio, non una categoria di vendita. La categoria 7 (Montaggio della struttura) dispone già oggi di un testo valido e approvato – in caso di redistribuzione non viene riscritto.</p>",
+  "h": "1573dc3cd9"
+ },
+ {
+  "id": "typ:34:nazev",
+  "typ": "text",
+  "cs": "Kotvení vestaveb do auta",
+  "en": "Anchoring vehicle fit-outs",
+  "it": "Ancoraggio degli allestimenti per veicoli",
+  "h": "8e7db3acef"
+ },
+ {
+  "id": "typ:34:popis_html",
+  "typ": "html",
+  "cs": "<p>Každý hliníkový profil systému LOGiMAN má po celé délce upínací drážku, díky které lze kotvit regály, šuplíky, madla i vlastní doplňky kdekoli na konstrukci – bez nutnosti vrtat znovu do profilu při každé úpravě. Ukotvení celé konstrukce ke karoserii vozidla ale obvykle vyžaduje vrtání do jejích zpevněných částí – originálních kotevních bodů bývá u dodávek jen málo – v souladu s požadavky na homologaci. Konkrétní kotevní prvky a sety najdete přímo u vestaveb v katalogu.</p><p><strong>Musí se kvůli kotvení vrtat do karoserie auta?</strong> Ano, ukotvení konstrukce ke karoserii obvykle vyžaduje vrtání do jejích zpevněných částí – originálních kotevních bodů bývá u dodávek jen málo. Je to běžné a homologačně v pořádku. Do samotného hliníkového profilu se naopak znovu nevrtá – využívá se jeho upínací drážka po celé délce.</p>",
+  "en": "<p>Every aluminium profile in the LOGiMAN system has a clamping slot along its entire length, which allows you to anchor shelving units, drawers, handles and your own accessories anywhere on the structure – without having to drill into the profile again with every modification. Anchoring the whole structure to the vehicle body, however, usually requires drilling into its reinforced areas – there are usually only a few original anchor points in vans – in line with homologation requirements. You will find the specific anchoring elements and sets directly with the fit-outs in the catalogue.</p><p><strong>Does the vehicle body have to be drilled for anchoring?</strong> Yes, anchoring the structure to the vehicle body usually requires drilling into its reinforced areas – there are usually only a few original anchor points in vans. This is common practice and in order as far as homologation is concerned. The aluminium profile itself, on the other hand, is not drilled again – its clamping slot along the entire length is used instead.</p>",
+  "it": "<p>Ogni profilo in alluminio del sistema LOGiMAN è dotato di una scanalatura di fissaggio per tutta la lunghezza, che consente di ancorare scaffali, cassetti, maniglie e accessori propri in qualsiasi punto della struttura – senza dover forare di nuovo il profilo a ogni modifica. L'ancoraggio dell'intera struttura alla carrozzeria del veicolo richiede tuttavia in genere la foratura delle sue parti rinforzate – i punti di ancoraggio originali sui furgoni sono di solito pochi – in conformità ai requisiti di omologazione. Gli elementi e i kit di ancoraggio specifici si trovano direttamente presso gli allestimenti nel catalogo.</p><p><strong>Per l'ancoraggio è necessario forare la carrozzeria del veicolo?</strong> Sì, l'ancoraggio della struttura alla carrozzeria richiede in genere la foratura delle sue parti rinforzate – i punti di ancoraggio originali sui furgoni sono di solito pochi. È una pratica comune ed è in regola ai fini dell'omologazione. Il profilo in alluminio in sé, invece, non viene forato di nuovo – si sfrutta la sua scanalatura di fissaggio che corre per tutta la lunghezza.</p>",
+  "h": "6e46f9899d"
+ },
+ {
+  "id": "var:1:nazev",
+  "typ": "text",
+  "cs": "270x5-220x5-170x5-120x8",
+  "en": "270x5-220x5-170x5-120x8",
+  "it": "270x5-220x5-170x5-120x8",
+  "h": "00b24d43c3"
+ },
+ {
+  "id": "var:2:nazev",
+  "typ": "text",
+  "cs": "270x5-220x4-170x1",
+  "en": "270x5-220x4-170x1",
+  "it": "270x5-220x4-170x1",
+  "h": "1a7ee8627b"
+ },
+ {
+  "id": "var:3:nazev",
+  "typ": "text",
+  "cs": "270x5-220x3-170x2",
+  "en": "270x5-220x3-170x2",
+  "it": "270x5-220x3-170x2",
+  "h": "65c29dc92e"
+ },
+ {
+  "id": "var:4:nazev",
+  "typ": "text",
+  "cs": "270x5-220x2-170x3-120x3",
+  "en": "270x5-220x2-170x3-120x3",
+  "it": "270x5-220x2-170x3-120x3",
+  "h": "df8c8ff791"
+ },
+ {
+  "id": "var:5:nazev",
+  "typ": "text",
+  "cs": "270x4-220x4-170x4-120x6",
+  "en": "270x4-220x4-170x4-120x6",
+  "it": "270x4-220x4-170x4-120x6",
+  "h": "3e878c186f"
+ },
+ {
+  "id": "var:6:nazev",
+  "typ": "text",
+  "cs": "270x4-220x3-170x1",
+  "en": "270x4-220x3-170x1",
+  "it": "270x4-220x3-170x1",
+  "h": "8e4544a64d"
+ },
+ {
+  "id": "var:7:nazev",
+  "typ": "text",
+  "cs": "270x4-220x2-170x6-120x6",
+  "en": "270x4-220x2-170x6-120x6",
+  "it": "270x4-220x2-170x6-120x6",
+  "h": "07074e9bce"
+ },
+ {
+  "id": "var:8:nazev",
+  "typ": "text",
+  "cs": "270x4-220x1-170x3-120x3",
+  "en": "270x4-220x1-170x3-120x3",
+  "it": "270x4-220x1-170x3-120x3",
+  "h": "66c60d4afe"
+ },
+ {
+  "id": "var:9:nazev",
+  "typ": "text",
+  "cs": "270x4-170x3-120x9",
+  "en": "270x4-170x3-120x9",
+  "it": "270x4-170x3-120x9",
+  "h": "ca1f1ce52f"
+ },
+ {
+  "id": "var:10:nazev",
+  "typ": "text",
+  "cs": "270x3-220x6",
+  "en": "270x3-220x6",
+  "it": "270x3-220x6",
+  "h": "72a33f2962"
+ },
+ {
+  "id": "var:11:nazev",
+  "typ": "text",
+  "cs": "270x3-220x5-170x5-120x2",
+  "en": "270x3-220x5-170x5-120x2",
+  "it": "270x3-220x5-170x5-120x2",
+  "h": "d92183f410"
+ },
+ {
+  "id": "var:12:nazev",
+  "typ": "text",
+  "cs": "270x3-220x5-170x2-120x2",
+  "en": "270x3-220x5-170x2-120x2",
+  "it": "270x3-220x5-170x2-120x2",
+  "h": "a2407ba2f9"
+ },
+ {
+  "id": "var:13:nazev",
+  "typ": "text",
+  "cs": "270x3-220x4-170x4-120x1",
+  "en": "270x3-220x4-170x4-120x1",
+  "it": "270x3-220x4-170x4-120x1",
+  "h": "60efca0218"
+ },
+ {
+  "id": "var:14:nazev",
+  "typ": "text",
+  "cs": "270x3-220x4-170x1-120x1",
+  "en": "270x3-220x4-170x1-120x1",
+  "it": "270x3-220x4-170x1-120x1",
+  "h": "7cbe90c628"
+ },
+ {
+  "id": "var:15:nazev",
+  "typ": "text",
+  "cs": "270x3-220x3-170x6",
+  "en": "270x3-220x3-170x6",
+  "it": "270x3-220x3-170x6",
+  "h": "7ac3922829"
+ },
+ {
+  "id": "var:16:nazev",
+  "typ": "text",
+  "cs": "270x3-220x3-170x3-120x3",
+  "en": "270x3-220x3-170x3-120x3",
+  "it": "270x3-220x3-170x3-120x3",
+  "h": "46072df52d"
+ },
+ {
+  "id": "var:17:nazev",
+  "typ": "text",
+  "cs": "270x3-220x3",
+  "en": "270x3-220x3",
+  "it": "270x3-220x3",
+  "h": "3a1220043e"
+ },
+ {
+  "id": "var:18:nazev",
+  "typ": "text",
+  "cs": "270x3-220x2-170x3-120x7",
+  "en": "270x3-220x2-170x3-120x7",
+  "it": "270x3-220x2-170x3-120x7",
+  "h": "1ff7a134c3"
+ },
+ {
+  "id": "var:19:nazev",
+  "typ": "text",
+  "cs": "270x3-170x3-120x8",
+  "en": "270x3-170x3-120x8",
+  "it": "270x3-170x3-120x8",
+  "h": "6a6807561d"
+ },
+ {
+  "id": "var:20:nazev",
+  "typ": "text",
+  "cs": "270x3-170x3",
+  "en": "270x3-170x3",
+  "it": "270x3-170x3",
+  "h": "60290ef014"
+ },
+ {
+  "id": "var:21:nazev",
+  "typ": "text",
+  "cs": "270x3-120x3",
+  "en": "270x3-120x3",
+  "it": "270x3-120x3",
+  "h": "ccf64f7a84"
+ },
+ {
+  "id": "var:22:nazev",
+  "typ": "text",
+  "cs": "270x2-220x6-170x4-120x6",
+  "en": "270x2-220x6-170x4-120x6",
+  "it": "270x2-220x6-170x4-120x6",
+  "h": "18d429b763"
+ },
+ {
+  "id": "var:23:nazev",
+  "typ": "text",
+  "cs": "270x2-220x6-170x4-120x4",
+  "en": "270x2-220x6-170x4-120x4",
+  "it": "270x2-220x6-170x4-120x4",
+  "h": "5763ce8294"
+ },
+ {
+  "id": "var:24:nazev",
+  "typ": "text",
+  "cs": "270x2-220x5-170x5",
+  "en": "270x2-220x5-170x5",
+  "it": "270x2-220x5-170x5",
+  "h": "5a2c9d92b3"
+ },
+ {
+  "id": "var:25:nazev",
+  "typ": "text",
+  "cs": "270x2-220x5-170x3-120x3",
+  "en": "270x2-220x5-170x3-120x3",
+  "it": "270x2-220x5-170x3-120x3",
+  "h": "d20f64eece"
+ },
+ {
+  "id": "var:26:nazev",
+  "typ": "text",
+  "cs": "270x2-220x4-170x6-120x6",
+  "en": "270x2-220x4-170x6-120x6",
+  "it": "270x2-220x4-170x6-120x6",
+  "h": "2de8242495"
+ },
+ {
+  "id": "var:27:nazev",
+  "typ": "text",
+  "cs": "270x2-220x4-170x4",
+  "en": "270x2-220x4-170x4",
+  "it": "270x2-220x4-170x4",
+  "h": "80f3041cbf"
+ },
+ {
+  "id": "var:28:nazev",
+  "typ": "text",
+  "cs": "270x2-220x4",
+  "en": "270x2-220x4",
+  "it": "270x2-220x4",
+  "h": "b1e3d20066"
+ },
+ {
+  "id": "var:29:nazev",
+  "typ": "text",
+  "cs": "270x2-220x3-170x8",
+  "en": "270x2-220x3-170x8",
+  "it": "270x2-220x3-170x8",
+  "h": "c94ab7817f"
+ },
+ {
+  "id": "var:30:nazev",
+  "typ": "text",
+  "cs": "270x2-220x3-170x3-120x1",
+  "en": "270x2-220x3-170x3-120x1",
+  "it": "270x2-220x3-170x3-120x1",
+  "h": "49e8b33623"
+ },
+ {
+  "id": "var:31:nazev",
+  "typ": "text",
+  "cs": "270x2-220x2-170x4",
+  "en": "270x2-220x2-170x4",
+  "it": "270x2-220x2-170x4",
+  "h": "733cc9e03e"
+ },
+ {
+  "id": "var:32:nazev",
+  "typ": "text",
+  "cs": "270x2-220x2-120x12",
+  "en": "270x2-220x2-120x12",
+  "it": "270x2-220x2-120x12",
+  "h": "e1f8d69284"
+ },
+ {
+  "id": "var:33:nazev",
+  "typ": "text",
+  "cs": "270x2-220x2",
+  "en": "270x2-220x2",
+  "it": "270x2-220x2",
+  "h": "c3eeef5c3f"
+ },
+ {
+  "id": "var:34:nazev",
+  "typ": "text",
+  "cs": "270x2-170x3-120x9",
+  "en": "270x2-170x3-120x9",
+  "it": "270x2-170x3-120x9",
+  "h": "484cca30be"
+ },
+ {
+  "id": "var:35:nazev",
+  "typ": "text",
+  "cs": "270x2-170x2",
+  "en": "270x2-170x2",
+  "it": "270x2-170x2",
+  "h": "c3b4e0f7a6"
+ },
+ {
+  "id": "var:36:nazev",
+  "typ": "text",
+  "cs": "270x2-120x2",
+  "en": "270x2-120x2",
+  "it": "270x2-120x2",
+  "h": "2cd2fafda0"
+ },
+ {
+  "id": "var:37:nazev",
+  "typ": "text",
+  "cs": "270x1-220x3-170x3-120x1",
+  "en": "270x1-220x3-170x3-120x1",
+  "it": "270x1-220x3-170x3-120x1",
+  "h": "90161780f7"
+ },
+ {
+  "id": "var:38:nazev",
+  "typ": "text",
+  "cs": "270x1-220x3-170x2-120x2",
+  "en": "270x1-220x3-170x2-120x2",
+  "it": "270x1-220x3-170x2-120x2",
+  "h": "e6cfc9be54"
+ },
+ {
+  "id": "var:39:nazev",
+  "typ": "text",
+  "cs": "270x1-220x3-170x2",
+  "en": "270x1-220x3-170x2",
+  "it": "270x1-220x3-170x2",
+  "h": "409c416046"
+ },
+ {
+  "id": "var:40:nazev",
+  "typ": "text",
+  "cs": "270x1-220x2-170x2-120x1",
+  "en": "270x1-220x2-170x2-120x1",
+  "it": "270x1-220x2-170x2-120x1",
+  "h": "4f1f725e3d"
+ },
+ {
+  "id": "var:41:nazev",
+  "typ": "text",
+  "cs": "270x1-220x2-170x1",
+  "en": "270x1-220x2-170x1",
+  "it": "270x1-220x2-170x1",
+  "h": "bd4ae0897e"
+ },
+ {
+  "id": "var:42:nazev",
+  "typ": "text",
+  "cs": "270x1-220x1-170x3-120x3",
+  "en": "270x1-220x1-170x3-120x3",
+  "it": "270x1-220x1-170x3-120x3",
+  "h": "d2e7fc299e"
+ },
+ {
+  "id": "var:43:nazev",
+  "typ": "text",
+  "cs": "270x1-220x1-170x1-120x6",
+  "en": "270x1-220x1-170x1-120x6",
+  "it": "270x1-220x1-170x1-120x6",
+  "h": "eb617c9be4"
+ },
+ {
+  "id": "var:44:nazev",
+  "typ": "text",
+  "cs": "220x7-170x6",
+  "en": "220x7-170x6",
+  "it": "220x7-170x6",
+  "h": "dce5d786bb"
+ },
+ {
+  "id": "var:45:nazev",
+  "typ": "text",
+  "cs": "220x6-170x6",
+  "en": "220x6-170x6",
+  "it": "220x6-170x6",
+  "h": "a667f58b43"
+ },
+ {
+  "id": "var:46:nazev",
+  "typ": "text",
+  "cs": "220x5-170x5-120x15",
+  "en": "220x5-170x5-120x15",
+  "it": "220x5-170x5-120x15",
+  "h": "c838d33481"
+ },
+ {
+  "id": "var:47:nazev",
+  "typ": "text",
+  "cs": "220x5-170x5-120x8",
+  "en": "220x5-170x5-120x8",
+  "it": "220x5-170x5-120x8",
+  "h": "6531c40083"
+ },
+ {
+  "id": "var:48:nazev",
+  "typ": "text",
+  "cs": "220x5-170x5-120x7",
+  "en": "220x5-170x5-120x7",
+  "it": "220x5-170x5-120x7",
+  "h": "6d5c66934a"
+ },
+ {
+  "id": "var:49:nazev",
+  "typ": "text",
+  "cs": "220x5-170x5-120x5",
+  "en": "220x5-170x5-120x5",
+  "it": "220x5-170x5-120x5",
+  "h": "8eb15bdfd4"
+ },
+ {
+  "id": "var:50:nazev",
+  "typ": "text",
+  "cs": "220x5-170x5-120x4",
+  "en": "220x5-170x5-120x4",
+  "it": "220x5-170x5-120x4",
+  "h": "b8ec921a50"
+ },
+ {
+  "id": "var:51:nazev",
+  "typ": "text",
+  "cs": "220x5-170x2-120x6",
+  "en": "220x5-170x2-120x6",
+  "it": "220x5-170x2-120x6",
+  "h": "6ff0a9b4d5"
+ },
+ {
+  "id": "var:52:nazev",
+  "typ": "text",
+  "cs": "220x4-170x4-120x7",
+  "en": "220x4-170x4-120x7",
+  "it": "220x4-170x4-120x7",
+  "h": "3a17e37664"
+ },
+ {
+  "id": "var:53:nazev",
+  "typ": "text",
+  "cs": "220x4-170x4-120x4",
+  "en": "220x4-170x4-120x4",
+  "it": "220x4-170x4-120x4",
+  "h": "5640bb7593"
+ },
+ {
+  "id": "var:54:nazev",
+  "typ": "text",
+  "cs": "220x4-170x4-120x3",
+  "en": "220x4-170x4-120x3",
+  "it": "220x4-170x4-120x3",
+  "h": "9d64a01e29"
+ },
+ {
+  "id": "var:55:nazev",
+  "typ": "text",
+  "cs": "220x4-170x3-120x1",
+  "en": "220x4-170x3-120x1",
+  "it": "220x4-170x3-120x1",
+  "h": "e1599d031e"
+ },
+ {
+  "id": "var:56:nazev",
+  "typ": "text",
+  "cs": "220x3-170x6-120x3",
+  "en": "220x3-170x6-120x3",
+  "it": "220x3-170x6-120x3",
+  "h": "b13d48a607"
+ },
+ {
+  "id": "var:57:nazev",
+  "typ": "text",
+  "cs": "220x3-170x4-120x1",
+  "en": "220x3-170x4-120x1",
+  "it": "220x3-170x4-120x1",
+  "h": "d36aeebe83"
+ },
+ {
+  "id": "var:58:nazev",
+  "typ": "text",
+  "cs": "220x3-170x3-120x9",
+  "en": "220x3-170x3-120x9",
+  "it": "220x3-170x3-120x9",
+  "h": "cfd3ddd1ab"
+ },
+ {
+  "id": "var:59:nazev",
+  "typ": "text",
+  "cs": "220x3-170x3-120x6",
+  "en": "220x3-170x3-120x6",
+  "it": "220x3-170x3-120x6",
+  "h": "f9df37c5e2"
+ },
+ {
+  "id": "var:60:nazev",
+  "typ": "text",
+  "cs": "220x3-170x3-120x5",
+  "en": "220x3-170x3-120x5",
+  "it": "220x3-170x3-120x5",
+  "h": "f96cc38dc3"
+ },
+ {
+  "id": "var:61:nazev",
+  "typ": "text",
+  "cs": "220x3-170x3-120x4",
+  "en": "220x3-170x3-120x4",
+  "it": "220x3-170x3-120x4",
+  "h": "40b9595c7c"
+ },
+ {
+  "id": "var:62:nazev",
+  "typ": "text",
+  "cs": "220x3-170x3-120x3",
+  "en": "220x3-170x3-120x3",
+  "it": "220x3-170x3-120x3",
+  "h": "48d5eee0c0"
+ },
+ {
+  "id": "var:63:nazev",
+  "typ": "text",
+  "cs": "220x3-170x3-120x2",
+  "en": "220x3-170x3-120x2",
+  "it": "220x3-170x3-120x2",
+  "h": "13d08044bc"
+ },
+ {
+  "id": "var:63:popis_zakaznicky",
+  "typ": "text",
+  "cs": "Osm euroboxů ve dvou výškových pásmech: 3× box výšky 220 mm, 3× 170 mm a 2× 120 mm.",
+  "en": "Eight Euro boxes in two height zones: 3× 220 mm high, 3× 170 mm and 2× 120 mm.",
+  "it": "Otto eurobox in due fasce di altezza: 3× da 220 mm, 3× da 170 mm e 2× da 120 mm.",
+  "h": "d4dcdf84e8"
+ },
+ {
+  "id": "var:64:nazev",
+  "typ": "text",
+  "cs": "220x3-170x3",
+  "en": "220x3-170x3",
+  "it": "220x3-170x3",
+  "h": "4573ba7044"
+ },
+ {
+  "id": "var:65:nazev",
+  "typ": "text",
+  "cs": "220x3-170x2-120x3",
+  "en": "220x3-170x2-120x3",
+  "it": "220x3-170x2-120x3",
+  "h": "0a16190a7c"
+ },
+ {
+  "id": "var:66:nazev",
+  "typ": "text",
+  "cs": "220x3-170x1-120x3",
+  "en": "220x3-170x1-120x3",
+  "it": "220x3-170x1-120x3",
+  "h": "e2ede0465a"
+ },
+ {
+  "id": "var:67:nazev",
+  "typ": "text",
+  "cs": "220x3-120x6",
+  "en": "220x3-120x6",
+  "it": "220x3-120x6",
+  "h": "1807b2b7d4"
+ },
+ {
+  "id": "var:68:nazev",
+  "typ": "text",
+  "cs": "220x3-120x3",
+  "en": "220x3-120x3",
+  "it": "220x3-120x3",
+  "h": "3114bd2499"
+ },
+ {
+  "id": "var:69:nazev",
+  "typ": "text",
+  "cs": "220x2-170x2-120x6",
+  "en": "220x2-170x2-120x6",
+  "it": "220x2-170x2-120x6",
+  "h": "73f48f6e82"
+ },
+ {
+  "id": "var:70:nazev",
+  "typ": "text",
+  "cs": "220x2-170x2-120x5",
+  "en": "220x2-170x2-120x5",
+  "it": "220x2-170x2-120x5",
+  "h": "003c5d3201"
+ },
+ {
+  "id": "var:71:nazev",
+  "typ": "text",
+  "cs": "220x2-170x2-120x4",
+  "en": "220x2-170x2-120x4",
+  "it": "220x2-170x2-120x4",
+  "h": "dd6a17baea"
+ },
+ {
+  "id": "var:72:nazev",
+  "typ": "text",
+  "cs": "220x2-170x2-120x2",
+  "en": "220x2-170x2-120x2",
+  "it": "220x2-170x2-120x2",
+  "h": "36327e7cdd"
+ },
+ {
+  "id": "var:73:nazev",
+  "typ": "text",
+  "cs": "220x2-170x2",
+  "en": "220x2-170x2",
+  "it": "220x2-170x2",
+  "h": "03d4e15542"
+ },
+ {
+  "id": "var:74:nazev",
+  "typ": "text",
+  "cs": "220x2-170x1-120x2",
+  "en": "220x2-170x1-120x2",
+  "it": "220x2-170x1-120x2",
+  "h": "518cbaf4cb"
+ },
+ {
+  "id": "var:75:nazev",
+  "typ": "text",
+  "cs": "220x2-120x2",
+  "en": "220x2-120x2",
+  "it": "220x2-120x2",
+  "h": "31ef83afe3"
+ },
+ {
+  "id": "var:76:nazev",
+  "typ": "text",
+  "cs": "220x1-170x4-120x3",
+  "en": "220x1-170x4-120x3",
+  "it": "220x1-170x4-120x3",
+  "h": "0e486e96ce"
+ },
+ {
+  "id": "var:77:nazev",
+  "typ": "text",
+  "cs": "220x1-170x1-120x9",
+  "en": "220x1-170x1-120x9",
+  "it": "220x1-170x1-120x9",
+  "h": "82dfe797b5"
+ },
+ {
+  "id": "var:78:nazev",
+  "typ": "text",
+  "cs": "220x1-170x1-120x6",
+  "en": "220x1-170x1-120x6",
+  "it": "220x1-170x1-120x6",
+  "h": "6210204c6b"
+ },
+ {
+  "id": "var:79:nazev",
+  "typ": "text",
+  "cs": "170x3-120x6",
+  "en": "170x3-120x6",
+  "it": "170x3-120x6",
+  "h": "59f476d329"
+ },
+ {
+  "id": "var:80:nazev",
+  "typ": "text",
+  "cs": "170x3-120x3",
+  "en": "170x3-120x3",
+  "it": "170x3-120x3",
+  "h": "558a496bc1"
+ },
+ {
+  "id": "var:81:nazev",
+  "typ": "text",
+  "cs": "170x2-120x4",
+  "en": "170x2-120x4",
+  "it": "170x2-120x4",
+  "h": "323ccbedc7"
+ },
+ {
+  "id": "var:82:nazev",
+  "typ": "text",
+  "cs": "120x30",
+  "en": "120x30",
+  "it": "120x30",
+  "h": "084eba4fb0"
+ },
+ {
+  "id": "var:83:nazev",
+  "typ": "text",
+  "cs": "120x23",
+  "en": "120x23",
+  "it": "120x23",
+  "h": "55ed47c0a9"
+ },
+ {
+  "id": "var:84:nazev",
+  "typ": "text",
+  "cs": "120x22",
+  "en": "120x22",
+  "it": "120x22",
+  "h": "3b726f7c69"
+ },
+ {
+  "id": "var:85:nazev",
+  "typ": "text",
+  "cs": "120x20",
+  "en": "120x20",
+  "it": "120x20",
+  "h": "27d9dc8936"
+ },
+ {
+  "id": "var:86:nazev",
+  "typ": "text",
+  "cs": "120x19",
+  "en": "120x19",
+  "it": "120x19",
+  "h": "ae9d8e3072"
+ },
+ {
+  "id": "var:87:nazev",
+  "typ": "text",
+  "cs": "120x18",
+  "en": "120x18",
+  "it": "120x18",
+  "h": "d43c9dbcb6"
+ },
+ {
+  "id": "var:88:nazev",
+  "typ": "text",
+  "cs": "120x16",
+  "en": "120x16",
+  "it": "120x16",
+  "h": "55a239dd14"
+ },
+ {
+  "id": "var:89:nazev",
+  "typ": "text",
+  "cs": "120x15",
+  "en": "120x15",
+  "it": "120x15",
+  "h": "df197d5ed4"
+ },
+ {
+  "id": "var:90:nazev",
+  "typ": "text",
+  "cs": "120x14",
+  "en": "120x14",
+  "it": "120x14",
+  "h": "987d121f0e"
+ },
+ {
+  "id": "var:91:nazev",
+  "typ": "text",
+  "cs": "120x12",
+  "en": "120x12",
+  "it": "120x12",
+  "h": "dbd51d73d2"
+ },
+ {
+  "id": "var:92:nazev",
+  "typ": "text",
+  "cs": "120x11",
+  "en": "120x11",
+  "it": "120x11",
+  "h": "d557f265db"
+ },
+ {
+  "id": "var:93:nazev",
+  "typ": "text",
+  "cs": "120x10",
+  "en": "120x10",
+  "it": "120x10",
+  "h": "eeb068a1c4"
+ },
+ {
+  "id": "var:94:nazev",
+  "typ": "text",
+  "cs": "120x9",
+  "en": "120x9",
+  "it": "120x9",
+  "h": "9dab6033c2"
+ },
+ {
+  "id": "var:95:nazev",
+  "typ": "text",
+  "cs": "120x8",
+  "en": "120x8",
+  "it": "120x8",
+  "h": "51e29ef6df"
+ },
+ {
+  "id": "var:96:nazev",
+  "typ": "text",
+  "cs": "120x7",
+  "en": "120x7",
+  "it": "120x7",
+  "h": "ffdb9526c1"
+ },
+ {
+  "id": "var:97:nazev",
+  "typ": "text",
+  "cs": "120x6",
+  "en": "120x6",
+  "it": "120x6",
+  "h": "d84eff1f75"
+ }
+]

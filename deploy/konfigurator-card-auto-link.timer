@@ -1,0 +1,16 @@
+[Unit]
+Description=Casovac automatu pro napojeni schvalenych sestav na existujici karty (kazdych 15 minut)
+# 15 minut, stejne jako konfigurator-card-auto-activate.timer - tenhle
+# krok je v retezu PRED render_auto_dispatch (20 min), takze nema smysl
+# byt pomalejsi nez to, co na nej navazuje. Vypinac je v
+# app_settings['card_auto_link_povoleno'] (cte se na zacatku kazdeho
+# behu) - zastaveni timeru neni jedina cesta, jak automat vypnout, ale
+# jde taky (systemctl stop/disable konfigurator-card-auto-link.timer).
+
+[Timer]
+OnCalendar=*-*-* *:05/15:00
+Persistent=true
+RandomizedDelaySec=90
+
+[Install]
+WantedBy=timers.target

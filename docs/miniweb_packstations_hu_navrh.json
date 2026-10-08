@@ -1,0 +1,108 @@
+{
+  "version": 1,
+  "family": "packstations",
+  "lang": "hu",
+  "categories": [
+    {
+      "slug": "packing-tables-and-workbenches",
+      "url_slug": "csomagolo-es-munkaasztalok",
+      "parent": null,
+      "sort": 1,
+      "name": "Csomagoló- és munkaasztalok"
+    },
+    {
+      "slug": "ergonomic-packing-table-system-35",
+      "url_slug": "ergonomikus-csomagoloasztal-35-os-rendszer",
+      "parent": null,
+      "sort": 2,
+      "name": "Ergonomikus csomagolóasztal – 35-ös rendszer"
+    },
+    {
+      "slug": "robust-packing-table-system-40",
+      "url_slug": "robusztus-csomagoloasztal-40-es-rendszer",
+      "parent": null,
+      "sort": 3,
+      "name": "Robusztus csomagolóasztal – 40-es rendszer"
+    }
+  ],
+  "products": [
+    {
+      "slug": "configurable-packing-station-and-workbench",
+      "url_slug": "konfiguralhato-csomagolo-es-munkaasztal",
+      "sku": "PWB-001",
+      "category": "packing-tables-and-workbenches",
+      "sort": 1,
+      "configurator": {
+        "available": true,
+        "shop_product_id": 4934,
+        "default_view": "configurator"
+      },
+      "name": "Konfigurálható csomagoló- és munkaasztal",
+      "summary": "Alumínium profilkeretes csomagoló- és munkaasztal az Ön méretére. Adja meg a méreteket, a polcokat és a tartozékokat, és nézze meg 3D-ben.",
+      "description": "Az Ön méretére szabva\nEz a munkaasztal megrendelésre készül. Nem előre rögzített méretek közül választ: megadja a munkalap szélességét, mélységét és magasságát, eldönti, hány polcra van szüksége, és hozzáadja a munkájához szükséges tartozékokat. A 3D nézet minden módosításnál megmutatja az eredményt.\n\nEllenőrzés minden módosításnál\nA keret minden változtatás után automatikusan újraszámolódik. A nem legyártható kombinációt a rendszer nem fogadja el, így minden érvényes konfiguráció olyan asztal, amely valóban elkészíthető.\n\nAlumínium profilkeret\nA keretet moduláris rendszerű alumínium profilok alkotják, 30 × 30 mm-es keresztmetszettel és 8 mm-es horonnyal, sarokösszekötőkkel összekapcsolva. A profilok mentén futó hornyok lehetővé teszik a polcok és a tartozékok beállítását.\n\nCsomagoláshoz és műhelyi használatra\nAz asztal csomagoló- és expediálási munkahelyekre, szerelési munkákhoz és műhelyekbe egyaránt alkalmas. Mivel a munkalap magasságát Ön választja meg, az asztal az azt használó személyekhez igazítható. A világításhoz, áramellátáshoz, tároláshoz és mozgatáshoz szükséges tartozékokat az asztal beállításakor adhatja hozzá.\n\nHatáridő, szerelés és szállítás\nAz asztal megrendelésre készül, a szállítási határidő 3–5 hét. A szerelés opcionális szolgáltatás: szereléssel összeszerelve szállítjuk az asztalt, szerelés nélkül szétszerelve (bontott állapotban), és Ön maga szereli össze. A szállítási költség attól függ, hogy kéri-e a szerelést; a megrendelés után határozzuk meg, és a díjbekérő kiállítása előtt megerősítjük.",
+      "delivery": "Megrendelésre készül, szállítási határidő 3–5 hét. A szerelés opcionális szolgáltatás: szereléssel összeszerelve, nélküle szétszerelve (bontott állapotban) szállítjuk. A szállítási költséget a megrendelés után adjuk meg, és a díjbekérő előtt megerősítjük.",
+      "specs": [
+        {
+          "name": "Keret",
+          "value": "Alumínium profilok 30 × 30 mm, 8 mm-es horonnyal, sarokösszekötők"
+        }
+      ]
+    },
+    {
+      "slug": "configurable-ergonomic-packing-table-system-35",
+      "url_slug": "konfiguralhato-ergonomikus-csomagoloasztal",
+      "sku": "PWB-003",
+      "category": "ergonomic-packing-table-system-35",
+      "sort": 2,
+      "configurator": {
+        "available": true,
+        "shop_product_id": 4955,
+        "default_view": "configurator"
+      },
+      "name": "Konfigurálható ergonomikus csomagolóasztal",
+      "summary": "Ergonomikus csomagolóasztal 35 × 35 mm-es alumínium profilkerettel, mechanikusan változtatható magassággal, az Ön méretére. Nézze meg az eredményt 3D-ben.",
+      "description": "Keret 35 × 35 mm-es profilokból\nAz asztal kerete 35 × 35 mm keresztmetszetű, 8 mm-es horonnyal ellátott alumínium profilokból készül. Ez a közepes keretméret a másik két méret, a 30 × 30 mm és a 40 × 40 mm között helyezkedik el, és ugyanazt a konfigurációt a 3D nézetben mindhárom méret között átkapcsolhatja.\n\nA munkához igazított magasság\nEnnek az asztalnak a lábaira hüvely kerül 40 × 40 mm-es zártszelvényből (falvastagság 2 mm), alul záródugóval, RAL 7016 színben (antracitszürke, fényes); ez helyettesíti a görgőket, az állítható lábakat és a záródugókat. A hüvely alapértelmezetten be van kapcsolva, hossza 300 mm; kikapcsolhatja, vagy beállíthatja a hosszát 200 és 400 mm között. A láb legalább 70 mm-re benyúlik a hüvelybe, így az asztal magassága mechanikusan változtatható.\n\nSaját méretek\nA munkalap szélességét (500 és 3000 mm között), mélységét (400 és 1500 mm között) és magasságát Ön választja meg. Az alsó polcokat, a görgőket vagy az állítható lábakat, a lyukasztott szerszámtáblákat, a LED-világítást, az acélfiókokat, az aljzatos elosztósort, a PET-palack tartót és a kivágásokat a munkalapon ugyanúgy adhatja hozzá, mint a másik két asztalnál.\n\nMinden kombinációt ellenőrzünk\nMinden módosítás után a keret újraszámolódik. A nem legyártható kombinációt a rendszer nem fogadja el, és kiírja az okát.\n\nHatáridő, szerelés és szállítás\nAz asztal megrendelésre készül, a szállítási határidő 3–5 hét. A szerelés opcionális szolgáltatás: szereléssel összeszerelve szállítjuk az asztalt, szerelés nélkül szétszerelve (bontott állapotban), és Ön maga szereli össze. A szállítási költség attól függ, hogy kéri-e a szerelést; a megrendelés után határozzuk meg, és a díjbekérő kiállítása előtt megerősítjük.",
+      "delivery": "Megrendelésre készül, szállítási határidő 3–5 hét. A szerelés opcionális szolgáltatás: szereléssel összeszerelve, nélküle szétszerelve (bontott állapotban) szállítjuk. A szállítási költséget a megrendelés után adjuk meg, és a díjbekérő előtt megerősítjük.",
+      "specs": [
+        {
+          "name": "Keret",
+          "value": "Alumínium profilok 35 × 35 mm, 8 mm-es horonnyal"
+        },
+        {
+          "name": "Lábhüvely",
+          "value": "Zártszelvény 40 × 40 mm, falvastagság 2 mm, RAL 7016 fényes, hossz 200–400 mm (alapértelmezetten 300 mm)"
+        },
+        {
+          "name": "Méretek",
+          "value": "Szélesség 500–3000 mm, mélység 400–1500 mm"
+        }
+      ]
+    },
+    {
+      "slug": "configurable-robust-packing-table-system-40",
+      "url_slug": "konfiguralhato-robusztus-csomagoloasztal",
+      "sku": "PWB-002",
+      "category": "robust-packing-table-system-40",
+      "sort": 3,
+      "configurator": {
+        "available": true,
+        "shop_product_id": 4954,
+        "default_view": "configurator"
+      },
+      "name": "Konfigurálható robusztus csomagolóasztal",
+      "summary": "Robusztus csomagolóasztal 40 × 40 mm-es alumínium profilkerettel, az Ön méretére. Adja meg a méreteket, a polcokat és a tartozékokat, és nézze meg 3D-ben.",
+      "description": "Keret 40 × 40 mm-es profilokból\nAz asztal kerete 40 × 40 mm keresztmetszetű, 10 mm-es horonnyal ellátott alumínium profilokból készül, sarokösszekötőkkel összekapcsolva. Ez a legnagyobb a három keretméretünk közül; a többi asztal 30 × 30 mm-es és 35 × 35 mm-es profilokból épül.\n\nSaját méretek\nA munkalap szélességét, mélységét és magasságát Ön választja meg. A szélesség 500 és 3000 mm, a mélység 400 és 1500 mm között lehet. 1500 mm-nél nagyobb szélességnél elöl és hátul egy-egy további középső láb kerül az asztalra.\n\nPolcok és tartozékok\nHozzáadhat alsó polcokat (legfeljebb 10-et, az asztal magasságától függően), és választhat görgőket, lyukasztott szerszámtáblákat, LED-világítást, acélfiókokat, aljzatos elosztósort és PET-palack tartót. A munkalapon kivágásokat is megadhat.\n\nMinden kombinációt ellenőrzünk\nMinden módosítás után a keret újraszámolódik. A nem legyártható kombinációt a rendszer nem fogadja el, és kiírja az okát.\n\nHatáridő, szerelés és szállítás\nAz asztal megrendelésre készül, a szállítási határidő 3–5 hét. A szerelés opcionális szolgáltatás: szereléssel összeszerelve szállítjuk az asztalt, szerelés nélkül szétszerelve (bontott állapotban), és Ön maga szereli össze. A szállítási költség attól függ, hogy kéri-e a szerelést; a megrendelés után határozzuk meg, és a díjbekérő kiállítása előtt megerősítjük.",
+      "delivery": "Megrendelésre készül, szállítási határidő 3–5 hét. A szerelés opcionális szolgáltatás: szereléssel összeszerelve, nélküle szétszerelve (bontott állapotban) szállítjuk. A szállítási költséget a megrendelés után adjuk meg, és a díjbekérő előtt megerősítjük.",
+      "specs": [
+        {
+          "name": "Keret",
+          "value": "Alumínium profilok 40 × 40 mm, 10 mm-es horonnyal, sarokösszekötők"
+        },
+        {
+          "name": "Méretek",
+          "value": "Szélesség 500–3000 mm, mélység 400–1500 mm"
+        }
+      ]
+    }
+  ]
+}

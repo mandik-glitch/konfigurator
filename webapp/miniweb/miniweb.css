@@ -1,0 +1,271 @@
+/* Mini-shop - vzhled (bot16, 2026-10-02). HUD styl (WORKFLOW 34: hranate rohy s useknutym rohem, tenke linky, mono popisky), tmavy, vlastni
+   barva akcentu (config.json "accent", ne oranzova znacky). Mobil jako prvni (Robert cte na mobilu). Vse pod prefixem .mw-, krome trid
+   .pd-* a promennych, ktere potrebuje modul configurator (js/product-configurator.js + css/product-configurator.css) - tady jsou
+   definovane znovu ve stejnem vzhledu. Soubor je BEZ jmena znacky (QA static_page_brand_leak). */
+
+:root {
+  /* barvy, pozadi a sikma mrizka = tokeny HLAVNIHO webu (webapp/index.html, tmavy i svetly motiv); akcent mini-shopu zustava vlastni (config.accent) */
+  --bg: #494b50; --panel: #22262e; --panel2: #1a1d23; --line: #3a3f4a; --text: #e8eaed; --muted: #8b93a1; --text-soft: #c7ccd4; --error: #e07070; --warn: #e0a070;
+  --accent: #2dd4bf;
+  --font-main: "Open Sans", -apple-system, "Segoe UI", Roboto, Arial, sans-serif; --mono: "SF Mono", "Cascadia Code", "Consolas", monospace;
+  /* promenne, ktere cekaji css/product-configurator.css a v3d.css */
+  --panel-bg: var(--panel); --panel-bg-2: var(--panel2); --border-soft: var(--line); --border-card: var(--line); --text-muted: var(--muted);
+  --card-bg: #f4f8fb;
+  --orange: var(--accent); --accent-glow: #5eead4;
+}
+[data-theme="light"] {
+  --bg: #eef1f5; --panel: #ffffff; --panel2: #f3f5f8; --line: #d7dce3; --text: #1b1e24; --muted: #5c6570; --text-soft: #3a3f4a; --error: #c23b3b; --warn: #b8721f;
+  --accent: #0f9d8e;
+}
+[data-theme="dark"] body {
+  background-image: repeating-linear-gradient(45deg,
+    transparent 0 126px, rgba(255,255,255,0.10) 126px 126.5px, transparent 126.5px 252px, rgba(255,255,255,0.10) 252px 252.5px,
+    transparent 252.5px 378px, rgba(255,255,255,0.10) 378px 378.5px, transparent 378.5px 504px, rgba(255,255,255,0.10) 504px 504.5px,
+    transparent 504.5px 630px, color-mix(in srgb, var(--warn) 55%, transparent) 630px 631px);
+  background-attachment: fixed;
+}
+[data-theme="light"] body {
+  background-image: repeating-linear-gradient(45deg,
+    transparent 0 126px, rgba(20,30,45,0.14) 126px 126.5px, transparent 126.5px 252px, rgba(20,30,45,0.14) 252px 252.5px,
+    transparent 252.5px 378px, rgba(20,30,45,0.14) 378px 378.5px, transparent 378.5px 504px, rgba(20,30,45,0.14) 504px 504.5px,
+    transparent 504.5px 630px, color-mix(in srgb, var(--warn) 55%, transparent) 630px 631px);
+  background-attachment: fixed;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.5 var(--font-main); }
+a { color: var(--accent); }
+img, svg { max-width: 100%; }
+h1 { font-size: 1.7rem; line-height: 1.2; margin: .2em 0 .5em; }
+h2 { font-size: 1.2rem; margin: 0 0 .6em; }
+h3 { font-size: 1.05rem; margin: 0 0 .3em; }
+[hidden] { display: none !important; }
+.mw-muted { color: var(--muted); }
+.mw-fine { color: var(--muted); font-size: .85rem; }
+.mw-label { display: block; color: var(--muted); font: 600 .72rem/1.2 var(--mono); letter-spacing: .1em; text-transform: uppercase; margin-bottom: .35rem; }
+.mw-skip { position: absolute; left: -999px; top: 0; background: var(--accent); color: #06120f; padding: .6rem 1rem; z-index: 100; }
+.mw-skip:focus { left: 0; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* ---- hlavicka, patka */
+.mw-staffbar { background: #3a2f12; color: #ffd98a; text-align: center; font: 600 .78rem/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; padding: .5rem; }
+.mw-nav { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; padding: .7rem 1rem; background: var(--panel); border-bottom: 1px solid var(--line); }
+.mw-brand { display: flex; align-items: center; gap: .6rem; color: var(--text); text-decoration: none; font: 800 1.15rem/1 var(--font-main); letter-spacing: .02em; }
+.mw-mark { width: 22px; height: 22px; background: var(--accent); clip-path: polygon(0 0, calc(100% - 6px) 0, 100% 6px, 100% 100%, 6px 100%, 0 calc(100% - 6px)); }
+.mw-links { display: flex; gap: 1rem; margin-left: .5rem; flex: 1; }
+.mw-links a, .mw-cart { color: var(--text); text-decoration: none; padding: .5rem .2rem; border-bottom: 2px solid transparent; }
+.mw-links a:hover, .mw-links a[aria-current] { border-bottom-color: var(--accent); }
+.mw-cart { display: inline-flex; align-items: center; gap: .4rem; border: 1px solid var(--accent); padding: .5rem .9rem;
+  clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px)); }
+.mw-count { background: var(--accent); color: #06120f; border-radius: 0; padding: 0 .4rem; font: 700 .75rem/1.4 var(--mono); }
+main { max-width: 1180px; margin: 0 auto; padding: 1rem; min-height: 60vh; }
+.mw-foot { max-width: 1180px; margin: 2rem auto 0; padding: 1.2rem 1rem 2rem; border-top: 1px solid var(--line); display: grid; gap: 1rem; grid-template-columns: 1fr; }
+.mw-foot a { display: block; color: var(--muted); padding: .2rem 0; }
+@media (min-width: 700px) { .mw-foot { grid-template-columns: 2fr 1fr 2fr; } }
+
+@media (max-width: 600px) {
+  .mw-nav { flex-wrap: nowrap; gap: .5rem; padding: .6rem .8rem; }
+  .mw-brand { font-size: 1rem; gap: .4rem; }
+  .mw-mark { width: 18px; height: 18px; }
+  .mw-links { margin-left: 0; gap: .5rem; font-size: .95rem; }
+  .mw-cart { padding: .45rem .6rem; }
+}
+
+/* ---- tlacitka, formulare */
+.mw-btn { display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: .6rem 1.4rem; border: 1px solid var(--accent); background: var(--accent); color: #06120f; text-decoration: none; cursor: pointer;
+  font: 800 .8rem/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px)); }
+.mw-btn:hover { filter: brightness(1.1); }
+.mw-btn:disabled { opacity: .4; cursor: default; filter: none; }
+.mw-btn-ghost { background: transparent; color: var(--accent); }
+.mw-btn-sm { min-height: 38px; padding: .45rem 1rem; }
+.mw-link { background: none; border: 0; color: var(--accent); text-decoration: underline; cursor: pointer; padding: .4rem 0; font: inherit; }
+.mw-actions { display: flex; gap: .8rem; flex-wrap: wrap; margin-top: 1rem; }
+.mw-field { display: block; margin: 0 0 .9rem; }
+input[type="text"], input[type="email"], input[type="tel"], input[type="number"], select, textarea {
+  width: 100%; min-height: 46px; padding: .5rem .7rem; border: 1px solid var(--line); border-radius: 0; background: var(--panel); color: var(--text); font: inherit; }
+input[type="number"] { width: 6rem; }
+.mw-msg { color: var(--accent); min-height: 1.4em; margin: .6rem 0 0; }
+.mw-form { max-width: 560px; }
+.mw-pay { border: 1px solid var(--line); padding: .8rem; margin: 0 0 1rem; }
+.mw-opt { display: flex; gap: .6rem; align-items: center; }
+.mw-opt input { width: 20px; height: 20px; min-height: 0; }
+
+/* ---- uvod, mrizka, karty */
+.mw-hero { padding: 2rem 0 1rem; border-bottom: 1px solid var(--line); }
+.mw-kicker { color: var(--accent); font: 700 .78rem/1 var(--mono); letter-spacing: .14em; text-transform: uppercase; margin: 0 0 .6rem; }
+.mw-hero h1 { font-size: clamp(1.9rem, 6vw, 3rem); max-width: 18ch; }
+.mw-lead { color: var(--text-soft); font-size: 1.1rem; max-width: 60ch; }
+.mw-section { padding: 1.4rem 0; }
+.mw-steps { list-style: none; padding: 0; margin: 0; display: grid; gap: .8rem; grid-template-columns: 1fr; }
+.mw-steps li { background: var(--panel); border: 1px solid var(--line); padding: 1rem; clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px)); }
+@media (min-width: 760px) { .mw-steps { grid-template-columns: repeat(3, 1fr); } }
+.mw-grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+.mw-card { display: flex; flex-direction: column; background: var(--panel); border: 1px solid var(--line); color: var(--text); text-decoration: none;
+  clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 14px 100%, 0 calc(100% - 14px)); }
+.mw-card:hover { border-color: var(--accent); }
+.mw-card-img { display: flex; align-items: center; justify-content: center; aspect-ratio: 4 / 3; background: var(--panel2); color: var(--accent); }
+.mw-svg { width: 60%; }
+.mw-card-body { padding: 1rem; display: flex; flex-direction: column; gap: .3rem; flex: 1; }
+.mw-card-body .mw-btn { align-self: flex-start; margin-top: auto; }
+.mw-price strong { font-size: 1.2rem; }
+.mw-crumbs { display: flex; flex-wrap: wrap; gap: .5rem; font-size: .9rem; color: var(--muted); margin-bottom: .4rem; }
+.mw-crumbs a + a::before, .mw-crumbs a + span::before { content: "/"; margin-right: .5rem; color: var(--muted); }
+.mw-crumbs span[aria-current] { color: var(--text); }
+.mw-layout { display: grid; gap: 1.2rem; grid-template-columns: 1fr; }
+@media (min-width: 800px) { .mw-layout { grid-template-columns: 240px 1fr; } }
+.mw-side { background: var(--panel); border: 1px solid var(--line); padding: .8rem 1rem; align-self: start; }
+.mw-side-h { font: 700 .75rem/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.mw-tree, .mw-tree ul { list-style: none; padding-left: 0; margin: 0; }
+.mw-tree ul { padding-left: 1rem; }
+.mw-tree a { display: block; padding: .4rem 0; color: var(--text); text-decoration: none; }
+.mw-tree a[aria-current] { color: var(--accent); font-weight: 700; }
+
+/* ---- karta sestavy */
+.mw-pd-grid { display: grid; gap: 1.2rem; grid-template-columns: 1fr; margin-top: .6rem; }
+@media (min-width: 900px) { .mw-pd-grid { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); align-items: start; } }
+.mw-pd-media { position: relative; }
+.mw-buy { display: flex; flex-wrap: wrap; align-items: end; gap: 1rem; margin: 1rem 0 .4rem; padding: .8rem 0; border-top: 1px solid var(--line); }
+.mw-buy-price { flex: 1 1 100%; }
+.mw-price-main { font-size: 1.6rem; }
+.mw-qty { display: block; }
+.mw-delivery { color: var(--muted); }
+.mw-specs { border-collapse: collapse; width: 100%; max-width: 640px; }
+.mw-specs th, .mw-specs td { text-align: left; padding: .5rem; border-bottom: 1px solid var(--line); }
+.mw-specs th { color: var(--muted); font-weight: 600; width: 40%; }
+@media (max-width: 600px) { .mw-buy { position: sticky; bottom: 0; z-index: 20; background: var(--bg); } }
+
+/* ---- kosik a pokladna */
+.mw-cart-grid { display: grid; gap: 1.4rem; grid-template-columns: 1fr; }
+@media (min-width: 900px) { .mw-cart-grid { grid-template-columns: minmax(0, 1.5fr) minmax(280px, 1fr); align-items: start; } }
+.mw-line { display: grid; gap: .8rem; grid-template-columns: 1fr; background: var(--panel); border: 1px solid var(--line); padding: 1rem; margin-bottom: .8rem; }
+@media (min-width: 600px) { .mw-line { grid-template-columns: 1fr auto; } }
+.mw-line-r { display: flex; flex-direction: column; gap: .4rem; align-items: flex-start; }
+.mw-sum { display: grid; grid-template-columns: auto 1fr; gap: .15rem .8rem; margin: .4rem 0 0; font-size: .92rem; }
+.mw-sum dt { color: var(--muted); } .mw-sum dd { margin: 0; }
+.mw-cfg-all { margin-top: .5rem; font-size: .92rem; } .mw-cfg-all summary { cursor: pointer; color: var(--accent); } .mw-cfg-all[open] summary { margin-bottom: .2rem; }
+.mw-totals { background: var(--panel); border: 1px solid var(--line); padding: 1rem; }
+.mw-row { display: flex; justify-content: space-between; padding: .35rem 0; border-bottom: 1px solid var(--line); }
+.mw-row-total { font-size: 1.15rem; border-bottom: 0; padding-top: .7rem; }
+.mw-gate { max-width: 560px; margin: 3rem auto; padding: 1.4rem; background: var(--panel); border: 1px solid var(--line); }
+
+/* ---- prvky, ktere ocekava modul configurator (stejny vzhled jako na produktove strance e-shopu) */
+.pd-options-card { margin: .4rem 0 1rem; padding: .6rem 1rem; border: 1px solid var(--line); background: var(--panel2); display: flex; flex-direction: column; gap: .4rem;
+  clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 14px 100%, 0 calc(100% - 14px)); }
+.pd-options-card[hidden] { display: none; }
+.pd-opt { display: flex; align-items: flex-start; gap: 10px; cursor: pointer; user-select: none; }
+.pd-opt-text { font-size: .9rem; color: var(--text-soft); line-height: 1.4; }
+.pd-opt-sub-label { font-family: var(--mono); font-size: .66rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
+.pd-switch { position: relative; flex: 0 0 auto; width: 38px; height: 20px; margin-top: 1px; }
+.pd-switch input { position: absolute; inset: 0; margin: 0; opacity: 0; cursor: pointer; z-index: 1; width: 100%; height: 100%; min-height: 0; }
+.pd-switch-track { position: absolute; inset: 0; background: var(--panel); border: 1px solid var(--line); clip-path: polygon(0 0, calc(100% - 6px) 0, 100% 6px, 100% 100%, 6px 100%, 0 calc(100% - 6px)); transition: border-color .18s; }
+.pd-switch-thumb { position: absolute; top: 2px; left: 2px; width: 14px; height: 14px; background: var(--muted); transition: transform .18s, background-color .18s; }
+.pd-switch input:checked ~ .pd-switch-track { border-color: var(--accent); }
+.pd-switch input:checked ~ .pd-switch-track .pd-switch-thumb { transform: translateX(18px); background: var(--accent); }
+.pd-switch input:focus-visible ~ .pd-switch-track { outline: 2px solid var(--accent); outline-offset: 2px; }
+.pd-pillgroup { display: flex; gap: 8px; flex-wrap: wrap; }
+.pd-pill { position: relative; cursor: pointer; }
+.pd-pill input { position: absolute; opacity: 0; width: 0; height: 0; }
+.pd-pill span { display: inline-block; padding: .55rem .9rem; border: 1px solid var(--line); color: var(--text-soft); font: .75rem/1.2 var(--mono); letter-spacing: .03em;
+  clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px)); transition: background-color .15s, color .15s, border-color .15s; }
+.pd-pill input:checked + span { border-color: var(--accent); background: var(--accent); color: #06120f; }
+.pd-pill input:focus-visible + span { outline: 2px solid var(--accent); outline-offset: 2px; }
+.pd-pill:not(:has(input:checked)):hover span { border-color: var(--accent); color: var(--text); }
+.pd-gallery-tab { font-size: .8rem; padding: .4rem .9rem; border: 1px solid var(--line); background: var(--panel); color: var(--muted); cursor: pointer; }
+.pd-gallery-tab.active { color: var(--text); border-color: var(--accent); }
+
+/* honeypot proti robotum: mimo obrazovku, ne display:none (ten nektere roboty poznaji) */
+.mw-hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+/* bez cen: modul voleb neukazuje radek s cenou */
+html[data-price-mode="hidden"] .pdc-price { display: none; }
+.mw-opt.mw-field { align-items: flex-start; }
+.mw-pre { white-space: pre-line; }
+
+/* dlouhy nazev shopu ("Packing Stations & Workbenches") se smi zalomit na dva radky, hlavicka se na mobilu nerozlezla */
+.mw-brand { min-width: 0; }
+.mw-brand span:last-child { line-height: 1.15; overflow-wrap: anywhere; }
+@media (max-width: 600px) {
+  .mw-brand { flex: 1 1 auto; font-size: .92rem; }
+  .mw-links { flex: 0 0 auto; gap: .6rem; font-size: .9rem; }
+  .mw-cart { flex: 0 0 auto; }
+}
+
+/* "jen pro podnikatele" - viditelna veta u formularu, na karte a v patice */
+.mw-b2b { margin: .5rem 0; padding: .45rem .7rem; border-left: 3px solid var(--accent); background: var(--panel); color: var(--text-soft); font-size: .88rem; line-height: 1.4; }
+.mw-seller { margin-top: 1rem; }
+
+.mw-faq { border: 1px solid var(--line); background: var(--panel); margin: 0 0 .5rem; padding: .2rem .9rem; }
+.mw-faq summary { cursor: pointer; padding: .6rem 0; font-weight: 600; }
+.mw-faq p { margin: 0 0 .8rem; color: var(--text-soft); }
+.mw-cta2 { text-align: left; border-top: 1px solid var(--line); }
+.mw-card-img { position: relative; }
+.mw-badges { display: flex; flex-wrap: wrap; gap: .3rem; }
+.mw-badges:empty { display: none; }
+.mw-badge { display: inline-flex; align-items: center; font-size: 11px; font-weight: 700; padding: 2px 7px; border: 1px solid var(--accent); color: var(--accent); background: transparent; background: color-mix(in srgb, var(--accent) 12%, transparent); white-space: nowrap; }
+.mw-badge-delivery { border-color: var(--line); color: var(--muted); background: transparent; }
+.mw-badge-profil { position: absolute; top: 6px; right: 6px; z-index: 2; background: rgba(8, 10, 14, .78); }
+.mw-card-img img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
+
+/* ---- karta stolu = mrizka oken (navrh Robert 2026-10-03): okno = zahlavi + telo, 12 sloupcu na desktopu, jeden sloupec na mobilu ---- */
+.mw-pd-title { margin: .4rem 0 .8rem; } .mw-pd-title h1 { margin: 0; } .mw-pd-title p { margin: .2rem 0 0; font: 12px var(--mono); letter-spacing: .08em; }
+.mw-pdg { display: grid; gap: 16px; grid-template-columns: minmax(0, 1fr); margin-top: .4rem; }
+.mw-col { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+.mw-win { display: flex; flex-direction: column; min-width: 0; background: var(--panel); border: 1px solid var(--line); clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%); }
+.mw-win[hidden] { display: none; }
+.mw-win-h { display: flex; align-items: center; justify-content: space-between; gap: .6rem; width: 100%; padding: 9px 14px; margin: 0; border: 0; border-bottom: 1px solid var(--line); background: transparent; color: var(--muted); font: 600 11px/1.2 var(--mono); letter-spacing: .12em; text-transform: uppercase; text-align: left; }
+button.mw-win-h { cursor: pointer; min-height: 40px; } button.mw-win-h:hover { color: var(--accent); }
+.mw-win.is-closed > .mw-win-b { display: none; } .mw-win.is-closed > .mw-win-h { border-bottom-color: transparent; } .mw-win.is-closed .mw-chev { transform: rotate(-90deg); }
+.mw-chev { display: inline-block; transition: transform .15s; color: var(--accent); }
+.mw-win-b { padding: 14px; display: flex; flex-direction: column; gap: .7rem; min-width: 0; }
+.mw-win-dim .mw-win-b, .mw-win-frame .mw-win-b, .mw-win-extras .mw-win-b, .mw-win-adv .mw-win-b { padding: 8px 12px 10px; gap: .3rem; }          /* okna s volbami: hustsi (Robert 2026-10-04) */
+.mw-win-stage .mw-win-b { padding: 0; flex: 1; gap: 0; } .mw-win-stage .mw-pd-media { flex: 1; display: flex; flex-direction: column; min-height: 300px; }
+.mw-win-stage .mw-pd-media .pdc-stage { height: auto; flex: 1; min-height: 300px; border: 0; }
+.mw-win-b.mw-badges { flex-direction: row; }
+.mw-win-attach .mw-win-b { padding: 0; }
+.mw-win-sub { margin: .6rem 0 .3rem; font: 600 11px var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); } .mw-win-sub:first-child { margin-top: 0; }
+.mw-win-price .mw-buy { margin: 0; padding: 0; border: 0; }
+.mw-profile { display: flex; gap: 14px; align-items: center; } .mw-profile img { flex: 0 0 auto; width: 96px; height: 96px; object-fit: contain; background: var(--panel2); } .mw-profile p { margin: 0; font-size: .9rem; color: var(--text-soft); }
+.mw-badge-profile { }
+.mw-cfgbar { min-width: 0; } .mw-cfgbar .pdc-panel { background: transparent; border: 0; padding: 0; margin: 0; }
+.mw-sum-host .pdc-summary dt:nth-of-type(n+5), .mw-sum-host .pdc-summary dd:nth-of-type(n+5) { display: none; }
+.sum-all .mw-sum-host .pdc-summary dt:nth-of-type(n+5), .sum-all .mw-sum-host .pdc-summary dd:nth-of-type(n+5) { display: block; }
+.mw-win-desc .mw-specs { max-width: 560px; }
+/* uchyty ovladani ve 3D (obecny modul v3d-ovladani.js) v barve shopu */
+.pdc-ov .v3do-h::after { background: var(--accent); }
+.pdc-ov .v3do-h:hover::after { background: var(--accent-glow); }
+.pdc-ov .v3do-h .ico { color: #06201c; }
+.pdc-ov .v3do-h.drag::after { background: #fff; }
+@media (min-width: 900px) {
+  .mw-pdg { grid-template-columns: repeat(12, minmax(0, 1fr)); grid-template-areas:
+    "stage stage stage stage stage stage stage stage side side side side"
+    "cfg cfg cfg cfg cfg cfg cfg cfg cfg cfg cfg cfg"
+    "dim dim dim dim frame frame frame frame extras extras extras extras"
+    "ship ship ship ship attach attach attach attach col3 col3 col3 col3"
+    "desc desc desc desc desc desc desc desc desc desc desc desc"; }
+  .mw-win-stage { grid-area: stage; } .mw-col-side { grid-area: side; } .mw-cfgbar { grid-area: cfg; }
+  .mw-win-dim { grid-area: dim; } .mw-win-frame { grid-area: frame; } .mw-win-extras { grid-area: extras; }
+  .mw-win-ship { grid-area: ship; } .mw-win-attach { grid-area: attach; } .mw-col-3 { grid-area: col3; } .mw-win-desc { grid-area: desc; }
+  .mw-win-stage .mw-pd-media, .mw-win-stage .mw-pd-media .pdc-stage { min-height: 560px; }
+}
+.mw-win-save .mw-win-h { display: none; } .mw-win-save .mw-win-b { padding: 12px 14px; }
+.mw-win-save .pdc-save { margin-top: 0; padding-top: 0; border-top: 0; }
+@media (max-width: 899px) {
+  .mw-col-side { display: contents; }
+  .mw-win-price { position: sticky; bottom: 0; z-index: 20; order: 2; border-color: var(--accent); }
+  .mw-win-save { order: 1; }                                        /* Ulozit konfiguraci: v toku primo nad sticky listou ceny (formular je vyssi nez obrazovka telefonu, ve sticky liste by nesel pouzit) */
+  .mw-win-price .mw-win-h, .mw-win-price .mw-delivery { display: none; }
+  .mw-win-price .mw-win-b { padding: 10px 14px; gap: .45rem; }
+  .mw-win-price .mw-msg:empty { display: none; }
+  .mw-win-price .mw-montaz { margin-top: .2rem; padding-top: .45rem; }      /* lista ceny ma byt kompaktni: mereni 360x640 bylo 375 px = 59 % obrazovky */
+  .mw-win-price .mw-montaz-state { margin-top: .25rem; font-size: .78rem; line-height: 1.3; }
+  .mw-win-stage .mw-pd-media { min-height: 300px; }
+}
+
+/* Volitelna montaz (Robert 2026-10-05): volba u ceny na karte produktu a u radku kosiku, pod ni doprovodny text smontovano / demontovano */
+.mw-montaz { margin-top: .9rem; padding-top: .7rem; border-top: 1px solid var(--line); }
+.mw-montaz .mw-opt { flex-wrap: wrap; }
+.mw-montaz-t { font-weight: 700; }
+.mw-montaz-amt { color: var(--muted); font-size: .85rem; margin-left: auto; }
+.mw-montaz-state { margin: .4rem 0 0; color: var(--muted); font-size: .85rem; }
+
+/* Dlouha slova (nemecke slozeniny, madarstina): nadpisy, tlacitka a karty se zalomi misto preteceni z boxu; JEN de/hu, aby se rozlozeni sk/en nezmenilo (bot16, 2026-10-07; zatezovy test s pseudo-nemeckymi slovy) */
+:lang(de) :is(h1, h2, h3, button, label, .mw-card, .mw-win-h), :lang(hu) :is(h1, h2, h3, button, label, .mw-card, .mw-win-h) { overflow-wrap: break-word; hyphens: auto; }

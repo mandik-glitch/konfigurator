@@ -1,0 +1,15 @@
+[Unit]
+Description=Konfigurator 3D objektu - tydenni prepocet cen profilu z Dogus (List Price x kurz x koeficient)
+After=network.target
+StartLimitIntervalSec=2h
+StartLimitBurst=4
+
+[Service]
+Type=oneshot
+User=www-data
+Group=www-data
+WorkingDirectory=/opt/konfigurator/api
+EnvironmentFile=/opt/konfigurator/api/.env
+ExecStart=/opt/konfigurator/api/venv/bin/python3 /opt/konfigurator/scripts/2026-08-09_dogus_price_recompute.py --apply
+Restart=on-failure
+RestartSec=10min

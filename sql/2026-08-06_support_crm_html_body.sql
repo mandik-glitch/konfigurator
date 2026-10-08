@@ -1,0 +1,22 @@
+-- Podpora + CRM: zachovani HTML verze prichozich e-mailu (bot3, 2026-08-06).
+--
+-- Robert (screenshot rozpadle objednavky v konverzaci Podpora): "roluje
+-- se to samo porad dole" (samostatny fix, viz AGENTS_LOG.md) + "dejme
+-- tomu nejaky format tabulky" - plain-text verze tabulkovych e-mailu
+-- (objednavky apod.) po prevodu na text ztrati sloupce/hlavicky (kazda
+-- bunka HTML tabulky je proste vlastni radek za sebou, bez oddelovace).
+-- Puvodni _extract_plain_text() v api/support_email_sync.py HTML cast
+-- pouzivala jen jako FALLBACK (kdyz text/plain chybi), a i tak ji hned
+-- proholila na text - zadna verze s tabulkami se nikdy neukladala.
+--
+-- Reseni (Robert vybral z 2 navrhu - heuristicke rekonstrukce tabulky z
+-- plain textu vs. ulozeni skutecneho HTML): ukladat i puvodni HTML,
+-- zobrazit ho v adminu v sandboxovanem <iframe sandbox="allow-same-origin">
+-- (bez allow-scripts - zadny skript z e-mailu se NIKDY nespusti, viz
+-- webapp/admin.html) - realna tabulka z originalu vyjde presne, funguje
+-- pro libovolny format objednavky/e-mailu.
+--
+-- NULL = beznej pripad (rucni zprava operatora/zakaznika, AI odpoved,
+-- e-mail bez text/html casti) - zobrazi se poze plain `body` jako doteď.
+ALTER TABLE shop_support_messages ADD COLUMN body_html MEDIUMTEXT NULL AFTER body;
+ALTER TABLE crm_lead_messages ADD COLUMN body_html MEDIUMTEXT NULL AFTER body;

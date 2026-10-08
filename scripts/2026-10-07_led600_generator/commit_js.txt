@@ -1,0 +1,14 @@
+Pocitadlo luxu: svitidlo LED 600 (TYP_SKU led_600, zaznam LED600 v katalogu, stupne vykonu podle typu svitidla) + piny ?v= (bot8, Robert 2026-10-07: "LED 600 doplnit do generatoru")
+
+js/lux/lux-data.js: katalog svitidel dostal LED600 (karta #5359: 16 W, 1920 lm, delka 600 mm, teleso 647 mm;
+vsechna dalsi pole null = neznama, optika = predpoklad jako u LED1200 vedena jako hypothesis => vysledky
+zustavaji "Orientacni odhad"; overit podle stitku / datoveho listu). js/stul-luxy.js: TYP_SKU led_600, build()
+pouzije vykonovy stupen jen kdyz ho typ svitidla ma (jinak vychozi), tlacitka stupnu (1200: 33 W / 21 W) se
+pri zmene typu svitidla postavi znovu a u typu s jedinym stupnem (600: 16 W) se skupina schova. Piny ?v=
+prepsal scripts/stul_verze.py + scripts/miniweb_verze.py (stranky generatoru 01-05, embed/stul.html).
+Zpetne kompatibilni se starym serverem (typ led_1200 funguje stejne); novy typ led_600 posila az API po
+nasazeni scripts/2026-10-07_led600_generator/apply.sh. Test: scripts/2026-10-07_led600_generator/
+test_led_delka_stranka.js (Chromium, kandidatni koren) a test_led_delka_lux.py.
+
+Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>
+Claude-Session: https://claude.ai/code/session_0117meq81TnjQhy1Mvk3fLRV

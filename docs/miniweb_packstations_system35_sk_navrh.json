@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "family": "packstations",
+  "lang": "sk",
+  "categories": [
+    {
+      "slug": "ergonomic-packing-table-system-35",
+      "url_slug": "ergonomicky-baliaci-stol-system-35",
+      "parent": null,
+      "sort": 2,
+      "name": "Ergonomický baliaci stôl system 35"
+    }
+  ],
+  "products": [
+    {
+      "slug": "configurable-ergonomic-packing-table-system-35",
+      "url_slug": "konfigurovatelny-ergonomicky-baliaci-stol",
+      "sku": "PWB-003",
+      "category": "ergonomic-packing-table-system-35",
+      "sort": 2,
+      "configurator": {
+        "available": true,
+        "shop_product_id": 4955,
+        "default_view": "configurator"
+      },
+      "name": "Konfigurovateľný ergonomický baliaci stôl",
+      "summary": "Ergonomický baliaci stôl s rámom z hliníkových profilov 35 × 35 mm a mechanicky volenou výškou, vyrobený na mieru. Zvoľte rozmery, police a príslušenstvo a pozrite si výsledok v 3D.",
+      "description": "Rám z profilov 35 × 35 mm\nRám stola je z hliníkových profilov s prierezom 35 × 35 mm a drážkou 8 mm. Je to stredná veľkosť rámu medzi našimi ďalšími dvoma, 30 × 30 mm a 40 × 40 mm, a rovnakú konfiguráciu možno v 3D náhľade prepínať medzi všetkými tromi.\n\nVýška podľa práce\nNa nohy tohto stola sa nasadzuje návlek z jaklu 40 × 40 mm so stenou 2 mm a záslepkou dole, v odtieni RAL 7016 (tmavá sivočierna, lesk); nahrádza kolieska, nožičky aj záslepky. Návlek je predvolene zapnutý a dlhý 300 mm; môžete ho vypnúť alebo nastaviť jeho dĺžku od 200 do 400 mm. Noha v ňom zasahuje najmenej 70 mm, takže výšku stola možno mechanicky meniť.\n\nVlastné rozmery\nŠírku dosky (500 až 3000 mm), jej hĺbku (400 až 1500 mm) aj výšku si zvolíte sami. Dolné police, kolieska alebo nastaviteľné nožičky, perforované panely na náradie, LED osvetlenie, oceľové zásuvky, napájaciu lištu so zásuvkami, držiak na PET fľašu a výrezy v doske pridáte rovnako ako pri ostatných dvoch stoloch.\n\nKaždá kombinácia sa kontroluje\nPo každej zmene sa rám prepočíta. Kombináciu, ktorú nie je možné vyrobiť, systém neprijme a napíše dôvod.\n\nDodanie, montáž a doprava\nStôl sa vyrába na objednávku, dodacia lehota je 3–5 týždňov. Montáž je voliteľná služba: s montážou dodáme stôl zmontovaný, bez nej demontovaný (rozložený) a zmontujete si ho sami. Cena dopravy sa mení podľa toho, či si montáž zvolíte; určíme ju po objednávke a pred vystavením zálohovej faktúry ju potvrdíme.",
+      "delivery": "Vyrába sa na objednávku. Dodacia lehota je 3–5 týždňov. Montáž je voliteľná služba: s montážou dodáme stôl zmontovaný, bez nej demontovaný (rozložený). Cenu dopravy určíme po objednávke a pred vystavením zálohovej faktúry ju potvrdíme.",
+      "specs": [
+        {
+          "name": "Rám",
+          "value": "Hliníkové profily 35 × 35 mm s drážkou 8 mm"
+        },
+        {
+          "name": "Návlek na nohy",
+          "value": "Jakl 40 × 40 mm, stena 2 mm, RAL 7016 lesk, dĺžka 200–400 mm (predvolene 300 mm)"
+        },
+        {
+          "name": "Rozmery",
+          "value": "Šírka 500–3000 mm, hĺbka 400–1500 mm"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <script src="/js/client-errors.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Výběr GLB do 3D scény</title>
+<!-- Robert 2026-08-11: "priprav mi klikaci tabulku prislusenstvi a
+     spojek 'obrazky' ktere ma hotovy glb, ty co znacim muzeme nasypat
+     do sceny" - interni nastroj (sklad_karty opravneni pres API - bot16, 2026-09-29: prejmenovano pri granularnim deleni, viz AGENTS_LOG.md),
+     klik na kartu prepina shop_products.visible_in_scene, tedy presne
+     priznak, kterym se produkt objevi v katalogu 3D sceny (scene.html
+     cte /api/parts: visible_in_scene=1 AND glb_file). HUD styl podle
+     zbytku webu (index.html dlazdice/odznaky). -->
+<style>
+  :root {
+    --bg: #494b50;
+    --panel-bg: #22262e;
+    --panel-bg-alt: #1a1d23;
+    --border: #3a3f4a;
+    --border-soft: #333333;
+    --text: #e8eaed;
+    --text2: #c7ccd4;
+    --text-muted: #8b93a1;
+    --accent: #2fe07a;
+    --warn: #e0a070;
+  }
+  * { box-sizing:border-box; }
+  html, body { margin:0; padding:0; min-height:100%; font-family:var(--font-main, -apple-system,"Segoe UI",Roboto,Arial,sans-serif); background:var(--bg); color:var(--text); font-size:14px; }
+  header {
+    background:var(--panel-bg); border-bottom:1px solid var(--border-soft);
+    padding:14px 20px; display:flex; align-items:center; gap:16px; flex-wrap:wrap; position:sticky; top:0; z-index:50;
+  }
+  header h1 {
+    margin:0; font-family:"SF Mono","Cascadia Code","Consolas",monospace;
+    font-size:14px; color:var(--accent); text-transform:uppercase; letter-spacing:.12em; font-weight:700;
+  }
+  #counter { font-family:"SF Mono","Cascadia Code","Consolas",monospace; font-size:12px; color:var(--text-muted); }
+  #counter b { color:var(--accent); }
+  .filters { display:flex; gap:8px; margin-left:auto; flex-wrap:wrap; align-items:center; }
+  .filter-btn {
+    background:none; border:1px solid var(--border); color:var(--text2); border-radius:0;
+    padding:6px 12px; cursor:pointer; font-family:"SF Mono","Cascadia Code","Consolas",monospace;
+    font-size:11px; text-transform:uppercase; letter-spacing:.06em;
+  }
+  .filter-btn.active { border-color:var(--accent); color:var(--accent); background:rgba(47,224,122,.1); }
+  #searchBox {
+    background:var(--panel-bg-alt); color:var(--text); border:1px solid var(--border); border-radius:0;
+    padding:6px 10px; font-size:13px; width:200px;
+  }
+  #searchBox:focus { outline:none; border-color:var(--accent); box-shadow:0 0 8px color-mix(in srgb, var(--accent) 45%, transparent); }
+  main { padding:20px; }
+  .cat-section-title {
+    font-family:"SF Mono","Cascadia Code","Consolas",monospace; font-size:11px; color:var(--text-muted);
+    text-transform:uppercase; letter-spacing:.1em; margin:26px 0 10px; border-bottom:1px solid var(--border-soft); padding-bottom:6px;
+  }
+  .cat-section-title:first-child { margin-top:0; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(150px, 1fr)); gap:12px; }
+  .card {
+    position:relative; background:var(--panel-bg-alt); border:1px solid var(--border-soft); border-radius:0;
+    clip-path:polygon(0 8px, 8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%);
+    padding:0 10px 10px; cursor:pointer; user-select:none; transition:border-color .15s;
+  }
+  .card::before, .card::after { content:""; position:absolute; width:12px; height:12px; pointer-events:none; transition:border-color .15s, box-shadow .15s; }
+  .card::before { top:-1px; right:-1px; border-top:2px solid var(--border); border-right:2px solid var(--border); }
+  .card::after { bottom:-1px; left:-1px; border-bottom:2px solid var(--border); border-left:2px solid var(--border); }
+  .card:hover::before, .card:hover::after { border-color:var(--warn); box-shadow:0 0 8px color-mix(in srgb, var(--warn) 60%, transparent); }
+  .card.selected { border-color:var(--accent); }
+  .card.selected::before, .card.selected::after { border-color:var(--accent); box-shadow:0 0 8px color-mix(in srgb, var(--accent) 60%, transparent); }
+  .card-media { height:110px; margin:0 -10px 8px; background:#fff; display:flex; align-items:center; justify-content:center; overflow:hidden; }
+  .card-media img { max-width:100%; max-height:100%; object-fit:contain; display:block; }
+  .card-media .noimg { font-size:11px; color:#999; }
+  .card-name { font-size:12.5px; line-height:1.35; color:var(--text2); min-height:34px; }
+  .card-sku { font-family:"SF Mono","Cascadia Code","Consolas",monospace; font-size:10.5px; color:var(--text-muted); margin-top:4px; }
+  .card-state {
+    display:inline-flex; margin-top:6px; font-family:"SF Mono","Cascadia Code","Consolas",monospace;
+    font-size:10px; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
+    padding:2px 7px; border:1px solid var(--border); color:var(--text-muted);
+  }
+  .card.selected .card-state { border-color:var(--accent); color:var(--accent); background:rgba(47,224,122,.12); }
+  .card.busy { opacity:.5; pointer-events:none; }
+  #status { position:fixed; bottom:16px; right:16px; background:var(--panel-bg); border:1px solid var(--accent); color:var(--accent); padding:8px 14px; font-family:"SF Mono","Cascadia Code","Consolas",monospace; font-size:12px; display:none; z-index:100; }
+  #loadMsg { color:var(--text-muted); font-size:13px; padding:30px 0; text-align:center; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Výběr GLB do 3D scény</h1>
+  <span id="counter"></span>
+  <div class="filters">
+    <input type="text" id="searchBox" placeholder="Hledat název / SKU...">
+    <button class="filter-btn active" data-filter="all" type="button">Vše</button>
+    <button class="filter-btn" data-filter="selected" type="button">Označené</button>
+    <button class="filter-btn" data-filter="unselected" type="button">Neoznačené</button>
+  </div>
+</header>
+<main>
+  <div id="loadMsg">Načítám…</div>
+  <div id="content"></div>
+</main>
+<div id="status"></div>
+
+<script>
+let PRODUCTS = [];
+let FILTER = "all";
+let SEARCH = "";
+
+function escapeHtml(s) {
+  return (s || "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+}
+
+function updateCounter() {
+  const sel = PRODUCTS.filter(p => p.visible_in_scene).length;
+  document.getElementById("counter").innerHTML = `Ve scéně: <b>${sel}</b> / ${PRODUCTS.length}`;
+}
+
+function matches(p) {
+  if (FILTER === "selected" && !p.visible_in_scene) return false;
+  if (FILTER === "unselected" && p.visible_in_scene) return false;
+  if (SEARCH) {
+    const q = SEARCH.toLowerCase();
+    if (!(p.name || "").toLowerCase().includes(q) && !(p.sku || "").toLowerCase().includes(q)) return false;
+  }
+  return true;
+}
+
+function render() {
+  const wrap = document.getElementById("content");
+  const byCat = new Map();
+  for (const p of PRODUCTS) {
+    if (!matches(p)) continue;
+    if (!byCat.has(p.category)) byCat.set(p.category, []);
+    byCat.get(p.category).push(p);
+  }
+  let html = "";
+  for (const [cat, items] of byCat) {
+    html += `<div class="cat-section-title">${escapeHtml(cat)} (${items.length})</div><div class="grid">`;
+    html += items.map(p => `
+      <div class="card${p.visible_in_scene ? " selected" : ""}" data-id="${p.id}">
+        <div class="card-media">${p.image_url ? `<img src="${escapeHtml(p.image_url)}" alt="" loading="lazy">` : '<span class="noimg">bez fotky</span>'}</div>
+        <div class="card-name">${escapeHtml(p.name)}</div>
+        <div class="card-sku">${escapeHtml(p.sku || "")}</div>
+        <span class="card-state">${p.visible_in_scene ? "✓ ve scéně" : "mimo scénu"}</span>
+      </div>
+    `).join("");
+    html += "</div>";
+  }
+  wrap.innerHTML = html || '<div id="loadMsg">Nic neodpovídá filtru.</div>';
+  updateCounter();
+}
+
+function flashStatus(msg) {
+  const el = document.getElementById("status");
+  el.textContent = msg;
+  el.style.display = "block";
+  clearTimeout(el._t);
+  el._t = setTimeout(() => { el.style.display = "none"; }, 1800);
+}
+
+document.getElementById("content").addEventListener("click", (e) => {
+  const card = e.target.closest(".card");
+  if (!card) return;
+  const id = parseInt(card.dataset.id, 10);
+  const p = PRODUCTS.find(x => x.id === id);
+  if (!p) return;
+  const newState = !p.visible_in_scene;
+  card.classList.add("busy");
+  fetch(`/api/admin/scene-glb-picker/${id}`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ visible: newState }),
+  }).then(r => {
+    if (!r.ok) throw new Error("HTTP " + r.status);
+    return r.json();
+  }).then(() => {
+    p.visible_in_scene = newState;
+    flashStatus(newState ? `✓ ${p.name} → do scény` : `${p.name} → ze scény ven`);
+    render();
+  }).catch(() => {
+    card.classList.remove("busy");
+    flashStatus("Uložení selhalo, zkus to znovu.");
+  });
+});
+
+document.querySelectorAll(".filter-btn").forEach(btn => {
+  btn.onclick = () => {
+    document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    FILTER = btn.dataset.filter;
+    render();
+  };
+});
+
+document.getElementById("searchBox").addEventListener("input", (e) => {
+  SEARCH = e.target.value.trim();
+  render();
+});
+
+fetch("/api/auth/me").then(r => r.ok ? r.json() : { user: null }).then(data => {
+  if (!data.user) { window.location.href = "/login.html"; return; }
+  return fetch("/api/admin/scene-glb-picker").then(r => {
+    if (r.status === 403) throw new Error("forbidden");
+    if (!r.ok) throw new Error("HTTP " + r.status);
+    return r.json();
+  }).then(d => {
+    PRODUCTS = d.products || [];
+    document.getElementById("loadMsg").remove();
+    render();
+  });
+}).catch((err) => {
+  document.getElementById("loadMsg").textContent =
+    err && err.message === "forbidden" ? "Nemáš oprávnění na skladové karty produktů." : "Načtení selhalo.";
+});
+</script>
+</body>
+</html>

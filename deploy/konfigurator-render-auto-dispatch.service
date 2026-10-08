@@ -1,0 +1,15 @@
+[Unit]
+Description=Konfigurator - automat, ktery sam zaradi pripravene sestavy do renderovaci fronty
+After=network.target mysql.service
+
+[Service]
+Type=oneshot
+# User=root (na rozdil od sesterskeho konfigurator-watchdog-prace, ktery
+# bezi jako www-data): renderovaci klic /root/.konfigurator_render_klic
+# je schvalne cist jen root (0600) - www-data ho precist nesmi, presne
+# proto, aby web sluzba sama nemohla renderovaci frontu zaradit.
+User=root
+Group=root
+WorkingDirectory=/opt/konfigurator
+EnvironmentFile=/opt/konfigurator/api/.env
+ExecStart=/opt/konfigurator/api/venv/bin/python3 /opt/konfigurator/scripts/2026-09-14_render_auto_dispatch.py

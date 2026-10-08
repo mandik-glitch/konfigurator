@@ -1,0 +1,1837 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <script src="/js/client-errors.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title id="pageTitleTag">Hliníkový konstrukční stavebnicový systém s drážkami</title>
+<!-- OG_TAGS_PLACEHOLDER -->
+<!-- bot16, 2026-09-17 (Robert: "chci zkusit pismo ktere ma logiman.cz
+     v menu, jen na nase menu") - logiman.cz (Shoptet) pouziva Open Sans
+     (--template-font: "Open Sans", viz open-sans.css font-face soubor
+     tamtez) - zkousime tu, ale SCOPED jen na .cat-tree-name (viz CSS
+     nize), ne site-wide --font-main. Docasny experiment, ne admin
+     posuvnik - kdyz se nezalibi, staci smazat tenhle <link> + CSS radek. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/css/brand-logo.css">
+<style>
+  :root {
+    --bg: #494b50;
+    --panel-bg: #22262e;
+    --panel-bg-alt: #1a1d23;
+    --border: #3a3f4a;
+    --border-soft: #333333;
+    --border-faint: #262a32;
+    --text: #e8eaed;
+    --text2: #c7ccd4;
+    --text-muted: #8b93a1;
+    --text-faint: #6f7684;
+    --text-dim: #666666;
+    --accent: #9fd0ff;
+    --btn-bg: #3a5a7a;
+    --btn-bg-hover: #4a6a8a;
+    --control-bg: #2b3038;
+    --error: #e07070;
+    --success: #7ed49a;
+    --warn: #e0a070;
+    /* Robert 2026-08-09 ("implementuj plně koncept 4" - menu kategorií
+       = vzor Konceptu 2/Blueprint) - samostatná modrá jen pro strom
+       kategorií, oddělená od hlavní (dynamické, přes theme_colors)
+       --accent, která zůstává zelená a používá se jinde (tlačítka,
+       ceny). Sidebar tak zůstává vizuálně odlišený od zbytku stránky. */
+    /* Robert 2026-08-09 ("implementuj ho k nám to menu 6") - sidebar dostal
+       pevnou hliníkovou texturu bez ohledu na motiv stránky (viz .sidebar
+       nize), takze i akcent v menu je ted tmave zelena (citelna na svetlem
+       kovu), stejna hodnota pro tmavy i svetly motiv. */
+    --sidebar-accent: #0e8a45;
+    /* Robert 2026-08-09 ("záloha konceptu 6 někde musí být, hledej") -
+       skutecna sekce "Koncept 6 · Menu hlinik" v design-concepts/
+       futuristicky-eshop-koncepty.html pouziva pro odlesk (aktivni
+       tecka + probihajici lesk pod textem) JASNEJSI zelenou nez
+       --sidebar-accent (ta je jen pro citelny text) - zivá implementace
+       to drive tise sjednotila na jednu barvu, cimz odlesk ztratil pop. */
+    --sidebar-accent-bright: #1fbe5c;
+  }
+  [data-theme="light"] {
+    --bg: #eef1f5;
+    --panel-bg: #ffffff;
+    --panel-bg-alt: #f3f5f8;
+    --border: #d7dce3;
+    --border-soft: #e3e7ec;
+    --border-faint: #e8ebef;
+    --text: #1b1e24;
+    --text2: #3a3f4a;
+    --text-muted: #5c6570;
+    --text-faint: #97a0ab;
+    --text-dim: #a7afb9;
+    --accent: #1a6fd4;
+    --btn-bg: #2f6690;
+    --btn-bg-hover: #3a76a0;
+    --control-bg: #e7eaef;
+    --error: #c23b3b;
+    --success: #2f9e5c;
+    --warn: #b8721f;
+    --sidebar-accent: #0e8a45;
+    /* Robert 2026-08-09 ("záloha konceptu 6 někde musí být, hledej") -
+       skutecna sekce "Koncept 6 · Menu hlinik" v design-concepts/
+       futuristicky-eshop-koncepty.html pouziva pro odlesk (aktivni
+       tecka + probihajici lesk pod textem) JASNEJSI zelenou nez
+       --sidebar-accent (ta je jen pro citelny text) - zivá implementace
+       to drive tise sjednotila na jednu barvu, cimz odlesk ztratil pop. */
+    --sidebar-accent-bright: #1fbe5c;
+  }
+  * { box-sizing:border-box; }
+  html, body { margin:0; padding:0; min-height:100%; font-family:var(--font-main, -apple-system, "Segoe UI", Roboto, Arial, sans-serif); background:var(--bg); color:var(--text); font-size:14px; }
+  /* Robert 2026-08-07 ("mě šlo hlavně o to pozadí!!") - jemna texturovana
+     mrizka na pozadi (screenshot "Můj počítač"). Robert 2026-08-09
+     ("eshop pozadí odstraň zeleny nadech") - puvodni --accent-tonovane
+     zare (color-mix radialni gradienty) odstraneny, sikma mrizka
+     zustava beze zmeny. */
+  /* Robert 2026-08-09 ("mohla by by byt kazda pata cara oranzova v jednom
+     smeru?") - v 45deg smeru je kazda 5. cara (630px = 5x126px cyklus)
+     oranzova (--warn) mist bile/tmave, -45deg smer beze zmeny. */
+  /* Robert 2026-08-09 ("diagonalu, tu spodni na eshopu zrus, a tu horni
+     o polovinu udelej tenci") - -45deg smer (sestupna \, bez oranzove)
+     uplne odstranen, 45deg smer (stoupajici /, s oranzovou) zustava,
+     jen kazda cara na polovicni tloustku (1px -> 0.5px, oranzova
+     2px -> 1px). */
+  [data-theme="dark"] body {
+    background-image:
+      repeating-linear-gradient(45deg,
+        transparent 0 126px, rgba(255,255,255,0.10) 126px 126.5px,
+        transparent 126.5px 252px, rgba(255,255,255,0.10) 252px 252.5px,
+        transparent 252.5px 378px, rgba(255,255,255,0.10) 378px 378.5px,
+        transparent 378.5px 504px, rgba(255,255,255,0.10) 504px 504.5px,
+        transparent 504.5px 630px, color-mix(in srgb, var(--warn) 55%, transparent) 630px 631px);
+    background-attachment: fixed;
+  }
+  /* Robert 2026-08-09 ("ve svetlem rezimu to zesil, neni to videt") -
+     stejna sikma mrizka jako v tmavem motivu chybela pro svetly (pravidlo
+     existovalo jen pro [data-theme="dark"]), takze ve svetlem rezimu
+     nebylo pozadi videt vubec. Tmave linky mist bilych, o neco silnejsi
+     krytí (0.10 -> 0.14), at jsou na svetlem pozadi stejne citelne. */
+  [data-theme="light"] body {
+    background-image:
+      repeating-linear-gradient(45deg,
+        transparent 0 126px, rgba(20,30,45,0.14) 126px 126.5px,
+        transparent 126.5px 252px, rgba(20,30,45,0.14) 252px 252.5px,
+        transparent 252.5px 378px, rgba(20,30,45,0.14) 378px 378.5px,
+        transparent 378.5px 504px, rgba(20,30,45,0.14) 504px 504.5px,
+        transparent 504.5px 630px, color-mix(in srgb, var(--warn) 55%, transparent) 630px 631px);
+    background-attachment: fixed;
+  }
+  body { display:flex; flex-direction:column; min-height:100vh; }
+  header {
+    height:56px; background:var(--panel-bg); border-bottom:1px solid var(--border-soft); display:flex;
+    align-items:center; justify-content:space-between; padding:0 20px; position:relative; z-index:100; flex-shrink:0;
+  }
+  /* .brand je na homepage <h1> (bot15 2026-09-02, QA SEO_NO_H1 - hero sekci
+     Robert 2026-08-09 zrusil, jiny nadpis na strance neni); margin:0 rusi
+     UA odsazeni h1, font-size/weight uz nastavuje tohle pravidlo -> vzhled
+     hlavicky beze zmeny. */
+  header .brand { font-size:14px; color:var(--text); font-weight:600; margin:0; }
+  /* Textove logo (.brand-logo*): sdilene CSS /css/brand-logo.css, nacitane v <head> - vzhled a zduvodneni upravuj JEN tam. */
+  /* HOME tlacitko (Robert primo, 2026-09-15 pres bot3: "stylove HUD
+     tlacitko Domu na vsech strankach, vedle loga") - stejny vizualni
+     jazyk jako #pdAddCartBtn v product.html (useknuty roh, --accent
+     obrys). Zadny sdileny JS/CSS soubor mezi strankami (stejny vzor
+     jako uz existujici renderAreaSwitch) - kopie na kazdou stranku. */
+  .home-hud-btn {
+    display:inline-flex; align-items:center; justify-content:center;
+    width:30px; height:30px; flex:none; box-sizing:border-box;
+    background:transparent; color:var(--accent); border:1px solid var(--accent); border-radius:0;
+    clip-path:polygon(0 0, calc(100% - 7px) 0, 100% 7px, 100% 100%, 7px 100%, 0 calc(100% - 7px));
+    font-size:15px; line-height:1; text-decoration:none; cursor:pointer;
+    transition:background-color .15s ease, color .15s ease;
+  }
+  .home-hud-btn:hover { background:var(--accent); color:#06140c; }
+  #areaSwitch { display:flex; align-items:center; gap:2px; background:rgba(127,127,127,.15); border-radius:0; padding:3px; }
+  #areaSwitch .as-item { padding:5px 10px; border-radius:0; font-size:12px; text-decoration:none; color:var(--text2); }
+  #areaSwitch a.as-item:hover { color:var(--accent); }
+  #areaSwitch .as-item.active { background:var(--btn-bg); color:#fff; font-weight:600; }
+  #userBox { display:flex; align-items:center; gap:10px; font-size:12.5px; color:var(--text-muted); }
+  #userBox a, #userBox button { color:#fff; background:var(--btn-bg); border:none; border-radius:0; padding:7px 14px; cursor:pointer; font-size:12.5px; text-decoration:none; }
+  #userBox a:hover, #userBox button:hover { background:var(--btn-bg-hover); }
+  #userBox .logout-btn { background:none; border:1px solid var(--border); color:var(--text2); }
+  #userBox .logout-btn:hover { background:var(--control-bg); }
+
+  /* ---- Dvousloupcovy layout: leve trvale menu kategorii + hlavni obsah ----
+     Robert 2026-07-25: "to levé menu kategorií musí zůstat stále viditelné" -
+     kategorie uz nejsou samostatna sekce na homepage, ale trvaly postranni
+     panel pritomny na kazde strance (viz stejny blok v category.html). */
+  /* ---- "Plovouci" vzhled (Robert 2026-07-26: "vše plovoucí... panely a
+     okna" - upresneno pres AskUserQuestion na CISTE VIZUALNI styl, bez
+     tazeni/resize, jen desktop) - sidebar i hlavni obsah jsou samostatne
+     zaoblene karty se stinem nad plochou pozadi (--bg), misto puvodniho
+     jednoho spojiteho panelu s delici carou. Na mobilu (@media nize)
+     se sidebar meni na vysouvaci panel - tam se tenhle "plovouci" odstup
+     zase resetuje, aby zasuvka zustala presne u okraje jako doteď. */
+  .layout { flex:1; display:flex; align-items:flex-start; min-height:0; gap:20px; padding:20px 20px 0; }
+  /* Robert 2026-08-09 ("panel kategorií musí být ghosted at je videt
+     sikmá sit v pozadí") - poloprusvitne "ghosted" sklo misto plne
+     krycí barvy, at je skrz panel videt sikma mrizka na pozadi body
+     (viz [data-theme="dark"] body background-image nize). */
+  /* Robert 2026-08-09 ("oprav se, zdaleka tam není všechno stejné podle
+     vzoru 4") - vzor (Koncept 2/4, .panel-blue) ma PLNY (ne ghosted)
+     panel, drivejsi pruhledny sikel + blur ("panel kategorií musí být
+     ghosted") sem se sidebarem od Konceptu 4 nikdy nesnoubil - vraceno
+     na plnou barvu at presne odpovida vzoru. */
+  /* Robert 2026-08-09 ("implementuj ho k nám to menu 6") - hlinikova
+     "vyrenderovana" textura sidebaru (Koncept 6 v design-concepts/) -
+     vrstvene gradienty: diagonalni lesk + jemne broušené rysky + zaklad
+     svetle modrosede. Pevna hodnota bez ohledu na --panel-bg-alt motivu,
+     protoze jde o material, ne o barvu tematu. */
+  .sidebar {
+    position:relative;
+    width:max-content; min-width:220px; max-width:380px; flex-shrink:0;
+    background:var(--cat-tree-bg-outer, var(--panel-bg-alt));
+    border:1px solid var(--border-soft);
+    border-radius:0; box-shadow:0 2px 8px rgba(0,0,0,.12);
+    /* bot16, 2026-09-17 (Robert: "mluvim o techZKOSENY rozich" - ne male
+       HUD kridky/registracni znacky (.corner-mark), ale useknuty roh
+       clip-path, stejny vzor jako uz .sidebar-footer/.cat-body/
+       .home-hud-btn - tady zvetseno na 14px, odpovida velikosti boxu. */
+    clip-path:polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 14px 100%, 0 calc(100% - 14px));
+    padding:20px 16px 24px;
+    /* Robert 2026-08-09 ("strom kategorií nesmí mít spodní posuvník") -
+       kdyz je nastaven jen overflow-y, prohlizec podle CSS specifikace
+       automaticky pocita i overflow-x jako "auto" (misto zdedeneho
+       "visible") - dlouhy nazev kategorie pak vyvolal vodorovny
+       posuvnik. Explicitni overflow-x:hidden tomu zabrani, dlouhe
+       nazvy se misto toho normalne zalamou (viz .cat-tree-name bez
+       white-space:nowrap). */
+    /* Robert 2026-09-26 - viz category.html: max-height/overflow-y
+       zruseno, strom kategorii roste do prirozene vysky, bez posuvniku. */
+    overflow-x:hidden;
+  }
+  /* Robert 2026-08-09 ("implementuj plně koncept 4" - menu kategorií =
+     vzor Konceptu 2/Blueprint) - modré krizove registracni znacky v
+     rozich panelu (misto zaoblenych rohu/plneho ramecku) - technicky
+     "rysovaci prkno" vzhled. */
+  .corner-mark { position:absolute; width:9px; height:9px; pointer-events:none; }
+  .corner-mark::before, .corner-mark::after { content:""; position:absolute; background:var(--sidebar-accent); }
+  .corner-mark::before { top:50%; left:0; right:0; height:1px; transform:translateY(-50%); }
+  .corner-mark::after { left:50%; top:0; bottom:0; width:1px; transform:translateX(-50%); }
+  /* bot16, 2026-09-17 (Robert: "zakladnimu ramecku menu chybi hud rohy" -
+     -4px = MIMO padding box .sidebar, ale ten ma overflow-x:hidden (viz
+     komentar tamtez, "vodorovny posuvnik u dlouheho nazvu") - overflow
+     orizne VSECHNY potomky za padding hranici bez ohledu na z-index,
+     takze rohy nebyly vubec videt, v zadnem motivu/barve pozadi. Male
+     kladne posunuti dovnitr misto zaporneho ven - porad ctou jako rohova
+     HUD znacka, jen uz je uvnitr orezove oblasti. */
+  .corner-mark.tl { top:2px; left:2px; } .corner-mark.tr { top:2px; right:2px; }
+  .corner-mark.bl { bottom:2px; left:2px; } .corner-mark.br { bottom:2px; right:2px; }
+  /* Robert 2026-08-11 ("Menu neni responzivni") - zaviraci krizek
+     mobilniho supliku s kategoriemi. Na desktopu skryty (sidebar je
+     tam trvale viditelny sloupec, neni co zavirat), zapina se az
+     v mobilnim breakpointu nize. */
+  .sidebar-close {
+    display:none; position:absolute; top:10px; right:10px;
+    width:30px; height:30px; align-items:center; justify-content:center;
+    background:none; border:1px solid var(--border); border-radius:0;
+    color:var(--text2); font-size:20px; line-height:1; cursor:pointer; padding:0;
+  }
+  .sidebar-title {
+    font-family:"SF Mono","Cascadia Code","Consolas",monospace; font-size:10.5px; color:var(--cat-tree-text-outer, var(--sidebar-accent));
+    text-transform:uppercase; letter-spacing:.1em; font-weight:600; margin:0 0 12px;
+    padding-bottom:9px; border-bottom:1px solid var(--border-soft);
+  }
+  .main-content { flex:1; min-width:0; overflow-x:hidden; padding-bottom:20px; }
+  /* bot16, 2026-09-17 (Robert: "vsechny stranky se musi mit stejnou
+     sirku, neni unifikovana") - category.html/product.html uz maji
+     .page-wrap (max-width:1600px), tahle stranka ho postradala -
+     obsah .main-content se tak roztahoval do CELE dostupne sirky
+     (zadny strop) na sirokych monitorech, jina sirka nez zbyle 2
+     stranky. Stejne pravidlo, presna kopie z category.html. */
+  /* Robert pres bot3, 2026-09-27 ("mezera mezi carouselem a menu!!!!!!!!!") -
+     bot3 zmeril 44px mezi sidebarem a obsahem (carousel/mozaika/hlasky/
+     intro text), misto sjednocenych 20px. Pricina: .layout gap (20px,
+     spravne) + tenhle .page-wrap LEVY padding (24px) se scitaly (20+24=44).
+     Levy padding proto na desktopu 0 - viz mobilni override nize, kde
+     se vraci zpet na 24px - na mobilu .layout nema zadny gap/padding
+     sidebaru, tenhle padding je tam JEDINY okrajovy odstup od telefonu,
+     musi zustat. ZAMERNE JEN index.html - category/product/blok.html
+     maji stejnych 44px taky (overeno), ale to je starsi/sirsi vec nez
+     dnesni prace na homepage, needit bez samostatneho zadani. */
+  .page-wrap { max-width:1600px; margin:0; padding:28px 24px 60px 0; }
+
+  /* ---- Mobilni responzivita (Robert 2026-07-26: "přizpůsob UI responzivně
+     pro mobilní zařízení") - sidebar se na uzsich obrazovkach meni na
+     vysouvaci panel (stejny vzor jako kosik), header se prizpusobuje. ---- */
+  .hamburger-btn { display:none; background:none; border:1px solid var(--border); color:var(--text2); border-radius:0; width:34px; height:34px; font-size:14px; cursor:pointer; align-items:center; justify-content:center; flex-shrink:0; }
+  /* Robert 2026-08-10 ("vloz tam nejdrive panel ktery bude videt vzdy
+     na vsech url webu... vlevo pod menu, do toho panelu pak vlozime
+     video") - trvaly panel pod stromem kategorii, na VSECH 4 strankach
+     se sidebarem (index/category/product/blok). Zatim prazdny (obsah
+     pribude v navazujici zmene) - display:none, aby nezustaval na
+     zivem webu jako prazdny ohraniceny box mezitim. */
+  /* Robert 2026-08-10 ("je to useknute prodluz to okno" + "proc je to
+     tak nalepene na menu") - oprava 2 chyb: (1) puvodni CSS omylem
+     duplikovalo .sidebar-footer-title/-video (2x stejne pravidlo,
+     zustatek z prvni "hardcoded video" verze pred prepsanim na
+     dynamicky render) - uklizeno na 1 definici kazde. (2) portretove
+     video (720x1280, 9:16) se v uzkem sidebaru (max-width 380px)
+     vykreslovalo cca 650px vysoke - vetsinou vyssi nez cely viditelny
+     sidebar (max-height:calc(100vh - 96px) na .sidebar), takze
+     vypadalo "usteknute" presne na hranici box. Reseno max-height +
+     object-fit:cover (oriznuti stran, ne cele natazeni) - misto
+     nutnosti scrollovat uzky sidebar pro cely portretovy snimek.
+     Odstup od stromu kategorii zvetsen (margin-top 20px -> 28px). */
+  /* Robert 2026-08-10 ("vrať se a oddělene od menu pridej dlazdici") -
+     panel VYNDAN z <aside class="sidebar"> (uz nesdili jeho
+     max-height:calc(100vh - 96px)/overflow-y:auto urcene pro
+     scrollovaci strom kategorii - to zpusobovalo "nalepeni"/oriznuti
+     nahlasene drive). Novy .left-column obaluje <aside> i panel jako
+     2 samostatne boxy nad sebou (misto uvnitr jednoho scrollovaciho
+     ramecku), sdili jen sirku se sidebarem (width:max-content).
+     Video/obrazek: robustni crop technika (wrapper s pevnym
+     aspect-ratio + video/img absolutne pozicovane pres cely wrapper,
+     object-fit:cover) - predchozi pokus (max-height primo na <video
+     controls>) se choval nespolehlive, protoze nativni ovladaci lista
+     prohlizece zabirala misto NAD ramec zadane vysky, misto aby ho
+     jen prekryvala. */
+  /* bot16, 2026-09-14 (Robert primo, screenshot: "chci aby to video
+     melo vzdy stejnou sirku jako má responzivne menu") - align-items
+     ZMENENO z flex-start na stretch: .sidebar (strom kategorii) ma
+     width:max-content (220-380px podle obsahu), zatimco
+     .sidebar-footer (video panel) mel NAPEVNO width:280px - pri
+     jinem nez presne 280px sirokem stromu se panely rozjely, video
+     vypadalo uzsi/sirsi nez menu nad nim. S flex-start si kazdy box
+     drzel svou VLASTNI sirku bez ohledu na souseda; se stretch se
+     .sidebar-footer (viz jeho pravidlo nize, uz bez vlastniho width)
+     natahne na stejnou sirku, jakou ma .left-column samotny (tu
+     urcuje sirsi z dvojice, typicky .sidebar). */
+  .left-column { display:flex; flex-direction:column; gap:20px; flex-shrink:0; width:max-content; align-items:stretch; }
+  /* HUD dlazdice - stejny vzor jako .hp-block-card/.cat-product-card
+     (useknute rohy + zarici zelene->oranzove rohove zavorky pri hoveru),
+     "jako mame vsude jinde" (Robert 2026-08-10). Pevne (theme-independent)
+     tmave pozadi + svetly text, protoze karty s timhle vzorem to maji
+     vsude stejne (viz .hp-block-card). Zadny vlastni `width` - viz
+     komentar u .left-column vyse, sirku ted dava az stretch. */
+  .sidebar-footer {
+    position:relative; display:none;
+    background:var(--base-dark, #1a1d23); border:1px solid var(--border); border-radius:0; padding:0;
+    clip-path:polygon(0 12px, 12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%);
+    box-shadow:0 2px 8px rgba(0,0,0,.12);
+  }
+  .sidebar-footer::before, .sidebar-footer::after { content:""; position:absolute; width:16px; height:16px; pointer-events:none; transition:border-color .15s, box-shadow .15s; }
+  .sidebar-footer::before { top:-1px; right:-1px; border-top:2px solid var(--accent); border-right:2px solid var(--accent); }
+  .sidebar-footer::after { bottom:-1px; left:-1px; border-bottom:2px solid var(--accent); border-left:2px solid var(--accent); }
+  .sidebar-footer:hover::before, .sidebar-footer:hover::after { border-color:var(--warn); box-shadow:0 0 8px color-mix(in srgb, var(--warn) 60%, transparent); }
+  .sidebar-footer-title { font-size:14px; line-height:1.4; color:#e8eaed; font-weight:600; margin:0; padding:14px 14px 8px; }
+  .sidebar-footer-media, .sidebar-footer-video-wrap { display:block; position:relative; width:100%; aspect-ratio:3/4; overflow:hidden; background:#000; text-decoration:none; }
+  .sidebar-footer-media img, .sidebar-footer-video-wrap video { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+  .sidebar-footer-excerpt { font-size:13px; color:#9aa4b2; padding:8px 14px 14px; margin:0; line-height:1.5; }
+  #sidebarOverlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,.5); z-index:140; }
+  #sidebarOverlay.open { display:block; }
+  @media (max-width:860px) {
+    .hamburger-btn { display:flex; }
+    /* Robert 2026-08-11 ("zkus pro mobil deaktivovat uplne 3D scenu
+       jakoby nebyla") - scene.html zustava desktop-only (drivejsi
+       rozhodnuti), takze odkaz na ni v mobilnim prepinaci Eshop/3D
+       scena nema smysl zobrazovat. */
+    a.as-item[href="/scene.html"] { display:none; }
+    /* Robert ("Nevidím nic právě" / "Jakoukoliv kategorii vidím
+       prázdnou") - KRITICKY bug: .layout je "display:flex" (radek) BEZ
+       flex-wrap, .left-column ma "width:100%" (viz nize v tomto
+       bloku) - v neprelamanem flex radku to donutilo .main-content
+       (flex:1, min-width:0) zmensit se skoro na 0px sirky, protoze
+       .left-column svym width:100% zabral "zakladni" (flex-basis)
+       nárok na CELOU sirku radku. Vysledek: cely obsah stranky
+       (mozaika, dlazdice, produkty...) byl vizualne stlaceny mimo
+       viditelnou plochu - vypadalo to jako "prazdna stranka", i kdyz
+       obsah v DOM byl (SSR fungovalo spravne, sel jen videt). Oprava:
+       flex-wrap na .layout, aby se .left-column (100% sirky) a
+       .main-content (flex:1) prelomily na 2 samostatne radky mist
+       souperit o jeden, kazdy pak dostane svou celou sirku. */
+    /* Robert 2026-08-11 - POTVRZENO MERENIM na realnem iPhonu (390px
+       viewport): .left-column w=390 h=0, .main-content w=0 h=2146
+       x=390 -> cely obsah stranky byl stlaceny na nulovou sirku a
+       odsunuty presne za pravy okraj obrazovky. Drivejsi pokus
+       "flex-wrap:wrap" NEMOHL zabrat: .main-content ma flex:1, tedy
+       flex-basis:0% - prvek s nulovym zakladem se do radku vzdy
+       "vejde", takze se nikdy nezalomi, jen dostane 0px sirky
+       (zalamovani se ridi flex-basis, ne obsahem). Reseni: na mobilu
+       z .layout zrusit flex uplne, oba potomci se pak poskladaji pod
+       sebe jako bezne bloky a .main-content dostane plnou sirku. */
+    .layout { gap:0; padding:0; display:block; }
+    .main-content { width:100%; }
+    .main-content { padding-bottom:0; }
+    /* Robert 2026-08-11 ("Menu neni responzivni") - mobilni suplik mel
+       2 chyby: (1) top:56px pocital s puvodni jednoradkovou hlavickou,
+       jenze ta se od responzivni opravy zalamuje (~103px), takze suplik
+       prekryval spodni radek hlavicky (kosik/hledani) - ted je pres
+       celou vysku, jak je u mobilnich supliku zvykem; (2) strom
+       kategorii dedil desktopovou velikost pisma 16px, ktera se do
+       uzkeho supliku nevejde - skoro kazdy nazev se lamal do 2 radku
+       (viz Robertuv screenshot). Zmenseno na 14px s tesnejsim
+       radkovanim; klikaci plocha zustava ~40px vysoka, tedy pohodlna
+       na prst. Suplik je scrollovatelny, protoze pres celou vysku se
+       dlouhy strom kategorii jinak nevejde. */
+    .sidebar {
+      position:fixed; top:0; left:-100%; bottom:0; width:min(86vw, 320px);
+      max-width:none; min-width:0; z-index:150;
+      transition:left .2s ease; box-shadow:2px 0 16px rgba(0,0,0,.35);
+      border-radius:0; border:none; max-height:none;
+      overflow-y:auto; -webkit-overflow-scrolling:touch;
+      padding:14px 14px 24px;
+    }
+    .sidebar.mobile-open { left:0; }
+    /* Suplik pres celou vysku prekryje i hamburger, takze musi mit
+       vlastni zaviraci krizek (klepnuti na ztmavene pozadi funguje
+       dal, ale nesmi byt jedina cesta zpet). */
+    .sidebar-close { display:flex; }
+    .sidebar-title { padding-right:34px; }
+    .cat-tree-row { gap:2px; }
+    .cat-tree-toggle {
+      width:28px; height:28px; display:inline-flex;
+      align-items:center; justify-content:center; font-size:15px;
+    }
+    .cat-tree-name { font-size:14px; line-height:1.35; letter-spacing:0; padding:8px 4px; }
+    .cat-tree-children { margin-left:12px; }
+    .left-column { width:100%; }
+    /* bot16, 2026-09-14 - stejna sirkova formule jako .sidebar v
+       tomhle breakpointu (min(86vw,320px), viz vyse) - i kdyz .sidebar
+       je tu jako position:fixed suplik mimo normalni tok (uz nesdili
+       box s .left-column), video panel ma i tak vypadat stejne siroke. */
+    .sidebar-footer { margin:12px 16px 0; width:min(86vw, 320px); }
+    /* Robert ("kompletně opravit responzivní web pro mobil") - header
+       drive dostal flex-wrap az pod 600px, ale hamburger nastupuje uz
+       pod 860px - mezi 601-860px header zustaval v 1 neprelamanem
+       radku a mohl prekrocit sirku obrazovky. */
+    header { flex-wrap:wrap; height:auto; min-height:56px; padding:10px 14px; row-gap:8px; }
+    header > div:last-of-type { flex-wrap:wrap; row-gap:6px; }
+    #userBox span { max-width:150px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  }
+  /* ---- Category tree (svisly, sbalovaci) - Robert 2026-08-09: "udelej
+     neco s tim vzhledem" + referencni sablona (cisty design bez linek
+     mezi radky) - drivejsi border-bottom u kazdeho radku nahrazen
+     jemnym podbarvenim primo na klikatelnem jmenu (hover/aktivni), at
+     odstup delaji mezery, ne cary. ---- */
+  /* bot16, 2026-09-17 (Robert: "dokola a dokola, stredni sedy to ukoseni
+     nema") - "stredni sedy blok" NENI samostatny element s vlastnim
+     pozadim (.cat-tree samo o sobe zadne pozadi nema) - je to jen
+     souvisly dojem ze sousednich radku (.cat-tree-node[data-depth] >
+     .cat-tree-row) se stejnou barvou "radky". clip-path primo na
+     .cat-tree orizne VSECHNY potomky (tedy i jejich pozadi) na stejnem
+     useknutem tvaru jako .sidebar/.cat-admin-tree-colors, aniz by bylo
+     nutne menit hloubkove odstupnovani jednotlivych radku. */
+  /* bot16, 2026-09-26 (Robert: "zkus aplikovat menu jako cisty strom
+     dle A, ale ponechat efekty" - viz Design Canvas "Menu kategorii -
+     varianty") - HUD ramecek/chamfer z varianty D (border+clip-path
+     na .cat-tree/.cat-tree-row, aktivni radek jako plne orámovaný box)
+     ODSTRANEN, nahrazeno plochym seznamem varianty A: zadny ramecek,
+     aktivni polozka = tenky levy prouzek (border-left, viz .cat-tree-row:
+     has(.cat-tree-name.active) nize) + jemne pozadi, zanorene vetve
+     dostaly VODICI CARU (.cat-tree-children border-left) misto A-ciho
+     staticky-pozicovaneho .guide divu (nejde na dynamicky strom,
+     border-left na kontejneru dela presne totez robustneji). EFEKTY
+     Robert vyslovne rekl ponechat - sweep hover (::before/::after +
+     catTreeSweepX/Y nize) a CELY admin barevny system (bg_rows/
+     nested/open/active/hover, text_*, border_width, caps) zustavaji
+     beze zmeny, jen uz nekresli obrys/vypln ramecku. */
+  .cat-tree { text-align:left; clip-path:polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px)); }
+  /* bot16, 2026-09-25 (Robert primo, ziva iterace v Artifact preview -
+     "chci mezi nazvy kategorii s mezerami jakoby to byly tlacitka", pak
+     doslovne po zhlednuti: "zustane tedy levy a horni lem, a jezdici
+     prouzek") - kazdy radek stromu ted vypada jako samostatne HUD
+     tlacitko, stejny useknuty roh jako .home-hud-btn/.sidebar/.cat-tree
+     (clip-path, ne border-radius). Jen HORNI a LEVY okraj (border-right/
+     border-bottom explicitne none) + realna mezera mezi radky (margin-
+     bottom, misto puvodniho padding:2px 0 ktere zadnou viditelnou mezeru
+     nedelalo). Hloubkove ladeni barvy (border-color/background nize) i
+     .is-open "sklenena" karta zustavaji stejny mechanismus - meni se jen
+     tvar/mezera radku. */
+  /* bot16, 2026-09-26 (Robert po designove revizi v artifactu "Menu
+     kategorii - varianty", vybral variantu D - "kombinace A a B, aspon
+     neco je HUD") - vychozi border uz neni transparentni, ale VZDY
+     viditelny (--border-soft) - lehky HUD ramecek na hlavni (depth 0)
+     polozce, misto drivejsiho "obrys se objevi az na hover/aktivni". */
+    /* bot16, 2026-09-26 (Robert: "neni tam radny hover efekt !!") -
+     zive overeno Playwrightem: ramecek TAM byl (spravna sirka/animace),
+     ale --border-soft (#333333, tmave sedy) byl na Robertove aktualnim
+     podkladu bocniho panelu (#48505b, svetlejsi modrosedy) TMAVSI nez
+     pozadi = nulovy kontrast, radek vypadal jako holy text. Nahrazeno
+     barvou odvozenou primo od textu radku (--cat-tree-text-rows) v
+     pulovicni pruhlednosti - text uz MUSI byt viditelny proti
+     jakemukoli pozadi, ktere si Robert zvoli, takze i tenhle ramecek
+     bude vzdy viditelny, at nastavi cokoli. */
+  .cat-tree-row { display:flex; align-items:center; gap:6px; padding:6px 8px; margin-bottom:1px; clip-path:polygon(0 0, calc(100% - 9px) 0, 100% 9px, 100% 100%, 9px 100%, 0 calc(100% - 9px)); position:relative; overflow:hidden; }
+  /* Robert, tyz den: "ten efekt zpomal na pulku rychlosti a aplikuj to
+     na web" - nahrazuje puvodni staticky "cely radek zbelal oranzove
+     na hover" dvema tenkymi svitivymi stopami, ktere pri najeti
+     "prejedou" presne po hornim a levem lemu (jedine dve hrany, co
+     radek fyzicky ma - prava/spodni zustava jen useknuty roh bez
+     vlastni linky). 2s = polovicni rychlost oproti puvodnimu 1s
+     odsouhlasenemu v artifactu.
+     ROZSIRENO (bot16, tyz den, Robert u zanoreneho "Vestavby pro
+     Fiat": "myši chybí hover efekt, levy+horni lem s efektem
+     přejezdu") - puvodne jen depth 0, ted na VSECH urovnich vcetne
+     hluboce zanorenych - zanorene radky zustavaji v klidu ploche
+     (zadny staly ramecek), sweep se objevi jen po najeti mysi. */
+  .cat-tree-row::before, .cat-tree-row::after { content:""; position:absolute; opacity:0; pointer-events:none; }
+  .cat-tree-row::before {
+    top:0; left:0; right:0; height:2px;
+    background:linear-gradient(90deg, transparent 0%, var(--cat-tree-text-active, var(--sidebar-accent-bright)) 45%, transparent 90%);
+    background-repeat:no-repeat; background-size:250% 100%; background-position:200% 0;
+  }
+  .cat-tree-row::after {
+    top:0; left:0; bottom:0; width:2px;
+    background:linear-gradient(180deg, transparent 0%, var(--cat-tree-text-active, var(--sidebar-accent-bright)) 45%, transparent 90%);
+    background-repeat:no-repeat; background-size:100% 250%; background-position:0 -100%;
+  }
+  /* bot16, 2026-09-26 (Robert: "ta linka efektova je moc silna,
+     ale porad k ni neni zeslabovac, ten posuvnik se tyka jeste jine
+     linky") - Sila linek (--cat-tree-border-width) meni jen levy
+     prouzek aktivni polozky, tenhle sweep efekt na to nereagoval
+     vubec. Vlastni nezavisly ovladac - opacity misto pevne 1. */
+  /* bot16, 2026-09-26 (Robert: "ten jezdici lesk efekt nech leti
+     podel leveho a horniho lemu v jednom smeru, ted se nejak divne
+     vlni ve dvou smerech") - puvodne obe animace (svisla na levem
+     lemu, vodorovna na hornim) bezely CELOU dobu SOUCASNE, jen s
+     jinou geometrii - vypadalo to jako dva nezavisle vlnici se
+     pruhy, ne jeden souvisly pohyb. Ted sdileji JEDEN 2s cyklus,
+     kazda aktivni jen v jeho polovine (svisla 0-50%, vodorovna
+     50-100%, mimo svou polovinu neviditelna) - vysledkem je JEDEN
+     smer pohybu: nahoru podel leveho lemu, pak doprava podel
+     horniho, porad dokola. */
+  .cat-tree-row:hover::before { animation:catTreeSweepX 2s linear infinite; }
+  .cat-tree-row:hover::after { animation:catTreeSweepY 2s linear infinite; }
+  /* bot16, 2026-09-26 (Robert: "efekt na linkach hoveru... zacina
+     dole na leve lince, jde nahoru, prechazi na levou cast horni
+     linky a pokracuje doprava na konec horni linky") - puvodni smer
+     (rostouci background-position) sel na hornim lemu DOPRAVA->
+     DOLEVA, presny opak. Overeno rucne staticky (bez animace) pres
+     CSS specifikaci background-position vzorce - hodnoty tady
+     ZAMENENY (200%->-100% misto -100%->200%), levy lem zustava
+     stejny (uz spravne zdola nahoru). background-repeat:no-repeat
+     vyse pridano, aby se prechazeny rozsah pozic nemohl zdvojit
+     (gradient by se jinak dlaždicoval a pusobil jako 2 nezavisle
+     zablesky misto jednoho souvisleho pruchodu). */
+  @keyframes catTreeSweepX {
+    0%, 50% { opacity:0; background-position:200% 0; }
+    50.1% { opacity:var(--cat-tree-sweep-opacity, 1); background-position:200% 0; }
+    100% { opacity:var(--cat-tree-sweep-opacity, 1); background-position:-100% 0; }
+  }
+  @keyframes catTreeSweepY {
+    0% { opacity:var(--cat-tree-sweep-opacity, 1); background-position:0 -100%; }
+    49.9% { opacity:var(--cat-tree-sweep-opacity, 1); background-position:0 200%; }
+    50%, 100% { opacity:0; background-position:0 200%; }
+  }
+  .cat-tree-row:has(.cat-tree-name.active) { border-left-color:var(--cat-tree-text-active, var(--sidebar-accent)) !important; background:var(--cat-tree-bg-active, color-mix(in srgb, var(--cat-tree-text-active, var(--sidebar-accent)), transparent 88%)) !important; }
+  .cat-tree-toggle {
+    display:inline-block; width:16px; text-align:center; cursor:pointer;
+    color:var(--cat-tree-text-rows, var(--cat-tree-text-outer, var(--text-muted))); font-weight:700; user-select:none; flex-shrink:0;
+  }
+  .cat-tree-toggle:hover { color:var(--sidebar-accent); }
+  .cat-tree-toggle.spacer { visibility:hidden; cursor:default; }
+  /* Robert 2026-08-09 ("implementuj plně koncept 4" - menu kategorií =
+     vzor Konceptu 2/Blueprint) - misto kmitajiciho pruhu pod textem
+     jen tenka vlasecnice + prefixova znacka ("·"/"▸"), modra
+     (--sidebar-accent), oddelena od hlavni zelene --accent pouzivane
+     jinde na strance. */
+  /* bot16, 2026-09-25 (Robert: "v logiman.cz je pismo mensi, chci v
+     menu stejne velke pismo") - zmereno zive na logiman.cz (Shoptet,
+     .cc-main-cat/<a> ve strome kategorii): 14px. Puvodne 16px na
+     desktopu (mobilni media query uz na 14px byla - viz vyse). */
+  .cat-tree-name { position:relative; flex:1; font-family:"Open Sans", var(--font-main, -apple-system,"Segoe UI",Roboto,Arial,sans-serif); font-weight:normal; font-size:14px; letter-spacing:.03em; line-height:1.5; color:var(--cat-tree-text-rows, var(--cat-tree-text-outer, var(--text2))); cursor:pointer; text-decoration:none; padding:7px 4px 8px; border-radius:0; overflow:hidden; transition:color .15s; }
+  /* bot16, 2026-09-17 (Robert: "pridej na nase menu prepinac caps vsechno
+     velke") - trida na <html>, JS ji preklapi (viz catTreeColorsApply). */
+  html.cat-tree-caps-on .cat-tree-name { text-transform:uppercase; }
+  .cat-tree-name::before { content:"· "; color:var(--text-muted); font-family:var(--font-main, -apple-system,"Segoe UI",Roboto,Arial,sans-serif); }
+  .cat-tree-name:hover { color:var(--cat-tree-text-hover, var(--cat-tree-text-active, var(--sidebar-accent))); }
+  /* bot16, 2026-09-23 (Robert pres bot3: "aktivni polozka barva" cerná
+     mist orander v light rezimu) - nalezeno pri auditu vsech 4 stranek
+     sdilejicich "Admin: barvy menu (3 vrstvy)" panel: category.html a
+     product.html maji .cat-tree-name.active pravidlo (bot16,
+     2026-09-17) od zacatku, index.html/blok.html ho NIKDY nemely -
+     aktivni polozka tu bez nej padala na zakladni .cat-tree-name barvu
+     (--cat-tree-text-rows/-outer/--text2), ne na admin barvu
+     --cat-tree-text-active. Dnes se .active trida na teto strance jeste
+     nikdy nepriradi (_index_page_response nepredava active_id), ale
+     panel pro editaci barvy je na strance viditelny pro admina uz ted -
+     doplneno pro paritu se zbylymi 2 strankami, at se pri budouci zmene
+     chova stejne, ne az po dalsim hlaseni stejne chyby. */
+  .cat-tree-name.active { color:var(--cat-tree-text-active, var(--sidebar-accent)); font-weight:700; }
+  /* Docasne oznaceni nove pridanych kategorii (Robert 2026-09-25: "dej
+     jim jinou barvu textu at to mohu rozeznat a posoudit") - zaroven
+     schvaluje/zamita v adminu, pak se pending_review vypne a barva
+     zmizi, viz sql/2026-09-25_content_categories_pending_review.sql. */
+  .cat-tree-name.cat-tree-name-new { color:#3fd8c9; }
+  .cat-tree-name.cat-tree-name-new.active { color:#3fd8c9; }
+  .cat-tree-name.active::before { content:"▸ "; color:var(--cat-tree-text-active, var(--sidebar-accent-bright)); }
+  /* bot16, 2026-09-26 (varianta D, Robert: "musi zustat jen zivy
+     prejizdeci efekt na levem a hornim lemu") - puvodni "pohyblive
+     podtrzeni" pod textem (Robert 2026-08-09, drzeno az doted)
+     NAHRAZENO jednim signaturnim efektem na .cat-tree-row vyse (sweep
+     po hornim+levem lemu) - Robert vyslovne rekl "JEN" ten jeden. */
+  .cat-tree-children { margin-left:18px; padding-left:10px; border-left:1px solid color-mix(in srgb, var(--cat-tree-text-nested, var(--cat-tree-text-rows, var(--text2))), transparent 78%); display:none; }
+  .cat-tree-children.expanded { display:block; }
+  /* bot16, 2026-09-17 (Robert pres bot7, screenshot leveho menu: "s tim
+     stejnym podkladem tmava to je spatne pro orientaci cloveka") -
+     hloubkove odliseni radku stromu (podklad + levy okraj, sytost roste
+     s hloubkou) + skupinove nadpisy ("PODLE VOZIDLA" apod., viz
+     content_categories.menu_group_label) - misto jednoho plocheho
+     podkladu na cely sidebar (.sidebar{background:var(--panel-bg-alt)}).
+     color-mix() smerem k --bg (ne pevny hex/pevny smer k bile/cerne) -
+     --bg a --panel-bg-alt jsou uz dnes 2 zamerne odlisne tony v obou
+     motivech (Robertuv live editovatelny theme_colors_eshop_dark/light,
+     admin > Vzhled), takze prechod mezi nimi funguje spravne v obou. */
+  .cat-tree-node[data-depth] > .cat-tree-row {
+    padding-left:6px; margin-left:-6px; border-left:var(--cat-tree-border-width, 2px) solid transparent;
+  }
+  /* bot16, 2026-09-17 (Robert primo: "chci adminovsky posuvnik urcovani
+     barvy podkladu i pisma vsech prvku aktualniho menu/stromu kategorii")
+     - var(--cat-tree-bg-rows, var(--cat-tree-bg-outer, var(--panel-bg-alt))) - viz plne vysvetleni +
+     admin ovladac v category.html, tady se hodnota jen aplikuje. */
+  /* bot16, 2026-09-26 (varianta D) - depth 0 zustava lehky HUD ramecek
+     BEZE VYPLNE (presne jak schvaleno v artifactu - zadny background,
+     jen border) - bg_rows_hex/bg_nested_hex admin pole tim docasne
+     nemaji zadny vizualni projev (nekam se vykreslit), text_*_hex
+     pary zustavaji plne funkcni beze zmeny. Zanorene (depth 1-4) jsou
+     ted uplne ploche (zadny ramecek, zadna vypln) - jednoduche jako ve
+     variante A, konzistentni napric hloubkou. */
+    /* bot16, 2026-09-26 (Robert: "ty barvy zase nereaguji... kdyz to
+     chci nastavit na nejake barvy neznamena to ze [ne]chci mit zive s
+     navazanim na barvitka") - predchozi zmena (background:transparent
+     napevno) admin "Podklad" pickery de facto vypnula, i kdyz si
+     Robert barvu aktivne nastavil. Vraceno zpet na var(--cat-tree-bg-*,
+     transparent) - NENASTAVENO = beze zmeny (stale bez vyplne, jak
+     schvaleno ve variante D), NASTAVENO = admin barva se hned projevi. */
+  .cat-tree-node[data-depth="0"] > .cat-tree-row { background:var(--cat-tree-bg-rows, transparent); }
+  .cat-tree-node[data-depth="1"] > .cat-tree-row,
+  .cat-tree-node[data-depth="2"] > .cat-tree-row,
+  .cat-tree-node[data-depth="3"] > .cat-tree-row,
+  .cat-tree-node[data-depth="4"] > .cat-tree-row { background:var(--cat-tree-bg-nested, transparent); margin-bottom:1px; }
+  /* bot16, 2026-09-26 (Robert: "hover efekt podkategorii jeste neni") -
+     zanorene (depth 1+) jsou ted uplne ploche (viz vyse), takze bez
+     vlastniho hoveru by na nich nebylo videt vubec nic. Jemny nadech
+     smerem k --text (svetly v tmavem motivu, tmavy ve svetlem - funguje
+     v obou beze zvlast [data-theme] pravidla), zadny sweep (ten zustava
+     jen na depth 0, viz Robert: "jen na levem a hornim lemu"). */
+  .cat-tree-node[data-depth="0"] > .cat-tree-row:hover { background:var(--cat-tree-bg-hover, transparent); }
+  .cat-tree-node[data-depth]:not([data-depth="0"]) > .cat-tree-row:hover { background:var(--cat-tree-bg-hover, color-mix(in srgb, var(--text), transparent 94%)); }
+  /* bot16, 2026-09-25 (Robert pres bot3: "chybi tam barvitko pro podklad
+     podkategorii") - zanorene urovne (depth 1-4) uz nesdileji zdroj s
+     "Radky" (depth 0), maji VLASTNI nezavisly zdroj --cat-tree-bg-nested,
+     vlozeny jako novy PRVNI clanek fallback retezce PRED --cat-tree-bg-rows
+     - kdyz neni nastaveny, chovani je bajt na bajt stejne jako pred timto
+     zapisem (fallback dopadne presne na puvodni --cat-tree-bg-rows).
+     Hloubkove odstupnovani (rostouci % smerem k --bg) zustava zachovane,
+     meni se jen VYCHOZI tón, ze ktereho se pocita - funguje pro VSECHNY
+     urovne zanoreni najednou (1,2,3,4), ne jen prvni. Analogicky doplneno
+     --cat-tree-text-nested pro text (konzistence se zbylymi pary
+     podklad+pismo) - viz .cat-tree-name pravidlo nize. */
+  .cat-tree-node[data-depth]:not([data-depth="0"]) > .cat-tree-row .cat-tree-name:not(.active):not(:hover) { color:var(--cat-tree-text-nested, var(--cat-tree-text-rows, var(--cat-tree-text-outer, var(--text2)))); }
+  .cat-tree-group-label {
+    font-family:"SF Mono","Cascadia Code","Consolas",monospace; font-size:9.5px; color:var(--cat-tree-text-rows, var(--cat-tree-text-outer, var(--text-muted)));
+    text-transform:uppercase; letter-spacing:.1em; font-weight:600; margin:10px 0 4px 2px;
+  }
+  /* bot16, 2026-09-17 (doplneno po nalezu bot7/Robert): oddelovac beze
+     jmena pro navrat z oznackovaneho shluku zpet do neoznackovaneho
+     (233/260/244/278 pod 184) - jen tenka linka, at nepusobi jako dalsi
+     skutecny nadpis. */
+  /* bot16, 2026-09-17 (Robert, podruhe: "proc jsou tam ty mezery resp
+     cerne linky?") - puvodne mela hranici mezi oznackovanou skupinou a
+     navratem k neoznackovanym sourozencum viditelnou caru
+     (border-top), ta ale opakovane pusobila jako matouci "sum" -
+     odstranena, samotna mezera (margin/padding) porad odlisi hranici
+     skupiny beze zmeny puvodniho ucelu (bot7 nalez: sourozenci po
+     oznackovanem uzlu se jinak tise priradili pod predchozi nadpis). */
+  /* bot16, 2026-09-17 (Robert: "nechci tam ani tu mezeru") - uplne bez
+     vizualniho odliseni hranice skupiny (drive cara, pak jen mezera,
+     ted nic) - element (.cat-tree-group-break) v DOM zustava jako
+     strukturalni znacka (viz _render_category_tree_html), jen uz beze
+     stylu, tedy bez vizualniho projevu. */
+  .cat-tree-group-break { margin:0; padding:0; }
+  /* bot16, 2026-09-17 (Robert primo: "v tom menu chci podbarvit otevrenou
+     celou vetev spolecne stejne jakoby podklad textů... tentyz podbarvovaci
+     rezim... ktery se aktivuje pri otevreni podkategorii", pak "ten posuvnik
+     ma byt spolecny napric webem") - STEJNA promenna --cat-body-opacity a
+     STEJNY smer (bila v tmavem, cerna ve svetlem) jako .cat-body (viz nize
+     v tomhle souboru i product.html .pd-desc-card) - zadny novy backend,
+     zadna nova hodnota, jen dalsi misto, kde se sdileny --cat-body-opacity
+     pouzije. Cely otevreny uzel (radek + rozbalene deti) dostane jednu
+     spolecnou "sklenenou" kartu mista puvodniho hloubkoveho nadechu na
+     jednotlivem radku - ten se proto pro OTEVRENY uzel vypina (viz
+     .is-open > .cat-tree-row nize), at nedoslo ke zdvojenemu podbarveni. */
+  /* bot16, 2026-09-26 (varianta D, Robert: "aplikuj to na web") -
+     "sklenena" karta pryc (D nema zadnou spolecnou kartu za celou
+     otevrenou vetvi) - jen SAMOTNY otevreny radek (jen depth 0,
+     zanorene uz jsou stejne ploche beze zmeny) dostane vlastni obrys +
+     lehky nadech, misto puvodni velke karty za celou skupinou.
+     --cat-body-opacity uz se tu nepouziva (byl to posuvnik prave pro
+     tu kartu, jinde na strance dal funguje beze zmeny). */
+  .cat-tree-node[data-depth="0"].is-open > .cat-tree-row {
+    background:var(--cat-tree-bg-open, color-mix(in srgb, var(--sidebar-accent-bright), transparent 92%));
+  }
+  /* bot16, 2026-09-17 - viz category.html pro plne vysvetleni 3 vrstev.
+     Tady se jen aplikuji stejne hodnoty (zadny viditelny ovladac). */
+  .cat-tree-node.is-open .cat-tree-name:not(.active):not(:hover) { color:var(--cat-tree-text-open, var(--text2)); }
+  .cat-tree-node.is-open .cat-tree-toggle { color:var(--cat-tree-text-open, var(--text-muted)); }
+  .cat-tree-node.is-open .cat-tree-group-label { color:var(--cat-tree-text-open, var(--text-muted)); }
+  /* bot16, 2026-09-17 (Robert, 3. hlaseni: "co porad delas s tim hlavnim
+     menu?????? zase tam chybi nastaveni barev!!!") - panel byl puvodne
+     JEN na category.html (stejny vzor jako starsi posuvnik pruhlednosti)
+     - Robert ale ocekava STEJNE ovladani vsude, kde se stejny strom
+     zobrazuje (sdileny .cat-tree napric vsemi 4 strankami). Cely
+     panel/CSS/JS zkopirovan 1:1 z category.html (viz tam pro plnou
+     historii/komentare k jednotlivym vrstvam). */
+  .cat-admin-tree-colors {
+    position:relative;
+    display:flex; align-items:center; gap:8px 12px; flex-wrap:wrap; margin:10px 0 20px;
+    padding:6px 10px; border:1px dashed var(--accent); font-size:11px;
+    /* bot16, 2026-09-26 (Robert: "potrebuji upravovat barvu pisma tam
+       kde se upravuje podklad pisma" - ve skutecnosti sel o jiny bug:
+       tenhle ovladaci panel mel VLASTNI text obarveny stejnou
+       promennou (--cat-tree-text-rows), kterou prave upravuje - kdyz
+       Robert nastavil Radky>Pismo na bilou a Bocni panel>Podklad taky
+       na bilou, popisky panelu (Podklad/Pismo/nazvy vrstev) zmizely,
+       bila na bile. Pevna, vzdy citelna barva nezavisla na tom, co se
+       prave v panelu edituje - stejny vzor jako .pd-admin-desc-opacity
+       (var(--text-muted)). */
+    background:var(--panel-bg); color:var(--text-muted);
+    /* bot16, 2026-09-17 (Robert: "mluvim o tech zkoseny rozich") - stejny
+       useknuty roh jako .sidebar (viz tam), 10px - mensi box, mensi rez. */
+    clip-path:polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+  }
+  .cat-admin-tree-colors[hidden] { display:none; }
+  .cat-admin-tree-colors .catc-title { flex-basis:100%; }
+  .cat-admin-tree-colors .catc-tier { display:flex; align-items:center; gap:6px 10px; flex-wrap:wrap; flex-basis:100%; }
+  .cat-admin-tree-colors .catc-tier-label { min-width:88px; font-weight:600; color:var(--text2); }
+  .cat-admin-tree-colors .catc-item { display:inline-flex; align-items:center; gap:6px; white-space:nowrap; cursor:pointer; }
+  .cat-admin-tree-colors input[type=color] { width:30px; height:24px; padding:0; border:1px solid var(--border); border-radius:4px; cursor:pointer; background:none; flex-shrink:0; }
+  .cat-admin-tree-colors button { font-size:11px; padding:3px 8px; border:1px solid var(--border); border-radius:4px; background:var(--panel-bg); color:var(--text2); cursor:pointer; }
+  .cat-admin-tree-colors button:hover { color:var(--text); border-color:var(--accent); }
+
+  .cat-empty { color:var(--cat-tree-text-outer, var(--text-muted)); font-size:12.5px; padding:10px 0; }
+
+
+  footer {
+    border-top:1px solid var(--border-faint); padding:24px; text-align:center; color:var(--text-dim); font-size:12px; flex-shrink:0;
+  }
+  .footer-nap { margin-top:6px; }
+  .footer-nap a { color:inherit; text-decoration:underline; }
+
+  /* Robert 2026-08-09 ("kosik na horni liste dej uplne stejny jako je
+     tento" - odkazuje na #pdAddCartBtn na product.html) - stejny HUD
+     vzor: obrys misto plne barvy, useknuty roh (clip-path), vyplnovaci
+     animace zleva doprava pri hoveru, monospace uppercase pismo. */
+  #cartBtn {
+    position:relative; background-color:transparent;
+    background-image:linear-gradient(var(--accent), var(--accent)); background-repeat:no-repeat; background-size:0% 100%;
+    color:var(--accent); border:1px solid var(--accent); border-radius:0;
+    clip-path:polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
+    padding:8px 14px; font-family:"SF Mono","Cascadia Code","Consolas",monospace; font-size:12px; font-weight:800; letter-spacing:.05em;
+    text-transform:uppercase; cursor:pointer; text-decoration:none;
+    display:flex; align-items:center; gap:6px;
+    transition:background-size .22s cubic-bezier(.7,0,.3,1), color .22s ease;
+  }
+  #cartBtn:hover { background-size:100% 100%; color:#06140c; }
+
+  /* Robert 2026-08-08: "přidej na eshop hledací okno, se zatržítky kde
+     se má hledat - produkty, text kategorií". */
+  .search-widget { position:relative; }
+  /* Robert 2026-08-11 (screenshot lupy: "uprav do hud stylu") - stejny
+     HUD vzor jako #cartBtn vedle: obrys v akcentove barve, useknuty
+     roh (clip-path), vyplnovaci animace zleva doprava pri hoveru.
+     Misto barevneho emoji 🔍 (nejde obarvit do HUD palety) monospace
+     glyf ⌕ v barve akcentu. */
+  #searchToggleBtn {
+    position:relative; background-color:transparent;
+    background-image:linear-gradient(var(--accent), var(--accent)); background-repeat:no-repeat; background-size:0% 100%;
+    color:var(--accent); border:1px solid var(--accent); border-radius:0;
+    clip-path:polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
+    padding:7px 12px; font-family:"SF Mono","Cascadia Code","Consolas",monospace; font-size:16px; font-weight:800; line-height:1;
+    cursor:pointer;
+    transition:background-size .22s cubic-bezier(.7,0,.3,1), color .22s ease;
+  }
+  #searchToggleBtn:hover { background-size:100% 100%; color:#06140c; }
+  .search-panel {
+    display:none; position:absolute; top:calc(100% + 8px); right:0; width:320px; max-width:90vw;
+    background:var(--control-bg); border:1px solid var(--border); border-radius:0;
+    box-shadow:0 8px 24px rgba(0,0,0,.35); padding:12px; z-index:500;
+    clip-path:polygon(0 10px, 10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
+  }
+  .search-panel.open { display:block; }
+  .search-panel::before, .search-panel::after { content:""; position:absolute; width:14px; height:14px; pointer-events:none; }
+  .search-panel::before { top:-1px; right:-1px; border-top:2px solid var(--accent); border-right:2px solid var(--accent); }
+  .search-panel::after { bottom:-1px; left:-1px; border-bottom:2px solid var(--accent); border-left:2px solid var(--accent); }
+  .search-panel input[type=text] {
+    width:100%; box-sizing:border-box; background:var(--bg); color:var(--text); border:1px solid var(--border);
+    border-radius:0; padding:8px 10px; font-size:13.5px; margin-bottom:8px;
+  }
+  /* Robert 2026-08-11 (screenshot vyhledavaciho panelu: "vsechno chceme
+     ladit do naseho stylu") - HUD doladeni panelu: misto vychoziho
+     modreho fokusu prohlizece akcentovy ramecek se slabou zari, useknuty
+     roh panelu + rohove zavorky jako u dlazdic (.announcement-preview-card),
+     zatrzitka v akcentove barve (accent-color misto vychozi modre),
+     popisky rozsahu v monospace verzalkach jako HUD stitky. */
+  .search-panel input[type=text]:focus {
+    outline:none; border-color:var(--accent);
+    box-shadow:0 0 8px color-mix(in srgb, var(--accent) 45%, transparent);
+  }
+  .search-scope { display:flex; gap:14px; margin-bottom:10px; }
+  .search-scope label {
+    display:flex; align-items:center; gap:6px; cursor:pointer;
+    font-family:"SF Mono","Cascadia Code","Consolas",monospace; font-size:10.5px;
+    text-transform:uppercase; letter-spacing:.08em; color:var(--text-muted);
+  }
+  .search-scope input[type=checkbox] { accent-color:var(--accent); }
+  .search-results { max-height:360px; overflow-y:auto; display:flex; flex-direction:column; gap:2px; }
+  .search-results .sr-group-label { font-size:11px; text-transform:uppercase; letter-spacing:.03em; color:var(--text-muted); margin:8px 0 2px; }
+  .search-results .sr-group-label:first-child { margin-top:0; }
+  .search-results a.sr-item { display:flex; align-items:center; gap:8px; padding:7px 8px; border-radius:0; text-decoration:none; color:var(--text); font-size:13px; }
+  .search-results a.sr-item:hover { background:var(--control-bg); }
+  .search-results .sr-thumb { width:32px; height:32px; border-radius:0; object-fit:cover; flex-shrink:0; background:var(--panel-bg-alt); }
+  .search-results .sr-text { min-width:0; }
+  .search-results a.sr-item .sr-sub { display:block; font-size:11px; color:var(--text-muted); margin-top:2px; }
+  .search-results .sr-empty { font-size:12.5px; color:var(--text-muted); padding:8px 0; text-align:center; }
+  #cartCount { display:none; background:var(--error); color:#fff; border-radius:0; padding:0 6px; font-size:11px; font-weight:700; min-width:16px; text-align:center; line-height:16px; }
+
+  /* Robert 2026-08-09 ("system sudeho poctu oken... mozaika...
+     pozitivni vliv na SEO/GEO") - dlazdice odkazujici na vlastni
+     stranky (/blok/<slug>), stejny vizualni vzor jako karty produktu
+     na category.html (.cat-product-card/.cp-media - useknute rohy,
+     HUD zavorky, prelet/sken pri hoveru), jen vlastni tridy (hp-*)
+     protoze tohle nejsou produkty. Auto-fill grid resi responzivitu
+     podle poctu dlazdic i sirky okna sam (bez media query). */
+  /* Robert 2026-08-09 ("jenutne zarovnani s levym menu") - margin-top
+     tu byl kvuli odstupu od drivejsi .hero sekce, ktera uz je pryc -
+     bez nej mozaika zacina zarovnana s vrskem sidebaru. */
+  /* Robert 2026-08-10 ("jednoduchý typ dlazdice povedle mozaiky, pro
+     ohlašování nových zpráv novinek... design jako dlazdice mozaiky,
+     jen s možností menit barvy okrajů" -> "podobne jako dlazdice s
+     fotogalerií") - 1 kompaktni dlazdice NAD mozaikou, stejny HUD vzor
+     (useknute rohy + zarici rohove zavorky) jako .hp-block-card, jen
+     text (zadny obrazek) a crossfade karusel poslednich 3 novinek.
+     Barva zavorek je volitelna per-polozka (--announcement-border-color,
+     nastavena admin, fallback na --accent).
+     Robert po prvni verzi ("nechtěná mezifáze, musí se 2x kliknout do
+     detailu, proč mizí nadpis"): (1) keyframes upraveny tak, aby
+     KAZDA polozka byla viditelna po CELY svuj 1/3 podil cyklu (0%-33%
+     jejiho VLASTNIHO casoveho pasma, viz animation-delay v Pythonu) -
+     zadna "mrtva" mezera mezi polozkami, kdy by nadpis zmizel do
+     prazdna. (2) .announcement-preview-stack ma pevnou vysku (misto min-height)
+     + overflow:hidden, aby klikaci plocha <a> presne odpovidala
+     viditelnemu textu (drive text vizualne prekryval mimo skutecny
+     box .announcement-preview-stack, takze klik na spodni radek textu se
+     "minul" - proto bylo treba klikat 2x). (3) kazda .announcement-preview-item
+     je ted SAMA <a> (misto 1 spolecneho odkazu na cely karusel) -
+     pointer-events se animuje spolu s opacity, aby prave neviditelna
+     polozka nekradla klik te viditelne pod/nad ni ve stejnem prostoru. */
+  .announcement-preview-row { margin-bottom:20px; }
+  /* Robert 2026-08-11 ("udelej dlaždici nižsí o 20%") - padding
+     16px->13px + .announcement-preview-stack 82px->66px (~19% mensi celkova
+     vyska dlazdice), .announcement-preview-body line-clamp 3->2 radky, at se
+     text porad vejde bez oriznuti uprostred radku. */
+  .announcement-preview-card {
+    position:relative;
+    background:var(--base-dark, #1a1d23); border:1px solid var(--border); border-radius:0; padding:13px 20px;
+    clip-path:polygon(0 10px, 10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
+    box-shadow:0 2px 8px rgba(0,0,0,.12); max-width:520px;
+  }
+  .announcement-preview-card::before, .announcement-preview-card::after { content:""; position:absolute; width:14px; height:14px; pointer-events:none; transition:border-color .15s, box-shadow .15s; }
+  .announcement-preview-card::before { top:-1px; right:-1px; border-top:2px solid var(--announcement-border-color, var(--accent)); border-right:2px solid var(--announcement-border-color, var(--accent)); }
+  .announcement-preview-card::after { bottom:-1px; left:-1px; border-bottom:2px solid var(--announcement-border-color, var(--accent)); border-left:2px solid var(--announcement-border-color, var(--accent)); }
+  .announcement-preview-card:hover::before, .announcement-preview-card:hover::after { border-color:var(--warn); box-shadow:0 0 8px color-mix(in srgb, var(--warn) 60%, transparent); }
+  /* Robert 2026-08-11 ("ten text se tam zaLamuje, udelat neco rozumneho
+     responzivnim zpusobem") - pevna vyska 66px orezavala delsi hlasky
+     uprostred radku (na uzkem mobilu se text zalomi do vic radku nez
+     na desktopu, viz screenshot: "www.logiman.cz" bylo ustrizene).
+     Reseni: misto absolutne pozicovanych polozek v boxu s pevnou
+     vyskou se vsechny polozky skladaji do JEDNE bunky gridu
+     (grid-area:1/1) - vyska boxu pak automaticky odpovida NEJVYSSI
+     polozce pri dane sirce obrazovky, takze se nic neoreze na zadnem
+     zarizeni. Prolinani (opacity+z-index) i presna klikaci plocha
+     zustavaji, protoze polozky se stale prekryvaji ve stejnem miste
+     (to byl duvod puvodniho overflow:hidden, viz komentar vyse).
+     min-height drzi puvodni vzhled u kratkych hlasek na desktopu. */
+  .announcement-preview-stack { display:grid; min-height:66px; }
+  /* Robert 2026-08-11 ("ten nadpis mizi protoze toci dalsi novinky" +
+     "nesmi blikat"): stridani uz NENI ciste CSS animace s pevnym 15s
+     cyklem. Ta fungovala jen pro presne 3 novinky - pri 2 zbyla mezera
+     ~5 s, kdy nebylo videt NIC, a i pri 3 tam byla ~0,35s prazdna mezi
+     polozkami (odtud "blikani"/mizeni nadpisu). Ted to prepina maly JS
+     (viz initAnnouncementPreviewRotator nize) pro LIBOVOLNY pocet polozek a
+     nastupujici polozka se prolne PRES odchazejici (vyssi z-index +
+     NEPRUHLEDNE pozadi shodne s dlazdici), takze v zadnem okamziku
+     neni prazdno ani zdvojeny text. Bez JS zustane videt prvni novinka
+     (:first-child nize) - SSR obsah je tedy porad plnohodnotny. */
+  .announcement-preview-item {
+    grid-area:1 / 1; opacity:0; z-index:1;
+    background:var(--base-dark, #1a1d23); transition:opacity .5s ease;
+    display:block; text-decoration:none; color:inherit; pointer-events:none;
+  }
+  .announcement-preview-item:first-child { opacity:1; pointer-events:auto; }
+  .announcement-preview-item.is-active { opacity:1; z-index:2; pointer-events:auto; }
+  /* Robert 2026-08-11 ("ten nadpis chci v té zelené HUD verzi"):
+     stejny vzor jako .eyebrow ve HUD navrhu (design-concepts/
+     admin-hud-navrh.html) - monospace, verzalky, prostrkane, zelena. */
+  .announcement-preview-title {
+    font-family:"SF Mono","Cascadia Code","Consolas",monospace;
+    font-size:12.5px; line-height:1.5; color:#2fe07a; font-weight:700;
+    letter-spacing:.12em; text-transform:uppercase;
+  }
+  .announcement-preview-body { font-size:12.5px; line-height:1.4; color:#9aa4b2; margin-top:6px; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+  /* Robert 2026-08-11 ("nech jsou aktivni prolinky rovnou v prvotním
+     náhledu, druhotný /detail) nebude") - zadna vlastni stranka na
+     hlasku, telo zpravy se renderuje jako SKUTECNE HTML (viz
+     _render_announcement_preview_html v api/app.py - uz zadne
+     oriznuti na cisty text), takze odkaz vlozeny primo v textu (Quill
+     "Odkaz") funguje uz v tomto naprevu. Zvyrazneno zelenou, aby bylo
+     jasne ze je klikaci. */
+  .announcement-preview-body a { color:#2fe07a; text-decoration:underline; }
+  .announcement-preview-body p { margin:0; }
+  /* Robert pres bot3, 2026-09-27 ("na nas homepage chceme stejny carousel
+     jako je na homepage logimanu") - puvodni Shoptet vzor: #homepage-banner
+     > #carousel-banner, 5x <div> (prvni "active") s <img>, sipky #next-
+     carousel/#prev-carousel, puntiky #carousel-sys. Timing primo z jejich
+     inline JS configu: stepTimer:4000 (zobrazeni), fadeTimer:600
+     (crossfade) - viz .hp-carousel-slide transition nize a
+     initHomepageCarousel() (CROSSFADE_MS/STEP_MS). Vizualne PRESKINOVANO
+     do naseho tmaveho HUD vzoru (useknute rohy + zarici rohove zavorky) -
+     stejny vzor jako .hp-block-card/.cat-product-card, NE bily bootstrap
+     vzhled zdroje. Mechanismus (opacity+z-index stacking, prvni slide
+     aktivni bez JS) prevzaty z .announcement-preview-item vyse, jen
+     absolutne pozicovane (misto grid-area) - viz komentar tam k duvodu
+     stackovani, ten plati stejne i tady. */
+  /* bot3 nalez 2026-09-27 (Playwright zmereno na 1440/1920px): (1) sidebar
+     border-top sedi na 111px, carousel border-top na 139px - rozdil 28px je
+     presne .page-wrap padding-top (sdileny s category/product/blok.html,
+     NEsahat na nej globalne) pred prvnim potomkem. margin-top zaporne o
+     stejnou hodnotu zarovna oba rámečky do jedne linie, bez zasahu do
+     sdileneho pravidla. (2) aspect-ratio+max-height dohromady na sirokych
+     obrazovkach (1920px) prohlizec dopocital SIRKU zpet z orizle vysky
+     (460px max drzi pomer 1150:460 => jen 1150px sirky misto plnych
+     ~1504px dostupnych) - carousel byl viditelne uzsi nez #hpMosaic pod
+     nim. Nahrazeno stejnym vzorem jako .hp-media/.hp-image (pevna vyska,
+     width:100%, zadny aspect-ratio, .hp-carousel-image object-fit:cover
+     dela orez). */
+  /* bot3 nalez 2026-09-27 #2 (ZAHOZENO #3, viz nize): zkuseno zrcadlit
+     sirku mozaiky pres .hp-carousel-sizer/span 4 - Robert pak zadani
+     zmenil, uz nechce sirku podle mozaiky. */
+  /* Robert 2026-09-27 #3: "zmensit resp snizit carousel tak, aby byl
+     zobrazen cely plne 1150x460 px" - to je NATIVNI rozmer puvodnich
+     obrazku. Pevna max-width (ne width - at se to na uzsich obrazovkach
+     porad zmensi) + object-fit:contain (misto cover), at zadny slide
+     neni oriznuty, i kdyz nektery ma mirne jiny pomer stran (napr.
+     "Stavebnice do dodavky" 1000x430). Zarovnano vlevo - na sirokych
+     monitorech napravo vznikne prazdne misto (pozadi/uhlopricky), to je
+     pri pevne sirce OCEKAVANY dusledek (Robert vyslovne odsouhlasil),
+     ne chyba.
+     #4 (Robert): "carousel zmensit o 20% pri zachovani pomeru stran" -
+     1150x460 -> 920x368 (oboji -20%, pomer 2.5:1 beze zmeny). */
+  /* Robert pres bot3, 2026-09-27 ("jednu dlazdici mozaiky dej napravo od
+     carouselu") - .hp-top-row obaluje carousel + 1 "vypujcenou" dlazdici
+     mozaiky (#hpTopTile, viz api/storefront_pages.py) vedle sebe. margin-top
+     (puvodne na .hp-carousel samotnem, viz komentar #3d vyse) presunuto sem
+     na CELY radek, aby se oba prvky posunuly nahoru spolecne (jinak by se
+     rozjely, kdyby zustalo jen na .hp-carousel = flex polozka). align-items
+     stretch (flex vychozi, napsano vyslovne) + .hp-top-tile display:flex ->
+     .hp-block-card uvnitr se natahne na stejnou vysku jako carousel (368px),
+     misto sve prirozene nizsi vysky (Robert/bot3: jinak by vypadalo, ze
+     dlazdici "neco chybi" vedle vysokeho carouselu). */
+  /* Robert pres bot3, 2026-09-27 ("system mezer mezi jednotlivymi prvky na
+     homepage musi byt stejny") - 20px je uz dominantni hodnota na strance
+     (.layout, .left-column, .announcement-preview-row) - sjednoceno sem
+     (gap i margin-bottom) + .hp-top-tile/.hp-mosaic-grid/.hp-intro-text
+     nize (byly 16/16/24px). margin-top:-28px NENI mezera mezi prvky, je to
+     samostatny zarovnavaci trik (viz komentar u puvodni verze vyse) -
+     schvalne nezmeneno. Mobilni gapy (10px v mozaice/top-tile) take
+     schvalne nezmeneny - tesnejsi na mensich obrazovkach je zamer, ne
+     nesoulad, Robert mluvil o desktopove homepage. */
+  .hp-top-row { display:flex; gap:20px; margin-top:-28px; margin-bottom:20px; align-items:stretch; }
+  /* Robert pres bot3, 2026-09-27 ("proc ma dlazdice napravo od carouselu
+     vetsi sirku nez jine dlazdice???") - puvodni flex:1 (natahni na 100%
+     zbyvajici sirky) delalo dlazdici siroci nez jeji sourozence dole v
+     #hpMosaic. Zkuseno "zrcadlit" grid formuli (auto-fill+minmax) v
+     mini-gridu, ale bot3 zmeril, ze se to jen NEKDY trefi nahodou (1920px
+     ok, 2200px uz 22% rozdil) - #hpTopTile a #hpMosaic jsou porad DVA
+     NEZAVISLE containery s RUZNOU dostupnou sirkou, stejna formule na
+     ruzne sirokem zakladu da ruzny pocet/sirku tracku. Skutecne presne
+     reseni je JS: zmerit REALNOU vykreslenou sirku prvni karty v
+     #hpMosaic a tu explicitne nastavit na kartu v #hpTopTile (viz
+     syncHpTopTileWidth() nize u initHomepageCarousel) - cte skutecnou
+     hodnotu misto nezavisleho prepoctu, takze sedi na KAZDE sirce. .hp-
+     top-tile uz proto neni grid, jen flex kontejner drzici 1 kartu na
+     JS-rizene sirce (min-width:240px jen jako fallback pred prvnim
+     sync behem/kdyby JS selhalo). */
+  .hp-top-tile { display:flex; flex:1 1 0; min-width:240px; }
+  .hp-top-tile:empty { display:none; }
+  .hp-carousel { flex:0 1 920px; min-width:0; }
+  .hp-carousel-viewport {
+    position:relative; width:100%; max-width:920px; height:368px;
+    background:var(--base-dark, #1a1d23); border:1px solid var(--border);
+    border-radius:0; overflow:hidden;
+    clip-path:polygon(0 16px, 16px 0, 100% 0, 100% calc(100% - 16px), calc(100% - 16px) 100%, 0 100%);
+    box-shadow:0 2px 8px rgba(0,0,0,.12);
+  }
+  .hp-carousel-viewport::before, .hp-carousel-viewport::after { content:""; position:absolute; width:18px; height:18px; pointer-events:none; z-index:5; }
+  .hp-carousel-viewport::before { top:-1px; right:-1px; border-top:2px solid var(--accent); border-right:2px solid var(--accent); }
+  .hp-carousel-viewport::after { bottom:-1px; left:-1px; border-bottom:2px solid var(--accent); border-left:2px solid var(--accent); }
+  .hp-carousel-slide { position:absolute; inset:0; opacity:0; z-index:1; transition:opacity .6s ease; pointer-events:none; }
+  .hp-carousel-slide:first-child { opacity:1; }
+  .hp-carousel-slide.active { opacity:1; z-index:2; pointer-events:auto; }
+  @media (prefers-reduced-motion:reduce) { .hp-carousel-slide { transition:none; } }
+  .hp-carousel-image { width:100%; height:100%; object-fit:contain; display:block; }
+  .hp-carousel-caption {
+    position:absolute; left:0; right:0; bottom:0; padding:16px 22px;
+    background:linear-gradient(0deg, rgba(0,0,0,.72), transparent 85%);
+    color:#fff; font-size:14px; font-weight:700;
+    font-family:"SF Mono","Cascadia Code","Consolas",monospace;
+    letter-spacing:.04em; text-transform:uppercase;
+  }
+  .hp-carousel-arrow {
+    position:absolute; top:50%; transform:translateY(-50%); z-index:6;
+    width:36px; height:36px; background:rgba(10,12,16,.55);
+    border:1px solid var(--border); color:#fff; font-size:15px; line-height:1;
+    cursor:pointer; display:flex; align-items:center; justify-content:center;
+    transition:background .15s, border-color .15s, color .15s;
+  }
+  .hp-carousel-arrow:hover { background:rgba(10,12,16,.85); border-color:var(--accent); color:var(--accent); }
+  .hp-carousel-prev { left:12px; }
+  .hp-carousel-next { right:12px; }
+  /* bot3 nalez 2026-09-27 (screenshot, 390px sirka, delsi popisek "Balicí
+     stoly k dopravníkům"): puntiky na bottom:12px prekryvaly text
+     .hp-carousel-caption (ta taky sedi na bottom:0, vyska podle poctu
+     radku textu - zadna rezervovana mezera). Presunuto NAHORU (top misto
+     bottom) - uplne mimo dosah patickove caption bez ohledu na delku/
+     zalomeni textu, misto krehkeho vypoctu "vyska captionu + mezera". */
+  .hp-carousel-dots { position:absolute; left:0; right:0; top:12px; display:flex; justify-content:center; gap:8px; z-index:6; }
+  .hp-carousel-dot { width:9px; height:9px; border-radius:50%; background:rgba(255,255,255,.35); border:1px solid rgba(0,0,0,.3); cursor:pointer; padding:0; transition:background .15s, transform .15s; }
+  .hp-carousel-dot:hover { background:rgba(255,255,255,.6); }
+  .hp-carousel-dot.active { background:var(--accent); transform:scale(1.25); }
+  @media (max-width:640px) {
+    /* bot3 nalez 2026-09-27 - stejny duvod jako desktop pravidlo vyse
+       (aspect-ratio+omezena vyska dopocitava sirku zpet, orizne obsah po
+       stranach) - pevna vyska misto pomeru stran, konzistentni vzor. */
+    .hp-carousel-viewport { height:280px; }
+    .hp-carousel-arrow { width:28px; height:28px; font-size:12px; }
+    .hp-carousel-caption { font-size:12px; padding:10px 14px; }
+  }
+  .hp-mosaic-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(240px, 1fr)); gap:20px; }
+  /* Robert primo ("pridej editovatelny text na homepage") - jednoduchy
+     citelny text blok, stejny rodinny vzor jako .cat-body (category.html:
+     max-width pro citelnou delku radku, useknute rohy jako zbytek HUD
+     stylu), bez jeji opacity-slider komplexity (to je vlastnost kategorii,
+     ne homepage). Prazdny (viz api/storefront_pages.py) = cely div SSR
+     vubec nevyrenderovan, takze tahle CSS nikdy nezpusobi prazdny ramecek. */
+  .hp-intro-text {
+    max-width:760px; font-size:14px; line-height:1.75; color:var(--text-muted);
+    margin-top:20px; padding:18px 20px; border:1px solid var(--border);
+    background:var(--panel-bg-alt);
+    clip-path:polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 14px 100%, 0 calc(100% - 14px));
+  }
+  .hp-intro-text > *:first-child { margin-top:0; }
+  .hp-intro-text > *:last-child { margin-bottom:0; }
+  .hp-intro-text img { max-width:100%; height:auto; }
+  .hp-intro-text a { color:var(--accent); }
+  .hp-block-card {
+    position:relative;
+    /* Robert 2026-08-09 ("cerny spodek nahledu svetleho rezimu mozaiky
+       dejme cerny stejne jako maji ostatni nahledy") - stejna pevna
+       (theme-independent) tmava barva jako .cat-subcats .cs-name v
+       category.html, ne theme-reaktivni panel-bg (ten byl v light
+       rezimu skoro bily). .hp-media ma vlastni nepruhledne pozadi
+       (#fff pro obrazek), takze tahle zmena je videt jen na spodni
+       "titulkove" casti dlazdice pod obrazkem. */
+    background:var(--base-dark, #1a1d23);
+    border:1px solid var(--border);
+    border-radius:0; padding:0;
+    clip-path:polygon(0 12px, 12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%);
+    box-shadow:0 2px 8px rgba(0,0,0,.12);
+  }
+  .hp-block-card::before, .hp-block-card::after { content:""; position:absolute; width:16px; height:16px; pointer-events:none; transition:border-color .15s, box-shadow .15s; }
+  .hp-block-card::before { top:-1px; right:-1px; border-top:2px solid var(--accent); border-right:2px solid var(--accent); }
+  .hp-block-card::after { bottom:-1px; left:-1px; border-bottom:2px solid var(--accent); border-left:2px solid var(--accent); }
+  .hp-block-card:hover::before, .hp-block-card:hover::after { border-color:var(--warn); box-shadow:0 0 8px color-mix(in srgb, var(--warn) 60%, transparent); }
+  .hp-block-card > a { display:block; padding:0 14px 14px; }
+  .hp-media { position:relative; height:150px; margin:0 -14px 10px; border-radius:0; overflow:hidden; background:#fff; }
+  .hp-media::after {
+    content:""; position:absolute; inset:0; pointer-events:none; z-index:1;
+    background:linear-gradient(100deg, transparent 40%, rgba(255,255,255,.55) 50%, transparent 60%);
+    transform:translateX(-120%);
+  }
+  /* Robert 2026-10-03: 'ty prejizdeci prouzky, efekty na nahledech, nechci - aktivni jen vodorovny sken': sweep (svisly prouzek) vypnut, scan jede pri kazdem najeti */
+  @keyframes hpCardSweep { from { transform:translateX(-120%); } to { transform:translateX(120%); } }
+  .hp-media::before {
+    content:""; position:absolute; left:0; right:0; height:20px; pointer-events:none; z-index:2;
+    background:linear-gradient(180deg, transparent, color-mix(in srgb, var(--accent) 55%, transparent), transparent);
+    top:-26px; opacity:0;
+  }
+  /* bot16, 2026-09-13 (Robert primo, u screenshotu mozaikove dlazdice):
+     "ten pohyblivy pruh co ma prejet jen jednou pri jakkoli dlouhem
+     stani mysi nad oknem" - stejna oprava jako uz drive dostaly
+     produktove karty v category.html (Robert 2026-09-12 pres bot3:
+     puvodne "infinite", jelo to porad dokola, dokud tam mys byla).
+     `forwards` je nutny - bez nej by se po dobehnuti `top` vratil na
+     vychozich -26px, ale `opacity:1` z :hover pravidla by zustalo,
+     takze by se pruh po jednom prujezdu "teleportoval" zpet nahoru a
+     zustal viditelny, misto aby zmizel. */
+  .hp-block-card:hover .hp-media::before { opacity:1; animation:hpScan 1.1s linear 1 forwards; }
+  @keyframes hpScan { from { top:-26px; } to { top:170px; } }
+  @media (prefers-reduced-motion:reduce) { .hp-media::after, .hp-media::before { animation:none !important; } }
+  .hp-image { width:100%; height:150px; object-fit:contain; display:block; background:#fff; }
+  /* Robert 2026-08-10 ("z této dlaždice udeláme fotogalerii... v náhledu
+     tam bude carusel prvních 10ti fotek") - cisty CSS crossfade karusel
+     (zadny JS - mozaika je zamerne 100% SSR, viz komentar v api/app.py
+     u _render_homepage_mosaic_html). Kazdy obrazek dostane primo
+     inline "style=animation-delay:Ns" (N=poradi*3, viz Python) -
+     Robert: "carusel se ti netočí" - puvodni verze pocitala zpozdeni
+     pres CSS calc(var(--i)) se zapornou hodnotou, coz je (a) riskantni
+     napric prohlizeci a (b) davalo obrazky v OBRACENEM poradi (zaporne
+     zpozdeni posouva viditelne okno dozadu, ne dopredu). Kladne
+     zpozdeni je jednoznacne: pred uplynutim sveho zpozdeni je obrazek
+     dle zakladniho pravidla opacity:0 (neviditelny), pak se rozjede
+     vlastni cyklus odshora - vysledne poradi odpovida poradi fotek. */
+  /* Robert 2026-08-10 ("carusel se ti netočí") - skutecna pricina:
+     prohlizec/OS ma zapnute "omezit pohyb" (prefers-reduced-motion),
+     coz puvodni verze respektovala (animace vypnuta, jen prvni
+     obrazek staticky - spravne accessibility chovani, ale vypadalo to
+     jako bug). Robert vyslovne chtel pro tenhle konkretni dekorativni
+     prvek preferenci ignorovat ("Ignorovat preferenci, vzdy točit") -
+     zadny @media (prefers-reduced-motion) override tu proto NENI,
+     karusel bezi vzdy bez ohledu na OS/prohlizec nastaveni. */
+  .hp-gallery-img { position:absolute; inset:0; opacity:0; animation:hpGalleryFade 30s infinite; }
+  @keyframes hpGalleryFade {
+    0% { opacity:0; } 1% { opacity:1; } 9% { opacity:1; } 10% { opacity:0; } 100% { opacity:0; }
+  }
+  /* Pevne (ne theme-reaktivni) barvy textu - musi zustat citelne na
+     pevnem tmavem pozadi .hp-block-card i ve svetlem rezimu, viz
+     komentar u .hp-block-card. */
+  .hp-block-title { font-size:14px; line-height:1.4; color:#e8eaed; font-weight:600; margin-bottom:4px; }
+  .hp-block-excerpt { font-size:13px; line-height:1.5; color:#9aa4b2; }
+
+  /* Robert 2026-08-09 ("na mobilu nevidím v detailu cenu a přířezy
+     zkontroluj responzivní webu v této části") - stejny bug jako v
+     product.html/category.html: mobilni media-query blok sedel u
+     sidebar/hamburger pravidel nahoru, ale mezitim nad nej pribyla
+     dalsi kola base-level CSS - u stejne specificity vyhrava
+     POZDEJSI pravidlo v poradi zdroje bez ohledu na to, ze media
+     query podminka plati (.hero base az za timhle blokem). Presunuto
+     AZ SEM, na konec <style>. */
+  @media (max-width:600px) {
+    header .brand { font-size:14.5px; }
+    /* .page-wrap levy padding je na desktopu 0 (viz komentar u zakladniho
+       pravidla vyse - scital se s .layout gapem, ktery ale na mobilu
+       vubec neexistuje). Na mobilu je tenhle padding JEDINY odstup od
+       okraje telefonu, musi zustat 24px. */
+    .page-wrap { padding-left:24px; }
+    .hp-mosaic-grid { grid-template-columns:repeat(auto-fill, minmax(150px,1fr)); gap:10px; }
+    /* Carousel (920x368 na desktopu) + vypujcena dlazdice vedle sebe by se
+       na mobilu vzajemne uzsily pod pouzitelnou sirku - rozpadnout do
+       sloupce, dlazdice normalne pod carouselem. */
+    /* bot7 sebe-nalez: flex-basis v px (920px/240px, desktop SIRKA) se v
+       column smeru aplikuje na VYSKU, ne sirku - carousel by mel 920px
+       vysoky box s obsahem jen v hornich 280px. Reset na auto (prirozena
+       vyska podle obsahu) resi oba prvky. */
+    .hp-top-row { flex-direction:column; }
+    .hp-carousel, .hp-top-tile { flex:0 0 auto; }
+    /* Robert ("kompletně opravit responzivní web pro mobil") - dlazdice
+       Hlasky neprekracovala sirku (max-width, ne width), jen mela na
+       nejuzsich telefonech relativne velky padding vuci dostupnemu
+       prostoru. */
+    .announcement-preview-card { padding:11px 14px; }
+    /* Robert 2026-08-11 ("ten text se tam zaLamuje") - na uzkem mobilu
+       se do jednoho radku vejde podstatne min slov nez na desktopu,
+       takze desktopovy limit 2 radky utne i kratkou hlasku uprostred
+       vety. Na mobilu proto 4 radky (limit tu porad je, aby jedna
+       dlouha hlaska nezabrala pul obrazovky). */
+    .announcement-preview-body { -webkit-line-clamp:4; }
+  }
+  .skip-link { position:absolute; left:-9999px; top:0; background:#fff; color:#000; padding:8px 16px; z-index:9999; }
+  .skip-link:focus { left:8px; top:8px; }
+</style>
+<script>
+// Barevny motiv - stejna oprava FOUC probliknuti jako category.html
+// (Robert: "zustava problik pri kliknuti na kategorii" - stejna
+// pricina hrozila i na homepage, protoze puvodne se data-theme i
+// barvy z /api/theme-colors aplikovaly az skriptem uvnitr <body>,
+// tedy az po prvnim vykresleni s vychozimi tmavymi CSS promennymi).
+// Aplikujeme HNED, pred prvnim vykreslenim <body>, jak ulozeny
+// data-theme, tak cachovanou paletu barev z localStorage; fetch
+// nize v <body> jen tise obnovi cache pro pristi navstevu.
+(function () {
+  try {
+    var t = localStorage.getItem("shopTheme");
+    if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+  } catch (e) {}
+  try {
+    var cached = JSON.parse(localStorage.getItem("shopThemeColorsCache") || "null");
+    if (cached) {
+      var theme = document.documentElement.getAttribute("data-theme") === "light" ? "light" : "dark";
+      var palette = cached[theme];
+      if (palette) {
+        Object.keys(palette).forEach(function (key) {
+          document.documentElement.style.setProperty("--" + key.replace(/_/g, "-"), palette[key]);
+        });
+      }
+    }
+  } catch (e) {}
+})();
+</script>
+<script src="/track.js" defer></script>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Přeskočit na obsah</a>
+
+<script>
+function applyShopThemeColors() {
+  fetch("/api/theme-colors?surface=eshop").then(function (r) { return r.ok ? r.json() : null; }).then(function (data) {
+    if (!data) return;
+    window.__themeColors = data;
+    try { localStorage.setItem("shopThemeColorsCache", JSON.stringify(data)); } catch (e) {}
+    var theme = document.documentElement.getAttribute("data-theme") === "light" ? "light" : "dark";
+    var palette = data[theme];
+    Object.keys(palette).forEach(function (key) {
+      document.documentElement.style.setProperty("--" + key.replace(/_/g, "-"), palette[key]);
+    });
+  }).catch(function () {});
+}
+applyShopThemeColors();
+function applyShopTheme(theme, opts) {
+  opts = opts || {};
+  theme = theme === "light" ? "light" : "dark";
+  document.documentElement.setAttribute("data-theme", theme);
+  try { localStorage.setItem("shopTheme", theme); } catch (e) {}
+  if (window.__themeColors) {
+    var palette = window.__themeColors[theme];
+    Object.keys(palette).forEach(function (key) {
+      document.documentElement.style.setProperty("--" + key.replace(/_/g, "-"), palette[key]);
+    });
+  }
+  var btn = document.getElementById("themeToggleBtn");
+  if (btn) btn.textContent = theme === "light" ? "🌙" : "☀️";
+  if (opts.persist) {
+    fetch("/api/auth/theme", {
+      method: "PUT", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ scope: "shop", theme: theme }),
+    }).catch(function () {});
+  }
+}
+function toggleShopTheme() {
+  var current = document.documentElement.getAttribute("data-theme") === "light" ? "light" : "dark";
+  applyShopTheme(current === "light" ? "dark" : "light", { persist: true });
+}
+document.addEventListener("DOMContentLoaded", function () {
+  var btn = document.getElementById("themeToggleBtn");
+  if (btn) btn.textContent = (document.documentElement.getAttribute("data-theme") === "light") ? "🌙" : "☀️";
+});
+</script>
+
+<div id="rekonstrukceBanner" style="background:#b3541e; color:#fff; text-align:center; padding:8px 14px; font-size:14px; font-weight:600; letter-spacing:.02em;">&#9888;&#65039; Web je v rekonstrukci &mdash; omluvte pros&iacute;m do&#269;asn&eacute; nedostatky.</div>
+<header>
+  <div style="display:flex; align-items:center; gap:10px;">
+    <button id="sidebarToggleBtn" class="hamburger-btn" type="button" aria-label="Menu kategorií">☰</button>
+    <a href="/" class="home-hud-btn" title="Domů" aria-label="Domů">⌂</a>
+    <a class="brand-logo" href="/" aria-label="Logiman"><span class="brand-logo-hl">LOGi</span><span class="brand-logo-lt">MAN</span></a>
+    <h1 class="brand">Hliníkový konstrukční stavebnicový systém s drážkami</h1>
+  </div>
+  <div style="display:flex; align-items:center; gap:14px;">
+    <div class="search-widget" id="searchWidget">
+      <button id="searchToggleBtn" type="button" title="Hledat" aria-label="Hledat">⌕</button>
+      <div id="searchPanel" class="search-panel">
+        <input id="searchInput" type="text" placeholder="Hledat produkty, kategorie…" aria-label="Hledat produkty a kategorie" autocomplete="off">
+        <div class="search-scope">
+          <label><input type="checkbox" id="searchScopeProducts" checked> Produkty</label>
+          <label><input type="checkbox" id="searchScopeCategories" checked> Text kategorií</label>
+        </div>
+        <div id="searchResults" class="search-results"></div>
+      </div>
+    </div>
+    <a id="cartBtn" href="/product.html?openCart=1" style="text-decoration:none;">🛒 Košík<span id="cartCount">0</span></a>
+    <button id="themeToggleBtn" type="button" title="Přepnout barevné schéma" onclick="toggleShopTheme()" style="background:var(--panel-bg-alt);color:var(--text-muted);border:1px solid var(--border);border-radius:0;padding:5px 10px;cursor:pointer;font-size:13px;"></button>
+    <div id="areaSwitch"></div>
+    <div id="userBox"></div>
+  </div>
+</header>
+
+<div id="sidebarOverlay"></div>
+<div class="layout">
+  <div class="left-column">
+  <aside class="sidebar">
+    <!-- bot16, 2026-09-17 (Robert: "bozena nebi, mluvim o tech zkoseny
+         rozich") - .corner-mark kriz-znacky ODSTRANENY, nahrazeny
+         clip-path useknutym rohem primo na .sidebar (viz CSS) - presne
+         to Robert myslel "hud rohy", ne male registracni krizky. -->
+    <button type="button" class="sidebar-close" id="sidebarCloseBtn" aria-label="Zavřít menu kategorií">&times;</button>
+    <h2 class="sidebar-title">Kategorie</h2>
+    <div class="cat-tree" id="catTree"></div>
+    <div class="cat-empty" id="catTreeEmpty" style="display:none;">Zatím tu nejsou žádné kategorie.</div>
+    <!-- bot16, 2026-09-17 - stejny panel jako category.html (Robert chce
+         ovladani barev vsude, kde se strom zobrazuje, ne jen na
+         category.html - viz komentar u CSS vyse). -->
+    <!-- bot16, 2026-09-26 (Robert: "nastaveni z webu dej pryc") -
+         admin editace barev stromu presunuta do admin.html (zalozka
+         "Menu kategorii", webapp/admin/js/menu-kategorii.js) - tady
+         zustava jen VEREJNA aplikace ulozenych barev (viz
+         catTreeColorsLoad/Apply nize), zadny editacni panel. -->
+  </aside>
+    <div class="sidebar-footer" id="sidebarFooterPanel"></div>
+  </div>
+
+  <main class="main-content" id="main-content">
+   <div class="page-wrap">
+    <!-- Robert 2026-08-09 ("zaroven dejme pryc z homepage toto, bude to
+         nahrazeno tou mozaikou") - drivejsi staticka .hero sekce
+         (nadpis + text + CTA "Vstoupit do 3D scény") odstranena, jeji
+         roli preberou dlazdice mozaiky nize. -->
+    <!-- Robert 2026-08-09 ("system sudeho poctu oken... mozaika...
+         pozitivni vliv na SEO/GEO") - admin-spravovana dlazdice, kazda
+         odkazuje na vlastni stranku (/blok/<slug>) se skutecnym title/
+         meta description. SSR primo zde (viz api/app.py::
+         _index_page_response), zadny klientsky JS render. -->
+    <!-- Robert 2026-08-10/11 ("jednoduchý typ dlazdice povedle mozaiky,
+         pro ohlašování nových zpráv novinek..." -> "tato dlaždice
+         není o novinkách ale pro hlášky") - samostatny radek NAD
+         mozaikou, 1 dlazdice s rotaci poslednich 3 kratkych hlasek
+         (zadny klik-skrz, odkazy primo v textu). SSR primo zde (viz
+         api/app.py::_index_page_response), prazdna/skryta kdyz
+         nejsou zadne hlasky. -->
+    <!-- Robert pres bot3, 2026-09-27 ("na nas homepage chceme stejny
+         carousel jako je na homepage logimanu") - mechanismus okopirovan
+         ze stareho Shoptet e-shopu stejne firmy (autoplay crossfade
+         4000ms/600ms + klikaci sipky + puntiky, prvni slide aktivni),
+         vizualne v nasem tmavem HUD vzoru (useknute rohy), NE bilý
+         bootstrap vzhled zdroje. NENAHRAZUJE mozaiku nize - novy blok
+         NAD ni. SSR primo zde (viz api/app.py::_render_homepage_
+         carousel_html), admin-spravovane slidy (homepage_carousel_slides),
+         JS jen prida crossfade/sipky/puntiky nad uz existujici markup -
+         viz initHomepageCarousel() nize. -->
+    <!-- Robert pres bot3, 2026-09-27 ("jednu dlazdici mozaiky dej napravo
+         od carouselu") - vyplni prazdne misto napravo od carouselu na
+         sirokych monitorech (carousel ma pevnou max-width:920px, viz
+         .hp-carousel-viewport nize) 1. dlazdici mozaiky misto prazdna.
+         #hpTopTile = SSR placeholder pro tu 1 dlazdici (viz api/
+         storefront_pages.py), #hpMosaic pod tim dostane jen ZBYVAJICI
+         dlazdice (bez te prvni). -->
+    <div class="hp-top-row">
+     <div class="hp-carousel" id="hpCarousel"></div>
+     <div class="hp-top-tile" id="hpTopTile"></div>
+    </div>
+    <div class="announcement-preview-row" id="announcementPreviewRow"></div>
+    <div class="hp-mosaic-grid" id="hpMosaic"></div>
+    <!-- Robert primo ("pridej editovatelny text na homepage vcetne meta
+         popisu") - viditelny textovy blok POD celou mozaikou, editovatelny
+         v adminu (Homepage mozaika > Uvodni text). Meta popis homepage uz
+         editovatelny byl drive (Sociální sítě > Výchozí náhled při
+         sdílení), tenhle blok je ta chybejici VIDITELNA cast. Prazdny =
+         cely div SSR odstranen (viz api/storefront_pages.py), zadny
+         prazdny ramecek kdyz jeste nic nenapsano. -->
+    <div class="hp-intro-text" id="hpIntroText"></div>
+   </div>
+  </main>
+</div>
+
+<footer>
+  Hliníkový konstrukční stavebnicový systém s drážkami
+  <div class="footer-nap">LOGIMAN s.r.o. · Praha · IČO 28337638 · <a href="tel:+420603230059">+420 603 230 059</a> · <a href="/kontakt.html">Kontakt</a></div>
+</footer>
+
+
+<script>
+let CURRENT_USER = null;
+
+// Snadne prepinani mezi Eshop/3D scena/Administrace (Robert 2026-08-06:
+// "potřebuju snadné přepínání mezi eshopem, administrací a scénou, vpravo
+// nahoře") - stejna funkce zkopirovana do index/category/product/
+// realizace/scene.html (projekt nema sdileny JS soubor mezi strankami,
+// viz ostatni userBox logika). "current" oznaci aktualni stranku jako
+// needitovatelnou aktivni polozku, Administrace jen pro admin roli.
+// bot16, 2026-09-30 (Robert pres bot3: "uzivatel logiman.sklad@seznam.cz
+// nevidi vstup do administrace") - drive natvrdo role==="admin", takze
+// ZADNA jina admin-panelova role (manager/skladnik/ucetni/monter/sklad)
+// se sem nemela jak dostat bez rucniho zadani /admin.html do URL, bez
+// ohledu na sebevic udelenych prav v role_permissions. `permissions` je
+// /api/auth/me:user.permissions (zobrazit_permissions_map v api/app.py) -
+// null pro bezneho zakaznika, objekt (i prazdny) pro kazdou roli z
+// PERMISSION_ROLES vcetne admina - jedno misto pravdy, misto dalsiho
+// natvrdo zkopirovaneho seznamu roli tady v HTML. "Řemeslo" NEMENENO -
+// samostatna neprobadana zalezitost (bot3: nehadat).
+function renderAreaSwitch(role, current, permissions) {
+  const items = [
+    { key: "eshop", href: "/index.html", label: "Eshop" },
+    { key: "scene", href: "/scene.html", label: "3D scéna" },
+  ];
+  if (permissions) items.push({ key: "admin", href: "/admin.html", label: "Administrace" });
+  if (role === "admin") items.push({ key: "remeslo", href: "/remeslo.html", label: "Řemeslo" });
+  return items.map(it => it.key === current
+    ? `<span class="as-item active">${it.label}</span>`
+    : `<a class="as-item" href="${it.href}">${it.label}</a>`
+  ).join("");
+}
+
+fetch("/api/auth/me").then(r => r.ok ? r.json() : { user: null }).then(data => {
+  CURRENT_USER = data.user;
+  if (CURRENT_USER) {
+    refreshCartBadge();
+    if (CURRENT_USER.theme_shop) {
+      applyShopTheme(CURRENT_USER.theme_shop, { persist: false });
+    }
+  }
+  const box = document.getElementById("userBox");
+  if (CURRENT_USER) {
+    document.getElementById("areaSwitch").innerHTML = renderAreaSwitch(CURRENT_USER.role, "eshop", CURRENT_USER.permissions);
+    const roleLabel = { admin: "admin", manager: "manager", user: "uživatel", skladnik: "mistr", ucetni: "asistent", monter: "montér", sklad: "skladník" }[CURRENT_USER.role] || CURRENT_USER.role;
+    box.innerHTML = `<span>${CURRENT_USER.name || CURRENT_USER.email} (${roleLabel})</span>` +
+      '<a href="/moje-objednavky.html" style="margin:0 8px;">Moje objednávky</a>' +
+      '<button class="logout-btn" id="btnLogout">Odhlásit se</button>';
+    document.getElementById("btnLogout").onclick = () => {
+      fetch("/api/auth/logout", { method: "POST" }).then(() => window.location.reload());
+    };
+  } else {
+    box.innerHTML = '<a href="/login.html">Přihlásit se</a>';
+  }
+});
+
+// Robert 2026-08-11 ("ten nadpis mizi protoze toci dalsi novinky" -
+// nadpis dlazdice Novinky je nazev PRAVE zobrazene novinky, takze pri
+// prepnuti na dalsi zmizel i on): stridani polozek dlazdice. Nahrazuje
+// puvodni ciste CSS animaci s pevnym 15s cyklem, ktera fungovala jen pro
+// presne 3 polozky (pri 2 zbyla nekolikasekundova prazdna mezera) a i
+// tak mezi polozkami blikla. Tady se nastupujici polozka polozi PRES
+// odchazejici (z-index + nepruhledne pozadi, viz CSS), takze nikdy neni
+// videt prazdno ani zdvojeny text.
+function initAnnouncementPreviewRotator() {
+  const stack = document.querySelector(".announcement-preview-stack");
+  if (!stack) return;
+  const items = Array.from(stack.querySelectorAll(".announcement-preview-item"));
+  if (items.length < 2) return;  // 1 novinka = nic se netoci, zadne blikani
+  let idx = 0;
+  items[0].classList.add("is-active");
+  setInterval(() => {
+    const prev = items[idx];
+    idx = (idx + 1) % items.length;
+    items[idx].classList.add("is-active");
+    prev.classList.remove("is-active");  // odchazejici se prolne POD nastupujici
+  }, 5000);
+}
+initAnnouncementPreviewRotator();
+
+// Robert pres bot3, 2026-09-27 ("stejny carousel jako je na homepage
+// logimanu") - rozsireni vzoru initAnnouncementPreviewRotator() vyse o
+// manualni sipky/puntiky + restart autoplay timeru po manualnim zasahu.
+// Timing 4000/600ms primo z inline JS configu puvodniho Shoptet carouselu
+// (stepTimer/fadeTimer) - viz CSS .hp-carousel-slide transition (600ms)
+// pro crossfade, STEP_MS nize pro dobu zobrazeni.
+const HP_CAROUSEL_STEP_MS = 4000;
+
+function initHomepageCarousel() {
+  const viewport = document.querySelector(".hp-carousel-viewport");
+  if (!viewport) return;
+  const slides = Array.from(viewport.querySelectorAll(".hp-carousel-slide"));
+  if (slides.length < 2) return;  // 1 slide = nic se netoci, zadne sipky/puntiky treba
+  const dots = Array.from(viewport.querySelectorAll(".hp-carousel-dot"));
+  let idx = slides.findIndex(s => s.classList.contains("active"));
+  if (idx < 0) idx = 0;
+  let timer = null;
+
+  function goTo(newIdx) {
+    const prev = slides[idx];
+    idx = (newIdx + slides.length) % slides.length;
+    slides[idx].classList.add("active");
+    if (prev !== slides[idx]) prev.classList.remove("active");
+    dots.forEach(d => d.classList.toggle("active", parseInt(d.dataset.index, 10) === idx));
+  }
+
+  function restartAutoplay() {
+    if (timer) clearInterval(timer);
+    timer = setInterval(() => goTo(idx + 1), HP_CAROUSEL_STEP_MS);
+  }
+
+  const prevBtn = viewport.querySelector(".hp-carousel-prev");
+  const nextBtn = viewport.querySelector(".hp-carousel-next");
+  if (prevBtn) prevBtn.addEventListener("click", () => { goTo(idx - 1); restartAutoplay(); });
+  if (nextBtn) nextBtn.addEventListener("click", () => { goTo(idx + 1); restartAutoplay(); });
+  dots.forEach(d => d.addEventListener("click", () => { goTo(parseInt(d.dataset.index, 10)); restartAutoplay(); }));
+
+  restartAutoplay();
+}
+initHomepageCarousel();
+
+// bot3 nalez 2026-09-27 (po tom, co CSS "zrcadleni" grid formule #hpMosaic
+// vs #hpTopTile jen NEKDY nahodou vyslo stejne - zmereno 22% rozdil na
+// 2200px): jedine presne reseni je precist SKUTECNOU vykreslenou sirku
+// prvni karty v #hpMosaic a tu explicitne nastavit na kartu v #hpTopTile -
+// zadny nezavisly prepocet, primo kopie zmerene hodnoty. Bezi hned (obe
+// strany jsou 100% SSR, uz existuji v DOM) + na resize (debounce 150ms,
+// at nesedi jen pri prvnim vykresleni, ale i po zmene sirky okna).
+// Volano 2x na startu (hned + po "load") - fonty/obrazky jeste
+// nemuseji byt hotove pri prvnim behu, coz umi mosaicCard sirku o par
+// px posunout (font reflow) - "load" bezi az po vsem, doladi to na
+// presnou konecnou hodnotu.
+function syncHpTopTileWidth() {
+  const topCard = document.querySelector(".hp-top-tile .hp-block-card");
+  const mosaicCard = document.querySelector("#hpMosaic .hp-block-card");
+  if (!topCard || !mosaicCard) return;
+  topCard.style.width = mosaicCard.getBoundingClientRect().width + "px";
+}
+syncHpTopTileWidth();
+window.addEventListener("load", syncHpTopTileWidth);
+let hpTopTileSyncTimer = null;
+window.addEventListener("resize", () => {
+  clearTimeout(hpTopTileSyncTimer);
+  hpTopTileSyncTimer = setTimeout(syncHpTopTileWidth, 150);
+});
+
+function loadCategoryNav() {
+  fetch("/api/categories")
+    .then(r => r.json())
+    .then(data => {
+      const tree = data.tree || [];
+      if (!tree.length) {
+        document.getElementById("catTreeEmpty").style.display = "block";
+      }
+      renderCategoryTree(tree);
+      // Robert 2026-08-18: docasne vypnuty kosik -> ikona v hlavicce
+      // se uplne schova (ne jen zustane neaktivni), viz api/cart.py/
+      // api/orders.py pro skutecne backendove vynuceni.
+      const cartBtn = document.getElementById("cartBtn");
+      if (cartBtn) cartBtn.style.display = data.cart_enabled === false ? "none" : "";
+    });
+}
+
+// Svisly sbalovaci strom kategorii v levem trvalem panelu (Robert
+// 2026-07-25: "zobrazení stromu kategorií frontend svisle prosím", pak
+// "to levé menu kategorií musí zůstat stále viditelné" - proto je nyni
+// soucasti spolecneho .sidebar layoutu na index.html i category.html,
+// misto puvodni samostatne sekce jen na homepage). Klik na nazev naviguje
+// na standardni stranku kategorie (category.html?id=X).
+function catUrl(cat) {
+  return cat && cat.slug ? `/${cat.slug}` : `/category.html?id=${cat.id}`;
+}
+
+function renderCategoryTree(tree) {
+  const treeEl = document.getElementById("catTree");
+  // Robert 2026-08-11 ("probliká podtržítko v menu") - SSR uz strom
+  // vykreslil (viz data-ssr atribut z api/app.py::_add_category_tree_ssr)
+  // se stejnym vysledkem, jaky by dal tenhle JS render - prepis DOM by
+  // i pri identickem textu restartoval CSS animaci podtrzeni aktivni/
+  // hover polozky (viditelny "problik"), tak se preskoci.
+  if (treeEl.dataset.ssr === "1") {
+    delete treeEl.dataset.ssr;
+    // Robert 2026-08-11 ("proc nefunguji ty krizky?") - SSR strom ma
+    // +/- jako holé <span> BEZ click handleru (ty vazal jen JS pri
+    // vlastni stavbe stromu pres buildCatTreeNode, ktera se tady
+    // prave preskakuje). Delegovany listener na celem stromu dodava
+    // rozbalovani SSR uzlum; vaze se jen jednou (tahle vetev bezi
+    // prave jednou na nacteni stranky).
+    treeEl.addEventListener("click", (e) => {
+      const t = e.target.closest(".cat-tree-toggle");
+      if (!t || t.classList.contains("spacer")) return;
+      const children = t.closest(".cat-tree-row")?.nextElementSibling;
+      if (!children || !children.classList.contains("cat-tree-children")) return;
+      const expanded = children.classList.toggle("expanded");
+      t.textContent = expanded ? "\u2212" : "+";
+      // bot16, 2026-09-17 (Robert primo: "otevrene vetve musis take
+      // barevne odlisit") - drzet .is-open v sync i po rucnim kliku.
+      t.closest(".cat-tree-node")?.classList.toggle("is-open", expanded);
+    });
+    return;
+  }
+  const empty = document.getElementById("catTreeEmpty");
+  treeEl.innerHTML = "";
+  if (!tree.length) {
+    empty.style.display = "block";
+    return;
+  }
+  empty.style.display = "none";
+  appendCatTreeSiblings(treeEl, tree, 0);
+}
+
+// bot16, 2026-09-17 (doplneno po nalezu bot7/Robert): skupinovy nadpis
+// patri MEZI sourozence (detekce hranice skupiny), ne "na" jeden uzel -
+// jinak sourozenci PO oznackovanem uzlu vizualne splyvali s predchozim
+// nadpisem. Zrcadli Python _render_category_tree_html (api/
+// storefront_pages.py) - musi zustat stejne, tenhle JS bezi jen jako
+// fallback re-render (viz data-ssr).
+function appendCatTreeSiblings(container, cats, depth) {
+  let prevGroup = null;
+  cats.forEach(cat => {
+    const group = cat.menu_group_label || null;
+    if (group !== prevGroup) {
+      const marker = document.createElement("div");
+      marker.className = group ? "cat-tree-group-label" : "cat-tree-group-break";
+      if (group) marker.textContent = group;
+      container.appendChild(marker);
+      prevGroup = group;
+    }
+    container.appendChild(buildCatTreeNode(cat, depth));
+  });
+}
+
+function buildCatTreeNode(cat, depth) {
+  depth = depth || 0;
+  const hasChildren = !!(cat.children && cat.children.length);
+  const node = document.createElement("div");
+  node.className = "cat-tree-node";
+  node.dataset.depth = depth;
+
+  const row = document.createElement("div");
+  row.className = "cat-tree-row";
+
+  const toggle = document.createElement("span");
+  toggle.className = "cat-tree-toggle" + (hasChildren ? "" : " spacer");
+  toggle.textContent = "+";
+  row.appendChild(toggle);
+
+  const nameEl = document.createElement("span");
+  nameEl.className = "cat-tree-name" + (cat.pending_review ? " cat-tree-name-new" : "");
+  nameEl.textContent = cat.name;
+  nameEl.onclick = () => { window.location.href = catUrl(cat); };
+  row.appendChild(nameEl);
+
+  node.appendChild(row);
+
+  const childrenEl = document.createElement("div");
+  childrenEl.className = "cat-tree-children";
+  appendCatTreeSiblings(childrenEl, cat.children || [], depth + 1);
+  node.appendChild(childrenEl);
+
+  if (hasChildren) {
+    toggle.onclick = (e) => {
+      e.stopPropagation();
+      const expanded = childrenEl.classList.toggle("expanded");
+      toggle.textContent = expanded ? "−" : "+";
+      node.classList.toggle("is-open", expanded);
+    };
+  }
+
+  return node;
+}
+
+loadCategoryNav();
+
+// bot16, 2026-09-17 (Robert primo: "ten posuvnik ma byt spolecny napric
+// webem") - stejna hodnota jako .pd-desc-card (product.html)/.cat-body
+// (category.html), pohani podbarveni otevrene vetve v menu
+// (.cat-tree-node.is-open). Jen aplikace hodnoty - samotny posuvnik
+// (admin ovladac) zije na product.html/category.html, tady se jen cte.
+fetch("/api/public/pd-desc-opacity").then(r => r.ok ? r.json() : { opacity_pct: 0 })
+  .then(d => document.documentElement.style.setProperty("--cat-body-opacity", (typeof d.opacity_pct === "number" ? d.opacity_pct : 0) + "%"))
+  .catch(() => {});
+
+// bot16, 2026-09-17 (Robert primo: "chci adminovsky posuvnik urcovani barvy
+// podkladu i pisma vsech prvku aktualniho menu/stromu kategorii") - jen
+// aplikace hodnoty (viz --cat-tree-*-rows/-open/-outer v CSS vyse), samotne
+// pickery (admin ovladac) zijou jen na category.html, tady se jen cte.
+// bot16, 2026-09-17 - stejna plna verze jako category.html (predtim tu
+// bylo jen tiche nacteni bez ovladacich prvku - Robert: "zase tam chybi
+// nastaveni barev", chce ovladani vsude, ne jen na category.html).
+const CAT_TREE_COLOR_FIELDS = [
+  { field: "bg_rows_hex", cssVar: "--cat-tree-bg-rows", pickerId: "catTreeBgRowsPicker" },
+  { field: "bg_open_hex", cssVar: "--cat-tree-bg-open", pickerId: "catTreeBgOpenPicker" },
+  { field: "bg_outer_hex", cssVar: "--cat-tree-bg-outer", pickerId: "catTreeBgOuterPicker" },
+  { field: "bg_nested_hex", cssVar: "--cat-tree-bg-nested", pickerId: "catTreeBgNestedPicker" },
+  { field: "text_rows_hex", cssVar: "--cat-tree-text-rows", pickerId: "catTreeTextRowsPicker" },
+  { field: "text_open_hex", cssVar: "--cat-tree-text-open", pickerId: "catTreeTextOpenPicker" },
+  { field: "text_outer_hex", cssVar: "--cat-tree-text-outer", pickerId: "catTreeTextOuterPicker" },
+  { field: "text_nested_hex", cssVar: "--cat-tree-text-nested", pickerId: "catTreeTextNestedPicker" },
+  { field: "text_active_hex", cssVar: "--cat-tree-text-active", pickerId: "catTreeTextActivePicker" },
+];
+function catTreeColorsApply(state) {
+  const root = document.documentElement;
+  CAT_TREE_COLOR_FIELDS.forEach(({ field, cssVar, pickerId }) => {
+    const hex = state[field];
+    if (hex) root.style.setProperty(cssVar, hex); else root.style.removeProperty(cssVar);
+    const picker = document.getElementById(pickerId);
+    if (hex && picker && document.activeElement !== picker) picker.value = hex;
+  });
+  // bot16, 2026-09-17 (Robert: "pridej na nase menu prepinac caps vsechno
+  // velke") - trida na <html>, viz html.cat-tree-caps-on v CSS.
+  root.classList.toggle("cat-tree-caps-on", !!state.caps);
+  const capsToggle = document.getElementById("catTreeCapsToggle");
+  if (capsToggle && document.activeElement !== capsToggle) capsToggle.checked = !!state.caps;
+  // bot16, 2026-09-25 (Robert: "silu linek") - cislo v px primo na
+  // var(--cat-tree-border-width), fallback 2px kdyz nic neni ulozeno.
+  const bw = state.border_width;
+  if (bw) root.style.setProperty("--cat-tree-border-width", bw + "px"); else root.style.removeProperty("--cat-tree-border-width");
+  const bwPicker = document.getElementById("catTreeBorderWidthPicker");
+  const bwVal = document.getElementById("catTreeBorderWidthVal");
+  if (bwPicker && document.activeElement !== bwPicker) bwPicker.value = bw || 2;
+  if (bwVal) bwVal.textContent = (bw || 2) + "px";
+  // bot16, 2026-09-26 (Robert: "ta linka efektova je moc silna, ale
+  // porad k ni neni zeslabovac") - nezavisly na Sile linek vyse (ta
+  // meni jen levy prouzek aktivni polozky).
+  const sweepOpacity = state.sweep_opacity;
+  if (sweepOpacity) root.style.setProperty("--cat-tree-sweep-opacity", sweepOpacity); else root.style.removeProperty("--cat-tree-sweep-opacity");
+}
+let catTreeColorsState = {};
+function catTreeColorsLoad() {
+  fetch("/api/public/cat-tree-colors").then(r => r.ok ? r.json() : {})
+    .then(d => { catTreeColorsState = d || {}; catTreeColorsApply(catTreeColorsState); })
+    .catch(() => {});
+}
+catTreeColorsLoad();
+let catTreeColorsSaveTimer = null;
+function catTreeColorsSave(patch) {
+  clearTimeout(catTreeColorsSaveTimer);
+  catTreeColorsSaveTimer = setTimeout(() => {
+    fetch("/api/admin/cat-tree-colors", {
+      method: "PUT", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(patch),
+    }).catch(() => {});
+  }, 400);
+}
+// bot16, 2026-09-26 (Robert: "nastaveni z webu dej pryc") - editace
+// presunuta do admin.html (viz webapp/admin/js/menu-kategorii.js),
+// catTreeColorsWireAdmin() odstranena, uz neni co tu wirovat.
+
+// bot5 2026-08-10 (Robert: "udelej novou sekci v adminu, a dlazdici
+// tam prenes, prekopiruj") - panel v levem sidebaru pod stromem
+// kategorii, admin-spravovany (viz Postranni panel v adminu), stejny
+// self-contained vzor na vsech 4 strankach s timhle sidebarem.
+function loadSidebarFooterPanel() {
+  fetch("/api/sidebar-blocks").then(r => r.ok ? r.json() : { blocks: [] }).then(data => {
+    const blocks = data.blocks || [];
+    const wrap = document.getElementById("sidebarFooterPanel");
+    if (!wrap) return;
+    if (!blocks.length) { wrap.style.display = "none"; wrap.innerHTML = ""; return; }
+    const esc = (s) => (s || "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+    wrap.innerHTML = blocks.map(b => {
+      const media = b.video_url
+        ? `<div class="sidebar-footer-video-wrap"><video controls preload="none"${b.image_url ? ` poster="${esc(b.image_url)}"` : ""} playsinline><source src="${esc(b.video_url)}" type="video/mp4"></video></div>`
+        : (b.image_url ? `<a class="sidebar-footer-media" href="/panel/${encodeURIComponent(b.slug)}"><img src="${esc(b.image_url)}" alt="${esc(b.title)}"></a>` : "");
+      const excerpt = b.meta_description ? `<div class="sidebar-footer-excerpt">${esc(b.meta_description)}</div>` : "";
+      return `<div class="sidebar-footer-title"><a href="/panel/${encodeURIComponent(b.slug)}" style="color:inherit;text-decoration:none;">${esc(b.title)}</a></div>${media}${excerpt}`;
+    }).join("");
+    wrap.style.display = "block";
+  }).catch(() => {});
+}
+loadSidebarFooterPanel();
+
+// ---- Mobilni vysouvaci menu kategorii (Robert 2026-07-26: "přizpůsob UI
+// responzivně pro mobilní zařízení") - stejny princip jako kosikova
+// zasuvka, jen pro .sidebar. Nad 860px sirokou obrazovku je tlacitko
+// skryte (viz CSS) a sidebar zustava trvale viditelny jako doteď. ----
+function openSidebarMobile() {
+  document.querySelector(".sidebar").classList.add("mobile-open");
+  document.getElementById("sidebarOverlay").classList.add("open");
+}
+function closeSidebarMobile() {
+  document.querySelector(".sidebar").classList.remove("mobile-open");
+  document.getElementById("sidebarOverlay").classList.remove("open");
+}
+document.getElementById("sidebarToggleBtn").onclick = openSidebarMobile;
+document.getElementById("sidebarOverlay").onclick = closeSidebarMobile;
+document.getElementById("sidebarCloseBtn").onclick = closeSidebarMobile;
+
+// ==================== KOSIK (jen odznak s poctem polozek) ====================
+// Robert 2026-08-08: "přidat do košíku bude pouze na detailu produktu" -
+// cely kosikovy wizard (pridavani, kroky, checkout) zije uz jen na
+// product.html. Tady zustava jen minimum potrebne pro odznak s poctem
+// kusu u ikonky kosiku (ktera odkazuje na /product.html?openCart=1).
+let cartData = { items: [], subtotal_czk: 0, item_count: 0, total_qty: 0 };
+
+async function refreshCartBadge() {
+  if (!CURRENT_USER) return;
+  try {
+    const r = await fetch("/api/cart");
+    if (!r.ok) return;
+    cartData = await r.json();
+    updateCartBadgeDisplay();
+  } catch (e) { /* ticho - odznak proste zustane na puvodni hodnote */ }
+}
+
+function updateCartBadgeDisplay() {
+  const badge = document.getElementById("cartCount");
+  if (!badge) return;
+  const n = cartData.total_qty || 0;
+  if (n > 0) { badge.style.display = "inline-block"; badge.textContent = n; }
+  else { badge.style.display = "none"; }
+}
+
+// Robert 2026-08-08: "přidej na eshop hledací okno, se zatržítky kde
+// se má hledat - produkty, text kategorií". Produkty přes existující
+// verejny GET /api/shop/products?q=, text kategorii pres novy verejny
+// GET /api/categories/search?q= (api/app.py).
+(function () {
+  const toggleBtn = document.getElementById("searchToggleBtn");
+  const panel = document.getElementById("searchPanel");
+  const input = document.getElementById("searchInput");
+  const scopeProducts = document.getElementById("searchScopeProducts");
+  const scopeCategories = document.getElementById("searchScopeCategories");
+  const results = document.getElementById("searchResults");
+  if (!toggleBtn || !panel) return;
+
+  function srEscapeHtml(s) {
+    const d = document.createElement("div");
+    d.textContent = s == null ? "" : s;
+    return d.innerHTML;
+  }
+  function searchCatHref(c) {
+    return c.slug ? `/${c.slug}` : `/category.html?id=${c.id}`;
+  }
+  function openPanel() {
+    panel.classList.add("open");
+    setTimeout(() => input.focus(), 0);
+  }
+  function closePanel() {
+    panel.classList.remove("open");
+  }
+  toggleBtn.onclick = (e) => {
+    e.stopPropagation();
+    panel.classList.contains("open") ? closePanel() : openPanel();
+  };
+  document.addEventListener("click", (e) => {
+    if (!panel.contains(e.target) && e.target !== toggleBtn) closePanel();
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closePanel();
+  });
+
+  let debounceTimer = null;
+  let requestSeq = 0;
+  function runSearch() {
+    const q = input.value.trim();
+    if (q.length < 2) {
+      results.innerHTML = q.length === 0 ? "" : '<div class="sr-empty">Piš aspoň 2 znaky…</div>';
+      return;
+    }
+    const wantProducts = scopeProducts.checked;
+    const wantCategories = scopeCategories.checked;
+    if (!wantProducts && !wantCategories) {
+      results.innerHTML = '<div class="sr-empty">Zaškrtni, kde se má hledat.</div>';
+      return;
+    }
+    const seq = ++requestSeq;
+    results.innerHTML = '<div class="sr-empty">Hledám…</div>';
+    const productsTask = wantProducts
+      ? fetch(`/api/shop/products?q=${encodeURIComponent(q)}&page_size=8`).then(r => r.ok ? r.json() : { products: [] }).then(d => d.products || []).catch(() => [])
+      : Promise.resolve([]);
+    const categoriesTask = wantCategories
+      ? fetch(`/api/categories/search?q=${encodeURIComponent(q)}`).then(r => r.ok ? r.json() : { categories: [] }).then(d => d.categories || []).catch(() => [])
+      : Promise.resolve([]);
+    Promise.all([productsTask, categoriesTask]).then(([products, categories]) => {
+      if (seq !== requestSeq) return;
+      if (!products.length && !categories.length) {
+        results.innerHTML = '<div class="sr-empty">Nic nenalezeno.</div>';
+        return;
+      }
+      let html = "";
+      if (products.length) {
+        html += '<div class="sr-group-label">Produkty</div>';
+        html += products.map(p => `<a class="sr-item" href="${p.slug ? "/produkt/" + encodeURIComponent(p.slug) : "/product.html?id=" + p.id}">${p.image_url ? `<img class="sr-thumb" src="${p.image_url}" loading="lazy" alt="">` : ""}<span class="sr-text">${srEscapeHtml(p.name)}<span class="sr-sub">${srEscapeHtml(p.sku || "")}${p.price_czk_placeholder != null ? " · " + p.price_czk_placeholder.toLocaleString("cs-CZ") + " Kč" + (p.is_profile_material && p.unit === "ks" && !p.is_board_material ? " (3 m)" : "") + " (bez DPH)" : ""}</span></span></a>`).join("");
+      }
+      if (categories.length) {
+        html += '<div class="sr-group-label">Kategorie</div>';
+        html += categories.map(c => `<a class="sr-item" href="${searchCatHref(c)}">${srEscapeHtml(c.name)}${c.snippet ? `<span class="sr-sub">${srEscapeHtml(c.snippet)}</span>` : ""}</a>`).join("");
+      }
+      results.innerHTML = html;
+    });
+  }
+  input.addEventListener("input", () => {
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(runSearch, 300);
+  });
+  scopeProducts.addEventListener("change", runSearch);
+  scopeCategories.addEventListener("change", runSearch);
+})();
+
+</script>
+
+</body>
+</html>

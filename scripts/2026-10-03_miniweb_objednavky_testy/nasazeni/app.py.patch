@@ -1,0 +1,8 @@
+--- a/api/app.py
++++ b/api/app.py
+@@ -5378,3 +5378,5 @@
+ import dealer_feed  # noqa: F401 - registruje feed produktu pro dealery, krok 5: /api/dealer/v1/feed.csv|xml (bot5, Robert pres bot3 2026-10-02, viz dealer_feed.py + DEALER_API.md), MUSI byt az po dealers
+ import miniweb  # noqa: F401 - registruje mini-shop API /api/miniweb/* (config, categories, products, legal, inquiry; bot5, Robert pres bot3 2026-10-02, viz miniweb.py + sql/2026-10-02_miniweb*.sql), MUSI byt az po dealers (brand filtr), car_storefronts a documents
+ import miniweb_admin  # noqa: F401 - registruje import a schvalovani textu mini-shopu /api/admin/miniweb/* (jen admin; bot5, Robert pres bot3 2026-10-02, viz miniweb_admin.py + webapp/miniweb-schvaleni.html), MUSI byt az po miniweb
++import miniweb_objednavky  # noqa: F401 - registruje kosik a objednavku mini-shopu /api/miniweb/quote|orders|vat-check (faze 3 SK; bot5, Robert pres bot3 2026-10-03, viz miniweb_objednavky.py)
++import miniweb_objednavky_admin  # noqa: F401 - registruje schvaleni dopravy objednavky mini-shopu /api/admin/orders/<id>/shipping (krok 2; bot5, 2026-10-03)

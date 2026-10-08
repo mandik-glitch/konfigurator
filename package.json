@@ -1,0 +1,11 @@
+{
+  "name": "konfigurator-scene-scripts",
+  "private": true,
+  "description": "Node.js dependency (three@0.128.0) sdílená mezi webapp/js/scene-geometry-shared.js (require('three') se resolvuje sem, do repo-root node_modules) a Node.js ověřovacími nástroji ve scripts/ (2026-*_scene_*.js / *_shelf_*.js) - viz VLASTNOSTI_PROFILU.md a .claude/skills/3d-scena-spoje/SKILL.md. Spustit `npm install` v ROOTU repa (ne ve scripts/) před použitím kteréhokoli z těch skriptů.",
+  "dependencies": {
+    "three": "0.128.0"
+  },
+  "devDependencies": {
+    "playwright": "^1.62.1"
+  }
+}

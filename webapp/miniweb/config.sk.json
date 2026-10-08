@@ -1,0 +1,21 @@
+{
+  "shop": "packstations",
+  "lang": "sk",
+  "locale": "sk-SK",
+  "currency": "EUR",
+  "accent": "#2dd4bf",
+  "countries": [
+    "SK"
+  ],
+  "contact": {
+    "phone": "",
+    "hours": ""
+  },
+  "alternates": [],
+  "preview": true,
+  "inquiry_only": false,
+  "checkout_mode": "order",
+  "price_mode": "shown",
+  "configurator_source": "server",
+  "configurator_product_id": 4934
+}

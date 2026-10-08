@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <script src="/js/client-errors.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Moje objednávky – Hliníkový konstrukční stavebnicový systém s drážkami</title>
+<meta name="robots" content="noindex, nofollow">
+<!-- bot16, 2026-09-27 (Robert: "vstupem do Moje objednávky, Logo
+     ztučnělo") - pricina: stranka je cely staticky soubor, ZADNY
+     backend route ji nikdy nerenderuje (na rozdil od category/product/
+     index/blok.html, kde _render_og_page()/site_font_ssr_head()
+     vlozi Robertem vybrany font + --font-main promennou primo do
+     <head> pri kazdem pozadavku). Tady tedy --font-main vzdy zustaval
+     NEDEFINOVANY a .brand-logo (font-weight:800) padal na cisty
+     systemovy font prohlizece, ktery pri teto vaze casto skoci na
+     nejtezsi dostupny rez (Black/900) - viditelne "ztluste" oproti
+     Manrope (Robertova aktualni volba, /api/public/site-font) na
+     ostatnich strankach. Reseni: presne stejny <link>+--font-main
+     par, jaky by SSR vlozil, jen NATVRDO (stejna konvence jako
+     barvy :root nize - cela stranka je bez zdilene CSS/backend
+     napojeni). POZOR: pri zmene site-font volby v adminu je nutne
+     tenhle radek rucne aktualizovat, jinak se strankam zase rozejdou. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap">
+<link rel="stylesheet" href="/css/brand-logo.css">
+<style>
+  :root {
+    --font-main: "Manrope", -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    --bg: #494b50;
+    --panel-bg: #22262e;
+    --panel-bg-2: #1f232a;
+    --border: #3a3f4a;
+    --border-soft: #333333;
+    --border-card: #2c313a;
+    --text: #e8eaed;
+    --text2: #c7ccd4;
+    --text-muted: #8b93a1;
+    --accent: #9fd0ff;
+    --error: #e07070;
+    --success: #7ed49a;
+  }
+  [data-theme="light"] {
+    --bg: #eef1f5;
+    --panel-bg: #ffffff;
+    --panel-bg-2: #f6f8fa;
+    --border: #d7dce3;
+    --border-soft: #e3e7ec;
+    --border-card: #dde2e8;
+    --text: #1b1e24;
+    --text2: #3a3f4a;
+    --text-muted: #5c6570;
+    --accent: #1a6fd4;
+    --error: #b3241e;
+    --success: #1e7a45;
+  }
+  * { box-sizing:border-box; }
+  html, body { margin:0; padding:0; min-height:100%; font-family:var(--font-main, -apple-system, "Segoe UI", Roboto, Arial, sans-serif); background:var(--bg); color:var(--text); font-size:14px; }
+  a { color:var(--accent); }
+  header { display:flex; align-items:center; justify-content:space-between; gap:14px; padding:12px 20px; border-bottom:1px solid var(--border-soft); background:var(--panel-bg); }
+  header .brand { color:var(--text); font-weight:700; text-decoration:none; font-size:14px; }
+  /* Textove logo (.brand-logo*): sdilene CSS /css/brand-logo.css, nacitane v <head> - vzhled a zduvodneni upravuj JEN tam. */
+  /* HOME tlacitko (Robert primo, 2026-09-15 pres bot3: "stylove HUD
+     tlacitko Domu na vsech strankach, vedle loga") - stejny vizualni
+     jazyk jako #pdAddCartBtn v product.html (useknuty roh, --accent
+     obrys). Zadny sdileny JS/CSS soubor mezi strankami - kopie na
+     kazdou stranku. */
+  .home-hud-btn {
+    display:inline-flex; align-items:center; justify-content:center;
+    width:30px; height:30px; flex:none; box-sizing:border-box;
+    background:transparent; color:var(--accent); border:1px solid var(--accent); border-radius:0;
+    clip-path:polygon(0 0, calc(100% - 7px) 0, 100% 7px, 100% 100%, 7px 100%, 0 calc(100% - 7px));
+    font-size:15px; line-height:1; text-decoration:none; cursor:pointer;
+    transition:background-color .15s ease, color .15s ease;
+  }
+  .home-hud-btn:hover { background:var(--accent); color:#06140c; }
+  #themeToggleBtn { background:var(--panel-bg-2); color:var(--text-muted); border:1px solid var(--border); border-radius:14px; padding:5px 10px; cursor:pointer; font-size:13px; }
+  .page-wrap { max-width:820px; margin:0 auto; padding:24px 18px 60px; }
+  .breadcrumb { font-size:13px; color:var(--text-muted); margin-bottom:14px; }
+  .breadcrumb a { color:var(--text-muted); text-decoration:none; }
+  .breadcrumb a:hover { text-decoration:underline; }
+  h1 { font-size:24px; margin:0 0 18px; }
+  h2 { font-size:14px; margin:0 0 10px; }
+  .card { border:1px solid var(--border-card); border-radius:8px; background:var(--panel-bg-2); padding:18px 20px; margin-bottom:14px; }
+  .order-row { display:flex; align-items:center; gap:12px; padding:12px 0; border-bottom:1px solid var(--border-card); cursor:pointer; }
+  .order-row:last-child { border-bottom:none; }
+  .order-row:hover { background:var(--panel-bg); }
+  .order-row .onum { font-weight:600; flex:0 0 140px; }
+  .order-row .ostatus { flex:0 0 140px; color:var(--text-muted); font-size:13.5px; }
+  .order-row .odate { flex:0 0 110px; color:var(--text-muted); font-size:13px; }
+  .order-row .ototal { flex:1; text-align:right; font-weight:600; }
+  table.items-table { width:100%; border-collapse:collapse; margin-top:8px; }
+  table.items-table th, table.items-table td { text-align:left; padding:6px 8px; border-bottom:1px solid var(--border-card); font-size:13.5px; }
+  table.items-table th { color:var(--text-muted); font-weight:600; font-size:11.5px; text-transform:uppercase; }
+  .ret-row { display:flex; align-items:center; gap:8px; padding:4px 0; font-size:13.5px; }
+  .pill { font-size:11px; padding:2px 9px; border-radius:10px; display:inline-block; background:var(--border); color:var(--text2); }
+  .btn { background:var(--accent); color:#12151d; border:none; border-radius:6px; padding:8px 16px; font-size:14px; cursor:pointer; font-weight:600; }
+  .btn:disabled { opacity:.5; cursor:default; }
+  .btn-ghost { background:none; border:1px solid var(--border); color:var(--text2); border-radius:6px; padding:6px 12px; font-size:13px; cursor:pointer; }
+  .err { color:var(--error); font-size:13.5px; margin-top:6px; }
+  .hint { color:var(--text-muted); font-size:13.5px; }
+  select, textarea, input[type=number] { background:var(--panel-bg); border:1px solid var(--border); color:var(--text2); border-radius:5px; padding:6px 8px; font-size:14px; font-family:inherit; }
+  textarea { width:100%; box-sizing:border-box; min-height:50px; margin-top:6px; }
+  .back-link { display:inline-block; margin-bottom:10px; font-size:13.5px; }
+  footer { text-align:center; color:var(--text-muted); font-size:12.5px; padding:24px 18px; }
+</style>
+</head>
+<body>
+
+<div id="rekonstrukceBanner" style="background:#b3541e; color:#fff; text-align:center; padding:8px 14px; font-size:14px; font-weight:600; letter-spacing:.02em;">&#9888;&#65039; Web je v rekonstrukci &mdash; omluvte pros&iacute;m do&#269;asn&eacute; nedostatky.</div>
+<header>
+  <div style="display:flex; align-items:center; gap:10px;">
+    <a href="/" class="home-hud-btn" title="Domů" aria-label="Domů">⌂</a>
+    <a class="brand-logo" href="/" aria-label="Logiman"><span class="brand-logo-hl">LOGi</span><span class="brand-logo-lt">MAN</span></a>
+    <a class="brand" href="/">Hliníkový konstrukční stavebnicový systém s drážkami</a>
+  </div>
+  <button id="themeToggleBtn" type="button" title="Přepnout barevné schéma" onclick="toggleShopTheme()"></button>
+</header>
+
+<div class="page-wrap">
+  <div class="breadcrumb"><a href="/">Kategorie</a> <span>›</span> Moje objednávky</div>
+  <h1>Moje objednávky</h1>
+
+  <div id="ordersListView">
+    <div class="card" id="ordersListCard">
+      <div id="ordersList" class="hint">Načítám…</div>
+    </div>
+  </div>
+
+  <div id="orderDetailView" style="display:none;">
+    <a class="back-link" href="#" id="backToListLink">← Zpět na seznam objednávek</a>
+    <div class="card">
+      <h2 id="odTitle"></h2>
+      <div id="odMeta" class="hint" style="margin-bottom:12px;"></div>
+      <div id="odQrWrap" style="display:none;text-align:center;margin:0 0 16px;padding:14px;border:1px solid var(--border-soft, #333);">
+        <p style="font-size:14px;margin:0 0 8px;">K uhrazení naskenujte QR kód bankovní aplikací:</p>
+        <img id="odQrImg" alt="QR platba" style="width:220px;height:220px;">
+      </div>
+      <table class="items-table">
+        <thead><tr><th>Položka</th><th>Ks</th><th>Cena/ks</th><th>Celkem</th></tr></thead>
+        <tbody id="odItems"></tbody>
+      </table>
+    </div>
+
+    <div class="card" id="odReturnsCard">
+      <h2>Reklamace a vratky</h2>
+      <div id="odReturnsList" class="hint">Žádné dosud založené.</div>
+      <div id="odReturnFormWrap" style="margin-top:14px; display:none;">
+        <div id="odReturnItems"></div>
+        <div style="margin-top:8px;">
+          <select id="odReturnType">
+            <option value="reklamace">Reklamace (zboží je vadné/poškozené)</option>
+            <option value="odstoupeni">Odstoupení od smlouvy (do 14 dní od převzetí)</option>
+          </select>
+        </div>
+        <textarea id="odReturnReason" placeholder="Popište prosím důvod (nepovinné)"></textarea>
+        <div style="margin-top:8px;">
+          <button type="button" class="btn" id="odReturnSubmitBtn">Odeslat žádost</button>
+        </div>
+        <div id="odReturnErr" class="err"></div>
+      </div>
+      <div id="odReturnNotAvailable" class="hint" style="display:none;">Reklamaci/vratku lze založit až po expedici objednávky.</div>
+    </div>
+  </div>
+
+  <div id="loginRedirectNote" class="card" style="display:none;">
+    <p>Pro zobrazení objednávek se prosím <a id="loginLink" href="/login.html">přihlaste</a>.</p>
+  </div>
+</div>
+
+<footer>
+  Hliníkový konstrukční stavebnicový systém s drážkami
+</footer>
+
+<script>
+(function () {
+  try {
+    var t = localStorage.getItem("shopTheme");
+    if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+  } catch (e) {}
+})();
+function applyShopTheme(theme) {
+  theme = theme === "light" ? "light" : "dark";
+  document.documentElement.setAttribute("data-theme", theme);
+  try { localStorage.setItem("shopTheme", theme); } catch (e) {}
+  var btn = document.getElementById("themeToggleBtn");
+  if (btn) btn.textContent = theme === "light" ? "🌙" : "☀️";
+}
+function toggleShopTheme() {
+  var current = document.documentElement.getAttribute("data-theme") === "light" ? "light" : "dark";
+  applyShopTheme(current === "light" ? "dark" : "light");
+  fetch("/api/auth/theme", {
+    method: "PUT", headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ scope: "shop", theme: current === "light" ? "dark" : "light" }),
+  }).catch(function () {});
+}
+document.addEventListener("DOMContentLoaded", function () {
+  var btn = document.getElementById("themeToggleBtn");
+  if (btn) btn.textContent = (document.documentElement.getAttribute("data-theme") === "light") ? "🌙" : "☀️";
+});
+
+// ==================== Moje objednavky (bot18, 2026-09-05) ====================
+// Zakaznicka self-service stranka - seznam vlastnich objednavek
+// (GET /api/orders, uz existujici endpoint), detail (GET /api/orders/<id>)
+// + reklamace/vratky (api/returns.py customer_* endpointy).
+
+const STATUS_LABELS_SHOP = {
+  nova: "Nová", potvrzena: "Potvrzená", ceka_na_zbozi: "Čeká na zboží",
+  pripravit: "Připravuje se", expedovana: "Expedovaná", fakturovana: "Fakturovaná", zrusena: "Zrušená",
+};
+const RETURNABLE_STATUSES = ["expedovana", "fakturovana"];
+const RETURN_TYPE_LABELS_SHOP = { reklamace: "Reklamace", odstoupeni: "Odstoupení od smlouvy" };
+const RETURN_STATUS_LABELS_SHOP = {
+  pozadovano: "Požadováno", posuzovano: "Posuzováno", schvaleno: "Schváleno",
+  prijato: "Přijato zpět", vyrizeno: "Vyřízeno", zamitnuto: "Zamítnuto", zruseno: "Zrušeno",
+};
+
+function escapeHtmlShop(s) {
+  return String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+}
+
+async function loadMyOrders() {
+  try {
+    const r = await fetch("/api/orders");
+    if (r.status === 401) {
+      document.getElementById("ordersListView").style.display = "none";
+      const note = document.getElementById("loginRedirectNote");
+      note.style.display = "";
+      document.getElementById("loginLink").href = "/login.html?next=" + encodeURIComponent(location.pathname);
+      return;
+    }
+    const data = await r.json();
+    const orders = data.orders || [];
+    if (!orders.length) {
+      document.getElementById("ordersList").innerHTML = "Zatím žádné objednávky.";
+      return;
+    }
+    document.getElementById("ordersList").innerHTML = orders.map(o => `
+      <div class="order-row" data-id="${o.id}">
+        <div class="onum">${escapeHtmlShop(o.order_number)}</div>
+        <div class="ostatus">${escapeHtmlShop(STATUS_LABELS_SHOP[o.status] || o.status)}</div>
+        <div class="odate">${new Date(o.created_at).toLocaleDateString("cs-CZ")}</div>
+        <div class="ototal">${o.total_czk != null ? o.total_czk.toLocaleString("cs-CZ") + " Kč" : ""}</div>
+      </div>
+    `).join("");
+    document.querySelectorAll(".order-row").forEach(row => {
+      row.onclick = () => openOrderDetailShop(parseInt(row.dataset.id, 10));
+    });
+  } catch (e) {
+    document.getElementById("ordersList").innerHTML = '<span class="err">Nepodařilo se načíst objednávky.</span>';
+  }
+}
+
+let currentShopOrder = null;
+
+async function openOrderDetailShop(id) {
+  try {
+    const r = await fetch(`/api/orders/${id}`);
+    const data = await r.json();
+    if (!r.ok) { alert(data.error || "Chyba při načítání objednávky."); return; }
+    currentShopOrder = data.order;
+    document.getElementById("ordersListView").style.display = "none";
+    document.getElementById("orderDetailView").style.display = "";
+    document.getElementById("odTitle").textContent = `Objednávka ${data.order.order_number}`;
+    document.getElementById("odMeta").textContent =
+      `Stav: ${STATUS_LABELS_SHOP[data.order.status] || data.order.status} · Založeno ${new Date(data.order.created_at).toLocaleString("cs-CZ")}`;
+    // QR jen u objednavek se zalohovou fakturou (napr. QR platba/Platba
+    // předem) - endpoint vraci 404 u ostatnich platebnich metod, obrazek
+    // se proste schova beze zvlastniho rozlisovani metody na klientovi.
+    const odQrWrap = document.getElementById("odQrWrap");
+    const odQrImg = document.getElementById("odQrImg");
+    odQrWrap.style.display = "none";
+    odQrImg.onload = () => { odQrWrap.style.display = ""; };
+    odQrImg.onerror = () => { odQrWrap.style.display = "none"; };
+    odQrImg.src = `/api/orders/${id}/payment-qr?t=${Date.now()}`;
+    document.getElementById("odItems").innerHTML = (data.order.items || []).map(it => `
+      <tr>
+        <td>${escapeHtmlShop(it.product_name)}</td>
+        <td>${it.qty}</td>
+        <td>${it.unit_price_czk != null ? it.unit_price_czk.toLocaleString("cs-CZ") + " Kč" : ""}</td>
+        <td>${it.line_total_czk != null ? it.line_total_czk.toLocaleString("cs-CZ") + " Kč" : ""}</td>
+      </tr>
+    `).join("");
+    await loadOrderReturnsShop(id);
+  } catch (e) {
+    alert("Nepodařilo se načíst detail objednávky.");
+  }
+}
+
+document.getElementById("backToListLink").onclick = (e) => {
+  e.preventDefault();
+  document.getElementById("orderDetailView").style.display = "none";
+  document.getElementById("ordersListView").style.display = "";
+};
+
+async function loadOrderReturnsShop(orderId) {
+  try {
+    const r = await fetch(`/api/customer/orders/${orderId}/returns`);
+    const data = await r.json();
+    const returns = data.returns || [];
+    document.getElementById("odReturnsList").innerHTML = returns.length
+      ? returns.map(ret => `<div class="ret-row"><span class="pill">${escapeHtmlShop(RETURN_STATUS_LABELS_SHOP[ret.status] || ret.status)}</span> ${escapeHtmlShop(ret.return_number)} — ${escapeHtmlShop(RETURN_TYPE_LABELS_SHOP[ret.return_type] || ret.return_type)}</div>`).join("")
+      : "Žádné dosud založené.";
+  } catch (e) {
+    document.getElementById("odReturnsList").innerHTML = '<span class="err">Nepodařilo se načíst.</span>';
+  }
+
+  const formWrap = document.getElementById("odReturnFormWrap");
+  const notAvailable = document.getElementById("odReturnNotAvailable");
+  if (!RETURNABLE_STATUSES.includes(currentShopOrder.status)) {
+    formWrap.style.display = "none";
+    notAvailable.style.display = "";
+    return;
+  }
+  notAvailable.style.display = "none";
+  formWrap.style.display = "";
+  document.getElementById("odReturnItems").innerHTML = (currentShopOrder.items || []).map(it => `
+    <label style="display:flex;align-items:center;gap:8px;margin-bottom:4px;">
+      <input type="checkbox" class="od-ret-check" data-item-id="${it.id}" data-max="${it.qty}">
+      ${escapeHtmlShop(it.product_name)} (max ${it.qty} ks)
+      <input type="number" class="od-ret-qty" data-item-id="${it.id}" value="1" min="1" max="${it.qty}" style="width:60px;" disabled>
+    </label>
+  `).join("");
+  document.querySelectorAll(".od-ret-check").forEach(chk => {
+    chk.onchange = () => {
+      document.querySelector(`.od-ret-qty[data-item-id="${chk.dataset.itemId}"]`).disabled = !chk.checked;
+    };
+  });
+  document.getElementById("odReturnSubmitBtn").onclick = () => submitReturnRequestShop(orderId);
+}
+
+async function submitReturnRequestShop(orderId) {
+  const items = [];
+  document.querySelectorAll(".od-ret-check:checked").forEach(chk => {
+    const itemId = parseInt(chk.dataset.itemId, 10);
+    const qty = parseInt(document.querySelector(`.od-ret-qty[data-item-id="${itemId}"]`).value, 10);
+    items.push({ order_item_id: itemId, qty });
+  });
+  if (!items.length) { document.getElementById("odReturnErr").textContent = "Vyberte prosím aspoň 1 položku."; return; }
+  const body = {
+    return_type: document.getElementById("odReturnType").value,
+    reason: document.getElementById("odReturnReason").value.trim() || null,
+    items,
+  };
+  try {
+    const r = await fetch(`/api/customer/orders/${orderId}/returns`, {
+      method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body),
+    });
+    const data = await r.json();
+    if (!r.ok) { document.getElementById("odReturnErr").textContent = data.error || "Chyba."; return; }
+    document.getElementById("odReturnReason").value = "";
+    document.querySelectorAll(".od-ret-check:checked").forEach(chk => chk.checked = false);
+    await loadOrderReturnsShop(orderId);
+  } catch (e) {
+    document.getElementById("odReturnErr").textContent = "Nepodařilo se odeslat žádost.";
+  }
+}
+
+loadMyOrders();
+</script>
+
+</body>
+</html>

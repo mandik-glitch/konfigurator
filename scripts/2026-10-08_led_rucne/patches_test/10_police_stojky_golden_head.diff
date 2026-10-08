@@ -1,0 +1,20 @@
+--- a/2026-10-07_police_stojky/golden_head.py
++++ b/2026-10-07_police_stojky/golden_head.py
+@@ -48,12 +48,15 @@
+     yield dict(system=41, sirka=2600, hloubka=700)
+ 
+ 
+-def vypocti():
++def vypocti(navic=None, jen=None):
++    """Otisky mrizky; `navic` = dalsi parametry generatoru pro vsechny konfigurace (napr. led_pocet), `jen` = mnozina klicu, ktere se maji pocitat."""
+     out = {}
+     for p in mrizka():
+         klic = json.dumps(p, sort_keys=True)
++        if jen is not None and klic not in jen:
++            continue
+         try:
+-            r = S.sestav_stul(**p)
++            r = S.sestav_stul(**{**p, **(navic or {})})
+         except S.StulChyba as e:
+             out[klic] = {"chyba": str(e)}
+             continue

@@ -1,0 +1,12 @@
+# Vandr model v hlavní Scéně a v karoserii z knihovny
+
+Robert 2026-10-06: *„VD-2c24d107-… tuto sestavu potřebuji vložit do scény a do karoserie MAN L3H3“* → zvolil **hlavní scénu, celý model** (ne kontrolní scénu, ne rozklad na díly).
+
+**Jak (bez psaní do adresy):** na kartě Vandr v admin pruhu odkaz **„Do scény…“** → `/scene.html?vandr=<id karty>`; ve Scéně plovoucí panel **„▸ Vandr model“**: číslo karty (nebo SKU `VD-…`), hledání karoserie (např. „MAN L3H3“) → **Vložit do scény a karoserie**. Panel umí posun v mm (X bok / Y výška / Z délka), otočení (±90°, 180°), „Výchozí zarovnání“ a „Odebrat model“. Po vložení nese adresa `?vandr=<id>&karoserie=K-xxx` (F5 vloží totéž, jinak se nic neobnoví).
+
+**Co to je:** celý Vandr GLB (chráněný, jen staff přes `/api/vandr-glb-file/`) jako **„kontrolní pomůcka“** (role `kontrolni-pomucka-vandr-<id>`, `scene-geometry-shared.js::isKontrolniPart`): **mimo kusovník, cenu, spoje, kolizní kontrolu karoserie i uložení** sestavy/tvaru; hýbat s ním jde i běžnými nástroji Scény. Nic se nezakládá (žádná karta, sestava, tvar). Pomocné uzly Vandr exportu (`podlaha`, `dimension*`, `fixarea`, `legshoverbox`, `logo`, `text`) se odeberou, barvy jsou z GLB.
+
+**Zarovnání** (Vandr vůz má přepážku na +z a levou stranu na +x, knihovna přepážku na −z a levou na −x → otočení o 180° kolem Y): podlaha = horní plocha plechu „podlaha“ ve Vandr modelu ↦ horní plocha podlahy karoserie (paprsek shora v ose vozu); přepážka = konec plechu „podlaha“ na +z ↦ líc přepážky karoserie (vodorovný paprsek z zadku). **Model bez plechu „podlaha“** (ponk #4969, FBX mimo Vandr admin): nejnižší bod = podlaha, nejvyšší z (záda) = líc přepážky, vystředěno v ose vozu. Ověřeno: K-227 (MAN TGE L3H3 FWD) + levý regál #4967 - bez kolize (Node kolizní modul), u levé stěny pod 10 mm, od přepážky 271 mm (jako ve Vandr).
+
+**Omezení / pasti:** (1) karoserii vybírá člověk - FWD/RWD (K-227/K-228) se nerozlišuje a knihovní karoserie musí být totéž vozidlo (MAN TGE = VW Crafter); (2) cena a kusovník reference nemá, je to jen pohled/kontrola; (3) u karty bez ceny se admin pruh na kartě neukáže (je jen u karet s cenou) - panel ve Scéně ji ale vezme podle čísla.
+**Soubory a testy:** `webapp/js/scene/vandr-ref.js`; `scripts/2026-10-07_vandr_ref_testy/test_vandr_ref.js` (19 kontrol na skutečné scéně v Chromiu přes most `scripts/2026-10-06_nabidka_vykresy_testy/_most_scena.py`, vč. nezávislého měření paprsky); odkaz na kartě `webapp/product.html` (`pdOfferScena`).

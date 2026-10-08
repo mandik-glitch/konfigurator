@@ -1,0 +1,22 @@
+-- Zruseni plosneho stagingu priloh Emaily prichozi - bot11, 2026-08-22.
+--
+-- Kontext: TASKS.md "Emaily příchozí: zrušit plošný staging příloh,
+-- ukládat až v dalších krocích" (Robert, po dotazu "nemůžeme do
+-- nekonečna ukládat" -> "staging příloh nechceme, ukládat budeme až v
+-- dalších krocích"). Puvodni navrh (mazat stazene soubory po 30 dnech)
+-- byl PREKONAN - misto stahovani VSECH priloh VSECH prichozich e-mailu
+-- PRI SYNCHRONIZACI (viz puvodni komentar u tehle tabulky,
+-- sql/2026-08-19_shop_support_message_attachments.sql) se ted pri
+-- synchronizaci zaznamenaji jen METADATA (nazev/typ/velikost, zadne
+-- bajty na disku) - skutecny soubor se stahuje az na vyzadani primo z
+-- IMAPu podle Message-ID (viz support_email_sync.fetch_attachment_from_imap),
+-- typicky az pri nahledu v triazi nebo pri schvaleni kategorie 'doklad'.
+--
+-- stored_filename tedy uz neni vzdy vyplnene hned pri vzniku radku -
+-- NULL = priloha jeste nestazena na disk (novy postup), vyplnene =
+-- bud legacy staged soubor z pred tehle zmeny, nebo nove stazeny az
+-- pri schvaleni 'doklad' (viz api/support.py::_import_triage_invoice,
+-- ktera po schvaleni radek stejne rovnou maze, takze u noveho postupu
+-- fakticky zustava NULL po celou dobu zivota radku, dokud radek
+-- nezanikne - bud schvalenim, nebo kaskadou pri smazani konverzace).
+ALTER TABLE shop_support_message_attachments MODIFY stored_filename VARCHAR(255) NULL;

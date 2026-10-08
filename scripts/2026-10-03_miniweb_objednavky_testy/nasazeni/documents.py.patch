@@ -1,0 +1,124 @@
+--- a/api/documents.py
++++ b/api/documents.py
+@@ -138,6 +138,26 @@
+ 
+ VAT_RATE = 21  # % - jedina sazba pouzita ve vsech vzorovych dokladech
+ 
++# bot5, 2026-10-03 (Robert pres bot3: zakaznik z jineho clenskeho statu s PLATNYM IC DPH = DPH se neuctuje, na dokladu dolozka): objednavka z mini-shopu nese shop_orders.vat_mode
++# ('reverse_charge' = 0 %, jinak/NULL = CZ sazba beze zmeny). Sazbu a doplnujici text dokladu urcuji jen tyhle dve funkce, zadne jine misto sazbu pro objednavku nerozhoduje.
++# POZOR (otevreny bod pro ucetni): zneni dolozky VAT_ZERO_NOTE je navrh, ucetni ho potvrdi/upravi.
++PODPORA_PRENESENE_DPH = True
++VAT_ZERO_NOTE = "Osvobozené plnění – dodání zboží do jiného členského státu (§ 64 zákona č. 235/2004 Sb., o DPH). IČ DPH odběratele: {dic}."
++
++
++def _order_vat_rate(order):
++    return 0 if (order or {}).get("vat_mode") == "reverse_charge" else VAT_RATE
++
++
++def _order_doc_note(order, base):
++    """Poznamka dokladu = zakladni text + (u DPH 0 %) dolozka s IC DPH odberatele + (je-li) text k prepoctu meny z objednavky (order['document_note'], jen mini-shop). Jeden odstavec."""
++    parts = [base]
++    if (order or {}).get("vat_mode") == "reverse_charge":
++        parts.append(VAT_ZERO_NOTE.format(dic=(order.get("billing_dic") or "").strip() or "-"))
++    if (order or {}).get("document_note"):
++        parts.append(str(order["document_note"]))
++    return " ".join(p for p in parts if p)
++
+ # Menovy kod pro SPAYD/IBAN QR platbu (viz _build_spayd() nize) - bot16
+ # nalez 2026-09-17 (pres bot3): byl natvrdo "CC:CZK" nezavisle na 2
+ # mistech (tady + api/scene_offers.py::_build_spayd, ktera VLASTNI kopii
+@@ -318,9 +338,10 @@
+         price = _money(order["payment_price_czk"]) or 0.0
+         rows.append({"name": order["payment_method_name"], "qty": 1,
+                       "unit_price_net": price, "line_total_net": price, "is_profile_unit": False, "unit": "ks"})
++    rate = _order_vat_rate(order)
+     for r in rows:
+-        r["vat_rate"] = VAT_RATE
+-        r["vat_amount"] = _round2(r["line_total_net"] * VAT_RATE / 100)
++        r["vat_rate"] = rate
++        r["vat_amount"] = _round2(r["line_total_net"] * rate / 100)
+         r["line_total_gross"] = _round2(r["line_total_net"] + r["vat_amount"])
+     return rows
+ 
+@@ -496,7 +517,7 @@
+     display_number, seq_year, seq_number = _next_document_number(cur, "proforma_invoice", issue_dt)
+     items = _build_items_with_vat(order, order_items)
+     total_net, total_vat, total_gross, total_gross_rounded, rounding = _totals(items)
+-    vat_breakdown = [{"rate": VAT_RATE, "base_czk": total_net, "vat_czk": total_vat, "total_czk": total_gross}]
++    vat_breakdown = [{"rate": _order_vat_rate(order), "base_czk": total_net, "vat_czk": total_vat, "total_czk": total_gross}]
+     doc_id = _insert_document(
+         cur, order_id=order["id"], document_type="proforma_invoice",
+         items=items, vat_breakdown=vat_breakdown,
+@@ -512,7 +533,7 @@
+         variable_symbol=display_number, issue_dt=issue_dt,
+         due_date=(issue_dt.date() + timedelta(days=DUE_DAYS)), taxable_supply_date=None,
+         recipient_snapshot=_recipient_snapshot(order), delivery_snapshot=_delivery_snapshot(order),
+-        note="Zasíláme fakturu k uhrazení zálohy dle vaší objednávky:",
++        note=_order_doc_note(order, "Zasíláme fakturu k uhrazení zálohy dle vaší objednávky:"),
+         payment_method_label=order.get("payment_method_name"),
+         related_document_id=None, part_number=None,
+         issued_by_label=issued_by_label, display_number=display_number,
+@@ -577,7 +598,8 @@
+     # spatnym/chybejicim VS, viz can_mark_payment) neni co odkazovat,
+     # padame zpet na vlastni cislo VDD.
+     vs = proforma_doc["document_number"] if proforma_doc else display_number
+-    vat_amount = _round2(amount_net * VAT_RATE / 100)
++    rate = _order_vat_rate(order)
++    vat_amount = _round2(amount_net * rate / 100)
+     gross = _round2(amount_net + vat_amount)
+     # bot5, 2026-09-28 (Robert primo, vzor proofPayment_vdd26080021-01.pdf:
+     # "Daňový doklad k přijaté platbě s VS 26080087 v sazbě DPH 21 %") -
+@@ -587,11 +609,11 @@
+     # Paragraph = spravne zalamovani v ramci sirky sloupce), ne odebranim
+     # textu.
+     item = {
+-        "name": f"Daňový doklad k přijaté platbě s VS {vs} v sazbě DPH {VAT_RATE} %",
++        "name": f"Daňový doklad k přijaté platbě s VS {vs} v sazbě DPH {rate} %",
+         "qty": 1, "unit_price_net": _round2(amount_net), "line_total_net": _round2(amount_net),
+-        "vat_rate": VAT_RATE, "vat_amount": vat_amount, "line_total_gross": gross,
++        "vat_rate": rate, "vat_amount": vat_amount, "line_total_gross": gross,
+     }
+-    vat_breakdown = [{"rate": VAT_RATE, "base_czk": _round2(amount_net), "vat_czk": vat_amount, "total_czk": gross}]
++    vat_breakdown = [{"rate": rate, "base_czk": _round2(amount_net), "vat_czk": vat_amount, "total_czk": gross}]
+ 
+     doc_id = _insert_document(
+         cur, order_id=order["id"], document_type="payment_tax_document",
+@@ -620,7 +642,7 @@
+     display_number, seq_year, seq_number = _next_document_number(cur, "invoice", issue_dt)
+     items = _build_items_with_vat(order, order_items)
+     total_net, total_vat, total_gross, total_gross_rounded, rounding = _totals(items)
+-    vat_breakdown = [{"rate": VAT_RATE, "base_czk": total_net, "vat_czk": total_vat, "total_czk": total_gross}]
++    vat_breakdown = [{"rate": _order_vat_rate(order), "base_czk": total_net, "vat_czk": total_vat, "total_czk": total_gross}]
+ 
+     # bot5, 2026-09-28 (Robert primo: "u zálohy např 60% je doklad k
+     # platbe jen na 60%... při dodání zboží se vystaví faktura kde se
+@@ -659,9 +681,9 @@
+     # kde 96849 = K ZAPLACENÍ). "Shrnutí" radek (total_net/total_vat/
+     # total_gross vyse) zustava CELKOVA cena objednavky beze zmeny.
+     if advance_deduction:
+-        remaining_net = _round2(amount_due / (1 + VAT_RATE / 100))
++        remaining_net = _round2(amount_due / (1 + _order_vat_rate(order) / 100))
+         remaining_vat = _round2(amount_due - remaining_net)
+-        vat_breakdown = [{"rate": VAT_RATE, "base_czk": remaining_net, "vat_czk": remaining_vat, "total_czk": amount_due}]
++        vat_breakdown = [{"rate": _order_vat_rate(order), "base_czk": remaining_net, "vat_czk": remaining_vat, "total_czk": amount_due}]
+ 
+     doc_id = _insert_document(
+         cur, order_id=order["id"], document_type="invoice",
+@@ -672,7 +694,7 @@
+         variable_symbol=display_number, issue_dt=issue_dt,  # bot10, 2026-08-22 (BUG): drive str(order["id"])
+         due_date=(issue_dt.date() + timedelta(days=DUE_DAYS)), taxable_supply_date=issue_dt.date(),
+         recipient_snapshot=_recipient_snapshot(order), delivery_snapshot=_delivery_snapshot(order),
+-        note="Položky objednávky:",
++        note=_order_doc_note(order, "Položky objednávky:"),
+         payment_method_label=order.get("payment_method_name"),
+         related_document_id=(proforma_doc["id"] if proforma_doc else None), part_number=None,
+         issued_by_label=issued_by_label, display_number=display_number,
+@@ -1359,7 +1381,7 @@
+                 # ocekava amount_net BEZ DPH - chybel prevod, VDD tak
+                 # trvale vychazelo o castku DPH nizsi, nez skutecne zbyvalo.
+                 remaining_gross = round(order_total - already_received, 2)
+-                amount_net = round(remaining_gross / (1 + VAT_RATE / 100), 2)
++                amount_net = round(remaining_gross / (1 + _order_vat_rate(order) / 100), 2)
+             if amount_net <= 0:
+                 conn.rollback()
+                 return jsonify({"error": "Částka musí být kladná."}), 400

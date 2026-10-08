@@ -1,0 +1,20 @@
+--- a/2026-10-07_led600_generator/test_led_delka_shop.py
++++ b/2026-10-07_led600_generator/test_led_delka_shop.py
+@@ -110,7 +110,7 @@
+     check(all(k in SH.TEXTY[lang] for k in ("ledlen", "ledlen_600", "ledlen_1200", "help_ledlen")) and lang in SH.LEDLEN_NEVEJDE and lang in SH.LED_NENI_V_NABIDCE and "led_kratsi" in SH.TEXTY_AKCI[lang],
+           f"dalsi jazyk {lang}: nove texty maji (anglickou) zalohu")
+ 
+-base = schema("cs")["default_selection"]
++base = dict(schema("cs")["default_selection"], ledcount=S.LED_MAX)           # od 2026-10-08 je pocet svitidel RUCNI (vychozi 1): tyto kontroly overuji svitidla podle sirky = nejvic, co se vejde
+ 
+ # ---- vychozi stul: beze zmeny, obe delky se vejdou
+ st, d = post(base)
+@@ -281,7 +281,7 @@
+     check("4929" not in txt and "5359" not in txt and "LED600" not in txt and "LED1200" not in txt and "sku" not in txt.lower(), f"lux {sirka}/{lenv}: verejny payload nenese SKU ani cisla produktu")
+ 
+ # ---- staff API: ?led_delka=
+-r = staff.get("/api/stul/konfigurace?sirka=1500&led_delka=600")
++r = staff.get("/api/stul/konfigurace?sirka=1500&led_delka=600&led_pocet=4")
+ j = r.get_json()
+ check(r.status_code == 200 and j["parametry"]["led_delka"] == 600.0 and sum(1 for d in j["dily"] if d["part_id"] == L600) == 2 and not j["problemy"], f"staff API ?led_delka=600: 2 svitidla product_5359 ({r.status_code})")
+ r = staff.get("/api/stul/konfigurace?sirka=1500")

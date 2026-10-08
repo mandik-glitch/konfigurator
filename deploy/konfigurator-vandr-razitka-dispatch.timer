@@ -1,0 +1,14 @@
+[Unit]
+Description=Casovac automatu 3D razitek pro Vandr karty (kazdych 15 minut)
+# Staggered za ostatnimi Vandr timery (fbx-watcher :10/15, card-activate
+# :12/15) - stamp krok prijde na radu az kdyz uz karta pripadne existuje
+# a je aktivovana. Nezavisi ale tvrde na jejich poradi (bezi kdykoli je
+# glb_file hotovy, viz scripts/2026-09-23_vandr_razitka_auto_dispatch.py) -
+# stagger je jen slusnost, ne pozadavek.
+[Timer]
+OnCalendar=*-*-* *:14/15:00
+Persistent=true
+RandomizedDelaySec=60
+
+[Install]
+WantedBy=timers.target

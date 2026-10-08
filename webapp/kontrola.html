@@ -1,0 +1,1950 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+<title>Kontrolní scéna</title>
+<style>
+  html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; background: #eef1f4; font-family: -apple-system, "Segoe UI", Roboto, sans-serif; }
+  /* OPRAVENO 2026-09-25 (nalezeno pri zivem Playwright testu otocky, ne
+     nahlaseno primo): #viewer (a jeho <canvas>) je v DOM AZ PO topbar/
+     vdStrany/vdOtocka/vdOtockaVynechano - bez vlastniho z-index by "auto"
+     razeni podle poradi v DOM dalo canvasu prednost pred nimi (prekryti,
+     u tlacitek i NEKLIKATELNOST - presne to hlasil Playwright na
+     #vdOtockaPlay: "canvas... intercepts pointer events"). VŠECHNY plovouci
+     ovladaci prvky proto maji spolecnou z-index vrstvu NAD canvasem;
+     #status/#hud fungovaly i predtim (jsou v DOM AZ PO #viewer), z-index
+     jen pro jistotu/konzistenci do budoucna, kdyby se poradi zmenilo.*/
+  #viewer { position: fixed; inset: 0; z-index: 1; }
+  #viewer canvas { display: block; width: 100%; height: 100%; }
+  #topbar, #vdStrany, #vdOtocka, #vdOtockaVynechano, #status, #hud { z-index: 5; }
+  #hud {
+    position: fixed; left: 0; right: 0; bottom: 0;
+    padding: 10px 14px calc(10px + env(safe-area-inset-bottom, 0px));
+    background: linear-gradient(to top, rgba(20,24,30,0.88), rgba(20,24,30,0));
+    display: flex; align-items: center; gap: 10px; justify-content: center;
+    color: #fff; box-sizing: border-box;
+  }
+  #hud button {
+    min-width: 46px; min-height: 46px; border-radius: 10px; border: none;
+    background: rgba(255,255,255,0.18); color: #fff; font-size: 22px; line-height: 1;
+    display: flex; align-items: center; justify-content: center;
+  }
+  #hud button:disabled { opacity: 0.3; }
+  #vdStrany {
+    position: fixed; left: 0; right: 0; top: 0; margin-top: 34px;
+    display: flex; align-items: center; justify-content: center; gap: 6px;
+    padding: 6px 10px; box-sizing: border-box;
+  }
+  #vdStrany button {
+    padding: 5px 10px; border-radius: 8px; border: 1px solid rgba(0,0,0,0.15);
+    background: rgba(255,255,255,0.92); color: #2c3542; font-size: 12px;
+  }
+  #vdStrany button[aria-pressed="true"] { background: #2c3542; color: #fff; border-color: #2c3542; }
+  #vdOtocka {
+    position: fixed; left: 0; right: 0; top: 0; margin-top: 68px;
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    padding: 4px 10px; box-sizing: border-box;
+  }
+  #vdOtocka button {
+    min-width: 34px; min-height: 30px; border-radius: 8px; border: 1px solid rgba(0,0,0,0.15);
+    background: rgba(255,255,255,0.92); color: #2c3542; font-size: 16px;
+  }
+  #vdOtockaLabel { font-size: 11.5px; color: #2c3542; background: rgba(255,255,255,0.85); padding: 4px 8px; border-radius: 6px; white-space: nowrap; }
+  #vdOtockaPlay { min-width: 34px; min-height: 30px; border-radius: 8px; border: 1px solid rgba(0,0,0,0.15); background: rgba(255,255,255,0.92); color: #2c3542; font-size: 14px; }
+  #vdOtockaPlay[aria-pressed="true"] { background: #2c3542; color: #fff; }
+  #vdOtockaVynechano {
+    position: fixed; left: 0; right: 0; top: 0; margin-top: 100px;
+    display: flex; justify-content: center; padding: 0 10px; box-sizing: border-box;
+  }
+  #vdOtockaVynechano span {
+    font-size: 11px; color: #a33; background: rgba(255,255,255,0.9); padding: 3px 8px;
+    border-radius: 6px; border: 1px solid rgba(163,51,51,0.3);
+  }
+  .vd-otocka-arrow {
+    position: fixed; top: 50%; transform: translateY(-50%); z-index: 6;
+    width: 56px; height: 56px; border-radius: 50%; border: none;
+    background: rgba(20,24,30,0.38); color: #fff; font-size: 30px; line-height: 1;
+    display: flex; align-items: center; justify-content: center;
+    touch-action: manipulation;
+  }
+  .vd-otocka-arrow:active { background: rgba(20,24,30,0.6); }
+  #vdOtockaArrowLeft { left: 8px; }
+  #vdOtockaArrowRight { right: 8px; }
+  #viewer.vd-otocka-drag { cursor: ew-resize; }
+  #label { font-size: 13px; text-align: center; max-width: 62vw; line-height: 1.3; }
+  #idxLabel { opacity: 0.75; font-size: 11px; display: block; }
+  /* Vzhled online nabidek (bot10 2026-10-06; Robert: "potrebuju upravovat materialy v online nabidce a hdri, tzn v kontrolni scene"): tlacitko vpravo v horni liste + panel
+     s V3D.envPicker (HDRI) a souhrnem hliniku / AO; uklada se pro VSECHNY online nabidky (docs/KONTRAKT_NABIDKA_3D.md 5f). */
+  #vzhledBtn {
+    position: fixed; right: 10px; top: calc(5px + env(safe-area-inset-top, 0px)); z-index: 8;
+    padding: 6px 12px; border-radius: 8px; border: 1px solid rgba(0,0,0,0.25); background: #2c3542; color: #fff; font-size: 12px; font-weight: 600;
+  }
+  #vzhledBtn[aria-expanded="true"] { background: #ff7b29; border-color: #ff7b29; color: #1a1208; }
+  /* okno Vzhled v generatoru stolu (iframe, ?embed=1; bot10 2026-10-07): jen prohlizec a okno Vzhled, bez horniho popisku; tlacitko zustane videt i nad otevrenym oknem */
+  body.embed #topbar { display: none; }
+  body.embed #vzhledBtn { top: 8px; }
+  body.embed #vzhledPanel { margin-top: 44px; max-height: calc(100vh - 60px); }
+  @media (max-width: 700px) { body.rezim-nabidka #topbar { padding-right: 128px; } }        /* tlacitko Vzhled nabidek (vpravo nahore) nesmi prekryvat popisek */
+  #vzhledPanel {
+    position: fixed; right: 10px; top: var(--nab-top, 44px); margin-top: 6px; width: min(360px, calc(100vw - 20px)); box-sizing: border-box; z-index: 9;
+    max-height: calc(100vh - var(--nab-top, 44px) - var(--nab-bottom, 0px) - 16px); overflow: auto;
+    background: rgba(20,24,30,0.95); color: #fff; border-radius: 10px; padding: 10px 12px; box-shadow: 0 6px 24px rgba(0,0,0,0.35); font-size: 13px;
+  }
+  #vzhledPanel h4 { margin: 0 0 8px; font-size: 14px; }
+  #vzhledPanel .vzh-info { font-size: 12.5px; line-height: 1.5; margin: 10px 0 4px; opacity: 0.95; white-space: pre-line; }
+  #vzhledPanel .vzh-btns { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
+  #vzhledPanel .vzh-btns button { min-height: 38px; padding: 0 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.35); background: rgba(255,255,255,0.12); color: #fff; font-size: 13px; font-weight: 600; }
+  #vzhledPanel .vzh-st { min-height: 1.3em; font-size: 13px; margin-top: 6px; }
+  #vzhledPanel .vzh-st.err { color: #ff8a78; } #vzhledPanel .vzh-st.ok { color: #6fe39a; }
+  /* Sytost a barvy materialu (Robert 2026-10-06): jezdec sytosti + vzorky puvodnich barev modelu s vyberem nove barvy */
+  #vzhledMat { margin-top: 12px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.18); }
+  #vzhledMat h5 { margin: 0 0 8px; font-size: 13px; }
+  #vzhledMat .vzh-sat { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+  #vzhledMat .vzh-sat input { flex: 1 1 auto; min-width: 0; }
+  #vzhledMat .vzh-sat b { min-width: 46px; text-align: right; font-variant-numeric: tabular-nums; }
+  #vzhledPal { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 6px 10px; }
+  #vzhledPal .vzh-sw { display: flex; align-items: center; gap: 6px; font-size: 12px; }
+  #vzhledPal .vzh-sw input[type=color] { width: 34px; height: 28px; padding: 0; border: 1px solid rgba(255,255,255,0.4); background: none; flex: 0 0 auto; }
+  #vzhledPal .vzh-sw__t { flex: 1 1 auto; min-width: 0; opacity: 0.85; font-variant-numeric: tabular-nums; }
+  #vzhledPal .vzh-sw__r { flex: 0 0 auto; min-width: 28px; min-height: 28px; padding: 0; border-radius: 6px; border: 1px solid rgba(255,255,255,0.35); background: rgba(255,255,255,0.12); color: #fff; font-size: 14px; }
+  #vzhledMat .vzh-mat-hint { margin-top: 8px; font-size: 11.5px; line-height: 1.45; opacity: 0.8; }
+  /* Odlesky a AO (Robert 2026-10-07): plynule posuvniky - lesk u kazde barvy materialu, odlesky a matnost hliniku, sila a dosah AO */
+  #vzhledPal .vzh-sw { flex-wrap: wrap; }
+  #vzhledPal .vzh-gl { flex: 1 0 100%; min-width: 0; display: none; align-items: center; gap: 6px; font-size: 11.5px; opacity: 0.92; }
+  #vzhledPanel.nove-api #vzhledPal .vzh-gl { display: flex; }                                   /* odlesky / AO / HDRI: videt jen kdyz server zna nove klice (probe vzhledApiProbe; staticke soubory jsou zive driv nez api/*.py) */
+  #vzhledPal .vzh-gl input { flex: 1 1 0%; width: 0; min-width: 0; }
+  #vzhledPal .vzh-gl b { flex: 0 0 auto; min-width: 36px; text-align: right; font-variant-numeric: tabular-nums; }
+  #vzhledPal .vzh-gl__r { flex: 0 0 auto; min-width: 24px; min-height: 24px; padding: 0; border-radius: 6px; border: 1px solid rgba(255,255,255,0.35); background: rgba(255,255,255,0.12); color: #fff; font-size: 13px; }
+  #vzhledLesk { display: none; margin-top: 10px; }
+  #vzhledPanel.nove-api #vzhledLesk { display: block; }
+  /* Doplneni HDRI ze Sdileneho disku (Robert 2026-10-07: "moznost pridat dalsi hdri ze sdileneho disku") */
+  #vzhledImport { display: none; margin-top: 10px; }
+  #vzhledPanel.nove-api #vzhledImport { display: block; }
+  #vzhledImportBtn { min-height: 36px; padding: 0 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.35); background: rgba(255,255,255,0.12); color: #fff; font-size: 13px; font-weight: 600; }
+  #vzhledImportBox { margin-top: 8px; padding: 8px 10px; border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; }
+  #vzhledImportBox .vzh-imp-row { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; font-size: 12.5px; }
+  #vzhledImportBox .vzh-imp-row label { flex: 0 0 104px; }
+  #vzhledImportBox select, #vzhledImportBox input[type=text] { flex: 1 1 auto; min-width: 0; min-height: 32px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.35); background: rgba(255,255,255,0.1); color: #fff; padding: 0 8px; font-size: 12.5px; }
+  #vzhledImportBox select option { color: #000; }
+  #vzhledImportSeznam { margin-top: 8px; font-size: 12px; }
+  #vzhledImportSeznam .vzh-imp-it { display: flex; align-items: center; gap: 8px; margin-top: 4px; }
+  #vzhledImportSeznam .vzh-imp-it span { flex: 1 1 auto; min-width: 0; overflow-wrap: anywhere; }
+  #vzhledImportSeznam .vzh-imp-it small { opacity: 0.7; }
+  #vzhledImportSeznam button { min-height: 28px; padding: 0 10px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.35); background: rgba(255,255,255,0.12); color: #fff; font-size: 12px; }
+  #vzhledLesk .vzh-sat span { flex: 0 0 132px; font-size: 12.5px; }
+  #vzhledLesk .vzh-sat input:disabled, #vzhledLesk .vzh-sat input:disabled ~ b { opacity: 0.4; }
+  #vzhledPal .vzh-gl input:disabled, #vzhledPal .vzh-gl input:disabled ~ b { opacity: 0.4; }
+  #vzhledMat .vzh-auto { margin: 0 0 4px; font-size: 12px; line-height: 1.45; opacity: 0.9; }
+  #vzhledAutoSt { min-height: 1.3em; margin: 0 0 8px; }
+  #vzhledAoNote { display: none; margin-top: 6px; font-size: 11.5px; line-height: 1.45; color: #ffd27a; }
+  #vzhledPanel.nove-api:not(.ao-mat-api) #vzhledAoNote { display: block; }          /* AO po komponentech: server ji zatim neuklada (probe vzhledApiProbe), je jen v nahledu */
+  #vzhledMimo { margin-top: 10px; font-size: 12px; }
+  #vzhledMimo summary { cursor: pointer; min-height: 24px; }
+  #vzhledMimo .vzh-mimo-it { display: flex; align-items: center; gap: 8px; margin-top: 6px; }
+  #vzhledMimo .vzh-mimo-it span { flex: 1 1 auto; min-width: 0; overflow-wrap: anywhere; }
+  #vzhledMimo .vzh-mimo-it i { flex: 0 0 auto; width: 16px; height: 16px; border: 1px solid rgba(255,255,255,0.4); border-radius: 3px; }
+  #vzhledMimo button { min-height: 28px; padding: 0 10px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.35); background: rgba(255,255,255,0.12); color: #fff; font-size: 12px; }
+  /* Spolecna nabidka z vice karet Vandr (bot10 2026-10-06; Robert: "v jedne online nabidce nabidnout dohromady levou stranu, i pravou stranu i prepazku"): tlacitko v horni
+     liste u skupiny karet vd:<a>+<b>[+<c>] (docs/KONTRAKT_NABIDKA_3D.md 5g) */
+  #spolAkce { margin-top: 5px; }
+  #spolBtn { padding: 5px 14px; border-radius: 8px; border: 1px solid #ff7b29; background: #ff7b29; color: #1a1208; font-size: 12px; font-weight: 700; cursor: pointer; }
+  #spolBtn:disabled { opacity: 0.55; cursor: default; }
+  #spolStav { margin-left: 10px; font-size: 12px; }
+  #spolPridat { margin-left: 8px; padding: 4px 8px; border-radius: 8px; border: 1px solid #2c3542; background: #fff; color: #2c3542; font-size: 12px; max-width: 46vw; }
+  #spolStav.err { color: #a33; } #spolStav.ok { color: #176b3a; } #spolStav a { color: #0b5cad; font-weight: 700; }
+  #topbar {
+    position: fixed; left: 0; right: 0; top: 0;
+    padding: calc(8px + env(safe-area-inset-top, 0px)) 14px 8px;
+    color: #2c3542; font-size: 12px; text-align: center;
+    background: rgba(255,255,255,0.75); box-sizing: border-box;
+  }
+  #status {
+    position: fixed; inset: 0; display: flex; align-items: center; justify-content: center;
+    color: #445; font-size: 15px; text-align: center; padding: 24px; box-sizing: border-box;
+  }
+  #status.err { color: #a33; }
+  [hidden] { display: none !important; }
+  /* rezim=materialy (iframe v prirazovacim panelu) - popisek ma 2 radky */
+  body.rezim-materialy #vdStrany { margin-top: 50px; }
+  /* rezim=nabidka (bot10 2026-10-01): sdileny prohlizec online nabidky
+     (/js/v3d/viewer3d.js) mezi hornim popiskem a spodnim prepinacem polozek
+     - jeho HUD (koty, vzhled, pohledy, cipy pohybu) se s nimi neprekryva.
+     --nab-top/--nab-bottom nastavuje JS podle skutecne vysky obou list. */
+  body.rezim-nabidka #viewer { top: var(--nab-top, 34px); bottom: var(--nab-bottom, 0px); }
+  /* rezim=param (bot10 2026-10-05): parametricky komponent - posuvnik sirky v dolni liste (viz rezimParam) */
+  #paramBar {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 5; box-sizing: border-box;
+    padding: 10px 14px calc(10px + env(safe-area-inset-bottom, 0px));
+    background: linear-gradient(to top, rgba(20,24,30,0.94), rgba(20,24,30,0.80));
+    color: #fff; font-size: 13px; line-height: 1.35;
+  }
+  #paramBar .pb-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  #paramBar input[type=range] { flex: 1 1 220px; min-width: 150px; height: 34px; accent-color: #6ee0c0; }
+  #paramBar input[type=number] { width: 88px; min-height: 38px; border-radius: 8px; border: 1px solid rgba(255,255,255,.3); background: rgba(255,255,255,.12); color: #fff; font-size: 16px; padding: 0 8px; text-align: right; box-sizing: border-box; }
+  #paramBar button { min-height: 38px; padding: 0 12px; border-radius: 8px; border: none; background: rgba(255,255,255,.18); color: #fff; font-size: 14px; }
+  #paramBar button[aria-pressed="true"] { background: #2e9e83; }
+  #paramBar .pb-info { margin-top: 6px; opacity: .95; }
+  #paramBar .pb-small { opacity: .65; font-size: 11px; margin-top: 4px; }
+  #paramBar .pb-sirka { font-size: 18px; font-weight: 700; color: #87edcc; min-width: 82px; }
+  #paramBar .pb-cena { margin-top: 6px; font-size: 15px; font-weight: 700; color: #ffe39a; }
+  #paramBar details.pb-kus { margin-top: 6px; }
+  #paramBar details.pb-kus summary { cursor: pointer; opacity: .92; padding: 6px 0; min-height: 24px; }
+  #paramBar .pb-scroll { max-height: 30vh; overflow-y: auto; -webkit-overflow-scrolling: touch; }
+  #paramBar table.pb-tab { width: 100%; border-collapse: collapse; font-size: 12px; margin-top: 4px; }
+  #paramBar table.pb-tab td, #paramBar table.pb-tab th { padding: 3px 6px; border-bottom: 1px solid rgba(255,255,255,.12); text-align: right; white-space: nowrap; font-weight: 400; }
+  #paramBar table.pb-tab td:first-child, #paramBar table.pb-tab th:first-child { text-align: left; white-space: normal; word-break: break-all; }
+  #paramBar table.pb-tab tr.zmena td { color: #87edcc; font-weight: 700; }
+  #paramBar table.pb-tab tfoot td { font-weight: 700; border-bottom: 0; }
+</style>
+</head>
+<body>
+<div id="topbar">Kontrolní scéna</div>
+<!-- bot10 2026-09-24 (pravidlo 52, nalez 4604 "cok stitek nema razitko"):
+     ctyri strany PRESNE podle vandr_predni_azimut_deg (= to, co pouziva
+     render, ne odhad z vychoziho diagonalniho uhlu pohledu). Viditelne
+     nezavisle na #hud/poctu polozek - hlavni pripad je kontrola JEDNE
+     karty, kde by #hud (prev/next) zustalo schovane. -->
+<div id="vdStrany" hidden>
+  <button type="button" data-off="0" aria-label="Přední">Přední</button>
+  <button type="button" data-off="90" aria-label="Pravá">Pravá</button>
+  <button type="button" data-off="180" aria-label="Zadní">Zadní</button>
+  <button type="button" data-off="270" aria-label="Levá">Levá</button>
+</div>
+<!-- bot10 2026-09-25 (Robert: "můžeš to simulovat i v kontrolní scéně ty
+     azimuty" - projít PŘESNĚ úhly, ze kterých render vezme snímky, dřív
+     než na to GPU spálí čas). MVP dle bot3 (Robert čeká hned): jen
+     další/předchozí + popisek - přehrávání/3 elevace/zvýraznění
+     vynechaného sektoru přijde v dalším kroku. -->
+<div id="vdOtocka" hidden>
+  <button type="button" id="vdOtockaPlay" aria-label="Přehrát">▶</button>
+  <span id="vdOtockaLabel"></span>
+</div>
+<div id="vdOtockaVynechano" hidden></div>
+<!-- bot10 2026-09-25 (Robert: "ideálně tam vložit nějaké šipky" - malé ‹ ›
+     v horní liště mezi textem si jako šipky nevšiml): VELKÉ šipky přímo u
+     okrajů 3D pohledu, dost velké i na dotyk na mobilu (kontrolní scéna se
+     používá i z telefonu). Ovládají POUZE azimut (elevace zatím ↑↓/klávesy,
+     viz JS) - stejné jako klávesy ←/→ a tažení po scéně. -->
+<button type="button" id="vdOtockaArrowLeft" class="vd-otocka-arrow" aria-label="Předchozí úhel" hidden>‹</button>
+<button type="button" id="vdOtockaArrowRight" class="vd-otocka-arrow" aria-label="Další úhel" hidden>›</button>
+<div id="viewer"></div>
+<div id="status">Načítám…</div>
+<div id="paramBar" hidden></div>
+<button type="button" id="vzhledBtn" hidden aria-expanded="false" aria-controls="vzhledPanel">Vzhled nabídek</button>
+<div id="vzhledPanel" hidden role="dialog" aria-label="Vzhled online nabídek">
+  <h4>Vzhled online nabídek – platí pro všechny nabídky</h4>
+  <div id="vzhledEnv"></div>
+  <div id="vzhledImport">
+    <button type="button" id="vzhledImportBtn" aria-expanded="false" aria-controls="vzhledImportBox">+ Přidat HDRI ze Sdíleného disku…</button>
+    <div id="vzhledImportBox" hidden>
+      <div class="vzh-imp-row"><label for="vzhledImportSel">Soubor (.hdr)</label><select id="vzhledImportSel"></select></div>
+      <div class="vzh-imp-row"><label for="vzhledImportLabel">Název v seznamu</label><input type="text" id="vzhledImportLabel" maxlength="60" autocomplete="off"></div>
+      <div class="vzh-btns"><button type="button" id="vzhledImportGo">Přidat</button><button type="button" id="vzhledImportZrus">Zavřít</button></div>
+      <div class="vzh-st" id="vzhledImportSt" role="status"></div>
+      <div id="vzhledImportSeznam" role="group" aria-label="Doplněná HDRI"></div>
+    </div>
+  </div>
+  <div id="vzhledMat">
+    <h5>Materiály – sytost, barvy, lesk a AO</h5>
+    <div class="vzh-auto" id="vzhledAuto">Změny barev, lesku a AO se ukládají samy a platí pro všechny nabídky (podle původní barvy materiálu).</div>
+    <div class="vzh-st" id="vzhledAutoSt" role="status"></div>
+    <label class="vzh-sat"><span>Sytost barev</span><input type="range" id="vzhledSat" min="0" max="200" step="5" value="100" aria-label="Sytost barev materiálů"><b id="vzhledSatTxt">100 %</b></label>
+    <div id="vzhledPal" role="group" aria-label="Barvy materiálů v modelu"></div>
+    <details id="vzhledMimo" hidden><summary id="vzhledMimoSum"></summary><div id="vzhledMimoSeznam"></div></details>
+    <div id="vzhledLesk" role="group" aria-label="Hliník a celkové AO">
+      <h5>Hliník a celkové AO</h5>
+      <label class="vzh-sat"><span>Hliník – odlesky</span><input type="range" id="vzhledAluRefl" min="0" max="150" step="5" value="100" aria-label="Síla odlesků hliníku"><b id="vzhledAluReflTxt">100 %</b></label>
+      <label class="vzh-sat"><span>Hliník – matnost</span><input type="range" id="vzhledAluRough" min="50" max="200" step="5" value="100" aria-label="Matnost hliníku"><b id="vzhledAluRoughTxt">100 %</b></label>
+      <label class="vzh-sat"><span>Hliník – AO</span><input type="range" id="vzhledAluAo" min="0" max="200" step="5" value="100" aria-label="Síla AO na hliníkových profilech"><b id="vzhledAluAoTxt">100 %</b></label>
+      <label class="vzh-sat"><span>AO celkově – síla</span><input type="range" id="vzhledAoK" min="0" max="200" step="5" value="100" aria-label="Síla AO celé scény"><b id="vzhledAoKTxt">100 %</b></label>
+      <label class="vzh-sat"><span>AO celkově – dosah</span><input type="range" id="vzhledAoR" min="25" max="300" step="5" value="100" aria-label="Dosah AO celé scény"><b id="vzhledAoRTxt">100 %</b></label>
+    </div>
+    <div id="vzhledAoNote">AO po komponentech (posuvníky AO u barev a u hliníku) je zatím jen náhled: uloží se po nasazení serveru.</div>
+    <div class="vzh-mat-hint">Lesk a AO ostatních materiálů se nastavují posuvníky u každé barvy výše (lesk: 0 % = mat, 100 % = jako v modelu, 200 % = dvojnásobný; AO: 0 % = bez stínování v koutech, 100 % = jako ostatní, 200 % = dvojnásobné). Hliník: odlesky = síla odrazu prostředí, matnost = rozmazání odrazu, AO = stínování v koutech na hliníkových profilech (vždy jako násobek zvolené varianty hliníku / AO). AO se uplatní jen při zapnutém AO (levý horní roh 3D); „AO celkově“ platí pro celou scénu.</div>
+    <div class="vzh-mat-hint">Barva se mění podle původní barvy materiálu (stejná původní barva = stejná změna ve všech nabídkách). Hliník má vlastní volbu v levém horním rohu 3D; materiály podle role dílů (pro nově stavěné modely) zůstávají v administraci → Rendering → HDRi.</div>
+  </div>
+  <div class="vzh-info" id="vzhledInfo"></div>
+  <div class="vzh-btns"><button type="button" id="vzhledReset">Vrátit výchozí vzhled</button><button type="button" id="vzhledZavrit">Zavřít</button></div>
+  <div class="vzh-st" id="vzhledStav" role="status"></div>
+</div>
+<div id="hud" hidden>
+  <button id="prevBtn" aria-label="Předchozí">‹</button>
+  <span id="label"><span id="idxLabel" class="idx"></span><span id="nameLabel"></span></span>
+  <button id="nextBtn" aria-label="Další">›</button>
+  <button id="carBtn" aria-pressed="true" title="Zobrazit/skrýt karoserii vozu">Karoserie</button>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+<!-- bot10 2026-09-24 (Robert: "nechci to rozbité bílé", pravidlo 52): PMREM
+     prostredi pro hlinikove materialy (metalness bez env mapy nema co
+     odrazet, viz initViewer() nize) - RoomEnvironment misto skutecne HDRI
+     souboru zamerne: procedurally generovana, ZADNY sitovy fetch navic,
+     rychlejsi a spolehlivejsi nez stahovat .hdr (kontrolni scena ma zustat
+     rychla, neni to render-quality nastroj). -->
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/environments/RoomEnvironment.js"></script>
+<script>
+// bot8 2026-09-19 (Robert: "vytvoříme vedlejší scénu malou ořezanou mobil
+// úplně prázdnou, bude sloužit na kontrolu 3D modelů... stejný princip
+// jako je v online nabídce 3D, jednoduché prostředí"). Zámerně JEN prohlížeč
+// (žádné úpravy/ukládání) - bod: WORKFLOW.md pravidlo 48, geometrie se
+// Robertovi UŽ nesmí posílat jako screenshot/render do chatu, jen odkaz sem.
+//
+// URL: kontrola.html?items=cs:558,pa:554,pa:561
+//   cs:<id> = custom_shapes, pa:<id> = product_assemblies. Víc položek ->
+//   objeví se přepínač (prev/next), jedna položka -> žádný HUD navíc.
+
+(function () {
+  "use strict";
+
+  const statusEl = document.getElementById("status");
+  const hudEl = document.getElementById("hud");
+  const idxLabelEl = document.getElementById("idxLabel");
+  const nameLabelEl = document.getElementById("nameLabel");
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
+  const carBtn = document.getElementById("carBtn");
+  const viewerEl = document.getElementById("viewer");
+  const vdStranyEl = document.getElementById("vdStrany");
+  const vdStranyBtns = Array.from(vdStranyEl.querySelectorAll("button"));
+  const vdOtockaEl = document.getElementById("vdOtocka");
+  const vdOtockaLabelEl = document.getElementById("vdOtockaLabel");
+  const vdOtockaPrevBtn = document.getElementById("vdOtockaPrev");
+  const vdOtockaNextBtn = document.getElementById("vdOtockaNext");
+
+  function setStatus(text, isError) {
+    statusEl.textContent = text;
+    statusEl.classList.toggle("err", !!isError);
+    statusEl.hidden = !text;
+  }
+
+  const params = new URLSearchParams(location.search);
+  // bot4 2026-09-28 (Robert: "u HDRi přiřazovací tabulce musíš vykreslit
+  // celou sestavu... a zvýraznit materiál ve 3D modelu, který to je"):
+  // rezim=materialy = vlozeno jako iframe do prirazovaciho panelu v adminu
+  // (Sdileny disk > Rendering > HDRi). Bez otocky (volne otaceni), klik na
+  // dil = jaky je to material, rodic muze poslat postMessage se zvyraznenim.
+  const rezimMaterialy = params.get("rezim") === "materialy";
+  const zvyraznitParam = (params.get("zvyraznit") || "").trim() || null;
+  if (rezimMaterialy) document.body.classList.add("rezim-materialy");
+  if (params.get("rezim") === "param") { rezimParam(); return; }   // bot10 2026-10-05: parametricky komponent (bez ?items=)
+  const itemsRaw = (params.get("items") || "").trim();
+  if (!itemsRaw) {
+    setStatus("Chybí ?items= v odkazu (např. ?items=cs:558 nebo ?items=pa:554,pa:561).", true);
+    return;
+  }
+  // bot10 2026-09-24 (Robert: "v kontrolní scéně je všechno jen pro
+  // kontrolu... může se tam dávat cokoli co potřebuju"): treti typ
+  // `vd:<karta>` = Vandr karta (monoliticky GLB + razitka z DB) a
+  // `vd:<karta>:navrh` (resp. `vd:<karta>:<jmeno>`) = razitka z NAVRHU
+  // (soubor kontrola-navrhy/navrh_<karta|jmeno>.json), DB se nedotyka.
+  // bot10 2026-10-06: `vd:<a>+<b>+<c>` (rezim=nabidka) = SKUPINA karet stran jednoho vozu (leva + prava + prepazka) = slouceny model, jaky dostane zakaznik ve spolecne
+  // nabidce (GET /api/kontrola-scena/v3d/<a>+<b>+<c>.glb); '+' v query string se dekoduje jako mezera, proto se deli na plus i mezeru. it.id = prvni karta, it.ids = vsechny.
+  // bot10 2026-10-07 (Robert: "at se to negeneruje porad dokola, muze to byt propojene do generatoru stolu"): `mu:<adresa modelu>` (rezim=nabidka) = model zadany ADRESOU - okno Vzhled
+  // v generatoru stolu (iframe) ukaze presne ten GLB, ktery generator uz ma (/api/shop/configurator/glb/<token>), nic se nestavi na serveru; jina cesta se zahodi.
+  const MU_RE = /^\/api\/shop\/configurator\/glb\/[A-Za-z0-9._-]{8,3000}$/;
+  const items = itemsRaw.split(",").map(s => s.trim()).filter(Boolean).map(tok => {
+    const [type, idStr, extra] = tok.split(":");
+    if ((type || "").trim() === "mu") {
+      let url = ""; try { url = decodeURIComponent(String(idStr || "")); } catch (e) { /* neplatna adresa */ }
+      return { type: "mu", id: 0, ids: [0], extra: "", url: MU_RE.test(url) ? url : "" };
+    }
+    const ids = String(idStr || "").trim().split(/[+\s]+/).map(x => (/^\d{1,9}$/.test(x) ? parseInt(x, 10) : NaN));
+    return { type: (type || "").trim(), id: ids[0], ids: ids, extra: (extra || "").trim() };
+  }).filter(it => it.type === "mu" ? (params.get("rezim") === "nabidka" && !!it.url)
+                  : ((it.type === "cs" || it.type === "pa" || it.type === "vd") && it.ids.every(Number.isFinite)
+                     && (it.ids.length === 1 || (it.type === "vd" && params.get("rezim") === "nabidka" && it.ids.length <= 3 && new Set(it.ids).size === it.ids.length))));
+  if (!items.length) {
+    setStatus("Neplatný formát ?items= (očekávám cs:<id>, pa:<id> nebo vd:<karta>[:navrh], oddělené čárkou).", true);
+    return;
+  }
+
+  // bot10 2026-10-01 (Robert: 3D scena online nabidky; pravidlo 53 - kontrola
+  // vzdy v kontrolni scene): rezim=nabidka ukaze PRESNE to, co uvidi zakaznik
+  // v online nabidce - stejny prohlizec /js/v3d/viewer3d.js (+ /css/v3d.css)
+  // nad nahledovym GLB webapp/katalog/vandr/v3d_nahled/<karta>.glb (Vandr
+  // build + serverova pojistka v3d_glb.sanitize = zakaznicky soubor). Cesta
+  // /katalog/vandr/ je chranena (nginx -> staff /api/vandr-glb-file/).
+  // Od 2026-10-06 si model stavi server na pozadani (GET /api/kontrola-scena/v3d/<karta>.glb), soubor je jen zaloha (viz zdrojModelu).
+  // Vychozi rezim a rezim=materialy (iframe panelu bota4, render-panel.js)
+  // touto vetvi vubec neprochazeji - konci `return` driv, nez se z nich
+  // cokoli spusti; viewer3d.js, CSS2D a blur shadery se nacitaji jen tady.
+  if (params.get("rezim") === "nabidka") { rezimNabidka(items); return; }
+
+  function rezimNabidka(items) {
+    document.body.classList.add("rezim-nabidka");
+    if (params.get("embed") === "1") document.body.classList.add("embed");          // v iframe okna Vzhled v generatoru stolu
+    const topbarEl = document.getElementById("topbar");
+    document.getElementById("carBtn").hidden = true; // karoserie v nabidce neni
+    const CDN = "https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/";
+    // stejne ?v= jako nabidka-online.html (prvnich 10 znaku sha256 souboru)
+    const V3D_JS_URL = "/js/v3d/viewer3d.js?v=a965f06e73";
+    const V3D_CSS_URL = "/css/v3d.css?v=f244e9e21e";
+    const deps = [CDN + "renderers/CSS2DRenderer.js", CDN + "shaders/HorizontalBlurShader.js",
+                  CDN + "shaders/VerticalBlurShader.js", V3D_JS_URL];
+    const cssLoaded = new Promise((res) => {
+      const l = document.createElement("link");
+      l.rel = "stylesheet"; l.href = V3D_CSS_URL; l.onload = res; l.onerror = res;
+      document.head.appendChild(l);
+    });
+    const scriptsLoaded = deps.reduce((p, url) => p.then(() => new Promise((res, rej) => {
+      const s = document.createElement("script");
+      s.src = url; s.onload = res; s.onerror = () => rej(new Error("nenačteno " + url));
+      document.head.appendChild(s);
+    })), Promise.resolve());
+
+    let api = null, idx = 0, token = 0;
+    let jmeno = "", info = "", infoChyba = false;
+    // ---- Spolecna nabidka z vice karet (bot10 2026-10-06; Robert: "v jedne online nabidce nabidnout dohromady levou stranu, i pravou stranu i prepazku") ----
+    // U skupiny karet vd:<a>+<b>[+<c>] (stejny vuz, kazda jina strana) je v horni liste tlacitko, ktere po potvrzeni zalozi SPOLECNOU online nabidku:
+    // POST /api/admin/vandr-vyroba/nabidka-spolecna {karty:[...]} (docs/KONTRAKT_NABIDKA_3D.md 5g). Vsechny kontroly dela server (stejny vuz, kazda jina strana, ceny, 3D;
+    // bez 3D se nezaklada) - chyba = ceska veta ze serveru. Vysledek se drzi podle skupiny karet (po prepnuti tam a zpet je videt), odkaz jen ve tvaru /nabidka-online.html?t=...
+    const SPOL_URL = "/api/admin/vandr-vyroba/nabidka-spolecna";
+    const SPOL_MAX = 3;            // jako SPOLECNA_MAX v api/vandr_scene_offers.py
+    const spolStavy = {};          // "4965+4964" -> {text, ok, chyba, cislo, url}
+    let spolBezi = false;
+    const spolAkce = document.createElement("div");
+    spolAkce.id = "spolAkce";
+    const spolBtn = document.createElement("button");
+    spolBtn.type = "button"; spolBtn.id = "spolBtn"; spolBtn.textContent = "Vytvořit společnou nabídku";
+    const spolStav = document.createElement("span");
+    spolStav.id = "spolStav"; spolStav.setAttribute("role", "status");
+    // VYBER DALSI STRANY (Robert 2026-10-06: "nevidim moznost slouceni sestav do jedne nabidky"): select "+ pridat stranu" nabidne sourozenecke karty TEHOZ vozu (stejny nazev karty, jine umisteni v aute,
+    // hotovy GLB a cena) z /api/admin/vandr-vyroba/prehled (pravo dash_vandr_vyroba; bez nej se vyber neukaze). Volba prepise ?items= a nacte stranku znovu - slouceny model postavi server.
+    // Konecnou kontrolu (stejny vuz podle Vandr dat, kazda jina strana) dela server (ceska chyba pri nahledu i pri zalozeni nabidky).
+    const spolPridat = document.createElement("select");
+    spolPridat.id = "spolPridat"; spolPridat.hidden = true; spolPridat.setAttribute("aria-label", "Přidat další stranu vozu do společné nabídky");
+    let spolKarty = null, spolKartyP = null;
+    function spolNactiKarty() {        // jednou na stranku; chyba / 403 = prazdny seznam (vyber se neukaze)
+      if (spolKartyP) return spolKartyP;
+      spolKartyP = fetch("/api/admin/vandr-vyroba/prehled", { credentials: "same-origin", cache: "no-store" })
+        .then((r) => (r.ok ? r.json() : null))
+        .then((j) => { spolKarty = j && Array.isArray(j.kartas) ? j.kartas.filter((k) => k && Number.isInteger(k.shop_product_id) && k.glb && k.cena).map((k) => ({ id: k.shop_product_id, name: String(k.name || ""), kod: k.umisteni_kod || null, nazev: String(k.umisteni_nazev || ""), cena: Number.isFinite(k.cena_czk) ? k.cena_czk : null })) : []; return spolKarty; })
+        .catch(() => { spolKarty = []; return spolKarty; });
+      return spolKartyP;
+    }
+    function spolKandidati(item) {
+      if (!spolKarty || item.ids.length >= SPOL_MAX) return [];
+      const nyni = spolKarty.filter((k) => item.ids.includes(k.id));
+      if (!nyni.length || !nyni[0].name) return [];
+      const pouzita = new Set(nyni.map((k) => k.kod).filter(Boolean));
+      return spolKarty.filter((k) => !item.ids.includes(k.id) && k.name === nyni[0].name && k.kod && !pouzita.has(k.kod));       // karta bez umisteni v aute (kombinace / neurceno) se nenabizi: strana by se ukazala az chybou serveru
+    }
+    function spolVykresliVyber(item) {
+      const kand = spolKandidati(item);
+      spolPridat.textContent = "";
+      const o0 = document.createElement("option"); o0.value = ""; o0.textContent = item.ids.length > 1 ? "+ přidat další stranu…" : "+ přidat stranu (společná nabídka)…";
+      spolPridat.appendChild(o0);
+      for (const k of kand) { const o = document.createElement("option"); o.value = String(k.id); o.textContent = (k.nazev || "bez umístění") + " · #" + k.id + (k.cena != null ? " · " + Math.round(k.cena).toLocaleString("cs-CZ") + " Kč" : ""); spolPridat.appendChild(o); }
+      spolPridat.hidden = kand.length === 0 || spolBezi;
+    }
+    spolPridat.addEventListener("change", () => {
+      const nova = parseInt(spolPridat.value, 10), item = items[idx];
+      if (!Number.isInteger(nova) || !item || item.type !== "vd" || item.ids.includes(nova) || item.ids.length >= SPOL_MAX) { spolPridat.value = ""; return; }
+      const tok = items.map((it, i) => it.type + ":" + (i === idx ? it.ids.concat([nova]) : it.ids).join("+") + (it.extra ? ":" + it.extra : "")).join(",");
+      const q = new URLSearchParams(location.search); q.set("items", tok);
+      location.search = "?" + q.toString().replace(/%3A/g, ":").replace(/%2C/g, ",");
+    });
+    spolAkce.appendChild(spolBtn); spolAkce.appendChild(spolPridat); spolAkce.appendChild(spolStav);
+    function spolVykresli(item) {
+      const st = spolStavy[item.ids.join("+")] || {};
+      spolBtn.disabled = spolBezi;
+      spolBtn.hidden = item.ids.length < 2;
+      spolVykresliVyber(item);
+      if (spolKarty === null) spolNactiKarty().then(() => { if (items[idx] === item) { spolVykresliVyber(item); rozvrh(); } });
+      spolStav.textContent = "";
+      spolStav.className = st.chyba ? "err" : (st.ok ? "ok" : "");
+      if (st.text) spolStav.appendChild(document.createTextNode(st.text));
+      if (st.url) {
+        spolStav.appendChild(document.createTextNode(" "));
+        const a = document.createElement("a");
+        a.href = st.url; a.target = "_blank"; a.rel = "noopener"; a.textContent = "Otevřít nabídku";
+        spolStav.appendChild(a);
+      }
+    }
+    async function spolVytvor() {
+      const item = items[idx];
+      if (spolBezi || !item || item.type !== "vd" || item.ids.length < 2) return;
+      const klic = item.ids.join("+");
+      const predchozi = spolStavy[klic];
+      const otazka = (predchozi && predchozi.ok ? "Z těchto karet už na této stránce vznikla nabídka č. " + predchozi.cislo + ". Vytvořit další?\n\n" : "")
+        + "Vytvořit společnou online nabídku z karet " + item.ids.join(" + ") + "?\nVznikne hned (stavba 3D modelu trvá až minutu) a půjde otevřít přes odkaz.";
+      if (!window.confirm(otazka)) return;
+      spolBezi = true;
+      spolStavy[klic] = { text: "Vytvářím nabídku… (až minuta, staví se 3D model)" };
+      popisek();
+      try {
+        const r = await fetch(SPOL_URL, { method: "POST", credentials: "same-origin", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ karty: item.ids }) });
+        let j = null; try { j = await r.json(); } catch (e) { /* bez tela */ }
+        if (!r.ok) throw new Error((j && typeof j.error === "string" && j.error) || (r.status === 401 || r.status === 403 ? "Nemáš oprávnění vytvářet nabídky." : "HTTP " + r.status));
+        const url = j && typeof j.online_url === "string" && /^\/nabidka-online\.html\?t=[A-Za-z0-9_-]{8,200}$/.test(j.online_url) ? j.online_url : null;
+        const cislo = j && j.offer_number != null ? String(j.offer_number) : "?";
+        const cena = j && Number.isFinite(j.cena_celkem) ? " · součet cen karet " + Math.round(j.cena_celkem).toLocaleString("cs-CZ") + " Kč" : "";
+        const bez3d = !!(j && j.v3d === false);
+        spolStavy[klic] = { ok: true, chyba: bez3d, cislo, url, text: "Hotovo: nabídka č. " + cislo + cena + (bez3d ? " · POZOR: vznikla BEZ 3D (" + String(j.v3d_duvod || "důvod neznámý") + ")" : "") + (url ? "" : " (odkaz se nepodařilo přečíst)") };
+      } catch (e) {
+        spolStavy[klic] = { chyba: true, text: "Nabídka nevznikla: " + (e instanceof TypeError ? "spojení se serverem selhalo." : (e && e.message ? e.message : String(e))) };
+      } finally { spolBezi = false; }
+      if (items[idx]) popisek();
+    }
+    spolBtn.addEventListener("click", spolVytvor);
+    // prohlizec mezi horni popisek a spodni prepinac (vyska popisku se meni)
+    function rozvrh() {
+      document.body.style.setProperty("--nab-top", Math.ceil(topbarEl.getBoundingClientRect().bottom) + "px");
+      document.body.style.setProperty("--nab-bottom", (hudEl.hidden ? 0 : Math.ceil(hudEl.getBoundingClientRect().height)) + "px");
+    }
+    function popisek() {
+      const item = items[idx];
+      topbarEl.textContent = "";
+      const b = document.createElement("b");
+      b.textContent = "Náhled 3D nabídky · " + (item.type === "vd" ? (item.ids.length > 1 ? "karty " + item.ids.join(" + ") : "karta " + item.id) : item.type === "mu" ? "model z generátoru stolu" : item.type + ":" + item.id) + (jmeno ? " · " + jmeno : "");
+      topbarEl.appendChild(b);
+      if (info) {
+        topbarEl.appendChild(document.createElement("br"));
+        const s = document.createElement("span");
+        s.textContent = info;
+        s.style.color = infoChyba ? "#a33" : "";
+        s.style.opacity = infoChyba ? "1" : ".75";
+        topbarEl.appendChild(s);
+      }
+      if (item.type === "vd") { spolVykresli(item); topbarEl.appendChild(spolAkce); }     // Vandr karta: vyber dalsi strany; skupina karet navic tlacitko Vytvorit spolecnou nabidku
+      rozvrh();
+    }
+    function prepinac() {
+      if (items.length <= 1) hudEl.hidden = true;
+      else {
+        hudEl.hidden = false;
+        prevBtn.disabled = idx === 0;
+        nextBtn.disabled = idx === items.length - 1;
+        idxLabelEl.textContent = (idx + 1) + " / " + items.length;
+        nameLabelEl.textContent = items[idx].type + ":" + items[idx].ids.join("+");
+      }
+      rozvrh();
+    }
+    function ukaz(i) {
+      idx = i;
+      const my = ++token;
+      if (api) { vzhledZapamatuj(api); try { api.dispose(); } catch (e) { /* uz uklizeno */ } api = null; }
+      const item = items[i];
+      vzhledBtn.hidden = item.type !== "vd" && item.type !== "mu";          // okno Vzhled nabidek u Vandr karet a u modelu zadaneho adresou (generator stolu); nativni polozky zatim nemaji 3D nabidky
+      if (vzhledBtn.hidden && !vzhledPanel.hidden) vzhledOtevri(false);
+      jmeno = ""; info = ""; infoChyba = false;
+      prepinac();
+      if (item.type === "mu") {                                  // model zadany adresou (okno Vzhled v generatoru stolu): bez stavby serverem, bez jmena karty a bez spolecne nabidky
+        setStatus("");
+        info = "Model z generátoru stolu (stejný soubor jako ve 3D náhledu); vzhled platí pro všechny online nabídky.";
+        popisek();
+        spustModel(item, { url: item.url, zdroj: "url" }, my);
+        return;
+      }
+      if (item.type !== "vd") {
+        popisek();
+        setStatus("Režim nabídka zatím umí jen Vandr karty (vd:<karta>). Nativní sestavy (pa:, cs:) přibudou s exportem nabídky ze scény.", true);
+        return;
+      }
+      setStatus("");
+      info = "Stavím 3D model s pohyby (poprvé kolem 10 s, pak z cache)…";
+      popisek();
+      // jmeno karty jen do popisku (kdyz neprijde, nevadi)
+      fetch("/api/kontrola-scena/vd/" + item.id).then(r => (r.ok ? r.json() : null)).then(d => {
+        if (my === token && d && d.product && d.product.name) { jmeno = String(d.product.name) + (item.ids.length > 1 ? " (+" + (item.ids.length - 1) + " další)" : ""); popisek(); }
+      }).catch(() => { /* jen popisek */ });
+      zdrojModelu(item.ids.join("+")).then((z) => {
+        if (my !== token) return;                      // mezitim se prepnulo na jinou polozku
+        if (z.chyba) {
+          info = ""; popisek();
+          setStatus("Model " + (item.ids.length > 1 ? "karet " + item.ids.join(" + ") : "karty " + item.id) + ": " + z.chyba, true);
+          return;
+        }
+        spustModel(item, z, my);
+      });
+    }
+    // bot10 2026-10-06 (Robert: "automatizovat proces bez zasahu rucne botem na kazdou FBX vyexportovanou sestavu"): model s pohyby si kontrolni
+    // scena nechava POSTAVIT serverem (GET /api/kontrola-scena/v3d/<karta>.glb: stejny build + cache + pojistka jako pri zalozeni nabidky, jen
+    // zamestnanci). Hotovy soubor katalog/vandr/v3d_nahled/<karta>.glb (7 rucne udelanych karet) je jen ZALOHA, dokud API tu trasu nema (nasazeni
+    // 0:00 / 12:30): trasa chybi = server vrati HTML 404 -> soubor. Chyba trasy (JSON {error}, napr. kdyz build selze) se ukaze NAHLAS a na soubor
+    // se NEpada: kontrola nesmi tise ukazat jiny model, nez uvidi zakaznik. Uz vznikle modely se drzi v pameti stranky (prepinani sem a zpet je hned).
+    const modelCache = new Map();
+
+    // ---- Vzhled online nabidek (bot10 2026-10-06; Robert: "potrebuju upravovat materialy v online nabidce a hdri, tzn v kontrolni scene") ----
+    // HDRI (V3D.envPicker) + povrch hliniku + AO (HUD prohlizece) se ulozi tlacitkem "Ulozit vzhled pro nabidky" pro VSECHNY online nabidky: PUT /api/admin/v3d-vzhled
+    // (jen admin, nastaveni/upravit), cte ho stranka nabidky (GET /api/public/v3d-vzhled) a preda prohlizeci. Vzhled je volba prohlizece, ne soucast modelu, takze plati
+    // i pro uz vytvorene nabidky. Priorita pri mountu: rozdelane zmeny z teto stranky > ulozene pro nabidky > posledni volba z HUD (localStorage) > vychozi.
+    // Materialy dilu podle role (barva boxu, desek) se meni v panelu Rendering > HDRi (plati pro nove stavene modely).
+    const vzhledPanel = document.getElementById("vzhledPanel"), vzhledBtn = document.getElementById("vzhledBtn"), vzhledStav = document.getElementById("vzhledStav");
+    let vzhledNoveApi = false, vzhledApiAoMat = false, vzhledExtra = [], vzhledUlozeny = { env: null, alu: null, ao: null, sat: null, barvy: null, lesk: null, ao_mat: null, alu_cfg: null, ao_cfg: null }, vzhledRozdelany = null, vzhledPickerObj = null, vzhledTimer = 0, envPickerPromise = null;
+    let vzhledAutoTimer = 0, vzhledAutoDirty = false, vzhledAutoChain = Promise.resolve();
+    const VZHLED_AUTO_MS = 900;          // ukladani na pozadi: tolik ms po posledni zmene (zmeny v rychlem sledu se spoji do jednoho ulozeni)
+    const VZHLED_ENV_PICKER_URL = "/js/v3d/env-picker.js?v=04214b179a";
+    let vzhledOtevritSamo = /[?&]vzhled=1(?:&|$)/.test(location.search);         // odkaz "Vzhled online nabidek..." z karty Vandr: okno se po nacteni modelu otevre samo (jednou)
+    function vzhledNacti() {          // nikdy nevyhodi: bez API (pred nasazenim) nebo pri chybe plati vychozi
+      const ctrl = window.AbortController ? new AbortController() : null;
+      const t = setTimeout(() => { if (ctrl) ctrl.abort(); }, 4000);
+      return fetch("/api/public/v3d-vzhled", { credentials: "same-origin", cache: "no-store", signal: ctrl ? ctrl.signal : undefined })
+        .then((r) => (r.ok && /json/.test(r.headers.get("content-type") || "") ? r.json() : null))
+        .then((j) => { if (j && typeof j === "object") { vzhledUlozeny = vzhledZeServeru(j); vzhledApiProbe(j); vzhledExtra = Array.isArray(j.hdri_extra) ? j.hdri_extra : []; } })
+        .catch(() => { /* vychozi */ })
+        .then(() => clearTimeout(t));
+    }
+    function vzhledApiProbe(j) {     // server zna odlesky / AO / HDRI ze Sdileneho disku (nove klice lesk + hdri_extra v odpovedi)? Do nasazeni API se ta cast okna schova a PUT nese jen stara pole
+      vzhledNoveApi = !!(j && typeof j === "object" && "lesk" in j && "hdri_extra" in j);
+      vzhledPanel.classList.toggle("nove-api", vzhledNoveApi);
+      vzhledApiAoMat = vzhledNoveApi && "ao_mat" in j;      // server uklada i AO po komponentech (ao_mat, alu_cfg.ao); jinak je to jen nahled a PUT tyto klice nenese (stary server by je odmitl 400)
+      vzhledPanel.classList.toggle("ao-mat-api", vzhledApiAoMat);
+    }
+    function vzhledPripojExtra() {   // HDRI doplnena ze Sdileneho disku: do knihovny vieweru PRED mountem (jinak by se envConfig s jejich klicem zahodil)
+      try { if (vzhledExtra.length && window.V3D && typeof window.V3D.addEnvLibrary === "function") window.V3D.addEnvLibrary(vzhledExtra); } catch (e) { /* plati vestavena HDRI */ }
+    }
+    function vzhledZeServeru(j) {     // odpoved serveru {env, alu, ao, sat, barvy, lesk, alu_cfg, ao_cfg} -> vzhledUlozeny
+      const obj = (x) => (x && typeof x === "object" && !Array.isArray(x)) ? x : null;
+      return { env: (j && j.env) || null, alu: (j && j.alu) || null, ao: (j && j.ao) || null, sat: (j && typeof j.sat === "number") ? j.sat : null, barvy: obj(j && j.barvy),
+        lesk: obj(j && j.lesk), ao_mat: obj(j && j.ao_mat), alu_cfg: obj(j && j.alu_cfg), ao_cfg: obj(j && j.ao_cfg) };
+    }
+    function vzhledOpts() {
+      const d = vzhledRozdelany || vzhledUlozeny, o = {};
+      const env = (vzhledRozdelany && vzhledRozdelany.env) || vzhledUlozeny.env;
+      if (env) o.envConfig = env;
+      if (d.alu || vzhledUlozeny.alu) o.aluVariant = d.alu || vzhledUlozeny.alu;
+      if (d.ao || vzhledUlozeny.ao) o.aoVariant = d.ao || vzhledUlozeny.ao;
+      const mat = vzhledRozdelany ? vzhledRozdelany.mat : ((vzhledUlozeny.sat != null || vzhledUlozeny.barvy || vzhledUlozeny.lesk || vzhledUlozeny.ao_mat) ? { sat: vzhledUlozeny.sat != null ? vzhledUlozeny.sat : 1, colors: vzhledUlozeny.barvy || {}, gloss: vzhledUlozeny.lesk || {}, ao: vzhledUlozeny.ao_mat || {} } : null);
+      if (mat) o.matConfig = mat;                  // sytost, barvy a lesk materialu (rozdelane zmeny > ulozene)
+      const ac = vzhledRozdelany ? vzhledRozdelany.aluCfg : vzhledUlozeny.alu_cfg, oc = vzhledRozdelany ? vzhledRozdelany.aoCfg : vzhledUlozeny.ao_cfg;
+      if (ac) o.aluConfig = ac;                    // odlesky a matnost hliniku
+      if (oc) o.aoConfig = oc;                     // sila a dosah AO
+      return o;
+    }
+    function vzhledZapamatuj(v) {
+      try { const st = v.state(); vzhledRozdelany = { env: v.getEnvConfig(), alu: st.alu, ao: st.ao, mat: v.getMatConfig(), aluCfg: v.getAluConfig && v.getAluConfig(), aoCfg: v.getAoConfig && v.getAoConfig() }; } catch (e) { /* prohlizec uz neni */ }
+    }
+    const popisku = (seznam, klic) => { const x = (seznam || []).find((v) => v.key === klic); return x ? x.label : klic; };
+    function vzhledPopis(vz) {
+      if (!vz || (!vz.env && !vz.alu && !vz.ao && vz.sat == null && !vz.barvy && !vz.lesk && !vz.ao_mat && !vz.alu_cfg && !vz.ao_cfg)) return "výchozí vzhled";
+      const e = vz.env ? "HDRI " + popisku(window.V3D.envLibrary, vz.env.hdri) + ", síla " + fmtCz(vz.env.strength) + ", natočení " + Math.round(vz.env.rot_deg) + "°, světlo shora " + fmtCz(vz.env.hemi) : "HDRI výchozí";
+      return e + " · hliník " + (vz.alu ? popisku(window.V3D.aluVariants, vz.alu) : "výchozí") + " · AO " + (vz.ao ? popisku(window.V3D.aoVariants, vz.ao) : "výchozí")
+        + " · sytost " + (vz.sat != null ? Math.round(vz.sat * 100) + " %" : "výchozí") + " · změněných barev " + (vz.barvy ? Object.keys(vz.barvy).length : 0)
+        + (vz.lesk ? " · lesk materiálů: " + Object.keys(vz.lesk).length + " změn" : "")
+        + (vz.ao_mat ? " · AO materiálů: " + Object.keys(vz.ao_mat).length + " změn" : "")
+        + (vz.alu_cfg ? " · hliník odlesky " + Math.round(vz.alu_cfg.refl * 100) + " %, matnost " + Math.round(vz.alu_cfg.rough * 100) + " %" + (vz.alu_cfg.ao != null && vz.alu_cfg.ao !== 1 ? ", AO " + Math.round(vz.alu_cfg.ao * 100) + " %" : "") : "")
+        + (vz.ao_cfg ? " · AO síla " + Math.round(vz.ao_cfg.k * 100) + " %, dosah " + Math.round(vz.ao_cfg.r * 100) + " %" : "");
+    }
+    const fmtCz = (n) => String(Math.round(n * 100) / 100).replace(".", ",");
+    function vzhledObnovInfo() {
+      let ted = "";
+      if (api) { try { const st = api.state(); ted = "Právě nastaveno v náhledu: hliník " + popisku(window.V3D.aluVariants, st.alu) + " · AO " + popisku(window.V3D.aoVariants, st.ao) + " (hliník a AO se mění v levém horním rohu 3D, HDRI tady)."; } catch (e) { /* bez prohlizece */ } }
+      document.getElementById("vzhledInfo").textContent = "Uloženo pro nabídky: " + vzhledPopis(vzhledUlozeny) + (ted ? "\n" + ted : "");
+      if (api) { try { const vyp = api.state().ao === "vyp"; vzhledAoK.disabled = vyp; vzhledAoR.disabled = vyp; vzhledAoK.title = vzhledAoR.title = vzhledAluAo.title = vyp ? "AO je vypnuté – zapni ho v levém horním rohu 3D" : ""; vzhledAluAo.disabled = vyp; vzhledPal.querySelectorAll("[data-ao]").forEach((x) => { x.disabled = vyp; if (vyp) x.title = "AO je vypnuté – zapni ho v levém horním rohu 3D"; }); } catch (e) { /* bez prohlizece */ } }
+    }
+    function vzhledHlaska(text, cls) { vzhledStav.textContent = text || ""; vzhledStav.className = "vzh-st" + (cls ? " " + cls : ""); }
+    function vzhledUloz(telo, moznosti) {     // telo = {env, alu, ao, ...} | null (vychozi); vraci Promise, pri chybe vyhodi Error s ceskou vetou ze serveru; moznosti.keepalive = ulozeni pri zavirani stranky
+      return fetch("/api/admin/v3d-vzhled", { method: "PUT", credentials: "same-origin", headers: { "Content-Type": "application/json" }, body: JSON.stringify(telo), keepalive: !!(moznosti && moznosti.keepalive) })
+        .then(async (r) => {
+          let j = null; try { j = await r.json(); } catch (e) { /* bez tela */ }
+          if (!r.ok) throw new Error((j && j.error) || (r.status === 401 || r.status === 403 ? "Nemáš oprávnění ukládat vzhled nabídek." : "HTTP " + r.status));
+          vzhledUlozeny = vzhledZeServeru(j);
+          vzhledObnovInfo();
+          return j;
+        });
+    }
+    // ---- ukladani vzhledu pro VSECHNY nabidky: tlacitko "Ulozit vzhled pro nabidky" (HDRI + vse) a AUTOMATICKE ukladani barev, lesku, AO a hliniku z tohoto okna (Robert 2026-10-07:
+    // "upravy barev a lesku chci aby se ulozily i pro ostatni dalsi nabidky"). Ukladani na pozadi nemeni HDRI ani volbu hliniku / AO z HUD (zustane ulozena hodnota, nahled HDRI se tak nepusti ven).
+    function vzhledTelo(v, vse, envCfg) {          // vse = true: i HDRI a volby hliniku / AO z HUD (tlacitko Ulozit); jinak jen materialy
+      const st = v.state(), m = v.getMatConfig(), ac = v.getAluConfig(), oc = v.getAoConfig(), U = vzhledUlozeny;
+      const telo = { env: vse ? envCfg : U.env, alu: vse ? st.alu : U.alu, ao: vse ? st.ao : U.ao, sat: m.sat === 1 ? null : m.sat, barvy: Object.keys(m.colors).length ? m.colors : null };
+      if (vzhledNoveApi) {                           // stary server nove klice odmitne (400)
+        const aluAo = vzhledApiAoMat ? ac.ao : 1;
+        Object.assign(telo, { lesk: Object.keys(m.gloss).length ? m.gloss : null, alu_cfg: (ac.refl === 1 && ac.rough === 1 && aluAo === 1) ? null : (vzhledApiAoMat ? ac : { refl: ac.refl, rough: ac.rough }), ao_cfg: (oc.k === 1 && oc.r === 1) ? null : oc });
+        if (vzhledApiAoMat) telo.ao_mat = Object.keys(m.ao || {}).length ? m.ao : null;
+      }
+      return telo;
+    }
+    function vzhledVRade(fn) {        // ukladani na server jde po jednom (ukladani na pozadi a tlacitko Ulozit se nepredbihaji)
+      const p = vzhledAutoChain.then(fn);
+      vzhledAutoChain = p.catch(() => {});
+      return p;
+    }
+    const casCz = () => new Date().toLocaleTimeString("cs-CZ");
+    function vzhledAutoHlaska(text, cls) { vzhledAutoSt.textContent = text || ""; vzhledAutoSt.className = "vzh-st" + (cls ? " " + cls : ""); }
+    function vzhledAutoPlan() {       // po kazde zmene barvy / lesku / AO / hliniku: za chvilku ulozit pro vsechny nabidky
+      vzhledAutoDirty = true;
+      clearTimeout(vzhledAutoTimer);
+      vzhledAutoHlaska("Změny se uloží za chvilku…", "");
+      vzhledAutoTimer = setTimeout(() => vzhledAutoUloz(false), VZHLED_AUTO_MS);
+    }
+    function vzhledAutoUloz(naKonci) {
+      clearTimeout(vzhledAutoTimer);
+      if (!vzhledAutoDirty) return vzhledAutoChain;
+      if (!api) { vzhledAutoTimer = setTimeout(() => vzhledAutoUloz(false), 400); return vzhledAutoChain; }      // prohlizec se prave vymenuje (prepnuti polozky): zkusi se znovu
+      vzhledAutoDirty = false;
+      return vzhledVRade(() => {
+        const v = api;
+        if (!v) { vzhledAutoDirty = true; vzhledAutoTimer = setTimeout(() => vzhledAutoUloz(false), 400); return null; }
+        vzhledAutoHlaska("Ukládám…", "");
+        return vzhledUloz(vzhledTelo(v, false), { keepalive: !!naKonci })
+          .then(() => { if (!vzhledAutoDirty) vzhledAutoHlaska("Uloženo pro všechny nabídky (" + casCz() + ").", "ok"); })
+          .catch((e) => { vzhledAutoDirty = true; vzhledAutoHlaska("Neuloženo: " + ((e && e.message) || e), "err"); });
+      });
+    }
+    window.addEventListener("pagehide", () => { if (vzhledAutoDirty && api) vzhledAutoUloz(true); });
+    document.addEventListener("visibilitychange", () => { if (document.visibilityState === "hidden" && vzhledAutoDirty && api) vzhledAutoUloz(true); });
+    // ---- sytost a barvy materialu (viewer 1.12.0: setMatConfig / getMatConfig / materialPalette): zivy nahled, ulozi se samo (viz vyse) i tlacitkem "Ulozit vzhled pro nabidky"
+    const vzhledSat = document.getElementById("vzhledSat"), vzhledSatTxt = document.getElementById("vzhledSatTxt"), vzhledPal = document.getElementById("vzhledPal");
+    const vzhledAutoSt = document.getElementById("vzhledAutoSt"), vzhledAluAo = document.getElementById("vzhledAluAo"), vzhledMimo = document.getElementById("vzhledMimo"), vzhledMimoSum = document.getElementById("vzhledMimoSum"), vzhledMimoSeznam = document.getElementById("vzhledMimoSeznam");
+    const vzhledAluRefl = document.getElementById("vzhledAluRefl"), vzhledAluRough = document.getElementById("vzhledAluRough"), vzhledAoK = document.getElementById("vzhledAoK"), vzhledAoR = document.getElementById("vzhledAoR");
+    function vzhledMatNastav(upravit) {          // upravit(cfg) zmeni kopii konfigurace materialu, ta se preda prohlizeci
+      if (!api) return;
+      const c = api.getMatConfig();
+      upravit(c);
+      api.setMatConfig(c);
+      vzhledObnovInfo();
+      vzhledAutoPlan();
+    }
+    function vzhledMatKresli() {
+      vzhledPal.textContent = "";
+      if (!api || typeof api.getMatConfig !== "function") return;
+      const c = api.getMatConfig();
+      vzhledSat.value = String(Math.round(c.sat * 100));
+      vzhledSatTxt.textContent = Math.round(c.sat * 100) + " %";
+      const nast = (inp, txt, v) => { inp.value = String(Math.round(v * 100)); document.getElementById(txt).textContent = Math.round(v * 100) + " %"; };
+      if (typeof api.getAluConfig === "function") { const a = api.getAluConfig(), o = api.getAoConfig(); nast(vzhledAluRefl, "vzhledAluReflTxt", a.refl); nast(vzhledAluRough, "vzhledAluRoughTxt", a.rough); nast(vzhledAluAo, "vzhledAluAoTxt", a.ao != null ? a.ao : 1); nast(vzhledAoK, "vzhledAoKTxt", o.k); nast(vzhledAoR, "vzhledAoRTxt", o.r); }
+      const paleta = api.materialPalette();
+      paleta.slice(0, 16).forEach((p) => {
+        const row = document.createElement("div"); row.className = "vzh-sw";
+        const inp = document.createElement("input"); inp.type = "color"; inp.value = c.colors[p.hex] || p.hex; inp.setAttribute("data-hex", p.hex); inp.setAttribute("aria-label", "Barva materiálu " + p.hex);
+        const txt = document.createElement("span"); txt.className = "vzh-sw__t"; txt.textContent = p.hex + (p.count > 1 ? " · " + p.count + " mat." : "");
+        const rst = document.createElement("button"); rst.type = "button"; rst.className = "vzh-sw__r"; rst.textContent = "↺"; rst.title = "Vrátit původní barvu"; rst.setAttribute("aria-label", "Vrátit původní barvu " + p.hex); rst.hidden = !c.colors[p.hex];
+        inp.addEventListener("input", () => {
+          const v = inp.value.toLowerCase();
+          vzhledMatNastav((cfg) => { if (v === p.hex) delete cfg.colors[p.hex]; else cfg.colors[p.hex] = v; });
+          rst.hidden = v === p.hex;
+        });
+        rst.addEventListener("click", () => { inp.value = p.hex; vzhledMatNastav((cfg) => { delete cfg.colors[p.hex]; }); rst.hidden = true; });
+        row.appendChild(inp); row.appendChild(txt); row.appendChild(rst);
+        const gl = document.createElement("label"); gl.className = "vzh-gl";
+        const glS = document.createElement("span"); glS.textContent = "Lesk";
+        const glIn = document.createElement("input"); glIn.type = "range"; glIn.min = "0"; glIn.max = "200"; glIn.step = "5"; glIn.value = String(Math.round((c.gloss && c.gloss[p.hex] != null ? c.gloss[p.hex] : 1) * 100));
+        glIn.setAttribute("data-gloss", p.hex); glIn.setAttribute("aria-label", "Lesk materiálu " + p.hex);
+        const glT = document.createElement("b"); glT.textContent = glIn.value + " %";
+        const glR = document.createElement("button"); glR.type = "button"; glR.className = "vzh-gl__r"; glR.textContent = "↺"; glR.title = "Vrátit původní lesk"; glR.setAttribute("aria-label", "Vrátit původní lesk " + p.hex); glR.hidden = glIn.value === "100";
+        glIn.addEventListener("input", () => {
+          const v = (+glIn.value) / 100;
+          glT.textContent = glIn.value + " %"; glR.hidden = v === 1;
+          vzhledMatNastav((cfg) => { cfg.gloss = cfg.gloss || {}; if (v === 1) delete cfg.gloss[p.hex]; else cfg.gloss[p.hex] = v; });
+        });
+        glR.addEventListener("click", () => { glIn.value = "100"; glT.textContent = "100 %"; glR.hidden = true; vzhledMatNastav((cfg) => { if (cfg.gloss) delete cfg.gloss[p.hex]; }); });
+        gl.appendChild(glS); gl.appendChild(glIn); gl.appendChild(glT); gl.appendChild(glR); row.appendChild(gl);
+        const ao = document.createElement("label"); ao.className = "vzh-gl vzh-gl--ao";          // AO po komponentech: sila AO na dilech teto barvy (viewer 1.16.0 matConfig.ao)
+        const aoS = document.createElement("span"); aoS.textContent = "AO";
+        const aoIn = document.createElement("input"); aoIn.type = "range"; aoIn.min = "0"; aoIn.max = "200"; aoIn.step = "5"; aoIn.value = String(Math.round((c.ao && c.ao[p.hex] != null ? c.ao[p.hex] : 1) * 100));
+        aoIn.setAttribute("data-ao", p.hex); aoIn.setAttribute("aria-label", "AO na dílech barvy " + p.hex); aoIn.title = "Síla AO (stínování v koutech) na dílech této barvy: 0 % = bez AO, 100 % = jako ostatní, 200 % = dvojnásobná";
+        const aoT = document.createElement("b"); aoT.textContent = aoIn.value + " %";
+        const aoR = document.createElement("button"); aoR.type = "button"; aoR.className = "vzh-gl__r"; aoR.textContent = "↺"; aoR.title = "Vrátit původní AO"; aoR.setAttribute("aria-label", "Vrátit původní AO " + p.hex); aoR.hidden = aoIn.value === "100";
+        aoIn.addEventListener("input", () => {
+          const v = (+aoIn.value) / 100;
+          aoT.textContent = aoIn.value + " %"; aoR.hidden = v === 1;
+          vzhledMatNastav((cfg) => { cfg.ao = cfg.ao || {}; if (v === 1) delete cfg.ao[p.hex]; else cfg.ao[p.hex] = v; });
+        });
+        aoR.addEventListener("click", () => { aoIn.value = "100"; aoT.textContent = "100 %"; aoR.hidden = true; vzhledMatNastav((cfg) => { if (cfg.ao) delete cfg.ao[p.hex]; }); });
+        ao.appendChild(aoS); ao.appendChild(aoIn); ao.appendChild(aoT); ao.appendChild(aoR); row.appendChild(ao);
+        vzhledPal.appendChild(row);
+      });
+      vzhledMimoKresli(c, new Set(paleta.map((p) => p.hex)));
+    }
+    function vzhledMimoKresli(c, vScene) {     // ulozene upravy barev, ktere v teto scene nejsou (platí pro nabidky, kde ty barvy jsou): videt a jde je zrusit
+      const hexy = Array.from(new Set([].concat(Object.keys(c.colors || {}), Object.keys(c.gloss || {}), Object.keys(c.ao || {})))).filter((h) => !vScene.has(h)).sort();
+      vzhledMimoSeznam.textContent = "";
+      vzhledMimo.hidden = !hexy.length;
+      if (!hexy.length) return;
+      vzhledMimoSum.textContent = "Uloženo i pro barvy, které v této scéně nejsou (" + hexy.length + ")";
+      hexy.forEach((h) => {
+        const row = document.createElement("div"); row.className = "vzh-mimo-it";
+        const sw = document.createElement("i"); sw.style.background = (c.colors && c.colors[h]) || h;
+        const dily = [];
+        if (c.colors && c.colors[h]) dily.push("barva " + h + " → " + c.colors[h]);
+        if (c.gloss && c.gloss[h] != null) dily.push("lesk " + Math.round(c.gloss[h] * 100) + " %");
+        if (c.ao && c.ao[h] != null) dily.push("AO " + Math.round(c.ao[h] * 100) + " %");
+        const t = document.createElement("span"); t.textContent = (c.colors && c.colors[h] ? "" : h + ": ") + dily.join(", ");
+        const b = document.createElement("button"); b.type = "button"; b.textContent = "Zrušit"; b.setAttribute("data-mimo", h); b.setAttribute("aria-label", "Zrušit uložené úpravy barvy " + h);
+        b.addEventListener("click", () => { vzhledMatNastav((cfg) => { delete cfg.colors[h]; if (cfg.gloss) delete cfg.gloss[h]; if (cfg.ao) delete cfg.ao[h]; }); vzhledMatKresli(); });
+        row.appendChild(sw); row.appendChild(t); row.appendChild(b); vzhledMimoSeznam.appendChild(row);
+      });
+    }
+    vzhledSat.addEventListener("input", () => { vzhledSatTxt.textContent = vzhledSat.value + " %"; vzhledMatNastav((cfg) => { cfg.sat = (+vzhledSat.value) / 100; }); });
+    function vzhledAluNastav() {     // odlesky a matnost hliniku: posuvniky -> prohlizec
+      document.getElementById("vzhledAluReflTxt").textContent = vzhledAluRefl.value + " %"; document.getElementById("vzhledAluRoughTxt").textContent = vzhledAluRough.value + " %";
+      document.getElementById("vzhledAluAoTxt").textContent = vzhledAluAo.value + " %";
+      if (api && typeof api.setAluConfig === "function") api.setAluConfig({ refl: (+vzhledAluRefl.value) / 100, rough: (+vzhledAluRough.value) / 100, ao: (+vzhledAluAo.value) / 100 });
+      vzhledObnovInfo();
+      vzhledAutoPlan();
+    }
+    function vzhledAoNastav() {      // sila a dosah AO: posuvniky -> prohlizec
+      document.getElementById("vzhledAoKTxt").textContent = vzhledAoK.value + " %"; document.getElementById("vzhledAoRTxt").textContent = vzhledAoR.value + " %";
+      if (api && typeof api.setAoConfig === "function") api.setAoConfig({ k: (+vzhledAoK.value) / 100, r: (+vzhledAoR.value) / 100 });
+      vzhledObnovInfo();
+      vzhledAutoPlan();
+    }
+    vzhledAluRefl.addEventListener("input", vzhledAluNastav); vzhledAluRough.addEventListener("input", vzhledAluNastav); vzhledAluAo.addEventListener("input", vzhledAluNastav);
+    vzhledAoK.addEventListener("input", vzhledAoNastav); vzhledAoR.addEventListener("input", vzhledAoNastav);
+    // ---- doplneni HDRI ze Sdileneho disku: vyber .hdr -> server prevede (api/v3d_env_import.py) -> V3D.addEnvLibrary + znovu postaveny seznam HDRI; mazani doplnenych
+    const impBtn = document.getElementById("vzhledImportBtn"), impBox = document.getElementById("vzhledImportBox"), impSel = document.getElementById("vzhledImportSel"), impLab = document.getElementById("vzhledImportLabel");
+    const impGo = document.getElementById("vzhledImportGo"), impSt = document.getElementById("vzhledImportSt"), impSeznam = document.getElementById("vzhledImportSeznam");
+    let impZdroje = [];
+    function impHlaska(text, cls) { impSt.textContent = text || ""; impSt.className = "vzh-st" + (cls ? " " + cls : ""); }
+    async function impJson(url, opts) {
+      const r = await fetch(url, Object.assign({ credentials: "same-origin", cache: "no-store" }, opts || {}));
+      let j = null; try { j = await r.json(); } catch (e) { /* bez tela */ }
+      if (!r.ok) throw new Error((j && j.error) || (r.status === 401 || r.status === 403 ? "Nemáš oprávnění přidávat HDRI." : "HTTP " + r.status));
+      return j;
+    }
+    function impKresliSeznam(extra, max) {
+      impSeznam.textContent = "";
+      if (!extra.length) return;
+      const h = document.createElement("div"); h.textContent = "Doplněná HDRI (" + extra.length + (max ? " z " + max : "") + "):"; impSeznam.appendChild(h);
+      extra.forEach((z) => {
+        const row = document.createElement("div"); row.className = "vzh-imp-it";
+        const t = document.createElement("span"); t.textContent = z.label + " "; const sm = document.createElement("small"); sm.textContent = z.source_name ? "(" + z.source_name + ")" : ""; t.appendChild(sm);
+        const b = document.createElement("button"); b.type = "button"; b.textContent = "Smazat"; b.setAttribute("data-smazat", z.key); b.setAttribute("aria-label", "Smazat HDRI " + z.label);
+        b.addEventListener("click", async () => {
+          b.disabled = true;
+          try {
+            await impJson("/api/admin/v3d-env/" + encodeURIComponent(z.key), { method: "DELETE" });
+            vzhledExtra = vzhledExtra.filter((x) => x.key !== z.key);
+            impHlaska("Smazáno: " + z.label + ". Ze seznamu HDRI nahoře zmizí po obnovení stránky.", "ok");
+            await impNacti(true);
+          } catch (e) { b.disabled = false; impHlaska(String((e && e.message) || e), "err"); }
+        });
+        row.appendChild(t); row.appendChild(b); impSeznam.appendChild(row);
+      });
+    }
+    async function impNacti(zachovatHlasku) {
+      if (!zachovatHlasku) impHlaska("Načítám Sdílený disk…");
+      const j = await impJson("/api/admin/v3d-env/zdroje");
+      impZdroje = j.zdroje || [];
+      impSel.textContent = "";
+      impZdroje.forEach((z) => {
+        const o = document.createElement("option"); o.value = String(z.id);
+        o.textContent = z.folder + " / " + z.filename + " (" + Math.max(1, Math.round((z.size_bytes || 0) / 1048576)) + " MB)" + (z.moc_velke ? " – moc velké" : ""); o.disabled = !!z.moc_velke;
+        impSel.appendChild(o);
+      });
+      const pouzitelne = impZdroje.filter((z) => !z.moc_velke);
+      if (!impZdroje.length) { const o = document.createElement("option"); o.textContent = "(na Sdíleném disku není žádný nový soubor .hdr)"; o.disabled = true; impSel.appendChild(o); }
+      if (pouzitelne.length) { impSel.value = String(pouzitelne[0].id); impLab.value = pouzitelne[0].navrh_label || ""; } else impLab.value = "";
+      impGo.disabled = !pouzitelne.length;
+      impKresliSeznam(j.extra || [], j.max);
+      if (!zachovatHlasku) impHlaska(pouzitelne.length ? "" : "Nahraj .hdr na Sdílený disk (do libovolné složky, nejvýš " + (j.max_zdroj_mb || 150) + " MB, šířka nejvýš 8192 px) a otevři to znovu.");
+    }
+    impSel.addEventListener("change", () => { const z = impZdroje.find((x) => String(x.id) === impSel.value); if (z) impLab.value = z.navrh_label || ""; });
+    impBtn.addEventListener("click", () => {
+      impBox.hidden = !impBox.hidden; impBtn.setAttribute("aria-expanded", String(!impBox.hidden));
+      if (!impBox.hidden) impNacti().catch((e) => impHlaska(String((e && e.message) || e), "err"));
+    });
+    document.getElementById("vzhledImportZrus").addEventListener("click", () => { impBox.hidden = true; impBtn.setAttribute("aria-expanded", "false"); });
+    impGo.addEventListener("click", async () => {
+      if (!impSel.value) return;
+      impGo.disabled = true; impHlaska("Převádím HDRI (u velkého souboru až půl minuty)…");
+      try {
+        const j = await impJson("/api/admin/v3d-env/import", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ file_id: +impSel.value, label: impLab.value.trim() || undefined }) });
+        const p = j.polozka;
+        vzhledExtra.push(p);
+        if (window.V3D && typeof window.V3D.addEnvLibrary === "function") window.V3D.addEnvLibrary([p]);
+        if (api) {
+          vzhledPicker(api);                                               // seznam HDRI se postavi znovu (V3D.envLibrary uz ma novou polozku)
+          if (vzhledPickerObj) { const c = vzhledPickerObj.getConfig(); c.hdri = p.key; vzhledPickerObj.setConfig(c); }       // a nove HDRI se hned ukaze v nahledu
+        }
+        impHlaska("Přidáno: " + p.label + " – je vybrané v náhledu, uložíš ho tlačítkem Uložit vzhled pro nabídky.", "ok");
+        await impNacti(true);
+      } catch (e) { impHlaska(String((e && e.message) || e), "err"); impGo.disabled = false; }
+    });
+    function vzhledPicker(v) {
+      vzhledMatKresli();
+      if (vzhledPickerObj) { try { vzhledPickerObj.destroy(); } catch (e) { /* uklizeno */ } vzhledPickerObj = null; }
+      if (!window.V3D || typeof window.V3D.envPicker !== "function") return;
+      vzhledPickerObj = window.V3D.envPicker(v, document.getElementById("vzhledEnv"), {
+        saved: vzhledUlozeny.env,
+        labels: { title: "HDRI prostředí", save: "Uložit vzhled pro nabídky", saved: "Uloženo: HDRI, hliník, AO, sytost i barvy materiálů uvidí zákazníci ve všech online nabídkách.",
+                  unsaved: "Náhled, zatím neuloženo (uloží se HDRI, sytost, barvy a lesk materiálů, odlesky hliníku a síla + dosah AO z tohoto okna a výběr hliníku + AO z levého horního rohu 3D).", revert: "Obnovit uložené HDRI", factory: "Výchozí HDRI" },
+        onSave: (cfg) => {
+          clearTimeout(vzhledAutoTimer);
+          return vzhledVRade(() => vzhledUloz(vzhledTelo(v, true, cfg))).then((j) => { vzhledAutoDirty = false; vzhledAutoHlaska("Uloženo pro všechny nabídky (" + casCz() + ").", "ok"); return j; });
+        },
+      });
+      vzhledObnovInfo();
+    }
+    function vzhledOtevri(otevrit) {
+      vzhledPanel.hidden = !otevrit;
+      vzhledBtn.setAttribute("aria-expanded", String(otevrit));
+      clearInterval(vzhledTimer);
+      if (!otevrit) { rozvrh(); return; }
+      vzhledHlaska("");
+      (envPickerPromise = envPickerPromise || new Promise((res, rej) => {
+        if (window.V3D && window.V3D.envPicker) return res();
+        const sc = document.createElement("script"); sc.src = VZHLED_ENV_PICKER_URL; sc.onload = res; sc.onerror = () => { envPickerPromise = null; rej(new Error("env-picker.js se nenačetl")); };
+        document.head.appendChild(sc);
+      })).then(() => { if (!vzhledPanel.hidden && api) vzhledPicker(api); })
+        .catch((e) => vzhledHlaska(String(e.message || e), "err"));
+      vzhledObnovInfo();
+      vzhledTimer = setInterval(vzhledObnovInfo, 600);
+    }
+    vzhledBtn.addEventListener("click", () => vzhledOtevri(vzhledPanel.hidden));
+    document.getElementById("vzhledZavrit").addEventListener("click", () => vzhledOtevri(false));
+    document.getElementById("vzhledReset").addEventListener("click", () => {
+      vzhledHlaska("Ukládám…", "");
+      clearTimeout(vzhledAutoTimer); vzhledAutoDirty = false; vzhledAutoHlaska("");
+      vzhledVRade(() => vzhledUloz(null)).then(() => {
+        vzhledRozdelany = null;
+        if (api) { try { api.resetEnvConfig(); api.setAluminium("puvodni"); api.setAO("vyp"); api.resetMatConfig(); if (api.resetAluConfig) { api.resetAluConfig(); api.resetAoConfig(); } } catch (e) { /* prohlizec uz neni */ } vzhledPicker(api); }
+        vzhledHlaska("Vráceno výchozí: zákazníci uvidí výchozí vzhled prohlížeče.", "ok");
+      }).catch((e) => vzhledHlaska("Uložení se nepovedlo: " + (e && e.message || e), "err"));
+    });
+    function zdrojModelu(id) {
+      if (modelCache.has(id)) return Promise.resolve(modelCache.get(id));
+      return (async () => {
+        let r = null;
+        try { r = await fetch("/api/kontrola-scena/v3d/" + id + ".glb", { credentials: "same-origin", cache: "no-store" }); } catch (e) { /* sit: zkusi se soubor */ }
+        if (r) {
+          const ct = (r.headers.get("content-type") || "").toLowerCase();
+          if (r.ok && ct.indexOf("model/gltf-binary") === 0) {
+            const z = { bytes: await r.arrayBuffer(), zdroj: "build", cache: r.headers.get("X-V3D-Cache") || "" };
+            modelCache.set(id, z);
+            return z;
+          }
+          if (ct.indexOf("application/json") === 0) {
+            const j = await r.json().catch(() => null);
+            return { chyba: (j && j.error) || ("HTTP " + r.status) };
+          }
+        }
+        // ?t= = vzdy cerstvy soubor (endpoint posila Cache-Control max-age=3600, po pregenerovani nahledu by se jinak hodinu ukazoval stary model)
+        return { url: "/katalog/vandr/v3d_nahled/" + id + ".glb?t=" + Date.now(), zdroj: "soubor" };
+      })();
+    }
+    function spustModel(item, z, my) {
+      let mine;
+      try {
+        mine = window.V3D.mount(viewerEl, Object.assign({
+          mode: "real",
+          allowReal: true,
+          // volba Prostredi + Hliniku primo v HUD sdileneho prohlizece (jedna komponenta s online nabidkou, nic se neduplikuje)
+          ladeni: true,
+          selDims: true,                       // klik na dil / cip pohybu ukaze rozmery vybraneho komponentu (viewer 1.11.0)
+          hoverHint: true,                     // najeti mysi na pohyblivy dil: podsviceni + vyzva ke kliknuti (viewer 1.13.0)
+        }, vzhledOpts(), z.bytes ? { arrayBuffer: z.bytes.slice(0) } : { modelUrl: z.url }));       // vzhledOpts = ulozeny / rozdelany vzhled nabidek (HDRI, hlinik, AO)
+      } catch (err) {
+        info = ""; popisek();
+        setStatus("3D prohlížeč se nepodařilo spustit (WebGL?): " + err.message, true);
+        return;
+      }
+      api = mine;
+      const zdrojInfo = z.zdroj === "build" ? " · postaveno serverem (" + (z.cache === "hit" ? "z cache" : "nový build") + ")" : z.zdroj === "url" ? " · model z generátoru stolu" : " · ze souboru (starý postup, server tu trasu zatím nemá)";
+      mine.ready.then(() => {
+        if (my !== token) return;
+        if (!vzhledPanel.hidden) vzhledPicker(mine);                  // okno Vzhled nabidek je otevrene: napoji se na novy prohlizec
+        const s = mine.state();
+        if (s.legacy) {
+          info = "POZOR: soubor nemá popis v3d (není to výstup buildu nabídky) - zobrazen jako starý GLB.";
+          infoChyba = true;
+        } else {
+          info = "Přesně to, co uvidí zákazník · pohyblivých dílů " + s.motions.length
+            + (s.twoSided ? " · oboustranná" : "")
+            + (s.warnings.length ? " · varování popisu v3d: " + s.warnings.length : "")
+            + zdrojInfo;
+          infoChyba = s.warnings.length > 0;
+        }
+        popisek();
+        if (vzhledOtevritSamo && !vzhledBtn.hidden) { vzhledOtevritSamo = false; if (vzhledPanel.hidden) vzhledOtevri(true); }
+      }).catch((err) => {
+        if (my !== token) return;
+        const chyba = (mine.state().error || (err && err.message) || "chyba");
+        info = "";
+        popisek();
+        setStatus(z.zdroj === "url" ? "Model z generátoru stolu se nepodařilo zobrazit (" + chyba + ")." : z.zdroj === "build"
+          ? "Model " + (item.ids.length > 1 ? "karet " + item.ids.join(" + ") : "karty " + item.id) + " se ze serveru postavil, ale nepodařilo se ho zobrazit (" + chyba + ")."
+          : "Náhledový 3D model karty " + item.id + " se nepodařilo načíst (" + chyba + "). Soubor: webapp/katalog/vandr/v3d_nahled/" + item.id + ".glb", true);
+      });
+    }
+    prevBtn.addEventListener("click", () => { if (idx > 0) ukaz(idx - 1); });
+    nextBtn.addEventListener("click", () => { if (idx < items.length - 1) ukaz(idx + 1); });
+    window.addEventListener("resize", rozvrh);
+    Promise.all([scriptsLoaded, cssLoaded, vzhledNacti()]).then(() => {
+      if (!window.V3D || typeof window.V3D.mount !== "function") throw new Error("viewer3d.js se nenačetl");
+      vzhledPripojExtra();
+      ukaz(0);
+    }).catch((err) => setStatus("Prohlížeč 3D nabídky se nepodařilo načíst: " + err.message, true));
+  }
+
+  // bot10 2026-10-05 (Robert: "potrebuju upravitelnou sirku nekterych komponentu z vandr"; plato 3x43: "menily by se podelne profily a dno, ktere je v nich zasazene",
+  // "nohy nepotrebuju roztahovaci, jen to plato do sirky"): rezim=param&model=<soubor> = PARAMETRICKY komponent. GLB lezi v CHRANENE slozce
+  // webapp/katalog/vandr/param/<model>.glb (jen zamestnanci - Vandr geometrie nesmi ven) a nese v scenes[0].extras.vandrParam pravidlo natazeni
+  // (osa, rovina, vychozi sirka, rozsah, natahovane dily). Sirka se meni na posuvniku PRIMO ve vrcholech: vrcholy za rovinou +delta/2, pred rovinou -delta/2
+  // (scripts/2026-10-05_vandr_plato/vandr_param.py::natahni - stejny vzorec) -> nohy, pojezdy, madla jen odjedou, natahuji se jen dily, ktere rovinu protinaji
+  // (podelne profily a dno). Prohlizec = tentyz /js/v3d/viewer3d.js jako rezim=nabidka. Odkaz: /api/kontrola-scena?rezim=param&model=plato_vysuvne
+  function rezimParam() {
+    document.body.classList.add("rezim-nabidka");
+    const topbarEl = document.getElementById("topbar");
+    const barEl = document.getElementById("paramBar");
+    document.getElementById("carBtn").hidden = true;
+    const model = (params.get("model") || "plato_vysuvne").trim();
+    if (!/^[A-Za-z0-9_-]{1,60}$/.test(model)) { setStatus("Neplatný název modelu (?model=).", true); return; }
+    // komponenta=<kod> = model z registru Vandr systemu u nas (docs/VANDR_SYSTEM.md, tabulka vd_komponenty): webapp/katalog/vandr/komponenty/<kod>.glb, take jen zamestnanci
+    const komponenta = (params.get("komponenta") || "").trim();
+    if (komponenta && !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(komponenta)) { setStatus("Neplatný kód komponenty (?komponenta=).", true); return; }
+    const modelCesta = komponenta ? "/katalog/vandr/komponenty/" + komponenta + ".glb" : "/katalog/vandr/param/" + model + ".glb";
+    const CDN = "https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/";
+    const deps = [CDN + "renderers/CSS2DRenderer.js", CDN + "shaders/HorizontalBlurShader.js", CDN + "shaders/VerticalBlurShader.js", "/js/v3d/viewer3d.js?t=" + Date.now()];
+    const cssLoaded = new Promise((res) => {
+      const l = document.createElement("link");
+      l.rel = "stylesheet"; l.href = "/css/v3d.css?t=" + Date.now(); l.onload = res; l.onerror = res;
+      document.head.appendChild(l);
+    });
+    const scriptsLoaded = deps.reduce((p, url) => p.then(() => new Promise((res, rej) => {
+      const s = document.createElement("script");
+      s.src = url; s.onload = res; s.onerror = () => rej(new Error("nenačteno " + url));
+      document.head.appendChild(s);
+    })), Promise.resolve());
+
+    let api = null, ctxP = null, meshes = [], param = null, W = null, el = null;
+    const fmt = (n) => String(Math.round(n * 10) / 10).replace(".", ",");
+    const popisDilu = (dil) => String(dil).replace(/_.*$/, "").replace(/x/g, "×");
+    function rozvrh() {
+      document.body.style.setProperty("--nab-top", Math.ceil(topbarEl.getBoundingClientRect().bottom) + "px");
+      document.body.style.setProperty("--nab-bottom", (barEl.hidden ? 0 : Math.ceil(barEl.getBoundingClientRect().height)) + "px");
+    }
+    function popisek(text) {
+      topbarEl.textContent = "";
+      const b = document.createElement("b");
+      b.textContent = "Kontrola · parametrický komponent" + (param && param.nazev ? " · " + param.nazev : "");
+      topbarEl.appendChild(b);
+      if (text) { topbarEl.appendChild(document.createElement("br")); const sp = document.createElement("span"); sp.style.opacity = ".75"; sp.textContent = text; topbarEl.appendChild(sp); }
+      rozvrh();
+    }
+    // vrcholy po zmene sirky na W (vychozi polohy drzi mesh.userData.p0); stejny vzorec jako vandr_param.natahni
+    function aplikuj(sirka) {
+      if (!param || !ctxP) return;
+      W = Math.max(param.wmin, Math.min(param.wmax, Math.round(sirka)));
+      const d = W - param.w0, r = param.rovina, os = param.os;
+      for (const m of meshes) {
+        const a = m.geometry.attributes.position, o = m.userData.p0, arr = a.array;
+        for (let i = os; i < o.length; i += 3) { const v = o[i]; arr[i] = v > r ? v + d / 2 : (v < r ? v - d / 2 : v); }
+        a.needsUpdate = true;
+        m.geometry.computeBoundingBox(); m.geometry.computeBoundingSphere();
+      }
+      ctxP.requestRender();
+      obnovOvladani();
+    }
+    const fmtKc = (n) => n.toLocaleString("cs-CZ", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    // kusovnik / cena / vaha pro sirku W: pevne dily beze zmeny, dily protazene s materialove prepoctenou cenou a vahou (pravidla Vandru, viz vandr_kusovnik.py); stejny vzorec ma test
+    function kusovnik(d) {
+      const k = param.kusovnik;
+      if (!k) return null;
+      let cena = 0, vaha = 0;
+      const radky = k.radky.map((r) => {
+        let c = r.cena, v = r.vaha, jm = r.dil;
+        if (r.delka) { c += r.delka.cena_za_mm * d; v += r.delka.vaha_za_mm * d; jm = r.delka.sablona.replace("{L}", String(Math.round((r.delka.delka0 + d) * 10) / 10)); }
+        cena += c * r.ks; vaha += v * r.ks;
+        return { jm: jm, ks: r.ks, c: c, v: v, zmena: !!r.delka };
+      });
+      return { radky: radky, cena: cena, vaha: vaha };
+    }
+    function tabulka(k) {
+      const t = document.createElement("table"); t.className = "pb-tab";
+      const hd = t.createTHead().insertRow();
+      ["Díl", "ks", "Kč / ks", "Kč"].forEach((x) => { const th = document.createElement("th"); th.textContent = x; hd.appendChild(th); });
+      const tb = t.createTBody();
+      k.radky.forEach((r) => { const tr = tb.insertRow(); if (r.zmena) tr.className = "zmena"; [r.jm, String(r.ks), fmtKc(r.c), fmtKc(r.c * r.ks)].forEach((x) => { tr.insertCell().textContent = x; }); });
+      const f = t.createTFoot().insertRow();
+      ["Celkem", "", "", fmtKc(k.cena)].forEach((x) => { f.insertCell().textContent = x; });
+      return t;
+    }
+    function obnovOvladani() {
+      if (!el) return;
+      const d = W - param.w0;
+      el.slider.value = String(W);
+      if (document.activeElement !== el.num) el.num.value = String(W);
+      el.sirka.textContent = W + " mm";
+      el.presety.forEach((b) => b.setAttribute("aria-pressed", String(Number(b.dataset.w) === W)));
+      const radky = ["Šířka celku " + W + " mm (vychozí " + fmt(param.w0) + ")" + (param.svetlost0 != null ? " · světlost mezi nohama " + fmt(param.svetlost0 + d) + " mm" : "")];
+      for (const n of param.natahovane || []) radky.push(popisDilu(n.dil) + " · " + n.ks + " ks · délka " + fmt(n.delka0) + " → " + fmt(n.delka0 + d) + " mm");
+      el.info.textContent = radky.join("\n");
+      const kus = kusovnik(d);
+      if (kus && el.cena) {
+        el.cena.textContent = "Cena plata " + fmtKc(kus.cena) + " Kč · " + (Math.round(kus.vaha / 10) / 100).toLocaleString("cs-CZ") + " kg" + (d !== 0 ? "  (při " + fmt(param.w0) + " mm: " + fmtKc(param.kusovnik.cena0) + " Kč)" : "");
+        el.kusBox.textContent = ""; el.kusBox.appendChild(tabulka(kus));
+      }
+      rozvrh();
+    }
+    function postavOvladani() {
+      barEl.textContent = "";
+      const mk = (tag, cls, txt) => { const e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; };
+      const r1 = mk("div", "pb-row");
+      const sirka = mk("span", "pb-sirka", "");
+      const slider = mk("input"); slider.type = "range"; slider.min = String(param.wmin); slider.max = String(param.wmax); slider.step = "1"; slider.setAttribute("aria-label", "Šířka plata v mm");
+      const num = mk("input"); num.type = "number"; num.min = String(param.wmin); num.max = String(param.wmax); num.step = "1"; num.setAttribute("aria-label", "Šířka plata v mm");
+      r1.append(mk("span", "", "Šířka"), slider, num, mk("span", "", "mm"));
+      const r2 = mk("div", "pb-row"); r2.style.marginTop = "6px";
+      const hodnoty = [param.wmin, Math.round((param.wmin + param.w0) / 2), Math.round(param.w0), param.wmax].filter((v, i, a) => a.indexOf(v) === i);
+      const presety = hodnoty.map((v) => { const b = mk("button", "", String(v)); b.type = "button"; b.dataset.w = String(v); b.addEventListener("click", () => aplikuj(v)); return b; });
+      r2.append(sirka, ...presety);
+      const info = mk("div", "pb-info"); info.style.whiteSpace = "pre-line";
+      const cena = mk("div", "pb-cena");
+      const kusDet = mk("details", "pb-kus"), kusBox = mk("div", "pb-scroll");
+      kusDet.append(mk("summary", "", "Kusovník a cena podle šířky (ceník Vandru)"), kusBox);
+      const mala = mk("div", "pb-small", (param.rozsah ? "Rozsah šířky " + param.wmin + "–" + param.wmax + " mm = délka profilů " + String(param.rozsah.dil).match(/^\d+x\d+/)[0].replace("x", "×") + " od " + fmt(param.rozsah.od) + " do " + fmt(param.rozsah.do) + " mm (zadal Robert)" : "Rozsah " + param.wmin + "–" + param.wmax + " mm je zatím návrh") + (komponenta ? " · komponenta je bez noh (světlá šířka mezi nohami = šířka celku − " + fmt(param.w0 - param.svetlost0) + " mm), natahují se jen označené díly" : " · nohy se jen odsouvají, natahují se jen označené díly") + " · cena: díly podle délky z materiálu (ceník Vandru k " + (param.kusovnik ? param.kusovnik.snimek : "?") + "), operace beze změny · jen pro zaměstnance");
+      if (param.kusovnik) barEl.append(r1, r2, cena, info, kusDet, mala); else barEl.append(r1, r2, info, mala);
+      slider.addEventListener("input", () => aplikuj(Number(slider.value)));
+      num.addEventListener("change", () => { const v = Number(num.value); if (Number.isFinite(v)) aplikuj(v); else obnovOvladani(); });
+      el = { slider, num, sirka, info, presety, cena: param.kusovnik ? cena : null, kusBox };
+      barEl.hidden = false;
+    }
+    function plugin(ctx) {
+      ctxP = ctx;
+      const sc = ctx.gltf && ctx.gltf.scene;
+      param = (sc && sc.userData && sc.userData.vandrParam) || null;
+      meshes = [];
+      ctx.model.traverse((o) => {
+        if (o.isMesh && o.geometry && o.geometry.attributes && o.geometry.attributes.position) {
+          if (!o.userData.p0) o.userData.p0 = o.geometry.attributes.position.array.slice();
+          meshes.push(o);
+        }
+      });
+      if (param) { if (!el) postavOvladani(); aplikuj(W != null ? W : param.w0); popisek(""); }
+      return function dispose() { ctxP = null; meshes = []; };
+    }
+    window.__plato = {
+      setW: (v) => aplikuj(v),
+      kus: () => (param && W != null ? kusovnik(W - param.w0) : null),
+      state: () => ({ W: W, param: param, meshy: meshes.length, hotovo: !!(param && ctxP) }),
+      // [{jmeno, zmin, zmax}] v souradnicich GLB (mm) po aktualni zmene sirky - jen pro testy
+      mesh: () => meshes.map((m) => { const a = m.geometry.attributes.position.array; let lo = Infinity, hi = -Infinity; for (let i = 2; i < a.length; i += 3) { if (a[i] < lo) lo = a[i]; if (a[i] > hi) hi = a[i]; } return { jmeno: m.name || (m.parent && m.parent.name) || "?", zmin: lo, zmax: hi }; }),
+    };
+    window.addEventListener("resize", rozvrh);
+    if (window.ResizeObserver) new ResizeObserver(rozvrh).observe(barEl);        // rozbaleni kusovniku zvetsi listu: platno se prizpusobi
+    popisek("Načítám model…");
+    Promise.all([scriptsLoaded, cssLoaded]).then(() => {
+      if (!window.V3D || typeof window.V3D.mount !== "function") throw new Error("viewer3d.js se nenačetl");
+      setStatus("");
+      api = window.V3D.mount(viewerEl, {
+        modelUrl: modelCesta + "?t=" + Date.now(),
+        mode: "real", allowReal: true, ladeni: true, dims: 0, hudKoty: false, plugins: [plugin],
+      });
+      api.ready.then(() => {
+        if (!param) { popisek(""); setStatus("Model nemá popis parametrizace (extras.vandrParam) - zobrazen jen jako obyčejný GLB.", true); }
+      }).catch((err) => {
+        const chyba = (api && api.state && api.state().error) || (err && err.message) || "chyba";
+        popisek(""); setStatus("Model " + (komponenta || model) + " se nepodařilo načíst (" + chyba + "). Soubor: webapp" + modelCesta, true);
+      });
+    }).catch((err) => setStatus("Prohlížeč 3D se nepodařilo načíst: " + err.message, true));
+  }
+
+  let renderer, scene3d, camera, controls, currentGroup = null;
+  let katalogById = null;
+  let csListCache = null; // /api/custom-shapes vraci VSE najednou vc. dilu, nacte se jednou
+  let currentIndex = 0;
+  let loadToken = 0; // bot8 2026-09-19: viz showItem() nize - race guard
+  let loading = false;
+
+  function initViewer() {
+    renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+    renderer.setSize(viewerEl.clientWidth, viewerEl.clientHeight);
+    // Robert ("nechci to rozbité bílé") - hlinikove materialy maji
+    // metalness ~0.6 (viz Vandr GLB ALU material), ale bez tone mappingu/
+    // spravneho vystupniho kodovani se PBR barvy/odlesky zobrazi spatne
+    // (presne stejny paragraf jako webapp/scene.html, jen r128 API -
+    // outputEncoding/sRGBEncoding, ne novejsi outputColorSpace).
+    renderer.outputEncoding = THREE.sRGBEncoding;
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 1.1;
+    viewerEl.appendChild(renderer.domElement);
+
+    scene3d = new THREE.Scene();
+    scene3d.background = new THREE.Color(0xeef1f4);
+    // PMREM prostredi (RoomEnvironment) - kov ma bez env mapy co odrazet
+    // jen ploche svetlo, coz vyrobi presne to "rozbité bílé", co Robert
+    // vidí. RoomEnvironment misto skutecneho .hdr souboru: zadny sitovy
+    // fetch, generuje se z GPU okamzite (kontrolni scena ma zustat rychla,
+    // neni to render-quality nastroj - viz komentar u <script> vyse).
+    const pmremGenerator = new THREE.PMREMGenerator(renderer);
+    scene3d.environment = pmremGenerator.fromScene(new THREE.RoomEnvironment(), 0.04).texture;
+    pmremGenerator.dispose();
+    // Svetla ZESTIHLENA (Robert: "stáhni tu hromadu světel, až bude co
+    // odrážet") - drivejsi 4 stacknuta svetla (hemisphere 2.3 + dir 1.8 +
+    // fill 0.9 + camLight 0.7 + ambient 0.6) bez env mapy kov jen prepalila
+    // do bila; s PMREM prostredim uz odlesky/barvu nese hlavne
+    // scene3d.environment, tady zbyva jen mirny smerovy "key" pro tvar/stiny
+    // + slaby ambient pro dosvit stinovych mist.
+    scene3d.add(new THREE.AmbientLight(0xffffff, 0.35));
+    const dirLight = new THREE.DirectionalLight(0xffffff, 1.0); dirLight.position.set(400, 600, 300);
+    scene3d.add(dirLight);
+
+    camera = new THREE.PerspectiveCamera(45, viewerEl.clientWidth / Math.max(viewerEl.clientHeight, 1), 1, 100000);
+    controls = new THREE.OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true;
+
+    function requestRender() { renderer.render(scene3d, camera); }
+    controls.addEventListener("change", requestRender);
+    new ResizeObserver(() => {
+      if (!viewerEl.clientWidth || !viewerEl.clientHeight) return;
+      camera.aspect = viewerEl.clientWidth / viewerEl.clientHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(viewerEl.clientWidth, viewerEl.clientHeight);
+      requestRender();
+    }).observe(viewerEl);
+    (function loop() { requestAnimationFrame(loop); controls.update(); requestRender(); })();
+  }
+
+  // Stejny princip jako nabidka-online.html frameCameraToObject - objekt
+  // vyplni ~90% okna, kamera z fixniho uhlu (0.6,0.45,1), zadne rucni
+  // nastavovani na kazdou polozku zvlast. Prijima Object3D (spocita si box
+  // sam) NEBO uz hotovy THREE.Box3 primo (viz frameCameraOnHorniBlok nize -
+  // tam NESMI vznikat skutecny podgraf/reparenting, jen vypocet ramce).
+  function frameCameraToObject(objectOrBox) {
+    const box = objectOrBox.isBox3 ? objectOrBox : new THREE.Box3().setFromObject(objectOrBox);
+    const sphere = box.getBoundingSphere(new THREE.Sphere());
+    const radius = Math.max(sphere.radius, 1e-3);
+    const halfFovRad = camera.fov * Math.PI / 360;
+    const halfFov = Math.min(halfFovRad, Math.atan(Math.tan(halfFovRad) * camera.aspect));
+    const distance = (radius * (1 / 0.9)) / Math.sin(halfFov);
+    const dir = new THREE.Vector3(0.6, 0.45, 1).normalize();
+    camera.position.copy(sphere.center).addScaledVector(dir, distance);
+    camera.near = Math.max(radius / 100, 0.1);
+    camera.far = distance + radius * 10;
+    camera.updateProjectionMatrix();
+    controls.target.copy(sphere.center);
+    controls.update();
+  }
+
+  // bot10 2026-09-24 (pravidlo 52, nalez 4604): STEJNY vzorec jako
+  // webapp/scene.html ttCameraPosition() / api/blender_render_turntable.py
+  // _cam_dir() - smer stred->kamera pro dane (elevace, azimut) v three.js
+  // prostoru. Kamera na presne tomhle smeru = presne to, co uvidi render
+  // s `front_azimuth_deg` rovnym `azDeg` (0° = "predni" snimek prstence).
+  function vdCameraDir(azDeg, elDeg) {
+    const el = elDeg * Math.PI / 180, az = azDeg * Math.PI / 180;
+    return new THREE.Vector3(Math.cos(el) * Math.sin(az), Math.sin(el), Math.cos(el) * Math.cos(az));
+  }
+
+  // Stejne "vejde se do 90 % okna" jako frameCameraToObject, jen SMER
+  // kamery je zadany primo (azimut/elevace), ne fixni diagonala.
+  function frameCameraFromAzimuth(box, azDeg, elDeg) {
+    const sphere = box.getBoundingSphere(new THREE.Sphere());
+    const radius = Math.max(sphere.radius, 1e-3);
+    const halfFovRad = camera.fov * Math.PI / 360;
+    const halfFov = Math.min(halfFovRad, Math.atan(Math.tan(halfFovRad) * camera.aspect));
+    const distance = (radius * (1 / 0.9)) / Math.sin(halfFov);
+    camera.position.copy(sphere.center).addScaledVector(vdCameraDir(azDeg, elDeg), distance);
+    camera.near = Math.max(radius / 100, 0.1);
+    camera.far = distance + radius * 10;
+    camera.updateProjectionMatrix();
+    controls.target.copy(sphere.center);
+    controls.update();
+  }
+
+  let vdAktualniBox = null;    // Box3 aktualne zobrazene Vandr karty (pro tlacitka stran)
+  let vdAktualniAzimut = null; // jeji front_azimuth_deg (0 = predni)
+  const VD_STRANY_LABEL = { 0: "Přední", 90: "Pravá", 180: "Zadní", 270: "Levá" };
+
+  function vdUkazStranu(offset) {
+    if (vdAktualniBox == null || vdAktualniAzimut == null) return;
+    frameCameraFromAzimuth(vdAktualniBox, (vdAktualniAzimut + offset) % 360, 0);
+    vdStranyBtns.forEach(b => b.setAttribute("aria-pressed", String(Number(b.dataset.off) === offset)));
+  }
+  vdStranyBtns.forEach(b => b.addEventListener("click", () => {
+    vdUkazStranu(Number(b.dataset.off));
+    if (rezimMaterialy) matPriblizit();
+  }));
+
+  // bot10 2026-09-25 (Robert: "můžeš to simulovat i v kontrolní scéně ty
+  // azimuty" - projít přesně úhly/elevace, ze kterých render vezme snímky,
+  // dřív než na to GPU spálí čas). `vdOtockaFrames` = STEJNÁ množina, co
+  // počítá server (`turntable._azimuths_for_front()`/`ELEVATIONS`, viz
+  // api/app.py) - žádná vlastní kopie vzorce, jen kamera na dodané úhly.
+  // Pořadí snímků (elevace vnější smyčka, azimut vnitřní) STEJNÉ jako
+  // skutečný render (api/blender_render_turntable.py `ring_dirs`), aby
+  // "snímek N" znamenalo totéž tady i tam.
+  const vdOtockaArrowLeftEl = document.getElementById("vdOtockaArrowLeft");
+  const vdOtockaArrowRightEl = document.getElementById("vdOtockaArrowRight");
+  const vdOtockaPlayBtn = document.getElementById("vdOtockaPlay");
+  const vdOtockaVynechanoEl = document.getElementById("vdOtockaVynechano");
+  let vdOtockaFrames = null;     // [{el, az}, ...]
+  let vdOtockaIdx = 0;
+  let vdOtockaTimer = null;
+
+  function vdOtockaZastavPrehravani() {
+    if (vdOtockaTimer) { clearInterval(vdOtockaTimer); vdOtockaTimer = null; }
+    vdOtockaPlayBtn.textContent = "▶";
+    vdOtockaPlayBtn.setAttribute("aria-pressed", "false");
+  }
+  function vdOtockaJdiNa(idx) {
+    if (!vdOtockaFrames || vdAktualniBox == null) return;
+    vdOtockaIdx = ((idx % vdOtockaFrames.length) + vdOtockaFrames.length) % vdOtockaFrames.length;
+    const f = vdOtockaFrames[vdOtockaIdx];
+    frameCameraFromAzimuth(vdAktualniBox, f.az, f.el);
+    vdOtockaLabelEl.textContent = "azimut " + f.az + "° · elevace " + f.el + "° · snímek "
+      + (vdOtockaIdx + 1) + "/" + vdOtockaFrames.length;
+    vdStranyBtns.forEach(b => b.removeAttribute("aria-pressed"));
+  }
+  function vdOtockaJdiOAzimut(smer) {
+    // +/-1 POZICE v seznamu azimutů teto elevace (ne v celem seznamu
+    // snimku) - klavesy/sipky/tazeni ovladaji hlavne azimut, jak Robert
+    // cekal ("projit devět úhlů za sebou").
+    if (!vdOtockaFrames) return;
+    const el = vdOtockaFrames[vdOtockaIdx].el;
+    const azimutyTeteElevace = vdOtockaFrames.map((f, i) => ({ i, el: f.el })).filter(x => x.el === el).map(x => x.i);
+    const pozice = azimutyTeteElevace.indexOf(vdOtockaIdx);
+    const novaPozice = ((pozice + smer) % azimutyTeteElevace.length + azimutyTeteElevace.length) % azimutyTeteElevace.length;
+    vdOtockaJdiNa(azimutyTeteElevace[novaPozice]);
+  }
+  function vdOtockaJdiOElevaci(smer) {
+    if (!vdOtockaFrames) return;
+    const az = vdOtockaFrames[vdOtockaIdx].az;
+    const elevaceUnikatni = Array.from(new Set(vdOtockaFrames.map(f => f.el)));
+    const aktualniElIdx = elevaceUnikatni.indexOf(vdOtockaFrames[vdOtockaIdx].el);
+    const novaEl = elevaceUnikatni[((aktualniElIdx + smer) % elevaceUnikatni.length + elevaceUnikatni.length) % elevaceUnikatni.length];
+    const cil = vdOtockaFrames.findIndex(f => f.el === novaEl && f.az === az);
+    if (cil !== -1) vdOtockaJdiNa(cil);
+  }
+  vdOtockaArrowLeftEl.addEventListener("click", () => { vdOtockaZastavPrehravani(); vdOtockaJdiOAzimut(-1); });
+  vdOtockaArrowRightEl.addEventListener("click", () => { vdOtockaZastavPrehravani(); vdOtockaJdiOAzimut(1); });
+  vdOtockaPlayBtn.addEventListener("click", () => {
+    if (vdOtockaTimer) { vdOtockaZastavPrehravani(); return; }
+    vdOtockaPlayBtn.textContent = "❚❚";
+    vdOtockaPlayBtn.setAttribute("aria-pressed", "true");
+    vdOtockaTimer = setInterval(() => vdOtockaJdiNa(vdOtockaIdx + 1), 900);
+  });
+
+  // Klávesnice: ←/→ azimut, ↑/↓ elevace - jen když je otočka pro
+  // aktuální kartu aktivní (jinak by kradla šipky ostatním položkám).
+  document.addEventListener("keydown", (e) => {
+    if (!vdOtockaFrames || vdOtockaEl.hidden) return;
+    if (e.key === "ArrowLeft") { e.preventDefault(); vdOtockaZastavPrehravani(); vdOtockaJdiOAzimut(-1); }
+    else if (e.key === "ArrowRight") { e.preventDefault(); vdOtockaZastavPrehravani(); vdOtockaJdiOAzimut(1); }
+    else if (e.key === "ArrowUp") { e.preventDefault(); vdOtockaZastavPrehravani(); vdOtockaJdiOElevaci(1); }
+    else if (e.key === "ArrowDown") { e.preventDefault(); vdOtockaZastavPrehravani(); vdOtockaJdiOElevaci(-1); }
+  });
+
+  // Tažení myší/prstem přes scénu = krokování po azimutech (bot3: "stejný
+  // princip jako v HDRI testovacích otočkách"). Dokud je otočka aktivní,
+  // OrbitControls volné otáčení VYPNUTO (viz níže) - jinak by si tažení
+  // konkurovalo s volnou orbitou a výsledek by byl nepředvídatelný.
+  const VD_OTOCKA_DRAG_PRAH_PX = 50;
+  let vdOtockaDragOd = null;
+  let vdOtockaDragPosledniKrok = 0;
+  viewerEl.addEventListener("pointerdown", (e) => {
+    if (!vdOtockaFrames || vdOtockaEl.hidden) return;
+    vdOtockaDragOd = e.clientX;
+    vdOtockaDragPosledniKrok = 0;
+    viewerEl.classList.add("vd-otocka-drag");
+    vdOtockaZastavPrehravani();
+  });
+  viewerEl.addEventListener("pointermove", (e) => {
+    if (vdOtockaDragOd == null) return;
+    const delta = e.clientX - vdOtockaDragOd;
+    const krok = Math.trunc(delta / VD_OTOCKA_DRAG_PRAH_PX);
+    if (krok !== vdOtockaDragPosledniKrok) {
+      vdOtockaJdiOAzimut(-(krok - vdOtockaDragPosledniKrok)); // tažení doprava -> otočí jako by šel doleva (přirozený pocit "táhnu objekt")
+      vdOtockaDragPosledniKrok = krok;
+    }
+  });
+  function vdOtockaDragKonec() { vdOtockaDragOd = null; viewerEl.classList.remove("vd-otocka-drag"); }
+  viewerEl.addEventListener("pointerup", vdOtockaDragKonec);
+  viewerEl.addEventListener("pointerleave", vdOtockaDragKonec);
+
+  function vdOtockaZapni(front, azimuths, elevations) {
+    vdOtockaZastavPrehravani(); // nove polozka (i jina vd karta) zacina bez bezici otocky
+    vdOtockaFrames = elevations.flatMap(el => azimuths.map(az => ({ el, az })));
+    vdOtockaEl.hidden = false;
+    vdOtockaArrowLeftEl.hidden = false;
+    vdOtockaArrowRightEl.hidden = false;
+    controls.enableRotate = false; // viz komentář u tažení výše
+    const plnyKruh = [];
+    for (let a = 0; a < 360; a += (azimuths.length > 1 ? Math.abs(azimuths[1] - azimuths[0]) || 30 : 30)) plnyKruh.push(a);
+    const vynechano = plnyKruh.filter(a => azimuths.indexOf(a) === -1);
+    if (vynechano.length) {
+      vdOtockaVynechanoEl.hidden = false;
+      vdOtockaVynechanoEl.innerHTML = "<span>Vynechaný sektor (zadní strana, nerenderuje se): "
+        + vynechano.map(a => a + "°").join(" / ") + "</span>";
+    } else {
+      vdOtockaVynechanoEl.hidden = true;
+    }
+    // najdi snimek nejblizsi "predni" (el=0, az=front) jako vychozi pohled
+    const start = vdOtockaFrames.findIndex(f => f.el === 0 && f.az === front);
+    vdOtockaJdiNa(start !== -1 ? start : 0);
+  }
+  function vdOtockaVypni() {
+    vdOtockaZastavPrehravani();
+    vdOtockaFrames = null;
+    vdOtockaEl.hidden = true;
+    vdOtockaArrowLeftEl.hidden = true;
+    vdOtockaArrowRightEl.hidden = true;
+    vdOtockaVynechanoEl.hidden = true;
+    controls.enableRotate = true;
+  }
+
+  async function fetchJson(url) {
+    const r = await fetch(url);
+    const data = await r.json().catch(() => ({}));
+    if (!r.ok) throw new Error(data.error || ("HTTP " + r.status));
+    return data;
+  }
+
+  async function ensureKatalog() {
+    if (katalogById) return katalogById;
+    const data = await fetchJson("/api/katalog");
+    katalogById = new Map((data.parts || []).map(p => [p.id, p]));
+    return katalogById;
+  }
+
+  const VD_LOGO_BARVA = "#ff3b00"; // razitka jsou na 40mm profilu mala - pro kontrolu umisteni se zvyrazni
+  async function fetchItemParts(item) {
+    if (item.type === "vd") {
+      const navrh = item.extra ? (item.extra === "navrh" ? String(item.id) : item.extra) : "";
+      const data = await fetchJson("/api/kontrola-scena/vd/" + item.id + (navrh ? ("?navrh=" + encodeURIComponent(navrh)) : ""));
+      const razitka = (data.razitka || []).map(r => {
+        const spec = Object.assign({}, r);
+        if (/logo-ochrana-vandr-logo/.test(spec.role || "")) spec.color = VD_LOGO_BARVA;
+        return spec;
+      });
+      return { name: data.product.name, parts: razitka,
+               vandr: { glb: data.product.glb_file, zdroj: data.zdroj, souhrn: data.souhrn, pravidlo: data.pravidlo,
+                        front_azimuth_deg: data.front_azimuth_deg, azimuths: data.azimuths,
+                        elevations: data.elevations, step_deg: data.step_deg,
+                        umisteni_kod: data.product.umisteni_kod, umisteni_nazev: data.product.umisteni_nazev } };
+    }
+    if (item.type === "pa") {
+      const data = await fetchJson("/api/product-assemblies/lookup?assembly=" + item.id);
+      return { name: data.assembly.name, parts: data.assembly.parts || [] };
+    }
+    // cs: seznam vraci VSECHNY vlastni tvary vc. dilu najednou (levne, na
+    // rozdil od product-assemblies) - nacte se jednou, dal se jen filtruje.
+    if (!csListCache) {
+      const data = await fetchJson("/api/custom-shapes");
+      csListCache = new Map((data.shapes || []).map(s => [s.id, s]));
+    }
+    const shape = csListCache.get(item.id);
+    if (!shape) throw new Error("Vlastní tvar #" + item.id + " nenalezen.");
+    return { name: shape.name, parts: shape.parts || [] };
+  }
+
+  // Robert 2026-09-19 ("bez karoserií... strašně pomalé načítání"): dva
+  // zavaznejsi vykonove nedostatky prvni verze - (1) karoserie (car_body_*)
+  // se vubec nepotrebuji pro kontrolu horniho bloku/dvirek, jen zbytecne
+  // stahuji velke GLB; (2) kazda INSTANCE dilu (napr. uhelnik-noha0 se v
+  // jedne sestave opakuje klidne 10x+) spoustela VLASTNI GLTFLoader.load -
+  // samostatny fetch+parse pro stejny soubor znovu a znovu. Oprava: karoserie
+  // se preskakuji uplne, a kazdy unikatni GLB se stahuje/parsuje JEN JEDNOU
+  // (gltfCache, cachuje i rozjety Promise, aby soubezne pozadavky na tyz
+  // soubor nezpustily druhy fetch) - dalsi instance jen .clone() uz hotoveho
+  // Object3D (levna operace, zadna sit/parse navic).
+  function jeKaroserie(partId) { return typeof partId === "string" && partId.startsWith("car_body_"); }
+
+  // ZMENA 2026-09-24 (Robert, doslova): "pokud sestava přesahuje něco, musíš
+  // to vidět samozřejmě v kontrolní scéně to něco co přesahuje !!!!" - bez
+  // karoserie se přesah/kolize posoudit NEDÁ, a přesně na tom dneska stálo
+  // hodnocení #548/#477 (regál trčící z dodávky). Karoserie se proto
+  // zobrazuje, VYCHOZE ZAPNUTA.
+  //
+  // Puvodni duvod pro vypnuti (Robert 2026-09-19 "bez karoserií... strašně
+  // pomalé načítání") zustava osetreny jinak, ne vypnutim: gltfCache nize
+  // stahuje kazdy GLB jen JEDNOU a dalsi instance jen klonuje, takze
+  // karoserie stoji jedno stazeni navic, ne jedno na kazdy dil. Kdyby to
+  // na mobilu presto vadilo, prepinac "Karoserie" v HUD ji vypne a volba
+  // se pamatuje.
+  let zobrazitKaroserii = localStorage.getItem("kontrolaKaroserie") !== "0";
+
+  const gltfLoader = new THREE.GLTFLoader();
+  const gltfCache = new Map(); // url -> Promise<Object3D scena, NEKLONOVANA>
+  function loadGltfCached(url) {
+    if (!gltfCache.has(url)) {
+      gltfCache.set(url, new Promise((resolve, reject) => {
+        gltfLoader.load(url, (gltf) => resolve(gltf.scene), undefined, reject);
+      }));
+    }
+    return gltfCache.get(url);
+  }
+
+  // Vandr monolit: cely export vozidla v jednom GLB. Pro kontrolu razitek
+  // se skryva to, co skryva i render (build_job_vandr vynechat_objekty +
+  // blender_render_turntable "SomeName >= 60 % sceny"): podlaha/karoserie
+  // podle nazvu objektu i materialu, a kazdy objekt pokryvajici >= 60 %
+  // celku v OBOU vodorovnych osach (X,Z ve three.js) = karoserie NEBO jen
+  // podlahova deska (Ducato/Connect exporty skorepinu nemaji).
+  const VD_VYNECHAT = ["podlaha", "karoserie", "dimension", "fixarea", "legshoverbox"];
+  async function loadVandrMonolit(glbFile) {
+    // Vandr GLB pod katalog/vandr/ NEjsou verejne (primy /katalog/vandr/ = 401,
+    // viz ochrana 3D modelu sestav) - staff je cte pres chraneny
+    // /api/vandr-glb-file/<soubor> (X-Accel), stejne jako product.html.
+    const url = glbFile.startsWith("vandr/") ? ("/api/vandr-glb-file/" + glbFile.slice("vandr/".length)) : ("/katalog/" + glbFile);
+    const base = await loadGltfCached(url);
+    const obj = base.clone();
+    obj.updateMatrixWorld(true);
+    const celek = new THREE.Box3().setFromObject(obj);
+    const sz = celek.getSize(new THREE.Vector3());
+    let skryto = 0;
+    obj.traverse(n => {
+      if (!n.isMesh) return;
+      const jmena = [n.name || ""].concat((Array.isArray(n.material) ? n.material : [n.material]).map(m => (m && m.name) || ""));
+      const podleJmena = jmena.some(j => VD_VYNECHAT.some(k => j.toLowerCase().includes(k)));
+      const b = new THREE.Box3().setFromObject(n);
+      const s = b.getSize(new THREE.Vector3());
+      const obal = sz.x > 0 && sz.z > 0 && s.x >= 0.6 * sz.x && s.z >= 0.6 * sz.z;
+      if (podleJmena || obal) { n.visible = false; skryto++; }
+    });
+    obj.userData.role = "vandr-monolit";
+    obj.userData.skryto = skryto;
+    return obj;
+  }
+
+  async function loadOnePart(partSpec, katalog) {
+    const p = katalog.get(partSpec.part_id);
+    if (!p || !p.file) throw new Error("neznámý díl " + partSpec.part_id);
+    if (!Array.isArray(partSpec.position) || !Array.isArray(partSpec.quaternion) || !Array.isArray(partSpec.scale)) {
+      throw new Error("díl " + partSpec.part_id + " nemá pozici/rotaci/měřítko");
+    }
+    let baseObj;
+    try {
+      baseObj = await loadGltfCached("/katalog/" + p.file);
+    } catch (err) {
+      throw new Error("díl " + partSpec.part_id + ": " + (err && err.message || "nelze načíst GLB"));
+    }
+    const obj = baseObj.clone();
+    // Stejna priorita jako scene.html applyPartMaterial(): barva per-mesh
+    // (mesh_colors[jmeno_meshe]) prebiji jednotnou partSpec.color, ta
+    // prebiji katalogovou vychozi barvu. Bez mesh_colors podpory by slozity
+    // vicedilny GLB (desitky/stovky mesh uzlu, napr. SSE/CAD import) dostal
+    // JEDNU plosnou barvu na vsechno, i kdyz ulozena data pocitaji s
+    // odlisenim jednotlivych casti - zaleklo se to jako "rozbita struktura/
+    // cervena sracka" (bot10 2026-09-19, nalezeno Robertem na cs:562-564).
+    const meshColors = (partSpec.mesh_colors && typeof partSpec.mesh_colors === "object") ? partSpec.mesh_colors : null;
+    const fallbackColor = partSpec.color || p.color_hex;
+    const karoserie = jeKaroserie(partSpec.part_id);
+    obj.traverse(n => {
+      if (n.isMesh && n.material) {
+        n.material = n.material.clone();
+        const color = (meshColors && meshColors[n.name]) || fallbackColor;
+        if (color) n.material.color.set(color);
+        // Karoserie POLOPRUHLEDNA: kdyby byla plna, schovala by regal uvnitr
+        // a prave ten se posuzuje. depthWrite=false, aby skrz ni byly dily
+        // videt bez razeni podle hloubky.
+        if (karoserie) {
+          n.material.transparent = true;
+          n.material.opacity = 0.22;
+          n.material.depthWrite = false;
+          n.material.side = THREE.DoubleSide;
+        }
+      }
+    });
+    if (karoserie) obj.renderOrder = 10;
+    obj.position.set(partSpec.position[0], partSpec.position[1], partSpec.position[2]);
+    obj.quaternion.set(partSpec.quaternion[0], partSpec.quaternion[1], partSpec.quaternion[2], partSpec.quaternion[3]);
+    obj.scale.set(partSpec.scale[0], partSpec.scale[1], partSpec.scale[2]);
+    obj.userData.role = partSpec.role || "";
+    return obj;
+  }
+
+  // Robert 2026-09-19 ("kamera ať to zabírá lépe na horní blok"): kontroluje
+  // se hlavne dvirka/ram horniho bloku, ne cela sestava (nohy+eurobox
+  // police pod nim). Rozdeleni "horni blok vs zbytek" pouziva STEJNY
+  // koncept jako uz zavedeny `analyzuj().nejvyssiUhelnik`
+  // (2026-09-05_horni_ram.js) - vse s DOLNIM Y okrajem NAD nejvyssim bodem
+  // rolí `uhelnik*` (karoserie kolem euroboxu) patri do "horniho bloku".
+  // Zadny uhelnik nalezen (napr. vlastni tvar/vzor bez vozidla pod nim) ->
+  // padne zpet na cely objekt, jak fungovalo drive.
+  function frameCameraOnHorniBlok(group) {
+    let maxUhelnikY = -Infinity;
+    const childBoxes = group.children.map(child => ({ child, box: new THREE.Box3().setFromObject(child) }));
+    childBoxes.forEach(({ child, box }) => {
+      if (/^uhelnik/i.test(child.userData.role || "") && box.max.y > maxUhelnikY) maxUhelnikY = box.max.y;
+    });
+    if (maxUhelnikY === -Infinity) { frameCameraToObject(group); return; }
+    const combined = new THREE.Box3();
+    let found = false;
+    childBoxes.forEach(({ box }) => {
+      if (box.min.y >= maxUhelnikY - 1) { combined.union(box); found = true; }
+    });
+    // Robert 2026-09-20 ("dorazy uplne chybi"): pin/dorazdvirek trci NAD
+    // horni pricli jen 20-47mm, na celkove vysce horniho bloku (700mm+) je
+    // to jen pár % - presto se orizly uplne mimo zaber. frameCameraToObject
+    // sama pocita jen s 90% vyplnenim (10% marze), coz u malych vycnivajicich
+    // dilu na okraji nestaci spolehlive - pridana pevna rezerva navic.
+    if (found) combined.expandByScalar(60);
+    frameCameraToObject(found ? combined : group);
+  }
+
+  // bot8 2026-09-19 (Robert: "náhledy mají obsahovat jednu vestavbu jednu
+  // sestavu ale obsahují dvě i tři sestavy") - PRICINA: showItem() nemela
+  // zadnou ochranu proti prekryvu. Rychle poklepani next/next (bezne na
+  // mobilu/pomalejsim pripojeni, driv nez se stihne dokoncit predchozi
+  // nacitani) spustilo 2-3 soubezne showItem() bihy; kazdy z nich na konci
+  // udelal scene3d.add(group) bez ohledu na to, ze uz mezitim bezi novejsi
+  // pozadavek - `currentGroup` (jedna sdilena promenna) pak ukazovala jen
+  // na POSLEDNI dokonceny beh, takze starsi pridane skupiny zustaly v
+  // scene navzdy osirele = presne to "2-3 sestavy v jednom nahledu".
+  // Oprava: `loadToken` - kazdy beh si na zacatku vezme vlastni cislo,
+  // pred KAZDYM zapisem do scene (add i remove) overi, ze je porad
+  // nejnovejsi; pokud ho mezitim predbehl dalsi klik, potichu skonci beze
+  // zmeny sceny (vyhraje vzdy jen ten UPLNE posledni pozadovany index).
+  // Navic tlacitka behem nacitani zamknuta, aby se soubeh vubec nevyrabel.
+  async function showItem(index) {
+    currentIndex = index;
+    const myToken = ++loadToken;
+    loading = true;
+    updateHud();
+    setStatus("Načítám…");
+    const item = items[index];
+    try {
+      const katalog = await ensureKatalog();
+      const { name, parts: allParts, vandr } = await fetchItemParts(item);
+      if (myToken !== loadToken) return; // predbehnuto novejsim klikem
+      const parts = zobrazitKaroserii ? allParts.slice() : allParts.filter(p => !jeKaroserie(p.part_id));
+      const maKaroserii = zobrazitKaroserii && allParts.some(p => jeKaroserie(p.part_id));
+      if (!parts.length && !vandr) throw new Error("Sestava nemá žádné díly.");
+      const group = new THREE.Group();
+      const failed = [];
+      const nacitani = parts.map(p => loadOnePart(p, katalog).catch(e => { failed.push(e.message); return null; }));
+      if (vandr) nacitani.push(loadVandrMonolit(vandr.glb).catch(e => { failed.push("monolit: " + e.message); return null; }));
+      const loaded = await Promise.all(nacitani);
+      if (myToken !== loadToken) return; // predbehnuto novejsim klikem
+      loaded.forEach(obj => { if (obj) group.add(obj); });
+      if (!group.children.length) throw new Error("Žádný díl se nepodařilo načíst" + (failed[0] ? (" (" + failed[0] + ")") : "."));
+      if (currentGroup) { scene3d.remove(currentGroup); disposeGroup(currentGroup); currentGroup = null; }
+      scene3d.add(group);
+      currentGroup = group;
+      // bot10 2026-09-24 (pravidlo 52, nalez 4604 "cok stitek nema
+      // razitko"): u Vandr karty s vypocitanym front_azimuth_deg
+      // otoc kameru PRESNE na "predni" pohled renderu (misto fixni
+      // diagonaly) - jinak nejde overit "je razitko videt zepredu",
+      // aniz by clovek sam netusil, na kterou stranu se prave divá.
+      const vdAzimut = vandr && Number.isFinite(vandr.front_azimuth_deg) ? vandr.front_azimuth_deg : null;
+      if (vdAzimut != null) {
+        // rezim=materialy: ramovat jen VIDITELNE dily - Box3.setFromObject
+        // bere i skrytou skorepinu karoserie/podlahu (Vito: 2533x1473x1669 mm),
+        // sestava by v 460px okenku panelu byla jen malym ostruvkem uprostred.
+        vdAktualniBox = rezimMaterialy ? boxViditelnych(group) : new THREE.Box3().setFromObject(group);
+        vdAktualniAzimut = vdAzimut;
+        vdStranyEl.hidden = false;
+        vdUkazStranu(0);
+        if (!rezimMaterialy && Array.isArray(vandr.azimuths) && vandr.azimuths.length) {
+          vdOtockaZapni(vdAzimut, vandr.azimuths, Array.isArray(vandr.elevations) && vandr.elevations.length ? vandr.elevations : [0]);
+        } else {
+          vdOtockaVypni();
+        }
+      } else {
+        vdAktualniBox = null; vdAktualniAzimut = null;
+        vdStranyEl.hidden = true;
+        vdOtockaVypni();
+        // S karoserii ramuj CELEK - smyslem zobrazene karoserie je videt,
+        // jestli sestava nekam presahuje; priblizeni na horni blok by to zase skrylo.
+        if (maKaroserii) frameCameraToObject(group); else frameCameraOnHorniBlok(group);
+      }
+      let popis = escapeHtml(name);
+      if (vandr) {
+        // Robert 2026-09-24 ("chci videt kompletni nezmatene verze"): popisek
+        // jen to podstatne - varianta, karta, pocty. Technicke detaily
+        // (podle ceho je celo, pozice noh) zustavaji v SOUHRN_JSON generatoru.
+        const s = vandr.souhrn || {};
+        const pocetRazitek = parts.filter(p => /logo-ochrana-vandr-logo/.test(p.role || "")).length;
+        const strany = ["predni", "zadni", "leva", "prava"];
+        const pz = (o) => strany.map(k => (o && o[k] != null ? o[k] : "-")).join(" / ");
+        const varianta = vandr.zdroj === "db" ? "Razítka z DB (aktuálně renderovaná)" : (vandr.pravidlo || "Návrh razítek");
+        // WORKFLOW.md pravidlo 51/52 (Robert: "postradam stitky v detailu
+        // sestavy Vandr") - stejna konvence jako prehled "Tvorba sestav -
+        // Vandr" (kod + tooltip s nazvem, cervene "?" misto prazdna).
+        const umLabel = vandr.umisteni_kod
+          ? "<span title=\"Umístění: " + escapeHtml(vandr.umisteni_kod) + " - " + escapeHtml(vandr.umisteni_nazev || "") + "\">"
+            + escapeHtml(vandr.umisteni_kod) + "</span>"
+          : "<span style='color:#ffb4b4;font-weight:700' title=\"NEURČENO - karta nemá štítek strany vozu (WORKFLOW.md pravidlo 51)\">?</span>";
+        popis = "<b>" + escapeHtml(varianta) + "</b> · umístění " + umLabel
+              + "<br>karta " + item.id + " · " + escapeHtml(name) + (s.pocet_sloupcu != null ? " · " + s.pocet_sloupcu + " pole" : "")
+              + "<br>razítek " + pocetRazitek
+              + (s.orientace ? " · svisle " + s.orientace.svisle + " / vodorovně " + s.orientace.vodorovne : "")
+              + (s.umistene ? " · čelo / záda / levá / pravá: " + pz(s.umistene) : "")
+              + ((s.nedostatek && s.nedostatek.length) ? " · <span style='color:#ffb4b4'>NEDOSTATEK " + escapeHtml(s.nedostatek.join(", ")) + "</span>" : "")
+              + (vdAzimut != null ? "<br>render (\"přední\") = azimut " + vdAzimut + "° - tlačítka nahoře ukazují přesně tenhle a další 3 pohledy" : "");
+      }
+      nameLabelEl.innerHTML = popis + (failed.length ? "<br><span style='color:#ffb4b4'>" + failed.length + "× díl se nenačetl (" + escapeHtml(failed[0]) + ")</span>" : "");
+      setStatus("");
+      if (rezimMaterialy) materialyPoNacteni(group, name);
+    } catch (err) {
+      if (myToken !== loadToken) return; // predbehnuto novejsim klikem
+      setStatus("Nepodařilo se načíst (" + (item.type === "pa" ? "sestava" : item.type === "vd" ? "Vandr karta" : "vlastní tvar") + " #" + item.id + "): " + err.message, true);
+    } finally {
+      if (myToken === loadToken) { loading = false; updateHud(); }
+    }
+  }
+
+  // ---- Rezim "materialy" (viz rezimMaterialy nahore) -------------------
+  // Rodina = jmeno materialu tak, jak je v Unity/vanDrawee zdroji, bez
+  // glTF kopii "(Instance).NNN" - STEJNE pravidlo jako radky tabulky
+  // (scripts/_render_prirazeni_lib.rodina_materialu) i render
+  // (api/blender_render_turntable._rodina_materialu). "__celo__" = celo
+  // supliku = rodina tyrkys s nejvetsim rozmerem nad 300 mm (stejny filtr
+  // jako render, _je_celo_supliku_klt - drobne tyrkysove rozky nepatri).
+  const topbarEl = document.getElementById("topbar");
+  // toneMapped:false - ACES tone mapping (renderer vyse) by sytou barvu
+  // vybledl do svetle ruzove (overeno Playwright snimkem 2026-09-28).
+  const MAT_ZVYRAZNENI = new THREE.MeshStandardMaterial({ color: 0xff1f4b, emissive: 0xff0033, emissiveIntensity: 0.35, roughness: 0.5, metalness: 0, toneMapped: false });
+  const MAT_DUCH = new THREE.MeshStandardMaterial({ color: 0xb9c1cc, transparent: true, opacity: 0.14, depthWrite: false, roughness: 1, metalness: 0 });
+  function boxViditelnych(group) {
+    const b = new THREE.Box3();
+    group.updateMatrixWorld(true);
+    group.traverse(n => { if (n.isMesh && n.visible) b.expandByObject(n); });
+    return b.isEmpty() ? new THREE.Box3().setFromObject(group) : b;
+  }
+  let matMeshe = [];          // [{mesh, puvodni, rodina, klic, celo, skryty}]
+  let matAktivni = zvyraznitParam;
+  let matSestava = "";
+  let matRamecky = [];        // BoxHelpery kolem zvyraznenych drobnych dilu
+  const MAT_RAMECKY_MAX = 30; // nad tolik dilu (napr. ALU 62) by ramecky jen rusily
+
+  // Vychozi pohled v rezimu materialy: predni azimut renderu, ale mirne
+  // SHORA (20°) - ploche dily lezici u podlahy (napr. loga "vanDrawee"
+  // rodiny blue KLT v sestave Vito) jsou z elevace 0 videt jen z hrany.
+  // + priblizeni 30 % (sfericky ramec frameCameraFromAzimuth je volny).
+  function matPriblizit() { camera.position.lerp(controls.target, 0.3); controls.update(); }
+
+  function rodinaMaterialu(jmeno) {
+    return String(jmeno || "").trim().replace(/\s*\(instance\).*$/i, "").replace(/\.\d{3}$/, "");
+  }
+  // Typ dilu (Robert 2026-09-28: KLT box vs Multibox musi jit rozdelit) -
+  // KOPIE scripts/_render_prirazeni_lib.py TYPY_DILU/typ_dilu (a
+  // api/blender_render_turntable.py _typ_dilu): prvni klicove slovo v
+  // retezci jmen OD KORENE k dilu. Pri zmene upravit vsechna tri mista.
+  const TYPY_DILU = [
+    ["multibox", "multibox", "Police s Multiboxy"], ["vysuvklt", "vysuvklt", "Výsuv KLT (KLT box)"],
+    ["vysuveurobox", "vysuveurobox", "Výsuv Eurobox"], ["kufrik", "kufrik", "Kufřík"],
+    ["boxpolice", "boxpolice", "Box police"], ["suplik", "suplik", "Šuplík"], ["drawer", "suplik", "Šuplík"],
+    ["policedoor", "policedoor", "Police s dvířky"], ["doorfloor", "doorfloor", "Dvířková podlaha"],
+    ["frontfloor", "frontfloor", "Přední podlážka"], ["upinaci", "upinaci", "Upínací plocha"],
+    ["zavetrovani", "zavetrovani", "Zavětrování"], ["pricka", "pricka", "Příčka"], ["stul", "stul", "Stůl"],
+    ["ramsikmy", "ramsikmy", "Šikmý rám"], ["bocniram", "bocniram", "Boční rám"], ["noha", "noha", "Noha"],
+    ["popruh", "popruh", "Popruh"], ["legsbox", "legsbox", "LegsBox"], ["police", "police", "Police"],
+    ["logo", "logo", "Vodoznak vanDrawee"], ["podlaha", "podlaha", "Podlaha"],
+  ];
+  const NAZEV_TYPU = Object.fromEntries(TYPY_DILU.map(([, t, n]) => [t, n]));
+  // Role dilu = skupina PRIMO nad dilem (KOPIE _render_prirazeni_lib.role_dilu):
+  // klic jen mala pismena bez "(Clone)" - GLTFLoader tecky maze a duplicitam
+  // pridava "_1", pismena zustanou stejna. Dil s vice materialy je v r128
+  // THREE.Group (primitivy uvnitr) -> role je o uroven vys; prazdne uzly
+  // (skupiny roli) jsou Object3D, ne Group.
+  const NAZEV_ROLE = {
+    multiboxarc: "Multiboxy (přihrádky)", drawer: "Čelo šuplíku", darkgreybin: "Tmavé boxy",
+    plasttyrkys: "Tyrkysový plast", blueklt: "Modré díly (blue_klt)", plastgr: "Šedý plast",
+    black: "Černé díly", alu: "Hliník", preklizkahl: "Překližka", sroub: "Šrouby, trubky (chrom)",
+    default: "Těla šuplíků a ostatní (Default)", red: "Červené díly", zinc: "Zinek", orange: "Oranžové díly",
+    bila: "Bílý plast", layer: "Layer_01", logo: "Vodoznak vanDrawee", podlaha: "Podlaha",
+  };
+  function roleDilu(mesh) {
+    let p = mesh.parent;
+    if (p && p.isGroup) p = p.parent;
+    return p ? String(p.name || "").replace(/\(clone\)/ig, "").toLowerCase().replace(/[^a-z]/g, "") : "";
+  }
+  // Kryci lista v drazce (stejne pravidlo jako render _je_kryci_lista_klt:
+  // "klt" v materialu, nejtensi rozmer < 15 mm A prostredni < 50 mm;
+  // rozmery = lokalni obalka x meritko, jako Blender o.dimensions)
+  function jeKryciLista(mesh, matJmeno) {
+    if (!String(matJmeno || "").toLowerCase().includes("klt") || !mesh.geometry) return false;
+    if (!mesh.geometry.boundingBox) mesh.geometry.computeBoundingBox();
+    const s = mesh.geometry.boundingBox.getSize(new THREE.Vector3());
+    const m = mesh.getWorldScale(new THREE.Vector3());
+    const d = [Math.abs(s.x * m.x), Math.abs(s.y * m.y), Math.abs(s.z * m.z)].sort((a, b) => a - b);
+    return d[0] < 15 && d[1] < 50;
+  }
+  let matListySkryt = false;
+  function typDilu(mesh) {
+    const retez = [];
+    for (let p = mesh; p; p = p.parent) retez.push(String(p.name || "").toLowerCase());
+    for (let i = retez.length - 1; i >= 0; i--) {
+      const shoda = TYPY_DILU.find(([k]) => retez[i].includes(k));
+      if (shoda) return shoda[1];
+    }
+    return "";
+  }
+  function poslatRodici(zprava) {
+    if (window.parent && window.parent !== window) window.parent.postMessage(zprava, location.origin);
+  }
+  function matPopisek(html) { topbarEl.innerHTML = html; }
+
+  // Viditelnost v rezimu materialy = PRESNE to, co ukaze render (ne
+  // vychozi zjednoduseni kontrolni sceny VD_VYNECHAT nahore): stejny seznam
+  // jako scripts/2026-09-09_turntable_job.py build_job_vandr
+  // ("vynechat_objekty") a stejna pravidla jako api/blender_render_turntable.py
+  // - shoda ve jmene dilu, jmene materialu NEBO kteremkoli predkovi
+  // (vodoznak "vanDrawee" = 9 plochych dilu pod skupinou "logo", sam o sobe
+  // se jmenuje Object_N) + "SomeName*" dil pokryvajici >= 60 % sceny ve
+  // VSECH 3 osach (skorepina karoserie se ztracenym jmenem).
+  const VD_RENDER_VYNECHAT = ["podlaha", "karoserie", "dimension", "fixarea", "legshoverbox", "logo"];
+  function vRenderuSkryte(monolit) {
+    const skryte = new Set();
+    const obsahuje = s => { const t = String(s || "").toLowerCase(); return VD_RENDER_VYNECHAT.some(k => t.includes(k)); };
+    const meshe = [];
+    monolit.traverse(n => { if (n.isMesh) meshe.push(n); });
+    const scena = new THREE.Box3();
+    meshe.forEach(n => scena.expandByObject(n));
+    const vs = scena.getSize(new THREE.Vector3());
+    meshe.forEach(n => {
+      let ano = obsahuje(n.name)
+        || (Array.isArray(n.material) ? n.material : [n.material]).some(m => m && obsahuje(m.name));
+      for (let p = n.parent; !ano && p && p !== monolit; p = p.parent) ano = obsahuje(p.name);
+      if (!ano && /^somename/i.test(n.name || "")) {
+        const s = new THREE.Box3().setFromObject(n).getSize(new THREE.Vector3());
+        ano = ["x", "y", "z"].every(a => vs[a] <= 1e-6 || s[a] / vs[a] >= 0.6);
+      }
+      if (ano) skryte.add(n);
+    });
+    return skryte;
+  }
+
+  function materialyPoNacteni(group, nazev) {
+    matSestava = nazev || "";
+    matMeshe = [];
+    group.updateMatrixWorld(true);
+    const skryteVRenderu = new Set();
+    group.children.forEach(ch => {
+      if (ch.userData && ch.userData.role === "vandr-monolit") vRenderuSkryte(ch).forEach(n => skryteVRenderu.add(n));
+    });
+    group.traverse(n => {
+      if (!n.isMesh) return;
+      const m = Array.isArray(n.material) ? n.material[0] : n.material;
+      const rodina = rodinaMaterialu(m && m.name);
+      const s = new THREE.Box3().setFromObject(n).getSize(new THREE.Vector3());
+      // razitka (samostatne dily mimo monolit) render nevynechava
+      const skrytyRender = skryteVRenderu.has(n);
+      const typ = typDilu(n);
+      const role = roleDilu(n);
+      const lista = jeKryciLista(n, m && m.name);
+      const zaznam = { mesh: n, puvodni: n.material, rodina, klic: rodina.toLowerCase(), typ, role, lista, skrytyRender,
+                      // celo = role "drawer", pojistka tyrkys v Suplik > 300 mm (stejne jako render)
+                      celo: role === "drawer" || (rodina.toLowerCase() === "tyrkys" && typ === "suplik" && Math.max(s.x, s.y, s.z) > 300) };
+      zaznam.skryty = skrytyRender || (matListySkryt && lista);
+      n.visible = !zaznam.skryty;
+      matMeshe.push(zaznam);
+    });
+    vdAktualniBox = boxViditelnych(group);
+    if (vdAktualniBox && vdAktualniAzimut != null) {
+      frameCameraFromAzimuth(vdAktualniBox, vdAktualniAzimut, 20);
+      vdStranyBtns.forEach(b => b.removeAttribute("aria-pressed"));
+    }
+    matPriblizit();
+    const pritomne = Array.from(new Set(matMeshe.map(x => x.rodina).filter(Boolean)));
+    poslatRodici({ typ: "kontrola-rodiny", karta: items[currentIndex].id, rodiny: pritomne,
+                   kombinace: Array.from(new Set(matMeshe.filter(x => x.rodina).map(x => x.klic + "|" + x.typ))),
+                   role: Array.from(new Set(matMeshe.map(x => x.role).filter(Boolean))),
+                   kombinaceRole: Array.from(new Set(matMeshe.filter(x => x.role).map(x => x.role + "|" + x.typ))),
+                   celo: matMeshe.some(x => x.celo) });
+    zvyraznitRodinu(matAktivni);
+  }
+
+  function zvyraznitRodinu(klic) {
+    matAktivni = klic || null;
+    if (!matMeshe.length) return 0; // model se jeste nacita - pouzije se po nacteni
+    const cil = (klic || "").toLowerCase();
+    // "rodina@typ" = jen dily daneho typu (radek "rozdělit podle dílu")
+    const jeRole = cil.startsWith("role:");
+    const cilBez = jeRole ? cil.slice(5) : cil;
+    const [cilRodina, cilTyp] = cilBez.includes("@") ? cilBez.split("@") : [cilBez, null];
+    let pocet = 0, skrytych = 0;
+    matMeshe.forEach(x => {
+      if (!cil) { x.mesh.material = x.puvodni; x.mesh.visible = !x.skryty; return; }
+      const shoda = cil === "__celo__" ? x.celo
+        : ((jeRole ? x.role === cilRodina : x.klic === cilRodina) && (cilTyp === null || x.typ === cilTyp));
+      if (shoda) {
+        x.mesh.material = MAT_ZVYRAZNENI; x.mesh.visible = true; pocet++;
+        if (x.skryty) skrytych++;
+      } else {
+        x.mesh.material = MAT_DUCH; x.mesh.visible = !x.skryty;
+      }
+    });
+    matRamecky.forEach(h => { scene3d.remove(h); h.geometry.dispose(); h.material.dispose(); });
+    matRamecky = [];
+    if (cil && pocet && pocet <= MAT_RAMECKY_MAX) {
+      matMeshe.forEach(x => {
+        if (x.mesh.material !== MAT_ZVYRAZNENI) return;
+        const h = new THREE.BoxHelper(x.mesh, 0xff1f4b);
+        h.material.depthTest = false; h.material.transparent = true; h.renderOrder = 20;
+        scene3d.add(h); matRamecky.push(h);
+      });
+    }
+    const zaklad = jeRole ? (NAZEV_ROLE[cilRodina] || cilRodina) : String(klic).split("@")[0];
+    const jmeno = cil === "__celo__" ? "čelo šuplíku"
+      : (cilTyp !== null ? zaklad + " · " + (NAZEV_TYPU[cilTyp] || "ostatní díly") : zaklad);
+    if (!cil) {
+      matPopisek(escapeHtml(matSestava) + "<br><span style='opacity:.75'>klikni na díl → ukáže, jaký je to materiál</span>");
+    } else if (!pocet) {
+      matPopisek("<b>" + escapeHtml(jmeno) + "</b> — v této sestavě není");
+    } else {
+      matPopisek("<b style='color:#d0103a'>" + escapeHtml(jmeno) + "</b> — " + pocet + " dílů"
+        + (skrytych ? " <span style='color:#a33'>(z toho " + skrytych + " v renderu skrytých)</span>" : "")
+        + "<br><span style='opacity:.75'>" + escapeHtml(matSestava) + " · klik do prázdna = zrušit</span>");
+    }
+    return pocet;
+  }
+
+  if (rezimMaterialy) {
+    window.addEventListener("message", (e) => {
+      if (e.origin !== location.origin || !e.data) return;
+      if (e.data.typ === "kontrola-nastaveni") {
+        matListySkryt = !!e.data.kryciListySkryt;
+        matMeshe.forEach(x => { x.skryty = x.skrytyRender || (matListySkryt && x.lista); });
+        zvyraznitRodinu(matAktivni);
+        return;
+      }
+      if (e.data.typ !== "kontrola-zvyraznit") return;
+      zvyraznitRodinu(e.data.rodina || null);
+    });
+    const raycaster = new THREE.Raycaster();
+    let klikOd = null;
+    viewerEl.addEventListener("pointerdown", (e) => { klikOd = { x: e.clientX, y: e.clientY }; });
+    viewerEl.addEventListener("pointerup", (e) => {
+      if (!klikOd) return;
+      const posun = Math.hypot(e.clientX - klikOd.x, e.clientY - klikOd.y);
+      klikOd = null;
+      if (posun > 5 || !matMeshe.length) return; // tazeni = otaceni, ne klik
+      const r = renderer.domElement.getBoundingClientRect();
+      const v = new THREE.Vector2(((e.clientX - r.left) / r.width) * 2 - 1, -((e.clientY - r.top) / r.height) * 2 + 1);
+      raycaster.setFromCamera(v, camera);
+      const hit = raycaster.intersectObjects(matMeshe.filter(x => x.mesh.visible).map(x => x.mesh), false)[0];
+      const x = hit && matMeshe.find(m => m.mesh === hit.object);
+      // klik = material A typ dilu (nejpresnejsi radek tabulky)
+      const klic = x ? (x.celo ? "__celo__" : (x.role ? "role:" + x.role + "@" + x.typ : x.rodina + "@" + x.typ)) : null;
+      zvyraznitRodinu(klic);
+      poslatRodici({ typ: "kontrola-klik", rodina: klic });
+    });
+  }
+
+  function disposeGroup(group) {
+    group.traverse(n => {
+      if (n.isMesh) {
+        n.geometry && n.geometry.dispose();
+        if (n.material) (Array.isArray(n.material) ? n.material : [n.material]).forEach(m => m.dispose());
+      }
+    });
+  }
+
+  function escapeHtml(s) {
+    return String(s || "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  }
+
+  function updateHud() {
+    if (items.length <= 1) { hudEl.hidden = true; return; }
+    hudEl.hidden = false;
+    prevBtn.disabled = loading || currentIndex === 0;
+    nextBtn.disabled = loading || currentIndex === items.length - 1;
+    idxLabelEl.textContent = (currentIndex + 1) + " / " + items.length;
+  }
+
+  carBtn.addEventListener("click", () => {
+    zobrazitKaroserii = !zobrazitKaroserii;
+    localStorage.setItem("kontrolaKaroserie", zobrazitKaroserii ? "1" : "0");
+    carBtn.setAttribute("aria-pressed", zobrazitKaroserii ? "true" : "false");
+    if (currentIndex >= 0) showItem(currentIndex);
+  });
+  prevBtn.addEventListener("click", () => { if (currentIndex > 0) showItem(currentIndex - 1); });
+  nextBtn.addEventListener("click", () => { if (currentIndex < items.length - 1) showItem(currentIndex + 1); });
+
+  initViewer();
+  updateHud();
+  showItem(0);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+[Unit]
+Description=Konfigurator 3D objektu - kontrolni mechanismy na cely system (scripts/qa/run_all.sh)
+After=network.target
+
+[Service]
+Type=oneshot
+User=root
+Group=root
+Nice=15
+MemoryMax=4G
+TimeoutStartSec=45min
+WorkingDirectory=/opt/konfigurator
+ExecStart=/opt/konfigurator/scripts/qa/run_all.sh

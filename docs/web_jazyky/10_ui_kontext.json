@@ -1,0 +1,6040 @@
+{
+ "ui:701253da2158:text": {
+  "zdroj": [
+   "product.html:6137"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": [
+   "html-v-retezci"
+  ]
+ },
+ "ui:64794ed90534:hlaska": {
+  "zdroj": [
+   "product.html:5934"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": [
+   "mena"
+  ]
+ },
+ "ui:6c33980c41d2:hlaska": {
+  "zdroj": [
+   "product.html:5933"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:3710d62135e9:hlaska": {
+  "zdroj": [
+   "js/kategorie-tabulka.js:230"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": [
+   "slovnik"
+  ]
+ },
+ "ui:be62c29b0d41:hlaska": {
+  "zdroj": [
+   "category.html:1853",
+   "category.html:1854"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:50b93ea3438d:hlaska": {
+  "zdroj": [
+   "product.html:5546"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:e8467319fa8b:hlaska": {
+  "zdroj": [
+   "product.html:5270"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:a8620deb9c5c:tlacitko": {
+  "zdroj": [
+   "product.html:1925"
+  ],
+  "kontexty": [
+   "tlacitko"
+  ],
+  "priznaky": []
+ },
+ "ui:ea6e9559f918:hlaska": {
+  "zdroj": [
+   "product.html:5531"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": [
+   "mena"
+  ]
+ },
+ "ui:9c622404b7ce:placeholder": {
+  "zdroj": [
+   "product.html:2125"
+  ],
+  "kontexty": [
+   "placeholder"
+  ],
+  "priznaky": []
+ },
+ "ui:5d8bcf515e39:hlaska": {
+  "zdroj": [
+   "product.html:2475"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:266aa4ed22db:hlaska": {
+  "zdroj": [
+   "js/kategorie-tabulka.js:158",
+   "js/kategorie-tabulka.js:175"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:ed3aeec4d649:hlaska": {
+  "zdroj": [
+   "js/turntable.js:627"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:c86491022ffe:text": {
+  "zdroj": [
+   "js/image-markup.js:83"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": [
+   "html-v-sablone"
+  ]
+ },
+ "ui:8764c5dfe062:tlacitko": {
+  "zdroj": [
+   "product.html:1707"
+  ],
+  "kontexty": [
+   "tlacitko"
+  ],
+  "priznaky": []
+ },
+ "ui:b91485b3a913:text": {
+  "zdroj": [
+   "product.html:2899"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": [
+   "html-v-retezci"
+  ]
+ },
+ "ui:928c5c86b520:hlaska": {
+  "zdroj": [
+   "product.html:4327"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:3c88102f300e:hlaska": {
+  "zdroj": [
+   "product.html:2470"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:6cf9c4d35a2b:hlaska": {
+  "zdroj": [
+   "index.html:1357",
+   "category.html:1890",
+   "product.html:2269",
+   "realizace.html:378",
+   "blok.html:816"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:9458daa76033:hlaska": {
+  "zdroj": [
+   "category.html:3090"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": [
+   "slovnik"
+  ]
+ },
+ "ui:4af1204d018e:text": {
+  "zdroj": [
+   "poptavka-stul.html:154"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:a50b2b1bfbe9:text": {
+  "zdroj": [
+   "kontakt.html:127"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:8154a56b0b3e:text": {
+  "zdroj": [
+   "moje-objednavky.html:122"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:db367efa9184:text": {
+  "zdroj": [
+   "poptavka-stul.html:422"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": [
+   "html-v-sablone"
+  ]
+ },
+ "ui:1be5969ccaa0:text": {
+  "zdroj": [
+   "poptavka-stul.html:422"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": [
+   "html-v-sablone"
+  ]
+ },
+ "ui:6adac517c59f:text": {
+  "zdroj": [
+   "poptavka-stul.html:422"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": [
+   "html-v-sablone"
+  ]
+ },
+ "ui:513257319b43:hlaska": {
+  "zdroj": [
+   "js/realizace-foto.js:89"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": [
+   "slovnik"
+  ]
+ },
+ "ui:35eb218d117b:hlaska": {
+  "zdroj": [
+   "js/realizace-foto.js:86"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": [
+   "slovnik"
+  ]
+ },
+ "ui:6386b36b3e80:hlaska": {
+  "zdroj": [
+   "js/turntable.js:118"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": [
+   "slovnik"
+  ]
+ },
+ "ui:61e7f14134ef:hlaska": {
+  "zdroj": [
+   "js/realizace-foto.js:98"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": [
+   "slovnik"
+  ]
+ },
+ "ui:501cb1d78e9b:hlaska": {
+  "zdroj": [
+   "js/realizace-foto.js:17"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:bb14103fc9eb:hlaska": {
+  "zdroj": [
+   "category.html:3123"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": [
+   "slovnik"
+  ]
+ },
+ "ui:4e7afebcfbae:text": {
+  "zdroj": [
+   "product.html:1784",
+   "product.html:1801"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:7420133a2446:text": {
+  "zdroj": [
+   "category.html:1765"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:e994f8e3b932:text": {
+  "zdroj": [
+   "product.html:1996"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:6f4e789c646b:text": {
+  "zdroj": [
+   "kontakt.html:131"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:030a4f7ffeb0:hlaska": {
+  "zdroj": [
+   "product.html:4710"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:f5ddb95b398f:text": {
+  "zdroj": [
+   "register.html:89"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:545a99990e0a:hlaska": {
+  "zdroj": [
+   "product.html:4479"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:29ee6031e504:tlacitko": {
+  "zdroj": [
+   "product.html:1793"
+  ],
+  "kontexty": [
+   "tlacitko"
+  ],
+  "priznaky": []
+ },
+ "ui:f2b6bd143d87:text": {
+  "zdroj": [
+   "poptavka-stul.html:245"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:c79602b062bc:text": {
+  "zdroj": [
+   "category.html:1611",
+   "category.html:1616"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:11bd864fc03c:title": {
+  "zdroj": [
+   "product.html:1802"
+  ],
+  "kontexty": [
+   "title"
+  ],
+  "priznaky": []
+ },
+ "ui:48de5f1d19d8:hlaska": {
+  "zdroj": [
+   "product.html:3426"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": [
+   "mena"
+  ]
+ },
+ "ui:cea7774a90a8:text": {
+  "zdroj": [
+   "category.html:2785",
+   "product.html:4541",
+   "product.html:4628"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": [
+   "html-v-retezci"
+  ]
+ },
+ "ui:51c87b73c54c:hlaska": {
+  "zdroj": [
+   "product.html:4502"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:099c4a1cee77:hlaska": {
+  "zdroj": [
+   "product.html:4500"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:2a8240e565b2:hlaska": {
+  "zdroj": [
+   "poptavka-stul.html:362"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:f88b45a3be1c:hlaska": {
+  "zdroj": [
+   "poptavka-stul.html:342"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:e80c88bd3fca:nadpis": {
+  "zdroj": [
+   "moje-objednavky.html:141"
+  ],
+  "kontexty": [
+   "nadpis"
+  ],
+  "priznaky": []
+ },
+ "ui:f185a5629e90:hlaska": {
+  "zdroj": [
+   "js/kategorie-tabulka.js:134"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": [
+   "slovnik"
+  ]
+ },
+ "ui:0bca5bf7f5db:text": {
+  "zdroj": [
+   "product.html:6000"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": [
+   "html-v-sablone"
+  ]
+ },
+ "ui:d32baab54ba3:text": {
+  "zdroj": [
+   "product.html:3734"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": [
+   "html-v-sablone",
+   "mena"
+  ]
+ },
+ "ui:5e252eb00077:hlaska": {
+  "zdroj": [
+   "product.html:4735"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": [
+   "slovnik"
+  ]
+ },
+ "ui:f916f46a6d19:hlaska": {
+  "zdroj": [
+   "product.html:4710"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:6041edb1ce02:hlaska": {
+  "zdroj": [
+   "js/kategorie-tabulka.js:135"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": [
+   "slovnik"
+  ]
+ },
+ "ui:59b4f92a0faa:hlaska": {
+  "zdroj": [
+   "product.html:4710"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:9c92f01041ba:text": {
+  "zdroj": [
+   "product.html:6000"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": [
+   "html-v-sablone"
+  ]
+ },
+ "ui:5fec3aa9ea5a:nadpis": {
+  "zdroj": [
+   "product.html:5767"
+  ],
+  "kontexty": [
+   "nadpis"
+  ],
+  "priznaky": [
+   "html-v-sablone"
+  ]
+ },
+ "ui:5e680c19a493:text": {
+  "zdroj": [
+   "product.html:5125"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": [
+   "html-v-sablone",
+   "mena"
+  ]
+ },
+ "ui:c6c82469ca8a:hlaska": {
+  "zdroj": [
+   "product.html:5127"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": [
+   "mena"
+  ]
+ },
+ "ui:424bb7004fab:nadpis": {
+  "zdroj": [
+   "moje-objednavky.html:141"
+  ],
+  "kontexty": [
+   "nadpis"
+  ],
+  "priznaky": []
+ },
+ "ui:583960c4106b:text": {
+  "zdroj": [
+   "category.html:1714",
+   "js/kategorie-tabulka.js:55"
+  ],
+  "kontexty": [
+   "text",
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:cce9d0742636:hlaska": {
+  "zdroj": [
+   "js/kategorie-tabulka.js:55"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:95e4846238e9:hlaska": {
+  "zdroj": [
+   "product.html:5656"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:da19867f7f15:text": {
+  "zdroj": [
+   "product.html:6000"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": [
+   "html-v-sablone"
+  ]
+ },
+ "ui:cdb07faeda48:hlaska": {
+  "zdroj": [
+   "js/kategorie-tabulka.js:62"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:684528206fe8:hlaska": {
+  "zdroj": [
+   "moje-objednavky.html:261"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:7e4494455779:hlaska": {
+  "zdroj": [
+   "login.html:187",
+   "register.html:145",
+   "forgot-password.html:120",
+   "reset-password.html:191",
+   "verify-email.html:125"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:17b69350b0bc:hlaska": {
+  "zdroj": [
+   "product.html:4887",
+   "product.html:5647"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:f29040395460:hlaska": {
+  "zdroj": [
+   "product.html:5551"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:b58b08f4bad1:hlaska": {
+  "zdroj": [
+   "product.html:5516"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:a8fa911024ab:text": {
+  "zdroj": [
+   "404.html:85"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:028b8aab643a:text": {
+  "zdroj": [
+   "category.html:2869"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": [
+   "html-v-retezci"
+  ]
+ },
+ "ui:8fa60acf1a86:hlaska": {
+  "zdroj": [
+   "product.html:5033"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:7c571b086da4:hlaska": {
+  "zdroj": [
+   "reset-password.html:131"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:c554e4a22e61:hlaska": {
+  "zdroj": [
+   "verify-email.html:102"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:7e396ece1a30:hlaska": {
+  "zdroj": [
+   "js/image-markup.js:766"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:6fea464f1ba5:text": {
+  "zdroj": [
+   "kontakt.html:134"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:807ce3c3414a:hlaska": {
+  "zdroj": [
+   "category.html:3209"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:8a1934745b7f:title": {
+  "zdroj": [
+   "category.html:1791",
+   "product.html:2051"
+  ],
+  "kontexty": [
+   "title"
+  ],
+  "priznaky": []
+ },
+ "ui:c6f7256351bd:hlaska": {
+  "zdroj": [
+   "js/realizace-foto.js:110"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:be1704cfca65:hlaska": {
+  "zdroj": [
+   "js/kategorie-tabulka.js:212"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:68d08ca18128:hlaska": {
+  "zdroj": [
+   "product.html:4710"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:fc9092cf2664:hlaska": {
+  "zdroj": [
+   "js/kategorie-tabulka.js:158",
+   "js/kategorie-tabulka.js:175"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": [
+   "slovnik"
+  ]
+ },
+ "ui:949bd4e13ef5:nadpis": {
+  "zdroj": [
+   "product.html:2123",
+   "kontakt.html:134"
+  ],
+  "kontexty": [
+   "nadpis",
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:1c72002f0373:hlaska": {
+  "zdroj": [
+   "product.html:6051"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:ee50ff2e9f90:tlacitko": {
+  "zdroj": [
+   "product.html:1766"
+  ],
+  "kontexty": [
+   "tlacitko"
+  ],
+  "priznaky": []
+ },
+ "ui:0179fbe32806:tlacitko": {
+  "zdroj": [
+   "product.html:1790"
+  ],
+  "kontexty": [
+   "tlacitko"
+  ],
+  "priznaky": []
+ },
+ "ui:fa87415303ac:nadpis": {
+  "zdroj": [
+   "product.html:2129"
+  ],
+  "kontexty": [
+   "nadpis"
+  ],
+  "priznaky": []
+ },
+ "ui:abc529ca0a63:text": {
+  "zdroj": [
+   "product.html:2128"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:7c06f50cf94b:hlaska": {
+  "zdroj": [
+   "product.html:6019"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:e21b9783f687:title": {
+  "zdroj": [
+   "index.html:1229",
+   "category.html:1581",
+   "product.html:1647",
+   "moje-objednavky.html:114",
+   "kontakt.html:119",
+   "realizace.html:260"
+  ],
+  "kontexty": [
+   "title",
+   "aria",
+   "odkaz"
+  ],
+  "priznaky": []
+ },
+ "ui:42ed756c287d:text": {
+  "zdroj": [
+   "poptavka-stul.html:213"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:7c5ab92c3273:hlaska": {
+  "zdroj": [
+   "product.html:5999"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": [
+   "slovnik"
+  ]
+ },
+ "ui:a138a1147a3b:hlaska": {
+  "zdroj": [
+   "product.html:5831"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:e86c91fdc189:hlaska": {
+  "zdroj": [
+   "product.html:5834"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:46816953006e:hlaska": {
+  "zdroj": [
+   "product.html:5836"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": [
+   "slovnik"
+  ]
+ },
+ "ui:33186e3b6ba0:hlaska": {
+  "zdroj": [
+   "product.html:5830",
+   "product.html:5833",
+   "product.html:5836"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": [
+   "slovnik"
+  ]
+ },
+ "ui:7b9435543620:nadpis": {
+  "zdroj": [
+   "product.html:6060"
+  ],
+  "kontexty": [
+   "nadpis"
+  ],
+  "priznaky": [
+   "html-v-sablone"
+  ]
+ },
+ "ui:8c1f4fee031b:hlaska": {
+  "zdroj": [
+   "product.html:5997"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:a78fc9413e83:nadpis": {
+  "zdroj": [
+   "product.html:5767"
+  ],
+  "kontexty": [
+   "nadpis"
+  ],
+  "priznaky": [
+   "html-v-sablone"
+  ]
+ },
+ "ui:6ef5e12aa6ef:hlaska": {
+  "zdroj": [
+   "product.html:4482"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:18e242c27147:hlaska": {
+  "zdroj": [
+   "category.html:2764"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:ef4e942d2a6c:hlaska": {
+  "zdroj": [
+   "category.html:2758"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:2b2ab484d576:hlaska": {
+  "zdroj": [
+   "category.html:2630",
+   "product.html:4588"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:eda71b4f8117:hlaska": {
+  "zdroj": [
+   "js/kategorie-tabulka.js:153"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:a510143ba1bf:hlaska": {
+  "zdroj": [
+   "js/kategorie-tabulka.js:134"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:7bd6608154d9:placeholder": {
+  "zdroj": [
+   "product.html:5437"
+  ],
+  "kontexty": [
+   "placeholder"
+  ],
+  "priznaky": [
+   "html-v-sablone"
+  ]
+ },
+ "ui:bd7c593cb9bb:hlaska": {
+  "zdroj": [
+   "js/kategorie-tabulka.js:17"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:845934efe5c1:hlaska": {
+  "zdroj": [
+   "product.html:4499"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:50e4cb145604:text": {
+  "zdroj": [
+   "poptavka-stul.html:174"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:feba1b056fe2:hlaska": {
+  "zdroj": [
+   "product.html:4495"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:eff3fc927027:hlaska": {
+  "zdroj": [
+   "js/kategorie-tabulka.js:18"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:095b3cb6a0fc:hlaska": {
+  "zdroj": [
+   "product.html:4499"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:049f8310c311:hlaska": {
+  "zdroj": [
+   "js/kategorie-tabulka.js:55"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:56d44b99cc67:hlaska": {
+  "zdroj": [
+   "js/kategorie-tabulka.js:55"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:54fd7e2678eb:nadpis": {
+  "zdroj": [
+   "poptavka-stul.html:261"
+  ],
+  "kontexty": [
+   "nadpis"
+  ],
+  "priznaky": []
+ },
+ "ui:3a724250dd2b:hlaska": {
+  "zdroj": [
+   "category.html:2754"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:dbd82102661c:hlaska": {
+  "zdroj": [
+   "js/image-markup.js:887"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:86ebe8b567de:hlaska": {
+  "zdroj": [
+   "poptavka-stul.html:348"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:e2eb511ca9e9:hlaska": {
+  "zdroj": [
+   "poptavka-stul.html:351"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:0d01e2e86669:text": {
+  "zdroj": [
+   "login.html:81",
+   "register.html:85",
+   "forgot-password.html:77",
+   "kontakt.html:140",
+   "poptavka-stul.html:203"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:eface70c9a8f:placeholder": {
+  "zdroj": [
+   "realizace.html:302"
+  ],
+  "kontexty": [
+   "placeholder"
+  ],
+  "priznaky": []
+ },
+ "ui:a3fb038d23d1:nadpis": {
+  "zdroj": [
+   "product.html:2124"
+  ],
+  "kontexty": [
+   "nadpis"
+  ],
+  "priznaky": []
+ },
+ "ui:313f5553fc8b:hlaska": {
+  "zdroj": [
+   "verify-email.html:117"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:80136fd1cb4e:alt": {
+  "zdroj": [
+   "kontakt.html:140"
+  ],
+  "kontexty": [
+   "alt"
+  ],
+  "priznaky": []
+ },
+ "ui:ee741822b76e:text": {
+  "zdroj": [
+   "category.html:1622"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:d6a8ea60253a:hlaska": {
+  "zdroj": [
+   "poptavka-stul.html:337"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:1eabd87307d6:placeholder": {
+  "zdroj": [
+   "product.html:2124",
+   "login.html:82",
+   "register.html:86",
+   "forgot-password.html:78"
+  ],
+  "kontexty": [
+   "placeholder"
+  ],
+  "priznaky": []
+ },
+ "ui:7965d097ef8d:hlaska": {
+  "zdroj": [
+   "poptavka-stul.html:349"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:5dbd1d8d5df4:hlaska": {
+  "zdroj": [
+   "moje-objednavky.html:210"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:1729e89ab611:nadpis": {
+  "zdroj": [
+   "product.html:2126"
+  ],
+  "kontexty": [
+   "nadpis"
+  ],
+  "priznaky": []
+ },
+ "ui:65529d6e3c35:hlaska": {
+  "zdroj": [
+   "moje-objednavky.html:210"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:439145df6937:text": {
+  "zdroj": [
+   "kontakt.html:130"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:2a4978c8ab82:text": {
+  "zdroj": [
+   "product.html:2117"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:00ea8b1e916e:tlacitko": {
+  "zdroj": [
+   "product.html:1706"
+  ],
+  "kontexty": [
+   "tlacitko"
+  ],
+  "priznaky": []
+ },
+ "ui:b0979cb16097:nadpis": {
+  "zdroj": [
+   "realizace.html:265",
+   "realizace.html:277"
+  ],
+  "kontexty": [
+   "odkaz",
+   "nadpis"
+  ],
+  "priznaky": []
+ },
+ "ui:3ff01b75854b:meta": {
+  "zdroj": [
+   "realizace.html:7",
+   "realizace.html:15",
+   "realizace.html:22"
+  ],
+  "kontexty": [
+   "meta"
+  ],
+  "priznaky": []
+ },
+ "ui:89249991940b:meta": {
+  "zdroj": [
+   "realizace.html:8",
+   "realizace.html:16",
+   "realizace.html:23"
+  ],
+  "kontexty": [
+   "meta"
+  ],
+  "priznaky": []
+ },
+ "ui:cc67a5c2d791:hlaska": {
+  "zdroj": [
+   "realizace.html:538"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:f7d1e377fdc1:hlaska": {
+  "zdroj": [
+   "js/realizace-foto.js:106"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": [
+   "slovnik"
+  ]
+ },
+ "ui:6d7d2aa52d5c:hlaska": {
+  "zdroj": [
+   "product.html:3203"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:d7f181af6693:text": {
+  "zdroj": [
+   "category.html:2954"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": [
+   "html-v-retezci"
+  ]
+ },
+ "ui:02175bb81eb0:title": {
+  "zdroj": [
+   "category.html:1677",
+   "category.html:2673",
+   "category.html:2674",
+   "category.html:2675",
+   "category.html:2676",
+   "product.html:4933"
+  ],
+  "kontexty": [
+   "title",
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:7b00a9e1526f:hlaska": {
+  "zdroj": [
+   "reset-password.html:167"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:894f36e5fe63:text": {
+  "zdroj": [
+   "login.html:83",
+   "register.html:87"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:bdbf12800510:hlaska": {
+  "zdroj": [
+   "reset-password.html:187"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:d64ed7464855:title": {
+  "zdroj": [
+   "index.html:1235",
+   "category.html:1587",
+   "product.html:1653"
+  ],
+  "kontexty": [
+   "title",
+   "aria"
+  ],
+  "priznaky": []
+ },
+ "ui:431a5e624a34:aria": {
+  "zdroj": [
+   "index.html:1237",
+   "category.html:1589",
+   "product.html:1655"
+  ],
+  "kontexty": [
+   "aria"
+  ],
+  "priznaky": []
+ },
+ "ui:34c192bdafc2:placeholder": {
+  "zdroj": [
+   "index.html:1237",
+   "category.html:1589",
+   "product.html:1655"
+  ],
+  "kontexty": [
+   "placeholder"
+  ],
+  "priznaky": []
+ },
+ "ui:11cc9c09334f:text": {
+  "zdroj": [
+   "index.html:1801",
+   "category.html:3398",
+   "product.html:6230"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": [
+   "html-v-retezci"
+  ]
+ },
+ "ui:d2cd02eec1ab:hlaska": {
+  "zdroj": [
+   "js/kategorie-tabulka.js:12"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:796ed6993d75:hlaska": {
+  "zdroj": [
+   "js/kategorie-tabulka.js:12"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:b6d7822059b2:hlaska": {
+  "zdroj": [
+   "js/kategorie-tabulka.js:12"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:9d56837de796:nadpis": {
+  "zdroj": [
+   "index.html:7",
+   "index.html:1231",
+   "index.html:1329",
+   "category.html:1583",
+   "category.html:1774",
+   "product.html:1649"
+  ],
+  "kontexty": [
+   "meta",
+   "nadpis",
+   "text",
+   "odkaz",
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:8f8466a689c9:hlaska": {
+  "zdroj": [
+   "js/kategorie-tabulka.js:12"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:80d53a5eccec:hlaska": {
+  "zdroj": [
+   "product.html:4494"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": [
+   "slovnik"
+  ]
+ },
+ "ui:353bb76d3c4f:hlaska": {
+  "zdroj": [
+   "product.html:4023"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:950a39b6c293:text": {
+  "zdroj": [
+   "index.html:1",
+   "category.html:1",
+   "product.html:1",
+   "moje-objednavky.html:1",
+   "login.html:1",
+   "register.html:1"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:7bbb14c7d2fa:hlaska": {
+  "zdroj": [
+   "kontakt.html:36"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:40db2b893ccc:text": {
+  "zdroj": [
+   "kontakt.html:131"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:457c28160cb0:hlaska": {
+  "zdroj": [
+   "poptavka-stul.html:354"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:fae777d93ac9:text": {
+  "zdroj": [
+   "category.html:1729",
+   "product.html:2025"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:6571326ff6fc:hlaska": {
+  "zdroj": [
+   "product.html:6019"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:fddadf3161b0:nadpis": {
+  "zdroj": [
+   "product.html:2122",
+   "kontakt.html:133"
+  ],
+  "kontexty": [
+   "nadpis",
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:4c279e8d5a3e:text": {
+  "zdroj": [
+   "register.html:83",
+   "poptavka-stul.html:198"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:e9ca5f948860:placeholder": {
+  "zdroj": [
+   "realizace.html:301"
+  ],
+  "kontexty": [
+   "placeholder"
+  ],
+  "priznaky": []
+ },
+ "ui:182eb77f9576:hlaska": {
+  "zdroj": [
+   "product.html:6109",
+   "product.html:6294"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:42ad96bfa717:placeholder": {
+  "zdroj": [
+   "product.html:2120",
+   "register.html:84"
+  ],
+  "kontexty": [
+   "placeholder"
+  ],
+  "priznaky": []
+ },
+ "ui:ba752ba48b97:nadpis": {
+  "zdroj": [
+   "product.html:2120"
+  ],
+  "kontexty": [
+   "nadpis"
+  ],
+  "priznaky": []
+ },
+ "ui:9770b787cfaf:text": {
+  "zdroj": [
+   "moje-objednavky.html:137"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:358210386a4f:nadpis": {
+  "zdroj": [
+   "index.html:1261",
+   "index.html:1820",
+   "category.html:1639",
+   "category.html:2302",
+   "category.html:3417",
+   "product.html:1679"
+  ],
+  "kontexty": [
+   "nadpis",
+   "text",
+   "odkaz"
+  ],
+  "priznaky": [
+   "html-v-retezci"
+  ]
+ },
+ "ui:58d395d7f147:hlaska": {
+  "zdroj": [
+   "category.html:2868",
+   "category.html:2879"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": [
+   "slovnik"
+  ]
+ },
+ "ui:895a3d7758bb:meta": {
+  "zdroj": [
+   "category.html:7"
+  ],
+  "kontexty": [
+   "meta"
+  ],
+  "priznaky": []
+ },
+ "ui:fc37a335c571:title": {
+  "zdroj": [
+   "product.html:2770"
+  ],
+  "kontexty": [
+   "title"
+  ],
+  "priznaky": [
+   "html-v-sablone"
+  ]
+ },
+ "ui:637c75fe3717:hlaska": {
+  "zdroj": [
+   "poptavka-stul.html:358"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:298b453e08b9:text": {
+  "zdroj": [
+   "category.html:1752"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:631d66dba1c4:hlaska": {
+  "zdroj": [
+   "category.html:2665"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": [
+   "slovnik"
+  ]
+ },
+ "ui:c380a02d02f4:aria": {
+  "zdroj": [
+   "product.html:1901",
+   "product.html:1904"
+  ],
+  "kontexty": [
+   "aria",
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:43f262f8e544:text": {
+  "zdroj": [
+   "product.html:5672"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": [
+   "html-v-retezci"
+  ]
+ },
+ "ui:a92b9bcb1665:nadpis": {
+  "zdroj": [
+   "kontakt.html:128",
+   "404.html:90"
+  ],
+  "kontexty": [
+   "nadpis",
+   "odkaz"
+  ],
+  "priznaky": []
+ },
+ "ui:dd5f4b045461:meta": {
+  "zdroj": [
+   "kontakt.html:26",
+   "kontakt.html:33"
+  ],
+  "kontexty": [
+   "meta"
+  ],
+  "priznaky": []
+ },
+ "ui:79ce0b6e1a8e:meta": {
+  "zdroj": [
+   "kontakt.html:7"
+  ],
+  "kontexty": [
+   "meta"
+  ],
+  "priznaky": []
+ },
+ "ui:888c900e460b:nadpis": {
+  "zdroj": [
+   "product.html:6060"
+  ],
+  "kontexty": [
+   "nadpis"
+  ],
+  "priznaky": [
+   "html-v-sablone"
+  ]
+ },
+ "ui:d11fe9043ee8:meta": {
+  "zdroj": [
+   "kontakt.html:8",
+   "kontakt.html:27",
+   "kontakt.html:34"
+  ],
+  "kontexty": [
+   "meta"
+  ],
+  "priznaky": []
+ },
+ "ui:5a306ee2f937:hlaska": {
+  "zdroj": [
+   "category.html:2665",
+   "category.html:2666"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:263a0854c312:hlaska": {
+  "zdroj": [
+   "product.html:2461"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:c13f5a7ea2dd:nadpis": {
+  "zdroj": [
+   "product.html:1965"
+  ],
+  "kontexty": [
+   "nadpis"
+  ],
+  "priznaky": []
+ },
+ "ui:f9cb1a027a5a:nadpis": {
+  "zdroj": [
+   "product.html:2064"
+  ],
+  "kontexty": [
+   "nadpis"
+  ],
+  "priznaky": []
+ },
+ "ui:c3407310e14e:hlaska": {
+  "zdroj": [
+   "product.html:4910"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:2ab7c5ec7bff:text": {
+  "zdroj": [
+   "product.html:5684"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": [
+   "html-v-retezci"
+  ]
+ },
+ "ui:f4c09364677a:hlaska": {
+  "zdroj": [
+   "product.html:4375"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:bd1b8567951c:hlaska": {
+  "zdroj": [
+   "js/image-markup.js:59"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:10133f797b03:placeholder": {
+  "zdroj": [
+   "product.html:5427",
+   "product.html:5437"
+  ],
+  "kontexty": [
+   "placeholder",
+   "text"
+  ],
+  "priznaky": [
+   "html-v-sablone"
+  ]
+ },
+ "ui:1363c20e8e3f:nadpis": {
+  "zdroj": [
+   "moje-objednavky.html:141"
+  ],
+  "kontexty": [
+   "nadpis"
+  ],
+  "priznaky": []
+ },
+ "ui:4712357c97f4:hlaska": {
+  "zdroj": [
+   "js/kategorie-tabulka.js:155"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": [
+   "slovnik"
+  ]
+ },
+ "ui:ebf2934e106e:hlaska": {
+  "zdroj": [
+   "js/kategorie-tabulka.js:156"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": [
+   "slovnik"
+  ]
+ },
+ "ui:9bad19c9089e:hlaska": {
+  "zdroj": [
+   "category.html:2479"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:0906618d42cd:hlaska": {
+  "zdroj": [
+   "category.html:2489"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:8ab97f04e8ea:text": {
+  "zdroj": [
+   "product.html:5670"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": [
+   "html-v-sablone"
+  ]
+ },
+ "ui:74166473e67c:hlaska": {
+  "zdroj": [
+   "product.html:4464"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": [
+   "slovnik"
+  ]
+ },
+ "ui:16de4a99e749:hlaska": {
+  "zdroj": [
+   "product.html:4874"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:7126a89082cf:hlaska": {
+  "zdroj": [
+   "product.html:4879"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:ef2f19488d0f:hlaska": {
+  "zdroj": [
+   "index.html:1817",
+   "category.html:2785",
+   "category.html:3414",
+   "product.html:4541",
+   "product.html:4628",
+   "product.html:5335"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": [
+   "mena"
+  ]
+ },
+ "ui:f66186578247:hlaska": {
+  "zdroj": [
+   "poptavka-stul.html:341"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:b3d592042651:hlaska": {
+  "zdroj": [
+   "category.html:2627",
+   "product.html:4585"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:abf1d6f91751:odkaz": {
+  "zdroj": [
+   "index.html:1230",
+   "category.html:1582",
+   "product.html:1648",
+   "moje-objednavky.html:115",
+   "kontakt.html:120",
+   "realizace.html:261"
+  ],
+  "kontexty": [
+   "odkaz"
+  ],
+  "priznaky": []
+ },
+ "ui:ef4c62a19da0:aria": {
+  "zdroj": [
+   "index.html:1230",
+   "category.html:1582",
+   "product.html:1648",
+   "moje-objednavky.html:115",
+   "kontakt.html:120",
+   "realizace.html:261"
+  ],
+  "kontexty": [
+   "aria"
+  ],
+  "priznaky": []
+ },
+ "ui:605e6a37eab0:text": {
+  "zdroj": [
+   "kontakt.html:130",
+   "kontakt.html:36"
+  ],
+  "kontexty": [
+   "text",
+   "hlaska"
+  ],
+  "priznaky": [
+   "slovnik"
+  ]
+ },
+ "ui:2377901559d8:text": {
+  "zdroj": [
+   "index.html:1331",
+   "category.html:1776",
+   "product.html:2058"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:56ceb1686268:odkaz": {
+  "zdroj": [
+   "index.html:1230",
+   "category.html:1582",
+   "product.html:1648",
+   "moje-objednavky.html:115",
+   "kontakt.html:120",
+   "realizace.html:261"
+  ],
+  "kontexty": [
+   "odkaz"
+  ],
+  "priznaky": []
+ },
+ "ui:6806d49386f0:hlaska": {
+  "zdroj": [
+   "product.html:4494"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:c2d6d66afe39:hlaska": {
+  "zdroj": [
+   "product.html:4366"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:4ee09eb8d49c:text": {
+  "zdroj": [
+   "poptavka-stul.html:219"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:5e0140612543:aria": {
+  "zdroj": [
+   "index.html:1228",
+   "category.html:1580",
+   "product.html:1646",
+   "blok.html:753"
+  ],
+  "kontexty": [
+   "aria"
+  ],
+  "priznaky": []
+ },
+ "ui:6a35f4ee03f1:hlaska": {
+  "zdroj": [
+   "js/kategorie-tabulka.js:171"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:7922d323d7eb:text": {
+  "zdroj": [
+   "product.html:5427",
+   "product.html:5437"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": [
+   "html-v-sablone"
+  ]
+ },
+ "ui:171b7a672f9c:hlaska": {
+  "zdroj": [
+   "js/kategorie-tabulka.js:158",
+   "js/kategorie-tabulka.js:175"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:6c0c4b331417:nadpis": {
+  "zdroj": [
+   "product.html:5767"
+  ],
+  "kontexty": [
+   "nadpis"
+  ],
+  "priznaky": [
+   "html-v-sablone"
+  ]
+ },
+ "ui:5f9f5c7f6411:hlaska": {
+  "zdroj": [
+   "js/image-markup.js:56"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:cb8afe8bedd7:nadpis": {
+  "zdroj": [
+   "index.html:1380",
+   "category.html:2158",
+   "product.html:2497",
+   "moje-objednavky.html:123",
+   "realizace.html:395",
+   "blok.html:837"
+  ],
+  "kontexty": [
+   "odkaz",
+   "nadpis"
+  ],
+  "priznaky": [
+   "html-v-retezci"
+  ]
+ },
+ "ui:8f6c3d8156b4:meta": {
+  "zdroj": [
+   "moje-objednavky.html:7"
+  ],
+  "kontexty": [
+   "meta"
+  ],
+  "priznaky": []
+ },
+ "ui:5e2998f387da:hlaska": {
+  "zdroj": [
+   "product.html:4496"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:956152f9f9d0:hlaska": {
+  "zdroj": [
+   "product.html:4496"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:9038a204b769:nadpis": {
+  "zdroj": [
+   "product.html:1976"
+  ],
+  "kontexty": [
+   "nadpis"
+  ],
+  "priznaky": []
+ },
+ "ui:de24c898a21e:hlaska": {
+  "zdroj": [
+   "product.html:3419",
+   "product.html:4828"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": [
+   "mena"
+  ]
+ },
+ "ui:4b065d03978c:hlaska": {
+  "zdroj": [
+   "index.html:1378",
+   "category.html:2156",
+   "product.html:2495",
+   "realizace.html:393",
+   "blok.html:835"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:22a276a92e67:nadpis": {
+  "zdroj": [
+   "category.html:1746"
+  ],
+  "kontexty": [
+   "nadpis"
+  ],
+  "priznaky": []
+ },
+ "ui:06e718955a55:aria": {
+  "zdroj": [
+   "product.html:1837",
+   "product.html:1838",
+   "product.html:1879",
+   "product.html:1880"
+  ],
+  "kontexty": [
+   "text",
+   "aria"
+  ],
+  "priznaky": []
+ },
+ "ui:264c0538eacc:text": {
+  "zdroj": [
+   "product.html:5114"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": [
+   "html-v-sablone",
+   "mena"
+  ]
+ },
+ "ui:7c2524a0775b:hlaska": {
+  "zdroj": [
+   "product.html:5116"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": [
+   "mena"
+  ]
+ },
+ "ui:eccfe515d786:hlaska": {
+  "zdroj": [
+   "product.html:4376"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:ff6ae17319b3:hlaska": {
+  "zdroj": [
+   "js/kategorie-tabulka.js:155",
+   "js/kategorie-tabulka.js:172"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": [
+   "slovnik"
+  ]
+ },
+ "ui:6ede9b47a4a2:text": {
+  "zdroj": [
+   "product.html:5713"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": [
+   "html-v-sablone"
+  ]
+ },
+ "ui:88a38dfc6930:text": {
+  "zdroj": [
+   "product.html:5707"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": [
+   "html-v-retezci"
+  ]
+ },
+ "ui:36f7fb9a0b81:hlaska": {
+  "zdroj": [
+   "product.html:2465"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:8efb3d12e333:hlaska": {
+  "zdroj": [
+   "product.html:2456"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:f97604c1d377:text": {
+  "zdroj": [
+   "poptavka-stul.html:217"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:ba571c5d3025:odkaz": {
+  "zdroj": [
+   "product.html:1776"
+  ],
+  "kontexty": [
+   "odkaz"
+  ],
+  "priznaky": []
+ },
+ "ui:1ad478770f0f:text": {
+  "zdroj": [
+   "category.html:1747"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:290f0ad2c02d:text": {
+  "zdroj": [
+   "realizace.html:299",
+   "realizace.html:425"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": [
+   "html-v-retezci"
+  ]
+ },
+ "ui:32ebc9f6d3dd:placeholder": {
+  "zdroj": [
+   "realizace.html:306"
+  ],
+  "kontexty": [
+   "placeholder"
+  ],
+  "priznaky": []
+ },
+ "ui:78f9ef4923d6:placeholder": {
+  "zdroj": [
+   "product.html:2123"
+  ],
+  "kontexty": [
+   "placeholder"
+  ],
+  "priznaky": []
+ },
+ "ui:b0a4b0d52417:text": {
+  "zdroj": [
+   "product.html:2151"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:59fb94471d28:title": {
+  "zdroj": [
+   "category.html:1608"
+  ],
+  "kontexty": [
+   "title"
+  ],
+  "priznaky": []
+ },
+ "ui:e517978b0250:tlacitko": {
+  "zdroj": [
+   "reset-password.html:97",
+   "reset-password.html:183",
+   "reset-password.html:193"
+  ],
+  "kontexty": [
+   "tlacitko",
+   "hlaska"
+  ],
+  "priznaky": [
+   "slovnik"
+  ]
+ },
+ "ui:718599f28791:nadpis": {
+  "zdroj": [
+   "reset-password.html:80"
+  ],
+  "kontexty": [
+   "nadpis"
+  ],
+  "priznaky": []
+ },
+ "ui:66d93ce0028d:meta": {
+  "zdroj": [
+   "reset-password.html:7"
+  ],
+  "kontexty": [
+   "meta"
+  ],
+  "priznaky": []
+ },
+ "ui:5a6164659c5c:nadpis": {
+  "zdroj": [
+   "category.html:1676"
+  ],
+  "kontexty": [
+   "nadpis"
+  ],
+  "priznaky": []
+ },
+ "ui:9ca2606f32ad:hlaska": {
+  "zdroj": [
+   "category.html:2662"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:fb4acf45b6a6:hlaska": {
+  "zdroj": [
+   "js/kategorie-tabulka.js:52",
+   "js/kategorie-tabulka.js:216"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:5ee635c92db9:nadpis": {
+  "zdroj": [
+   "category.html:1654",
+   "product.html:1697",
+   "product.html:6144",
+   "moje-objednavky.html:127",
+   "blok.html:795"
+  ],
+  "kontexty": [
+   "nadpis",
+   "text"
+  ],
+  "priznaky": [
+   "html-v-retezci"
+  ]
+ },
+ "ui:2658fb938c99:odkaz": {
+  "zdroj": [
+   "login.html:88"
+  ],
+  "kontexty": [
+   "odkaz"
+  ],
+  "priznaky": []
+ },
+ "ui:de4e8cc16f0f:text": {
+  "zdroj": [
+   "product.html:5706",
+   "product.html:5709"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": [
+   "html-v-retezci"
+  ]
+ },
+ "ui:acc358bf97c9:text": {
+  "zdroj": [
+   "product.html:5705"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": [
+   "html-v-retezci"
+  ]
+ },
+ "ui:4e77a334638d:hlaska": {
+  "zdroj": [
+   "product.html:4883"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:a53e6bf8bb5e:hlaska": {
+  "zdroj": [
+   "reset-password.html:181"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:949cf07ebfad:hlaska": {
+  "zdroj": [
+   "moje-objednavky.html:287"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:d21666c7106a:text": {
+  "zdroj": [
+   "moje-objednavky.html:251"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": [
+   "html-v-retezci"
+  ]
+ },
+ "ui:3bccc7a5aa36:hlaska": {
+  "zdroj": [
+   "product.html:4303"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:ccf20c0b0a17:text": {
+  "zdroj": [
+   "moje-objednavky.html:306"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": [
+   "html-v-retezci"
+  ]
+ },
+ "ui:149594fc235a:hlaska": {
+  "zdroj": [
+   "moje-objednavky.html:356"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:48c43f7cc5a2:hlaska": {
+  "zdroj": [
+   "product.html:5641"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:9624d76aee48:text": {
+  "zdroj": [
+   "category.html:1690"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:732393fb93b3:text": {
+  "zdroj": [
+   "index.html:1811",
+   "category.html:3408",
+   "product.html:6240"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": [
+   "html-v-retezci"
+  ]
+ },
+ "ui:165704aa4475:hlaska": {
+  "zdroj": [
+   "moje-objednavky.html:209"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:87a296671841:text": {
+  "zdroj": [
+   "reset-password.html:87"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:4d0a8b327b33:hlaska": {
+  "zdroj": [
+   "product.html:3885"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:31e14e9c157b:hlaska": {
+  "zdroj": [
+   "product.html:2472"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:9cdbf97bcf2a:hlaska": {
+  "zdroj": [
+   "product.html:6019"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:ab2e4197011a:hlaska": {
+  "zdroj": [
+   "product.html:5645"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:fabfc4310724:placeholder": {
+  "zdroj": [
+   "product.html:2121"
+  ],
+  "kontexty": [
+   "placeholder"
+  ],
+  "priznaky": []
+ },
+ "ui:4f6811771d2f:nadpis": {
+  "zdroj": [
+   "product.html:2121"
+  ],
+  "kontexty": [
+   "nadpis"
+  ],
+  "priznaky": []
+ },
+ "ui:fa06997e15b6:hlaska": {
+  "zdroj": [
+   "moje-objednavky.html:265"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:9f82819f0f78:hlaska": {
+  "zdroj": [
+   "product.html:6348"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:1bd6ffeee131:hlaska": {
+  "zdroj": [
+   "product.html:6363"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:a381005e1bba:hlaska": {
+  "zdroj": [
+   "product.html:6344"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:391957f0412e:text": {
+  "zdroj": [
+   "product.html:1778"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:3b1ce9643dce:hlaska": {
+  "zdroj": [
+   "product.html:2472"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:b2ee29a1c2d0:text": {
+  "zdroj": [
+   "product.html:2086"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:e39d75ba996b:hlaska": {
+  "zdroj": [
+   "js/kategorie-tabulka.js:12"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:744ed93af119:title": {
+  "zdroj": [
+   "product.html:5427",
+   "product.html:5437",
+   "product.html:5719"
+  ],
+  "kontexty": [
+   "title"
+  ],
+  "priznaky": [
+   "html-v-sablone"
+  ]
+ },
+ "ui:f5ac0d80edb8:hlaska": {
+  "zdroj": [
+   "js/image-markup.js:828"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": [
+   "slovnik"
+  ]
+ },
+ "ui:835d10e46a44:tlacitko": {
+  "zdroj": [
+   "realizace.html:307"
+  ],
+  "kontexty": [
+   "tlacitko"
+  ],
+  "priznaky": []
+ },
+ "ui:5d386c1988cb:hlaska": {
+  "zdroj": [
+   "product.html:4359"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": [
+   "slovnik"
+  ]
+ },
+ "ui:22912ed4d68e:tlacitko": {
+  "zdroj": [
+   "product.html:1742"
+  ],
+  "kontexty": [
+   "tlacitko"
+  ],
+  "priznaky": []
+ },
+ "ui:a3f00f37f315:tlacitko": {
+  "zdroj": [
+   "category.html:1755"
+  ],
+  "kontexty": [
+   "tlacitko"
+  ],
+  "priznaky": []
+ },
+ "ui:f28982baea21:tlacitko": {
+  "zdroj": [
+   "product.html:2147",
+   "product.html:6367"
+  ],
+  "kontexty": [
+   "tlacitko",
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:7e499f6385f1:tlacitko": {
+  "zdroj": [
+   "forgot-password.html:79",
+   "forgot-password.html:122"
+  ],
+  "kontexty": [
+   "tlacitko",
+   "hlaska"
+  ],
+  "priznaky": [
+   "slovnik"
+  ]
+ },
+ "ui:e8d84291b862:tlacitko": {
+  "zdroj": [
+   "poptavka-stul.html:254",
+   "poptavka-stul.html:521"
+  ],
+  "kontexty": [
+   "tlacitko",
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:ffc75a1a57a5:hlaska": {
+  "zdroj": [
+   "js/image-markup.js:744"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:d10c36c89f72:tlacitko": {
+  "zdroj": [
+   "moje-objednavky.html:159"
+  ],
+  "kontexty": [
+   "tlacitko"
+  ],
+  "priznaky": []
+ },
+ "ui:c43fe374b6b9:hlaska": {
+  "zdroj": [
+   "forgot-password.html:117"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:b537d18094e8:hlaska": {
+  "zdroj": [
+   "product.html:4442"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:4eababbf6ac0:hlaska": {
+  "zdroj": [
+   "js/image-markup.js:891"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:d4dc33159dcb:hlaska": {
+  "zdroj": [
+   "poptavka-stul.html:518"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:2744056e57b4:hlaska": {
+  "zdroj": [
+   "realizace.html:478",
+   "poptavka-stul.html:512"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:c2aadbf2c1b4:hlaska": {
+  "zdroj": [
+   "product.html:6322",
+   "forgot-password.html:107",
+   "poptavka-stul.html:491",
+   "js/image-markup.js:880"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:37a5d87f37b7:tlacitko": {
+  "zdroj": [
+   "index.html:1381",
+   "category.html:2159",
+   "product.html:2498",
+   "realizace.html:396",
+   "blok.html:838"
+  ],
+  "kontexty": [
+   "tlacitko"
+  ],
+  "priznaky": [
+   "html-v-retezci"
+  ]
+ },
+ "ui:56ec9339079a:hlaska": {
+  "zdroj": [
+   "login.html:158"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:21a3dcc1d7b9:hlaska": {
+  "zdroj": [
+   "verify-email.html:113"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:21fdc4f7497a:hlaska": {
+  "zdroj": [
+   "product.html:2462"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:7ba3beb1f16e:text": {
+  "zdroj": [
+   "404.html:87"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:62f4c13d6494:hlaska": {
+  "zdroj": [
+   "moje-objednavky.html:213"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:6b65578565bc:text": {
+  "zdroj": [
+   "moje-objednavky.html:154"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:14579a7a7c65:hlaska": {
+  "zdroj": [
+   "poptavka-stul.html:343"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:1103d9d8da80:hlaska": {
+  "zdroj": [
+   "product.html:2460"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:0dca42843fed:hlaska": {
+  "zdroj": [
+   "js/turntable.js:331"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:52d15e258668:hlaska": {
+  "zdroj": [
+   "js/turntable.js:333"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:1a751ed6aade:hlaska": {
+  "zdroj": [
+   "product.html:2745"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:1c45bfd92fac:hlaska": {
+  "zdroj": [
+   "js/turntable.js:301"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:a7b67fba63b1:hlaska": {
+  "zdroj": [
+   "js/turntable.js:626"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:ae7c86af3e4d:text": {
+  "zdroj": [
+   "verify-email.html:69"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:23cc59cb9680:hlaska": {
+  "zdroj": [
+   "poptavka-stul.html:362"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:c9da676750c1:text": {
+  "zdroj": [
+   "index.html:1791",
+   "category.html:3388",
+   "product.html:6220"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": [
+   "html-v-retezci"
+  ]
+ },
+ "ui:4d7dd064ad74:hlaska": {
+  "zdroj": [
+   "product.html:6019"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": [
+   "slovnik"
+  ]
+ },
+ "ui:88b1214679c5:hlaska": {
+  "zdroj": [
+   "product.html:4497"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:c5559ea6a459:nadpis": {
+  "zdroj": [
+   "category.html:1695"
+  ],
+  "kontexty": [
+   "nadpis"
+  ],
+  "priznaky": []
+ },
+ "ui:4c22c239a7cd:text": {
+  "zdroj": [
+   "category.html:1713"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:29befa5dc592:nadpis": {
+  "zdroj": [
+   "realizace.html:296"
+  ],
+  "kontexty": [
+   "nadpis"
+  ],
+  "priznaky": []
+ },
+ "ui:247f60151f20:title": {
+  "zdroj": [
+   "realizace.html:291"
+  ],
+  "kontexty": [
+   "title"
+  ],
+  "priznaky": []
+ },
+ "ui:a71c71451ca6:hlaska": {
+  "zdroj": [
+   "js/turntable.js:330"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:7596d9a72aa2:hlaska": {
+  "zdroj": [
+   "js/turntable.js:332"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:659f12c8e6ae:tlacitko": {
+  "zdroj": [
+   "verify-email.html:70",
+   "poptavka-stul.html:191",
+   "poptavka-stul.html:223"
+  ],
+  "kontexty": [
+   "tlacitko"
+  ],
+  "priznaky": []
+ },
+ "ui:07f29ccb5d6e:tlacitko": {
+  "zdroj": [
+   "product.html:2093",
+   "product.html:2108",
+   "product.html:2138"
+  ],
+  "kontexty": [
+   "tlacitko"
+  ],
+  "priznaky": []
+ },
+ "ui:3507b12d8348:hlaska": {
+  "zdroj": [
+   "forgot-password.html:116"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:f27a27451ded:hlaska": {
+  "zdroj": [
+   "register.html:142"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:ba89a753e50c:hlaska": {
+  "zdroj": [
+   "poptavka-stul.html:356"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:9c801d7fafe0:nadpis": {
+  "zdroj": [
+   "product.html:5767",
+   "moje-objednavky.html:141"
+  ],
+  "kontexty": [
+   "nadpis"
+  ],
+  "priznaky": [
+   "html-v-sablone"
+  ]
+ },
+ "ui:88fca5f9e1e9:nadpis": {
+  "zdroj": [
+   "product.html:6060"
+  ],
+  "kontexty": [
+   "nadpis"
+  ],
+  "priznaky": [
+   "html-v-sablone"
+  ]
+ },
+ "ui:153a95cd470b:hlaska": {
+  "zdroj": [
+   "js/image-markup.js:858"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:29b1dd55a80a:placeholder": {
+  "zdroj": [
+   "moje-objednavky.html:157"
+  ],
+  "kontexty": [
+   "placeholder"
+  ],
+  "priznaky": []
+ },
+ "ui:6ab5173238b9:tlacitko": {
+  "zdroj": [
+   "category.html:1691"
+  ],
+  "kontexty": [
+   "tlacitko"
+  ],
+  "priznaky": []
+ },
+ "ui:72c6ec9a02cc:meta": {
+  "zdroj": [
+   "poptavka-stul.html:8"
+  ],
+  "kontexty": [
+   "meta"
+  ],
+  "priznaky": []
+ },
+ "ui:8c5345390e77:nadpis": {
+  "zdroj": [
+   "poptavka-stul.html:155"
+  ],
+  "kontexty": [
+   "nadpis"
+  ],
+  "priznaky": []
+ },
+ "ui:89646240f45f:meta": {
+  "zdroj": [
+   "poptavka-stul.html:7"
+  ],
+  "kontexty": [
+   "meta"
+  ],
+  "priznaky": []
+ },
+ "ui:deeebd7d1140:text": {
+  "zdroj": [
+   "poptavka-stul.html:262"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:0580a01b020b:hlaska": {
+  "zdroj": [
+   "moje-objednavky.html:215"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:25d66dc53870:hlaska": {
+  "zdroj": [
+   "moje-objednavky.html:209"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:a11c075716b2:nadpis": {
+  "zdroj": [
+   "verify-email.html:68"
+  ],
+  "kontexty": [
+   "nadpis"
+  ],
+  "priznaky": []
+ },
+ "ui:25ead202c923:meta": {
+  "zdroj": [
+   "verify-email.html:7"
+  ],
+  "kontexty": [
+   "meta"
+  ],
+  "priznaky": []
+ },
+ "ui:e45b6206296b:hlaska": {
+  "zdroj": [
+   "product.html:5523"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": [
+   "mena"
+  ]
+ },
+ "ui:782897597bbd:hlaska": {
+  "zdroj": [
+   "product.html:5548"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": [
+   "mena"
+  ]
+ },
+ "ui:db3a8c8f5d8b:hlaska": {
+  "zdroj": [
+   "product.html:2475"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:ca37c8c491de:nadpis": {
+  "zdroj": [
+   "product.html:2131"
+  ],
+  "kontexty": [
+   "nadpis"
+  ],
+  "priznaky": []
+ },
+ "ui:74f9898fa247:nadpis": {
+  "zdroj": [
+   "product.html:1956"
+  ],
+  "kontexty": [
+   "nadpis"
+  ],
+  "priznaky": []
+ },
+ "ui:a55c55873e4e:hlaska": {
+  "zdroj": [
+   "product.html:5412"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:5f3c20172fc1:title": {
+  "zdroj": [
+   "product.html:1764",
+   "product.html:5412"
+  ],
+  "kontexty": [
+   "title",
+   "aria",
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:ae97481e8bc5:text": {
+  "zdroj": [
+   "poptavka-stul.html:249"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:b0f845558d67:hlaska": {
+  "zdroj": [
+   "moje-objednavky.html:215"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:b73a8e22e40e:hlaska": {
+  "zdroj": [
+   "category.html:2628",
+   "product.html:4586"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:3b7c9c8f05f8:hlaska": {
+  "zdroj": [
+   "product.html:6116"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:39499e2a8f8f:text": {
+  "zdroj": [
+   "product.html:6136"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": [
+   "html-v-retezci"
+  ]
+ },
+ "ui:829079c70d9d:hlaska": {
+  "zdroj": [
+   "realizace.html:464"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:7505b412a5bc:text": {
+  "zdroj": [
+   "moje-objednavky.html:168"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:aa73509bfdc0:hlaska": {
+  "zdroj": [
+   "product.html:2656"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": [
+   "slovnik"
+  ]
+ },
+ "ui:ecf9d8fa6a9f:hlaska": {
+  "zdroj": [
+   "product.html:5590"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:195b71d3b943:hlaska": {
+  "zdroj": [
+   "product.html:5584"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:2c56acb076e0:meta": {
+  "zdroj": [
+   "product.html:7"
+  ],
+  "kontexty": [
+   "meta"
+  ],
+  "priznaky": []
+ },
+ "ui:7ac9c1c8a204:nadpis": {
+  "zdroj": [
+   "index.html:1239",
+   "index.html:1816",
+   "category.html:1591",
+   "category.html:1705",
+   "category.html:1711",
+   "category.html:3413"
+  ],
+  "kontexty": [
+   "text",
+   "nadpis"
+  ],
+  "priznaky": [
+   "html-v-retezci"
+  ]
+ },
+ "ui:0251179dbc81:hlaska": {
+  "zdroj": [
+   "product.html:5401"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:4c2fdc8e8b41:hlaska": {
+  "zdroj": [
+   "product.html:3336",
+   "product.html:4042",
+   "product.html:4044"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:882d601a2bc9:text": {
+  "zdroj": [
+   "category.html:1610"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:069db946b66c:text": {
+  "zdroj": [
+   "category.html:1612",
+   "category.html:1617"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:cd6cca493b50:hlaska": {
+  "zdroj": [
+   "product.html:4499"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:68fd9e7134ce:hlaska": {
+  "zdroj": [
+   "category.html:2561"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:501c1c4578b3:hlaska": {
+  "zdroj": [
+   "product.html:4497"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:50b86b95de2f:hlaska": {
+  "zdroj": [
+   "product.html:4497"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:a51cbf4ce83d:nadpis": {
+  "zdroj": [
+   "product.html:2127"
+  ],
+  "kontexty": [
+   "nadpis"
+  ],
+  "priznaky": []
+ },
+ "ui:fd104675ab16:nadpis": {
+  "zdroj": [
+   "product.html:2101",
+   "product.html:2130"
+  ],
+  "kontexty": [
+   "nadpis"
+  ],
+  "priznaky": []
+ },
+ "ui:117a2132245d:text": {
+  "zdroj": [
+   "product.html:2133"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:a06ac6c0acad:hlaska": {
+  "zdroj": [
+   "category.html:3204"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:36305861693a:title": {
+  "zdroj": [
+   "category.html:1789",
+   "product.html:2043"
+  ],
+  "kontexty": [
+   "title"
+  ],
+  "priznaky": []
+ },
+ "ui:d25452e65d6f:hlaska": {
+  "zdroj": [
+   "js/realizace-foto.js:110"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:6be67ecfb818:title": {
+  "zdroj": [
+   "index.html:1246",
+   "category.html:1598",
+   "product.html:1664",
+   "moje-objednavky.html:118",
+   "kontakt.html:123",
+   "realizace.html:271"
+  ],
+  "kontexty": [
+   "title"
+  ],
+  "priznaky": []
+ },
+ "ui:e940d57a24ce:odkaz": {
+  "zdroj": [
+   "index.html:1179"
+  ],
+  "kontexty": [
+   "odkaz"
+  ],
+  "priznaky": []
+ },
+ "ui:0c6b9d30e748:hlaska": {
+  "zdroj": [
+   "product.html:5587"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:e94ab622cfd5:text": {
+  "zdroj": [
+   "login.html:92"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:c522e43b101a:hlaska": {
+  "zdroj": [
+   "login.html:167"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:36f5888e75c9:tlacitko": {
+  "zdroj": [
+   "index.html:1386",
+   "category.html:2164",
+   "product.html:2503",
+   "login.html:85",
+   "login.html:181",
+   "login.html:189"
+  ],
+  "kontexty": [
+   "odkaz",
+   "tlacitko",
+   "hlaska"
+  ],
+  "priznaky": [
+   "html-v-retezci"
+  ]
+ },
+ "ui:1abff91ad41a:hlaska": {
+  "zdroj": [
+   "login.html:179"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:9030bf5d7f3b:meta": {
+  "zdroj": [
+   "login.html:7"
+  ],
+  "kontexty": [
+   "meta"
+  ],
+  "priznaky": []
+ },
+ "ui:a68a5978ff2c:hlaska": {
+  "zdroj": [
+   "moje-objednavky.html:216"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:9cc42de4ad9b:hlaska": {
+  "zdroj": [
+   "product.html:4435"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:c4f4f96dac5c:hlaska": {
+  "zdroj": [
+   "moje-objednavky.html:210"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:7916e76b04bf:hlaska": {
+  "zdroj": [
+   "poptavka-stul.html:352"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:8d4ddfeae12e:text": {
+  "zdroj": [
+   "product.html:1923"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:bbe636301938:text": {
+  "zdroj": [
+   "product.html:5727"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": [
+   "html-v-sablone"
+  ]
+ },
+ "ui:7e4fd27932f3:alt": {
+  "zdroj": [
+   "product.html:2152",
+   "moje-objednavky.html:138"
+  ],
+  "kontexty": [
+   "alt"
+  ],
+  "priznaky": []
+ },
+ "ui:74edf75f2353:hlaska": {
+  "zdroj": [
+   "register.html:132"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:bcbce1866815:meta": {
+  "zdroj": [
+   "register.html:7"
+  ],
+  "kontexty": [
+   "meta"
+  ],
+  "priznaky": []
+ },
+ "ui:1e102faac45a:text": {
+  "zdroj": [
+   "moje-objednavky.html:153"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:50c88de72626:nadpis": {
+  "zdroj": [
+   "moje-objednavky.html:147"
+  ],
+  "kontexty": [
+   "nadpis"
+  ],
+  "priznaky": []
+ },
+ "ui:fa39c1590547:text": {
+  "zdroj": [
+   "moje-objednavky.html:163"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:b2fc84500c2f:hlaska": {
+  "zdroj": [
+   "js/realizace-foto.js:12"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:9a13ee2912a9:hlaska": {
+  "zdroj": [
+   "js/realizace-foto.js:11"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:83b4918b00fe:hlaska": {
+  "zdroj": [
+   "js/realizace-foto.js:170"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": [
+   "slovnik"
+  ]
+ },
+ "ui:2d32904700e4:nadpis": {
+  "zdroj": [
+   "product.html:1956"
+  ],
+  "kontexty": [
+   "nadpis"
+  ],
+  "priznaky": []
+ },
+ "ui:f03d1fece976:text": {
+  "zdroj": [
+   "poptavka-stul.html:184"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:9d4449ca9111:hlaska": {
+  "zdroj": [
+   "product.html:4500"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:2b59968c4232:text": {
+  "zdroj": [
+   "category.html:1614",
+   "category.html:1619"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:a4e5f87758f2:hlaska": {
+  "zdroj": [
+   "moje-objednavky.html:215"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:190f43df876f:text": {
+  "zdroj": [
+   "category.html:1620"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:dc21db802e16:hlaska": {
+  "zdroj": [
+   "product.html:4436"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:7ce53cdca701:hlaska": {
+  "zdroj": [
+   "product.html:2444"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:5c6e79e1afb7:text": {
+  "zdroj": [
+   "category.html:1615"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:c554369c3475:hlaska": {
+  "zdroj": [
+   "product.html:4038"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:6da2317e12f0:text": {
+  "zdroj": [
+   "product.html:5711"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": [
+   "html-v-sablone"
+  ]
+ },
+ "ui:4dd533ccf657:hlaska": {
+  "zdroj": [
+   "index.html:1378",
+   "category.html:2156",
+   "product.html:2495",
+   "realizace.html:393",
+   "blok.html:835"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:d4a5ee0a197b:text": {
+  "zdroj": [
+   "product.html:1919"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:45e022318523:placeholder": {
+  "zdroj": [
+   "product.html:1910"
+  ],
+  "kontexty": [
+   "placeholder",
+   "aria"
+  ],
+  "priznaky": []
+ },
+ "ui:bfef09575f2d:title": {
+  "zdroj": [
+   "product.html:1788"
+  ],
+  "kontexty": [
+   "title"
+  ],
+  "priznaky": []
+ },
+ "ui:ca76264c8bb1:hlaska": {
+  "zdroj": [
+   "category.html:3222"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:ec7f629fed0d:text": {
+  "zdroj": [
+   "product.html:2116"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:686b644eb3f7:nadpis": {
+  "zdroj": [
+   "product.html:4852"
+  ],
+  "kontexty": [
+   "nadpis"
+  ],
+  "priznaky": [
+   "html-v-retezci"
+  ]
+ },
+ "ui:267d9e15e240:nadpis": {
+  "zdroj": [
+   "product.html:2012"
+  ],
+  "kontexty": [
+   "nadpis"
+  ],
+  "priznaky": []
+ },
+ "ui:e4e5993f51f0:nadpis": {
+  "zdroj": [
+   "product.html:2019"
+  ],
+  "kontexty": [
+   "nadpis"
+  ],
+  "priznaky": []
+ },
+ "ui:9d757deb58f8:nadpis": {
+  "zdroj": [
+   "product.html:5767"
+  ],
+  "kontexty": [
+   "nadpis"
+  ],
+  "priznaky": [
+   "html-v-sablone"
+  ]
+ },
+ "ui:c5c2e6877bda:hlaska": {
+  "zdroj": [
+   "poptavka-stul.html:347"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:6d28c3a91470:hlaska": {
+  "zdroj": [
+   "product.html:2456"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:bf07d73eb9fe:text": {
+  "zdroj": [
+   "category.html:1723"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:d09b637cb578:text": {
+  "zdroj": [
+   "product.html:2007"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:7ec9bf3526d5:tlacitko": {
+  "zdroj": [
+   "product.html:1788"
+  ],
+  "kontexty": [
+   "tlacitko"
+  ],
+  "priznaky": []
+ },
+ "ui:aed409bb9781:text": {
+  "zdroj": [
+   "poptavka-stul.html:236"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:593329aea33f:hlaska": {
+  "zdroj": [
+   "moje-objednavky.html:267"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:dc35039766b9:hlaska": {
+  "zdroj": [
+   "poptavka-stul.html:362"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:ba4c46650489:nadpis": {
+  "zdroj": [
+   "404.html:86"
+  ],
+  "kontexty": [
+   "nadpis"
+  ],
+  "priznaky": []
+ },
+ "ui:1f6f046881c5:meta": {
+  "zdroj": [
+   "404.html:7"
+  ],
+  "kontexty": [
+   "meta"
+  ],
+  "priznaky": []
+ },
+ "ui:8d36439fe38c:hlaska": {
+  "zdroj": [
+   "poptavka-stul.html:335"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:52907daf9f74:hlaska": {
+  "zdroj": [
+   "poptavka-stul.html:334"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:4cce49c07b31:hlaska": {
+  "zdroj": [
+   "poptavka-stul.html:336"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:1a5b85333351:text": {
+  "zdroj": [
+   "category.html:1618"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:5698de1b8748:text": {
+  "zdroj": [
+   "category.html:1613"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:40fdf9e6179d:text": {
+  "zdroj": [
+   "category.html:2880"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": [
+   "html-v-retezci"
+  ]
+ },
+ "ui:40314f882822:nadpis": {
+  "zdroj": [
+   "product.html:2125",
+   "kontakt.html:136",
+   "poptavka-stul.html:208"
+  ],
+  "kontexty": [
+   "nadpis",
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:446534263131:hlaska": {
+  "zdroj": [
+   "product.html:5041"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:559da25a5b97:hlaska": {
+  "zdroj": [
+   "product.html:5047"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:87cd9aaf0e22:text": {
+  "zdroj": [
+   "index.html:1240",
+   "category.html:1592",
+   "product.html:1658"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:6fc72648bcb7:hlaska": {
+  "zdroj": [
+   "js/image-markup.js:592"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": [
+   "slovnik"
+  ]
+ },
+ "ui:e2ef84263597:hlaska": {
+  "zdroj": [
+   "js/turntable.js:185"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": [
+   "slovnik"
+  ]
+ },
+ "ui:d4387d8ee68c:hlaska": {
+  "zdroj": [
+   "js/turntable.js:204"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": [
+   "slovnik"
+  ]
+ },
+ "ui:bea3431957ba:hlaska": {
+  "zdroj": [
+   "js/turntable.js:986",
+   "js/turntable.js:988"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": [
+   "slovnik"
+  ]
+ },
+ "ui:ae2e2f13ee18:hlaska": {
+  "zdroj": [
+   "js/image-markup.js:58"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:0b9966dacffe:hlaska": {
+  "zdroj": [
+   "poptavka-stul.html:337"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": [
+   "slovnik"
+  ]
+ },
+ "ui:ab0a918f18f2:hlaska": {
+  "zdroj": [
+   "js/kategorie-tabulka.js:19",
+   "js/kategorie-tabulka.js:32",
+   "js/kategorie-tabulka.js:134"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:ac873dcc926d:nadpis": {
+  "zdroj": [
+   "product.html:2114"
+  ],
+  "kontexty": [
+   "nadpis"
+  ],
+  "priznaky": []
+ },
+ "ui:4a5a57b348ed:hlaska": {
+  "zdroj": [
+   "product.html:5715"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:312be44c04e9:hlaska": {
+  "zdroj": [
+   "poptavka-stul.html:357"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:640c187af006:hlaska": {
+  "zdroj": [
+   "js/turntable.js:309"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:7b906cd6e392:hlaska": {
+  "zdroj": [
+   "js/turntable.js:309"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:699e4c5eee34:hlaska": {
+  "zdroj": [
+   "product.html:6110",
+   "product.html:6299"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:c7933e485e4f:hlaska": {
+  "zdroj": [
+   "reset-password.html:171"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:6769af2dc3af:nadpis": {
+  "zdroj": [
+   "category.html:1728",
+   "product.html:2024"
+  ],
+  "kontexty": [
+   "nadpis"
+  ],
+  "priznaky": []
+ },
+ "ui:b1d80291ff49:placeholder": {
+  "zdroj": [
+   "product.html:2126",
+   "product.html:2129"
+  ],
+  "kontexty": [
+   "placeholder"
+  ],
+  "priznaky": []
+ },
+ "ui:f3f36bdc895f:text": {
+  "zdroj": [
+   "product.html:2134"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:7a051fb7f948:tlacitko": {
+  "zdroj": [
+   "product.html:1911"
+  ],
+  "kontexty": [
+   "tlacitko"
+  ],
+  "priznaky": []
+ },
+ "ui:4f7a18e17af6:hlaska": {
+  "zdroj": [
+   "product.html:6051"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:2a1b845ad046:odkaz": {
+  "zdroj": [
+   "register.html:93"
+  ],
+  "kontexty": [
+   "odkaz"
+  ],
+  "priznaky": []
+ },
+ "ui:cbaa5eb84569:hlaska": {
+  "zdroj": [
+   "index.html:1378",
+   "category.html:2156",
+   "product.html:2495",
+   "realizace.html:393",
+   "blok.html:835"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:5d419779589a:hlaska": {
+  "zdroj": [
+   "product.html:5697"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:45e9c01337b0:hlaska": {
+  "zdroj": [
+   "js/kategorie-tabulka.js:219"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": [
+   "slovnik"
+  ]
+ },
+ "ui:963769bc74a9:hlaska": {
+  "zdroj": [
+   "js/kategorie-tabulka.js:211"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:10fbe0e6afdd:hlaska": {
+  "zdroj": [
+   "js/kategorie-tabulka.js:132"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:2a4bfed55c23:hlaska": {
+  "zdroj": [
+   "product.html:2476"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:163d2797467f:nadpis": {
+  "zdroj": [
+   "category.html:1722",
+   "product.html:2006"
+  ],
+  "kontexty": [
+   "nadpis"
+  ],
+  "priznaky": []
+ },
+ "ui:8cee48a06d2b:title": {
+  "zdroj": [
+   "product.html:1790"
+  ],
+  "kontexty": [
+   "title"
+  ],
+  "priznaky": []
+ },
+ "ui:f8668dc3a98b:hlaska": {
+  "zdroj": [
+   "product.html:4495"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:95e3a67c755c:placeholder": {
+  "zdroj": [
+   "product.html:2131"
+  ],
+  "kontexty": [
+   "placeholder"
+  ],
+  "priznaky": []
+ },
+ "ui:47421ac31ae2:hlaska": {
+  "zdroj": [
+   "product.html:5633"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": [
+   "slovnik"
+  ]
+ },
+ "ui:34400b5eed68:hlaska": {
+  "zdroj": [
+   "js/kategorie-tabulka.js:219"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:1eb4542aac9f:hlaska": {
+  "zdroj": [
+   "js/kategorie-tabulka.js:46"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:42277cc7a159:text": {
+  "zdroj": [
+   "poptavka-stul.html:238"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:761632496e1b:hlaska": {
+  "zdroj": [
+   "product.html:5236",
+   "product.html:5263"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:a7b36403cf92:hlaska": {
+  "zdroj": [
+   "moje-objednavky.html:340"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:47348ae8c682:text": {
+  "zdroj": [
+   "poptavka-stul.html:170"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:719a5544e299:hlaska": {
+  "zdroj": [
+   "product.html:6096"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:70cc3937adef:text": {
+  "zdroj": [
+   "poptavka-stul.html:241"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:02fdd0681f56:text": {
+  "zdroj": [
+   "poptavka-stul.html:168"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:bab4b0615419:text": {
+  "zdroj": [
+   "realizace.html:278"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:9b8c1cae2d84:hlaska": {
+  "zdroj": [
+   "js/image-markup.js:649"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:f76ebf482ff1:hlaska": {
+  "zdroj": [
+   "realizace.html:438"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:c67731a1f666:hlaska": {
+  "zdroj": [
+   "category.html:2742"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:20fad4b0c02e:text": {
+  "zdroj": [
+   "poptavka-stul.html:156"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:49a796362e31:hlaska": {
+  "zdroj": [
+   "product.html:2465"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:4db56e1e9e87:hlaska": {
+  "zdroj": [
+   "product.html:2463"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:6a4921e26abb:text": {
+  "zdroj": [
+   "product.html:1791"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:ba0356eeb8b8:tlacitko": {
+  "zdroj": [
+   "product.html:2089"
+  ],
+  "kontexty": [
+   "tlacitko"
+  ],
+  "priznaky": []
+ },
+ "ui:dee8132dc030:tlacitko": {
+  "zdroj": [
+   "product.html:1785"
+  ],
+  "kontexty": [
+   "tlacitko"
+  ],
+  "priznaky": []
+ },
+ "ui:d4bc76b18a79:nadpis": {
+  "zdroj": [
+   "register.html:76"
+  ],
+  "kontexty": [
+   "nadpis"
+  ],
+  "priznaky": []
+ },
+ "ui:d51f006fabeb:hlaska": {
+  "zdroj": [
+   "moje-objednavky.html:216"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:95ceb84c5965:tlacitko": {
+  "zdroj": [
+   "product.html:1802"
+  ],
+  "kontexty": [
+   "tlacitko"
+  ],
+  "priznaky": []
+ },
+ "ui:3b9f98985d7d:placeholder": {
+  "zdroj": [
+   "category.html:1749"
+  ],
+  "kontexty": [
+   "placeholder"
+  ],
+  "priznaky": []
+ },
+ "ui:2e22628fc753:placeholder": {
+  "zdroj": [
+   "category.html:1750"
+  ],
+  "kontexty": [
+   "placeholder"
+  ],
+  "priznaky": []
+ },
+ "ui:9aaae1573cbe:hlaska": {
+  "zdroj": [
+   "js/kategorie-tabulka.js:55"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:16aea9203b53:hlaska": {
+  "zdroj": [
+   "product.html:2469"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:8f6169f896ea:hlaska": {
+  "zdroj": [
+   "product.html:4465"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:94bede9a1abd:hlaska": {
+  "zdroj": [
+   "poptavka-stul.html:355"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:072c5c5f560a:hlaska": {
+  "zdroj": [
+   "category.html:2632",
+   "product.html:4590"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:fe70a2756a9a:hlaska": {
+  "zdroj": [
+   "category.html:2631",
+   "product.html:4589"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:172436b19ac0:hlaska": {
+  "zdroj": [
+   "category.html:2633",
+   "product.html:4591"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:92272e6a330f:hlaska": {
+  "zdroj": [
+   "poptavka-stul.html:350"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:691dc5493459:hlaska": {
+  "zdroj": [
+   "poptavka-stul.html:359"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:387c5854be20:hlaska": {
+  "zdroj": [
+   "product.html:4499"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:dc6ff5ea0d39:placeholder": {
+  "zdroj": [
+   "product.html:5427"
+  ],
+  "kontexty": [
+   "placeholder"
+  ],
+  "priznaky": [
+   "html-v-sablone"
+  ]
+ },
+ "ui:af75a8ec17f4:text": {
+  "zdroj": [
+   "product.html:5671"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": [
+   "html-v-sablone"
+  ]
+ },
+ "ui:8807d7ac126e:hlaska": {
+  "zdroj": [
+   "realizace.html:544"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:be82b43a60c0:hlaska": {
+  "zdroj": [
+   "category.html:2421"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": [
+   "slovnik"
+  ]
+ },
+ "ui:94331dffc163:hlaska": {
+  "zdroj": [
+   "product.html:4856"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": [
+   "slovnik"
+  ]
+ },
+ "ui:425fa303126c:text": {
+  "zdroj": [
+   "forgot-password.html:74"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:14a97d1852c1:hlaska": {
+  "zdroj": [
+   "js/image-markup.js:866"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:212cf8f17e49:hlaska": {
+  "zdroj": [
+   "js/image-markup.js:862"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:71d3c9f79942:text": {
+  "zdroj": [
+   "poptavka-stul.html:176"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:92e2866c41bb:text": {
+  "zdroj": [
+   "poptavka-stul.html:200"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:c8814bb17a8a:text": {
+  "zdroj": [
+   "poptavka-stul.html:205"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:c6941fac08e4:text": {
+  "zdroj": [
+   "poptavka-stul.html:186"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:6463b8179593:text": {
+  "zdroj": [
+   "poptavka-stul.html:210"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:6bd3b244afc9:text": {
+  "zdroj": [
+   "poptavka-stul.html:181"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:6611442887b3:hlaska": {
+  "zdroj": [
+   "js/image-markup.js:659"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:fbac9a402b96:hlaska": {
+  "zdroj": [
+   "register.html:119"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:754be16777a6:hlaska": {
+  "zdroj": [
+   "moje-objednavky.html:216"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:d1acea0cea96:nadpis": {
+  "zdroj": [
+   "forgot-password.html:73"
+  ],
+  "kontexty": [
+   "nadpis"
+  ],
+  "priznaky": []
+ },
+ "ui:f5b7b4af9e51:meta": {
+  "zdroj": [
+   "forgot-password.html:7"
+  ],
+  "kontexty": [
+   "meta"
+  ],
+  "priznaky": []
+ },
+ "ui:a23d87243ed7:odkaz": {
+  "zdroj": [
+   "login.html:87"
+  ],
+  "kontexty": [
+   "odkaz"
+  ],
+  "priznaky": []
+ },
+ "ui:f474cc04fc0d:tlacitko": {
+  "zdroj": [
+   "register.html:90"
+  ],
+  "kontexty": [
+   "tlacitko"
+  ],
+  "priznaky": []
+ },
+ "ui:4031d54fd5f8:text": {
+  "zdroj": [
+   "category.html:2921"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": [
+   "html-v-retezci"
+  ]
+ },
+ "ui:99c171a07403:text": {
+  "zdroj": [
+   "realizace.html:284",
+   "realizace.html:568"
+  ],
+  "kontexty": [
+   "text",
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:46c023425c69:text": {
+  "zdroj": [
+   "index.html:1263",
+   "category.html:1641",
+   "product.html:1681",
+   "blok.html:777"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:5e48481889f8:hlaska": {
+  "zdroj": [
+   "category.html:3157"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:8ff83411f1ec:hlaska": {
+  "zdroj": [
+   "moje-objednavky.html:236"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:ae2883a526af:tlacitko": {
+  "zdroj": [
+   "product.html:2153",
+   "product.html:2231",
+   "realizace.html:297",
+   "blok.html:794",
+   "js/realizace-foto.js:110"
+  ],
+  "kontexty": [
+   "tlacitko",
+   "hlaska",
+   "title",
+   "aria"
+  ],
+  "priznaky": []
+ },
+ "ui:2e3b9888809c:title": {
+  "zdroj": [
+   "category.html:1788",
+   "product.html:2040"
+  ],
+  "kontexty": [
+   "title"
+  ],
+  "priznaky": []
+ },
+ "ui:cf38a16ac9bc:aria": {
+  "zdroj": [
+   "index.html:1260",
+   "category.html:1638",
+   "product.html:1678",
+   "blok.html:774"
+  ],
+  "kontexty": [
+   "aria"
+  ],
+  "priznaky": []
+ },
+ "ui:1fb52f49bd65:text": {
+  "zdroj": [
+   "index.html:1797",
+   "category.html:3394",
+   "product.html:6226"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": [
+   "html-v-retezci"
+  ]
+ },
+ "ui:f6b79cb2c6e5:text": {
+  "zdroj": [
+   "product.html:5755"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": [
+   "html-v-sablone"
+  ]
+ },
+ "ui:1eec4eed4ee2:text": {
+  "zdroj": [
+   "product.html:1927"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:65eda8e7b523:hlaska": {
+  "zdroj": [
+   "product.html:2462"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:3ce0f49251e0:hlaska": {
+  "zdroj": [
+   "js/kategorie-tabulka.js:212"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": [
+   "slovnik"
+  ]
+ },
+ "ui:27971d43d206:hlaska": {
+  "zdroj": [
+   "js/kategorie-tabulka.js:58"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:47f6418fa5bc:hlaska": {
+  "zdroj": [
+   "js/realizace-foto.js:12"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:136f97f861c1:hlaska": {
+  "zdroj": [
+   "js/realizace-foto.js:11"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": [
+   "slovnik"
+  ]
+ },
+ "ui:0d078d54eb80:text": {
+  "zdroj": [
+   "reset-password.html:92"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:7a77a032e052:tlacitko": {
+  "zdroj": [
+   "poptavka-stul.html:222",
+   "poptavka-stul.html:253"
+  ],
+  "kontexty": [
+   "tlacitko"
+  ],
+  "priznaky": []
+ },
+ "ui:37c027ba655c:odkaz": {
+  "zdroj": [
+   "404.html:89"
+  ],
+  "kontexty": [
+   "odkaz"
+  ],
+  "priznaky": []
+ },
+ "ui:dd6247c70962:nadpis": {
+  "zdroj": [
+   "product.html:2099"
+  ],
+  "kontexty": [
+   "nadpis"
+  ],
+  "priznaky": []
+ },
+ "ui:c704ee457c87:nadpis": {
+  "zdroj": [
+   "product.html:2100"
+  ],
+  "kontexty": [
+   "nadpis"
+  ],
+  "priznaky": []
+ },
+ "ui:960f05e6d98b:hlaska": {
+  "zdroj": [
+   "moje-objednavky.html:216"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:950ea014836c:hlaska": {
+  "zdroj": [
+   "moje-objednavky.html:210"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:9bd5ed7e6ef7:tlacitko": {
+  "zdroj": [
+   "product.html:1794"
+  ],
+  "kontexty": [
+   "tlacitko"
+  ],
+  "priznaky": []
+ },
+ "ui:d09458b857be:tlacitko": {
+  "zdroj": [
+   "category.html:2563"
+  ],
+  "kontexty": [
+   "tlacitko"
+  ],
+  "priznaky": [
+   "html-v-retezci"
+  ]
+ },
+ "ui:b4e272fbb222:hlaska": {
+  "zdroj": [
+   "js/kategorie-tabulka.js:53",
+   "js/kategorie-tabulka.js:186"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:a1eceaa47310:tlacitko": {
+  "zdroj": [
+   "product.html:5673"
+  ],
+  "kontexty": [
+   "tlacitko"
+  ],
+  "priznaky": [
+   "html-v-sablone"
+  ]
+ },
+ "ui:6606efa97372:hlaska": {
+  "zdroj": [
+   "js/realizace-foto.js:147",
+   "js/realizace-foto.js:173"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:ef558b4b4215:hlaska": {
+  "zdroj": [
+   "product.html:4468"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:551ce0287014:hlaska": {
+  "zdroj": [
+   "product.html:3447",
+   "product.html:4747",
+   "product.html:4750",
+   "product.html:4840"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": [
+   "mena"
+  ]
+ },
+ "ui:1b072d83324e:text": {
+  "zdroj": [
+   "category.html:2388"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": [
+   "html-v-sablone",
+   "mena"
+  ]
+ },
+ "ui:1d0ea53bc096:hlaska": {
+  "zdroj": [
+   "category.html:2484"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": [
+   "mena"
+  ]
+ },
+ "ui:06791fd9157b:text": {
+  "zdroj": [
+   "product.html:5719"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": [
+   "html-v-sablone"
+  ]
+ },
+ "ui:da05207b76a8:text": {
+  "zdroj": [
+   "moje-objednavky.html:318"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": [
+   "html-v-sablone"
+  ]
+ },
+ "ui:486a66efa3ef:text": {
+  "zdroj": [
+   "product.html:5749"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": [
+   "html-v-sablone"
+  ]
+ },
+ "ui:b5fe19ade8d1:hlaska": {
+  "zdroj": [
+   "category.html:2398",
+   "product.html:3246",
+   "product.html:5171"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:ee749d13e168:text": {
+  "zdroj": [
+   "product.html:1921"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:e811e9d99b77:hlaska": {
+  "zdroj": [
+   "js/image-markup.js:354"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": [
+   "slovnik"
+  ]
+ },
+ "ui:0b41829c0790:placeholder": {
+  "zdroj": [
+   "product.html:2122"
+  ],
+  "kontexty": [
+   "placeholder"
+  ],
+  "priznaky": []
+ },
+ "ui:95f685bfabc5:hlaska": {
+  "zdroj": [
+   "product.html:5062"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": [
+   "slovnik"
+  ]
+ },
+ "ui:9d710b990ff2:hlaska": {
+  "zdroj": [
+   "js/kategorie-tabulka.js:171"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:9451ee47b014:hlaska": {
+  "zdroj": [
+   "js/kategorie-tabulka.js:134"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:a591171020ee:text": {
+  "zdroj": [
+   "category.html:1621"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:47d27ccae58e:odkaz": {
+  "zdroj": [
+   "realizace.html:264"
+  ],
+  "kontexty": [
+   "odkaz"
+  ],
+  "priznaky": []
+ },
+ "ui:84197db2ea3f:text": {
+  "zdroj": [
+   "reset-password.html:84"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:128a2f585af6:hlaska": {
+  "zdroj": [
+   "moje-objednavky.html:209"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:ae4a09a2e821:hlaska": {
+  "zdroj": [
+   "js/image-markup.js:56"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:e96c7de78ed0:hlaska": {
+  "zdroj": [
+   "js/kategorie-tabulka.js:54"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:aa0221b0a59a:aria": {
+  "zdroj": [
+   "category.html:1712"
+  ],
+  "kontexty": [
+   "aria"
+  ],
+  "priznaky": []
+ },
+ "ui:135a84749575:hlaska": {
+  "zdroj": [
+   "index.html:1360",
+   "category.html:1893",
+   "product.html:2272",
+   "realizace.html:381",
+   "blok.html:819"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:78cff21133ac:hlaska": {
+  "zdroj": [
+   "product.html:5086"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:b637a05b6de7:text": {
+  "zdroj": [
+   "product.html:5749"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": [
+   "html-v-sablone"
+  ]
+ },
+ "ui:d64d6a93576b:hlaska": {
+  "zdroj": [
+   "poptavka-stul.html:353"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:8de24a75bea1:hlaska": {
+  "zdroj": [
+   "js/image-markup.js:61"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:58bb841911bd:hlaska": {
+  "zdroj": [
+   "js/image-markup.js:60"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:7484ba947aef:hlaska": {
+  "zdroj": [
+   "js/kategorie-tabulka.js:152"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:8f3f1fd61d08:placeholder": {
+  "zdroj": [
+   "product.html:5427"
+  ],
+  "kontexty": [
+   "placeholder"
+  ],
+  "priznaky": [
+   "html-v-sablone"
+  ]
+ },
+ "ui:f8ea03a4e535:hlaska": {
+  "zdroj": [
+   "js/kategorie-tabulka.js:134"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:bbd54df67320:hlaska": {
+  "zdroj": [
+   "js/kategorie-tabulka.js:18"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:9a10e978e68e:text": {
+  "zdroj": [
+   "poptavka-stul.html:179"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:4bcad6943216:hlaska": {
+  "zdroj": [
+   "js/kategorie-tabulka.js:56"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:19c4daa76a94:hlaska": {
+  "zdroj": [
+   "js/kategorie-tabulka.js:56"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:34fef2bda4b3:hlaska": {
+  "zdroj": [
+   "js/image-markup.js:56"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:7b2b4dcc84e2:hlaska": {
+  "zdroj": [
+   "js/kategorie-tabulka.js:185"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:e8cab0913ab1:text": {
+  "zdroj": [
+   "moje-objednavky.html:148",
+   "moje-objednavky.html:304"
+  ],
+  "kontexty": [
+   "text",
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:c25fc7bc2df3:hlaska": {
+  "zdroj": [
+   "category.html:2884"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:6b5f134bebe4:text": {
+  "zdroj": [
+   "product.html:2099",
+   "product.html:2100",
+   "product.html:5937",
+   "product.html:5939"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": [
+   "html-v-retezci"
+  ]
+ },
+ "ui:391f6ef5af09:hlaska": {
+  "zdroj": [
+   "product.html:4029",
+   "product.html:4044"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:e4ab86882fcd:text": {
+  "zdroj": [
+   "product.html:5624"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": [
+   "html-v-retezci"
+  ]
+ },
+ "ui:e30aceaaf4bd:hlaska": {
+  "zdroj": [
+   "product.html:5536"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:e4195243c7b4:tlacitko": {
+  "zdroj": [
+   "product.html:2107",
+   "product.html:2137",
+   "product.html:2146"
+  ],
+  "kontexty": [
+   "tlacitko"
+  ],
+  "priznaky": []
+ },
+ "ui:e55c040cd931:odkaz": {
+  "zdroj": [
+   "product.html:2029"
+  ],
+  "kontexty": [
+   "odkaz"
+  ],
+  "priznaky": []
+ },
+ "ui:26c14074ecff:odkaz": {
+  "zdroj": [
+   "forgot-password.html:81",
+   "reset-password.html:99",
+   "verify-email.html:71"
+  ],
+  "kontexty": [
+   "odkaz"
+  ],
+  "priznaky": []
+ },
+ "ui:ebf6786f50bc:odkaz": {
+  "zdroj": [
+   "moje-objednavky.html:132"
+  ],
+  "kontexty": [
+   "odkaz"
+  ],
+  "priznaky": []
+ },
+ "ui:1214ad364417:hlaska": {
+  "zdroj": [
+   "js/image-markup.js:459"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:8ad2cfc0a9fb:text": {
+  "zdroj": [
+   "category.html:2612",
+   "product.html:4577"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": [
+   "html-v-sablone"
+  ]
+ },
+ "ui:4293c266cf8c:text": {
+  "zdroj": [
+   "index.html:1225",
+   "category.html:1577",
+   "product.html:1643",
+   "moje-objednavky.html:111",
+   "kontakt.html:116",
+   "realizace.html:257"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:a6160361c9f4:tlacitko": {
+  "zdroj": [
+   "category.html:1608"
+  ],
+  "kontexty": [
+   "tlacitko"
+  ],
+  "priznaky": []
+ },
+ "ui:06839a2c87c8:tlacitko": {
+  "zdroj": [
+   "product.html:1739",
+   "product.html:4370"
+  ],
+  "kontexty": [
+   "tlacitko",
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:728c721ada82:hlaska": {
+  "zdroj": [
+   "product.html:5269"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:39419024a8ae:hlaska": {
+  "zdroj": [
+   "js/image-markup.js:404",
+   "js/image-markup.js:428",
+   "js/image-markup.js:748"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:9193570c79e6:hlaska": {
+  "zdroj": [
+   "product.html:4370"
+  ],
+  "kontexty": [
+   "hlaska"
+  ],
+  "priznaky": []
+ },
+ "ui:3e666e0aa1e4:odkaz": {
+  "zdroj": [
+   "product.html:1732"
+  ],
+  "kontexty": [
+   "odkaz"
+  ],
+  "priznaky": []
+ },
+ "ui:26c7781182f9:text": {
+  "zdroj": [
+   "category.html:2599",
+   "product.html:4565"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": [
+   "html-v-sablone"
+  ]
+ },
+ "ui:97c0f2cdc58c:text": {
+  "zdroj": [
+   "product.html:2085"
+  ],
+  "kontexty": [
+   "text"
+  ],
+  "priznaky": []
+ },
+ "ui:a7630b1fbb81:tlacitko": {
+  "zdroj": [
+   "index.html:1245",
+   "category.html:1597",
+   "product.html:1663",
+   "blok.html:759"
+  ],
+  "kontexty": [
+   "odkaz",
+   "tlacitko"
+  ],
+  "priznaky": []
+ }
+}

@@ -1,0 +1,1796 @@
+{
+ "_navod": "Vyplň pole \"hu\" (maďarština) u každé položky v `polozky`. Zdroj = cs / en / sk (en je referenční, sk je vzor pro odbornou terminologii). Pravidla: (1) placeholdery ve složených závorkách ({n} {d} {w} {h} {u} {k} {v} {t1} {t2} {prah} {mezera} {name} {site}) zachovej PŘESNĚ jako v poli `placeholdery` (pořadí ve větě smíš změnit); (2) žádná značka ani interní slova: Logiman, konfigurátor / konfigurator (i německy „Konfigurator“), vandrawee; (3) prodej jen firmám (B2B), neutrální věcný tón, bez značky; (4) povolená písmena jazyka: ASCII + áéíóöőúüűÁÉÍÓÖŐÚÜŰ - jakýkoli jiný znak (např. česká písmena ě š č ř ž ý ů ť ď ň ľ) vyřadí `miniweb_jazyk_sestav.py`; (5) mezeru / středník / tečku na začátku nebo konci u šablon (navazují na `zaklad`) ZACHOVEJ stejně jako v en; (6) terminologie jednotně v celém shopu (i18n, SEO, katalog): drážka profilu = v angličtině „slot“ -> ekvivalent v jazyce určí bot7; (7) plurálové položky (`typ`: plural): `hu` je objekt, vyplň tvary other (`one` je volitelné, stačí `other`); (8) hotové soubory ověř příkazem `scripts/miniweb_jazyk_sestav.py --lang hu` (bez --apply jen kontrola) a pak jazyk zapíše `--apply`.",
+ "_sekce": "Popisky ovládání ve 3D náhledu (tahy myší: „Výška desky“, „Přidat výřez sem“, „Odebrat šuplíky“ …). Klíč je česká šablona; {n} = číslo výřezu nebo police.",
+ "lang": "hu",
+ "sekce": "ovladani",
+ "polozky": [
+  {
+   "id": "ovladani.Pracovní deska",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Pracovní deska",
+   "en": "Worktop",
+   "sk": "Pracovná doska",
+   "hu": "Munkalap"
+  },
+  {
+   "id": "ovladani.Výřez {n}",
+   "typ": "text",
+   "placeholdery": [
+    "{n}"
+   ],
+   "cs": "Výřez {n}",
+   "en": "Cutout {n}",
+   "sk": "Výrez {n}",
+   "hu": "{n}. kivágás"
+  },
+  {
+   "id": "ovladani.Police pod výřezem {n}",
+   "typ": "text",
+   "placeholdery": [
+    "{n}"
+   ],
+   "cs": "Police pod výřezem {n}",
+   "en": "Shelf under cutout {n}",
+   "sk": "Polica pod výrezom {n}",
+   "hu": "{n}. kivágás alatti polc"
+  },
+  {
+   "id": "ovladani.Spodní police",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Spodní police",
+   "en": "Lower shelf",
+   "sk": "Spodná polica",
+   "hu": "Alsó polc"
+  },
+  {
+   "id": "ovladani.Spodní police {n}",
+   "typ": "text",
+   "placeholdery": [
+    "{n}"
+   ],
+   "cs": "Spodní police {n}",
+   "en": "Lower shelf {n}",
+   "sk": "Spodná polica {n}",
+   "hu": "{n}. alsó polc"
+  },
+  {
+   "id": "ovladani.Šuplíky",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Šuplíky",
+   "en": "Drawers",
+   "sk": "Zásuvky",
+   "hu": "Fiókok"
+  },
+  {
+   "id": "ovladani.Podpěry spodní police",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Podpěry spodní police",
+   "en": "Lower shelf supports",
+   "sk": "Podpery spodnej police",
+   "hu": "Alsó polc támaszai"
+  },
+  {
+   "id": "ovladani.Podpěry spodní police {n}",
+   "typ": "text",
+   "placeholdery": [
+    "{n}"
+   ],
+   "cs": "Podpěry spodní police {n}",
+   "en": "Lower shelf supports {n}",
+   "sk": "Podpery spodnej police {n}",
+   "hu": "{n}. alsó polc támaszai"
+  },
+  {
+   "id": "ovladani.Podpěry pod pracovní deskou",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Podpěry pod pracovní deskou",
+   "en": "Work surface supports",
+   "sk": "Podpery pod pracovnou doskou",
+   "hu": "Munkalap alatti támaszok"
+  },
+  {
+   "id": "ovladani.Počet podpěr určuje šířka stolu, střední noha a šuplíky (jejich příčky desku podpírají)",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Počet podpěr určuje šířka stolu, střední noha a šuplíky (jejich příčky desku podpírají)",
+   "en": "The number of supports depends on the table width, the middle leg and the drawers (their rails support the surface too)",
+   "sk": "Počet podpier určuje šírka stola, stredná noha a zásuvky (ich priečky dosku podopierajú)",
+   "hu": "A támaszok számát az asztal szélessége, a középső láb és a fiókok határozzák meg (a fiókok keresztlécei is alátámasztják a munkalapot)"
+  },
+  {
+   "id": "ovladani.Počet podpěr určuje šířka stolu a střední noha",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Počet podpěr určuje šířka stolu a střední noha",
+   "en": "The number of supports depends on the table width and the middle leg",
+   "sk": "Počet podpier určuje šírka stola a stredná noha",
+   "hu": "A támaszok számát az asztal szélessége és a középső láb határozza meg"
+  },
+  {
+   "id": "ovladani.Podpěry jsou při větší hloubce stolu vždy; zmenšením hloubky zmizí",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Podpěry jsou při větší hloubce stolu vždy; zmenšením hloubky zmizí",
+   "en": "The supports are always added at a larger table depth; they disappear when the depth is reduced",
+   "sk": "Podpery sú pri väčšej hĺbke stola vždy; zmenšením hĺbky zmiznú",
+   "hu": "Nagyobb asztalmélységnél a támaszok mindig jelen vannak; a mélység csökkentésekor eltűnnek"
+  },
+  {
+   "id": "ovladani.Perforované panely",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Perforované panely",
+   "en": "Perforated panels",
+   "sk": "Perforované panely",
+   "hu": "Lyukasztott szerszámtáblák"
+  },
+  {
+   "id": "ovladani.LED osvětlení",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "LED osvětlení",
+   "en": "LED light",
+   "sk": "LED osvetlenie",
+   "hu": "LED-világítás"
+  },
+  {
+   "id": "ovladani.Elektrožlab",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Elektrožlab",
+   "en": "Power strip",
+   "sk": "Napájacia lišta",
+   "hu": "Elosztósor"
+  },
+  {
+   "id": "ovladani.Držák PET lahve",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Držák PET lahve",
+   "en": "PET bottle holder",
+   "sk": "Držiak na PET fľašu",
+   "hu": "PET-palack tartó"
+  },
+  {
+   "id": "ovladani.Noha přední levá",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Noha přední levá",
+   "en": "Front left leg",
+   "sk": "Predná ľavá noha",
+   "hu": "Bal első láb"
+  },
+  {
+   "id": "ovladani.Noha přední pravá",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Noha přední pravá",
+   "en": "Front right leg",
+   "sk": "Predná pravá noha",
+   "hu": "Jobb első láb"
+  },
+  {
+   "id": "ovladani.Noha zadní levá",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Noha zadní levá",
+   "en": "Rear left leg",
+   "sk": "Zadná ľavá noha",
+   "hu": "Bal hátsó láb"
+  },
+  {
+   "id": "ovladani.Noha zadní pravá",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Noha zadní pravá",
+   "en": "Rear right leg",
+   "sk": "Zadná pravá noha",
+   "hu": "Jobb hátsó láb"
+  },
+  {
+   "id": "ovladani.Střední noha přední",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Střední noha přední",
+   "en": "Front middle leg",
+   "sk": "Stredná noha predná",
+   "hu": "Első középső láb"
+  },
+  {
+   "id": "ovladani.Střední noha zadní",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Střední noha zadní",
+   "en": "Rear middle leg",
+   "sk": "Stredná noha zadná",
+   "hu": "Hátsó középső láb"
+  },
+  {
+   "id": "ovladani.Konec nohy",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Konec nohy",
+   "en": "Leg end",
+   "sk": "Koniec nohy",
+   "hu": "Lábvég"
+  },
+  {
+   "id": "ovladani.Vestavěný rám (střední opora)",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Vestavěný rám (střední opora)",
+   "en": "Built-in frame (centre support)",
+   "sk": "Vstavaný rám (stredná opora)",
+   "hu": "Beépített keret (középső támasz)"
+  },
+  {
+   "id": "ovladani.Přidat výřez sem",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Přidat výřez sem",
+   "en": "Add a cutout here",
+   "sk": "Pridať výrez sem",
+   "hu": "Kivágás hozzáadása ide"
+  },
+  {
+   "id": "ovladani.Ložiskové jednotky: vypnout",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Ložiskové jednotky: vypnout",
+   "en": "Ball transfer units: switch off",
+   "sk": "Ložiskové jednotky: vypnúť",
+   "hu": "Golyósgörgők: kikapcsolás"
+  },
+  {
+   "id": "ovladani.Ložiskové jednotky: zapnout",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Ložiskové jednotky: zapnout",
+   "en": "Ball transfer units: switch on",
+   "sk": "Ložiskové jednotky: zapnúť",
+   "hu": "Golyósgörgők: bekapcsolás"
+  },
+  {
+   "id": "ovladani.Jednotky hustěji (rozteč −10 mm)",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Jednotky hustěji (rozteč −10 mm)",
+   "en": "Units closer together (spacing −10 mm)",
+   "sk": "Jednotky hustejšie (rozstup −10 mm)",
+   "hu": "Golyósgörgők sűrűbben (távolság −10 mm)"
+  },
+  {
+   "id": "ovladani.Jednotky řidčeji (rozteč +10 mm)",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Jednotky řidčeji (rozteč +10 mm)",
+   "en": "Units further apart (spacing +10 mm)",
+   "sk": "Jednotky redšie (rozstup +10 mm)",
+   "hu": "Golyósgörgők ritkábban (távolság +10 mm)"
+  },
+  {
+   "id": "ovladani.Rozměry desky nastavit v panelu",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Rozměry desky nastavit v panelu",
+   "en": "Set the worktop size in the panel",
+   "sk": "Rozmery dosky nastaviť v paneli",
+   "hu": "Állítsa be a munkalap méreteit a panelen"
+  },
+  {
+   "id": "ovladani.Police pod výřezem {n}: odebrat",
+   "typ": "text",
+   "placeholdery": [
+    "{n}"
+   ],
+   "cs": "Police pod výřezem {n}: odebrat",
+   "en": "Shelf under cutout {n}: remove",
+   "sk": "Polica pod výrezom {n}: odstrániť",
+   "hu": "{n}. kivágás alatti polc: eltávolítás"
+  },
+  {
+   "id": "ovladani.Police pod výřezem {n}: přidat",
+   "typ": "text",
+   "placeholdery": [
+    "{n}"
+   ],
+   "cs": "Police pod výřezem {n}: přidat",
+   "en": "Shelf under cutout {n}: add",
+   "sk": "Polica pod výrezom {n}: pridať",
+   "hu": "{n}. kivágás alatti polc: hozzáadás"
+  },
+  {
+   "id": "ovladani.Odebrat výřez {n}",
+   "typ": "text",
+   "placeholdery": [
+    "{n}"
+   ],
+   "cs": "Odebrat výřez {n}",
+   "en": "Remove cutout {n}",
+   "sk": "Odstrániť výrez {n}",
+   "hu": "{n}. kivágás eltávolítása"
+  },
+  {
+   "id": "ovladani.Odebrat polici pod výřezem {n}",
+   "typ": "text",
+   "placeholdery": [
+    "{n}"
+   ],
+   "cs": "Odebrat polici pod výřezem {n}",
+   "en": "Remove the shelf under cutout {n}",
+   "sk": "Odstrániť policu pod výrezom {n}",
+   "hu": "{n}. kivágás alatti polc eltávolítása"
+  },
+  {
+   "id": "ovladani.Odebrat výřez {n} i s policí",
+   "typ": "text",
+   "placeholdery": [
+    "{n}"
+   ],
+   "cs": "Odebrat výřez {n} i s policí",
+   "en": "Remove cutout {n} with its shelf",
+   "sk": "Odstrániť výrez {n} aj s policou",
+   "hu": "{n}. kivágás eltávolítása a polccal együtt"
+  },
+  {
+   "id": "ovladani.Přidat spodní polici",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Přidat spodní polici",
+   "en": "Add a lower shelf",
+   "sk": "Pridať spodnú policu",
+   "hu": "Alsó polc hozzáadása"
+  },
+  {
+   "id": "ovladani.Odebrat spodní polici",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Odebrat spodní polici",
+   "en": "Remove a lower shelf",
+   "sk": "Odstrániť spodnú policu",
+   "hu": "Alsó polc eltávolítása"
+  },
+  {
+   "id": "ovladani.Odebrat desku police",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Odebrat desku police",
+   "en": "Remove the shelf board",
+   "sk": "Odstrániť dosku police",
+   "hu": "Polclap eltávolítása"
+  },
+  {
+   "id": "ovladani.Vrátit desku police",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Vrátit desku police",
+   "en": "Put the shelf board back",
+   "sk": "Vrátiť dosku police",
+   "hu": "Polclap visszahelyezése"
+  },
+  {
+   "id": "ovladani.Odebrat desky všech polic",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Odebrat desky všech polic",
+   "en": "Remove the boards of all shelves",
+   "sk": "Odstrániť dosky všetkých políc",
+   "hu": "Valamennyi polc lapjának eltávolítása"
+  },
+  {
+   "id": "ovladani.Vrátit desky všech polic",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Vrátit desky všech polic",
+   "en": "Put the boards back on all shelves",
+   "sk": "Vrátiť dosky na všetky police",
+   "hu": "Lapok visszahelyezése az összes polcra"
+  },
+  {
+   "id": "ovladani.Odebrat šuplíky",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Odebrat šuplíky",
+   "en": "Remove the drawers",
+   "sk": "Odstrániť zásuvky",
+   "hu": "Fiókok eltávolítása"
+  },
+  {
+   "id": "ovladani.Šuplíky vrátit na výchozí místo",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Šuplíky vrátit na výchozí místo",
+   "en": "Move the drawers back to the default position",
+   "sk": "Zásuvky vrátiť na pôvodné miesto",
+   "hu": "Fiókok visszahelyezése az eredeti helyükre"
+  },
+  {
+   "id": "ovladani.Box s 1 šuplíkem",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Box s 1 šuplíkem",
+   "en": "Unit with 1 drawer",
+   "sk": "Box s 1 zásuvkou",
+   "hu": "Fiókos doboz 1 fiókkal"
+  },
+  {
+   "id": "ovladani.Box s 2 šuplíky",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Box s 2 šuplíky",
+   "en": "Unit with 2 drawers",
+   "sk": "Box s 2 zásuvkami",
+   "hu": "Fiókos doboz 2 fiókkal"
+  },
+  {
+   "id": "ovladani.Box s 3 šuplíky",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Box s 3 šuplíky",
+   "en": "Unit with 3 drawers",
+   "sk": "Box s 3 zásuvkami",
+   "hu": "Fiókos doboz 3 fiókkal"
+  },
+  {
+   "id": "ovladani.Odebrat perforované panely (i elektrožlab)",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Odebrat perforované panely (i elektrožlab)",
+   "en": "Remove the perforated panels (and the power strip)",
+   "sk": "Odstrániť perforované panely (aj napájaciu lištu)",
+   "hu": "Szerszámtáblák eltávolítása (az elosztósorral együtt)"
+  },
+  {
+   "id": "ovladani.Odebrat LED osvětlení",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Odebrat LED osvětlení",
+   "en": "Remove the LED light",
+   "sk": "Odstrániť LED osvetlenie",
+   "hu": "LED-világítás eltávolítása"
+  },
+  {
+   "id": "ovladani.Odebrat elektrožlab",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Odebrat elektrožlab",
+   "en": "Remove the power strip",
+   "sk": "Odstrániť napájaciu lištu",
+   "hu": "Elosztósor eltávolítása"
+  },
+  {
+   "id": "ovladani.Odebrat držák PET lahve",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Odebrat držák PET lahve",
+   "en": "Remove the PET bottle holder",
+   "sk": "Odstrániť držiak na PET fľašu",
+   "hu": "PET-palack tartó eltávolítása"
+  },
+  {
+   "id": "ovladani.Vzpěry ramen LED",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Vzpěry ramen LED",
+   "en": "LED arm braces",
+   "sk": "Vzpery ramien LED",
+   "hu": "LED-karok merevítői"
+  },
+  {
+   "id": "ovladani.Odebrat vzpěry ramen LED",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Odebrat vzpěry ramen LED",
+   "en": "Remove the LED arm braces",
+   "sk": "Odstrániť vzpery ramien LED",
+   "hu": "LED-karok merevítőinek eltávolítása"
+  },
+  {
+   "id": "ovladani.Přidat vzpěry ramen LED",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Přidat vzpěry ramen LED",
+   "en": "Add braces under the LED arms",
+   "sk": "Pridať vzpery pod ramená LED",
+   "hu": "Merevítők hozzáadása a LED-karok alá"
+  },
+  {
+   "id": "ovladani.Vzpěry delší (+50 mm)",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Vzpěry delší (+50 mm)",
+   "en": "Longer braces (+50 mm)",
+   "sk": "Dlhšie vzpery (+50 mm)",
+   "hu": "Hosszabb merevítők (+50 mm)"
+  },
+  {
+   "id": "ovladani.Vzpěry kratší (−50 mm)",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Vzpěry kratší (−50 mm)",
+   "en": "Shorter braces (−50 mm)",
+   "sk": "Kratšie vzpery (−50 mm)",
+   "hu": "Rövidebb merevítők (−50 mm)"
+  },
+  {
+   "id": "ovladani.Delší vzpěra se sem nevejde.",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Delší vzpěra se sem nevejde.",
+   "en": "A longer brace does not fit here.",
+   "sk": "Dlhšia vzpera sa sem nezmestí.",
+   "hu": "Hosszabb merevítő nem fér ide."
+  },
+  {
+   "id": "ovladani.Kratší vzpěra už není možná.",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Kratší vzpěra už není možná.",
+   "en": "A shorter brace is not possible.",
+   "sk": "Kratšia vzpera už nie je možná.",
+   "hu": "Rövidebb merevítő már nem lehetséges."
+  },
+  {
+   "id": "ovladani.Místo koleček záslepky",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Místo koleček záslepky",
+   "en": "End caps instead of castors",
+   "sk": "Záslepky namiesto koliesok",
+   "hu": "Záródugók görgők helyett"
+  },
+  {
+   "id": "ovladani.Místo koleček stavitelné patky",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Místo koleček stavitelné patky",
+   "en": "Adjustable feet instead of castors",
+   "sk": "Nastaviteľné nožičky namiesto koliesok",
+   "hu": "Állítható lábak görgők helyett"
+  },
+  {
+   "id": "ovladani.Místo patek záslepky",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Místo patek záslepky",
+   "en": "End caps instead of feet",
+   "sk": "Záslepky namiesto nožičiek",
+   "hu": "Záródugók az állítható lábak helyett"
+  },
+  {
+   "id": "ovladani.Místo patek kolečka",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Místo patek kolečka",
+   "en": "Castors instead of feet",
+   "sk": "Kolieska namiesto nožičiek",
+   "hu": "Görgők az állítható lábak helyett"
+  },
+  {
+   "id": "ovladani.Kolečka",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Kolečka",
+   "en": "Castors",
+   "sk": "Kolieska",
+   "hu": "Görgők"
+  },
+  {
+   "id": "ovladani.Stavitelné patky místo záslepek",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Stavitelné patky místo záslepek",
+   "en": "Adjustable feet instead of end caps",
+   "sk": "Nastaviteľné nožičky namiesto záslepiek",
+   "hu": "Állítható lábak záródugók helyett"
+  },
+  {
+   "id": "ovladani.Místo koleček návlek (jekl 40×40×2)",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Místo koleček návlek (jekl 40×40×2)",
+   "en": "Steel sleeves instead of castors",
+   "sk": "Návleky z jekla namiesto koliesok",
+   "hu": "Acélhüvelyek görgők helyett"
+  },
+  {
+   "id": "ovladani.Místo patek návlek (jekl 40×40×2)",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Místo patek návlek (jekl 40×40×2)",
+   "en": "Steel sleeves instead of feet",
+   "sk": "Návleky z jekla namiesto nožičiek",
+   "hu": "Acélhüvelyek az állítható lábak helyett"
+  },
+  {
+   "id": "ovladani.Místo záslepek návlek (jekl 40×40×2)",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Místo záslepek návlek (jekl 40×40×2)",
+   "en": "Steel sleeves instead of end caps",
+   "sk": "Návleky z jekla namiesto záslepiek",
+   "hu": "Acélhüvelyek záródugók helyett"
+  },
+  {
+   "id": "ovladani.Místo návleku záslepky",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Místo návleku záslepky",
+   "en": "End caps instead of sleeves",
+   "sk": "Záslepky namiesto návlekov",
+   "hu": "Záródugók hüvelyek helyett"
+  },
+  {
+   "id": "ovladani.Místo návleku kolečka",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Místo návleku kolečka",
+   "en": "Castors instead of sleeves",
+   "sk": "Kolieska namiesto návlekov",
+   "hu": "Görgők hüvelyek helyett"
+  },
+  {
+   "id": "ovladani.Návlek delší (+50 mm)",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Návlek delší (+50 mm)",
+   "en": "Longer sleeves (+50 mm)",
+   "sk": "Dlhšie návleky (+50 mm)",
+   "hu": "Hosszabb hüvelyek (+50 mm)"
+  },
+  {
+   "id": "ovladani.Návlek kratší (−50 mm)",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Návlek kratší (−50 mm)",
+   "en": "Shorter sleeves (−50 mm)",
+   "sk": "Kratšie návleky (−50 mm)",
+   "hu": "Rövidebb hüvelyek (−50 mm)"
+  },
+  {
+   "id": "ovladani.Delší návlek se sem nevejde.",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Delší návlek se sem nevejde.",
+   "en": "A longer sleeve does not fit here.",
+   "sk": "Dlhší návlek sa sem nezmestí.",
+   "hu": "Hosszabb hüvely nem fér ide."
+  },
+  {
+   "id": "ovladani.Kratší návlek už není možný.",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Kratší návlek už není možný.",
+   "en": "A shorter sleeve is not possible.",
+   "sk": "Kratší návlek už nie je možný.",
+   "hu": "Rövidebb hüvely már nem lehetséges."
+  },
+  {
+   "id": "ovladani.Zadní stojky: vypnout (i panely, LED, elektrožlab)",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Zadní stojky: vypnout (i panely, LED, elektrožlab)",
+   "en": "Rear uprights: switch off (also panels, LED, power strip)",
+   "sk": "Zadné stojky: vypnúť (aj panely, LED, napájaciu lištu)",
+   "hu": "Hátsó oszlopok: kikapcsolás (szerszámtáblák, LED, elosztósor is)"
+  },
+  {
+   "id": "ovladani.Zadní stojky: zapnout",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Zadní stojky: zapnout",
+   "en": "Rear uprights: switch on",
+   "sk": "Zadné stojky: zapnúť",
+   "hu": "Hátsó oszlopok: bekapcsolás"
+  },
+  {
+   "id": "ovladani.Střední nohu vrátit doprostřed",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Střední nohu vrátit doprostřed",
+   "en": "Move the middle leg back to the centre",
+   "sk": "Strednú nohu vrátiť do stredu",
+   "hu": "Középső láb visszahelyezése középre"
+  },
+  {
+   "id": "ovladani.Přidat panel",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Přidat panel",
+   "en": "Add a panel",
+   "sk": "Pridať panel",
+   "hu": "Szerszámtábla hozzáadása"
+  },
+  {
+   "id": "ovladani.Odebrat panel",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Odebrat panel",
+   "en": "Remove a panel",
+   "sk": "Odstrániť panel",
+   "hu": "Szerszámtábla eltávolítása"
+  },
+  {
+   "id": "ovladani.Odebrat panel (i elektrožlab)",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Odebrat panel (i elektrožlab)",
+   "en": "Remove the panel (and the power strip)",
+   "sk": "Odstrániť panel (aj napájaciu lištu)",
+   "hu": "Szerszámtábla eltávolítása (az elosztósorral együtt)"
+  },
+  {
+   "id": "ovladani.Odebrat všechny panely (i elektrožlab)",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Odebrat všechny panely (i elektrožlab)",
+   "en": "Remove all panels (and the power strip)",
+   "sk": "Odstrániť všetky panely (aj napájaciu lištu)",
+   "hu": "Összes szerszámtábla eltávolítása (az elosztósorral együtt)"
+  },
+  {
+   "id": "ovladani.Panely vrátit do spodní polohy",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Panely vrátit do spodní polohy",
+   "en": "Move the panels back down",
+   "sk": "Panely vrátiť do dolnej polohy",
+   "hu": "Szerszámtáblák visszahelyezése az alsó helyzetbe"
+  },
+  {
+   "id": "ovladani.Už jsou dole.",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Už jsou dole.",
+   "en": "Already at the bottom.",
+   "sk": "Už sú dole.",
+   "hu": "Már lent vannak."
+  },
+  {
+   "id": "ovladani.Další panel se sem nevejde (širší stůl, vyšší stojky nebo vestavěný rám).",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Další panel se sem nevejde (širší stůl, vyšší stojky nebo vestavěný rám).",
+   "en": "Another panel does not fit here (a wider table, taller uprights or a built-in frame).",
+   "sk": "Ďalší panel sa sem nezmestí (širší stôl, vyššie stojky alebo vstavaný rám).",
+   "hu": "Újabb szerszámtábla nem fér ide (szélesebb asztal, magasabb oszlopok vagy beépített keret)."
+  },
+  {
+   "id": "ovladani.Elektrožlab vrátit na výchozí místo",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Elektrožlab vrátit na výchozí místo",
+   "en": "Move the power strip back to the default place",
+   "sk": "Napájaciu lištu vrátiť na pôvodné miesto",
+   "hu": "Elosztósor visszahelyezése az eredeti helyére"
+  },
+  {
+   "id": "ovladani.Už je na výchozím místě.",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Už je na výchozím místě.",
+   "en": "Already in the default place.",
+   "sk": "Už je na pôvodnom mieste.",
+   "hu": "Már az eredeti helyén van."
+  },
+  {
+   "id": "ovladani.Střední nohy místo vestavěného rámu",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Střední nohy místo vestavěného rámu",
+   "en": "Centre legs instead of the built-in frame",
+   "sk": "Stredné nohy namiesto vstavaného rámu",
+   "hu": "Középső lábak a beépített keret helyett"
+  },
+  {
+   "id": "ovladani.Rám vrátit doprostřed",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Rám vrátit doprostřed",
+   "en": "Move the frame back to the centre",
+   "sk": "Rám vrátiť do stredu",
+   "hu": "Keret visszahelyezése középre"
+  },
+  {
+   "id": "ovladani.Střední nohy nahradit vestavěným rámem",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Střední nohy nahradit vestavěným rámem",
+   "en": "Replace the centre legs with a built-in frame",
+   "sk": "Stredné nohy nahradiť vstavaným rámom",
+   "hu": "Középső lábak cseréje beépített keretre"
+  },
+  {
+   "id": "ovladani.Vestavěný rám potřebuje spodní polici.",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Vestavěný rám potřebuje spodní polici.",
+   "en": "The built-in frame needs a lower shelf.",
+   "sk": "Vstavaný rám potrebuje spodnú policu.",
+   "hu": "A beépített kerethez alsó polc kell."
+  },
+  {
+   "id": "ovladani.Výška panelů",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Výška panelů",
+   "en": "Panel height",
+   "sk": "Výška panelov",
+   "hu": "Szerszámtáblák magassága"
+  },
+  {
+   "id": "ovladani.posun panelů nahoru",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "posun panelů nahoru",
+   "en": "panels moved up",
+   "sk": "posun panelov nahor",
+   "hu": "szerszámtáblák eltolása felfelé"
+  },
+  {
+   "id": "ovladani.Panely vrátit doprostřed mezi nohy",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Panely vrátit doprostřed mezi nohy",
+   "en": "Centre the panels between the legs",
+   "sk": "Panely vrátiť doprostred medzi nohy",
+   "hu": "Szerszámtáblák visszahelyezése a lábak közé, középre"
+  },
+  {
+   "id": "ovladani.Už jsou uprostřed.",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Už jsou uprostřed.",
+   "en": "Already centred.",
+   "sk": "Už sú uprostred.",
+   "hu": "Már középen vannak."
+  },
+  {
+   "id": "ovladani.Panely do stran",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Panely do stran",
+   "en": "Panels sideways",
+   "sk": "Panely do strán",
+   "hu": "Szerszámtáblák oldalirányban"
+  },
+  {
+   "id": "ovladani.od střední nohy",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "od střední nohy",
+   "en": "from the middle leg",
+   "sk": "od strednej nohy",
+   "hu": "a középső lábtól"
+  },
+  {
+   "id": "ovladani.levý panel od levé nohy",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "levý panel od levé nohy",
+   "en": "left panel from the left leg",
+   "sk": "ľavý panel od ľavej nohy",
+   "hu": "bal szerszámtábla a bal lábtól"
+  },
+  {
+   "id": "ovladani.levý panel od střední nohy",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "levý panel od střední nohy",
+   "en": "left panel from the middle leg",
+   "sk": "ľavý panel od strednej nohy",
+   "hu": "bal szerszámtábla a középső lábtól"
+  },
+  {
+   "id": "ovladani.pravý panel od střední nohy",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "pravý panel od střední nohy",
+   "en": "right panel from the middle leg",
+   "sk": "pravý panel od strednej nohy",
+   "hu": "jobb szerszámtábla a középső lábtól"
+  },
+  {
+   "id": "ovladani.pravý panel od pravé nohy",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "pravý panel od pravé nohy",
+   "en": "right panel from the right leg",
+   "sk": "pravý panel od pravej nohy",
+   "hu": "jobb szerszámtábla a jobb lábtól"
+  },
+  {
+   "id": "ovladani.Výška zadních stojek",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Výška zadních stojek",
+   "en": "Rear upright height",
+   "sk": "Výška zadných stojok",
+   "hu": "Hátsó oszlopok magassága"
+  },
+  {
+   "id": "ovladani.výška stojek nad deskou",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "výška stojek nad deskou",
+   "en": "upright height above the worktop",
+   "sk": "výška stojok nad doskou",
+   "hu": "oszlopok magassága a munkalap felett"
+  },
+  {
+   "id": "ovladani.Elektrožlab: výška",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Elektrožlab: výška",
+   "en": "Power strip: height",
+   "sk": "Napájacia lišta: výška",
+   "hu": "Elosztósor: magasság"
+  },
+  {
+   "id": "ovladani.posun elektrožlabu nahoru",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "posun elektrožlabu nahoru",
+   "en": "power strip moved up",
+   "sk": "posun napájacej lišty nahor",
+   "hu": "elosztósor eltolása felfelé"
+  },
+  {
+   "id": "ovladani.Elektrožlab: do stran",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Elektrožlab: do stran",
+   "en": "Power strip: sideways",
+   "sk": "Napájacia lišta: do strán",
+   "hu": "Elosztósor: oldalirányban"
+  },
+  {
+   "id": "ovladani.posun elektrožlabu doprava",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "posun elektrožlabu doprava",
+   "en": "power strip moved to the right",
+   "sk": "posun napájacej lišty doprava",
+   "hu": "elosztósor eltolása jobbra"
+  },
+  {
+   "id": "ovladani.Už je 3 výřezy (nejvíc).",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Už je 3 výřezy (nejvíc).",
+   "en": "There are already 3 cutouts (the maximum).",
+   "sk": "Už sú 3 výrezy (maximum).",
+   "hu": "Már 3 kivágás van (ez a maximum)."
+  },
+  {
+   "id": "ovladani.Další police se nevejde (nízký stůl nebo šuplíky).",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Další police se nevejde (nízký stůl nebo šuplíky).",
+   "en": "Another shelf does not fit (low table or the drawers).",
+   "sk": "Ďalšia polica sa nezmestí (nízky stôl alebo zásuvky).",
+   "hu": "Újabb polc nem fér el (alacsony asztal vagy fiókok)."
+  },
+  {
+   "id": "ovladani.Žádná police není.",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Žádná police není.",
+   "en": "There is no shelf.",
+   "sk": "Žiadna polica nie je.",
+   "hu": "Nincs polc."
+  },
+  {
+   "id": "ovladani.Už jsou na výchozím místě.",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Už jsou na výchozím místě.",
+   "en": "Already in the default position.",
+   "sk": "Už sú na pôvodnom mieste.",
+   "hu": "Már az eredeti helyükön vannak."
+  },
+  {
+   "id": "ovladani.Už je uprostřed.",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Už je uprostřed.",
+   "en": "Already in the centre.",
+   "sk": "Už je v strede.",
+   "hu": "Már középen van."
+  },
+  {
+   "id": "ovladani.Odebrat jen svítidlo LED (profily zůstanou)",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Odebrat jen svítidlo LED (profily zůstanou)",
+   "en": "Remove only the LED light (the profiles stay)",
+   "sk": "Odobrať len svietidlo LED (profily ostanú)",
+   "hu": "Csak a LED-lámpatest eltávolítása (a profilok maradnak)"
+  },
+  {
+   "id": "ovladani.Vrátit svítidlo LED",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Vrátit svítidlo LED",
+   "en": "Put the LED light back",
+   "sk": "Vrátiť svietidlo LED",
+   "hu": "LED-lámpatest visszahelyezése"
+  },
+  {
+   "id": "ovladani.Přehodit šuplíky na levou stranu",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Přehodit šuplíky na levou stranu",
+   "en": "Move the drawers to the left side",
+   "sk": "Prehodiť zásuvky na ľavú stranu",
+   "hu": "Fiókok áthelyezése a bal oldalra"
+  },
+  {
+   "id": "ovladani.Přehodit šuplíky na pravou stranu",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Přehodit šuplíky na pravou stranu",
+   "en": "Move the drawers to the right side",
+   "sk": "Prehodiť zásuvky na pravú stranu",
+   "hu": "Fiókok áthelyezése a jobb oldalra"
+  },
+  {
+   "id": "ovladani.Držák PET lahve vrátit na výchozí výšku",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Držák PET lahve vrátit na výchozí výšku",
+   "en": "Move the PET bottle holder back to the default height",
+   "sk": "Držiak na PET fľašu vrátiť na pôvodnú výšku",
+   "hu": "PET-palack tartó visszaállítása az eredeti magasságra"
+  },
+  {
+   "id": "ovladani.Už je ve výchozí výšce.",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Už je ve výchozí výšce.",
+   "en": "Already at the default height.",
+   "sk": "Už je na pôvodnej výške.",
+   "hu": "Már az eredeti magasságban van."
+  },
+  {
+   "id": "ovladani.Výška držáku PET",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Výška držáku PET",
+   "en": "PET holder height",
+   "sk": "Výška držiaka PET",
+   "hu": "PET-tartó magassága"
+  },
+  {
+   "id": "ovladani.posun držáku",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "posun držáku",
+   "en": "holder position",
+   "sk": "posun držiaka",
+   "hu": "tartó helyzete"
+  },
+  {
+   "id": "ovladani.Výška police {n}",
+   "typ": "text",
+   "placeholdery": [
+    "{n}"
+   ],
+   "cs": "Výška police {n}",
+   "en": "Shelf {n} height",
+   "sk": "Výška police {n}",
+   "hu": "{n}. polc magassága"
+  },
+  {
+   "id": "ovladani.odstup pod deskou",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "odstup pod deskou",
+   "en": "distance below the worktop",
+   "sk": "odstup pod doskou",
+   "hu": "távolság a munkalap alatt"
+  },
+  {
+   "id": "ovladani.mezera nad policí",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "mezera nad policí",
+   "en": "gap above the shelf",
+   "sk": "medzera nad policou",
+   "hu": "szabad hely a polc felett"
+  },
+  {
+   "id": "ovladani.Střední noha",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Střední noha",
+   "en": "Middle leg",
+   "sk": "Stredná noha",
+   "hu": "Középső láb"
+  },
+  {
+   "id": "ovladani.od levé nohy",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "od levé nohy",
+   "en": "from the left leg",
+   "sk": "od ľavej nohy",
+   "hu": "a bal lábtól"
+  },
+  {
+   "id": "ovladani.od pravé nohy",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "od pravé nohy",
+   "en": "from the right leg",
+   "sk": "od pravej nohy",
+   "hu": "a jobb lábtól"
+  },
+  {
+   "id": "ovladani.Výška desky",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Výška desky",
+   "en": "Worktop height",
+   "sk": "Výška pracovnej dosky",
+   "hu": "Munkalap magassága"
+  },
+  {
+   "id": "ovladani.Šířka desky",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Šířka desky",
+   "en": "Worktop width",
+   "sk": "Šírka dosky",
+   "hu": "Munkalap szélessége"
+  },
+  {
+   "id": "ovladani.Hloubka desky",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Hloubka desky",
+   "en": "Worktop depth",
+   "sk": "Hĺbka dosky",
+   "hu": "Munkalap mélysége"
+  },
+  {
+   "id": "ovladani.Posun šuplíků",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Posun šuplíků",
+   "en": "Drawers position",
+   "sk": "Posun zásuviek",
+   "hu": "Fiókok helyzete"
+  },
+  {
+   "id": "ovladani.Délka ramene LED",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Délka ramene LED",
+   "en": "LED arm length",
+   "sk": "Dĺžka ramena LED",
+   "hu": "LED-kar hossza"
+  },
+  {
+   "id": "ovladani.Výřez {n}: posun",
+   "typ": "text",
+   "placeholdery": [
+    "{n}"
+   ],
+   "cs": "Výřez {n}: posun",
+   "en": "Cutout {n}: move",
+   "sk": "Výrez {n}: posun",
+   "hu": "{n}. kivágás: eltolás"
+  },
+  {
+   "id": "ovladani.Výřez {n}: velikost",
+   "typ": "text",
+   "placeholdery": [
+    "{n}"
+   ],
+   "cs": "Výřez {n}: velikost",
+   "en": "Cutout {n}: size",
+   "sk": "Výrez {n}: veľkosť",
+   "hu": "{n}. kivágás: méret"
+  },
+  {
+   "id": "ovladani.výška desky",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "výška desky",
+   "en": "worktop height",
+   "sk": "výška dosky",
+   "hu": "munkalap magassága"
+  },
+  {
+   "id": "ovladani.šířka desky",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "šířka desky",
+   "en": "worktop width",
+   "sk": "šírka dosky",
+   "hu": "munkalap szélessége"
+  },
+  {
+   "id": "ovladani.Levá noha SSE",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Levá noha SSE",
+   "en": "Left SSE leg",
+   "sk": "Ľavá noha SSE",
+   "hu": "Bal SSE-láb"
+  },
+  {
+   "id": "ovladani.Pravá noha SSE",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Pravá noha SSE",
+   "en": "Right SSE leg",
+   "sk": "Pravá noha SSE",
+   "hu": "Jobb SSE-láb"
+  },
+  {
+   "id": "ovladani.Střední noha SSE",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Střední noha SSE",
+   "en": "Centre SSE leg",
+   "sk": "Stredná noha SSE",
+   "hu": "Középső SSE-láb"
+  },
+  {
+   "id": "ovladani.Výšku stolu nastavit v panelu",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Výšku stolu nastavit v panelu",
+   "en": "Set the table height in the panel",
+   "sk": "Výšku stola nastavte v paneli",
+   "hu": "Állítsa be az asztal magasságát a panelen"
+  },
+  {
+   "id": "ovladani.Hloubku stolu (spojnici nohy) nastavit v panelu",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Hloubku stolu (spojnici nohy) nastavit v panelu",
+   "en": "Set the table depth (leg cross-member) in the panel",
+   "sk": "Hĺbku stola (spojnicu nohy) nastavte v paneli",
+   "hu": "Állítsa be az asztal mélységét (lábak keresztlécei) a panelen"
+  },
+  {
+   "id": "ovladani.hloubka desky",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "hloubka desky",
+   "en": "worktop depth",
+   "sk": "hĺbka dosky",
+   "hu": "munkalap mélysége"
+  },
+  {
+   "id": "ovladani.posun šuplíků",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "posun šuplíků",
+   "en": "drawers position",
+   "sk": "posun zásuviek",
+   "hu": "fiókok helyzete"
+  },
+  {
+   "id": "ovladani.délka ramene",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "délka ramene",
+   "en": "arm length",
+   "sk": "dĺžka ramena",
+   "hu": "kar hossza"
+  },
+  {
+   "id": "ovladani.od předního okraje",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "od předního okraje",
+   "en": "from the front edge",
+   "sk": "od predného okraja",
+   "hu": "az első éltől"
+  },
+  {
+   "id": "ovladani.od levého okraje",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "od levého okraje",
+   "en": "from the left edge",
+   "sk": "od ľavého okraja",
+   "hu": "a bal éltől"
+  },
+  {
+   "id": "ovladani.šířka výřezu",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "šířka výřezu",
+   "en": "cutout width",
+   "sk": "šírka výrezu",
+   "hu": "kivágás szélessége"
+  },
+  {
+   "id": "ovladani.hloubka výřezu",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "hloubka výřezu",
+   "en": "cutout depth",
+   "sk": "hĺbka výrezu",
+   "hu": "kivágás mélysége"
+  },
+  {
+   "id": "ovladani.Zvolit LED 600 mm",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Zvolit LED 600 mm",
+   "en": "Use the 600 mm LED light",
+   "sk": "Zvoliť LED 600 mm",
+   "hu": "600 mm-es LED-világítás választása"
+  },
+  {
+   "id": "ovladani.Zvolit LED 1200 mm",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Zvolit LED 1200 mm",
+   "en": "Use the 1200 mm LED light",
+   "sk": "Zvoliť LED 1200 mm",
+   "hu": "1200 mm-es LED-világítás választása"
+  },
+  {
+   "id": "ovladani.Tahle délka LED se sem nevejde (širší stůl).",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Tahle délka LED se sem nevejde (širší stůl).",
+   "en": "This LED length does not fit here (a wider table).",
+   "sk": "Táto dĺžka LED sa sem nezmestí (širší stôl).",
+   "hu": "Ez a LED-hossz itt nem fér el (szélesebb asztal)."
+  },
+  {
+   "id": "ovladani.Zvolit panel 1190 mm",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Zvolit panel 1190 mm",
+   "en": "Use the 1190 mm panel",
+   "sk": "Zvoliť panel 1190 mm",
+   "hu": "1190 mm-es tábla választása"
+  },
+  {
+   "id": "ovladani.Zvolit panel 1481 mm",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Zvolit panel 1481 mm",
+   "en": "Use the 1481 mm panel",
+   "sk": "Zvoliť panel 1481 mm",
+   "hu": "1481 mm-es tábla választása"
+  },
+  {
+   "id": "ovladani.Zvolit panel 1671 mm",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Zvolit panel 1671 mm",
+   "en": "Use the 1671 mm panel",
+   "sk": "Zvoliť panel 1671 mm",
+   "hu": "1671 mm-es tábla választása"
+  },
+  {
+   "id": "ovladani.Zvolit panel 1975 mm",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Zvolit panel 1975 mm",
+   "en": "Use the 1975 mm panel",
+   "sk": "Zvoliť panel 1975 mm",
+   "hu": "1975 mm-es tábla választása"
+  },
+  {
+   "id": "ovladani.Tahle délka panelu se sem nevejde (širší stůl, vyšší stojky nebo vestavěný rám).",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Tahle délka panelu se sem nevejde (širší stůl, vyšší stojky nebo vestavěný rám).",
+   "en": "This panel length does not fit here (a wider table, taller uprights or the built-in frame).",
+   "sk": "Táto dĺžka panela sa sem nezmestí (širší stôl, vyššie stojky alebo vstavaný rám).",
+   "hu": "Ez a táblahossz itt nem fér el (szélesebb asztal, magasabb oszlopok vagy beépített keret)."
+  },
+  {
+   "id": "ovladani.Přidat svítidlo LED",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Přidat svítidlo LED",
+   "en": "Add an LED light",
+   "sk": "Pridať svietidlo LED",
+   "hu": "LED-világítótest hozzáadása"
+  },
+  {
+   "id": "ovladani.Další svítidlo LED se sem nevejde (jejich délky dohromady by přesáhly šířku stolu).",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Další svítidlo LED se sem nevejde (jejich délky dohromady by přesáhly šířku stolu).",
+   "en": "Another LED light does not fit here (their lengths together would exceed the table width).",
+   "sk": "Ďalšie svietidlo LED sa sem nezmestí (ich dĺžky dokopy by presiahli šírku stola).",
+   "hu": "Újabb LED-világítótest nem fér el itt (hosszuk együtt meghaladná az asztal szélességét)."
+  },
+  {
+   "id": "ovladani.Odebrat toto svítidlo",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Odebrat toto svítidlo",
+   "en": "Remove this light",
+   "sk": "Odstrániť toto svietidlo",
+   "hu": "E világítótest eltávolítása"
+  },
+  {
+   "id": "ovladani.Vrátit svítidlo na výchozí místo",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Vrátit svítidlo na výchozí místo",
+   "en": "Move the light back to its default place",
+   "sk": "Vrátiť svietidlo na pôvodné miesto",
+   "hu": "A világítótest visszahelyezése az alapértelmezett helyre"
+  },
+  {
+   "id": "ovladani.Svítidlo LED",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Svítidlo LED",
+   "en": "LED light",
+   "sk": "Svietidlo LED",
+   "hu": "LED-világítótest"
+  },
+  {
+   "id": "ovladani.Posun svítidla LED",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Posun svítidla LED",
+   "en": "LED light position",
+   "sk": "Posun svietidla LED",
+   "hu": "A LED-világítótest helyzete"
+  },
+  {
+   "id": "ovladani.Svítidlo LED 1",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Svítidlo LED 1",
+   "en": "LED light 1",
+   "sk": "Svietidlo LED 1",
+   "hu": "1. LED-világítótest"
+  },
+  {
+   "id": "ovladani.Svítidlo LED 2",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Svítidlo LED 2",
+   "en": "LED light 2",
+   "sk": "Svietidlo LED 2",
+   "hu": "2. LED-világítótest"
+  },
+  {
+   "id": "ovladani.Svítidlo LED 3",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Svítidlo LED 3",
+   "en": "LED light 3",
+   "sk": "Svietidlo LED 3",
+   "hu": "3. LED-világítótest"
+  },
+  {
+   "id": "ovladani.Svítidlo LED 4",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Svítidlo LED 4",
+   "en": "LED light 4",
+   "sk": "Svietidlo LED 4",
+   "hu": "4. LED-világítótest"
+  },
+  {
+   "id": "ovladani.Posun svítidla LED 1",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Posun svítidla LED 1",
+   "en": "LED light 1 position",
+   "sk": "Posun svietidla LED 1",
+   "hu": "Az 1. LED-világítótest helyzete"
+  },
+  {
+   "id": "ovladani.Posun svítidla LED 2",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Posun svítidla LED 2",
+   "en": "LED light 2 position",
+   "sk": "Posun svietidla LED 2",
+   "hu": "A 2. LED-világítótest helyzete"
+  },
+  {
+   "id": "ovladani.Posun svítidla LED 3",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Posun svítidla LED 3",
+   "en": "LED light 3 position",
+   "sk": "Posun svietidla LED 3",
+   "hu": "A 3. LED-világítótest helyzete"
+  },
+  {
+   "id": "ovladani.Posun svítidla LED 4",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Posun svítidla LED 4",
+   "en": "LED light 4 position",
+   "sk": "Posun svietidla LED 4",
+   "hu": "A 4. LED-világítótest helyzete"
+  },
+  {
+   "id": "ovladani.od levého okraje stolu",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "od levého okraje stolu",
+   "en": "from the left edge of the table",
+   "sk": "od ľavého okraja stola",
+   "hu": "az asztal bal szélétől"
+  },
+  {
+   "id": "ovladani.od pravého okraje stolu",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "od pravého okraje stolu",
+   "en": "from the right edge of the table",
+   "sk": "od pravého okraja stola",
+   "hu": "az asztal jobb szélétől"
+  },
+  {
+   "id": "ovladani.od levého svítidla",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "od levého svítidla",
+   "en": "from the left light",
+   "sk": "od ľavého svietidla",
+   "hu": "a bal oldali világítótesttől"
+  },
+  {
+   "id": "ovladani.od pravého svítidla",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "od pravého svítidla",
+   "en": "from the right light",
+   "sk": "od pravého svietidla",
+   "hu": "a jobb oldali világítótesttől"
+  },
+  {
+   "id": "ovladani.Police mezi stojkami",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Police mezi stojkami",
+   "en": "Shelf between the uprights",
+   "sk": "Polica medzi stojkami",
+   "hu": "Polc az oszlopok között"
+  },
+  {
+   "id": "ovladani.Odebrat polici mezi stojkami",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Odebrat polici mezi stojkami",
+   "en": "Remove the shelf between the uprights",
+   "sk": "Odstrániť policu medzi stojkami",
+   "hu": "Az oszlopok közötti polc eltávolítása"
+  },
+  {
+   "id": "ovladani.Police: rovná, deska na rámu",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Police: rovná, deska na rámu",
+   "en": "Shelf: flat, board on the frame",
+   "sk": "Polica: rovná, doska na ráme",
+   "hu": "Polc: sík, lap a kereten"
+  },
+  {
+   "id": "ovladani.Police: rámová, bez desky",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Police: rámová, bez desky",
+   "en": "Shelf: frame only, no board",
+   "sk": "Polica: rámová, bez dosky",
+   "hu": "Polc: csak keret, lap nélkül"
+  },
+  {
+   "id": "ovladani.Police: rám s deskou v drážce",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Police: rám s deskou v drážce",
+   "en": "Shelf: frame with a board in the slot",
+   "sk": "Polica: rám s doskou v drážke",
+   "hu": "Polc: keret a horonyban lévő lappal"
+  },
+  {
+   "id": "ovladani.Police: s lemem",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Police: s lemem",
+   "en": "Shelf: with a front lip",
+   "sk": "Polica: s lemom",
+   "hu": "Polc: ütközőléccel az elülső élen"
+  },
+  {
+   "id": "ovladani.Police: rám s přepážkami z překližky",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Police: rám s přepážkami z překližky",
+   "en": "Shelf: frame with plywood dividers",
+   "sk": "Polica: rám s priehradkami z preglejky",
+   "hu": "Polc: keret rétegelt lemez válaszfalakkal"
+  },
+  {
+   "id": "ovladani.Police: šikmá na boxy",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Police: šikmá na boxy",
+   "en": "Shelf: sloped, for boxes",
+   "sk": "Polica: šikmá na boxy",
+   "hu": "Polc: dőlt, dobozokhoz"
+  },
+  {
+   "id": "ovladani.Deska police: laminodeska 18 mm",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Deska police: laminodeska 18 mm",
+   "en": "Shelf board: laminated chipboard 18 mm",
+   "sk": "Doska police: laminovaná drevotrieska 18 mm",
+   "hu": "Polclap: laminált forgácslap 18 mm"
+  },
+  {
+   "id": "ovladani.Deska police: laminodeska 12 mm",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Deska police: laminodeska 12 mm",
+   "en": "Shelf board: laminated chipboard 12 mm",
+   "sk": "Doska police: laminovaná drevotrieska 12 mm",
+   "hu": "Polclap: laminált forgácslap 12 mm"
+  },
+  {
+   "id": "ovladani.Deska police: MDF 8 mm",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Deska police: MDF 8 mm",
+   "en": "Shelf board: MDF 8 mm",
+   "sk": "Doska police: MDF 8 mm",
+   "hu": "Polclap: MDF 8 mm"
+  },
+  {
+   "id": "ovladani.Deska police: překližka 10 mm",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Deska police: překližka 10 mm",
+   "en": "Shelf board: plywood 10 mm",
+   "sk": "Doska police: preglejka 10 mm",
+   "hu": "Polclap: rétegelt lemez 10 mm"
+  },
+  {
+   "id": "ovladani.Police o 50 mm výš",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Police o 50 mm výš",
+   "en": "Raise the shelf by 50 mm",
+   "sk": "Polica o 50 mm vyššie",
+   "hu": "Polc megemelése 50 mm-rel"
+  },
+  {
+   "id": "ovladani.Police o 50 mm níž",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Police o 50 mm níž",
+   "en": "Lower the shelf by 50 mm",
+   "sk": "Polica o 50 mm nižšie",
+   "hu": "Polc leengedése 50 mm-rel"
+  },
+  {
+   "id": "ovladani.Sem se nevejde (málo místa nad rámem).",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Sem se nevejde (málo místa nad rámem).",
+   "en": "It does not fit here (not enough room above the frame).",
+   "sk": "Sem sa nezmestí (málo miesta nad rámom).",
+   "hu": "Itt nem fér el (kevés hely a keret felett)."
+  },
+  {
+   "id": "ovladani.Sem se nevejde (stůl se střední zadní nohou).",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Sem se nevejde (stůl se střední zadní nohou).",
+   "en": "It does not fit here (table with a rear centre leg).",
+   "sk": "Sem sa nezmestí (stôl so strednou zadnou nohou).",
+   "hu": "Itt nem fér el (hátsó középső lábas asztal)."
+  },
+  {
+   "id": "ovladani.Výš už police nejde.",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Výš už police nejde.",
+   "en": "The shelf cannot go any higher.",
+   "sk": "Vyššie už polica nejde.",
+   "hu": "A polc nem vihető följebb."
+  },
+  {
+   "id": "ovladani.Níž už police nejde.",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Níž už police nejde.",
+   "en": "The shelf cannot go any lower.",
+   "sk": "Nižšie už polica nejde.",
+   "hu": "A polc nem vihető lejjebb."
+  },
+  {
+   "id": "ovladani.Police hlouběji (+50 mm)",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Police hlouběji (+50 mm)",
+   "en": "Shelf deeper (+50 mm)",
+   "sk": "Polica hlbšia (+50 mm)",
+   "hu": "Nagyobb mélységű polc (+50 mm)"
+  },
+  {
+   "id": "ovladani.Police mělčí (−50 mm)",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Police mělčí (−50 mm)",
+   "en": "Shelf shallower (−50 mm)",
+   "sk": "Polica plytšia (−50 mm)",
+   "hu": "Kisebb mélységű polc (−50 mm)"
+  },
+  {
+   "id": "ovladani.Hlouběji už police nejde.",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Hlouběji už police nejde.",
+   "en": "The shelf cannot be any deeper.",
+   "sk": "Hlbšie už polica nejde.",
+   "hu": "Nagyobb mélység már nem lehetséges."
+  },
+  {
+   "id": "ovladani.Mělčeji už police nejde.",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Mělčeji už police nejde.",
+   "en": "The shelf cannot be any shallower.",
+   "sk": "Plytšie už polica nejde.",
+   "hu": "Kisebb mélység már nem lehetséges."
+  },
+  {
+   "id": "ovladani.Sklon police o 5° větší",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Sklon police o 5° větší",
+   "en": "Shelf slope 5° steeper",
+   "sk": "Sklon police o 5° väčší",
+   "hu": "A polc dőlése 5°-kal nagyobb"
+  },
+  {
+   "id": "ovladani.Sklon police o 5° menší",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Sklon police o 5° menší",
+   "en": "Shelf slope 5° shallower",
+   "sk": "Sklon police o 5° menší",
+   "hu": "A polc dőlése 5°-kal kisebb"
+  },
+  {
+   "id": "ovladani.Větší sklon už není možný.",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Větší sklon už není možný.",
+   "en": "A steeper slope is not possible.",
+   "sk": "Väčší sklon už nie je možný.",
+   "hu": "Nagyobb dőlésszög már nem lehetséges."
+  },
+  {
+   "id": "ovladani.Menší sklon už není možný.",
+   "typ": "text",
+   "placeholdery": [],
+   "cs": "Menší sklon už není možný.",
+   "en": "A shallower slope is not possible.",
+   "sk": "Menší sklon už nie je možný.",
+   "hu": "Kisebb dőlésszög már nem lehetséges."
+  }
+ ]
+}

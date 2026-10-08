@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "family": "packstations",
+  "lang": "sk",
+  "categories": [
+    {
+      "slug": "packing-tables-and-workbenches",
+      "parent": null,
+      "sort": 1,
+      "name": "Pracovné a baliace stoly"
+    }
+  ],
+  "products": [
+    {
+      "slug": "configurable-packing-station-and-workbench",
+      "sku": "PWB-001",
+      "category": "packing-tables-and-workbenches",
+      "sort": 1,
+      "configurator": {
+        "available": true,
+        "shop_product_id": 4934,
+        "default_view": "configurator"
+      },
+      "name": "Konfigurovateľný baliaci a pracovný stôl",
+      "summary": "Baliaci a pracovný stôl s rámom z hliníkových profilov, vyrobený na mieru. Zvoľte rozmery, police a príslušenstvo a pozrite si 3D.",
+      "description": "Na mieru podľa vašich rozmerov\nTento pracovný stôl sa vyrába na objednávku. Nevyberáte z pevných rozmerov: nastavíte šírku, hĺbku a výšku pracovnej dosky, rozhodnete, koľko políc potrebujete, a pridáte príslušenstvo, ktoré vaša práca vyžaduje. 3D pohľad zobrazí výsledok pri každej zmene.\n\nKontrola pri každej zmene\nRám sa po každej zmene automaticky prepočíta. Kombinácia, ktorú nie je možné vyrobiť, sa neprijme, takže každá platná konfigurácia je stôl, ktorý sa dá skutočne zhotoviť.\n\nRám z hliníkových profilov\nRám tvorí stavebnicový systém hliníkových profilov s prierezom 30 × 30 mm a drážkou 8 mm, spojených rohovými spojkami. Drážky pozdĺž profilov umožňujú upraviť police a príslušenstvo.\n\nNa balenie aj do dielne\nStôl sa hodí na baliace a expedičné miesta, na pracoviská pre montážne práce aj do dielní. Keďže výšku pracovnej dosky volíte vy, stôl sa dá prispôsobiť ľuďom, ktorí pri ňom pracujú. Príslušenstvo na osvetlenie, napájanie, odkladanie a premiestňovanie sa pridáva pri zostavovaní stola.\n\nDodanie a doprava\nStôl sa vyrába na objednávku, dodacia lehota je 3–5 týždňov. Cenu dopravy určíme po objednávke a pred vystavením zálohovej faktúry ju potvrdíme.",
+      "delivery": "Vyrába sa na objednávku. Dodacia lehota je 3–5 týždňov. Cenu dopravy určíme po objednávke a pred vystavením zálohovej faktúry ju potvrdíme.",
+      "specs": [
+        {
+          "name": "Rám",
+          "value": "Hliníkové profily 30 × 30 mm s drážkou 8 mm, rohové spojky"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+ "legs": [
+  {
+   "type": "plain",
+   "anchorZ": -2373
+  },
+  {
+   "type": "vyrez",
+   "anchorZ": -1111
+  },
+  {
+   "type": "vyrez",
+   "anchorZ": -249
+  }
+ ],
+ "columns": [
+  {
+   "N": 3,
+   "legFromIdx": 0,
+   "legToIdx": 1
+  },
+  {
+   "N": 2,
+   "legFromIdx": 1,
+   "legToIdx": 2
+  }
+ ],
+ "offsetX": -425,
+ "offsetY": 2,
+ "D": 326,
+ "T": 30
+}

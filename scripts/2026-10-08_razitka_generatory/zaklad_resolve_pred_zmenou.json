@@ -1,0 +1,1802 @@
+{
+"30|{\"braces\": true}": {
+"hash": "0b6b519479a10fed",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "b636ef490155a6908460020d",
+"valid": true,
+"vodici": "8905aae5f1557acc46618f68"
+},
+"30|{\"cut1\": true}": {
+"hash": "bd1c3f9e35d014ef",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "7584082460ff7aee01246ca3",
+"valid": true,
+"vodici": "342da9a12a3f88ead2f94d29"
+},
+"30|{\"d\": 1000, \"shelf\": 2, \"w\": 2800}": {
+"hash": "fc4735fb4e93998a",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "db5a05cb8b88c40ea93a5a14",
+"valid": true,
+"vodici": "658a0032f9e2f27572b2ec60"
+},
+"30|{\"d\": 900, \"w\": 2000}": {
+"hash": "d2caeb69a300c1a7",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "d62e4abfa8b288525c3cffc1",
+"valid": true,
+"vodici": "4664753720d0048b1777a52b"
+},
+"30|{\"drawers\": true}": {
+"hash": "87a80526a7ae21aa",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "c7d576241ff4f1bbd6e646e0",
+"valid": true,
+"vodici": "731abef6d1f7cc9acdef8807"
+},
+"30|{\"led\": false}": {
+"hash": "eba0934ce16693d4",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "5bd21b1e10bea8f797ce3a20",
+"valid": true,
+"vodici": "31ed13e304b91051bcd9702e"
+},
+"30|{\"led\": true, \"ledlight\": false, \"w\": 1800}": {
+"hash": "b4f614c4cd92a7cc",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "194512f0140860fc597ba5ed",
+"valid": true,
+"vodici": "14ecd4f97509d06e4af19238"
+},
+"30|{\"ledcount\": 2, \"w\": 3000}": {
+"hash": "e7555efb3ec9df76",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "0af86358fd318e88a79ea084",
+"valid": true,
+"vodici": "6a452f9818ed463fa6e6a359"
+},
+"30|{\"ledcount\": 3, \"ledlen\": \"600\", \"w\": 3000}": {
+"hash": "2cfdeea2b03e0bad",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "862cb1f851c8b4bbfdff7f18",
+"valid": true,
+"vodici": "51cdeb66e26fe958b289dbb1"
+},
+"30|{\"midsupport\": \"frame\", \"w\": 2400}": {
+"hash": "a57dead1b31b3114",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "7794a4f6e73348bb052c8257",
+"valid": true,
+"vodici": "704669ea554e244e1d418f4f"
+},
+"30|{\"panelcount\": 2, \"panels\": true}": {
+"hash": "20ca867b1c891e71",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "97f8a8557832a8b110d98c6c",
+"valid": true,
+"vodici": "6819586e4c9dbcf79460b2c4"
+},
+"30|{\"posts\": false}": {
+"hash": "20a7bac8cd324bba",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "a8bd072d53f1ad8a3b22db8b",
+"valid": true,
+"vodici": "090572dcee4f79d2cc3e34e0"
+},
+"30|{\"shelf\": 3, \"shelfboard\": false}": {
+"hash": "6a7c3917b54300dc",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "81ae08d58cce4e34696b7ce8",
+"valid": true,
+"vodici": "4a2938c69e8918063b816c7d"
+},
+"30|{\"upshelf\": true, \"w\": 2200}": {
+"hash": "81855cef3466398a",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "df36110d3bf76055e1490d87",
+"valid": true,
+"vodici": "5b680459547057f7c16721be"
+},
+"30|{\"upshelf\": true}": {
+"hash": "21e8678b27682006",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "9ba4fd0e6e5fe4c0ee61976a",
+"valid": true,
+"vodici": "1ae549952c870a7043316dbf"
+},
+"30|{\"w\": 1100}": {
+"hash": "f067be8fe3f4ab87",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "0fc7c5d99b4bebd51d4f72b5",
+"valid": true,
+"vodici": "8d365c9b56faabf765d10ec8"
+},
+"30|{\"wheels\": true}": {
+"hash": "87a80526a7ae21aa",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "c7d576241ff4f1bbd6e646e0",
+"valid": true,
+"vodici": "731abef6d1f7cc9acdef8807"
+},
+"30|{}": {
+"hash": "87a80526a7ae21aa",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "c7d576241ff4f1bbd6e646e0",
+"valid": true,
+"vodici": "731abef6d1f7cc9acdef8807"
+},
+"35|{\"braces\": true}": {
+"hash": "88046789d9b59619",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "299159827223913a1a9cff07",
+"valid": true,
+"vodici": "df5cb3c958f2623dbfb8249f"
+},
+"35|{\"cut1\": true}": {
+"hash": "31777536fe3246e7",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "010fcb1c0e906ceda1cab2aa",
+"valid": true,
+"vodici": "83ce4e7633be64b1f2842887"
+},
+"35|{\"d\": 1000, \"shelf\": 2, \"w\": 2800}": {
+"hash": "220f67aa6004b93c",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "998ae4b75d92813adaa49bca",
+"valid": true,
+"vodici": "50b9e4170d7e952b19b874d9"
+},
+"35|{\"d\": 900, \"w\": 2000}": {
+"hash": "d19e7506fc49f4b7",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "a463b38afe04ab297cfa95b1",
+"valid": true,
+"vodici": "65290e2a3254687f3e0ce116"
+},
+"35|{\"drawers\": true}": {
+"hash": "7d6b3ac7f0fa1402",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "9df4ec1b0befa9406d9cf0be",
+"valid": true,
+"vodici": "dab0fddc94bbb993efe9a786"
+},
+"35|{\"led\": false}": {
+"hash": "1216ee67cd99eb99",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "8fa96da78888b8265767129d",
+"valid": true,
+"vodici": "9a13ae2a060adf33390f7543"
+},
+"35|{\"led\": true, \"ledlight\": false, \"w\": 1800}": {
+"hash": "3988abb14835621a",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "fcd40c2c5b375c9425fe2ea3",
+"valid": true,
+"vodici": "5821501ba7f5f79c29cc9a74"
+},
+"35|{\"ledcount\": 2, \"w\": 3000}": {
+"hash": "10843dd1444efe1a",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "7e1960f8cb58e6e3227b0227",
+"valid": true,
+"vodici": "fdc03dfbc3d32226747afe5e"
+},
+"35|{\"ledcount\": 3, \"ledlen\": \"600\", \"w\": 3000}": {
+"hash": "94bd99094ee04e37",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "962356ed8a1107cde7271f1d",
+"valid": true,
+"vodici": "b369555d6956f8647a6b0fd5"
+},
+"35|{\"midsupport\": \"frame\", \"w\": 2400}": {
+"hash": "254fcbf720ca90e6",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "bbdf58944524b13bbfe044d1",
+"valid": true,
+"vodici": "a880975374f0b963c9a69ff4"
+},
+"35|{\"panelcount\": 2, \"panels\": true}": {
+"hash": "89da841b582403a2",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "41a463d91703e8486f46765f",
+"valid": true,
+"vodici": "cc812fb2dff4515f43bfecd7"
+},
+"35|{\"posts\": false}": {
+"hash": "787786ffdfdfa887",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "e3002c88e88fb3b5924c724b",
+"valid": true,
+"vodici": "34235ea3c892b7124bd00f60"
+},
+"35|{\"shelf\": 3, \"shelfboard\": false}": {
+"hash": "e8ffbd819c4d541a",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "7a0f4a2049341c274499c770",
+"valid": true,
+"vodici": "cc7a87aaca2ba8f976ff4d77"
+},
+"35|{\"upshelf\": true, \"w\": 2200}": {
+"hash": "0dafd011272eccc0",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "2ad293dc2a89db3b1ca485e5",
+"valid": true,
+"vodici": "4712fa944f94d7f8a9a899d7"
+},
+"35|{\"upshelf\": true}": {
+"hash": "c5a8de226029f060",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "cfd3365a662fb58f5583365d",
+"valid": true,
+"vodici": "62118f872c6bf61a98ccbe1b"
+},
+"35|{\"w\": 1100}": {
+"hash": "b33b193f0630234a",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "1e3ab9a7b5af39685a5039fb",
+"valid": true,
+"vodici": "4d8b4de47d80c5484a106200"
+},
+"35|{\"wheels\": true}": {
+"hash": "7d6b3ac7f0fa1402",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "9df4ec1b0befa9406d9cf0be",
+"valid": true,
+"vodici": "dab0fddc94bbb993efe9a786"
+},
+"35|{}": {
+"hash": "7d6b3ac7f0fa1402",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "9df4ec1b0befa9406d9cf0be",
+"valid": true,
+"vodici": "dab0fddc94bbb993efe9a786"
+},
+"40|{\"braces\": true}": {
+"hash": "f10d1fa45f2ebbc0",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "148fedb2f97de1f8aeba7b3c",
+"valid": true,
+"vodici": "90fe6284dde48c4d5db3c570"
+},
+"40|{\"cut1\": true}": {
+"hash": "b751bca076fe6fc4",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "9775226f8f26b7eab0e4ac57",
+"valid": true,
+"vodici": "d2b4145ee0cdf577f47b52bf"
+},
+"40|{\"d\": 1000, \"shelf\": 2, \"w\": 2800}": {
+"hash": "1180062c49506afa",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "c92dd7fed64fed1c8944a5b2",
+"valid": true,
+"vodici": "357a0e9bc53a09c977491ee9"
+},
+"40|{\"d\": 900, \"w\": 2000}": {
+"hash": "2c7c403b3a70397d",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "3c651251565d58b255252cd1",
+"valid": true,
+"vodici": "f41a2c8de8820175cd8a800e"
+},
+"40|{\"drawers\": true}": {
+"hash": "e434a7a62768f32e",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "e5d69c85bc4f79620e91d6b2",
+"valid": true,
+"vodici": "08cbf11ad860418d5aed3ba9"
+},
+"40|{\"led\": false}": {
+"hash": "40ae7462ac69c380",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "d825f199b6770203b603cb60",
+"valid": true,
+"vodici": "6cc1a4af57111fd31201fd4b"
+},
+"40|{\"led\": true, \"ledlight\": false, \"w\": 1800}": {
+"hash": "9ec593ced1be897a",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "c7839ffde91cc8a6e1fdc0f3",
+"valid": true,
+"vodici": "b75f245763f490a039e31564"
+},
+"40|{\"ledcount\": 2, \"w\": 3000}": {
+"hash": "cfe9a5e6d9ea9c5c",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "5eb6ddf085f6b09609cb32f2",
+"valid": true,
+"vodici": "26595d659771c42e5b75407d"
+},
+"40|{\"ledcount\": 3, \"ledlen\": \"600\", \"w\": 3000}": {
+"hash": "18d483076a31814c",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "74437a472b847e7ca25a0566",
+"valid": true,
+"vodici": "312a5d45c264b31366dab707"
+},
+"40|{\"midsupport\": \"frame\", \"w\": 2400}": {
+"hash": "0b5ce3497051c7f0",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "4eee858c3ec271ebe8e1faaa",
+"valid": true,
+"vodici": "2223761501502d0ef588bcea"
+},
+"40|{\"panelcount\": 2, \"panels\": true}": {
+"hash": "43a2d7c6bed6c5f3",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "7bce3d7e886540b1639c4055",
+"valid": true,
+"vodici": "05ba3ae9379de04bd7bba80a"
+},
+"40|{\"posts\": false}": {
+"hash": "333b8adcb38bde18",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "c824ed55320034742d6620da",
+"valid": true,
+"vodici": "9356d065ddfeb4dc19253b87"
+},
+"40|{\"shelf\": 3, \"shelfboard\": false}": {
+"hash": "0ed924dc8ce57881",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "d323494cfaff75704a72ac27",
+"valid": true,
+"vodici": "1947b7101e9e59fd67c24086"
+},
+"40|{\"upshelf\": true, \"w\": 2200}": {
+"hash": "385f1a864c8f5304",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "2c75049a85787788dfb0a766",
+"valid": true,
+"vodici": "75a31ad2d7e37c08b36164b7"
+},
+"40|{\"upshelf\": true}": {
+"hash": "45c55ecd251356e0",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "17d54bf584b39938242a04ee",
+"valid": true,
+"vodici": "2253b952654a7e48b45114ce"
+},
+"40|{\"w\": 1100}": {
+"hash": "fd31e8f59901d942",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "c9436ea2152108f0d2242a6d",
+"valid": true,
+"vodici": "83487d7513db7e0fb315994b"
+},
+"40|{\"wheels\": true}": {
+"hash": "e434a7a62768f32e",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "e5d69c85bc4f79620e91d6b2",
+"valid": true,
+"vodici": "08cbf11ad860418d5aed3ba9"
+},
+"40|{}": {
+"hash": "e434a7a62768f32e",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "e5d69c85bc4f79620e91d6b2",
+"valid": true,
+"vodici": "08cbf11ad860418d5aed3ba9"
+},
+"41|{\"braces\": true}": {
+"hash": "78bddf7bbced795a",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "327f1dd049b0c0eb028f064c",
+"valid": true,
+"vodici": "32fe9507dfd5759c8f51087e"
+},
+"41|{\"cut1\": true}": {
+"hash": "78bddf7bbced795a",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "327f1dd049b0c0eb028f064c",
+"valid": true,
+"vodici": "32fe9507dfd5759c8f51087e"
+},
+"41|{\"d\": 1000, \"shelf\": 2, \"w\": 2800}": {
+"hash": "5e5bbc31d68ee733",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "ff5f2578c8f93ecf3959b592",
+"valid": true,
+"vodici": "df062ce14f3be0ab178dbe61"
+},
+"41|{\"d\": 900, \"w\": 2000}": {
+"hash": "78bddf7bbced795a",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "327f1dd049b0c0eb028f064c",
+"valid": true,
+"vodici": "32fe9507dfd5759c8f51087e"
+},
+"41|{\"drawers\": true}": {
+"hash": "78bddf7bbced795a",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "327f1dd049b0c0eb028f064c",
+"valid": true,
+"vodici": "32fe9507dfd5759c8f51087e"
+},
+"41|{\"led\": false}": {
+"hash": "78bddf7bbced795a",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "327f1dd049b0c0eb028f064c",
+"valid": true,
+"vodici": "32fe9507dfd5759c8f51087e"
+},
+"41|{\"led\": true, \"ledlight\": false, \"w\": 1800}": {
+"hash": "a47c4bf586f2815b",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "df7cfe74eaf2df638878c681",
+"valid": true,
+"vodici": "eec327953ddfce3907cb6d35"
+},
+"41|{\"ledcount\": 2, \"w\": 3000}": {
+"hash": "5eafb0951b342c2e",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "8f5e4992d8b81f4608f3ef29",
+"valid": true,
+"vodici": "f4c0beb8f7c33b8eac6dbe87"
+},
+"41|{\"ledcount\": 3, \"ledlen\": \"600\", \"w\": 3000}": {
+"hash": "5eafb0951b342c2e",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "8f5e4992d8b81f4608f3ef29",
+"valid": true,
+"vodici": "f4c0beb8f7c33b8eac6dbe87"
+},
+"41|{\"midsupport\": \"frame\", \"w\": 2400}": {
+"hash": "d565b2fb1ae2000d",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "2e5f77a96e9ee41355a5aba2",
+"valid": true,
+"vodici": "a0bc0370c3c115d2b3b343d0"
+},
+"41|{\"panelcount\": 2, \"panels\": true}": {
+"hash": "78bddf7bbced795a",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "327f1dd049b0c0eb028f064c",
+"valid": true,
+"vodici": "32fe9507dfd5759c8f51087e"
+},
+"41|{\"posts\": false}": {
+"hash": "78bddf7bbced795a",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "327f1dd049b0c0eb028f064c",
+"valid": true,
+"vodici": "32fe9507dfd5759c8f51087e"
+},
+"41|{\"shelf\": 3, \"shelfboard\": false}": {
+"hash": "78bddf7bbced795a",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "327f1dd049b0c0eb028f064c",
+"valid": true,
+"vodici": "32fe9507dfd5759c8f51087e"
+},
+"41|{\"upshelf\": true, \"w\": 2200}": {
+"hash": "7ebaf2ce2c953510",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "e8fe95ddef17befd9666bd0f",
+"valid": true,
+"vodici": "411cc4e9cce9dd14e5fd97c7"
+},
+"41|{\"upshelf\": true}": {
+"hash": "78bddf7bbced795a",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "327f1dd049b0c0eb028f064c",
+"valid": true,
+"vodici": "32fe9507dfd5759c8f51087e"
+},
+"41|{\"w\": 1100}": {
+"hash": "c884204ae649e986",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "42cf36157471ef440675c53e",
+"valid": true,
+"vodici": "3501d1033b1c915c0ec94256"
+},
+"41|{\"wheels\": true}": {
+"hash": "78bddf7bbced795a",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "327f1dd049b0c0eb028f064c",
+"valid": true,
+"vodici": "32fe9507dfd5759c8f51087e"
+},
+"41|{}": {
+"hash": "78bddf7bbced795a",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "327f1dd049b0c0eb028f064c",
+"valid": true,
+"vodici": "32fe9507dfd5759c8f51087e"
+},
+"45|{\"braces\": true}": {
+"hash": "d8844c38b9a0dfe8",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "ac367e91bf5cd1de668d2564",
+"valid": true,
+"vodici": "d7d55e21165db539fc61e654"
+},
+"45|{\"cut1\": true}": {
+"hash": "766f6a1fa4c310e1",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "fe8547fad3d9125e419fc322",
+"valid": true,
+"vodici": "0ce988d9a6a22b1ad737b7c2"
+},
+"45|{\"d\": 1000, \"shelf\": 2, \"w\": 2800}": {
+"hash": "ea1535fc0f8e7097",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "da4885e9fd0d1e1149488083",
+"valid": true,
+"vodici": "5089c2d68f35c99941d6665b"
+},
+"45|{\"d\": 900, \"w\": 2000}": {
+"hash": "070336437506f213",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "37121279577ed95fbc0b7fbe",
+"valid": true,
+"vodici": "08c31945ba2db95598bd211f"
+},
+"45|{\"drawers\": true}": {
+"hash": "31e6de03d730ae4d",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "ec1a848f0a00d6ef9ef0e2c0",
+"valid": true,
+"vodici": "d59f16d3b416c3814b92f915"
+},
+"45|{\"led\": false}": {
+"hash": "dd7f8f79b5dba940",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "499bf7703292477d3430bad2",
+"valid": true,
+"vodici": "8a7f0d2ecb97c169043b19c4"
+},
+"45|{\"led\": true, \"ledlight\": false, \"w\": 1800}": {
+"hash": "9bb29a3a42289e13",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "790038fa8829a414231b241a",
+"valid": true,
+"vodici": "9516db89f1510afd3ac715e3"
+},
+"45|{\"ledcount\": 2, \"w\": 3000}": {
+"hash": "0dd09fd79a698d68",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "b0a38ff48c1a8567815325ee",
+"valid": true,
+"vodici": "409709eaef8ed7ceb5f0548e"
+},
+"45|{\"ledcount\": 3, \"ledlen\": \"600\", \"w\": 3000}": {
+"hash": "2ecc904d1fe7248e",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "bda2ed4f58af5d7e6b74ee6b",
+"valid": true,
+"vodici": "cb1c67bf8bc0bad623100f7c"
+},
+"45|{\"midsupport\": \"frame\", \"w\": 2400}": {
+"hash": "4f32c71362f88750",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "a5f7208396699c946cbbdd5d",
+"valid": true,
+"vodici": "fa56028dc47fb35d7926f640"
+},
+"45|{\"panelcount\": 2, \"panels\": true}": {
+"hash": "bc8b94014e5a47e4",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "297818416bee44fa7e2b5fe0",
+"valid": true,
+"vodici": "415a91310b95bb722fdce6d4"
+},
+"45|{\"posts\": false}": {
+"hash": "22cdd7727c4e4784",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "fcf066ced1542fc2c8ff663d",
+"valid": true,
+"vodici": "d48dfb73f8a8bc66cf34ed37"
+},
+"45|{\"shelf\": 3, \"shelfboard\": false}": {
+"hash": "3ab78b681a0ec82c",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "868576458f8dfb26c87b0a20",
+"valid": true,
+"vodici": "f3c61c0c34580cfd85abf03c"
+},
+"45|{\"upshelf\": true, \"w\": 2200}": {
+"hash": "3e11716b1626cb41",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "3bdcb9e2343c978f6c09eedb",
+"valid": true,
+"vodici": "103b9dd3814a0b2e0e9cbec0"
+},
+"45|{\"upshelf\": true}": {
+"hash": "20443ed5d2a80090",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "3ac8029bfe1ec5789f95c332",
+"valid": true,
+"vodici": "e011ba703b46e508469c4d5d"
+},
+"45|{\"w\": 1100}": {
+"hash": "230382411b58e768",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "213b5aafc8dff7555adcb4fd",
+"valid": true,
+"vodici": "64344d6887e3b9f3b2f2d5d8"
+},
+"45|{\"wheels\": true}": {
+"hash": "31e6de03d730ae4d",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "ec1a848f0a00d6ef9ef0e2c0",
+"valid": true,
+"vodici": "d59f16d3b416c3814b92f915"
+},
+"45|{}": {
+"hash": "31e6de03d730ae4d",
+"klice": [
+"errors",
+"hash",
+"kod",
+"model",
+"notices",
+"offers",
+"options",
+"price",
+"rules_version",
+"selection",
+"valid",
+"vodici"
+],
+"sha": "ec1a848f0a00d6ef9ef0e2c0",
+"valid": true,
+"vodici": "d59f16d3b416c3814b92f915"
+}
+}

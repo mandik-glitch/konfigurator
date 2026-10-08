@@ -1,0 +1,154 @@
+[
+ {
+  "id": "dom:blok4:title",
+  "typ": "text",
+  "cs": "Alu profily vhodné pro vestavby pracovních dodávek",
+  "en": "Aluminium profiles suitable for work van fit-outs",
+  "it": "Profili in alluminio adatti agli allestimenti di furgoni da lavoro",
+  "h": "96e695d6d0"
+ },
+ {
+  "id": "dom:blok4:meta_description",
+  "typ": "text",
+  "cs": "Hliníkové profily pro vestavby do dodávek: 40x40 SuperLight – univerzální profil vhodný pro vestavby do všech typů užitkových pracovních dodávek.",
+  "en": "Aluminium profiles for van fit-outs: 40x40 SuperLight – a universal profile suitable for fit-outs in all types of commercial work vans.",
+  "it": "Profili in alluminio per allestimenti di furgoni: 40x40 SuperLight, profilo universale adatto a tutti i tipi di furgoni da lavoro commerciali.",
+  "h": "bb738b12dd"
+ },
+ {
+  "id": "dom:blok4:body_html",
+  "typ": "html",
+  "cs": "<h3>Hliníkové profily pro vestavby do užitkových vozidel</h3><p>Podle typu vozidla a konstrukce doporučujeme:</p><ul><li><strong>40x40 SuperLight</strong> – univerzální profil vhodný pro vestavby do všech typů užitkových pracovních dodávek.</li><li><strong>45x45 SuperLight</strong> – silnější profil, jen pro velké dodávky s vysokou nosností polic </li><li><strong>30x30</strong> – pro výsuvné rámy s euroboxy, nebo jako tělo/korpus šuplíků.</li><li><strong>20x20 a 20x40</strong> – pro jednoboxové výsuvy a dvířka.</li></ul><p><br></p>",
+  "en": "<h3>Aluminium profiles for commercial vehicle fit-outs</h3><p>Depending on the vehicle type and the design, we recommend:</p><ul><li><strong>40x40 SuperLight</strong> – a universal profile suitable for fit-outs in all types of commercial work vans.</li><li><strong>45x45 SuperLight</strong> – a stronger profile, only for large vans with a high shelf load capacity.</li><li><strong>30x30</strong> – for pull-out frames with Euro boxes, or as the body/carcass of drawers.</li><li><strong>20x20 and 20x40</strong> – for single-box pull-outs and doors.</li></ul><p><br></p>",
+  "it": "<h3>Profili in alluminio per allestimenti di veicoli commerciali</h3><p>In base al tipo di veicolo e alla struttura, consigliamo:</p><ul><li><strong>40x40 SuperLight</strong> – profilo universale adatto agli allestimenti di tutti i tipi di furgoni da lavoro commerciali.</li><li><strong>45x45 SuperLight</strong> – profilo più robusto, solo per furgoni di grandi dimensioni con ripiani ad alta portata.</li><li><strong>30x30</strong> – per telai estraibili con eurobox o come corpo/scocca dei cassetti.</li><li><strong>20x20 e 20x40</strong> – per estraibili a box singolo e sportelli.</li></ul><p><br></p>",
+  "h": "d2d742e496"
+ },
+ {
+  "id": "dom:blok7:title",
+  "typ": "text",
+  "cs": "Zastupujeme výrobce Dogus Kalip",
+  "en": "We represent an aluminium profile manufacturer",
+  "it": "Rappresentiamo un produttore di profili in alluminio",
+  "h": "bc0055b606"
+ },
+ {
+  "id": "dom:blok7:meta_description",
+  "typ": "text",
+  "cs": "Logiman je autorizovaným obchodním zástupcem tureckého výrobce hliníkových profilů Doğuş Kalıp pro Českou republiku – jeho sortiment najdete v katalogu.",
+  "en": "Logiman is the authorised sales representative for the Czech Republic of a Turkish manufacturer of aluminium profiles – its range is in the catalogue.",
+  "it": "Logiman è il rappresentante commerciale autorizzato per la Repubblica Ceca di un produttore turco di profili in alluminio: la gamma è disponibile nel catalogo.",
+  "h": "dd38258311"
+ },
+ {
+  "id": "dom:blok7:body_html",
+  "typ": "html",
+  "cs": "<h3>Doğuş Kalıp – výrobce hliníkových profilových systémů</h3><p>Jsme autorizovaným obchodním zástupcem výrobce Doğuş Kalıp pro Českou republiku. Doğuş Kalıp vyrábí širokou řadu hliníkových stavebnicových profilů a spojovacích prvků, které u nás najdete přímo v katalogu i ve 3D konfigurátoru.</p>",
+  "en": "<h3>Manufacturer of aluminium profile systems</h3><p>We are the authorised sales representative of this manufacturer for the Czech Republic. The manufacturer produces a wide range of modular aluminium profiles and fasteners, which you can find directly in our catalogue and in the 3D design tool.</p>",
+  "it": "<h3>Produttore di sistemi di profili in alluminio</h3><p>Siamo il rappresentante commerciale autorizzato di questo produttore per la Repubblica Ceca. Il produttore realizza un'ampia gamma di profili modulari in alluminio ed elementi di collegamento, disponibili direttamente nel nostro catalogo e nello strumento di progettazione 3D.</p>",
+  "h": "95540bd377"
+ },
+ {
+  "id": "dom:blok8:title",
+  "typ": "text",
+  "cs": "Realizace vestaveb do užitkových vozidel",
+  "en": "Completed commercial vehicle fit-outs",
+  "it": "Allestimenti realizzati per veicoli commerciali",
+  "h": "a7a7ac93d7"
+ },
+ {
+  "id": "dom:blok8:body_html",
+  "typ": "html",
+  "cs": "<p><br></p>",
+  "en": "<p><br></p>",
+  "it": "<p><br></p>",
+  "h": "e9d8375aad"
+ },
+ {
+  "id": "dom:blok9:title",
+  "typ": "text",
+  "cs": "Realizace stolů a pracovišť",
+  "en": "Completed tables and workstations",
+  "it": "Tavoli e postazioni di lavoro realizzati",
+  "h": "7c41133dd3"
+ },
+ {
+  "id": "dom:blok9:meta_description",
+  "typ": "text",
+  "cs": "Ukázka realizovaných ergonomických pracovních stolů a pracovišť z hliníkových profilů Logiman.",
+  "en": "A showcase of completed ergonomic workbenches and workstations built from Logiman aluminium profiles.",
+  "it": "Esempi di banchi da lavoro ergonomici e postazioni di lavoro realizzati con profili in alluminio Logiman.",
+  "h": "7dc644c681"
+ },
+ {
+  "id": "dom:slide1:caption_text",
+  "typ": "text",
+  "cs": "Stavebnice do dodávky",
+  "en": "Modular kit for vans",
+  "it": "Kit modulare per furgoni",
+  "h": "45cd476a49"
+ },
+ {
+  "id": "dom:slide2:caption_text",
+  "typ": "text",
+  "cs": "Ergonomické balicí stoly na míru",
+  "en": "Made-to-measure ergonomic packing tables",
+  "it": "Tavoli da imballaggio ergonomici su misura",
+  "h": "d511256906"
+ },
+ {
+  "id": "dom:slide3:caption_text",
+  "typ": "text",
+  "cs": "Paletu dostaneme i do malé dodávky včetně regálu",
+  "en": "A pallet fits even in a small van, shelving unit included",
+  "it": "Un pallet entra anche in un piccolo furgone, scaffale incluso",
+  "h": "d078149809"
+ },
+ {
+  "id": "dom:slide4:caption_text",
+  "typ": "text",
+  "cs": "Balicí stoly k dopravníkům",
+  "en": "Packing tables for conveyors",
+  "it": "Tavoli da imballaggio per trasportatori",
+  "h": "9ce6fd79b7"
+ },
+ {
+  "id": "dom:slide5:caption_text",
+  "typ": "text",
+  "cs": "Ponk s organizéry v dodávce",
+  "en": "Workbench with organisers in a van",
+  "it": "Banco da lavoro con organizer nel furgone",
+  "h": "3b6de25034"
+ },
+ {
+  "id": "dom:slide6:caption_text",
+  "typ": "text",
+  "cs": "Regálová vestavba na míru na každému řemeslníkovi",
+  "en": "Made-to-measure shelving fit-out for every tradesperson",
+  "it": "Allestimento a scaffali su misura per ogni artigiano",
+  "h": "76879b9a72"
+ },
+ {
+  "id": "dom:bocni1:title",
+  "typ": "text",
+  "cs": "Vestavby do aut na míru",
+  "en": "Made-to-measure vehicle fit-outs",
+  "it": "Allestimenti su misura per veicoli",
+  "h": "54a307a413"
+ },
+ {
+  "id": "dom:bocni1:meta_description",
+  "typ": "text",
+  "cs": "Ukázka stavebnicové vestavby do užitkového vozidla z hliníkových profilů Logiman – zásuvky, úchyty a uspořádání na míru.",
+  "en": "A showcase of a modular fit-out for a commercial vehicle made from Logiman aluminium profiles – drawers, holders and a made-to-measure layout.",
+  "it": "Esempio di allestimento modulare per veicolo commerciale in profili di alluminio Logiman: cassetti, supporti e disposizione su misura.",
+  "h": "545c04d6d6"
+ },
+ {
+  "id": "dom:bocni1:body_html",
+  "typ": "html",
+  "cs": "<p>Krátká ukázka, jak vypadá hotová stavebnicová vestavba do užitkového vozidla postavená z hliníkových profilů Logiman – zásuvkové systémy, úchyty a uspořádání podle konkrétních potřeb řemeslníka.</p>",
+  "en": "<p>A short look at a finished modular fit-out for a commercial vehicle, built from Logiman aluminium profiles – drawer systems, holders and a layout tailored to the specific needs of the tradesperson.</p>",
+  "it": "<p>Una breve panoramica di un allestimento modulare completo per veicolo commerciale, realizzato con profili in alluminio Logiman: sistemi a cassetti, supporti e disposizione studiata sulle esigenze specifiche dell'artigiano.</p>",
+  "h": "56dfb16796"
+ }
+]

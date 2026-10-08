@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>2D kontrola: Ducato L2H2 - 4 ruzne komponenty</title>
+<style>
+html,body{margin:0;padding:0;background:#e8ecf0;overflow:hidden;}
+#lbl{position:fixed;top:14px;left:14px;font:bold 20px Arial;color:#111;background:rgba(255,255,255,0.85);padding:8px 14px;border-radius:4px;}
+#legend{position:fixed;top:14px;right:14px;font:bold 15px Arial;background:rgba(255,255,255,0.85);padding:8px 14px;border-radius:4px;line-height:1.5;}
+</style>
+</head>
+<body>
+<div id="lbl">-</div>
+<div id="legend">
+<span style="color:#2255cc">modra = noha</span><br>
+<span style="color:#cc2222">cervena = suplik</span><br>
+<span style="color:#22aa55">zelena = dvirka</span><br>
+<span style="color:#cc8822">oranzova = stul</span><br>
+<span style="color:#7a1acc">fialova = top vana</span>
+</div>
+<!--
+Izolovana 2D wireframe kontrola k render_ducato_l2h2_multi.html - stejne
+pozice dilu (staticka kopie, ne import), jen orto kamera + wireframe.
+-->
+<script type="importmap">
+{ "imports": {
+  "three": "../../node_modules/three/build/three.module.js",
+  "three/addons/loaders/FBXLoader.js": "../../node_modules/three/examples/jsm/loaders/FBXLoader.js"
+} }
+</script>
+<script type="module">
+import * as THREE from 'three';
+import { FBXLoader } from 'three/addons/loaders/FBXLoader.js';
+import { innerWallZRangeOf, endBracketOf, mainZoneTopOf, makeAspectCorrectOrtho } from './vandr_geometry_lib.js';
+
+const W = 1400, H = 1100;
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0xe8ecf0);
+const camera = makeAspectCorrectOrtho(W, H, 750);
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setSize(W, H);
+document.body.appendChild(renderer.domElement);
+
+const loader = new FBXLoader();
+function loadFbx(path) { return new Promise((resolve, reject) => loader.load(path, resolve, undefined, reject)); }
+function wireframe(obj, color) {
+  obj.traverse(n => { if (n.isMesh) n.material = new THREE.MeshBasicMaterial({ color, wireframe: true }); });
+}
+
+const INNER_GAP_TARGET = 967;
+const CLEARANCE = 40;
+
+(async () => {
+  try {
+    const leg1 = await loadFbx('./fbx/ducato_leg1.fbx');
+    wireframe(leg1, 0x2255cc);
+    leg1.rotation.x = -Math.PI / 2;
+    leg1.updateMatrixWorld(true);
+    const legBox1 = new THREE.Box3().setFromObject(leg1);
+    leg1.position.y -= legBox1.min.y;
+    leg1.position.x -= legBox1.min.x;
+    leg1.updateMatrixWorld(true);
+    const legBox1f = new THREE.Box3().setFromObject(leg1);
+
+    const leg2 = await loadFbx('./fbx/ducato_leg2.fbx');
+    wireframe(leg2, 0x2255cc);
+    leg2.rotation.x = -Math.PI / 2;
+    leg2.updateMatrixWorld(true);
+    const legBox2raw = new THREE.Box3().setFromObject(leg2);
+    leg2.position.x += legBox1f.max.x + INNER_GAP_TARGET - legBox2raw.min.x;
+    leg2.position.y -= legBox2raw.min.y;
+    leg2.updateMatrixWorld(true);
+    const legBox2f = new THREE.Box3().setFromObject(leg2);
+    scene.add(leg1); scene.add(leg2);
+
+    const centerX = (legBox1f.max.x + legBox2f.min.x) / 2;
+    const legWallZ = innerWallZRangeOf(leg1);
+    const centerZ = (legWallZ.min + legWallZ.max) / 2;
+    const MAIN_ZONE_TOP = mainZoneTopOf(leg1);
+
+    async function place(path, color, yBottomTarget) {
+      const comp = await loadFbx(path);
+      wireframe(comp, color);
+      comp.rotation.x = -Math.PI / 2;
+      comp.updateMatrixWorld(true);
+      const raw = new THREE.Box3().setFromObject(comp);
+      const endBracketRaw = endBracketOf(comp);
+      comp.position.x += centerX - raw.getCenter(new THREE.Vector3()).x;
+      comp.position.z += centerZ - endBracketRaw.getCenter(new THREE.Vector3()).z;
+      comp.position.y += yBottomTarget - raw.min.y;
+      comp.updateMatrixWorld(true);
+      scene.add(comp);
+      return new THREE.Box3().setFromObject(comp);
+    }
+
+    const box1 = await place('./fbx/ducato_suplik.fbx', 0xcc2222, 0);
+    const box2 = await place('./fbx/ducato_door.fbx', 0x22aa55, box1.max.y + CLEARANCE);
+    const box3 = await place('./fbx/ducato_stul.fbx', 0xcc8822, box2.max.y + CLEARANCE);
+
+    const topComp = await loadFbx('./fbx/ducato_top.fbx');
+    wireframe(topComp, 0x7a1acc);
+    topComp.rotation.x = -Math.PI / 2;
+    topComp.updateMatrixWorld(true);
+    const topRaw = new THREE.Box3().setFromObject(topComp);
+    const topEndBracketRaw = endBracketOf(topComp);
+    topComp.position.x += centerX - topRaw.getCenter(new THREE.Vector3()).x;
+    topComp.position.z += legWallZ.max - topEndBracketRaw.max.z;
+    topComp.position.y += (MAIN_ZONE_TOP + 30) - topEndBracketRaw.min.y;
+    topComp.updateMatrixWorld(true);
+    scene.add(topComp);
+
+    const lbl = document.getElementById('lbl');
+    window.__setView__ = function (view) {
+      if (view === 'side-leg1') {
+        camera.position.set(legBox1f.max.x + 3000, 750, 0);
+        camera.up.set(0, 1, 0); camera.lookAt(legBox1f.max.x, 750, 0);
+        lbl.textContent = 'NOHA 1 — BOKORYS, cely stack (Z vs Y)';
+      } else if (view === 'side-leg2') {
+        camera.position.set(legBox2f.min.x - 3000, 750, 0);
+        camera.up.set(0, 1, 0); camera.lookAt(legBox2f.min.x, 750, 0);
+        lbl.textContent = 'NOHA 2 — BOKORYS, cely stack (Z vs Y)';
+      } else if (view === 'front') {
+        camera.position.set(centerX, 750, 3000);
+        camera.up.set(0, 1, 0); camera.lookAt(centerX, 750, 0);
+        lbl.textContent = 'CELNI POHLED — cely rozpon, obe nohy (X vs Y)';
+      }
+      camera.updateProjectionMatrix();
+      renderer.render(scene, camera);
+    };
+    window.__setView__('side-leg1');
+    window.__RENDER_DONE__ = true;
+  } catch (e) {
+    window.__RENDER_ERROR__ = (e && e.message) || String(e);
+  }
+})();
+</script>
+</body>
+</html>

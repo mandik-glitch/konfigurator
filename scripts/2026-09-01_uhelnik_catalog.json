@@ -1,0 +1,128 @@
+[
+  {
+    "id": 3045,
+    "part_id": "product_3045",
+    "sku": "2.2.001.08.3030.01",
+    "name": "Úhelníková spojka 30x30",
+    "attach_mode": "corner_side",
+    "sizes": [
+      30
+    ],
+    "glb_file": "product_2895.glb",
+    "geo_faces": [
+      {
+        "x": 0,
+        "y": 14,
+        "z": -14.48,
+        "nx": -1,
+        "ny": 0,
+        "nz": 0,
+        "area": 782.3
+      },
+      {
+        "x": 14.48,
+        "y": 14,
+        "z": 0,
+        "nx": 0,
+        "ny": 0,
+        "nz": 1,
+        "area": 782.3
+      }
+    ],
+    "uhelnik_pose": {
+      "face": 1,
+      "q": [
+        0.49999999999999994,
+        0.49999999999999994,
+        -0.5000000000000001,
+        -0.5
+      ]
+    },
+    "accessory_conn_enabled": [
+      1,
+      5
+    ]
+  },
+  {
+    "id": 3207,
+    "part_id": "product_3207",
+    "sku": "2.2.001.10.4040.01",
+    "name": "Úhelníková spojka 40x40",
+    "attach_mode": "corner_side",
+    "sizes": [
+      40
+    ],
+    "glb_file": "product_3207.glb",
+    "geo_faces": [
+      {
+        "x": 18.44,
+        "y": 18.5,
+        "z": 0,
+        "nx": 0,
+        "ny": 0,
+        "nz": 1,
+        "area": 1312.4
+      },
+      {
+        "x": 0.02,
+        "y": 18.5,
+        "z": -18.44,
+        "nx": -1,
+        "ny": 0,
+        "nz": 0,
+        "area": 1312.4
+      }
+    ],
+    "uhelnik_pose": {
+      "face": 1,
+      "q": [
+        0.49999999999999994,
+        0.49999999999999994,
+        -0.5000000000000001,
+        -0.5
+      ]
+    },
+    "accessory_conn_enabled": null
+  },
+  {
+    "id": 3216,
+    "part_id": "product_3216",
+    "sku": "2.2.001.10.4545.01",
+    "name": "Úhelníková spojka 45x45",
+    "attach_mode": "corner_side",
+    "sizes": [
+      45
+    ],
+    "glb_file": "product_3216.glb",
+    "geo_faces": [
+      {
+        "x": 0.02,
+        "y": 21,
+        "z": -20.95,
+        "nx": -1,
+        "ny": 0,
+        "nz": 0,
+        "area": 1707.4
+      },
+      {
+        "x": 20.95,
+        "y": 21,
+        "z": 0,
+        "nx": 0,
+        "ny": 0,
+        "nz": 1,
+        "area": 1707.4
+      }
+    ],
+    "uhelnik_pose": {
+      "face": 0,
+      "q": [
+        0.5000000000000001,
+        -0.5,
+        -0.5,
+        0.4999999999999999
+      ]
+    },
+    "accessory_conn_enabled": null
+  }
+]

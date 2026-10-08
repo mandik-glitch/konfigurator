@@ -1,0 +1,241 @@
+[
+ {
+  "name": "TO08",
+  "label": "Proace Medium 16-",
+  "door": 1220,
+  "H": 1180,
+  "status": "inserted",
+  "insertOut": "product_assemblies.id=59 shop_product_id=3808 sku=SEST-PROACE-MEDIUM-16-BOXY43-270X220X170 name=Proace Medium 16- - boxy43-270x220x170 dily=59",
+  "summary": {
+   "columns": 2,
+   "legs": 3,
+   "boxes": 8,
+   "heights": [
+    270,
+    170,
+    220
+   ]
+  }
+ },
+ {
+  "name": "TO09",
+  "label": "Proace Long 16-",
+  "door": 1220,
+  "H": 1180,
+  "status": "inserted",
+  "insertOut": "product_assemblies.id=60 shop_product_id=3809 sku=SEST-PROACE-LONG-16-BOXY43-270X220X170 name=Proace Long 16- - boxy43-270x220x170 dily=63",
+  "summary": {
+   "columns": 2,
+   "legs": 3,
+   "boxes": 10,
+   "heights": [
+    270,
+    170,
+    220
+   ]
+  }
+ },
+ {
+  "name": "TO12",
+  "label": "Proace Medium Crew Cab (L2) 20-",
+  "door": 1220,
+  "H": 1180,
+  "status": "inserted",
+  "insertOut": "product_assemblies.id=61 shop_product_id=3810 sku=SEST-PROACE-MEDIUM-CREW-CAB-L2-20-BOXY43-270X name=Proace Medium Crew Cab (L2) 20- - boxy43-270x220 dily=35",
+  "summary": {
+   "columns": 1,
+   "legs": 2,
+   "boxes": 4,
+   "heights": [
+    270,
+    220
+   ]
+  }
+ },
+ {
+  "name": "TO17",
+  "label": "Proace Long Crew Cab (L3) 20-",
+  "door": 1220,
+  "H": 1180,
+  "status": "inserted",
+  "insertOut": "product_assemblies.id=62 shop_product_id=3811 sku=SEST-PROACE-LONG-CREW-CAB-L3-20-BOXY43-270X22 name=Proace Long Crew Cab (L3) 20- - boxy43-270x220 dily=39",
+  "summary": {
+   "columns": 1,
+   "legs": 2,
+   "boxes": 6,
+   "heights": [
+    270,
+    220
+   ]
+  }
+ },
+ {
+  "name": "TO21",
+  "label": "Proace Medium Electric 20-",
+  "door": 1220,
+  "H": 1180,
+  "status": "inserted",
+  "insertOut": "product_assemblies.id=63 shop_product_id=3812 sku=SEST-PROACE-MEDIUM-ELECTRIC-20-BOXY43-270X220 name=Proace Medium Electric 20- - boxy43-270x220x170 dily=59",
+  "summary": {
+   "columns": 2,
+   "legs": 3,
+   "boxes": 8,
+   "heights": [
+    270,
+    170,
+    220
+   ]
+  }
+ },
+ {
+  "name": "TO22",
+  "label": "Proace Long Electric 20-",
+  "door": 1220,
+  "H": 1180,
+  "status": "inserted",
+  "insertOut": "product_assemblies.id=64 shop_product_id=3813 sku=SEST-PROACE-LONG-ELECTRIC-20-BOXY43-270X220X1 name=Proace Long Electric 20- - boxy43-270x220x170 dily=63",
+  "summary": {
+   "columns": 2,
+   "legs": 3,
+   "boxes": 10,
+   "heights": [
+    270,
+    170,
+    220
+   ]
+  }
+ },
+ {
+  "name": "TO23",
+  "label": "Proace Compact Electric 20-",
+  "door": 1220,
+  "H": 1180,
+  "status": "inserted",
+  "insertOut": "product_assemblies.id=65 shop_product_id=3814 sku=SEST-PROACE-COMPACT-ELECTRIC-20-BOXY43-270X22 name=Proace Compact Electric 20- - boxy43-270x220 dily=39",
+  "summary": {
+   "columns": 1,
+   "legs": 2,
+   "boxes": 6,
+   "heights": [
+    270,
+    220
+   ]
+  }
+ },
+ {
+  "name": "TO10",
+  "label": "Proace City_TO10_2020-",
+  "door": 1196,
+  "H": 1180,
+  "status": "no_fit",
+  "reason": "no_column_fits"
+ },
+ {
+  "name": "TO11",
+  "label": "Proace City L2 20-",
+  "door": 1196,
+  "H": 1180,
+  "status": "no_fit",
+  "reason": "no_column_fits"
+ },
+ {
+  "name": "TO19",
+  "label": "Proace City L1 Electric 20-",
+  "door": 1075,
+  "H": 1075,
+  "status": "no_fit",
+  "reason": "no_column_fits"
+ },
+ {
+  "name": "TO20",
+  "label": "Proace City L2 Electric 20-",
+  "door": 1075,
+  "H": 1075,
+  "status": "no_fit",
+  "reason": "no_column_fits"
+ },
+ {
+  "name": "TO14",
+  "label": "Proace Max L2H2 24-",
+  "door": null,
+  "H": 1180,
+  "status": "build_fail",
+  "detail": {
+   "carCollisionProfiles": false,
+   "euroboxCarCollision": false,
+   "unexpected": 1
+  }
+ },
+ {
+  "name": "TO15",
+  "label": "Proace Max L3H2 24-",
+  "door": null,
+  "H": 1180,
+  "status": "build_fail",
+  "detail": {
+   "carCollisionProfiles": false,
+   "euroboxCarCollision": false,
+   "unexpected": 2
+  }
+ },
+ {
+  "name": "TO16",
+  "label": "Proace Max L4H2 24-",
+  "door": null,
+  "H": 1180,
+  "status": "build_fail",
+  "detail": {
+   "carCollisionProfiles": false,
+   "euroboxCarCollision": false,
+   "unexpected": 2
+  }
+ },
+ {
+  "name": "TO18",
+  "label": "Proace Max L2H1 24-",
+  "door": null,
+  "H": 1180,
+  "status": "build_fail",
+  "detail": {
+   "carCollisionProfiles": false,
+   "euroboxCarCollision": false,
+   "unexpected": 1
+  }
+ },
+ {
+  "name": "TO24",
+  "label": "Proace Max L3H3 24-",
+  "door": null,
+  "H": 1180,
+  "status": "build_fail",
+  "detail": {
+   "carCollisionProfiles": false,
+   "euroboxCarCollision": false,
+   "unexpected": 2
+  }
+ },
+ {
+  "name": "TO25",
+  "label": "Proace Max L1H1 24-",
+  "door": null,
+  "H": 1180,
+  "status": "build_fail",
+  "detail": {
+   "carCollisionProfiles": false,
+   "euroboxCarCollision": false,
+   "unexpected": 1
+  }
+ },
+ {
+  "name": "TO26",
+  "label": "Proace Max L4H3 24-",
+  "door": null,
+  "H": 1180,
+  "status": "build_fail",
+  "detail": {
+   "carCollisionProfiles": false,
+   "euroboxCarCollision": false,
+   "unexpected": 2
+  }
+ }
+]

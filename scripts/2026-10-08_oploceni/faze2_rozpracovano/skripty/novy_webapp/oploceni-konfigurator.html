@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="cs" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Generátor 06 – Ochranný kryt a oplocení</title>
+<link rel="icon" href="data:,">
+<!-- GENERATOR 06 = OCHRANNY KRYT A OPLOCENI z profilu 40x40 (bot8, 2026-10-08; Robert: "udelej generator ochranneho oploceni a krytovani stroju z profilu 40x40", "nahrat vsechno hned").
+     Tenka stranka pro zamestnance nad SPOLECNYM modulem voleb (js/product-configurator.js) a mrizkou oken (js/pdc-layout.js) jako Generator stolu; logika stranky je v js/oploceni-host.js.
+     Ukaze se jen po prihlaseni zamestnance (id karty se zjisti z GET /api/shop/configurator/recepty/oploceni_kryt); ?public=1&id=<karta> ukaze VEREJNOU variantu (bez zamestnaneckych oken a bez
+     `staff` v resolve) - nahled toho, co uvidi zakaznik. Bez "Do online nabidky", "Vzhled" a "Vlozit do Sceny" (v1). -->
+<link rel="stylesheet" href="/miniweb/miniweb.css?v=7f702de1f3">
+<style>
+  /* akcent hlavniho webu (oranzova), ne akcent mini-shopu */
+  :root { --accent: #ff7b29; --accent-glow: #ffa05c; --orange: #ff7b29; }
+  .sh-nav-r { margin-left: auto; display: flex; gap: 1rem; align-items: center; }
+  .sh-nav-r a { color: var(--text-soft); text-decoration: none; } .sh-nav-r a:hover { color: var(--accent); }
+  #login { display: none; margin: 14px 0; padding: 12px; border: 1px solid var(--warn); color: var(--warn); }
+  #login a { color: var(--accent); }
+  /* staff okna navic: kusovnik (siroke) */
+  @media (min-width: 900px) {
+    .mw-pdg { grid-template-areas:
+      "stage stage stage stage stage stage stage stage side side side side"
+      "cfg cfg cfg cfg cfg cfg cfg cfg cfg cfg cfg cfg"
+      "dim dim dim dim frame frame frame frame extras extras extras extras"
+      "bom bom bom bom bom bom bom bom col3 col3 col3 col3"; }
+    .mw-win-bom { grid-area: bom; }
+  }
+  #stageMsg { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; text-align: center; padding: 24px; color: var(--muted); pointer-events: none; z-index: 1; }
+  .mw-win-stage .mw-win-b { position: relative; }
+  /* cena a tlacitka */
+  #staffPrice .big { font-size: 1.7rem; font-weight: 700; } #staffPrice .small { color: var(--muted); font-size: .8rem; }
+  .sh-btns { display: flex; gap: .6rem; flex-wrap: wrap; }
+  .sh-btns button { cursor: pointer; }
+  button.sh-ghost { background: transparent; color: var(--text-soft); border: 1px solid var(--line); padding: .5rem .8rem; font: inherit; }
+  button.sh-ghost:hover { color: var(--accent); border-color: var(--accent); }
+  #staffProblems { font-size: .85rem; color: var(--error); } #staffProblems:empty { display: none; }
+  #staffLinks { display: flex; gap: .8rem; flex-wrap: wrap; } #staffLinks a { color: var(--accent); font-size: .85rem; }
+  #staffCode, #cardInfo { color: var(--muted); font-size: .8rem; } #cardInfo a { color: var(--accent); }
+  /* kusovnik */
+  #bomBody { overflow-x: auto; }
+  #bomBody table { width: 100%; border-collapse: collapse; font-size: .8rem; }
+  #bomBody th, #bomBody td { padding: 4px 6px; border-bottom: 1px solid var(--line); text-align: right; vertical-align: top; }
+  #bomBody th:first-child, #bomBody td:first-child { text-align: left; }
+  #bomBody td:nth-child(n+2), #bomBody th:nth-child(n+2) { white-space: nowrap; }
+  #bomBody tr.sum td:nth-child(2) { white-space: nowrap; }
+  #bomBody th { color: var(--muted); font-weight: 600; }
+  #bomBody tr.sec td { text-align: left; color: var(--muted); font-weight: 600; padding-top: 10px; border-bottom: none; }
+  #bomBody tr.sum td { font-weight: 700; border-bottom: none; }
+  #bomBody tr.grp td { font-weight: 600; } #bomBody tr.grp td:first-child { text-align: left; }
+  #bomBody .bom-tog { all: unset; cursor: pointer; color: var(--text); display: inline-flex; gap: 4px; align-items: baseline; } #bomBody .bom-tog:hover, #bomBody .bom-tog:focus-visible { color: var(--accent); }
+  #bomBody .bom-chev { display: inline-block; width: 1em; color: var(--muted); }
+  #bomBody tr.det td:first-child { padding-left: 24px; color: var(--text-soft); }
+  #bomBody .note { color: var(--muted); font-size: .8rem; margin-top: 6px; }
+</style>
+</head>
+<body>
+<header>
+  <nav class="mw-nav" aria-label="Hlavní">
+    <a class="mw-brand" href="/oploceni-konfigurator.html"><span class="mw-mark" aria-hidden="true"></span><span>Generátor 06 – Ochranný kryt a oplocení</span></a>
+    <span class="mw-muted" id="navNote">interní nástroj</span>
+    <span class="sh-nav-r"><a href="/scene.html">Scéna</a></span>
+  </nav>
+</header>
+<main id="shMain" tabindex="-1">
+  <div id="login">Pro zobrazení se přihlas. <a id="loginLink" href="/login.html">Přihlášení</a></div>
+  <div class="mw-pd-title"><h1>Generátor 06 – Ochranný kryt a oplocení</h1><p class="mw-muted">Kód konfigurace: <span id="titleCode">…</span></p></div>
+  <div id="shGrid"></div>
+</main>
+<script src="/js/product-configurator.js?v=79a2ceff15"></script>
+<script src="/js/pdc-layout.js?v=fc42710501"></script>
+<script src="/js/oploceni-host.js?v=0000000000"></script>
+</body>
+</html>

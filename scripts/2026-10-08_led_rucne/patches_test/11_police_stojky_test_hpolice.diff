@@ -1,0 +1,12 @@
+--- a/2026-10-07_police_stojky/test_hpolice.py
++++ b/2026-10-07_police_stojky/test_hpolice.py
+@@ -144,6 +144,9 @@
+ nyni = GH.vypocti()
+ check(set(nyni) == set(gold) and len(gold) >= 600, f"A: stejna mnozina konfiguraci ({len(nyni)} vs {len(gold)})")
+ rozdily = [k for k in gold if nyni.get(k) != gold[k]]
++if rozdily and hasattr(S, "LED_MAX"):                                   # od 2026-10-08 je pocet svitidel LED RUCNI (vychozi 1): siroke stoly maji ted jedno svitidlo; led_pocet = nejvic da PRESNE drivejsi model (hash se lisi - nese klic poctu)
++    stary_pocet = GH.vypocti(navic={"led_pocet": S.LED_MAX}, jen=set(rozdily))
++    rozdily = [k for k in rozdily if {x: y for x, y in stary_pocet[k].items() if x != "hash"} != {x: y for x, y in gold[k].items() if x != "hash"}]
+ check(not rozdily, f"A: {len(rozdily)} z {len(gold)} konfiguraci se ZMENILO oproti stavu pred horni policí (napr. {rozdily[:2]} {[(gold[k], nyni.get(k)) for k in rozdily[:1]]})")
+ for system in (30, 35, 40, 45):
+     zakl = sestav(system=system, police=1)

@@ -1,0 +1,211 @@
+--- a/api/miniweb_admin.py
++++ b/api/miniweb_admin.py
+@@ -17,6 +17,9 @@
+                  "configurator": {"available": true, "shop_product_id": 1234, "default_view": "configurator"},
+                  "name": "...", "summary": "...", "description": "...", "delivery": "...", "specs": [{"name": "Width", "value": "1200 mm"}]}]}
+ Katalogova data (rodic, poradi, kod, kategorie, konfigurator) u UZ existujici polozky import nemeni (jen hlasi rozdil), meni je az update_catalog. Neznamy klic = chyba (preklep nesmi tise zahodit data).
++PRAVNI DOKUMENTY (podminky, soukromi, vraceni ...): volitelny klic "documents": [{"kind": "terms|privacy|returns|shipping|cookies", "title": "...", "body": "text s odstavci"}] (jeden dokument na druh a jazyk),
++import jako draft stejne jako ostatni texty (schvaleny se neprepise), schvaluje Robert na teze strance, verejne je vydava /api/miniweb/legal. Bez znacky; povoleny je JEN zakonny nazev prodejce (zakonna identifikace v podminkach, jako legal.seller), jina znacka dokument blokuje. Zastupne znacky [DOPLNIT]/[OVERIT] a oznaceni navrhu
++k pravni kontrole se nahraji jako draft, ale dokument NEJDE schvalit ani verejne vydat, dokud je nenahradi finalni verze.
+ """
+ import hashlib
+ import json
+@@ -37,7 +40,9 @@
+ MAX_PRODUCTS = 2000
+ MAX_APPROVE_ITEMS = 300
+ LIMITS = {"name": 200, "summary": 500, "description": 4000, "delivery": 255}
+-TOP_KEYS = {"version", "family", "lang", "categories", "products"}
++TOP_KEYS = {"version", "family", "lang", "categories", "products", "documents"}
++DOC_KEYS = {"kind", "title", "body"}
++MAX_DOCUMENTS = 20
+ CAT_KEYS = {"slug", "parent", "sort", "name"}
+ PROD_KEYS = {"slug", "sku", "category", "sort", "configurator", "name", "summary", "description", "delivery", "specs"}
+ CONF_KEYS = {"available", "shop_product_id", "default_view"}
+@@ -50,6 +55,27 @@
+     return hashlib.sha1(blob.encode("utf-8")).hexdigest()[:16]
+ 
+ 
++def doc_rev(title, body):
++    """Otisk obsahu pravniho dokumentu (uz ocisteneho): co admin videl, to schvaluje."""
++    blob = json.dumps([title or "", body or ""], ensure_ascii=False, separators=(",", ":"))
++    return hashlib.sha1(blob.encode("utf-8")).hexdigest()[:16]
++
++
++def _clean_doc(row):
++    return miniweb._plain(row["title"], miniweb.DOC_MAX_TITLE), miniweb._plain(row["body"], miniweb.DOC_MAX_BODY, multiline=True)
++
++
++def _doc_problems(title, body):
++    blocking = []
++    if miniweb._doc_brand_hit(title, body):
++        blocking.append("brand")
++    if not title or not body:
++        blocking.append("no_name")
++    if miniweb._doc_placeholder(title, body):
++        blocking.append("placeholder")
++    return blocking
++
++
+ def _clean_product_text(t):
+     return {"name": miniweb._plain(t["name"], LIMITS["name"]), "summary": miniweb._plain(t["summary"], LIMITS["summary"]),
+             "description": miniweb._plain(t["description"], LIMITS["description"], multiline=True), "delivery": miniweb._plain(t["delivery"], LIMITS["delivery"]), "specs": miniweb._specs(t["specs_json"])}
+@@ -79,7 +105,8 @@
+     return {"errors": [], "warnings": [], "applied": False,
+             "categories": {"created": 0, "unchanged": 0, "differs": 0, "updated": 0},
+             "products": {"created": 0, "unchanged": 0, "differs": 0, "updated": 0},
+-            "texts": {"created": 0, "updated": 0, "unchanged": 0, "skipped_approved": 0, "revised": 0}}
++            "texts": {"created": 0, "updated": 0, "unchanged": 0, "skipped_approved": 0, "revised": 0},
++            "documents": {"created": 0, "updated": 0, "unchanged": 0, "skipped_approved": 0, "revised": 0}}
+ 
+ 
+ def _field(report, where, entry, key, required=False, multiline=False):
+@@ -131,10 +158,13 @@
+     lang = miniweb._clean_lang(data.get("lang")) if isinstance(data.get("lang"), str) else None
+     if not lang or lang != data.get("lang"):
+         report["errors"].append("soubor: lang musí být kód jazyka malými písmeny (en, de, en-ie)")
+-    cats_raw, prods_raw = data.get("categories", []), data.get("products", [])
++    cats_raw, prods_raw, docs_raw = data.get("categories", []), data.get("products", []), data.get("documents", [])
+     if not isinstance(cats_raw, list) or not isinstance(prods_raw, list) or len(cats_raw) > MAX_CATEGORIES or len(prods_raw) > MAX_PRODUCTS:
+         report["errors"].append(f"soubor: categories a products musí být seznamy (max {MAX_CATEGORIES} a {MAX_PRODUCTS})")
+         return None
++    if not isinstance(docs_raw, list) or len(docs_raw) > MAX_DOCUMENTS:
++        report["errors"].append(f"soubor: documents musí být seznam (max {MAX_DOCUMENTS})")
++        return None
+     cats, seen = [], set()
+     for i, c in enumerate(cats_raw):
+         where = f"kategorie[{i}]"
+@@ -211,7 +241,40 @@
+                 specs.append({"name": n, "value": v})
+         prods.append({"slug": slug, "sku": sku, "category": p.get("category"), "sort": _int(report, where, p, "sort"), "configurator": conf_clean, "name": _field(report, where, p, "name", required=True),
+                       "summary": _field(report, where, p, "summary"), "description": _field(report, where, p, "description", multiline=True), "delivery": _field(report, where, p, "delivery"), "specs": specs})
+-    return {"family": family, "lang": lang, "categories": cats, "products": prods}
++    docs, seen_kind = [], set()
++    for i, d in enumerate(docs_raw):
++        where = f"dokument[{i}]"
++        if not isinstance(d, dict):
++            report["errors"].append(f"{where}: musí být objekt")
++            continue
++        _unknown(report, where, d, DOC_KEYS)
++        kind = d.get("kind")
++        if kind not in miniweb.DOC_KINDS:
++            report["errors"].append(f"{where}: kind musí být jeden z {list(miniweb.DOC_KINDS)}")
++            continue
++        where = f"dokument '{kind}'"
++        if kind in seen_kind:
++            report["errors"].append(f"{where}: druh dokumentu je v souboru dvakrát")
++        seen_kind.add(kind)
++        cleaned = {}
++        for key, limit, multiline in (("title", miniweb.DOC_MAX_TITLE, False), ("body", miniweb.DOC_MAX_BODY, True)):
++            raw = d.get(key)
++            if not isinstance(raw, str):
++                report["errors"].append(f"{where}: pole '{key}' musí být text")
++                cleaned[key] = ""
++                continue
++            text = miniweb._plain(raw, 10 ** 6, multiline=multiline)
++            if not text:
++                report["errors"].append(f"{where}: pole '{key}' je po vyčištění prázdné")
++            if len(text) > limit:
++                report["errors"].append(f"{where}: pole '{key}' má po vyčištění {len(text)} znaků, limit je {limit}")
++            if miniweb._doc_brand_hit(text):
++                report["errors"].append(f"{where}: pole '{key}' zmiňuje značku/dodavatele (povolený je jen zákonný název prodejce), opravit u zdroje")
++            if miniweb._doc_placeholder(text):
++                report["warnings"].append(f"{where}: pole '{key}' obsahuje zástupné značky ([DOPLNIŤ], [OVERIŤ]) nebo označení návrhu: nahraje se jako draft, ale NEJDE schválit ani zveřejnit, dokud ho nenahradí finální verze")
++            cleaned[key] = text[:limit]
++        docs.append({"kind": kind, "title": cleaned["title"], "body": cleaned["body"]})
++    return {"family": family, "lang": lang, "categories": cats, "products": prods, "documents": docs}
+ 
+ 
+ def _same_text(row, new):
+@@ -330,10 +393,35 @@
+                 report["products"]["differs"] += 1
+                 report["warnings"].append(f"produkt '{p['slug']}': katalogová data (kategorie, kód, pořadí, konfigurátor) se liší od databáze, nezměněno (změní až update_catalog)")
+         _upsert_text(cur, report, apply, revise_approved, "miniweb_product_texts", "miniweb_product_id", pid, lang, p, f"produkt '{p['slug']}'", is_product=True)
++    for d in parsed["documents"]:
++        _upsert_document(cur, report, apply, revise_approved, family, lang, d)
+     report["applied"] = bool(apply)
+     return report
+ 
+ 
++def _upsert_document(cur, report, apply, revise_approved, family, lang, d):
++    """Pravni dokument (rodina, druh, jazyk) jako draft; stejna pravidla jako _upsert_text (schvaleny se neprepise bez revise_approved)."""
++    cur.execute("SELECT * FROM miniweb_documents WHERE family=%s AND kind=%s AND lang=%s", (family, d["kind"], lang))
++    row = cur.fetchone()
++    t = report["documents"]
++    label = f"dokument '{d['kind']}' ({lang})"
++    if row is None:
++        t["created"] += 1
++        if apply:
++            cur.execute("INSERT INTO miniweb_documents (family, kind, lang, title, body, status) VALUES (%s,%s,%s,%s,%s,'draft')", (family, d["kind"], lang, d["title"], d["body"]))
++        return
++    if _clean_doc(row) == (d["title"], d["body"]):
++        t["unchanged"] += 1
++        return
++    if row["status"] == "approved" and not revise_approved:
++        t["skipped_approved"] += 1
++        report["warnings"].append(f"{label}: schválený dokument se liší od souboru, NEPŘEPSÁNO (přepsat a vrátit do návrhu jen s revise_approved)")
++        return
++    t["revised" if row["status"] == "approved" else "updated"] += 1
++    if apply:
++        cur.execute("UPDATE miniweb_documents SET title=%s, body=%s, status='draft', approved_by=NULL, approved_at=NULL WHERE id=%s", (d["title"], d["body"], row["id"]))
++
++
+ def _upsert_text(cur, report, apply, revise_approved, table, idcol, item_id, lang, new, label, is_product):
+     row = None
+     if item_id > 0:                                      # zaporne id = nova polozka v nahledu (bez zapisu), text neexistuje
+@@ -417,6 +505,15 @@
+                       "category": cat_name.get((r["category_id"], r["lang"])) or r["category_slug"], **clean, "rev": text_rev(clean["name"], clean["summary"], clean["description"], clean["delivery"], clean["specs"]),
+                       "blocking": blocking, "info": info, "active": bool(r["is_active"]), "public": r["id"] in pub_prods,
+                       "approved_at": r["approved_at"].isoformat(sep=" ", timespec="seconds") if r["approved_at"] else None, "updated_at": r["updated_at"].isoformat(sep=" ", timespec="seconds") if r["updated_at"] else None})
++    cur.execute("SELECT * FROM miniweb_documents ORDER BY family, lang, id")
++    for r in cur.fetchall():
++        if only_lang and r["lang"] != only_lang:
++            continue
++        title, body = _clean_doc(r)
++        blocking = _doc_problems(title, body)
++        items.append({"kind": "document", "id": r["id"], "lang": r["lang"], "family": r["family"], "status": r["status"], "slug": r["kind"], "sku": None, "category": None, "name": title, "summary": "",
++                      "description": body, "delivery": "", "specs": [], "rev": doc_rev(title, body), "blocking": blocking, "info": [], "active": True, "public": r["status"] == "approved" and not blocking,
++                      "approved_at": r["approved_at"].isoformat(sep=" ", timespec="seconds") if r["approved_at"] else None, "updated_at": r["updated_at"].isoformat(sep=" ", timespec="seconds") if r["updated_at"] else None})
+     counts = {"draft": sum(1 for i in items if i["status"] == "draft"), "approved": sum(1 for i in items if i["status"] == "approved"), "blocked": sum(1 for i in items if i["blocking"]),
+               "public": sum(1 for i in items if i["public"])}
+     return {"shops": shops, "items": items, "counts": counts, "langs": sorted({i["lang"] for i in items})}
+@@ -436,7 +533,7 @@
+         return None
+     out = []
+     for it in items:
+-        if not isinstance(it, dict) or it.get("kind") not in ("product", "category") or isinstance(it.get("id"), bool) or not isinstance(it.get("id"), int):
++        if not isinstance(it, dict) or it.get("kind") not in ("product", "category", "document") or isinstance(it.get("id"), bool) or not isinstance(it.get("id"), int):
+             return None
+         lang = miniweb._clean_lang(it.get("lang")) if isinstance(it.get("lang"), str) else None
+         rev = it.get("rev")
+@@ -450,7 +547,10 @@
+     """Schvali (approve=True, jen kdyz se otisk shoduje, neni blokovano a je v draftu) nebo vrati do draftu. -> (pocet, preskocene). Transakci commituje volajici."""
+     done, skipped = 0, []
+     for it in items:
+-        if it["kind"] == "product":
++        if it["kind"] == "document":
++            cur.execute("SELECT * FROM miniweb_documents WHERE id=%s AND lang=%s FOR UPDATE", (it["id"], it["lang"]))
++            table, idcol = "miniweb_documents", "id"
++        elif it["kind"] == "product":
+             cur.execute("SELECT t.*, p.slug, p.public_sku FROM miniweb_product_texts t JOIN miniweb_products p ON p.id = t.miniweb_product_id WHERE t.miniweb_product_id=%s AND t.lang=%s FOR UPDATE", (it["id"], it["lang"]))
+             table, idcol = "miniweb_product_texts", "miniweb_product_id"
+         else:
+@@ -462,11 +562,16 @@
+             skipped.append({**ref, "reason": "not_found"})
+             continue
+         if approve:
+-            clean = _clean_product_text(row) if it["kind"] == "product" else {"name": miniweb._plain(row["name"], LIMITS["name"]), "summary": "", "description": "", "delivery": "", "specs": []}
+-            blocking, _info = _problems(clean, row["slug"], row["public_sku"], False)
++            if it["kind"] == "document":
++                title, body = _clean_doc(row)
++                blocking, rev_now = _doc_problems(title, body), doc_rev(title, body)
++            else:
++                clean = _clean_product_text(row) if it["kind"] == "product" else {"name": miniweb._plain(row["name"], LIMITS["name"]), "summary": "", "description": "", "delivery": "", "specs": []}
++                blocking, _info = _problems(clean, row["slug"], row["public_sku"], False)
++                rev_now = text_rev(clean["name"], clean["summary"], clean["description"], clean["delivery"], clean["specs"])
+             if blocking:
+                 skipped.append({**ref, "reason": "blocked"})
+-            elif text_rev(clean["name"], clean["summary"], clean["description"], clean["delivery"], clean["specs"]) != it["rev"]:
++            elif rev_now != it["rev"]:
+                 skipped.append({**ref, "reason": "changed"})
+             elif row["status"] == "approved":
+                 skipped.append({**ref, "reason": "already"})

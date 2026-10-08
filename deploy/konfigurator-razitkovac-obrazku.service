@@ -1,0 +1,11 @@
+[Unit]
+Description=Konfigurator - automaticky 2D vodoznak na zakaznicke obrazky (webapp/content-files)
+After=network.target mysql.service
+
+[Service]
+Type=oneshot
+User=www-data
+Group=www-data
+WorkingDirectory=/opt/konfigurator
+EnvironmentFile=/opt/konfigurator/api/.env
+ExecStart=/opt/konfigurator/api/venv/bin/python3 /opt/konfigurator/scripts/2026-09-11_razitkovac_obrazku_timer.py

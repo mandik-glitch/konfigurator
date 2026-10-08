@@ -1,0 +1,14 @@
+[Unit]
+Description=Casovac dennich testovacich objednavek (denne 05:30, WORKFLOW.md bod 27)
+
+[Timer]
+# Cas mimo ostatni automaty: 02:30 ceny, 03:30 zaloha, 04:30 QA.
+OnCalendar=*-*-* 05:30:00
+# Persistent je tu BEZPECNY prave diky idempotenci ve skriptu: kdyz byl
+# server v 05:30 vypnuty, unit dobehne po startu, ale kdyz uz dnesni davka
+# existuje, skript skonci bez zapisu (WORKFLOW.md bod 28).
+Persistent=true
+RandomizedDelaySec=120
+
+[Install]
+WantedBy=timers.target

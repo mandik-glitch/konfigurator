@@ -1,0 +1,15 @@
+[Unit]
+Description=Casovac automatu pro dopocet kusovniku/ceny sestav (kazdych 10 minut)
+# Vypinac je v app_settings['watchdog_prace_povoleno'] (cte se na zacatku
+# kazdeho behu, ne jen jednou) - zastaveni timeru neni jedina cesta, jak
+# automat vypnout, ale timer sam jde zastavit taky (systemctl stop/disable
+# konfigurator-watchdog-prace.timer), kdyby bylo potreba pritomnost timeru
+# v systemu uplne odstranit.
+
+[Timer]
+OnCalendar=*-*-* *:00/10:00
+Persistent=true
+RandomizedDelaySec=60
+
+[Install]
+WantedBy=timers.target

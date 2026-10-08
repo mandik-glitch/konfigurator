@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <script src="/js/client-errors.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kontakt – Hliníkový konstrukční stavebnicový systém s drážkami</title>
+<meta name="description" content="Kontaktní údaje LOGIMAN s.r.o. – Husinecká 903/10, Praha. IČO 28337638, telefon +420 603 230 059.">
+<meta name="robots" content="index, follow">
+<!-- canonical + OG/twitter (bot15 2026-09-02, QA seo.py SEO_NO_CANONICAL/SEO_NO_OG_*):
+     staticka stranka mimo _render_og_page, hodnoty rucne; og:image =
+     1200x630 varianta site defaultu (content-files/og/, generovano Pillow).
+     Firemni udaje (bot9 2026-09-06, DB-backed misto natvrdo, viz
+     AGENTS_LOG.md): meta description/og:description/twitter:description
+     + JSON-LD Organization + hodnoty s id="ki*" v tele stranky prepisuje
+     za behu api/company_info.py::kontakt_html_page() - ALE JEN na
+     vhostech, ktere maji `location = /kontakt.html` proxy na backend
+     (aktualne logiman-autovestavby + konfigurator, mimo git). Na
+     ostatnich vhostech sdilejicich webapp/ (Fiat storefronty,
+     remeslnik-pro) se servíruje tenhle staticky soubor beze zmeny - proto
+     tu hodnoty NIKDY nemazat/neprazdnit, zustavaji rozumny fallback. -->
+<link rel="canonical" href="https://autovestavby.logiman.cz/kontakt.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Hliníkový konstrukční stavebnicový systém s drážkami">
+<meta property="og:locale" content="cs_CZ">
+<meta property="og:title" content="Kontakt | Logiman">
+<meta property="og:description" content="Kontaktní údaje LOGIMAN s.r.o. – Husinecká 903/10, Praha. IČO 28337638, telefon +420 603 230 059.">
+<meta property="og:url" content="https://autovestavby.logiman.cz/kontakt.html">
+<meta property="og:image" content="https://autovestavby.logiman.cz/content-files/og/site-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kontakt | Logiman">
+<meta name="twitter:description" content="Kontaktní údaje LOGIMAN s.r.o. – Husinecká 903/10, Praha. IČO 28337638, telefon +420 603 230 059.">
+<meta name="twitter:image" content="https://autovestavby.logiman.cz/content-files/og/site-default.jpg">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Hliníkový konstrukční stavebnicový systém s drážkami","legalName":"LOGIMAN s.r.o.","telephone":"+420 603 230 059","address":{"@type":"PostalAddress","streetAddress":"Husinecká 903/10","addressLocality":"Praha","postalCode":"13000","addressCountry":"CZ"}}</script>
+<link rel="stylesheet" href="/css/brand-logo.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap">
+<style>
+  :root {
+    --bg: #494b50;
+    --panel-bg: #22262e;
+    --panel-bg-2: #1f232a;
+    --border: #3a3f4a;
+    --border-soft: #333333;
+    --border-card: #2c313a;
+    --text: #e8eaed;
+    --text2: #c7ccd4;
+    --text-muted: #8b93a1;
+    --accent: #9fd0ff;
+  }
+  [data-theme="light"] {
+    --bg: #eef1f5;
+    --panel-bg: #ffffff;
+    --panel-bg-2: #f6f8fa;
+    --border: #d7dce3;
+    --border-soft: #e3e7ec;
+    --border-card: #dde2e8;
+    --text: #1b1e24;
+    --text2: #3a3f4a;
+    --text-muted: #5c6570;
+    --accent: #1a6fd4;
+  }
+  * { box-sizing:border-box; }
+  html, body { margin:0; padding:0; min-height:100%; font-family:var(--font-main, -apple-system, "Segoe UI", Roboto, Arial, sans-serif); background:var(--bg); color:var(--text); font-size:14px; }
+  a { color:var(--accent); }
+  header { display:flex; align-items:center; justify-content:space-between; gap:14px; padding:12px 20px; border-bottom:1px solid var(--border-soft); background:var(--panel-bg); }
+  header .brand { color:var(--text); font-weight:700; text-decoration:none; font-size:14px; }
+  /* Textove logo (.brand-logo*): sdilene CSS /css/brand-logo.css, nacitane v <head> - vzhled a zduvodneni upravuj JEN tam. */
+  /* Pismo loga: stranka je staticka (bez SSR, nedostava --font-main z volby admina), logo by bylo v systemovem pismu a
+     vypadalo jinak nez na homepage. Proto natvrdo Manrope (= dnesni volba pisma webu, site_font.py) + <link> v <head>;
+     pri zmene volby pisma v adminu je treba upravit oboji (QA static_page_font_stale to ohlasi). Text stranky se nemeni. */
+  .brand-logo { --font-main: "Manrope", -apple-system, "Segoe UI", Roboto, Arial, sans-serif; }
+  /* HOME tlacitko (Robert primo, 2026-09-15 pres bot3: "stylove HUD
+     tlacitko Domu na vsech strankach, vedle loga") - stejny vizualni
+     jazyk jako #pdAddCartBtn v product.html (useknuty roh, --accent
+     obrys). Zadny sdileny JS/CSS soubor mezi strankami - kopie na
+     kazdou stranku. */
+  .home-hud-btn {
+    display:inline-flex; align-items:center; justify-content:center;
+    width:30px; height:30px; flex:none; box-sizing:border-box;
+    background:transparent; color:var(--accent); border:1px solid var(--accent); border-radius:0;
+    clip-path:polygon(0 0, calc(100% - 7px) 0, 100% 7px, 100% 100%, 7px 100%, 0 calc(100% - 7px));
+    font-size:15px; line-height:1; text-decoration:none; cursor:pointer;
+    transition:background-color .15s ease, color .15s ease;
+  }
+  .home-hud-btn:hover { background:var(--accent); color:#06140c; }
+  #themeToggleBtn { background:var(--panel-bg-2); color:var(--text-muted); border:1px solid var(--border); border-radius:14px; padding:5px 10px; cursor:pointer; font-size:13px; }
+  .page-wrap { max-width:640px; margin:0 auto; padding:24px 18px 60px; }
+  .breadcrumb { font-size:13px; color:var(--text-muted); margin-bottom:14px; }
+  .breadcrumb a { color:var(--text-muted); text-decoration:none; }
+  .breadcrumb a:hover { text-decoration:underline; }
+  h1 { font-size:24px; margin:0 0 18px; }
+  .kontakt-card { border:1px solid var(--border-card); border-radius:8px; background:var(--panel-bg-2); padding:20px 22px; }
+  .kontakt-row { display:flex; gap:8px; font-size:14px; line-height:1.75; }
+  .kontakt-row + .kontakt-row { margin-top:2px; }
+  .kontakt-label { flex:0 0 130px; color:var(--text-muted); }
+  .kontakt-value { color:var(--text2); }
+  .kontakt-value a { color:var(--accent); }
+  .kontakt-hr { border:none; border-top:1px solid var(--border-card); margin:14px 0; }
+  footer { text-align:center; color:var(--text-muted); font-size:12.5px; padding:24px 18px; }
+  /* E-mail jako obrázek (Robert 2026-09-06) - živý mailto:/text by šel
+     scrapovat spam roboty, obrázek s vykresleným textem přečte jen
+     člověk. Dvě varianty (kontrast na tmavý/světlý motiv), přepínané
+     stejně jako zbytek stránky přes [data-theme="light"] na <html>. */
+  .kontakt-email { height:1.2em; width:auto; vertical-align:-0.2em; }
+  .kontakt-email-light { display:none; }
+  [data-theme="light"] .kontakt-email-dark { display:none; }
+  [data-theme="light"] .kontakt-email-light { display:inline; }
+</style>
+</head>
+<body>
+
+<div id="rekonstrukceBanner" style="background:#b3541e; color:#fff; text-align:center; padding:8px 14px; font-size:14px; font-weight:600; letter-spacing:.02em;">&#9888;&#65039; Web je v rekonstrukci &mdash; omluvte pros&iacute;m do&#269;asn&eacute; nedostatky.</div>
+<header>
+  <div style="display:flex; align-items:center; gap:10px;">
+    <a href="/" class="home-hud-btn" title="Domů" aria-label="Domů">⌂</a>
+    <a class="brand-logo" href="/" aria-label="Logiman"><span class="brand-logo-hl">LOGi</span><span class="brand-logo-lt">MAN</span></a>
+    <a class="brand" href="/">Hliníkový konstrukční stavebnicový systém s drážkami</a>
+  </div>
+  <button id="themeToggleBtn" type="button" title="Přepnout barevné schéma" onclick="toggleShopTheme()"></button>
+</header>
+
+<div class="page-wrap">
+  <div class="breadcrumb"><a href="/">Kategorie</a> <span>›</span> Kontakt</div>
+  <h1>Kontakt</h1>
+  <div class="kontakt-card">
+    <div class="kontakt-row"><div class="kontakt-label">Firma</div><div class="kontakt-value" id="kiName">LOGIMAN s.r.o.</div></div>
+    <div class="kontakt-row"><div class="kontakt-label">Adresa</div><div class="kontakt-value" id="kiAddress">Husinecká 903/10, 13000 Praha, Česká republika</div></div>
+    <hr class="kontakt-hr">
+    <div class="kontakt-row"><div class="kontakt-label">IČO</div><div class="kontakt-value" id="kiIco">28337638</div></div>
+    <div class="kontakt-row"><div class="kontakt-label">DIČ</div><div class="kontakt-value" id="kiDic">CZ28337638</div></div>
+    <hr class="kontakt-hr">
+    <div class="kontakt-row"><div class="kontakt-label">Telefon</div><div class="kontakt-value"><a id="kiPhoneLink" href="tel:+420603230059">+420 603 230 059</a></div></div>
+    <!-- E-mail jako obrazek (spam-robot ochrana, viz AGENTS_LOG.md) - src
+         je dynamicky endpoint (api/company_info.py::contact_email_image),
+         ne staticky soubor, aby sel zdroj e-mailu editovat z adminu. -->
+    <div class="kontakt-row"><div class="kontakt-label">E-mail</div><div class="kontakt-value"><img class="kontakt-email kontakt-email-dark" src="/api/contact-email-image?theme=dark" alt="e-mailová adresa (obrázek kvůli ochraně před spam roboty, opište ručně)"><img class="kontakt-email kontakt-email-light" src="/api/contact-email-image?theme=light" alt="e-mailová adresa (obrázek kvůli ochraně před spam roboty, opište ručně)"></div></div>
+  </div>
+</div>
+
+<footer>
+  Hliníkový konstrukční stavebnicový systém s drážkami
+</footer>
+
+<script>
+(function () {
+  try {
+    var t = localStorage.getItem("shopTheme");
+    if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+  } catch (e) {}
+})();
+function applyShopTheme(theme) {
+  theme = theme === "light" ? "light" : "dark";
+  document.documentElement.setAttribute("data-theme", theme);
+  try { localStorage.setItem("shopTheme", theme); } catch (e) {}
+  var btn = document.getElementById("themeToggleBtn");
+  if (btn) btn.textContent = theme === "light" ? "🌙" : "☀️";
+}
+function toggleShopTheme() {
+  var current = document.documentElement.getAttribute("data-theme") === "light" ? "light" : "dark";
+  applyShopTheme(current === "light" ? "dark" : "light");
+  fetch("/api/auth/theme", {
+    method: "PUT", headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ scope: "shop", theme: current === "light" ? "dark" : "light" }),
+  }).catch(function () {});
+}
+document.addEventListener("DOMContentLoaded", function () {
+  var btn = document.getElementById("themeToggleBtn");
+  if (btn) btn.textContent = (document.documentElement.getAttribute("data-theme") === "light") ? "🌙" : "☀️";
+});
+</script>
+
+</body>
+</html>

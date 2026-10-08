@@ -1,0 +1,11 @@
+[Unit]
+Description=Konfigurator - automat: orazitkuje Vandr karty s hotovym GLB a bez aktualnich razitek
+After=network.target mysql.service
+
+[Service]
+Type=oneshot
+User=www-data
+Group=www-data
+WorkingDirectory=/opt/konfigurator
+EnvironmentFile=/opt/konfigurator/api/.env
+ExecStart=/opt/konfigurator/api/venv/bin/python3 /opt/konfigurator/scripts/2026-09-23_vandr_razitka_auto_dispatch.py

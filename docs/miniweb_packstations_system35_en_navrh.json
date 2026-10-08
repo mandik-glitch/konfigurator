@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "family": "packstations",
+  "lang": "en",
+  "categories": [
+    {
+      "slug": "ergonomic-packing-table-system-35",
+      "url_slug": "ergonomic-packing-table-system-35",
+      "parent": null,
+      "sort": 2,
+      "name": "Ergonomic packing table system 35"
+    }
+  ],
+  "products": [
+    {
+      "slug": "configurable-ergonomic-packing-table-system-35",
+      "url_slug": "configurable-ergonomic-packing-table-system-35",
+      "sku": "PWB-003",
+      "category": "ergonomic-packing-table-system-35",
+      "sort": 2,
+      "configurator": {
+        "available": true,
+        "shop_product_id": 4955,
+        "default_view": "configurator"
+      },
+      "name": "Configurable ergonomic packing table",
+      "summary": "Ergonomic packing table with a frame of 35 × 35 mm aluminium profiles and a height chosen mechanically, made to your size. Set the dimensions, shelves and accessories and see the result in 3D.",
+      "description": "Frame from 35 × 35 mm profiles\nThe frame of this table is made of aluminium profiles with a 35 × 35 mm cross-section and an 8 mm slot. It sits between our other two frame sizes, 30 × 30 mm and 40 × 40 mm, and the same configuration can be switched between all three in the 3D view.\n\nHeight to suit the work\nThe legs of this table take a sleeve made of 40 × 40 mm square tube with a 2 mm wall and an end cap at the bottom, finished in RAL 7016 (dark grey-black, gloss); it replaces the castors, feet and end caps. The sleeve is on by default and 300 mm long; you can switch it off or set its length from 200 to 400 mm. The leg goes into it at least 70 mm, so the height of the table can be changed mechanically.\n\nYour own dimensions\nYou choose the width of the worktop (500 to 3000 mm), its depth (400 to 1500 mm) and its height. Lower shelves, castors or levelling feet, perforated tool panels, LED lighting, steel drawers, a power strip with sockets, a PET bottle holder and cut-outs in the worktop are added in the same way as for the other two tables.\n\nEvery combination is checked\nAfter each change the frame is recalculated. A combination that cannot be made is refused and the reason is shown.\n\nDelivery, assembly and shipping\nThe table is made to order and delivery takes 3–5 weeks. Assembly is an optional service: with it the table is delivered assembled, without it disassembled, and you assemble it yourself. The shipping price depends on whether you choose assembly; we set it after the order and confirm it with you before the proforma invoice is issued.",
+      "delivery": "Made to order. Delivery in 3–5 weeks. Assembly is an optional service: with it the table is delivered assembled, without it disassembled. We set the shipping price after the order and confirm it before the proforma invoice is issued.",
+      "specs": [
+        {
+          "name": "Frame",
+          "value": "Aluminium profiles 35 × 35 mm with 8 mm slot"
+        },
+        {
+          "name": "Leg sleeve",
+          "value": "Square tube 40 × 40 mm, 2 mm wall, RAL 7016 gloss, length 200–400 mm (300 mm by default)"
+        },
+        {
+          "name": "Dimensions",
+          "value": "Width 500–3000 mm, depth 400–1500 mm"
+        }
+      ]
+    }
+  ]
+}

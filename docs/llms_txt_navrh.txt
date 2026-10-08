@@ -1,0 +1,15 @@
+# LOGIMAN – hliníkový stavebnicový systém
+
+> LOGIMAN s.r.o. (Husinecká 903/10, 130 00 Praha, IČO 28337638, telefon +420 603 230 059) nabízí hliníkový stavebnicový systém: hliníkové profily a spojovací prvky, pracovní, balicí a montážní stoly na míru a vestavby do dodávek. Konstrukce se navrhují ve 3D na webu a vyrábějí se podle zadání zákazníka.
+
+## Hlavní sekce
+- [Hliníkové stavebnicové profily](https://autovestavby.logiman.cz/hlinikove-stavebnicove-profily): profily s drážkou 6, 8 a 10 mm, deskové a kulaté profily, spojovací prvky a příslušenství.
+- [Vestavby do dodávek, aut](https://autovestavby.logiman.cz/vestavby-do-dodavek-aut): úložné systémy, regály, šuplíky, podlahy a kotvení na míru.
+- [Balicí stoly a pracoviště na míru](https://autovestavby.logiman.cz/balici-stoly-a-pracoviste-na-miru): generátory stolů system 30 a system 40.
+- [Ergonomické pracovní stoly](https://autovestavby.logiman.cz/ergonomicke-pracovni-stoly)
+- [Montážní stoly a pracoviště](https://autovestavby.logiman.cz/montazni-stoly-a-pracoviste)
+- [Návody a postupy](https://autovestavby.logiman.cz/navody-a-postupy)
+
+## Technické
+- [Sitemap](https://autovestavby.logiman.cz/sitemap.xml)
+- [Kontakt](https://autovestavby.logiman.cz/kontakt.html)

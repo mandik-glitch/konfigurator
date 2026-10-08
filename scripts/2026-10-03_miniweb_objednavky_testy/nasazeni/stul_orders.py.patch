@@ -1,0 +1,55 @@
+--- a/api/orders.py
++++ b/api/orders.py
+@@ -1260,7 +1260,11 @@
+             total += order_item_cfg["line_total_czk"]
+             total_weight_kg += kg_cfg
+             weight_incomplete_cfg = weight_incomplete_cfg or not kg_cfg_ok
++            montaz_radek = order_item_cfg.pop("_montaz_radek", None)           # bot5, 2026-10-04: montaz stolu = samostatny radek objednavky (Robert pres bot9)
+             order_items.append(order_item_cfg)
++            if montaz_radek:
++                total += montaz_radek["line_total_czk"]
++                order_items.append(montaz_radek)
+             continue
+         cur.execute(
+             "SELECT id, name, price_czk_placeholder, stock_qty, active, weight_g, cfg_dily_id, "
+@@ -1417,6 +1421,7 @@
+ 
+     # --- doprava (volitelna) - AZ TEĎ, potrebuje uz spocitanou hmotnost ---
+     shipping_method_name, shipping_price = None, 0.0
++    shipping_review = False                                    # bot5, 2026-10-04: doprava ke schvaleni zamestnancem (viz nize, jen konfigurace s neuplnou hmotnosti)
+     shipping_method_id = body.get("shipping_method_id")
+     if shipping_method_id is not None:
+         cur.execute(
+@@ -1428,12 +1433,15 @@
+             raise _OrderCreateError("Zvolený způsob dopravy neexistuje nebo není aktivní.")
+         shipping_method_name = sm["name"]
+         if sm["pricing_mode"] == "zip_weight":
+-            if weight_incomplete_cfg:                          # bot5, 2026-10-02: konfigurace sestavy
+-                import konfigurace_kosik
+-                raise _OrderCreateError(konfigurace_kosik.ZPRAVA_HMOTNOST, status_code=409)
+-            shipping_price, _km_band, _basis = _resolve_toptrans_price(
+-                cur, sm["id"], delivery_zip, total_weight_kg, total_volume_m3
+-            )
++            if weight_incomplete_cfg:                          # bot5, 2026-10-02: konfigurace sestavy; od 2026-10-04 (Robert pres bot9: doprava u hlavniho e-shopu ke schvaleni zamestnancem) objednavka VZNIKNE
++                # s cenou dopravy 0 a priznakem shipping_review, zalohova faktura az po schvaleni dopravy (POST /api/admin/orders/<id>/shipping)
++                shipping_price = 0.0
++                shipping_method_name = sm["name"] + " – cena ke schválení"
++                shipping_review = True
++            else:
++                shipping_price, _km_band, _basis = _resolve_toptrans_price(
++                    cur, sm["id"], delivery_zip, total_weight_kg, total_volume_m3
++                )
+         else:
+             shipping_price = float(sm["price_czk"])
+ 
+@@ -1547,7 +1555,9 @@
+          "product_is_profile_material": oi.get("is_profile_material")}
+         for oi in order_items
+     ]
+-    proforma = None if has_missing_stock else documents.create_proforma_invoice_if_needed(
++    if shipping_review:                                        # cena dopravy jeste neni: priznak ke schvaleni; zalohova faktura se nevystavuje (vystavi ji zamestnanec po schvaleni dopravy)
++        cur.execute("UPDATE shop_orders SET shipping_review=1 WHERE id=%s", (order_id,))
++    proforma = None if (has_missing_stock or shipping_review) else documents.create_proforma_invoice_if_needed(
+         cur, order_snapshot, order_items_db
+     )
+ 

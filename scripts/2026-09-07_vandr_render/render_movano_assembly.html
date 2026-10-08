@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vandr render: Movano 2 nohy + 2 supliky</title>
+<style>html,body{margin:0;padding:0;background:#e8ecf0;overflow:hidden;}</style>
+</head>
+<body>
+<!--
+Priklad pouziti vandr_geometry_lib.js - overeny funkcni render (2026-09-07).
+Postup spusteni je v ../../VANDR_RENDER_HOWTO.md. Shrnuti:
+
+1. FBX zdroje (NEJSOU v gitu, zkopiruj rucne vedle tohohle souboru
+   do podadresare ./fbx/ pred spustenim):
+   - fbx/movano_normal.fbx <- /opt/vandrawee/unity/Assets/Models/vandrawee/Legs/Opel Movano/Noha.1.Movano.H1.1490.459.fbx
+   - fbx/movano_vyrez.fbx  <- .../Opel Movano/Noha.1.Movano.H1.1490.459.vyrez.fbx
+   - fbx/movano_suplik1.fbx <- /opt/vandrawee/unity/Assets/Models/vandrawee/Components/1057/Suplik.ocel.100.1057.459.fbx
+   - fbx/movano_suplik2.fbx <- .../Components/1057/Suplik.maxi.30.200.1057.459.fbx
+   DB overeno (vandrawee_work): legs_id=142, components_list_id=10
+   ("Nohy 45x45"), oba supliky is_universal=0, min_width=max_width=967.
+
+2. Serveruj tenhle adresar (python3 -m http.server) a otevri v
+   Playwright/prohlizeci - three.js/FBXLoader se natahuji primo z
+   node_modules (viz importmap nize), zadne kopirovani knihoven.
+
+3. window.__DEBUG__ po dokonceni obsahuje vsechny zmerene mezery
+   (gapFront/gapRear/floorGap/stackGap) - VSECHNY musi byt 0.
+   window.__setView__('iso'|'front'|'side') pro screenshot.
+-->
+<script type="importmap">
+{ "imports": {
+  "three": "../../node_modules/three/build/three.module.js",
+  "three/addons/loaders/FBXLoader.js": "../../node_modules/three/examples/jsm/loaders/FBXLoader.js"
+} }
+</script>
+<script type="module">
+import * as THREE from 'three';
+import { FBXLoader } from 'three/addons/loaders/FBXLoader.js';
+import {
+  colorize, structuralZRange, endBracketOf, redStopsYRange,
+  exposedFloorYOf, mainZoneTopOf, makeTextSprite, dimensionLine,
+} from './vandr_geometry_lib.js';
+
+const W = 1600, H = 1100;
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0xe8ecf0);
+const camera = new THREE.PerspectiveCamera(32, W / H, 1, 20000);
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setSize(W, H);
+document.body.appendChild(renderer.domElement);
+scene.add(new THREE.AmbientLight(0xffffff, 0.75));
+const dir1 = new THREE.DirectionalLight(0xffffff, 0.9);
+dir1.position.set(900, 1600, 1300);
+scene.add(dir1);
+const dir2 = new THREE.DirectionalLight(0xffffff, 0.4);
+dir2.position.set(-700, 900, -900);
+scene.add(dir2);
+scene.add(new THREE.GridHelper(2500, 25, 0x999999, 0xcccccc));
+
+const loader = new FBXLoader();
+function loadFbx(path) { return new Promise((resolve, reject) => loader.load(path, resolve, undefined, reject)); }
+
+const debug = {};
+const INNER_GAP_TARGET = 967; // mm - pozadovana volna mezera mezi nohami
+
+(async () => {
+  try {
+    const leg1 = await loadFbx('./fbx/movano_normal.fbx');
+    colorize(leg1);
+    leg1.rotation.x = -Math.PI / 2; // FBX Z-up -> Three.js Y-up (VANDR_RENDER_HOWTO.md krok 3)
+    leg1.updateMatrixWorld(true);
+    const legBox1 = new THREE.Box3().setFromObject(leg1);
+    leg1.position.y -= legBox1.min.y;
+    leg1.position.x -= legBox1.min.x;
+    leg1.updateMatrixWorld(true);
+    const legBox1f = new THREE.Box3().setFromObject(leg1);
+
+    const leg2 = await loadFbx('./fbx/movano_vyrez.fbx');
+    colorize(leg2);
+    leg2.rotation.x = -Math.PI / 2;
+    leg2.updateMatrixWorld(true);
+    const legBox2raw = new THREE.Box3().setFromObject(leg2);
+    leg2.position.x += legBox1f.max.x + INNER_GAP_TARGET - legBox2raw.min.x;
+    leg2.position.y -= legBox2raw.min.y;
+    leg2.updateMatrixWorld(true);
+    const legBox2f = new THREE.Box3().setFromObject(leg2);
+    scene.add(leg1); scene.add(leg2);
+
+    const label1 = makeTextSprite('NOHA 1 - Movano normalni', { color: '#1a3a5c' });
+    label1.position.set((legBox1f.min.x + legBox1f.max.x) / 2, legBox1f.max.y + 120, (legBox1f.min.z + legBox1f.max.z) / 2);
+    scene.add(label1);
+    const label2 = makeTextSprite('NOHA 2 - Movano s vyrezem', { color: '#1a3a5c' });
+    label2.position.set((legBox2f.min.x + legBox2f.max.x) / 2, legBox2f.max.y + 120, (legBox2f.min.z + legBox2f.max.z) / 2);
+    scene.add(label2);
+
+    const centerX = (legBox1f.max.x + legBox2f.min.x) / 2;
+    const legStructZ = structuralZRange(leg1);
+    const centerZ = (legStructZ.min + legStructZ.max) / 2;
+    const MAIN_ZONE_TOP = mainZoneTopOf(leg1); // strop hlavni zony (VANDR_SKLADANI_REGALU.md "Zona pro hlavni komponenty")
+    const EXPOSED_FLOOR_Y = exposedFloorYOf(leg2); // "obnazene celo" zkraceneho sloupku nohy s vyrezem
+    debug.legStructZ = legStructZ;
+    debug.innerGapMeasured = legBox2f.min.x - legBox1f.max.x;
+    debug.outerSpanMeasured = legBox2f.max.x - legBox1f.min.x;
+    debug.mainZoneTop = MAIN_ZONE_TOP;
+    debug.exposedFloorY = EXPOSED_FLOOR_Y;
+
+    // Overeno v DB (vandrawee_work): Suplik.ocel.100.1057.459 (id=87) a
+    // Suplik.maxi.30.200.1057.459 (id=11), obe components_list_id=10,
+    // is_universal=0, min_width=max_width=967 - presne sedi na mezeru.
+    async function placeComponent(path, yBottomTarget, label, yRefMode = 'endBracket') {
+      const comp = await loadFbx(path);
+      colorize(comp);
+      comp.rotation.x = -Math.PI / 2;
+      comp.updateMatrixWorld(true);
+      const raw = new THREE.Box3().setFromObject(comp);
+      const endBracketRaw = endBracketOf(comp);
+      comp.position.x += centerX - raw.getCenter(new THREE.Vector3()).x;
+      // stredit podle KONCOVEHO NOSNIKU, ne podle celeho bboxu (VANDR_RENDER_HOWTO.md 3f)
+      comp.position.z += centerZ - endBracketRaw.getCenter(new THREE.Vector3()).z;
+      // 'endBracket' = dosedani na NOHU (alu bocni profil); 'redStop' =
+      // dosedani na JINOU KOMPONENTU pod ni - tam je spravna reference
+      // CERVENY DORAZ, ne endBracket ani cely bbox (VANDR_DILY_ZNACENI.md)
+      const yRefRaw = yRefMode === 'redStop' ? redStopsYRange(comp).min : endBracketRaw.min.y;
+      comp.position.y += yBottomTarget - yRefRaw;
+      comp.updateMatrixWorld(true);
+      const redRange = redStopsYRange(comp);
+      const boxF = new THREE.Box3().setFromObject(comp);
+      const endBracketF = endBracketOf(comp);
+      scene.add(comp);
+      const lbl = makeTextSprite(label, { color: '#1a3a5c' });
+      lbl.position.set(centerX, boxF.max.y + 90, boxF.max.z + 80);
+      scene.add(lbl);
+      return {
+        boxF, endBracketF, redRange,
+        gapFront: +(legStructZ.max - endBracketF.max.z).toFixed(3),
+        gapRear: +(endBracketF.min.z - legStructZ.min).toFixed(3),
+      };
+    }
+
+    // Sup1: boci profil dosedne PRESNE na exponovanou podlahu nohy 2
+    // (VANDR_SKLADANI_REGALU.md "dosednuti plati i svisle") - zadna
+    // libovolna rezerva.
+    const s1 = await placeComponent('./fbx/movano_suplik1.fbx', EXPOSED_FLOOR_Y, 'SUPLIK 1 - Suplik.ocel.100.1057.459');
+    debug.suplik1 = { box: { min: s1.boxF.min, max: s1.boxF.max }, gapFront: s1.gapFront, gapRear: s1.gapRear };
+    debug.floorGap = +(s1.endBracketF.min.y - EXPOSED_FLOOR_Y).toFixed(3); // musi byt 0
+
+    // Sup2: cerveny SPODNI doraz dosedne PRESNE na cerveny HORNI doraz
+    // supliku 1 (ne libovolna rezera nad celym bboxem - to zpusobilo
+    // realne zabor eni, viz VANDR_DILY_ZNACENI.md).
+    const s2 = await placeComponent('./fbx/movano_suplik2.fbx', s1.redRange.max, 'SUPLIK 2 - Suplik.maxi.30.200.1057.459', 'redStop');
+    debug.suplik2 = { box: { min: s2.boxF.min, max: s2.boxF.max }, gapFront: s2.gapFront, gapRear: s2.gapRear };
+    debug.stackGap = +(s2.redRange.min - s1.redRange.max).toFixed(3); // musi byt 0
+    debug.suplik2TopVsZone = +(MAIN_ZONE_TOP - s2.boxF.max.y).toFixed(1); // musi byt > 0
+
+    // --- kotovani ---
+    const zFront = Math.max(legBox1f.max.z, legBox2f.max.z) + 60;
+    scene.add(dimensionLine(
+      new THREE.Vector3(legBox1f.max.x, 0, zFront), new THREE.Vector3(legBox2f.min.x, 0, zFront),
+      `${Math.round(debug.innerGapMeasured)} mm (volna mezera)`, new THREE.Vector3(0, 0, 1), 120));
+    scene.add(dimensionLine(
+      new THREE.Vector3(legBox1f.min.x, 0, zFront), new THREE.Vector3(legBox1f.min.x, legBox1f.max.y, zFront),
+      `${Math.round(legBox1f.max.y)} mm (vyska)`, new THREE.Vector3(-1, 0, 0), 150));
+    scene.add(dimensionLine(
+      new THREE.Vector3(legBox1f.min.x, 0, zFront), new THREE.Vector3(legBox1f.min.x, MAIN_ZONE_TOP, zFront),
+      `hlavni zona (do ${Math.round(MAIN_ZONE_TOP)} mm)`, new THREE.Vector3(-1, 0, 0), 300));
+
+    window.__DEBUG__ = debug;
+
+    const overallBox = new THREE.Box3().setFromObject(scene);
+    const overallSize = overallBox.getSize(new THREE.Vector3());
+    const overallCenter = overallBox.getCenter(new THREE.Vector3());
+    const maxDim = Math.max(overallSize.x, overallSize.y, overallSize.z);
+    const dist = maxDim * 1.5;
+    window.__setView__ = function (view) {
+      if (view === 'iso') {
+        camera.position.set(overallCenter.x, overallCenter.y + dist * 0.55, overallCenter.z + dist * 1.05);
+        camera.lookAt(overallCenter.x, overallCenter.y * 0.7, overallCenter.z);
+      } else if (view === 'front') {
+        camera.position.set(overallCenter.x, overallCenter.y, overallCenter.z + dist * 1.4);
+        camera.lookAt(overallCenter.x, overallCenter.y, overallCenter.z);
+      } else if (view === 'side') {
+        camera.position.set(overallCenter.x + dist * 1.4, overallCenter.y, overallCenter.z);
+        camera.lookAt(overallCenter.x, overallCenter.y, overallCenter.z);
+      }
+      renderer.render(scene, camera);
+    };
+    window.__setView__('iso');
+    window.__RENDER_DONE__ = true;
+  } catch (e) {
+    window.__RENDER_ERROR__ = (e && e.message) || String(e);
+  }
+})();
+</script>
+</body>
+</html>

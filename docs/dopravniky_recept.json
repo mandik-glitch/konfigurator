@@ -1,0 +1,105 @@
+{
+  "_poznamka": "Recept ceny hotovych valeckovych dopravniku Dogus z komponent (bot5, 2026-10-07). Volby potvrdil Robert 2026-10-07 (klik): Ø50 -> profil 23x75, Ø51 ocel -> 23x127; 4 nohy do 3 m / 6 noh do 6 m; H-ram = pricka na kazdy par + 1 podelna; prirazka 10 %. Delky valecku = SKUTECNE valecky z Dogusu (ocel 290/440/590/790/990, hlinik a vroubkovane 290/440/590/790); dopravniky se sirkou bez skutecneho valecku (vroubkovane 1000, ocel 1200) se necenit. Cena = ceil(soucet(Dogus USD x mnozstvi) x kurz Fio USD prodej x koeficient kategorie x (1 + prirazka)). OPRAVA 2026-10-07: cena profilu a profilu H-ramu je USD za 1 METR (Dogus List Price); v1 ji chybne delila delkou tyce `tyc_m` (profil a ram vychazely 3x levneji), `tyc_m` je jen informace o prodejni tyci a do ceny nevstupuje. Ceny 78 karet prepocitany, zaloha backups/2026-10-07_dopravniky_ceny_pred_opravou_profil_metr.json.",
+  "verze": "v1-potvrzeno-2026-10-07",
+  "rozteč_valecku_mm": 150,
+  "vyska_mm": 800,
+  "rady": {
+    "16.12.01.050": {
+      "popis": "Válečkový dopravník, vroubkované hliníkové válečky Ø50",
+      "valecek_prefix": "3.009.03.50.",
+      "profil": "23x75",
+      "nazev_valecku": "Vroubkovaný hliníkový váleček Ø50"
+    },
+    "16.10.01.050": {
+      "popis": "Válečkový dopravník, hliníkové válečky Ø50",
+      "valecek_prefix": "3.009.01.50.",
+      "profil": "23x75",
+      "nazev_valecku": "Hliníkový váleček Ø50"
+    },
+    "16.10.01.051": {
+      "popis": "Válečkový dopravník, ocelové válečky Ø51",
+      "valecek_prefix": "3.009.02.51.",
+      "profil": "23x127",
+      "nazev_valecku": "Ocelový váleček Ø51"
+    }
+  },
+  "profily": {
+    "23x75": {
+      "sku": "1.2.00.023075.00",
+      "nazev": "Dopravníkový profil 23x75",
+      "tyc_m": 3,
+      "noha_sku": "3.004.03.01",
+      "noha_nazev": "Kovová noha 23x75 (teleskopická)"
+    },
+    "23x127": {
+      "sku": "1.2.00.023127.00",
+      "nazev": "Dopravníkový profil 23x127",
+      "tyc_m": 3,
+      "noha_sku": "3.004.02.01",
+      "noha_nazev": "Kovová noha, malá stupňovaná (teleskopická)"
+    }
+  },
+  "patka": {
+    "sku": "2.3.002.1050",
+    "nazev": "Vyrovnávací patka M10",
+    "na_nohu": 1
+  },
+  "h_ram": {
+    "profil_sku": "1.1.10.040040.02",
+    "profil_nazev": "Hliníkový profil 40x40 Light S10",
+    "tyc_m": 3,
+    "konektor_sku": "3.006.240.021.180",
+    "konektor_nazev": "Spodní spojovací úchyt rámu",
+    "konektoru_na_par": 4
+  },
+  "volby": {
+    "nohy": {
+      "3m_6m": "4 nohy do 3 m, 6 noh do 6 m",
+      "2_4_6": "4 nohy do 2 m, 6 do 4 m, 8 do 6 m",
+      "vzdy4": "vždy 4 nohy"
+    },
+    "h_ram": {
+      "pricka_podelna": "příčka na každý pár + 1 podélná (L − 0,2 m)",
+      "jen_pricky": "jen příčky na páry",
+      "zadny": "bez spodního rámu"
+    },
+    "prirazka_pct": [
+      0,
+      10,
+      20
+    ]
+  },
+  "vychozi": {
+    "nohy": "3m_6m",
+    "h_ram": "pricka_podelna",
+    "prirazka_pct": 10
+  },
+  "koeficient_kategorie": 1.2,
+  "skutecne_valecky_mm": {
+    "16.12.01.050": {
+      "0300": 290,
+      "0450": 440,
+      "0600": 590,
+      "0800": 790
+    },
+    "16.10.01.050": {
+      "0300": 290,
+      "0450": 440,
+      "0600": 590,
+      "0800": 790
+    },
+    "16.10.01.051": {
+      "0300": 290,
+      "0450": 440,
+      "0600": 590,
+      "0800": 790,
+      "1000": 990
+    }
+  },
+  "nazev_stary_na_skutecny_mm": {
+    "300": 290,
+    "450": 440,
+    "600": 590,
+    "800": 790
+  }
+}

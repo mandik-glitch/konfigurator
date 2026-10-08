@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "family": "packstations",
+  "lang": "en",
+  "categories": [
+    {
+      "slug": "robust-packing-table-system-40",
+      "url_slug": "robust-packing-table-system-40",
+      "parent": null,
+      "sort": 3,
+      "name": "Robust packing table system 40"
+    }
+  ],
+  "products": [
+    {
+      "slug": "configurable-robust-packing-table-system-40",
+      "url_slug": "configurable-robust-packing-table-system-40",
+      "sku": "PWB-002",
+      "category": "robust-packing-table-system-40",
+      "sort": 3,
+      "configurator": {
+        "available": true,
+        "shop_product_id": 4954,
+        "default_view": "configurator"
+      },
+      "name": "Configurable robust packing table",
+      "summary": "Robust packing table with a frame of 40 × 40 mm aluminium profiles, made to your size. Set the dimensions, shelves and accessories and see the result in 3D.",
+      "description": "Frame from 40 × 40 mm profiles\nThe frame of this table is made of aluminium profiles with a 40 × 40 mm cross-section and a 10 mm slot, joined with corner connectors. It is the largest of our three frame sizes; the other tables have 30 × 30 mm and 35 × 35 mm profiles.\n\nYour own dimensions\nYou choose the worktop width, depth and height. The width can be 500 to 3000 mm and the depth 400 to 1500 mm. Above 1500 mm of width the table gets an additional middle leg at the front and at the back.\n\nShelves and accessories\nYou can add lower shelves (up to 10, depending on the height of the table) and choose castors, perforated tool panels, LED lighting, steel drawers, a power strip with sockets and a holder for a PET bottle. Cut-outs in the worktop can be added as well.\n\nEvery combination is checked\nWhen you change something, the frame is recalculated. A combination that cannot be made is refused and the reason is shown.\n\nDelivery, assembly and shipping\nThe table is made to order and delivery takes 3–5 weeks. Assembly is an optional service: with it the table is delivered assembled, without it disassembled, and you assemble it yourself. The shipping price depends on whether you choose assembly; we set it after the order and confirm it with you before the proforma invoice is issued.",
+      "delivery": "Made to order. Delivery in 3–5 weeks. Assembly is an optional service: with it the table is delivered assembled, without it disassembled. We set the shipping price after the order and confirm it before the proforma invoice is issued.",
+      "specs": [
+        {
+          "name": "Frame",
+          "value": "Aluminium profiles 40 × 40 mm with 10 mm slot, corner connectors"
+        },
+        {
+          "name": "Dimensions",
+          "value": "Width 500–3000 mm, depth 400–1500 mm"
+        }
+      ]
+    }
+  ]
+}

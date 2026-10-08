@@ -1,0 +1,14 @@
+Generator stolu: svitidla LED se uz nepridavaji sama podle sirky, pocet a poloha jsou RUCNI (led_pocet, led_z1..4) - bot8, Robert 2026-10-08
+
+Robert: "svitidla v generatoru se pridavaji automaticky za sebe podle delky, ale chceme aby se pridavala jen rucne a mohla se posouvat podel profilu".
+- generator: led_pocet (1-4, vychozi 1) a led_z1..led_z4 (stred svitidla v mm od osy stolu, None = automaticky); poradi se nemeni, svitidla se neprekryvaji, aspon 90 % delky nad
+  pricnym profilem, rozpeti skupiny <= sirka + 47 mm; efektivni parametry nesou skutecne hodnoty (poloha shodna s automatickou = None); led_info (pocet, max, polohy, auto, meze,
+  pridat, odebrat); zive tazeni = presna operace posun; hash: led_pocet se nese jen kde se vejde vic svitidel (hashe uzkych stolu a stolu bez svitidla beze zmeny), SSE ignoruje
+- verejne API: sloty ledcount + ledpos1..4, options (cely rozsah stredu), orez poctu s oznamenim, token J, shrnuti, odkaz na vyrobni list; 3D: casti ledlamp<k>, tahy ledpos<k>,
+  nabidka Pridat / Odebrat toto svitidlo / Vratit na vychozi misto (cs/en/sk)
+- siroke stoly (s LED 1200 od 2447 mm, s LED 600 od 1247 mm) maji nove VYCHOZI 1 svitidlo (drive 2-4 automaticky; led_pocet = drivejsi pocet da presne drivejsi model)
+- testy: test_led_rucne.py, test_led_rucne_shop.py, test_led_rucne_stranka.js, test_regrese_bez_rucnich_led.py, zlaty otisk 873 konfiguraci, 111 mutaci; upravene stavajici testy
+  (led_pocet = nejvic, hash sirokych stolu se nesrovnava); dokumentace KONTRAKT_KONFIGURATOR_UI / OVLADANI_3D / MAPA_3D_A_GENERATORU
+
+Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>
+Claude-Session: https://claude.ai/code/session_0117meq81TnjQhy1Mvk3fLRV

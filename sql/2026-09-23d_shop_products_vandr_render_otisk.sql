@@ -1,0 +1,26 @@
+-- Otisk razitek POUZITYCH v aktivni render davce (bot4, 2026-09-23,
+-- schvaleno bot3) - uzavira mezeru zdokumentovanou u 2026-09-14_render_
+-- auto_dispatch.py ("NEDETEKUJE staleness JIZ vyrenderovane karty po
+-- dodatecne zmene GLB/razitek"), ktera skutecne zpusobila regresi:
+-- karta 4903 mela aktivni davku z 15:33, PRED velkym prepisem algoritmu
+-- razitek (commit 0786f23d, 19:48) - Robert primo nahlasil "ma prilis
+-- mnoho razitek", protoze render nikdy nedostal aktualni (spocitana
+-- 16, ne puvodnich vic) data.
+--
+-- Princip STEJNY jako vandr_razitka_glb_otisk (viz 2026-09-23_shop_
+-- products_vandr_razitka.sql): otisk = sha256 obsahu VSTUPU v dobe,
+-- kdy se z nej neco odvodilo. Tam vstup = GLB soubor, tady vstup =
+-- `shop_products.vandr_razitka_json` (RAW retezec z DB, ne znovu
+-- serializovany JSON - vyhne se poradi klicu jako zdroji falesne
+-- neshody). Zapisuje se PRI KAZDEM uspesnem commitu davky (api/
+-- turntable_ingest.py::ingest_frames_dir/commit_davku), cte ho
+-- 2026-09-23_vandr_render_auto_dispatch.py::kandidati() - aktivni
+-- davka s NESEDICIM (nebo chybejicim) otiskem = zastarala, nabidni k
+-- prerenderovani znovu, i kdyz uz "ma aktivni snimek".
+--
+-- NEZACHYCUJE ciste kodove opravy renderu (watermark/karoserie
+-- exclusion apod.), kde se GLB ani razitka_json nezmenily - to
+-- zustava na rucnim sweepu (Robert chce byt sam kontrola, viz
+-- feedback_robert_is_the_qa_gate).
+ALTER TABLE shop_products
+  ADD COLUMN vandr_render_razitka_otisk CHAR(64) NULL;

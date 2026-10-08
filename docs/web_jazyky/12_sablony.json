@@ -1,0 +1,618 @@
+[
+ {
+  "id": "sablona:orders.py:potvrzeni_predmet",
+  "typ": "text",
+  "cs": "Potvrzení přijetí objednávky {order_number}",
+  "en": "Confirmation of receipt of order {order_number}",
+  "it": "Conferma di ricevimento dell'ordine {order_number}",
+  "h": "d2d9071859"
+ },
+ {
+  "id": "sablona:orders.py:pozdrav",
+  "typ": "text",
+  "cs": "Dobrý den,",
+  "en": "Hello,",
+  "it": "Buongiorno,",
+  "h": "11b966b74a"
+ },
+ {
+  "id": "sablona:orders.py:potvrzeni_uvod",
+  "typ": "text",
+  "cs": "děkujeme za Vaši objednávku {order_number}. Aktuální stav: {status}.",
+  "en": "thank you for your order {order_number}. Current status: {status}.",
+  "it": "grazie per il Suo ordine {order_number}. Stato attuale: {status}.",
+  "h": "e2776fad4b"
+ },
+ {
+  "id": "sablona:orders.py:potvrzeni_polozky",
+  "typ": "text",
+  "cs": "Položky objednávky:",
+  "en": "Order items:",
+  "it": "Articoli dell'ordine:",
+  "h": "16fefd7cc0"
+ },
+ {
+  "id": "sablona:orders.py:potvrzeni_radek",
+  "typ": "text",
+  "cs": "- {name} × {qty} {unit}{unit_note} = {line_total} Kč",
+  "en": "- {name} × {qty} {unit}{unit_note} = {line_total}",
+  "it": "- {name} × {qty} {unit}{unit_note} = {line_total}",
+  "h": "8ca05e25e5"
+ },
+ {
+  "id": "sablona:orders.py:jednotka_ks",
+  "typ": "text",
+  "cs": "ks",
+  "en": "pcs",
+  "it": "pz",
+  "h": "10133f797b"
+ },
+ {
+  "id": "sablona:orders.py:potvrzeni_celkem",
+  "typ": "text",
+  "cs": "Celkem: {total} Kč",
+  "en": "Total: {total}",
+  "it": "Totale: {total}",
+  "h": "bb060e7691"
+ },
+ {
+  "id": "sablona:orders.py:potvrzeni_nedostatek",
+  "typ": "text",
+  "cs": "Upozorňujeme, že u níže uvedených položek aktuálně nemáme dostatek skladu. Doobjednáváme je u dodavatele a přesný termín dodání Vám upřesníme v nejbližší době:",
+  "en": "Please note that we do not currently have sufficient stock of the items listed below. We are reordering them from our supplier and will confirm the exact delivery date to you shortly:",
+  "it": "Desideriamo informarLa che per gli articoli indicati di seguito al momento non abbiamo disponibilità sufficiente a magazzino. Li stiamo riordinando dal fornitore e Le comunicheremo a breve la data di consegna esatta:",
+  "h": "828f0fbbbd"
+ },
+ {
+  "id": "sablona:orders.py:potvrzeni_dalsi_kroky",
+  "typ": "text",
+  "cs": "Ozveme se Vám s dalšími kroky.",
+  "en": "We will be in touch with you regarding the next steps.",
+  "it": "La contatteremo per i prossimi passaggi.",
+  "h": "54006f7769"
+ },
+ {
+  "id": "sablona:orders.py:podpis",
+  "typ": "text",
+  "cs": "S pozdravem,",
+  "en": "Kind regards,",
+  "it": "Cordiali saluti,",
+  "h": "222675886b"
+ },
+ {
+  "id": "sablona:orders.py:stav_predmet",
+  "typ": "text",
+  "cs": "Změna stavu objednávky {order_number}",
+  "en": "Status change for order {order_number}",
+  "it": "Variazione dello stato dell'ordine {order_number}",
+  "h": "024701365b"
+ },
+ {
+  "id": "sablona:orders.py:stav_text",
+  "typ": "text",
+  "cs": "stav Vaší objednávky {order_number} se změnil na: {status}.",
+  "en": "the status of your order {order_number} has changed to: {status}.",
+  "it": "lo stato del Suo ordine {order_number} è cambiato in: {status}.",
+  "h": "c33c7b7cfb"
+ },
+ {
+  "id": "sablona:orders.py:stav:nova",
+  "typ": "text",
+  "cs": "Nová",
+  "en": "New",
+  "it": "Nuovo",
+  "h": "165704aa44"
+ },
+ {
+  "id": "sablona:orders.py:stav:potvrzena",
+  "typ": "text",
+  "cs": "Potvrzená",
+  "en": "Confirmed",
+  "it": "Confermato",
+  "h": "25d66dc538"
+ },
+ {
+  "id": "sablona:orders.py:stav:ceka_na_zbozi",
+  "typ": "text",
+  "cs": "Čeká na zboží",
+  "en": "Awaiting goods",
+  "it": "In attesa della merce",
+  "h": "128a2f585a"
+ },
+ {
+  "id": "sablona:orders.py:stav:pripravit",
+  "typ": "text",
+  "cs": "Připravit",
+  "en": "To prepare",
+  "it": "Da preparare",
+  "h": "2a5cf2d0ce"
+ },
+ {
+  "id": "sablona:orders.py:stav:expedovana",
+  "typ": "text",
+  "cs": "Expedovaná",
+  "en": "Dispatched",
+  "it": "Spedito",
+  "h": "5dbd1d8d5d"
+ },
+ {
+  "id": "sablona:orders.py:stav:fakturovana",
+  "typ": "text",
+  "cs": "Fakturovaná",
+  "en": "Invoiced",
+  "it": "Fatturato",
+  "h": "65529d6e3c"
+ },
+ {
+  "id": "sablona:orders.py:stav:zrusena",
+  "typ": "text",
+  "cs": "Zrušená",
+  "en": "Cancelled",
+  "it": "Annullato",
+  "h": "950ea01483"
+ },
+ {
+  "id": "sablona:emails.py:doklad_predmet",
+  "typ": "text",
+  "cs": "{label} č. {document_number} - objednávka {order_number}",
+  "en": "{label} no. {document_number} - order {order_number}",
+  "it": "{label} n. {document_number} - ordine {order_number}",
+  "h": "1a16ca23d4"
+ },
+ {
+  "id": "sablona:emails.py:pozdrav_jmeno",
+  "typ": "text",
+  "cs": "Dobrý den, {first_name},",
+  "en": "Hello {first_name},",
+  "it": "Buongiorno {first_name},",
+  "h": "c8ab4201fb"
+ },
+ {
+  "id": "sablona:emails.py:doklad_uvod",
+  "typ": "text",
+  "cs": "v příloze Vám zasíláme {label_lower} č. {document_number} k objednávce č. {order_number}.",
+  "en": "please find attached {label_lower} no. {document_number} for order no. {order_number}.",
+  "it": "in allegato troverà il seguente documento: {label_lower} n. {document_number}, relativo all'ordine n. {order_number}.",
+  "h": "f64a69c73a"
+ },
+ {
+  "id": "sablona:emails.py:doklad_k_uhrade",
+  "typ": "text",
+  "cs": "K úhradě: {amount_due}",
+  "en": "Amount due: {amount_due}",
+  "it": "Importo da pagare: {amount_due}",
+  "h": "22c5ffd724"
+ },
+ {
+  "id": "sablona:emails.py:doklad_splatnost",
+  "typ": "text",
+  "cs": ", splatnost do {due_date}.",
+  "en": ", payable by {due_date}.",
+  "it": ", scadenza: {due_date}.",
+  "h": "7203b12d43"
+ },
+ {
+  "id": "sablona:emails.py:doklad_zaloha_neplatit",
+  "typ": "text",
+  "cs": "Tento doklad slouží pouze jako potvrzení přijaté platby - prosím NEPLAŤTE jej.",
+  "en": "This document serves only as confirmation of the payment received - please DO NOT pay it.",
+  "it": "Questo documento costituisce solo conferma del pagamento ricevuto - si prega di NON pagarlo.",
+  "h": "d3b34d0236"
+ },
+ {
+  "id": "sablona:emails.py:doklad_dodaci_list",
+  "typ": "text",
+  "cs": "Zásilka byla předána k expedici - v příloze najdete dodací list s přehledem dodaných položek.",
+  "en": "The shipment has been handed over for dispatch - the delivery note with an overview of the delivered items is attached.",
+  "it": "La spedizione è stata consegnata per l'invio - in allegato trova il documento di trasporto con l'elenco degli articoli consegnati.",
+  "h": "a18b6b6d11"
+ },
+ {
+  "id": "sablona:emails.py:potvrzeni_predmet",
+  "typ": "text",
+  "cs": "Potvrzení objednávky č. {order_number} - LOGIMAN s.r.o.",
+  "en": "Order confirmation no. {order_number} - LOGIMAN s.r.o.",
+  "it": "Conferma d'ordine n. {order_number} - LOGIMAN s.r.o.",
+  "h": "045a07b460"
+ },
+ {
+  "id": "sablona:emails.py:potvrzeni_uvod",
+  "typ": "text",
+  "cs": "děkujeme za Vaši objednávku č. {order_number}.",
+  "en": "thank you for your order no. {order_number}.",
+  "it": "grazie per il Suo ordine n. {order_number}.",
+  "h": "53cd5c3ceb"
+ },
+ {
+  "id": "sablona:emails.py:potvrzeni_radek",
+  "typ": "text",
+  "cs": "- {name} × {qty} ks{unit_note} = {line_total}",
+  "en": "- {name} × {qty} pcs{unit_note} = {line_total}",
+  "it": "- {name} × {qty} pz{unit_note} = {line_total}",
+  "h": "af10bff986"
+ },
+ {
+  "id": "sablona:emails.py:potvrzeni_celkem",
+  "typ": "text",
+  "cs": "Celkem: {total}",
+  "en": "Total: {total}",
+  "it": "Totale: {total}",
+  "h": "45eed3284f"
+ },
+ {
+  "id": "sablona:documents.py:typ:proforma_invoice",
+  "typ": "text",
+  "cs": "Zálohová faktura",
+  "en": "Proforma invoice",
+  "it": "Fattura proforma",
+  "h": "605281c523"
+ },
+ {
+  "id": "sablona:documents.py:typ:payment_tax_document",
+  "typ": "text",
+  "cs": "Daňový doklad k přijaté platbě",
+  "en": "Payment receipt (tax document)",
+  "it": "Documento fiscale per pagamento ricevuto",
+  "h": "ff855fda62"
+ },
+ {
+  "id": "sablona:documents.py:typ:invoice",
+  "typ": "text",
+  "cs": "Faktura - Daňový doklad",
+  "en": "Invoice - Tax document",
+  "it": "Fattura - Documento fiscale",
+  "h": "d0dec33796"
+ },
+ {
+  "id": "sablona:documents.py:typ:delivery_note",
+  "typ": "text",
+  "cs": "Dodací list",
+  "en": "Delivery note",
+  "it": "Documento di trasporto",
+  "h": "87648f745a"
+ },
+ {
+  "id": "sablona:documents.py:typ:credit_note",
+  "typ": "text",
+  "cs": "Dobropis",
+  "en": "Credit note",
+  "it": "Nota di credito",
+  "h": "d8a506c27e"
+ },
+ {
+  "id": "sablona:documents.py:pdf:dodavatel",
+  "typ": "text",
+  "cs": "Dodavatel:",
+  "en": "Supplier:",
+  "it": "Fornitore:",
+  "h": "c417268916"
+ },
+ {
+  "id": "sablona:documents.py:pdf:prijemce",
+  "typ": "text",
+  "cs": "Příjemce:",
+  "en": "Recipient:",
+  "it": "Destinatario:",
+  "h": "e971b79cae"
+ },
+ {
+  "id": "sablona:documents.py:pdf:odesilatel",
+  "typ": "text",
+  "cs": "Odesílatel:",
+  "en": "Sender:",
+  "it": "Mittente:",
+  "h": "4b79b6eae7"
+ },
+ {
+  "id": "sablona:documents.py:pdf:dorucovaci_adresa",
+  "typ": "text",
+  "cs": "Doručovací adresa: {address}",
+  "en": "Delivery address: {address}",
+  "it": "Indirizzo di consegna: {address}",
+  "h": "50b6e37dd6"
+ },
+ {
+  "id": "sablona:documents.py:pdf:ico",
+  "typ": "text",
+  "cs": "IČ: {ico}",
+  "en": "Company reg. no.: {ico}",
+  "it": "N. registro imprese: {ico}",
+  "h": "e79d8cd4af"
+ },
+ {
+  "id": "sablona:documents.py:pdf:dic",
+  "typ": "text",
+  "cs": "DIČ: {dic}",
+  "en": "VAT ID: {dic}",
+  "it": "Partita IVA: {dic}",
+  "h": "f3b64bc38f"
+ },
+ {
+  "id": "sablona:documents.py:pdf:tel",
+  "typ": "text",
+  "cs": "Tel: {phone}",
+  "en": "Tel: {phone}",
+  "it": "Tel: {phone}",
+  "h": "78c64905e9"
+ },
+ {
+  "id": "sablona:documents.py:pdf:email",
+  "typ": "text",
+  "cs": "E-mail: {email}",
+  "en": "E-mail: {email}",
+  "it": "E-mail: {email}",
+  "h": "221b48f209"
+ },
+ {
+  "id": "sablona:documents.py:pdf:cislo_uctu",
+  "typ": "text",
+  "cs": "Číslo účtu: {bank_account}",
+  "en": "Account number: {bank_account}",
+  "it": "Numero di conto: {bank_account}",
+  "h": "2ec4d46340"
+ },
+ {
+  "id": "sablona:documents.py:pdf:variabilni_symbol",
+  "typ": "text",
+  "cs": "Variabilní symbol: {variable_symbol}",
+  "en": "Variable symbol (payment reference): {variable_symbol}",
+  "it": "Simbolo variabile (causale di pagamento): {variable_symbol}",
+  "h": "f7c9c813a7"
+ },
+ {
+  "id": "sablona:documents.py:pdf:forma_uhrady",
+  "typ": "text",
+  "cs": "Forma úhrady: {payment_method_label}",
+  "en": "Payment method: {payment_method_label}",
+  "it": "Modalità di pagamento: {payment_method_label}",
+  "h": "d13cdb4b22"
+ },
+ {
+  "id": "sablona:documents.py:pdf:datum_vystaveni",
+  "typ": "text",
+  "cs": "Datum vystavení: {issue_date}",
+  "en": "Issue date: {issue_date}",
+  "it": "Data di emissione: {issue_date}",
+  "h": "b6c7f67611"
+ },
+ {
+  "id": "sablona:documents.py:pdf:datum_splatnosti",
+  "typ": "text",
+  "cs": "Datum splatnosti: {due_date}",
+  "en": "Due date: {due_date}",
+  "it": "Data di scadenza: {due_date}",
+  "h": "906a908738"
+ },
+ {
+  "id": "sablona:documents.py:pdf:datum_zdanitelneho_plneni",
+  "typ": "text",
+  "cs": "Datum zdanitelného plnění",
+  "en": "Date of taxable supply",
+  "it": "Data dell'operazione imponibile",
+  "h": "17867b5be4"
+ },
+ {
+  "id": "sablona:documents.py:pdf:datum_dodani",
+  "typ": "text",
+  "cs": "Datum dodání",
+  "en": "Delivery date",
+  "it": "Data di consegna",
+  "h": "be31026eba"
+ },
+ {
+  "id": "sablona:documents.py:pdf:cislo_objednavky",
+  "typ": "text",
+  "cs": "Číslo objednávky: {reference}",
+  "en": "Order number: {reference}",
+  "it": "Numero d'ordine: {reference}",
+  "h": "bb2bdd36ef"
+ },
+ {
+  "id": "sablona:documents.py:pdf:polozka",
+  "typ": "text",
+  "cs": "Položka",
+  "en": "Item",
+  "it": "Articolo",
+  "h": "9c801d7faf"
+ },
+ {
+  "id": "sablona:documents.py:pdf:polozky_dodavky",
+  "typ": "text",
+  "cs": "Položky dodávky",
+  "en": "Delivery items",
+  "it": "Articoli consegnati",
+  "h": "b12f0f30fb"
+ },
+ {
+  "id": "sablona:documents.py:pdf:mnozstvi",
+  "typ": "text",
+  "cs": "Množství",
+  "en": "Quantity",
+  "it": "Quantità",
+  "h": "6c0c4b3314"
+ },
+ {
+  "id": "sablona:documents.py:pdf:cena_za_mj",
+  "typ": "text",
+  "cs": "Cena za m.j.",
+  "en": "Unit price",
+  "it": "Prezzo unitario",
+  "h": "5fec3aa9ea"
+ },
+ {
+  "id": "sablona:documents.py:pdf:cena",
+  "typ": "text",
+  "cs": "Cena",
+  "en": "Price",
+  "it": "Prezzo",
+  "h": "88702fbea4"
+ },
+ {
+  "id": "sablona:documents.py:pdf:cena_celkem",
+  "typ": "text",
+  "cs": "Cena celkem",
+  "en": "Total price",
+  "it": "Prezzo totale",
+  "h": "a01df96e34"
+ },
+ {
+  "id": "sablona:documents.py:pdf:cena_bez_dph",
+  "typ": "text",
+  "cs": "Cena bez DPH",
+  "en": "Price excl. VAT",
+  "it": "Prezzo IVA esclusa",
+  "h": "f185a5629e"
+ },
+ {
+  "id": "sablona:documents.py:pdf:celkova_cena_vc_dph",
+  "typ": "text",
+  "cs": "Celková cena vč. DPH",
+  "en": "Total price incl. VAT",
+  "it": "Prezzo totale IVA inclusa",
+  "h": "2c15886ef6"
+ },
+ {
+  "id": "sablona:documents.py:pdf:celkem_vc_dph",
+  "typ": "text",
+  "cs": "Celkem vč. DPH",
+  "en": "Total incl. VAT",
+  "it": "Totale IVA inclusa",
+  "h": "1ce4565292"
+ },
+ {
+  "id": "sablona:documents.py:pdf:celkem",
+  "typ": "text",
+  "cs": "Celkem",
+  "en": "Total",
+  "it": "Totale",
+  "h": "e80c88bd3f"
+ },
+ {
+  "id": "sablona:documents.py:pdf:dph_procenta",
+  "typ": "text",
+  "cs": "DPH %",
+  "en": "VAT %",
+  "it": "IVA %",
+  "h": "6c2f831a99"
+ },
+ {
+  "id": "sablona:documents.py:pdf:dph",
+  "typ": "text",
+  "cs": "DPH",
+  "en": "VAT",
+  "it": "IVA",
+  "h": "6463f104ce"
+ },
+ {
+  "id": "sablona:documents.py:pdf:bez_dph",
+  "typ": "text",
+  "cs": "bez DPH",
+  "en": "excl. VAT",
+  "it": "IVA esclusa",
+  "h": "cea7774a90"
+ },
+ {
+  "id": "sablona:documents.py:pdf:sazba_dph",
+  "typ": "text",
+  "cs": "Sazba DPH",
+  "en": "VAT rate",
+  "it": "Aliquota IVA",
+  "h": "f4a64a26ee"
+ },
+ {
+  "id": "sablona:documents.py:pdf:soucet_dph",
+  "typ": "text",
+  "cs": "Součet DPH:",
+  "en": "VAT total:",
+  "it": "Totale IVA:",
+  "h": "cde8cdc3de"
+ },
+ {
+  "id": "sablona:documents.py:pdf:shrnuti",
+  "typ": "text",
+  "cs": "Shrnutí",
+  "en": "Summary",
+  "it": "Riepilogo",
+  "h": "856bb6313e"
+ },
+ {
+  "id": "sablona:documents.py:pdf:zaokrouhleni",
+  "typ": "text",
+  "cs": "Zaokrouhlení",
+  "en": "Rounding",
+  "it": "Arrotondamento",
+  "h": "fbf58b9428"
+ },
+ {
+  "id": "sablona:documents.py:pdf:vyse_zalohy",
+  "typ": "text",
+  "cs": "Výše zálohy",
+  "en": "Advance amount",
+  "it": "Importo dell'acconto",
+  "h": "8bea910cbe"
+ },
+ {
+  "id": "sablona:documents.py:pdf:uhrazena_zaloha",
+  "typ": "text",
+  "cs": "Uhrazená záloha - Kód: {advance_document_number}",
+  "en": "Advance paid - Code: {advance_document_number}",
+  "it": "Acconto versato - Codice: {advance_document_number}",
+  "h": "57a7f6a9e9"
+ },
+ {
+  "id": "sablona:documents.py:pdf:k_zaplaceni",
+  "typ": "text",
+  "cs": "K ZAPLACENÍ",
+  "en": "AMOUNT DUE",
+  "it": "IMPORTO DA PAGARE",
+  "h": "a1ee586d89"
+ },
+ {
+  "id": "sablona:documents.py:pdf:neplatte",
+  "typ": "text",
+  "cs": "NEPLAŤTE!",
+  "en": "DO NOT PAY!",
+  "it": "NON PAGARE!",
+  "h": "d7ac14cd3d"
+ },
+ {
+  "id": "sablona:documents.py:pdf:vydal",
+  "typ": "text",
+  "cs": "Vydal:",
+  "en": "Issued by:",
+  "it": "Emesso da:",
+  "h": "f5e030441a"
+ },
+ {
+  "id": "sablona:documents.py:pdf:vystavil",
+  "typ": "text",
+  "cs": "Vystavil: {issued_by}",
+  "en": "Prepared by: {issued_by}",
+  "it": "Redatto da: {issued_by}",
+  "h": "1de9f63eb0"
+ },
+ {
+  "id": "sablona:documents.py:pdf:prevzal",
+  "typ": "text",
+  "cs": "Převzal(a):",
+  "en": "Received by:",
+  "it": "Ricevuto da:",
+  "h": "b539a1bc01"
+ },
+ {
+  "id": "sablona:documents.py:pdf:podpis_datum",
+  "typ": "text",
+  "cs": "podpis, datum",
+  "en": "signature, date",
+  "it": "firma, data",
+  "h": "de34cbe172"
+ },
+ {
+  "id": "sablona:documents.py:pdf:paticka",
+  "typ": "text",
+  "cs": "Vystaveno systémem konfigurátoru logiman.cz",
+  "en": "Issued by the logiman.cz system",
+  "it": "Emesso dal sistema logiman.cz",
+  "h": "ea50fa8b85"
+ }
+]

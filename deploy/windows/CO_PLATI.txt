@@ -1,0 +1,19 @@
+﻿CO V TE SLOZCE PLATI  (aktualizovano 2026-10-01)
+
+NA NOTEBOOKU (Omen), aby se na nem renderovaly online nabidky:
+  1. Stahni SPUSTIT_AGENTA_NOTEBOOK.bat, render_worker_agent_2026-08-11_1455.py A NAINSTALOVAT_SLUZBU.bat
+     do JEDNE slozky na notebooku (stare kopie prepis). NAINSTALOVAT_SLUZBU.bat NESPOUSTEJ - spoustec si z nej
+     jen precte token (kdyz ho tam nenajde, zepta se na nej; token je v tom souboru na radku set "RENDER_WORKER_TOKEN=...").
+     Nazev agenta je historicky - uvnitr je nejnovejsi verze 2026-09-29b. Jiny agent nepouzivej.
+  2. Spust SPUSTIT_AGENTA_NOTEBOOK.bat a nech okno otevrene. Vic nic.
+  Na notebooku musi byt Blender 5.2 nebo novejsi.
+  Kdyz agent nebezi, jdou nabidky na Logiman2 - nic se nerozbije.
+
+DALSI SOUBORY:
+  NAINSTALOVAT_SLUZBU.bat   - nepovinne: agent jako sluzba Windows (startuje sam po zapnuti, bez okna).
+                              Takhle bezi Logiman2. Na notebooku jen kdyz nechces mit otevrene okno.
+  ODINSTALOVAT_PROTOKOL.bat - spust jednou na PC, kde naskakuje cerne okno "RenderAgent"
+                              (odebere stary odkaz logimanrender://, ktery ho pousti dokola).
+  VYPNOUT_HLASKY.bat        - zachrana: kdyz okno agenta naskakuje samo pri startu Windows
+                              (zrusi stare naplanovane ulohy a zastupce ve slozce Po spusteni).
+  Slozka STARE - nepouzivat - starsi verze agenta (2026-09-09c). Nepouzivat.

@@ -1,0 +1,41 @@
+.lux-overlay{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:4;font:13px/1.4 system-ui,sans-serif;color:#eaf8ff}
+.lux-hud{position:absolute;left:18px;top:18px;max-width:min(330px,calc(100% - 36px));padding:12px 16px;background:rgba(11,25,36,.88);border:1px solid #487d85;border-radius:12px;box-shadow:0 8px 30px #0004;z-index:2;box-sizing:border-box;overflow-wrap:anywhere}
+.lux-hud strong,.lux-hud small,.lux-main-number{display:block}.lux-hud small{color:#cfdee8;font-size:11px;margin-top:4px}.lux-main-number{font-size:26px;font-weight:700;color:#87edcc;margin:5px 0}
+.lux-point{position:absolute;transform:translate(-50%,-50%);font-size:12px;white-space:nowrap;padding:4px 8px;border-radius:20px;background:#142b39e8;border:1px solid #65d7b6;color:#fff;box-shadow:0 3px 10px #0005}
+.lux-hover{position:absolute;right:14px;top:14px;max-height:calc(100% - 28px);width:min(390px,calc(100% - 28px));box-sizing:border-box;padding:12px 14px;overflow-y:auto;overscroll-behavior:contain;pointer-events:auto;background:rgba(14,31,44,.9);backdrop-filter:blur(12px);border:1px solid #72dfbf;border-radius:14px;box-shadow:0 10px 40px #0005;z-index:3;overflow-wrap:anywhere}
+.lux-hover>strong{display:block;padding-right:24px;line-height:1.3}.lux-light-setting{color:#87edcc;font-weight:700;margin:3px 0}.lux-close{float:right;width:28px;height:28px;border:0;border-radius:5px;background:#ffffff18;color:#fff;font-size:20px;cursor:pointer}
+.lux-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:5px 0}.lux-metrics strong{display:block;font-size:17px;font-variant-numeric:tabular-nums;color:#87edcc}
+.lux-norms,.lux-details{font-size:11px;margin:6px 0;pointer-events:auto}.lux-norms summary,.lux-details summary{cursor:pointer;color:#a6f2db;padding:4px 0}.lux-norms a{display:block;color:#a6f2db;margin:5px 0}.lux-norms p{margin:6px 0}.lux-norms-caption{color:#c7dfda}.lux-hud{max-height:calc(100% - 36px);overflow:auto}.lux-hud .lux-norms a{color:#a6f2db}
+.lux-hover>.lux-task{padding:4px 0}.lux-best-task{border-left:3px solid #87edcc;padding-left:8px!important;background:#65d7b610}.lux-best-task>small:last-child{color:#87edcc}.lux-hover .lux-note{margin:6px 0}
+.lux-specifications{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:5px 10px;margin:10px 0;font-size:12px}.lux-specifications dt{color:#bed0db}.lux-specifications dd{margin:0;font-variant-numeric:tabular-nums}
+.lux-panel-title{font-weight:700;margin:8px 0}.lux-hover small{display:block;font-size:11px;color:#d0dee5}.lux-hover a{color:#a6f2db;text-decoration:underline}.lux-note{font-size:12px;color:#e5d6ac}.lux-task{padding:8px 0;border-top:1px solid #ffffff25}.lux-task small{margin-top:3px}
+.lux-overlay [hidden]{display:none!important}
+@media(max-width:600px){.lux-hud{top:8px;left:8px;padding:8px 10px;max-width:min(290px,calc(100% - 16px));max-height:calc(100% - 16px)}.lux-main-number{font-size:20px}.lux-point{font-size:10px;padding:3px 5px}.lux-hover{top:8px;right:8px;width:calc(100% - 16px);max-height:calc(100% - 16px);font-size:12px}.lux-metrics strong{font-size:15px}}
+/* Panel v3: slovní verdikt, dvě skupiny, žádná široká tabulka. */
+.lux-hover{width:min(540px,calc(100% - 28px));overflow-x:hidden;font-size:13px;line-height:1.45;background:rgba(14,31,44,.96)}
+.lux-hover *{box-sizing:border-box;min-width:0;max-width:100%}
+.lux-hover .lux-close{position:sticky;top:0;z-index:1;background:#233e4a;min-width:32px;min-height:32px;margin-left:8px;line-height:1;max-width:32px}
+.lux-verdict{padding:10px 12px;margin:0 0 12px;border:1px solid #5a7f8c;border-radius:8px;background:#ffffff06;font-size:15px}
+.lux-verdict-lead{display:block;font-size:12px;margin-bottom:3px;color:#d0dee5}
+.lux-verdict strong{display:block;line-height:1.5;padding-right:20px}
+.lux-pass-text,.lux-pass-group>.lux-group-title{color:#a2efcb}.lux-fail-text,.lux-fail-group>.lux-group-title{color:#ffb9b1}
+.lux-metrics{gap:8px;grid-template-columns:repeat(3,minmax(0,1fr))}.lux-metrics>div{min-width:0}.lux-metrics small{overflow-wrap:anywhere;white-space:normal}.lux-metrics strong{white-space:normal;font-size:19px}
+.lux-comparison-scope,.lux-uniformity-help{font-size:12px;margin:6px 0 10px;color:#d0dee5}
+.lux-activity-group{margin:12px 0;border:1px solid #4b716c;border-radius:8px;overflow:hidden;background:#72dfbf04}
+.lux-fail-group{border-color:#8c5753;background:#ffb9b104}
+.lux-group-title{padding:10px 12px;margin:0;font-size:15px;background:#ffffff06}
+.lux-group-empty{margin:0;padding:10px 12px;font-size:12px;color:#d0dee5}
+.lux-activity-group .lux-task{padding:12px;margin:0;border-top:1px solid #ffffff1c}
+.lux-task-name{font-size:14px;margin:0 0 7px;line-height:1.4}
+.lux-task-values{display:grid;grid-template-columns:86px minmax(0,1fr);gap:4px 8px;margin:0;font-size:12px}
+.lux-task-values dt{color:#adc3cf}.lux-task-values dd{margin:0;color:#edf5f8;font-variant-numeric:tabular-nums}
+.lux-task-reason{margin:8px 0 0;font-size:12px;color:#eaf8ff}
+.lux-task-help{font-size:12px;color:#f4dda9;margin:7px 0 0;padding-left:9px;border-left:2px solid #d0b574}
+.lux-task-source{margin-top:8px;color:#b3c8d4!important}.lux-highest{color:#a2efcb!important}
+.lux-open-panel{margin-top:9px;padding:7px 10px;white-space:normal;font:600 12px/1.4 system-ui,sans-serif;background:#1c3c43;color:#a2efcb;border:1px solid #72dfbf;border-radius:6px;cursor:pointer;pointer-events:auto}
+.lux-open-panel:focus-visible,.lux-close:focus-visible{outline:2px solid #a2efcb;outline-offset:2px}
+@media(max-width:600px){.lux-hover{right:8px;top:8px;width:calc(100% - 16px);padding:10px;max-height:calc(100% - 16px)}.lux-metrics{grid-template-columns:repeat(2,minmax(0,1fr));gap:5px 12px}.lux-metrics>div:last-child{grid-column:1/-1;display:flex;gap:10px;align-items:baseline}.lux-metrics strong{font-size:18px}.lux-verdict{font-size:14px}.lux-task-values{grid-template-columns:1fr;gap:1px}.lux-task-values dd{margin-bottom:5px}.lux-task-name{font-size:13px}}
+
+.stl-lux-compact .lux-hud{display:flex;flex-direction:column;overflow-y:auto;overflow-x:hidden}.stl-lux-compact .lux-hud .lux-open-panel{order:-1;margin-top:0;margin-bottom:6px}
+
+.lux-hover h2.lux-panel-title{font-size:16px;line-height:1.35}.lux-hover{overflow-anchor:none}
