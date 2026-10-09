@@ -1,0 +1,19 @@
+{
+ "sku": "4932498323",
+ "pohled": "celo-madlo-primo",
+ "foto_repo_cesta": "kufriky_john/fotky/4932498323/c04.jpg",
+ "foto_url": "https://static.milwaukeetool.eu/remote.axd/milwaukee-media-images.s3.amazonaws.com/hi/4932498323--Hero_4.jpg?v=FFD8FE973EFD0F6DD9F9D5B826210F57&width=1200",
+ "pose": {},
+ "kamera": {
+  "azim": 1.6757719354229006,
+  "elev": 6.003562527973671,
+  "roll": -0.11245186388677623,
+  "dist": 2479.5400401844317,
+  "shiftX": 0.007438453664690257,
+  "shiftY": -0.01087220221989984,
+  "fov": 14,
+  "iou": 0.9888536733022328
+ },
+ "iou": 0.9888536733022328,
+ "poznamka": "Kamera odhadnuta z obrysu fotografie (IoU); ohnisko je pevně zvolené, ne změřené."
+}

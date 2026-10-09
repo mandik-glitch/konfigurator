@@ -1,0 +1,19 @@
+{
+ "sku": "4932498323",
+ "pohled": "lezato-sikmo",
+ "foto_repo_cesta": "kufriky_john/fotky/4932498323/c05.jpg",
+ "foto_url": "https://static.milwaukeetool.eu/remote.axd/milwaukee-media-images.s3.amazonaws.com/hi/4932498323--Hero_5.jpg?v=499A980633965E52A34673BA5AD9F3EF&width=1200",
+ "pose": {},
+ "kamera": {
+  "azim": 29.52156117911422,
+  "elev": 21.630199465780994,
+  "roll": 0.7006284179261162,
+  "dist": 2788.4796970421694,
+  "shiftX": 0.01157209445337821,
+  "shiftY": -0.02163752491921572,
+  "fov": 14,
+  "iou": 0.9601364697432214
+ },
+ "iou": 0.9601364697432214,
+ "poznamka": "Kamera odhadnuta z obrysu fotografie (IoU); ohnisko je pevně zvolené, ne změřené."
+}

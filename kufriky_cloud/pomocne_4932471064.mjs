@@ -71,7 +71,10 @@ export function earcut(outer, holes = []) {
 export function flatFace(part, outer, holes, z, up = true) {
   const { pts, tris } = earcut(outer, holes);
   const base = pts.map(p => part.addV(p[0], p[1], z));
-  for (const [a, b, c] of tris) { if (up) part.addT(base[a], base[b], base[c]); else part.addT(base[a], base[c], base[b]); }
+  for (const [a, b, c] of tris) {
+    const A = pts[a], B = pts[b], C = pts[c]; if (Math.abs((B[0] - A[0]) * (C[1] - A[1]) - (B[1] - A[1]) * (C[0] - A[0])) < 1e-7) continue;   // žádné nulové plošky
+    if (up) part.addT(base[a], base[b], base[c]); else part.addT(base[a], base[c], base[b]);
+  }
   return part;
 }
 
@@ -130,3 +133,16 @@ export function prismHoles(mat, name, outer, holes, z0, z1) {
 // zrcadlení bodů polygonu (X nebo Y), vrací CCW
 export const mirrorPolyY = (P) => ccw(P.map(p => [p[0], -p[1]]));
 export const mirrorPolyX = (P) => ccw(P.map(p => [-p[0], p[1]]));
+
+// odstraní zdegenerované (nulová plocha) trojúhelníky z dílu
+export function cistiDil(part, eps = 1e-6) {
+  const P = part.pos, I = part.idx, out = [];
+  for (let t = 0; t < I.length; t += 3) {
+    const a = I[t], b = I[t + 1], c = I[t + 2];
+    const ux = P[3 * b] - P[3 * a], uy = P[3 * b + 1] - P[3 * a + 1], uz = P[3 * b + 2] - P[3 * a + 2];
+    const vx = P[3 * c] - P[3 * a], vy = P[3 * c + 1] - P[3 * a + 1], vz = P[3 * c + 2] - P[3 * a + 2];
+    if (Math.hypot(uy * vz - uz * vy, uz * vx - ux * vz, ux * vy - uy * vx) < eps) continue;
+    out.push(a, b, c);
+  }
+  const n = I.length / 3 - out.length / 3; part.idx = out; return n;
+}

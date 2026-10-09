@@ -1,0 +1,19 @@
+{
+ "sku": "4932471065",
+ "pohled": "spodek-c13",
+ "foto_repo_cesta": "kufriky_john/fotky/4932471065/c13.jpg",
+ "foto_url": "https://www.stavbaeu.sk/image/cache/data/productsdetail/D/DE_4932471065_3-800x800.jpg",
+ "pose": {},
+ "kamera": {
+  "azim": 180.3893305486912,
+  "elev": -81.04491018459373,
+  "roll": 0.6341229118687655,
+  "dist": 3089.5859266907664,
+  "shiftX": -0.009196703238742754,
+  "shiftY": -0.00140320840997765,
+  "fov": 8,
+  "iou": 0.9461737121109147
+ },
+ "iou": 0.9461737121109147,
+ "poznamka": "Kamera odhadnuta z obrysu fotografie (IoU); ohnisko je pevně zvolené, ne změřené."
+}

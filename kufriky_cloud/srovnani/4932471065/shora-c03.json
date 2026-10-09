@@ -1,0 +1,19 @@
+{
+ "sku": "4932471065",
+ "pohled": "shora-c03",
+ "foto_repo_cesta": "kufriky_john/fotky/4932471065/c03.jpg",
+ "foto_url": "https://static.milwaukeetool.eu/remote.axd/milwaukee-media-images.s3.amazonaws.com/hi/4932471065--Hero_3.jpg?v=85566297FE84D01A4A22B250AB8BB93A&width=1200",
+ "pose": {},
+ "kamera": {
+  "azim": 269.46367200583416,
+  "elev": 86.81894907676212,
+  "roll": 0.6948365921210784,
+  "dist": 3339.3030614068794,
+  "shiftX": -0.001064074412483157,
+  "shiftY": -0.0033317819128190398,
+  "fov": 8,
+  "iou": 0.9589038021277551
+ },
+ "iou": 0.9589038021277551,
+ "poznamka": "Kamera odhadnuta z obrysu fotografie (IoU); ohnisko je pevně zvolené, ne změřené."
+}

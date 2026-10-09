@@ -1,0 +1,23 @@
+{
+ "sku": "4932471065",
+ "pohled": "otevreny-c02",
+ "foto_repo_cesta": "kufriky_john/fotky/4932471065/c02.jpg",
+ "foto_url": "https://static.milwaukeetool.eu/remote.axd/milwaukee-media-images.s3.amazonaws.com/hi/4932471065--Hero_2.jpg?v=F42507B01C5B04C4B68AF9A30122347A&width=1200",
+ "pose": {
+  "vicko": 105,
+  "trmen_P": 150,
+  "trmen_L": 150
+ },
+ "kamera": {
+  "azim": 113.68120980525983,
+  "elev": 36.39335492126192,
+  "roll": -1.4859050122435806,
+  "dist": 5382.097987449622,
+  "shiftX": -0.043121916193223725,
+  "shiftY": 0.19111271720554832,
+  "fov": 8,
+  "iou": 0.9373339150438266
+ },
+ "iou": 0.9373339150438266,
+ "poznamka": "Kamera odhadnuta z obrysu fotografie (IoU); ohnisko je pevně zvolené, ne změřené."
+}

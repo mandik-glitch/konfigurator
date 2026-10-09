@@ -5,15 +5,16 @@
  "foto_url": "https://paulimot-sw6.b-cdn.net/media/85/d3/64/1741610800/000001638501paulimot_4932478625_Milwaukee_PACKOUT_Organiser_tief_1.jpg?ts=1741610800",
  "pose": {},
  "kamera": {
-  "azim": 27.171486866122958,
-  "elev": 16.545515121965206,
-  "roll": 0.01198342366496961,
-  "dist": 1997.0507559164726,
-  "shiftX": 0.009092963410243167,
-  "shiftY": -0.028074897908189695,
+  "azim": 27.525666010286415,
+  "elev": 16.74063089834638,
+  "dist": 1995.7460786393906,
+  "shiftX": 0.011353677039819356,
+  "shiftY": -0.028067241566611632,
   "fov": 12,
-  "iou": 0.9739289854681729
+  "roll": 0,
+  "ang": 0,
+  "iou": 0.9780059443393677
  },
- "iou": 0.9739289854681729,
+ "iou": 0.9780059443393677,
  "poznamka": "Kamera odhadnuta z obrysu fotografie (IoU); ohnisko je pevně zvolené, ne změřené."
 }

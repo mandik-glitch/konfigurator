@@ -67,7 +67,11 @@ export const pointInPoly = (p, P) => { let c = false; for (let i = 0, j = P.leng
 // extruze polygonu s otvory mezi z0 a z1 (horní/dolní víčko volitelně)
 export function extrude(mat, name, outer, holes = [], z0, z1, { top = true, bottom = true, crease } = {}) {
   const p = new Part(name, mat); if (crease !== undefined) p.crease = crease;
-  const O = ccw(outer), H = holes.map(cw);
+  const clean = (P) => { // odstranění duplicitních a téměř kolineárních bodů (triangulace je jinak vynechá → trhliny mezi víčkem a stěnou)
+    let Q = P.slice(), ch = true;
+    while (ch && Q.length > 3) { ch = false; for (let i = 0; i < Q.length; i++) { const a = Q[(i + Q.length - 1) % Q.length], b = Q[i], c = Q[(i + 1) % Q.length]; const cr = (b[0] - a[0]) * (c[1] - b[1]) - (b[1] - a[1]) * (c[0] - b[0]); const l = Math.hypot(c[0] - a[0], c[1] - a[1]) || 1; if (Math.hypot(b[0] - a[0], b[1] - a[1]) < 1e-4 || Math.abs(cr) / l < 2e-3) { Q.splice(i, 1); ch = true; break; } } }
+    return Q; };
+  const O = clean(ccw(outer)), H = holes.map(h => clean(cw(h)));
   const T = three();
   const all = [...O, ...H.flat()];
   const idxTop = [], idxBot = [];
@@ -155,4 +159,20 @@ export function clipPolyY(poly, y0, keepBelow = true) {
     if (ia !== ib) { const t = (y0 - a[1]) / (b[1] - a[1]); out.push([a[0] + t * (b[0] - a[0]), y0]); }
   }
   return out;
+}
+
+// ---------- odsazení zaobleného polygonu bez smyček ----------
+// pts = ostré vrcholy, rs = poloměry zaoblení; odsazení d>0 dovnitř: ostrý polygon se odsadí (miter), poloměry konvexních rohů se zmenší
+// (min. rMin), poloměry konkávních zvětší o d; pak se znovu zaoblí. Počet bodů je pro všechna d stejný (n úseků na roh).
+export function insetRounded(pts, rs, d, n = 6, rMin = 0.6) {
+  const Q = pts.slice(), R = rs.slice();
+  if (area2(Q) < 0) { Q.reverse(); R.reverse(); }
+  const m = Q.length, P2 = offsetPoly(Q, d), R2 = [];
+  for (let i = 0; i < m; i++) {
+    const a = Q[(i + m - 1) % m], b = Q[i], c = Q[(i + 1) % m];
+    const cr = (b[0] - a[0]) * (c[1] - b[1]) - (b[1] - a[1]) * (c[0] - b[0]);
+    const r = R[i] || 0;
+    R2.push(r <= 1e-6 ? 0 : cr > 0 ? Math.max(r - d, rMin) : r + d);
+  }
+  return roundPoly(P2, R2, n);
 }

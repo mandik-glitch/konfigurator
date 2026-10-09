@@ -5,15 +5,15 @@
  "foto_url": "https://www.stavbaeu.sk//image/cache/data/products/D/DE_4932471065_0-800x800.jpg",
  "pose": {},
  "kamera": {
-  "azim": 269.1669215427427,
-  "elev": 84.12968392260231,
-  "roll": 0.9919762970567816,
-  "dist": 2926.1465657839935,
-  "shiftX": 0.0007452766102180183,
-  "shiftY": -0.0020847271065044665,
+  "azim": 269.3275125759163,
+  "elev": 87.40899244996062,
+  "roll": 0.5000223059505762,
+  "dist": 2980.377058104182,
+  "shiftX": -0.000931812985101931,
+  "shiftY": -0.005166102006031284,
   "fov": 8,
-  "iou": 0.9512697933142583
+  "iou": 0.9608723771198621
  },
- "iou": 0.9512697933142583,
+ "iou": 0.9608723771198621,
  "poznamka": "Kamera odhadnuta z obrysu fotografie (IoU); ohnisko je pevně zvolené, ne změřené."
 }
