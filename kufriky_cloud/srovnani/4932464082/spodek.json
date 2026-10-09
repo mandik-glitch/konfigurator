@@ -1,0 +1,19 @@
+{
+ "sku": "4932464082",
+ "pohled": "spodek",
+ "foto_repo_cesta": "kufriky_john/fotky/4932464082/c08.jpg",
+ "foto_url": "https://www.tim.pl/media/wysiwyg/w360/0001-00018-63769/images/Photo007.jpg",
+ "pose": {},
+ "kamera": {
+  "azim": 1.70415471108931,
+  "elev": -85.34673679314366,
+  "roll": 1.6833216694221114,
+  "dist": 1538.098259956102,
+  "shiftX": -0.006373970751683789,
+  "shiftY": -0.02572478083684545,
+  "fov": 20.91223065634437,
+  "iou": 0.9728848680885475
+ },
+ "iou": 0.9728848680885475,
+ "poznamka": "Kamera odhadnuta z obrysu fotografie (IoU); ohnisko je pevně zvolené, ne změřené."
+}
