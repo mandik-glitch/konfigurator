@@ -12,8 +12,8 @@
   "shiftX": 0.014306025305690688,
   "shiftY": -0.00978629088736585,
   "fov": 24.67755249507396,
-  "iou": 0.9685268032336551
+  "iou": 0.9677225445611835
  },
- "iou": 0.9685268032336551,
+ "iou": 0.9677225445611835,
  "poznamka": "Kamera odhadnuta z obrysu fotografie (IoU); ohnisko je pevně zvolené, ne změřené."
 }
