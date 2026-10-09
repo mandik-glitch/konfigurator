@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="cs"><head><meta charset="utf-8"><title>render</title>
+<style>html,body{margin:0;background:#fff}canvas{display:block}</style>
+<script src="../vendor/three.min.js"></script></head>
+<body><script>
+// Vlastní prohlížeč pro kontrolní rendery GLB (cloud). Čte přímo GLB (vlastní parser), nepoužívá interní data generátoru.
+let renderer, scene, camera, root, envTex;
+function parseGLB(buf){
+  const dv=new DataView(buf); if(dv.getUint32(0,true)!==0x46546C67) throw new Error('GLB');
+  const jl=dv.getUint32(12,true); const gltf=JSON.parse(new TextDecoder().decode(new Uint8Array(buf,20,jl)));
+  const bin=buf.slice(20+jl+8);
+  const acc=i=>{const a=gltf.accessors[i],bv=gltf.bufferViews[a.bufferView];const o=(bv.byteOffset||0)+(a.byteOffset||0);const n={SCALAR:1,VEC3:3}[a.type];
+    return a.componentType===5126?new Float32Array(bin,o,a.count*n):new Uint32Array(bin,o,a.count*n);};
+  return {gltf,acc};
+}
+function buildNode(g,ni,mats,silhouette){
+  const n=g.gltf.nodes[ni]; const o=new THREE.Object3D(); o.name=n.name||''; o.userData=n.extras||{};
+  if(n.translation) o.position.set(...n.translation);
+  if(n.mesh!==undefined){
+    const prim=g.gltf.meshes[n.mesh].primitives[0]; const geo=new THREE.BufferGeometry();
+    geo.setAttribute('position',new THREE.BufferAttribute(g.acc(prim.attributes.POSITION),3));
+    geo.setAttribute('normal',new THREE.BufferAttribute(g.acc(prim.attributes.NORMAL),3));
+    geo.setIndex(new THREE.BufferAttribute(g.acc(prim.indices),1));
+    const m=mats[prim.material]; const mesh=new THREE.Mesh(geo,silhouette?new THREE.MeshBasicMaterial({color:0x000000}):m); mesh.name=n.name; mesh.userData.mat=g.gltf.materials[prim.material].name;
+    o.add(mesh);
+  }
+  for(const c of n.children||[]) o.add(buildNode(g,c,mats,silhouette));
+  return o;
+}
+function makeMats(gltf){
+  return gltf.materials.map(m=>{const p=m.pbrMetallicRoughness,c=p.baseColorFactor;
+    const mm=new THREE.MeshPhysicalMaterial({color:new THREE.Color(c[0],c[1],c[2]),metalness:p.metallicFactor,roughness:p.roughnessFactor,envMapIntensity:1.0,side:m.doubleSided?THREE.DoubleSide:THREE.FrontSide});
+    if(c[3]<1){mm.transparent=true;mm.opacity=c[3];mm.depthWrite=false;}
+    return mm;});
+}
+function makeEnv(){
+  const s=new THREE.Scene();
+  const geo=new THREE.SphereGeometry(50,32,16);
+  const cols=[];const pos=geo.attributes.position;
+  for(let i=0;i<pos.count;i++){const y=pos.getY(i)/50;const t=(y+1)/2;const c=new THREE.Color().setRGB(0.55+0.45*t,0.58+0.42*t,0.62+0.40*t);cols.push(c.r,c.g,c.b);}
+  geo.setAttribute('color',new THREE.Float32BufferAttribute(cols,3));
+  s.add(new THREE.Mesh(geo,new THREE.MeshBasicMaterial({vertexColors:true,side:THREE.BackSide})));
+  const lg=new THREE.BoxGeometry(30,2,30);const lm=new THREE.MeshBasicMaterial({color:0xffffff});
+  const l1=new THREE.Mesh(lg,lm);l1.position.set(0,45,0);s.add(l1);
+  const l2=new THREE.Mesh(new THREE.BoxGeometry(2,30,40),lm);l2.position.set(-45,10,0);s.add(l2);
+  const l3=new THREE.Mesh(new THREE.BoxGeometry(2,30,40),new THREE.MeshBasicMaterial({color:0xcfd6dc}));l3.position.set(45,5,10);s.add(l3);
+  const pm=new THREE.PMREMGenerator(renderer);const rt=pm.fromScene(s,0.02);envTex=rt.texture;pm.dispose();
+}
+window.init=function(w,h){
+  renderer=new THREE.WebGLRenderer({antialias:true,preserveDrawingBuffer:true});
+  renderer.setPixelRatio(1);renderer.setSize(w,h);renderer.outputEncoding=THREE.sRGBEncoding;
+  renderer.toneMapping=THREE.NoToneMapping;
+  document.body.appendChild(renderer.domElement);makeEnv();return true;
+};
+window.size=function(w,h){renderer.setSize(w,h);};
+window.load=function(b64,silhouette){
+  const bin=atob(b64);const u=new Uint8Array(bin.length);for(let i=0;i<bin.length;i++)u[i]=bin.charCodeAt(i);
+  const g=parseGLB(u.buffer);const mats=makeMats(g.gltf);
+  scene=new THREE.Scene();scene.background=new THREE.Color(0xffffff);
+  if(!silhouette){scene.environment=envTex;
+    const key=new THREE.DirectionalLight(0xffffff,1.05);key.position.set(300,-400,700);scene.add(key);
+    const fill=new THREE.DirectionalLight(0xffffff,0.35);fill.position.set(-500,200,200);scene.add(fill);}
+  root=new THREE.Group();scene.add(root);
+  for(const ni of g.gltf.scenes[g.gltf.scene].nodes)root.add(buildNode(g,ni,mats,silhouette));
+  return {nodes:g.gltf.nodes.length};
+};
+// pose: {jménoUzlu: úhel°} – otáčí kolem osy z extras.osa (pivot = počátek uzlu)
+window.pose=function(p){
+  root.traverse(o=>{o.rotation.set(0,0,0);});
+  root.traverse(o=>{const a=p[o.name];if(a!==undefined&&o.userData.osa){const ax=new THREE.Vector3(...o.userData.osa).normalize();o.quaternion.setFromAxisAngle(ax,a*Math.PI/180);}});
+};
+window.hide=function(names){root.traverse(o=>{if(o.isMesh||o.isObject3D)o.visible=!names.some(n=>o.name.startsWith(n));});};
+window.shot=function(c){
+  camera=new THREE.PerspectiveCamera(c.fov,renderer.domElement.width/renderer.domElement.height,c.near||5,c.far||20000);
+  camera.up.set(...(c.up||[0,0,1]));camera.position.set(...c.pos);camera.lookAt(new THREE.Vector3(...c.target));
+  if(c.roll){camera.rotateZ(c.roll*Math.PI/180);}
+  if(c.shiftX||c.shiftY){camera.setViewOffset(renderer.domElement.width,renderer.domElement.height,-(c.shiftX||0)*renderer.domElement.width,-(c.shiftY||0)*renderer.domElement.height,renderer.domElement.width,renderer.domElement.height);}
+  renderer.render(scene,camera);return true;
+};
+window.pixels=function(){const gl=renderer.getContext();const w=gl.drawingBufferWidth,h=gl.drawingBufferHeight;const px=new Uint8Array(w*h*4);gl.readPixels(0,0,w,h,gl.RGBA,gl.UNSIGNED_BYTE,px);
+  // maska: tmavé pixely (silueta) → 1 ; bez převrácení řádků vrací pole shora dolů
+  const m=new Uint8Array(w*h);for(let y=0;y<h;y++)for(let x=0;x<w;x++){const s=((h-1-y)*w+x)*4;m[y*w+x]=px[s]<128?1:0;}
+  let bin='';const CH=0x8000;for(let i=0;i<m.length;i+=CH)bin+=String.fromCharCode.apply(null,m.subarray(i,i+CH));return btoa(bin);};
+</script></body></html>
