@@ -3,7 +3,7 @@ import { Group, Part, rrPoly, roundPoly, ccw, loftSolid, ext, slab, rrShell, tra
 
 export const K = {
   zBot: 12, zChan: 20, yCh: 32,            // spodní plocha vany (nad patkami)
-  zRim: 108.5, yT: 239.5,           // horní okraj vany (stěny) – víko sedí na něm
+  zRim: 93.5, yT: 239.5,           // horní okraj černé vany = švík s víkem (z' 93,5; c11/c06); nádoby vyčnívají nad něj
   xF: 181, xR: -166.5,   // čelní a zadní vnější rovina vany
   yB: 233,             // polovina šířky vany (spodní deska / stěny u rohů)
   yBelt: 243.5,        // vnější plocha pásu na koncové stěně (nahoře)
@@ -17,23 +17,29 @@ const frontPoly = (xF, yE) => roundPoly([[Math.min(181, xF - 12), 184], [Math.mi
 // zadní patka (rektifikace spodního pohledu c08): max |y| = 250,4 v x = -147; zadní hrana x = xR; zkosení dole
 const rearPoly = (xR, yE) => roundPoly([[-122.5, 232.3], [-127.5, yE - 13], [-131.9, yE - 6.3], [-137.5, yE - 2.5], [-146.9, yE], [-161, yE - 0.4], [-170, yE - 1.4], [-181, yE - 4], [xR, yE - 4.4], [xR, 221], [xR + 8, 214], [xR + 13, 206], [xR + 19, 198.5], [-169.4, 186.6], [-140, 190]], [0, 3, 3, 3, 4, 2, 2, 3, 2, 2, 3, 3, 3, 0, 0], 3);
 
+// ořezané varianty (nad podlahou vany): nárazník nesmí zasahovat do vnitřku vany, kde stojí nádoby (x −162,1 … 151, |y| < 235,5)
+const yIn = 236.4;
+const frontPolyClip = (xF, yE) => roundPoly([[Math.min(181, xF - 12), 184], [Math.min(185.4, xF - 7.5), 184], [Math.min(185.4, xF - 7.5), 207], [xF, 220], [xF, 236], [Math.max(xF - 16.5, 163), yE], [160, yE], [150, yE - 6], [138, yIn], [158, yIn], [158, 196]], [0, 1.5, 2, 6, 3, 3, 3, 8, 1, 0, 0], 4);
+const rearPolyClip = (xR, yE) => roundPoly([[-125, yIn], [-127.5, yE - 13], [-131.9, yE - 6.3], [-137.5, yE - 2.5], [-146.9, yE], [-161, yE - 0.4], [-170, yE - 1.4], [-181, yE - 4], [xR, yE - 4.4], [xR, 221], [xR + 8, 214], [xR + 13, 206], [xR + 19, 198.5], [-169.4, 186.6], [-163.5, 190], [-163.5, yIn]], [0, 3, 3, 3, 4, 2, 2, 3, 2, 2, 3, 3, 3, 0, 0, 0], 3);
+// obrys zadního sloupku/čepice ve tvaru L (venku za zadní stěnou vany a za koncovou stěnou)
+const rearL = (x0, y0 = 207) => roundPoly([[x0, y0], [-163.5, y0], [-163.5, yIn], [-146, yIn], [-146, 250], [x0, 250]], [5, 0, 0, 0, 12, 5], 4);
+
 function narazniky(g) {
   const fl = [[15.5, 172, 240], [19.5, 176.5, 244], [22.5, 181.5, 247], [24, 189, 249], [25.5, 191.8, 250], [27, 192.9, 250], [40, 192.9, 250]];
   const flr = [[19, -166, 241], [21, -180, 243], [22.5, -184, 245], [24, -187, 247], [25.5, -190.2, 249.5], [27, -192.6, 250], [40, -192.6, 250]];
   const items = [];
-  items.push(loftSolid('cerna_mat', 'naraznik_patka', fl.map(([z, xF, yE]) => ({ poly: ccw(frontPoly(xF, yE)), z })), { crease: 40 }));
-  items.push(loftSolid('cerna_mat', 'naraznik_patka_z', flr.map(([z, xR, yE]) => ({ poly: ccw(rearPoly(xR, yE)), z })), { crease: 40 }));
+  const lo = r => r.filter(e => e[0] <= 22.5), up = r => r.filter(e => e[0] >= 22.5);
+  items.push(loftSolid('cerna_mat', 'naraznik_patka_dole', lo(fl).map(([z, xF, yE]) => ({ poly: ccw(frontPoly(xF, yE)), z })), { crease: 40 }));
+  items.push(loftSolid('cerna_mat', 'naraznik_patka', up(fl).map(([z, xF, yE]) => ({ poly: ccw(frontPolyClip(xF, yE)), z })), { crease: 40 }));
+  items.push(loftSolid('cerna_mat', 'naraznik_patka_z_dole', lo(flr).map(([z, xR, yE]) => ({ poly: ccw(rearPoly(xR, yE)), z })), { crease: 40 }));
+  items.push(loftSolid('cerna_mat', 'naraznik_patka_z', up(flr).map(([z, xR, yE]) => ({ poly: ccw(rearPolyClip(xR, yE)), z })), { crease: 40 }));
   // střední sloupek (mírně zapuštěný)
   items.push(slab('cerna_mat', 'naraznik_sloupek', { x0: 157, x1: 190.5, y0: 213, y1: 248.2, z0: 38, z1: 91, rs: [12, 4, 4, 3], seg: 4, reT: 0.5, reB: 0.5, fs: 1 }));
-  items.push(slab('cerna_mat', 'naraznik_sloupek_z', { x0: -192.6, x1: -146, y0: 207, y1: 248.2, z0: 38, z1: 99, rs: [4, 12, 4, 4], seg: 4, reT: 0.5, reB: 0.5, fs: 1 }));
-  // čepice: čelní se zaobleným temenem, zadní se šikmým temenem
+  items.push(ext('cerna_mat', 'naraznik_sloupek_z', ccw(roundPoly([[-192.6, 207], [-163.5, 207], [-163.5, yIn], [-146, yIn], [-146, 248.2], [-192.6, 248.2]], [4, 0, 0, 0, 4, 4], 3)), 38, 99));
+  // čepice: čelní se zaobleným temenem, zadní (tvar L) se šikmým temenem
   items.push(slab('cerna_mat', 'naraznik_cepice', { x0: 155, x1: 192, y0: 211, y1: 250, z0: 88, z1: 113, rs: [14, 5, 5, 4], seg: 4, reT: 8, reB: 1, fs: 5, kT: 1.7 }));
-  const zadni = loftSolid('cerna_mat', 'naraznik_cepice_z', [
-    { poly: ccw(rrPoly(-192.6, -146, 207, 250, [5, 14, 5, 5], 4)), z: 88 },
-    { poly: ccw(rrPoly(-192.6, -146, 207, 250, [5, 14, 5, 5], 4)), z: 99.5 },
-    { poly: ccw(rrPoly(-184, -146, 207, 250, [5, 14, 5, 5], 4)), z: 105 },
-    { poly: ccw(rrPoly(-174, -146, 207, 250, [5, 14, 5, 5], 4)), z: 112 }], { crease: 40 });
-  items.push(zadni);
+  items.push(loftSolid('cerna_mat', 'naraznik_cepice_z', [
+    { poly: ccw(rearL(-192.6)), z: 88 }, { poly: ccw(rearL(-192.6)), z: 99.5 }, { poly: ccw(rearL(-184)), z: 105 }, { poly: ccw(rearL(-174)), z: 112 }], { crease: 40 }));
   for (const it of items) { g.add(it); const m = it.clone(it.name + '_m'); m.mirror('y', 0); g.add(m); }
 }
 
@@ -67,25 +73,25 @@ function okna(g) {
 
 // ---------- vana ----------
 function vana(g) {
-  g.add(tray('cerna_mat', 'vana', { x0: K.xR, x1: K.xF, y0: -K.yT, y1: K.yT, z0: K.zChan, z1: K.zRim, rs: [10, 14, 14, 10], seg: 4, wall: 4, floor: 3, re: 3, fs: 3 }));
+  g.add(tray('cerna_mat', 'vana', { x0: K.xR, x1: K.xF, y0: -K.yT, y1: K.yT, z0: K.zChan, z1: K.zRim - 0.6, rs: [10, 14, 14, 10], seg: 4, wall: 4, floor: 3, re: 3, fs: 3 }));
   // spodní desky po obou stranách kanálu (z' 12..26); čelní hrana desky: x=179,4 u rohů, x=169,4 v zářezu pod západkou (|y| 118..185), x=181 u držadla
   const zonyY = [[K.yCh, 118, 181], [118, 185, 169.4], [185, K.yB, 179.4]];
   for (const s of [-1, 1]) for (const [a, b, xf] of zonyY) {
     const y0 = s > 0 ? a : -b, y1 = s > 0 ? b : -a;
     const rs = b === K.yB ? (s > 0 ? [8, 14, 0.6, 0.6] : [0.6, 0.6, 14, 8]) : a === K.yCh ? (s > 0 ? [0.6, 0.6, 0.6, 0.6] : [0.6, 0.6, 0.6, 0.6]) : [0.6, 0.6, 0.6, 0.6];
-    g.add(slab('cerna_mat', 'spodni_deska', { x0: K.xR, x1: xf, y0, y1, z0: K.zBot, z1: K.zChan + 3, rs, seg: 4, reB: 2.5, reT: 0.5, fs: 3 }));
+    g.add(slab('cerna_mat', 'spodni_deska', { x0: K.xR, x1: xf, y0, y1, z0: K.zBot, z1: K.zChan + 2.4, rs, seg: 4, reB: 2.5, reT: 0.5, fs: 3 }));
   }
   // červený zachytávací háček v kanálu pod držadlem (3 drážky), x 148..167, y -25..22
   g.add(slab('cervena', 'kanal_hacek', { x0: 148, x1: 167.5, y0: -25, y1: 22, z0: 13.2, z1: 25, rs: 4, seg: 3, reB: 1.5, reT: 1, fs: 2 }));
   for (const yc of [-15, -1.5, 12]) g.add(slab('cerna_mat', 'kanal_hacek_drazka', { x0: 156, x1: 167.7, y0: yc - 3.2, y1: yc + 3.2, z0: 13.0, z1: 14.4, rs: 1, seg: 1, reB: 0.2, reT: 0.2, fs: 1 }));
-  g.add(slab('cerna_mat', 'kanal_celo', { x0: 165, x1: 181, y0: -K.yCh - 0.5, y1: K.yCh + 0.5, z0: K.zBot, z1: K.zChan + 3, rs: 0.6, seg: 2, reB: 2, reT: 0.5, fs: 2 }));
+  g.add(slab('cerna_mat', 'kanal_celo', { x0: 165, x1: 181, y0: -K.yCh - 0.5, y1: K.yCh + 0.5, z0: K.zBot, z1: K.zChan + 2.4, rs: 0.6, seg: 2, reB: 2, reT: 0.5, fs: 2 }));
   // horní deska vany (černý rám kolem otvoru pro nádoby): vnější obrys vany, otvor 305 × 457
-  g.add(ringSolid('cerna_mat', 'vana_rám', rrPoly(K.xR, K.xF, -K.yT, K.yT, [10, 14, 14, 10], 4), rrPoly(-162.2, 151.3, -235.2, 235.2, [6.5, 6.5, 6.5, 6.5], 4), 104.5, K.zRim));
+  g.add(ringSolid('cerna_mat', 'vana_rám', rrPoly(K.xR, K.xF, -K.yT, K.yT, [10, 14, 14, 10], 4), rrPoly(-162.2, 151.3, -235.2, 235.2, [6.5, 6.5, 6.5, 6.5], 4), 88.5, K.zRim, { outerWall: true }));
   // pásy na koncových stěnách (vystupují z vany k víku)
   for (const s of [-1, 1]) {
     const mk = (y0, y1, dz) => ccw(rrPoly(-80, 64, s > 0 ? y0 : -y1, s > 0 ? y1 : -y0, 3, 2));
     const belt = loftSolid('cerna_mat', 'pas_' + (s > 0 ? 'p' : 'm'), [
-      { poly: mk(228, 238.5), z: 14 }, { poly: mk(228, 240), z: 30 }, { poly: mk(228, K.yBelt), z: 105 }, { poly: mk(228, K.yBelt - 1.5), z: 109 }], { crease: 40 });
+      { poly: mk(236.5, 238.5), z: 14 }, { poly: mk(236.5, 240), z: 30 }, { poly: mk(236.5, K.yBelt), z: 90 }, { poly: mk(236.5, K.yBelt - 1.0), z: 93.5 }], { crease: 40 });
     g.add(belt);
   }
 }
@@ -94,7 +100,7 @@ function vana(g) {
 function hrbet(g) {
   const lug = (y0, y1) => {
     // dutý černý "kalíšek" otevřený dolů: x -182..-164, z' 88..109
-    g.add(slab('cerna_mat', 'pant_oko', { x0: -182, x1: -163, y0, y1, z0: 88, z1: 109, rs: 2.5, seg: 2, reT: 2, reB: 0.8, fs: 2 }));
+    g.add(slab('cerna_mat', 'pant_oko', { x0: -182, x1: -163, y0, y1, z0: 88, z1: 107, rs: 2.5, seg: 2, reT: 2, reB: 0.8, fs: 2 }));
   };
   lug(-40, 40);
   for (const yc of [78.6, 128.1, 177.2]) for (const s of [-1, 1]) lug(s * yc - 11.2, s * yc + 11.2);

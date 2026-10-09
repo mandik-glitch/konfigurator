@@ -6,7 +6,7 @@ import { kapsa } from './p4082_kapsy.mjs';
 
 export const V = {
   x0: -168.5, x1: 180.5, y: 243.6,           // obrys víka (deska)
-  zSk: 109, zTop: 117, tPl: 2.5, rFil: 7,           // spodek obvodové sukně, horní plocha, tloušťka desky
+  zSk: 93.5, zTop: 117, tPl: 2.5, rFil: 7,           // spodek obvodové sukně, horní plocha, tloušťka desky
   rF: 30, rR: 14,
   inner: { x0: -161, x1: 149, y: 233 },     // obdélník, uvnitř kterého se deska skládá z buněk (kolem kapes)
   pivot: [-176.5, 0, 97],
@@ -25,7 +25,7 @@ export function vicko() {
   // --- obvodová sukně
   const RF = V.rFil, prof = [[V.zSk, 0], [V.zTop - RF, 0]];
   for (let k = 1; k <= 4; k++) { const a = Math.PI / 2 * k / 4; prof.push([V.zTop - RF + RF * Math.sin(a), RF - RF * Math.cos(a)]); }
-  prof.push([V.zSk, RF]);
+  prof.push([V.zTop - V.tPl, RF], [V.zTop - V.tPl, 2.5], [V.zSk, 2.5]);
   g.add(rrShell('vicko_cira', 'vicko_sukne', { x0: V.x0, x1: V.x1, y0: -V.y, y1: V.y, rs: [V.rF, V.rR, V.rR, V.rF], seg: 6, profile: prof, closed: true }));
   // deska kolem kapes: obvodový prstenec + buňky mezi kapsami
   const iN = V.inner, inRect = rrPoly(iN.x0, iN.x1, -iN.y, iN.y, 0.01, 6);
@@ -66,12 +66,12 @@ export function vicko() {
   const zPl = V.zTop - V.dPocket + 0.2;
   g.add(rrFrame('bila', 'vicko_plaketa', { x0: -40, x1: 28.3, y0: 73.3, y1: 188.3, z0: zPl, z1: zPl + 0.5, w: 0.8, rs: 8, seg: 1 }));
   // těsnění (černá guma) pod víkem po obvodu
-  g.add(rrFrame('cerna_mat', 'vicko_tesneni', { x0: -163.5, x1: 175.5, y0: -237.4, y1: 237.4, z0: 108.4, z1: 111, w: 2.6, rs: [26, 14, 14, 26], seg: 5 }));
+  g.add(rrFrame('cerna_mat', 'vicko_tesneni', { x0: -165.5, x1: 178, y0: -238.5, y1: 238.5, z0: 92.6, z1: 94.8, w: 2.4, rs: [26, 14, 14, 26], seg: 5 }));
   // --- čelní lem (z' 98..117), držáky spon, žebírka na okraji, kopule
   g.add(slab('vicko_cira', 'vicko_lem', { x0: 179.2, x1: 184.4, y0: -214, y1: 214, z0: 98, z1: 112.5, rs: 4, seg: 3, reT: 1.2, reB: 1.2, fs: 2 }));
   for (const s of [-1, 1]) {
-    const yc = s * 147.5;
-    g.add(slab('vicko_cira', 'vicko_drzak', { x0: 182, x1: 191, y0: yc - 23.5, y1: yc + 23.5, z0: 95.5, z1: 111.5, rs: 3.5, seg: 3, reT: 2.5, reB: 1.5, fs: 3 }));
+    const yc = s * 148.5;
+    g.add(slab('vicko_cira', 'vicko_drzak', { x0: 182, x1: 191, y0: yc - 26, y1: yc + 26, z0: 95.5, z1: 111.5, rs: 3.5, seg: 3, reT: 2.5, reB: 1.5, fs: 3 }));
     // zápustka s příčkou pod třmenem (tmavší pruh na čele držáku)
     g.add(slab('cira', 'vicko_drzak_pruh', { x0: 190.4, x1: 191.4, y0: yc - 15, y1: yc + 15, z0: 100, z1: 107, rs: 1.5, seg: 2, reT: 0.4, reB: 0.4, fs: 1 }));
   }

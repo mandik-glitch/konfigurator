@@ -134,7 +134,7 @@ export function roundPoly(pts, rs, n = 4) {
 export const ccw = P => (polyArea(P) < 0 ? P.slice().reverse() : P);
 
 // ploché těleso mezi vnějším a vnitřním polygonem (stejný počet bodů) – deska s otvorem
-export function ringSolid(mat, name, outer, inner, z0, z1, { innerWall = true } = {}) {
+export function ringSolid(mat, name, outer, inner, z0, z1, { innerWall = true, outerWall = false } = {}) {
   const p = new Part(name, mat); p.crease = 30; const n = outer.length;
   const ot = outer.map(q => p.addV(q[0], q[1], zc(z1))), it = inner.map(q => p.addV(q[0], q[1], zc(z1)));
   const ob = outer.map(q => p.addV(q[0], q[1], zc(z0))), ib = inner.map(q => p.addV(q[0], q[1], zc(z0)));
@@ -143,6 +143,7 @@ export function ringSolid(mat, name, outer, inner, z0, z1, { innerWall = true } 
     p.addQ(ot[i], ot[j], it[j], it[i]);          // horní plocha
     p.addQ(ob[j], ob[i], ib[i], ib[j]);          // spodní plocha
     if (innerWall) p.addQ(it[i], it[j], ib[j], ib[i]);          // vnitřní stěna (normála do otvoru)
+    if (outerWall) p.addQ(ob[i], ob[j], ot[j], ot[i]);          // vnější stěna (normála ven)
   }
   return p;
 }

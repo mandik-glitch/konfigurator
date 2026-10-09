@@ -5,15 +5,15 @@
  "foto_url": "https://paulimot-sw6.b-cdn.net/media/9b/7b/38/1685451508/000001638101paulimot_4932464082_Milwaukee_PACKOUT_Organiser_1.jpg?ts=1685451508",
  "pose": {},
  "kamera": {
-  "azim": 28.620775672579995,
-  "elev": 15.303438489032786,
-  "roll": -0.4410876167199857,
-  "dist": 1944.18464072815,
-  "shiftX": 0.01337285381939287,
-  "shiftY": -0.023780697626863165,
-  "fov": 11.976974005168927,
-  "iou": 0.9801558187471614
+  "azim": 28.789306809546936,
+  "elev": 15.315601355858671,
+  "roll": -0.3789336815161594,
+  "dist": 2282.3071932039898,
+  "shiftX": 0.013038847051767643,
+  "shiftY": -0.02102205417070452,
+  "fov": 10.2,
+  "iou": 0.9843427090265858
  },
- "iou": 0.9801558187471614,
+ "iou": 0.9843427090265858,
  "poznamka": "Kamera odhadnuta z obrysu fotografie (IoU); ohnisko je pevně zvolené, ne změřené."
 }
