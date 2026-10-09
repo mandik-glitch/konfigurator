@@ -1,6 +1,6 @@
 // Korpus (černá vana) 4932471064: vana s lemem na švíku víka, otvor pro nádoby, střední příčka, čtyři rohové nárazníky, pantové kloubky.
 // Spodek (patky, žebra) není na žádné fotografii → zjednodušeno (rovná spodní plocha se zkosením), označeno v poznámkách jako NEOVĚŘENO.
-import { Group, Part, roundPoly, rrPoly, ccw, loftSolid, ext, slab, ringSolid, bx, zc, polyInset, ZC } from './p1064_zaklad.mjs';
+import { cylinder, Group, Part, roundPoly, rrPoly, ccw, loftSolid, ext, slab, ringSolid, bx, zc, polyInset, ZC } from './p1064_zaklad.mjs';
 import { flatFace } from './pomocne_4932471064.mjs';
 import { H, BASE, CAV, X } from './p1064_data.mjs';
 
@@ -55,8 +55,26 @@ function narazniky(g) {
   for (const it of [mk(front, 'naraznik_celo'), mk(rear, 'naraznik_zad')]) { g.add(it); const m = it.clone(it.name + '_m'); m.mirror('y', 0); g.add(m); }
 }
 
+// ---------- hřbet: černá oka pantu (mezi čirými články víka) + ocelový čep ----------
+function hrbet(g) {
+  const lug = (y0, y1) => g.add(slab('cerna_mat', 'pant_oko', { x0: X(1), x1: X(19), y0, y1, z0: 30, z1: 50, rs: 2.5, seg: 2, reT: 2, reB: 0.8, fs: 2 }));
+  lug(-26, 26);
+  for (const yc of [78.3, 127.8, 177]) for (const s of [-1, 1]) lug(s * yc - 11, s * yc + 11);
+  g.add(cylinder('ocel', 'pant_cep', 1.5, 0, 470, 12, [0, 0]).rot('x', 90).move(X(10), 235, zc(42)));
+}
+// rámečky "oken" na čelní ploše nárazníků (c07: dvě obdélníková okna se žebrem)
+function okna(g) {
+  const L = [];
+  for (const [z0, z1] of [[34, 43], [19, 28]]) {
+    const w = 15, y0 = 217, e = 1.1;
+    L.push(bx('seda', 'okno_h', X(379.5), X(380.4), y0, y0 + w, z0, z0 + e), bx('seda', 'okno_h', X(379.5), X(380.4), y0, y0 + w, z1 - e, z1),
+      bx('seda', 'okno_v', X(379.5), X(380.4), y0, y0 + e, z0 + e, z1 - e), bx('seda', 'okno_v', X(379.5), X(380.4), y0 + w - e, y0 + w, z0 + e, z1 - e));
+  }
+  for (const it of L) { g.add(it); const m = it.clone(it.name + '_m'); m.mirror('y', 0); g.add(m); }
+}
+
 export function korpus() {
   const g = new Group('korpus');
-  vana(g); narazniky(g);
+  vana(g); narazniky(g); hrbet(g); okna(g);
   return g;
 }

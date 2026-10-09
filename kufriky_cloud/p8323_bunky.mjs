@@ -7,8 +7,8 @@ import { K } from './p8323_korpus.mjs';
 export const B = {
   pitch: 108.1, xTop0: K.XOT,               // rozteč řad; horní hrana boxů v 1. řadě (u madla)
   hF: 94.2, rodBelow: 80.2,                 // výška boxu u čela (od špiček pilířků po okraj); osa tyče pod okrajem
-  zRod: 77, rRod: 2.7,                      // osa tyče (Z), poloměr tyče
-  zHood: 74.2,                              // čelní rovina kápě boxu (Z)
+  zRod: 74, rRod: 2.0,                      // osa tyče (Z), poloměr tyče
+  zHood: 71.3,                              // čelní rovina kápě boxu (Z)
   D: 102, rise: 4, hood: 16, t: 1.7,        // hloubka boxu (kápa → zadní stěna), stoupání okraje k zadní stěně, výška kápě, tloušťka stěn
   wS: 87.6, gap: 5.7, y0: 19.0,             // malý box: šířka, mezera, vnitřní hrana (|y|) – vedle sloupku
   colHalf: 15.6,

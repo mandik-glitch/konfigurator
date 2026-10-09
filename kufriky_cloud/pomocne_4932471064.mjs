@@ -11,6 +11,8 @@ export const cw = (P) => (area2(P) > 0 ? P.slice().reverse() : P.slice());
 // ---------- earcut: polygon s dírami -> trojúhelníky ----------
 // outer: pole [x,y]; holes: pole polí. Vrací { pts, tris } (pts = sloučený kruh bodů s mosty, tris = trojice indexů do pts).
 export function earcut(outer, holes = []) {
+  const dd = (P) => { const o = []; for (const q of P) { const l = o[o.length - 1]; if (!l || Math.hypot(q[0] - l[0], q[1] - l[1]) > 1e-6) o.push(q); } while (o.length > 1 && Math.hypot(o[0][0] - o[o.length - 1][0], o[0][1] - o[o.length - 1][1]) < 1e-6) o.pop(); return o; };
+  outer = dd(outer); holes = holes.map(dd);
   let ring = ccw(outer).map(p => ({ x: p[0], y: p[1] }));
   const H = holes.map(h => cw(h).map(p => ({ x: p[0], y: p[1] })));
   const segX = (a, b, c, d) => {                         // vlastní průsečík úseček ab a cd (bez dotyku koncových bodů)

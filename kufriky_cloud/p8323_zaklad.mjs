@@ -17,7 +17,7 @@ export function rrPoly(x0, x1, y0, y1, rs = 0, seg = 4) {
   const cs = [[x1, y1, 0], [x0, y1, 90], [x0, y0, 180], [x1, y0, 270]];
   const pts = [];
   for (let c = 0; c < 4; c++) {
-    const r = Math.max(Math.min(R[c], hx - 1e-4, hy - 1e-4), 1e-3);
+    const r = Math.max(Math.min(R[c], 0.9 * hx, 0.9 * hy), 1e-3);       // poloměr vždy menší než polovina rozměru (žádné nulové hrany)
     const sx = c === 0 || c === 3 ? -1 : 1, sy = c === 0 || c === 1 ? -1 : 1;
     const cx = cs[c][0] + sx * r, cy = cs[c][1] + sy * r;
     for (let k = 0; k <= S[c]; k++) { const a = (cs[c][2] + 90 * k / S[c]) * Math.PI / 180; pts.push([cx + r * Math.cos(a), cy + r * Math.sin(a)]); }
@@ -67,7 +67,8 @@ export function slab(mat, name, { x0, x1, y0, y1, z0, z1, rs = 0, seg = 4, reT =
   const layers = [];
   reB = Math.min(reB, (z1 - z0) / 2); reT = Math.min(reT, (z1 - z0) / 2);
   const rmax = Math.max(...(Array.isArray(rs) ? rs : [rs]));
-  const mk = (d, z) => ({ poly: rrPoly(x0 + d, x1 - d, y0 + d, y1 - d, (Array.isArray(rs) ? rs : [rs, rs, rs, rs]).map(r => Math.max(r - d, 0.01)), seg), z });
+  const dmax = 0.9 * Math.min(x1 - x0, y1 - y0) / 2;
+  const mk = (d, z) => (d = Math.min(d, dmax), { poly: rrPoly(x0 + d, x1 - d, y0 + d, y1 - d, (Array.isArray(rs) ? rs : [rs, rs, rs, rs]).map(r => Math.max(r - d, 0.01)), seg), z });
   if (reB > 1e-6) for (let k = 0; k <= fs; k++) { const a = Math.PI / 2 * k / fs; layers.push(mk(kB * (reB - reB * Math.sin(a)), z0 + reB - reB * Math.cos(a))); } else layers.push(mk(0, z0));
   if (reT > 1e-6) for (let k = 0; k <= fs; k++) { const a = Math.PI / 2 * k / fs; layers.push(mk(kT * (reT - reT * Math.cos(a)), z1 - reT + reT * Math.sin(a))); } else layers.push(mk(0, z1));
   return loftSolid(mat, name, layers);

@@ -20,5 +20,13 @@ export function nadoby() {
     g.add(trayT('cervena', 'nadoba', { x0: n.x0, x1: n.x1, y0: n.y0, y1: n.y1, z0: H.zFloor, z1: H.zBin, rs: NB.rc, seg: 3, wall: NB.wall, floor: NB.floor, re: 1.8, fs: 2, taper: NB.taper }));
     g.add(rrFrame('cervena', 'nadoba_lem', { x0: n.x0, x1: n.x1, y0: n.y0, y1: n.y1, z0: H.zBin - NB.lem, z1: H.zBin, w: NB.lemW, rs: NB.rc, seg: 3 }));
   }
+  // děliče: malé nádoby 2 oddíly, velké 3 oddíly (stěna 1,6 mm kolmo k delší straně = podél osy X); výška těsně pod okrajem
+  for (const n of seznamNadob()) {
+    const nd = n.velka ? 2 : 1, y0 = n.y0 + NB.wall + 1.5, y1 = n.y1 - NB.wall - 1.5;
+    for (let k = 1; k <= nd; k++) {
+      const fr = n.velka ? k / 3 : 0.45, yy = n.s > 0 ? y0 + (y1 - y0) * fr : y1 - (y1 - y0) * fr;
+      g.add(bx('cervena', 'nadoba_delic', n.x0 + NB.wall + 1.2, n.x1 - NB.wall - 1.2, yy - 0.8, yy + 0.8, H.zFloor + NB.floor - 0.2, H.zBin - 8));
+    }
+  }
   return g;
 }
