@@ -1,0 +1,21 @@
+{
+ "sku": "4932498323",
+ "pohled": "sikmo-celo-c13",
+ "foto_repo_cesta": "kufriky_john/fotky/4932498323/c13.jpg",
+ "foto_url": "https://cdn.myshoptet.com/usr/www.elglobal.cz/user/shop/big/294725-1_4932498323-hero-2.jpg?ff=1&x=1024&y=768&q=85&ts=698df604&sg=161563f2",
+ "pose": {
+  "rukojet": 90
+ },
+ "kamera": {
+  "azim": -69.98152897825632,
+  "elev": 58.314206792866116,
+  "roll": -108.17145533807727,
+  "dist": 1562.664529536118,
+  "shiftX": -0.014322867605719204,
+  "shiftY": 0.014892316635056049,
+  "fov": 20.45382211188533,
+  "iou": 0.9538571861985272
+ },
+ "iou": 0.9538571861985272,
+ "poznamka": "Kamera odhadnuta z obrysu fotografie (IoU); ohnisko je pevně zvolené, ne změřené."
+}

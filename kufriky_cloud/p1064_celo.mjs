@@ -5,17 +5,17 @@ import { X } from './p1064_data.mjs';
 
 export const C = {
   yL: 148,                  // střed západky (±)
-    bar: { xp0: 346, y0: -88, y1: 100, zs0: 22, zs1: 30, zh: 41 },
+    bar: { xp0: 346, y0: -88, y1: 100, zs0: 22, zs1: 30, zh: 38 },
 };
 
 function drzadlo(g) {
   const b = C.bar, F = 414;
   // spodní blok držadla (příčka s hlubokým profilem) a horní rameno nad průchozí štěrbinou (z' 24 … 31), koncové sloupky; čelo xp 414
-  g.add(slab('cerna_mat', 'drzadlo_pricka', { x0: X(b.xp0), x1: X(F), y0: b.y0, y1: b.y1, z0: 2, z1: b.zs0, rs: 3, seg: 3, reT: 1.5, reB: 2, fs: 2 }));
+  g.add(slab('cerna_mat', 'drzadlo_pricka', { x0: X(b.xp0), x1: X(F), y0: b.y0, y1: b.y1, z0: 0, z1: b.zs0, rs: 3, seg: 3, reT: 1.5, reB: 2, fs: 2 }));
   g.add(slab('cerna_mat', 'drzadlo_horni', { x0: X(b.xp0), x1: X(F - 6), y0: b.y0, y1: b.y1, z0: b.zs1, z1: b.zh, rs: 3, seg: 3, reT: 1.5, reB: 1, fs: 2 }));
-  g.add(slab('cerna_mat', 'drzadlo_sloupek_L', { x0: X(b.xp0), x1: X(F - 6), y0: b.y0, y1: b.y0 + 14, z0: 2, z1: b.zh, rs: 3, seg: 3, reT: 1.5, reB: 1.5, fs: 2 }));
-  g.add(slab('cerna_mat', 'drzadlo_sloupek_P', { x0: X(b.xp0), x1: X(F - 6), y0: b.y1 - 14, y1: b.y1, z0: 2, z1: b.zh, rs: 3, seg: 3, reT: 1.5, reB: 1.5, fs: 2 }));
-  g.add(slab('cervena', 'drzadlo_tlacitko', { x0: X(F - 12), x1: X(F - 4), y0: 17, y1: 53, z0: 32, z1: 42, rs: 5, seg: 3, reT: 2, reB: 1.5, fs: 2 }));
+  g.add(slab('cerna_mat', 'drzadlo_sloupek_L', { x0: X(b.xp0), x1: X(F - 6), y0: b.y0, y1: b.y0 + 14, z0: 0, z1: b.zh, rs: 3, seg: 3, reT: 1.5, reB: 1.5, fs: 2 }));
+  g.add(slab('cerna_mat', 'drzadlo_sloupek_P', { x0: X(b.xp0), x1: X(F - 6), y0: b.y1 - 14, y1: b.y1, z0: 0, z1: b.zh, rs: 3, seg: 3, reT: 1.5, reB: 1.5, fs: 2 }));
+  g.add(slab('cervena', 'drzadlo_tlacitko', { x0: X(F - 12), x1: X(F - 4), y0: 17, y1: 53, z0: 30, z1: 38, rs: 3, seg: 3, reT: 1.5, reB: 1, fs: 2 }));
 }
 
 function zamek(g, s) {

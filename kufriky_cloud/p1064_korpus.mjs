@@ -48,7 +48,7 @@ function narazniky(g) {
   const { front, rear } = guardPts();
   const mk = (pts, name) => {
     const base = ccw(pts.map(([a, b]) => [X(a), b]));
-    const R = 2.6, top = H.zBumper, L = [{ poly: base, z: 0 }, { poly: base, z: top - R }];
+    const R = 2.6, top = H.zBumper, L = [{ poly: polyInset(base, 1.5), z: 5 }, { poly: base, z: 6.5 }, { poly: base, z: top - R }];
     for (let k = 1; k <= 3; k++) { const a = Math.PI / 2 * k / 3; L.push({ poly: polyInset(base, R - R * Math.cos(a)), z: top - R + R * Math.sin(a) }); }
     return loftSolid('cerna_mat', name, L, { crease: 40 });
   };

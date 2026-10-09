@@ -1,0 +1,19 @@
+{
+ "sku": "4932471064",
+ "pohled": "sikmo-celo-2",
+ "foto_repo_cesta": "kufriky_john/fotky/4932471064/c08.jpg",
+ "foto_url": "https://paulimot-sw6.b-cdn.net/media/9b/02/3b/1685451960/000001638301paulimot_4932471064_Milwaukee_PACKOUT_Organiser_Slim_1_2.jpg?ts=1685451960",
+ "pose": {},
+ "kamera": {
+  "azim": 29.551607702612174,
+  "elev": 16.00621099011262,
+  "roll": -0.39081903813476765,
+  "dist": 3095.1044337340836,
+  "shiftX": -0.007066931246324021,
+  "shiftY": 0.007858332558706497,
+  "fov": 8,
+  "iou": 0.9614274721046556
+ },
+ "iou": 0.9614274721046556,
+ "poznamka": "Kamera odhadnuta z obrysu fotografie (IoU); ohnisko je pevně zvolené, ne změřené."
+}

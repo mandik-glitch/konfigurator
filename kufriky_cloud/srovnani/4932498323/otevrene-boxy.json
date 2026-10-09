@@ -5,19 +5,19 @@
  "foto_url": "https://static.milwaukeetool.eu/remote.axd/milwaukee-media-images.s3.amazonaws.com/hi/4932498323--Hero_3.jpg?v=CA7F78ADBF5BE1DB22AC04858EB96D5F&width=1200",
  "pose": {
   "rukojet": 90,
-  "box_1": 55,
-  "box_6": 50
+  "box_1": 40,
+  "box_6": 40
  },
  "kamera": {
-  "azim": -70.94065931508783,
-  "elev": 55.15083162231348,
-  "roll": -107.55978683210347,
-  "dist": 2199.740450078428,
-  "shiftX": -0.0010610117446974456,
-  "shiftY": 0.018477905599017883,
-  "fov": 14.999999999999996,
-  "iou": 0.9493601644344252
+  "azim": -70.47422991485678,
+  "elev": 56.00896361926439,
+  "roll": -108.6762106281357,
+  "dist": 1581.5726573970514,
+  "shiftX": -0.007867821106255534,
+  "shiftY": 0.017209003603327007,
+  "fov": 20.89395320210275,
+  "iou": 0.950023198780407
  },
- "iou": 0.9493601644344252,
+ "iou": 0.950023198780407,
  "poznamka": "Kamera odhadnuta z obrysu fotografie (IoU); ohnisko je pevně zvolené, ne změřené."
 }

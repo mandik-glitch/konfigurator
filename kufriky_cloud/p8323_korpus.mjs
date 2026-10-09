@@ -15,10 +15,11 @@ export const K = {
 //   sy(z) = zúžení ve směru Y (zkosení zadní hrany Z -68…-53, zapuštěný střed Z -39…58 o 2,5 mm, c04);  e(z) = zaoblení čelní hrany (Z 81…85).
 const Zs = [-68, -63, -58, -53, -39, -36.5, 55.5, 58, 81, 83.2, 84.5, 85];
 const chm = (z, c) => z < -53 ? c * (-53 - z) / 15 : 0;
-const sy = z => z < -53 ? 22 * (-53 - z) / 15 : (z < -39 ? 0 : z < -36.5 ? 2.5 * (z + 39) / 2.5 : z < 55.5 ? 2.5 : z < 58 ? 2.5 * (58 - z) / 2.5 : 0);
+const ZsTop = [-85, -78, -68, -63, -58, -53, -39, -36.5, 55.5, 58, 81, 83.2, 84.5, 85];
+const sy = z => z < -53 ? Math.min(22 * (-53 - z) / 15, 22 + 10 * (-68 - z) / 17) : (z < -39 ? 0 : z < -36.5 ? 2.5 * (z + 39) / 2.5 : z < 55.5 ? 2.5 : z < 58 ? 2.5 * (58 - z) / 2.5 : 0);
 const ee = z => z <= 81 ? 0 : z <= 83.2 ? 0.5 * (z - 81) / 2.2 : z <= 84.5 ? 0.5 + 1.0 * (z - 83.2) / 1.3 : 1.5 + 2.0 * (z - 84.5) / 0.5;
-function bumperLayers(verts, n = 4) {
-  return Zs.map(z => {
+function bumperLayers(verts, n = 4, zs = Zs, zLow = -68) {
+  return zs.map(z => {
     const pts = verts.map(v => {
       if (!v.n) return v.p;
       const k = (v.n[1] > 0.3 ? sy(z) : 0) + (Math.abs(v.n[0]) > 0.3 ? chm(z, K.CHX) : 0) + ee(z);
@@ -49,7 +50,7 @@ export function narazniky(g) {
 export function steny(g) {
   const { YIN, YW, XNT, XNB, XBODY, XOB, ZF, ZBP, ZPLATE } = K;
   // zadní deska s zkosenou spodní hranou (c04: zúžení u Z -62…-69)
-  g.add(slab('o8323_cerna', 'deska_zadni', { x0: XBODY, x1: 185, y0: -K.YPL, y1: K.YPL, z0: ZPLATE, z1: ZBP, rs: 8, seg: 4, reB: 5, reT: 0, fs: 3 }));
+  g.add(slab('o8323_dira', 'deska_zadni', { x0: XBODY, x1: 185, y0: -K.YPL, y1: K.YPL, z0: ZPLATE, z1: ZBP, rs: 8, seg: 4, reB: 5, reT: 0, fs: 3 }));
   // boční (koncové) stěny: horní hrana zkosená (pás s červeným proužkem), dole zapuštěný pás (Z -58…-28), c05/c15
   const prof = [[YIN, ZBP], [K.YPL, ZBP], [K.YPL, -28], [YW, -28], [YW, 68], [226, ZF], [YIN, ZF]];
   if (K.WREC <= 0) { prof.splice(1, 3, [YW, ZBP]); }

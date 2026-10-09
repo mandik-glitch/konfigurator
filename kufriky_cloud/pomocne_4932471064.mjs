@@ -70,8 +70,10 @@ export function earcut(outer, holes = []) {
 }
 
 // ploché plochy: polygon s otvory na výšce z; up=true normála +Z
+import { earcut2 } from './earcut_cloud.mjs';
 export function flatFace(part, outer, holes, z, up = true) {
-  const { pts, tris } = earcut(outer, holes);
+  const dd = (P) => { const o = []; for (const q of P) { const l = o[o.length - 1]; if (!l || Math.hypot(q[0] - l[0], q[1] - l[1]) > 1e-6) o.push(q); } while (o.length > 1 && Math.hypot(o[0][0] - o[o.length - 1][0], o[0][1] - o[o.length - 1][1]) < 1e-6) o.pop(); return o; };
+  const { pts, tris } = earcut2(ccw(dd(outer)), holes.map(h => cw(dd(h))));
   const base = pts.map(p => part.addV(p[0], p[1], z));
   for (const [a, b, c] of tris) {
     const A = pts[a], B = pts[b], C = pts[c]; if (Math.abs((B[0] - A[0]) * (C[1] - A[1]) - (B[1] - A[1]) * (C[0] - A[0])) < 1e-7) continue;   // žádné nulové plošky
@@ -137,7 +139,7 @@ export const mirrorPolyY = (P) => ccw(P.map(p => [p[0], -p[1]]));
 export const mirrorPolyX = (P) => ccw(P.map(p => [-p[0], p[1]]));
 
 // odstraní zdegenerované (nulová plocha) trojúhelníky z dílu
-export function cistiDil(part, eps = 1e-6) {
+export function cistiDil(part, eps = 2e-3) {
   const P = part.pos, I = part.idx, out = [];
   for (let t = 0; t < I.length; t += 3) {
     const a = I[t], b = I[t + 1], c = I[t + 2];

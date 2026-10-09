@@ -6,7 +6,7 @@ import { K } from './p8323_korpus.mjs';
 export const C = {
   XI: 161.5, XP: 185, XT: 193,        // vnitřní líc stěny, zapuštěný panel, čelní rovina (nárazníky, sloupky, lem)
   ZTOP: 73,                           // čelní plocha pásu u madla v prostředku (sníženo oproti rámu Z=85)
-  hinge: [177.7, 0, 22],              // osa čepu madla (rovnoběžná s Y)
+  hinge: [177.7, 0, 20.5],              // osa čepu madla (rovnoběžná s Y)
 };
 
 // okna roštu (Y intervaly; c01 rektifikace): sedm úzkých + dvě široké, žebra 1,5–2 mm
@@ -26,7 +26,7 @@ function stena(g) {
     if (a > -36 && b < 34) holes.push([186, XT + 5, a, b, 72, 82]);   // okna v čele (c04: y -34…33, Z 72…82)
   }
   for (const s of [-1, 1]) holes.push([188, XT + 5, s > 0 ? 100 : -111, s > 0 ? 111 : -100, 36, 62]);   // okénka ve sloupcích
-  g.add(voxelSolid('o8323_cerna', 'stena_modul', [XI, XT, -116, 116, -85, 83], holes));
+  g.add(...voxelSolid('o8323_cerna', 'stena_modul', [XI, XT, -116, 116, -85, 83], holes, { innerMat: 'o8323_dira' }));
   // boční panely (zapuštěné na X=185) a horní lem, na okraji skos na Z=85 (c04: |y| 161…174)
   for (const s of [1, -1]) {
     const pol = s > 0
@@ -38,7 +38,7 @@ function stena(g) {
     // vnější část lemu (větrací okna ve čele, c04: y ±[161…212]) – plný kvádr s dvěma kapsami
     const y0 = s > 0 ? 176 : -218, y1 = s > 0 ? 218 : -176;
     const w = s > 0 ? [[176.5, 188], [190.6, 210]] : [[-210, -190.6], [-188, -176.5]];
-    g.add(voxelSolid('o8323_cerna', 'stena_lem_vne_' + (s > 0 ? 'p' : 'm'), [XP, XT, y0, y1, 64, 85], w.map(([a, b]) => [XP + 2, XT + 5, a, b, 66, 81])));
+    g.add(...voxelSolid('o8323_cerna', 'stena_lem_vne_' + (s > 0 ? 'p' : 'm'), [XP, XT, y0, y1, 64, 85], w.map(([a, b]) => [XP + 2, XT + 5, a, b, 66, 81]), { innerMat: 'o8323_dira' }));
   }
   // štítek PACKOUT na pásu (strana s boxy): y -154,4…-65,6; X 165,4…187,4
   g.add(slab('cervena', 'stitek_pas', { x0: 165.4, x1: 187.4, y0: -154.4, y1: -65.6, z0: ZTOP, z1: ZTOP + 1.6, rs: 1.2, seg: 2, reT: 0.5, fs: 1 }));
@@ -50,29 +50,44 @@ function stena(g) {
   g.add(extYZ('cervena', 'stitek_celo', ccw(pl), 188.2, XT));
 }
 
-// madlo: U-rám (červený) s čepy a gumovým úchopem; výchozí poloha sklopená v kapse, rukojet=90 → vyklopeno nahoru (+X)
+// madlo: červený U-rám s třemi hinge-články (tines) na každém rameni, ocelové čepy a gumový úchop; rozměry z rektifikace c04 (rovina X=183).
+// Výchozí poloha sklopená v kapse, rukojet=90 → vyklopeno nahoru (+X, c01). Čep: X=177,7, Z=20,5 (osa rovnoběžná s Y).
 function madlo() {
   const [hx, hy, hz] = C.hinge;
   const g = new Group('rukojet', { pivot: [hx, hy, hz], extras: { osa: [0, -1, 0], max_uhel: 90, popis: 'sklopené v kapse na čele; úhel 90° = vyklopeno nahoru (+X), c01' } });
   const X0 = hx - 7, X1 = hx + 7;
-  const outl = [[-91.5, -40.8], [91.5, -40.8], [91.5, 28], [88, 34.5], [53, 34.5], [53, 14], [66.5, 4], [66.5, -12], [-66.5, -12], [-66.5, 4], [-53, 14], [-53, 34.5], [-88, 34.5], [-91.5, 28]];
-  const rr = [4, 4, 3, 2, 1, 3, 3, 2, 2, 3, 3, 1, 2, 3];
-  g.add(extYZ('cervena', 'madlo_ram', ccw(roundPoly(outl, rr, 3)), X0, X1));
-  for (const s of [-1, 1]) g.add(tube('ocel', 'madlo_cep_' + (s > 0 ? 'p' : 'm'), [[hx, s * 86, hz], [hx, s * 93, hz]], 2.3, 12).rot('x', 0));
-  g.add(slab('o8323_mat', 'madlo_guma', { x0: X1, x1: X1 + 4.5, y0: -52.8, y1: 51.2, z0: -30, z1: -11.7, rs: 3, seg: 3, reT: 1.8, fs: 2 }));
-  for (let k = 0; k < 15; k++) { const y = -48 + k * 6.9; g.add(bx('o8323_mat', 'madlo_vroubek', X1 + 3.9, X1 + 5.2, y, y + 3.2, -28, -13.7)); }
+  // tělo U (od Z=7 dolů): ramena, spodní příčka s oknem; vnitřní obrys ramene měřen po 5 mm
+  const arm = [[-92.3, -42], [92.3, -42], [92.3, 7], [58, 7], [61, 5], [64, 0], [64.5, -5], [62, -10], [57, -14], [53, -15], [-53, -15], [-57, -14], [-62, -10], [-64.5, -5], [-64, 0], [-61, 5], [-58, 7], [-92.3, 7]];
+  const rr = [4, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+  g.add(extYZ('cervena', 'madlo_ram', ccw(roundPoly(arm, rr, 3)), X0, X1));
+  for (const s of [-1, 1]) {
+    for (const [a, b] of [[86, 92.3], [73, 78.5], [58.5, 64.5]]) {
+      const y0 = s > 0 ? a : -b, y1 = s > 0 ? b : -a;
+      g.add(slab('cervena', 'madlo_clanek', { x0: X0, x1: X1, y0, y1, z0: 6, z1: 33.3, rs: [0.5, 0.5, 0.5, 0.5], seg: 1, reT: 2, reB: 0, fs: 2 }));
+    }
+    g.add(tube('o8323_ocel', 'madlo_cep', [[hx, s * 55.5, hz], [hx, s * 92.8, hz]], 1.3, 10));
+    for (const yy of [s * 55.0, s * 93.2]) g.add(tube('o8323_ocel', 'madlo_cep_hlava', [[hx, yy - 0.5, hz], [hx, yy + 0.5, hz]], 2.7, 14));
+  }
+  // gumový úchop se žebrováním (c04: y ±52,5, Z -31…-15,5)
+  g.add(slab('o8323_mat', 'madlo_guma', { x0: X1, x1: X1 + 3, y0: -52.5, y1: 52.5, z0: -31, z1: -15.5, rs: 2, seg: 2, reT: 1, fs: 2 }));
+  for (let k = -6; k <= 6; k++) g.add(bx('o8323_mat', 'madlo_vroubek', X1 + 3, X1 + 3.9, k * 7.6 - 1.1, k * 7.6 + 1.1, -29.5, -17));
   return g;
 }
 
-// západka (červený hák pod madlem, c04: y ±22, Z -41…-77)
+// západka (červený hák pod madlem, c04: y ±22…23, Z -43…-77, kopule nahoře)
 function zapadka(g) {
-  const hook = roundPoly([[-15, -41], [15, -41], [22.6, -62], [22.6, -76.7], [-22.6, -76.7], [-22.6, -62]], [6, 6, 2, 3, 3, 2], 3);
+  const hook = roundPoly([[-19.5, -43], [19.5, -43], [21, -62], [23, -77], [-23, -77], [-21, -62]], [8, 8, 1, 3, 3, 1], 4);
   g.add(extYZ('cervena', 'zapadka', ccw(hook), 177, 190.5));
+}
+
+// žebra na zadní stěně kapsy madla (tmavá, c04: 9 žeber po 8,3 mm)
+function zebraKapsy(g) {
+  for (let k = 0; k < 9; k++) { const y = -33.2 + 8.3 * k; g.add(bx('o8323_dira', 'kapsa_zebro', 169, 172.5, y - 1.5, y + 1.5, -12, 18)); }
 }
 
 export function celo() {
   const g = new Group('celo');
-  stena(g); zapadka(g);
+  stena(g); zapadka(g); zebraKapsy(g);
   g.addGroup(madlo());
   return g;
 }

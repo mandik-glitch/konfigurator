@@ -1,0 +1,54 @@
+{
+ "4932498323": {
+  "celo-boxy-primo": {
+   "iou": 0.9799,
+   "foto": "kufriky_john/fotky/4932498323/c01.jpg",
+   "pose": {
+    "rukojet": 90
+   }
+  },
+  "celo-madlo-c14": {
+   "iou": 0.9844,
+   "foto": "kufriky_john/fotky/4932498323/c14.jpg",
+   "pose": {}
+  },
+  "celo-madlo-primo": {
+   "iou": 0.9876,
+   "foto": "kufriky_john/fotky/4932498323/c04.jpg",
+   "pose": {}
+  },
+  "lezato-sikmo-c15": {
+   "iou": 0.9604,
+   "foto": "kufriky_john/fotky/4932498323/c15.jpg",
+   "pose": {}
+  },
+  "lezato-sikmo": {
+   "iou": 0.9594,
+   "foto": "kufriky_john/fotky/4932498323/c05.jpg",
+   "pose": {}
+  },
+  "otevrene-boxy": {
+   "iou": 0.9486,
+   "foto": "kufriky_john/fotky/4932498323/c03.jpg",
+   "pose": {
+    "rukojet": 90,
+    "box_1": 40,
+    "box_6": 40
+   }
+  },
+  "tmp-c02-g15": {
+   "iou": 0.9544,
+   "foto": "kufriky_john/fotky/4932498323/c02.jpg",
+   "pose": {
+    "rukojet": 90
+   }
+  },
+  "sikmo-celo-c13": {
+   "iou": 0.9539,
+   "foto": "kufriky_john/fotky/4932498323/c13.jpg",
+   "pose": {
+    "rukojet": 90
+   }
+  }
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "sku": "4932498323",
+ "pohled": "celo-madlo-c14",
+ "foto_repo_cesta": "kufriky_john/fotky/4932498323/c14.jpg",
+ "foto_url": "https://cdn.myshoptet.com/usr/www.elglobal.cz/user/shop/big/294725-3_4932498323-hero-4.jpg?ff=1&x=1024&y=768&q=85&ts=698df604&sg=161563f2",
+ "pose": {},
+ "kamera": {
+  "azim": -0.46073152907643944,
+  "elev": 5.813839844274186,
+  "roll": -0.051942783610355384,
+  "dist": 2482.0713671431668,
+  "shiftX": -0.0017953209672642851,
+  "shiftY": -0.01230183979697122,
+  "fov": 14,
+  "iou": 0.9774375
+ },
+ "iou": 0.9774375,
+ "poznamka": "Kamera odhadnuta z obrysu fotografie (IoU); ohnisko je pevně zvolené, ne změřené."
+}

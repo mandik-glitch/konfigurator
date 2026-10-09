@@ -10,7 +10,9 @@ import { bunky, boxy } from './p8323_bunky.mjs';
 // vlastní materiály (jedinečné názvy, aby se nepřepsaly materiály jiných modelů)
 MATERIALY.o8323_cerna = { color: [0.014, 0.014, 0.016], metallic: 0.0, roughness: 0.55 };       // černý PP korpus
 MATERIALY.o8323_mat = { color: [0.008, 0.008, 0.009], metallic: 0.0, roughness: 0.8 };         // matný černý PP (nárazníky, přepážky, guma)
-MATERIALY.o8323_cira = { color: [0.55, 0.6, 0.65], metallic: 0.0, roughness: 0.08, alpha: 0.14 };   // čirý PC (boxy)
+MATERIALY.o8323_ocel = { color: [0.50, 0.51, 0.53], metallic: 1.0, roughness: 0.42 };               // kartáčovaná ocel (tyče)
+MATERIALY.o8323_dira = { color: [0.002, 0.002, 0.002], metallic: 1.0, roughness: 0.7 };                // hluboké kapsy a vnitřek buněk (bez odlesků)
+MATERIALY.o8323_cira = { color: [0.55, 0.6, 0.65], metallic: 0.0, roughness: 0.08, alpha: 0.09 };   // čirý PC (boxy)
 
 export const SKU = '4932498323';
 export const OBALKA = { x: 386, y: 500, z: 170 };

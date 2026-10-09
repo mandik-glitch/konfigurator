@@ -1,0 +1,19 @@
+{
+ "sku": "4932498323",
+ "pohled": "lezato-sikmo-c15",
+ "foto_repo_cesta": "kufriky_john/fotky/4932498323/c15.jpg",
+ "foto_url": "https://cdn.myshoptet.com/usr/www.elglobal.cz/user/shop/big/294725-4_4932498323-hero-5.jpg?ff=1&x=1024&y=768&q=85&ts=698df604&sg=161563f2",
+ "pose": {},
+ "kamera": {
+  "azim": 29.84788189408888,
+  "elev": 22.01332362445343,
+  "roll": 0.7755637542478748,
+  "dist": 2776.918141986028,
+  "shiftX": 0.008703357412184854,
+  "shiftY": -0.02071008393939032,
+  "fov": 14,
+  "iou": 0.9603589337556083
+ },
+ "iou": 0.9603589337556083,
+ "poznamka": "Kamera odhadnuta z obrysu fotografie (IoU); ohnisko je pevně zvolené, ne změřené."
+}

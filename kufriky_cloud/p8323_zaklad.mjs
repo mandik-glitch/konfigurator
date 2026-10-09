@@ -186,30 +186,35 @@ export function extXZ(mat, name, poly, y0, y1, { crease = 25 } = {}) {
 // ---------- kvádr s pravoúhlými otvory (kapsy, okna, drážky) ----------
 // Prostor [x0,x1]×[y0,y1]×[z0,z1] se rozdělí rovinami všech otvorů; ploché stěny se vyrobí jen mezi plnou a prázdnou buňkou (žádné vnitřní plochy).
 // holes = [[x0,x1,y0,y1,z0,z1], ...] (otvor smí přesahovat ven = průchozí). crease ostré.
-export function voxelSolid(mat, name, [x0, x1, y0, y1, z0, z1], holes = [], { crease = 5 } = {}) {
+export function voxelSolid(mat, name, [x0, x1, y0, y1, z0, z1], holes = [], { crease = 5, innerMat = null } = {}) {
   const cl = (v, a, b) => Math.min(Math.max(v, a), b);
   const ax = [new Set([x0, x1]), new Set([y0, y1]), new Set([z0, z1])], lo = [x0, y0, z0], hi = [x1, y1, z1];
   for (const h of holes) for (let k = 0; k < 3; k++) { ax[k].add(cl(h[2 * k], lo[k], hi[k])); ax[k].add(cl(h[2 * k + 1], lo[k], hi[k])); }
   const [X, Y, Z] = ax.map(s => [...s].sort((a, b) => a - b));
   const nx = X.length - 1, ny = Y.length - 1, nz = Z.length - 1;
+  const inb = (i, j, k) => !(i < 0 || j < 0 || k < 0 || i >= nx || j >= ny || k >= nz);
   const solid = (i, j, k) => {
-    if (i < 0 || j < 0 || k < 0 || i >= nx || j >= ny || k >= nz) return false;
+    if (!inb(i, j, k)) return false;
     const cx = (X[i] + X[i + 1]) / 2, cy = (Y[j] + Y[j + 1]) / 2, cz = (Z[k] + Z[k + 1]) / 2;
     return !holes.some(h => cx > h[0] && cx < h[1] && cy > h[2] && cy < h[3] && cz > h[4] && cz < h[5]);
   };
-  const p = new Part(name, mat); p.crease = crease;
-  const q = (a, b, c, d) => p.addQ(p.addV(...a), p.addV(...b), p.addV(...c), p.addV(...d));
+  const po = new Part(name, mat), pi = new Part(name + '_kapsa', innerMat || mat); po.crease = crease; pi.crease = crease;
   for (let i = 0; i < nx; i++) for (let j = 0; j < ny; j++) for (let k = 0; k < nz; k++) {
     if (!solid(i, j, k)) continue;
     const xa = X[i], xb = X[i + 1], ya = Y[j], yb = Y[j + 1], za = Z[k], zb = Z[k + 1];
-    if (!solid(i + 1, j, k)) q([xb, ya, za], [xb, yb, za], [xb, yb, zb], [xb, ya, zb]);
-    if (!solid(i - 1, j, k)) q([xa, yb, za], [xa, ya, za], [xa, ya, zb], [xa, yb, zb]);
-    if (!solid(i, j + 1, k)) q([xb, yb, za], [xa, yb, za], [xa, yb, zb], [xb, yb, zb]);
-    if (!solid(i, j - 1, k)) q([xa, ya, za], [xb, ya, za], [xb, ya, zb], [xa, ya, zb]);
-    if (!solid(i, j, k + 1)) q([xa, ya, zb], [xb, ya, zb], [xb, yb, zb], [xa, yb, zb]);
-    if (!solid(i, j, k - 1)) q([xa, ya, za], [xa, yb, za], [xb, yb, za], [xb, ya, za]);
+    const face = (ni, nj, nk, a, b, c, d) => {
+      if (solid(ni, nj, nk)) return;
+      const p = inb(ni, nj, nk) ? pi : po;               // stěna k otvoru = kapsa, vnější plocha = povrch dílu
+      p.addQ(p.addV(...a), p.addV(...b), p.addV(...c), p.addV(...d));
+    };
+    face(i + 1, j, k, [xb, ya, za], [xb, yb, za], [xb, yb, zb], [xb, ya, zb]);
+    face(i - 1, j, k, [xa, yb, za], [xa, ya, za], [xa, ya, zb], [xa, yb, zb]);
+    face(i, j + 1, k, [xb, yb, za], [xa, yb, za], [xa, yb, zb], [xb, yb, zb]);
+    face(i, j - 1, k, [xa, ya, za], [xb, ya, za], [xb, ya, zb], [xa, ya, zb]);
+    face(i, j, k + 1, [xa, ya, zb], [xb, ya, zb], [xb, yb, zb], [xa, yb, zb]);
+    face(i, j, k - 1, [xa, ya, za], [xa, yb, za], [xb, yb, za], [xb, ya, za]);
   }
-  return p;
+  return pi.nt ? [po, pi] : [po];
 }
 // zrcadlení skupiny dílů podle roviny y=0 (přidá _m kopie)
 export function mirrorInto(g, parts) { for (const p of parts) { g.add(p); const m = p.clone(p.name + '_m'); m.mirror('y', 0); g.add(m); } }

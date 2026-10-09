@@ -7,7 +7,7 @@ import { K } from './p8323_korpus.mjs';
 export const B = {
   pitch: 108.1, xTop0: K.XOT,               // rozteč řad; horní hrana boxů v 1. řadě (u madla)
   hF: 94.2, rodBelow: 80.2,                 // výška boxu u čela (od špiček pilířků po okraj); osa tyče pod okrajem
-  zRod: 74, rRod: 2.0,                      // osa tyče (Z), poloměr tyče
+  zRod: 74, rRod: 1.7,                      // osa tyče (Z), poloměr tyče
   zHood: 71.3,                              // čelní rovina kápě boxu (Z)
   D: 102, rise: 4, hood: 16, t: 1.7,        // hloubka boxu (kápa → zadní stěna), stoupání okraje k zadní stěně, výška kápě, tloušťka stěn
   wS: 87.6, gap: 5.7, y0: 19.0,             // malý box: šířka, mezera, vnitřní hrana (|y|) – vedle sloupku
@@ -32,7 +32,7 @@ export function bunky(g) {
   g.add(slab('cervena', 'sloupek_zapadka', { x0: 42.3, x1: 54.2, y0: -10.5, y1: 9.5, z0: 82, z1: 85, rs: 1.5, seg: 2, reT: 0.8, fs: 2 }));
   g.add(slab('cervena', 'sloupek_zapadka_noha', { x0: 28, x1: 42.3, y0: -5.5, y1: 5, z0: 82, z1: 85, rs: 1.2, seg: 2, reT: 0.8, fs: 2 }));
   // tyče
-  for (let r = 0; r < 3; r++) g.add(tube('ocel', 'tyc_' + (r + 1), [[XROD[r], -YIN - 8, B.zRod], [XROD[r], YIN + 8, B.zRod]], B.rRod, 14));
+  for (let r = 0; r < 3; r++) g.add(tube('o8323_ocel', 'tyc_' + (r + 1), [[XROD[r], -YIN - 8, B.zRod], [XROD[r], YIN + 8, B.zRod]], B.rRod, 14));
 }
 
 // ---------- box ----------
@@ -40,15 +40,16 @@ export function bunky(g) {
 // (u,v,w) → X = XROD + w, Y = yc + v, Z = zHood − u.
 function hoodBand(mat, name, W, notches) {
   const { D, t, hood, rise } = B;
-  const hw = W / 2, wLow = 80.2 - hood - 1.7, wFront = 80.2;
+  const ov = 1.4, hw = W / 2 + ov, wLow = 80.2 - hood - 1.7, wFront = 80.2;     // kápa přesahuje spodní nádobu o 1,4 mm do stran a dozadu (c08)
   // vrcholy (u,v) proti směru hodinových ručiček; na čelní hraně body výřezu pro prst
   const front = [];
   for (const c of [...notches].sort((a, b) => b - a)) front.push([0, c + 9], [0, c + 5], [0, c - 5], [0, c - 9]);
-  const verts = [[D, -hw], [D, hw], [0, hw], ...front, [0, -hw]];
+  const Dd = D + ov;
+  const verts = [[Dd, -hw], [Dd, hw], [0, hw], ...front, [0, -hw]];
   const rr = verts.map((p, i) => i === 0 || i === 1 ? 5 : (i === 2 || i === verts.length - 1) ? 3.5 : 0);
   const outer = ccw(roundPoly(verts, rr, 3));
   const inner = polyInset(outer, t);
-  const wTop = (p, depth) => wFront + rise * p[0] / D - depth;
+  const wTop = (p, depth) => wFront + rise * p[0] / Dd - depth;
   const notchDepth = p => {
     if (p[0] > 2.5) return 0;
     let d = 0;
@@ -67,8 +68,10 @@ export function box(idx, row, yc, W, big) {
   const g = new Group('box_' + idx, { pivot: [xr, yc, zRod], extras: { osa: [0, -1, 0], rada: row + 1, velky: !!big, max_uhel: 100, popis: 'výklopný box; osa otáčení = tyč (rovnoběžná s Y); kladný úhel = sklopení dopředu (+Z)' } });
   const L = [];
   const wHb = 80.2 - hood - 1.7;                       // dolní hrana kápy (w)
-  // spodní nádoba (vlastní dno i stěny), horní okraj ve výšce dolní hrany kápy
-  L.push(tray('o8323_cira', 'telo', { x0: 1.7, x1: D, y0: -hw, y1: hw, z0: -5, z1: wHb, rs: [5, 3, 3, 5], seg: 3, wall: t, floor: t, re: 3.5, fs: 3 }));
+  // spodní nádoba: vlastní dno + stěny ve tvaru U (zadní a boční; čelní okno je otevřené jako na c07/c08), horní okraj ve výšce dolní hrany kápy
+  L.push(slab('o8323_cira', 'dno', { x0: 0.4, x1: D, y0: -hw, y1: hw, z0: -5, z1: -5 + t, rs: [5, 1.5, 1.5, 5], seg: 3, reB: 2.5, reT: 0, fs: 3 }));
+  const U = [[1.7, -hw], [D, -hw], [D, hw], [1.7, hw], [1.7, hw - t], [D - t, hw - t], [D - t, -hw + t], [1.7, -hw + t]];
+  L.push(ext('o8323_cira', 'steny', ccw(roundPoly(U, [0, 5, 5, 0, 0, 3.3, 3.3, 0], 3)), -5 + t, wHb));
   // kápa s okrajem šikmo stoupajícím k zadní stěně a výřezy pro prst
   L.push(hoodBand('o8323_cira', 'kapa', W, big ? [-W / 4, W / 4] : [0]));
   // čelní pilířky (boční hrany bez zapuštění) až na špičky pod dnem; zadní výstupky na dně (západky)
