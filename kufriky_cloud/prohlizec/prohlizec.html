@@ -2,20 +2,25 @@
 <html lang="cs"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Organizér PACKOUT – 3D model</title>
 <style>
-:root{--bg:#eef1f4;--fg:#1d2733;--panel:#ffffffd9;--line:#cfd6dd}
-@media (prefers-color-scheme:dark){:root{--bg:#171b20;--fg:#e6ebf0;--panel:#222a33d9;--line:#38424d}}
-html,body{margin:0;height:100%;background:var(--bg);color:var(--fg);font:14px/1.4 -apple-system,"Segoe UI",Roboto,Arial,sans-serif;overflow:hidden}
-canvas{display:block}
-#panel{position:fixed;left:12px;top:12px;max-width:min(330px,calc(100vw - 24px));background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px 12px;backdrop-filter:blur(6px)}
-#panel h1{font-size:15px;margin:0 0 2px}#panel small{opacity:.75;display:block;margin-bottom:6px}
-.row{display:flex;align-items:center;gap:8px;margin:5px 0}.row label{flex:0 0 118px}.row input[type=range]{flex:1}
-button{font:inherit;color:var(--fg);background:transparent;border:1px solid var(--line);border-radius:7px;padding:3px 9px;cursor:pointer}
-#hint{position:fixed;left:12px;bottom:10px;opacity:.7;font-size:12px}
+/* 3D prohlížeč organizéru: celostránkové plátno, ovládací panel vlevo nahoře */
+:root{--bg:#e8ecf0;--fg:#16202a;--panel:rgba(255,255,255,.9);--line:#c3ccd5;--accent:#c8102e;--muted:#52606d}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#11151a;--fg:#e8edf2;--panel:rgba(28,35,43,.9);--line:#34404c;--accent:#ff5266;--muted:#9aa8b6;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#11151a;--fg:#e8edf2;--panel:rgba(28,35,43,.9);--line:#34404c;--accent:#ff5266;--muted:#9aa8b6;color-scheme:dark}
+html,body{height:100%;margin:0}
+body{background:var(--bg);color:var(--fg);font:14px/1.4 -apple-system,"Segoe UI",Roboto,Arial,sans-serif;overflow:hidden;position:relative}
+canvas{display:block;width:100%;height:100%}
+#panel{position:absolute;left:16px;top:16px;width:min(340px,calc(100% - 32px));box-sizing:border-box;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px 12px;backdrop-filter:blur(6px)}
+#panel h1{font-size:15px;margin:0 0 2px;font-weight:650}#panel small{color:var(--muted);display:block;margin-bottom:6px}
+.row{display:flex;align-items:center;gap:8px;margin:6px 0;flex-wrap:wrap}.row label{flex:0 0 120px}.row input[type=range]{flex:1;min-width:90px;accent-color:var(--accent)}
+.row input[type=checkbox]{accent-color:var(--accent)}
+button{font:inherit;color:var(--fg);background:transparent;border:1px solid var(--line);border-radius:7px;padding:4px 10px;cursor:pointer}
+button:hover{border-color:var(--accent)}button:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+#hint{position:absolute;left:16px;right:16px;bottom:12px;color:var(--muted);font-size:12px;pointer-events:none}
 </style></head>
 <body>
 <div id="panel"><h1 id="nazev">3D model</h1><small id="info"></small><div id="ovl"></div>
 <div class="row"><button id="b-celo">čelo</button><button id="b-sikmo">šikmo</button><button id="b-shora">shora</button><button id="b-zezadu">zezadu</button><button id="b-spodek">spodek</button></div></div>
-<div id="hint">Myš: otáčení (levé tlačítko), přiblížení (kolečko), posun (pravé). Jednotky mm.</div>
+<div id="hint">Táhni myší nebo prstem: otáčení. Kolečko / štípnutí: přiblížení. Pravé tlačítko / dva prsty: posun. Rozměry v mm.</div>
 <!--THREE_SCRIPTS-->
 <script>
 const EMBED = "__GLB_B64__";           // vloženo balicím skriptem; jinak se bere ?glb=cesta
@@ -44,7 +49,7 @@ function buildNode(g,ni,mats){
   else{const r=await fetch(params.get('glb')||'../modely/4932464082.glb');buf=await r.arrayBuffer();}
   const g=parseGLB(buf), meta=g.gltf.asset.extras||{};
   document.getElementById('nazev').textContent='PACKOUT organizér '+(meta.sku||'');
-  const renderer=new THREE.WebGLRenderer({antialias:true});renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.setSize(innerWidth,innerHeight);renderer.outputEncoding=THREE.sRGBEncoding;
+  const renderer=new THREE.WebGLRenderer({antialias:true,alpha:true});renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.setClearColor(0x000000,0);renderer.setSize(innerWidth,innerHeight);renderer.outputEncoding=THREE.sRGBEncoding;
   document.body.prepend(renderer.domElement);
   const scene=new THREE.Scene();
   // prostředí (gradient + světelné plochy) pro odlesky plastu

@@ -1,19 +1,19 @@
 {
  "sku": "4932464082",
  "pohled": "spodek-sikmo-2",
- "foto_repo_cesta": "kufriky_john/fotky/4932464082/c15.jpg",
- "foto_url": "https://www.tim.pl/media/wysiwyg/w360/0001-00018-63769/images/Photo009.jpg",
+ "foto_repo_cesta": "../../../tmp/claude-0/-home-user-konfigurator/4afe04ea-52af-557e-a8a4-75a8d542e4f9/scratchpad/kuf_4932464082/w/c15r.jpg",
+ "foto_url": null,
  "pose": {},
  "kamera": {
-  "azim": 82.88927432396702,
-  "elev": -62.6838378742452,
-  "roll": -9.98386850809539,
-  "dist": 2219.750896165753,
-  "shiftX": 0.04425425809168221,
-  "shiftY": -0.01499848823096768,
-  "fov": 16.558643400027588,
-  "iou": 0.859968458404521
+  "azim": 90.08813103100954,
+  "elev": -24.954742786716707,
+  "roll": 0.340538046709634,
+  "dist": 1713.8615116633223,
+  "shiftX": -0.024431269643923705,
+  "shiftY": -0.005150112683659198,
+  "fov": 21.563688640154904,
+  "iou": 0.9493500207440189
  },
- "iou": 0.859968458404521,
+ "iou": 0.9493500207440189,
  "poznamka": "Kamera odhadnuta z obrysu fotografie (IoU); ohnisko je pevně zvolené, ne změřené."
 }

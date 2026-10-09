@@ -1,19 +1,19 @@
 {
  "sku": "4932464082",
  "pohled": "vrsek-konec-2",
- "foto_repo_cesta": "kufriky_john/fotky/4932464082/c10.jpg",
- "foto_url": "https://www.tim.pl/media/wysiwyg/w360/0001-00018-63769/images/Photo002.jpg",
+ "foto_repo_cesta": "../../../tmp/claude-0/-home-user-konfigurator/4afe04ea-52af-557e-a8a4-75a8d542e4f9/scratchpad/kuf_4932464082/w/c10r.jpg",
+ "foto_url": null,
  "pose": {},
  "kamera": {
-  "azim": -87.01277783979972,
-  "elev": 33.76369982008282,
-  "roll": 3.489040876190966,
-  "dist": 1660.7036363365319,
-  "shiftX": 0.02479599518734326,
-  "shiftY": -0.05583434726874059,
-  "fov": 16.968924510168847,
-  "iou": 0.8807417192134187
+  "azim": 269.1672511939371,
+  "elev": 54.780895140080574,
+  "roll": -0.1750685655905137,
+  "dist": 1512.17537747385,
+  "shiftX": 0.010609076704662861,
+  "shiftY": 0.002857031578848448,
+  "fov": 25.717677477555604,
+  "iou": 0.9642441333988772
  },
- "iou": 0.8807417192134187,
+ "iou": 0.9642441333988772,
  "poznamka": "Kamera odhadnuta z obrysu fotografie (IoU); ohnisko je pevně zvolené, ne změřené."
 }
