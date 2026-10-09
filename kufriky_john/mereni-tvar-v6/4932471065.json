@@ -1,0 +1,1227 @@
+{
+  "sku": "4932471065",
+  "units": "mm",
+  "catalog_axes": {
+    "X": "width",
+    "Y": "length",
+    "Z": "height"
+  },
+  "kind": "photo_reconstructed_product",
+  "is_product_geometry": true,
+  "detail_level": "realny_tvar",
+  "detail_label": "Reálný tvar · rekonstrukce z fotografií",
+  "physical_accuracy_verified": false,
+  "physical_tolerance_mm": null,
+  "source_url": "https://www.milwaukeetool.eu/en-eu/packout-organisers/packout-organisers/",
+  "photo_url": "https://static.milwaukeetool.eu/remote.axd/milwaukee-media-images.s3.amazonaws.com/hi/4932471065--Hero_1.jpg?v=A0BBD83F9F21F2E6F88603170E84EC44&width=240",
+  "photo_page_url": "https://www.milwaukeetool.eu/en-eu/packout-organisers/packout-organisers/",
+  "dimension_constraints_mm": {
+    "length": 411,
+    "width": 249,
+    "height": 64
+  },
+  "features": [
+    "nožky / podstava",
+    "5 samostatných dutých nádob s mezerami a zaoblenými okraji",
+    "průhledné členěné víko, samostatná těsnicí okna, střední pruh, jemné plastve a obvodové těsnění",
+    "vodorovný otevřený černý čelní úchop",
+    "dva červené uzávěry s kovovými sponami a průhlednými horními úchyty",
+    "zveřejněná vnitřní výška zahrnuje i prostor pod zavřeným víkem",
+    "podstavné plošky uvnitř skutečného zaobleného obrysu dna"
+  ],
+  "bin_count": 5,
+  "envelope_fit": {
+    "before_min_mm": [
+      -124.5,
+      -205.5,
+      0
+    ],
+    "before_max_mm": [
+      124.5,
+      205.5,
+      64
+    ],
+    "axis_scale": [
+      1,
+      1,
+      1
+    ],
+    "applied": false
+  },
+  "bottom_supports": {
+    "constraint": "actual_floor_contact_contour",
+    "allowed_overhang_mm": 0,
+    "physical_accuracy_verified": false
+  },
+  "front_axis": "positive_y",
+  "hinge_axis": "x",
+  "review": {
+    "seen": "Nádoby byly téměř bez mezer a děličů; čelní úchop a spony neodpovídaly fotografii kompaktního SKU.",
+    "changed": "Pět samostatných nádob (4 malé + 1 velká), dva děliče velké a jeden každé malé, výraznější čelní úchop, spony u obou čelních rohů. Vlastní doložený spodek 3 × 2.",
+    "match": "Viditelné rozdíly v5 přepracované podle vlastních fotografií SKU. Shoda detailů do 2 mm NEOVĚŘENA.",
+    "unverified": [
+      "Nekótované poloměry, tloušťky stěn, úkosy, přesné polohy, hloubky a vůle nejsou doměřené.",
+      "Shoda jednotlivých detailů do 2 mm není prokázaná; model není výrobní CAD."
+    ],
+    "source_photo_url": "https://static.milwaukeetool.eu/remote.axd/milwaukee-media-images.s3.amazonaws.com/hi/4932471065--Hero_1.jpg?v=A0BBD83F9F21F2E6F88603170E84EC44&width=1200",
+    "source_page_url": "https://www.milwaukeetool.eu/en-eu/packout-organisers/packout-organisers/?variant=382584",
+    "photo_count": 13,
+    "comparison_note": "Vlevo zachovaný model v5, vpravo v6. Srovnání s originální fotografií je samostatně u každého úhlu.",
+    "render_file": "porovnani/4932471065.png",
+    "render_before_file": "porovnani/4932471065-v5.png",
+    "changed_v3": "Dvě spony místo jedné, otočení čela na krátkou stranu, uchycení držadla.",
+    "support_summary": "Změřeno 199 součástí včetně 52 spodních dílů. Patky ověřené proti skutečné ploše dna; digitální tolerance 0,01 mm. Fyzická shoda detailů do 2 mm neověřená. Předsazené držadlo doložené fotografií tohoto SKU; odvozená hloubka těla není fyzicky změřená.",
+    "support_checked": true,
+    "support_changes": 16,
+    "changed_v4": "Patky přesunuté pod skutečné dno, obrys každé plošky podle spodní styčné plochy; spodní spojovací pozice vystředěné na tělo. Čelní ochrany rohů oddělené od spodních patek. Červená smyčka nahrazena malým čelním tlačítkem podle fotografie.",
+    "visual_check_v4": "Prohlédnuto zepředu, z obou boků, shora a zespodu. Podstavné díly nepřesahují skutečné dno; vzhled nekótovaných detailů zůstává rekonstrukcí.",
+    "changed_v5": "Samostatné vyčnívající čelní desky nahrazené spojitým zaobleným trupem, dnem a okrajem víka. Červená smyčka nahrazena odpovídajícím čelním prvkem a připojeným spodním odjištěním; upravené spodní spojovací pole."
+  },
+  "photo_sources": [
+    {
+      "url": "https://static.milwaukeetool.eu/remote.axd/milwaukee-media-images.s3.amazonaws.com/hi/4932471065--Hero_1.jpg?v=A0BBD83F9F21F2E6F88603170E84EC44&width=1200",
+      "page_url": "https://www.milwaukeetool.eu/en-eu/packout-organisers/packout-organisers/?variant=382584",
+      "kind": "hero"
+    },
+    {
+      "url": "https://static.milwaukeetool.eu/remote.axd/milwaukee-media-images.s3.amazonaws.com/hi/4932471065--Hero_2.jpg?v=F42507B01C5B04C4B68AF9A30122347A&width=1200",
+      "page_url": "https://www.milwaukeetool.eu/en-eu/packout-organisers/packout-organisers/?variant=382584",
+      "kind": "hero"
+    },
+    {
+      "url": "https://static.milwaukeetool.eu/remote.axd/milwaukee-media-images.s3.amazonaws.com/hi/4932471065--Hero_3.jpg?v=85566297FE84D01A4A22B250AB8BB93A&width=1200",
+      "page_url": "https://www.milwaukeetool.eu/en-eu/packout-organisers/packout-organisers/?variant=382584",
+      "kind": "hero"
+    },
+    {
+      "url": "https://static.milwaukeetool.eu/remote.axd/milwaukee-media-images.s3.amazonaws.com/hi_no_padding/4932471065--App_1.jpg?v=B1C94EED134F4C0D88AD6753609A5938&width=1200",
+      "page_url": "https://www.milwaukeetool.eu/en-eu/packout-organisers/packout-organisers/?variant=382584",
+      "kind": "app"
+    },
+    {
+      "url": "https://static.milwaukeetool.eu/remote.axd/milwaukee-media-images.s3.amazonaws.com/hi_no_padding/4932471065--App_2.jpg?v=E0E73539BC61B528646B59E768C029C4&width=1200",
+      "page_url": "https://www.milwaukeetool.eu/en-eu/packout-organisers/packout-organisers/?variant=382584",
+      "kind": "app"
+    },
+    {
+      "url": "https://www.stavbaeu.sk//image/cache/data/products/D/DE_4932471065_0-800x800.jpg",
+      "page_url": "https://www.stavbaeu.sk/milwaukee-packout-slim-kompaktny-organizer-4932471065-235267",
+      "kind": "nová fotografie prodejce"
+    },
+    {
+      "url": "https://paulimot-sw6.b-cdn.net/media/5b/9c/ba/1685450301/0000016384014932471065_paulimot_Milwaukee_PACKOUT_Organiser_Slim_Compact_1.jpg?ts=1685450301",
+      "page_url": "https://www.paulimot.de/en-gb/milwaukee-packout-organiser-slim-compact",
+      "kind": "nová fotografie prodejce"
+    },
+    {
+      "url": "https://paulimot-sw6.b-cdn.net/media/bf/8a/f6/1685450303/0000016384014932471065_paulimot_Milwaukee_PACKOUT_Organiser_Slim_Compact_1_2.jpg?ts=1685450303",
+      "page_url": "https://www.paulimot.de/en-gb/milwaukee-packout-organiser-slim-compact",
+      "kind": "nová fotografie prodejce"
+    },
+    {
+      "url": "https://paulimot-sw6.b-cdn.net/media/cd/9f/49/1685450305/0000016384014932471065_paulimot_Milwaukee_PACKOUT_Organiser_Slim_Compact_2_3.jpg?ts=1685450305",
+      "page_url": "https://www.paulimot.de/en-gb/milwaukee-packout-organiser-slim-compact",
+      "kind": "nová fotografie prodejce"
+    },
+    {
+      "url": "https://paulimot-sw6.b-cdn.net/media/9d/e6/a4/1685450306/0000016384014932471065_paulimot_Milwaukee_PACKOUT_Organiser_Slim_Compact_3_4.jpg?ts=1685450306",
+      "page_url": "https://www.paulimot.de/en-gb/milwaukee-packout-organiser-slim-compact",
+      "kind": "nová fotografie prodejce"
+    },
+    {
+      "url": "https://www.stavbaeu.sk/image/cache/data/productsdetail/D/DE_4932471065_1-800x800.jpg",
+      "page_url": "https://www.stavbaeu.sk/milwaukee-packout-slim-kompaktny-organizer-4932471065-235267",
+      "kind": "nová fotografie prodejce"
+    },
+    {
+      "url": "https://www.stavbaeu.sk/image/cache/data/productsdetail/D/DE_4932471065_2-800x800.jpg",
+      "page_url": "https://www.stavbaeu.sk/milwaukee-packout-slim-kompaktny-organizer-4932471065-235267",
+      "kind": "nová fotografie prodejce"
+    },
+    {
+      "url": "https://www.stavbaeu.sk/image/cache/data/productsdetail/D/DE_4932471065_3-800x800.jpg",
+      "page_url": "https://www.stavbaeu.sk/milwaukee-packout-slim-kompaktny-organizer-4932471065-235267",
+      "kind": "nová fotografie prodejce"
+    }
+  ],
+  "measured_features": [
+    {
+      "kind": "closed_cavity",
+      "dimensions_mm": {
+        "width": 305,
+        "length": 203,
+        "height": 46
+      },
+      "source_url": "https://www.milwaukeetool.eu/en-eu/packout-organisers/packout-organisers/",
+      "component": "telo-duta-stena",
+      "note": "height includes free volume under the closed lid"
+    }
+  ],
+  "limitation": "Kóty obálky jsou ze zdroje. Nekótované detaily a skryté spoje jsou vizuální rekonstrukce, ne přesný výrobní CAD. Kompatibilita PACKOUT a tolerance fyzického kusu neověřeny.",
+  "label_font_license": "Copyright (c) 2004 by MAGENTA Ltd. All Rights Reserved.\r\n\r\nPermission is hereby granted, free of charge, to any person obtaining a copy of the fonts accompanying this license (\"Fonts\") and associated documentation files (the \"Font Software\"), to reproduce and distribute the Font Software, including without limitation the rights to use, copy, merge, publish, distribute, and/or sell copies of the Font Software, and to permit persons to whom the Font Software is furnished to do so, subject to the following conditions: \r\n\r\nThe above copyright and this permission notice shall be included in all copies of one or more of the Font Software typefaces.\r\n\r\nThe Font Software may be modified, altered, or added to, and in particular the designs of glyphs or characters in the Fonts may be modified and additional glyphs or characters may be added to the Fonts, only if the fonts are renamed to names not containing the word \"MgOpen\", or if the modifications are accepted for inclusion in the Font Software itself by the each appointed Administrator.\r\n\r\nThis License becomes null and void to the extent applicable to Fonts or Font Software that has been modified and is distributed under the \"MgOpen\" name.\r\n\r\nThe Font Software may be sold as part of a larger software package but no copy of one or more of the Font Software typefaces may be sold by itself. \r\n\r\nTHE FONT SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT OF COPYRIGHT, PATENT, TRADEMARK, OR OTHER RIGHT. IN NO EVENT SHALL MAGENTA OR PERSONS OR BODIES IN CHARGE OF ADMINISTRATION AND MAINTENANCE OF THE FONT SOFTWARE BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, INCLUDING ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM OTHER DEALINGS IN THE FONT SOFTWARE.",
+  "revision": "v6",
+  "evidence_v6": {
+    "revision": 6,
+    "sku": "4932471065",
+    "top_photo_url": "https://www.stavbaeu.sk//image/cache/data/products/D/DE_4932471065_0-800x800.jpg",
+    "annotations_file": "anotace-v6.json",
+    "physical_accuracy_verified": false,
+    "physical_tolerance_mm": null,
+    "front_overhang_photo": "https://www.stavbaeu.sk//image/cache/data/products/D/DE_4932471065_0-800x800.jpg",
+    "body_depth_photo_formula": "411 × (792 − 72) / (793 − 6) = 376.010165184244 mm; projected reconstruction, not physical metrology",
+    "underside": "own_SKU_photograph_topology_only"
+  },
+  "cavity_semantics": "Published inner height includes the closed lid cavity; open body has a lower rim.",
+  "bytes": 902420,
+  "parts": [
+    {
+      "name": "telo-dno",
+      "group": "fixed",
+      "material": 0
+    },
+    {
+      "name": "telo-duta-stena",
+      "group": "fixed",
+      "material": 0
+    },
+    {
+      "name": "patka--1--1",
+      "group": "fixed",
+      "material": 0,
+      "support_component": "telo-dno",
+      "footprint_constraint": "actual_floor_contact_contour",
+      "allowed_overhang_mm": 0
+    },
+    {
+      "name": "patka--1-1",
+      "group": "fixed",
+      "material": 0,
+      "support_component": "telo-dno",
+      "footprint_constraint": "actual_floor_contact_contour",
+      "allowed_overhang_mm": 0
+    },
+    {
+      "name": "patka-1--1",
+      "group": "fixed",
+      "material": 0,
+      "support_component": "telo-dno",
+      "footprint_constraint": "actual_floor_contact_contour",
+      "allowed_overhang_mm": 0
+    },
+    {
+      "name": "patka-1-1",
+      "group": "fixed",
+      "material": 0,
+      "support_component": "telo-dno",
+      "footprint_constraint": "actual_floor_contact_contour",
+      "allowed_overhang_mm": 0
+    },
+    {
+      "name": "roh-nosne-telo--1--1",
+      "group": "fixed",
+      "material": 0
+    },
+    {
+      "name": "roh-obvodovy-prolis--1--1",
+      "group": "fixed",
+      "material": 5
+    },
+    {
+      "name": "roh-obvodovy-prolis--1--1",
+      "group": "fixed",
+      "material": 5
+    },
+    {
+      "name": "roh-nosne-telo--1-1",
+      "group": "fixed",
+      "material": 0
+    },
+    {
+      "name": "roh-obvodovy-prolis--1-1",
+      "group": "fixed",
+      "material": 5
+    },
+    {
+      "name": "roh-obvodovy-prolis--1-1",
+      "group": "fixed",
+      "material": 5
+    },
+    {
+      "name": "roh-nosne-telo-1--1",
+      "group": "fixed",
+      "material": 0
+    },
+    {
+      "name": "roh-obvodovy-prolis-1--1",
+      "group": "fixed",
+      "material": 5
+    },
+    {
+      "name": "roh-obvodovy-prolis-1--1",
+      "group": "fixed",
+      "material": 5
+    },
+    {
+      "name": "roh-nosne-telo-1-1",
+      "group": "fixed",
+      "material": 0
+    },
+    {
+      "name": "roh-obvodovy-prolis-1-1",
+      "group": "fixed",
+      "material": 5
+    },
+    {
+      "name": "roh-obvodovy-prolis-1-1",
+      "group": "fixed",
+      "material": 5
+    },
+    {
+      "name": "bok-nosne-zebro--1--0.3",
+      "group": "fixed",
+      "material": 5
+    },
+    {
+      "name": "bok-nosne-zebro--1-0.22",
+      "group": "fixed",
+      "material": 5
+    },
+    {
+      "name": "bok-podelny-prolis--1-7.4239999999999995",
+      "group": "fixed",
+      "material": 5
+    },
+    {
+      "name": "bok-podelny-prolis--1-42.0608",
+      "group": "fixed",
+      "material": 5
+    },
+    {
+      "name": "bok-nosne-zebro-1--0.3",
+      "group": "fixed",
+      "material": 5
+    },
+    {
+      "name": "bok-nosne-zebro-1-0.22",
+      "group": "fixed",
+      "material": 5
+    },
+    {
+      "name": "bok-podelny-prolis-1-7.4239999999999995",
+      "group": "fixed",
+      "material": 5
+    },
+    {
+      "name": "bok-podelny-prolis-1-42.0608",
+      "group": "fixed",
+      "material": 5
+    },
+    {
+      "name": "celo-prolis--1-7.0016",
+      "group": "fixed",
+      "material": 5
+    },
+    {
+      "name": "celo-prolis--1-41.216",
+      "group": "fixed",
+      "material": 5
+    },
+    {
+      "name": "celo-prolis-1-7.0016",
+      "group": "fixed",
+      "material": 5
+    },
+    {
+      "name": "celo-prolis-1-41.216",
+      "group": "fixed",
+      "material": 5
+    },
+    {
+      "name": "prihradka-0-dno",
+      "group": "bins",
+      "material": 1
+    },
+    {
+      "name": "prihradka-0-duta-stena",
+      "group": "bins",
+      "material": 1
+    },
+    {
+      "name": "prihradka-0-horni-lem",
+      "group": "bins",
+      "material": 1
+    },
+    {
+      "name": "prihradka-0-delic-0",
+      "group": "bins",
+      "material": 1
+    },
+    {
+      "name": "prihradka-0-vodici-zebro--1-0",
+      "group": "bins",
+      "material": 1
+    },
+    {
+      "name": "prihradka-0-vodici-zebro--1-1",
+      "group": "bins",
+      "material": 1
+    },
+    {
+      "name": "prihradka-0-vodici-zebro-1-0",
+      "group": "bins",
+      "material": 1
+    },
+    {
+      "name": "prihradka-0-vodici-zebro-1-1",
+      "group": "bins",
+      "material": 1
+    },
+    {
+      "name": "prihradka-1-dno",
+      "group": "bins",
+      "material": 1
+    },
+    {
+      "name": "prihradka-1-duta-stena",
+      "group": "bins",
+      "material": 1
+    },
+    {
+      "name": "prihradka-1-horni-lem",
+      "group": "bins",
+      "material": 1
+    },
+    {
+      "name": "prihradka-1-delic-0",
+      "group": "bins",
+      "material": 1
+    },
+    {
+      "name": "prihradka-1-vodici-zebro--1-0",
+      "group": "bins",
+      "material": 1
+    },
+    {
+      "name": "prihradka-1-vodici-zebro--1-1",
+      "group": "bins",
+      "material": 1
+    },
+    {
+      "name": "prihradka-1-vodici-zebro-1-0",
+      "group": "bins",
+      "material": 1
+    },
+    {
+      "name": "prihradka-1-vodici-zebro-1-1",
+      "group": "bins",
+      "material": 1
+    },
+    {
+      "name": "prihradka-2-dno",
+      "group": "bins",
+      "material": 1
+    },
+    {
+      "name": "prihradka-2-duta-stena",
+      "group": "bins",
+      "material": 1
+    },
+    {
+      "name": "prihradka-2-horni-lem",
+      "group": "bins",
+      "material": 1
+    },
+    {
+      "name": "prihradka-2-delic-0",
+      "group": "bins",
+      "material": 1
+    },
+    {
+      "name": "prihradka-2-delic-1",
+      "group": "bins",
+      "material": 1
+    },
+    {
+      "name": "prihradka-2-vodici-zebro--1-0",
+      "group": "bins",
+      "material": 1
+    },
+    {
+      "name": "prihradka-2-vodici-zebro--1-1",
+      "group": "bins",
+      "material": 1
+    },
+    {
+      "name": "prihradka-2-vodici-zebro--1-2",
+      "group": "bins",
+      "material": 1
+    },
+    {
+      "name": "prihradka-2-vodici-zebro--1-3",
+      "group": "bins",
+      "material": 1
+    },
+    {
+      "name": "prihradka-2-vodici-zebro-1-0",
+      "group": "bins",
+      "material": 1
+    },
+    {
+      "name": "prihradka-2-vodici-zebro-1-1",
+      "group": "bins",
+      "material": 1
+    },
+    {
+      "name": "prihradka-2-vodici-zebro-1-2",
+      "group": "bins",
+      "material": 1
+    },
+    {
+      "name": "prihradka-2-vodici-zebro-1-3",
+      "group": "bins",
+      "material": 1
+    },
+    {
+      "name": "prihradka-3-dno",
+      "group": "bins",
+      "material": 1
+    },
+    {
+      "name": "prihradka-3-duta-stena",
+      "group": "bins",
+      "material": 1
+    },
+    {
+      "name": "prihradka-3-horni-lem",
+      "group": "bins",
+      "material": 1
+    },
+    {
+      "name": "prihradka-3-delic-0",
+      "group": "bins",
+      "material": 1
+    },
+    {
+      "name": "prihradka-3-vodici-zebro--1-0",
+      "group": "bins",
+      "material": 1
+    },
+    {
+      "name": "prihradka-3-vodici-zebro--1-1",
+      "group": "bins",
+      "material": 1
+    },
+    {
+      "name": "prihradka-3-vodici-zebro-1-0",
+      "group": "bins",
+      "material": 1
+    },
+    {
+      "name": "prihradka-3-vodici-zebro-1-1",
+      "group": "bins",
+      "material": 1
+    },
+    {
+      "name": "prihradka-4-dno",
+      "group": "bins",
+      "material": 1
+    },
+    {
+      "name": "prihradka-4-duta-stena",
+      "group": "bins",
+      "material": 1
+    },
+    {
+      "name": "prihradka-4-horni-lem",
+      "group": "bins",
+      "material": 1
+    },
+    {
+      "name": "prihradka-4-delic-0",
+      "group": "bins",
+      "material": 1
+    },
+    {
+      "name": "prihradka-4-vodici-zebro--1-0",
+      "group": "bins",
+      "material": 1
+    },
+    {
+      "name": "prihradka-4-vodici-zebro--1-1",
+      "group": "bins",
+      "material": 1
+    },
+    {
+      "name": "prihradka-4-vodici-zebro-1-0",
+      "group": "bins",
+      "material": 1
+    },
+    {
+      "name": "prihradka-4-vodici-zebro-1-1",
+      "group": "bins",
+      "material": 1
+    },
+    {
+      "name": "viko-nosny-okraj",
+      "group": "lid",
+      "material": 3
+    },
+    {
+      "name": "viko-tesneni",
+      "group": "lid",
+      "material": 4
+    },
+    {
+      "name": "viko-panel",
+      "group": "lid",
+      "material": 3
+    },
+    {
+      "name": "viko-prolis-0",
+      "group": "lid",
+      "material": 3
+    },
+    {
+      "name": "viko-okno-0",
+      "group": "lid",
+      "material": 3
+    },
+    {
+      "name": "viko-plastve-0",
+      "group": "lid",
+      "material": 3
+    },
+    {
+      "name": "viko-prolis-1",
+      "group": "lid",
+      "material": 3
+    },
+    {
+      "name": "viko-okno-1",
+      "group": "lid",
+      "material": 3
+    },
+    {
+      "name": "viko-plastve-1",
+      "group": "lid",
+      "material": 3
+    },
+    {
+      "name": "viko-prolis-2",
+      "group": "lid",
+      "material": 3
+    },
+    {
+      "name": "viko-okno-2",
+      "group": "lid",
+      "material": 3
+    },
+    {
+      "name": "viko-plastve-2",
+      "group": "lid",
+      "material": 3
+    },
+    {
+      "name": "viko-prolis-3",
+      "group": "lid",
+      "material": 3
+    },
+    {
+      "name": "viko-okno-3",
+      "group": "lid",
+      "material": 3
+    },
+    {
+      "name": "viko-plastve-3",
+      "group": "lid",
+      "material": 3
+    },
+    {
+      "name": "viko-prolis-4",
+      "group": "lid",
+      "material": 3
+    },
+    {
+      "name": "viko-okno-4",
+      "group": "lid",
+      "material": 3
+    },
+    {
+      "name": "viko-plastve-4",
+      "group": "lid",
+      "material": 3
+    },
+    {
+      "name": "viko-celni-zebro-0",
+      "group": "lid",
+      "material": 3
+    },
+    {
+      "name": "viko-celni-zebro-1",
+      "group": "lid",
+      "material": 3
+    },
+    {
+      "name": "viko-celni-zebro-2",
+      "group": "lid",
+      "material": 3
+    },
+    {
+      "name": "viko-celni-zebro-3",
+      "group": "lid",
+      "material": 3
+    },
+    {
+      "name": "viko-celni-zebro-4",
+      "group": "lid",
+      "material": 3
+    },
+    {
+      "name": "viko-celni-zebro-5",
+      "group": "lid",
+      "material": 3
+    },
+    {
+      "name": "viko-celni-zebro-6",
+      "group": "lid",
+      "material": 3
+    },
+    {
+      "name": "viko-celni-zebro-7",
+      "group": "lid",
+      "material": 3
+    },
+    {
+      "name": "viko-celni-zebro-8",
+      "group": "lid",
+      "material": 3
+    },
+    {
+      "name": "viko-celni-zebro-9",
+      "group": "lid",
+      "material": 3
+    },
+    {
+      "name": "viko-celni-zebro-10",
+      "group": "lid",
+      "material": 3
+    },
+    {
+      "name": "pant-vika-0",
+      "group": "lid",
+      "material": 3
+    },
+    {
+      "name": "pant-vika-kotveni-0",
+      "group": "fixed",
+      "material": 0
+    },
+    {
+      "name": "pant-vika-1",
+      "group": "lid",
+      "material": 3
+    },
+    {
+      "name": "pant-vika-kotveni-1",
+      "group": "fixed",
+      "material": 0
+    },
+    {
+      "name": "pant-vika-2",
+      "group": "lid",
+      "material": 3
+    },
+    {
+      "name": "pant-vika-kotveni-2",
+      "group": "fixed",
+      "material": 0
+    },
+    {
+      "name": "pant-vika-3",
+      "group": "lid",
+      "material": 3
+    },
+    {
+      "name": "pant-vika-kotveni-3",
+      "group": "fixed",
+      "material": 0
+    },
+    {
+      "name": "pant-vika-4",
+      "group": "lid",
+      "material": 3
+    },
+    {
+      "name": "pant-vika-kotveni-4",
+      "group": "fixed",
+      "material": 0
+    },
+    {
+      "name": "pant-vika-5",
+      "group": "lid",
+      "material": 3
+    },
+    {
+      "name": "pant-vika-kotveni-5",
+      "group": "fixed",
+      "material": 0
+    },
+    {
+      "name": "pant-vika-6",
+      "group": "lid",
+      "material": 3
+    },
+    {
+      "name": "pant-vika-kotveni-6",
+      "group": "fixed",
+      "material": 0
+    },
+    {
+      "name": "viko-oznaceni-MILWAUKEE",
+      "group": "lid",
+      "material": 6
+    },
+    {
+      "name": "viko-oznaceni-PACKOUT",
+      "group": "lid",
+      "material": 6
+    },
+    {
+      "name": "drzadlo-otevreny-uchop",
+      "group": "fixed",
+      "material": 0
+    },
+    {
+      "name": "drzadlo-celni-rameno--1",
+      "group": "fixed",
+      "material": 0
+    },
+    {
+      "name": "drzadlo-celni-rameno-1",
+      "group": "fixed",
+      "material": 0
+    },
+    {
+      "name": "PACKOUT-celni-odjistovaci-tlacitko",
+      "group": "fixed",
+      "material": 1
+    },
+    {
+      "name": "zapadka-zaklad--1",
+      "group": "fixed",
+      "material": 0
+    },
+    {
+      "name": "zapadka-cervena--1",
+      "group": "fixed",
+      "material": 1
+    },
+    {
+      "name": "zapadka-cerveny-prst--1-0",
+      "group": "fixed",
+      "material": 1
+    },
+    {
+      "name": "zapadka-cerveny-prst--1-1",
+      "group": "fixed",
+      "material": 1
+    },
+    {
+      "name": "zapadka-cerveny-prst--1-2",
+      "group": "fixed",
+      "material": 1
+    },
+    {
+      "name": "zapadka-cerveny-prst--1-3",
+      "group": "fixed",
+      "material": 1
+    },
+    {
+      "name": "zapadka-vroubek--1-0",
+      "group": "fixed",
+      "material": 1
+    },
+    {
+      "name": "zapadka-vroubek--1-1",
+      "group": "fixed",
+      "material": 1
+    },
+    {
+      "name": "zapadka-vroubek--1-2",
+      "group": "fixed",
+      "material": 1
+    },
+    {
+      "name": "zapadka-kov-levy--1",
+      "group": "fixed",
+      "material": 2
+    },
+    {
+      "name": "zapadka-kov-pravy--1",
+      "group": "fixed",
+      "material": 2
+    },
+    {
+      "name": "zapadka-kov-mustek--1",
+      "group": "fixed",
+      "material": 2
+    },
+    {
+      "name": "zapadka-ciry-horni-kryt--1",
+      "group": "lid",
+      "material": 3
+    },
+    {
+      "name": "zapadka-zaklad-1",
+      "group": "fixed",
+      "material": 0
+    },
+    {
+      "name": "zapadka-cervena-1",
+      "group": "fixed",
+      "material": 1
+    },
+    {
+      "name": "zapadka-cerveny-prst-1-0",
+      "group": "fixed",
+      "material": 1
+    },
+    {
+      "name": "zapadka-cerveny-prst-1-1",
+      "group": "fixed",
+      "material": 1
+    },
+    {
+      "name": "zapadka-cerveny-prst-1-2",
+      "group": "fixed",
+      "material": 1
+    },
+    {
+      "name": "zapadka-cerveny-prst-1-3",
+      "group": "fixed",
+      "material": 1
+    },
+    {
+      "name": "zapadka-vroubek-1-0",
+      "group": "fixed",
+      "material": 1
+    },
+    {
+      "name": "zapadka-vroubek-1-1",
+      "group": "fixed",
+      "material": 1
+    },
+    {
+      "name": "zapadka-vroubek-1-2",
+      "group": "fixed",
+      "material": 1
+    },
+    {
+      "name": "zapadka-kov-levy-1",
+      "group": "fixed",
+      "material": 2
+    },
+    {
+      "name": "zapadka-kov-pravy-1",
+      "group": "fixed",
+      "material": 2
+    },
+    {
+      "name": "zapadka-kov-mustek-1",
+      "group": "fixed",
+      "material": 2
+    },
+    {
+      "name": "zapadka-ciry-horni-kryt-1",
+      "group": "lid",
+      "material": 3
+    },
+    {
+      "name": "PACKOUT-spodni-odjistovaci-tlacitko",
+      "group": "fixed",
+      "material": 1
+    },
+    {
+      "name": "PACKOUT-spodni-patka-0-0",
+      "group": "fixed",
+      "material": 0,
+      "support_component": "telo-dno",
+      "footprint_constraint": "actual_floor_contact_contour",
+      "allowed_overhang_mm": 0
+    },
+    {
+      "name": "PACKOUT-spodni-zub-0-0",
+      "group": "fixed",
+      "material": 0,
+      "support_component": "telo-dno",
+      "footprint_constraint": "actual_floor_contact_contour",
+      "allowed_overhang_mm": 0
+    },
+    {
+      "name": "PACKOUT-spodni-prolis-0-0-0",
+      "group": "fixed",
+      "material": 4
+    },
+    {
+      "name": "PACKOUT-spodni-prolis-0-0-1",
+      "group": "fixed",
+      "material": 4
+    },
+    {
+      "name": "PACKOUT-spodni-prolis-0-0-2",
+      "group": "fixed",
+      "material": 4
+    },
+    {
+      "name": "PACKOUT-spodni-prolis-0-0-3",
+      "group": "fixed",
+      "material": 4
+    },
+    {
+      "name": "PACKOUT-spodni-prolis-0-0-4",
+      "group": "fixed",
+      "material": 4
+    },
+    {
+      "name": "PACKOUT-spodni-prolis-0-0-5",
+      "group": "fixed",
+      "material": 4
+    },
+    {
+      "name": "PACKOUT-spodni-patka-0-1",
+      "group": "fixed",
+      "material": 0,
+      "support_component": "telo-dno",
+      "footprint_constraint": "actual_floor_contact_contour",
+      "allowed_overhang_mm": 0
+    },
+    {
+      "name": "PACKOUT-spodni-zub-0-1",
+      "group": "fixed",
+      "material": 0,
+      "support_component": "telo-dno",
+      "footprint_constraint": "actual_floor_contact_contour",
+      "allowed_overhang_mm": 0
+    },
+    {
+      "name": "PACKOUT-spodni-prolis-0-1-0",
+      "group": "fixed",
+      "material": 4
+    },
+    {
+      "name": "PACKOUT-spodni-prolis-0-1-1",
+      "group": "fixed",
+      "material": 4
+    },
+    {
+      "name": "PACKOUT-spodni-prolis-0-1-2",
+      "group": "fixed",
+      "material": 4
+    },
+    {
+      "name": "PACKOUT-spodni-prolis-0-1-3",
+      "group": "fixed",
+      "material": 4
+    },
+    {
+      "name": "PACKOUT-spodni-prolis-0-1-4",
+      "group": "fixed",
+      "material": 4
+    },
+    {
+      "name": "PACKOUT-spodni-prolis-0-1-5",
+      "group": "fixed",
+      "material": 4
+    },
+    {
+      "name": "PACKOUT-spodni-patka-1-0",
+      "group": "fixed",
+      "material": 0,
+      "support_component": "telo-dno",
+      "footprint_constraint": "actual_floor_contact_contour",
+      "allowed_overhang_mm": 0
+    },
+    {
+      "name": "PACKOUT-spodni-zub-1-0",
+      "group": "fixed",
+      "material": 0,
+      "support_component": "telo-dno",
+      "footprint_constraint": "actual_floor_contact_contour",
+      "allowed_overhang_mm": 0
+    },
+    {
+      "name": "PACKOUT-spodni-prolis-1-0-0",
+      "group": "fixed",
+      "material": 4
+    },
+    {
+      "name": "PACKOUT-spodni-prolis-1-0-1",
+      "group": "fixed",
+      "material": 4
+    },
+    {
+      "name": "PACKOUT-spodni-prolis-1-0-2",
+      "group": "fixed",
+      "material": 4
+    },
+    {
+      "name": "PACKOUT-spodni-prolis-1-0-3",
+      "group": "fixed",
+      "material": 4
+    },
+    {
+      "name": "PACKOUT-spodni-prolis-1-0-4",
+      "group": "fixed",
+      "material": 4
+    },
+    {
+      "name": "PACKOUT-spodni-prolis-1-0-5",
+      "group": "fixed",
+      "material": 4
+    },
+    {
+      "name": "PACKOUT-spodni-patka-1-1",
+      "group": "fixed",
+      "material": 0,
+      "support_component": "telo-dno",
+      "footprint_constraint": "actual_floor_contact_contour",
+      "allowed_overhang_mm": 0
+    },
+    {
+      "name": "PACKOUT-spodni-zub-1-1",
+      "group": "fixed",
+      "material": 0,
+      "support_component": "telo-dno",
+      "footprint_constraint": "actual_floor_contact_contour",
+      "allowed_overhang_mm": 0
+    },
+    {
+      "name": "PACKOUT-spodni-prolis-1-1-0",
+      "group": "fixed",
+      "material": 4
+    },
+    {
+      "name": "PACKOUT-spodni-prolis-1-1-1",
+      "group": "fixed",
+      "material": 4
+    },
+    {
+      "name": "PACKOUT-spodni-prolis-1-1-2",
+      "group": "fixed",
+      "material": 4
+    },
+    {
+      "name": "PACKOUT-spodni-prolis-1-1-3",
+      "group": "fixed",
+      "material": 4
+    },
+    {
+      "name": "PACKOUT-spodni-prolis-1-1-4",
+      "group": "fixed",
+      "material": 4
+    },
+    {
+      "name": "PACKOUT-spodni-prolis-1-1-5",
+      "group": "fixed",
+      "material": 4
+    },
+    {
+      "name": "PACKOUT-spodni-patka-2-0",
+      "group": "fixed",
+      "material": 0,
+      "support_component": "telo-dno",
+      "footprint_constraint": "actual_floor_contact_contour",
+      "allowed_overhang_mm": 0
+    },
+    {
+      "name": "PACKOUT-spodni-zub-2-0",
+      "group": "fixed",
+      "material": 0,
+      "support_component": "telo-dno",
+      "footprint_constraint": "actual_floor_contact_contour",
+      "allowed_overhang_mm": 0
+    },
+    {
+      "name": "PACKOUT-spodni-prolis-2-0-0",
+      "group": "fixed",
+      "material": 4
+    },
+    {
+      "name": "PACKOUT-spodni-prolis-2-0-1",
+      "group": "fixed",
+      "material": 4
+    },
+    {
+      "name": "PACKOUT-spodni-prolis-2-0-2",
+      "group": "fixed",
+      "material": 4
+    },
+    {
+      "name": "PACKOUT-spodni-prolis-2-0-3",
+      "group": "fixed",
+      "material": 4
+    },
+    {
+      "name": "PACKOUT-spodni-prolis-2-0-4",
+      "group": "fixed",
+      "material": 4
+    },
+    {
+      "name": "PACKOUT-spodni-prolis-2-0-5",
+      "group": "fixed",
+      "material": 4
+    },
+    {
+      "name": "PACKOUT-spodni-patka-2-1",
+      "group": "fixed",
+      "material": 0,
+      "support_component": "telo-dno",
+      "footprint_constraint": "actual_floor_contact_contour",
+      "allowed_overhang_mm": 0
+    },
+    {
+      "name": "PACKOUT-spodni-zub-2-1",
+      "group": "fixed",
+      "material": 0,
+      "support_component": "telo-dno",
+      "footprint_constraint": "actual_floor_contact_contour",
+      "allowed_overhang_mm": 0
+    },
+    {
+      "name": "PACKOUT-spodni-prolis-2-1-0",
+      "group": "fixed",
+      "material": 4
+    },
+    {
+      "name": "PACKOUT-spodni-prolis-2-1-1",
+      "group": "fixed",
+      "material": 4
+    },
+    {
+      "name": "PACKOUT-spodni-prolis-2-1-2",
+      "group": "fixed",
+      "material": 4
+    },
+    {
+      "name": "PACKOUT-spodni-prolis-2-1-3",
+      "group": "fixed",
+      "material": 4
+    },
+    {
+      "name": "PACKOUT-spodni-prolis-2-1-4",
+      "group": "fixed",
+      "material": 4
+    },
+    {
+      "name": "PACKOUT-spodni-prolis-2-1-5",
+      "group": "fixed",
+      "material": 4
+    }
+  ],
+  "equations": [
+    "411 × (792 − 72) / (793 − 6) = 376.010165184244 mm; projected reconstruction, not physical metrology",
+    "Uzavřený prostor: z_dno = 64 − 2 − 46 = 16 mm; horní rovina dutiny = 64 − 2 = 62 mm; 62 − 16 = 46 mm. Výška spodního těla = 45.44 − 16 = 29.439999999999998 mm. Tloušťka 2 mm je nekótovaná vzhledová rekonstrukce.",
+    "Přihrádky: obrazový poměr normalizován na doložený vnitřní půdorys 305 × 203 mm; počet = 5. Tato operace neprokazuje polohu detailů na fyzickém kusu do 2 mm.",
+    "Podstava: skutečné dno X = [-205.500, 170.510], Y = [-124.500, 124.500]; střed = (-17.495, 0.000) mm. Všechny spodní prvky jsou kotvené k tomuto dnu; výška patek = z_min dna = 3.200 mm."
+  ]
+}

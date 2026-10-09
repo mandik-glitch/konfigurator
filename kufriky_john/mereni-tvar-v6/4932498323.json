@@ -1,0 +1,824 @@
+{
+  "sku": "4932498323",
+  "units": "mm",
+  "catalog_axes": {
+    "X": "width",
+    "Y": "length",
+    "Z": "height"
+  },
+  "kind": "photo_reconstructed_product",
+  "is_product_geometry": true,
+  "detail_level": "realny_tvar",
+  "detail_label": "Reálný tvar · rekonstrukce z fotografií",
+  "physical_accuracy_verified": false,
+  "physical_tolerance_mm": null,
+  "source_url": "https://www.milwaukeetool.eu/en-eu/packout-tip-bin-organiser/packout-tip-bin-organiser/",
+  "photo_url": "https://static.milwaukeetool.eu/remote.axd/milwaukee-media-images.s3.amazonaws.com/hi/4932498323--Hero_1.jpg?v=42F2D462CAB6790176C54AC232D81B1A&width=240",
+  "photo_page_url": "https://www.milwaukeetool.eu/en-eu/packout-tip-bin-organiser/packout-tip-bin-organiser/",
+  "dimension_constraints_mm": {
+    "length": 500,
+    "width": 386,
+    "height": 170
+  },
+  "features": [
+    "červená výklopná rukojeť s černým vroubkovaným úchopem a čepy",
+    "nožky / podstava",
+    "otevřený nosný rám, střední sloupek, tři kovové tyče a červená západka T",
+    "8 malých a 2 velké průhledné boxy se samostatnými víčky; dělič v obou velkých",
+    "podstavné plošky uvnitř skutečného zaobleného obrysu dna"
+  ],
+  "bin_count": 10,
+  "envelope_fit": {
+    "before_min_mm": [
+      -193,
+      -250,
+      0
+    ],
+    "before_max_mm": [
+      193,
+      250,
+      170
+    ],
+    "axis_scale": [
+      1,
+      1,
+      1
+    ],
+    "applied": false
+  },
+  "bottom_supports": {
+    "constraint": "actual_floor_contact_contour",
+    "allowed_overhang_mm": 0,
+    "physical_accuracy_verified": false
+  },
+  "front_axis": "positive_x",
+  "hinge_axis": "y",
+  "review": {
+    "seen": "Souvislá vysoká stěna zakrývala vyklápěcí boxy, chyběl střední sloupek, tři kovové tyče a sklopné držadlo. Nádoby neměly správné čelo.",
+    "changed": "Otevřený nosný rám, 8 malých + 2 velké samostatné duté průhledné boxy, dělič v každém velkém, střední západka T, tři kovové přídržné tyče, přední rukojeť a její horní výklopná poloha.",
+    "match": "Viditelné rozdíly v5 přepracované podle vlastních fotografií SKU. Shoda detailů do 2 mm NEOVĚŘENA.",
+    "unverified": [
+      "Nekótované poloměry, tloušťky stěn, úkosy, přesné polohy, hloubky a vůle nejsou doměřené.",
+      "Shoda jednotlivých detailů do 2 mm není prokázaná; model není výrobní CAD.",
+      "Přímá fotografie spodku tohoto SKU nezískána; přesné spodní spojovací pozice nejsou v6 přebírané z jiného SKU ani potvrzené."
+    ],
+    "source_photo_url": "https://static.milwaukeetool.eu/remote.axd/milwaukee-media-images.s3.amazonaws.com/hi/4932498323--Hero_5.jpg?v=499A980633965E52A34673BA5AD9F3EF&width=1200",
+    "source_page_url": "https://www.milwaukeetool.eu/en-eu/packout-tip-bin-organiser/packout-tip-bin-organiser/?variant=1054317",
+    "photo_count": 15,
+    "comparison_note": "Vlevo zachovaný model v5, vpravo v6. Srovnání s originální fotografií je samostatně u každého úhlu.",
+    "render_file": "porovnani/4932498323.png",
+    "render_before_file": "porovnani/4932498323-v5.png",
+    "changed_v3": "Rukojeť přesunuta na krátkou stěnu; nádoby, skutečná dutina, víčka a samostatné panty.",
+    "support_summary": "Změřeno 127 součástí včetně 4 spodních dílů. Patky ověřené proti skutečné ploše dna; digitální tolerance 0,01 mm. Fyzická shoda detailů do 2 mm neověřená.",
+    "support_checked": true,
+    "support_changes": 4,
+    "changed_v4": "Čtyři rohové podstavy upravené podle skutečné zaoblené spodní plochy dna. Spojovací prvky byly uvnitř obrysu už ve v3.",
+    "visual_check_v4": "Prohlédnuto zepředu, z obou boků, shora a zespodu. Podstavné díly nepřesahují skutečné dno; vzhled nekótovaných detailů zůstává rekonstrukcí.",
+    "changed_v5": "Zkontrolované všechny součásti; nebyla nalezena vyčnívající podstava. Doplněné připojené červené odjištění pod čelním držadlem podle bočního snímku; vše v obrysu trupu."
+  },
+  "photo_sources": [
+    {
+      "url": "https://static.milwaukeetool.eu/remote.axd/milwaukee-media-images.s3.amazonaws.com/hi/4932498323--Hero_1.jpg?v=42F2D462CAB6790176C54AC232D81B1A&width=1200",
+      "page_url": "https://www.milwaukeetool.eu/en-eu/packout-tip-bin-organiser/packout-tip-bin-organiser/?variant=1054317",
+      "kind": "hero"
+    },
+    {
+      "url": "https://static.milwaukeetool.eu/remote.axd/milwaukee-media-images.s3.amazonaws.com/hi/4932498323--Hero_2.jpg?v=829ECDD38F411526B19FBB88D41509A9&width=1200",
+      "page_url": "https://www.milwaukeetool.eu/en-eu/packout-tip-bin-organiser/packout-tip-bin-organiser/?variant=1054317",
+      "kind": "hero"
+    },
+    {
+      "url": "https://static.milwaukeetool.eu/remote.axd/milwaukee-media-images.s3.amazonaws.com/hi/4932498323--Hero_3.jpg?v=CA7F78ADBF5BE1DB22AC04858EB96D5F&width=1200",
+      "page_url": "https://www.milwaukeetool.eu/en-eu/packout-tip-bin-organiser/packout-tip-bin-organiser/?variant=1054317",
+      "kind": "hero"
+    },
+    {
+      "url": "https://static.milwaukeetool.eu/remote.axd/milwaukee-media-images.s3.amazonaws.com/hi/4932498323--Hero_4.jpg?v=FFD8FE973EFD0F6DD9F9D5B826210F57&width=1200",
+      "page_url": "https://www.milwaukeetool.eu/en-eu/packout-tip-bin-organiser/packout-tip-bin-organiser/?variant=1054317",
+      "kind": "hero"
+    },
+    {
+      "url": "https://static.milwaukeetool.eu/remote.axd/milwaukee-media-images.s3.amazonaws.com/hi/4932498323--Hero_5.jpg?v=499A980633965E52A34673BA5AD9F3EF&width=1200",
+      "page_url": "https://www.milwaukeetool.eu/en-eu/packout-tip-bin-organiser/packout-tip-bin-organiser/?variant=1054317",
+      "kind": "hero"
+    },
+    {
+      "url": "https://static.milwaukeetool.eu/remote.axd/milwaukee-media-images.s3.amazonaws.com/hi/4932498323--Hero_6.jpg?v=A9831246AA2A9B64762CB5B41430EF78&width=1200",
+      "page_url": "https://www.milwaukeetool.eu/en-eu/packout-tip-bin-organiser/packout-tip-bin-organiser/?variant=1054317",
+      "kind": "hero"
+    },
+    {
+      "url": "https://static.milwaukeetool.eu/remote.axd/milwaukee-media-images.s3.amazonaws.com/hi/4932498323--Feat_1.jpg?v=3B45EF0257554BCEF99AC1BB2E1E95F5&width=1200",
+      "page_url": "https://www.milwaukeetool.eu/en-eu/packout-tip-bin-organiser/packout-tip-bin-organiser/?variant=1054317",
+      "kind": "feature"
+    },
+    {
+      "url": "https://static.milwaukeetool.eu/remote.axd/milwaukee-media-images.s3.amazonaws.com/hi/4932498323--Feat_2.jpg?v=8E5EACEE06BB016282FBC1F0C36DAB5F&width=1200",
+      "page_url": "https://www.milwaukeetool.eu/en-eu/packout-tip-bin-organiser/packout-tip-bin-organiser/?variant=1054317",
+      "kind": "feature"
+    },
+    {
+      "url": "https://static.milwaukeetool.eu/remote.axd/milwaukee-media-images.s3.amazonaws.com/hi/4932498323--Feat_3.jpg?v=295A3E6612815AC6E37390FD56A68D5E&width=1200",
+      "page_url": "https://www.milwaukeetool.eu/en-eu/packout-tip-bin-organiser/packout-tip-bin-organiser/?variant=1054317",
+      "kind": "feature"
+    },
+    {
+      "url": "https://static.milwaukeetool.eu/remote.axd/milwaukee-media-images.s3.amazonaws.com/hi/4932498323--Feat_4.jpg?v=117D7062793A3D3ED499245BB6465C4C&width=1200",
+      "page_url": "https://www.milwaukeetool.eu/en-eu/packout-tip-bin-organiser/packout-tip-bin-organiser/?variant=1054317",
+      "kind": "feature"
+    },
+    {
+      "url": "https://static.milwaukeetool.eu/remote.axd/milwaukee-media-images.s3.amazonaws.com/hi/4932498323--Feat_5.jpg?v=860C70029C842E88AB2DA3D2A27BA2A0&width=1200",
+      "page_url": "https://www.milwaukeetool.eu/en-eu/packout-tip-bin-organiser/packout-tip-bin-organiser/?variant=1054317",
+      "kind": "feature"
+    },
+    {
+      "url": "https://static.milwaukeetool.eu/remote.axd/milwaukee-media-images.s3.amazonaws.com/hi_no_padding/4932498323--App_1.jpg?v=7D2B31F1D281E72353FDEF0D12CF0740&width=1200",
+      "page_url": "https://www.milwaukeetool.eu/en-eu/packout-tip-bin-organiser/packout-tip-bin-organiser/?variant=1054317",
+      "kind": "app"
+    },
+    {
+      "url": "https://cdn.myshoptet.com/usr/www.elglobal.cz/user/shop/big/294725-1_4932498323-hero-2.jpg?ff=1&x=1024&y=768&q=85&ts=698df604&sg=161563f2",
+      "page_url": "https://www.elglobal.cz/packout--organizer-s-vyklapecimi-boxy/",
+      "kind": "nový zdroj CZ: šikmý a čelní pohled"
+    },
+    {
+      "url": "https://cdn.myshoptet.com/usr/www.elglobal.cz/user/shop/big/294725-3_4932498323-hero-4.jpg?ff=1&x=1024&y=768&q=85&ts=698df604&sg=161563f2",
+      "page_url": "https://www.elglobal.cz/packout--organizer-s-vyklapecimi-boxy/",
+      "kind": "nový zdroj CZ: šikmý a čelní pohled"
+    },
+    {
+      "url": "https://cdn.myshoptet.com/usr/www.elglobal.cz/user/shop/big/294725-4_4932498323-hero-5.jpg?ff=1&x=1024&y=768&q=85&ts=698df604&sg=161563f2",
+      "page_url": "https://www.elglobal.cz/packout--organizer-s-vyklapecimi-boxy/",
+      "kind": "nový zdroj CZ: šikmý a čelní pohled"
+    }
+  ],
+  "measured_features": [],
+  "limitation": "Kóty obálky jsou ze zdroje. Nekótované detaily a skryté spoje jsou vizuální rekonstrukce, ne přesný výrobní CAD. Kompatibilita PACKOUT a tolerance fyzického kusu neověřeny.",
+  "label_font_license": "Copyright (c) 2004 by MAGENTA Ltd. All Rights Reserved.\r\n\r\nPermission is hereby granted, free of charge, to any person obtaining a copy of the fonts accompanying this license (\"Fonts\") and associated documentation files (the \"Font Software\"), to reproduce and distribute the Font Software, including without limitation the rights to use, copy, merge, publish, distribute, and/or sell copies of the Font Software, and to permit persons to whom the Font Software is furnished to do so, subject to the following conditions: \r\n\r\nThe above copyright and this permission notice shall be included in all copies of one or more of the Font Software typefaces.\r\n\r\nThe Font Software may be modified, altered, or added to, and in particular the designs of glyphs or characters in the Fonts may be modified and additional glyphs or characters may be added to the Fonts, only if the fonts are renamed to names not containing the word \"MgOpen\", or if the modifications are accepted for inclusion in the Font Software itself by the each appointed Administrator.\r\n\r\nThis License becomes null and void to the extent applicable to Fonts or Font Software that has been modified and is distributed under the \"MgOpen\" name.\r\n\r\nThe Font Software may be sold as part of a larger software package but no copy of one or more of the Font Software typefaces may be sold by itself. \r\n\r\nTHE FONT SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT OF COPYRIGHT, PATENT, TRADEMARK, OR OTHER RIGHT. IN NO EVENT SHALL MAGENTA OR PERSONS OR BODIES IN CHARGE OF ADMINISTRATION AND MAINTENANCE OF THE FONT SOFTWARE BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, INCLUDING ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM OTHER DEALINGS IN THE FONT SOFTWARE.",
+  "revision": "v6",
+  "evidence_v6": {
+    "revision": 6,
+    "sku": "4932498323",
+    "top_photo_url": "https://static.milwaukeetool.eu/remote.axd/milwaukee-media-images.s3.amazonaws.com/hi/4932498323--Hero_1.jpg?v=42F2D462CAB6790176C54AC232D81B1A&width=1200",
+    "annotations_file": "anotace-v6.json",
+    "physical_accuracy_verified": false,
+    "physical_tolerance_mm": null,
+    "underside": "unverified_no_family_substitution"
+  },
+  "cavity_semantics": "Published inner height includes the closed lid cavity; open body has a lower rim.",
+  "bytes": 510884,
+  "parts": [
+    {
+      "name": "vyklopny-organizer-zadni-panel",
+      "group": "fixed",
+      "material": 0
+    },
+    {
+      "name": "vyklopny-organizer-bocni-nosnik--1",
+      "group": "fixed",
+      "material": 0
+    },
+    {
+      "name": "vyklopny-organizer-bocni-nosnik-1",
+      "group": "fixed",
+      "material": 0
+    },
+    {
+      "name": "vyklopny-organizer-celni-nosnik--168.296",
+      "group": "fixed",
+      "material": 0
+    },
+    {
+      "name": "vyklopny-organizer-celni-nosnik-168.296",
+      "group": "fixed",
+      "material": 0
+    },
+    {
+      "name": "vyklopny-organizer-stredni-sloupek",
+      "group": "fixed",
+      "material": 0
+    },
+    {
+      "name": "tip-0-dno",
+      "group": "tip-0",
+      "material": 3
+    },
+    {
+      "name": "tip-0-dute-cire-steny",
+      "group": "tip-0",
+      "material": 3
+    },
+    {
+      "name": "tip-0-vicko",
+      "group": "tip-0",
+      "material": 3
+    },
+    {
+      "name": "tip-0-ciry-horni-lem",
+      "group": "tip-0",
+      "material": 3
+    },
+    {
+      "name": "tip-0-uchop",
+      "group": "tip-0",
+      "material": 3
+    },
+    {
+      "name": "tip-0-pant",
+      "group": "tip-0",
+      "material": 2
+    },
+    {
+      "name": "tip-0-pant-kotveni",
+      "group": "fixed",
+      "material": 0
+    },
+    {
+      "name": "tip-1-dno",
+      "group": "tip-1",
+      "material": 3
+    },
+    {
+      "name": "tip-1-dute-cire-steny",
+      "group": "tip-1",
+      "material": 3
+    },
+    {
+      "name": "tip-1-vicko",
+      "group": "tip-1",
+      "material": 3
+    },
+    {
+      "name": "tip-1-ciry-horni-lem",
+      "group": "tip-1",
+      "material": 3
+    },
+    {
+      "name": "tip-1-uchop",
+      "group": "tip-1",
+      "material": 3
+    },
+    {
+      "name": "tip-1-pant",
+      "group": "tip-1",
+      "material": 2
+    },
+    {
+      "name": "tip-1-pant-kotveni",
+      "group": "fixed",
+      "material": 0
+    },
+    {
+      "name": "tip-2-dno",
+      "group": "tip-2",
+      "material": 3
+    },
+    {
+      "name": "tip-2-dute-cire-steny",
+      "group": "tip-2",
+      "material": 3
+    },
+    {
+      "name": "tip-2-vicko",
+      "group": "tip-2",
+      "material": 3
+    },
+    {
+      "name": "tip-2-ciry-horni-lem",
+      "group": "tip-2",
+      "material": 3
+    },
+    {
+      "name": "tip-2-uchop",
+      "group": "tip-2",
+      "material": 3
+    },
+    {
+      "name": "tip-2-pant",
+      "group": "tip-2",
+      "material": 2
+    },
+    {
+      "name": "tip-2-pant-kotveni",
+      "group": "fixed",
+      "material": 0
+    },
+    {
+      "name": "tip-3-dno",
+      "group": "tip-3",
+      "material": 3
+    },
+    {
+      "name": "tip-3-dute-cire-steny",
+      "group": "tip-3",
+      "material": 3
+    },
+    {
+      "name": "tip-3-vicko",
+      "group": "tip-3",
+      "material": 3
+    },
+    {
+      "name": "tip-3-ciry-horni-lem",
+      "group": "tip-3",
+      "material": 3
+    },
+    {
+      "name": "tip-3-uchop",
+      "group": "tip-3",
+      "material": 3
+    },
+    {
+      "name": "tip-3-pant",
+      "group": "tip-3",
+      "material": 2
+    },
+    {
+      "name": "tip-3-pant-kotveni",
+      "group": "fixed",
+      "material": 0
+    },
+    {
+      "name": "tip-4-dno",
+      "group": "tip-4",
+      "material": 3
+    },
+    {
+      "name": "tip-4-dute-cire-steny",
+      "group": "tip-4",
+      "material": 3
+    },
+    {
+      "name": "tip-4-vicko",
+      "group": "tip-4",
+      "material": 3
+    },
+    {
+      "name": "tip-4-ciry-horni-lem",
+      "group": "tip-4",
+      "material": 3
+    },
+    {
+      "name": "tip-4-uchop",
+      "group": "tip-4",
+      "material": 3
+    },
+    {
+      "name": "tip-4-vnitrni-delic",
+      "group": "tip-4",
+      "material": 0
+    },
+    {
+      "name": "tip-4-pant",
+      "group": "tip-4",
+      "material": 2
+    },
+    {
+      "name": "tip-4-pant-kotveni",
+      "group": "fixed",
+      "material": 0
+    },
+    {
+      "name": "tip-5-dno",
+      "group": "tip-5",
+      "material": 3
+    },
+    {
+      "name": "tip-5-dute-cire-steny",
+      "group": "tip-5",
+      "material": 3
+    },
+    {
+      "name": "tip-5-vicko",
+      "group": "tip-5",
+      "material": 3
+    },
+    {
+      "name": "tip-5-ciry-horni-lem",
+      "group": "tip-5",
+      "material": 3
+    },
+    {
+      "name": "tip-5-uchop",
+      "group": "tip-5",
+      "material": 3
+    },
+    {
+      "name": "tip-5-vnitrni-delic",
+      "group": "tip-5",
+      "material": 0
+    },
+    {
+      "name": "tip-5-pant",
+      "group": "tip-5",
+      "material": 2
+    },
+    {
+      "name": "tip-5-pant-kotveni",
+      "group": "fixed",
+      "material": 0
+    },
+    {
+      "name": "tip-6-dno",
+      "group": "tip-6",
+      "material": 3
+    },
+    {
+      "name": "tip-6-dute-cire-steny",
+      "group": "tip-6",
+      "material": 3
+    },
+    {
+      "name": "tip-6-vicko",
+      "group": "tip-6",
+      "material": 3
+    },
+    {
+      "name": "tip-6-ciry-horni-lem",
+      "group": "tip-6",
+      "material": 3
+    },
+    {
+      "name": "tip-6-uchop",
+      "group": "tip-6",
+      "material": 3
+    },
+    {
+      "name": "tip-6-pant",
+      "group": "tip-6",
+      "material": 2
+    },
+    {
+      "name": "tip-6-pant-kotveni",
+      "group": "fixed",
+      "material": 0
+    },
+    {
+      "name": "tip-7-dno",
+      "group": "tip-7",
+      "material": 3
+    },
+    {
+      "name": "tip-7-dute-cire-steny",
+      "group": "tip-7",
+      "material": 3
+    },
+    {
+      "name": "tip-7-vicko",
+      "group": "tip-7",
+      "material": 3
+    },
+    {
+      "name": "tip-7-ciry-horni-lem",
+      "group": "tip-7",
+      "material": 3
+    },
+    {
+      "name": "tip-7-uchop",
+      "group": "tip-7",
+      "material": 3
+    },
+    {
+      "name": "tip-7-pant",
+      "group": "tip-7",
+      "material": 2
+    },
+    {
+      "name": "tip-7-pant-kotveni",
+      "group": "fixed",
+      "material": 0
+    },
+    {
+      "name": "tip-8-dno",
+      "group": "tip-8",
+      "material": 3
+    },
+    {
+      "name": "tip-8-dute-cire-steny",
+      "group": "tip-8",
+      "material": 3
+    },
+    {
+      "name": "tip-8-vicko",
+      "group": "tip-8",
+      "material": 3
+    },
+    {
+      "name": "tip-8-ciry-horni-lem",
+      "group": "tip-8",
+      "material": 3
+    },
+    {
+      "name": "tip-8-uchop",
+      "group": "tip-8",
+      "material": 3
+    },
+    {
+      "name": "tip-8-pant",
+      "group": "tip-8",
+      "material": 2
+    },
+    {
+      "name": "tip-8-pant-kotveni",
+      "group": "fixed",
+      "material": 0
+    },
+    {
+      "name": "tip-9-dno",
+      "group": "tip-9",
+      "material": 3
+    },
+    {
+      "name": "tip-9-dute-cire-steny",
+      "group": "tip-9",
+      "material": 3
+    },
+    {
+      "name": "tip-9-vicko",
+      "group": "tip-9",
+      "material": 3
+    },
+    {
+      "name": "tip-9-ciry-horni-lem",
+      "group": "tip-9",
+      "material": 3
+    },
+    {
+      "name": "tip-9-uchop",
+      "group": "tip-9",
+      "material": 3
+    },
+    {
+      "name": "tip-9-pant",
+      "group": "tip-9",
+      "material": 2
+    },
+    {
+      "name": "tip-9-pant-kotveni",
+      "group": "fixed",
+      "material": 0
+    },
+    {
+      "name": "vyklopny-organizer-kovova-tyc-0",
+      "group": "fixed",
+      "material": 2
+    },
+    {
+      "name": "vyklopny-organizer-kovova-tyc-1",
+      "group": "fixed",
+      "material": 2
+    },
+    {
+      "name": "vyklopny-organizer-kovova-tyc-2",
+      "group": "fixed",
+      "material": 2
+    },
+    {
+      "name": "vyklopny-organizer-zapadka-T",
+      "group": "fixed",
+      "material": 1
+    },
+    {
+      "name": "drzadlo-otevreny-uchop",
+      "group": "carry",
+      "material": 1
+    },
+    {
+      "name": "drzadlo-cerny-uchop",
+      "group": "carry",
+      "material": 4
+    },
+    {
+      "name": "drzadlo-vroubek-0",
+      "group": "carry",
+      "material": 0
+    },
+    {
+      "name": "drzadlo-vroubek-1",
+      "group": "carry",
+      "material": 0
+    },
+    {
+      "name": "drzadlo-vroubek-2",
+      "group": "carry",
+      "material": 0
+    },
+    {
+      "name": "drzadlo-vroubek-3",
+      "group": "carry",
+      "material": 0
+    },
+    {
+      "name": "drzadlo-vroubek-4",
+      "group": "carry",
+      "material": 0
+    },
+    {
+      "name": "drzadlo-vroubek-5",
+      "group": "carry",
+      "material": 0
+    },
+    {
+      "name": "drzadlo-vroubek-6",
+      "group": "carry",
+      "material": 0
+    },
+    {
+      "name": "drzadlo-vroubek-7",
+      "group": "carry",
+      "material": 0
+    },
+    {
+      "name": "drzadlo-vroubek-8",
+      "group": "carry",
+      "material": 0
+    },
+    {
+      "name": "drzadlo-vroubek-9",
+      "group": "carry",
+      "material": 0
+    },
+    {
+      "name": "drzadlo-vroubek-10",
+      "group": "carry",
+      "material": 0
+    },
+    {
+      "name": "drzadlo-vroubek-11",
+      "group": "carry",
+      "material": 0
+    },
+    {
+      "name": "drzadlo-vroubek-12",
+      "group": "carry",
+      "material": 0
+    },
+    {
+      "name": "drzadlo-vroubek-13",
+      "group": "carry",
+      "material": 0
+    },
+    {
+      "name": "drzadlo-vroubek-14",
+      "group": "carry",
+      "material": 0
+    },
+    {
+      "name": "drzadlo-vroubek-15",
+      "group": "carry",
+      "material": 0
+    },
+    {
+      "name": "drzadlo-vroubek-16",
+      "group": "carry",
+      "material": 0
+    },
+    {
+      "name": "drzadlo-vroubek-17",
+      "group": "carry",
+      "material": 0
+    },
+    {
+      "name": "drzadlo-vroubek-18",
+      "group": "carry",
+      "material": 0
+    },
+    {
+      "name": "drzadlo-vroubek-19",
+      "group": "carry",
+      "material": 0
+    },
+    {
+      "name": "drzadlo-vroubek-20",
+      "group": "carry",
+      "material": 0
+    },
+    {
+      "name": "drzadlo-vroubek-21",
+      "group": "carry",
+      "material": 0
+    },
+    {
+      "name": "drzadlo-nosny-sloupek--1",
+      "group": "fixed",
+      "material": 0
+    },
+    {
+      "name": "drzadlo-cep--1",
+      "group": "fixed",
+      "material": 2
+    },
+    {
+      "name": "drzadlo-cerveny-prst--1-0",
+      "group": "carry",
+      "material": 1
+    },
+    {
+      "name": "drzadlo-cerveny-prst--1-1",
+      "group": "carry",
+      "material": 1
+    },
+    {
+      "name": "drzadlo-cerveny-prst--1-2",
+      "group": "carry",
+      "material": 1
+    },
+    {
+      "name": "drzadlo-nosny-sloupek-1",
+      "group": "fixed",
+      "material": 0
+    },
+    {
+      "name": "drzadlo-cep-1",
+      "group": "fixed",
+      "material": 2
+    },
+    {
+      "name": "drzadlo-cerveny-prst-1-0",
+      "group": "carry",
+      "material": 1
+    },
+    {
+      "name": "drzadlo-cerveny-prst-1-1",
+      "group": "carry",
+      "material": 1
+    },
+    {
+      "name": "drzadlo-cerveny-prst-1-2",
+      "group": "carry",
+      "material": 1
+    },
+    {
+      "name": "PACKOUT-celni-C-odjisteni",
+      "group": "fixed",
+      "material": 1
+    },
+    {
+      "name": "vyklopny-organizer-stitek-celo",
+      "group": "fixed",
+      "material": 1
+    },
+    {
+      "name": "vyklopny-organizer-oznaceni-MILWAUKEE",
+      "group": "fixed",
+      "material": 6
+    },
+    {
+      "name": "vyklopny-organizer-oznaceni-PACKOUT",
+      "group": "fixed",
+      "material": 6
+    },
+    {
+      "name": "PACKOUT-spodni-odjistovaci-tlacitko",
+      "group": "fixed",
+      "material": 1
+    },
+    {
+      "name": "vyklopny-organizer-bocni-stitek--1",
+      "group": "fixed",
+      "material": 1
+    },
+    {
+      "name": "vyklopny-organizer-bocni-stitek-1",
+      "group": "fixed",
+      "material": 1
+    },
+    {
+      "name": "patka--1--1",
+      "group": "fixed",
+      "material": 0,
+      "support_component": "vyklopny-organizer-zadni-panel",
+      "footprint_constraint": "actual_floor_contact_contour",
+      "allowed_overhang_mm": 0
+    },
+    {
+      "name": "patka--1-1",
+      "group": "fixed",
+      "material": 0,
+      "support_component": "vyklopny-organizer-zadni-panel",
+      "footprint_constraint": "actual_floor_contact_contour",
+      "allowed_overhang_mm": 0
+    },
+    {
+      "name": "patka-1--1",
+      "group": "fixed",
+      "material": 0,
+      "support_component": "vyklopny-organizer-zadni-panel",
+      "footprint_constraint": "actual_floor_contact_contour",
+      "allowed_overhang_mm": 0
+    },
+    {
+      "name": "patka-1-1",
+      "group": "fixed",
+      "material": 0,
+      "support_component": "vyklopny-organizer-zadni-panel",
+      "footprint_constraint": "actual_floor_contact_contour",
+      "allowed_overhang_mm": 0
+    }
+  ],
+  "equations": [
+    "Vyklápěcí boxy: 2 banky × (2 + 1 + 2) = 10, z toho 8 malých + 2 velké. Kovové tyče: 3 řady × 1 = 3.",
+    "Podstava: skutečné dno X = [-193.000, 193.000], Y = [-250.000, 250.000]; střed = (0.000, 0.000) mm. Všechny spodní prvky jsou kotvené k tomuto dnu; výška patek = z_min dna = 7.000 mm."
+  ]
+}

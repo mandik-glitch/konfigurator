@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="cs">
+<head>
+ <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta name="robots" content="noindex, nofollow">
+ <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'none'; font-src 'self'; base-uri 'none'; object-src 'none'; form-action 'none'">
+ <meta name="referrer" content="no-referrer">
+ <title>PACKOUT · kontrola tvarů v6 — John</title>
+ <link rel="stylesheet" href="style.css">
+ <script defer src="vendor/three.min.js"></script><script defer src="vendor/OrbitControls.js"></script><script defer src="vendor/GLTFLoader.js"></script><script defer src="data.js"></script><script defer src="srovnani-data.js"></script><script defer src="app.js"></script>
+</head>
+<body>
+ <header><div><p class="eyebrow">NÁŘADÍ / PODKLADY PRO NÁVRH</p><h1>Milwaukee <span>PACKOUT™</span></h1><p class="subtitle">Porovnání se skutečností · v6 · 20 typů · ČR a SR · připravil John</p></div><a class="back" href="../kufriky-milwaukee-tabulka-v1/">Schválená tabulka ↗</a></header>
+ <div class="notice"><strong>Přepracováno všech pět organizérů.</strong><span> V6 · pět organizérů přepracovaných podle vlastních fotografií SKU · 21 SKU. Vnější rozměry odpovídají zdrojům; přesnost nekótovaných detailů a spojovacích vůlí není ověřená.</span></div>
+ <div class="workspace">
+  <aside class="catalog"><div class="catalog-head"><h2>20 typů kufříků</h2><label for="search">Najít název nebo číslo</label><input id="search" type="search" placeholder="Např. organizér nebo 4932471064" autocomplete="off"><label for="type-select">Vybraný typ</label><select id="type-select"></select></div><nav id="types" aria-label="Typy kufříků"></nav><p id="empty" hidden>Žádný typ neodpovídá hledání.</p></aside>
+  <main>
+   <div class="model-head"><div><p id="sku" class="eyebrow"></p><h2 id="name"></h2></div><span class="badge" id="detail-badge">Vlastní · reálný tvar</span></div>
+   <div id="viewer"><div class="watermark">REKONSTRUKCE v6<br><small>Rekonstrukce z fotografií · kóty v mm</small></div><div id="labels"></div><div id="viewer-error" hidden>3D zobrazení není v tomto prohlížeči dostupné.</div></div>
+   <div class="views" aria-label="Pohledy"><button data-view="iso" class="active">Prostorový</button><button data-view="front">Zepředu</button><button data-view="side">Pravý bok</button><button data-view="sideOther">Levý bok</button><button data-view="back">Zezadu</button><button data-view="top">Shora</button><button id="reset">Vrátit pohled</button><label><input id="dimensions" type="checkbox"> Rozměry</label></div>
+   <div class="controls-detail"><label><input id="parts-colors" type="checkbox"> Rozlišit součásti barvou</label><label><input id="open" type="checkbox"> Otevřít / vysunout</label><label><input id="carry-raised" type="checkbox"> Zvednout držadlo výklopného typu</label><label><input id="hide-lid" type="checkbox"> Skrýt víko / čelo</label><label><input id="outline" type="checkbox"> Obálka pro kontrolu</label><label><input id="photo-view" type="checkbox"> Směr vybrané fotografie</label><label><input id="bottom" type="checkbox"> Ukázat spodní spoje</label></div>
+   <p class="hint">Tažením otočíte pohled, kolečkem přiblížíte. Otevření je názorné; dráha mechanismu není ověřená.</p>
+   <div class="dimensions" id="dimensions-summary"></div>
+   <section class="shape-features"><h3>Co model obsahuje</h3><p id="features"></p><p id="model-stats"></p></section>
+   <div class="evidence"><div class="photo"><img id="photo" alt="" title="Zvětšit vlastní render"><a id="photo-source" target="_blank" rel="noopener noreferrer">Vybraný snímek výrobce ↗</a></div><div><h3>Vidím ve zdroji</h3><p id="raw-dimensions"></p><p id="verification"></p><a id="source" target="_blank" rel="noopener noreferrer">Rozměry výrobce / prodejce ↗</a><p id="hardware"></p><div id="sales"></div></div></div>
+   <div id="conflicts" class="conflicts"></div>
+   <section class="review"><p><a class="compare-link" id="comparison-page" href="srovnani.html">Fotografie ↔ model: šest úhlů a otevřený stav ↗</a></p><div id="photo-model-pairs"></div><h3>Porovnání a opravy v6</h3><p id="match"></p><p id="seen"></p><p id="changed"></p><p id="comparison-note"></p><div class="render-pair"><figure><img id="render-before" alt="Původní model v5"><figcaption>Model v5</figcaption></figure><figure><img id="render-after" alt="Doladěný model v6"><figcaption>Model v6 · vlastní render</figcaption></figure></div><p>Fotografie jsou u výrobce a prodejců; zde jsou pouze odkazy a vlastní rendery.</p><h3>Použité fotografie</h3><ol id="photo-links"></ol><h3>Co ještě není ověřené</h3><ul id="review-unverified"></ul><h3>Kontrola podstavných plošek</h3><p id="support-summary"></p><div id="control-views" class="control-views"></div><details><summary>Barevné rozlišení součástí a naměřené polohy</summary><p>Každý díl má vlastní barvu; přepínač je také nad 3D modelem.</p><div id="color-views" class="control-views"></div><ol id="parts-legend"></ol><a href="soucasti.csv">Měření všech součástí v mm (CSV) ↗</a></details></section><section class="missing"><h3>Domnívám se / dosud neověřeno</h3><p><strong>Model reálného tvaru není ověřený výrobní CAD.</strong> Fotografie dokládají viditelné díly. Poloměry, tloušťky, úkosy, přesné polohy a skryté spoje jsou rekonstruované; funkční spojení PACKOUT je potřeba ověřit měřením konkrétního kusu. Rozměrová kontrola potvrzuje obálku, nikoli každý detail nebo polohu dutiny.</p><ul id="missing"></ul></section>
+   <div class="downloads"><a id="model-download" download>Stáhnout model GLB</a><a href="kufriky.json" download>Katalog JSON</a><a href="kufriky.csv" download>Katalog CSV</a><a href="mereni.csv" download>Chybějící měření</a></div>
+  </main>
+ </div>
+ <section class="cad"><h2>Stav všech modelů</h2><div class="status-table"><table><thead><tr><th>Typ / SKU</th><th>Úroveň detailu</th><th>Soubor</th><th>Shoda a neověřené detaily</th></tr></thead><tbody id="status-rows"></tbody></table></div></section>
+ <section class="cad"><h2>Průzkum existujících modelů</h2><p>Dosud nebyl získán celý model správného evropského SKU s ověřenou licencí a stažením bez účtu. Níže jsou kandidáti a důvody, proč nebyli použiti.</p><div id="cad-sources"></div></section>
+ <dialog id="photo-dialog"><button id="close-photo">Zavřít</button><img id="large-photo" alt=""></dialog>
+ <footer>Interní náhled · 8. 10. 2026 · John. Pouze 20 schválených úložných typů; dalších 14 dílů systému je mimo tuto etapu. Integrace do webu čeká na Robertovo schválení.</footer>
+</body>
+</html>

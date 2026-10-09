@@ -1,0 +1,469 @@
+{
+  "note": "Vnější a publikované vnitřní kóty jsou ověřené. Obrazové poměry nejsou fyzicky změřené milimetry.",
+  "records": [
+    {
+      "sku": "4932471064",
+      "top": "Hero_4",
+      "bounds": [
+        72,
+        200,
+        1128,
+        1000
+      ],
+      "rows": [
+        [
+          312,
+          506
+        ],
+        [
+          530,
+          716
+        ],
+        [
+          744,
+          932
+        ]
+      ],
+      "banks": [
+        [
+          130,
+          534
+        ],
+        [
+          666,
+          1070
+        ]
+      ],
+      "gap": [
+        534,
+        666
+      ],
+      "front_handle_fraction": [
+        0.32,
+        0.68
+      ],
+      "lid_height_fraction": 0.29,
+      "body_corner_fraction": 0.055,
+      "bottom": null,
+      "row_fractions": [
+        [
+          0.6174999999999999,
+          0.86
+        ],
+        [
+          0.355,
+          0.5875
+        ],
+        [
+          0.08499999999999996,
+          0.31999999999999995
+        ]
+      ],
+      "bank_fractions": [
+        [
+          -0.44507575757575757,
+          -0.0625
+        ],
+        [
+          0.0625,
+          0.44507575757575757
+        ]
+      ],
+      "top_photo": {
+        "url": "https://static.milwaukeetool.eu/remote.axd/milwaukee-media-images.s3.amazonaws.com/hi/4932471064--Hero_4.jpg?v=8E1C4A23582816DDAAB88C9BCBC7D896&width=1200",
+        "page_url": "https://www.milwaukeetool.eu/en-eu/packout-organisers/packout-organisers/?variant=382512",
+        "size_px": [
+          1200,
+          1200
+        ]
+      },
+      "physical_tolerance_mm": null,
+      "measurement_note": "Ruční odečet projekce fotografie; nekalibrovaný objektiv. Hloubky, tloušťky a poloměry nejsou fyzicky ověřené. Poměry výšek a rukojetí jsou vizuální anotace vlastní fotografie SKU.",
+      "known_outer_mm": {
+        "length": 500,
+        "width": 414,
+        "height": 64
+      },
+      "known_inner_mm": {
+        "length": 457,
+        "width": 305,
+        "height": 46
+      },
+      "findings_v5": "Přihrádky splývaly do červené desky; chyběly děliče, střední pruh víka, výrazné rohy a čelní úchop. Víko bylo příliš nízké.",
+      "changed": "10 samostatných zaoblených nádob (8 malých + 2 velké), děliče v každé nádobě, oddělené těsnicí okénko nad každou nádobou, střední pruh, čelní úchop a spony.",
+      "unverified": [
+        "Nekótované poloměry, tloušťky stěn, úkosy, přesné polohy, hloubky a vůle nejsou doměřené.",
+        "Shoda jednotlivých detailů do 2 mm není prokázaná; model není výrobní CAD.",
+        "Přímá fotografie spodku tohoto SKU nezískána; přesné spodní spojovací pozice nejsou v6 přebírané z jiného SKU ani potvrzené."
+      ]
+    },
+    {
+      "sku": "4932464082",
+      "top": "TIM-Photo001",
+      "bounds": [
+        335,
+        276,
+        2432,
+        1860
+      ],
+      "rows": [
+        [
+          487,
+          878
+        ],
+        [
+          918,
+          1320
+        ],
+        [
+          1358,
+          1747
+        ]
+      ],
+      "banks": [
+        [
+          429,
+          1275
+        ],
+        [
+          1503,
+          2352
+        ]
+      ],
+      "front_handle_fraction": [
+        0.32,
+        0.68
+      ],
+      "lid_height_fraction": 0.22,
+      "body_corner_fraction": 0.055,
+      "bottom": "Photo007",
+      "gap": [
+        1275,
+        1503
+      ],
+      "row_fractions": [
+        [
+          0.619949494949495,
+          0.8667929292929293
+        ],
+        [
+          0.34090909090909094,
+          0.5946969696969697
+        ],
+        [
+          0.07133838383838387,
+          0.31691919191919193
+        ]
+      ],
+      "bank_fractions": [
+        [
+          -0.45517405817835,
+          -0.05174058178350022
+        ],
+        [
+          0.05698617072007628,
+          0.4618502622794468
+        ]
+      ],
+      "top_photo": {
+        "url": "https://www.tim.pl/media/wysiwyg/w360/0001-00018-63769/images/Photo001.jpg",
+        "page_url": "https://www.tim.pl/organizer-narzedziowy-10-pojemnikow-na-akcesoria-packout-4932464082/p/0001-00018-63769",
+        "size_px": [
+          2800,
+          2240
+        ]
+      },
+      "physical_tolerance_mm": null,
+      "measurement_note": "Ruční odečet projekce fotografie; nekalibrovaný objektiv. Hloubky, tloušťky a poloměry nejsou fyzicky ověřené. Poměry výšek a rukojetí jsou vizuální anotace vlastní fotografie SKU.",
+      "known_outer_mm": {
+        "length": 500,
+        "width": 386,
+        "height": 117
+      },
+      "known_inner_mm": {
+        "length": 457,
+        "width": 305,
+        "height": 99
+      },
+      "findings_v5": "Tenké červené U nenahrazovalo skutečnou sklopnou rukojeť s černým vroubkovaným úchopem. Chyběly kapsy a sloupky čela. Víko téměř nemělo výšku.",
+      "changed": "Samostatné nádoby, výrazné zaoblené rohy, kapsy čela, červená výklopná rukojeť s černým úchopem, kovové spony a plné průhledné víko. Vlastní doložený spodek 3 × 4.",
+      "unverified": [
+        "Nekótované poloměry, tloušťky stěn, úkosy, přesné polohy, hloubky a vůle nejsou doměřené.",
+        "Shoda jednotlivých detailů do 2 mm není prokázaná; model není výrobní CAD."
+      ]
+    },
+    {
+      "sku": "4932471065",
+      "top": "DE_4932471065_0",
+      "bounds": [
+        160,
+        6,
+        640,
+        793
+      ],
+      "rows": [
+        [
+          154,
+          339
+        ],
+        [
+          353,
+          538
+        ],
+        [
+          548,
+          744
+        ]
+      ],
+      "banks": [
+        [
+          203,
+          595
+        ]
+      ],
+      "front_handle_fraction": [
+        0.17,
+        0.83
+      ],
+      "lid_height_fraction": 0.29,
+      "body_corner_fraction": 0.085,
+      "bottom": "DE_4932471065_3",
+      "gap": null,
+      "row_fractions": [
+        [
+          0.576874205844981,
+          0.8119440914866582
+        ],
+        [
+          0.3240152477763659,
+          0.5590851334180432
+        ],
+        [
+          0.06226175349428209,
+          0.31130876747141045
+        ]
+      ],
+      "bank_fractions": [
+        [
+          -0.41041666666666665,
+          0.40625
+        ]
+      ],
+      "top_photo": {
+        "url": "https://www.stavbaeu.sk//image/cache/data/products/D/DE_4932471065_0-800x800.jpg",
+        "page_url": "https://www.stavbaeu.sk/milwaukee-packout-slim-kompaktny-organizer-4932471065-235267",
+        "size_px": [
+          800,
+          800
+        ]
+      },
+      "physical_tolerance_mm": null,
+      "measurement_note": "Ruční odečet projekce fotografie; nekalibrovaný objektiv. Hloubky, tloušťky a poloměry nejsou fyzicky ověřené. Poměry výšek a rukojetí jsou vizuální anotace vlastní fotografie SKU.",
+      "known_outer_mm": {
+        "length": 411,
+        "width": 249,
+        "height": 64
+      },
+      "known_inner_mm": {
+        "length": 305,
+        "width": 203,
+        "height": 46
+      },
+      "findings_v5": "Nádoby byly téměř bez mezer a děličů; čelní úchop a spony neodpovídaly fotografii kompaktního SKU.",
+      "changed": "Pět samostatných nádob (4 malé + 1 velká), dva děliče velké a jeden každé malé, výraznější čelní úchop, spony u obou čelních rohů. Vlastní doložený spodek 3 × 2.",
+      "unverified": [
+        "Nekótované poloměry, tloušťky stěn, úkosy, přesné polohy, hloubky a vůle nejsou doměřené.",
+        "Shoda jednotlivých detailů do 2 mm není prokázaná; model není výrobní CAD."
+      ]
+    },
+    {
+      "sku": "4932478625",
+      "top": "Hero_4",
+      "bounds": [
+        73,
+        196,
+        1129,
+        1000
+      ],
+      "rows": [
+        [
+          310,
+          506
+        ],
+        [
+          530,
+          716
+        ],
+        [
+          744,
+          932
+        ]
+      ],
+      "banks": [
+        [
+          129,
+          534
+        ],
+        [
+          666,
+          1070
+        ]
+      ],
+      "front_handle_fraction": [
+        0.32,
+        0.68
+      ],
+      "lid_height_fraction": 0.15,
+      "body_corner_fraction": 0.055,
+      "bottom": null,
+      "gap": [
+        534,
+        666
+      ],
+      "row_fractions": [
+        [
+          0.6144278606965174,
+          0.8582089552238806
+        ],
+        [
+          0.3532338308457711,
+          0.5845771144278606
+        ],
+        [
+          0.08457711442786064,
+          0.31840796019900497
+        ]
+      ],
+      "bank_fractions": [
+        [
+          -0.44696969696969696,
+          -0.06344696969696972
+        ],
+        [
+          0.061553030303030276,
+          0.44412878787878785
+        ]
+      ],
+      "top_photo": {
+        "url": "https://static.milwaukeetool.eu/remote.axd/milwaukee-media-images.s3.amazonaws.com/hi/4932478625--Hero_4.jpg?v=9E74C1B5D599CB4ADFF1EDE867E014DA&width=1200",
+        "page_url": "https://www.milwaukeetool.eu/en-eu/packout-organisers/packout-organisers/?variant=537715",
+        "size_px": [
+          1200,
+          1200
+        ]
+      },
+      "physical_tolerance_mm": null,
+      "measurement_note": "Ruční odečet projekce fotografie; nekalibrovaný objektiv. Hloubky, tloušťky a poloměry nejsou fyzicky ověřené. Poměry výšek a rukojetí jsou vizuální anotace vlastní fotografie SKU.",
+      "known_outer_mm": {
+        "length": 507,
+        "width": 386,
+        "height": 178
+      },
+      "known_inner_mm": {
+        "length": 457,
+        "width": 305,
+        "height": 139
+      },
+      "findings_v5": "V5 měla jen dva červené děliče a čtyři oddíly. Hero_2 ukazuje tři dlouhé a tři krátké děliče po obou stranách pevného středu. Chyběly drážky pro děliče.",
+      "changed": "Šest červených vyjímatelných děličů (3 dlouhé + 3 krátké), pevný příčný střed a osm oddílů, kotvení děličů, vlastní profil čelní rukojeti a spon.",
+      "unverified": [
+        "Nekótované poloměry, tloušťky stěn, úkosy, přesné polohy, hloubky a vůle nejsou doměřené.",
+        "Shoda jednotlivých detailů do 2 mm není prokázaná; model není výrobní CAD.",
+        "Přímá fotografie spodku tohoto SKU nezískána; přesné spodní spojovací pozice nejsou v6 přebírané z jiného SKU ani potvrzené.",
+        "Rozpor zdrojů: některé jazykové produktové listy uvádějí 10 nádob; fotografie tohoto SKU a katalog 2023 ukazují 6 děličů a 8 oddílů. Model odpovídá zobrazené sestavě."
+      ]
+    },
+    {
+      "sku": "4932498323",
+      "top": "Hero_1",
+      "bounds": [
+        72,
+        148,
+        1128,
+        1052
+      ],
+      "rows": [
+        [
+          316,
+          513
+        ],
+        [
+          544,
+          728
+        ],
+        [
+          763,
+          933
+        ]
+      ],
+      "banks": [
+        [
+          178,
+          563
+        ],
+        [
+          641,
+          1035
+        ]
+      ],
+      "gap": [
+        563,
+        641
+      ],
+      "front_handle_fraction": [
+        0.315,
+        0.685
+      ],
+      "lid_height_fraction": 0,
+      "body_corner_fraction": 0.055,
+      "bottom": null,
+      "row_fractions": [
+        [
+          0.5962389380530974,
+          0.8141592920353982
+        ],
+        [
+          0.3584070796460177,
+          0.5619469026548672
+        ],
+        [
+          0.13163716814159288,
+          0.31969026548672563
+        ]
+      ],
+      "bank_fractions": [
+        [
+          -0.39962121212121215,
+          -0.035037878787878785
+        ],
+        [
+          0.03882575757575757,
+          0.41193181818181823
+        ]
+      ],
+      "top_photo": {
+        "url": "https://static.milwaukeetool.eu/remote.axd/milwaukee-media-images.s3.amazonaws.com/hi/4932498323--Hero_1.jpg?v=42F2D462CAB6790176C54AC232D81B1A&width=1200",
+        "page_url": "https://www.milwaukeetool.eu/en-eu/packout-tip-bin-organiser/packout-tip-bin-organiser/?variant=1054317",
+        "size_px": [
+          1200,
+          1200
+        ]
+      },
+      "physical_tolerance_mm": null,
+      "measurement_note": "Ruční odečet projekce fotografie; nekalibrovaný objektiv. Hloubky, tloušťky a poloměry nejsou fyzicky ověřené. Poměry výšek a rukojetí jsou vizuální anotace vlastní fotografie SKU.",
+      "known_outer_mm": {
+        "length": 500,
+        "width": 386,
+        "height": 170
+      },
+      "known_inner_mm": null,
+      "findings_v5": "Souvislá vysoká stěna zakrývala vyklápěcí boxy, chyběl střední sloupek, tři kovové tyče a sklopné držadlo. Nádoby neměly správné čelo.",
+      "changed": "Otevřený nosný rám, 8 malých + 2 velké samostatné duté průhledné boxy, dělič v každém velkém, střední západka T, tři kovové přídržné tyče, přední rukojeť a její horní výklopná poloha.",
+      "unverified": [
+        "Nekótované poloměry, tloušťky stěn, úkosy, přesné polohy, hloubky a vůle nejsou doměřené.",
+        "Shoda jednotlivých detailů do 2 mm není prokázaná; model není výrobní CAD.",
+        "Přímá fotografie spodku tohoto SKU nezískána; přesné spodní spojovací pozice nejsou v6 přebírané z jiného SKU ani potvrzené."
+      ]
+    }
+  ]
+}
