@@ -46,14 +46,20 @@ function ramecek(L, name, { n, p, a0, a1, z0, z1, w = 1.2, h = 0.7 }) {
 function okna(g) {
   const L = [];
   // čelní nárazník (y>0): čelo x = 192,3 (patka) / 191,4 (čepice); horní okna z' 90,5..100,5, dolní 26,7..36,7
-  for (const [a, b] of [[221, 234], [237, 249]]) ramecek(L, 'okno_cF_h', { n: 'x', p: 191.7, a0: a, a1: b, z0: 90.5, z1: 100.5 });
-  for (const [a, b] of [[225, 235], [238, 249]]) ramecek(L, 'okno_cF_d', { n: 'x', p: 192.3, a0: a, a1: b, z0: 26.7, z1: 36.7 });
-  ramecek(L, 'panel_cF', { n: 'x', p: 190.4, a0: 222.7, a1: 248.5, z0: 40, z1: 87.5, w: 1.0, h: 0.5 });
-  // koncová plocha čelního nárazníku (y ≈ 250): dvě okna podél x nahoře a dole
-  for (const [a, b] of [[176, 188], [160, 172]]) { ramecek(L, 'okno_kF_h', { n: 'y', p: 249.2, a0: a, a1: b, z0: 91, z1: 101 }); }
-  for (const [a, b] of [[178, 189], [162, 173]]) { ramecek(L, 'okno_kF_d', { n: 'y', p: 249.2, a0: a, a1: b, z0: 26.7, z1: 36.7 }); }
-  // zadní nárazník: okna na zadní ploše (x = -192,6) a koncové ploše
-  for (const [a, b] of [[221, 234], [237, 249]]) ramecek(L, 'okno_cR_h', { n: 'x', p: -192.6, a0: a, a1: b, z0: 64, z1: 74, h: -0.4 });
+  for (const [a, b] of [[221, 234.5]]) ramecek(L, 'okno_cF_h', { n: 'x', p: 191.7, a0: a, a1: b, z0: 90.5, z1: 100.5 });
+  for (const [a, b] of [[225, 235]]) ramecek(L, 'okno_cF_d', { n: 'x', p: 192.3, a0: a, a1: b, z0: 26.7, z1: 36.7 });
+  ramecek(L, 'panel_cF', { n: 'x', p: 190.4, a0: 222.7, a1: 236, z0: 40, z1: 87.5, w: 1.0, h: 0.5 });
+  // okna na zkosené ploše rohu (45°: z (192,237) do (176,250))
+  for (const [z0, z1, nm] of [[90.5, 100.5, 'okno_cS_h'], [26.7, 36.7, 'okno_cS_d']]) {
+    const th = 139.4, c = [184.65, 243], ww = 9, ws = [[-ww / 2, ww / 2]];
+    const bars = [];
+    const mk = (u0, u1, zz0, zz1) => { const q = bx('cerna_mat', nm, u0, u1, -0.7, 0.3, zz0, zz1); return q; };
+    bars.push(mk(-ww / 2, ww / 2, z0, z0 + 1.2), mk(-ww / 2, ww / 2, z1 - 1.2, z1), mk(-ww / 2, -ww / 2 + 1.2, z0 + 1.2, z1 - 1.2), mk(ww / 2 - 1.2, ww / 2, z0 + 1.2, z1 - 1.2));
+    for (const q of bars) { q.rot('z', th - 0, [0, 0, 0]); q.move(c[0], c[1], 0); L.push(q); }
+  }
+  // koncová plocha čelního nárazníku (y ≈ 250): okno na rovné části
+  for (const [a, b] of [[160.5, 171]]) ramecek(L, 'okno_kF_h', { n: 'y', p: 249.2, a0: a, a1: b, z0: 91, z1: 101 });
+  for (const [a, b] of [[162, 172.5]]) ramecek(L, 'okno_kF_d', { n: 'y', p: 249.4, a0: a, a1: b, z0: 26.7, z1: 36.7 });
   for (const it of L) { g.add(it); const m = it.clone(it.name + '_m'); m.mirror('y', 0); g.add(m); }
 }
 

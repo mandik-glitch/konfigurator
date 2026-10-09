@@ -27,18 +27,27 @@ export function vicko() {
   // --- deska kolem kapes: obvodový prstenec + buňky mezi kapsami
   const iN = V.inner, inRect = rrPoly(iN.x0, iN.x1, -iN.y, iN.y, 0.01, 6);
   const outIn = rrPoly(V.x0 + 1.2, V.x1 - 1.2, -V.y + 1.2, V.y - 1.2, [V.rF - 1.2, V.rR - 1.2, V.rR - 1.2, V.rF - 1.2], 6);
-  g.add(ringSolid('vicko_cira', 'vicko_deska_rám', outIn, inRect, V.zTop - V.tPl, V.zTop));
+  g.add(ringSolid('vicko_cira', 'vicko_deska_rám', outIn, inRect, V.zTop - V.tPl, V.zTop, { innerWall: false }));
   const P = kapsy();
   const strip = { x0: -143.3, x1: 131.7, y0: -22, y1: 22 };
   const holes = [...P, strip];
   const xs = new Set([iN.x0, iN.x1]), ys = new Set([-iN.y, iN.y]);
   for (const h of holes) { xs.add(h.x0); xs.add(h.x1); ys.add(h.y0); ys.add(h.y1); }
   const XS = [...xs].sort((a, b) => a - b), YS = [...ys].sort((a, b) => a - b);
+  const isHole = (i, j) => { if (i < 0 || j < 0 || i >= XS.length - 1 || j >= YS.length - 1) return false; const cx = (XS[i] + XS[i + 1]) / 2, cy = (YS[j] + YS[j + 1]) / 2; return holes.some(h => cx > h.x0 && cx < h.x1 && cy > h.y0 && cy < h.y1); };
+  // deska = buňky mimo kapsy; vykreslí se jen horní a spodní plocha a boční stěny u otvorů (žádné vnitřní plochy → žádné švy)
   const plate = new Part('vicko_deska', 'vicko_cira'); plate.crease = 30;
+  const zt = zc(V.zTop), zb = zc(V.zTop - V.tPl);
   for (let i = 0; i < XS.length - 1; i++) for (let j = 0; j < YS.length - 1; j++) {
-    const cx = (XS[i] + XS[i + 1]) / 2, cy = (YS[j] + YS[j + 1]) / 2;
-    if (holes.some(h => cx > h.x0 && cx < h.x1 && cy > h.y0 && cy < h.y1)) continue;
-    plate.append(bx('vicko_cira', 'c', XS[i], XS[i + 1], YS[j], YS[j + 1], V.zTop - V.tPl, V.zTop));
+    if (isHole(i, j)) continue;
+    const x0 = XS[i], x1 = XS[i + 1], y0 = YS[j], y1 = YS[j + 1];
+    const q = (a, b, c, d) => plate.addQ(plate.addV(...a), plate.addV(...b), plate.addV(...c), plate.addV(...d));
+    q([x0, y0, zt], [x1, y0, zt], [x1, y1, zt], [x0, y1, zt]);             // horní
+    q([x0, y0, zb], [x0, y1, zb], [x1, y1, zb], [x1, y0, zb]);             // spodní
+    if (isHole(i - 1, j)) q([x0, y1, zb], [x0, y0, zb], [x0, y0, zt], [x0, y1, zt]);     // stěna k otvoru v -x
+    if (isHole(i + 1, j)) q([x1, y0, zb], [x1, y1, zb], [x1, y1, zt], [x1, y0, zt]);     // +x
+    if (isHole(i, j - 1)) q([x0, y0, zb], [x1, y0, zb], [x1, y0, zt], [x0, y0, zt]);     // -y
+    if (isHole(i, j + 1)) q([x1, y1, zb], [x0, y1, zb], [x0, y1, zt], [x1, y1, zt]);     // +y
   }
   g.add(plate);
   // zkosené rohy kapes (přední rohy) – trojúhelníky desky
@@ -69,7 +78,7 @@ export function vicko() {
   }
   for (let k = 0; k < 11; k++) {                         // žebírka na koncích víka (po 21,5 mm)
     const x = 135 - k * 21.5 - 0 ; if (x < -150) continue;
-    for (const s of [-1, 1]) g.add(bx('cira', 'vicko_zebirko_k', x - 0.7, x + 0.7, s > 0 ? V.y : -V.y - 1.0, s > 0 ? V.y + 1.0 : -V.y, 108, 116));
+    for (const s of [-1, 1]) g.add(bx('cira', 'vicko_zebirko_k', x - 1.2, x + 1.2, s > 0 ? V.y - 0.3 : -V.y - 0.9, s > 0 ? V.y + 0.9 : -V.y + 0.3, 108.5, 115.5));
   }
   g.add(cylinder('vicko_cira', 'vicko_kopule', 5.5, 0, 2.2, 20, [0, 0]).rot('y', 90).move(188.4, -46, zc(106)));
   // --- pant: čiré články (středy |y| = 54,4; 103,6; 152,7; 201,5; šířka 22) kolem čepu (x = -175,5, z' = 97)
