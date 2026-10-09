@@ -5,11 +5,11 @@ import { seznamNadob, N } from './p4082_nadoby.mjs';
 import { kapsa } from './p4082_kapsy.mjs';
 
 export const V = {
-  x0: -163, x1: 188.5, y: 244.5,           // obrys víka (deska)
-  zSk: 109, zTop: 117, tPl: 2.5,           // spodek obvodové sukně, horní plocha, tloušťka desky
+  x0: -168.5, x1: 180.5, y: 243.6,           // obrys víka (deska)
+  zSk: 109, zTop: 117, tPl: 2.5, rFil: 7,           // spodek obvodové sukně, horní plocha, tloušťka desky
   rF: 30, rR: 14,
-  inner: { x0: -158, x1: 146, y: 229 },     // obdélník, uvnitř kterého se deska skládá z buněk (kolem kapes)
-  pivot: [-175.5, 0, 97],
+  inner: { x0: -161, x1: 149, y: 233 },     // obdélník, uvnitř kterého se deska skládá z buněk (kolem kapes)
+  pivot: [-176.5, 0, 97],
   zPocket: 105.5, dPocket: 11,
   ins: 2.5,                                 // okraj kapsy vzhledem k nádobě
 };
@@ -23,13 +23,16 @@ export function vicko() {
   const g = new Group('vicko', { pivot: [px, py, zc(pz)], extras: { osa: [0, -1, 0], max_uhel: 110 } });
   const plot = rrPoly(V.x0, V.x1, -V.y, V.y, [V.rF, V.rR, V.rR, V.rF], 6);
   // --- obvodová sukně
-  g.add(rrShell('vicko_cira', 'vicko_sukne', { x0: V.x0, x1: V.x1, y0: -V.y, y1: V.y, rs: [V.rF, V.rR, V.rR, V.rF], seg: 6, profile: [[V.zSk, 0], [V.zTop - 1.2, 0], [V.zTop, 1.2], [V.zTop, 2.6], [V.zSk, 2.6]], closed: true }));
-  // --- deska kolem kapes: obvodový prstenec + buňky mezi kapsami
+  const RF = V.rFil, prof = [[V.zSk, 0], [V.zTop - RF, 0]];
+  for (let k = 1; k <= 4; k++) { const a = Math.PI / 2 * k / 4; prof.push([V.zTop - RF + RF * Math.sin(a), RF - RF * Math.cos(a)]); }
+  prof.push([V.zSk, RF]);
+  g.add(rrShell('vicko_cira', 'vicko_sukne', { x0: V.x0, x1: V.x1, y0: -V.y, y1: V.y, rs: [V.rF, V.rR, V.rR, V.rF], seg: 6, profile: prof, closed: true }));
+  // deska kolem kapes: obvodový prstenec + buňky mezi kapsami
   const iN = V.inner, inRect = rrPoly(iN.x0, iN.x1, -iN.y, iN.y, 0.01, 6);
-  const outIn = rrPoly(V.x0 + 1.2, V.x1 - 1.2, -V.y + 1.2, V.y - 1.2, [V.rF - 1.2, V.rR - 1.2, V.rR - 1.2, V.rF - 1.2], 6);
+  const outIn = rrPoly(V.x0 + RF, V.x1 - RF, -V.y + RF, V.y - RF, [V.rF - RF, V.rR - RF, V.rR - RF, V.rF - RF], 6);
   g.add(ringSolid('vicko_cira', 'vicko_deska_rám', outIn, inRect, V.zTop - V.tPl, V.zTop, { innerWall: false }));
   const P = kapsy();
-  const strip = { x0: -143.3, x1: 131.7, y0: -22, y1: 22 };
+  const strip = { x0: -149, x1: 131.5, y0: -22, y1: 22 };
   const holes = [...P, strip];
   const xs = new Set([iN.x0, iN.x1]), ys = new Set([-iN.y, iN.y]);
   for (const h of holes) { xs.add(h.x0); xs.add(h.x1); ys.add(h.y0); ys.add(h.y1); }
@@ -63,27 +66,37 @@ export function vicko() {
   const zPl = V.zTop - V.dPocket + 0.2;
   g.add(rrFrame('bila', 'vicko_plaketa', { x0: -40, x1: 28.3, y0: 73.3, y1: 188.3, z0: zPl, z1: zPl + 0.5, w: 0.8, rs: 8, seg: 1 }));
   // těsnění (černá guma) pod víkem po obvodu
-  g.add(rrFrame('cerna_mat', 'vicko_tesneni', { x0: -156.5, x1: 177.5, y0: -236.5, y1: 236.5, z0: 108.4, z1: 111, w: 2.6, rs: [26, 14, 14, 26], seg: 5 }));
+  g.add(rrFrame('cerna_mat', 'vicko_tesneni', { x0: -163.5, x1: 175.5, y0: -237.4, y1: 237.4, z0: 108.4, z1: 111, w: 2.6, rs: [26, 14, 14, 26], seg: 5 }));
   // --- čelní lem (z' 98..117), držáky spon, žebírka na okraji, kopule
-  g.add(slab('vicko_cira', 'vicko_lem', { x0: 183.8, x1: 188.6, y0: -214, y1: 214, z0: 98, z1: V.zTop, rs: 4, seg: 3, reT: 1.2, reB: 1.2, fs: 2 }));
+  g.add(slab('vicko_cira', 'vicko_lem', { x0: 179.2, x1: 184.4, y0: -214, y1: 214, z0: 98, z1: 112.5, rs: 4, seg: 3, reT: 1.2, reB: 1.2, fs: 2 }));
   for (const s of [-1, 1]) {
-    const yc = s * 150.2;
-    g.add(slab('vicko_cira', 'vicko_drzak', { x0: 182, x1: 191, y0: yc - 33.5, y1: yc + 33.5, z0: 95.5, z1: 116, rs: 4, seg: 3, reT: 2.5, reB: 1.5, fs: 3 }));
+    const yc = s * 147.5;
+    g.add(slab('vicko_cira', 'vicko_drzak', { x0: 182, x1: 191, y0: yc - 23.5, y1: yc + 23.5, z0: 95.5, z1: 111.5, rs: 3.5, seg: 3, reT: 2.5, reB: 1.5, fs: 3 }));
     // zápustka s příčkou pod třmenem (tmavší pruh na čele držáku)
-    g.add(slab('cira', 'vicko_drzak_pruh', { x0: 190.4, x1: 191.4, y0: yc - 22, y1: yc + 22, z0: 100, z1: 108, rs: 1.5, seg: 2, reT: 0.4, reB: 0.4, fs: 1 }));
+    g.add(slab('cira', 'vicko_drzak_pruh', { x0: 190.4, x1: 191.4, y0: yc - 15, y1: yc + 15, z0: 100, z1: 107, rs: 1.5, seg: 2, reT: 0.4, reB: 0.4, fs: 1 }));
   }
   for (let k = -11; k <= 11; k++) {                     // žebírka na horní hraně čela
     const y = 5 + k * 20.4; if (Math.abs(y) > 212) continue;
-    g.add(bx('cira', 'vicko_zebirko', 188.6, 189.6, y - 0.7, y + 0.7, 107, 116));
+    g.add(bx('cira', 'vicko_zebirko', 184.4, 185.4, y - 0.7, y + 0.7, 104, 111.5));
   }
-  for (let k = 0; k < 11; k++) {                         // žebírka na koncích víka (po 21,5 mm)
-    const x = 135 - k * 21.5 - 0 ; if (x < -150) continue;
-    for (const s of [-1, 1]) g.add(bx('cira', 'vicko_zebirko_k', x - 1.2, x + 1.2, s > 0 ? V.y - 0.3 : -V.y - 0.9, s > 0 ? V.y + 0.9 : -V.y + 0.3, 108.5, 115.5));
+  for (let k = 0; k < 13; k++) {                         // žebírka na koncích víka (rozteč 21,1 mm; c11)
+    const x = 145.6 - k * 21.1;
+    for (const s of [-1, 1]) g.add(bx('cira', 'vicko_zebirko_k', x - 1.2, x + 1.2, s > 0 ? V.y - 0.3 : -V.y - 0.6, s > 0 ? V.y + 0.6 : -V.y + 0.3, 108.5, 115.5));
   }
-  g.add(cylinder('vicko_cira', 'vicko_kopule', 5.5, 0, 2.2, 20, [0, 0]).rot('y', 90).move(188.4, -46, zc(106)));
+  g.add(cylinder('vicko_cira', 'vicko_kopule', 5.5, 0, 2.2, 20, [0, 0]).rot('y', 90).move(184.2, -46, zc(105)));
   // --- pant: čiré články (středy |y| = 54,4; 103,6; 152,7; 201,5; šířka 22) kolem čepu (x = -175,5, z' = 97)
   for (const yc of [54.4, 103.6, 152.7, 201.5]) for (const s of [-1, 1]) {
-    g.add(slab('vicko_cira', 'vicko_clanek', { x0: -182, x1: -162, y0: s * yc - 11, y1: s * yc + 11, z0: 89, z1: 115, rs: 4, seg: 3, reT: 3, reB: 6, fs: 3 }));
+    g.add(slab('vicko_cira', 'vicko_clanek', { x0: -181, x1: -166, y0: s * yc - 11, y1: s * yc + 11, z0: 89, z1: 111, rs: 4, seg: 3, reT: 5, reB: 6, fs: 3 }));
+  }
+  // mírná klenba horní plochy směrem k pantu (koncový pohled c11: z' 117 → 116 na x = −150 → 114 na x = −165): svislý posun nahoře víka
+  const skip = /(clanek|cep|drzak|lem$|tesneni|kopule|zebirko$)/;
+  for (const p of g.parts) {
+    if (skip.test(p.name)) continue;
+    p.mapV((x, y, z) => {
+      if (x >= -115) return [x, y, z];
+      const f = Math.max(0, Math.min(1, (z + ZC - 105) / 8)), dz = Math.min(7, ((-115 - x) ** 2) / 1100);
+      return [x, y, z - f * dz];
+    });
   }
   return g;
 }

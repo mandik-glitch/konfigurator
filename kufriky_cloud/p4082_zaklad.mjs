@@ -159,3 +159,15 @@ export function extYZ(mat, name, poly, x0, x1, { crease = 25 } = {}) {
 function ccwYZ(P) { return polyArea(P) < 0 ? P.slice().reverse() : P; }
 // zaoblený obrys YZ: vrcholy s poloměry (viz roundPoly)
 export function roundYZ(pts, rs, n = 3) { return roundPoly(pts, rs, n); }
+
+// miska s úkosem stěn (zúžení ode dna k okraji o 'taper' mm na každé straně); jinak jako tray()
+export function trayT(mat, name, { x0, x1, y0, y1, z0, z1, rs = 3, seg = 3, wall = 1.5, floor = 1.5, re = 1, fs = 2, taper = 3 }) {
+  const pr = [], H = z1 - z0; re = Math.min(re, H / 2);
+  const tp = z => taper * (1 - (z - z0) / H);               // vnější odsazení ve výšce z
+  for (let k = 0; k <= fs; k++) { const a = Math.PI / 2 * k / fs; const zz = z0 + re - re * Math.cos(a); pr.push([zz, tp(zz) + re - re * Math.sin(a)]); }
+  pr.push([z1, 0]); pr.push([z1, wall]);
+  const zi = z0 + floor, ri = Math.max(re - wall * 0.3, 0.3);
+  pr.push([zi + ri, wall + tp(zi + ri)]);
+  for (let k = 1; k <= fs; k++) { const a = Math.PI / 2 * k / fs; const zz = zi + ri - ri * Math.sin(a); pr.push([zz, wall + tp(zz) + ri - ri * Math.cos(a)]); }
+  return rrShell(mat, name, { x0, x1, y0, y1, rs, seg, profile: pr, capStart: 'down', capEnd: 'up' });
+}

@@ -3,8 +3,8 @@ import { Group, Part, rrPoly, roundPoly, ccw, loftSolid, ext, slab, rrShell, tra
 
 export const K = {
   zBot: 12, zChan: 20, yCh: 32,            // spodní plocha vany (nad patkami)
-  zRim: 109,           // horní okraj vany (stěny) – víko sedí na něm
-  xF: 181, xR: -163.5,   // čelní a zadní vnější rovina vany
+  zRim: 108.5, yT: 239.5,           // horní okraj vany (stěny) – víko sedí na něm
+  xF: 181, xR: -166.5,   // čelní a zadní vnější rovina vany
   yB: 233,             // polovina šířky vany (spodní deska / stěny u rohů)
   yBelt: 243.5,        // vnější plocha pásu na koncové stěně (nahoře)
 };
@@ -38,9 +38,9 @@ function narazniky(g) {
 }
 
 // rámeček z pásků kolem obdélníku (osa normály X nebo Y): n = 'x' | 'y', p = poloha plochy, a0..a1 = rozsah podél plochy, z0..z1
-function ramecek(L, name, { n, p, a0, a1, z0, z1, w = 1.2, h = 0.7 }) {
+function ramecek(L, name, { n, p, a0, a1, z0, z1, w = 1.5, h = 0.7 }) {
   const lo = h < 0 ? p + h : p - 0.3, hi = h < 0 ? p + 0.3 : p + h;
-  const mk = (u0, u1, zz0, zz1) => n === 'x' ? bx('cerna_mat', name, lo, hi, u0, u1, zz0, zz1) : bx('cerna_mat', name, u0, u1, lo, hi, zz0, zz1);
+  const mk = (u0, u1, zz0, zz1) => n === 'x' ? bx('seda', name, lo, hi, u0, u1, zz0, zz1) : bx('seda', name, u0, u1, lo, hi, zz0, zz1);
   L.push(mk(a0, a1, z0, z0 + w), mk(a0, a1, z1 - w, z1), mk(a0, a0 + w, z0 + w, z1 - w), mk(a1 - w, a1, z0 + w, z1 - w));
 }
 function okna(g) {
@@ -53,32 +53,34 @@ function okna(g) {
   for (const [z0, z1, nm] of [[90.5, 100.5, 'okno_cS_h'], [26.7, 36.7, 'okno_cS_d']]) {
     const th = 139.4, c = [184.65, 243], ww = 9, ws = [[-ww / 2, ww / 2]];
     const bars = [];
-    const mk = (u0, u1, zz0, zz1) => { const q = bx('cerna_mat', nm, u0, u1, -0.7, 0.3, zz0, zz1); return q; };
+    const mk = (u0, u1, zz0, zz1) => { const q = bx('seda', nm, u0, u1, -0.7, 0.3, zz0, zz1); return q; };
     bars.push(mk(-ww / 2, ww / 2, z0, z0 + 1.2), mk(-ww / 2, ww / 2, z1 - 1.2, z1), mk(-ww / 2, -ww / 2 + 1.2, z0 + 1.2, z1 - 1.2), mk(ww / 2 - 1.2, ww / 2, z0 + 1.2, z1 - 1.2));
     for (const q of bars) { q.rot('z', th - 0, [0, 0, 0]); q.move(c[0], c[1], 0); L.push(q); }
   }
   // koncová plocha čelního nárazníku (y ≈ 250): okno na rovné části
-  for (const [a, b] of [[160.5, 171]]) ramecek(L, 'okno_kF_h', { n: 'y', p: 249.2, a0: a, a1: b, z0: 91, z1: 101 });
-  for (const [a, b] of [[162, 172.5]]) ramecek(L, 'okno_kF_d', { n: 'y', p: 249.4, a0: a, a1: b, z0: 26.7, z1: 36.7 });
+  for (const [a, b] of [[160.5, 171]]) ramecek(L, 'okno_kF_h', { n: 'y', p: 249.0, a0: a, a1: b, z0: 91, z1: 101 });
+  for (const [a, b] of [[162, 172.5]]) ramecek(L, 'okno_kF_d', { n: 'y', p: 249.1, a0: a, a1: b, z0: 26.7, z1: 36.7 });
+  // řada drobných žeber pod římsou koncové stěny (rozteč 12 mm, c11)
+  for (let i = 0; i < 11; i++) { const x = 52 - i * 12; L.push(bx('cerna_mat', 'zebro_pasu', x - 0.6, x + 0.6, 243.2, 244.1, 80.5, 89)); }
   for (const it of L) { g.add(it); const m = it.clone(it.name + '_m'); m.mirror('y', 0); g.add(m); }
 }
 
 // ---------- vana ----------
 function vana(g) {
-  g.add(tray('cerna_mat', 'vana', { x0: K.xR, x1: K.xF, y0: -K.yB, y1: K.yB, z0: K.zChan, z1: K.zRim, rs: [10, 14, 14, 10], seg: 4, wall: 4, floor: 3, re: 3, fs: 3 }));
+  g.add(tray('cerna_mat', 'vana', { x0: K.xR, x1: K.xF, y0: -K.yT, y1: K.yT, z0: K.zChan, z1: K.zRim, rs: [10, 14, 14, 10], seg: 4, wall: 4, floor: 3, re: 3, fs: 3 }));
   // spodní desky po obou stranách kanálu (z' 12..26); čelní hrana desky: x=179,4 u rohů, x=169,4 v zářezu pod západkou (|y| 118..185), x=181 u držadla
   const zonyY = [[K.yCh, 118, 181], [118, 185, 169.4], [185, K.yB, 179.4]];
   for (const s of [-1, 1]) for (const [a, b, xf] of zonyY) {
     const y0 = s > 0 ? a : -b, y1 = s > 0 ? b : -a;
     const rs = b === K.yB ? (s > 0 ? [8, 14, 0.6, 0.6] : [0.6, 0.6, 14, 8]) : a === K.yCh ? (s > 0 ? [0.6, 0.6, 0.6, 0.6] : [0.6, 0.6, 0.6, 0.6]) : [0.6, 0.6, 0.6, 0.6];
-    g.add(slab('cerna_mat', 'spodni_deska', { x0: K.xR, x1: xf, y0, y1, z0: K.zBot, z1: K.zChan + 6, rs, seg: 4, reB: 2.5, reT: 0.5, fs: 3 }));
+    g.add(slab('cerna_mat', 'spodni_deska', { x0: K.xR, x1: xf, y0, y1, z0: K.zBot, z1: K.zChan + 3, rs, seg: 4, reB: 2.5, reT: 0.5, fs: 3 }));
   }
   // červený zachytávací háček v kanálu pod držadlem (3 drážky), x 148..167, y -25..22
   g.add(slab('cervena', 'kanal_hacek', { x0: 148, x1: 167.5, y0: -25, y1: 22, z0: 13.2, z1: 25, rs: 4, seg: 3, reB: 1.5, reT: 1, fs: 2 }));
   for (const yc of [-15, -1.5, 12]) g.add(slab('cerna_mat', 'kanal_hacek_drazka', { x0: 156, x1: 167.7, y0: yc - 3.2, y1: yc + 3.2, z0: 13.0, z1: 14.4, rs: 1, seg: 1, reB: 0.2, reT: 0.2, fs: 1 }));
-  g.add(slab('cerna_mat', 'kanal_celo', { x0: 165, x1: 181, y0: -K.yCh - 0.5, y1: K.yCh + 0.5, z0: K.zBot, z1: K.zChan + 6, rs: 0.6, seg: 2, reB: 2, reT: 0.5, fs: 2 }));
+  g.add(slab('cerna_mat', 'kanal_celo', { x0: 165, x1: 181, y0: -K.yCh - 0.5, y1: K.yCh + 0.5, z0: K.zBot, z1: K.zChan + 3, rs: 0.6, seg: 2, reB: 2, reT: 0.5, fs: 2 }));
   // horní deska vany (černý rám kolem otvoru pro nádoby): vnější obrys vany, otvor 305 × 457
-  g.add(ringSolid('cerna_mat', 'vana_rám', rrPoly(K.xR, K.xF, -K.yB, K.yB, [10, 14, 14, 10], 4), rrPoly(-158, 147, -229, 229, [4, 4, 4, 4], 4), 104.5, K.zRim));
+  g.add(ringSolid('cerna_mat', 'vana_rám', rrPoly(K.xR, K.xF, -K.yT, K.yT, [10, 14, 14, 10], 4), rrPoly(-162.2, 151.3, -235.2, 235.2, [6.5, 6.5, 6.5, 6.5], 4), 104.5, K.zRim));
   // pásy na koncových stěnách (vystupují z vany k víku)
   for (const s of [-1, 1]) {
     const mk = (y0, y1, dz) => ccw(rrPoly(-80, 64, s > 0 ? y0 : -y1, s > 0 ? y1 : -y0, 3, 2));

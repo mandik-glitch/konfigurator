@@ -1,0 +1,23 @@
+{
+ "sku": "4932464082",
+ "pohled": "otevreny-1",
+ "foto_repo_cesta": "kufriky_john/fotky/4932464082/c07.jpg",
+ "foto_url": "https://paulimot-sw6.b-cdn.net/media/b0/d1/18/1685451510/000001638101paulimot_4932464082_Milwaukee_PACKOUT_Organiser_1_2.jpg?ts=1685451510",
+ "pose": {
+  "vicko": 102,
+  "trmen_P": 165,
+  "trmen_L": 165
+ },
+ "kamera": {
+  "azim": 28.945854894480785,
+  "elev": 31.67312801561237,
+  "roll": -8.14231389059798,
+  "dist": 950.8220305352534,
+  "shiftX": -0.0032998780542230813,
+  "shiftY": 0.17372134798969618,
+  "fov": 39.87191965559782,
+  "iou": 0.872479600782251
+ },
+ "iou": 0.872479600782251,
+ "poznamka": "Kamera odhadnuta z obrysu fotografie (IoU); ohnisko je pevně zvolené, ne změřené."
+}
