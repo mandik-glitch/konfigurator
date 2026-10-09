@@ -1,4 +1,197 @@
 {
+ "4932464082": {
+  "bok-konec-2": {
+   "iou": 0.909,
+   "foto": "../../../tmp/claude-0/-home-user-konfigurator/4afe04ea-52af-557e-a8a4-75a8d542e4f9/scratchpad/kuf_4932464082/w/c16r.jpg",
+   "pose": {}
+  },
+  "bok-konec": {
+   "iou": 0.9705,
+   "foto": "../../../tmp/claude-0/-home-user-konfigurator/4afe04ea-52af-557e-a8a4-75a8d542e4f9/scratchpad/kuf_4932464082/w/c11r.jpg",
+   "pose": {}
+  },
+  "otevreny-1": {
+   "iou": 0.9361,
+   "foto": "kufriky_john/fotky/4932464082/c07.jpg",
+   "pose": {
+    "vicko": 97,
+    "trmen_P": 165,
+    "trmen_L": 165
+   }
+  },
+  "otevreny-2": {
+   "iou": 0.9605,
+   "foto": "kufriky_john/fotky/4932464082/c02.jpg",
+   "pose": {
+    "vicko": 97,
+    "trmen_P": 165,
+    "trmen_L": 165
+   }
+  },
+  "shora": {
+   "iou": 0.9795,
+   "foto": "kufriky_john/fotky/4932464082/c13.jpg",
+   "pose": {}
+  },
+  "sikmo-celo-1": {
+   "iou": 0.9843,
+   "foto": "kufriky_john/fotky/4932464082/c06.jpg",
+   "pose": {}
+  },
+  "sikmo-celo-2": {
+   "iou": 0.9782,
+   "foto": "kufriky_john/fotky/4932464082/c01.jpg",
+   "pose": {}
+  },
+  "spodek-sikmo-1": {
+   "iou": 0.9676,
+   "foto": "../../../tmp/claude-0/-home-user-konfigurator/4afe04ea-52af-557e-a8a4-75a8d542e4f9/scratchpad/kuf_4932464082/w/c12r.jpg",
+   "pose": {}
+  },
+  "spodek-sikmo-2": {
+   "iou": 0.9555,
+   "foto": "../../../tmp/claude-0/-home-user-konfigurator/4afe04ea-52af-557e-a8a4-75a8d542e4f9/scratchpad/kuf_4932464082/w/c15r.jpg",
+   "pose": {}
+  },
+  "spodek-sikmo-3": {
+   "iou": 0.9677,
+   "foto": "../../../tmp/claude-0/-home-user-konfigurator/4afe04ea-52af-557e-a8a4-75a8d542e4f9/scratchpad/kuf_4932464082/w/c18r.jpg",
+   "pose": {}
+  },
+  "spodek-sikmo-4": {
+   "iou": 0.9643,
+   "foto": "../../../tmp/claude-0/-home-user-konfigurator/4afe04ea-52af-557e-a8a4-75a8d542e4f9/scratchpad/kuf_4932464082/w/c19r.jpg",
+   "pose": {}
+  },
+  "spodek": {
+   "iou": 0.9729,
+   "foto": "kufriky_john/fotky/4932464082/c08.jpg",
+   "pose": {}
+  },
+  "vrsek-konec-1": {
+   "iou": 0.9483,
+   "foto": "../../../tmp/claude-0/-home-user-konfigurator/4afe04ea-52af-557e-a8a4-75a8d542e4f9/scratchpad/kuf_4932464082/w/c09r.jpg",
+   "pose": {}
+  },
+  "vrsek-konec-2": {
+   "iou": 0.9651,
+   "foto": "../../../tmp/claude-0/-home-user-konfigurator/4afe04ea-52af-557e-a8a4-75a8d542e4f9/scratchpad/kuf_4932464082/w/c10r.jpg",
+   "pose": {}
+  },
+  "vrsek-konec-3": {
+   "iou": 0.9617,
+   "foto": "../../../tmp/claude-0/-home-user-konfigurator/4afe04ea-52af-557e-a8a4-75a8d542e4f9/scratchpad/kuf_4932464082/w/c14r.jpg",
+   "pose": {}
+  },
+  "vrsek-konec-4": {
+   "iou": 0.9683,
+   "foto": "../../../tmp/claude-0/-home-user-konfigurator/4afe04ea-52af-557e-a8a4-75a8d542e4f9/scratchpad/kuf_4932464082/w/c17r.jpg",
+   "pose": {}
+  }
+ },
+ "4932471064": {
+  "otevreny-1": {
+   "iou": 0.9659,
+   "foto": "kufriky_john/fotky/4932471064/c03.jpg",
+   "pose": {
+    "vicko": 100,
+    "trmen_P": 165,
+    "trmen_L": 165
+   }
+  },
+  "shora": {
+   "iou": 0.9518,
+   "foto": "kufriky_john/fotky/4932471064/c04.jpg",
+   "pose": {}
+  },
+  "sikmo-celo-1": {
+   "iou": 0.9663,
+   "foto": "kufriky_john/fotky/4932471064/c07.jpg",
+   "pose": {}
+  },
+  "sikmo-celo-2": {
+   "iou": 0.9614,
+   "foto": "kufriky_john/fotky/4932471064/c08.jpg",
+   "pose": {}
+  },
+  "sikmo-celo-3": {
+   "iou": 0.9662,
+   "foto": "kufriky_john/fotky/4932471064/c01.jpg",
+   "pose": {}
+  },
+  "sikmo-celo-4": {
+   "iou": 0.9616,
+   "foto": "kufriky_john/fotky/4932471064/c02.jpg",
+   "pose": {}
+  }
+ },
+ "4932471065": {
+  "otevreny-c02": {
+   "iou": 0.9373,
+   "foto": "kufriky_john/fotky/4932471065/c02.jpg",
+   "pose": {
+    "vicko": 105,
+    "trmen_P": 150,
+    "trmen_L": 150
+   }
+  },
+  "shora-c03": {
+   "iou": 0.9589,
+   "foto": "kufriky_john/fotky/4932471065/c03.jpg",
+   "pose": {}
+  },
+  "shora-c06": {
+   "iou": 0.9609,
+   "foto": "kufriky_john/fotky/4932471065/c06.jpg",
+   "pose": {}
+  },
+  "sikmo-celo-c01": {
+   "iou": 0.9553,
+   "foto": "kufriky_john/fotky/4932471065/c01.jpg",
+   "pose": {}
+  },
+  "sikmo-celo-c07": {
+   "iou": 0.9562,
+   "foto": "kufriky_john/fotky/4932471065/c07.jpg",
+   "pose": {}
+  },
+  "spodek-c13": {
+   "iou": 0.9357,
+   "foto": "kufriky_john/fotky/4932471065/c13.jpg",
+   "pose": {}
+  }
+ },
+ "4932478625": {
+  "otevreny-1": {
+   "iou": 0.9558,
+   "foto": "kufriky_john/fotky/4932478625/c03.jpg",
+   "pose": {
+    "vicko": 108.52409401737822
+   }
+  },
+  "otevreny-2": {
+   "iou": 0.9564,
+   "foto": "kufriky_john/fotky/4932478625/c02.jpg",
+   "pose": {
+    "vicko": 108.52409401737822
+   }
+  },
+  "shora": {
+   "iou": 0.9766,
+   "foto": "kufriky_john/fotky/4932478625/c04.jpg",
+   "pose": {}
+  },
+  "sikmo-celo-1": {
+   "iou": 0.978,
+   "foto": "kufriky_john/fotky/4932478625/c13.jpg",
+   "pose": {}
+  },
+  "sikmo-celo-2": {
+   "iou": 0.968,
+   "foto": "kufriky_john/fotky/4932478625/c01.jpg",
+   "pose": {}
+  }
+ },
  "4932498323": {
   "celo-boxy-primo": {
    "iou": 0.9799,
@@ -28,7 +221,7 @@
    "pose": {}
   },
   "otevrene-boxy": {
-   "iou": 0.9486,
+   "iou": 0.9489,
    "foto": "kufriky_john/fotky/4932498323/c03.jpg",
    "pose": {
     "rukojet": 90,
@@ -36,7 +229,7 @@
     "box_6": 40
    }
   },
-  "tmp-c02-g15": {
+  "sikmo-celo-boxy": {
    "iou": 0.9544,
    "foto": "kufriky_john/fotky/4932498323/c02.jpg",
    "pose": {

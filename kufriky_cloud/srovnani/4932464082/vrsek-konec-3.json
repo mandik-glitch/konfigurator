@@ -1,8 +1,8 @@
 {
  "sku": "4932464082",
  "pohled": "vrsek-konec-3",
- "foto_repo_cesta": "../../../tmp/claude-0/-home-user-konfigurator/4afe04ea-52af-557e-a8a4-75a8d542e4f9/scratchpad/kuf_4932464082/w/c14r.jpg",
- "foto_url": null,
+ "foto_repo_cesta": "kufriky_john/fotky/4932464082/c14.jpg",
+ "foto_url": "https://www.tim.pl/media/wysiwyg/w360/0001-00018-63769/images/Photo003.jpg",
  "pose": {},
  "kamera": {
   "azim": 268.49394576050906,
@@ -15,5 +15,6 @@
   "iou": 0.9617064042140283
  },
  "iou": 0.9617064042140283,
- "poznamka": "Kamera odhadnuta z obrysu fotografie (IoU); ohnisko je pevně zvolené, ne změřené."
+ "poznamka": "Kamera odhadnuta z obrysu fotografie (IoU); ohnisko je pevně zvolené, ne změřené.",
+ "poznamka_foto": "porovnano s natocenou kopii fotografie (jen ve scratchpadu, neni v repu); puvodni snimek viz foto_repo_cesta"
 }
