@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="cs"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Organizér PACKOUT – 3D model</title>
+<style>
+:root{--bg:#eef1f4;--fg:#1d2733;--panel:#ffffffd9;--line:#cfd6dd}
+@media (prefers-color-scheme:dark){:root{--bg:#171b20;--fg:#e6ebf0;--panel:#222a33d9;--line:#38424d}}
+html,body{margin:0;height:100%;background:var(--bg);color:var(--fg);font:14px/1.4 -apple-system,"Segoe UI",Roboto,Arial,sans-serif;overflow:hidden}
+canvas{display:block}
+#panel{position:fixed;left:12px;top:12px;max-width:min(330px,calc(100vw - 24px));background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px 12px;backdrop-filter:blur(6px)}
+#panel h1{font-size:15px;margin:0 0 2px}#panel small{opacity:.75;display:block;margin-bottom:6px}
+.row{display:flex;align-items:center;gap:8px;margin:5px 0}.row label{flex:0 0 118px}.row input[type=range]{flex:1}
+button{font:inherit;color:var(--fg);background:transparent;border:1px solid var(--line);border-radius:7px;padding:3px 9px;cursor:pointer}
+#hint{position:fixed;left:12px;bottom:10px;opacity:.7;font-size:12px}
+</style></head>
+<body>
+<div id="panel"><h1 id="nazev">3D model</h1><small id="info"></small><div id="ovl"></div>
+<div class="row"><button id="b-celo">čelo</button><button id="b-sikmo">šikmo</button><button id="b-shora">shora</button><button id="b-zezadu">zezadu</button><button id="b-spodek">spodek</button></div></div>
+<div id="hint">Myš: otáčení (levé tlačítko), přiblížení (kolečko), posun (pravé). Jednotky mm.</div>
+<!--THREE_SCRIPTS-->
+<script>
+const EMBED = "__GLB_B64__";           // vloženo balicím skriptem; jinak se bere ?glb=cesta
+const params = new URLSearchParams(location.search);
+function parseGLB(buf){
+  const dv=new DataView(buf); if(dv.getUint32(0,true)!==0x46546C67) throw new Error('není GLB');
+  const jl=dv.getUint32(12,true); const gltf=JSON.parse(new TextDecoder().decode(new Uint8Array(buf,20,jl))); const bin=buf.slice(20+jl+8);
+  const acc=i=>{const a=gltf.accessors[i],bv=gltf.bufferViews[a.bufferView];const o=(bv.byteOffset||0)+(a.byteOffset||0);const n={SCALAR:1,VEC3:3}[a.type];
+    return a.componentType===5126?new Float32Array(bin,o,a.count*n):new Uint32Array(bin,o,a.count*n);};
+  return {gltf,acc};
+}
+function makeMats(gltf){return gltf.materials.map(m=>{const p=m.pbrMetallicRoughness,c=p.baseColorFactor;
+  const mm=new THREE.MeshPhysicalMaterial({color:new THREE.Color(c[0],c[1],c[2]),metalness:p.metallicFactor,roughness:p.roughnessFactor,side:m.doubleSided?THREE.DoubleSide:THREE.FrontSide});
+  if(c[3]<1){mm.transparent=true;mm.opacity=c[3];mm.depthWrite=false;} return mm;});}
+function buildNode(g,ni,mats){
+  const n=g.gltf.nodes[ni]; const o=new THREE.Object3D(); o.name=n.name||''; o.userData=n.extras||{};
+  if(n.translation)o.position.set(...n.translation);
+  if(n.mesh!==undefined){const prim=g.gltf.meshes[n.mesh].primitives[0];const geo=new THREE.BufferGeometry();
+    geo.setAttribute('position',new THREE.BufferAttribute(g.acc(prim.attributes.POSITION),3));geo.setAttribute('normal',new THREE.BufferAttribute(g.acc(prim.attributes.NORMAL),3));
+    geo.setIndex(new THREE.BufferAttribute(g.acc(prim.indices),1));const m=new THREE.Mesh(geo,mats[prim.material]);m.name=n.name;o.add(m);}
+  for(const c of n.children||[])o.add(buildNode(g,c,mats)); return o;
+}
+(async function(){
+  let buf;
+  if(EMBED && EMBED.length>100){const bin=atob(EMBED);const u=new Uint8Array(bin.length);for(let i=0;i<bin.length;i++)u[i]=bin.charCodeAt(i);buf=u.buffer;}
+  else{const r=await fetch(params.get('glb')||'../modely/4932464082.glb');buf=await r.arrayBuffer();}
+  const g=parseGLB(buf), meta=g.gltf.asset.extras||{};
+  document.getElementById('nazev').textContent='PACKOUT organizér '+(meta.sku||'');
+  const renderer=new THREE.WebGLRenderer({antialias:true});renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.setSize(innerWidth,innerHeight);renderer.outputEncoding=THREE.sRGBEncoding;
+  document.body.prepend(renderer.domElement);
+  const scene=new THREE.Scene();
+  // prostředí (gradient + světelné plochy) pro odlesky plastu
+  const es=new THREE.Scene();const sg=new THREE.SphereGeometry(50,32,16);const cols=[];const pp=sg.attributes.position;
+  for(let i=0;i<pp.count;i++){const t=(pp.getY(i)/50+1)/2;cols.push(.5+.5*t,.53+.47*t,.57+.43*t);} sg.setAttribute('color',new THREE.Float32BufferAttribute(cols,3));
+  es.add(new THREE.Mesh(sg,new THREE.MeshBasicMaterial({vertexColors:true,side:THREE.BackSide})));
+  const lm=new THREE.MeshBasicMaterial({color:0xffffff});const l1=new THREE.Mesh(new THREE.BoxGeometry(30,2,30),lm);l1.position.set(0,45,0);es.add(l1);
+  const l2=new THREE.Mesh(new THREE.BoxGeometry(2,30,40),lm);l2.position.set(-45,10,0);es.add(l2);
+  const pm=new THREE.PMREMGenerator(renderer);scene.environment=pm.fromScene(es,.02).texture;
+  const key=new THREE.DirectionalLight(0xffffff,.9);key.position.set(300,-400,700);scene.add(key);
+  const fill=new THREE.DirectionalLight(0xffffff,.3);fill.position.set(-500,200,200);scene.add(fill);
+  const mats=makeMats(g.gltf);const root=new THREE.Group();scene.add(root);
+  for(const ni of g.gltf.scenes[g.gltf.scene].nodes)root.add(buildNode(g,ni,mats));
+  const camera=new THREE.PerspectiveCamera(30,innerWidth/innerHeight,5,20000);camera.up.set(0,0,1);
+  const controls=new THREE.OrbitControls(camera,renderer.domElement);controls.enableDamping=true;controls.dampingFactor=.12;
+  const bb=new THREE.Box3().setFromObject(root);const size=bb.getSize(new THREE.Vector3());document.getElementById('info').textContent=
+    `obálka ${size.x.toFixed(0)} × ${size.y.toFixed(0)} × ${size.z.toFixed(0)} mm (Š × L × V) · dílů ${g.gltf.meshes.length}`;
+  const R=Math.max(size.x,size.y,size.z);
+  function pohled(az,el,k=1.6){const a=az*Math.PI/180,e=el*Math.PI/180,d=R*k*1.5;camera.position.set(d*Math.cos(e)*Math.cos(a),d*Math.cos(e)*Math.sin(a),d*Math.sin(e));controls.target.set(0,0,0);controls.update();}
+  const front=(meta.osy||'').includes('celo +Y')?90:0;
+  const bt={celo:[front,6],sikmo:[front+32,26],shora:[front,88],zezadu:[front+150,26],spodek:[front+20,-60]};
+  for(const [k,v] of Object.entries(bt))document.getElementById('b-'+k).onclick=()=>pohled(v[0],v[1]);
+  pohled(front+32,26);
+  // posuvníky pro pohyblivé skupiny (uzly s extras.osa): víko, výklopné boxy, …
+  const groups={};root.traverse(o=>{if(o.userData&&o.userData.osa){const k=o.name.replace(/[_\-\s]?\d+$/,'');(groups[k]=groups[k]||[]).push(o);}});
+  const ovl=document.getElementById('ovl');
+  for(const [k,arr] of Object.entries(groups)){
+    const max=arr[0].userData.max_uhel||110;const row=document.createElement('div');row.className='row';
+    row.innerHTML=`<label>${k==='vicko'?'víko – otevření':k+' – otevření'}</label><input type=range min=0 max=${max} value=0 step=1><span>0°</span>`;
+    const inp=row.querySelector('input'),sp=row.querySelector('span');
+    inp.oninput=()=>{const a=+inp.value;sp.textContent=a+'°';for(const o of arr){const ax=new THREE.Vector3(...o.userData.osa).normalize();o.quaternion.setFromAxisAngle(ax,a*Math.PI/180);}};
+    ovl.appendChild(row);
+    if(/vicko|lid/i.test(k)){const r2=document.createElement('div');r2.className='row';r2.innerHTML='<label>víko – zobrazit</label><input type=checkbox checked>';r2.querySelector('input').onchange=e=>{for(const o of arr)o.visible=e.target.checked;};ovl.appendChild(r2);}
+  }
+  addEventListener('resize',()=>{renderer.setSize(innerWidth,innerHeight);camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();});
+  (function loop(){requestAnimationFrame(loop);controls.update();renderer.render(scene,camera);})();
+})().catch(e=>{document.body.insertAdjacentHTML('beforeend','<pre style="padding:12px">Chyba: '+e.message+'</pre>');});
+</script></body></html>

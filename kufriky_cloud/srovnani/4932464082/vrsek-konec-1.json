@@ -1,0 +1,19 @@
+{
+ "sku": "4932464082",
+ "pohled": "vrsek-konec-1",
+ "foto_repo_cesta": "kufriky_john/fotky/4932464082/c09.jpg",
+ "foto_url": "https://www.tim.pl/media/wysiwyg/w360/0001-00018-63769/images/Photo011.jpg",
+ "pose": {},
+ "kamera": {
+  "azim": 87.90706274084023,
+  "elev": 67.25916152861821,
+  "roll": -0.5317462439480283,
+  "dist": 1358.0109898024148,
+  "shiftX": -0.04038687576828704,
+  "shiftY": -0.037649828249587444,
+  "fov": 26.180365239255956,
+  "iou": 0.8637387040064152
+ },
+ "iou": 0.8637387040064152,
+ "poznamka": "Kamera odhadnuta z obrysu fotografie (IoU); ohnisko je pevně zvolené, ne změřené."
+}

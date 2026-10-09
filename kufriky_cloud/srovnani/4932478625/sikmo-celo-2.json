@@ -1,0 +1,19 @@
+{
+ "sku": "4932478625",
+ "pohled": "sikmo-celo-2",
+ "foto_repo_cesta": "kufriky_john/fotky/4932478625/c01.jpg",
+ "foto_url": "https://static.milwaukeetool.eu/remote.axd/milwaukee-media-images.s3.amazonaws.com/hi/4932478625--Hero_1.jpg?v=E642CA1EB0DDE450E778625DE09D9B87&width=1200",
+ "pose": {},
+ "kamera": {
+  "azim": 27.00992988311972,
+  "elev": 17.629806670230707,
+  "dist": 3513.9523473192476,
+  "shiftX": -0.008976379737387514,
+  "shiftY": -0.00712480310963913,
+  "fov": 12,
+  "roll": 0,
+  "iou": 0.9649441797883559
+ },
+ "iou": 0.9649441797883559,
+ "poznamka": "Kamera odhadnuta z obrysu fotografie (IoU); ohnisko je pevně zvolené, ne změřené."
+}

@@ -1,0 +1,21 @@
+{
+ "sku": "4932498323",
+ "pohled": "sikmo-celo-boxy",
+ "foto_repo_cesta": "kufriky_john/fotky/4932498323/c02.jpg",
+ "foto_url": "https://static.milwaukeetool.eu/remote.axd/milwaukee-media-images.s3.amazonaws.com/hi/4932498323--Hero_2.jpg?v=829ECDD38F411526B19FBB88D41509A9&width=1200",
+ "pose": {
+  "rukojet": 90
+ },
+ "kamera": {
+  "azim": -59.37722050964943,
+  "elev": 59.25014260008834,
+  "roll": -119.32678060796164,
+  "dist": 1633.487986208721,
+  "shiftX": -0.014810799888345669,
+  "shiftY": 0.0203464985729781,
+  "fov": 20,
+  "iou": 0.9366093816891933
+ },
+ "iou": 0.9366093816891933,
+ "poznamka": "Kamera odhadnuta z obrysu fotografie (IoU); ohnisko je pevně zvolené, ne změřené."
+}

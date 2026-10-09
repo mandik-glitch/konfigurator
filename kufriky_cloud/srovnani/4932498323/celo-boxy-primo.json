@@ -1,0 +1,21 @@
+{
+ "sku": "4932498323",
+ "pohled": "celo-boxy-primo",
+ "foto_repo_cesta": "kufriky_john/fotky/4932498323/c01.jpg",
+ "foto_url": "https://static.milwaukeetool.eu/remote.axd/milwaukee-media-images.s3.amazonaws.com/hi/4932498323--Hero_1.jpg?v=42F2D462CAB6790176C54AC232D81B1A&width=1200",
+ "pose": {
+  "rukojet": 90
+ },
+ "kamera": {
+  "azim": 181.5838357129995,
+  "elev": 88.57998052792853,
+  "roll": -1.505478765297357,
+  "dist": 1748.3562143346012,
+  "shiftX": -0.0005038574762662332,
+  "shiftY": 0.045489887306060434,
+  "fov": 19.300759867936797,
+  "iou": 0.9797875356469823
+ },
+ "iou": 0.9797875356469823,
+ "poznamka": "Kamera odhadnuta z obrysu fotografie (IoU); ohnisko je pevně zvolené, ne změřené."
+}

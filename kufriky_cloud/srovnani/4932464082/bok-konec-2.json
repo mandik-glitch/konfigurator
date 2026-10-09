@@ -1,0 +1,19 @@
+{
+ "sku": "4932464082",
+ "pohled": "bok-konec-2",
+ "foto_repo_cesta": "../../../tmp/claude-0/-home-user-konfigurator/4afe04ea-52af-557e-a8a4-75a8d542e4f9/scratchpad/kuf_4932464082/w/c16r.jpg",
+ "foto_url": null,
+ "pose": {},
+ "kamera": {
+  "azim": 268.0469306163723,
+  "elev": -1.6109070767690836,
+  "roll": -0.5057592033340572,
+  "dist": 1568.5365531675395,
+  "shiftX": 0.011712227738973327,
+  "shiftY": -0.00048007894884156423,
+  "fov": 22.993925850235556,
+  "iou": 0.9135190785663728
+ },
+ "iou": 0.9135190785663728,
+ "poznamka": "Kamera odhadnuta z obrysu fotografie (IoU); ohnisko je pevně zvolené, ne změřené."
+}

@@ -116,3 +116,43 @@ export { Part, tube, loftRings };
 export function mirrorCopyX(part, name) { const q = part.clone(name ?? part.name); q.mirror('x', 0); return q; }
 // sloučení více Partů do jednoho (stejný materiál)
 export function merge(name, mat, parts) { const p = new Part(name, mat); for (const q of parts) p.append(q); return p; }
+
+// ---------- další pomocné (v2) ----------
+// otočený zaoblený obdélník jako polygon: střed, rozměry (po lokální X, Y), poloměr rohů, otočení ve stupních
+export function rrect(cx, cy, sx, sy, r = 0, rot = 0, seg = 4) {
+  let Q = rectPoly(-sx / 2, sx / 2, -sy / 2, sy / 2);
+  if (r > 0) Q = roundPoly(Q, r, seg);
+  return rotPoly(Q, rot).map(q => [q[0] + cx, q[1] + cy]);
+}
+// těleso z jednoho obrysu a profilu [[z, odsazení]...] zdola nahoru (víčka dole/nahoře)
+export function profileSolid(mat, name, poly, prof, { capStart = 'down', capEnd = 'up', crease } = {}) {
+  const p = new Part(name, mat); if (crease !== undefined) p.crease = crease;
+  const rings = prof.map(([z, d]) => ccw(d === 0 ? poly : offsetPoly(poly, d)).map(q => [q[0], q[1], z]));
+  loftRings(p, rings, { capStart, capEnd });
+  return p;
+}
+// tenká tyč (hrana) mezi dvěma body v rovině XY na výšce z0..z1, šířka w
+export function seg2(mat, name, a, b, w, z0, z1) {
+  const dx = b[0] - a[0], dy = b[1] - a[1], L = Math.hypot(dx, dy), ang = Math.atan2(dy, dx) * 180 / Math.PI;
+  return boxR(mat, name, (a[0] + b[0]) / 2, (a[1] + b[1]) / 2, L + w * 0.2, w, z0, z1, { rot: ang, crease: 5 });
+}
+// vodorovný válec s osou rovnoběžnou s X: střed (y,z), poloměr, x0..x1
+export function cylX(mat, name, y, z, r, x0, x1, n = 16) {
+  const p = new Part(name, mat);
+  const rings = [x0, x1].map(x => Array.from({ length: n }, (_, i) => { const a = 2 * Math.PI * i / n; return [x, y + r * Math.cos(a), z + r * Math.sin(a)]; }));
+  // prstence jsou v rovině YZ; pořadí bodů zajistí vnější normály po otestování orientace
+  loftRings(p, rings, { capStart: 'down', capEnd: 'up' });
+  return p;
+}
+
+// ořez polygonu polorovinou Y<=y0 (keepBelow) nebo Y>=y0 (Sutherland–Hodgman, jedna polorovina)
+export function clipPolyY(poly, y0, keepBelow = true) {
+  const inside = p => keepBelow ? p[1] <= y0 + 1e-9 : p[1] >= y0 - 1e-9;
+  const out = [];
+  for (let i = 0; i < poly.length; i++) {
+    const a = poly[i], b = poly[(i + 1) % poly.length], ia = inside(a), ib = inside(b);
+    if (ia) out.push(a);
+    if (ia !== ib) { const t = (y0 - a[1]) / (b[1] - a[1]); out.push([a[0] + t * (b[0] - a[0]), y0]); }
+  }
+  return out;
+}

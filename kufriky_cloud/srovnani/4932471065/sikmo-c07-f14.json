@@ -1,0 +1,19 @@
+{
+ "sku": "4932471065",
+ "pohled": "sikmo-c07-f14",
+ "foto_repo_cesta": "kufriky_john/fotky/4932471065/c07.jpg",
+ "foto_url": "https://paulimot-sw6.b-cdn.net/media/5b/9c/ba/1685450301/0000016384014932471065_paulimot_Milwaukee_PACKOUT_Organiser_Slim_Compact_1.jpg?ts=1685450301",
+ "pose": {},
+ "kamera": {
+  "azim": 127.98194269416882,
+  "elev": 18.205260614782375,
+  "roll": -2.315272216235236,
+  "dist": 1235.5095925177836,
+  "shiftX": 0.002739867146024986,
+  "shiftY": -0.04025655439006194,
+  "fov": 14,
+  "iou": 0.9342244373961637
+ },
+ "iou": 0.9342244373961637,
+ "poznamka": "Kamera odhadnuta z obrysu fotografie (IoU); ohnisko je pevně zvolené, ne změřené."
+}

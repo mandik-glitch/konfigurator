@@ -1,0 +1,19 @@
+{
+ "sku": "4932464082",
+ "pohled": "spodek-sikmo-3",
+ "foto_repo_cesta": "kufriky_john/fotky/4932464082/c18.jpg",
+ "foto_url": "https://www.tim.pl/media/wysiwyg/w360/0001-00018-63769/images/Photo006.jpg",
+ "pose": {},
+ "kamera": {
+  "azim": 2.8301552590250534,
+  "elev": -87.24863153045835,
+  "roll": 2.633886127470686,
+  "dist": 1459.9391640521908,
+  "shiftX": -0.036038594121981474,
+  "shiftY": -0.018311768892403896,
+  "fov": 23.04586437391501,
+  "iou": 0.9134119862924112
+ },
+ "iou": 0.9134119862924112,
+ "poznamka": "Kamera odhadnuta z obrysu fotografie (IoU); ohnisko je pevně zvolené, ne změřené."
+}
