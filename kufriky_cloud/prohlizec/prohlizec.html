@@ -14,11 +14,12 @@ canvas{display:block;width:100%;height:100%}
 .row{display:flex;align-items:center;gap:8px;margin:6px 0;flex-wrap:wrap}.row label{flex:0 0 120px}.row input[type=range]{flex:1;min-width:90px;accent-color:var(--accent)}
 .row input[type=checkbox]{accent-color:var(--accent)}
 button{font:inherit;color:var(--fg);background:transparent;border:1px solid var(--line);border-radius:7px;padding:4px 10px;cursor:pointer}
+select{font:inherit;color:var(--fg);background:var(--panel);border:1px solid var(--line);border-radius:7px;padding:3px 6px}
 button:hover{border-color:var(--accent)}button:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 #hint{position:absolute;left:16px;right:16px;bottom:12px;color:var(--muted);font-size:12px;pointer-events:none}
 </style></head>
 <body>
-<div id="panel"><h1 id="nazev">3D model</h1><small id="info"></small><div id="ovl"></div>
+<div id="panel"><h1 id="nazev">3D model</h1><small id="info"></small><div id="ovl"></div><div class="row"><label>řez modelem</label><select id="rez-osa"><option value="">vypnuto</option><option value="y">podél (Y)</option><option value="x">příčně (X)</option><option value="z">vodorovně (Z)</option></select></div><div class="row" id="rez-r" hidden><label>poloha řezu</label><input id="rez-p" type="range" min="-250" max="250" value="0" step="1"><span id="rez-v">0 mm</span></div>
 <div class="row"><button id="b-celo">čelo</button><button id="b-sikmo">šikmo</button><button id="b-shora">shora</button><button id="b-zezadu">zezadu</button><button id="b-spodek">spodek</button></div></div>
 <div id="hint">Táhni myší nebo prstem: otáčení. Kolečko / štípnutí: přiblížení. Pravé tlačítko / dva prsty: posun. Rozměry v mm.</div>
 <!--THREE_SCRIPTS-->
@@ -49,7 +50,7 @@ function buildNode(g,ni,mats){
   else{const r=await fetch(params.get('glb')||'../modely/4932464082.glb');buf=await r.arrayBuffer();}
   const g=parseGLB(buf), meta=g.gltf.asset.extras||{};
   document.getElementById('nazev').textContent='PACKOUT organizér '+(meta.sku||'');
-  const renderer=new THREE.WebGLRenderer({antialias:true,alpha:true});renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.setClearColor(0x000000,0);renderer.setSize(innerWidth,innerHeight);renderer.outputEncoding=THREE.sRGBEncoding;
+  const renderer=new THREE.WebGLRenderer({antialias:true,alpha:true});renderer.localClippingEnabled=true;renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.setClearColor(0x000000,0);renderer.setSize(innerWidth,innerHeight);renderer.outputEncoding=THREE.sRGBEncoding;
   document.body.prepend(renderer.domElement);
   const scene=new THREE.Scene();
   // prostředí (gradient + světelné plochy) pro odlesky plastu
@@ -84,6 +85,16 @@ function buildNode(g,ni,mats){
     ovl.appendChild(row);
     if(/vicko|lid/i.test(k)){const r2=document.createElement('div');r2.className='row';r2.innerHTML='<label>víko – zobrazit</label><input type=checkbox checked>';r2.querySelector('input').onchange=e=>{for(const o of arr)o.visible=e.target.checked;};ovl.appendChild(r2);}
   }
+  // řez: jedna ořezová rovina, obě strany materiálů se kreslí, aby bylo vidět dovnitř
+  const planes={x:new THREE.Plane(new THREE.Vector3(-1,0,0),0),y:new THREE.Plane(new THREE.Vector3(0,-1,0),0),z:new THREE.Plane(new THREE.Vector3(0,0,-1),0)};
+  const rOsa=document.getElementById('rez-osa'),rP=document.getElementById('rez-p'),rV=document.getElementById('rez-v'),rR=document.getElementById('rez-r');
+  const lim={x:[-size.x/2,size.x/2],y:[-size.y/2,size.y/2],z:[-size.z/2,size.z/2]};
+  function rez(){const ax=rOsa.value;rR.hidden=!ax;
+    if(ax){const [a,b]=lim[ax];rP.min=Math.floor(a);rP.max=Math.ceil(b);if(+rP.value<a||+rP.value>b)rP.value=0;
+      const pl=planes[ax];pl.constant=+rP.value;rV.textContent=rP.value+' mm';
+      for(const m of mats){m.clippingPlanes=[pl];m.side=THREE.DoubleSide;m.needsUpdate=true;}}
+    else{mats.forEach((m,i)=>{m.clippingPlanes=null;m.side=g.gltf.materials[i].doubleSided?THREE.DoubleSide:THREE.FrontSide;m.needsUpdate=true;});}}
+  rOsa.onchange=()=>{rP.value=0;rez();};rP.oninput=rez;
   addEventListener('resize',()=>{renderer.setSize(innerWidth,innerHeight);camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();});
   (function loop(){requestAnimationFrame(loop);controls.update();renderer.render(scene,camera);})();
 })().catch(e=>{document.body.insertAdjacentHTML('beforeend','<pre style="padding:12px">Chyba: '+e.message+'</pre>');});

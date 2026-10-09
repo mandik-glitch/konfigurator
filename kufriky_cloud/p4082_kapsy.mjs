@@ -3,7 +3,7 @@ import { Part, rrPoly, ccw, ext, slab, rrShell, bx, zc } from './p4082_zaklad.mj
 
 // šestiúhelníková mřížka (strana a) jako tenké pásky na dně kapsy; jen hrany plně uvnitř obdélníku [x0,x1]×[y0,y1]
 // orientace: plochá horní a spodní hrana rovnoběžná s osou Y (jako na fotografiích, pohled shora s čelem nahoře)
-export function hexMrizka(mat, name, { x0, x1, y0, y1, z, a = 5.6, w = 0.75, ox = 0, oy = 0 }) {
+export function hexMrizka(mat, name, { x0, x1, y0, y1, z, a = 7.0, w = 0.7, ox = 0, oy = 0 }) {
   const p = new Part(name, mat); p.crease = 60;
   const h = Math.sqrt(3) * a, edge = (ax, ay, bx_, by) => {
     const m = 0.2;

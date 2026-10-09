@@ -4,20 +4,20 @@
  "foto_repo_cesta": "kufriky_john/fotky/4932464082/c07.jpg",
  "foto_url": "https://paulimot-sw6.b-cdn.net/media/b0/d1/18/1685451510/000001638101paulimot_4932464082_Milwaukee_PACKOUT_Organiser_1_2.jpg?ts=1685451510",
  "pose": {
-  "vicko": 102,
+  "vicko": 97,
   "trmen_P": 165,
   "trmen_L": 165
  },
  "kamera": {
-  "azim": 28.945854894480785,
-  "elev": 31.67312801561237,
-  "roll": -8.14231389059798,
-  "dist": 950.8220305352534,
-  "shiftX": -0.0032998780542230813,
-  "shiftY": 0.17372134798969618,
-  "fov": 39.87191965559782,
-  "iou": 0.872479600782251
+  "azim": 30.40223397801278,
+  "elev": 42.701778444779336,
+  "roll": -5.492927779610833,
+  "dist": 1296.9917149586208,
+  "shiftX": -0.010780396013802419,
+  "shiftY": 0.20533699943170997,
+  "fov": 31.571841213243296,
+  "iou": 0.9126699063314317
  },
- "iou": 0.872479600782251,
+ "iou": 0.9126699063314317,
  "poznamka": "Kamera odhadnuta z obrysu fotografie (IoU); ohnisko je pevně zvolené, ne změřené."
 }

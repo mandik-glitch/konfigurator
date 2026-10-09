@@ -105,7 +105,7 @@ function hrbet(g) {
 // ---------- patky spodku + kanál ----------
 // [y0,y1] pro řady (x): řada 1 u čela, 2 uprostřed, 3 u pantu; hodnoty z rektifikace c08 (±1,5 mm); základna patky u desky, spodní plocha užší (šikmé boky)
 const PADS = [
-  { x0: 63, x1: 98, ys: [[41.7, 116.7], [140, 223]] },
+  { x0: 57, x1: 98.5, ys: [[41.7, 116.7], [140, 223]] },
   { x0: -49, x1: -8, ys: [[52, 105], [151, 222]] },
   { x0: -150, x1: -112, ys: [[33, 120], [142, 225]] },
 ];
