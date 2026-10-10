@@ -125,20 +125,30 @@ def main():
                            database=env["DB_NAME"], charset="utf8mb4", cursorclass=pymysql.cursors.DictCursor)
     try:
         with conn.cursor() as cur:
-            fmt = ",".join(["%s"] * len(ids))
-            cur.execute(f"SELECT id, name, glb_file, visible_in_scene FROM cfg_dily WHERE id IN ({fmt})", ids)
-            nalez = {r["id"]: r for r in cur.fetchall()}
+            # Karty dílů: part_id `product_<N>` = řádek shop_products (id=N); ostatní (např. Object_11) = cfg_dily (api/app.py: product_ → shop_products)
+            ids_prod = [i for i in ids if i.startswith("product_")]
+            ids_cfg = [i for i in ids if not i.startswith("product_")]
+            nalez = {}
+            if ids_cfg:
+                fmt = ",".join(["%s"] * len(ids_cfg))
+                cur.execute(f"SELECT id, name, glb_file FROM cfg_dily WHERE id IN ({fmt})", ids_cfg)
+                nalez.update({r["id"]: dict(r, zdroj="cfg_dily") for r in cur.fetchall()})
+            if ids_prod:
+                nums = [int(i[len("product_"):]) for i in ids_prod]
+                fmt = ",".join(["%s"] * len(nums))
+                cur.execute(f"SELECT id, glb_file FROM shop_products WHERE id IN ({fmt})", nums)
+                nalez.update({f"product_{r['id']}": dict(r, name="", zdroj="shop_products") for r in cur.fetchall()})
             problem = False
             for pid in ids:
                 r = nalez.get(pid)
                 if not r:
-                    print(f"  CHYBÍ karta v cfg_dily: {pid}")
+                    print(f"  CHYBÍ karta ({'shop_products' if pid.startswith('product_') else 'cfg_dily'}): {pid}")
                     problem = True
                 elif not r["glb_file"]:
                     print(f"  {pid}: karta nemá glb_file")
                     problem = True
                 else:
-                    print(f"  OK {pid}: {r['glb_file']} ({r['name']})")
+                    print(f"  OK {pid}: {r['glb_file']} [{r['zdroj']}] {r.get('name') or ''}")
             cur.execute("SELECT id, name, glb_file FROM cfg_dily WHERE glb_file=%s", (KVADR_GLB,))
             kvadr = cur.fetchall()
             print(f"kandidáti na kartu zástupného kvádru ({KVADR_GLB}):", [(k['id'], k['name']) for k in kvadr] or "žádný - zástupné díly zatím nejdou vložit")
