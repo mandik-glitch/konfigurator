@@ -69,6 +69,7 @@ window.pose=function(p){
   root.traverse(o=>{o.rotation.set(0,0,0);});
   root.traverse(o=>{const a=p[o.name];if(a!==undefined&&o.userData.osa){const ax=new THREE.Vector3(...o.userData.osa).normalize();o.quaternion.setFromAxisAngle(ax,a*Math.PI/180);}});
 };
+window.setBg=function(h){scene.background=new THREE.Color(h);};
 window.hide=function(names){root.traverse(o=>{if(o.isMesh||o.isObject3D)o.visible=!names.some(n=>o.name.startsWith(n));});};
 window.shot=function(c){
   camera=new THREE.PerspectiveCamera(c.fov,renderer.domElement.width/renderer.domElement.height,c.near||5,c.far||20000);

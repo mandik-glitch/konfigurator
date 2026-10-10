@@ -10,6 +10,8 @@ export const MATERIALY = {
   cira:       { color: [0.90, 0.94, 0.96], metallic: 0.0, roughness: 0.10, alpha: 0.22 }, // čirý PC (víko, boxy)
   cira_kour:  { color: [0.40, 0.42, 0.45], metallic: 0.0, roughness: 0.12, alpha: 0.40 }, // kouřové PC
   vicko_cira: { color: [0.60, 0.63, 0.66], metallic: 0.0, roughness: 0.12, alpha: 0.30 },   // lehce zakouřené čiré víko
+  pozink:     { color: [0.40, 0.42, 0.45], metallic: 0.85, roughness: 0.48 },       // pozinkovaný plech
+  plast_bily: { color: [0.80, 0.80, 0.78], metallic: 0.0, roughness: 0.38 },        // bílý plast (POM/PA)
   ocel:       { color: [0.78, 0.79, 0.82], metallic: 1.0, roughness: 0.30 },      // nerez
   bila:       { color: [0.80, 0.80, 0.80], metallic: 0.0, roughness: 0.5 },
   cervena_pruhl: { color: [0.62, 0.02, 0.04], metallic: 0.0, roughness: 0.35, alpha: 0.80 },

@@ -11,6 +11,6 @@ t = t.replace('<!--THREE_SCRIPTS-->', `<script>${js('three.min.js')}</script><sc
 t = t.replace('__GLB_B64__', fs.readFileSync(glb).toString('base64'));
 if (process.argv.includes('--artifact')) {
   t = t.replace(/<!doctype html>\s*/i, '').replace(/<html[^>]*>\s*/i, '').replace(/<head>\s*/i, '').replace(/<meta charset[^>]*>\s*/i, '').replace(/<meta name="viewport"[^>]*>\s*/i, '').replace(/<\/head>\s*/i, '').replace(/<body>\s*/i, '').replace(/<\/body>\s*<\/html>\s*$/i, '');
-  t = t.replace(/<title>[^<]*<\/title>/, '<title>PACKOUT organizér 3D</title>');
+  const ti = process.argv.indexOf('--title'); t = t.replace(/<title>[^<]*<\/title>/, '<title>' + (ti > 0 ? process.argv[ti + 1] : 'PACKOUT organizér 3D') + '</title>');
 }
 fs.writeFileSync(out, t); console.log(out, (t.length / 1e6).toFixed(2) + ' MB');

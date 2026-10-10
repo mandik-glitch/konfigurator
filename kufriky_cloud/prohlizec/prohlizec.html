@@ -49,7 +49,7 @@ function buildNode(g,ni,mats){
   if(EMBED && EMBED.length>100){const bin=atob(EMBED);const u=new Uint8Array(bin.length);for(let i=0;i<bin.length;i++)u[i]=bin.charCodeAt(i);buf=u.buffer;}
   else{const r=await fetch(params.get('glb')||'../modely/4932464082.glb');buf=await r.arrayBuffer();}
   const g=parseGLB(buf), meta=g.gltf.asset.extras||{};
-  document.getElementById('nazev').textContent='PACKOUT organizér '+(meta.sku||'');
+  document.getElementById('nazev').textContent=meta.nazev||('PACKOUT organizér '+(meta.sku||''));
   const renderer=new THREE.WebGLRenderer({antialias:true,alpha:true});renderer.localClippingEnabled=true;renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.setClearColor(0x000000,0);renderer.setSize(innerWidth,innerHeight);renderer.outputEncoding=THREE.sRGBEncoding;
   document.body.prepend(renderer.domElement);
   const scene=new THREE.Scene();
@@ -73,7 +73,7 @@ function buildNode(g,ni,mats){
   const front=(meta.osy||'').includes('celo +Y')?90:0;
   const bt={celo:[front,6],sikmo:[front+32,26],shora:[front,88],zezadu:[front+150,26],spodek:[front+20,-60]};
   for(const [k,v] of Object.entries(bt))document.getElementById('b-'+k).onclick=()=>pohled(v[0],v[1]);
-  pohled(front+32,26);
+  if(meta.start){const st=meta.start,a=st.az*Math.PI/180,e=st.el*Math.PI/180;camera.position.set(st.target[0]+st.dist*Math.cos(e)*Math.cos(a),st.target[1]+st.dist*Math.cos(e)*Math.sin(a),st.target[2]+st.dist*Math.sin(e));controls.target.set(...st.target);controls.update();}else pohled(front+32,26);
   // posuvníky pro pohyblivé skupiny (uzly s extras.osa): víko, výklopné boxy, …
   const groups={};root.traverse(o=>{if(o.userData&&o.userData.osa){const k=o.name.replace(/[_\-\s]?\d+$/,'');(groups[k]=groups[k]||[]).push(o);}});
   const ovl=document.getElementById('ovl');

@@ -25,6 +25,7 @@ export class Renderer {
     return this.page.evaluate(([b, s]) => window.load(b, s), [b64, silhouette]);
   }
   async pose(p) { await this.page.evaluate(p => window.pose(p), p); }
+  async bg(hex) { await this.page.evaluate(h => window.setBg(h), hex); }
   async hide(names) { await this.page.evaluate(n => window.hide(n), names); }
   async png(cam, out) {
     await this.page.evaluate(c => window.shot(c), cam);
