@@ -163,3 +163,9 @@ Spojů profilů: 69 T/čelních + 6 bočních dosedů (posuvné profily / sloupe
 | vysunutí ramene od podstavy (250) | 250 | 250 | +0.000 |
 
 Výsledek: 36 kót porovnáno, všechny se shodují na 0,01 mm.
+
+## 7. Oprava po otevření ve scéně (bot9, 2026-10-10)
+- Vlastní tvar **#592** je zapsaný v DB. Laminodesky `product_4933` byly v první verzi posunuté doprava: jejich GLB nemá střed v počátku, ale v (4268; 881; 9,8) mm. Bot9 polohu přepočítal ze skutečného GLB přímo v záznamu #592; Robert a bot8 potvrdili, že police sedí. **Soubory v `vystup/` (včetně `custom_shape_data.json`) tuto opravu NEOBSAHUJÍ** – při dalším generování z `stul_balici_spec.json` je potřeba polohu 4933 počítat ze skutečného středu GLB.
+- LED `product_4929` měla polohu správně.
+- Žlutá barva profilů ve scéně byla barva karty v katalogu (`cfg_dily.Object_11.color_hex`), data tvaru byla v pořádku; bot8 po Robertově OK vrátil standardní hliník.
+- Poučení: střed obálky dílu vždy MĚŘIT z GLB v katalogu, nepředpokládat vystředěný.
