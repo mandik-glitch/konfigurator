@@ -910,6 +910,105 @@ function postavNahled() {
   return html.length;
 }
 
+
+// ---------------------------------------------------------------------------------------------------------------
+// 11) 2D kontrolní pohledy z naměřených Box3 (WORKFLOW pravidlo 10, doplněk 2026-08-30: 2D pohled s mm mřížkou a kótami ze SKUTEČNÉ geometrie)
+// ---------------------------------------------------------------------------------------------------------------
+function postav2D() {
+  const FILL = { profil: '#c3c8ce', deska: '#9aa0a6', spojka: '#2d3139', patka: '#16181b', drzak: '#9aa3b0', led: '#f2d45c' };
+  const barva = k => FILL[k] || BARVY[k] || '#cccccc';
+  const FS = 26;                                   // písmo v mm
+  const popis = (view) => ({ celo: 'POHLED ZEPŘEDU (osa X doprava, Y nahoru)', bok: 'POHLED ZLEVA (osa Z doprava = k přední straně, Y nahoru)', pudorys: 'PŮDORYS (osa X doprava, Z dolů = k přední straně)' }[view]);
+  function svg(view, kreslit) {
+    const sx = it => (view === 'bok' ? it.box.min.z : it.box.min.x), ex = it => (view === 'bok' ? it.box.max.z : it.box.max.x);
+    const sy = it => (view === 'pudorys' ? it.box.min.z : -it.box.max.y), ey = it => (view === 'pudorys' ? it.box.max.z : -it.box.min.y);
+    const out = []; let minX = 1e9, minY = 1e9, maxX = -1e9, maxY = -1e9;
+    const ext = (x, y) => { minX = Math.min(minX, x); maxX = Math.max(maxX, x); minY = Math.min(minY, y); maxY = Math.max(maxY, y); };
+    const poradi = ['zastupne', 'deska', 'profil', 'drzak', 'spojka', 'patka', 'led'];
+    const rank = it => { const k = poradi.findIndex(p => it.kat.startsWith(p)); return k < 0 ? 0 : k; };
+    for (const it of items.slice().sort((a, b) => rank(a) - rank(b))) {
+      const x = sx(it), y = sy(it), w = ex(it) - x, h = ey(it) - y;
+      ext(x, y); ext(x + w, y + h);
+      out.push(`<rect x="${r3(x)}" y="${r3(y)}" width="${r3(w)}" height="${r3(h)}" fill="${barva(it.kat)}" fill-opacity="${it.kat === 'deska' ? 0.55 : (it.zastupne ? 0.45 : 0.7)}" stroke="#222" stroke-width="1.2"><title>${it.role}</title></rect>`);
+    }
+    const dim = [];
+    const hodn = (v) => (Math.abs(v - Math.round(v)) < 0.005 ? String(Math.round(v)) : v.toFixed(1));
+    let rowH = 0;
+    const dimH = (a, b, yOff, text) => { const y = yOff; ext(a, y); ext(b, y); dim.push(`<g stroke="#b3261e" fill="#b3261e" stroke-width="1.6"><line x1="${a}" y1="${y}" x2="${b}" y2="${y}"/><line x1="${a}" y1="${y - 14}" x2="${a}" y2="${y + 14}"/><line x1="${b}" y1="${y - 14}" x2="${b}" y2="${y + 14}"/><text x="${(a + b) / 2}" y="${y - 7}" font-size="${FS}" text-anchor="middle" stroke="none">${text}</text></g>`); };
+    const dimV = (a, b, xOff, text) => { const x = xOff; ext(x, a); ext(x, b); dim.push(`<g stroke="#b3261e" fill="#b3261e" stroke-width="1.6"><line x1="${x}" y1="${a}" x2="${x}" y2="${b}"/><line x1="${x - 14}" y1="${a}" x2="${x + 14}" y2="${a}"/><line x1="${x - 14}" y1="${b}" x2="${x + 14}" y2="${b}"/><text transform="translate(${x - 8},${(a + b) / 2}) rotate(-90)" font-size="${FS}" text-anchor="middle" stroke="none">${text}</text></g>`); };
+    kreslit({ dimH, dimV, hodn });
+    const pad = 120, x0 = minX - pad, y0 = minY - pad - 60, W = maxX - minX + 2 * pad, Hh = maxY - minY + 2 * pad + 60;
+    const grid = [];
+    for (let gx = Math.ceil(x0 / 100) * 100; gx <= x0 + W; gx += 100) grid.push(`<line x1="${gx}" y1="${y0}" x2="${gx}" y2="${y0 + Hh}" stroke="${gx % 500 === 0 ? '#9aa5b1' : '#d5dbe1'}" stroke-width="${gx % 500 === 0 ? 1.4 : 0.8}"/>${gx % 500 === 0 ? `<text x="${gx + 4}" y="${y0 + FS}" font-size="${FS * 0.8}" fill="#667">${gx}</text>` : ''}`);
+    for (let gy = Math.ceil(y0 / 100) * 100; gy <= y0 + Hh; gy += 100) grid.push(`<line x1="${x0}" y1="${gy}" x2="${x0 + W}" y2="${gy}" stroke="${gy % 500 === 0 ? '#9aa5b1' : '#d5dbe1'}" stroke-width="${gy % 500 === 0 ? 1.4 : 0.8}"/>${gy % 500 === 0 ? `<text x="${x0 + 4}" y="${gy - 4}" font-size="${FS * 0.8}" fill="#667">${view === 'pudorys' ? gy : -gy}</text>` : ''}`);
+    return `<?xml version="1.0" encoding="UTF-8"?>\n<svg xmlns="http://www.w3.org/2000/svg" viewBox="${r3(x0)} ${r3(y0)} ${r3(W)} ${r3(Hh)}" width="${Math.round(W * 0.9)}" height="${Math.round(Hh * 0.9)}" font-family="Arial,Helvetica,sans-serif">\n<rect x="${r3(x0)}" y="${r3(y0)}" width="${r3(W)}" height="${r3(Hh)}" fill="#fff"/>\n<text x="${r3(x0 + 10)}" y="${r3(y0 + FS + 30)}" font-size="${FS * 1.1}" font-weight="bold">${spec.nazev} - ${popis(view)} - kóty NAMĚŘENÉ z Box3 reálné GLB geometrie (mřížka 100 mm, čísla v mm)</text>\n${grid.join('\n')}\n${out.join('\n')}\n${dim.join('\n')}\n</svg>\n`;
+  }
+  const B = id => byId.get(id).box;
+  const m = (v) => r3(v);
+  const celo = svg('celo', ({ dimH, dimV, hodn }) => {
+    const yy = 80, y = k => -k;
+    dimH(B('noha-AZ').max.x, B('noha-BZ').min.x, yy, hodn(H.mezera('noha-AZ', 'noha-BZ', 'x')));
+    dimH(B('noha-BZ').max.x, B('noha-CZ').min.x, yy, hodn(H.mezera('noha-BZ', 'noha-CZ', 'x')));
+    dimH(B('noha-CZ').max.x, B('noha-DZ').min.x, yy, hodn(H.mezera('noha-CZ', 'noha-DZ', 'x')));
+    dimH(0, B('noha-BZ').max.x, yy + 80, hodn(B('noha-BZ').max.x));
+    dimH(B('noha-BZ').max.x, B('noha-CZ').max.x, yy + 80, hodn(B('noha-CZ').max.x - B('noha-BZ').max.x));
+    dimH(B('noha-CZ').max.x, B('noha-DZ').max.x, yy + 80, hodn(B('noha-DZ').max.x - B('noha-CZ').max.x));
+    dimH(0, H.rozpeti(['profil', 'deska'], 'x'), yy + 160, hodn(H.rozpeti(['profil', 'deska'], 'x')));
+    const L = [[B('police-1').max.y, 0], [B('police-2').max.y, 0], [B('police-3').max.y, 0]];
+    dimV(0, y(B('police-1').max.y), -90, hodn(B('police-1').max.y));
+    dimV(0, y(B('police-2').max.y), -170, hodn(B('police-2').max.y));
+    dimV(0, y(B('police-3').max.y), -250, hodn(B('police-3').max.y));
+    dimV(0, y(B('LT-zadni').max.y), -330, hodn(B('LT-zadni').max.y));
+    dimV(0, y(B('deska-stolu').max.y), 1750 + 90, hodn(B('deska-stolu').max.y));
+    dimV(0, y(B('police-S').max.y), 1750 + 170, hodn(B('police-S').max.y));
+    dimV(0, y(B('deska-spodni').max.y), 1750 + 250, hodn(B('deska-spodni').max.y));
+    dimV(0, y(B('LB-zadni').min.y), 1750 + 330, hodn(B('LB-zadni').min.y));
+    dimV(0, y(B('noha-AZ').min.y), 1750 + 410, hodn(B('noha-AZ').min.y));
+    dimV(0, y(H.rozpeti(['profil', 'patka'], 'y')), 1750 + 490, hodn(H.rozpeti(['profil', 'patka'], 'y')));
+    dimV(y(B('LT-zadni').min.y), y(B('zed-horni').max.y), 1750 + 570, hodn(B('zed-horni').max.y - B('LT-zadni').min.y));
+    dimV(y(B('deska-stolu').max.y), y(B('zed-spodni').min.y), 1750 + 650, hodn(B('zed-spodni').min.y - B('deska-stolu').max.y));
+    dimV(y(B('LT-zadni').max.y), y(B('horni-zadni').min.y), 1750 + 730, hodn(B('horni-zadni').min.y - B('LT-zadni').max.y));
+    dimV(y(B('rameno-sloup').min.y), y(B('rameno-sloup').max.y), 515 - 60, hodn(B('rameno-sloup').max.y - B('rameno-sloup').min.y));
+    dimH(B('noha-BZ').max.x, B('noha-DZ').min.x, -B('zed-horni').max.y - 70, hodn(H.delka('zed-horni')));
+    dimH(B('horni-zadni').min.x, B('horni-zadni').max.x, -B('horni-zadni').max.y - 70, hodn(H.delka('horni-zadni')));
+  });
+  const bok = svg('bok', ({ dimH, dimV, hodn }) => {
+    const y = k => -k, yy = 80;
+    dimH(0, 800, yy, hodn(H.rozpeti(['profil', 'deska'], 'z')));
+    dimH(B('noha-AZ').max.z, B('noha-AP').min.z, yy + 80, hodn(H.mezera('noha-AZ', 'noha-AP', 'z')));
+    dimH(0, B('deska-spodni').max.z, yy + 160, hodn(B('deska-spodni').max.z));
+    dimH(B('deska-spodni').max.z, 800, yy + 160, hodn(800 - B('deska-spodni').max.z));
+    dimH(0, H.rozpeti(['horni-bok-L'], 'z'), -B('horni-zadni').max.y - 90, hodn(H.rozpeti(['horni-bok-L'], 'z')));
+    dimH(B('noha-AZ').max.z, B('rameno-hlava').max.z, -1650 - 90, hodn(B('rameno-hlava').max.z - B('noha-AZ').max.z));
+    dimH(B('rameno-vodorovne').min.z, B('rameno-hlava').max.z, -1650 - 170, hodn(B('rameno-hlava').max.z - B('rameno-vodorovne').min.z));
+    dimV(0, y(H.rozpeti(['profil', 'patka'], 'y')), -90, hodn(H.rozpeti(['profil', 'patka'], 'y')));
+    dimV(0, y(B('LT-zadni').max.y), -170, hodn(B('LT-zadni').max.y));
+    dimV(0, y(B('deska-stolu').max.y), -250, hodn(B('deska-stolu').max.y));
+    dimV(0, y(B('police-S').max.y), 890, hodn(B('police-S').max.y));
+    dimV(0, y(B('deska-spodni').max.y), 970, hodn(B('deska-spodni').max.y));
+    dimV(y(B('deska-stolu').max.y), y(B('horni-zadni').min.y), 1050, hodn(B('horni-zadni').min.y - B('deska-stolu').max.y));
+    dimV(0, y(B('noha-AZ').min.y), 1130, hodn(B('noha-AZ').min.y));
+    dimV(0, y(B('LB-zadni').min.y), 1210, hodn(B('LB-zadni').min.y));
+  });
+  const pud = svg('pudorys', ({ dimH, dimV, hodn }) => {
+    const yy = 880;
+    dimH(0, B('noha-BZ').max.x, yy, hodn(B('noha-BZ').max.x));
+    dimH(B('noha-BZ').max.x, B('noha-CZ').max.x, yy, hodn(B('noha-CZ').max.x - B('noha-BZ').max.x));
+    dimH(B('noha-CZ').max.x, B('noha-DZ').max.x, yy, hodn(B('noha-DZ').max.x - B('noha-CZ').max.x));
+    dimH(0, H.rozpeti(['profil', 'deska'], 'x'), yy + 80, hodn(H.rozpeti(['profil', 'deska'], 'x')));
+    dimH(B('valecka-draha-1').min.x, B('valecka-draha-11').max.x, yy + 160, hodn(B('valecka-draha-11').max.x - B('valecka-draha-1').min.x));
+    dimV(0, 800, -90, hodn(H.rozpeti(['profil', 'deska'], 'z')));
+    dimV(B('valecka-draha-1').min.z, B('valecka-draha-1').max.z, 1750 + 90, hodn(B('valecka-draha-1').max.z - B('valecka-draha-1').min.z));
+    dimV(0, B('horni-bok-L').max.z, -170, hodn(B('horni-bok-L').max.z));
+    dimV(B('noha-AZ').max.z, B('rameno-hlava').max.z, 515 - 70, hodn(B('rameno-hlava').max.z - B('noha-AZ').max.z));
+  });
+  fs.mkdirSync(path.join(HERE, 'nahled'), { recursive: true });
+  fs.writeFileSync(path.join(HERE, 'nahled/kontrola_2d_celo.svg'), celo);
+  fs.writeFileSync(path.join(HERE, 'nahled/kontrola_2d_bok.svg'), bok);
+  fs.writeFileSync(path.join(HERE, 'nahled/kontrola_2d_pudorys.svg'), pud);
+}
+postav2D();
+
 const nahledB = postavNahled();
 L('');
 L('== 8. SOUHRN ==');

@@ -109,7 +109,7 @@ T-styl (připojovaný profil = světlé rozpětí, tj. zkrácení o CELOU šíř
 == 4. KOLIZE (všechny dvojice dílů: obálky na 3 osách, pak přesný mesh test) ==
 překryv obálek na všech 3 osách současně (lib.fullCollisionCheck): 167 dvojic, z toho očekávaných (zámek spojky, závit patky): 138, ostatních: 29
   ostatní překryvy obálek podle druhu (rozhoduje mesh test níže): patka x profil 6, spojka x spojka 23
-přesný mesh test (SAT + objemové vzorkování, scripts/2026-09-11_mesh_kolize_lib.js) na 0 dvojicích: kolize 0 (očekávané zámky/závity 0, NEočekávané 0), obálky ano / mesh ne 0
+přesný mesh test (SAT + objemové vzorkování, scripts/2026-09-11_mesh_kolize_lib.js) na 167 dvojicích: kolize 8 (očekávané zámky/závity 8, NEočekávané 0), obálky ano / mesh ne 159
 
 == 5. ROHOVÉ SPOJKY (product_3176): zámek v drážce obou profilů ==
   OK  spojka-13-LB-zadni-noha-AZ         strana -y  zámek v noha-AZ: 3.43 mm, v LB-zadni: 3.43 mm
@@ -230,6 +230,5 @@ varování: 4
   VAROVÁNÍ spoj MB-bok-B -> noha-BZ: BEZ rohové spojky (boční příčka 46..86 mm leží 34 mm pod příčkou levé sekce (120..160): spojka shora by zasáhla 3 mm do příčky 120..160 - spoj šroubem přes čelo (bez rohové spojky)); zamítnuté strany: -y: rodič má za dítětem jen 0 mm; +x: rodič má za dítětem jen 0 mm; -x: rodič má za dítětem jen 0 mm; +y: kolize s LB-prava (odsun 2.95 mm)
   VAROVÁNÍ spoj MB-zadni -> noha-BZ: BEZ rohové spojky (spodní rám střední sekce (příčka 46..86 mm) leží těsně nad čely nohou a pod ní je deska 18 mm: spojka (37 mm) shora koliduje s deskou, zespodu není pod příčkou materiál nohy - spoj se musí řešit šroubem přes čelo (bez rohové spojky)); zamítnuté strany: -y: rodič má za dítětem jen 0 mm; +z: rodič má za dítětem jen 0 mm; -z: rodič má za dítětem jen 0 mm; +y: kolize s deska-spodni (odsun 21.39 mm)
   VAROVÁNÍ spoj MB-zadni -> noha-CZ: BEZ rohové spojky (spodní rám střední sekce (příčka 46..86 mm) leží těsně nad čely nohou a pod ní je deska 18 mm: spojka (37 mm) shora koliduje s deskou, zespodu není pod příčkou materiál nohy - spoj se musí řešit šroubem přes čelo (bez rohové spojky)); zamítnuté strany: -y: rodič má za dítětem jen 0 mm; +z: rodič má za dítětem jen 0 mm; -z: rodič má za dítětem jen 0 mm; +y: kolize s deska-spodni (odsun 21.39 mm)
-chyb: 1
-  CHYBA DEV REŽIM (SKIP_MESH): přesný mesh test kolizí PŘESKOČEN - výsledek neplatí
-VÝSLEDEK: NEPROŠLO
+chyb: 0
+VÝSLEDEK: OK (vše změřeno a čisté; rozsah viz oddíl 0)
