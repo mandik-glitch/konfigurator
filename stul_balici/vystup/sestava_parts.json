@@ -1,0 +1,7174 @@
+{
+ "_popis": "Seznam dílů sestavy Stůl balení LIDL (prototyp II). Souřadnice mm, Y nahoru, X doprava, Z k pozorovateli; position/quaternion/scale jsou transformace GLB dílu jako v custom_shapes.",
+ "spec_sha": "2e3cdb88d742",
+ "jednotky": "mm",
+ "dily": [
+  {
+   "index": 0,
+   "role": "stulbal-noha-AZ",
+   "id": "noha-AZ",
+   "kategorie": "profil",
+   "part_id": "Object_11",
+   "sku": "1.1.10.040040.03",
+   "nazev": "Profil 40x40 SuperLight S10 (drážka 10 mm)",
+   "zastupne": false,
+   "glb": "webapp/katalog/Object_11.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    20.000008,
+    1053,
+    19.99997
+   ],
+   "quaternion": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "scale": [
+    1,
+    2.014,
+    1
+   ],
+   "rozmer_mm": [
+    40,
+    2014,
+    40
+   ],
+   "box_min": [
+    0,
+    46,
+    0
+   ],
+   "box_max": [
+    40,
+    2060,
+    40
+   ],
+   "osa": "y",
+   "delka_mm": 2014
+  },
+  {
+   "index": 1,
+   "role": "stulbal-noha-BZ",
+   "id": "noha-BZ",
+   "kategorie": "profil",
+   "part_id": "Object_11",
+   "sku": "1.1.10.040040.03",
+   "nazev": "Profil 40x40 SuperLight S10 (drážka 10 mm)",
+   "zastupne": false,
+   "glb": "webapp/katalog/Object_11.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    410.000008,
+    1053,
+    19.99997
+   ],
+   "quaternion": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "scale": [
+    1,
+    2.014,
+    1
+   ],
+   "rozmer_mm": [
+    40,
+    2014,
+    40
+   ],
+   "box_min": [
+    390,
+    46,
+    0
+   ],
+   "box_max": [
+    430,
+    2060,
+    40
+   ],
+   "osa": "y",
+   "delka_mm": 2014
+  },
+  {
+   "index": 2,
+   "role": "stulbal-noha-CZ",
+   "id": "noha-CZ",
+   "kategorie": "profil",
+   "part_id": "Object_11",
+   "sku": "1.1.10.040040.03",
+   "nazev": "Profil 40x40 SuperLight S10 (drážka 10 mm)",
+   "zastupne": false,
+   "glb": "webapp/katalog/Object_11.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    1020.000008,
+    414,
+    19.99997
+   ],
+   "quaternion": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "scale": [
+    1,
+    0.736,
+    1
+   ],
+   "rozmer_mm": [
+    40,
+    736,
+    40
+   ],
+   "box_min": [
+    1000,
+    46,
+    0
+   ],
+   "box_max": [
+    1040,
+    782,
+    40
+   ],
+   "osa": "y",
+   "delka_mm": 736
+  },
+  {
+   "index": 3,
+   "role": "stulbal-noha-DZ",
+   "id": "noha-DZ",
+   "kategorie": "profil",
+   "part_id": "Object_11",
+   "sku": "1.1.10.040040.03",
+   "nazev": "Profil 40x40 SuperLight S10 (drážka 10 mm)",
+   "zastupne": false,
+   "glb": "webapp/katalog/Object_11.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    1730.000008,
+    1053,
+    19.99997
+   ],
+   "quaternion": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "scale": [
+    1,
+    2.014,
+    1
+   ],
+   "rozmer_mm": [
+    40,
+    2014,
+    40
+   ],
+   "box_min": [
+    1710,
+    46,
+    0
+   ],
+   "box_max": [
+    1750,
+    2060,
+    40
+   ],
+   "osa": "y",
+   "delka_mm": 2014
+  },
+  {
+   "index": 4,
+   "role": "stulbal-noha-AP",
+   "id": "noha-AP",
+   "kategorie": "profil",
+   "part_id": "Object_11",
+   "sku": "1.1.10.040040.03",
+   "nazev": "Profil 40x40 SuperLight S10 (drážka 10 mm)",
+   "zastupne": false,
+   "glb": "webapp/katalog/Object_11.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    20.000008,
+    768,
+    779.99997
+   ],
+   "quaternion": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "scale": [
+    1,
+    1.444,
+    1
+   ],
+   "rozmer_mm": [
+    40,
+    1444,
+    40
+   ],
+   "box_min": [
+    0,
+    46,
+    760
+   ],
+   "box_max": [
+    40,
+    1490,
+    800
+   ],
+   "osa": "y",
+   "delka_mm": 1444
+  },
+  {
+   "index": 5,
+   "role": "stulbal-noha-BP",
+   "id": "noha-BP",
+   "kategorie": "profil",
+   "part_id": "Object_11",
+   "sku": "1.1.10.040040.03",
+   "nazev": "Profil 40x40 SuperLight S10 (drážka 10 mm)",
+   "zastupne": false,
+   "glb": "webapp/katalog/Object_11.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    410.000008,
+    768,
+    779.99997
+   ],
+   "quaternion": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "scale": [
+    1,
+    1.444,
+    1
+   ],
+   "rozmer_mm": [
+    40,
+    1444,
+    40
+   ],
+   "box_min": [
+    390,
+    46,
+    760
+   ],
+   "box_max": [
+    430,
+    1490,
+    800
+   ],
+   "osa": "y",
+   "delka_mm": 1444
+  },
+  {
+   "index": 6,
+   "role": "stulbal-noha-CP",
+   "id": "noha-CP",
+   "kategorie": "profil",
+   "part_id": "Object_11",
+   "sku": "1.1.10.040040.03",
+   "nazev": "Profil 40x40 SuperLight S10 (drážka 10 mm)",
+   "zastupne": false,
+   "glb": "webapp/katalog/Object_11.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    1020.000008,
+    414,
+    779.99997
+   ],
+   "quaternion": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "scale": [
+    1,
+    0.736,
+    1
+   ],
+   "rozmer_mm": [
+    40,
+    736,
+    40
+   ],
+   "box_min": [
+    1000,
+    46,
+    760
+   ],
+   "box_max": [
+    1040,
+    782,
+    800
+   ],
+   "osa": "y",
+   "delka_mm": 736
+  },
+  {
+   "index": 7,
+   "role": "stulbal-noha-DP",
+   "id": "noha-DP",
+   "kategorie": "profil",
+   "part_id": "Object_11",
+   "sku": "1.1.10.040040.03",
+   "nazev": "Profil 40x40 SuperLight S10 (drážka 10 mm)",
+   "zastupne": false,
+   "glb": "webapp/katalog/Object_11.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    1730.000008,
+    414,
+    779.99997
+   ],
+   "quaternion": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "scale": [
+    1,
+    0.736,
+    1
+   ],
+   "rozmer_mm": [
+    40,
+    736,
+    40
+   ],
+   "box_min": [
+    1710,
+    46,
+    760
+   ],
+   "box_max": [
+    1750,
+    782,
+    800
+   ],
+   "osa": "y",
+   "delka_mm": 736
+  },
+  {
+   "index": 8,
+   "role": "stulbal-LB-zadni",
+   "id": "LB-zadni",
+   "kategorie": "profil",
+   "part_id": "Object_11",
+   "sku": "1.1.10.040040.03",
+   "nazev": "Profil 40x40 SuperLight S10 (drážka 10 mm)",
+   "zastupne": false,
+   "glb": "webapp/katalog/Object_11.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    215,
+    139.999992,
+    19.999977
+   ],
+   "quaternion": [
+    0,
+    0,
+    -0.707107,
+    0.707107
+   ],
+   "scale": [
+    1,
+    0.35,
+    1
+   ],
+   "rozmer_mm": [
+    350,
+    40,
+    40
+   ],
+   "box_min": [
+    40,
+    120,
+    0
+   ],
+   "box_max": [
+    390,
+    160,
+    40
+   ],
+   "osa": "x",
+   "delka_mm": 350
+  },
+  {
+   "index": 9,
+   "role": "stulbal-LB-predni",
+   "id": "LB-predni",
+   "kategorie": "profil",
+   "part_id": "Object_11",
+   "sku": "1.1.10.040040.03",
+   "nazev": "Profil 40x40 SuperLight S10 (drážka 10 mm)",
+   "zastupne": false,
+   "glb": "webapp/katalog/Object_11.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    215,
+    139.999992,
+    779.999977
+   ],
+   "quaternion": [
+    0,
+    0,
+    -0.707107,
+    0.707107
+   ],
+   "scale": [
+    1,
+    0.35,
+    1
+   ],
+   "rozmer_mm": [
+    350,
+    40,
+    40
+   ],
+   "box_min": [
+    40,
+    120,
+    760
+   ],
+   "box_max": [
+    390,
+    160,
+    800
+   ],
+   "osa": "x",
+   "delka_mm": 350
+  },
+  {
+   "index": 10,
+   "role": "stulbal-LB-leva",
+   "id": "LB-leva",
+   "kategorie": "profil",
+   "part_id": "Object_11",
+   "sku": "1.1.10.040040.03",
+   "nazev": "Profil 40x40 SuperLight S10 (drážka 10 mm)",
+   "zastupne": false,
+   "glb": "webapp/katalog/Object_11.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    20.000038,
+    140.00003,
+    400
+   ],
+   "quaternion": [
+    0.707107,
+    0,
+    0,
+    0.707107
+   ],
+   "scale": [
+    1,
+    0.72,
+    1
+   ],
+   "rozmer_mm": [
+    40,
+    40,
+    720
+   ],
+   "box_min": [
+    0,
+    120,
+    40
+   ],
+   "box_max": [
+    40,
+    160,
+    760
+   ],
+   "osa": "z",
+   "delka_mm": 720
+  },
+  {
+   "index": 11,
+   "role": "stulbal-LB-prava",
+   "id": "LB-prava",
+   "kategorie": "profil",
+   "part_id": "Object_11",
+   "sku": "1.1.10.040040.03",
+   "nazev": "Profil 40x40 SuperLight S10 (drážka 10 mm)",
+   "zastupne": false,
+   "glb": "webapp/katalog/Object_11.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    410.000038,
+    140.00003,
+    400
+   ],
+   "quaternion": [
+    0.707107,
+    0,
+    0,
+    0.707107
+   ],
+   "scale": [
+    1,
+    0.72,
+    1
+   ],
+   "rozmer_mm": [
+    40,
+    40,
+    720
+   ],
+   "box_min": [
+    390,
+    120,
+    40
+   ],
+   "box_max": [
+    430,
+    160,
+    760
+   ],
+   "osa": "z",
+   "delka_mm": 720
+  },
+  {
+   "index": 12,
+   "role": "stulbal-LM-zadni",
+   "id": "LM-zadni",
+   "kategorie": "profil",
+   "part_id": "Object_11",
+   "sku": "1.1.10.040040.03",
+   "nazev": "Profil 40x40 SuperLight S10 (drážka 10 mm)",
+   "zastupne": false,
+   "glb": "webapp/katalog/Object_11.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    215,
+    761.999992,
+    19.999977
+   ],
+   "quaternion": [
+    0,
+    0,
+    -0.707107,
+    0.707107
+   ],
+   "scale": [
+    1,
+    0.35,
+    1
+   ],
+   "rozmer_mm": [
+    350,
+    40,
+    40
+   ],
+   "box_min": [
+    40,
+    742,
+    0
+   ],
+   "box_max": [
+    390,
+    782,
+    40
+   ],
+   "osa": "x",
+   "delka_mm": 350
+  },
+  {
+   "index": 13,
+   "role": "stulbal-LM-predni",
+   "id": "LM-predni",
+   "kategorie": "profil",
+   "part_id": "Object_11",
+   "sku": "1.1.10.040040.03",
+   "nazev": "Profil 40x40 SuperLight S10 (drážka 10 mm)",
+   "zastupne": false,
+   "glb": "webapp/katalog/Object_11.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    215,
+    761.999992,
+    779.999977
+   ],
+   "quaternion": [
+    0,
+    0,
+    -0.707107,
+    0.707107
+   ],
+   "scale": [
+    1,
+    0.35,
+    1
+   ],
+   "rozmer_mm": [
+    350,
+    40,
+    40
+   ],
+   "box_min": [
+    40,
+    742,
+    760
+   ],
+   "box_max": [
+    390,
+    782,
+    800
+   ],
+   "osa": "x",
+   "delka_mm": 350
+  },
+  {
+   "index": 14,
+   "role": "stulbal-LM-leva",
+   "id": "LM-leva",
+   "kategorie": "profil",
+   "part_id": "Object_11",
+   "sku": "1.1.10.040040.03",
+   "nazev": "Profil 40x40 SuperLight S10 (drážka 10 mm)",
+   "zastupne": false,
+   "glb": "webapp/katalog/Object_11.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    20.000038,
+    762.00003,
+    400
+   ],
+   "quaternion": [
+    0.707107,
+    0,
+    0,
+    0.707107
+   ],
+   "scale": [
+    1,
+    0.72,
+    1
+   ],
+   "rozmer_mm": [
+    40,
+    40,
+    720
+   ],
+   "box_min": [
+    0,
+    742,
+    40
+   ],
+   "box_max": [
+    40,
+    782,
+    760
+   ],
+   "osa": "z",
+   "delka_mm": 720
+  },
+  {
+   "index": 15,
+   "role": "stulbal-LM-prava",
+   "id": "LM-prava",
+   "kategorie": "profil",
+   "part_id": "Object_11",
+   "sku": "1.1.10.040040.03",
+   "nazev": "Profil 40x40 SuperLight S10 (drážka 10 mm)",
+   "zastupne": false,
+   "glb": "webapp/katalog/Object_11.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    410.000038,
+    762.00003,
+    400
+   ],
+   "quaternion": [
+    0.707107,
+    0,
+    0,
+    0.707107
+   ],
+   "scale": [
+    1,
+    0.72,
+    1
+   ],
+   "rozmer_mm": [
+    40,
+    40,
+    720
+   ],
+   "box_min": [
+    390,
+    742,
+    40
+   ],
+   "box_max": [
+    430,
+    782,
+    760
+   ],
+   "osa": "z",
+   "delka_mm": 720
+  },
+  {
+   "index": 16,
+   "role": "stulbal-LT-zadni",
+   "id": "LT-zadni",
+   "kategorie": "profil",
+   "part_id": "Object_11",
+   "sku": "1.1.10.040040.03",
+   "nazev": "Profil 40x40 SuperLight S10 (drážka 10 mm)",
+   "zastupne": false,
+   "glb": "webapp/katalog/Object_11.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    215,
+    1469.999992,
+    19.999977
+   ],
+   "quaternion": [
+    0,
+    0,
+    -0.707107,
+    0.707107
+   ],
+   "scale": [
+    1,
+    0.35,
+    1
+   ],
+   "rozmer_mm": [
+    350,
+    40,
+    40
+   ],
+   "box_min": [
+    40,
+    1450,
+    0
+   ],
+   "box_max": [
+    390,
+    1490,
+    40
+   ],
+   "osa": "x",
+   "delka_mm": 350
+  },
+  {
+   "index": 17,
+   "role": "stulbal-LT-predni",
+   "id": "LT-predni",
+   "kategorie": "profil",
+   "part_id": "Object_11",
+   "sku": "1.1.10.040040.03",
+   "nazev": "Profil 40x40 SuperLight S10 (drážka 10 mm)",
+   "zastupne": false,
+   "glb": "webapp/katalog/Object_11.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    215,
+    1469.999992,
+    779.999977
+   ],
+   "quaternion": [
+    0,
+    0,
+    -0.707107,
+    0.707107
+   ],
+   "scale": [
+    1,
+    0.35,
+    1
+   ],
+   "rozmer_mm": [
+    350,
+    40,
+    40
+   ],
+   "box_min": [
+    40,
+    1450,
+    760
+   ],
+   "box_max": [
+    390,
+    1490,
+    800
+   ],
+   "osa": "x",
+   "delka_mm": 350
+  },
+  {
+   "index": 18,
+   "role": "stulbal-LT-leva",
+   "id": "LT-leva",
+   "kategorie": "profil",
+   "part_id": "Object_11",
+   "sku": "1.1.10.040040.03",
+   "nazev": "Profil 40x40 SuperLight S10 (drážka 10 mm)",
+   "zastupne": false,
+   "glb": "webapp/katalog/Object_11.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    20.000038,
+    1470.00003,
+    400
+   ],
+   "quaternion": [
+    0.707107,
+    0,
+    0,
+    0.707107
+   ],
+   "scale": [
+    1,
+    0.72,
+    1
+   ],
+   "rozmer_mm": [
+    40,
+    40,
+    720
+   ],
+   "box_min": [
+    0,
+    1450,
+    40
+   ],
+   "box_max": [
+    40,
+    1490,
+    760
+   ],
+   "osa": "z",
+   "delka_mm": 720
+  },
+  {
+   "index": 19,
+   "role": "stulbal-LT-prava",
+   "id": "LT-prava",
+   "kategorie": "profil",
+   "part_id": "Object_11",
+   "sku": "1.1.10.040040.03",
+   "nazev": "Profil 40x40 SuperLight S10 (drážka 10 mm)",
+   "zastupne": false,
+   "glb": "webapp/katalog/Object_11.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    410.000038,
+    1470.00003,
+    400
+   ],
+   "quaternion": [
+    0.707107,
+    0,
+    0,
+    0.707107
+   ],
+   "scale": [
+    1,
+    0.72,
+    1
+   ],
+   "rozmer_mm": [
+    40,
+    40,
+    720
+   ],
+   "box_min": [
+    390,
+    1450,
+    40
+   ],
+   "box_max": [
+    430,
+    1490,
+    760
+   ],
+   "osa": "z",
+   "delka_mm": 720
+  },
+  {
+   "index": 20,
+   "role": "stulbal-MB-bok-B",
+   "id": "MB-bok-B",
+   "kategorie": "profil",
+   "part_id": "Object_11",
+   "sku": "1.1.10.040040.03",
+   "nazev": "Profil 40x40 SuperLight S10 (drážka 10 mm)",
+   "zastupne": false,
+   "glb": "webapp/katalog/Object_11.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    410.000038,
+    66.00003,
+    400
+   ],
+   "quaternion": [
+    0.707107,
+    0,
+    0,
+    0.707107
+   ],
+   "scale": [
+    1,
+    0.72,
+    1
+   ],
+   "rozmer_mm": [
+    40,
+    40,
+    720
+   ],
+   "box_min": [
+    390,
+    46,
+    40
+   ],
+   "box_max": [
+    430,
+    86,
+    760
+   ],
+   "osa": "z",
+   "delka_mm": 720
+  },
+  {
+   "index": 21,
+   "role": "stulbal-MB-bok-C",
+   "id": "MB-bok-C",
+   "kategorie": "profil",
+   "part_id": "Object_11",
+   "sku": "1.1.10.040040.03",
+   "nazev": "Profil 40x40 SuperLight S10 (drážka 10 mm)",
+   "zastupne": false,
+   "glb": "webapp/katalog/Object_11.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    1020.000038,
+    66.00003,
+    400
+   ],
+   "quaternion": [
+    0.707107,
+    0,
+    0,
+    0.707107
+   ],
+   "scale": [
+    1,
+    0.72,
+    1
+   ],
+   "rozmer_mm": [
+    40,
+    40,
+    720
+   ],
+   "box_min": [
+    1000,
+    46,
+    40
+   ],
+   "box_max": [
+    1040,
+    86,
+    760
+   ],
+   "osa": "z",
+   "delka_mm": 720
+  },
+  {
+   "index": 22,
+   "role": "stulbal-MB-zadni",
+   "id": "MB-zadni",
+   "kategorie": "profil",
+   "part_id": "Object_11",
+   "sku": "1.1.10.040040.03",
+   "nazev": "Profil 40x40 SuperLight S10 (drážka 10 mm)",
+   "zastupne": false,
+   "glb": "webapp/katalog/Object_11.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    715,
+    65.999992,
+    19.999977
+   ],
+   "quaternion": [
+    0,
+    0,
+    -0.707107,
+    0.707107
+   ],
+   "scale": [
+    1,
+    0.57,
+    1
+   ],
+   "rozmer_mm": [
+    570,
+    40,
+    40
+   ],
+   "box_min": [
+    430,
+    46,
+    0
+   ],
+   "box_max": [
+    1000,
+    86,
+    40
+   ],
+   "osa": "x",
+   "delka_mm": 570
+  },
+  {
+   "index": 23,
+   "role": "stulbal-MB-kolejnice",
+   "id": "MB-kolejnice",
+   "kategorie": "profil",
+   "part_id": "Object_11",
+   "sku": "1.1.10.040040.03",
+   "nazev": "Profil 40x40 SuperLight S10 (drážka 10 mm)",
+   "zastupne": false,
+   "glb": "webapp/katalog/Object_11.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    715.000031,
+    65.999992,
+    629.99997
+   ],
+   "quaternion": [
+    0,
+    0,
+    -0.707107,
+    0.707107
+   ],
+   "scale": [
+    1,
+    0.57,
+    1
+   ],
+   "rozmer_mm": [
+    570,
+    40,
+    40
+   ],
+   "box_min": [
+    430,
+    46,
+    610
+   ],
+   "box_max": [
+    1000,
+    86,
+    650
+   ],
+   "osa": "x",
+   "delka_mm": 570
+  },
+  {
+   "index": 24,
+   "role": "stulbal-MM-zadni",
+   "id": "MM-zadni",
+   "kategorie": "profil",
+   "part_id": "Object_11",
+   "sku": "1.1.10.040040.03",
+   "nazev": "Profil 40x40 SuperLight S10 (drážka 10 mm)",
+   "zastupne": false,
+   "glb": "webapp/katalog/Object_11.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    715,
+    761.999992,
+    19.999977
+   ],
+   "quaternion": [
+    0,
+    0,
+    -0.707107,
+    0.707107
+   ],
+   "scale": [
+    1,
+    0.57,
+    1
+   ],
+   "rozmer_mm": [
+    570,
+    40,
+    40
+   ],
+   "box_min": [
+    430,
+    742,
+    0
+   ],
+   "box_max": [
+    1000,
+    782,
+    40
+   ],
+   "osa": "x",
+   "delka_mm": 570
+  },
+  {
+   "index": 25,
+   "role": "stulbal-MM-predni",
+   "id": "MM-predni",
+   "kategorie": "profil",
+   "part_id": "Object_11",
+   "sku": "1.1.10.040040.03",
+   "nazev": "Profil 40x40 SuperLight S10 (drážka 10 mm)",
+   "zastupne": false,
+   "glb": "webapp/katalog/Object_11.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    715,
+    761.999992,
+    779.999977
+   ],
+   "quaternion": [
+    0,
+    0,
+    -0.707107,
+    0.707107
+   ],
+   "scale": [
+    1,
+    0.57,
+    1
+   ],
+   "rozmer_mm": [
+    570,
+    40,
+    40
+   ],
+   "box_min": [
+    430,
+    742,
+    760
+   ],
+   "box_max": [
+    1000,
+    782,
+    800
+   ],
+   "osa": "x",
+   "delka_mm": 570
+  },
+  {
+   "index": 26,
+   "role": "stulbal-MM-prava",
+   "id": "MM-prava",
+   "kategorie": "profil",
+   "part_id": "Object_11",
+   "sku": "1.1.10.040040.03",
+   "nazev": "Profil 40x40 SuperLight S10 (drážka 10 mm)",
+   "zastupne": false,
+   "glb": "webapp/katalog/Object_11.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    1020.000038,
+    762.00003,
+    400
+   ],
+   "quaternion": [
+    0.707107,
+    0,
+    0,
+    0.707107
+   ],
+   "scale": [
+    1,
+    0.72,
+    1
+   ],
+   "rozmer_mm": [
+    40,
+    40,
+    720
+   ],
+   "box_min": [
+    1000,
+    742,
+    40
+   ],
+   "box_max": [
+    1040,
+    782,
+    760
+   ],
+   "osa": "z",
+   "delka_mm": 720
+  },
+  {
+   "index": 27,
+   "role": "stulbal-R0-zadni",
+   "id": "R0-zadni",
+   "kategorie": "profil",
+   "part_id": "Object_11",
+   "sku": "1.1.10.040040.03",
+   "nazev": "Profil 40x40 SuperLight S10 (drážka 10 mm)",
+   "zastupne": false,
+   "glb": "webapp/katalog/Object_11.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    1375,
+    139.999992,
+    19.999977
+   ],
+   "quaternion": [
+    0,
+    0,
+    -0.707107,
+    0.707107
+   ],
+   "scale": [
+    1,
+    0.67,
+    1
+   ],
+   "rozmer_mm": [
+    670,
+    40,
+    40
+   ],
+   "box_min": [
+    1040,
+    120,
+    0
+   ],
+   "box_max": [
+    1710,
+    160,
+    40
+   ],
+   "osa": "x",
+   "delka_mm": 670
+  },
+  {
+   "index": 28,
+   "role": "stulbal-R0-predni",
+   "id": "R0-predni",
+   "kategorie": "profil",
+   "part_id": "Object_11",
+   "sku": "1.1.10.040040.03",
+   "nazev": "Profil 40x40 SuperLight S10 (drážka 10 mm)",
+   "zastupne": false,
+   "glb": "webapp/katalog/Object_11.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    1375,
+    139.999992,
+    779.999977
+   ],
+   "quaternion": [
+    0,
+    0,
+    -0.707107,
+    0.707107
+   ],
+   "scale": [
+    1,
+    0.67,
+    1
+   ],
+   "rozmer_mm": [
+    670,
+    40,
+    40
+   ],
+   "box_min": [
+    1040,
+    120,
+    760
+   ],
+   "box_max": [
+    1710,
+    160,
+    800
+   ],
+   "osa": "x",
+   "delka_mm": 670
+  },
+  {
+   "index": 29,
+   "role": "stulbal-R0-prava",
+   "id": "R0-prava",
+   "kategorie": "profil",
+   "part_id": "Object_11",
+   "sku": "1.1.10.040040.03",
+   "nazev": "Profil 40x40 SuperLight S10 (drážka 10 mm)",
+   "zastupne": false,
+   "glb": "webapp/katalog/Object_11.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    1730.000038,
+    140.00003,
+    400
+   ],
+   "quaternion": [
+    0.707107,
+    0,
+    0,
+    0.707107
+   ],
+   "scale": [
+    1,
+    0.72,
+    1
+   ],
+   "rozmer_mm": [
+    40,
+    40,
+    720
+   ],
+   "box_min": [
+    1710,
+    120,
+    40
+   ],
+   "box_max": [
+    1750,
+    160,
+    760
+   ],
+   "osa": "z",
+   "delka_mm": 720
+  },
+  {
+   "index": 30,
+   "role": "stulbal-R1-bok-C",
+   "id": "R1-bok-C",
+   "kategorie": "profil",
+   "part_id": "Object_11",
+   "sku": "1.1.10.040040.03",
+   "nazev": "Profil 40x40 SuperLight S10 (drážka 10 mm)",
+   "zastupne": false,
+   "glb": "webapp/katalog/Object_11.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    1020.000038,
+    390.00003,
+    400
+   ],
+   "quaternion": [
+    0.707107,
+    0,
+    0,
+    0.707107
+   ],
+   "scale": [
+    1,
+    0.72,
+    1
+   ],
+   "rozmer_mm": [
+    40,
+    40,
+    720
+   ],
+   "box_min": [
+    1000,
+    370,
+    40
+   ],
+   "box_max": [
+    1040,
+    410,
+    760
+   ],
+   "osa": "z",
+   "delka_mm": 720
+  },
+  {
+   "index": 31,
+   "role": "stulbal-R1-bok-D",
+   "id": "R1-bok-D",
+   "kategorie": "profil",
+   "part_id": "Object_11",
+   "sku": "1.1.10.040040.03",
+   "nazev": "Profil 40x40 SuperLight S10 (drážka 10 mm)",
+   "zastupne": false,
+   "glb": "webapp/katalog/Object_11.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    1730.000038,
+    390.00003,
+    400
+   ],
+   "quaternion": [
+    0.707107,
+    0,
+    0,
+    0.707107
+   ],
+   "scale": [
+    1,
+    0.72,
+    1
+   ],
+   "rozmer_mm": [
+    40,
+    40,
+    720
+   ],
+   "box_min": [
+    1710,
+    370,
+    40
+   ],
+   "box_max": [
+    1750,
+    410,
+    760
+   ],
+   "osa": "z",
+   "delka_mm": 720
+  },
+  {
+   "index": 32,
+   "role": "stulbal-R1-predni",
+   "id": "R1-predni",
+   "kategorie": "profil",
+   "part_id": "Object_11",
+   "sku": "1.1.10.040040.03",
+   "nazev": "Profil 40x40 SuperLight S10 (drážka 10 mm)",
+   "zastupne": false,
+   "glb": "webapp/katalog/Object_11.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    1375,
+    389.999992,
+    779.999977
+   ],
+   "quaternion": [
+    0,
+    0,
+    -0.707107,
+    0.707107
+   ],
+   "scale": [
+    1,
+    0.67,
+    1
+   ],
+   "rozmer_mm": [
+    670,
+    40,
+    40
+   ],
+   "box_min": [
+    1040,
+    370,
+    760
+   ],
+   "box_max": [
+    1710,
+    410,
+    800
+   ],
+   "osa": "x",
+   "delka_mm": 670
+  },
+  {
+   "index": 33,
+   "role": "stulbal-R1-kolejnice",
+   "id": "R1-kolejnice",
+   "kategorie": "profil",
+   "part_id": "Object_11",
+   "sku": "1.1.10.040040.03",
+   "nazev": "Profil 40x40 SuperLight S10 (drážka 10 mm)",
+   "zastupne": false,
+   "glb": "webapp/katalog/Object_11.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    1375.000031,
+    389.999992,
+    629.99997
+   ],
+   "quaternion": [
+    0,
+    0,
+    -0.707107,
+    0.707107
+   ],
+   "scale": [
+    1,
+    0.67,
+    1
+   ],
+   "rozmer_mm": [
+    670,
+    40,
+    40
+   ],
+   "box_min": [
+    1040,
+    370,
+    610
+   ],
+   "box_max": [
+    1710,
+    410,
+    650
+   ],
+   "osa": "x",
+   "delka_mm": 670
+  },
+  {
+   "index": 34,
+   "role": "stulbal-R2-zadni",
+   "id": "R2-zadni",
+   "kategorie": "profil",
+   "part_id": "Object_11",
+   "sku": "1.1.10.040040.03",
+   "nazev": "Profil 40x40 SuperLight S10 (drážka 10 mm)",
+   "zastupne": false,
+   "glb": "webapp/katalog/Object_11.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    1375,
+    709.999992,
+    19.999977
+   ],
+   "quaternion": [
+    0,
+    0,
+    -0.707107,
+    0.707107
+   ],
+   "scale": [
+    1,
+    0.67,
+    1
+   ],
+   "rozmer_mm": [
+    670,
+    40,
+    40
+   ],
+   "box_min": [
+    1040,
+    690,
+    0
+   ],
+   "box_max": [
+    1710,
+    730,
+    40
+   ],
+   "osa": "x",
+   "delka_mm": 670
+  },
+  {
+   "index": 35,
+   "role": "stulbal-R2-predni",
+   "id": "R2-predni",
+   "kategorie": "profil",
+   "part_id": "Object_11",
+   "sku": "1.1.10.040040.03",
+   "nazev": "Profil 40x40 SuperLight S10 (drážka 10 mm)",
+   "zastupne": false,
+   "glb": "webapp/katalog/Object_11.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    1375,
+    709.999992,
+    779.999977
+   ],
+   "quaternion": [
+    0,
+    0,
+    -0.707107,
+    0.707107
+   ],
+   "scale": [
+    1,
+    0.67,
+    1
+   ],
+   "rozmer_mm": [
+    670,
+    40,
+    40
+   ],
+   "box_min": [
+    1040,
+    690,
+    760
+   ],
+   "box_max": [
+    1710,
+    730,
+    800
+   ],
+   "osa": "x",
+   "delka_mm": 670
+  },
+  {
+   "index": 36,
+   "role": "stulbal-D-bok-stul",
+   "id": "D-bok-stul",
+   "kategorie": "profil",
+   "part_id": "Object_11",
+   "sku": "1.1.10.040040.03",
+   "nazev": "Profil 40x40 SuperLight S10 (drážka 10 mm)",
+   "zastupne": false,
+   "glb": "webapp/katalog/Object_11.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    1730.000038,
+    762.00003,
+    400
+   ],
+   "quaternion": [
+    0.707107,
+    0,
+    0,
+    0.707107
+   ],
+   "scale": [
+    1,
+    0.72,
+    1
+   ],
+   "rozmer_mm": [
+    40,
+    40,
+    720
+   ],
+   "box_min": [
+    1710,
+    742,
+    40
+   ],
+   "box_max": [
+    1750,
+    782,
+    760
+   ],
+   "osa": "z",
+   "delka_mm": 720
+  },
+  {
+   "index": 37,
+   "role": "stulbal-horni-bok-L",
+   "id": "horni-bok-L",
+   "kategorie": "profil",
+   "part_id": "Object_11",
+   "sku": "1.1.10.040040.03",
+   "nazev": "Profil 40x40 SuperLight S10 (drážka 10 mm)",
+   "zastupne": false,
+   "glb": "webapp/katalog/Object_11.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    20.000008,
+    2080.00003,
+    300
+   ],
+   "quaternion": [
+    0.707107,
+    0,
+    0,
+    0.707107
+   ],
+   "scale": [
+    1,
+    0.6,
+    1
+   ],
+   "rozmer_mm": [
+    40,
+    40,
+    600
+   ],
+   "box_min": [
+    0,
+    2060,
+    0
+   ],
+   "box_max": [
+    40,
+    2100,
+    600
+   ],
+   "osa": "z",
+   "delka_mm": 600
+  },
+  {
+   "index": 38,
+   "role": "stulbal-horni-bok-P",
+   "id": "horni-bok-P",
+   "kategorie": "profil",
+   "part_id": "Object_11",
+   "sku": "1.1.10.040040.03",
+   "nazev": "Profil 40x40 SuperLight S10 (drážka 10 mm)",
+   "zastupne": false,
+   "glb": "webapp/katalog/Object_11.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    1730.000008,
+    2080.00003,
+    300
+   ],
+   "quaternion": [
+    0.707107,
+    0,
+    0,
+    0.707107
+   ],
+   "scale": [
+    1,
+    0.6,
+    1
+   ],
+   "rozmer_mm": [
+    40,
+    40,
+    600
+   ],
+   "box_min": [
+    1710,
+    2060,
+    0
+   ],
+   "box_max": [
+    1750,
+    2100,
+    600
+   ],
+   "osa": "z",
+   "delka_mm": 600
+  },
+  {
+   "index": 39,
+   "role": "stulbal-horni-zadni",
+   "id": "horni-zadni",
+   "kategorie": "profil",
+   "part_id": "Object_11",
+   "sku": "1.1.10.040040.03",
+   "nazev": "Profil 40x40 SuperLight S10 (drážka 10 mm)",
+   "zastupne": false,
+   "glb": "webapp/katalog/Object_11.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    875,
+    2079.999999,
+    19.99997
+   ],
+   "quaternion": [
+    0,
+    0,
+    -0.707107,
+    0.707107
+   ],
+   "scale": [
+    1,
+    1.67,
+    1
+   ],
+   "rozmer_mm": [
+    1670,
+    40,
+    40
+   ],
+   "box_min": [
+    40,
+    2060,
+    0
+   ],
+   "box_max": [
+    1710,
+    2100,
+    40
+   ],
+   "osa": "x",
+   "delka_mm": 1670
+  },
+  {
+   "index": 40,
+   "role": "stulbal-horni-predni",
+   "id": "horni-predni",
+   "kategorie": "profil",
+   "part_id": "Object_11",
+   "sku": "1.1.10.040040.03",
+   "nazev": "Profil 40x40 SuperLight S10 (drážka 10 mm)",
+   "zastupne": false,
+   "glb": "webapp/katalog/Object_11.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    875,
+    2079.999999,
+    579.99997
+   ],
+   "quaternion": [
+    0,
+    0,
+    -0.707107,
+    0.707107
+   ],
+   "scale": [
+    1,
+    1.67,
+    1
+   ],
+   "rozmer_mm": [
+    1670,
+    40,
+    40
+   ],
+   "box_min": [
+    40,
+    2060,
+    560
+   ],
+   "box_max": [
+    1710,
+    2100,
+    600
+   ],
+   "osa": "x",
+   "delka_mm": 1670
+  },
+  {
+   "index": 41,
+   "role": "stulbal-zed-spodni",
+   "id": "zed-spodni",
+   "kategorie": "profil",
+   "part_id": "Object_11",
+   "sku": "1.1.10.040040.03",
+   "nazev": "Profil 40x40 SuperLight S10 (drážka 10 mm)",
+   "zastupne": false,
+   "glb": "webapp/katalog/Object_11.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    1070,
+    1469.999992,
+    19.999977
+   ],
+   "quaternion": [
+    0,
+    0,
+    -0.707107,
+    0.707107
+   ],
+   "scale": [
+    1,
+    1.28,
+    1
+   ],
+   "rozmer_mm": [
+    1280,
+    40,
+    40
+   ],
+   "box_min": [
+    430,
+    1450,
+    0
+   ],
+   "box_max": [
+    1710,
+    1490,
+    40
+   ],
+   "osa": "x",
+   "delka_mm": 1280
+  },
+  {
+   "index": 42,
+   "role": "stulbal-zed-horni",
+   "id": "zed-horni",
+   "kategorie": "profil",
+   "part_id": "Object_11",
+   "sku": "1.1.10.040040.03",
+   "nazev": "Profil 40x40 SuperLight S10 (drážka 10 mm)",
+   "zastupne": false,
+   "glb": "webapp/katalog/Object_11.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    1070,
+    1629.999992,
+    19.999977
+   ],
+   "quaternion": [
+    0,
+    0,
+    -0.707107,
+    0.707107
+   ],
+   "scale": [
+    1,
+    1.28,
+    1
+   ],
+   "rozmer_mm": [
+    1280,
+    40,
+    40
+   ],
+   "box_min": [
+    430,
+    1610,
+    0
+   ],
+   "box_max": [
+    1710,
+    1650,
+    40
+   ],
+   "osa": "x",
+   "delka_mm": 1280
+  },
+  {
+   "index": 43,
+   "role": "stulbal-posuvny-1",
+   "id": "posuvny-1",
+   "kategorie": "profil",
+   "part_id": "Object_11",
+   "sku": "1.1.10.040040.03",
+   "nazev": "Profil 40x40 SuperLight S10 (drážka 10 mm)",
+   "zastupne": false,
+   "glb": "webapp/katalog/Object_11.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    1275.000008,
+    1550,
+    59.99997
+   ],
+   "quaternion": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "scale": [
+    1,
+    0.2,
+    1
+   ],
+   "rozmer_mm": [
+    40,
+    200,
+    40
+   ],
+   "box_min": [
+    1255,
+    1450,
+    40
+   ],
+   "box_max": [
+    1295,
+    1650,
+    80
+   ],
+   "osa": "y",
+   "delka_mm": 200
+  },
+  {
+   "index": 44,
+   "role": "stulbal-posuvny-2",
+   "id": "posuvny-2",
+   "kategorie": "profil",
+   "part_id": "Object_11",
+   "sku": "1.1.10.040040.03",
+   "nazev": "Profil 40x40 SuperLight S10 (drážka 10 mm)",
+   "zastupne": false,
+   "glb": "webapp/katalog/Object_11.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    1480.000008,
+    1550,
+    59.99997
+   ],
+   "quaternion": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "scale": [
+    1,
+    0.2,
+    1
+   ],
+   "rozmer_mm": [
+    40,
+    200,
+    40
+   ],
+   "box_min": [
+    1460,
+    1450,
+    40
+   ],
+   "box_max": [
+    1500,
+    1650,
+    80
+   ],
+   "osa": "y",
+   "delka_mm": 200
+  },
+  {
+   "index": 45,
+   "role": "stulbal-rameno-sloup",
+   "id": "rameno-sloup",
+   "kategorie": "profil",
+   "part_id": "Object_11",
+   "sku": "1.1.10.040040.03",
+   "nazev": "Profil 40x40 SuperLight S10 (drážka 10 mm)",
+   "zastupne": false,
+   "glb": "webapp/katalog/Object_11.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    535.000008,
+    1400,
+    59.99997
+   ],
+   "quaternion": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "scale": [
+    1,
+    0.5,
+    1
+   ],
+   "rozmer_mm": [
+    40,
+    500,
+    40
+   ],
+   "box_min": [
+    515,
+    1150,
+    40
+   ],
+   "box_max": [
+    555,
+    1650,
+    80
+   ],
+   "osa": "y",
+   "delka_mm": 500
+  },
+  {
+   "index": 46,
+   "role": "stulbal-police-1",
+   "id": "police-1",
+   "kategorie": "deska",
+   "part_id": "product_4933",
+   "sku": "Laminodeska.SEDA.18",
+   "nazev": "Laminovaná dřevotříska šedá 18 mm",
+   "zastupne": false,
+   "glb": "stul_balici/nahrazky/product_4933_nahrada_1000x1000x18.glb",
+   "glb_je_nahrada": true,
+   "position": [
+    215,
+    1041,
+    400
+   ],
+   "quaternion": [
+    -0.707107,
+    0,
+    0,
+    0.707107
+   ],
+   "scale": [
+    0.35,
+    0.8,
+    1
+   ],
+   "rozmer_mm": [
+    350,
+    18,
+    800
+   ],
+   "box_min": [
+    40,
+    1032,
+    0
+   ],
+   "box_max": [
+    390,
+    1050,
+    800
+   ]
+  },
+  {
+   "index": 47,
+   "role": "stulbal-police-2",
+   "id": "police-2",
+   "kategorie": "deska",
+   "part_id": "product_4933",
+   "sku": "Laminodeska.SEDA.18",
+   "nazev": "Laminovaná dřevotříska šedá 18 mm",
+   "zastupne": false,
+   "glb": "stul_balici/nahrazky/product_4933_nahrada_1000x1000x18.glb",
+   "glb_je_nahrada": true,
+   "position": [
+    215,
+    1209,
+    400
+   ],
+   "quaternion": [
+    -0.707107,
+    0,
+    0,
+    0.707107
+   ],
+   "scale": [
+    0.35,
+    0.8,
+    1
+   ],
+   "rozmer_mm": [
+    350,
+    18,
+    800
+   ],
+   "box_min": [
+    40,
+    1200,
+    0
+   ],
+   "box_max": [
+    390,
+    1218,
+    800
+   ]
+  },
+  {
+   "index": 48,
+   "role": "stulbal-police-3",
+   "id": "police-3",
+   "kategorie": "deska",
+   "part_id": "product_4933",
+   "sku": "Laminodeska.SEDA.18",
+   "nazev": "Laminovaná dřevotříska šedá 18 mm",
+   "zastupne": false,
+   "glb": "stul_balici/nahrazky/product_4933_nahrada_1000x1000x18.glb",
+   "glb_je_nahrada": true,
+   "position": [
+    215,
+    1377,
+    400
+   ],
+   "quaternion": [
+    -0.707107,
+    0,
+    0,
+    0.707107
+   ],
+   "scale": [
+    0.35,
+    0.8,
+    1
+   ],
+   "rozmer_mm": [
+    350,
+    18,
+    800
+   ],
+   "box_min": [
+    40,
+    1368,
+    0
+   ],
+   "box_max": [
+    390,
+    1386,
+    800
+   ]
+  },
+  {
+   "index": 49,
+   "role": "stulbal-police-S",
+   "id": "police-S",
+   "kategorie": "deska",
+   "part_id": "product_4933",
+   "sku": "Laminodeska.SEDA.18",
+   "nazev": "Laminovaná dřevotříska šedá 18 mm",
+   "zastupne": false,
+   "glb": "stul_balici/nahrazky/product_4933_nahrada_1000x1000x18.glb",
+   "glb_je_nahrada": true,
+   "position": [
+    715,
+    583,
+    400
+   ],
+   "quaternion": [
+    -0.707107,
+    0,
+    0,
+    0.707107
+   ],
+   "scale": [
+    0.57,
+    0.8,
+    1
+   ],
+   "rozmer_mm": [
+    570,
+    18,
+    800
+   ],
+   "box_min": [
+    430,
+    574,
+    0
+   ],
+   "box_max": [
+    1000,
+    592,
+    800
+   ]
+  },
+  {
+   "index": 50,
+   "role": "stulbal-deska-spodni",
+   "id": "deska-spodni",
+   "kategorie": "deska",
+   "part_id": "product_4933",
+   "sku": "Laminodeska.SEDA.18",
+   "nazev": "Laminovaná dřevotříska šedá 18 mm",
+   "zastupne": false,
+   "glb": "stul_balici/nahrazky/product_4933_nahrada_1000x1000x18.glb",
+   "glb_je_nahrada": true,
+   "position": [
+    715,
+    95,
+    325
+   ],
+   "quaternion": [
+    -0.707107,
+    0,
+    0,
+    0.707107
+   ],
+   "scale": [
+    0.57,
+    0.65,
+    1
+   ],
+   "rozmer_mm": [
+    570,
+    18,
+    650
+   ],
+   "box_min": [
+    430,
+    86,
+    0
+   ],
+   "box_max": [
+    1000,
+    104,
+    650
+   ]
+  },
+  {
+   "index": 51,
+   "role": "stulbal-deska-stolu",
+   "id": "deska-stolu",
+   "kategorie": "deska",
+   "part_id": "product_4933",
+   "sku": "Laminodeska.SEDA.18",
+   "nazev": "Laminovaná dřevotříska šedá 18 mm",
+   "zastupne": false,
+   "glb": "stul_balici/nahrazky/product_4933_nahrada_1000x1000x18.glb",
+   "glb_je_nahrada": true,
+   "position": [
+    735,
+    791,
+    400
+   ],
+   "quaternion": [
+    -0.707107,
+    0,
+    0,
+    0.707107
+   ],
+   "scale": [
+    0.61,
+    0.8,
+    1
+   ],
+   "rozmer_mm": [
+    610,
+    18,
+    800
+   ],
+   "box_min": [
+    430,
+    782,
+    0
+   ],
+   "box_max": [
+    1040,
+    800,
+    800
+   ]
+  },
+  {
+   "index": 52,
+   "role": "stulbal-patka-noha-AZ",
+   "id": "patka-noha-AZ",
+   "kategorie": "patka",
+   "part_id": "product_3283",
+   "sku": "2.3.002.1050",
+   "nazev": "Vyrovnávací šroubovací patka M10",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3283.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    20,
+    79,
+    20
+   ],
+   "quaternion": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    60,
+    79,
+    60
+   ],
+   "box_min": [
+    -10,
+    0,
+    -10
+   ],
+   "box_max": [
+    50,
+    79,
+    50
+   ]
+  },
+  {
+   "index": 53,
+   "role": "stulbal-patka-noha-BZ",
+   "id": "patka-noha-BZ",
+   "kategorie": "patka",
+   "part_id": "product_3283",
+   "sku": "2.3.002.1050",
+   "nazev": "Vyrovnávací šroubovací patka M10",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3283.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    410,
+    79,
+    20
+   ],
+   "quaternion": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    60,
+    79,
+    60
+   ],
+   "box_min": [
+    380,
+    0,
+    -10
+   ],
+   "box_max": [
+    440,
+    79,
+    50
+   ]
+  },
+  {
+   "index": 54,
+   "role": "stulbal-patka-noha-CZ",
+   "id": "patka-noha-CZ",
+   "kategorie": "patka",
+   "part_id": "product_3283",
+   "sku": "2.3.002.1050",
+   "nazev": "Vyrovnávací šroubovací patka M10",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3283.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    1020,
+    79,
+    20
+   ],
+   "quaternion": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    60,
+    79,
+    60
+   ],
+   "box_min": [
+    990,
+    0,
+    -10
+   ],
+   "box_max": [
+    1050,
+    79,
+    50
+   ]
+  },
+  {
+   "index": 55,
+   "role": "stulbal-patka-noha-DZ",
+   "id": "patka-noha-DZ",
+   "kategorie": "patka",
+   "part_id": "product_3283",
+   "sku": "2.3.002.1050",
+   "nazev": "Vyrovnávací šroubovací patka M10",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3283.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    1730,
+    79,
+    20
+   ],
+   "quaternion": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    60,
+    79,
+    60
+   ],
+   "box_min": [
+    1700,
+    0,
+    -10
+   ],
+   "box_max": [
+    1760,
+    79,
+    50
+   ]
+  },
+  {
+   "index": 56,
+   "role": "stulbal-patka-noha-AP",
+   "id": "patka-noha-AP",
+   "kategorie": "patka",
+   "part_id": "product_3283",
+   "sku": "2.3.002.1050",
+   "nazev": "Vyrovnávací šroubovací patka M10",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3283.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    20,
+    79,
+    780
+   ],
+   "quaternion": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    60,
+    79,
+    60
+   ],
+   "box_min": [
+    -10,
+    0,
+    750
+   ],
+   "box_max": [
+    50,
+    79,
+    810
+   ]
+  },
+  {
+   "index": 57,
+   "role": "stulbal-patka-noha-BP",
+   "id": "patka-noha-BP",
+   "kategorie": "patka",
+   "part_id": "product_3283",
+   "sku": "2.3.002.1050",
+   "nazev": "Vyrovnávací šroubovací patka M10",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3283.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    410,
+    79,
+    780
+   ],
+   "quaternion": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    60,
+    79,
+    60
+   ],
+   "box_min": [
+    380,
+    0,
+    750
+   ],
+   "box_max": [
+    440,
+    79,
+    810
+   ]
+  },
+  {
+   "index": 58,
+   "role": "stulbal-patka-noha-CP",
+   "id": "patka-noha-CP",
+   "kategorie": "patka",
+   "part_id": "product_3283",
+   "sku": "2.3.002.1050",
+   "nazev": "Vyrovnávací šroubovací patka M10",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3283.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    1020,
+    79,
+    780
+   ],
+   "quaternion": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    60,
+    79,
+    60
+   ],
+   "box_min": [
+    990,
+    0,
+    750
+   ],
+   "box_max": [
+    1050,
+    79,
+    810
+   ]
+  },
+  {
+   "index": 59,
+   "role": "stulbal-patka-noha-DP",
+   "id": "patka-noha-DP",
+   "kategorie": "patka",
+   "part_id": "product_3283",
+   "sku": "2.3.002.1050",
+   "nazev": "Vyrovnávací šroubovací patka M10",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3283.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    1730,
+    79,
+    780
+   ],
+   "quaternion": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    60,
+    79,
+    60
+   ],
+   "box_min": [
+    1700,
+    0,
+    750
+   ],
+   "box_max": [
+    1760,
+    79,
+    810
+   ]
+  },
+  {
+   "index": 60,
+   "role": "stulbal-drzak-police-1-noha-AZ",
+   "id": "drzak-police-1-noha-AZ",
+   "kategorie": "drzak",
+   "part_id": "product_3207",
+   "sku": "2.2.001.10.4040.01",
+   "nazev": "Úhelníková spojka 40x40 (držák desky)",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3207.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    39.999969,
+    1032,
+    38.5
+   ],
+   "quaternion": [
+    -0.707107,
+    0,
+    0,
+    0.707107
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    37,
+    37,
+    37
+   ],
+   "box_min": [
+    40,
+    995,
+    1.5
+   ],
+   "box_max": [
+    77,
+    1032,
+    38.5
+   ]
+  },
+  {
+   "index": 61,
+   "role": "stulbal-drzak-police-1-noha-BZ",
+   "id": "drzak-police-1-noha-BZ",
+   "kategorie": "drzak",
+   "part_id": "product_3207",
+   "sku": "2.2.001.10.4040.01",
+   "nazev": "Úhelníková spojka 40x40 (držák desky)",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3207.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    390.000031,
+    1032,
+    1.5
+   ],
+   "quaternion": [
+    0,
+    0.707107,
+    0.707107,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    37,
+    37,
+    37
+   ],
+   "box_min": [
+    353,
+    995,
+    1.5
+   ],
+   "box_max": [
+    390,
+    1032,
+    38.5
+   ]
+  },
+  {
+   "index": 62,
+   "role": "stulbal-drzak-police-1-noha-AP",
+   "id": "drzak-police-1-noha-AP",
+   "kategorie": "drzak",
+   "part_id": "product_3207",
+   "sku": "2.2.001.10.4040.01",
+   "nazev": "Úhelníková spojka 40x40 (držák desky)",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3207.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    39.999969,
+    1032,
+    798.5
+   ],
+   "quaternion": [
+    -0.707107,
+    0,
+    0,
+    0.707107
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    37,
+    37,
+    37
+   ],
+   "box_min": [
+    40,
+    995,
+    761.5
+   ],
+   "box_max": [
+    77,
+    1032,
+    798.5
+   ]
+  },
+  {
+   "index": 63,
+   "role": "stulbal-drzak-police-1-noha-BP",
+   "id": "drzak-police-1-noha-BP",
+   "kategorie": "drzak",
+   "part_id": "product_3207",
+   "sku": "2.2.001.10.4040.01",
+   "nazev": "Úhelníková spojka 40x40 (držák desky)",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3207.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    390.000031,
+    1032,
+    761.5
+   ],
+   "quaternion": [
+    0,
+    0.707107,
+    0.707107,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    37,
+    37,
+    37
+   ],
+   "box_min": [
+    353,
+    995,
+    761.5
+   ],
+   "box_max": [
+    390,
+    1032,
+    798.5
+   ]
+  },
+  {
+   "index": 64,
+   "role": "stulbal-drzak-police-2-noha-AZ",
+   "id": "drzak-police-2-noha-AZ",
+   "kategorie": "drzak",
+   "part_id": "product_3207",
+   "sku": "2.2.001.10.4040.01",
+   "nazev": "Úhelníková spojka 40x40 (držák desky)",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3207.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    39.999969,
+    1200,
+    38.5
+   ],
+   "quaternion": [
+    -0.707107,
+    0,
+    0,
+    0.707107
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    37,
+    37,
+    37
+   ],
+   "box_min": [
+    40,
+    1163,
+    1.5
+   ],
+   "box_max": [
+    77,
+    1200,
+    38.5
+   ]
+  },
+  {
+   "index": 65,
+   "role": "stulbal-drzak-police-2-noha-BZ",
+   "id": "drzak-police-2-noha-BZ",
+   "kategorie": "drzak",
+   "part_id": "product_3207",
+   "sku": "2.2.001.10.4040.01",
+   "nazev": "Úhelníková spojka 40x40 (držák desky)",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3207.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    390.000031,
+    1200,
+    1.5
+   ],
+   "quaternion": [
+    0,
+    0.707107,
+    0.707107,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    37,
+    37,
+    37
+   ],
+   "box_min": [
+    353,
+    1163,
+    1.5
+   ],
+   "box_max": [
+    390,
+    1200,
+    38.5
+   ]
+  },
+  {
+   "index": 66,
+   "role": "stulbal-drzak-police-2-noha-AP",
+   "id": "drzak-police-2-noha-AP",
+   "kategorie": "drzak",
+   "part_id": "product_3207",
+   "sku": "2.2.001.10.4040.01",
+   "nazev": "Úhelníková spojka 40x40 (držák desky)",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3207.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    39.999969,
+    1200,
+    798.5
+   ],
+   "quaternion": [
+    -0.707107,
+    0,
+    0,
+    0.707107
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    37,
+    37,
+    37
+   ],
+   "box_min": [
+    40,
+    1163,
+    761.5
+   ],
+   "box_max": [
+    77,
+    1200,
+    798.5
+   ]
+  },
+  {
+   "index": 67,
+   "role": "stulbal-drzak-police-2-noha-BP",
+   "id": "drzak-police-2-noha-BP",
+   "kategorie": "drzak",
+   "part_id": "product_3207",
+   "sku": "2.2.001.10.4040.01",
+   "nazev": "Úhelníková spojka 40x40 (držák desky)",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3207.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    390.000031,
+    1200,
+    761.5
+   ],
+   "quaternion": [
+    0,
+    0.707107,
+    0.707107,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    37,
+    37,
+    37
+   ],
+   "box_min": [
+    353,
+    1163,
+    761.5
+   ],
+   "box_max": [
+    390,
+    1200,
+    798.5
+   ]
+  },
+  {
+   "index": 68,
+   "role": "stulbal-drzak-police-3-noha-AZ",
+   "id": "drzak-police-3-noha-AZ",
+   "kategorie": "drzak",
+   "part_id": "product_3207",
+   "sku": "2.2.001.10.4040.01",
+   "nazev": "Úhelníková spojka 40x40 (držák desky)",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3207.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    39.999969,
+    1368,
+    38.5
+   ],
+   "quaternion": [
+    -0.707107,
+    0,
+    0,
+    0.707107
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    37,
+    37,
+    37
+   ],
+   "box_min": [
+    40,
+    1331,
+    1.5
+   ],
+   "box_max": [
+    77,
+    1368,
+    38.5
+   ]
+  },
+  {
+   "index": 69,
+   "role": "stulbal-drzak-police-3-noha-BZ",
+   "id": "drzak-police-3-noha-BZ",
+   "kategorie": "drzak",
+   "part_id": "product_3207",
+   "sku": "2.2.001.10.4040.01",
+   "nazev": "Úhelníková spojka 40x40 (držák desky)",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3207.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    390.000031,
+    1368,
+    1.5
+   ],
+   "quaternion": [
+    0,
+    0.707107,
+    0.707107,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    37,
+    37,
+    37
+   ],
+   "box_min": [
+    353,
+    1331,
+    1.5
+   ],
+   "box_max": [
+    390,
+    1368,
+    38.5
+   ]
+  },
+  {
+   "index": 70,
+   "role": "stulbal-drzak-police-3-noha-AP",
+   "id": "drzak-police-3-noha-AP",
+   "kategorie": "drzak",
+   "part_id": "product_3207",
+   "sku": "2.2.001.10.4040.01",
+   "nazev": "Úhelníková spojka 40x40 (držák desky)",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3207.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    39.999969,
+    1368,
+    798.5
+   ],
+   "quaternion": [
+    -0.707107,
+    0,
+    0,
+    0.707107
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    37,
+    37,
+    37
+   ],
+   "box_min": [
+    40,
+    1331,
+    761.5
+   ],
+   "box_max": [
+    77,
+    1368,
+    798.5
+   ]
+  },
+  {
+   "index": 71,
+   "role": "stulbal-drzak-police-3-noha-BP",
+   "id": "drzak-police-3-noha-BP",
+   "kategorie": "drzak",
+   "part_id": "product_3207",
+   "sku": "2.2.001.10.4040.01",
+   "nazev": "Úhelníková spojka 40x40 (držák desky)",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3207.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    390.000031,
+    1368,
+    761.5
+   ],
+   "quaternion": [
+    0,
+    0.707107,
+    0.707107,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    37,
+    37,
+    37
+   ],
+   "box_min": [
+    353,
+    1331,
+    761.5
+   ],
+   "box_max": [
+    390,
+    1368,
+    798.5
+   ]
+  },
+  {
+   "index": 72,
+   "role": "stulbal-drzak-police-S-noha-BZ",
+   "id": "drzak-police-S-noha-BZ",
+   "kategorie": "drzak",
+   "part_id": "product_3207",
+   "sku": "2.2.001.10.4040.01",
+   "nazev": "Úhelníková spojka 40x40 (držák desky)",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3207.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    429.999969,
+    574,
+    38.5
+   ],
+   "quaternion": [
+    -0.707107,
+    0,
+    0,
+    0.707107
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    37,
+    37,
+    37
+   ],
+   "box_min": [
+    430,
+    537,
+    1.5
+   ],
+   "box_max": [
+    467,
+    574,
+    38.5
+   ]
+  },
+  {
+   "index": 73,
+   "role": "stulbal-drzak-police-S-noha-CZ",
+   "id": "drzak-police-S-noha-CZ",
+   "kategorie": "drzak",
+   "part_id": "product_3207",
+   "sku": "2.2.001.10.4040.01",
+   "nazev": "Úhelníková spojka 40x40 (držák desky)",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3207.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    1000.000031,
+    574,
+    1.5
+   ],
+   "quaternion": [
+    0,
+    0.707107,
+    0.707107,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    37,
+    37,
+    37
+   ],
+   "box_min": [
+    963,
+    537,
+    1.5
+   ],
+   "box_max": [
+    1000,
+    574,
+    38.5
+   ]
+  },
+  {
+   "index": 74,
+   "role": "stulbal-drzak-police-S-noha-BP",
+   "id": "drzak-police-S-noha-BP",
+   "kategorie": "drzak",
+   "part_id": "product_3207",
+   "sku": "2.2.001.10.4040.01",
+   "nazev": "Úhelníková spojka 40x40 (držák desky)",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3207.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    429.999969,
+    574,
+    798.5
+   ],
+   "quaternion": [
+    -0.707107,
+    0,
+    0,
+    0.707107
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    37,
+    37,
+    37
+   ],
+   "box_min": [
+    430,
+    537,
+    761.5
+   ],
+   "box_max": [
+    467,
+    574,
+    798.5
+   ]
+  },
+  {
+   "index": 75,
+   "role": "stulbal-drzak-police-S-noha-CP",
+   "id": "drzak-police-S-noha-CP",
+   "kategorie": "drzak",
+   "part_id": "product_3207",
+   "sku": "2.2.001.10.4040.01",
+   "nazev": "Úhelníková spojka 40x40 (držák desky)",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3207.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    1000.000031,
+    574,
+    761.5
+   ],
+   "quaternion": [
+    0,
+    0.707107,
+    0.707107,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    37,
+    37,
+    37
+   ],
+   "box_min": [
+    963,
+    537,
+    761.5
+   ],
+   "box_max": [
+    1000,
+    574,
+    798.5
+   ]
+  },
+  {
+   "index": 76,
+   "role": "stulbal-led-1",
+   "id": "led-1",
+   "kategorie": "led",
+   "part_id": "product_4929",
+   "sku": "LED1200",
+   "nazev": "Osvětlení LED 1,2 m 33W 3960lm",
+   "zastupne": false,
+   "glb": "stul_balici/nahrazky/product_4929_nahrada_1247x81x85.glb",
+   "glb_je_nahrada": true,
+   "position": [
+    -1373.580017,
+    50.400062,
+    1304.090027
+   ],
+   "quaternion": [
+    0,
+    0.707107,
+    0.707107,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    1247,
+    81,
+    85
+   ],
+   "box_min": [
+    251.5,
+    1979,
+    537.5
+   ],
+   "box_max": [
+    1498.5,
+    2060,
+    622.5
+   ]
+  },
+  {
+   "index": 77,
+   "role": "stulbal-valecka-draha-1",
+   "id": "valecka-draha-1",
+   "kategorie": "zastupne-draha",
+   "part_id": null,
+   "sku": null,
+   "nazev": "zástupný kvádr 1x1x1 (karta se doplní z DB)",
+   "zastupne": true,
+   "glb": "webapp/katalog/kvadr_plny_1x1x1.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    1069.772727,
+    742,
+    403
+   ],
+   "quaternion": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "scale": [
+    59.545455,
+    24,
+    782
+   ],
+   "rozmer_mm": [
+    59.545,
+    24,
+    782
+   ],
+   "box_min": [
+    1040,
+    730,
+    12
+   ],
+   "box_max": [
+    1099.545,
+    754,
+    794
+   ]
+  },
+  {
+   "index": 78,
+   "role": "stulbal-valecka-draha-2",
+   "id": "valecka-draha-2",
+   "kategorie": "zastupne-draha",
+   "part_id": null,
+   "sku": null,
+   "nazev": "zástupný kvádr 1x1x1 (karta se doplní z DB)",
+   "zastupne": true,
+   "glb": "webapp/katalog/kvadr_plny_1x1x1.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    1130.818182,
+    742,
+    403
+   ],
+   "quaternion": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "scale": [
+    59.545455,
+    24,
+    782
+   ],
+   "rozmer_mm": [
+    59.545,
+    24,
+    782
+   ],
+   "box_min": [
+    1101.045,
+    730,
+    12
+   ],
+   "box_max": [
+    1160.591,
+    754,
+    794
+   ]
+  },
+  {
+   "index": 79,
+   "role": "stulbal-valecka-draha-3",
+   "id": "valecka-draha-3",
+   "kategorie": "zastupne-draha",
+   "part_id": null,
+   "sku": null,
+   "nazev": "zástupný kvádr 1x1x1 (karta se doplní z DB)",
+   "zastupne": true,
+   "glb": "webapp/katalog/kvadr_plny_1x1x1.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    1191.863636,
+    742,
+    403
+   ],
+   "quaternion": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "scale": [
+    59.545455,
+    24,
+    782
+   ],
+   "rozmer_mm": [
+    59.545,
+    24,
+    782
+   ],
+   "box_min": [
+    1162.091,
+    730,
+    12
+   ],
+   "box_max": [
+    1221.636,
+    754,
+    794
+   ]
+  },
+  {
+   "index": 80,
+   "role": "stulbal-valecka-draha-4",
+   "id": "valecka-draha-4",
+   "kategorie": "zastupne-draha",
+   "part_id": null,
+   "sku": null,
+   "nazev": "zástupný kvádr 1x1x1 (karta se doplní z DB)",
+   "zastupne": true,
+   "glb": "webapp/katalog/kvadr_plny_1x1x1.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    1252.909091,
+    742,
+    403
+   ],
+   "quaternion": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "scale": [
+    59.545455,
+    24,
+    782
+   ],
+   "rozmer_mm": [
+    59.545,
+    24,
+    782
+   ],
+   "box_min": [
+    1223.136,
+    730,
+    12
+   ],
+   "box_max": [
+    1282.682,
+    754,
+    794
+   ]
+  },
+  {
+   "index": 81,
+   "role": "stulbal-valecka-draha-5",
+   "id": "valecka-draha-5",
+   "kategorie": "zastupne-draha",
+   "part_id": null,
+   "sku": null,
+   "nazev": "zástupný kvádr 1x1x1 (karta se doplní z DB)",
+   "zastupne": true,
+   "glb": "webapp/katalog/kvadr_plny_1x1x1.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    1313.954545,
+    742,
+    403
+   ],
+   "quaternion": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "scale": [
+    59.545455,
+    24,
+    782
+   ],
+   "rozmer_mm": [
+    59.545,
+    24,
+    782
+   ],
+   "box_min": [
+    1284.182,
+    730,
+    12
+   ],
+   "box_max": [
+    1343.727,
+    754,
+    794
+   ]
+  },
+  {
+   "index": 82,
+   "role": "stulbal-valecka-draha-6",
+   "id": "valecka-draha-6",
+   "kategorie": "zastupne-draha",
+   "part_id": null,
+   "sku": null,
+   "nazev": "zástupný kvádr 1x1x1 (karta se doplní z DB)",
+   "zastupne": true,
+   "glb": "webapp/katalog/kvadr_plny_1x1x1.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    1375,
+    742,
+    403
+   ],
+   "quaternion": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "scale": [
+    59.545455,
+    24,
+    782
+   ],
+   "rozmer_mm": [
+    59.545,
+    24,
+    782
+   ],
+   "box_min": [
+    1345.227,
+    730,
+    12
+   ],
+   "box_max": [
+    1404.773,
+    754,
+    794
+   ]
+  },
+  {
+   "index": 83,
+   "role": "stulbal-valecka-draha-7",
+   "id": "valecka-draha-7",
+   "kategorie": "zastupne-draha",
+   "part_id": null,
+   "sku": null,
+   "nazev": "zástupný kvádr 1x1x1 (karta se doplní z DB)",
+   "zastupne": true,
+   "glb": "webapp/katalog/kvadr_plny_1x1x1.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    1436.045455,
+    742,
+    403
+   ],
+   "quaternion": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "scale": [
+    59.545455,
+    24,
+    782
+   ],
+   "rozmer_mm": [
+    59.545,
+    24,
+    782
+   ],
+   "box_min": [
+    1406.273,
+    730,
+    12
+   ],
+   "box_max": [
+    1465.818,
+    754,
+    794
+   ]
+  },
+  {
+   "index": 84,
+   "role": "stulbal-valecka-draha-8",
+   "id": "valecka-draha-8",
+   "kategorie": "zastupne-draha",
+   "part_id": null,
+   "sku": null,
+   "nazev": "zástupný kvádr 1x1x1 (karta se doplní z DB)",
+   "zastupne": true,
+   "glb": "webapp/katalog/kvadr_plny_1x1x1.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    1497.090909,
+    742,
+    403
+   ],
+   "quaternion": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "scale": [
+    59.545455,
+    24,
+    782
+   ],
+   "rozmer_mm": [
+    59.545,
+    24,
+    782
+   ],
+   "box_min": [
+    1467.318,
+    730,
+    12
+   ],
+   "box_max": [
+    1526.864,
+    754,
+    794
+   ]
+  },
+  {
+   "index": 85,
+   "role": "stulbal-valecka-draha-9",
+   "id": "valecka-draha-9",
+   "kategorie": "zastupne-draha",
+   "part_id": null,
+   "sku": null,
+   "nazev": "zástupný kvádr 1x1x1 (karta se doplní z DB)",
+   "zastupne": true,
+   "glb": "webapp/katalog/kvadr_plny_1x1x1.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    1558.136364,
+    742,
+    403
+   ],
+   "quaternion": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "scale": [
+    59.545455,
+    24,
+    782
+   ],
+   "rozmer_mm": [
+    59.545,
+    24,
+    782
+   ],
+   "box_min": [
+    1528.364,
+    730,
+    12
+   ],
+   "box_max": [
+    1587.909,
+    754,
+    794
+   ]
+  },
+  {
+   "index": 86,
+   "role": "stulbal-valecka-draha-10",
+   "id": "valecka-draha-10",
+   "kategorie": "zastupne-draha",
+   "part_id": null,
+   "sku": null,
+   "nazev": "zástupný kvádr 1x1x1 (karta se doplní z DB)",
+   "zastupne": true,
+   "glb": "webapp/katalog/kvadr_plny_1x1x1.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    1619.181818,
+    742,
+    403
+   ],
+   "quaternion": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "scale": [
+    59.545455,
+    24,
+    782
+   ],
+   "rozmer_mm": [
+    59.545,
+    24,
+    782
+   ],
+   "box_min": [
+    1589.409,
+    730,
+    12
+   ],
+   "box_max": [
+    1648.955,
+    754,
+    794
+   ]
+  },
+  {
+   "index": 87,
+   "role": "stulbal-valecka-draha-11",
+   "id": "valecka-draha-11",
+   "kategorie": "zastupne-draha",
+   "part_id": null,
+   "sku": null,
+   "nazev": "zástupný kvádr 1x1x1 (karta se doplní z DB)",
+   "zastupne": true,
+   "glb": "webapp/katalog/kvadr_plny_1x1x1.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    1680.227273,
+    742,
+    403
+   ],
+   "quaternion": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "scale": [
+    59.545455,
+    24,
+    782
+   ],
+   "rozmer_mm": [
+    59.545,
+    24,
+    782
+   ],
+   "box_min": [
+    1650.455,
+    730,
+    12
+   ],
+   "box_max": [
+    1710,
+    754,
+    794
+   ]
+  },
+  {
+   "index": 88,
+   "role": "stulbal-celni-desticka",
+   "id": "celni-desticka",
+   "kategorie": "zastupne-plech",
+   "part_id": null,
+   "sku": null,
+   "nazev": "zástupný kvádr 1x1x1 (karta se doplní z DB)",
+   "zastupne": true,
+   "glb": "webapp/katalog/kvadr_plny_1x1x1.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    1375,
+    790,
+    797
+   ],
+   "quaternion": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "scale": [
+    670,
+    120,
+    6
+   ],
+   "rozmer_mm": [
+    670,
+    120,
+    6
+   ],
+   "box_min": [
+    1040,
+    730,
+    794
+   ],
+   "box_max": [
+    1710,
+    850,
+    800
+   ]
+  },
+  {
+   "index": 89,
+   "role": "stulbal-kovani-L",
+   "id": "kovani-L",
+   "kategorie": "zastupne-kovani",
+   "part_id": null,
+   "sku": null,
+   "nazev": "zástupný kvádr 1x1x1 (karta se doplní z DB)",
+   "zastupne": true,
+   "glb": "webapp/katalog/kvadr_plny_1x1x1.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    1147,
+    570,
+    630
+   ],
+   "quaternion": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "scale": [
+    30,
+    320,
+    40
+   ],
+   "rozmer_mm": [
+    30,
+    320,
+    40
+   ],
+   "box_min": [
+    1132,
+    410,
+    610
+   ],
+   "box_max": [
+    1162,
+    730,
+    650
+   ]
+  },
+  {
+   "index": 90,
+   "role": "stulbal-kovani-P",
+   "id": "kovani-P",
+   "kategorie": "zastupne-kovani",
+   "part_id": null,
+   "sku": null,
+   "nazev": "zástupný kvádr 1x1x1 (karta se doplní z DB)",
+   "zastupne": true,
+   "glb": "webapp/katalog/kvadr_plny_1x1x1.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    1601,
+    570,
+    630
+   ],
+   "quaternion": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "scale": [
+    30,
+    320,
+    40
+   ],
+   "rozmer_mm": [
+    30,
+    320,
+    40
+   ],
+   "box_min": [
+    1586,
+    410,
+    610
+   ],
+   "box_max": [
+    1616,
+    730,
+    650
+   ]
+  },
+  {
+   "index": 91,
+   "role": "stulbal-rameno-podstava",
+   "id": "rameno-podstava",
+   "kategorie": "zastupne-rameno",
+   "part_id": null,
+   "sku": null,
+   "nazev": "zástupný kvádr 1x1x1 (karta se doplní z DB)",
+   "zastupne": true,
+   "glb": "webapp/katalog/kvadr_plny_1x1x1.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    535,
+    1425,
+    88
+   ],
+   "quaternion": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "scale": [
+    30,
+    40,
+    16
+   ],
+   "rozmer_mm": [
+    30,
+    40,
+    16
+   ],
+   "box_min": [
+    520,
+    1405,
+    80
+   ],
+   "box_max": [
+    550,
+    1445,
+    96
+   ]
+  },
+  {
+   "index": 92,
+   "role": "stulbal-rameno-vodorovne",
+   "id": "rameno-vodorovne",
+   "kategorie": "zastupne-rameno",
+   "part_id": null,
+   "sku": null,
+   "nazev": "zástupný kvádr 1x1x1 (karta se doplní z DB)",
+   "zastupne": true,
+   "glb": "webapp/katalog/kvadr_plny_1x1x1.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    535,
+    1430,
+    218
+   ],
+   "quaternion": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "scale": [
+    20,
+    20,
+    244
+   ],
+   "rozmer_mm": [
+    20,
+    20,
+    244
+   ],
+   "box_min": [
+    525,
+    1420,
+    96
+   ],
+   "box_max": [
+    545,
+    1440,
+    340
+   ]
+  },
+  {
+   "index": 93,
+   "role": "stulbal-rameno-hlava",
+   "id": "rameno-hlava",
+   "kategorie": "zastupne-rameno",
+   "part_id": null,
+   "sku": null,
+   "nazev": "zástupný kvádr 1x1x1 (karta se doplní z DB)",
+   "zastupne": true,
+   "glb": "webapp/katalog/kvadr_plny_1x1x1.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    535,
+    1430,
+    343
+   ],
+   "quaternion": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "scale": [
+    100,
+    100,
+    6
+   ],
+   "rozmer_mm": [
+    100,
+    100,
+    6
+   ],
+   "box_min": [
+    485,
+    1380,
+    340
+   ],
+   "box_max": [
+    585,
+    1480,
+    346
+   ]
+  },
+  {
+   "index": 94,
+   "role": "stulbal-vypinac",
+   "id": "vypinac",
+   "kategorie": "zastupne-vypinac",
+   "part_id": null,
+   "sku": null,
+   "nazev": "zástupný kvádr 1x1x1 (karta se doplní z DB)",
+   "zastupne": true,
+   "glb": "webapp/katalog/kvadr_plny_1x1x1.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    450,
+    1125,
+    30
+   ],
+   "quaternion": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "scale": [
+    40,
+    150,
+    60
+   ],
+   "rozmer_mm": [
+    40,
+    150,
+    60
+   ],
+   "box_min": [
+    430,
+    1050,
+    0
+   ],
+   "box_max": [
+    470,
+    1200,
+    60
+   ]
+  },
+  {
+   "index": 95,
+   "role": "stulbal-spojka-01-D-bok-stul-noha-DP",
+   "id": "spojka-01-D-bok-stul-noha-DP",
+   "kategorie": "spojka",
+   "part_id": "product_3176",
+   "sku": "2.2.001.10.4040.33",
+   "nazev": "40x40 Rohová spojka",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3176.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    1748.500031,
+    705,
+    760.000007
+   ],
+   "quaternion": [
+    -0.707107,
+    0,
+    0.707107,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    37,
+    40.43,
+    40.43
+   ],
+   "box_min": [
+    1711.5,
+    705,
+    723
+   ],
+   "box_max": [
+    1748.5,
+    745.43,
+    763.43
+   ],
+   "dite": "D-bok-stul",
+   "rodic": "noha-DP",
+   "strana": "-y"
+  },
+  {
+   "index": 96,
+   "role": "stulbal-spojka-02-D-bok-stul-noha-DZ",
+   "id": "spojka-02-D-bok-stul-noha-DZ",
+   "kategorie": "spojka",
+   "part_id": "product_3176",
+   "sku": "2.2.001.10.4040.33",
+   "nazev": "40x40 Rohová spojka",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3176.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    1711.500031,
+    705,
+    39.999993
+   ],
+   "quaternion": [
+    0.707107,
+    0,
+    0.707107,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    37,
+    40.43,
+    40.43
+   ],
+   "box_min": [
+    1711.5,
+    705,
+    36.57
+   ],
+   "box_max": [
+    1748.5,
+    745.43,
+    77
+   ],
+   "dite": "D-bok-stul",
+   "rodic": "noha-DZ",
+   "strana": "-y"
+  },
+  {
+   "index": 97,
+   "role": "stulbal-spojka-03-horni-predni-horni-bok-L",
+   "id": "spojka-03-horni-predni-horni-bok-L",
+   "kategorie": "spojka",
+   "part_id": "product_3176",
+   "sku": "2.2.001.10.4040.33",
+   "nazev": "40x40 Rohová spojka",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3176.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    39.999969,
+    2061.500007,
+    523
+   ],
+   "quaternion": [
+    -0.707107,
+    0,
+    0,
+    0.707107
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    40.43,
+    37,
+    40.43
+   ],
+   "box_min": [
+    36.57,
+    2061.5,
+    523
+   ],
+   "box_max": [
+    77,
+    2098.5,
+    563.43
+   ],
+   "dite": "horni-predni",
+   "rodic": "horni-bok-L",
+   "strana": "-z"
+  },
+  {
+   "index": 98,
+   "role": "stulbal-spojka-04-horni-predni-horni-bok-P",
+   "id": "spojka-04-horni-predni-horni-bok-P",
+   "kategorie": "spojka",
+   "part_id": "product_3176",
+   "sku": "2.2.001.10.4040.33",
+   "nazev": "40x40 Rohová spojka",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3176.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    1710.000031,
+    2098.500007,
+    523
+   ],
+   "quaternion": [
+    0,
+    -0.707107,
+    0.707107,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    40.43,
+    37,
+    40.43
+   ],
+   "box_min": [
+    1673,
+    2061.5,
+    523
+   ],
+   "box_max": [
+    1713.43,
+    2098.5,
+    563.43
+   ],
+   "dite": "horni-predni",
+   "rodic": "horni-bok-P",
+   "strana": "-z"
+  },
+  {
+   "index": 99,
+   "role": "stulbal-spojka-05-horni-zadni-horni-bok-L",
+   "id": "spojka-05-horni-zadni-horni-bok-L",
+   "kategorie": "spojka",
+   "part_id": "product_3176",
+   "sku": "2.2.001.10.4040.33",
+   "nazev": "40x40 Rohová spojka",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3176.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    39.999969,
+    2098.500007,
+    77
+   ],
+   "quaternion": [
+    0.707107,
+    0,
+    0,
+    0.707107
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    40.43,
+    37,
+    40.43
+   ],
+   "box_min": [
+    36.57,
+    2061.5,
+    36.57
+   ],
+   "box_max": [
+    77,
+    2098.5,
+    77
+   ],
+   "dite": "horni-zadni",
+   "rodic": "horni-bok-L",
+   "strana": "+z"
+  },
+  {
+   "index": 100,
+   "role": "stulbal-spojka-06-horni-zadni-horni-bok-P",
+   "id": "spojka-06-horni-zadni-horni-bok-P",
+   "kategorie": "spojka",
+   "part_id": "product_3176",
+   "sku": "2.2.001.10.4040.33",
+   "nazev": "40x40 Rohová spojka",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3176.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    1710.000031,
+    2061.500007,
+    77
+   ],
+   "quaternion": [
+    0,
+    0.707107,
+    0.707107,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    40.43,
+    37,
+    40.43
+   ],
+   "box_min": [
+    1673,
+    2061.5,
+    36.57
+   ],
+   "box_max": [
+    1713.43,
+    2098.5,
+    77
+   ],
+   "dite": "horni-zadni",
+   "rodic": "horni-bok-P",
+   "strana": "+z"
+  },
+  {
+   "index": 101,
+   "role": "stulbal-spojka-07-LB-leva-noha-AP",
+   "id": "spojka-07-LB-leva-noha-AP",
+   "kategorie": "spojka",
+   "part_id": "product_3176",
+   "sku": "2.2.001.10.4040.33",
+   "nazev": "40x40 Rohová spojka",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3176.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    38.500031,
+    83,
+    760.000007
+   ],
+   "quaternion": [
+    -0.707107,
+    0,
+    0.707107,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    37,
+    40.43,
+    40.43
+   ],
+   "box_min": [
+    1.5,
+    83,
+    723
+   ],
+   "box_max": [
+    38.5,
+    123.43,
+    763.43
+   ],
+   "dite": "LB-leva",
+   "rodic": "noha-AP",
+   "strana": "-y"
+  },
+  {
+   "index": 102,
+   "role": "stulbal-spojka-08-LB-leva-noha-AZ",
+   "id": "spojka-08-LB-leva-noha-AZ",
+   "kategorie": "spojka",
+   "part_id": "product_3176",
+   "sku": "2.2.001.10.4040.33",
+   "nazev": "40x40 Rohová spojka",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3176.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    1.500031,
+    83,
+    39.999993
+   ],
+   "quaternion": [
+    0.707107,
+    0,
+    0.707107,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    37,
+    40.43,
+    40.43
+   ],
+   "box_min": [
+    1.5,
+    83,
+    36.57
+   ],
+   "box_max": [
+    38.5,
+    123.43,
+    77
+   ],
+   "dite": "LB-leva",
+   "rodic": "noha-AZ",
+   "strana": "-y"
+  },
+  {
+   "index": 103,
+   "role": "stulbal-spojka-09-LB-prava-noha-BP",
+   "id": "spojka-09-LB-prava-noha-BP",
+   "kategorie": "spojka",
+   "part_id": "product_3176",
+   "sku": "2.2.001.10.4040.33",
+   "nazev": "40x40 Rohová spojka",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3176.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    391.500031,
+    197,
+    760.000007
+   ],
+   "quaternion": [
+    0,
+    0.707107,
+    0,
+    0.707107
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    37,
+    40.43,
+    40.43
+   ],
+   "box_min": [
+    391.5,
+    156.57,
+    723
+   ],
+   "box_max": [
+    428.5,
+    197,
+    763.43
+   ],
+   "dite": "LB-prava",
+   "rodic": "noha-BP",
+   "strana": "+y"
+  },
+  {
+   "index": 104,
+   "role": "stulbal-spojka-10-LB-prava-noha-BZ",
+   "id": "spojka-10-LB-prava-noha-BZ",
+   "kategorie": "spojka",
+   "part_id": "product_3176",
+   "sku": "2.2.001.10.4040.33",
+   "nazev": "40x40 Rohová spojka",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3176.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    428.500031,
+    197,
+    39.999993
+   ],
+   "quaternion": [
+    0,
+    -0.707107,
+    0,
+    0.707107
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    37,
+    40.43,
+    40.43
+   ],
+   "box_min": [
+    391.5,
+    156.57,
+    36.57
+   ],
+   "box_max": [
+    428.5,
+    197,
+    77
+   ],
+   "dite": "LB-prava",
+   "rodic": "noha-BZ",
+   "strana": "+y"
+  },
+  {
+   "index": 105,
+   "role": "stulbal-spojka-11-LB-predni-noha-AP",
+   "id": "spojka-11-LB-predni-noha-AP",
+   "kategorie": "spojka",
+   "part_id": "product_3176",
+   "sku": "2.2.001.10.4040.33",
+   "nazev": "40x40 Rohová spojka",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3176.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    39.999969,
+    83,
+    798.500007
+   ],
+   "quaternion": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    40.43,
+    40.43,
+    37
+   ],
+   "box_min": [
+    36.57,
+    83,
+    761.5
+   ],
+   "box_max": [
+    77,
+    123.43,
+    798.5
+   ],
+   "dite": "LB-predni",
+   "rodic": "noha-AP",
+   "strana": "-y"
+  },
+  {
+   "index": 106,
+   "role": "stulbal-spojka-12-LB-predni-noha-BP",
+   "id": "spojka-12-LB-predni-noha-BP",
+   "kategorie": "spojka",
+   "part_id": "product_3176",
+   "sku": "2.2.001.10.4040.33",
+   "nazev": "40x40 Rohová spojka",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3176.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    390.000031,
+    83,
+    761.500007
+   ],
+   "quaternion": [
+    0,
+    0,
+    1,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    40.43,
+    40.43,
+    37
+   ],
+   "box_min": [
+    353,
+    83,
+    761.5
+   ],
+   "box_max": [
+    393.43,
+    123.43,
+    798.5
+   ],
+   "dite": "LB-predni",
+   "rodic": "noha-BP",
+   "strana": "-y"
+  },
+  {
+   "index": 107,
+   "role": "stulbal-spojka-13-LB-zadni-noha-AZ",
+   "id": "spojka-13-LB-zadni-noha-AZ",
+   "kategorie": "spojka",
+   "part_id": "product_3176",
+   "sku": "2.2.001.10.4040.33",
+   "nazev": "40x40 Rohová spojka",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3176.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    39.999969,
+    83,
+    38.500007
+   ],
+   "quaternion": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    40.43,
+    40.43,
+    37
+   ],
+   "box_min": [
+    36.57,
+    83,
+    1.5
+   ],
+   "box_max": [
+    77,
+    123.43,
+    38.5
+   ],
+   "dite": "LB-zadni",
+   "rodic": "noha-AZ",
+   "strana": "-y"
+  },
+  {
+   "index": 108,
+   "role": "stulbal-spojka-14-LB-zadni-noha-BZ",
+   "id": "spojka-14-LB-zadni-noha-BZ",
+   "kategorie": "spojka",
+   "part_id": "product_3176",
+   "sku": "2.2.001.10.4040.33",
+   "nazev": "40x40 Rohová spojka",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3176.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    390.000031,
+    83,
+    1.500007
+   ],
+   "quaternion": [
+    0,
+    0,
+    1,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    40.43,
+    40.43,
+    37
+   ],
+   "box_min": [
+    353,
+    83,
+    1.5
+   ],
+   "box_max": [
+    393.43,
+    123.43,
+    38.5
+   ],
+   "dite": "LB-zadni",
+   "rodic": "noha-BZ",
+   "strana": "-y"
+  },
+  {
+   "index": 109,
+   "role": "stulbal-spojka-15-LM-leva-noha-AP",
+   "id": "spojka-15-LM-leva-noha-AP",
+   "kategorie": "spojka",
+   "part_id": "product_3176",
+   "sku": "2.2.001.10.4040.33",
+   "nazev": "40x40 Rohová spojka",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3176.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    38.500031,
+    705,
+    760.000007
+   ],
+   "quaternion": [
+    -0.707107,
+    0,
+    0.707107,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    37,
+    40.43,
+    40.43
+   ],
+   "box_min": [
+    1.5,
+    705,
+    723
+   ],
+   "box_max": [
+    38.5,
+    745.43,
+    763.43
+   ],
+   "dite": "LM-leva",
+   "rodic": "noha-AP",
+   "strana": "-y"
+  },
+  {
+   "index": 110,
+   "role": "stulbal-spojka-16-LM-leva-noha-AZ",
+   "id": "spojka-16-LM-leva-noha-AZ",
+   "kategorie": "spojka",
+   "part_id": "product_3176",
+   "sku": "2.2.001.10.4040.33",
+   "nazev": "40x40 Rohová spojka",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3176.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    1.500031,
+    705,
+    39.999993
+   ],
+   "quaternion": [
+    0.707107,
+    0,
+    0.707107,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    37,
+    40.43,
+    40.43
+   ],
+   "box_min": [
+    1.5,
+    705,
+    36.57
+   ],
+   "box_max": [
+    38.5,
+    745.43,
+    77
+   ],
+   "dite": "LM-leva",
+   "rodic": "noha-AZ",
+   "strana": "-y"
+  },
+  {
+   "index": 111,
+   "role": "stulbal-spojka-17-LM-prava-noha-BP",
+   "id": "spojka-17-LM-prava-noha-BP",
+   "kategorie": "spojka",
+   "part_id": "product_3176",
+   "sku": "2.2.001.10.4040.33",
+   "nazev": "40x40 Rohová spojka",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3176.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    428.500031,
+    705,
+    760.000007
+   ],
+   "quaternion": [
+    -0.707107,
+    0,
+    0.707107,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    37,
+    40.43,
+    40.43
+   ],
+   "box_min": [
+    391.5,
+    705,
+    723
+   ],
+   "box_max": [
+    428.5,
+    745.43,
+    763.43
+   ],
+   "dite": "LM-prava",
+   "rodic": "noha-BP",
+   "strana": "-y"
+  },
+  {
+   "index": 112,
+   "role": "stulbal-spojka-18-LM-prava-noha-BZ",
+   "id": "spojka-18-LM-prava-noha-BZ",
+   "kategorie": "spojka",
+   "part_id": "product_3176",
+   "sku": "2.2.001.10.4040.33",
+   "nazev": "40x40 Rohová spojka",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3176.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    391.500031,
+    705,
+    39.999993
+   ],
+   "quaternion": [
+    0.707107,
+    0,
+    0.707107,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    37,
+    40.43,
+    40.43
+   ],
+   "box_min": [
+    391.5,
+    705,
+    36.57
+   ],
+   "box_max": [
+    428.5,
+    745.43,
+    77
+   ],
+   "dite": "LM-prava",
+   "rodic": "noha-BZ",
+   "strana": "-y"
+  },
+  {
+   "index": 113,
+   "role": "stulbal-spojka-19-LM-predni-noha-AP",
+   "id": "spojka-19-LM-predni-noha-AP",
+   "kategorie": "spojka",
+   "part_id": "product_3176",
+   "sku": "2.2.001.10.4040.33",
+   "nazev": "40x40 Rohová spojka",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3176.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    39.999969,
+    705,
+    798.500007
+   ],
+   "quaternion": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    40.43,
+    40.43,
+    37
+   ],
+   "box_min": [
+    36.57,
+    705,
+    761.5
+   ],
+   "box_max": [
+    77,
+    745.43,
+    798.5
+   ],
+   "dite": "LM-predni",
+   "rodic": "noha-AP",
+   "strana": "-y"
+  },
+  {
+   "index": 114,
+   "role": "stulbal-spojka-20-LM-predni-noha-BP",
+   "id": "spojka-20-LM-predni-noha-BP",
+   "kategorie": "spojka",
+   "part_id": "product_3176",
+   "sku": "2.2.001.10.4040.33",
+   "nazev": "40x40 Rohová spojka",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3176.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    390.000031,
+    705,
+    761.500007
+   ],
+   "quaternion": [
+    0,
+    0,
+    1,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    40.43,
+    40.43,
+    37
+   ],
+   "box_min": [
+    353,
+    705,
+    761.5
+   ],
+   "box_max": [
+    393.43,
+    745.43,
+    798.5
+   ],
+   "dite": "LM-predni",
+   "rodic": "noha-BP",
+   "strana": "-y"
+  },
+  {
+   "index": 115,
+   "role": "stulbal-spojka-21-LM-zadni-noha-AZ",
+   "id": "spojka-21-LM-zadni-noha-AZ",
+   "kategorie": "spojka",
+   "part_id": "product_3176",
+   "sku": "2.2.001.10.4040.33",
+   "nazev": "40x40 Rohová spojka",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3176.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    39.999969,
+    705,
+    38.500007
+   ],
+   "quaternion": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    40.43,
+    40.43,
+    37
+   ],
+   "box_min": [
+    36.57,
+    705,
+    1.5
+   ],
+   "box_max": [
+    77,
+    745.43,
+    38.5
+   ],
+   "dite": "LM-zadni",
+   "rodic": "noha-AZ",
+   "strana": "-y"
+  },
+  {
+   "index": 116,
+   "role": "stulbal-spojka-22-LM-zadni-noha-BZ",
+   "id": "spojka-22-LM-zadni-noha-BZ",
+   "kategorie": "spojka",
+   "part_id": "product_3176",
+   "sku": "2.2.001.10.4040.33",
+   "nazev": "40x40 Rohová spojka",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3176.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    390.000031,
+    705,
+    1.500007
+   ],
+   "quaternion": [
+    0,
+    0,
+    1,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    40.43,
+    40.43,
+    37
+   ],
+   "box_min": [
+    353,
+    705,
+    1.5
+   ],
+   "box_max": [
+    393.43,
+    745.43,
+    38.5
+   ],
+   "dite": "LM-zadni",
+   "rodic": "noha-BZ",
+   "strana": "-y"
+  },
+  {
+   "index": 117,
+   "role": "stulbal-spojka-23-LT-leva-noha-AP",
+   "id": "spojka-23-LT-leva-noha-AP",
+   "kategorie": "spojka",
+   "part_id": "product_3176",
+   "sku": "2.2.001.10.4040.33",
+   "nazev": "40x40 Rohová spojka",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3176.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    38.500031,
+    1413,
+    760.000007
+   ],
+   "quaternion": [
+    -0.707107,
+    0,
+    0.707107,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    37,
+    40.43,
+    40.43
+   ],
+   "box_min": [
+    1.5,
+    1413,
+    723
+   ],
+   "box_max": [
+    38.5,
+    1453.43,
+    763.43
+   ],
+   "dite": "LT-leva",
+   "rodic": "noha-AP",
+   "strana": "-y"
+  },
+  {
+   "index": 118,
+   "role": "stulbal-spojka-24-LT-leva-noha-AZ",
+   "id": "spojka-24-LT-leva-noha-AZ",
+   "kategorie": "spojka",
+   "part_id": "product_3176",
+   "sku": "2.2.001.10.4040.33",
+   "nazev": "40x40 Rohová spojka",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3176.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    1.500031,
+    1413,
+    39.999993
+   ],
+   "quaternion": [
+    0.707107,
+    0,
+    0.707107,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    37,
+    40.43,
+    40.43
+   ],
+   "box_min": [
+    1.5,
+    1413,
+    36.57
+   ],
+   "box_max": [
+    38.5,
+    1453.43,
+    77
+   ],
+   "dite": "LT-leva",
+   "rodic": "noha-AZ",
+   "strana": "-y"
+  },
+  {
+   "index": 119,
+   "role": "stulbal-spojka-25-LT-prava-noha-BP",
+   "id": "spojka-25-LT-prava-noha-BP",
+   "kategorie": "spojka",
+   "part_id": "product_3176",
+   "sku": "2.2.001.10.4040.33",
+   "nazev": "40x40 Rohová spojka",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3176.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    428.500031,
+    1413,
+    760.000007
+   ],
+   "quaternion": [
+    -0.707107,
+    0,
+    0.707107,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    37,
+    40.43,
+    40.43
+   ],
+   "box_min": [
+    391.5,
+    1413,
+    723
+   ],
+   "box_max": [
+    428.5,
+    1453.43,
+    763.43
+   ],
+   "dite": "LT-prava",
+   "rodic": "noha-BP",
+   "strana": "-y"
+  },
+  {
+   "index": 120,
+   "role": "stulbal-spojka-26-LT-prava-noha-BZ",
+   "id": "spojka-26-LT-prava-noha-BZ",
+   "kategorie": "spojka",
+   "part_id": "product_3176",
+   "sku": "2.2.001.10.4040.33",
+   "nazev": "40x40 Rohová spojka",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3176.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    391.500031,
+    1413,
+    39.999993
+   ],
+   "quaternion": [
+    0.707107,
+    0,
+    0.707107,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    37,
+    40.43,
+    40.43
+   ],
+   "box_min": [
+    391.5,
+    1413,
+    36.57
+   ],
+   "box_max": [
+    428.5,
+    1453.43,
+    77
+   ],
+   "dite": "LT-prava",
+   "rodic": "noha-BZ",
+   "strana": "-y"
+  },
+  {
+   "index": 121,
+   "role": "stulbal-spojka-27-LT-predni-noha-AP",
+   "id": "spojka-27-LT-predni-noha-AP",
+   "kategorie": "spojka",
+   "part_id": "product_3176",
+   "sku": "2.2.001.10.4040.33",
+   "nazev": "40x40 Rohová spojka",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3176.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    39.999969,
+    1413,
+    798.500007
+   ],
+   "quaternion": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    40.43,
+    40.43,
+    37
+   ],
+   "box_min": [
+    36.57,
+    1413,
+    761.5
+   ],
+   "box_max": [
+    77,
+    1453.43,
+    798.5
+   ],
+   "dite": "LT-predni",
+   "rodic": "noha-AP",
+   "strana": "-y"
+  },
+  {
+   "index": 122,
+   "role": "stulbal-spojka-28-LT-predni-noha-BP",
+   "id": "spojka-28-LT-predni-noha-BP",
+   "kategorie": "spojka",
+   "part_id": "product_3176",
+   "sku": "2.2.001.10.4040.33",
+   "nazev": "40x40 Rohová spojka",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3176.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    390.000031,
+    1413,
+    761.500007
+   ],
+   "quaternion": [
+    0,
+    0,
+    1,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    40.43,
+    40.43,
+    37
+   ],
+   "box_min": [
+    353,
+    1413,
+    761.5
+   ],
+   "box_max": [
+    393.43,
+    1453.43,
+    798.5
+   ],
+   "dite": "LT-predni",
+   "rodic": "noha-BP",
+   "strana": "-y"
+  },
+  {
+   "index": 123,
+   "role": "stulbal-spojka-29-LT-zadni-noha-AZ",
+   "id": "spojka-29-LT-zadni-noha-AZ",
+   "kategorie": "spojka",
+   "part_id": "product_3176",
+   "sku": "2.2.001.10.4040.33",
+   "nazev": "40x40 Rohová spojka",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3176.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    39.999969,
+    1413,
+    38.500007
+   ],
+   "quaternion": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    40.43,
+    40.43,
+    37
+   ],
+   "box_min": [
+    36.57,
+    1413,
+    1.5
+   ],
+   "box_max": [
+    77,
+    1453.43,
+    38.5
+   ],
+   "dite": "LT-zadni",
+   "rodic": "noha-AZ",
+   "strana": "-y"
+  },
+  {
+   "index": 124,
+   "role": "stulbal-spojka-30-LT-zadni-noha-BZ",
+   "id": "spojka-30-LT-zadni-noha-BZ",
+   "kategorie": "spojka",
+   "part_id": "product_3176",
+   "sku": "2.2.001.10.4040.33",
+   "nazev": "40x40 Rohová spojka",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3176.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    390.000031,
+    1413,
+    1.500007
+   ],
+   "quaternion": [
+    0,
+    0,
+    1,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    40.43,
+    40.43,
+    37
+   ],
+   "box_min": [
+    353,
+    1413,
+    1.5
+   ],
+   "box_max": [
+    393.43,
+    1453.43,
+    38.5
+   ],
+   "dite": "LT-zadni",
+   "rodic": "noha-BZ",
+   "strana": "-y"
+  },
+  {
+   "index": 125,
+   "role": "stulbal-spojka-31-MB-bok-C-noha-CP",
+   "id": "spojka-31-MB-bok-C-noha-CP",
+   "kategorie": "spojka",
+   "part_id": "product_3176",
+   "sku": "2.2.001.10.4040.33",
+   "nazev": "40x40 Rohová spojka",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3176.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    1001.500031,
+    123,
+    760.000007
+   ],
+   "quaternion": [
+    0,
+    0.707107,
+    0,
+    0.707107
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    37,
+    40.43,
+    40.43
+   ],
+   "box_min": [
+    1001.5,
+    82.57,
+    723
+   ],
+   "box_max": [
+    1038.5,
+    123,
+    763.43
+   ],
+   "dite": "MB-bok-C",
+   "rodic": "noha-CP",
+   "strana": "+y"
+  },
+  {
+   "index": 126,
+   "role": "stulbal-spojka-32-MB-bok-C-noha-CZ",
+   "id": "spojka-32-MB-bok-C-noha-CZ",
+   "kategorie": "spojka",
+   "part_id": "product_3176",
+   "sku": "2.2.001.10.4040.33",
+   "nazev": "40x40 Rohová spojka",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3176.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    1038.500031,
+    123,
+    39.999993
+   ],
+   "quaternion": [
+    0,
+    -0.707107,
+    0,
+    0.707107
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    37,
+    40.43,
+    40.43
+   ],
+   "box_min": [
+    1001.5,
+    82.57,
+    36.57
+   ],
+   "box_max": [
+    1038.5,
+    123,
+    77
+   ],
+   "dite": "MB-bok-C",
+   "rodic": "noha-CZ",
+   "strana": "+y"
+  },
+  {
+   "index": 127,
+   "role": "stulbal-spojka-33-MB-kolejnice-MB-bok-B",
+   "id": "spojka-33-MB-kolejnice-MB-bok-B",
+   "kategorie": "spojka",
+   "part_id": "product_3176",
+   "sku": "2.2.001.10.4040.33",
+   "nazev": "40x40 Rohová spojka",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3176.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    430,
+    84.5,
+    687
+   ],
+   "quaternion": [
+    0.707107,
+    0,
+    0,
+    0.707107
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    40.43,
+    37,
+    40.43
+   ],
+   "box_min": [
+    426.57,
+    47.5,
+    646.57
+   ],
+   "box_max": [
+    467,
+    84.5,
+    687
+   ],
+   "dite": "MB-kolejnice",
+   "rodic": "MB-bok-B",
+   "strana": "+z"
+  },
+  {
+   "index": 128,
+   "role": "stulbal-spojka-34-MB-kolejnice-MB-bok-C",
+   "id": "spojka-34-MB-kolejnice-MB-bok-C",
+   "kategorie": "spojka",
+   "part_id": "product_3176",
+   "sku": "2.2.001.10.4040.33",
+   "nazev": "40x40 Rohová spojka",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3176.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    1000.000061,
+    47.5,
+    687
+   ],
+   "quaternion": [
+    0,
+    0.707107,
+    0.707107,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    40.43,
+    37,
+    40.43
+   ],
+   "box_min": [
+    963,
+    47.5,
+    646.57
+   ],
+   "box_max": [
+    1003.43,
+    84.5,
+    687
+   ],
+   "dite": "MB-kolejnice",
+   "rodic": "MB-bok-C",
+   "strana": "+z"
+  },
+  {
+   "index": 129,
+   "role": "stulbal-spojka-35-MM-prava-noha-CP",
+   "id": "spojka-35-MM-prava-noha-CP",
+   "kategorie": "spojka",
+   "part_id": "product_3176",
+   "sku": "2.2.001.10.4040.33",
+   "nazev": "40x40 Rohová spojka",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3176.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    1038.500031,
+    705,
+    760.000007
+   ],
+   "quaternion": [
+    -0.707107,
+    0,
+    0.707107,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    37,
+    40.43,
+    40.43
+   ],
+   "box_min": [
+    1001.5,
+    705,
+    723
+   ],
+   "box_max": [
+    1038.5,
+    745.43,
+    763.43
+   ],
+   "dite": "MM-prava",
+   "rodic": "noha-CP",
+   "strana": "-y"
+  },
+  {
+   "index": 130,
+   "role": "stulbal-spojka-36-MM-prava-noha-CZ",
+   "id": "spojka-36-MM-prava-noha-CZ",
+   "kategorie": "spojka",
+   "part_id": "product_3176",
+   "sku": "2.2.001.10.4040.33",
+   "nazev": "40x40 Rohová spojka",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3176.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    1001.500031,
+    705,
+    39.999993
+   ],
+   "quaternion": [
+    0.707107,
+    0,
+    0.707107,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    37,
+    40.43,
+    40.43
+   ],
+   "box_min": [
+    1001.5,
+    705,
+    36.57
+   ],
+   "box_max": [
+    1038.5,
+    745.43,
+    77
+   ],
+   "dite": "MM-prava",
+   "rodic": "noha-CZ",
+   "strana": "-y"
+  },
+  {
+   "index": 131,
+   "role": "stulbal-spojka-37-MM-predni-noha-BP",
+   "id": "spojka-37-MM-predni-noha-BP",
+   "kategorie": "spojka",
+   "part_id": "product_3176",
+   "sku": "2.2.001.10.4040.33",
+   "nazev": "40x40 Rohová spojka",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3176.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    429.999969,
+    705,
+    798.500007
+   ],
+   "quaternion": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    40.43,
+    40.43,
+    37
+   ],
+   "box_min": [
+    426.57,
+    705,
+    761.5
+   ],
+   "box_max": [
+    467,
+    745.43,
+    798.5
+   ],
+   "dite": "MM-predni",
+   "rodic": "noha-BP",
+   "strana": "-y"
+  },
+  {
+   "index": 132,
+   "role": "stulbal-spojka-38-MM-predni-noha-CP",
+   "id": "spojka-38-MM-predni-noha-CP",
+   "kategorie": "spojka",
+   "part_id": "product_3176",
+   "sku": "2.2.001.10.4040.33",
+   "nazev": "40x40 Rohová spojka",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3176.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    1000.000031,
+    705,
+    761.500007
+   ],
+   "quaternion": [
+    0,
+    0,
+    1,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    40.43,
+    40.43,
+    37
+   ],
+   "box_min": [
+    963,
+    705,
+    761.5
+   ],
+   "box_max": [
+    1003.43,
+    745.43,
+    798.5
+   ],
+   "dite": "MM-predni",
+   "rodic": "noha-CP",
+   "strana": "-y"
+  },
+  {
+   "index": 133,
+   "role": "stulbal-spojka-39-MM-zadni-noha-BZ",
+   "id": "spojka-39-MM-zadni-noha-BZ",
+   "kategorie": "spojka",
+   "part_id": "product_3176",
+   "sku": "2.2.001.10.4040.33",
+   "nazev": "40x40 Rohová spojka",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3176.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    429.999969,
+    705,
+    38.500007
+   ],
+   "quaternion": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    40.43,
+    40.43,
+    37
+   ],
+   "box_min": [
+    426.57,
+    705,
+    1.5
+   ],
+   "box_max": [
+    467,
+    745.43,
+    38.5
+   ],
+   "dite": "MM-zadni",
+   "rodic": "noha-BZ",
+   "strana": "-y"
+  },
+  {
+   "index": 134,
+   "role": "stulbal-spojka-40-MM-zadni-noha-CZ",
+   "id": "spojka-40-MM-zadni-noha-CZ",
+   "kategorie": "spojka",
+   "part_id": "product_3176",
+   "sku": "2.2.001.10.4040.33",
+   "nazev": "40x40 Rohová spojka",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3176.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    1000.000031,
+    705,
+    1.500007
+   ],
+   "quaternion": [
+    0,
+    0,
+    1,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    40.43,
+    40.43,
+    37
+   ],
+   "box_min": [
+    963,
+    705,
+    1.5
+   ],
+   "box_max": [
+    1003.43,
+    745.43,
+    38.5
+   ],
+   "dite": "MM-zadni",
+   "rodic": "noha-CZ",
+   "strana": "-y"
+  },
+  {
+   "index": 135,
+   "role": "stulbal-spojka-41-noha-AZ-horni-bok-L",
+   "id": "spojka-41-noha-AZ-horni-bok-L",
+   "kategorie": "spojka",
+   "part_id": "product_3176",
+   "sku": "2.2.001.10.4040.33",
+   "nazev": "40x40 Rohová spojka",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3176.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    38.5,
+    2060,
+    77
+   ],
+   "quaternion": [
+    -0.5,
+    0.5,
+    0.5,
+    -0.5
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    37,
+    40.43,
+    40.43
+   ],
+   "box_min": [
+    1.5,
+    2023,
+    36.57
+   ],
+   "box_max": [
+    38.5,
+    2063.43,
+    77
+   ],
+   "dite": "noha-AZ",
+   "rodic": "horni-bok-L",
+   "strana": "+z"
+  },
+  {
+   "index": 136,
+   "role": "stulbal-spojka-42-noha-BZ-horni-zadni",
+   "id": "spojka-42-noha-BZ-horni-zadni",
+   "kategorie": "spojka",
+   "part_id": "product_3176",
+   "sku": "2.2.001.10.4040.33",
+   "nazev": "40x40 Rohová spojka",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3176.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    467,
+    2060,
+    1.5
+   ],
+   "quaternion": [
+    0,
+    0,
+    -0.707107,
+    0.707107
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    40.43,
+    40.43,
+    37
+   ],
+   "box_min": [
+    426.57,
+    2023,
+    1.5
+   ],
+   "box_max": [
+    467,
+    2063.43,
+    38.5
+   ],
+   "dite": "noha-BZ",
+   "rodic": "horni-zadni",
+   "strana": "+x"
+  },
+  {
+   "index": 137,
+   "role": "stulbal-spojka-43-noha-DZ-horni-bok-P",
+   "id": "spojka-43-noha-DZ-horni-bok-P",
+   "kategorie": "spojka",
+   "part_id": "product_3176",
+   "sku": "2.2.001.10.4040.33",
+   "nazev": "40x40 Rohová spojka",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3176.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    1748.5,
+    2060,
+    77
+   ],
+   "quaternion": [
+    -0.5,
+    0.5,
+    0.5,
+    -0.5
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    37,
+    40.43,
+    40.43
+   ],
+   "box_min": [
+    1711.5,
+    2023,
+    36.57
+   ],
+   "box_max": [
+    1748.5,
+    2063.43,
+    77
+   ],
+   "dite": "noha-DZ",
+   "rodic": "horni-bok-P",
+   "strana": "+z"
+  },
+  {
+   "index": 138,
+   "role": "stulbal-spojka-44-R0-prava-noha-DP",
+   "id": "spojka-44-R0-prava-noha-DP",
+   "kategorie": "spojka",
+   "part_id": "product_3176",
+   "sku": "2.2.001.10.4040.33",
+   "nazev": "40x40 Rohová spojka",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3176.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    1748.500031,
+    83,
+    760.000007
+   ],
+   "quaternion": [
+    -0.707107,
+    0,
+    0.707107,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    37,
+    40.43,
+    40.43
+   ],
+   "box_min": [
+    1711.5,
+    83,
+    723
+   ],
+   "box_max": [
+    1748.5,
+    123.43,
+    763.43
+   ],
+   "dite": "R0-prava",
+   "rodic": "noha-DP",
+   "strana": "-y"
+  },
+  {
+   "index": 139,
+   "role": "stulbal-spojka-45-R0-prava-noha-DZ",
+   "id": "spojka-45-R0-prava-noha-DZ",
+   "kategorie": "spojka",
+   "part_id": "product_3176",
+   "sku": "2.2.001.10.4040.33",
+   "nazev": "40x40 Rohová spojka",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3176.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    1711.500031,
+    83,
+    39.999993
+   ],
+   "quaternion": [
+    0.707107,
+    0,
+    0.707107,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    37,
+    40.43,
+    40.43
+   ],
+   "box_min": [
+    1711.5,
+    83,
+    36.57
+   ],
+   "box_max": [
+    1748.5,
+    123.43,
+    77
+   ],
+   "dite": "R0-prava",
+   "rodic": "noha-DZ",
+   "strana": "-y"
+  },
+  {
+   "index": 140,
+   "role": "stulbal-spojka-46-R0-predni-noha-CP",
+   "id": "spojka-46-R0-predni-noha-CP",
+   "kategorie": "spojka",
+   "part_id": "product_3176",
+   "sku": "2.2.001.10.4040.33",
+   "nazev": "40x40 Rohová spojka",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3176.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    1039.999969,
+    83,
+    798.500007
+   ],
+   "quaternion": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    40.43,
+    40.43,
+    37
+   ],
+   "box_min": [
+    1036.57,
+    83,
+    761.5
+   ],
+   "box_max": [
+    1077,
+    123.43,
+    798.5
+   ],
+   "dite": "R0-predni",
+   "rodic": "noha-CP",
+   "strana": "-y"
+  },
+  {
+   "index": 141,
+   "role": "stulbal-spojka-47-R0-predni-noha-DP",
+   "id": "spojka-47-R0-predni-noha-DP",
+   "kategorie": "spojka",
+   "part_id": "product_3176",
+   "sku": "2.2.001.10.4040.33",
+   "nazev": "40x40 Rohová spojka",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3176.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    1710.000031,
+    83,
+    761.500007
+   ],
+   "quaternion": [
+    0,
+    0,
+    1,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    40.43,
+    40.43,
+    37
+   ],
+   "box_min": [
+    1673,
+    83,
+    761.5
+   ],
+   "box_max": [
+    1713.43,
+    123.43,
+    798.5
+   ],
+   "dite": "R0-predni",
+   "rodic": "noha-DP",
+   "strana": "-y"
+  },
+  {
+   "index": 142,
+   "role": "stulbal-spojka-48-R0-zadni-noha-CZ",
+   "id": "spojka-48-R0-zadni-noha-CZ",
+   "kategorie": "spojka",
+   "part_id": "product_3176",
+   "sku": "2.2.001.10.4040.33",
+   "nazev": "40x40 Rohová spojka",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3176.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    1039.999969,
+    83,
+    38.500007
+   ],
+   "quaternion": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    40.43,
+    40.43,
+    37
+   ],
+   "box_min": [
+    1036.57,
+    83,
+    1.5
+   ],
+   "box_max": [
+    1077,
+    123.43,
+    38.5
+   ],
+   "dite": "R0-zadni",
+   "rodic": "noha-CZ",
+   "strana": "-y"
+  },
+  {
+   "index": 143,
+   "role": "stulbal-spojka-49-R0-zadni-noha-DZ",
+   "id": "spojka-49-R0-zadni-noha-DZ",
+   "kategorie": "spojka",
+   "part_id": "product_3176",
+   "sku": "2.2.001.10.4040.33",
+   "nazev": "40x40 Rohová spojka",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3176.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    1710.000031,
+    83,
+    1.500007
+   ],
+   "quaternion": [
+    0,
+    0,
+    1,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    40.43,
+    40.43,
+    37
+   ],
+   "box_min": [
+    1673,
+    83,
+    1.5
+   ],
+   "box_max": [
+    1713.43,
+    123.43,
+    38.5
+   ],
+   "dite": "R0-zadni",
+   "rodic": "noha-DZ",
+   "strana": "-y"
+  },
+  {
+   "index": 144,
+   "role": "stulbal-spojka-50-R1-bok-C-noha-CP",
+   "id": "spojka-50-R1-bok-C-noha-CP",
+   "kategorie": "spojka",
+   "part_id": "product_3176",
+   "sku": "2.2.001.10.4040.33",
+   "nazev": "40x40 Rohová spojka",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3176.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    1038.500031,
+    333,
+    760.000007
+   ],
+   "quaternion": [
+    -0.707107,
+    0,
+    0.707107,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    37,
+    40.43,
+    40.43
+   ],
+   "box_min": [
+    1001.5,
+    333,
+    723
+   ],
+   "box_max": [
+    1038.5,
+    373.43,
+    763.43
+   ],
+   "dite": "R1-bok-C",
+   "rodic": "noha-CP",
+   "strana": "-y"
+  },
+  {
+   "index": 145,
+   "role": "stulbal-spojka-51-R1-bok-C-noha-CZ",
+   "id": "spojka-51-R1-bok-C-noha-CZ",
+   "kategorie": "spojka",
+   "part_id": "product_3176",
+   "sku": "2.2.001.10.4040.33",
+   "nazev": "40x40 Rohová spojka",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3176.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    1001.500031,
+    333,
+    39.999993
+   ],
+   "quaternion": [
+    0.707107,
+    0,
+    0.707107,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    37,
+    40.43,
+    40.43
+   ],
+   "box_min": [
+    1001.5,
+    333,
+    36.57
+   ],
+   "box_max": [
+    1038.5,
+    373.43,
+    77
+   ],
+   "dite": "R1-bok-C",
+   "rodic": "noha-CZ",
+   "strana": "-y"
+  },
+  {
+   "index": 146,
+   "role": "stulbal-spojka-52-R1-bok-D-noha-DP",
+   "id": "spojka-52-R1-bok-D-noha-DP",
+   "kategorie": "spojka",
+   "part_id": "product_3176",
+   "sku": "2.2.001.10.4040.33",
+   "nazev": "40x40 Rohová spojka",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3176.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    1748.500031,
+    333,
+    760.000007
+   ],
+   "quaternion": [
+    -0.707107,
+    0,
+    0.707107,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    37,
+    40.43,
+    40.43
+   ],
+   "box_min": [
+    1711.5,
+    333,
+    723
+   ],
+   "box_max": [
+    1748.5,
+    373.43,
+    763.43
+   ],
+   "dite": "R1-bok-D",
+   "rodic": "noha-DP",
+   "strana": "-y"
+  },
+  {
+   "index": 147,
+   "role": "stulbal-spojka-53-R1-bok-D-noha-DZ",
+   "id": "spojka-53-R1-bok-D-noha-DZ",
+   "kategorie": "spojka",
+   "part_id": "product_3176",
+   "sku": "2.2.001.10.4040.33",
+   "nazev": "40x40 Rohová spojka",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3176.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    1711.500031,
+    333,
+    39.999993
+   ],
+   "quaternion": [
+    0.707107,
+    0,
+    0.707107,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    37,
+    40.43,
+    40.43
+   ],
+   "box_min": [
+    1711.5,
+    333,
+    36.57
+   ],
+   "box_max": [
+    1748.5,
+    373.43,
+    77
+   ],
+   "dite": "R1-bok-D",
+   "rodic": "noha-DZ",
+   "strana": "-y"
+  },
+  {
+   "index": 148,
+   "role": "stulbal-spojka-54-R1-kolejnice-R1-bok-C",
+   "id": "spojka-54-R1-kolejnice-R1-bok-C",
+   "kategorie": "spojka",
+   "part_id": "product_3176",
+   "sku": "2.2.001.10.4040.33",
+   "nazev": "40x40 Rohová spojka",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3176.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    1040,
+    408.5,
+    687
+   ],
+   "quaternion": [
+    0.707107,
+    0,
+    0,
+    0.707107
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    40.43,
+    37,
+    40.43
+   ],
+   "box_min": [
+    1036.57,
+    371.5,
+    646.57
+   ],
+   "box_max": [
+    1077,
+    408.5,
+    687
+   ],
+   "dite": "R1-kolejnice",
+   "rodic": "R1-bok-C",
+   "strana": "+z"
+  },
+  {
+   "index": 149,
+   "role": "stulbal-spojka-55-R1-kolejnice-R1-bok-D",
+   "id": "spojka-55-R1-kolejnice-R1-bok-D",
+   "kategorie": "spojka",
+   "part_id": "product_3176",
+   "sku": "2.2.001.10.4040.33",
+   "nazev": "40x40 Rohová spojka",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3176.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    1710.000061,
+    371.5,
+    687
+   ],
+   "quaternion": [
+    0,
+    0.707107,
+    0.707107,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    40.43,
+    37,
+    40.43
+   ],
+   "box_min": [
+    1673,
+    371.5,
+    646.57
+   ],
+   "box_max": [
+    1713.43,
+    408.5,
+    687
+   ],
+   "dite": "R1-kolejnice",
+   "rodic": "R1-bok-D",
+   "strana": "+z"
+  },
+  {
+   "index": 150,
+   "role": "stulbal-spojka-56-R1-predni-noha-CP",
+   "id": "spojka-56-R1-predni-noha-CP",
+   "kategorie": "spojka",
+   "part_id": "product_3176",
+   "sku": "2.2.001.10.4040.33",
+   "nazev": "40x40 Rohová spojka",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3176.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    1039.999969,
+    333,
+    798.500007
+   ],
+   "quaternion": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    40.43,
+    40.43,
+    37
+   ],
+   "box_min": [
+    1036.57,
+    333,
+    761.5
+   ],
+   "box_max": [
+    1077,
+    373.43,
+    798.5
+   ],
+   "dite": "R1-predni",
+   "rodic": "noha-CP",
+   "strana": "-y"
+  },
+  {
+   "index": 151,
+   "role": "stulbal-spojka-57-R1-predni-noha-DP",
+   "id": "spojka-57-R1-predni-noha-DP",
+   "kategorie": "spojka",
+   "part_id": "product_3176",
+   "sku": "2.2.001.10.4040.33",
+   "nazev": "40x40 Rohová spojka",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3176.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    1710.000031,
+    333,
+    761.500007
+   ],
+   "quaternion": [
+    0,
+    0,
+    1,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    40.43,
+    40.43,
+    37
+   ],
+   "box_min": [
+    1673,
+    333,
+    761.5
+   ],
+   "box_max": [
+    1713.43,
+    373.43,
+    798.5
+   ],
+   "dite": "R1-predni",
+   "rodic": "noha-DP",
+   "strana": "-y"
+  },
+  {
+   "index": 152,
+   "role": "stulbal-spojka-58-R2-predni-noha-CP",
+   "id": "spojka-58-R2-predni-noha-CP",
+   "kategorie": "spojka",
+   "part_id": "product_3176",
+   "sku": "2.2.001.10.4040.33",
+   "nazev": "40x40 Rohová spojka",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3176.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    1039.999969,
+    653,
+    798.500007
+   ],
+   "quaternion": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    40.43,
+    40.43,
+    37
+   ],
+   "box_min": [
+    1036.57,
+    653,
+    761.5
+   ],
+   "box_max": [
+    1077,
+    693.43,
+    798.5
+   ],
+   "dite": "R2-predni",
+   "rodic": "noha-CP",
+   "strana": "-y"
+  },
+  {
+   "index": 153,
+   "role": "stulbal-spojka-59-R2-predni-noha-DP",
+   "id": "spojka-59-R2-predni-noha-DP",
+   "kategorie": "spojka",
+   "part_id": "product_3176",
+   "sku": "2.2.001.10.4040.33",
+   "nazev": "40x40 Rohová spojka",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3176.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    1710.000031,
+    653,
+    761.500007
+   ],
+   "quaternion": [
+    0,
+    0,
+    1,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    40.43,
+    40.43,
+    37
+   ],
+   "box_min": [
+    1673,
+    653,
+    761.5
+   ],
+   "box_max": [
+    1713.43,
+    693.43,
+    798.5
+   ],
+   "dite": "R2-predni",
+   "rodic": "noha-DP",
+   "strana": "-y"
+  },
+  {
+   "index": 154,
+   "role": "stulbal-spojka-60-R2-zadni-noha-CZ",
+   "id": "spojka-60-R2-zadni-noha-CZ",
+   "kategorie": "spojka",
+   "part_id": "product_3176",
+   "sku": "2.2.001.10.4040.33",
+   "nazev": "40x40 Rohová spojka",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3176.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    1039.999969,
+    653,
+    38.500007
+   ],
+   "quaternion": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    40.43,
+    40.43,
+    37
+   ],
+   "box_min": [
+    1036.57,
+    653,
+    1.5
+   ],
+   "box_max": [
+    1077,
+    693.43,
+    38.5
+   ],
+   "dite": "R2-zadni",
+   "rodic": "noha-CZ",
+   "strana": "-y"
+  },
+  {
+   "index": 155,
+   "role": "stulbal-spojka-61-R2-zadni-noha-DZ",
+   "id": "spojka-61-R2-zadni-noha-DZ",
+   "kategorie": "spojka",
+   "part_id": "product_3176",
+   "sku": "2.2.001.10.4040.33",
+   "nazev": "40x40 Rohová spojka",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3176.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    1710.000031,
+    653,
+    1.500007
+   ],
+   "quaternion": [
+    0,
+    0,
+    1,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    40.43,
+    40.43,
+    37
+   ],
+   "box_min": [
+    1673,
+    653,
+    1.5
+   ],
+   "box_max": [
+    1713.43,
+    693.43,
+    38.5
+   ],
+   "dite": "R2-zadni",
+   "rodic": "noha-DZ",
+   "strana": "-y"
+  },
+  {
+   "index": 156,
+   "role": "stulbal-spojka-62-zed-horni-noha-BZ",
+   "id": "spojka-62-zed-horni-noha-BZ",
+   "kategorie": "spojka",
+   "part_id": "product_3176",
+   "sku": "2.2.001.10.4040.33",
+   "nazev": "40x40 Rohová spojka",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3176.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    429.999969,
+    1573,
+    38.500007
+   ],
+   "quaternion": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    40.43,
+    40.43,
+    37
+   ],
+   "box_min": [
+    426.57,
+    1573,
+    1.5
+   ],
+   "box_max": [
+    467,
+    1613.43,
+    38.5
+   ],
+   "dite": "zed-horni",
+   "rodic": "noha-BZ",
+   "strana": "-y"
+  },
+  {
+   "index": 157,
+   "role": "stulbal-spojka-63-zed-horni-noha-DZ",
+   "id": "spojka-63-zed-horni-noha-DZ",
+   "kategorie": "spojka",
+   "part_id": "product_3176",
+   "sku": "2.2.001.10.4040.33",
+   "nazev": "40x40 Rohová spojka",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3176.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    1710.000031,
+    1573,
+    1.500007
+   ],
+   "quaternion": [
+    0,
+    0,
+    1,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    40.43,
+    40.43,
+    37
+   ],
+   "box_min": [
+    1673,
+    1573,
+    1.5
+   ],
+   "box_max": [
+    1713.43,
+    1613.43,
+    38.5
+   ],
+   "dite": "zed-horni",
+   "rodic": "noha-DZ",
+   "strana": "-y"
+  },
+  {
+   "index": 158,
+   "role": "stulbal-spojka-64-zed-spodni-noha-BZ",
+   "id": "spojka-64-zed-spodni-noha-BZ",
+   "kategorie": "spojka",
+   "part_id": "product_3176",
+   "sku": "2.2.001.10.4040.33",
+   "nazev": "40x40 Rohová spojka",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3176.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    429.999969,
+    1413,
+    38.500007
+   ],
+   "quaternion": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    40.43,
+    40.43,
+    37
+   ],
+   "box_min": [
+    426.57,
+    1413,
+    1.5
+   ],
+   "box_max": [
+    467,
+    1453.43,
+    38.5
+   ],
+   "dite": "zed-spodni",
+   "rodic": "noha-BZ",
+   "strana": "-y"
+  },
+  {
+   "index": 159,
+   "role": "stulbal-spojka-65-zed-spodni-noha-DZ",
+   "id": "spojka-65-zed-spodni-noha-DZ",
+   "kategorie": "spojka",
+   "part_id": "product_3176",
+   "sku": "2.2.001.10.4040.33",
+   "nazev": "40x40 Rohová spojka",
+   "zastupne": false,
+   "glb": "webapp/katalog/product_3176.glb",
+   "glb_je_nahrada": false,
+   "position": [
+    1710.000031,
+    1413,
+    1.500007
+   ],
+   "quaternion": [
+    0,
+    0,
+    1,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rozmer_mm": [
+    40.43,
+    40.43,
+    37
+   ],
+   "box_min": [
+    1673,
+    1413,
+    1.5
+   ],
+   "box_max": [
+    1713.43,
+    1453.43,
+    38.5
+   ],
+   "dite": "zed-spodni",
+   "rodic": "noha-DZ",
+   "strana": "-y"
+  }
+ ]
+}

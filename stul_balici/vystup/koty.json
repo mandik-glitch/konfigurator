@@ -1,0 +1,290 @@
+[
+ {
+  "kota": "celková šířka (list 1, půdorys)",
+  "vykres": 1750,
+  "namereno": 1750,
+  "rozdil": 0,
+  "ok": true,
+  "mereni": "rozpeti(['profil','deska'], 'x')"
+ },
+ {
+  "kota": "celková hloubka (list 1, půdorys/bokorys)",
+  "vykres": 800,
+  "namereno": 800,
+  "rozdil": 0,
+  "ok": true,
+  "mereni": "rozpeti(['profil','deska'], 'z')"
+ },
+ {
+  "kota": "celková výška od podlahy (list 1)",
+  "vykres": 2100,
+  "namereno": 2100,
+  "rozdil": 0,
+  "ok": true,
+  "mereni": "rozpeti(['profil','patka'], 'y')"
+ },
+ {
+  "kota": "světlá rozpona levá sekce",
+  "vykres": 350,
+  "namereno": 350,
+  "rozdil": 0,
+  "ok": true,
+  "mereni": "mezera('noha-AZ','noha-BZ','x')"
+ },
+ {
+  "kota": "světlá rozpona střední sekce",
+  "vykres": 570,
+  "namereno": 570,
+  "rozdil": 0,
+  "ok": true,
+  "mereni": "mezera('noha-BZ','noha-CZ','x')"
+ },
+ {
+  "kota": "světlá rozpona pravá sekce",
+  "vykres": 670,
+  "namereno": 670,
+  "rozdil": 0,
+  "ok": true,
+  "mereni": "mezera('noha-CZ','noha-DZ','x')"
+ },
+ {
+  "kota": "půdorys 430 (A + levá sekce + B)",
+  "vykres": 430,
+  "namereno": 430,
+  "rozdil": 0,
+  "ok": true,
+  "mereni": "maximum('noha-BZ','x')"
+ },
+ {
+  "kota": "půdorys 610 (deska stolu B..C vč. nohy C)",
+  "vykres": 610,
+  "namereno": 610,
+  "rozdil": 0,
+  "ok": true,
+  "mereni": "maximum('noha-CZ','x') - maximum('noha-BZ','x')"
+ },
+ {
+  "kota": "půdorys 710 (pravá sekce vč. nohy D)",
+  "vykres": 710,
+  "namereno": 710,
+  "rozdil": 0,
+  "ok": true,
+  "mereni": "maximum('noha-DZ','x') - maximum('noha-CZ','x')"
+ },
+ {
+  "kota": "výška police 1 (horní plocha)",
+  "vykres": 1050,
+  "namereno": 1050,
+  "rozdil": 0,
+  "ok": true,
+  "mereni": "maximum('police-1','y')"
+ },
+ {
+  "kota": "výška police 2",
+  "vykres": 1218,
+  "namereno": 1218,
+  "rozdil": 0,
+  "ok": true,
+  "mereni": "maximum('police-2','y')"
+ },
+ {
+  "kota": "výška police 3",
+  "vykres": 1386,
+  "namereno": 1386,
+  "rozdil": 0,
+  "ok": true,
+  "mereni": "maximum('police-3','y')"
+ },
+ {
+  "kota": "volná výška mezi policemi 1-2 (150)",
+  "vykres": 150,
+  "namereno": 150,
+  "rozdil": 0,
+  "ok": true,
+  "mereni": "minimum('police-2','y') - maximum('police-1','y')"
+ },
+ {
+  "kota": "volná výška mezi policemi 2-3 (150)",
+  "vykres": 150,
+  "namereno": 150,
+  "rozdil": 0,
+  "ok": true,
+  "mereni": "minimum('police-3','y') - maximum('police-2','y')"
+ },
+ {
+  "kota": "výška střední police 570x800 (592)",
+  "vykres": 592,
+  "namereno": 592,
+  "rozdil": 0,
+  "ok": true,
+  "mereni": "maximum('police-S','y')"
+ },
+ {
+  "kota": "horní plocha pracovní desky (800)",
+  "vykres": 800,
+  "namereno": 800,
+  "rozdil": 0,
+  "ok": true,
+  "mereni": "maximum('deska-stolu','y')"
+ },
+ {
+  "kota": "světlá výška nad spodní deskou (470)",
+  "vykres": 470,
+  "namereno": 470,
+  "rozdil": 0,
+  "ok": true,
+  "mereni": "minimum('police-S','y') - maximum('deska-spodni','y')"
+ },
+ {
+  "kota": "volná výška pod příčkou stolu (150)",
+  "vykres": 150,
+  "namereno": 150,
+  "rozdil": 0,
+  "ok": true,
+  "mereni": "minimum('MM-zadni','y') - maximum('police-S','y')"
+ },
+ {
+  "kota": "hloubka spodní desky (650)",
+  "vykres": 650,
+  "namereno": 650,
+  "rozdil": 0,
+  "ok": true,
+  "mereni": "rozpeti(['deska-spodni'], 'z')"
+ },
+ {
+  "kota": "přední odstup spodní desky (150)",
+  "vykres": 150,
+  "namereno": 150,
+  "rozdil": 0,
+  "ok": true,
+  "mereni": "maximum('noha-AP','z') - maximum('deska-spodni','z')"
+ },
+ {
+  "kota": "horní hrana skříně / zadních příček (1490)",
+  "vykres": 1490,
+  "namereno": 1490,
+  "rozdil": 0,
+  "ok": true,
+  "mereni": "maximum('LT-zadni','y')"
+ },
+ {
+  "kota": "dolní hrana zadní příčky (1450)",
+  "vykres": 1450,
+  "namereno": 1450,
+  "rozdil": 0,
+  "ok": true,
+  "mereni": "minimum('zed-spodni','y')"
+ },
+ {
+  "kota": "od spodku horního rámu po horní hranu příčky (570)",
+  "vykres": 570,
+  "namereno": 570,
+  "rozdil": 0,
+  "ok": true,
+  "mereni": "minimum('horni-zadni','y') - maximum('LT-zadni','y')"
+ },
+ {
+  "kota": "rozestup zadních příček (200)",
+  "vykres": 200,
+  "namereno": 200,
+  "rozdil": 0,
+  "ok": true,
+  "mereni": "maximum('zed-horni','y') - minimum('zed-spodni','y')"
+ },
+ {
+  "kota": "od dolní příčky po desku stolu (650 - stavitelné)",
+  "vykres": 650,
+  "namereno": 650,
+  "rozdil": 0,
+  "ok": true,
+  "mereni": "minimum('zed-spodni','y') - maximum('deska-stolu','y')"
+ },
+ {
+  "kota": "od spodku horního rámu po desku stolu (1260)",
+  "vykres": 1260,
+  "namereno": 1260,
+  "rozdil": 0,
+  "ok": true,
+  "mereni": "minimum('horni-zadni','y') - maximum('deska-stolu','y')"
+ },
+ {
+  "kota": "sloupek ramene monitoru (500 - stavitelné)",
+  "vykres": 500,
+  "namereno": 500,
+  "rozdil": 0,
+  "ok": true,
+  "mereni": "delka('rameno-sloup')"
+ },
+ {
+  "kota": "světlá šířka zadní stěny B..D (1280)",
+  "vykres": 1280,
+  "namereno": 1280,
+  "rozdil": 0,
+  "ok": true,
+  "mereni": "delka('zed-spodni')"
+ },
+ {
+  "kota": "délka přední/zadní příčky horního rámu (1670)",
+  "vykres": 1670,
+  "namereno": 1670,
+  "rozdil": 0,
+  "ok": true,
+  "mereni": "delka('horni-zadni')"
+ },
+ {
+  "kota": "hloubka horního rámu (600)",
+  "vykres": 600,
+  "namereno": 600,
+  "rozdil": 0,
+  "ok": true,
+  "mereni": "rozpeti(['horni-bok-L'], 'z')"
+ },
+ {
+  "kota": "spodek nohy nad podlahou (46)",
+  "vykres": 46,
+  "namereno": 46,
+  "rozdil": 0,
+  "ok": true,
+  "mereni": "minimum('noha-AZ','y')"
+ },
+ {
+  "kota": "spodek nejnižší příčky L/P sekce nad podlahou (120)",
+  "vykres": 120,
+  "namereno": 120,
+  "rozdil": 0,
+  "ok": true,
+  "mereni": "minimum('LB-zadni','y')"
+ },
+ {
+  "kota": "světlá hloubka mezi nohami (720, list 3)",
+  "vykres": 720,
+  "namereno": 720,
+  "rozdil": 0,
+  "ok": true,
+  "mereni": "mezera('noha-AZ','noha-AP','z')"
+ },
+ {
+  "kota": "délka válečkové dráhy (782)",
+  "vykres": 782,
+  "namereno": 782,
+  "rozdil": 0,
+  "ok": true,
+  "mereni": "rozpeti(['valecka-draha-1'], 'z')"
+ },
+ {
+  "kota": "vysunutí ramene monitoru od líce zadní nohy (306)",
+  "vykres": 306,
+  "namereno": 306,
+  "rozdil": 0,
+  "ok": true,
+  "mereni": "maximum('rameno-hlava','z') - maximum('noha-AZ','z')"
+ },
+ {
+  "kota": "vysunutí ramene od podstavy (250)",
+  "vykres": 250,
+  "namereno": 250,
+  "rozdil": 0,
+  "ok": true,
+  "mereni": "maximum('rameno-hlava','z') - minimum('rameno-vodorovne','z')"
+ }
+]

@@ -1,0 +1,409 @@
+{
+ "profily": [
+  {
+   "delka_mm": 2014,
+   "ks": 3,
+   "id": [
+    "noha-AZ",
+    "noha-BZ",
+    "noha-DZ"
+   ]
+  },
+  {
+   "delka_mm": 1670,
+   "ks": 2,
+   "id": [
+    "horni-zadni",
+    "horni-predni"
+   ]
+  },
+  {
+   "delka_mm": 1444,
+   "ks": 2,
+   "id": [
+    "noha-AP",
+    "noha-BP"
+   ]
+  },
+  {
+   "delka_mm": 1280,
+   "ks": 2,
+   "id": [
+    "zed-spodni",
+    "zed-horni"
+   ]
+  },
+  {
+   "delka_mm": 736,
+   "ks": 3,
+   "id": [
+    "noha-CZ",
+    "noha-CP",
+    "noha-DP"
+   ]
+  },
+  {
+   "delka_mm": 720,
+   "ks": 13,
+   "id": [
+    "LB-leva",
+    "LB-prava",
+    "LM-leva",
+    "LM-prava",
+    "LT-leva",
+    "LT-prava",
+    "MB-bok-B",
+    "MB-bok-C",
+    "MM-prava",
+    "R0-prava",
+    "R1-bok-C",
+    "R1-bok-D",
+    "D-bok-stul"
+   ]
+  },
+  {
+   "delka_mm": 670,
+   "ks": 6,
+   "id": [
+    "R0-zadni",
+    "R0-predni",
+    "R1-predni",
+    "R1-kolejnice",
+    "R2-zadni",
+    "R2-predni"
+   ]
+  },
+  {
+   "delka_mm": 600,
+   "ks": 2,
+   "id": [
+    "horni-bok-L",
+    "horni-bok-P"
+   ]
+  },
+  {
+   "delka_mm": 570,
+   "ks": 4,
+   "id": [
+    "MB-zadni",
+    "MB-kolejnice",
+    "MM-zadni",
+    "MM-predni"
+   ]
+  },
+  {
+   "delka_mm": 500,
+   "ks": 1,
+   "id": [
+    "rameno-sloup"
+   ]
+  },
+  {
+   "delka_mm": 350,
+   "ks": 6,
+   "id": [
+    "LB-zadni",
+    "LB-predni",
+    "LM-zadni",
+    "LM-predni",
+    "LT-zadni",
+    "LT-predni"
+   ]
+  },
+  {
+   "delka_mm": 200,
+   "ks": 2,
+   "id": [
+    "posuvny-1",
+    "posuvny-2"
+   ]
+  }
+ ],
+ "desky": [
+  {
+   "id": "police-1",
+   "rozmer_mm": [
+    350,
+    800
+   ],
+   "tloustka_mm": 18,
+   "plocha_m2": 0.28
+  },
+  {
+   "id": "police-2",
+   "rozmer_mm": [
+    350,
+    800
+   ],
+   "tloustka_mm": 18,
+   "plocha_m2": 0.28
+  },
+  {
+   "id": "police-3",
+   "rozmer_mm": [
+    350,
+    800
+   ],
+   "tloustka_mm": 18,
+   "plocha_m2": 0.28
+  },
+  {
+   "id": "police-S",
+   "rozmer_mm": [
+    570,
+    800
+   ],
+   "tloustka_mm": 18,
+   "plocha_m2": 0.456
+  },
+  {
+   "id": "deska-spodni",
+   "rozmer_mm": [
+    570,
+    650
+   ],
+   "tloustka_mm": 18,
+   "plocha_m2": 0.371
+  },
+  {
+   "id": "deska-stolu",
+   "rozmer_mm": [
+    610,
+    800
+   ],
+   "tloustka_mm": 18,
+   "plocha_m2": 0.488
+  }
+ ],
+ "spojky": {
+  "part_id": "product_3176",
+  "sku": "2.2.001.10.4040.33",
+  "nazev": "40x40 Rohová spojka",
+  "ks": 65
+ },
+ "patky": {
+  "part_id": "product_3283",
+  "sku": "2.3.002.1050",
+  "nazev": "Vyrovnávací šroubovací patka M10",
+  "ks": 8
+ },
+ "drzaky": {
+  "part_id": "product_3207",
+  "sku": "2.2.001.10.4040.01",
+  "nazev": "Úhelníková spojka 40x40 (držák desky)",
+  "ks": 16
+ },
+ "led": {
+  "part_id": "product_4929",
+  "sku": "LED1200",
+  "nazev": "Osvětlení LED 1,2 m 33W 3960lm",
+  "ks": 1
+ },
+ "zastupne": [
+  {
+   "id": "valecka-draha-1",
+   "kategorie": "zastupne-draha",
+   "nazev": "Válečková dráha 60x24 D15 (zástupně)",
+   "rozmer_mm": [
+    59.545,
+    24,
+    782
+   ]
+  },
+  {
+   "id": "valecka-draha-2",
+   "kategorie": "zastupne-draha",
+   "nazev": "Válečková dráha 60x24 D15 (zástupně)",
+   "rozmer_mm": [
+    59.545,
+    24,
+    782
+   ]
+  },
+  {
+   "id": "valecka-draha-3",
+   "kategorie": "zastupne-draha",
+   "nazev": "Válečková dráha 60x24 D15 (zástupně)",
+   "rozmer_mm": [
+    59.545,
+    24,
+    782
+   ]
+  },
+  {
+   "id": "valecka-draha-4",
+   "kategorie": "zastupne-draha",
+   "nazev": "Válečková dráha 60x24 D15 (zástupně)",
+   "rozmer_mm": [
+    59.545,
+    24,
+    782
+   ]
+  },
+  {
+   "id": "valecka-draha-5",
+   "kategorie": "zastupne-draha",
+   "nazev": "Válečková dráha 60x24 D15 (zástupně)",
+   "rozmer_mm": [
+    59.545,
+    24,
+    782
+   ]
+  },
+  {
+   "id": "valecka-draha-6",
+   "kategorie": "zastupne-draha",
+   "nazev": "Válečková dráha 60x24 D15 (zástupně)",
+   "rozmer_mm": [
+    59.545,
+    24,
+    782
+   ]
+  },
+  {
+   "id": "valecka-draha-7",
+   "kategorie": "zastupne-draha",
+   "nazev": "Válečková dráha 60x24 D15 (zástupně)",
+   "rozmer_mm": [
+    59.545,
+    24,
+    782
+   ]
+  },
+  {
+   "id": "valecka-draha-8",
+   "kategorie": "zastupne-draha",
+   "nazev": "Válečková dráha 60x24 D15 (zástupně)",
+   "rozmer_mm": [
+    59.545,
+    24,
+    782
+   ]
+  },
+  {
+   "id": "valecka-draha-9",
+   "kategorie": "zastupne-draha",
+   "nazev": "Válečková dráha 60x24 D15 (zástupně)",
+   "rozmer_mm": [
+    59.545,
+    24,
+    782
+   ]
+  },
+  {
+   "id": "valecka-draha-10",
+   "kategorie": "zastupne-draha",
+   "nazev": "Válečková dráha 60x24 D15 (zástupně)",
+   "rozmer_mm": [
+    59.545,
+    24,
+    782
+   ]
+  },
+  {
+   "id": "valecka-draha-11",
+   "kategorie": "zastupne-draha",
+   "nazev": "Válečková dráha 60x24 D15 (zástupně)",
+   "rozmer_mm": [
+    59.545,
+    24,
+    782
+   ]
+  },
+  {
+   "id": "celni-desticka",
+   "kategorie": "zastupne-plech",
+   "nazev": "Čelní plech válečkové dráhy s úchopem (zástupně)",
+   "rozmer_mm": [
+    670,
+    120,
+    6
+   ]
+  },
+  {
+   "id": "kovani-L",
+   "kategorie": "zastupne-kovani",
+   "nazev": "Polohovací kování cca 10 poloh - levé (zástupně)",
+   "rozmer_mm": [
+    30,
+    320,
+    40
+   ]
+  },
+  {
+   "id": "kovani-P",
+   "kategorie": "zastupne-kovani",
+   "nazev": "Polohovací kování cca 10 poloh - pravé (zástupně)",
+   "rozmer_mm": [
+    30,
+    320,
+    40
+   ]
+  },
+  {
+   "id": "rameno-podstava",
+   "kategorie": "zastupne-rameno",
+   "nazev": "Rameno monitoru - upínací patka na sloupku (zástupně)",
+   "rozmer_mm": [
+    30,
+    40,
+    16
+   ]
+  },
+  {
+   "id": "rameno-vodorovne",
+   "kategorie": "zastupne-rameno",
+   "nazev": "Rameno monitoru otočné - vodorovné rameno (zástupně)",
+   "rozmer_mm": [
+    20,
+    20,
+    244
+   ]
+  },
+  {
+   "id": "rameno-hlava",
+   "kategorie": "zastupne-rameno",
+   "nazev": "Rameno monitoru - hlava VESA 100x100 (zástupně)",
+   "rozmer_mm": [
+    100,
+    100,
+    6
+   ]
+  },
+  {
+   "id": "vypinac",
+   "kategorie": "zastupne-vypinac",
+   "nazev": "Vypínač stmívací zvonkový (zástupně)",
+   "rozmer_mm": [
+    40,
+    150,
+    60
+   ]
+  }
+ ],
+ "profily_celkem": {
+  "ks": 46,
+  "delka_mm": 36898
+ },
+ "desky_celkem_m2": 2.155,
+ "profil_katalog": {
+  "part_id": "Object_11",
+  "sku": "1.1.10.040040.03",
+  "nazev": "Profil 40x40 SuperLight S10 (drážka 10 mm)"
+ },
+ "deska_katalog": {
+  "part_id": "product_4933",
+  "sku": "Laminodeska.SEDA.18",
+  "nazev": "Laminovaná dřevotříska šedá 18 mm"
+ },
+ "spoje_bez_rohove_spojky": [
+  "MB-bok-B -> noha-BZ",
+  "MB-zadni -> noha-BZ",
+  "MB-zadni -> noha-CZ",
+  "MB-bok-B -> noha-BP"
+ ],
+ "pocet_spoju_profilu": {
+  "T_a_celni": 69,
+  "bocni_dosedy": 6
+ }
+}

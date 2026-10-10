@@ -1,0 +1,235 @@
+VALIDACE sestavy "Stůl balení LIDL - prototyp II (z výkresu)"
+spec sha256[:12] = 2e3cdb88d742, three r128, měřeno na REÁLNÉ geometrii GLB (parseGlbMesh), tolerance dotyku 0.05 mm
+
+== 0. ROZSAH MĚŘENÍ ==
+dílů celkem: 160 (katalogových 142, zástupných 18); podle kategorií: profil 46, deska 6, patka 8, drzak 16, led 1, zastupne-draha 11, zastupne-plech 1, zastupne-kovani 2, zastupne-rameno 3, zastupne-vypinac 1, spojka 65
+dvojic dílů porovnáno obálkami (všechny s všemi): 12720
+profilů 46 -> dvojic profil x profil: 1035
+
+== 1. SPOJE PROFILŮ (čelo celou plochou na stěně jiného profilu; touchReport / isValidFlushTouch) ==
+nalezeno T / čelních spojů: 69; bočních dosedů (posuvný profil na T-matice): 6; neočekávaných plošných dotyků: 0
+  OK  LB-zadni       -> noha-AZ        osa x v 40  x:g=-0.000/o=0.000 y:g=-114.000/o=40.000 z:g=-40.000/o=40.000  krytí čela 40x40  spojka -y
+  OK  LB-leva        -> noha-AZ        osa z v 40  x:g=-40.000/o=40.000 y:g=-114.000/o=40.000 z:g=-0.000/o=0.000  krytí čela 40x40  spojka -y
+  OK  LM-zadni       -> noha-AZ        osa x v 40  x:g=-0.000/o=0.000 y:g=-736.000/o=40.000 z:g=-40.000/o=40.000  krytí čela 40x40  spojka -y
+  OK  LM-leva        -> noha-AZ        osa z v 40  x:g=-40.000/o=40.000 y:g=-736.000/o=40.000 z:g=-0.000/o=0.000  krytí čela 40x40  spojka -y
+  OK  LT-zadni       -> noha-AZ        osa x v 40  x:g=-0.000/o=0.000 y:g=-610.000/o=40.000 z:g=-40.000/o=40.000  krytí čela 40x40  spojka -y
+  OK  LT-leva        -> noha-AZ        osa z v 40  x:g=-40.000/o=40.000 y:g=-610.000/o=40.000 z:g=-0.000/o=0.000  krytí čela 40x40  spojka -y
+  OK  noha-AZ        -> horni-bok-L    osa y v 2060  x:g=-40.000/o=40.000 y:g=0.000/o=-0.000 z:g=-40.000/o=40.000  krytí čela 40x40  spojka +z
+  OK  LB-zadni       -> noha-BZ        osa x v 390  x:g=0.000/o=0.000 y:g=-114.000/o=40.000 z:g=-40.000/o=40.000  krytí čela 40x40  spojka -y
+  OK  LB-prava       -> noha-BZ        osa z v 40  x:g=-40.000/o=40.000 y:g=-114.000/o=40.000 z:g=-0.000/o=0.000  krytí čela 40x40  spojka +y
+  OK  LM-zadni       -> noha-BZ        osa x v 390  x:g=0.000/o=0.000 y:g=-736.000/o=40.000 z:g=-40.000/o=40.000  krytí čela 40x40  spojka -y
+  OK  LM-prava       -> noha-BZ        osa z v 40  x:g=-40.000/o=40.000 y:g=-736.000/o=40.000 z:g=-0.000/o=0.000  krytí čela 40x40  spojka -y
+  OK  LT-zadni       -> noha-BZ        osa x v 390  x:g=0.000/o=0.000 y:g=-610.000/o=40.000 z:g=-40.000/o=40.000  krytí čela 40x40  spojka -y
+  OK  LT-prava       -> noha-BZ        osa z v 40  x:g=-40.000/o=40.000 y:g=-610.000/o=40.000 z:g=-0.000/o=0.000  krytí čela 40x40  spojka -y
+  OK  MB-bok-B       -> noha-BZ        osa z v 40  x:g=-40.000/o=40.000 y:g=-40.000/o=40.000 z:g=-0.000/o=0.000  krytí čela 40x40  BEZ spojky
+  OK  MB-zadni       -> noha-BZ        osa x v 430  x:g=-0.000/o=0.000 y:g=-40.000/o=40.000 z:g=-40.000/o=40.000  krytí čela 40x40  BEZ spojky
+  OK  MM-zadni       -> noha-BZ        osa x v 430  x:g=-0.000/o=0.000 y:g=-736.000/o=40.000 z:g=-40.000/o=40.000  krytí čela 40x40  spojka -y
+  OK  noha-BZ        -> horni-zadni    osa y v 2060  x:g=-390.000/o=40.000 y:g=0.000/o=-0.000 z:g=-40.000/o=40.000  krytí čela 40x40  spojka +x
+  OK  zed-spodni     -> noha-BZ        osa x v 430  x:g=-0.000/o=0.000 y:g=-610.000/o=40.000 z:g=-40.000/o=40.000  krytí čela 40x40  spojka -y
+  OK  zed-horni      -> noha-BZ        osa x v 430  x:g=-0.000/o=0.000 y:g=-450.000/o=40.000 z:g=-40.000/o=40.000  krytí čela 40x40  spojka -y
+  OK  MB-bok-C       -> noha-CZ        osa z v 40  x:g=-40.000/o=40.000 y:g=-40.000/o=40.000 z:g=-0.000/o=0.000  krytí čela 40x40  spojka +y
+  OK  MB-zadni       -> noha-CZ        osa x v 1000  x:g=0.000/o=0.000 y:g=-40.000/o=40.000 z:g=-40.000/o=40.000  krytí čela 40x40  BEZ spojky
+  OK  MM-zadni       -> noha-CZ        osa x v 1000  x:g=0.000/o=0.000 y:g=-40.000/o=40.000 z:g=-40.000/o=40.000  krytí čela 40x40  spojka -y
+  OK  MM-prava       -> noha-CZ        osa z v 40  x:g=-40.000/o=40.000 y:g=-40.000/o=40.000 z:g=-0.000/o=0.000  krytí čela 40x40  spojka -y
+  OK  R0-zadni       -> noha-CZ        osa x v 1040  x:g=0.000/o=0.000 y:g=-114.000/o=40.000 z:g=-40.000/o=40.000  krytí čela 40x40  spojka -y
+  OK  R1-bok-C       -> noha-CZ        osa z v 40  x:g=-40.000/o=40.000 y:g=-364.000/o=40.000 z:g=-0.000/o=0.000  krytí čela 40x40  spojka -y
+  OK  R2-zadni       -> noha-CZ        osa x v 1040  x:g=0.000/o=0.000 y:g=-92.000/o=40.000 z:g=-40.000/o=40.000  krytí čela 40x40  spojka -y
+  OK  R0-zadni       -> noha-DZ        osa x v 1710  x:g=0.000/o=0.000 y:g=-114.000/o=40.000 z:g=-40.000/o=40.000  krytí čela 40x40  spojka -y
+  OK  R0-prava       -> noha-DZ        osa z v 40  x:g=-40.000/o=40.000 y:g=-114.000/o=40.000 z:g=-0.000/o=0.000  krytí čela 40x40  spojka -y
+  OK  R1-bok-D       -> noha-DZ        osa z v 40  x:g=-40.000/o=40.000 y:g=-364.000/o=40.000 z:g=-0.000/o=0.000  krytí čela 40x40  spojka -y
+  OK  R2-zadni       -> noha-DZ        osa x v 1710  x:g=0.000/o=0.000 y:g=-684.000/o=40.000 z:g=-40.000/o=40.000  krytí čela 40x40  spojka -y
+  OK  D-bok-stul     -> noha-DZ        osa z v 40  x:g=-40.000/o=40.000 y:g=-736.000/o=40.000 z:g=-0.000/o=0.000  krytí čela 40x40  spojka -y
+  OK  noha-DZ        -> horni-bok-P    osa y v 2060  x:g=-40.000/o=40.000 y:g=0.000/o=-0.000 z:g=-40.000/o=40.000  krytí čela 40x40  spojka +z
+  OK  zed-spodni     -> noha-DZ        osa x v 1710  x:g=0.000/o=0.000 y:g=-610.000/o=40.000 z:g=-40.000/o=40.000  krytí čela 40x40  spojka -y
+  OK  zed-horni      -> noha-DZ        osa x v 1710  x:g=0.000/o=0.000 y:g=-450.000/o=40.000 z:g=-40.000/o=40.000  krytí čela 40x40  spojka -y
+  OK  LB-predni      -> noha-AP        osa x v 40  x:g=-0.000/o=0.000 y:g=-114.000/o=40.000 z:g=-40.000/o=40.000  krytí čela 40x40  spojka -y
+  OK  LB-leva        -> noha-AP        osa z v 760  x:g=-40.000/o=40.000 y:g=-114.000/o=40.000 z:g=0.000/o=0.000  krytí čela 40x40  spojka -y
+  OK  LM-predni      -> noha-AP        osa x v 40  x:g=-0.000/o=0.000 y:g=-736.000/o=40.000 z:g=-40.000/o=40.000  krytí čela 40x40  spojka -y
+  OK  LM-leva        -> noha-AP        osa z v 760  x:g=-40.000/o=40.000 y:g=-736.000/o=40.000 z:g=0.000/o=0.000  krytí čela 40x40  spojka -y
+  OK  LT-predni      -> noha-AP        osa x v 40  x:g=-0.000/o=0.000 y:g=-40.000/o=40.000 z:g=-40.000/o=40.000  krytí čela 40x40  spojka -y
+  OK  LT-leva        -> noha-AP        osa z v 760  x:g=-40.000/o=40.000 y:g=-40.000/o=40.000 z:g=0.000/o=0.000  krytí čela 40x40  spojka -y
+  OK  LB-predni      -> noha-BP        osa x v 390  x:g=0.000/o=0.000 y:g=-114.000/o=40.000 z:g=-40.000/o=40.000  krytí čela 40x40  spojka -y
+  OK  LB-prava       -> noha-BP        osa z v 760  x:g=-40.000/o=40.000 y:g=-114.000/o=40.000 z:g=0.000/o=0.000  krytí čela 40x40  spojka +y
+  OK  LM-predni      -> noha-BP        osa x v 390  x:g=0.000/o=0.000 y:g=-736.000/o=40.000 z:g=-40.000/o=40.000  krytí čela 40x40  spojka -y
+  OK  LM-prava       -> noha-BP        osa z v 760  x:g=-40.000/o=40.000 y:g=-736.000/o=40.000 z:g=0.000/o=0.000  krytí čela 40x40  spojka -y
+  OK  LT-predni      -> noha-BP        osa x v 390  x:g=0.000/o=0.000 y:g=-40.000/o=40.000 z:g=-40.000/o=40.000  krytí čela 40x40  spojka -y
+  OK  LT-prava       -> noha-BP        osa z v 760  x:g=-40.000/o=40.000 y:g=-40.000/o=40.000 z:g=0.000/o=0.000  krytí čela 40x40  spojka -y
+  OK  MB-bok-B       -> noha-BP        osa z v 760  x:g=-40.000/o=40.000 y:g=-40.000/o=40.000 z:g=0.000/o=0.000  krytí čela 40x40  BEZ spojky
+  OK  MM-predni      -> noha-BP        osa x v 430  x:g=-0.000/o=0.000 y:g=-736.000/o=40.000 z:g=-40.000/o=40.000  krytí čela 40x40  spojka -y
+  OK  MB-bok-C       -> noha-CP        osa z v 760  x:g=-40.000/o=40.000 y:g=-40.000/o=40.000 z:g=0.000/o=0.000  krytí čela 40x40  spojka +y
+  OK  MM-predni      -> noha-CP        osa x v 1000  x:g=0.000/o=0.000 y:g=-40.000/o=40.000 z:g=-40.000/o=40.000  krytí čela 40x40  spojka -y
+  OK  MM-prava       -> noha-CP        osa z v 760  x:g=-40.000/o=40.000 y:g=-40.000/o=40.000 z:g=0.000/o=0.000  krytí čela 40x40  spojka -y
+  OK  R0-predni      -> noha-CP        osa x v 1040  x:g=0.000/o=0.000 y:g=-114.000/o=40.000 z:g=-40.000/o=40.000  krytí čela 40x40  spojka -y
+  OK  R1-bok-C       -> noha-CP        osa z v 760  x:g=-40.000/o=40.000 y:g=-364.000/o=40.000 z:g=0.000/o=0.000  krytí čela 40x40  spojka -y
+  OK  R1-predni      -> noha-CP        osa x v 1040  x:g=0.000/o=0.000 y:g=-364.000/o=40.000 z:g=-40.000/o=40.000  krytí čela 40x40  spojka -y
+  OK  R2-predni      -> noha-CP        osa x v 1040  x:g=0.000/o=0.000 y:g=-92.000/o=40.000 z:g=-40.000/o=40.000  krytí čela 40x40  spojka -y
+  OK  R0-predni      -> noha-DP        osa x v 1710  x:g=0.000/o=0.000 y:g=-114.000/o=40.000 z:g=-40.000/o=40.000  krytí čela 40x40  spojka -y
+  OK  R0-prava       -> noha-DP        osa z v 760  x:g=-40.000/o=40.000 y:g=-114.000/o=40.000 z:g=0.000/o=0.000  krytí čela 40x40  spojka -y
+  OK  R1-bok-D       -> noha-DP        osa z v 760  x:g=-40.000/o=40.000 y:g=-364.000/o=40.000 z:g=0.000/o=0.000  krytí čela 40x40  spojka -y
+  OK  R1-predni      -> noha-DP        osa x v 1710  x:g=0.000/o=0.000 y:g=-364.000/o=40.000 z:g=-40.000/o=40.000  krytí čela 40x40  spojka -y
+  OK  R2-predni      -> noha-DP        osa x v 1710  x:g=0.000/o=0.000 y:g=-92.000/o=40.000 z:g=-40.000/o=40.000  krytí čela 40x40  spojka -y
+  OK  D-bok-stul     -> noha-DP        osa z v 760  x:g=-40.000/o=40.000 y:g=-40.000/o=40.000 z:g=0.000/o=0.000  krytí čela 40x40  spojka -y
+  OK  MB-kolejnice   -> MB-bok-B       osa x v 430  x:g=-0.000/o=0.000 y:g=-40.000/o=40.000 z:g=-150.000/o=40.000  krytí čela 40x40  spojka +z
+  OK  MB-kolejnice   -> MB-bok-C       osa x v 1000  x:g=0.000/o=0.000 y:g=-40.000/o=40.000 z:g=-150.000/o=40.000  krytí čela 40x40  spojka +z
+  OK  R1-kolejnice   -> R1-bok-C       osa x v 1040  x:g=0.000/o=0.000 y:g=-40.000/o=40.000 z:g=-150.000/o=40.000  krytí čela 40x40  spojka +z
+  OK  R1-kolejnice   -> R1-bok-D       osa x v 1710  x:g=0.000/o=0.000 y:g=-40.000/o=40.000 z:g=-150.000/o=40.000  krytí čela 40x40  spojka +z
+  OK  horni-zadni    -> horni-bok-L    osa x v 40  x:g=-0.000/o=0.000 y:g=-40.000/o=40.000 z:g=-40.000/o=40.000  krytí čela 40x40  spojka +z
+  OK  horni-predni   -> horni-bok-L    osa x v 40  x:g=-0.000/o=0.000 y:g=-40.000/o=40.000 z:g=-40.000/o=40.000  krytí čela 40x40  spojka -z
+  OK  horni-zadni    -> horni-bok-P    osa x v 1710  x:g=-0.000/o=0.000 y:g=-40.000/o=40.000 z:g=-40.000/o=40.000  krytí čela 40x40  spojka +z
+  OK  horni-predni   -> horni-bok-P    osa x v 1710  x:g=-0.000/o=0.000 y:g=-40.000/o=40.000 z:g=-40.000/o=40.000  krytí čela 40x40  spojka -z
+spojů platných: 69 / 69
+  boční dosed posuvny-1 -> zed-spodni osa z v 40  x:g=-455.000/o=40.000 y:g=-40.000/o=40.000 z:g=0.000/o=-0.000  (T-matice, účtuje se jako spoj)
+  boční dosed posuvny-2 -> zed-spodni osa z v 40  x:g=-250.000/o=40.000 y:g=-40.000/o=40.000 z:g=0.000/o=-0.000  (T-matice, účtuje se jako spoj)
+  boční dosed rameno-sloup -> zed-spodni osa z v 40  x:g=-125.000/o=40.000 y:g=-200.000/o=40.000 z:g=0.000/o=-0.000  (T-matice, účtuje se jako spoj)
+  boční dosed posuvny-1 -> zed-horni osa z v 40  x:g=-455.000/o=40.000 y:g=-40.000/o=40.000 z:g=0.000/o=-0.000  (T-matice, účtuje se jako spoj)
+  boční dosed posuvny-2 -> zed-horni osa z v 40  x:g=-250.000/o=40.000 y:g=-40.000/o=40.000 z:g=0.000/o=-0.000  (T-matice, účtuje se jako spoj)
+  boční dosed rameno-sloup -> zed-horni osa z v 40  x:g=-125.000/o=40.000 y:g=-40.000/o=40.000 z:g=0.000/o=-0.000  (T-matice, účtuje se jako spoj)
+T-styl (připojovaný profil = světlé rozpětí, tj. zkrácení o CELOU šířku průchozího): ověřeno u 33 příček
+
+== 2. NOHY (volné čelo; patka) ==
+  noha-AZ: spodek y=46 volný (patka product_3283); vršek y=2060 uzavřen horním rámem horni-bok-L
+  noha-BZ: spodek y=46 volný (patka product_3283); vršek y=2060 uzavřen horním rámem horni-zadni
+  noha-CZ: spodek y=46 volný (patka product_3283); vršek y=782 volný
+  noha-DZ: spodek y=46 volný (patka product_3283); vršek y=2060 uzavřen horním rámem horni-bok-P
+  noha-AP: spodek y=46 volný (patka product_3283); vršek y=1490 volný
+  noha-BP: spodek y=46 volný (patka product_3283); vršek y=1490 volný
+  noha-CP: spodek y=46 volný (patka product_3283); vršek y=782 volný
+  noha-DP: spodek y=46 volný (patka product_3283); vršek y=782 volný
+
+== 3. PATKY (product_3283) ==
+  patka-noha-AZ: základna y=0 (podlaha 0), zásun 33 mm (část nad spodkem nohy má poloměr max 9.815 mm <= 20; vrcholů 106) OK
+  patka-noha-BZ: základna y=0 (podlaha 0), zásun 33 mm (část nad spodkem nohy má poloměr max 9.815 mm <= 20; vrcholů 106) OK
+  patka-noha-CZ: základna y=0 (podlaha 0), zásun 33 mm (část nad spodkem nohy má poloměr max 9.815 mm <= 20; vrcholů 106) OK
+  patka-noha-DZ: základna y=0 (podlaha 0), zásun 33 mm (část nad spodkem nohy má poloměr max 9.815 mm <= 20; vrcholů 106) OK
+  patka-noha-AP: základna y=0 (podlaha 0), zásun 33 mm (část nad spodkem nohy má poloměr max 9.815 mm <= 20; vrcholů 106) OK
+  patka-noha-BP: základna y=0 (podlaha 0), zásun 33 mm (část nad spodkem nohy má poloměr max 9.815 mm <= 20; vrcholů 106) OK
+  patka-noha-CP: základna y=0 (podlaha 0), zásun 33 mm (část nad spodkem nohy má poloměr max 9.815 mm <= 20; vrcholů 106) OK
+  patka-noha-DP: základna y=0 (podlaha 0), zásun 33 mm (část nad spodkem nohy má poloměr max 9.815 mm <= 20; vrcholů 106) OK
+
+== 4. KOLIZE (všechny dvojice dílů: obálky na 3 osách, pak přesný mesh test) ==
+překryv obálek na všech 3 osách současně (lib.fullCollisionCheck): 167 dvojic, z toho očekávaných (zámek spojky, závit patky): 138, ostatních: 29
+  ostatní překryvy obálek podle druhu (rozhoduje mesh test níže): patka x profil 6, spojka x spojka 23
+přesný mesh test (SAT + objemové vzorkování, scripts/2026-09-11_mesh_kolize_lib.js) na 0 dvojicích: kolize 0 (očekávané zámky/závity 0, NEočekávané 0), obálky ano / mesh ne 0
+
+== 5. ROHOVÉ SPOJKY (product_3176): zámek v drážce obou profilů ==
+  OK  spojka-13-LB-zadni-noha-AZ         strana -y  zámek v noha-AZ: 3.43 mm, v LB-zadni: 3.43 mm
+  OK  spojka-08-LB-leva-noha-AZ          strana -y  zámek v noha-AZ: 3.43 mm, v LB-leva: 3.43 mm
+  OK  spojka-21-LM-zadni-noha-AZ         strana -y  zámek v noha-AZ: 3.43 mm, v LM-zadni: 3.43 mm
+  OK  spojka-16-LM-leva-noha-AZ          strana -y  zámek v noha-AZ: 3.43 mm, v LM-leva: 3.43 mm
+  OK  spojka-29-LT-zadni-noha-AZ         strana -y  zámek v noha-AZ: 3.43 mm, v LT-zadni: 3.43 mm
+  OK  spojka-24-LT-leva-noha-AZ          strana -y  zámek v noha-AZ: 3.43 mm, v LT-leva: 3.43 mm
+  OK  spojka-41-noha-AZ-horni-bok-L      strana +z  zámek v horni-bok-L: 3.43 mm, v noha-AZ: 3.43 mm
+  OK  spojka-14-LB-zadni-noha-BZ         strana -y  zámek v noha-BZ: 3.43 mm, v LB-zadni: 3.43 mm
+  OK  spojka-10-LB-prava-noha-BZ         strana +y  zámek v noha-BZ: 3.43 mm, v LB-prava: 3.43 mm
+  OK  spojka-22-LM-zadni-noha-BZ         strana -y  zámek v noha-BZ: 3.43 mm, v LM-zadni: 3.43 mm
+  OK  spojka-18-LM-prava-noha-BZ         strana -y  zámek v noha-BZ: 3.43 mm, v LM-prava: 3.43 mm
+  OK  spojka-30-LT-zadni-noha-BZ         strana -y  zámek v noha-BZ: 3.43 mm, v LT-zadni: 3.43 mm
+  OK  spojka-26-LT-prava-noha-BZ         strana -y  zámek v noha-BZ: 3.43 mm, v LT-prava: 3.43 mm
+  OK  spojka-39-MM-zadni-noha-BZ         strana -y  zámek v noha-BZ: 3.43 mm, v MM-zadni: 3.43 mm
+  OK  spojka-42-noha-BZ-horni-zadni      strana +x  zámek v horni-zadni: 3.43 mm, v noha-BZ: 3.43 mm
+  OK  spojka-64-zed-spodni-noha-BZ       strana -y  zámek v noha-BZ: 3.43 mm, v zed-spodni: 3.43 mm
+  OK  spojka-62-zed-horni-noha-BZ        strana -y  zámek v noha-BZ: 3.43 mm, v zed-horni: 3.43 mm
+  OK  spojka-32-MB-bok-C-noha-CZ         strana +y  zámek v noha-CZ: 3.43 mm, v MB-bok-C: 3.43 mm
+  OK  spojka-40-MM-zadni-noha-CZ         strana -y  zámek v noha-CZ: 3.43 mm, v MM-zadni: 3.43 mm
+  OK  spojka-36-MM-prava-noha-CZ         strana -y  zámek v noha-CZ: 3.43 mm, v MM-prava: 3.43 mm
+  OK  spojka-48-R0-zadni-noha-CZ         strana -y  zámek v noha-CZ: 3.43 mm, v R0-zadni: 3.43 mm
+  OK  spojka-51-R1-bok-C-noha-CZ         strana -y  zámek v noha-CZ: 3.43 mm, v R1-bok-C: 3.43 mm
+  OK  spojka-60-R2-zadni-noha-CZ         strana -y  zámek v noha-CZ: 3.43 mm, v R2-zadni: 3.43 mm
+  OK  spojka-49-R0-zadni-noha-DZ         strana -y  zámek v noha-DZ: 3.43 mm, v R0-zadni: 3.43 mm
+  OK  spojka-45-R0-prava-noha-DZ         strana -y  zámek v noha-DZ: 3.43 mm, v R0-prava: 3.43 mm
+  OK  spojka-53-R1-bok-D-noha-DZ         strana -y  zámek v noha-DZ: 3.43 mm, v R1-bok-D: 3.43 mm
+  OK  spojka-61-R2-zadni-noha-DZ         strana -y  zámek v noha-DZ: 3.43 mm, v R2-zadni: 3.43 mm
+  OK  spojka-02-D-bok-stul-noha-DZ       strana -y  zámek v noha-DZ: 3.43 mm, v D-bok-stul: 3.43 mm
+  OK  spojka-43-noha-DZ-horni-bok-P      strana +z  zámek v horni-bok-P: 3.43 mm, v noha-DZ: 3.43 mm
+  OK  spojka-65-zed-spodni-noha-DZ       strana -y  zámek v noha-DZ: 3.43 mm, v zed-spodni: 3.43 mm
+  OK  spojka-63-zed-horni-noha-DZ        strana -y  zámek v noha-DZ: 3.43 mm, v zed-horni: 3.43 mm
+  OK  spojka-11-LB-predni-noha-AP        strana -y  zámek v noha-AP: 3.43 mm, v LB-predni: 3.43 mm
+  OK  spojka-07-LB-leva-noha-AP          strana -y  zámek v noha-AP: 3.43 mm, v LB-leva: 3.43 mm
+  OK  spojka-19-LM-predni-noha-AP        strana -y  zámek v noha-AP: 3.43 mm, v LM-predni: 3.43 mm
+  OK  spojka-15-LM-leva-noha-AP          strana -y  zámek v noha-AP: 3.43 mm, v LM-leva: 3.43 mm
+  OK  spojka-27-LT-predni-noha-AP        strana -y  zámek v noha-AP: 3.43 mm, v LT-predni: 3.43 mm
+  OK  spojka-23-LT-leva-noha-AP          strana -y  zámek v noha-AP: 3.43 mm, v LT-leva: 3.43 mm
+  OK  spojka-12-LB-predni-noha-BP        strana -y  zámek v noha-BP: 3.43 mm, v LB-predni: 3.43 mm
+  OK  spojka-09-LB-prava-noha-BP         strana +y  zámek v noha-BP: 3.43 mm, v LB-prava: 3.43 mm
+  OK  spojka-20-LM-predni-noha-BP        strana -y  zámek v noha-BP: 3.43 mm, v LM-predni: 3.43 mm
+  OK  spojka-17-LM-prava-noha-BP         strana -y  zámek v noha-BP: 3.43 mm, v LM-prava: 3.43 mm
+  OK  spojka-28-LT-predni-noha-BP        strana -y  zámek v noha-BP: 3.43 mm, v LT-predni: 3.43 mm
+  OK  spojka-25-LT-prava-noha-BP         strana -y  zámek v noha-BP: 3.43 mm, v LT-prava: 3.43 mm
+  OK  spojka-37-MM-predni-noha-BP        strana -y  zámek v noha-BP: 3.43 mm, v MM-predni: 3.43 mm
+  OK  spojka-31-MB-bok-C-noha-CP         strana +y  zámek v noha-CP: 3.43 mm, v MB-bok-C: 3.43 mm
+  OK  spojka-38-MM-predni-noha-CP        strana -y  zámek v noha-CP: 3.43 mm, v MM-predni: 3.43 mm
+  OK  spojka-35-MM-prava-noha-CP         strana -y  zámek v noha-CP: 3.43 mm, v MM-prava: 3.43 mm
+  OK  spojka-46-R0-predni-noha-CP        strana -y  zámek v noha-CP: 3.43 mm, v R0-predni: 3.43 mm
+  OK  spojka-50-R1-bok-C-noha-CP         strana -y  zámek v noha-CP: 3.43 mm, v R1-bok-C: 3.43 mm
+  OK  spojka-56-R1-predni-noha-CP        strana -y  zámek v noha-CP: 3.43 mm, v R1-predni: 3.43 mm
+  OK  spojka-58-R2-predni-noha-CP        strana -y  zámek v noha-CP: 3.43 mm, v R2-predni: 3.43 mm
+  OK  spojka-47-R0-predni-noha-DP        strana -y  zámek v noha-DP: 3.43 mm, v R0-predni: 3.43 mm
+  OK  spojka-44-R0-prava-noha-DP         strana -y  zámek v noha-DP: 3.43 mm, v R0-prava: 3.43 mm
+  OK  spojka-52-R1-bok-D-noha-DP         strana -y  zámek v noha-DP: 3.43 mm, v R1-bok-D: 3.43 mm
+  OK  spojka-57-R1-predni-noha-DP        strana -y  zámek v noha-DP: 3.43 mm, v R1-predni: 3.43 mm
+  OK  spojka-59-R2-predni-noha-DP        strana -y  zámek v noha-DP: 3.43 mm, v R2-predni: 3.43 mm
+  OK  spojka-01-D-bok-stul-noha-DP       strana -y  zámek v noha-DP: 3.43 mm, v D-bok-stul: 3.43 mm
+  OK  spojka-33-MB-kolejnice-MB-bok-B    strana +z  zámek v MB-bok-B: 3.43 mm, v MB-kolejnice: 3.43 mm
+  OK  spojka-34-MB-kolejnice-MB-bok-C    strana +z  zámek v MB-bok-C: 3.43 mm, v MB-kolejnice: 3.43 mm
+  OK  spojka-54-R1-kolejnice-R1-bok-C    strana +z  zámek v R1-bok-C: 3.43 mm, v R1-kolejnice: 3.43 mm
+  OK  spojka-55-R1-kolejnice-R1-bok-D    strana +z  zámek v R1-bok-D: 3.43 mm, v R1-kolejnice: 3.43 mm
+  OK  spojka-05-horni-zadni-horni-bok-L  strana +z  zámek v horni-bok-L: 3.43 mm, v horni-zadni: 3.43 mm
+  OK  spojka-03-horni-predni-horni-bok-L strana -z  zámek v horni-bok-L: 3.43 mm, v horni-predni: 3.43 mm
+  OK  spojka-06-horni-zadni-horni-bok-P  strana +z  zámek v horni-bok-P: 3.43 mm, v horni-zadni: 3.43 mm
+  OK  spojka-04-horni-predni-horni-bok-P strana -z  zámek v horni-bok-P: 3.43 mm, v horni-predni: 3.43 mm
+spojek se správným zámkem: 65 / 65; spojů BEZ rohové spojky: 4 (MB-bok-B->noha-BZ, MB-zadni->noha-BZ, MB-zadni->noha-CZ, MB-bok-B->noha-BP)
+
+== 6. ÚČETNICTVÍ SPOJŮ (invarianty I1-I4 validátoru, podmnožina = profily; příslušenství viz poznámka) ==
+profilů 46, plošných dotyků profil x profil (měřeno geometricky) 75, součet joint_count 75, dvojic v lic_peers 75
+  I1 symetrie lic_peers: OK; I2 každý dotyk registrován: OK; I2b lic_peers bez dotyku: OK; I3 součet joint_count == dotyky: OK; I4 used_conn indexy: OK
+ostatní plošné dosedy (nosné/montážní, do spojů se NEPOČÍTAJÍ): deska x profil 27, drzak x profil 16, profil x zastupne-vypinac 1, profil x zastupne-draha 28, profil x zastupne-plech 3, profil x zastupne-kovani 2, led x profil 1, profil x zastupne-rameno 1, deska x drzak 16, deska x zastupne-plech 1, zastupne-draha x zastupne-plech 11, zastupne-draha x zastupne-kovani 3, zastupne-rameno x zastupne-rameno 2
+
+== 7. KÓTY Z VÝKRESU x NAMĚŘENO V SESTAVĚ ==
+  OK    1750      1750   0.000  celková šířka (list 1, půdorys)
+  OK     800       800   0.000  celková hloubka (list 1, půdorys/bokorys)
+  OK    2100      2100   0.000  celková výška od podlahy (list 1)
+  OK     350       350   0.000  světlá rozpona levá sekce
+  OK     570       570   0.000  světlá rozpona střední sekce
+  OK     670       670   0.000  světlá rozpona pravá sekce
+  OK     430       430   0.000  půdorys 430 (A + levá sekce + B)
+  OK     610       610   0.000  půdorys 610 (deska stolu B..C vč. nohy C)
+  OK     710       710   0.000  půdorys 710 (pravá sekce vč. nohy D)
+  OK    1050      1050   0.000  výška police 1 (horní plocha)
+  OK    1218      1218   0.000  výška police 2
+  OK    1386      1386   0.000  výška police 3
+  OK     150       150   0.000  volná výška mezi policemi 1-2 (150)
+  OK     150       150   0.000  volná výška mezi policemi 2-3 (150)
+  OK     592       592   0.000  výška střední police 570x800 (592)
+  OK     800       800   0.000  horní plocha pracovní desky (800)
+  OK     470       470   0.000  světlá výška nad spodní deskou (470)
+  OK     150       150   0.000  volná výška pod příčkou stolu (150)
+  OK     650       650   0.000  hloubka spodní desky (650)
+  OK     150       150   0.000  přední odstup spodní desky (150)
+  OK    1490      1490   0.000  horní hrana skříně / zadních příček (1490)
+  OK    1450      1450   0.000  dolní hrana zadní příčky (1450)
+  OK     570       570   0.000  od spodku horního rámu po horní hranu příčky (570)
+  OK     200       200   0.000  rozestup zadních příček (200)
+  OK     650       650   0.000  od dolní příčky po desku stolu (650 - stavitelné)
+  OK    1260      1260   0.000  od spodku horního rámu po desku stolu (1260)
+  OK     500       500   0.000  sloupek ramene monitoru (500 - stavitelné)
+  OK    1280      1280   0.000  světlá šířka zadní stěny B..D (1280)
+  OK    1670      1670   0.000  délka přední/zadní příčky horního rámu (1670)
+  OK     600       600   0.000  hloubka horního rámu (600)
+  OK      46        46   0.000  spodek nohy nad podlahou (46)
+  OK     120       120   0.000  spodek nejnižší příčky L/P sekce nad podlahou (120)
+  OK     720       720   0.000  světlá hloubka mezi nohami (720, list 3)
+  OK     782       782   0.000  délka válečkové dráhy (782)
+  OK     306       306   0.000  vysunutí ramene monitoru od líce zadní nohy (306)
+  OK     250       250   0.000  vysunutí ramene od podstavy (250)
+kót porovnáno: 36, shoduje se na 0,01 mm: 36
+
+== 8. SOUHRN ==
+dílů v custom_shape_data.json: 142 (profily 46, desky 6, patky 8, držáky 16, rohové spojky 65, LED 1); zástupných dílů mimo katalog: 18
+varování: 4
+  VAROVÁNÍ spoj MB-bok-B -> noha-BP: BEZ rohové spojky (boční příčka 46..86 mm leží 34 mm pod příčkou levé sekce (120..160): spojka shora by zasáhla 3 mm do příčky 120..160 - spoj šroubem přes čelo (bez rohové spojky)); zamítnuté strany: -y: rodič má za dítětem jen 0 mm; +x: rodič má za dítětem jen 0 mm; -x: rodič má za dítětem jen 0 mm; +y: kolize s LB-prava (odsun 2.95 mm)
+  VAROVÁNÍ spoj MB-bok-B -> noha-BZ: BEZ rohové spojky (boční příčka 46..86 mm leží 34 mm pod příčkou levé sekce (120..160): spojka shora by zasáhla 3 mm do příčky 120..160 - spoj šroubem přes čelo (bez rohové spojky)); zamítnuté strany: -y: rodič má za dítětem jen 0 mm; +x: rodič má za dítětem jen 0 mm; -x: rodič má za dítětem jen 0 mm; +y: kolize s LB-prava (odsun 2.95 mm)
+  VAROVÁNÍ spoj MB-zadni -> noha-BZ: BEZ rohové spojky (spodní rám střední sekce (příčka 46..86 mm) leží těsně nad čely nohou a pod ní je deska 18 mm: spojka (37 mm) shora koliduje s deskou, zespodu není pod příčkou materiál nohy - spoj se musí řešit šroubem přes čelo (bez rohové spojky)); zamítnuté strany: -y: rodič má za dítětem jen 0 mm; +z: rodič má za dítětem jen 0 mm; -z: rodič má za dítětem jen 0 mm; +y: kolize s deska-spodni (odsun 21.39 mm)
+  VAROVÁNÍ spoj MB-zadni -> noha-CZ: BEZ rohové spojky (spodní rám střední sekce (příčka 46..86 mm) leží těsně nad čely nohou a pod ní je deska 18 mm: spojka (37 mm) shora koliduje s deskou, zespodu není pod příčkou materiál nohy - spoj se musí řešit šroubem přes čelo (bez rohové spojky)); zamítnuté strany: -y: rodič má za dítětem jen 0 mm; +z: rodič má za dítětem jen 0 mm; -z: rodič má za dítětem jen 0 mm; +y: kolize s deska-spodni (odsun 21.39 mm)
+chyb: 1
+  CHYBA DEV REŽIM (SKIP_MESH): přesný mesh test kolizí PŘESKOČEN - výsledek neplatí
+VÝSLEDEK: NEPROŠLO

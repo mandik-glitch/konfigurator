@@ -1,0 +1,3523 @@
+{
+ "parts": [
+  {
+   "part_id": "Object_11",
+   "position": [
+    20.000008,
+    1053,
+    19.99997
+   ],
+   "quaternion": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "scale": [
+    1,
+    2.014,
+    1
+   ],
+   "used_conn": [
+    0,
+    2
+   ],
+   "joint_count": 1,
+   "hidden_end_conn": [
+    0
+   ],
+   "was_through": true,
+   "was_attached": true,
+   "vertical": true,
+   "lic_peers": [
+    8,
+    10,
+    12,
+    14,
+    16,
+    18,
+    37
+   ],
+   "role": "stulbal-noha-AZ"
+  },
+  {
+   "part_id": "Object_11",
+   "position": [
+    410.000008,
+    1053,
+    19.99997
+   ],
+   "quaternion": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "scale": [
+    1,
+    2.014,
+    1
+   ],
+   "used_conn": [
+    0,
+    2
+   ],
+   "joint_count": 1,
+   "hidden_end_conn": [
+    0
+   ],
+   "was_through": true,
+   "was_attached": true,
+   "vertical": true,
+   "lic_peers": [
+    8,
+    11,
+    12,
+    15,
+    16,
+    19,
+    20,
+    22,
+    24,
+    39,
+    41,
+    42
+   ],
+   "role": "stulbal-noha-BZ"
+  },
+  {
+   "part_id": "Object_11",
+   "position": [
+    1020.000008,
+    414,
+    19.99997
+   ],
+   "quaternion": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "scale": [
+    1,
+    0.736,
+    1
+   ],
+   "used_conn": [
+    2
+   ],
+   "was_through": true,
+   "vertical": true,
+   "lic_peers": [
+    21,
+    22,
+    24,
+    26,
+    27,
+    30,
+    34
+   ],
+   "role": "stulbal-noha-CZ"
+  },
+  {
+   "part_id": "Object_11",
+   "position": [
+    1730.000008,
+    1053,
+    19.99997
+   ],
+   "quaternion": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "scale": [
+    1,
+    2.014,
+    1
+   ],
+   "used_conn": [
+    0,
+    2
+   ],
+   "joint_count": 1,
+   "hidden_end_conn": [
+    0
+   ],
+   "was_through": true,
+   "was_attached": true,
+   "vertical": true,
+   "lic_peers": [
+    27,
+    29,
+    31,
+    34,
+    36,
+    38,
+    41,
+    42
+   ],
+   "role": "stulbal-noha-DZ"
+  },
+  {
+   "part_id": "Object_11",
+   "position": [
+    20.000008,
+    768,
+    779.99997
+   ],
+   "quaternion": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "scale": [
+    1,
+    1.444,
+    1
+   ],
+   "used_conn": [
+    2
+   ],
+   "was_through": true,
+   "vertical": true,
+   "lic_peers": [
+    9,
+    10,
+    13,
+    14,
+    17,
+    18
+   ],
+   "role": "stulbal-noha-AP"
+  },
+  {
+   "part_id": "Object_11",
+   "position": [
+    410.000008,
+    768,
+    779.99997
+   ],
+   "quaternion": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "scale": [
+    1,
+    1.444,
+    1
+   ],
+   "used_conn": [
+    2
+   ],
+   "was_through": true,
+   "vertical": true,
+   "lic_peers": [
+    9,
+    11,
+    13,
+    15,
+    17,
+    19,
+    20,
+    25
+   ],
+   "role": "stulbal-noha-BP"
+  },
+  {
+   "part_id": "Object_11",
+   "position": [
+    1020.000008,
+    414,
+    779.99997
+   ],
+   "quaternion": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "scale": [
+    1,
+    0.736,
+    1
+   ],
+   "used_conn": [
+    2
+   ],
+   "was_through": true,
+   "vertical": true,
+   "lic_peers": [
+    21,
+    25,
+    26,
+    28,
+    30,
+    32,
+    35
+   ],
+   "role": "stulbal-noha-CP"
+  },
+  {
+   "part_id": "Object_11",
+   "position": [
+    1730.000008,
+    414,
+    779.99997
+   ],
+   "quaternion": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "scale": [
+    1,
+    0.736,
+    1
+   ],
+   "used_conn": [
+    2
+   ],
+   "was_through": true,
+   "vertical": true,
+   "lic_peers": [
+    28,
+    29,
+    31,
+    32,
+    35,
+    36
+   ],
+   "role": "stulbal-noha-DP"
+  },
+  {
+   "part_id": "Object_11",
+   "position": [
+    215,
+    139.999992,
+    19.999977
+   ],
+   "quaternion": [
+    0,
+    0,
+    -0.707107,
+    0.707107
+   ],
+   "scale": [
+    1,
+    0.35,
+    1
+   ],
+   "used_conn": [
+    0,
+    1
+   ],
+   "joint_count": 2,
+   "hidden_end_conn": [
+    1,
+    0
+   ],
+   "was_attached": true,
+   "lic_peers": [
+    0,
+    1
+   ],
+   "role": "stulbal-LB-zadni"
+  },
+  {
+   "part_id": "Object_11",
+   "position": [
+    215,
+    139.999992,
+    779.999977
+   ],
+   "quaternion": [
+    0,
+    0,
+    -0.707107,
+    0.707107
+   ],
+   "scale": [
+    1,
+    0.35,
+    1
+   ],
+   "used_conn": [
+    0,
+    1
+   ],
+   "joint_count": 2,
+   "hidden_end_conn": [
+    1,
+    0
+   ],
+   "was_attached": true,
+   "lic_peers": [
+    4,
+    5
+   ],
+   "role": "stulbal-LB-predni"
+  },
+  {
+   "part_id": "Object_11",
+   "position": [
+    20.000038,
+    140.00003,
+    400
+   ],
+   "quaternion": [
+    0.707107,
+    0,
+    0,
+    0.707107
+   ],
+   "scale": [
+    1,
+    0.72,
+    1
+   ],
+   "used_conn": [
+    0,
+    1
+   ],
+   "joint_count": 2,
+   "hidden_end_conn": [
+    1,
+    0
+   ],
+   "was_attached": true,
+   "lic_peers": [
+    0,
+    4
+   ],
+   "role": "stulbal-LB-leva"
+  },
+  {
+   "part_id": "Object_11",
+   "position": [
+    410.000038,
+    140.00003,
+    400
+   ],
+   "quaternion": [
+    0.707107,
+    0,
+    0,
+    0.707107
+   ],
+   "scale": [
+    1,
+    0.72,
+    1
+   ],
+   "used_conn": [
+    0,
+    1
+   ],
+   "joint_count": 2,
+   "hidden_end_conn": [
+    1,
+    0
+   ],
+   "was_attached": true,
+   "lic_peers": [
+    1,
+    5
+   ],
+   "role": "stulbal-LB-prava"
+  },
+  {
+   "part_id": "Object_11",
+   "position": [
+    215,
+    761.999992,
+    19.999977
+   ],
+   "quaternion": [
+    0,
+    0,
+    -0.707107,
+    0.707107
+   ],
+   "scale": [
+    1,
+    0.35,
+    1
+   ],
+   "used_conn": [
+    0,
+    1
+   ],
+   "joint_count": 2,
+   "hidden_end_conn": [
+    1,
+    0
+   ],
+   "was_attached": true,
+   "lic_peers": [
+    0,
+    1
+   ],
+   "role": "stulbal-LM-zadni"
+  },
+  {
+   "part_id": "Object_11",
+   "position": [
+    215,
+    761.999992,
+    779.999977
+   ],
+   "quaternion": [
+    0,
+    0,
+    -0.707107,
+    0.707107
+   ],
+   "scale": [
+    1,
+    0.35,
+    1
+   ],
+   "used_conn": [
+    0,
+    1
+   ],
+   "joint_count": 2,
+   "hidden_end_conn": [
+    1,
+    0
+   ],
+   "was_attached": true,
+   "lic_peers": [
+    4,
+    5
+   ],
+   "role": "stulbal-LM-predni"
+  },
+  {
+   "part_id": "Object_11",
+   "position": [
+    20.000038,
+    762.00003,
+    400
+   ],
+   "quaternion": [
+    0.707107,
+    0,
+    0,
+    0.707107
+   ],
+   "scale": [
+    1,
+    0.72,
+    1
+   ],
+   "used_conn": [
+    0,
+    1
+   ],
+   "joint_count": 2,
+   "hidden_end_conn": [
+    1,
+    0
+   ],
+   "was_attached": true,
+   "lic_peers": [
+    0,
+    4
+   ],
+   "role": "stulbal-LM-leva"
+  },
+  {
+   "part_id": "Object_11",
+   "position": [
+    410.000038,
+    762.00003,
+    400
+   ],
+   "quaternion": [
+    0.707107,
+    0,
+    0,
+    0.707107
+   ],
+   "scale": [
+    1,
+    0.72,
+    1
+   ],
+   "used_conn": [
+    0,
+    1
+   ],
+   "joint_count": 2,
+   "hidden_end_conn": [
+    1,
+    0
+   ],
+   "was_attached": true,
+   "lic_peers": [
+    1,
+    5
+   ],
+   "role": "stulbal-LM-prava"
+  },
+  {
+   "part_id": "Object_11",
+   "position": [
+    215,
+    1469.999992,
+    19.999977
+   ],
+   "quaternion": [
+    0,
+    0,
+    -0.707107,
+    0.707107
+   ],
+   "scale": [
+    1,
+    0.35,
+    1
+   ],
+   "used_conn": [
+    0,
+    1
+   ],
+   "joint_count": 2,
+   "hidden_end_conn": [
+    1,
+    0
+   ],
+   "was_attached": true,
+   "lic_peers": [
+    0,
+    1
+   ],
+   "role": "stulbal-LT-zadni"
+  },
+  {
+   "part_id": "Object_11",
+   "position": [
+    215,
+    1469.999992,
+    779.999977
+   ],
+   "quaternion": [
+    0,
+    0,
+    -0.707107,
+    0.707107
+   ],
+   "scale": [
+    1,
+    0.35,
+    1
+   ],
+   "used_conn": [
+    0,
+    1
+   ],
+   "joint_count": 2,
+   "hidden_end_conn": [
+    1,
+    0
+   ],
+   "was_attached": true,
+   "lic_peers": [
+    4,
+    5
+   ],
+   "role": "stulbal-LT-predni"
+  },
+  {
+   "part_id": "Object_11",
+   "position": [
+    20.000038,
+    1470.00003,
+    400
+   ],
+   "quaternion": [
+    0.707107,
+    0,
+    0,
+    0.707107
+   ],
+   "scale": [
+    1,
+    0.72,
+    1
+   ],
+   "used_conn": [
+    0,
+    1
+   ],
+   "joint_count": 2,
+   "hidden_end_conn": [
+    1,
+    0
+   ],
+   "was_attached": true,
+   "lic_peers": [
+    0,
+    4
+   ],
+   "role": "stulbal-LT-leva"
+  },
+  {
+   "part_id": "Object_11",
+   "position": [
+    410.000038,
+    1470.00003,
+    400
+   ],
+   "quaternion": [
+    0.707107,
+    0,
+    0,
+    0.707107
+   ],
+   "scale": [
+    1,
+    0.72,
+    1
+   ],
+   "used_conn": [
+    0,
+    1
+   ],
+   "joint_count": 2,
+   "hidden_end_conn": [
+    1,
+    0
+   ],
+   "was_attached": true,
+   "lic_peers": [
+    1,
+    5
+   ],
+   "role": "stulbal-LT-prava"
+  },
+  {
+   "part_id": "Object_11",
+   "position": [
+    410.000038,
+    66.00003,
+    400
+   ],
+   "quaternion": [
+    0.707107,
+    0,
+    0,
+    0.707107
+   ],
+   "scale": [
+    1,
+    0.72,
+    1
+   ],
+   "used_conn": [
+    0,
+    1,
+    2
+   ],
+   "joint_count": 2,
+   "hidden_end_conn": [
+    1,
+    0
+   ],
+   "was_through": true,
+   "was_attached": true,
+   "lic_peers": [
+    1,
+    5,
+    23
+   ],
+   "role": "stulbal-MB-bok-B"
+  },
+  {
+   "part_id": "Object_11",
+   "position": [
+    1020.000038,
+    66.00003,
+    400
+   ],
+   "quaternion": [
+    0.707107,
+    0,
+    0,
+    0.707107
+   ],
+   "scale": [
+    1,
+    0.72,
+    1
+   ],
+   "used_conn": [
+    0,
+    1,
+    2
+   ],
+   "joint_count": 2,
+   "hidden_end_conn": [
+    1,
+    0
+   ],
+   "was_through": true,
+   "was_attached": true,
+   "lic_peers": [
+    2,
+    6,
+    23
+   ],
+   "role": "stulbal-MB-bok-C"
+  },
+  {
+   "part_id": "Object_11",
+   "position": [
+    715,
+    65.999992,
+    19.999977
+   ],
+   "quaternion": [
+    0,
+    0,
+    -0.707107,
+    0.707107
+   ],
+   "scale": [
+    1,
+    0.57,
+    1
+   ],
+   "used_conn": [
+    0,
+    1
+   ],
+   "joint_count": 2,
+   "hidden_end_conn": [
+    1,
+    0
+   ],
+   "was_attached": true,
+   "lic_peers": [
+    1,
+    2
+   ],
+   "role": "stulbal-MB-zadni"
+  },
+  {
+   "part_id": "Object_11",
+   "position": [
+    715.000031,
+    65.999992,
+    629.99997
+   ],
+   "quaternion": [
+    0,
+    0,
+    -0.707107,
+    0.707107
+   ],
+   "scale": [
+    1,
+    0.57,
+    1
+   ],
+   "used_conn": [
+    0,
+    1
+   ],
+   "joint_count": 2,
+   "hidden_end_conn": [
+    1,
+    0
+   ],
+   "was_attached": true,
+   "lic_peers": [
+    20,
+    21
+   ],
+   "role": "stulbal-MB-kolejnice"
+  },
+  {
+   "part_id": "Object_11",
+   "position": [
+    715,
+    761.999992,
+    19.999977
+   ],
+   "quaternion": [
+    0,
+    0,
+    -0.707107,
+    0.707107
+   ],
+   "scale": [
+    1,
+    0.57,
+    1
+   ],
+   "used_conn": [
+    0,
+    1
+   ],
+   "joint_count": 2,
+   "hidden_end_conn": [
+    1,
+    0
+   ],
+   "was_attached": true,
+   "lic_peers": [
+    1,
+    2
+   ],
+   "role": "stulbal-MM-zadni"
+  },
+  {
+   "part_id": "Object_11",
+   "position": [
+    715,
+    761.999992,
+    779.999977
+   ],
+   "quaternion": [
+    0,
+    0,
+    -0.707107,
+    0.707107
+   ],
+   "scale": [
+    1,
+    0.57,
+    1
+   ],
+   "used_conn": [
+    0,
+    1
+   ],
+   "joint_count": 2,
+   "hidden_end_conn": [
+    1,
+    0
+   ],
+   "was_attached": true,
+   "lic_peers": [
+    5,
+    6
+   ],
+   "role": "stulbal-MM-predni"
+  },
+  {
+   "part_id": "Object_11",
+   "position": [
+    1020.000038,
+    762.00003,
+    400
+   ],
+   "quaternion": [
+    0.707107,
+    0,
+    0,
+    0.707107
+   ],
+   "scale": [
+    1,
+    0.72,
+    1
+   ],
+   "used_conn": [
+    0,
+    1
+   ],
+   "joint_count": 2,
+   "hidden_end_conn": [
+    1,
+    0
+   ],
+   "was_attached": true,
+   "lic_peers": [
+    2,
+    6
+   ],
+   "role": "stulbal-MM-prava"
+  },
+  {
+   "part_id": "Object_11",
+   "position": [
+    1375,
+    139.999992,
+    19.999977
+   ],
+   "quaternion": [
+    0,
+    0,
+    -0.707107,
+    0.707107
+   ],
+   "scale": [
+    1,
+    0.67,
+    1
+   ],
+   "used_conn": [
+    0,
+    1
+   ],
+   "joint_count": 2,
+   "hidden_end_conn": [
+    1,
+    0
+   ],
+   "was_attached": true,
+   "lic_peers": [
+    2,
+    3
+   ],
+   "role": "stulbal-R0-zadni"
+  },
+  {
+   "part_id": "Object_11",
+   "position": [
+    1375,
+    139.999992,
+    779.999977
+   ],
+   "quaternion": [
+    0,
+    0,
+    -0.707107,
+    0.707107
+   ],
+   "scale": [
+    1,
+    0.67,
+    1
+   ],
+   "used_conn": [
+    0,
+    1
+   ],
+   "joint_count": 2,
+   "hidden_end_conn": [
+    1,
+    0
+   ],
+   "was_attached": true,
+   "lic_peers": [
+    6,
+    7
+   ],
+   "role": "stulbal-R0-predni"
+  },
+  {
+   "part_id": "Object_11",
+   "position": [
+    1730.000038,
+    140.00003,
+    400
+   ],
+   "quaternion": [
+    0.707107,
+    0,
+    0,
+    0.707107
+   ],
+   "scale": [
+    1,
+    0.72,
+    1
+   ],
+   "used_conn": [
+    0,
+    1
+   ],
+   "joint_count": 2,
+   "hidden_end_conn": [
+    1,
+    0
+   ],
+   "was_attached": true,
+   "lic_peers": [
+    3,
+    7
+   ],
+   "role": "stulbal-R0-prava"
+  },
+  {
+   "part_id": "Object_11",
+   "position": [
+    1020.000038,
+    390.00003,
+    400
+   ],
+   "quaternion": [
+    0.707107,
+    0,
+    0,
+    0.707107
+   ],
+   "scale": [
+    1,
+    0.72,
+    1
+   ],
+   "used_conn": [
+    0,
+    1,
+    2
+   ],
+   "joint_count": 2,
+   "hidden_end_conn": [
+    1,
+    0
+   ],
+   "was_through": true,
+   "was_attached": true,
+   "lic_peers": [
+    2,
+    6,
+    33
+   ],
+   "role": "stulbal-R1-bok-C"
+  },
+  {
+   "part_id": "Object_11",
+   "position": [
+    1730.000038,
+    390.00003,
+    400
+   ],
+   "quaternion": [
+    0.707107,
+    0,
+    0,
+    0.707107
+   ],
+   "scale": [
+    1,
+    0.72,
+    1
+   ],
+   "used_conn": [
+    0,
+    1,
+    2
+   ],
+   "joint_count": 2,
+   "hidden_end_conn": [
+    1,
+    0
+   ],
+   "was_through": true,
+   "was_attached": true,
+   "lic_peers": [
+    3,
+    7,
+    33
+   ],
+   "role": "stulbal-R1-bok-D"
+  },
+  {
+   "part_id": "Object_11",
+   "position": [
+    1375,
+    389.999992,
+    779.999977
+   ],
+   "quaternion": [
+    0,
+    0,
+    -0.707107,
+    0.707107
+   ],
+   "scale": [
+    1,
+    0.67,
+    1
+   ],
+   "used_conn": [
+    0,
+    1
+   ],
+   "joint_count": 2,
+   "hidden_end_conn": [
+    1,
+    0
+   ],
+   "was_attached": true,
+   "lic_peers": [
+    6,
+    7
+   ],
+   "role": "stulbal-R1-predni"
+  },
+  {
+   "part_id": "Object_11",
+   "position": [
+    1375.000031,
+    389.999992,
+    629.99997
+   ],
+   "quaternion": [
+    0,
+    0,
+    -0.707107,
+    0.707107
+   ],
+   "scale": [
+    1,
+    0.67,
+    1
+   ],
+   "used_conn": [
+    0,
+    1
+   ],
+   "joint_count": 2,
+   "hidden_end_conn": [
+    1,
+    0
+   ],
+   "was_attached": true,
+   "lic_peers": [
+    30,
+    31
+   ],
+   "role": "stulbal-R1-kolejnice"
+  },
+  {
+   "part_id": "Object_11",
+   "position": [
+    1375,
+    709.999992,
+    19.999977
+   ],
+   "quaternion": [
+    0,
+    0,
+    -0.707107,
+    0.707107
+   ],
+   "scale": [
+    1,
+    0.67,
+    1
+   ],
+   "used_conn": [
+    0,
+    1
+   ],
+   "joint_count": 2,
+   "hidden_end_conn": [
+    1,
+    0
+   ],
+   "was_attached": true,
+   "lic_peers": [
+    2,
+    3
+   ],
+   "role": "stulbal-R2-zadni"
+  },
+  {
+   "part_id": "Object_11",
+   "position": [
+    1375,
+    709.999992,
+    779.999977
+   ],
+   "quaternion": [
+    0,
+    0,
+    -0.707107,
+    0.707107
+   ],
+   "scale": [
+    1,
+    0.67,
+    1
+   ],
+   "used_conn": [
+    0,
+    1
+   ],
+   "joint_count": 2,
+   "hidden_end_conn": [
+    1,
+    0
+   ],
+   "was_attached": true,
+   "lic_peers": [
+    6,
+    7
+   ],
+   "role": "stulbal-R2-predni"
+  },
+  {
+   "part_id": "Object_11",
+   "position": [
+    1730.000038,
+    762.00003,
+    400
+   ],
+   "quaternion": [
+    0.707107,
+    0,
+    0,
+    0.707107
+   ],
+   "scale": [
+    1,
+    0.72,
+    1
+   ],
+   "used_conn": [
+    0,
+    1
+   ],
+   "joint_count": 2,
+   "hidden_end_conn": [
+    1,
+    0
+   ],
+   "was_attached": true,
+   "lic_peers": [
+    3,
+    7
+   ],
+   "role": "stulbal-D-bok-stul"
+  },
+  {
+   "part_id": "Object_11",
+   "position": [
+    20.000008,
+    2080.00003,
+    300
+   ],
+   "quaternion": [
+    0.707107,
+    0,
+    0,
+    0.707107
+   ],
+   "scale": [
+    1,
+    0.6,
+    1
+   ],
+   "used_conn": [
+    2
+   ],
+   "was_through": true,
+   "lic_peers": [
+    0,
+    39,
+    40
+   ],
+   "role": "stulbal-horni-bok-L"
+  },
+  {
+   "part_id": "Object_11",
+   "position": [
+    1730.000008,
+    2080.00003,
+    300
+   ],
+   "quaternion": [
+    0.707107,
+    0,
+    0,
+    0.707107
+   ],
+   "scale": [
+    1,
+    0.6,
+    1
+   ],
+   "used_conn": [
+    2
+   ],
+   "was_through": true,
+   "lic_peers": [
+    3,
+    39,
+    40
+   ],
+   "role": "stulbal-horni-bok-P"
+  },
+  {
+   "part_id": "Object_11",
+   "position": [
+    875,
+    2079.999999,
+    19.99997
+   ],
+   "quaternion": [
+    0,
+    0,
+    -0.707107,
+    0.707107
+   ],
+   "scale": [
+    1,
+    1.67,
+    1
+   ],
+   "used_conn": [
+    0,
+    1,
+    2
+   ],
+   "joint_count": 2,
+   "hidden_end_conn": [
+    1,
+    0
+   ],
+   "was_through": true,
+   "was_attached": true,
+   "lic_peers": [
+    1,
+    37,
+    38
+   ],
+   "role": "stulbal-horni-zadni"
+  },
+  {
+   "part_id": "Object_11",
+   "position": [
+    875,
+    2079.999999,
+    579.99997
+   ],
+   "quaternion": [
+    0,
+    0,
+    -0.707107,
+    0.707107
+   ],
+   "scale": [
+    1,
+    1.67,
+    1
+   ],
+   "used_conn": [
+    0,
+    1
+   ],
+   "joint_count": 2,
+   "hidden_end_conn": [
+    1,
+    0
+   ],
+   "was_attached": true,
+   "lic_peers": [
+    37,
+    38
+   ],
+   "role": "stulbal-horni-predni"
+  },
+  {
+   "part_id": "Object_11",
+   "position": [
+    1070,
+    1469.999992,
+    19.999977
+   ],
+   "quaternion": [
+    0,
+    0,
+    -0.707107,
+    0.707107
+   ],
+   "scale": [
+    1,
+    1.28,
+    1
+   ],
+   "used_conn": [
+    0,
+    1,
+    5
+   ],
+   "joint_count": 2,
+   "hidden_end_conn": [
+    1,
+    0
+   ],
+   "was_attached": true,
+   "lic_peers": [
+    1,
+    3,
+    43,
+    44,
+    45
+   ],
+   "role": "stulbal-zed-spodni"
+  },
+  {
+   "part_id": "Object_11",
+   "position": [
+    1070,
+    1629.999992,
+    19.999977
+   ],
+   "quaternion": [
+    0,
+    0,
+    -0.707107,
+    0.707107
+   ],
+   "scale": [
+    1,
+    1.28,
+    1
+   ],
+   "used_conn": [
+    0,
+    1,
+    5
+   ],
+   "joint_count": 2,
+   "hidden_end_conn": [
+    1,
+    0
+   ],
+   "was_attached": true,
+   "lic_peers": [
+    1,
+    3,
+    43,
+    44,
+    45
+   ],
+   "role": "stulbal-zed-horni"
+  },
+  {
+   "part_id": "Object_11",
+   "position": [
+    1275.000008,
+    1550,
+    59.99997
+   ],
+   "quaternion": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "scale": [
+    1,
+    0.2,
+    1
+   ],
+   "used_conn": [
+    6
+   ],
+   "joint_count": 2,
+   "hidden_end_conn": [
+    6
+   ],
+   "was_attached": true,
+   "vertical": true,
+   "lic_peers": [
+    41,
+    42
+   ],
+   "role": "stulbal-posuvny-1"
+  },
+  {
+   "part_id": "Object_11",
+   "position": [
+    1480.000008,
+    1550,
+    59.99997
+   ],
+   "quaternion": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "scale": [
+    1,
+    0.2,
+    1
+   ],
+   "used_conn": [
+    6
+   ],
+   "joint_count": 2,
+   "hidden_end_conn": [
+    6
+   ],
+   "was_attached": true,
+   "vertical": true,
+   "lic_peers": [
+    41,
+    42
+   ],
+   "role": "stulbal-posuvny-2"
+  },
+  {
+   "part_id": "Object_11",
+   "position": [
+    535.000008,
+    1400,
+    59.99997
+   ],
+   "quaternion": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "scale": [
+    1,
+    0.5,
+    1
+   ],
+   "used_conn": [
+    6
+   ],
+   "joint_count": 2,
+   "hidden_end_conn": [
+    6
+   ],
+   "was_attached": true,
+   "vertical": true,
+   "lic_peers": [
+    41,
+    42
+   ],
+   "role": "stulbal-rameno-sloup"
+  },
+  {
+   "part_id": "product_4933",
+   "position": [
+    215,
+    1041,
+    400
+   ],
+   "quaternion": [
+    -0.707107,
+    0,
+    0,
+    0.707107
+   ],
+   "scale": [
+    0.35,
+    0.8,
+    1
+   ],
+   "role": "stulbal-police-1"
+  },
+  {
+   "part_id": "product_4933",
+   "position": [
+    215,
+    1209,
+    400
+   ],
+   "quaternion": [
+    -0.707107,
+    0,
+    0,
+    0.707107
+   ],
+   "scale": [
+    0.35,
+    0.8,
+    1
+   ],
+   "role": "stulbal-police-2"
+  },
+  {
+   "part_id": "product_4933",
+   "position": [
+    215,
+    1377,
+    400
+   ],
+   "quaternion": [
+    -0.707107,
+    0,
+    0,
+    0.707107
+   ],
+   "scale": [
+    0.35,
+    0.8,
+    1
+   ],
+   "role": "stulbal-police-3"
+  },
+  {
+   "part_id": "product_4933",
+   "position": [
+    715,
+    583,
+    400
+   ],
+   "quaternion": [
+    -0.707107,
+    0,
+    0,
+    0.707107
+   ],
+   "scale": [
+    0.57,
+    0.8,
+    1
+   ],
+   "role": "stulbal-police-S"
+  },
+  {
+   "part_id": "product_4933",
+   "position": [
+    715,
+    95,
+    325
+   ],
+   "quaternion": [
+    -0.707107,
+    0,
+    0,
+    0.707107
+   ],
+   "scale": [
+    0.57,
+    0.65,
+    1
+   ],
+   "role": "stulbal-deska-spodni"
+  },
+  {
+   "part_id": "product_4933",
+   "position": [
+    735,
+    791,
+    400
+   ],
+   "quaternion": [
+    -0.707107,
+    0,
+    0,
+    0.707107
+   ],
+   "scale": [
+    0.61,
+    0.8,
+    1
+   ],
+   "role": "stulbal-deska-stolu"
+  },
+  {
+   "part_id": "product_3283",
+   "position": [
+    20,
+    79,
+    20
+   ],
+   "quaternion": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-patka-noha-AZ"
+  },
+  {
+   "part_id": "product_3283",
+   "position": [
+    410,
+    79,
+    20
+   ],
+   "quaternion": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-patka-noha-BZ"
+  },
+  {
+   "part_id": "product_3283",
+   "position": [
+    1020,
+    79,
+    20
+   ],
+   "quaternion": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-patka-noha-CZ"
+  },
+  {
+   "part_id": "product_3283",
+   "position": [
+    1730,
+    79,
+    20
+   ],
+   "quaternion": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-patka-noha-DZ"
+  },
+  {
+   "part_id": "product_3283",
+   "position": [
+    20,
+    79,
+    780
+   ],
+   "quaternion": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-patka-noha-AP"
+  },
+  {
+   "part_id": "product_3283",
+   "position": [
+    410,
+    79,
+    780
+   ],
+   "quaternion": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-patka-noha-BP"
+  },
+  {
+   "part_id": "product_3283",
+   "position": [
+    1020,
+    79,
+    780
+   ],
+   "quaternion": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-patka-noha-CP"
+  },
+  {
+   "part_id": "product_3283",
+   "position": [
+    1730,
+    79,
+    780
+   ],
+   "quaternion": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-patka-noha-DP"
+  },
+  {
+   "part_id": "product_3207",
+   "position": [
+    39.999969,
+    1032,
+    38.5
+   ],
+   "quaternion": [
+    -0.707107,
+    0,
+    0,
+    0.707107
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-drzak-police-1-noha-AZ"
+  },
+  {
+   "part_id": "product_3207",
+   "position": [
+    390.000031,
+    1032,
+    1.5
+   ],
+   "quaternion": [
+    0,
+    0.707107,
+    0.707107,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-drzak-police-1-noha-BZ"
+  },
+  {
+   "part_id": "product_3207",
+   "position": [
+    39.999969,
+    1032,
+    798.5
+   ],
+   "quaternion": [
+    -0.707107,
+    0,
+    0,
+    0.707107
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-drzak-police-1-noha-AP"
+  },
+  {
+   "part_id": "product_3207",
+   "position": [
+    390.000031,
+    1032,
+    761.5
+   ],
+   "quaternion": [
+    0,
+    0.707107,
+    0.707107,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-drzak-police-1-noha-BP"
+  },
+  {
+   "part_id": "product_3207",
+   "position": [
+    39.999969,
+    1200,
+    38.5
+   ],
+   "quaternion": [
+    -0.707107,
+    0,
+    0,
+    0.707107
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-drzak-police-2-noha-AZ"
+  },
+  {
+   "part_id": "product_3207",
+   "position": [
+    390.000031,
+    1200,
+    1.5
+   ],
+   "quaternion": [
+    0,
+    0.707107,
+    0.707107,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-drzak-police-2-noha-BZ"
+  },
+  {
+   "part_id": "product_3207",
+   "position": [
+    39.999969,
+    1200,
+    798.5
+   ],
+   "quaternion": [
+    -0.707107,
+    0,
+    0,
+    0.707107
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-drzak-police-2-noha-AP"
+  },
+  {
+   "part_id": "product_3207",
+   "position": [
+    390.000031,
+    1200,
+    761.5
+   ],
+   "quaternion": [
+    0,
+    0.707107,
+    0.707107,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-drzak-police-2-noha-BP"
+  },
+  {
+   "part_id": "product_3207",
+   "position": [
+    39.999969,
+    1368,
+    38.5
+   ],
+   "quaternion": [
+    -0.707107,
+    0,
+    0,
+    0.707107
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-drzak-police-3-noha-AZ"
+  },
+  {
+   "part_id": "product_3207",
+   "position": [
+    390.000031,
+    1368,
+    1.5
+   ],
+   "quaternion": [
+    0,
+    0.707107,
+    0.707107,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-drzak-police-3-noha-BZ"
+  },
+  {
+   "part_id": "product_3207",
+   "position": [
+    39.999969,
+    1368,
+    798.5
+   ],
+   "quaternion": [
+    -0.707107,
+    0,
+    0,
+    0.707107
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-drzak-police-3-noha-AP"
+  },
+  {
+   "part_id": "product_3207",
+   "position": [
+    390.000031,
+    1368,
+    761.5
+   ],
+   "quaternion": [
+    0,
+    0.707107,
+    0.707107,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-drzak-police-3-noha-BP"
+  },
+  {
+   "part_id": "product_3207",
+   "position": [
+    429.999969,
+    574,
+    38.5
+   ],
+   "quaternion": [
+    -0.707107,
+    0,
+    0,
+    0.707107
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-drzak-police-S-noha-BZ"
+  },
+  {
+   "part_id": "product_3207",
+   "position": [
+    1000.000031,
+    574,
+    1.5
+   ],
+   "quaternion": [
+    0,
+    0.707107,
+    0.707107,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-drzak-police-S-noha-CZ"
+  },
+  {
+   "part_id": "product_3207",
+   "position": [
+    429.999969,
+    574,
+    798.5
+   ],
+   "quaternion": [
+    -0.707107,
+    0,
+    0,
+    0.707107
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-drzak-police-S-noha-BP"
+  },
+  {
+   "part_id": "product_3207",
+   "position": [
+    1000.000031,
+    574,
+    761.5
+   ],
+   "quaternion": [
+    0,
+    0.707107,
+    0.707107,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-drzak-police-S-noha-CP"
+  },
+  {
+   "part_id": "product_4929",
+   "position": [
+    -1373.580017,
+    50.400062,
+    1304.090027
+   ],
+   "quaternion": [
+    0,
+    0.707107,
+    0.707107,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-led-1"
+  },
+  {
+   "part_id": "product_3176",
+   "position": [
+    1748.500031,
+    705,
+    760.000007
+   ],
+   "quaternion": [
+    -0.707107,
+    0,
+    0.707107,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-spojka-01-D-bok-stul-noha-DP"
+  },
+  {
+   "part_id": "product_3176",
+   "position": [
+    1711.500031,
+    705,
+    39.999993
+   ],
+   "quaternion": [
+    0.707107,
+    0,
+    0.707107,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-spojka-02-D-bok-stul-noha-DZ"
+  },
+  {
+   "part_id": "product_3176",
+   "position": [
+    39.999969,
+    2061.500007,
+    523
+   ],
+   "quaternion": [
+    -0.707107,
+    0,
+    0,
+    0.707107
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-spojka-03-horni-predni-horni-bok-L"
+  },
+  {
+   "part_id": "product_3176",
+   "position": [
+    1710.000031,
+    2098.500007,
+    523
+   ],
+   "quaternion": [
+    0,
+    -0.707107,
+    0.707107,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-spojka-04-horni-predni-horni-bok-P"
+  },
+  {
+   "part_id": "product_3176",
+   "position": [
+    39.999969,
+    2098.500007,
+    77
+   ],
+   "quaternion": [
+    0.707107,
+    0,
+    0,
+    0.707107
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-spojka-05-horni-zadni-horni-bok-L"
+  },
+  {
+   "part_id": "product_3176",
+   "position": [
+    1710.000031,
+    2061.500007,
+    77
+   ],
+   "quaternion": [
+    0,
+    0.707107,
+    0.707107,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-spojka-06-horni-zadni-horni-bok-P"
+  },
+  {
+   "part_id": "product_3176",
+   "position": [
+    38.500031,
+    83,
+    760.000007
+   ],
+   "quaternion": [
+    -0.707107,
+    0,
+    0.707107,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-spojka-07-LB-leva-noha-AP"
+  },
+  {
+   "part_id": "product_3176",
+   "position": [
+    1.500031,
+    83,
+    39.999993
+   ],
+   "quaternion": [
+    0.707107,
+    0,
+    0.707107,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-spojka-08-LB-leva-noha-AZ"
+  },
+  {
+   "part_id": "product_3176",
+   "position": [
+    391.500031,
+    197,
+    760.000007
+   ],
+   "quaternion": [
+    0,
+    0.707107,
+    0,
+    0.707107
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-spojka-09-LB-prava-noha-BP"
+  },
+  {
+   "part_id": "product_3176",
+   "position": [
+    428.500031,
+    197,
+    39.999993
+   ],
+   "quaternion": [
+    0,
+    -0.707107,
+    0,
+    0.707107
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-spojka-10-LB-prava-noha-BZ"
+  },
+  {
+   "part_id": "product_3176",
+   "position": [
+    39.999969,
+    83,
+    798.500007
+   ],
+   "quaternion": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-spojka-11-LB-predni-noha-AP"
+  },
+  {
+   "part_id": "product_3176",
+   "position": [
+    390.000031,
+    83,
+    761.500007
+   ],
+   "quaternion": [
+    0,
+    0,
+    1,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-spojka-12-LB-predni-noha-BP"
+  },
+  {
+   "part_id": "product_3176",
+   "position": [
+    39.999969,
+    83,
+    38.500007
+   ],
+   "quaternion": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-spojka-13-LB-zadni-noha-AZ"
+  },
+  {
+   "part_id": "product_3176",
+   "position": [
+    390.000031,
+    83,
+    1.500007
+   ],
+   "quaternion": [
+    0,
+    0,
+    1,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-spojka-14-LB-zadni-noha-BZ"
+  },
+  {
+   "part_id": "product_3176",
+   "position": [
+    38.500031,
+    705,
+    760.000007
+   ],
+   "quaternion": [
+    -0.707107,
+    0,
+    0.707107,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-spojka-15-LM-leva-noha-AP"
+  },
+  {
+   "part_id": "product_3176",
+   "position": [
+    1.500031,
+    705,
+    39.999993
+   ],
+   "quaternion": [
+    0.707107,
+    0,
+    0.707107,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-spojka-16-LM-leva-noha-AZ"
+  },
+  {
+   "part_id": "product_3176",
+   "position": [
+    428.500031,
+    705,
+    760.000007
+   ],
+   "quaternion": [
+    -0.707107,
+    0,
+    0.707107,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-spojka-17-LM-prava-noha-BP"
+  },
+  {
+   "part_id": "product_3176",
+   "position": [
+    391.500031,
+    705,
+    39.999993
+   ],
+   "quaternion": [
+    0.707107,
+    0,
+    0.707107,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-spojka-18-LM-prava-noha-BZ"
+  },
+  {
+   "part_id": "product_3176",
+   "position": [
+    39.999969,
+    705,
+    798.500007
+   ],
+   "quaternion": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-spojka-19-LM-predni-noha-AP"
+  },
+  {
+   "part_id": "product_3176",
+   "position": [
+    390.000031,
+    705,
+    761.500007
+   ],
+   "quaternion": [
+    0,
+    0,
+    1,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-spojka-20-LM-predni-noha-BP"
+  },
+  {
+   "part_id": "product_3176",
+   "position": [
+    39.999969,
+    705,
+    38.500007
+   ],
+   "quaternion": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-spojka-21-LM-zadni-noha-AZ"
+  },
+  {
+   "part_id": "product_3176",
+   "position": [
+    390.000031,
+    705,
+    1.500007
+   ],
+   "quaternion": [
+    0,
+    0,
+    1,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-spojka-22-LM-zadni-noha-BZ"
+  },
+  {
+   "part_id": "product_3176",
+   "position": [
+    38.500031,
+    1413,
+    760.000007
+   ],
+   "quaternion": [
+    -0.707107,
+    0,
+    0.707107,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-spojka-23-LT-leva-noha-AP"
+  },
+  {
+   "part_id": "product_3176",
+   "position": [
+    1.500031,
+    1413,
+    39.999993
+   ],
+   "quaternion": [
+    0.707107,
+    0,
+    0.707107,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-spojka-24-LT-leva-noha-AZ"
+  },
+  {
+   "part_id": "product_3176",
+   "position": [
+    428.500031,
+    1413,
+    760.000007
+   ],
+   "quaternion": [
+    -0.707107,
+    0,
+    0.707107,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-spojka-25-LT-prava-noha-BP"
+  },
+  {
+   "part_id": "product_3176",
+   "position": [
+    391.500031,
+    1413,
+    39.999993
+   ],
+   "quaternion": [
+    0.707107,
+    0,
+    0.707107,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-spojka-26-LT-prava-noha-BZ"
+  },
+  {
+   "part_id": "product_3176",
+   "position": [
+    39.999969,
+    1413,
+    798.500007
+   ],
+   "quaternion": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-spojka-27-LT-predni-noha-AP"
+  },
+  {
+   "part_id": "product_3176",
+   "position": [
+    390.000031,
+    1413,
+    761.500007
+   ],
+   "quaternion": [
+    0,
+    0,
+    1,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-spojka-28-LT-predni-noha-BP"
+  },
+  {
+   "part_id": "product_3176",
+   "position": [
+    39.999969,
+    1413,
+    38.500007
+   ],
+   "quaternion": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-spojka-29-LT-zadni-noha-AZ"
+  },
+  {
+   "part_id": "product_3176",
+   "position": [
+    390.000031,
+    1413,
+    1.500007
+   ],
+   "quaternion": [
+    0,
+    0,
+    1,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-spojka-30-LT-zadni-noha-BZ"
+  },
+  {
+   "part_id": "product_3176",
+   "position": [
+    1001.500031,
+    123,
+    760.000007
+   ],
+   "quaternion": [
+    0,
+    0.707107,
+    0,
+    0.707107
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-spojka-31-MB-bok-C-noha-CP"
+  },
+  {
+   "part_id": "product_3176",
+   "position": [
+    1038.500031,
+    123,
+    39.999993
+   ],
+   "quaternion": [
+    0,
+    -0.707107,
+    0,
+    0.707107
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-spojka-32-MB-bok-C-noha-CZ"
+  },
+  {
+   "part_id": "product_3176",
+   "position": [
+    430,
+    84.5,
+    687
+   ],
+   "quaternion": [
+    0.707107,
+    0,
+    0,
+    0.707107
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-spojka-33-MB-kolejnice-MB-bok-B"
+  },
+  {
+   "part_id": "product_3176",
+   "position": [
+    1000.000061,
+    47.5,
+    687
+   ],
+   "quaternion": [
+    0,
+    0.707107,
+    0.707107,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-spojka-34-MB-kolejnice-MB-bok-C"
+  },
+  {
+   "part_id": "product_3176",
+   "position": [
+    1038.500031,
+    705,
+    760.000007
+   ],
+   "quaternion": [
+    -0.707107,
+    0,
+    0.707107,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-spojka-35-MM-prava-noha-CP"
+  },
+  {
+   "part_id": "product_3176",
+   "position": [
+    1001.500031,
+    705,
+    39.999993
+   ],
+   "quaternion": [
+    0.707107,
+    0,
+    0.707107,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-spojka-36-MM-prava-noha-CZ"
+  },
+  {
+   "part_id": "product_3176",
+   "position": [
+    429.999969,
+    705,
+    798.500007
+   ],
+   "quaternion": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-spojka-37-MM-predni-noha-BP"
+  },
+  {
+   "part_id": "product_3176",
+   "position": [
+    1000.000031,
+    705,
+    761.500007
+   ],
+   "quaternion": [
+    0,
+    0,
+    1,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-spojka-38-MM-predni-noha-CP"
+  },
+  {
+   "part_id": "product_3176",
+   "position": [
+    429.999969,
+    705,
+    38.500007
+   ],
+   "quaternion": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-spojka-39-MM-zadni-noha-BZ"
+  },
+  {
+   "part_id": "product_3176",
+   "position": [
+    1000.000031,
+    705,
+    1.500007
+   ],
+   "quaternion": [
+    0,
+    0,
+    1,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-spojka-40-MM-zadni-noha-CZ"
+  },
+  {
+   "part_id": "product_3176",
+   "position": [
+    38.5,
+    2060,
+    77
+   ],
+   "quaternion": [
+    -0.5,
+    0.5,
+    0.5,
+    -0.5
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-spojka-41-noha-AZ-horni-bok-L"
+  },
+  {
+   "part_id": "product_3176",
+   "position": [
+    467,
+    2060,
+    1.5
+   ],
+   "quaternion": [
+    0,
+    0,
+    -0.707107,
+    0.707107
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-spojka-42-noha-BZ-horni-zadni"
+  },
+  {
+   "part_id": "product_3176",
+   "position": [
+    1748.5,
+    2060,
+    77
+   ],
+   "quaternion": [
+    -0.5,
+    0.5,
+    0.5,
+    -0.5
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-spojka-43-noha-DZ-horni-bok-P"
+  },
+  {
+   "part_id": "product_3176",
+   "position": [
+    1748.500031,
+    83,
+    760.000007
+   ],
+   "quaternion": [
+    -0.707107,
+    0,
+    0.707107,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-spojka-44-R0-prava-noha-DP"
+  },
+  {
+   "part_id": "product_3176",
+   "position": [
+    1711.500031,
+    83,
+    39.999993
+   ],
+   "quaternion": [
+    0.707107,
+    0,
+    0.707107,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-spojka-45-R0-prava-noha-DZ"
+  },
+  {
+   "part_id": "product_3176",
+   "position": [
+    1039.999969,
+    83,
+    798.500007
+   ],
+   "quaternion": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-spojka-46-R0-predni-noha-CP"
+  },
+  {
+   "part_id": "product_3176",
+   "position": [
+    1710.000031,
+    83,
+    761.500007
+   ],
+   "quaternion": [
+    0,
+    0,
+    1,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-spojka-47-R0-predni-noha-DP"
+  },
+  {
+   "part_id": "product_3176",
+   "position": [
+    1039.999969,
+    83,
+    38.500007
+   ],
+   "quaternion": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-spojka-48-R0-zadni-noha-CZ"
+  },
+  {
+   "part_id": "product_3176",
+   "position": [
+    1710.000031,
+    83,
+    1.500007
+   ],
+   "quaternion": [
+    0,
+    0,
+    1,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-spojka-49-R0-zadni-noha-DZ"
+  },
+  {
+   "part_id": "product_3176",
+   "position": [
+    1038.500031,
+    333,
+    760.000007
+   ],
+   "quaternion": [
+    -0.707107,
+    0,
+    0.707107,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-spojka-50-R1-bok-C-noha-CP"
+  },
+  {
+   "part_id": "product_3176",
+   "position": [
+    1001.500031,
+    333,
+    39.999993
+   ],
+   "quaternion": [
+    0.707107,
+    0,
+    0.707107,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-spojka-51-R1-bok-C-noha-CZ"
+  },
+  {
+   "part_id": "product_3176",
+   "position": [
+    1748.500031,
+    333,
+    760.000007
+   ],
+   "quaternion": [
+    -0.707107,
+    0,
+    0.707107,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-spojka-52-R1-bok-D-noha-DP"
+  },
+  {
+   "part_id": "product_3176",
+   "position": [
+    1711.500031,
+    333,
+    39.999993
+   ],
+   "quaternion": [
+    0.707107,
+    0,
+    0.707107,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-spojka-53-R1-bok-D-noha-DZ"
+  },
+  {
+   "part_id": "product_3176",
+   "position": [
+    1040,
+    408.5,
+    687
+   ],
+   "quaternion": [
+    0.707107,
+    0,
+    0,
+    0.707107
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-spojka-54-R1-kolejnice-R1-bok-C"
+  },
+  {
+   "part_id": "product_3176",
+   "position": [
+    1710.000061,
+    371.5,
+    687
+   ],
+   "quaternion": [
+    0,
+    0.707107,
+    0.707107,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-spojka-55-R1-kolejnice-R1-bok-D"
+  },
+  {
+   "part_id": "product_3176",
+   "position": [
+    1039.999969,
+    333,
+    798.500007
+   ],
+   "quaternion": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-spojka-56-R1-predni-noha-CP"
+  },
+  {
+   "part_id": "product_3176",
+   "position": [
+    1710.000031,
+    333,
+    761.500007
+   ],
+   "quaternion": [
+    0,
+    0,
+    1,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-spojka-57-R1-predni-noha-DP"
+  },
+  {
+   "part_id": "product_3176",
+   "position": [
+    1039.999969,
+    653,
+    798.500007
+   ],
+   "quaternion": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-spojka-58-R2-predni-noha-CP"
+  },
+  {
+   "part_id": "product_3176",
+   "position": [
+    1710.000031,
+    653,
+    761.500007
+   ],
+   "quaternion": [
+    0,
+    0,
+    1,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-spojka-59-R2-predni-noha-DP"
+  },
+  {
+   "part_id": "product_3176",
+   "position": [
+    1039.999969,
+    653,
+    38.500007
+   ],
+   "quaternion": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-spojka-60-R2-zadni-noha-CZ"
+  },
+  {
+   "part_id": "product_3176",
+   "position": [
+    1710.000031,
+    653,
+    1.500007
+   ],
+   "quaternion": [
+    0,
+    0,
+    1,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-spojka-61-R2-zadni-noha-DZ"
+  },
+  {
+   "part_id": "product_3176",
+   "position": [
+    429.999969,
+    1573,
+    38.500007
+   ],
+   "quaternion": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-spojka-62-zed-horni-noha-BZ"
+  },
+  {
+   "part_id": "product_3176",
+   "position": [
+    1710.000031,
+    1573,
+    1.500007
+   ],
+   "quaternion": [
+    0,
+    0,
+    1,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-spojka-63-zed-horni-noha-DZ"
+  },
+  {
+   "part_id": "product_3176",
+   "position": [
+    429.999969,
+    1413,
+    38.500007
+   ],
+   "quaternion": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-spojka-64-zed-spodni-noha-BZ"
+  },
+  {
+   "part_id": "product_3176",
+   "position": [
+    1710.000031,
+    1413,
+    1.500007
+   ],
+   "quaternion": [
+    0,
+    0,
+    1,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "role": "stulbal-spojka-65-zed-spodni-noha-DZ"
+  }
+ ],
+ "join_groups": [],
+ "frame_groups": []
+}

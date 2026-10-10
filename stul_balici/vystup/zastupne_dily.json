@@ -1,0 +1,707 @@
+{
+ "_popis": "Díly, které nejsou v katalogu. Orientační tvar = kvádr dané velikosti; skutečné díly potřebují karty v DB.",
+ "dily": [
+  {
+   "id": "valecka-draha-1",
+   "role": "stulbal-valecka-draha-1",
+   "kategorie": "zastupne-draha",
+   "nazev": "Válečková dráha 60x24 D15 (zástupně)",
+   "poznamka": "11 drah 60x24, mezera 1,5 mm, délka 782; není v katalogu",
+   "katalogova_nahrada": "kvadr_plny_1x1x1.glb (jednotkový kvádr; part_id karty z DB)",
+   "position": [
+    1069.772727,
+    742,
+    403
+   ],
+   "quaternion": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "scale": [
+    59.545455,
+    24,
+    782
+   ],
+   "rozmer_mm": [
+    59.545,
+    24,
+    782
+   ],
+   "box_min": [
+    1040,
+    730,
+    12
+   ],
+   "box_max": [
+    1099.545,
+    754,
+    794
+   ]
+  },
+  {
+   "id": "valecka-draha-2",
+   "role": "stulbal-valecka-draha-2",
+   "kategorie": "zastupne-draha",
+   "nazev": "Válečková dráha 60x24 D15 (zástupně)",
+   "poznamka": "11 drah 60x24, mezera 1,5 mm, délka 782; není v katalogu",
+   "katalogova_nahrada": "kvadr_plny_1x1x1.glb (jednotkový kvádr; part_id karty z DB)",
+   "position": [
+    1130.818182,
+    742,
+    403
+   ],
+   "quaternion": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "scale": [
+    59.545455,
+    24,
+    782
+   ],
+   "rozmer_mm": [
+    59.545,
+    24,
+    782
+   ],
+   "box_min": [
+    1101.045,
+    730,
+    12
+   ],
+   "box_max": [
+    1160.591,
+    754,
+    794
+   ]
+  },
+  {
+   "id": "valecka-draha-3",
+   "role": "stulbal-valecka-draha-3",
+   "kategorie": "zastupne-draha",
+   "nazev": "Válečková dráha 60x24 D15 (zástupně)",
+   "poznamka": "11 drah 60x24, mezera 1,5 mm, délka 782; není v katalogu",
+   "katalogova_nahrada": "kvadr_plny_1x1x1.glb (jednotkový kvádr; part_id karty z DB)",
+   "position": [
+    1191.863636,
+    742,
+    403
+   ],
+   "quaternion": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "scale": [
+    59.545455,
+    24,
+    782
+   ],
+   "rozmer_mm": [
+    59.545,
+    24,
+    782
+   ],
+   "box_min": [
+    1162.091,
+    730,
+    12
+   ],
+   "box_max": [
+    1221.636,
+    754,
+    794
+   ]
+  },
+  {
+   "id": "valecka-draha-4",
+   "role": "stulbal-valecka-draha-4",
+   "kategorie": "zastupne-draha",
+   "nazev": "Válečková dráha 60x24 D15 (zástupně)",
+   "poznamka": "11 drah 60x24, mezera 1,5 mm, délka 782; není v katalogu",
+   "katalogova_nahrada": "kvadr_plny_1x1x1.glb (jednotkový kvádr; part_id karty z DB)",
+   "position": [
+    1252.909091,
+    742,
+    403
+   ],
+   "quaternion": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "scale": [
+    59.545455,
+    24,
+    782
+   ],
+   "rozmer_mm": [
+    59.545,
+    24,
+    782
+   ],
+   "box_min": [
+    1223.136,
+    730,
+    12
+   ],
+   "box_max": [
+    1282.682,
+    754,
+    794
+   ]
+  },
+  {
+   "id": "valecka-draha-5",
+   "role": "stulbal-valecka-draha-5",
+   "kategorie": "zastupne-draha",
+   "nazev": "Válečková dráha 60x24 D15 (zástupně)",
+   "poznamka": "11 drah 60x24, mezera 1,5 mm, délka 782; není v katalogu",
+   "katalogova_nahrada": "kvadr_plny_1x1x1.glb (jednotkový kvádr; part_id karty z DB)",
+   "position": [
+    1313.954545,
+    742,
+    403
+   ],
+   "quaternion": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "scale": [
+    59.545455,
+    24,
+    782
+   ],
+   "rozmer_mm": [
+    59.545,
+    24,
+    782
+   ],
+   "box_min": [
+    1284.182,
+    730,
+    12
+   ],
+   "box_max": [
+    1343.727,
+    754,
+    794
+   ]
+  },
+  {
+   "id": "valecka-draha-6",
+   "role": "stulbal-valecka-draha-6",
+   "kategorie": "zastupne-draha",
+   "nazev": "Válečková dráha 60x24 D15 (zástupně)",
+   "poznamka": "11 drah 60x24, mezera 1,5 mm, délka 782; není v katalogu",
+   "katalogova_nahrada": "kvadr_plny_1x1x1.glb (jednotkový kvádr; part_id karty z DB)",
+   "position": [
+    1375,
+    742,
+    403
+   ],
+   "quaternion": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "scale": [
+    59.545455,
+    24,
+    782
+   ],
+   "rozmer_mm": [
+    59.545,
+    24,
+    782
+   ],
+   "box_min": [
+    1345.227,
+    730,
+    12
+   ],
+   "box_max": [
+    1404.773,
+    754,
+    794
+   ]
+  },
+  {
+   "id": "valecka-draha-7",
+   "role": "stulbal-valecka-draha-7",
+   "kategorie": "zastupne-draha",
+   "nazev": "Válečková dráha 60x24 D15 (zástupně)",
+   "poznamka": "11 drah 60x24, mezera 1,5 mm, délka 782; není v katalogu",
+   "katalogova_nahrada": "kvadr_plny_1x1x1.glb (jednotkový kvádr; part_id karty z DB)",
+   "position": [
+    1436.045455,
+    742,
+    403
+   ],
+   "quaternion": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "scale": [
+    59.545455,
+    24,
+    782
+   ],
+   "rozmer_mm": [
+    59.545,
+    24,
+    782
+   ],
+   "box_min": [
+    1406.273,
+    730,
+    12
+   ],
+   "box_max": [
+    1465.818,
+    754,
+    794
+   ]
+  },
+  {
+   "id": "valecka-draha-8",
+   "role": "stulbal-valecka-draha-8",
+   "kategorie": "zastupne-draha",
+   "nazev": "Válečková dráha 60x24 D15 (zástupně)",
+   "poznamka": "11 drah 60x24, mezera 1,5 mm, délka 782; není v katalogu",
+   "katalogova_nahrada": "kvadr_plny_1x1x1.glb (jednotkový kvádr; part_id karty z DB)",
+   "position": [
+    1497.090909,
+    742,
+    403
+   ],
+   "quaternion": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "scale": [
+    59.545455,
+    24,
+    782
+   ],
+   "rozmer_mm": [
+    59.545,
+    24,
+    782
+   ],
+   "box_min": [
+    1467.318,
+    730,
+    12
+   ],
+   "box_max": [
+    1526.864,
+    754,
+    794
+   ]
+  },
+  {
+   "id": "valecka-draha-9",
+   "role": "stulbal-valecka-draha-9",
+   "kategorie": "zastupne-draha",
+   "nazev": "Válečková dráha 60x24 D15 (zástupně)",
+   "poznamka": "11 drah 60x24, mezera 1,5 mm, délka 782; není v katalogu",
+   "katalogova_nahrada": "kvadr_plny_1x1x1.glb (jednotkový kvádr; part_id karty z DB)",
+   "position": [
+    1558.136364,
+    742,
+    403
+   ],
+   "quaternion": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "scale": [
+    59.545455,
+    24,
+    782
+   ],
+   "rozmer_mm": [
+    59.545,
+    24,
+    782
+   ],
+   "box_min": [
+    1528.364,
+    730,
+    12
+   ],
+   "box_max": [
+    1587.909,
+    754,
+    794
+   ]
+  },
+  {
+   "id": "valecka-draha-10",
+   "role": "stulbal-valecka-draha-10",
+   "kategorie": "zastupne-draha",
+   "nazev": "Válečková dráha 60x24 D15 (zástupně)",
+   "poznamka": "11 drah 60x24, mezera 1,5 mm, délka 782; není v katalogu",
+   "katalogova_nahrada": "kvadr_plny_1x1x1.glb (jednotkový kvádr; part_id karty z DB)",
+   "position": [
+    1619.181818,
+    742,
+    403
+   ],
+   "quaternion": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "scale": [
+    59.545455,
+    24,
+    782
+   ],
+   "rozmer_mm": [
+    59.545,
+    24,
+    782
+   ],
+   "box_min": [
+    1589.409,
+    730,
+    12
+   ],
+   "box_max": [
+    1648.955,
+    754,
+    794
+   ]
+  },
+  {
+   "id": "valecka-draha-11",
+   "role": "stulbal-valecka-draha-11",
+   "kategorie": "zastupne-draha",
+   "nazev": "Válečková dráha 60x24 D15 (zástupně)",
+   "poznamka": "11 drah 60x24, mezera 1,5 mm, délka 782; není v katalogu",
+   "katalogova_nahrada": "kvadr_plny_1x1x1.glb (jednotkový kvádr; part_id karty z DB)",
+   "position": [
+    1680.227273,
+    742,
+    403
+   ],
+   "quaternion": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "scale": [
+    59.545455,
+    24,
+    782
+   ],
+   "rozmer_mm": [
+    59.545,
+    24,
+    782
+   ],
+   "box_min": [
+    1650.455,
+    730,
+    12
+   ],
+   "box_max": [
+    1710,
+    754,
+    794
+   ]
+  },
+  {
+   "id": "celni-desticka",
+   "role": "stulbal-celni-desticka",
+   "kategorie": "zastupne-plech",
+   "nazev": "Čelní plech válečkové dráhy s úchopem (zástupně)",
+   "poznamka": "plech 120 mm vysoký, zaoblený s oválným úchopem; není v katalogu",
+   "katalogova_nahrada": "kvadr_plny_1x1x1.glb (jednotkový kvádr; part_id karty z DB)",
+   "position": [
+    1375,
+    790,
+    797
+   ],
+   "quaternion": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "scale": [
+    670,
+    120,
+    6
+   ],
+   "rozmer_mm": [
+    670,
+    120,
+    6
+   ],
+   "box_min": [
+    1040,
+    730,
+    794
+   ],
+   "box_max": [
+    1710,
+    850,
+    800
+   ]
+  },
+  {
+   "id": "kovani-L",
+   "role": "stulbal-kovani-L",
+   "kategorie": "zastupne-kovani",
+   "nazev": "Polohovací kování cca 10 poloh - levé (zástupně)",
+   "poznamka": "orientační náhrada; skutečné kování není v katalogu",
+   "katalogova_nahrada": "kvadr_plny_1x1x1.glb (jednotkový kvádr; part_id karty z DB)",
+   "position": [
+    1147,
+    570,
+    630
+   ],
+   "quaternion": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "scale": [
+    30,
+    320,
+    40
+   ],
+   "rozmer_mm": [
+    30,
+    320,
+    40
+   ],
+   "box_min": [
+    1132,
+    410,
+    610
+   ],
+   "box_max": [
+    1162,
+    730,
+    650
+   ]
+  },
+  {
+   "id": "kovani-P",
+   "role": "stulbal-kovani-P",
+   "kategorie": "zastupne-kovani",
+   "nazev": "Polohovací kování cca 10 poloh - pravé (zástupně)",
+   "poznamka": "orientační náhrada; skutečné kování není v katalogu",
+   "katalogova_nahrada": "kvadr_plny_1x1x1.glb (jednotkový kvádr; part_id karty z DB)",
+   "position": [
+    1601,
+    570,
+    630
+   ],
+   "quaternion": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "scale": [
+    30,
+    320,
+    40
+   ],
+   "rozmer_mm": [
+    30,
+    320,
+    40
+   ],
+   "box_min": [
+    1586,
+    410,
+    610
+   ],
+   "box_max": [
+    1616,
+    730,
+    650
+   ]
+  },
+  {
+   "id": "rameno-podstava",
+   "role": "stulbal-rameno-podstava",
+   "kategorie": "zastupne-rameno",
+   "nazev": "Rameno monitoru - upínací patka na sloupku (zástupně)",
+   "poznamka": "orientační náhrada",
+   "katalogova_nahrada": "kvadr_plny_1x1x1.glb (jednotkový kvádr; part_id karty z DB)",
+   "position": [
+    535,
+    1425,
+    88
+   ],
+   "quaternion": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "scale": [
+    30,
+    40,
+    16
+   ],
+   "rozmer_mm": [
+    30,
+    40,
+    16
+   ],
+   "box_min": [
+    520,
+    1405,
+    80
+   ],
+   "box_max": [
+    550,
+    1445,
+    96
+   ]
+  },
+  {
+   "id": "rameno-vodorovne",
+   "role": "stulbal-rameno-vodorovne",
+   "kategorie": "zastupne-rameno",
+   "nazev": "Rameno monitoru otočné - vodorovné rameno (zástupně)",
+   "poznamka": "vysunutí 306 mm od líce zadní nohy, 250 mm od podstavy; orientační náhrada",
+   "katalogova_nahrada": "kvadr_plny_1x1x1.glb (jednotkový kvádr; part_id karty z DB)",
+   "position": [
+    535,
+    1430,
+    218
+   ],
+   "quaternion": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "scale": [
+    20,
+    20,
+    244
+   ],
+   "rozmer_mm": [
+    20,
+    20,
+    244
+   ],
+   "box_min": [
+    525,
+    1420,
+    96
+   ],
+   "box_max": [
+    545,
+    1440,
+    340
+   ]
+  },
+  {
+   "id": "rameno-hlava",
+   "role": "stulbal-rameno-hlava",
+   "kategorie": "zastupne-rameno",
+   "nazev": "Rameno monitoru - hlava VESA 100x100 (zástupně)",
+   "poznamka": "orientační náhrada",
+   "katalogova_nahrada": "kvadr_plny_1x1x1.glb (jednotkový kvádr; part_id karty z DB)",
+   "position": [
+    535,
+    1430,
+    343
+   ],
+   "quaternion": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "scale": [
+    100,
+    100,
+    6
+   ],
+   "rozmer_mm": [
+    100,
+    100,
+    6
+   ],
+   "box_min": [
+    485,
+    1380,
+    340
+   ],
+   "box_max": [
+    585,
+    1480,
+    346
+   ]
+  },
+  {
+   "id": "vypinac",
+   "role": "stulbal-vypinac",
+   "kategorie": "zastupne-vypinac",
+   "nazev": "Vypínač stmívací zvonkový (zástupně)",
+   "poznamka": "orientační náhrada",
+   "katalogova_nahrada": "kvadr_plny_1x1x1.glb (jednotkový kvádr; part_id karty z DB)",
+   "position": [
+    450,
+    1125,
+    30
+   ],
+   "quaternion": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "scale": [
+    40,
+    150,
+    60
+   ],
+   "rozmer_mm": [
+    40,
+    150,
+    60
+   ],
+   "box_min": [
+    430,
+    1050,
+    0
+   ],
+   "box_max": [
+    470,
+    1200,
+    60
+   ]
+  }
+ ]
+}
