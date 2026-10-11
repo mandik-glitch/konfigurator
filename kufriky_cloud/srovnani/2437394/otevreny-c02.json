@@ -1,0 +1,21 @@
+{
+ "sku": "2437394",
+ "pohled": "otevreny-c02",
+ "foto_repo_cesta": "../../../tmp/claude-0/-home-user-konfigurator/4afe04ea-52af-557e-a8a4-75a8d542e4f9/scratchpad/hilti/foto/2437394/c02.jpg",
+ "foto_url": null,
+ "pose": {
+  "vicko": 98.10216216181085
+ },
+ "kamera": {
+  "azim": 41.6566056900577,
+  "elev": 52.23755432919393,
+  "roll": 0.000048835931224680926,
+  "dist": 11960.949638886957,
+  "fov": 4.15612076605886,
+  "shiftX": -0.057701730028040646,
+  "shiftY": 0.15991697270514482,
+  "iou": 0.9664332577596758
+ },
+ "iou": 0.9664332577596758,
+ "poznamka": "Kamera odhadnuta z obrysu fotografie (IoU); ohnisko je pevně zvolené, ne změřené."
+}

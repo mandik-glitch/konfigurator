@@ -1,0 +1,19 @@
+{
+ "sku": "2437394",
+ "pohled": "zavreny-iso-L153707",
+ "foto_repo_cesta": "../../../tmp/claude-0/-home-user-konfigurator/4afe04ea-52af-557e-a8a4-75a8d542e4f9/scratchpad/hilti_pkc35/L153707_f2000.jpg",
+ "foto_url": null,
+ "pose": {},
+ "kamera": {
+  "azim": 41.360350444295904,
+  "elev": 19.962361512228725,
+  "roll": 0.00003876571261529522,
+  "dist": 6247.1664014918315,
+  "fov": 4.060630222094172,
+  "shiftX": -0.009238510913837795,
+  "shiftY": 0.009839476129505545,
+  "iou": 0.956439221125244
+ },
+ "iou": 0.956439221125244,
+ "poznamka": "Kamera odhadnuta z obrysu fotografie (IoU); ohnisko je pevně zvolené, ne změřené."
+}
