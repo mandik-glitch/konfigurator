@@ -7,8 +7,10 @@
   "azim": 180,
   "elev": 89.97,
   "roll": 0,
-  "dist": 10000,
-  "fov": 4.924403459172575,
+  "dist": 8000,
+  "fov": 6.153375027770294,
   "poznamka": "téměř ortografický pohled, render oříznut na obrys a roztažen na rozměr fotografie"
- }
+ },
+ "foto_url": "https://productdata.hilti.com/APQ_HC_f2000/L128476.jpg",
+ "iou": 0.9857
 }

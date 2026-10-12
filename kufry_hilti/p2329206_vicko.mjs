@@ -67,7 +67,7 @@ function zapadky(g) {
   // černé bloky západek v kapsách čelní koruny (c01 px 157..292 / 905..1045, py 15..77); sražený horní okraj
   for (const s of [-1, 1]) {
     const ya = s < 0 ? -LAT_BLK.yb : LAT_BLK.ya, yb = s < 0 ? -LAT_BLK.ya : LAT_BLK.yb;
-    g.add(rb('cerna', 'zapadka_vicko', { x0: LAT_BLK.x0, x1: LAT_BLK.x1, y0: ya, y1: yb, z0: Z_CAP - 0.3, z1: Z_CAP + 4, rc: 3, re: 1.8, seg: 2, fs: 2 }));
+    g.add(rb('cerna_mat', 'zapadka_vicko', { x0: LAT_BLK.x0, x1: LAT_BLK.x1, y0: ya, y1: yb, z0: Z_CAP - 0.3, z1: Z_CAP + 4, rc: 3, re: 1.8, seg: 2, fs: 2 }));
   }
 }
 

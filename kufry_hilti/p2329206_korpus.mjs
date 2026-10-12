@@ -49,7 +49,7 @@ export function korpus() {
     { fr: [{ z: SP - 30, y0: -LAT_Y[1], y1: -LAT_Y[0], nx: LAT.nx }, { z: SP, y0: -LAT_Y[1], y1: -LAT_Y[0], nx: LAT.nx }] },
     { fr: [{ z: SP - 30, y0: LAT_Y[0], y1: LAT_Y[1], nx: LAT.nx }, { z: SP, y0: LAT_Y[0], y1: LAT_Y[1], nx: LAT.nx }] },
   ];
-  const [plast, vlozka] = vanaH('cervena', 'cerna', 'korpus_vana', { frames: fr, notches, enotches: enFR(0, SP), wall: 3.5, floorZ: 9, holePolys: [WIN] });
+  const [plast, vlozka] = vanaH('cervena', 'cerna_mat', 'korpus_vana', { frames: fr, notches, enotches: enFR(0, SP), wall: 3.5, floorZ: 9, holePolys: [WIN] });
   g.add(plast, vlozka);
   g.add(trubka('seda', 'okno_trubka_korpus', WIN, 0, SP));
   // rám madla korpusu (červený držák kolem okna) a černá rukojeť (gumová příčka) – vidět jen u otevřeného kufru (c02); poloha/výška neověřena
@@ -57,7 +57,7 @@ export function korpus() {
   g.add(rb('cerna_mat', 'rukojet_korpus', { x0: pX(70), x1: 226, y0: -99, y1: 99, z0: SP - 16, z1: SP - 2, rc: 5, re: 3, seg: 3, fs: 2 }));
   // západky (černé bloky v kapsách; pozice zavřené západky – u otevřeného víka se objeví i na víku, viz p2329206_vicko.mjs)
   for (const s of [-1, 1]) {
-    g.add(rb('cerna', 'zapadka_korpus', { x0: LAT_BLK.x0 + 6, x1: LAT_BLK.x1 + 1, y0: s < 0 ? -LAT_BLK.yb : LAT_BLK.ya, y1: s < 0 ? -LAT_BLK.ya : LAT_BLK.yb, z0: SP - 28, z1: SP - 1, rc: 3, re: 2.2, seg: 2, fs: 2 }));
+    g.add(rb('cerna_mat', 'zapadka_korpus', { x0: LAT_BLK.x0 + 6, x1: LAT_BLK.x1 + 1, y0: s < 0 ? -LAT_BLK.yb : LAT_BLK.ya, y1: s < 0 ? -LAT_BLK.ya : LAT_BLK.yb, z0: SP - 28, z1: SP - 1, rc: 3, re: 2.2, seg: 2, fs: 2 }));
   }
   // pant: články korpusu (liché)
   for (const h of hingeSegments()) if (h.i % 2 === 1) g.add(cylY('cervena', 'pant_clanek', hingeRadius(h), h.a, h.b, HINGE.x, SP));

@@ -1,8 +1,8 @@
 {
  "sku": "2329206",
  "pohled": "otevreny-c04",
- "foto_repo_cesta": "../../../tmp/claude-0/-home-user-konfigurator/4afe04ea-52af-557e-a8a4-75a8d542e4f9/scratchpad/kufry2/2329206/c04.jpg",
- "foto_url": null,
+ "foto_repo_cesta": "kufry2/2329206/c04.jpg (mimo repo, scratchpad session)",
+ "foto_url": "https://productdata.hilti.com/APQ_HC_f2000/L128478.jpg",
  "pose": {
   "vicko": 107.52629424889227
  },
@@ -17,5 +17,5 @@
   "iou": 0.978899877580776
  },
  "iou": 0.978899877580776,
- "poznamka": "Kamera odhadnuta z obrysu fotografie (IoU); ohnisko je pevně zvolené, ne změřené."
+ "poznamka": "Kamera z 6 ručně změřených bodů (zdroje/landmarky_2329206_c02.json: konce pantu, rohy černých bloků západek) + překryv obrysu (nastroje/fit_lm_2329206.mjs, díry v masce vyplněny); c02, c03, c04 jsou JEDEN záběr. Úhel víka je výsledek fitu. Ohnisko/vzdálenost nejsou změřené (degenerují)."
 }
