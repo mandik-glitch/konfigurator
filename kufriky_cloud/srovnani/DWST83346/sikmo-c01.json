@@ -1,7 +1,8 @@
 {
  "sku": "DWST83346",
  "pohled": "sikmo-c01",
- "foto_repo_cesta": "DWST83346-1/c01.jpg (mimo repo, scratchpad)",
+ "foto_repo_cesta": "../../../tmp/claude-0/-home-user-konfigurator/4afe04ea-52af-557e-a8a4-75a8d542e4f9/scratchpad/kufry2/DWST83346-1/c01.jpg",
+ "foto_url": null,
  "pose": {
   "drzadlo": 61.60504164158161
  },
@@ -16,21 +17,5 @@
   "iou": 0.9700905209222886
  },
  "iou": 0.9700905209222886,
- "chyby_landmarku_px": [
-  16.1,
-  45.2,
-  7.1,
-  47.3,
-  23.5,
-  20.3,
-  9.4,
-  13.5,
-  30.5,
-  28.6,
-  7.5,
-  16.9,
-  4.9,
-  15.5
- ],
- "poznamka": "kamera z ručně změřených bodů (kalibruj.py) a doladění překryvem obrysu (fit_lm.mjs)"
+ "poznamka": "Kamera odhadnuta z obrysu fotografie (IoU); ohnisko je pevně zvolené, ne změřené."
 }

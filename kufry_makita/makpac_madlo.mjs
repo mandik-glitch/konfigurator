@@ -2,7 +2,7 @@
 // skupina `madlo` má pivot na ose čepů (rovnoběžná s Y), extras.osa = [0,1,0]: pose madlo=90° = vztyčené (tak je madlo na všech fotografiích výrobce).
 import { Group, Part, extXY, bx, cylZ, zc } from './makpac_zaklad.mjs';
 
-export const MADLO = { xp: 8, L: 70, yo: 122, yi: 88, bw: 28, t: 16, zdolu: 20 };   // xp = x osy čepů; L = délka ramen; yo/yi = vnější/vnitřní polovina šířky; bw = šířka příčky; t = tloušťka
+export const MADLO = { xp: 8, L: 70, yo: 131, yi: 95, bw: 28, t: 16, zdolu: 20 };   // xp = x osy čepů; L = délka ramen; yo/yi = vnější/vnitřní polovina šířky; bw = šířka příčky; t = tloušťka
 
 export function madlo(V) {
   const { xp, L, yo, yi, bw, t, zdolu } = MADLO;

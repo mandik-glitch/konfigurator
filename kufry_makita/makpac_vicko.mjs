@@ -5,7 +5,7 @@ import { par, LID } from './makpac_par.mjs';
 import { madlo } from './makpac_madlo.mjs';
 import { logo } from './makpac_logo.mjs';
 
-export const KAPSA = { xf: 20, xr: -86, y0: -128, y1: 128, rf: 16, rr: 16, hloubka: 20 };
+export const KAPSA = { xf: 20, xr: -86, y0: -137, y1: 137, rf: 16, rr: 16, hloubka: 20 };
 export const LEDGE = { xf: 118, xr: -134, rf: 6, rr: 6, hloubka: 5 };   // rameno nad západkou (stohování): Y 140..181 na obou koncích, 5 mm pod horní plochou
 export const LOGO = { xf: 128, xr: 66, y0: -110, y1: 110, rf: 3, rr: 3 };
 
