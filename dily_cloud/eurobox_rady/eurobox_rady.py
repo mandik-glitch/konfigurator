@@ -875,11 +875,13 @@ def postav(spec):
         return False
 
     kolize = {}
+    LO = np.array([a[0] for a in aabbs]) if aabbs else np.zeros((0, 3))
+    HI = np.array([a[1] for a in aabbs]) if aabbs else np.zeros((0, 3))
     for i in range(len(tvary)):
-        lo1, hi1 = aabbs[i]
-        for j in range(i + 1, len(tvary)):
-            lo2, hi2 = aabbs[j]
-            if np.any(lo1 > hi2 - tol) or np.any(lo2 > hi1 - tol):
+        # hrubý výběr (AABB se překrývají o víc než tolerance), vektorově
+        kand = np.nonzero(~(np.any(LO[i] > HI - tol, axis=1) | np.any(LO > HI[i] - tol, axis=1)))[0]
+        for j in kand:
+            if j <= i:
                 continue
             A, B = tvary[i], tvary[j]
             if A["vlastnik"] == B["vlastnik"]:

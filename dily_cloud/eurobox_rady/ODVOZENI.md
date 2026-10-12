@@ -7,8 +7,8 @@ Po dodání GLB se musí přeměřit body označené `[GLB]` níže a upravit ko
 
 ## Shrnutí
 
-- `eurobox_rady.py` (`postav`, `kopie_rady`, `min_vyska_patra`), `test_eurobox_rady.py` (17 testů, 980 kontrol,
-  ~1 min, vč. objemu průniku s originálními GLB boxů), `nahled.html` (4 předvolby, Three.js r128 inline),
+- `eurobox_rady.py` (`postav`, `kopie_rady`, `min_vyska_patra`), `test_eurobox_rady.py` (19 testů, ~3600 kontrol,
+  ~2 min, vč. objemu průniku s originálními GLB boxů), `nahled.html` (6 předvoleb, Three.js r128 inline),
   `sestav_nahled.py` (generátor nahled.html), `odvod_konstant.py` (konstanty boxů z GLB), `rez_svg.py` → `obr_ukotveni.svg`.
 - Boxy 400×300 jsou ověřené na GLB 3788 až 3796: pozice+kvaternion sedí na 0,02 mm (spodek nožky přesně v rovině
   dráhy, model je o 1 mm menší než jmenovitě, vystředěný). Z GLB: nožka dole 266 × 366 mm (nahoře ~274 × 375), výška 12 mm.
@@ -18,6 +18,26 @@ Po dodání GLB se musí přeměřit body označené `[GLB]` níže a upravit ko
   nižším nosníku (nosník `dolni`), horní na vyšším (`horni`). Rozdíl výšek = vzdálenost trubek × sin(sklon).
 - Řady jednoho patra sdílejí JEDEN dolní nosník; horní nosníky jsou po jednom na každou různě dlouhou řadu.
 - Výchozí rozteč dráhy zdůvodněna dole; výchozí dráha `5276`, výchozí zasunutí `54.5`.
+
+## Pravidla od Roberta doplněná později
+
+- **Boxy se naklánějí spolu s dráhami** („aby jely po té dvojici válečkových drah“): všechny boxy řady mají stejný sklon jako obě dráhy,
+  spodek nožky leží v rovině válečků obou drah. Test `test_boxy_nakloneny_spolu_s_drahami` to měří jen z výstupu a z GLB: úhel osy boxu = úhel dráhy
+  (4 desetinná místa), normála boxu = normála roviny drah, vzdálenost spodku nožky od roviny válečků ≤ 0,1 mm (naměřeno max. 0,0007 mm),
+  obě dráhy a všechny moduly leží v jedné rovině a řady jednoho patra tvoří jednu šikmou rovinu. Platí pro obě dráhy, obě orientace boxu, obě osy a oba nižší konce.
+- **Strop délky řady 20 m**: parametr `max_delka_rady_mm` (výchozí 20000). Delší řada vrací chybu `RADA_PRILIS_DLOUHA` (text s délkou, stropem a nejvyšším počtem boxů,
+  dotčené id řady), `postav` ale výstup přesto vrátí. `max_pocet_boxu(typ, smer, mezera_mm=1, max_delka_mm=20000)` dá nejvyšší počet pro nabídku:
+  400×300 na délku 49 (49·400+48 = 19648), na šířku 66; 600×400 na délku 33 (33·600+32 = 19832), na šířku 49. Stejné číslo je ve výstupu `rady[].max_pocet_boxu`.
+  `kopie_rady` řadu na stropu zkopíruje bez chyby; kopie řady nad stropem nese chybu u každé řady. Řada na stropu projde, +1 box je chyba (test `test_strop_delky_rady_20_m`).
+  Poznámka: u řady dlouhé desítky metrů je střední podpora dráhy stále OTEVŘENÁ OTÁZKA (viz otázka 1); parametr `max_rozpeti_mm` je výchozí vypnutý.
+
+## Náhled (změny po připomínce Roberta)
+
+Boxy se kreslí jako pevné modré nádoby (obálka a nožka podle GLB, stěny 6 mm a dno 5 mm jsou jen vizuální), dráhy jako souvislá lišta stejné barvy
+s válečky (polomer 10 mm, rozteč 26 mm; horní hrana válečků je přesně v rovině spodku nožky), trubky světle šedé, zarážka oranžová. Předvolby: vodorovná řada,
+jedna skloněná, patro vedle sebe, dvě patra s různým sklonem, „Podle fotky: 3 patra“ (výchozí, pohled 3/4 zepředu zboku), „Dlouhá řada v jedné lince“ (11 boxů, 5°).
+Pohled z boku podél osy Z je tlačítkem. Skutečná chyba, která dělala dojem „boxy nejsou v jedné lince“: původní náhled skládal natočení z levotočivé báze
+(zrcadlo), takže se boxy kreslily s jiným sklonem než dráhy. Data z `postav()` byla v pořádku; opraveno jen v náhledu (báze se před převodem na kvaternion zpravotočivní).
 
 ## Výklad pojmů bota10: potvrzeno / opraveno
 

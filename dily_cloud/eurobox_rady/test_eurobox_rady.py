@@ -237,9 +237,9 @@ def test_strop_delky_rady_20_m():
                 ok(len(ch) == 1 and ch[0]["id"] == ["R"], str(v["problemy"]))
                 ok(len(v["boxy"]) == nmax + 1, "výstup se vrací i při překročení")
     # vlastní strop a kopie dlouhé řady
-    v = E.postav({"rady": [radek(pocet=3, y=0)], "max_delka_rady_mm": 1200})
+    v = E.postav({"rady": [radek(pocet=3, y=0)], "max_delka_rady_mm": 1202})
     ok(not chyby(v, "RADA_PRILIS_DLOUHA"))
-    v = E.postav({"rady": [radek(pocet=4, y=0)], "max_delka_rady_mm": 1200})
+    v = E.postav({"rady": [radek(pocet=4, y=0)], "max_delka_rady_mm": 1202})
     ok(chyby(v, "RADA_PRILIS_DLOUHA"))
     s = {"rady": [radek(id_="A", pocet=50, y=400, sklon_deg=5)]}
     for kam in ("vedle", "nad"):
