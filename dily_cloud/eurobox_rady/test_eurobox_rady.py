@@ -383,6 +383,7 @@ def test_boxy_nakloneny_spolu_s_drahami():
                 v = E.postav(s)
                 ok(not chyby(v), str(chyby(v)))
                 dcfg = E.DILY[int(dr)]
+                roviny_rad = {}
                 for r in v["rady"]:
                     th = math.radians(r["sklon_deg"])
                     ds = [d for d in v["draha"] if d["rada"] == r["id"]][0]
@@ -398,6 +399,7 @@ def test_boxy_nakloneny_spolu_s_drahami():
                             blizko(math.degrees(math.acos(min(1.0, n[1]))), r["sklon_deg"], 1e-4, "úhel dráhy")
                             roviny.append((n, float(n @ np.array(t0["stred"]) + t0["pul"][2])))
                     n0, c0 = roviny[0]
+                    roviny_rad[r["id"]] = (r["patro"], n0, c0)
                     for n, c in roviny:
                         blizko(float(np.linalg.norm(n - n0)), 0.0, 1e-6, "obě dráhy a všechny moduly v jedné rovině: normála")
                         blizko(c, c0, 5e-3, "obě dráhy a všechny moduly v jedné rovině: výška")
@@ -411,6 +413,12 @@ def test_boxy_nakloneny_spolu_s_drahami():
                         ok(abs(spodek - c0) <= 0.1, "nožka–válečky %.4f mm" % (spodek - c0))
                         # nožka je celá nad rovinou válečků (žádné zanoření) a vodorovná stěna spodku leží v ní
                         ok(spodek - c0 >= -0.1)
+                # řady jednoho patra tvoří jednu šikmou rovinu (shodná normála a poloha roviny válečků)
+                for p1, n1, c1 in roviny_rad.values():
+                    for p2, n2, c2 in roviny_rad.values():
+                        if p1 == p2:
+                            blizko(float(np.linalg.norm(n1 - n2)), 0.0, 1e-6)
+                            blizko(c1, c2, 5e-3, "rovina válečků patra")
 
 
 def test_kolize_glb_objem_pruniku():
