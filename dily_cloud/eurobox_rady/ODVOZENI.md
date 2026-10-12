@@ -1,15 +1,15 @@
 # Řady euroboxů s válečkovými dráhami: odvození
 
-Stav: 2026-10-12, agent pro bota10. GLB dílů 5275 až 5282 zatím NEJSOU v repu (`git fetch origin main`
-je v `origin/main` nenašel), takže všechno kolem dílů je z rozměrů ze zadání a je označeno **neověřeno**.
-Po dodání GLB se musí přeměřit body označené `[GLB]` níže a upravit konstanty v `DILY`
-(`eurobox_rady.py`); kód pak díly zaměří stejnou cestou jako boxy.
+Stav: 2026-10-12, agent pro bota10. Dráha **5276** je od Roberta jako STEP (dily/5276_2.2.016.027.037.03.step) a je
+převedená na skutečný mesh `dily/5276.glb`; její rozměry a tvar jsou z geometrie. Díly **5275, 5281, 5282** (GLB ani STEP) zatím NEJSOU,
+takže jejich tvar a uchycení jsou z rozměrů ze zadání a jsou označené **neověřeno** (body `[GLB]`). Po dodání se konstanty v `DILY`
+(`eurobox_rady.py`) přeměří stejným postupem jako 5276 (`dily/step_na_glb.py`).
 
 ## Shrnutí
 
-- `eurobox_rady.py` (`postav`, `kopie_rady`, `min_vyska_patra`), `test_eurobox_rady.py` (19 testů, ~3600 kontrol,
-  ~2 min, vč. objemu průniku s originálními GLB boxů), `nahled.html` (6 předvoleb, Three.js r128 inline),
-  `sestav_nahled.py` (generátor nahled.html), `odvod_konstant.py` (konstanty boxů z GLB), `rez_svg.py` → `obr_ukotveni.svg`.
+- `eurobox_rady.py` (`postav`, `kopie_rady`, `min_vyska_patra`), `test_eurobox_rady.py` (22 testů, ~9000 kontrol,
+  ~3 min, vč. objemu průniku s originálními GLB boxů a s meshem dráhy 5276), `nahled.html` (6 předvoleb, Three.js r128 inline),
+  `sestav_nahled.py` (generátor nahled.html), `odvod_konstant.py` (konstanty boxů z GLB), `rez_svg.py` → `obr_ukotveni.svg`, `dily/step_na_glb.py` (STEP → GLB přes OCP) a `dily/5276.glb`.
 - Boxy 400×300 jsou ověřené na GLB 3788 až 3796: pozice+kvaternion sedí na 0,02 mm (spodek nožky přesně v rovině
   dráhy, model je o 1 mm menší než jmenovitě, vystředěný). Z GLB: nožka dole 266 × 366 mm (nahoře ~274 × 375), výška 12 mm.
 - Dráha leží svou horní plochou (rovina válečků) přesně pod spodkem nožky. Konec dráhy je zasunut 54,5 mm do kapsy
@@ -34,7 +34,7 @@ Po dodání GLB se musí přeměřit body označené `[GLB]` níže a upravit ko
 ## Náhled (změny po připomínce Roberta)
 
 Boxy se kreslí jako pevné modré nádoby (obálka a nožka podle GLB, stěny 6 mm a dno 5 mm jsou jen vizuální), dráhy jako souvislá lišta stejné barvy;
-u 5275 s ozdobnými válečky (polomer 10 mm, rozteč 26 mm; horní hrana válečků je přesně v rovině spodku nožky), u 5276 se kreslí skutečné válečky s disky z dat `postav()`, trubky světle šedé, zarážka oranžová. Předvolby: vodorovná řada,
+u 5275 s ozdobnými válečky (polomer 10 mm, rozteč 26 mm; horní hrana válečků je přesně v rovině spodku nožky), u 5276 se kreslí skutečný mesh `dily/5276.glb` (STEP) v pozicích a natočeních modulů z výstupu `postav()`, trubky světle šedé, zarážka oranžová. Předvolby: vodorovná řada,
 jedna skloněná, patro vedle sebe, dvě patra s různým sklonem, „Podle fotky: 3 patra“ (výchozí, pohled 3/4 zepředu zboku), „Dlouhá řada v jedné lince“ (11 boxů, 5°).
 Pohled z boku podél osy Z je tlačítkem. Skutečná chyba, která dělala dojem „boxy nejsou v jedné lince“: původní náhled skládal natočení z levotočivé báze
 (zrcadlo), takže se boxy kreslily s jiným sklonem než dráhy. Data z `postav()` byla v pořádku; opraveno jen v náhledu (báze se před převodem na kvaternion zpravotočivní).
@@ -79,16 +79,23 @@ ODHAD (neověřeno, `[GLB]`):
 - Zarážka je u otvoru kapsy (čelo boxu se opírá o zarážku v otvoru kapsy); alternativa `zarazka_u="hak"`.
 - Tloušťka zarážky 1,5 mm (odhad), ve výpočtu jen pro polohu.
 - Dráha 5275: tělo pod rovinou válečků na výšku 38,86 mm.
-- Dráha 5276 (Robert: „tím dorazem je to samotné kolečko s talířkem/diskem na konci, není to doraz jako táhlý profil“): lišta s válečky,
-  každý váleček má na VNĚJŠÍM konci disk (kruhovou přírubu) vyčnívající nad rovinu válečků. Žádná souvislá boční lišta není.
-  Odvození z rozměrů modulu 41,0 × 61,67 × 255,04 (dlouhá osa Z): 41,0 = šířka (délka osy válečku vč. disku), 61,67 = výška od spodku disku po horní okraj
-  disku, tedy PRŮMĚR DISKU = 61,67 mm (disk je největší součást průřezu, proto určuje obálku). Osa válečku je napříč, disk stojí v rovině (podél, kolmo).
-  Odhady (neověřeno): polomer válečku 15 mm (určuje, že disk přečnívá rovinu válečků o 61,67/2 − 15 = 15,8 mm a spodek disku je 45,8 mm pod ní),
-  tloušťka disku 3 mm, 4 válečky s diskem na modul (rozteč 255,04/4 = 63,76 mm; disky o průměru 61,67 se tak těsně nedotýkají), lišta pod osou 16 mm (jen náhrada).
-  Disky, které by zasahovaly do kapsy koncovky (zasunutá část dráhy), se vynechávají.
-  Orientace lokálních os 5276 je jiná než u 5275 (Z podélně, Y výška, X napříč); strana disku = lokální +X, levá/pravá dráha se liší otočením o 180° kolem normály.
-- Orientace lokálních os plechů: Z podél (háček na −Z), Y nahoru, X napříč. U 5276: doraz na +X lokálně; levá/pravá dráha se liší otočením o 180° kolem normály.
-- Moduly dráhy na sraz, bez spojky (nic v podkladech neříká jinak).
+- **Dráha 5276 = STEP (změřeno, [GLB] hotovo):** modul 41,0 × 61,67 × 255,04 mm se skládá z 12 těles (osy STEPu: X šířka, Y nahoru, Z podél; střed obálky ve STEPu
+  (0; 28,335; 95,0), v `dily/5276.glb` je posunut do počátku):
+  - lišta (tělo) 40,5 × 36,5 × 190 mm (Y −1,0 až 35,5);
+  - 2 koncové plechy 41,0 × 44,0 × 88,9 mm (Y −2,5 až 41,5), zasahují 56,4 mm do těla a o 32,52 mm přečnívají (rozměr = „spojovací plech střední“ 5278);
+  - 3 kolečka (rozteč 59,6 mm, osa rovnoběžná s X, střed Y = 31,2): váleček R 13,5 (Ø27, X −11,92 až 9,88, tedy 21,8 mm), jádro R 12,5, osička R 1,75, na straně +X
+    DISK („talířek“) R 28,0 (Ø56) tloušťky 2,4 mm (X 9,88 až 12,28); horní okraj válečku Y = 44,7, horní okraj disku Y = 59,2: **disk přečnívá váleček o 14,5 mm**;
+  - kolíky/příčky 35,7 × 12 × 6 a 3 hlavičky 2,4 × 6,4 × 6,4 (drobnosti uvnitř těla).
+  Rovina, na které leží nožka boxu, je horní okraj válečků (Y = 44,7 ve STEPu). Disk **není** na okraji modulu: z těla zbývá za diskem 8 mm a před válečkem 8,4 mm.
+  Mesh se tvoří z STEPu skriptem `dily/step_na_glb.py` (OCP, odchylka sítění 0,1 mm, 20 000 trojúhelníků, objemy těles sedí s STEPem na 1 %);
+  kolizní náhrady v kódu (`STEP_5276`: 3 kvádry + 6 válců) kontroluje test proti meshi.
+  Odvození rozteče: disk (vnitřní plocha v X = 9,88 od osy dráhy, výška nad rovinou válečků 14,5 mm) je vyšší než nožka (12 mm) i než spodek boku boxu, takže nemůže
+  stát pod přesahem boxu a musí stát VNĚ boku boxu (vůle `disk_vule_mm`, výchozí 1 mm). U každé dráhy je disk na lokálním +X; levá dráha se otočí o 180°
+  kolem normály (modul je podél souměrný jen přibližně: kolečka jsou na Z −58,0 / 1,6 / 61,2, tj. o 1,6 mm mimo střed), takže disky míří vždy ven.
+- Orientace lokálních os plechů: Z podél (háček na −Z), Y nahoru, X napříč. U 5276 je disk na +X lokálně (viz výše).
+- Moduly dráhy se řetězí v rozteči 255,04 mm (konec koncového plechu na konec koncového plechu), bez dalšího dílu. Mezi posledním kolečkem jednoho a prvním dalšího
+  modulu pak vychází mezera 135,8 mm bez válečků (jinak 59,6 mm), box je přes ni stále podepřen (nožka 366 mm). Skutečný způsob spojení modulů ze STEPu nevyplývá
+  (plechy 41,0 × 44,0 × 88,9 mm přečnívají 32,52 mm a nejsou užší než tělo, takže nejde o zasunutí jednoho modulu do druhého) `[GLB]`.
 - 600×400: bez modelu → kvádr bez nožky (není známo, zda nožku má); karty dodavatele 2999 až 3003 v pořadí výšek 120/170/220/320/420 (domněnka).
 
 ### Hypotéza uchycení (obrázek `obr_ukotveni.svg`)
@@ -104,11 +111,13 @@ D = vzdálenost trubek podél sklonu, a trubka leží tím níž pod spodkem box
 Dráhy musí ležet pod nožkou boxu (spodek nožky 266 mm napříč při směru „delka“, 366 mm při „sirka“), jinak by se box opíral o dno ve výšce 12 mm.
 
 - 5275: vnější hrana dráhy 10 mm uvnitř hrany nožky: rozteč = nožka − šířka dráhy − 2·10, tedy 208,8 mm (delka) / 308,8 mm (sirka).
-- 5276: boxy se vedou mezi disky, disky stojí vně boku boxu s vůlí 1 mm (parametr `disk_vule_mm`): vnější plocha disku = vnější hrana dráhy,
-  rozteč = šířka boxu + 2·(vůle + tloušťka disku) − 41 = b + 2·(1 + 3) − 41, tedy 267 mm (delka) / 367 mm (sirka). Disk přečnívá rovinu válečků o 15,8 mm,
-  tedy nad nožku (12 mm) a zachytí spodní okraj boku boxu (stěna je nad nožkou o 17 mm široší než nožka). Nožka (zespodu 266 / 366 mm) leží na válečcích
-  na šířce 20 mm na každé straně (válečky sahají od disku dovnitř do hrany dráhy). Test: objem průniku originálních GLB boxů s disky a válečky je 0, vzdálenost
-  nožka–válečky ≤ 0,1 mm, disky vně boxu s vůlí ≥ 1 mm.
+- 5276: boxy se vedou mezi disky; disk stojí vně boku boxu s vůlí 1 mm (parametr `disk_vule_mm`). Vnitřní plocha disku je v X = 9,88 od osy dráhy, proto
+  rozteč = šířka boxu − 2·(9,88 − 1,0) = b − 17,76: **282,24 mm** (400×300 na délku) / **382,24 mm** (na šířku). Dráha pak přečnívá bok boxu o 11,6 mm (tělo 41 mm kolem osy).
+  Váleček (X −11,92 až 9,88, 21,8 mm) leží pod nožkou jen na úseku mezi hranou nožky a diskem: nožka (zespodu 266 mm, tj. 17 mm od boku boxu) a vnitřní
+  plocha disku je 1 mm vně boku, takže **nožka leží na každém válečku jen 3,8 mm své šířky**. Kód to hlásí jako varování `OPORA_NOZKY_MALA` (není to chyba: box se
+  opírá o válečky, ale okrajem nožky). Zdánlivě těsná podpora může být zjednodušením nožky v GLB boxu (266 × 366 × 12 mm); rozteč je parametr `roztec_drah_mm`.
+  Test (`test_drahy_5276_skutecna_geometrie_a_kolize_s_boxem`): na skutečných sítích (mesh dráhy z STEPu × originální GLB boxu) je objem průniku 0, horní okraj válečků
+  = spodek nožky (≤ 0,2 mm, daň sítění), disky vně boxu s vůlí ≥ 1 mm; při rozteči 250 mm (disk pod přesahem boxu) objem průniku vychází > 0 a kód hlásí `KOLIZE`.
 - Rozteč 5275 vychází zvolenou stabilitou (široce); Robert může zadat vlastní.
 
 ## Výstup `postav(spec)` (stručně)
@@ -126,17 +135,19 @@ Kopie: `kopie_rady(spec, id, "vedle"|"nad", mezera, pocet, sklon_deg=None, patro
 1. Jak se spojují moduly dráhy v řadě (5275 271,66 / 5276 255,04)? Plechem 5281, nebo uchem na ucho? Výchozí: na sraz, bez dílu. Bez spojky se např. 2 m řady nesou jen 2 trubkami; je potřeba střední podpora (parametr `max_rozpeti_mm`, výchozí vypnuto)?
 2. Je zarážka 28 mm na plechu 5282 u otvoru kapsy (výchozí), nebo na konci s hákem?
 3. Je hák plechu otevřený (trubka Ø28 vs. výška 27,75 mm)? Výchozí: osa trubky 15,9 mm od vnějšího konce plechu, 15,9 mm pod jeho horní plochou.
-4. Dráha 5276 (disk válečku): je průměr disku opravdu 61,67 mm (celá výška modulu), nebo jen část? Výchozí: ano, 61,67 mm. O kolik disk vyčnívá nad rovinu válečků
-   (tj. jaký je polomer válečku)? Výchozí: polomer válečku 15 mm → vyčnívá 15,8 mm. Tloušťka disku? Výchozí 3 mm. Kolik válečků s diskem je na modulu a v jaké rozteči?
-   Výchozí 4 na modul, rozteč 63,76 mm (disky mají disk na vnějším konci KAŽDÉHO válečku). Mají válečky i disky vynechané místo na koncích modulu (pro kapsu koncovky)?
-   Výchozí: disky v zasunuté části se vynechávají. Je disk vně boku boxu (výchozí, vůle 1 mm → rozteč drah 267 / 367 mm), nebo mezi nimi vede jiný systém?
-5. Která dráha je výchozí? Výchozí: 5276 (pořadí ve zprávě), jiná jen parametrem `draha`.
-6. Zasunutí 54,5 mm odpovídá hloubce kapsy? Výchozí: ano (zasunutí = kapsa = 54,5; menší zasunutí lze zadat).
-7. Doporučený rozsah sklonu? Výchozí varování mimo 2 až 15° (chyba nad 45° a pod 0°).
-8. Euroboxy 600×400: potvrdit výšky 120/170/220/320/420 a zda mají nožku (výchozí: kvádr bez nožky, karty 2999 až 3003).
-9. Minimální výšková mezera mezi patry? Výchozí varování pod 10 mm (kopie „nad“ dodrží jakoukoli zadanou).
-10. Tloušťka desky pod vodorovnou řadou (jen pro výškovou mezeru pater)? Výchozí 0 (řeší rám bota10).
-11. Nosník Ø28 u kraje patra: jak daleko přesahuje krajní koncovku? Výchozí 0 (nohy a spojky doplní rám).
+4. Dráha 5276, disky: disk je Ø56 × 2,4 mm, přečnívá váleček o 14,5 mm, takže stojí vně boku boxu (výchozí vůle 1 mm → rozteč 282,24 / 382,24 mm), a nožka pak leží
+   na válečku jen 3,8 mm své šířky. Je to tak správně (a je nožka eurobox ve skutečnosti širší)? Nebo má být rozteč menší a nožka/box si mezi disky vybrat zářezy? Výchozí: disky vně boxu.
+5. STEP dráhy 5276 obsahuje na koncích plechy 41,0 × 44,0 × 88,9 mm (rozměr 5278), které zasahují 56,4 mm do těla. Jsou to koncovky modulu, a jak se moduly řetězí dál
+   (výchozí: konec plechu na konec plechu, bez dalšího dílu, mezera bez válečků 135,8 mm)? Jsou 5281/5282 něco jiného (jak na ně dosedají plechy 41,0 × 44,0 mm, když 5282 je
+   38,47 × 55,75 mm a kapsa 27,75 mm vysoká)? Platí Robertových „54 až 55 mm“ zasunutí pro plech v těle (56,4 mm), nebo pro dráhu v 5281/5282? Výchozí: dráha v 5281/5282 54,5 mm.
+5a. Při zasunutí 54,5 mm do 5281/5282 by první disk (od konce modulu 41,5 mm) zasahoval 13 mm do kapsy; kód to hlásí `DISK_V_KAPSE`. Výchozí: ponecháno 54,5 mm a varování.
+6. Která dráha je výchozí? Výchozí: 5276 (pořadí ve zprávě), jiná jen parametrem `draha`.
+7. Zasunutí 54,5 mm odpovídá hloubce kapsy? Výchozí: ano (zasunutí = kapsa = 54,5; menší zasunutí lze zadat).
+8. Doporučený rozsah sklonu? Výchozí varování mimo 2 až 15° (chyba nad 45° a pod 0°).
+9. Euroboxy 600×400: potvrdit výšky 120/170/220/320/420 a zda mají nožku (výchozí: kvádr bez nožky, karty 2999 až 3003).
+10. Minimální výšková mezera mezi patry? Výchozí varování pod 10 mm (kopie „nad“ dodrží jakoukoli zadanou).
+11. Tloušťka desky pod vodorovnou řadou (jen pro výškovou mezeru pater)? Výchozí 0 (řeší rám bota10).
+12. Nosník Ø28 u kraje patra: jak daleko přesahuje krajní koncovku? Výchozí 0 (nohy a spojky doplní rám).
 
 ## Poznámka k nahled.html (kontrola zakázaných slov)
 V nahled.html nejsou slova admin, logiman, localStorage, /api/, window.open, postMessage, eval ani cizí servery. Jediné výskyty „http://“ jsou čtyři jmenné prostory XML/SVG/XHTML (`http://www.w3.org/...`) uvnitř knihovny Three.js; nejde o žádný síťový požadavek. Pokud synchronizační filtr hledá obecně řetězec „http“, je nutné ho upravit, nebo mi dát vědět a nahradím je.

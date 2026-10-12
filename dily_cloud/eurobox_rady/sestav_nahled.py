@@ -2,6 +2,7 @@
 Spuštění:  python3 -I sestav_nahled.py        (z této složky; čte jen node_modules/three z repa)
 """
 import json
+import numpy as np
 import os
 import re
 import sys
@@ -69,6 +70,49 @@ def data():
     return res
 
 
+def mesh_5276():
+    """dily/5276.glb (STEP) -> kompaktní pole pro náhled: pozice int16 (0,01 mm), normály int8, barva = index palety, indexy uint16."""
+    import base64
+    import struct as st
+    d = open(os.path.join(HERE, "dily", "5276.glb"), "rb").read()
+    jl = st.unpack("<I", d[12:16])[0]
+    j = json.loads(d[20:20 + jl])
+    off = 20 + jl
+    bl = st.unpack("<I", d[off:off + 4])[0]
+    b = d[off + 8:off + 8 + bl]
+
+    def acc(i):
+        a = j["accessors"][i]
+        bv = j["bufferViews"][a["bufferView"]]
+        n = {"SCALAR": 1, "VEC3": 3}[a["type"]]
+        dt = {5126: "<f4", 5125: "<u4"}[a["componentType"]]
+        o = bv.get("byteOffset", 0) + a.get("byteOffset", 0)
+        return np.frombuffer(b, dtype=dt, count=a["count"] * n, offset=o).reshape(-1, n).astype(float)
+    P, N, C, I = [], [], [], []
+    base = 0
+    for k, p in enumerate(j["meshes"][0]["primitives"]):
+        pos, nor = acc(p["attributes"]["POSITION"]), acc(p["attributes"]["NORMAL"])
+        idx = acc(p["indices"])[:, 0].astype(int)
+        if k == 0:
+            col = np.zeros(len(pos))
+        elif k in (1, 2):
+            col = np.ones(len(pos))
+        elif k in (3, 4, 5):
+            col = np.where(pos[:, 0] > 9.8, 3, 2)
+        else:
+            col = np.full(len(pos), 4)
+        P.append(pos)
+        N.append(nor)
+        C.append(col)
+        I.append(idx + base)
+        base += len(pos)
+    P, N, C, I = np.concatenate(P), np.concatenate(N), np.concatenate(C), np.concatenate(I)
+    assert base < 65536
+    enc = lambda a: base64.b64encode(a.tobytes()).decode()
+    return {"p": enc(np.round(P * 100).astype("<i2")), "n": enc(np.round(N * 127).astype("i1")),
+            "c": enc(C.astype("u1")), "i": enc(I.astype("<u2")), "nv": int(base), "nt": int(len(I) // 3)}
+
+
 def bez_eval(txt):
     """Odstraní z cizího minifikovaného kódu řetězec 'eval' (identifikátory jako evaluate se přejmenují
     konzistentně v celém souboru, funkce se tím nemění)."""
@@ -132,6 +176,7 @@ label{display:flex;align-items:center;gap:8px;margin:3px 0;cursor:pointer}
 <script>/*ORBIT*/</script>
 <script>
 const DATA = /*DATA*/;
+const MESH5276 = /*MESH*/;
 (function(){
 const BARVY={box:0x1f64d6,nozka:0x15489e,draha:0x8f98a6,doraz:0x7a8391,valec:0xe3e7ee,disk:0xaab3c0,dolni:0x4b5360,zarazka:0xe0701f,horni:0x4b5360,nosnik:0xd9dee5,opora:0xb08968};
 const cv=document.getElementById('cv');
@@ -181,6 +226,27 @@ function krabice(g,b,r){
   e.position.set(0,0,zc);gr.add(e);
   g.add(gr);
 }
+const PALETA=[0x8f98a6,0x6b7482,0xe8ebf0,0xb4bcc8,0x555b66].map(c=>new THREE.Color(c));
+function b64(s,T){const bin=atob(s);const u=new Uint8Array(bin.length);for(let i=0;i<bin.length;i++)u[i]=bin.charCodeAt(i);return new T(u.buffer);}
+let geo5276=null;
+function geometrie5276(){
+  if(geo5276)return geo5276;
+  const M=MESH5276,p=b64(M.p,Int16Array),n=b64(M.n,Int8Array),c=b64(M.c,Uint8Array),ix=b64(M.i,Uint16Array);
+  const pos=new Float32Array(M.nv*3),nor=new Float32Array(M.nv*3),col=new Float32Array(M.nv*3);
+  for(let i=0;i<M.nv;i++){for(let k=0;k<3;k++){pos[i*3+k]=p[i*3+k]/100;nor[i*3+k]=n[i*3+k]/127;}
+    const C=PALETA[c[i]];col[i*3]=C.r;col[i*3+1]=C.g;col[i*3+2]=C.b;}
+  const g=new THREE.BufferGeometry();
+  g.setAttribute('position',new THREE.BufferAttribute(pos,3));g.setAttribute('normal',new THREE.BufferAttribute(nor,3));
+  g.setAttribute('color',new THREE.BufferAttribute(col,3));g.setIndex(new THREE.BufferAttribute(ix,1));
+  return geo5276=g;
+}
+// skutečný model dráhy 5276 (STEP) v pozicích modulů z výstupu: pozice + kvaternion
+function drahaModel(g,pas){
+  const im=new THREE.InstancedMesh(geometrie5276(),new THREE.MeshStandardMaterial({vertexColors:true,roughness:.5,metalness:.35}),pas.moduly.length);
+  const m=new THREE.Matrix4();
+  pas.moduly.forEach((mo,i)=>{m.compose(vec(mo.position),new THREE.Quaternion(mo.quaternion[0],mo.quaternion[1],mo.quaternion[2],mo.quaternion[3]),new THREE.Vector3(1,1,1));im.setMatrixAt(i,m);});
+  g.add(im);
+}
 const VALEC_R=10,VALEC_PITCH=26;
 function valecky(g,r,pas,sirka){
   const P0=vec(r.zacatek),d=vec(r.vektor_podel),c=vec(r.vektor_napric),n=vec(r.vektor_kolmo);
@@ -210,6 +276,7 @@ function sestav(){
   }
   R.draha.forEach(d=>d.pasy.forEach(p=>{
     const r=rady[d.rada];
+    if(d.part_id===5276){drahaModel(grp.draha,p);return;}
     let sirka=0;
     p.moduly.forEach(m=>m.tvary_nahrady.forEach(t=>{
       if(t.typ==='valec'){valec(grp.draha,t,t.role==='disk'?BARVY.disk:BARVY.valec);return;}
@@ -294,6 +361,7 @@ def main():
     html = HTML.replace("/*THREE*/", bez_eval(three).replace("</script", "<\\/script"))
     html = html.replace("/*ORBIT*/", bez_eval(orbit).replace("</script", "<\\/script"))
     html = html.replace("/*DATA*/", d.replace("</", "<\\/"))
+    html = html.replace("/*MESH*/", json.dumps(mesh_5276(), separators=(",", ":")))
     zakaz = ["admin", "logiman", "localstorage", "/api/", "window.open", "postmessage", "eval"]
     low = html.lower()
     for z in zakaz:
