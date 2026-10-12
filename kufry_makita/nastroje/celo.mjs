@@ -46,8 +46,8 @@ f=np.asarray(Image.open(sys.argv[1]).convert('RGB')).astype(int).min(axis=2)<235
 r=np.asarray(Image.open(sys.argv[2]).convert('RGB')).astype(int).min(axis=2)<238
 print('IoU obrysu (po oříznutí na obrys): %.4f'%((f&r).sum()/(f|r).sum()))
 `;
-execFileSync('python3', ['-I', '-c', maskPy, fcrop, png], { stdio: 'inherit' });
-fs.writeFileSync(path.join(outDir, pohled + '.json'), JSON.stringify({ sku, pohled, foto_repo_cesta: path.basename(path.dirname(foto)) + '/' + path.basename(foto) + ' (scratchpad, mimo repo)', pose, kamera: { azim: az, elev: el, roll, dist, fov, poznamka: 'téměř ortografický pohled, render oříznut na obrys a roztažen na rozměr fotografie' } }, null, 1));
+const iouTxt = execFileSync('python3', ['-I', '-c', maskPy, fcrop, png], { encoding: 'utf8' }); process.stdout.write(iouTxt); const iouVal = +iouTxt.match(/([0-9.]+)\s*$/)[1];
+fs.writeFileSync(path.join(outDir, pohled + '.json'), JSON.stringify({ sku, pohled, foto_repo_cesta: path.basename(path.dirname(foto)) + '/' + path.basename(foto) + ' (scratchpad, mimo repo)', pose, iou: iouVal, kamera: { azim: az, elev: el, roll, dist, fov, poznamka: 'téměř ortografický pohled, render oříznut na obrys a roztažen na rozměr fotografie' } }, null, 1));
 const pair = path.join(scratch, `${sku}_${pohled}_dvojice.png`);
 execFileSync('python3', [path.join(KC, 'nastroje/porovnej.py'), fcrop, png, pair, '700'], { stdio: 'inherit' });
 console.log(pair);

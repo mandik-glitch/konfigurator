@@ -11,13 +11,15 @@ KODY=${@:-8215495 8215500 8215518 8215526}
 LOG=${KUF_SCRATCH:-/tmp/kuf_scratch}/srovnej_vse.log; mkdir -p "$(dirname $LOG)"; : > $LOG
 run() { # kod foto pohled start extra...
   local k=$1 f=$2 p=$3 st=$4; shift 4
-  local lm=""; [ -f ../zdroje/landmarky/${k}_$p.json ] && lm="--lm ../zdroje/landmarky/${k}_$p.json --wl 0.004"
+  local lm=""; [ -f ../zdroje/landmarky/${k}_$p.json ] && lm="--lm ../zdroje/landmarky/${k}_$p.json --wl 0.0004"
+  # odhad kamery je citlivý na start (lokální minima): u některých pohledů je uložen startovní odhad kamery <kód>_<pohled>_kam.json
+  [ -f ../zdroje/landmarky/${k}_${p}_kam.json ] && lm="$lm --kam ../zdroje/landmarky/${k}_${p}_kam.json"
   node srovnej.mjs --kod $k --foto "$FOTO/${DIR[$k]}/$f.jpg" --pohled $p --start $st --fov0 17.8 --dist 1450 $lm "$@" 2>&1 | tail -1 | cut -c1-200 >> $LOG
 }
 for k in $KODY; do
-  run $k c01 c01 35,18 --pose madlo=90 --free madlo --lim madlo=84:97 &
-  run $k c02 c02 -35,18 --pose madlo=90 --free madlo --lim madlo=84:97 &
-  run $k c03 c03 0,18 --pose madlo=90 --free madlo --lim madlo=84:97 &
+  run $k c01 c01 35,18 --pose madlo=90 --free madlo --lim madlo=70:100 &
+  run $k c02 c02 -35,18 --pose madlo=90 --free madlo --lim madlo=70:100 &
+  run $k c03 c03 0,18 --pose madlo=90 --free madlo --lim madlo=70:100 &
   wait
   run $k c04 c04 35,30 --pose madlo=0,vicko=100 --free vicko --lim vicko=70:125
 done

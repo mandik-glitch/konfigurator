@@ -19,7 +19,7 @@ function zaoblit(poly, radii, n = 5) {
 }
 export function madlo(V) {
   const { xp, L, yo, yi, bw, t, zdolu } = MADLO;
-  const z0 = V - zdolu + 0.5, z1 = z0 + t, zp = (z0 + z1) / 2;
+  const z0 = V - zdolu - 0.2, z1 = z0 + t, zp = (z0 + z1) / 2;
   const g = new Group('madlo', { pivot: [xp, 0, zc(zp)], extras: { osa: [0, 1, 0], max_uhel: 100 } });
   const U = zaoblit([[xp, -yo], [xp, -yi], [xp - bw, -yi], [xp - bw, yi], [xp, yi], [xp, yo], [xp - L, yo], [xp - L, -yo]], [0, 0, 6, 6, 0, 0, 12, 12]);
   g.add(extXY('cerna', 'madlo_trmen', U, z0, z1, { crease: 30 }));

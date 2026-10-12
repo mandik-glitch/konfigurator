@@ -5,6 +5,7 @@
  "pose": {
   "madlo": 0
  },
+ "iou": 0.9814,
  "kamera": {
   "azim": 0,
   "elev": 0,

@@ -3,24 +3,29 @@
  "pohled": "c02",
  "foto": "kufry2/821550-0/c02.jpg (scratchpad, mimo repo)",
  "pose": {
-  "madlo": 85.30401710876174
+  "madlo": 70.1265701901146
  },
  "kamera": {
-  "azim": -34.361807274420826,
-  "elev": 17.127658701671734,
-  "dist": 1227.5078963488108,
-  "fov": 16.36677642989686,
-  "roll": -0.6491765803674598,
-  "shiftX": -0.0007685780852034699,
-  "shiftY": -0.02488710054615579,
-  "iou": 0.9742588808009369
+  "azim": -33.73466238345921,
+  "elev": 16.867576034296526,
+  "dist": 1223.3102931277558,
+  "fov": 16.42891883402779,
+  "roll": -0.6735745955061578,
+  "shiftX": -0.0022490210608904606,
+  "shiftY": -0.02160413295281391,
+  "iou": 0.9674479166666666
  },
- "iou": 0.9736,
- "iou_hrube": 0.9743,
+ "iou": 0.9667,
+ "iou_hrube": 0.9674,
  "maska_px": [
   640,
   435
  ],
- "chyby_landmarku_px": null,
+ "chyby_landmarku_px": [
+  31.5,
+  38.7,
+  18.1,
+  21.8
+ ],
  "poznamka": "Kamera odhadnuta z obrysu fotografie (IoU) a případně ručních landmarků; ohnisko a póza (madlo/víko) jsou odhad, ne měření."
 }

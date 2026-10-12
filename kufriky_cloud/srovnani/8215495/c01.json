@@ -1,0 +1,26 @@
+{
+ "kod": "8215495",
+ "pohled": "c01",
+ "foto": "kufry2/821549-5/c01.jpg (scratchpad, mimo repo)",
+ "pose": {
+  "madlo": 86.40797717529766
+ },
+ "kamera": {
+  "azim": 39.038184198165396,
+  "elev": 22.842213673193484,
+  "dist": 1512.441839578046,
+  "fov": 12.196080178936523,
+  "roll": 0.0207963679692691,
+  "shiftX": 0.00009275979963889946,
+  "shiftY": -0.03518828851286333,
+  "iou": 0.9494140787323047
+ },
+ "iou": 0.9469,
+ "iou_hrube": 0.9494,
+ "maska_px": [
+  640,
+  399
+ ],
+ "chyby_landmarku_px": null,
+ "poznamka": "Kamera odhadnuta z obrysu fotografie (IoU) a případně ručních landmarků; ohnisko a póza (madlo/víko) jsou odhad, ne měření."
+}

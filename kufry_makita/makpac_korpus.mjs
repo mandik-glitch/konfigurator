@@ -12,14 +12,14 @@ function zapadkaCelni(g, V, s) {
   const yc = s * YC_ZAP, w = 17.6;                                 // šířka 35,2 mm (c09 px 76..160)
   const zt = V - 7, zb = V - 66;
   const poly = [[yc - w, zb], [yc + w, zb], [yc + w, zt - 3], [yc + w - 4, zt], [yc + 5, zt], [yc, zt - 4], [yc - 5, zt], [yc - w + 4, zt], [yc - w, zt - 3]];
-  g.add(extYZ('cerna', 'zapadka_telo', poly, XF - 10.5, XF - 1.6));
+  g.add(extYZ('cerna', 'zapadka_telo', poly, XF - POCKET_D - 0.3, XF - 1.6));
   g.add(extYZ('cerna_mat', 'zapadka_zebra', [[yc - 12, zb + 6], [yc + 12, zb + 6], [yc + 12, zb + 12], [yc - 12, zb + 12]], XF - 1.7, XF - 1.2));
 }
 // černá západka na konci (zadní, u pantu): polygon v rovině XZ, vytažený v Y
 function zapadkaKonec(g, V, s) {
   const xc = -106, w = 17.6, zt = V - 7, zb = V - 66;
   const poly = [[xc - w, zb], [xc + w, zb], [xc + w, zt - 3], [xc + w - 4, zt], [xc + 5, zt], [xc, zt - 4], [xc - 5, zt], [xc - w + 4, zt], [xc - w, zt - 3]];
-  const y0 = s * (YH - 10.5), y1 = s * (YH - 1.6);
+  const y0 = s * (YH - POCKET_D - 0.3), y1 = s * (YH - 1.6);
   g.add(extXZ('cerna', 'zapadka_zadni_telo', poly, Math.min(y0, y1), Math.max(y0, y1)));
 }
 // zuby v nožkových kapsách (dva na kapsu; c09 px ~100 a ~148, šířka ~14 mm)

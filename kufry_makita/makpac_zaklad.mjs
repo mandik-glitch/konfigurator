@@ -180,5 +180,5 @@ export function cylY(mat, name, r, y0, y1, x, z, n = 18) { return cylinder(mat, 
 export function cylZ(mat, name, r, z0, z1, x, y, n = 14) { return cylinder(mat, name, r, zc(z0), zc(z1), n, [x, y]); }
 
 // ---------- barvy (jen v paměti tohoto procesu; glb.js se nemění) ----------
-// Makita tyrkys: odstín z fotografií (čelní plocha ~ sRGB 0,124,144 ve světle fotografie); výchozí `tyrkys` z glb.js je světlejší, proto se zde zpřesňuje.
-MATERIALY.tyrkys = { color: [0.0, 0.135, 0.19], metallic: 0.0, roughness: 0.62 };
+// Makita tyrkys: odstín z fotografií (čelní plocha ~ sRGB 0,115–125,132–145 ve světle fotografie, tj. lineárně ~0,0.17–0.20,0.23–0.28); výchozí `tyrkys` z glb.js (0,0.32,0.38) je výrazně světlejší, proto se zde zpřesňuje.
+MATERIALY.tyrkys = { color: [0.0, 0.17, 0.24], metallic: 0.0, roughness: 0.65 };
