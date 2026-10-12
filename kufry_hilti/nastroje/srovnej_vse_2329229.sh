@@ -8,7 +8,7 @@ cd "$(dirname "$0")"
 node ../vytvor.mjs 2329229
 node porovnej_celo.mjs --glb ../modely/2329229.glb --foto "$FOTO/c01.jpg" --sku 2329229 --pohled celo --az 180 --el 89.99 --dist 6000 | grep IoU
 node iou_kamera.mjs --glb ../modely/2329229.glb --foto "$FOTO/c02.jpg" --sku 2329229 --pohled otevreny-c02
-node iou_kamera.mjs --glb ../modely/2329229.glb --foto "$FOTO/c03.jpg" --sku 2329229 --pohled otevreny-c03 --cervena 1
+node iou_kamera.mjs --glb ../modely/2329229.glb --foto "$FOTO/c03.jpg" --sku 2329229 --pohled otevreny-c03
 node iou_kamera.mjs --glb ../modely/2329229.glb --foto "$FOTO/c04.jpg" --sku 2329229 --pohled otevreny-c04
 cd ../../kufriky_cloud
 for v in "c02:otevreny-c02" "c03:otevreny-c03" "c04:otevreny-c04"; do f=${v%%:*}; p=${v##*:}; U=$(python3 -c "import json;print(json.load(open('srovnani/2329229/$p.json'))['pose']['vicko'])"); node render/srovnej.mjs --glb ../kufry_hilti/modely/2329229.glb --foto "$FOTO/$f.jpg" --sku 2329229 --pohled $p --pose vicko=$U --reuse >/dev/null; done

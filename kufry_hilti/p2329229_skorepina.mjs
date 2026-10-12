@@ -23,6 +23,8 @@ export function skorepina(D) {
   // ---------- spodní díl ----------
   const korpus = new Group('korpus');
   korpus.add(baseTray('cervena', 'korpus_vana', Pbase, { z1: zs, rB: 2.5, wall: 3, floor: 3, groove: 0.6 }));
+  // vložka (zjednodušená): hladká černá deska bez kapes – na fotografiích je dutina vyplněná černou tvarovanou vložkou; kapsy nemodelovány
+  korpus.add(extrude('cerna_mat', 'vlozka_zjednodusena', inset(Pbase, 3.4, ), 3, zs - 6));
   // límec kolem okna madla (deska ve tvaru U): vrstvy D.collar = [{mat, outer, inner}] v px (cesta zleva doprava), pod víkem
   for (const L of D.collar) korpus.add(extrude(L.mat, 'madlo_lem', toPoly([...L.outer, ...L.inner.slice().reverse()]), zs - 5, zs - 1));
   // madlo: černá příčka přes okno u čela – spodní polovina (grip, zůstává ve spodním dílu); výška odhad
