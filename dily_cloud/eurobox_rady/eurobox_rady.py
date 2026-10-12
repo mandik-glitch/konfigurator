@@ -30,6 +30,8 @@ VSTUP `spec` (vše kromě `rady` je volitelné):
   min_mezera_pater_mm: 10           menší výšková mezera pater => varování
   deska_mm: 0                       tloušťka desky pod vodorovnou řadou (jen pro mezeru pater)
   max_rozpeti_mm: null              nad touto vzdáleností trubek na řadě varování
+  max_delka_rady_mm: 20000          strop délky jedné řady (Robert); delší řada = chyba RADA_PRILIS_DLOUHA,
+                                    výstup se přesto vrátí (UI může řadu zkrátit); viz max_pocet_boxu()
   mrizka_mezery_mm: 2.0             krok vzorkování při výpočtu výškové mezery pater
   tolerance_kolize_mm: 0.05         hloubka průniku, od které je to kolize
 
@@ -127,6 +129,7 @@ DEFAULTY = {
     "deska_mm": 0.0,
     "max_rozpeti_mm": None,
     "mrizka_mezery_mm": 2.0,
+    "max_delka_rady_mm": 20000.0,
     "tolerance_kolize_mm": 0.05,
 }
 
@@ -330,6 +333,15 @@ def _sklon_rady(r, spec, p):
 # ---------------------------------------------------------------------------------------------
 # STAVBA JEDNÉ ŘADY
 # ---------------------------------------------------------------------------------------------
+def max_pocet_boxu(typ, smer, mezera_mm=1.0, max_delka_mm=20000.0):
+    """Největší počet boxů v jedné řadě, aby délka n·a + (n−1)·mezera nepřesáhla strop.
+    400×300 na délku (a=400): 49; 600×400 na délku (a=600): 33 (při mezeře 1 mm a stropu 20 m)."""
+    if typ not in BOXY:
+        raise ValueError("neznámý typ boxu: %r" % typ)
+    a = BOXY[typ]["dlouha"] if smer == "delka" else BOXY[typ]["kratka"]
+    return int(math.floor((float(max_delka_mm) + float(mezera_mm)) / (a + float(mezera_mm)) + 1e-9))
+
+
 def _roztec_vychozi(draha, typ, smer, p):
     b = BOXY[typ]["kratka"] if smer == "delka" else BOXY[typ]["dlouha"]   # rozměr napříč
     dl = DILY[int(draha)]
@@ -387,6 +399,11 @@ def _stavba_rady(r, spec, p, soupis):
         res["problemy"].append({"kod": "NEZNAMA_VYSKA", "uroven": "chyba", "id": [rid],
                                 "text": "Výška %d mm není pro %s v nabídce (%s)." % (
                                     vyska, typ, "/".join(str(x) for x in sorted(bx["vysky"])))})
+    if L > float(p["max_delka_rady_mm"]) + 1e-9:
+        res["problemy"].append({"kod": "RADA_PRILIS_DLOUHA", "uroven": "chyba", "id": [rid],
+                                "text": "Řada %s je dlouhá %.0f mm, strop je %.0f mm (nejvýše %d boxů)." % (
+                                    rid, L, float(p["max_delka_rady_mm"]),
+                                    max_pocet_boxu(typ, smer, gap, p["max_delka_rady_mm"]))})
     info = bx["vysky"].get(vyska, {"karta": None})
     fh = bx["nozka_h"]
     nd, nh = bx["nozka_dole"], bx["nozka_hore"]
@@ -903,6 +920,7 @@ def postav(spec):
         "parametry": p,
         "rady": [{"id": r["id"], "patro": r["patro"], "typ": r["typ"], "smer": r["smer"], "vyska": r["vyska"],
                   "pocet": r["n"], "sklon_deg": r["theta"], "delka_rady_mm": r["L"],
+                  "max_pocet_boxu": max_pocet_boxu(r["typ"], r["smer"], p["mezera_boxu_mm"], p["max_delka_rady_mm"]),
                   "nizsi_konec": p["nizsi_konec"], "osa_rady": p["osa_rady"],
                   "vektor_podel": r["fr"].d, "vektor_kolmo": r["fr"].n, "vektor_napric": r["fr"].c,
                   "roztec_drah_mm": r.get("roztec"), "zacatek": r["fr"].P0}

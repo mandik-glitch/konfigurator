@@ -213,6 +213,46 @@ def test_vodorovna_rada_mezery_a_delka():
                 blizko(op["y"], 300)
 
 
+def test_strop_delky_rady_20_m():
+    # výpočet: 400 mm -> 49 boxů (49*400+48 = 19648), 600 mm -> 33 boxů (33*600+32 = 19832)
+    ok(E.max_pocet_boxu("400x300", "delka") == 49)
+    ok(E.max_pocet_boxu("400x300", "sirka") == 66)      # 300 mm: 66*300+65 = 19865
+    ok(E.max_pocet_boxu("600x400", "delka") == 33)
+    ok(E.max_pocet_boxu("600x400", "sirka") == 49)      # 400 mm
+    ok(E.max_pocet_boxu("400x300", "delka", mezera_mm=5) == 49)
+    ok(E.max_pocet_boxu("400x300", "delka", max_delka_mm=1000) == 2)
+    for typ in E.BOXY:
+        vyska = sorted(E.BOXY[typ]["vysky"])[0]
+        for smer in ("delka", "sirka"):
+            for sklon in (0, 5):
+                nmax = E.max_pocet_boxu(typ, smer)
+                a = E.BOXY[typ]["dlouha" if smer == "delka" else "kratka"]
+                ok(nmax * a + (nmax - 1) <= 20000 < (nmax + 1) * a + nmax)
+                v = E.postav({"rady": [radek(typ=typ, vyska=vyska, smer=smer, pocet=nmax, y=400, sklon_deg=sklon)]})
+                ok(not chyby(v), "řada na stropu musí projít: %s" % chyby(v))
+                ok(v["rady"][0]["max_pocet_boxu"] == nmax)
+                ok(v["rady"][0]["delka_rady_mm"] <= 20000)
+                v = E.postav({"rady": [radek(typ=typ, vyska=vyska, smer=smer, pocet=nmax + 1, y=400, sklon_deg=sklon)]})
+                ch = chyby(v, "RADA_PRILIS_DLOUHA")
+                ok(len(ch) == 1 and ch[0]["id"] == ["R"], str(v["problemy"]))
+                ok(len(v["boxy"]) == nmax + 1, "výstup se vrací i při překročení")
+    # vlastní strop a kopie dlouhé řady
+    v = E.postav({"rady": [radek(pocet=3, y=0)], "max_delka_rady_mm": 1200})
+    ok(not chyby(v, "RADA_PRILIS_DLOUHA"))
+    v = E.postav({"rady": [radek(pocet=4, y=0)], "max_delka_rady_mm": 1200})
+    ok(chyby(v, "RADA_PRILIS_DLOUHA"))
+    s = {"rady": [radek(id_="A", pocet=50, y=400, sklon_deg=5)]}
+    for kam in ("vedle", "nad"):
+        k = E.kopie_rady(s, "A", kam, 30, pocet=2)
+        ok(len(k["rady"]) == 3)
+        v = E.postav(k)
+        ok(sorted(c["id"][0] for c in chyby(v, "RADA_PRILIS_DLOUHA")) == ["A", "A-1", "A-2"], "každá kopie nese chybu")
+    s = {"rady": [radek(id_="A", pocet=49, y=400, sklon_deg=5)]}
+    for kam in ("vedle", "nad"):
+        v = E.postav(E.kopie_rady(s, "A", kam, 30, pocet=2))
+        ok(not chyby(v), "kopie řady na stropu je v pořádku (%s): %s" % (kam, chyby(v)))
+
+
 def test_mezera_jina():
     v = E.postav({"rady": [radek(pocet=3, y=0)], "mezera_boxu_mm": 5})
     bx = v["boxy"]
