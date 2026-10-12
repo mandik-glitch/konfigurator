@@ -369,6 +369,50 @@ def test_nozka_je_na_rovine_draze():
             blizko(dolni[:, 1].max() - dolni[:, 1].min(), 266.0 if smer == "delka" else 366.0, 0.05, "nožka napříč")
 
 
+def test_boxy_nakloneny_spolu_s_drahami():
+    """Závazné pravidlo: všechny boxy řady jsou nakloněné přesně jako dvojice drah, spodek nožky leží
+    v rovině válečků OBOU drah (vzdálenost <= 0,1 mm), nikde mezera ani zanoření. Měří se jen z výstupu
+    (kvaterniony, tvary náhrad dráhy) a z GLB, ne z interního rámu řady."""
+    for dr in ("5275", "5276"):
+        for osa, nk in (("x", "predek"), ("x", "zadek"), ("z", "predek")):
+            for smer in ("delka", "sirka"):
+                s = {"rady": [radek(id_="A", pocet=4, vyska=220, y=500, x=20, z=40, sklon_deg=7, smer=smer)],
+                     "draha": dr, "osa_rady": osa, "nizsi_konec": nk}
+                s = E.kopie_rady(s, "A", "vedle", 20)
+                s = E.kopie_rady(s, "A", "nad", 100, sklon_deg=11, patro="horni")
+                v = E.postav(s)
+                ok(not chyby(v), str(chyby(v)))
+                dcfg = E.DILY[int(dr)]
+                for r in v["rady"]:
+                    th = math.radians(r["sklon_deg"])
+                    ds = [d for d in v["draha"] if d["rada"] == r["id"]][0]
+                    ok(len(ds["pasy"]) == 2)
+                    # rovina válečků každé dráhy: normála = osa "nahoru" modulu v rámu světa, výška = horní plocha těla
+                    roviny = []
+                    for p in ds["pasy"]:
+                        for m in p["moduly"]:
+                            t0 = m["tvary_nahrady"][0]
+                            n = np.array(t0["osy"][2])
+                            ok(n[1] > 0)
+                            # úhel dráhy: normála svírá se svislicí sklon
+                            blizko(math.degrees(math.acos(min(1.0, n[1]))), r["sklon_deg"], 1e-4, "úhel dráhy")
+                            roviny.append((n, float(n @ np.array(t0["stred"]) + t0["pul"][2])))
+                    n0, c0 = roviny[0]
+                    for n, c in roviny:
+                        blizko(float(np.linalg.norm(n - n0)), 0.0, 1e-6, "obě dráhy a všechny moduly v jedné rovině: normála")
+                        blizko(c, c0, 5e-3, "obě dráhy a všechny moduly v jedné rovině: výška")
+                    for b in [b for b in v["boxy"] if b["rada"] == r["id"]]:
+                        R = kvat_na_matici(b["quaternion"])
+                        osa_z_boxu = R[:, 2]      # lokální Z GLB = výška boxu
+                        blizko(float(np.linalg.norm(osa_z_boxu - n0)), 0.0, 1e-5, "box je nakloněn přesně jako dráhy")
+                        blizko(math.degrees(math.acos(min(1.0, osa_z_boxu[1]))), r["sklon_deg"], 1e-4, "úhel osy boxu")
+                        tris = glb_ve_svete(b).reshape(-1, 3)
+                        spodek = float((tris @ n0).min())
+                        ok(abs(spodek - c0) <= 0.1, "nožka–válečky %.4f mm" % (spodek - c0))
+                        # nožka je celá nad rovinou válečků (žádné zanoření) a vodorovná stěna spodku leží v ní
+                        ok(spodek - c0 >= -0.1)
+
+
 def test_kolize_glb_objem_pruniku():
     spec = {"rady": [radek(id_="A", pocet=3, vyska=220, y=500, sklon_deg=8)]}
     spec = E.kopie_rady(spec, "A", "vedle", 20)
