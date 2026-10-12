@@ -4,12 +4,24 @@ import { Group, Part, extXY, bx, cylZ, zc } from './makpac_zaklad.mjs';
 
 export const MADLO = { xp: 48, L: 82, yo: 134, yi: 98, bw: 28, t: 16, zdolu: 22 };   // xp = x osy čepů; L = délka ramen; yo/yi = vnější/vnitřní polovina šířky; bw = šířka příčky; t = tloušťka
 
+// zaoblení vybraných rohů polygonu (kvadratická Bézierova křivka mezi tečnými body); radii[i] = poloměr rohu i (0 = ostrý)
+function zaoblit(poly, radii, n = 5) {
+  const out = [], N = poly.length;
+  poly.forEach((P, i) => {
+    const r = radii[i] || 0; if (!r) { out.push(P); return; }
+    const A = poly[(i + N - 1) % N], B = poly[(i + 1) % N];
+    const ua = [A[0] - P[0], A[1] - P[1]], ub = [B[0] - P[0], B[1] - P[1]], la = Math.hypot(...ua), lb = Math.hypot(...ub);
+    const t = Math.min(r, la * 0.45, lb * 0.45);
+    const T1 = [P[0] + ua[0] / la * t, P[1] + ua[1] / la * t], T2 = [P[0] + ub[0] / lb * t, P[1] + ub[1] / lb * t];
+    for (let k = 0; k <= n; k++) { const u = k / n, a = (1 - u) * (1 - u), b = 2 * u * (1 - u), c = u * u; out.push([a * T1[0] + b * P[0] + c * T2[0], a * T1[1] + b * P[1] + c * T2[1]]); }
+  });
+  return out;
+}
 export function madlo(V) {
   const { xp, L, yo, yi, bw, t, zdolu } = MADLO;
   const z0 = V - zdolu + 0.5, z1 = z0 + t, zp = (z0 + z1) / 2;
   const g = new Group('madlo', { pivot: [xp, 0, zc(zp)], extras: { osa: [0, 1, 0], max_uhel: 100 } });
-  const c = 7;                                                      // sražení vnějších rohů příčky
-  const U = [[xp, -yo], [xp, -yi], [xp - bw - 14, -yi], [xp - bw, -yi + 6], [xp - bw, yi - 6], [xp - bw - 14, yi], [xp, yi], [xp, yo], [xp - L + c, yo], [xp - L, yo - c], [xp - L, -yo + c], [xp - L + c, -yo]];
+  const U = zaoblit([[xp, -yo], [xp, -yi], [xp - bw, -yi], [xp - bw, yi], [xp, yi], [xp, yo], [xp - L, yo], [xp - L, -yo]], [0, 0, 6, 6, 0, 0, 12, 12]);
   g.add(extXY('cerna', 'madlo_trmen', U, z0, z1, { crease: 30 }));
   // gumová vložka na vrchní ploše příčky (po vztyčení je to přední strana s vroubkováním)
   const xa = xp - L + 4, xb = xp - L + bw - 4;
