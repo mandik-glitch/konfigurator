@@ -1,0 +1,114 @@
+{
+ "logo": {
+  "foto_px": [
+   161,
+   1036,
+   394,
+   517
+  ],
+  "model_px": [
+   162,
+   1035,
+   395,
+   516
+  ],
+  "rozdil_px": [
+   1,
+   -1,
+   1,
+   -1
+  ],
+  "format": "x0,x1,y0,y1 v pixelech fotografie 1200x940"
+ },
+ "okno_drzadla": {
+  "foto_px": [
+   450,
+   755,
+   66,
+   122
+  ],
+  "model_px": [
+   451,
+   748,
+   71,
+   121
+  ],
+  "rozdil_px": [
+   1,
+   -7,
+   5,
+   -1
+  ],
+  "format": "x0,x1,y0,y1 v pixelech fotografie 1200x940"
+ },
+ "zapadka_leva": {
+  "foto_px": [
+   156,
+   292,
+   15,
+   76
+  ],
+  "model_px": [
+   158,
+   287,
+   16,
+   77
+  ],
+  "rozdil_px": [
+   2,
+   -5,
+   1,
+   1
+  ],
+  "format": "x0,x1,y0,y1 v pixelech fotografie 1200x940"
+ },
+ "zapadka_prava": {
+  "foto_px": [
+   906,
+   1046,
+   13,
+   75
+  ],
+  "model_px": [
+   908,
+   1036,
+   16,
+   77
+  ],
+  "rozdil_px": [
+   2,
+   -10,
+   3,
+   2
+  ],
+  "format": "x0,x1,y0,y1 v pixelech fotografie 1200x940"
+ },
+ "ram_drzadla": {
+  "foto_px": [
+   383,
+   815,
+   1,
+   142
+  ],
+  "model_px": [
+   395,
+   804,
+   0,
+   141
+  ],
+  "rozdil_px": [
+   12,
+   -11,
+   -1,
+   -1
+  ],
+  "format": "x0,x1,y0,y1 v pixelech fotografie 1200x940"
+ },
+ "obrys_IoU": 0.9877,
+ "obrys_okraje_px": {
+  "leve_max_abs": 76,
+  "prave_max_abs": 36,
+  "leve_median_abs": 0.0,
+  "prave_median_abs": 0.0
+ }
+}
