@@ -10,7 +10,7 @@ export function postav(H, nazev) {
   const p = par(H);
   const root = new Group(nazev);
   root.addGroup(korpus(p));
-  root.addGroup(vicko(p));
-  root.addGroup(madlo(p));
+  const v = root.addGroup(vicko(p));
+  v.addGroup(madlo(p));                          // sklopné madlo je potomek víka (otáčí se s ním)
   return root;
 }

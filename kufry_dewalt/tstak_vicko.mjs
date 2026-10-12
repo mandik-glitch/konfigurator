@@ -15,12 +15,13 @@ export function vicko() {
   const H = S.H, Z = zs(), Zf = zf(), ZT = H - 0.6;
   const g = new Group('vicko', { pivot: [-160, 0, zc(Z)], extras: { osa: [0, -1, 0], poznamka: 'pant neviditelný na fotografiích; pivot odhadnut na zadní hraně spáry' } });
   // --- plášť víka ---
+  const T = S.trim;
   const FR = [
-    { z: Z, xr: V.xRim0, xf: V.xRim1, y: V.y, rc: 10 },
-    { z: Zf + 21, xr: V.xRim0, xf: V.xRim1, y: V.y, rc: 10 },
-    { z: Zf + V.zRimH, xr: -164, xf: 160.5, y: 218.4, rc: 12 },
-    { z: H - 12, xr: -160, xf: 158, y: 209, rc: 24 },
-    { z: ZT, xr: -148, xf: 107, y: 199, rc: 25 },
+    { z: Z, xr: V.xRim0 + T, xf: V.xRim1, y: V.y, rc: 10 },
+    { z: Zf + 21, xr: V.xRim0 + T, xf: V.xRim1, y: V.y, rc: 10 },
+    { z: Zf + V.zRimH, xr: -164 + T, xf: 160.5, y: 218.4, rc: 12 },
+    { z: H - 12, xr: -160 + T, xf: 158, y: 209, rc: 24 },
+    { z: ZT, xr: -148 + T, xf: 107, y: 199, rc: 25 },
   ];
   const r = V.rec;
   g.add(vickoPlast('cerna', 'vicko_plast', FR, { wall: 3.5, topT: 3.5, holes: [{ x0: r.x0, x1: r.x1, y0: -r.y, y1: r.y }] }));

@@ -6,7 +6,7 @@ import { Part, Group, loftRings, rrRing, roundedBox, prism, cylinder, box } from
 import { earcut2 } from '../kufry_hilti/earcut2.mjs';
 export { Part, Group, roundedBox, prism, cylinder, box };
 
-export const S = { H: 302 };                 // aktuální výška kufru (nastavuje build)
+export const S = { H: 302, trim: +(process.env.TSTAK_TRIM || 0) };   // trim = zkrácení zadní strany (jen pro pokusy; ve výsledném modelu 0)                 // aktuální výška kufru (nastavuje build)
 export const zc = z => z - S.H / 2;
 export const LID_H = 72;                     // výška víka od spáry (odhad z čelní fotografie c02, viz poznámky)
 export const zs = () => S.H - LID_H;         // z' spáry víko/korpus
@@ -78,6 +78,7 @@ export function vyrez(mat, name, x0, x1, y0, y1, z0, z1) {
   const a = zc(z0), b = zc(z1), V = (x, y, z) => p.addV(x, y, z);
   const q = (A, B, C, D) => p.addQ(V(...A), V(...B), V(...C), V(...D));
   q([x0, y0, a], [x1, y0, a], [x1, y1, a], [x0, y1, a]);       // dno, normála +z
+  q([x0, y0, a], [x0, y1, a], [x1, y1, a], [x1, y0, a]);       // spodní strana dna (normála −z; víko při otevření vidět zespodu)
   q([x0, y0, b], [x0, y0, a], [x0, y1, a], [x0, y1, b]);       // stěna x0, normála +x (do dutiny)
   q([x1, y1, b], [x1, y1, a], [x1, y0, a], [x1, y0, b]);       // stěna x1, normála −x
   q([x1, y0, b], [x1, y0, a], [x0, y0, a], [x0, y0, b]);       // stěna y0, normála +y

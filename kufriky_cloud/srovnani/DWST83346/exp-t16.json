@@ -1,0 +1,21 @@
+{
+ "sku": "DWST83346",
+ "pohled": "exp-t16",
+ "foto_repo_cesta": "../../../tmp/claude-0/-home-user-konfigurator/4afe04ea-52af-557e-a8a4-75a8d542e4f9/scratchpad/kufry2/DWST83346-1/c01.jpg",
+ "foto_url": null,
+ "pose": {
+  "drzadlo": 58.8
+ },
+ "kamera": {
+  "azim": 27.538195428406322,
+  "elev": 15.76258690062466,
+  "roll": 0.000113960851105167,
+  "dist": 5061.5125959669,
+  "fov": 6.13054406603903,
+  "shiftX": 0.01234642745093036,
+  "shiftY": -0.006764776920810815,
+  "iou": 0.9691222968292399
+ },
+ "iou": 0.9691222968292399,
+ "poznamka": "Kamera odhadnuta z obrysu fotografie (IoU); ohnisko je pevně zvolené, ne změřené."
+}

@@ -1,0 +1,36 @@
+{
+ "sku": "DWST83346",
+ "pohled": "exp-t8",
+ "foto_repo_cesta": "DWST83346-1/c01.jpg (mimo repo, scratchpad)",
+ "pose": {
+  "drzadlo": 62.616856277438245
+ },
+ "kamera": {
+  "azim": 27.303086815499586,
+  "elev": 15.468911704450623,
+  "roll": 0.00007249398803208833,
+  "dist": 5267.977209535642,
+  "fov": 5.909735621062824,
+  "shiftX": 0.01074417323078648,
+  "shiftY": -0.005268668094936702,
+  "iou": 0.9645144514998906
+ },
+ "iou": 0.9645144514998906,
+ "chyby_landmarku_px": [
+  45.8,
+  72,
+  2.6,
+  39.1,
+  32.3,
+  23.9,
+  44.5,
+  45.5,
+  44,
+  49.6,
+  62.3,
+  60.8,
+  58.2,
+  63.2
+ ],
+ "poznamka": "kamera z ručně změřených bodů (kalibruj.py) a doladění překryvem obrysu (fit_lm.mjs)"
+}

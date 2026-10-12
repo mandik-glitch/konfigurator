@@ -8,9 +8,10 @@ export const KOR = { xF: 184.5, y: 276.2, panelY: 125, panelD: 12, latchHalf: 48
 
 export function korFrames(p) {
   const { zRim } = p, xf = KOR.xF, y = KOR.y;
+  const c = 13, r = 12;
   return [
-    F(8, 162, -162, 250, 224, 26, 22), F(15, 174, -174, 264, 238, 26, 22), F(26, xf - 0.6, -xf + 0.6, y - 0.6, y - 26, 26, 22),
-    F(40, xf, -xf, y, y - 26, 26, 22), F(zRim, xf, -xf, y, y - 26, 26, 22),
+    F(0, xf - 9, -xf + 9, y - 9, y - 9 - c, c, r), F(6, xf - 2.5, -xf + 2.5, y - 2.5, y - 2.5 - c, c, r), F(16, xf - 0.5, -xf + 0.5, y - 0.5, y - 0.5 - c, c, r),
+    F(34, xf, -xf, y, y - c, c, r), F(zRim, xf, -xf, y, y - c, c, r),
   ];
 }
 // výřezy v čelní hraně (zleva doprava podle Y): kapsa levé západky, vybrání štítku (logo), kapsa pravé západky
@@ -24,7 +25,7 @@ export function korEnds(p) { return [{ fr: [{ z: p.zRim - 86, x0: -160, x1: 78, 
 
 // žlutá těsnicí linka podél spáry (tenký pás, vyčnívá o ~0,5 mm nad korpus a je kryt přesahem víka)
 function tesneni(g, p) {
-  const f = (z) => F(z, 185.0, -185.0, 276.7, 250.7, 26, 22);
+  const f = (z) => F(z, 185.0, -185.0, 276.7, 263.7, 13, 12);
   g.add(prstenec('zluta', 'tesneni', { frames: [f(p.zRim - 5.5), f(p.zRim + 1)], wall: 2.5 }));
 }
 
@@ -80,14 +81,6 @@ function madlaKonce(g, p) {
   }
 }
 
-function nozky(g, p) {
-  // stohovací patky (dno korpusu je ve výšce 8 mm): 4 u rohů a po jedné nízké zarážce na koncích; tvar přibližný (c02: patky pod rohovými sloupky a pod koncovými panely)
-  for (const sx of [-1, 1]) for (const sy of [-1, 1]) {
-    const x0 = sx > 0 ? 112 : -170, x1 = sx > 0 ? 170 : -112, y0 = sy > 0 ? 150 : -236, y1 = sy > 0 ? 236 : -150;
-    g.add(rb('cerna_mat', 'patka', { x0, x1, y0, y1, z0: 0, z1: 10, rc: 6, re: 2, seg: 2, fs: 2 }));
-  }
-  for (const sy of [-1, 1]) g.add(rb('cerna_mat', 'patka_konec', { x0: -75, x1: 20, y0: sy > 0 ? 238 : -262, y1: sy > 0 ? 262 : -238, z0: 0, z1: 10, rc: 3, re: 2, seg: 2, fs: 2 }));
-}
 function pant(g, p) {
   // spodní články pantu na zadní straně (liché úseky); osa Y, střed x = −181; tvar přibližný, zadní strana na fotografiích není vidět
   const zz = p.zRim - 1;
@@ -97,6 +90,6 @@ function pant(g, p) {
 export function korpus(p) {
   const g = new Group('korpus');
   g.add(vana('cerna', 'korpus_vana', { frames: korFrames(p), notches: korNotches(p), enotches: korEnds(p), wall: 3.5, floorZ: 12 }));
-  tesneni(g, p); nozky(g, p); logo(g, p); zapadky(g, p); madlaKonce(g, p); pant(g, p);
+  tesneni(g, p); logo(g, p); zapadky(g, p); madlaKonce(g, p); pant(g, p);
   return g;
 }

@@ -6,19 +6,18 @@ import { par, F, nl, D } from './ts2_par.mjs';
 import { KOR } from './ts2_korpus.mjs';
 
 export function vickoFrames(p) {
-  const { zRim, H } = p;
-  const yp = 226;                                  // konce horní plochy: střední pás (|Y| < 226) je o 10 mm výš než koncové bloky
+  const { zRim, H } = p, t = D.LID, yp = 226;       // yp: konce horní plochy – střední pás (|Y| < 226) je o ~9 mm výš než koncové bloky
   return [
-    F(zRim, 185.5, -185.5, 277, 251, 26, 22), F(zRim + 9, 185.5, -185.5, 277, 251, 26, 22), F(zRim + 11, 183.5, -183.5, 275.5, 249.5, 26, 22),
-    F(H - 24, 183.5, -183.5, 275.5, 249.5, 26, 22), F(H - 12, 176, -176, 268, 242, 28, 22), F(H - 11.9, 176, -176, yp + 6, yp - 22, 28, 22),
-    F(H - 5, 170, -170, yp + 2, yp - 24, 28, 24), F(H, 164, -164, yp - 6, yp - 32, 28, 24),
+    F(zRim, 185.5, -185.5, 277, 264, 13, 12), F(zRim + 9, 185.5, -185.5, 277, 264, 13, 12), F(zRim + 11, 183.5, -183.5, 275.5, 262.5, 13, 12),
+    F(H - 0.34 * t, 183.5, -183.5, 275.5, 262, 14, 13), F(H - 0.17 * t, 177, -177, 268.5, 250, 22, 18), F(H - 0.17 * t + 0.1, 177, -177, yp + 6, yp - 20, 22, 18),
+    F(H - 0.07 * t, 171, -171, yp + 2, yp - 24, 26, 22), F(H, 164, -164, yp - 6, yp - 32, 28, 24),
   ];
 }
 export function vickoNotches(p) {
   const { zRim, H, yLatch } = p, xf = 183.5, LH = KOR.latchHalf;
-  const lat = s => nl([{ z: zRim, y0: s * yLatch - LH, y1: s * yLatch + LH, nx: xf - 7.5 }, { z: zRim + 58, y0: s * yLatch - LH, y1: s * yLatch + LH, nx: xf - 7.5 }]);
+  const lat = s => nl([{ z: zRim, y0: s * yLatch - LH, y1: s * yLatch + LH, nx: xf - 7.5 }, { z: zRim + 0.8 * D.LID, y0: s * yLatch - LH, y1: s * yLatch + LH, nx: xf - 7.5 }]);
   // střed čela: stupeň pod štítkem (hloubka 10 do z' zRim+40), nad ním ustoupí o 28 mm
-  const mid = nl([{ z: zRim, y0: -128, y1: 128, nx: xf - 10 }, { z: zRim + 40, y0: -128, y1: 128, nx: xf - 10 }, { z: zRim + 42, y0: -128, y1: 128, nx: xf - 26 }, { z: H - 20, y0: -128, y1: 128, nx: xf - 26 }, { z: H - 10, y0: -128, y1: 128, nx: 400 }]);
+  const mid = nl([{ z: zRim, y0: -128, y1: 128, nx: xf - 10 }, { z: zRim + 0.5 * D.LID, y0: -128, y1: 128, nx: xf - 10 }, { z: zRim + 0.5 * D.LID + 2, y0: -128, y1: 128, nx: xf - 26 }, { z: H - 0.3 * D.LID, y0: -128, y1: 128, nx: xf - 26 }, { z: H - 0.15 * D.LID, y0: -128, y1: 128, nx: 400 }]);
   return [lat(-1), mid, lat(1)];
 }
 
@@ -52,8 +51,8 @@ function hornDilyZapadek(g, p) {
   for (const s of [-1, 1]) {
     const yc = s * yLatch;
     // horní žebrovaná část páky (na víku): z' zRim+4 … zRim+54, šířka 66; rozteč žeber 4 × 14
-    g.add(rb('cerna_mat', 'zapadka_hlava', { x0: xp + 1, x1: 185.0, y0: yc - 33, y1: yc + 33, z0: zRim + 4, z1: zRim + 54, rc: 2, re: 1.5, seg: 2, fs: 2 }));
-    const xw = xp + 5.5, path = [[xw, yc - 40, zRim - 1], [xw, yc - 40, zRim + 44], [xw, yc - 37, zRim + 48], [xw, yc + 37, zRim + 48], [xw, yc + 40, zRim + 44], [xw, yc + 40, zRim - 1]];
+    g.add(rb('cerna_mat', 'zapadka_hlava', { x0: xp + 1, x1: 185.0, y0: yc - 33, y1: yc + 33, z0: zRim + 4, z1: zRim + 0.7 * D.LID, rc: 2, re: 1.5, seg: 2, fs: 2 }));
+    const xw = xp + 5.5, path = [[xw, yc - 40, zRim - 1], [xw, yc - 40, zRim + 36], [xw, yc - 37, zRim + 40], [xw, yc + 37, zRim + 40], [xw, yc + 40, zRim + 36], [xw, yc + 40, zRim - 1]];
     g.add(tube('seda_svetla', 'zapadka_drat_horni', path.map(q => [q[0], q[1], zc(q[2])]), 2.3, 8));
     for (const k of [-21, -7, 7, 21]) g.add(bx('cerna', 'zapadka_zebro_hlava', 184.4, 185.2, yc + k - 1.2, yc + k + 1.2, zRim + 12, zRim + 50));
   }
@@ -62,7 +61,7 @@ function lemVnitrni(g, p) {
   // žlutý vnitřní lem víka (těsnění) u spodního okraje, uvnitř stěny; kopíruje kapsy západek posunuté o stěnu (3 mm), viditelný jen z vnitřní strany
   const { zRim } = p, w = 3;
   const nn = vickoNotches(p).map(n => ({ fr: n.fr.map(f => ({ ...f, y0: f.y0 - w - 0.4, y1: f.y1 + w + 0.4, nx: f.nx - w - 0.4 })) }));
-  const f = z => F(z, 182.4, -182.4, 274, 248, 26, 19);
+  const f = z => F(z, 182.4, -182.4, 274, 261, 13, 15);
   g.add(prstenec('zluta', 'lem_vicka', { frames: [f(zRim + 0.4), f(zRim + 9)], notches: nn, wall: 3 }));
 }
 function pant(g, p) {

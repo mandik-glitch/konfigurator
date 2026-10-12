@@ -14,7 +14,7 @@ export const K = {
 
 export function korpus({ celoMadlo = false } = {}) {
   const g = new Group('korpus');
-  const Z = zs(), t = K;
+  const Z = zs(), t = { ...K, xR: K.xR + S.trim };
   // --- vana (hrubý tvar; čelo je odsazené na xHull, panely se přidávají zvlášť) ---
   const FR = [
     { z: 0, xr: t.xR + 8, xf: t.xHull - 4, y: t.yB - 7, rc: 7 },

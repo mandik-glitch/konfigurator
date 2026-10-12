@@ -1,0 +1,26 @@
+{
+ "sku": "DWST83294",
+ "pohled": "lt96",
+ "foto_repo_cesta": "DWST83294-1/c02.jpg (mimo repo, scratchpad)",
+ "pose": {
+  "vicko": -0.000016684627869916406
+ },
+ "kamera": {
+  "azim": -43.364649195728475,
+  "elev": 12.617579689329208,
+  "roll": 0.000018997351391401238,
+  "dist": 1117.0166743229343,
+  "fov": 27.80938777231764,
+  "shiftX": 0.03387643481964246,
+  "shiftY": -0.1134188671244489,
+  "iou": 0.8210085040124566
+ },
+ "iou": 0.8210085040124566,
+ "chyby_landmarku_px": [
+  0.1,
+  30.2,
+  58.5,
+  10.6
+ ],
+ "poznamka": "kamera z ručně změřených bodů (kalibruj.py) a doladění překryvem obrysu (fit_lm.mjs)"
+}

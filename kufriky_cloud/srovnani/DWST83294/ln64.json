@@ -1,0 +1,26 @@
+{
+ "sku": "DWST83294",
+ "pohled": "ln64",
+ "foto_repo_cesta": "DWST83294-1/c02.jpg (mimo repo, scratchpad)",
+ "pose": {
+  "vicko": -0.000050612783172831866
+ },
+ "kamera": {
+  "azim": -42.30597735958795,
+  "elev": 14.730052636794513,
+  "roll": 0.0000586865648707328,
+  "dist": 2052.1797824599707,
+  "fov": 15.435660598449324,
+  "shiftX": 0.021510379889330872,
+  "shiftY": -0.06598605517305103,
+  "iou": 0.9209602310929601
+ },
+ "iou": 0.9209602310929601,
+ "chyby_landmarku_px": [
+  0.2,
+  17.3,
+  43.2,
+  3
+ ],
+ "poznamka": "kamera z ručně změřených bodů (kalibruj.py) a doladění překryvem obrysu (fit_lm.mjs)"
+}
