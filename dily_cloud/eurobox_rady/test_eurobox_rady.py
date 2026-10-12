@@ -163,7 +163,7 @@ def rozsah_osa(t, i):
     return c - r, c + r
 
 
-def objem_pruniku_s_glb(vysl, krok=3.0):
+def objem_pruniku_s_glb(vysl, krok=3.0, vynech_role=()):
     """Objem (mm3) průniku originální geometrie GLB boxů s náhradami dílů a trubkami."""
     celkem = 0.0
     detaily = []
@@ -174,6 +174,7 @@ def objem_pruniku_s_glb(vysl, krok=3.0):
                 dily.extend(("%s/draha" % d["rada"], t) for t in m["tvary_nahrady"])
     for k in vysl["koncovky"]:
         dily.extend((k["id"], t) for t in k["tvary_nahrady"])
+    dily = [(n, t) for n, t in dily if t.get("role") not in vynech_role]
     trubky = [("trubka", n) for n in vysl["nosniky"]]
     for b in vysl["boxy"]:
         if not b.get("part_id"):
@@ -365,34 +366,39 @@ def test_dolni_konec_dolni_nosnik_a_osy():
 
 
 def test_rozlozeni_podle_zasunuti():
-    zakl = {"rady": [radek(pocet=5, y=500, sklon_deg=8)], "draha": "5275"}
-    v = E.postav(zakl)
-    d = v["draha"][0]
-    L = 5 * 400 + 4
-    blizko(v["rady"][0]["delka_rady_mm"], L)
-    m = math.ceil((L + 2 * 54.5) / 271.66)
-    ok(d["moduly_na_pas"] == m, "počet modulů %d != %d" % (d["moduly_na_pas"], m))
-    blizko(d["delka_celku_mm"], m * 271.66, 1e-2)
-    blizko(d["viditelna_delka_mm"], m * 271.66 - 2 * 54.5, 1e-2)
-    ok(d["viditelna_delka_mm"] >= L)
-    # vzdálenost trubek = celková délka + 2 * (délka plechu - zasunutí - polovina háku)
-    hak_pul = (86.29 - 54.5) / 2
-    blizko(d["vzdalenost_trubek_mm"], m * 271.66 + 2 * (86.29 - 54.5 - hak_pul), 1e-2)
-    # menší zasunutí => jiná poloha, stále bez kolize
-    v2 = E.postav(dict(zakl, zasun_draha_mm=40.0))
-    ok(not chyby(v2), str(chyby(v2)))
-    ok(v2["draha"][0]["zasun_draha_mm"] == 40.0)
-    ok(v2["draha"][0]["vzdalenost_trubek_mm"] > d["vzdalenost_trubek_mm"] - 1e-9 or v2["draha"][0]["moduly_na_pas"] < m)
-    # větší než kapsa => chyba
-    v3 = E.postav(dict(zakl, zasun_draha_mm=60.0))
-    ok(chyby(v3, "ZASUN_VETSI_NEZ_KAPSA"))
-    # koncovky: dolní 5282, horní 5281
-    role = {(k["role"], k["part_id"]) for k in v["koncovky"]}
-    ok(role == {("dolni", 5282), ("horni", 5281)}, str(role))
-    ok(len(v["koncovky"]) == 4)
-    # varianta zarážky u háku
-    v5 = E.postav(dict(zakl, zarazka_u="hak"))
-    ok(not chyby(v5), str(chyby(v5)))
+    for dr, delka, u_end, u_tip in (("5275", 271.66, 101.6, 135.83), ("5276", 255.04, 96.5, 127.52)):
+        zakl = {"rady": [radek(pocet=5, y=500, sklon_deg=8)], "draha": dr}
+        v = E.postav(zakl)
+        d = v["draha"][0]
+        L = 5 * 400 + 4
+        blizko(v["rady"][0]["delka_rady_mm"], L)
+        pitch = 2 * u_tip
+        blizko(pitch, delka, 0.02, "modul = 2 x vzdálenost špičky ucha")
+        m = math.ceil((L - 54.5 - 2 * u_end) / pitch) + 1
+        ok(d["moduly_na_pas"] == m, "počet modulů %d != %d" % (d["moduly_na_pas"], m))
+        blizko(d["delka_celku_mm"], m * pitch, 1e-2)
+        s_bs, s_be = d["telo_od_do_mm"]
+        blizko(s_bs, 54.5, 1e-6)                       # příruba prvního modulu 54,5 mm od líce zarážky
+        blizko(s_be, 54.5 + 2 * u_end + (m - 1) * pitch, 1e-6)
+        ok(s_be >= L and s_be - pitch < L, "poslední modul končí za řadou, o modul méně by nestačilo")
+        # trubky: dolní 16,8 mm před zarážkou, horní 16,8 mm za líc horní koncovky (s_be + 54,5)
+        blizko(d["vzdalenost_trubek_mm"], (s_be + 54.5 + 16.8) - (-16.8), 1e-6)
+        # menší zasunutí => ucho se nedostane do štěrbiny / příruba narazí na konec koncovky
+        v1 = E.postav(dict(zakl, zasun_draha_mm=45.0))
+        ok(chyby(v1, "ZASUN_MIMO_DRAZKU") or chyby(v1, "KOLIZE"), str(v1["problemy"][:3]))
+        v3 = E.postav(dict(zakl, zasun_draha_mm=70.0))
+        ok(chyby(v3, "ZASUN_MIMO_DRAZKU"))
+        # v rozsahu štěrbiny (Robertových 54 až 55 mm) bez chyb
+        for z in (54.3, 54.5, 55.0, 58.0):
+            ok(not chyby(E.postav(dict(zakl, zasun_draha_mm=z))), "zasunutí %s" % z)
+        # koncovky: dolní 5282, horní 5281, po dvou (2 dráhy)
+        role = {(k["role"], k["part_id"]) for k in v["koncovky"]}
+        ok(role == {("dolni", 5282), ("horni", 5281)}, str(role))
+        ok(len(v["koncovky"]) == 4)
+        # odsazení dolní koncovky posune dolní trubku, počet modulů a horní trubku
+        vo = E.postav(dict(zakl, odsazeni_koncovky_mm=60.0))
+        blizko(vo["draha"][0]["telo_od_do_mm"][0], -60.0 + 54.5, 1e-6)
+        ok(vo["draha"][0]["vzdalenost_trubek_mm"] >= d["vzdalenost_trubek_mm"] - 1e-9)
 
 
 def test_dve_drahy_pod_radou():
@@ -500,13 +506,17 @@ def test_boxy_nakloneny_spolu_s_drahami():
                             blizko(c1, c2, 5e-3, "rovina válečků patra")
 
 
-DIL_5276 = os.path.join(HERE, "dily", "5276.glb")
+KATALOG = os.path.join(HERE, "dily", "katalog")
 
 
-def modul_prims_ve_svete(m):
-    """Primitivy (tělesa) GLB dráhy 5276 přenesené do světa podle pozice/kvaternionu modulu z výstupu."""
-    R = kvat_na_matici(m["quaternion"])
-    return [(p.reshape(-1, 3) @ R.T + np.array(m["position"])).reshape(-1, 3, 3) for p in nacti_glb_prim(DIL_5276)]
+def mesh_dilu(karta):
+    return np.concatenate(nacti_glb_prim(os.path.join(KATALOG, "product_%d.glb" % karta)))
+
+
+def mesh_ve_svete(tris, pos, quat, scale=(1.0, 1.0, 1.0)):
+    R = kvat_na_matici(quat)
+    V = tris.reshape(-1, 3) * np.array(scale)
+    return (V @ R.T + np.array(pos)).reshape(-1, 3, 3)
 
 
 def objem_pruniku_siti(A, B, krok=2.0, ramec=None):
@@ -533,102 +543,181 @@ def objem_pruniku_siti(A, B, krok=2.0, ramec=None):
     return float(uvnitr_site(A, P[m]).sum()) * krok ** 3
 
 
-def test_dil_5276_glb_ze_stepu():
-    """dily/5276.glb (z STEPu přes OCP) odpovídá změřeným číslům a kolizním náhradám v kódu."""
-    pr = nacti_glb_prim(DIL_5276)
-    ok(len(pr) == 12)
-    V = np.concatenate([p.reshape(-1, 3) for p in pr])
+def objem_obb_v_siti(obb, sit, krok=0.5):
+    """Horní odhad průniku kvádru náhrady (OBB z výstupu) s uzavřenou sítí: body kvádru uvnitř sítě."""
+    P, V = mrizka_obb(obb, krok)
+    lo, hi = sit.reshape(-1, 3).min(0), sit.reshape(-1, 3).max(0)
+    m = np.all((P >= lo) & (P <= hi), axis=1)
+    return float(uvnitr_site(sit, P[m]).sum()) * V if m.any() else 0.0
+
+
+def test_katalog_glb_rozmery_a_stredy():
+    """Katalogové GLB dílů: rozměr = zadání, střed obálky v počátku (změřeno, ne předpokládáno)."""
+    hotovo = {5275: E.DILY[5275], 5276: E.DILY[5276], 5281: E.KONCOVKY[5281], 5282: E.KONCOVKY[5282]}
+    for karta, cfg in hotovo.items():
+        V = mesh_dilu(karta).reshape(-1, 3)
+        mn, mx = V.min(0), V.max(0)
+        for i in range(3):
+            blizko(mx[i] - mn[i], cfg["rozmer_glb"][i], 0.015, "rozměr %d osa %d" % (karta, i))
+            blizko((mx[i] + mn[i]) / 2, 0.0, 0.015, "střed obálky %d osa %d" % (karta, i))
+    V = mesh_dilu(3673).reshape(-1, 3)
     mn, mx = V.min(0), V.max(0)
-    for i, (x, e) in enumerate(zip(mx - mn, (41.0, 61.67, 255.04))):
-        blizko(x, e, 0.02, "rozměr celku %d" % i)
-    for i in range(3):
-        blizko((mn[i] + mx[i]) / 2, (0.0, 0.0, 0.0)[i], 0.05, "střed obálky v počátku")
-    def vol(t):
-        return float(np.einsum("ij,ij->i", t[:, 0], np.cross(t[:, 1], t[:, 2])).sum() / 6)
-    # objemy těles ze STEPu (OCP): 22518,6 / 11420,1 (2x) / 10448,9 (3x)
-    for i, v in ((0, 22518.6), (1, 11420.1), (2, 11420.1), (3, 10448.9), (4, 10448.9), (5, 10448.9)):
-        ok(abs(vol(pr[i]) - v) / v < 0.01, "objem tělesa %d: %.1f" % (i, vol(pr[i])))
-    # kolizní náhrady v kódu = obálky těles
-    S = E.STEP_5276
-    body = pr[0].reshape(-1, 3)
-    lo, hi = np.array(S["kvadry"][0][1]), np.array(S["kvadry"][0][2])
-    ok(np.all(np.abs(body.min(0) - lo) < 0.12) and np.all(np.abs(body.max(0) - hi) < 0.12), "tělo")
-    for i, kv in ((1, S["kvadry"][1]), (2, S["kvadry"][2])):
-        w = pr[i].reshape(-1, 3)
-        ok(np.all(np.abs(w.min(0) - np.array(kv[1])) < 0.12) and np.all(np.abs(w.max(0) - np.array(kv[2])) < 0.12), "plech %d" % i)
-    for i, z in zip((3, 4, 5), sorted(S["kolecka_z"], reverse=True)):
-        w = pr[i].reshape(-1, 3)
-        blizko((w[:, 2].min() + w[:, 2].max()) / 2, z, 0.05, "střed kolečka z")
-        blizko((w[:, 1].min() + w[:, 1].max()) / 2, S["kolecko_y"], 0.05, "střed kolečka y")
-        blizko(w[:, 1].max() - w[:, 1].min(), 56.0, 0.1, "průměr disku")
-        tread = w[np.abs(w[:, 0] - S["valec"]["x0"]) < 0.01]     # vnitřní čelo válečku (disk tam není)
-        blizko(tread[:, 1].max(), S["rovina_y"], 0.2, "horní okraj válečku = rovina")
-        blizko(w[:, 1].max() - S["rovina_y"], 14.5, 0.2, "disk přečnívá váleček")
+    ok(np.allclose(mx - mn, (28.0, 1000.0, 28.0), atol=0.02) and np.allclose((mx + mn) / 2, 0.0, atol=0.02), "trubka 3673")
+    # 5276 z katalogu = 5276 ze STEPu od Roberta (stejná obálka; jiné sítění: vrcholy do 1,5 mm)
+    S = np.concatenate(nacti_glb_prim(os.path.join(HERE, "dily", "5276.glb"))).reshape(-1, 3)
+    K = mesh_dilu(5276).reshape(-1, 3)
+    ok(np.allclose(S.max(0) - S.min(0), K.max(0) - K.min(0), atol=0.02))
+    Ku, Su = np.unique(K.round(3), axis=0), np.unique(S.round(3), axis=0)
+    d = np.concatenate([np.linalg.norm(Ku[i:i + 400, None] - Su[None], axis=2).min(1) for i in range(0, len(Ku), 400)])
+    ok(d.max() < 1.6, "vrcholy katalogu a STEPu se liší nejvýš o %.2f mm" % d.max())
 
 
-def test_drahy_5276_skutecna_geometrie_a_kolize_s_boxem():
-    """Skutečný mesh dráhy 5276 (STEP) v pozicích z výstupu: nožka boxu leží na válečcích, disky vně boxu,
-    objem průniku s originálním GLB boxu je 0."""
-    for vyska, smer, th, osa, nk in ((120, "delka", 8, "x", "predek"), (220, "sirka", 5, "x", "zadek"),
-                                     (320, "delka", 12, "z", "predek")):
-        v = E.postav({"rady": [radek(pocet=2, vyska=vyska, smer=smer, y=500, x=30, z=70, sklon_deg=th)],
-                      "draha": "5276", "osa_rady": osa, "nizsi_konec": nk})
-        ok(not chyby(v), str(chyby(v)))
-        r = v["rady"][0]
-        n = np.array(r["vektor_kolmo"])
-        ac = 2 if osa == "x" else 0
-        bxs = v["boxy"]
-        z0, z1 = bxs[0]["obalka"]["min"][ac], bxs[0]["obalka"]["max"][ac]
-        foot_dno = None
-        ds = v["draha"][0]
-        for k, pas in enumerate(ds["pasy"]):
-            for mi, m in enumerate(pas["moduly"]):
-                prims = modul_prims_ve_svete(m)
-                # rovina válečků: horní okraj válečků kolečka (bez disku) v souřadnici podél normály boxu
-                tops = []
-                for pm in prims[3:6]:
-                    P = pm.reshape(-1, 3)
-                    R = kvat_na_matici(m["quaternion"])
-                    loc = (P - np.array(m["position"])) @ R          # zpět do lokálních os
-                    sel = np.abs(loc[:, 0] - E.STEP_5276["valec"]["x0"]) < 0.01
-                    tops.append(float((P[sel] @ n).max()))
-                for b in bxs:
-                    foot = float((glb_ve_svete(b).reshape(-1, 3) @ n).min())
-                    for tp in tops:
-                        ok(abs(tp - foot) <= 0.2, "horní okraj válečku vs spodek nožky: %.3f" % (tp - foot))
-                # disk: nejvíc ven ze všech vrcholů dráhy leží disk, vně boxu s vůlí >= 1 mm
-                for pm in prims[3:6]:
-                    P = pm.reshape(-1, 3)
-                    R = kvat_na_matici(m["quaternion"])
-                    loc = (P - np.array(m["position"])) @ R
-                    disk = P[loc[:, 0] > E.STEP_5276["disk"]["x0"] + 0.01]
-                    ok(len(disk) > 0)
-                    if k == 0:
-                        ok(disk[:, ac].max() <= z0 - 1.0 + 0.01, "disk vlevo vně boxu: %.3f vs %.3f" % (disk[:, ac].max(), z0))
+def test_konstanty_dilu_proti_meshi():
+    # --- dráhy: ucho, příruba, rovina válečků --------------------------------------------------------
+    for karta in (5275, 5276):
+        c = E.DILY[karta]
+        V = mesh_dilu(karta).reshape(-1, 3)
+        i_u, i_v, i_w = c["osy"]["podel"], c["osy"]["nahoru"], c["osy"]["napric"]
+        u, v_, w = V[:, i_u], V[:, i_v], V[:, i_w]
+        ucho = V[(np.abs(u) > c["u_koncova_plocha"] + 1.5) & (v_ > c["v_ucho0"] - 0.05) & (v_ < c["v_ucho0"] + 1.55)]
+        ok(len(ucho) > 20)
+        blizko(ucho[:, i_v].min(), c["v_ucho0"], 0.01, "spodek ucha %d" % karta)
+        blizko(ucho[:, i_v].max(), c["v_ucho0"] + 1.5, 0.01, "horní plocha ucha %d" % karta)
+        blizko(np.abs(ucho[:, i_u]).max(), c["u_spicka"], 0.02, "špička ucha %d" % karta)
+        blizko(np.abs(ucho[:, i_w]).max(), 17.15 if karta == 5275 else 17.45, 0.1, "šířka ucha %d" % karta)
+        # kolizní náhrady obklopují ucho (kvádr "ucho" z DILY)
+        for t_ in c["tvary"]:
+            if t_[0] == "obb" and t_[1] == "ucho":
+                lo, hi = np.array(t_[2]), np.array(t_[3])
+                s_ = np.sign(lo[i_u] + hi[i_u])
+                U = ucho[np.sign(ucho[:, i_u]) == s_]
+                ok(np.all(U >= lo - 0.06) and np.all(U <= hi + 0.06), "kvádr ucha obsahuje ucho %d" % karta)
+        # horní okraj válečků (bez disku a uch) = rovina; sítění smí ubrat < 0,2 mm
+        telo = V[(np.abs(u) < c["u_koncova_plocha"] - 3.0)]
+        if karta == 5276:
+            telo = telo[telo[:, i_w] < c["kolo_w"][1] - 0.01]
+        blizko(telo[:, i_v].max(), c["v_rovina"], 0.2, "horní okraj válečků %d" % karta)
+    D = mesh_dilu(5276).reshape(-1, 3)
+    disk = D[D[:, 0] > 9.8]
+    blizko(disk[:, 1].max(), 30.865, 0.2, "horní okraj disku 5276")
+    blizko(disk[:, 1].max() - E.DILY[5276]["v_rovina"], 14.5, 0.2, "disk přečnívá váleček o 14,5 mm")
+    # --- koncovky ------------------------------------------------------------------------------------
+    for karta in (5282, 5281):
+        c = E.KONCOVKY[karta]
+        V = mesh_dilu(karta).reshape(-1, 3)
+        blizko(V[:, 2].max(), c["z_konec"], 0.02, "otevřený konec kapsy")
+        zaklad = V[(V[:, 2] > 0) & (V[:, 1] < c["y_zaklad_horni"] + 0.01)]
+        blizko(zaklad[:, 1].max(), c["y_zaklad_horni"], 0.02, "horní plocha základny")
+        # kvádry náhrad obsahují všechny vrcholy (kromě štěrbiny, ta je uvnitř základny)
+        lo = np.min([np.array(t_[2]) for t_ in c["tvary"]], axis=0)
+        hi = np.max([np.array(t_[3]) for t_ in c["tvary"]], axis=0)
+        ok(np.all(V >= lo - 0.07) and np.all(V <= hi + 0.07), "kvádry náhrad obsahují mesh koncovky %d" % karta)
+    S = mesh_dilu(5282).reshape(-1, 3)
+    stop = S[S[:, 1] > 0]
+    blizko(stop[:, 2].max(), E.KONCOVKY[5282]["z_lic_zarazky"], 0.02, "líc zarážky")
+    blizko(stop[:, 1].max(), 27.87, 0.02, "horní okraj zarážky")
+    # --- hák: trubka Ø28 se zaklapne s přesahem ~0,2 mm na stranu (plech je pružný) ------------------
+    for karta in (5282, 5281):
+        c = E.KONCOVKY[karta]
+        sit = mesh_dilu(karta)
+        zt, yt = c["z_trubka"], c["y_trubka"]
+        vol = 0.0
+        dv = 0.1 * 0.1 * 1.0
+        for z0, z1 in ((zt - 14.0 - 0.6, zt - 13.0), (zt + 13.0, zt + 14.0 + 0.6)):
+            zs = np.arange(z0 + 0.05, z1, 0.1)
+            ys = np.arange(yt - 14.0 + 0.05, yt + 14.0, 0.1)
+            xs = np.arange(-16.5, 16.6, 1.0)
+            P = np.stack(np.meshgrid(xs, ys, zs, indexing="ij"), -1).reshape(-1, 3)
+            vnitr = (P[:, 1] - yt) ** 2 + (P[:, 2] - zt) ** 2 < 14.0 ** 2
+            P = P[vnitr]
+            vol += float(uvnitr_site(sit, P).sum()) * dv
+        ok(5.0 < vol < 100.0, "přesah háku s trubkou %.1f mm3 (očekáváno ~40)" % vol)
+        # strop háku: trubka se dotýká stropu, nic nad ním
+        ys = np.arange(yt + 13.9, yt + 14.4, 0.05)
+        ok(not uvnitr_site(sit, np.array([[0.3, y, zt] for y in ys[ys < yt + 14.0 - 1e-6]])).any(), "mezi trubkou a stropem háku není plech")
+
+
+def sestava_mesh(v, r_id=None):
+    """Světové sítě dílů řady z výstupu postav(): moduly dráhy, koncovky, trubky, boxy a rám řady."""
+    r = v["rady"][0] if r_id is None else [x for x in v["rady"] if x["id"] == r_id][0]
+    out = {"moduly": [], "koncovky": [], "trubky": [], "boxy": []}
+    base = {5275: mesh_dilu(5275), 5276: mesh_dilu(5276), 5281: mesh_dilu(5281), 5282: mesh_dilu(5282)}
+    for d in v["draha"]:
+        if d["rada"] != r["id"]:
+            continue
+        for pas in d["pasy"]:
+            for m in pas["moduly"]:
+                out["moduly"].append((pas["index"], m["index"], mesh_ve_svete(base[m["part_id"]], m["position"], m["quaternion"]), m))
+    for k in v["koncovky"]:
+        if k["rada"] == r["id"]:
+            out["koncovky"].append((k["role"], k["pas"], mesh_ve_svete(base[k["part_id"]], k["position"], k["quaternion"]), k))
+    tr = mesh_dilu(3673)
+    for n in v["nosniky"]:
+        if r["id"] in n["rady"]:
+            out["trubky"].append((n["role"], mesh_ve_svete(tr, n["position"], n["quaternion"], n["scale"]), n))
+    for b in v["boxy"]:
+        if b["rada"] == r["id"]:
+            out["boxy"].append(glb_ve_svete(b))
+    ramec = (np.array(r["zacatek"]), np.array([r["vektor_podel"], r["vektor_napric"], r["vektor_kolmo"]]))
+    return out, ramec
+
+
+def test_sestava_na_meshich():
+    """Zero-objem kontroly na skutečných sítích: ucho x koncovka, moduly mezi sebou, dráha x box, koncovka x box,
+    trubka x všechno kromě vlastního háku. Ucho 5275 je 1 mm nad válečky a stěny kapsy 5282 přečnívají rovinu válečků."""
+    for dr in ("5276", "5275"):
+        for odsaz in (0.0, 60.0):
+            v = E.postav({"rady": [radek(pocet=2, vyska=170, y=500, sklon_deg=8)], "draha": dr, "odsazeni_koncovky_mm": odsaz})
+            ok(not chyby(v), str(chyby(v)))
+            S, ramec = sestava_mesh(v)
+            # (1) ucho dráhy leží v kapse koncovky: objem kvádru ucha uvnitř meshe koncovky = 0 (kontakt na základně, vůle 0,35 mm ke stěnám)
+            for role, pas, kt, k in S["koncovky"]:
+                mod = [m for (p_, j_, mt, m) in S["moduly"] if p_ == pas and (j_ == 1 if role == "dolni" else j_ == len(v["draha"][0]["pasy"][0]["moduly"]))][0]
+                for t_ in mod["tvary_nahrady"]:
+                    if t_["role"] == "ucho":
+                        zs = np.array(t_["stred"]) - np.array(k["position"])
+                        # ucho je u koncovky jen jedním koncem: počítáme jen ucho, které je blíž koncovce
+                        if np.linalg.norm(np.array(t_["stred"]) - np.array(k["position"])) > 120:
+                            continue
+                        ob = objem_obb_v_siti(t_, kt, 0.5)
+                        ok(ob <= 5.0, "ucho %s v koncovce %s: %.2f mm3 (ucho má ~1500 mm3)" % (dr, role, ob))
+            # (2) moduly mezi sebou (ucho na ucho): jen dotyk
+            for pas in (1, 2):
+                ms = [mt for (p_, j_, mt, m) in S["moduly"] if p_ == pas]
+                for a_, b_ in zip(ms, ms[1:]):
+                    blizko(objem_pruniku_siti(a_, b_, 3.0, ramec), 0.0, 1e-9, "sousední moduly")
+            # (3) dráha x box
+            for (p_, j_, mt, m) in S["moduly"][:6]:
+                for bx in S["boxy"]:
+                    vol = objem_pruniku_siti(bx, mt, 3.0, ramec)
+                    if dr == "5276":
+                        blizko(vol, 0.0, 1e-9, "5276 x box")
                     else:
-                        ok(disk[:, ac].min() >= z1 + 1.0 - 0.01, "disk vpravo vně boxu")
-                # objem průniku originální sítě boxu s každým tělesem modulu (jen moduly pod boxy)
-                ramec = (np.array(r["zacatek"]), np.array([r["vektor_podel"], r["vektor_napric"], r["vektor_kolmo"]]))
-                for b in bxs:
-                    tb = glb_ve_svete(b)
-                    for pm in prims:
-                        ok(objem_pruniku_siti(tb, pm, 2.0, ramec) == 0.0, "průnik GLB boxu a dráhy 5276")
-    # kalibrace: příliš úzká rozteč (disky pod boxem) dává nenulový objem i kolizi v kódu
-    v = E.postav({"rady": [radek(pocet=2, vyska=170, y=500, sklon_deg=8)], "draha": "5276", "roztec_drah_mm": 250})
-    ok(chyby(v, "KOLIZE"))
-    vmax = 0.0
-    for pas in v["draha"][0]["pasy"]:
-        for m in pas["moduly"]:
-            prims = modul_prims_ve_svete(m)
-            r_ = v["rady"][0]
-            ramec = (np.array(r_["zacatek"]), np.array([r_["vektor_podel"], r_["vektor_napric"], r_["vektor_kolmo"]]))
-            for pm in prims[3:6]:
-                vmax = max(vmax, objem_pruniku_siti(glb_ve_svete(v["boxy"][0]), pm, 2.0, ramec))
-    ok(vmax > 5.0, "měřidlo musí zachytit disk zasahující pod okraj boxu (%.1f mm3)" % vmax)
+                        ok(vol <= 1.2 * 2 * 34.0 * 34.0 * 1.0, "ucho 5275 pod boxem: %.0f mm3" % vol)   # ucho 34 x 34 x 1 mm nad válečky
+            # (4) koncovka x box: nenulový jen u dolní koncovky přímo pod předkem boxu
+            for role, pas, kt, k in S["koncovky"]:
+                vol = sum(objem_pruniku_siti(bx, kt, 2.0, ramec) for bx in S["boxy"])
+                if role == "dolni" and odsaz == 0.0:
+                    ok(vol > 100.0, "dolní koncovka %s pod předkem boxu: %.0f mm3" % (dr, vol))
+                else:
+                    blizko(vol, 0.0, 1e-9, "koncovka %s x box (odsazení %s)" % (role, odsaz))
+            # (5) trubka x box, trubka x dráha: nic (AABB v rámu řady jsou oddělené)
+            for role, tt, n in S["trubky"]:
+                for bx in S["boxy"]:
+                    blizko(objem_pruniku_siti(bx, tt, 3.0, ramec), 0.0, 1e-9, "trubka x box")
+                for (p_, j_, mt, m) in S["moduly"]:
+                    blizko(objem_pruniku_siti(mt, tt, 3.0, ramec), 0.0, 1e-9, "trubka x dráha")
+    # kalibrace měřidla: box posunutý o 10 mm do válečků dává nenulový objem
+    v = E.postav({"rady": [radek(pocet=1, vyska=120, y=500, sklon_deg=8)], "draha": "5276", "odsazeni_koncovky_mm": 60.0})
+    S, ramec = sestava_mesh(v)
+    n = np.array(v["rady"][0]["vektor_kolmo"])
+    bx = S["boxy"][0] - 10.0 * n
+    tot = sum(objem_pruniku_siti(bx, mt, 3.0, ramec) for (_, _, mt, _) in S["moduly"])
+    ok(tot > 1000.0, "měřidlo musí zachytit box zaražený do válečků (%.0f)" % tot)
 
 
 def test_disky_drahy_5276():
-    """Rozteč drah a disky 5276 ze skutečné geometrie: box mezi disky, disk přečnívá váleček o 14,5 mm."""
+    """Rozteč drah a disky 5276: box mezi disky, disk přečnívá váleček o 14,5 mm."""
     for smer in ("delka", "sirka"):
         for typ in E.BOXY:
             for osa, nk in (("x", "predek"), ("x", "zadek"), ("z", "predek")):
@@ -646,7 +735,6 @@ def test_disky_drahy_5276():
                     for m in pas["moduly"]:
                         valce = [x for x in m["tvary_nahrady"] if x["typ"] == "valec"]
                         ok([x["role"] for x in valce].count("valec") == 3 and [x["role"] for x in valce].count("disk") == 3)
-                        n_ = None
                         for x in valce:
                             if x["role"] == "disk":
                                 blizko(x["polomer"], 28.0, 1e-9)
@@ -659,33 +747,27 @@ def test_disky_drahy_5276():
                             else:
                                 blizko(x["polomer"], 13.5, 1e-9)
                                 blizko(x["delka"], 21.8, 1e-6)
-                        # disk přečnívá váleček o 28 − 13,5 = 14,5 mm (stejné osy)
                         dsk = [x for x in valce if x["role"] == "disk"][0]
                         val = [x for x in valce if x["role"] == "valec"][0]
                         n_ = np.array(dsk["nahoru"])
                         blizko(float(n_ @ np.array(dsk["stred"]) + dsk["polomer"]) - float(n_ @ np.array(val["stred"]) + val["polomer"]), 14.5, 1e-6)
-                # nožka leží na válečku jen 3,8 mm své šířky => varování (ne chyba)
                 if typ == "400x300":
                     ok(any("3.8 mm" in p["text"] for p in v["problemy"] if p["kod"] == "OPORA_NOZKY_MALA"), str(v["problemy"]))
                 else:
                     ok("OPORA_NOZKY_MALA" not in kody(v))       # kvádr bez nožky: válečky jsou celé pod boxem
-    # vůle disku mění rozteč; zasunutí do 41,5 mm nevadí diskům, 54,5 ano (varování)
     v = E.postav({"rady": [radek(pocet=2, y=500, sklon_deg=9)], "draha": "5276", "disk_vule_mm": 3})
     blizko(v["draha"][0]["roztec_mm"], 300 - 2 * (9.88 - 3.0), 1e-6)
     ok(not chyby(v), str(chyby(v)))
-    v = E.postav({"rady": [radek(pocet=2, y=500, sklon_deg=9)], "draha": "5276"})
-    ok("DISK_V_KAPSE" in kody(v))
-    v = E.postav({"rady": [radek(pocet=2, y=500, sklon_deg=9)], "draha": "5276", "zasun_draha_mm": 41.0})
-    ok("DISK_V_KAPSE" not in kody(v), str(v["problemy"]))
-    # objem průniku (kolizní náhrady) originálního GLB boxu s disky a válečky = 0
-    for vyska, smer in ((120, "delka"), (220, "sirka"), (320, "delka")):
-        v = E.postav({"rady": [radek(pocet=3, vyska=vyska, smer=smer, y=500, sklon_deg=9)], "draha": "5276"})
-        ok(not chyby(v))
-        obj, det = objem_pruniku_s_glb(v)
-        blizko(obj, 0.0, 1e-9, "průnik GLB s disky/válečky: %s" % (det[:3],))
-    # disky zasahující do boxu (příliš malá rozteč) = kolize
+    # příliš malá rozteč: disky pod boxem = kolize
     v = E.postav({"rady": [radek(pocet=2, y=500, sklon_deg=9)], "draha": "5276", "roztec_drah_mm": 250})
     ok(chyby(v, "KOLIZE"))
+    # box nad kapsou dolní koncovky: varování; od 54,3 mm odsazení už ne
+    v = E.postav({"rady": [radek(pocet=2, y=500, sklon_deg=9)], "draha": "5276"})
+    ok("BOX_NAD_KONCOVKOU" in kody(v))
+    v = E.postav({"rady": [radek(pocet=2, y=500, sklon_deg=9)], "draha": "5276", "odsazeni_koncovky_mm": 54.3})
+    ok("BOX_NAD_KONCOVKOU" not in kody(v), str(v["problemy"]))
+    v = E.postav({"rady": [radek(pocet=2, y=500, sklon_deg=9)], "draha": "5275"})
+    ok("UCHO_NAD_ROVINOU" in kody(v))
 
 
 def test_kolize_glb_objem_pruniku():
@@ -696,13 +778,14 @@ def test_kolize_glb_objem_pruniku():
         for sm in ("delka", "sirka"):
             s = copy.deepcopy(spec)
             s["draha"] = dr
+            s["odsazeni_koncovky_mm"] = 60.0     # box nad kapsou dolní koncovky: viz test_sestava_na_meshich
             for r in s["rady"]:
                 r["smer"] = sm
             if sm == "sirka":
-                s = E.kopie_rady({"rady": [s["rady"][0]], "draha": dr}, "A", "vedle", 20)
+                s = E.kopie_rady({"rady": [s["rady"][0]], "draha": dr, "odsazeni_koncovky_mm": 60.0}, "A", "vedle", 20)
             v = E.postav(s)
             ok(not chyby(v), str(chyby(v)))
-            obj, det = objem_pruniku_s_glb(v)
+            obj, det = objem_pruniku_s_glb(v, vynech_role=("ucho",))     # ucho 5275 je 1 mm nad válečky (viz ODVOZENI.md)
             ok(obj <= 1000.0, "objem průniku GLB s dráhami/plechy/trubkami %.1f mm3: %s" % (obj, det[:3]))
             blizko(obj, 0.0, 1e-9, "objem průniku má být 0 (dotyk)")
     # kontrola metody: box zasunutý o 10 mm do dráhy dává nenulový objem (měřidlo funguje)
@@ -861,24 +944,36 @@ def test_kolize_se_hlasi():
 
 
 def test_nosniky_obsahuji_rozpeti():
-    v = E.postav({"rady": [radek(id_="A", pocet=3, y=500, sklon_deg=8)], "presah_nosniku_mm": 25, "draha": "5275"})
-    for n in v["nosniky"]:
-        ok(n["polomer"] == 14.0 and n["part_id"] == 3673)
-        ok(n["a"][0] == n["b"][0] and n["a"][1] == n["b"][1])
-        # rozpětí pokrývá koncovky (šířka plechu 38,47) + přesah
-        d = v["draha"][0]
-        t0, t1 = d["pasy"][0]["t"] - 38.47 / 2 - 25, d["pasy"][1]["t"] + 38.47 / 2 + 25
-        blizko(n["a"][2], t0, 5e-3)
-        blizko(n["b"][2], t1, 5e-3)
-    # trubka: hák = poloviční vzdálenost od vnějšího konce plechu; osa je HAK_PUL pod horní plochou plechu
-    r = v["rady"][0]
-    P0, n_, d_ = (np.array(r[k]) for k in ("zacatek", "vektor_kolmo", "vektor_podel"))
-    dolni = [n for n in v["nosniky"] if n["role"] == "dolni"][0]
-    hak_pul = (86.29 - 54.5) / 2
-    # trubka v rámu řady: s = -86.29 + hak_pul, h = -hak_pul
-    bod = P0 + (-86.29 + hak_pul) * d_ + (-hak_pul) * n_
-    blizko(dolni["a"][0], bod[0], 5e-3)
-    blizko(dolni["a"][1], bod[1], 5e-3)
+    for dr, delta in (("5275", 17.63 - 17.12), ("5276", 16.365 - 11.665)):
+        v = E.postav({"rady": [radek(id_="A", pocet=3, y=500, sklon_deg=8)], "presah_nosniku_mm": 25, "draha": dr})
+        for n in v["nosniky"]:
+            ok(n["polomer"] == 14.0 and n["part_id"] == 3673)
+            ok(n["a"][0] == n["b"][0] and n["a"][1] == n["b"][1])
+            # rozpětí pokrývá koncovky (šířka 38,4 mm) + přesah
+            d = v["draha"][0]
+            t0, t1 = d["pasy"][0]["t"] - 19.2 - 25, d["pasy"][1]["t"] + 19.2 + 25
+            blizko(n["a"][2], t0, 5e-3)
+            blizko(n["b"][2], t1, 5e-3)
+            # trubka 3673 (válec Ø28 délky 1000, osa Y): měřítko Y = délka / 1000, osa Y modelu leží na ose nosníku
+            L_ = float(np.linalg.norm(np.array(n["b"]) - np.array(n["a"])))
+            blizko(n["scale"][1], L_ / 1000.0, 2e-6)
+            R = kvat_na_matici(n["quaternion"])
+            ax = (np.array(n["b"]) - np.array(n["a"])) / L_
+            blizko(float(np.linalg.norm(R[:, 1] - ax)), 0.0, 1e-5)
+            blizko(float(np.linalg.norm(np.array(n["position"]) - (np.array(n["a"]) + np.array(n["b"])) / 2)), 0.0, 5e-3)
+        # osa trubky v rámu řady: dolní s = -16,8 před zarážkou, h = 10,75 - delta nad rovinou válečků (hák 5282/5281 změřený na GLB)
+        r = v["rady"][0]
+        P0, n_, d_ = (np.array(r[k]) for k in ("zacatek", "vektor_kolmo", "vektor_podel"))
+        dolni = [n for n in v["nosniky"] if n["role"] == "dolni"][0]
+        horni = [n for n in v["nosniky"] if n["role"] == "horni"][0]
+        h_t = 10.75 - delta
+        s_be = v["draha"][0]["telo_od_do_mm"][1]
+        for nos, s_t in ((dolni, -16.8), (horni, s_be + 54.5 + 16.8)):
+            bod = P0 + s_t * d_ + h_t * n_
+            blizko(nos["a"][0], bod[0], 5e-3)
+            blizko(nos["a"][1], bod[1], 5e-3)
+        # trubka je nad rovinou válečků (osa 6 mm / 10,2 mm), tedy nad spodkem nožky boxu, ale před zarážkou
+        ok(h_t > 0)
 
 
 def test_deterministicke_a_json():

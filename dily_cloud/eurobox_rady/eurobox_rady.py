@@ -19,6 +19,9 @@ VSTUP `spec` (vše kromě `rady` je volitelné):
   draha: "5276" (výchozí) | "5275"  karta dráhy
   osa_rady: "x" (výchozí) | "z"     osa, podél které jdou boxy za sebou
   nizsi_konec: "predek" (výchozí) | "zadek"   nižší konec skloněné řady = menší | větší souřadnice
+  odsazeni_koncovky_mm: 0           o kolik mm je dolní koncovka (líc zarážky) před čelem prvního boxu; 0 = box se opírá o zarážku
+                                    (pak stěny kapsy 5282, které přečnívají rovinu válečků o 12,5 mm, leží pod předkem boxu),
+                                    od 54,3 mm výš už pod boxem nejsou
   zasun_draha_mm: 54.5              vzdálenost líce zarážky (5282) od vnější plochy příruby dráhy (Robert ~54-55 mm; plech 5282 má
                                     od zarážky 54,2 mm kapsy do otevřeného konce => příruba dosedá na konec koncovky)
   roztec_drah_mm: null              osová rozteč 2 drah (null = výchozí podle typu dráhy a boxu)
@@ -110,8 +113,8 @@ DILY = {
                ("obb", "lista", (-100.09, -18.62, -19.43), (100.09, 9.0, 19.43)),
                ("obb", "priruba", (-101.6, -18.62, -19.43), (-100.09, 17.12, 19.43)),
                ("obb", "priruba", (100.09, -18.62, -19.43), (101.6, 17.12, 19.43)),
-               ("obb", "ucho", (-135.83, 17.12, -17.0), (-103.07, 18.62, 17.0)),
-               ("obb", "ucho", (103.07, 17.12, -17.0), (135.83, 18.62, 17.0)),
+               ("obb", "ucho", (-135.83, 17.12, -17.2), (-103.07, 18.62, 17.2)),
+               ("obb", "ucho", (103.07, 17.12, -17.2), (135.83, 18.62, 17.2)),
            ) + tuple(("cyl", "valec", 2, (cx, 4.2, 0.0), 13.43, 14.0) for cx in (-85.2, -51.67, -17.77, 15.82, 49.19, 82.45))},
     5276: {"sku": "2.2.016.027.037.03", "role": "draha", "soubor": "dily/katalog/product_5276.glb",
            "rozmer_glb": (41.0, 61.67, 255.04), "delka": 255.04, "sirka": 41.0, "disk": True,
@@ -164,6 +167,7 @@ DEFAULTY = {
     "osa_rady": "x",
     "nizsi_konec": "predek",
     "zasun_draha_mm": 54.5,
+    "odsazeni_koncovky_mm": 0.0,
     "roztec_drah_mm": None,
     "odstup_nozka_mm": 10.0,
     "presah_nosniku_mm": 0.0,
@@ -230,7 +234,7 @@ def _quat(M):
     return q
 
 
-_PRESNE = {"quaternion", "nahoru", "osa", "vektor_podel", "vektor_kolmo", "vektor_napric", "osy"}
+_PRESNE = {"scale", "quaternion", "nahoru", "osa", "vektor_podel", "vektor_kolmo", "vektor_napric", "osy"}
 
 
 def _zaokr(o, des=3):
@@ -557,12 +561,13 @@ def _stavba_rady(r, spec, p, soupis):
     u_end, u_tip = dcfg["u_koncova_plocha"], dcfg["u_spicka"]
     pitch = 2.0 * u_tip                               # moduly uchem na ucho (špička na špičku)
     delta = dcfg["v_rovina"] - dcfg["v_ucho0"]        # rovina válečků nad spodní plochou ucha
-    s_bs = zasun                                      # vnější plocha příruby prvního modulu
+    s_stop_d = -float(p["odsazeni_koncovky_mm"])      # líc zarážky dolní koncovky
+    s_bs = s_stop_d + zasun                           # vnější plocha příruby prvního modulu
     m = max(1, math.ceil((L - s_bs - 2.0 * u_end - 1e-9) / pitch) + 1)
     s_be = s_bs + 2.0 * u_end + (m - 1) * pitch       # vnější plocha příruby posledního modulu
     s_stop_u = s_be + zasun                           # místo líce zarážky horní koncovky 5281 (zarážku nemá)
     h_hak = {k: kf["y_trubka"] - kf["y_zaklad_horni"] - delta for k, kf in ((5282, cd), (5281, cu))}
-    s_tl = cd["z_trubka"] - cd["z_lic_zarazky"]
+    s_tl = s_stop_d + cd["z_trubka"] - cd["z_lic_zarazky"]
     s_tu = s_stop_u - (cu["z_trubka"] - cu["z_lic_zarazky"])
     res["geom_draha"] = {"moduly": m, "s_telo_od": s_bs, "s_telo_do": s_be, "s_trubka_dole": s_tl,
                          "s_trubka_nahore": s_tu, "h_trubka_dole": h_hak[5282], "h_trubka_nahore": h_hak[5281],
@@ -610,7 +615,7 @@ def _stavba_rady(r, spec, p, soupis):
         # koncovky
         for role, kfg, kid in (("dolni", cd, 5282), ("horni", cu, 5281)):
             if role == "dolni":
-                d_pl, s0 = fr.d, kfg["z_lic_zarazky"] * -1.0                  # s = z + 11,1
+                d_pl, s0 = fr.d, s_stop_d - kfg["z_lic_zarazky"]              # s = s_stop_d + z + 11,1
             else:
                 d_pl, s0 = -fr.d, s_stop_u + kfg["z_lic_zarazky"]             # s = s_stop_u - 11,1 - z
             h0 = -(kfg["y_zaklad_horni"] + delta)
@@ -620,7 +625,7 @@ def _stavba_rady(r, spec, p, soupis):
             ko = {"id": idk, "rada": rid, "patro": pid, "pas": k + 1, "role": role, "part_id": kid,
                   "sku": kfg["sku"], "position": pos, "quaternion": q, "scale": [1.0, 1.0, 1.0],
                   "tvary_nahrady": [_vyst_tvar(t) for t in tv],
-                  "s_lic_zarazky": 0.0 if role == "dolni" else s_stop_u}
+                  "s_lic_zarazky": s_stop_d if role == "dolni" else s_stop_u}
             res["koncovky"].append(ko)
             for t in tv:
                 t["vlastnik"] = idk
@@ -951,10 +956,29 @@ def postav(spec):
                 continue
             hl = _sat_hloubka(A, B)
             if hl > tol:
-                kolize[(A["vlastnik"], B["vlastnik"])] = max(hl, kolize.get((A["vlastnik"], B["vlastnik"]), 0))
-    for (a_, b_), hl in sorted(kolize.items()):
-        problemy.append({"kod": "KOLIZE", "uroven": "chyba", "id": [a_, b_],
-                         "text": "Průnik %s a %s (hloubka %.2f mm)." % (a_, b_, hl)})
+                # box x stěny/základna koncovky a box x ucho dráhy: změřený stav skutečných dílů (stěny kapsy 5282 přečnívají
+                # rovinu válečků, ucho 5275 je o 1 mm nad válečky) => varování, ne chyba (viz ODVOZENI.md)
+                role = {A.get("rodic"): A.get("role"), B.get("rodic"): B.get("role")}
+                if "box" in role and role.get("koncovka") in ("stena", "zaklad", "zarazka", "hak"):
+                    kat = "BOX_NAD_KONCOVKOU"
+                elif "box" in role and role.get("draha") == "ucho":
+                    kat = "UCHO_NAD_ROVINOU"
+                else:
+                    kat = "KOLIZE"
+                k_ = (kat, A["vlastnik"], B["vlastnik"])
+                kolize[k_] = max(hl, kolize.get(k_, 0))
+    for (kat, a_, b_), hl in sorted(kolize.items()):
+        if kat == "KOLIZE":
+            problemy.append({"kod": "KOLIZE", "uroven": "chyba", "id": [a_, b_],
+                             "text": "Průnik %s a %s (hloubka %.2f mm)." % (a_, b_, hl)})
+    for kat, text in (("BOX_NAD_KONCOVKOU", "Box %s zasahuje do koncovky %s (hloubka %.1f mm): stěny kapsy přečnívají rovinu válečků a nožka "
+                                             "boxu z GLB je plný blok; použijte odsazeni_koncovky_mm >= 54,3."),
+                      ("UCHO_NAD_ROVINOU", "Box %s leží na uchu dráhy %s (ucho je %.1f mm nad horním okrajem válečků).")):
+        pary = [(k, h) for k, h in sorted(kolize.items()) if k[0] == kat]
+        if pary:
+            (_, a_, b_), hl = max(pary, key=lambda kh: kh[1])
+            ids = sorted({x for k, _ in pary for x in k[1:]})
+            problemy.append({"kod": kat, "uroven": "varovani", "id": ids, "text": text % (a_, b_, hl)})
     # --- různé -------------------------------------------------------------------------------------
     vsechny = [v for t in tvary for v in [_poly(t)[0]]]
     if vsechny:

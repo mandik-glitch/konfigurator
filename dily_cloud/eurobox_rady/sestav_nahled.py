@@ -70,47 +70,39 @@ def data():
     return res
 
 
-def mesh_5276():
-    """dily/5276.glb (STEP) -> kompaktní pole pro náhled: pozice int16 (0,01 mm), normály int8, barva = index palety, indexy uint16."""
+def mesh_katalog():
+    """Katalogové GLB dílů (dily/katalog) -> kompaktní data pro náhled: trojúhelníky bez sdílení vrcholů,
+    pozice int16 (0,01 mm), třída barvy uint8 (u 5276: disk = 1)."""
     import base64
     import struct as st
-    d = open(os.path.join(HERE, "dily", "5276.glb"), "rb").read()
-    jl = st.unpack("<I", d[12:16])[0]
-    j = json.loads(d[20:20 + jl])
-    off = 20 + jl
-    bl = st.unpack("<I", d[off:off + 4])[0]
-    b = d[off + 8:off + 8 + bl]
+    out = {}
+    for karta in (5275, 5276, 5281, 5282):
+        d = open(os.path.join(HERE, "dily", "katalog", "product_%d.glb" % karta), "rb").read()
+        jl = st.unpack("<I", d[12:16])[0]
+        j = json.loads(d[20:20 + jl])
+        off = 20 + jl
+        bl = st.unpack("<I", d[off:off + 4])[0]
+        b = d[off + 8:off + 8 + bl]
 
-    def acc(i):
-        a = j["accessors"][i]
-        bv = j["bufferViews"][a["bufferView"]]
-        n = {"SCALAR": 1, "VEC3": 3}[a["type"]]
-        dt = {5126: "<f4", 5125: "<u4"}[a["componentType"]]
-        o = bv.get("byteOffset", 0) + a.get("byteOffset", 0)
-        return np.frombuffer(b, dtype=dt, count=a["count"] * n, offset=o).reshape(-1, n).astype(float)
-    P, N, C, I = [], [], [], []
-    base = 0
-    for k, p in enumerate(j["meshes"][0]["primitives"]):
-        pos, nor = acc(p["attributes"]["POSITION"]), acc(p["attributes"]["NORMAL"])
-        idx = acc(p["indices"])[:, 0].astype(int)
-        if k == 0:
-            col = np.zeros(len(pos))
-        elif k in (1, 2):
-            col = np.ones(len(pos))
-        elif k in (3, 4, 5):
-            col = np.where(pos[:, 0] > 9.8, 3, 2)
-        else:
-            col = np.full(len(pos), 4)
-        P.append(pos)
-        N.append(nor)
-        C.append(col)
-        I.append(idx + base)
-        base += len(pos)
-    P, N, C, I = np.concatenate(P), np.concatenate(N), np.concatenate(C), np.concatenate(I)
-    assert base < 65536
-    enc = lambda a: base64.b64encode(a.tobytes()).decode()
-    return {"p": enc(np.round(P * 100).astype("<i2")), "n": enc(np.round(N * 127).astype("i1")),
-            "c": enc(C.astype("u1")), "i": enc(I.astype("<u2")), "nv": int(base), "nt": int(len(I) // 3)}
+        def acc(i):
+            a = j["accessors"][i]
+            bv = j["bufferViews"][a["bufferView"]]
+            n = {"SCALAR": 1, "VEC3": 3}[a["type"]]
+            dt = {5126: "<f4", 5125: "<u4", 5123: "<u2"}[a["componentType"]]
+            o = bv.get("byteOffset", 0) + a.get("byteOffset", 0)
+            stride = bv.get("byteStride") or n * np.dtype(dt).itemsize
+            return np.ndarray((a["count"], n), dt, b, o, (stride, np.dtype(dt).itemsize)).astype(float)
+        P = []
+        for m in j["meshes"]:
+            for p in m["primitives"]:
+                pos = acc(p["attributes"]["POSITION"])
+                idx = acc(p["indices"])[:, 0].astype(int)
+                P.append(pos[idx])
+        P = np.concatenate(P)
+        col = (P[:, 0] > 9.85).astype("u1") if karta == 5276 else np.zeros(len(P), "u1")
+        enc = lambda a: base64.b64encode(a.tobytes()).decode()
+        out[str(karta)] = {"p": enc(np.round(P * 100).astype("<i2")), "c": enc(col), "nv": int(len(P))}
+    return out
 
 
 def bez_eval(txt):
@@ -155,7 +147,7 @@ label{display:flex;align-items:center;gap:8px;margin:3px 0;cursor:pointer}
 <div id="app">
  <div id="panel">
   <h1>Řady euroboxů</h1>
-  <div class="pop">Boxy jsou vizuální modely nádob (obálka a nožka podle GLB), dráhy s válečky a koncovky jsou procedurální náhrady o rozměrech ze zadání.</div>
+  <div class="pop">Boxy jsou vizuální modely nádob (obálka a nožka podle GLB); dráhy 5275/5276, koncovky 5281/5282 jsou katalogové modely v pozicích z výstupu, trubky Ø28 válce.</div>
   <h2>Předvolba</h2><div class="btns" id="pre"></div>
   <div class="pop" id="popis"></div>
   <h2>Dráha</h2>
@@ -168,7 +160,7 @@ label{display:flex;align-items:center;gap:8px;margin:3px 0;cursor:pointer}
   <div class="kv" id="kv"></div>
   <h2>Hlášení</h2>
   <div id="prob"></div>
-  <div class="warn"><b>Neověřeno:</b> modely dílů 5275 až 5282 zatím nejsou k dispozici. Tvar, poloha háku a kapsy a orientace jsou odvozeny z rozměrů (viz ODVOZENI.md).</div>
+  <div class="warn"><b>Neověřeno:</b> spojení dvou modulů dráhy (ucho na ucho bez dalšího dílu) a poloha ucha na základně koncovky; viz ODVOZENI.md.</div>
  </div>
  <div id="view"><canvas id="cv"></canvas><div id="tip">Tažení = otáčení, kolečko = přiblížení, pravé tlačítko = posun</div></div>
 </div>
@@ -176,7 +168,7 @@ label{display:flex;align-items:center;gap:8px;margin:3px 0;cursor:pointer}
 <script>/*ORBIT*/</script>
 <script>
 const DATA = /*DATA*/;
-const MESH5276 = /*MESH*/;
+const MESH = /*MESH*/;
 (function(){
 const BARVY={box:0x1f64d6,nozka:0x15489e,draha:0x8f98a6,doraz:0x7a8391,valec:0xe3e7ee,disk:0xaab3c0,dolni:0x4b5360,zarazka:0xe0701f,horni:0x4b5360,nosnik:0xd9dee5,opora:0xb08968};
 const cv=document.getElementById('cv');
@@ -226,39 +218,25 @@ function krabice(g,b,r){
   e.position.set(0,0,zc);gr.add(e);
   g.add(gr);
 }
-const PALETA=[0x8f98a6,0x6b7482,0xe8ebf0,0xb4bcc8,0x555b66].map(c=>new THREE.Color(c));
+const PALETA=[0x8f98a6,0xb4bcc8].map(c=>new THREE.Color(c));
 function b64(s,T){const bin=atob(s);const u=new Uint8Array(bin.length);for(let i=0;i<bin.length;i++)u[i]=bin.charCodeAt(i);return new T(u.buffer);}
-let geo5276=null;
-function geometrie5276(){
-  if(geo5276)return geo5276;
-  const M=MESH5276,p=b64(M.p,Int16Array),n=b64(M.n,Int8Array),c=b64(M.c,Uint8Array),ix=b64(M.i,Uint16Array);
-  const pos=new Float32Array(M.nv*3),nor=new Float32Array(M.nv*3),col=new Float32Array(M.nv*3);
-  for(let i=0;i<M.nv;i++){for(let k=0;k<3;k++){pos[i*3+k]=p[i*3+k]/100;nor[i*3+k]=n[i*3+k]/127;}
-    const C=PALETA[c[i]];col[i*3]=C.r;col[i*3+1]=C.g;col[i*3+2]=C.b;}
+const GEO={};
+// katalogové GLB dílů: trojúhelníky bez sdílení vrcholů, ploché stínování (normály z trojúhelníků)
+function geometrie(karta){
+  if(GEO[karta])return GEO[karta];
+  const M=MESH[karta],p=b64(M.p,Int16Array),c=b64(M.c,Uint8Array);
+  const pos=new Float32Array(M.nv*3),col=new Float32Array(M.nv*3);
+  for(let i=0;i<M.nv;i++){for(let k=0;k<3;k++)pos[i*3+k]=p[i*3+k]/100;const C=PALETA[c[i]];col[i*3]=C.r;col[i*3+1]=C.g;col[i*3+2]=C.b;}
   const g=new THREE.BufferGeometry();
-  g.setAttribute('position',new THREE.BufferAttribute(pos,3));g.setAttribute('normal',new THREE.BufferAttribute(nor,3));
-  g.setAttribute('color',new THREE.BufferAttribute(col,3));g.setIndex(new THREE.BufferAttribute(ix,1));
-  return geo5276=g;
+  g.setAttribute('position',new THREE.BufferAttribute(pos,3));g.setAttribute('color',new THREE.BufferAttribute(col,3));
+  g.computeVertexNormals();
+  return GEO[karta]=g;
 }
-// skutečný model dráhy 5276 (STEP) v pozicích modulů z výstupu: pozice + kvaternion
-function drahaModel(g,pas){
-  const im=new THREE.InstancedMesh(geometrie5276(),new THREE.MeshStandardMaterial({vertexColors:true,roughness:.5,metalness:.35}),pas.moduly.length);
+// instance dílu z výstupu postav(): part_id, position, quaternion
+function dil(g,karta,seznam,barva){
+  const im=new THREE.InstancedMesh(geometrie(karta),new THREE.MeshStandardMaterial({vertexColors:true,color:barva||0xffffff,roughness:.5,metalness:.35,side:THREE.DoubleSide}),seznam.length);
   const m=new THREE.Matrix4();
-  pas.moduly.forEach((mo,i)=>{m.compose(vec(mo.position),new THREE.Quaternion(mo.quaternion[0],mo.quaternion[1],mo.quaternion[2],mo.quaternion[3]),new THREE.Vector3(1,1,1));im.setMatrixAt(i,m);});
-  g.add(im);
-}
-const VALEC_R=10,VALEC_PITCH=26;
-function valecky(g,r,pas,sirka){
-  const P0=vec(r.zacatek),d=vec(r.vektor_podel),c=vec(r.vektor_napric),n=vec(r.vektor_kolmo);
-  const s0=pas.moduly[0].s_od+12,s1=pas.moduly[pas.moduly.length-1].s_do-12;
-  const N=Math.floor((s1-s0)/VALEC_PITCH)+1;
-  const geo=new THREE.CylinderGeometry(VALEC_R,VALEC_R,sirka,16);
-  const im=new THREE.InstancedMesh(geo,new THREE.MeshStandardMaterial({color:BARVY.valec,roughness:.35,metalness:.6}),N);
-  const qy=new THREE.Quaternion().setFromUnitVectors(new THREE.Vector3(0,1,0),c);
-  const m=new THREE.Matrix4();
-  for(let i=0;i<N;i++){const s=s0+i*VALEC_PITCH;
-    const p=P0.clone().addScaledVector(d,s).addScaledVector(c,pas.t).addScaledVector(n,-VALEC_R);
-    m.compose(p,qy,new THREE.Vector3(1,1,1));im.setMatrixAt(i,m);}
+  seznam.forEach((mo,i)=>{m.compose(vec(mo.position),new THREE.Quaternion(mo.quaternion[0],mo.quaternion[1],mo.quaternion[2],mo.quaternion[3]),new THREE.Vector3(1,1,1));im.setMatrixAt(i,m);});
   g.add(im);
 }
 function sestav(){
@@ -266,27 +244,9 @@ function sestav(){
   Object.values(grp).forEach(clear);
   const rady={};R.rady.forEach(r=>rady[r.id]=r);
   R.boxy.forEach(b=>krabice(grp.box,b,rady[b.rada]));
-  // dráhy: 5275 = lišta (horní plocha 9 mm pod rovinou válečků, válečky dosahují do roviny h=0 = spodek nožky);
-  // 5276 = lišta + skutečné válečky s disky na vnějším konci (disk vyčnívá nad rovinu válečků)
-  function valec(g,t,col){
-    const geo=new THREE.CylinderGeometry(t.polomer,t.polomer,t.delka,28);
-    const m=new THREE.Mesh(geo,new THREE.MeshStandardMaterial({color:col,roughness:.35,metalness:.55}));
-    m.position.copy(vec(t.stred));
-    m.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),vec(t.osa).normalize());g.add(m);
-  }
-  R.draha.forEach(d=>d.pasy.forEach(p=>{
-    const r=rady[d.rada];
-    if(d.part_id===5276){drahaModel(grp.draha,p);return;}
-    let sirka=0;
-    p.moduly.forEach(m=>m.tvary_nahrady.forEach(t=>{
-      if(t.typ==='valec'){valec(grp.draha,t,t.role==='disk'?BARVY.disk:BARVY.valec);return;}
-      const pul=t.pul.slice(),st=t.stred.slice();
-      if(t.role==='telo'){const n=r.vektor_kolmo;pul[2]-=4.5;for(let k=0;k<3;k++)st[k]-=4.5*n[k];sirka=Math.max(sirka,t.pul[1]*2);}
-      kvadr(grp.draha,st,t.osy,pul,BARVY.draha,null,.55);
-    }));
-    if(d.part_id===5275)valecky(grp.draha,r,p,sirka-8);
-  }));
-  R.koncovky.forEach(k=>k.tvary_nahrady.forEach(t=>kvadr(grp.koncovky,t.stred,t.osy,t.pul,t.role==='zarazka'?BARVY.zarazka:BARVY.dolni,null,.5)));
+  // dráhy a koncovky: skutečné katalogové meshe v pozicích z výstupu (position + quaternion); trubky Ø28 jsou válce
+  R.draha.forEach(d=>d.pasy.forEach(p=>dil(grp.draha,d.part_id,p.moduly)));
+  [5282,5281].forEach(kk=>{const L=R.koncovky.filter(k=>k.part_id===kk);if(L.length)dil(grp.koncovky,kk,L,kk===5282?0xffb08a:0x9fdcb7);});
   R.nosniky.forEach(n=>{const a=vec(n.a),b=vec(n.b),L=a.distanceTo(b);
     const geo=new THREE.CylinderGeometry(n.polomer,n.polomer,L,28);
     const m=new THREE.Mesh(geo,new THREE.MeshStandardMaterial({color:BARVY.nosnik,roughness:.45,metalness:.1}));
@@ -335,7 +295,7 @@ const dra=document.getElementById('dra');
 const poh=document.getElementById('poh');
 [['3/4','Zepředu zboku'],['bok','Z boku (osa Z)'],['shora','Shora']].forEach(([k,t])=>{const b=document.createElement('button');b.textContent=t;b.onclick=()=>{fit(k);draw();};poh.append(b);});
 const tg=document.getElementById('tog');
-[['box','Boxy',BARVY.box],['draha','Dráhy (válečky, disky)',BARVY.draha],['koncovky','Koncovky 5282 dole / 5281 nahoře',BARVY.dolni],['nosniky','Nosníky Ø28',BARVY.nosnik],['opory','Deska vodorovné řady',BARVY.opora]].forEach(([k,t,c])=>{
+[['box','Boxy',BARVY.box],['draha','Dráhy (katalogový model)',BARVY.draha],['koncovky','Koncovky 5282 dole / 5281 nahoře',0xffb08a],['nosniky','Nosníky Ø28',BARVY.nosnik],['opory','Deska vodorovné řady',BARVY.opora]].forEach(([k,t,c])=>{
   const l=document.createElement('label');const i=document.createElement('input');i.type='checkbox';i.checked=true;
   i.onchange=()=>{tog[k]=i.checked;grp[k].visible=i.checked;draw();};
   const s=document.createElement('span');s.className='sw';s.style.background='#'+c.toString(16).padStart(6,'0');
@@ -361,7 +321,7 @@ def main():
     html = HTML.replace("/*THREE*/", bez_eval(three).replace("</script", "<\\/script"))
     html = html.replace("/*ORBIT*/", bez_eval(orbit).replace("</script", "<\\/script"))
     html = html.replace("/*DATA*/", d.replace("</", "<\\/"))
-    html = html.replace("/*MESH*/", json.dumps(mesh_5276(), separators=(",", ":")))
+    html = html.replace("/*MESH*/", json.dumps(mesh_katalog(), separators=(",", ":")))
     zakaz = ["admin", "logiman", "localstorage", "/api/", "window.open", "postmessage", "eval"]
     low = html.lower()
     for z in zakaz:
