@@ -1,0 +1,26 @@
+{
+ "sku": "2441669",
+ "pohled": "t44",
+ "foto_repo_cesta": "2441669/c03.jpg (mimo repo, scratchpad)",
+ "pose": {},
+ "kamera": {
+  "azim": 42.25949960804504,
+  "elev": 47.67057927770916,
+  "roll": 0.00002787416654416169,
+  "dist": 2539.65345868263,
+  "fov": 15.428561873719325,
+  "shiftX": 0.07811575121411277,
+  "shiftY": -0.007676261324238715,
+  "iou": 0.8995428344265554
+ },
+ "iou": 0.8995428344265554,
+ "chyby_landmarku_px": [
+  2.8,
+  2.8,
+  2.1,
+  3,
+  0.7,
+  0.6
+ ],
+ "poznamka": "kamera z ručně změřených bodů (kalibruj.py) a doladění překryvem obrysu (fit_lm.mjs)"
+}

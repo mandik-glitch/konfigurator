@@ -1,0 +1,20 @@
+{
+ "sku": "2437399",
+ "pohled": "otevreny-c03",
+ "foto_repo_cesta": "2437399/c03.jpg (mimo repo, scratchpad)",
+ "pose": {
+  "vicko": 87.0507193478972
+ },
+ "kamera": {
+  "azim": 42.0711478369895,
+  "elev": 48.599965114151615,
+  "dist": 2215.7284783805935,
+  "fov": 20.06080143212297,
+  "roll": 0,
+  "shiftX": 0.04190855774466194,
+  "shiftY": 0.16429850839261448,
+  "iou": 0.9344144454987205
+ },
+ "iou": 0.9344144454987205,
+ "poznamka": "kamera odhadnuta z obrysu fotografie (fit_2437399.mjs, roll = 0); ohnisko a úhel víka jsou odhad, ne měření"
+}

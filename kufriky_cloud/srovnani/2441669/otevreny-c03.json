@@ -1,0 +1,19 @@
+{
+ "sku": "2441669",
+ "pohled": "otevreny-c03",
+ "foto_repo_cesta": "2441669/c03.jpg (mimo repo, scratchpad)",
+ "pose": {},
+ "kamera": {
+  "azim": 41.40649955263937,
+  "elev": 54.0207497819308,
+  "roll": -0.00017466361384647151,
+  "dist": 3216.8207962760557,
+  "fov": 11.90178600098468,
+  "shiftX": 0.051923787680803316,
+  "shiftY": -0.0006201431516812718,
+  "iou": 0.9652446449603737
+ },
+ "iou": 0.9652446449603737,
+ "chyby_landmarku_px": [],
+ "poznamka": "kamera z ručně změřených bodů (kalibruj.py) a doladění překryvem obrysu (fit_lm.mjs)"
+}

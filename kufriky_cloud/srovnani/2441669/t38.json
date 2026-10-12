@@ -1,0 +1,26 @@
+{
+ "sku": "2441669",
+ "pohled": "t38",
+ "foto_repo_cesta": "2441669/c03.jpg (mimo repo, scratchpad)",
+ "pose": {},
+ "kamera": {
+  "azim": 41.784445284698265,
+  "elev": 43.99330914090777,
+  "roll": -0.00023203687757044863,
+  "dist": 2414.9132323505264,
+  "fov": 16.22679633731068,
+  "shiftX": 0.07754447826116503,
+  "shiftY": 0.007928883884405512,
+  "iou": 0.8932336210668682
+ },
+ "iou": 0.8932336210668682,
+ "chyby_landmarku_px": [
+  7.9,
+  1.6,
+  1.9,
+  1.7,
+  2.3,
+  9.6
+ ],
+ "poznamka": "kamera z ručně změřených bodů (kalibruj.py) a doladění překryvem obrysu (fit_lm.mjs)"
+}
