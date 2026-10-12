@@ -6,15 +6,16 @@
   "vicko": 100
  },
  "kamera": {
-  "azim": -46.19579020731855,
-  "elev": 19.305767457231497,
-  "roll": 3.6712103130073754,
-  "dist": 4146.158406504348,
-  "fov": 12,
-  "shiftX": 0.05262727265840633,
-  "shiftY": 0.1525204638825342,
-  "iou": 0.9485619469026548
+  "azim": -48.901487114841245,
+  "elev": 20.035587626606038,
+  "roll": 5.2642914599021715,
+  "dist": 3302.2688603018023,
+  "fov": 15,
+  "shiftX": 0.056963204594238676,
+  "shiftY": 0.15479423067244283,
+  "iou": 0.9416038816960476
  },
- "iou": 0.9485619469026548,
- "poznamka": "kamera z obrysu fotografie (IoU masky; roll volný); nastroje/fit_ts2.mjs"
+ "iou": 0.9416038816960476,
+ "poznamka": "kamera z obrysu fotografie (IoU masky; roll volný); nastroje/fit_ts2.mjs",
+ "iou_rozliseni_masky": "612x640"
 }

@@ -7,15 +7,24 @@
   "drzadlo": 90
  },
  "kamera": {
-  "azim": 32.90187144587698,
-  "elev": 15.677174381575398,
-  "roll": 1.2728487958836199,
-  "dist": 3244.2335675068716,
-  "fov": 12,
-  "shiftX": -0.008033869898095843,
-  "shiftY": -0.03784502514368919,
-  "iou": 0.9415073115860517
+  "azim": 46.973434157485585,
+  "elev": 12.123942054416768,
+  "roll": -1.1796152531441118,
+  "dist": 2553.273600071252,
+  "fov": 15,
+  "shiftX": -0.013525703136553893,
+  "shiftY": -0.06192743744649139,
+  "iou": 0.8952853180939575,
+  "chyba_landmarku_px_prumer": 10.68670808654601
  },
- "iou": 0.9415073115860517,
- "poznamka": "kamera z obrysu fotografie (IoU masky; roll volný); nastroje/fit_ts2.mjs"
+ "iou": 0.8952853180939575,
+ "poznamka": "kamera z obrysu fotografie (IoU masky; roll volný); nastroje/fit_ts2.mjs",
+ "chyby_landmarku_px": [
+  0,
+  16.8,
+  4.1,
+  21.7
+ ],
+ "landmarky_rozmer_fotky_px": "2000px (šířka)",
+ "iou_rozliseni_masky": "640x640"
 }

@@ -1,0 +1,28 @@
+{
+ "sku": "DWST83342",
+ "pohled": "obrys-c02",
+ "foto_repo_cesta": "DWST83342-1/c02.jpg (mimo repo, scratchpad)",
+ "pose": {
+  "vicko": 0
+ },
+ "kamera": {
+  "azim": -43.47955015937643,
+  "elev": 14.856917989716127,
+  "roll": -1.4291078931896068,
+  "dist": 2982.1365913654695,
+  "fov": 12,
+  "shiftX": -0.012426342004867705,
+  "shiftY": -0.03876666183900081,
+  "iou": 0.9650129723416273
+ },
+ "iou": 0.9650129723416273,
+ "poznamka": "kamera odhadnutá jen z obrysu fotografie (IoU masky, ohnisko 12°, roll volný) – bez kontroly landmarky; nastroje/fit_ts2.mjs",
+ "chyby_landmarku_px": [
+  85.6,
+  65.2,
+  51.1,
+  74.7
+ ],
+ "landmarky_rozmer_fotky_px": "2000px (šířka)",
+ "iou_rozliseni_masky": "640x521"
+}

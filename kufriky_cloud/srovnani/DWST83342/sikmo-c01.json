@@ -1,0 +1,30 @@
+{
+ "sku": "DWST83342",
+ "pohled": "sikmo-c01",
+ "foto_repo_cesta": "DWST83342-1/c01.jpg (mimo repo, scratchpad)",
+ "pose": {
+  "vicko": 0,
+  "drzadlo": 90
+ },
+ "kamera": {
+  "azim": 46.116350298242715,
+  "elev": 14.174823515173104,
+  "roll": -1.269992842909441,
+  "dist": 2684.688203408999,
+  "fov": 15,
+  "shiftX": -0.012602851734458766,
+  "shiftY": -0.0031628410698258673,
+  "iou": 0.8709545761973988,
+  "chyba_landmarku_px_prumer": 55.12509984380347
+ },
+ "iou": 0.8709545761973988,
+ "poznamka": "kamera z obrysu fotografie (IoU masky; roll volný); nastroje/fit_ts2.mjs",
+ "chyby_landmarku_px": [
+  3.7,
+  34.1,
+  17,
+  165.7
+ ],
+ "landmarky_rozmer_fotky_px": "2000px (šířka)",
+ "iou_rozliseni_masky": "640x640"
+}

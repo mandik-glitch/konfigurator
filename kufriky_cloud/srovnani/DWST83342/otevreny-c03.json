@@ -1,0 +1,21 @@
+{
+ "sku": "DWST83342",
+ "pohled": "otevreny-c03",
+ "foto_repo_cesta": "DWST83342-1/c03.jpg (mimo repo, scratchpad)",
+ "pose": {
+  "vicko": 100
+ },
+ "kamera": {
+  "azim": -48.45716340928893,
+  "elev": 22.651688762656086,
+  "roll": 4.1320899678192395,
+  "dist": 3680.429162281665,
+  "fov": 15,
+  "shiftX": 0.033515735508238435,
+  "shiftY": 0.15275217459761184,
+  "iou": 0.9357725622686267
+ },
+ "iou": 0.9357725622686267,
+ "poznamka": "kamera z obrysu fotografie (IoU masky; roll volný); nastroje/fit_ts2.mjs",
+ "iou_rozliseni_masky": "517x640"
+}

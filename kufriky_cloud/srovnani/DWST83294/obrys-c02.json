@@ -1,0 +1,28 @@
+{
+ "sku": "DWST83294",
+ "pohled": "obrys-c02",
+ "foto_repo_cesta": "DWST83294-1/c02.jpg (mimo repo, scratchpad)",
+ "pose": {
+  "vicko": 0
+ },
+ "kamera": {
+  "azim": -41.102749703604644,
+  "elev": 15.624440073999658,
+  "roll": -2.331544278797889,
+  "dist": 2597.9440683389894,
+  "fov": 12,
+  "shiftX": 0.01736465327387087,
+  "shiftY": -0.04079889526735609,
+  "iou": 0.9583570664046118
+ },
+ "iou": 0.9583570664046118,
+ "poznamka": "kamera odhadnutá jen z obrysu fotografie (IoU masky, ohnisko 12°, roll volný) – bez kontroly landmarky; nastroje/fit_ts2.mjs",
+ "chyby_landmarku_px": [
+  61.8,
+  55.7,
+  42.5,
+  72.2
+ ],
+ "landmarky_rozmer_fotky_px": "2000px (šířka)",
+ "iou_rozliseni_masky": "640x443"
+}

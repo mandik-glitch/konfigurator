@@ -6,7 +6,7 @@ import { par, F, nl, D } from './ts2_par.mjs';
 import { KOR } from './ts2_korpus.mjs';
 
 export function vickoFrames(p) {
-  const { zRim, H } = p, t = D.LID, yp = 226;       // yp: konce horní plochy – střední pás (|Y| < 226) je o ~9 mm výš než koncové bloky
+  const { zRim, H } = p, t = D.LID, yp = 150;       // yp: konce horní plochy – střední pás (|Y| < 150, mezi rohovými sloupky západek) je o ~10 mm výš než rohové a koncové bloky
   return [
     F(zRim, 185.5, -185.5, 277, 264, 13, 12), F(zRim + 9, 185.5, -185.5, 277, 264, 13, 12), F(zRim + 11, 183.5, -183.5, 275.5, 262.5, 13, 12),
     F(H - 0.34 * t, 183.5, -183.5, 275.5, 262, 14, 13), F(H - 0.17 * t, 177, -177, 268.5, 250, 22, 18), F(H - 0.17 * t + 0.1, 177, -177, yp + 6, yp - 20, 22, 18),
@@ -23,7 +23,7 @@ export function vickoNotches(p) {
 
 // kapsa sklopného madla v horní ploše (obrys = otvor v plášti); stojí na dně z' = zPocket
 const OT = (wl = 0) => ({ z: 0, xf: 56 + wl, xr: -56 - wl, y0: -140 - wl, y1: 140 + wl, yF: 132 + wl, cfx: 8, rr: 10, ns: 2, wx: 3, wy: 3 });
-export const MADLO = { LH: 86, xPiv: -48, T: 18, W: 24, Ys: 118 };      // délka smyčky od osy, tloušťka, šířka stojky, Y osy stojek
+export const MADLO = { LH: 78, xPiv: -48, T: 18, W: 24, Ys: 118 };      // délka smyčky od osy, tloušťka, šířka stojky, Y osy stojek
 
 function kapsa(g, p) {
   const O3 = OT(3), fr = [{ ...O3, z: p.zPocket - 3 }, { ...O3, z: p.H - 0.4 }];
@@ -60,7 +60,7 @@ function hornDilyZapadek(g, p) {
 function lemVnitrni(g, p) {
   // žlutý vnitřní lem víka (těsnění) u spodního okraje, uvnitř stěny; kopíruje kapsy západek posunuté o stěnu (3 mm), viditelný jen z vnitřní strany
   const { zRim } = p, w = 3;
-  const nn = vickoNotches(p).map(n => ({ fr: n.fr.map(f => ({ ...f, y0: f.y0 - w - 0.4, y1: f.y1 + w + 0.4, nx: f.nx - w - 0.4 })) }));
+  const nn = vickoNotches(p).map(n => { const a = n.fr[0], g = { y0: a.y0 - w - 0.4, y1: a.y1 + w + 0.4, nx: a.nx - w - 0.4 }; return { fr: [{ z: zRim + 0.4, ...g }, { z: zRim + 9, ...g }] }; });   // výřezy jen v rozsahu lemu (z' zRim … zRim+9)
   const f = z => F(z, 182.4, -182.4, 274, 261, 13, 15);
   g.add(prstenec('zluta', 'lem_vicka', { frames: [f(zRim + 0.4), f(zRim + 9)], notches: nn, wall: 3 }));
 }
