@@ -14,6 +14,9 @@ export const MATERIALY = {
   plast_bily: { color: [0.80, 0.80, 0.78], metallic: 0.0, roughness: 0.38 },        // bílý plast (POM/PA)
   ocel:       { color: [0.78, 0.79, 0.82], metallic: 1.0, roughness: 0.30 },      // nerez
   bila:       { color: [0.80, 0.80, 0.80], metallic: 0.0, roughness: 0.5 },
+  tyrkys:     { color: [0.0, 0.32, 0.38], metallic: 0.0, roughness: 0.42 },     // Makita tyrkysová (západky, prvky)
+  zluta:      { color: [0.95, 0.62, 0.0], metallic: 0.0, roughness: 0.42 },     // DeWalt žlutá
+  seda_svetla:{ color: [0.30, 0.30, 0.32], metallic: 0.0, roughness: 0.55 },     // světlejší šedá (ToughSystem)
   cervena_pruhl: { color: [0.62, 0.02, 0.04], metallic: 0.0, roughness: 0.35, alpha: 0.80 },
 };
 
