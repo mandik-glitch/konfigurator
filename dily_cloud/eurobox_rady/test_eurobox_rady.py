@@ -141,6 +141,18 @@ def mrizka_valec(nz, krok):
     return np.array(pts), krok ** 3
 
 
+def rozsah_osa(t, i):
+    """(min, max) tvaru náhrady (kvádr nebo válec) ve světové ose i."""
+    c = t["stred"][i]
+    if t["typ"] == "valec":
+        ax = np.array(t["osa"], float)
+        ax /= np.linalg.norm(ax)
+        r = abs(ax[i]) * t["delka"] / 2 + t["polomer"] * math.sqrt(max(0.0, 1 - ax[i] ** 2))
+    else:
+        r = float(sum(abs(np.array(t["osy"])[:, i]) * np.array(t["pul"])))
+    return c - r, c + r
+
+
 def objem_pruniku_s_glb(vysl, krok=3.0):
     """Objem (mm3) průniku originální geometrie GLB boxů s náhradami dílů a trubkami."""
     celkem = 0.0
@@ -159,11 +171,21 @@ def objem_pruniku_s_glb(vysl, krok=3.0):
         tris = glb_ve_svete(b)
         lo, hi = tris.reshape(-1, 3).min(0), tris.reshape(-1, 3).max(0)
         for nazev, t in dily:
-            c, pul = np.array(t["stred"]), np.array(t["pul"])
-            r = np.abs(np.array(t["osy"])).T @ pul
-            if np.any(c - r > hi) or np.any(c + r < lo):
-                continue
-            P, V = mrizka_obb(t, krok)
+            if t["typ"] == "valec":
+                ax = np.array(t["osa"], float)
+                ax /= np.linalg.norm(ax)
+                r = np.abs(ax) * t["delka"] / 2 + t["polomer"] * np.sqrt(np.maximum(0.0, 1 - ax ** 2))
+                c = np.array(t["stred"])
+                if np.any(c - r > hi) or np.any(c + r < lo):
+                    continue
+                nz = {"a": c - ax * t["delka"] / 2, "b": c + ax * t["delka"] / 2, "polomer": t["polomer"]}
+                P, V = mrizka_valec(nz, krok)
+            else:
+                c, pul = np.array(t["stred"]), np.array(t["pul"])
+                r = np.abs(np.array(t["osy"])).T @ pul
+                if np.any(c - r > hi) or np.any(c + r < lo):
+                    continue
+                P, V = mrizka_obb(t, krok)
             m = np.all((P >= lo) & (P <= hi), axis=1)
             if m.any():
                 n = int(uvnitr_site(tris, P[m]).sum())
@@ -228,11 +250,11 @@ def test_strop_delky_rady_20_m():
                 nmax = E.max_pocet_boxu(typ, smer)
                 a = E.BOXY[typ]["dlouha" if smer == "delka" else "kratka"]
                 ok(nmax * a + (nmax - 1) <= 20000 < (nmax + 1) * a + nmax)
-                v = E.postav({"rady": [radek(typ=typ, vyska=vyska, smer=smer, pocet=nmax, y=400, sklon_deg=sklon)]})
+                v = E.postav({"rady": [radek(typ=typ, vyska=vyska, smer=smer, pocet=nmax, y=400, sklon_deg=sklon)], "draha": "5275"})
                 ok(not chyby(v), "řada na stropu musí projít: %s" % chyby(v))
                 ok(v["rady"][0]["max_pocet_boxu"] == nmax)
                 ok(v["rady"][0]["delka_rady_mm"] <= 20000)
-                v = E.postav({"rady": [radek(typ=typ, vyska=vyska, smer=smer, pocet=nmax + 1, y=400, sklon_deg=sklon)]})
+                v = E.postav({"rady": [radek(typ=typ, vyska=vyska, smer=smer, pocet=nmax + 1, y=400, sklon_deg=sklon)], "draha": "5275"})
                 ch = chyby(v, "RADA_PRILIS_DLOUHA")
                 ok(len(ch) == 1 and ch[0]["id"] == ["R"], str(v["problemy"]))
                 ok(len(v["boxy"]) == nmax + 1, "výstup se vrací i při překročení")
@@ -241,13 +263,13 @@ def test_strop_delky_rady_20_m():
     ok(not chyby(v, "RADA_PRILIS_DLOUHA"))
     v = E.postav({"rady": [radek(pocet=4, y=0)], "max_delka_rady_mm": 1202})
     ok(chyby(v, "RADA_PRILIS_DLOUHA"))
-    s = {"rady": [radek(id_="A", pocet=50, y=400, sklon_deg=5)]}
+    s = {"rady": [radek(id_="A", pocet=50, y=400, sklon_deg=5)], "draha": "5275"}
     for kam in ("vedle", "nad"):
         k = E.kopie_rady(s, "A", kam, 30, pocet=2)
         ok(len(k["rady"]) == 3)
         v = E.postav(k)
         ok(sorted(c["id"][0] for c in chyby(v, "RADA_PRILIS_DLOUHA")) == ["A", "A-1", "A-2"], "každá kopie nese chybu")
-    s = {"rady": [radek(id_="A", pocet=49, y=400, sklon_deg=5)]}
+    s = {"rady": [radek(id_="A", pocet=49, y=400, sklon_deg=5)], "draha": "5275"}
     for kam in ("vedle", "nad"):
         v = E.postav(E.kopie_rady(s, "A", kam, 30, pocet=2))
         ok(not chyby(v), "kopie řady na stropu je v pořádku (%s): %s" % (kam, chyby(v)))
@@ -432,12 +454,19 @@ def test_boxy_nakloneny_spolu_s_drahami():
                     roviny = []
                     for p in ds["pasy"]:
                         for m in p["moduly"]:
-                            t0 = m["tvary_nahrady"][0]
-                            n = np.array(t0["osy"][2])
-                            ok(n[1] > 0)
-                            # úhel dráhy: normála svírá se svislicí sklon
-                            blizko(math.degrees(math.acos(min(1.0, n[1]))), r["sklon_deg"], 1e-4, "úhel dráhy")
-                            roviny.append((n, float(n @ np.array(t0["stred"]) + t0["pul"][2])))
+                            valce = [x for x in m["tvary_nahrady"] if x.get("role") == "valec"]
+                            if dr == "5276":
+                                ok(len(valce) <= 4)
+                            for x in (valce or [m["tvary_nahrady"][0]]):
+                                if x["typ"] == "valec":
+                                    n = np.array(x["nahoru"])
+                                    rov = float(n @ np.array(x["stred"]) + x["polomer"])     # horní hrana válečku
+                                else:
+                                    n = np.array(x["osy"][2])
+                                    rov = float(n @ np.array(x["stred"]) + x["pul"][2])      # horní plocha dráhy
+                                ok(n[1] > 0)
+                                blizko(math.degrees(math.acos(min(1.0, n[1]))), r["sklon_deg"], 1e-4, "úhel dráhy")
+                                roviny.append((n, rov))
                     n0, c0 = roviny[0]
                     roviny_rad[r["id"]] = (r["patro"], n0, c0)
                     for n, c in roviny:
@@ -459,6 +488,75 @@ def test_boxy_nakloneny_spolu_s_drahami():
                         if p1 == p2:
                             blizko(float(np.linalg.norm(n1 - n2)), 0.0, 1e-6)
                             blizko(c1, c2, 5e-3, "rovina válečků patra")
+
+
+def test_disky_drahy_5276():
+    """Dráha 5276 = lišta s válečky; na vnějším konci válečku disk, vně boku boxu, přečnívá rovinu válečků.
+    Box s disky nekoliduje (originální GLB: objem průniku 0), nožka leží na válečcích."""
+    for smer in ("delka", "sirka"):
+        for typ in E.BOXY:
+            for osa, nk in (("x", "predek"), ("x", "zadek"), ("z", "predek")):
+                vyska = sorted(E.BOXY[typ]["vysky"])[1]
+                v = E.postav({"rady": [radek(typ=typ, vyska=vyska, smer=smer, pocet=3, y=500, x=30, z=70, sklon_deg=9)],
+                              "draha": "5276", "osa_rady": osa, "nizsi_konec": nk})
+                ok(not chyby(v), str(chyby(v)))
+                r = v["rady"][0]
+                b_ = (E.BOXY[typ]["kratka"] if smer == "delka" else E.BOXY[typ]["dlouha"])
+                ac = 2 if osa == "x" else 0
+                z0 = [b for b in v["boxy"]][0]["obalka"]["min"][ac]
+                z1 = [b for b in v["boxy"]][0]["obalka"]["max"][ac]
+                ds = v["draha"][0]
+                n_disku = 0
+                for k, pas in enumerate(ds["pasy"]):
+                    for m in pas["moduly"]:
+                        valce = [x for x in m["tvary_nahrady"] if x["typ"] == "valec"]
+                        ok(len(valce) % 2 == 0 and len(valce) <= 8)
+                        for x in valce:
+                            ax = np.array(x["osa"])
+                            hl = x["delka"] / 2
+                            c_ac = x["stred"][ac]
+                            if x["role"] == "disk":
+                                n_disku += 1
+                                blizko(x["polomer"], 61.67 / 2, 1e-9)
+                                blizko(x["delka"], 3.0, 1e-9)
+                                # disk je celý vně boku boxu s vůlí 1 mm (levá dráha vlevo, pravá vpravo)
+                                if k == 0:
+                                    ok(c_ac + hl <= z0 - 1.0 + 1e-3, "disk vlevo vně boxu")
+                                else:
+                                    ok(c_ac - hl >= z1 + 1.0 - 1e-3, "disk vpravo vně boxu")
+                                # přečnívá rovinu válečků o polomer disku - polomer válečku (15,8 mm)
+                                blizko(x["polomer"] - 15.0, 15.835, 1e-9)
+                            else:
+                                blizko(x["polomer"], 15.0, 1e-9)
+                                # váleček leží uvnitř mezi diskem a vnitřní hranou, dosahuje do roviny válečků
+                ok(n_disku >= 4 * len(ds["pasy"]))
+                # první disk nezasahuje do kapsy koncovky: žádný disk v zasunuté části dráhy
+                g = ds["pasy"][0]["moduly"][0]
+                ok(g["s_od"] == -54.5)
+                for pas in ds["pasy"]:
+                    for m in pas["moduly"]:
+                        for x in m["tvary_nahrady"]:
+                            if x["role"] == "disk":
+                                sc = (np.array(x["stred"]) - np.array(r["zacatek"])) @ np.array(r["vektor_podel"])
+                                ok(sc - 30.835 >= -1e-3 and sc + 30.835 <= ds["viditelna_delka_mm"] - 54.5 + 54.5 + 1e-3)
+    # objem průniku originálních GLB boxů s disky a válečky = 0
+    for vyska, smer in ((120, "delka"), (220, "sirka"), (320, "delka")):
+        v = E.postav({"rady": [radek(pocet=3, vyska=vyska, smer=smer, y=500, sklon_deg=9)], "draha": "5276"})
+        ok(not chyby(v))
+        obj, det = objem_pruniku_s_glb(v)
+        blizko(obj, 0.0, 1e-9, "průnik GLB s disky/válečky: %s" % (det[:3],))
+    # rozteč 5276 vychází z disků: 300 + 2*(1+3) − 41 = 267; změna tloušťky disku ji mění
+    v = E.postav({"rady": [radek(pocet=2, y=500, sklon_deg=9)], "draha": "5276"})
+    blizko(v["draha"][0]["roztec_mm"], 267.0, 1e-6)
+    v = E.postav({"rady": [radek(pocet=2, y=500, sklon_deg=9)], "draha": "5276", "disk_tl_mm": 5})
+    blizko(v["draha"][0]["roztec_mm"], 271.0, 1e-6)
+    ok(not chyby(v), str(chyby(v)))
+    # disky zasahující do boxu (příliš malá rozteč) = kolize
+    v = E.postav({"rady": [radek(pocet=2, y=500, sklon_deg=9)], "draha": "5276", "roztec_drah_mm": 250})
+    ok(chyby(v, "KOLIZE"))
+    # nožka leží na válečcích: v kolizi s válečky nic (dotyk), box zvednutý nebo zanořený se pozná
+    v = E.postav({"rady": [radek(pocet=2, y=500, sklon_deg=9)], "draha": "5276"})
+    ok(not chyby(v))
 
 
 def test_kolize_glb_objem_pruniku():
@@ -502,11 +600,10 @@ def test_kopie_vedle():
         for r in v["rady"]:
             ds = [d for d in v["draha"] if d["rada"] == r["id"]][0]
             ks = [k for k in v["koncovky"] if k["rada"] == r["id"]]
-            ac_lo = min(t["stred"][2] - sum(abs(np.array(t["osy"])[:, 2]) * np.array(t["pul"])) for k in ks for t in k["tvary_nahrady"])
-            ac_lo = min(ac_lo, min(t["stred"][2] - sum(abs(np.array(t["osy"])[:, 2]) * np.array(t["pul"]))
-                                   for p in ds["pasy"] for m in p["moduly"] for t in m["tvary_nahrady"]))
-            ac_hi = max(t["stred"][2] + sum(abs(np.array(t["osy"])[:, 2]) * np.array(t["pul"]))
-                        for p in ds["pasy"] for m in p["moduly"] for t in m["tvary_nahrady"])
+            tv_all = [t for k in ks for t in k["tvary_nahrady"]] + \
+                [t for p in ds["pasy"] for m in p["moduly"] for t in m["tvary_nahrady"]]
+            ac_lo = min(rozsah_osa(t, 2)[0] for t in tv_all)
+            ac_hi = max(rozsah_osa(t, 2)[1] for t in tv_all)
             bxs = [b for b in v["boxy"] if b["rada"] == r["id"]]
             ac_lo = min(ac_lo, min(b["obalka"]["min"][2] for b in bxs))
             ac_hi = max(ac_hi, max(b["obalka"]["max"][2] for b in bxs))

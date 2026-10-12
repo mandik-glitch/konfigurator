@@ -133,7 +133,7 @@ label{display:flex;align-items:center;gap:8px;margin:3px 0;cursor:pointer}
 <script>
 const DATA = /*DATA*/;
 (function(){
-const BARVY={box:0x1f64d6,nozka:0x15489e,draha:0x8f98a6,doraz:0x7a8391,valec:0xe3e7ee,dolni:0x4b5360,zarazka:0xe0701f,horni:0x4b5360,nosnik:0xd9dee5,opora:0xb08968};
+const BARVY={box:0x1f64d6,nozka:0x15489e,draha:0x8f98a6,doraz:0x7a8391,valec:0xe3e7ee,disk:0xaab3c0,dolni:0x4b5360,zarazka:0xe0701f,horni:0x4b5360,nosnik:0xd9dee5,opora:0xb08968};
 const cv=document.getElementById('cv');
 const renderer=new THREE.WebGLRenderer({canvas:cv,antialias:true,preserveDrawingBuffer:true});
 renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,2));
@@ -200,20 +200,26 @@ function sestav(){
   Object.values(grp).forEach(clear);
   const rady={};R.rady.forEach(r=>rady[r.id]=r);
   R.boxy.forEach(b=>krabice(grp.box,b,rady[b.rada]));
-  // dráhy: tělo (horní plocha 9 mm pod rovinou válečků, válečky dosahují přesně do roviny h=0 = spodek nožky)
+  // dráhy: 5275 = lišta (horní plocha 9 mm pod rovinou válečků, válečky dosahují do roviny h=0 = spodek nožky);
+  // 5276 = lišta + skutečné válečky s disky na vnějším konci (disk vyčnívá nad rovinu válečků)
+  function valec(g,t,col){
+    const geo=new THREE.CylinderGeometry(t.polomer,t.polomer,t.delka,28);
+    const m=new THREE.Mesh(geo,new THREE.MeshStandardMaterial({color:col,roughness:.35,metalness:.55}));
+    m.position.copy(vec(t.stred));
+    m.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),vec(t.osa).normalize());g.add(m);
+  }
   R.draha.forEach(d=>d.pasy.forEach(p=>{
     const r=rady[d.rada];
     let sirka=0;
-    p.moduly.forEach(m=>m.tvary_nahrady.forEach((t,i)=>{
+    p.moduly.forEach(m=>m.tvary_nahrady.forEach(t=>{
+      if(t.typ==='valec'){valec(grp.draha,t,t.role==='disk'?BARVY.disk:BARVY.valec);return;}
       const pul=t.pul.slice(),st=t.stred.slice();
-      if(i===0){ // tělo: snížit horní plochu o 9 mm
-        const n=r.vektor_kolmo;pul[2]-=4.5;for(let k=0;k<3;k++)st[k]-=4.5*n[k];sirka=Math.max(sirka,t.pul[1]*2);
-      }
-      kvadr(grp.draha,st,t.osy,pul,i===0?BARVY.draha:BARVY.doraz,null,.55);
+      if(t.role==='telo'){const n=r.vektor_kolmo;pul[2]-=4.5;for(let k=0;k<3;k++)st[k]-=4.5*n[k];sirka=Math.max(sirka,t.pul[1]*2);}
+      kvadr(grp.draha,st,t.osy,pul,BARVY.draha,null,.55);
     }));
-    valecky(grp.draha,r,p,sirka-8);
+    if(d.part_id===5275)valecky(grp.draha,r,p,sirka-8);
   }));
-  R.koncovky.forEach(k=>k.tvary_nahrady.forEach((t,i)=>kvadr(grp.koncovky,t.stred,t.osy,t.pul,i===1?BARVY.zarazka:BARVY.dolni,null,.5)));
+  R.koncovky.forEach(k=>k.tvary_nahrady.forEach(t=>kvadr(grp.koncovky,t.stred,t.osy,t.pul,t.role==='zarazka'?BARVY.zarazka:BARVY.dolni,null,.5)));
   R.nosniky.forEach(n=>{const a=vec(n.a),b=vec(n.b),L=a.distanceTo(b);
     const geo=new THREE.CylinderGeometry(n.polomer,n.polomer,L,28);
     const m=new THREE.Mesh(geo,new THREE.MeshStandardMaterial({color:BARVY.nosnik,roughness:.45,metalness:.1}));
@@ -258,11 +264,11 @@ window.addEventListener('resize',()=>{size();draw();});
 const pre=document.getElementById('pre');
 DATA.forEach((P,i)=>{const b=document.createElement('button');b.textContent=P.nazev;b.onclick=()=>vyber(i);b.dataset.i=i;pre.append(b);});
 const dra=document.getElementById('dra');
-['5276','5275'].forEach(d=>{const b=document.createElement('button');b.textContent=d==='5276'?'5276 (s bočním dorazem)':'5275';b.dataset.d=d;b.onclick=()=>{cur.d=d;sestav();stav();draw();};dra.append(b);});
+['5276','5275'].forEach(d=>{const b=document.createElement('button');b.textContent=d==='5276'?'5276 (válečky s disky)':'5275';b.dataset.d=d;b.onclick=()=>{cur.d=d;sestav();stav();draw();};dra.append(b);});
 const poh=document.getElementById('poh');
 [['3/4','Zepředu zboku'],['bok','Z boku (osa Z)'],['shora','Shora']].forEach(([k,t])=>{const b=document.createElement('button');b.textContent=t;b.onclick=()=>{fit(k);draw();};poh.append(b);});
 const tg=document.getElementById('tog');
-[['box','Boxy',BARVY.box],['draha','Dráhy s válečky',BARVY.draha],['koncovky','Koncovky 5282 dole / 5281 nahoře',BARVY.dolni],['nosniky','Nosníky Ø28',BARVY.nosnik],['opory','Deska vodorovné řady',BARVY.opora]].forEach(([k,t,c])=>{
+[['box','Boxy',BARVY.box],['draha','Dráhy (válečky, disky)',BARVY.draha],['koncovky','Koncovky 5282 dole / 5281 nahoře',BARVY.dolni],['nosniky','Nosníky Ø28',BARVY.nosnik],['opory','Deska vodorovné řady',BARVY.opora]].forEach(([k,t,c])=>{
   const l=document.createElement('label');const i=document.createElement('input');i.type='checkbox';i.checked=true;
   i.onchange=()=>{tog[k]=i.checked;grp[k].visible=i.checked;draw();};
   const s=document.createElement('span');s.className='sw';s.style.background='#'+c.toString(16).padStart(6,'0');

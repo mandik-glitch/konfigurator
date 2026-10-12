@@ -33,8 +33,8 @@ Po dodání GLB se musí přeměřit body označené `[GLB]` níže a upravit ko
 
 ## Náhled (změny po připomínce Roberta)
 
-Boxy se kreslí jako pevné modré nádoby (obálka a nožka podle GLB, stěny 6 mm a dno 5 mm jsou jen vizuální), dráhy jako souvislá lišta stejné barvy
-s válečky (polomer 10 mm, rozteč 26 mm; horní hrana válečků je přesně v rovině spodku nožky), trubky světle šedé, zarážka oranžová. Předvolby: vodorovná řada,
+Boxy se kreslí jako pevné modré nádoby (obálka a nožka podle GLB, stěny 6 mm a dno 5 mm jsou jen vizuální), dráhy jako souvislá lišta stejné barvy;
+u 5275 s ozdobnými válečky (polomer 10 mm, rozteč 26 mm; horní hrana válečků je přesně v rovině spodku nožky), u 5276 se kreslí skutečné válečky s disky z dat `postav()`, trubky světle šedé, zarážka oranžová. Předvolby: vodorovná řada,
 jedna skloněná, patro vedle sebe, dvě patra s různým sklonem, „Podle fotky: 3 patra“ (výchozí, pohled 3/4 zepředu zboku), „Dlouhá řada v jedné lince“ (11 boxů, 5°).
 Pohled z boku podél osy Z je tlačítkem. Skutečná chyba, která dělala dojem „boxy nejsou v jedné lince“: původní náhled skládal natočení z levotočivé báze
 (zrcadlo), takže se boxy kreslily s jiným sklonem než dráhy. Data z `postav()` byla v pořádku; opraveno jen v náhledu (báze se před převodem na kvaternion zpravotočivní).
@@ -78,8 +78,15 @@ ODHAD (neověřeno, `[GLB]`):
   Horní plocha plechu je v rovině válečků (rovina h=0). Zarážka 28 mm: rozměr 55,75 = 27,75 + 28, tedy základna pod rovinou a zarážka nad ní.
 - Zarážka je u otvoru kapsy (čelo boxu se opírá o zarážku v otvoru kapsy); alternativa `zarazka_u="hak"`.
 - Tloušťka zarážky 1,5 mm (odhad), ve výpočtu jen pro polohu.
-- Dráha 5275: tělo pod rovinou válečků na výšku 38,86 mm. Dráha 5276: rovina válečků je 28 mm pod horním okrajem (33,67 pod, 28 nad),
-  boční doraz tloušťky 3 mm na VNĚJŠÍ straně dráhy (odhad; orientace lokálních os 5276 je jiná než u 5275, Z je podélně).
+- Dráha 5275: tělo pod rovinou válečků na výšku 38,86 mm.
+- Dráha 5276 (Robert: „tím dorazem je to samotné kolečko s talířkem/diskem na konci, není to doraz jako táhlý profil“): lišta s válečky,
+  každý váleček má na VNĚJŠÍM konci disk (kruhovou přírubu) vyčnívající nad rovinu válečků. Žádná souvislá boční lišta není.
+  Odvození z rozměrů modulu 41,0 × 61,67 × 255,04 (dlouhá osa Z): 41,0 = šířka (délka osy válečku vč. disku), 61,67 = výška od spodku disku po horní okraj
+  disku, tedy PRŮMĚR DISKU = 61,67 mm (disk je největší součást průřezu, proto určuje obálku). Osa válečku je napříč, disk stojí v rovině (podél, kolmo).
+  Odhady (neověřeno): polomer válečku 15 mm (určuje, že disk přečnívá rovinu válečků o 61,67/2 − 15 = 15,8 mm a spodek disku je 45,8 mm pod ní),
+  tloušťka disku 3 mm, 4 válečky s diskem na modul (rozteč 255,04/4 = 63,76 mm; disky o průměru 61,67 se tak těsně nedotýkají), lišta pod osou 16 mm (jen náhrada).
+  Disky, které by zasahovaly do kapsy koncovky (zasunutá část dráhy), se vynechávají.
+  Orientace lokálních os 5276 je jiná než u 5275 (Z podélně, Y výška, X napříč); strana disku = lokální +X, levá/pravá dráha se liší otočením o 180° kolem normály.
 - Orientace lokálních os plechů: Z podél (háček na −Z), Y nahoru, X napříč. U 5276: doraz na +X lokálně; levá/pravá dráha se liší otočením o 180° kolem normály.
 - Moduly dráhy na sraz, bez spojky (nic v podkladech neříká jinak).
 - 600×400: bez modelu → kvádr bez nožky (není známo, zda nožku má); karty dodavatele 2999 až 3003 v pořadí výšek 120/170/220/320/420 (domněnka).
@@ -97,8 +104,11 @@ D = vzdálenost trubek podél sklonu, a trubka leží tím níž pod spodkem box
 Dráhy musí ležet pod nožkou boxu (spodek nožky 266 mm napříč při směru „delka“, 366 mm při „sirka“), jinak by se box opíral o dno ve výšce 12 mm.
 
 - 5275: vnější hrana dráhy 10 mm uvnitř hrany nožky: rozteč = nožka − šířka dráhy − 2·10, tedy 208,8 mm (delka) / 308,8 mm (sirka).
-- 5276: boční doraz stojí za bokem boxu s vůlí 1 mm: rozteč = šířka boxu + 2·(1 + 3) − 41, tedy 267 mm (delka) / 367 mm (sirka).
-  (Doraz vyčnívá 28 mm nad rovinu válečků, tedy nad nožku 12 mm; musí stát vně boku boxu.)
+- 5276: boxy se vedou mezi disky, disky stojí vně boku boxu s vůlí 1 mm (parametr `disk_vule_mm`): vnější plocha disku = vnější hrana dráhy,
+  rozteč = šířka boxu + 2·(vůle + tloušťka disku) − 41 = b + 2·(1 + 3) − 41, tedy 267 mm (delka) / 367 mm (sirka). Disk přečnívá rovinu válečků o 15,8 mm,
+  tedy nad nožku (12 mm) a zachytí spodní okraj boku boxu (stěna je nad nožkou o 17 mm široší než nožka). Nožka (zespodu 266 / 366 mm) leží na válečcích
+  na šířce 20 mm na každé straně (válečky sahají od disku dovnitř do hrany dráhy). Test: objem průniku originálních GLB boxů s disky a válečky je 0, vzdálenost
+  nožka–válečky ≤ 0,1 mm, disky vně boxu s vůlí ≥ 1 mm.
 - Rozteč 5275 vychází zvolenou stabilitou (široce); Robert může zadat vlastní.
 
 ## Výstup `postav(spec)` (stručně)
@@ -116,7 +126,10 @@ Kopie: `kopie_rady(spec, id, "vedle"|"nad", mezera, pocet, sklon_deg=None, patro
 1. Jak se spojují moduly dráhy v řadě (5275 271,66 / 5276 255,04)? Plechem 5281, nebo uchem na ucho? Výchozí: na sraz, bez dílu. Bez spojky se např. 2 m řady nesou jen 2 trubkami; je potřeba střední podpora (parametr `max_rozpeti_mm`, výchozí vypnuto)?
 2. Je zarážka 28 mm na plechu 5282 u otvoru kapsy (výchozí), nebo na konci s hákem?
 3. Je hák plechu otevřený (trubka Ø28 vs. výška 27,75 mm)? Výchozí: osa trubky 15,9 mm od vnějšího konce plechu, 15,9 mm pod jeho horní plochou.
-4. Dráha 5276: na které straně je boční doraz a jak vysoko je rovina válečků? Výchozí: doraz vně, 3 mm silný, rovina válečků 28 mm pod horním okrajem.
+4. Dráha 5276 (disk válečku): je průměr disku opravdu 61,67 mm (celá výška modulu), nebo jen část? Výchozí: ano, 61,67 mm. O kolik disk vyčnívá nad rovinu válečků
+   (tj. jaký je polomer válečku)? Výchozí: polomer válečku 15 mm → vyčnívá 15,8 mm. Tloušťka disku? Výchozí 3 mm. Kolik válečků s diskem je na modulu a v jaké rozteči?
+   Výchozí 4 na modul, rozteč 63,76 mm (disky mají disk na vnějším konci KAŽDÉHO válečku). Mají válečky i disky vynechané místo na koncích modulu (pro kapsu koncovky)?
+   Výchozí: disky v zasunuté části se vynechávají. Je disk vně boku boxu (výchozí, vůle 1 mm → rozteč drah 267 / 367 mm), nebo mezi nimi vede jiný systém?
 5. Která dráha je výchozí? Výchozí: 5276 (pořadí ve zprávě), jiná jen parametrem `draha`.
 6. Zasunutí 54,5 mm odpovídá hloubce kapsy? Výchozí: ano (zasunutí = kapsa = 54,5; menší zasunutí lze zadat).
 7. Doporučený rozsah sklonu? Výchozí varování mimo 2 až 15° (chyba nad 45° a pod 0°).

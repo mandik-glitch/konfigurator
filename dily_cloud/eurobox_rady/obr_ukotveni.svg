@@ -2,10 +2,10 @@
 <rect width="1180" height="440" fill="#fff"/>
 <text x="14" y="22" font-size="14" font-weight="bold">Uchycení konců dráhy na trubku Ø28 (HYPOTÉZA z rozměrů, neověřeno na GLB)</text>
 <text x="14" y="40" font-size="11" fill="#555">boční řez v rovině sklonu; modrá = box (nožka 12 mm), šedá = dráha, plná čára horní plochy dráhy = rovina h=0</text>
-<rect x="240.0" y="225.0" width="345.0" height="77.4" fill="#cfd6e0" stroke="#333" stroke-width="1" />
+<rect x="240.0" y="225.0" width="345.0" height="105.4" fill="#cfd6e0" stroke="#333" stroke-width="1" />
 <rect x="41.5" y="225.0" width="198.5" height="63.8" fill="#f3b7a6" stroke="#a33" stroke-width="1" />
 <rect x="236.6" y="160.6" width="3.4" height="64.4" fill="#d9482b" stroke="#a33" stroke-width="1" />
-<rect x="114.7" y="225.0" width="125.3" height="77.4" fill="#b9c3d1" stroke="#335" stroke-width="1" stroke-dasharray="4 2"/>
+<rect x="114.7" y="225.0" width="125.3" height="105.4" fill="#b9c3d1" stroke="#335" stroke-width="1" stroke-dasharray="4 2"/>
 <rect x="279.1" y="197.4" width="305.9" height="27.6" fill="#9ec5ff" stroke="#25c" stroke-width="1" opacity=".8"/>
 <rect x="240.0" y="121.5" width="345.0" height="75.9" fill="#cfe1ff" stroke="#25c" stroke-width="1" opacity=".6"/>
 <text x="41.5" y="82.4" font-size="12" text-anchor="start" fill="#222">dolní konec: plech 5282</text>
@@ -17,9 +17,9 @@
 <text x="41.5" y="390.6" font-size="10" fill="#c00">osa trubky: 15.9 od vnějšího konce, 15.9 pod horní plochou plechu</text>
 <text x="41.5" y="418.2" font-size="10" fill="#555">dráha zasunuta 54.5 mm (čárkovaně), kapsa 54.5, hák 31.79</text>
 <line x1="240.0" y1="225.0" x2="585.0" y2="225.0" stroke="#25c" stroke-width="0.8" stroke-dasharray="2 2"/>
-<rect x="615.0" y="225.0" width="345.0" height="77.4" fill="#cfd6e0" stroke="#333" stroke-width="1" />
+<rect x="615.0" y="225.0" width="345.0" height="105.4" fill="#cfd6e0" stroke="#333" stroke-width="1" />
 <rect x="960.0" y="225.0" width="198.5" height="63.8" fill="#a9d9b9" stroke="#2a6" stroke-width="1" />
-<rect x="834.6" y="225.0" width="125.3" height="77.4" fill="#b9c3d1" stroke="#335" stroke-width="1" stroke-dasharray="4 2"/>
+<rect x="834.6" y="225.0" width="125.3" height="105.4" fill="#b9c3d1" stroke="#335" stroke-width="1" stroke-dasharray="4 2"/>
 <rect x="615.0" y="197.4" width="305.9" height="27.6" fill="#9ec5ff" stroke="#25c" stroke-width="1" opacity=".8"/>
 <rect x="615.0" y="121.5" width="345.0" height="75.9" fill="#cfe1ff" stroke="#25c" stroke-width="1" opacity=".6"/>
 <text x="615.0" y="82.4" font-size="12" text-anchor="start" fill="#222">horní konec: plech 5281 (hák vpravo)</text>

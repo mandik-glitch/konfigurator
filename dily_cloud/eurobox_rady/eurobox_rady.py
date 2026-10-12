@@ -32,6 +32,12 @@ VSTUP `spec` (vše kromě `rady` je volitelné):
   max_rozpeti_mm: null              nad touto vzdáleností trubek na řadě varování
   max_delka_rady_mm: 20000          strop délky jedné řady (Robert); delší řada = chyba RADA_PRILIS_DLOUHA,
                                     výstup se přesto vrátí (UI může řadu zkrátit); viz max_pocet_boxu()
+  disk_prumer_mm: 61.67             dráha 5276: průměr disku válečku (= výška modulu; neověřeno)
+  disk_tl_mm: 3                     dráha 5276: tloušťka disku (odhad)
+  disk_vule_mm: 1                   dráha 5276: vůle mezi diskem a bokem boxu
+  valec_polomer_mm: 15              dráha 5276: poloměr válečku (odhad); disk přečnívá o disk_prumer/2 − polomer
+  valcu_na_modul: 4                 dráha 5276: počet válečků s diskem na modul (odhad)
+  lista_vyska_mm: 16                dráha 5276: výška lišty pod osou válečků (jen náhrada)
   mrizka_mezery_mm: 2.0             krok vzorkování při výpočtu výškové mezery pater
   tolerance_kolize_mm: 0.05         hloubka průniku, od které je to kolize
 
@@ -97,10 +103,10 @@ BOXY = {
 # ---------------------------------------------------------------------------------------------
 DILY = {
     5275: {"sku": "2.2.016.027.037.01", "role": "draha", "rozmer_glb": (271.66, 37.24, 38.86),
-           "delka": 271.66, "sirka": 37.24, "pod": 38.86, "nad": 0.0, "doraz": False,
+           "delka": 271.66, "sirka": 37.24, "pod": 38.86, "nad": 0.0, "disk": False,
            "osy": {"podel": 0, "napric": 1, "nahoru": 2}, "stred_glb": (0.0, 0.0, 0.0)},
     5276: {"sku": "2.2.016.027.037.03", "role": "draha", "rozmer_glb": (41.0, 61.67, 255.04),
-           "delka": 255.04, "sirka": 41.0, "pod": 33.67, "nad": 28.0, "doraz": True,
+           "delka": 255.04, "sirka": 41.0, "pod": 45.835, "nad": 15.835, "disk": True,
            "osy": {"podel": 2, "napric": 0, "nahoru": 1}, "stred_glb": (0.0, 0.0, 0.0)},
     5281: {"sku": "2.2.017.000.055.01", "role": "horni", "rozmer_glb": (38.47, 27.75, 86.29),
            "delka": 86.29, "sirka": 38.47, "pod": 27.75, "nad": 0.0,
@@ -109,7 +115,11 @@ DILY = {
            "delka": 86.29, "sirka": 38.47, "pod": 27.75, "nad": 28.0,
            "osy": {"podel": 2, "napric": 0, "nahoru": 1}, "stred_glb": (0.0, 0.0, 0.0)},
 }
-HRANA_BOCNIHO_DORAZU = 3.0   # tloušťka bočního dorazu dráhy 5276 (odhad, jen pro náhradu)
+# Dráha 5276 (NEOVĚŘENO, hypotéza z rozměrů a z Robertova upřesnění): lišta s válečky; každý váleček má na
+# vnějším konci disk (kruhovou přírubu) vyčnívající nad rovinu válečků; disky stojí vně boku boxu.
+#   průměr disku = výška modulu 61,67 mm (od spodku po horní okraj disku), osa válečku napříč,
+#   polomer válečku 15 mm (odhad), tloušťka disku 3 mm (odhad), 4 válečky na modul (rozteč = délka/4),
+#   disk přečnívá rovinu válečků o 61,67/2 − 15 = 15,8 mm.
 
 DEFAULTY = {
     "sklon_deg": 0.0,
@@ -129,6 +139,12 @@ DEFAULTY = {
     "deska_mm": 0.0,
     "max_rozpeti_mm": None,
     "mrizka_mezery_mm": 2.0,
+    "disk_prumer_mm": 61.67,
+    "disk_tl_mm": 3.0,
+    "disk_vule_mm": 1.0,
+    "valec_polomer_mm": 15.0,
+    "valcu_na_modul": 4,
+    "lista_vyska_mm": 16.0,
     "max_delka_rady_mm": 20000.0,
     "tolerance_kolize_mm": 0.05,
 }
@@ -186,7 +202,7 @@ def _quat(M):
     return q
 
 
-_PRESNE = {"quaternion", "vektor_podel", "vektor_kolmo", "vektor_napric", "osy"}
+_PRESNE = {"quaternion", "nahoru", "osa", "vektor_podel", "vektor_kolmo", "vektor_napric", "osy"}
 
 
 def _zaokr(o, des=3):
@@ -236,6 +252,21 @@ class _Rama:
         return o
 
 
+def _cyl_fr(fr, s, t, h, r, hl, **extra):
+    o = {"typ": "cyl", "c": fr.bod(s, t, h), "a": fr.c.copy(), "r": float(r), "hl": float(hl), "up": fr.n.copy()}
+    o.update(extra)
+    return o
+
+
+def _vyst_tvar(t):
+    """Tvar náhrady pro výstup (JSON)."""
+    role = t.get("role") or t.get("nazev")
+    if t["typ"] == "obb":
+        return {"typ": "kvadr", "role": role, "stred": t["c"], "osy": t["u"], "pul": t["h"]}
+    return {"typ": "valec", "role": role, "stred": t["c"], "osa": t["a"], "nahoru": t["up"],
+            "polomer": t["r"], "delka": 2 * t["hl"]}
+
+
 def _verts_obb(o):
     sg = np.array(list(itertools.product((-1, 1), repeat=3)), float)
     return o["c"] + (sg * o["h"]) @ o["u"]
@@ -245,17 +276,20 @@ _N = 16
 
 
 def _cyl_geom(cy):
+    """Válec jako 16boký hranol OPSANÝ kružnici; strana hranolu leží přesně v rovině kolmé na `up`
+    (nahoře), takže dotyk válečku s rovinou není zkreslen."""
     a = _unit(cy["a"])
-    p = np.cross(a, _v(0, 1, 0))
+    up = np.asarray(cy.get("up", (0.0, 1.0, 0.0)), float)
+    p = np.cross(a, up)
     if np.linalg.norm(p) < 1e-6:
         p = np.cross(a, _v(1, 0, 0))
     p = _unit(p)
     q = np.cross(a, p)
     rc = cy["r"] / math.cos(math.pi / _N)
-    ang = np.arange(_N) * 2 * math.pi / _N
+    ang = (np.arange(_N) + 0.5) * 2 * math.pi / _N
     ring = rc * (np.outer(np.cos(ang), p) + np.outer(np.sin(ang), q))
     v = np.concatenate([cy["c"] + cy["hl"] * a + ring, cy["c"] - cy["hl"] * a + ring])
-    nang = (np.arange(_N // 2) * 2 + 1) * math.pi / _N
+    nang = np.arange(_N // 2) * 2 * math.pi / _N
     nor = [a] + [math.cos(x) * p + math.sin(x) * q for x in nang]
     edg = [a] + [-math.sin(x) * p + math.cos(x) * q for x in nang]
     return v, nor, edg
@@ -347,8 +381,8 @@ def _roztec_vychozi(draha, typ, smer, p):
     dl = DILY[int(draha)]
     w = dl["sirka"]
     if draha == "5276":
-        # boční doraz (strana ven, odhad tloušťky HRANA_BOCNIHO_DORAZU) 1 mm za bokem boxu
-        return b + 2.0 * (1.0 + HRANA_BOCNIHO_DORAZU) - w
+        # disky stojí vně boku boxu s vůlí disk_vule_mm; vnější hrana dráhy = vnější plocha disku
+        return b + 2.0 * (p["disk_vule_mm"] + p["disk_tl_mm"]) - w
     nozka = BOXY[typ]["nozka_dole"]
     nz = nozka[0] if smer == "delka" else nozka[1]
     return nz - w - 2.0 * p["odstup_nozka_mm"]
@@ -515,30 +549,40 @@ def _stavba_rady(r, spec, p, soupis):
     tc = b / 2
     w = dcfg["sirka"]
     wp = cd["sirka"]
+    disk = bool(dcfg.get("disk"))
+    td, Rr, Dd = float(p["disk_tl_mm"]), float(p["valec_polomer_mm"]), float(p["disk_prumer_mm"])
+    kroku, hl_lista = int(p["valcu_na_modul"]), float(p["lista_vyska_mm"])
+    if disk:
+        pod, nad = Rr + Dd / 2, Dd / 2 - Rr          # obálka modulu: spodek disku .. horní okraj disku
+    else:
+        pod, nad = dcfg["pod"], dcfg["nad"]
+    zony = [(s_rs, s_rs + zasun), (s_re - zasun, s_re)]    # části dráhy zasunuté v kapsách koncovek
     pasy = []
     for k, tk in enumerate((tc - roztec / 2, tc + roztec / 2)):
         vnejsi = -1.0 if k == 0 else 1.0        # směr "ven" (po ose c)
         moduly = []
         for j in range(m):
             sa, sb = s_rs + j * M_mod, s_rs + (j + 1) * M_mod
-            tv = [fr.obb(sa, sb, tk - w / 2, tk + w / 2, -dcfg["pod"], 0.0, rodic="draha", nazev="telo")]
-            if dcfg["doraz"]:
-                if vnejsi < 0:
-                    t0, t1 = tk - w / 2, tk - w / 2 + HRANA_BOCNIHO_DORAZU
-                else:
-                    t0, t1 = tk + w / 2 - HRANA_BOCNIHO_DORAZU, tk + w / 2
-                tv.append(fr.obb(sa, sb, t0, t1, 0.0, dcfg["nad"], rodic="draha", nazev="boc_doraz"))
-            # orientace: stran dorazu = lokální +napříč (neověřeno); volba směru podél pro vnější doraz
+            if disk:
+                ta, tb = sorted((tk - vnejsi * w / 2, tk + vnejsi * (w / 2 - td)))
+                tv = [fr.obb(sa, sb, ta, tb, -(Rr + hl_lista), -Rr, rodic="draha", role="lista")]
+                for q_ in range(kroku):
+                    sk = sa + (q_ + 0.5) * M_mod / kroku
+                    if any(sk + Dd / 2 > z0 and sk - Dd / 2 < z1 for z0, z1 in zony):
+                        continue            # disk by zasahoval do kapsy koncovky
+                    tv.append(_cyl_fr(fr, sk, (ta + tb) / 2, -Rr, Rr, (tb - ta) / 2, rodic="draha", role="valec"))
+                    tv.append(_cyl_fr(fr, sk, tk + vnejsi * (w / 2 - td / 2), -Rr, Dd / 2, td / 2, rodic="draha", role="disk"))
+            else:
+                tv = [fr.obb(sa, sb, tk - w / 2, tk + w / 2, -pod, nad, rodic="draha", role="telo")]
+            # orientace: strana s diskem = lokální +napříč (neověřeno); volba směru podél, aby disk byl vně
             d_part = fr.d
-            if dcfg["doraz"]:
-                # lokální +napříč = nahoru x podél => chceme, aby mířil "ven"
-                if np.dot(np.cross(fr.n, d_part), vnejsi * fr.c) < 0:
-                    d_part = -fr.d
-            stred = fr.bod((sa + sb) / 2, tk, (dcfg["nad"] - dcfg["pod"]) / 2)
+            if disk and np.dot(np.cross(fr.n, d_part), vnejsi * fr.c) < 0:
+                d_part = -fr.d
+            stred = fr.bod((sa + sb) / 2, tk, (nad - pod) / 2)
             pos, q, Mx = _pose_dil(d_part, fr.n, None, dcfg, stred)
             mod = {"part_id": dr, "sku": dcfg["sku"], "index": j + 1, "s_od": sa, "s_do": sb,
                    "position": pos, "quaternion": q, "scale": [1.0, 1.0, 1.0],
-                   "tvary_nahrady": [{"stred": t["c"], "osy": t["u"], "pul": t["h"]} for t in tv],
+                   "tvary_nahrady": [_vyst_tvar(t) for t in tv],
                    "neoverene": True}
             moduly.append(mod)
             for t in tv:
@@ -567,7 +611,7 @@ def _stavba_rady(r, spec, p, soupis):
             ko = {"id": idk, "rada": rid, "patro": pid, "pas": k + 1, "role": role,
                   "part_id": 5282 if role == "dolni" else 5281,
                   "sku": cfg["sku"], "position": pos, "quaternion": q, "scale": [1.0, 1.0, 1.0],
-                  "tvary_nahrady": [{"stred": t["c"], "osy": t["u"], "pul": t["h"]} for t in tv],
+                  "tvary_nahrady": [_vyst_tvar(t) for t in tv],
                   "s_otvor_kapsy": sp_in, "s_hak": sp_out, "neoverene": True}
             res["koncovky"].append(ko)
             for t in tv:
@@ -590,7 +634,9 @@ def _stavba_rady(r, spec, p, soupis):
     # kontrola opory: dráha musí ležet pod nožkou
     nz = nz_ac_d
     for k, tk in enumerate((tc - roztec / 2, tc + roztec / 2)):
-        prekryv = min(tk + w / 2, tc + nz / 2) - max(tk - w / 2, tc - nz / 2)
+        vn = -1.0 if k == 0 else 1.0
+        wa, wb = sorted((tk - vn * w / 2, tk + vn * (w / 2 - td))) if disk else (tk - w / 2, tk + w / 2)
+        prekryv = min(wb, tc + nz / 2) - max(wa, tc - nz / 2)
         if prekryv < 10.0:
             res["problemy"].append({"kod": "DRAHA_MIMO_OPORU", "uroven": "chyba", "id": [rid],
                                     "text": "Dráha %d leží pod nožkou boxu jen %.1f mm (box není podepřen)." % (k + 1, max(prekryv, 0))})
