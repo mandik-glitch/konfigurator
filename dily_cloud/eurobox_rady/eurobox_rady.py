@@ -19,13 +19,11 @@ VSTUP `spec` (vše kromě `rady` je volitelné):
   draha: "5276" (výchozí) | "5275"  karta dráhy
   osa_rady: "x" (výchozí) | "z"     osa, podél které jdou boxy za sebou
   nizsi_konec: "predek" (výchozí) | "zadek"   nižší konec skloněné řady = menší | větší souřadnice
-  zasun_draha_mm: 54.5              kolik mm dráhy je zasunuto do kapsy koncovky (neověřeno)
-  kapsa_hloubka_mm: 54.5            hloubka kapsy koncovky (neověřeno)
-  zarazka_u: "kapsa" | "hak"        kde na plechu 5282 je svislá zarážka (neověřeno, výchozí kapsa)
+  zasun_draha_mm: 54.5              vzdálenost líce zarážky (5282) od vnější plochy příruby dráhy (Robert ~54-55 mm; plech 5282 má
+                                    od zarážky 54,2 mm kapsy do otevřeného konce => příruba dosedá na konec koncovky)
   roztec_drah_mm: null              osová rozteč 2 drah (null = výchozí podle typu dráhy a boxu)
   odstup_nozka_mm: 10               u 5275: odstup vnější hrany dráhy od hrany nožky boxu
   presah_nosniku_mm: 0              o kolik trubka přesahuje krajní koncovku (nohy dodá rám)
-  hrubka_zarazky_mm: 1.5            tloušťka svislé zarážky (odhad)
   sklon_doporuceny_deg: [2, 15]     mimo => varování (neověřeno); <0 nebo >=45 => chyba
   min_mezera_pater_mm: 10           menší výšková mezera pater => varování
   deska_mm: 0                       tloušťka desky pod vodorovnou řadou (jen pro mezeru pater)
@@ -93,43 +91,71 @@ BOXY = {
 }
 
 # ---------------------------------------------------------------------------------------------
-# DÍLY (rozměry ze zadání; GLB zatím nejsou => procedurální náhrady o stejných rozměrech)
-# Osy lokální: viz `osy` (index lokální osy podél / napříč / nahoru). Neověřené orientace: `neoverene`.
+# DÍLY: skutečná geometrie z katalogových GLB (dily/katalog/product_<karta>.glb, střed obálky v počátku, změřeno)
+# Níže jen kolizní náhrady (kvádry a válce v lokálních souřadnicích GLB) a změřené konstanty; správnost kontrolují testy
+# proti meshi (test_eurobox_rady.py). Postup odvození: ODVOZENI.md.
 # ---------------------------------------------------------------------------------------------
+# Dráhové moduly: lokální osy GLB `osy` (index osy podél / nahoru / napříč). Obě dráhy mají na obou koncích plechové UCHO
+# (plochý plech 1,5 mm se štěrbinou 8 x 12 mm, šířka 34,9 mm), které leží těsně nad horní plochou koncovky 5281/5282.
+#   u_koncova_plocha = vzdálenost od středu modulu k vnější ploše svislé příruby (strana k uchu),
+#   u_spicka = vzdálenost ke špičce ucha (půl délky modulu), v_rovina = horní okraj válečků (rovina, na které leží nožka boxu),
+#   v_ucho0 = spodní plocha ucha, ucho_stred_od_prirub = střed štěrbiny ucha od vnější plochy příruby.
 DILY = {
-    5275: {"sku": "2.2.016.027.037.01", "role": "draha", "rozmer_glb": (271.66, 37.24, 38.86),
-           "delka": 271.66, "sirka": 37.24, "pod": 38.86, "nad": 0.0, "disk": False,
-           "osy": {"podel": 0, "napric": 1, "nahoru": 2}, "stred_glb": (0.0, 0.0, 0.0)},
-    5276: {"sku": "2.2.016.027.037.03", "role": "draha", "rozmer_glb": (41.0, 61.67, 255.04),
-           "delka": 255.04, "sirka": 41.0, "pod": 47.2, "nad": 14.5, "disk": True, "step": True,
-           "osy": {"podel": 2, "napric": 0, "nahoru": 1}, "stred_glb": (0.0, 0.0, 0.0)},
-    5281: {"sku": "2.2.017.000.055.01", "role": "horni", "rozmer_glb": (38.47, 27.75, 86.29),
-           "delka": 86.29, "sirka": 38.47, "pod": 27.75, "nad": 0.0,
-           "osy": {"podel": 2, "napric": 0, "nahoru": 1}, "stred_glb": (0.0, 0.0, 0.0)},
-    5282: {"sku": "2.2.017.035.055.01", "role": "dolni", "rozmer_glb": (38.47, 55.75, 86.29),
-           "delka": 86.29, "sirka": 38.47, "pod": 27.75, "nad": 28.0,
-           "osy": {"podel": 2, "napric": 0, "nahoru": 1}, "stred_glb": (0.0, 0.0, 0.0)},
+    5275: {"sku": "2.2.016.027.037.01", "role": "draha", "soubor": "dily/katalog/product_5275.glb",
+           "rozmer_glb": (271.66, 37.24, 38.86), "delka": 271.66, "sirka": 38.86, "disk": False,
+           "osy": {"podel": 0, "nahoru": 1, "napric": 2}, "stred_glb": (0.0, 0.0, 0.0),
+           "u_koncova_plocha": 101.6, "u_spicka": 135.83, "v_rovina": 17.63, "v_ucho0": 17.12,
+           "ucho_stred_od_prirub": 23.2, "kolo_w_pul": 14.0, "kolo_w": (-14.0, 14.0),
+           "tvary": (
+               ("obb", "lista", (-100.09, -18.62, -19.43), (100.09, 9.0, 19.43)),
+               ("obb", "priruba", (-101.6, -18.62, -19.43), (-100.09, 17.12, 19.43)),
+               ("obb", "priruba", (100.09, -18.62, -19.43), (101.6, 17.12, 19.43)),
+               ("obb", "ucho", (-135.83, 17.12, -17.0), (-103.07, 18.62, 17.0)),
+               ("obb", "ucho", (103.07, 17.12, -17.0), (135.83, 18.62, 17.0)),
+           ) + tuple(("cyl", "valec", 2, (cx, 4.2, 0.0), 13.43, 14.0) for cx in (-85.2, -51.67, -17.77, 15.82, 49.19, 82.45))},
+    5276: {"sku": "2.2.016.027.037.03", "role": "draha", "soubor": "dily/katalog/product_5276.glb",
+           "rozmer_glb": (41.0, 61.67, 255.04), "delka": 255.04, "sirka": 41.0, "disk": True,
+           "osy": {"podel": 2, "nahoru": 1, "napric": 0}, "stred_glb": (0.0, 0.0, 0.0),
+           "u_koncova_plocha": 96.5, "u_spicka": 127.52, "v_rovina": 16.365, "v_ucho0": 11.665,
+           "ucho_stred_od_prirub": 19.82, "kolo_w": (-11.92, 9.88), "disk_w": (9.88, 12.28),
+           "tvary": (
+               ("obb", "lista", (-20.25, -29.335, -95.0), (20.25, 7.165, 95.0)),
+               ("obb", "priruba", (-20.5, -30.835, -96.5), (20.5, 13.165, -95.0)),
+               ("obb", "priruba", (-20.5, -30.835, 95.0), (20.5, 13.165, 96.5)),
+               ("obb", "ucho", (-17.45, 11.665, -127.52), (17.45, 13.165, -96.73)),
+               ("obb", "ucho", (-17.45, 11.665, 96.73), (17.45, 13.165, 127.52)),
+           ) + tuple(x for z in (-58.0, 1.6, 61.2) for x in (
+               ("cyl", "valec", 0, (-1.02, 2.865, z), 13.5, 10.9),
+               ("cyl", "disk", 0, (11.08, 2.865, z), 28.0, 1.2)))},
 }
-# Dráha 5276: skutečná geometrie ze STEPu 2.2.016.027.037.03 (SolidWorks, mm), převedená skriptem dily/step_na_glb.py
-# do dily/5276.glb (střed obálky v počátku; původní střed ve STEPu (0; 28,335; 95,0)). Lokální osy: X šířka,
-# Y nahoru, Z podél dráhy. Obálka X ±20,5, Y −30,835..30,865, Z ±127,52 (255,04). 12 těles:
-#   tělo (lišta) 40,5 × 36,5 × 190; 2 koncové plechy 41,0 × 44,0 × 88,9, zasahují 56,4 mm do těla a o 32,52 mm
-#   přečnívají (v STEPu jsou součástí modulu); 3 kolečka (osa rovnoběžná s X, střed y = 2,865, z = −58,0 / 1,6 / 61,2,
-#   rozteč 59,6): váleček R 13,5 (x −11,92..9,88) a DISK R 28,0 tloušťky 2,4 (x 9,88..12,28) na straně +X; horní okraj
-#   válečku y = 16,365 = rovina, na které leží nožka boxu; horní okraj disku 14,5 mm nad ní (boční doraz).
-# Níže jen kolizní náhrady (kvádry a válce) těchto těles; kontrolují je testy proti dily/5276.glb.
-STEP_5276 = {
-    "soubor": "dily/5276.glb", "stred_step": (0.0, 28.335, 95.0),
-    "rovina_y": 16.365,
-    "kvadry": [   # (role, min, max) v lokálních souřadnicích GLB
-        ("lista", (-20.25, -29.335, -95.0), (20.25, 7.165, 95.0)),
-        ("koncovy_plech", (-20.5, -30.835, 38.6), (20.5, 13.165, 127.52)),
-        ("koncovy_plech", (-20.5, -30.835, -127.52), (20.5, 13.165, -38.6)),
-    ],
-    "kolecka_z": (-58.0, 1.6, 61.2), "kolecko_y": 2.865,
-    "valec": {"polomer": 13.5, "x0": -11.92, "x1": 9.88},
-    "disk": {"polomer": 28.0, "x0": 9.88, "x1": 12.28},
+# Koncovky (lokální osy GLB: X napříč, Y nahoru, Z podél; hák je na straně -Z, otevřený konec kapsy na +Z):
+#   hák = převrácené U s oky 1,5 mm (světlost mezi rameny 27,6 mm < Ø28: zámek se zaklapne s přesahem 0,2 mm na každé straně),
+#   kapsa = U-žlábek (základna se štěrbinou 8 x 16 mm + dvě stěny, jejichž horní hrany zahnuté dovnitř drží ucho dráhy),
+#   zarážka (jen 5282) = svislý plech 34 mm široký v z = -12,5..-11,1 (líc zarážky z = -11,1) vysoký nad základnou 54,2 mm.
+_HAK = ("obb", "hak", (-17.0, -23.44, -43.14), (17.0, -0.12, -12.5))
+_ZAKLAD = ("obb", "zaklad", (-19.2, -27.87, -12.5), (19.2, -26.37, 43.14))
+_STENY = (("obb", "stena", (17.8, -27.87, -11.1), (19.2, -9.2, 43.14)),
+          ("obb", "stena", (-19.2, -27.87, -11.1), (-17.8, -9.2, 43.14)))
+_ZARAZKA = ("obb", "zarazka", (-17.0, -9.2, -12.5), (17.0, 27.87, -11.1))
+
+
+def _posun_y(tv, dy):
+    return tuple((t[0], t[1], (t[2][0], t[2][1] + dy, t[2][2]), (t[3][0], t[3][1] + dy, t[3][2])) for t in tv)
+
+
+KONCOVKY = {
+    5282: {"sku": "2.2.017.035.055.01", "role": "dolni", "soubor": "dily/katalog/product_5282.glb",
+           "rozmer_glb": (38.47, 55.75, 86.29), "osy": {"podel": 2, "nahoru": 1, "napric": 0},
+           "z_lic_zarazky": -11.1, "z_trubka": -27.9, "y_trubka": -15.62, "y_zaklad_horni": -26.37,
+           "z_konec": 43.14, "slot_z": (21.0, 29.0), "tvary": (_HAK, _ZAKLAD) + _STENY + (_ZARAZKA,)},
+    5281: {"sku": "2.2.017.000.055.01", "role": "horni", "soubor": "dily/katalog/product_5281.glb",
+           "rozmer_glb": (38.47, 27.75, 86.29), "osy": {"podel": 2, "nahoru": 1, "napric": 0},
+           "z_lic_zarazky": -11.1, "z_trubka": -27.9, "y_trubka": -1.62, "y_zaklad_horni": -12.37,
+           "z_konec": 43.14, "slot_z": (21.0, 29.0), "tvary": _posun_y((_HAK, _ZAKLAD) + _STENY, 14.0)},
 }
+TRUBKA = {"part_id": 3673, "soubor": "dily/katalog/product_3673.glb", "polomer": 14.0, "delka_glb": 1000.0}
+# Šířka kapsy mezi zahnutými hranami stěn 30,6 mm, ucho 34,9 mm: ucho se nasouvá z otevřeného konce (+Z).
+ZASUN_MIN_PRIRUBA = 43.14 + 11.1       # nejmenší vzdálenost líce zarážky - vnější plocha příruby (příruba nenarazí na konec koncovky)
 
 DEFAULTY = {
     "sklon_deg": 0.0,
@@ -138,12 +164,9 @@ DEFAULTY = {
     "osa_rady": "x",
     "nizsi_konec": "predek",
     "zasun_draha_mm": 54.5,
-    "kapsa_hloubka_mm": 54.5,
-    "zarazka_u": "kapsa",
     "roztec_drah_mm": None,
     "odstup_nozka_mm": 10.0,
     "presah_nosniku_mm": 0.0,
-    "hrubka_zarazky_mm": HR_ZARAZKY,
     "sklon_doporuceny_deg": [2.0, 15.0],
     "min_mezera_pater_mm": 10.0,
     "deska_mm": 0.0,
@@ -155,8 +178,8 @@ DEFAULTY = {
 }
 
 NEOVERENO = (
-    "Dráha 5276 je ze STEPu; GLB/STEP dílů 5275, 5281, 5282 zatím nejsou: jejich tvar, orientace, poloha háku a kapsy "
-    "jsou odvozené z rozměrů (viz ODVOZENI.md)."
+    "Geometrie dílů 5275, 5276, 5281, 5282 a trubky je z katalogových GLB; neověřeno zůstává spojení dvou modulů dráhy "
+    "(moduly jsou uchem na ucho bez dalšího dílu) a to, že ucho leží na základně koncovky (viz ODVOZENI.md)."
 )
 
 
@@ -348,8 +371,6 @@ def _parametry(spec):
         raise ValueError("osa_rady musí být x nebo z")
     if p["nizsi_konec"] not in ("predek", "zadek"):
         raise ValueError("nizsi_konec musí být predek nebo zadek")
-    if p["zarazka_u"] not in ("kapsa", "hak"):
-        raise ValueError("zarazka_u musí být kapsa nebo hak")
     return p
 
 
@@ -383,14 +404,12 @@ def max_pocet_boxu(typ, smer, mezera_mm=1.0, max_delka_mm=20000.0):
 
 def _roztec_vychozi(draha, typ, smer, p):
     b = BOXY[typ]["kratka"] if smer == "delka" else BOXY[typ]["dlouha"]   # rozměr napříč
-    dl = DILY[int(draha)]
-    w = dl["sirka"]
     if draha == "5276":
         # disk válečku (vnitřní plocha disku v x = 9,88 od osy dráhy) stojí vně boku boxu s vůlí disk_vule_mm
-        return b - 2.0 * (STEP_5276["valec"]["x1"] - p["disk_vule_mm"])
+        return b - 2.0 * (DILY[5276]["kolo_w"][1] - p["disk_vule_mm"])
     nozka = BOXY[typ]["nozka_dole"]
     nz = nozka[0] if smer == "delka" else nozka[1]
-    return nz - w - 2.0 * p["odstup_nozka_mm"]
+    return nz - 2.0 * (DILY[5275]["kolo_w_pul"] + p["odstup_nozka_mm"])
 
 
 def _pose_dil(M_cols_podel, nahoru, napric_vec, cfg, stred_svet):
@@ -402,26 +421,26 @@ def _pose_dil(M_cols_podel, nahoru, napric_vec, cfg, stred_svet):
     M[:, i_ac] = np.cross(nahoru, M_cols_podel)
     if np.linalg.det(M) < 0:
         M[:, i_ac] *= -1
-    sg = _v(*cfg["stred_glb"])
+    sg = _v(*cfg.get("stred_glb", (0.0, 0.0, 0.0)))
     pos = np.asarray(stred_svet, float) - M @ sg
     return pos, _quat(M), M
 
 
-def _tvary_5276(pos, M):
-    """Kolizní náhrady modulu 5276 ve světě: lokální tvary STEP_5276 přes pozici `pos` a matici `M`
-    (sloupce = lokální osy X, Y, Z ve světě)."""
+def _tvary_lok(tvary, pos, M, rodic, extra=None):
+    """Kolizní náhrady dílu ve světě: lokální tvary (souřadnice GLB) přes pozici `pos` a matici `M` (sloupce = lokální osy)."""
     out = []
-    for role, lo, hi in STEP_5276["kvadry"]:
-        lo, hi = _v(*lo), _v(*hi)
-        c = pos + M @ ((lo + hi) / 2)
-        out.append({"typ": "obb", "c": c, "u": np.array([M[:, 0], M[:, 1], M[:, 2]]), "h": (hi - lo) / 2,
-                    "rodic": "draha", "role": role})
-    up = M[:, 1]
-    for z in STEP_5276["kolecka_z"]:
-        for nm, g in (("valec", STEP_5276["valec"]), ("disk", STEP_5276["disk"])):
-            c = pos + M @ _v((g["x0"] + g["x1"]) / 2, STEP_5276["kolecko_y"], z)
-            out.append({"typ": "cyl", "c": c, "a": M[:, 0].copy(), "r": g["polomer"], "hl": (g["x1"] - g["x0"]) / 2,
-                        "up": up.copy(), "rodic": "draha", "role": nm})
+    for t in tvary:
+        if t[0] == "obb":
+            lo, hi = _v(*t[2]), _v(*t[3])
+            o = {"typ": "obb", "c": pos + M @ ((lo + hi) / 2), "u": np.array([M[:, 0], M[:, 1], M[:, 2]]),
+                 "h": (hi - lo) / 2, "rodic": rodic, "role": t[1]}
+        else:
+            _, role, ax, c, r, hl = t
+            o = {"typ": "cyl", "c": pos + M @ _v(*c), "a": M[:, ax].copy(), "r": float(r), "hl": float(hl),
+                 "up": M[:, 1].copy(), "rodic": rodic, "role": role}
+        if extra:
+            o.update(extra)
+        out.append(o)
     return out
 
 
@@ -529,39 +548,31 @@ def _stavba_rady(r, spec, p, soupis):
             res["tvary"].append(fr.obb(0, L, 0, b, -p["deska_mm"], 0, rodic="deska", vlastnik=rid + "#deska"))
         return res
 
-    # --- skloněná řada: dráhy + koncovky ---------------------------------------------------------
+    # --- skloněná řada: dráhy + koncovky + trubky --------------------------------------------------
+    # Rám řady: s = 0 je líc zarážky dolní koncovky 5282 (čelo prvního boxu), h = 0 je rovina válečků (spodek nožky).
     dr = int(p["draha"])
     dcfg = DILY[dr]
-    M_mod = dcfg["delka"]
+    cd, cu = KONCOVKY[5282], KONCOVKY[5281]
     zasun = float(p["zasun_draha_mm"])
-    kapsa = float(p["kapsa_hloubka_mm"])
-    ts = float(p["hrubka_zarazky_mm"])
-    cd, cu = DILY[5282], DILY[5281]
-    Lp = cd["delka"]
-    hak_pul = (Lp - kapsa) / 2.0          # osa trubky od vnějšího konce plechu
-    if zasun > kapsa + 1e-9:
-        res["problemy"].append({"kod": "ZASUN_VETSI_NEZ_KAPSA", "uroven": "chyba", "id": [rid],
-                                "text": "Zasunutí dráhy %.2f mm je větší než hloubka kapsy %.2f mm." % (zasun, kapsa)})
-    # dolní plech: otvor kapsy (vnitřní konec) v s = 0 (zarazka_u = kapsa), nebo zarážka u háku
-    if p["zarazka_u"] == "kapsa":
-        sp0_d = -Lp                       # vnější (hákový) konec
-    else:
-        sp0_d = -ts
-    sp_in_d = sp0_d + Lp                 # otvor kapsy
-    s_rs = sp_in_d - zasun               # začátek soustavy modulů
-    # počet modulů: viditelná část dráhy (mezi otvory kapes) musí pokrýt řadu
-    # dráha musí sahat od s_rs do s_re, otvor horní kapsy sp_in_u = s_re - zasun >= L
-    m = max(1, math.ceil((L + zasun - s_rs - 1e-9) / M_mod))
-    s_re = s_rs + m * M_mod
-    sp_in_u = s_re - zasun
-    sp1_u = sp_in_u + Lp                 # vnější (hákový) konec horního plechu
-    s_tl = sp0_d + hak_pul
-    s_tu = sp1_u - hak_pul
-    h_t = -hak_pul
-    res["geom_draha"] = {"moduly": m, "s_zacatek": s_rs, "s_konec": s_re, "delka_celkem": m * M_mod,
-                         "sp0_d": sp0_d, "sp_in_d": sp_in_d, "sp_in_u": sp_in_u, "sp1_u": sp1_u,
-                         "s_trubka_dole": s_tl, "s_trubka_nahore": s_tu, "h_trubky": h_t,
-                         "vzdalenost_trubek": s_tu - s_tl, "viditelna_delka": sp_in_u - sp_in_d}
+    u_end, u_tip = dcfg["u_koncova_plocha"], dcfg["u_spicka"]
+    pitch = 2.0 * u_tip                               # moduly uchem na ucho (špička na špičku)
+    delta = dcfg["v_rovina"] - dcfg["v_ucho0"]        # rovina válečků nad spodní plochou ucha
+    s_bs = zasun                                      # vnější plocha příruby prvního modulu
+    m = max(1, math.ceil((L - s_bs - 2.0 * u_end - 1e-9) / pitch) + 1)
+    s_be = s_bs + 2.0 * u_end + (m - 1) * pitch       # vnější plocha příruby posledního modulu
+    s_stop_u = s_be + zasun                           # místo líce zarážky horní koncovky 5281 (zarážku nemá)
+    h_hak = {k: kf["y_trubka"] - kf["y_zaklad_horni"] - delta for k, kf in ((5282, cd), (5281, cu))}
+    s_tl = cd["z_trubka"] - cd["z_lic_zarazky"]
+    s_tu = s_stop_u - (cu["z_trubka"] - cu["z_lic_zarazky"])
+    res["geom_draha"] = {"moduly": m, "s_telo_od": s_bs, "s_telo_do": s_be, "s_trubka_dole": s_tl,
+                         "s_trubka_nahore": s_tu, "h_trubka_dole": h_hak[5282], "h_trubka_nahore": h_hak[5281],
+                         "vzdalenost_trubek": s_tu - s_tl}
+    # štěrbina ucha musí se překrývat se štěrbinou koncovky (šroub): střed ucha od líce zarážky
+    zc = (cd["z_lic_zarazky"] + zasun) - dcfg["ucho_stred_od_prirub"]
+    if zc + 2.0 < cd["slot_z"][0] - 1e-9 or zc - 2.0 > cd["slot_z"][1] + 1e-9:
+        res["problemy"].append({"kod": "ZASUN_MIMO_DRAZKU", "uroven": "chyba", "id": [rid],
+                                "text": "Zasunutí %.1f mm: štěrbina ucha (střed %.1f od líce) neleží nad štěrbinou koncovky "
+                                        "(šroub nezapadne)." % (zasun, zc)})
     roztec = p["roztec_drah_mm"]
     roztec_auto = roztec is None
     if roztec_auto:
@@ -571,33 +582,24 @@ def _stavba_rady(r, spec, p, soupis):
     res["roztec_auto"] = roztec_auto
     tc = b / 2
     w = dcfg["sirka"]
-    wp = cd["sirka"]
+    wp = 38.4                                         # šířka koncovky (stěny kapsy ±19,2)
     disk = bool(dcfg.get("disk"))
-    pod, nad = dcfg["pod"], dcfg["nad"]
     pasy = []
     for k, tk in enumerate((tc - roztec / 2, tc + roztec / 2)):
         vnejsi = -1.0 if k == 0 else 1.0        # směr "ven" (po ose c)
         moduly = []
+        # u 5276 je disk na lokálním +X; levá dráha ho má vlevo, pravá vpravo (vně boxu): modul se otočí o 180° kolem normály
+        d_part = fr.d
+        if disk and np.dot(np.cross(fr.n, d_part), vnejsi * fr.c) < 0:
+            d_part = -fr.d
         for j in range(m):
-            sa, sb = s_rs + j * M_mod, s_rs + (j + 1) * M_mod
-            # orientace: u 5276 je disk na lokálním +X; levá dráha ho má vlevo, pravá vpravo (vně boxu);
-            # dráha je podél souměrná, proto stačí otočit o 180° kolem normály
-            d_part = fr.d
-            if disk and np.dot(np.cross(fr.n, d_part), vnejsi * fr.c) < 0:
-                d_part = -fr.d
-            if disk:
-                stred = fr.bod((sa + sb) / 2, tk, -STEP_5276["rovina_y"])      # váleček dosahuje do roviny h = 0
-            else:
-                stred = fr.bod((sa + sb) / 2, tk, (nad - pod) / 2)
+            sc = s_bs + u_end + j * pitch
+            stred = fr.bod(sc, tk, -dcfg["v_rovina"])
             pos, q, Mx = _pose_dil(d_part, fr.n, None, dcfg, stred)
-            if disk:
-                tv = _tvary_5276(pos, Mx)
-            else:
-                tv = [fr.obb(sa, sb, tk - w / 2, tk + w / 2, -pod, nad, rodic="draha", role="telo")]
-            mod = {"part_id": dr, "sku": dcfg["sku"], "index": j + 1, "s_od": sa, "s_do": sb,
+            tv = _tvary_lok(dcfg["tvary"], pos, Mx, "draha")
+            mod = {"part_id": dr, "sku": dcfg["sku"], "index": j + 1, "s_od": sc - u_tip, "s_do": sc + u_tip,
                    "position": pos, "quaternion": q, "scale": [1.0, 1.0, 1.0],
-                   "tvary_nahrady": [_vyst_tvar(t) for t in tv],
-                   "neoverene": True}
+                   "tvary_nahrady": [_vyst_tvar(t) for t in tv]}
             moduly.append(mod)
             for t in tv:
                 t["vlastnik"] = "%s/draha%d/m%d" % (rid, k + 1, j + 1)
@@ -606,27 +608,19 @@ def _stavba_rady(r, spec, p, soupis):
                 res["tvary"].append(t)
         pasy.append({"index": k + 1, "t": tk, "moduly": moduly})
         # koncovky
-        for role, cfg, sp_in, smer_ven in (("dolni", cd, sp_in_d, -1.0), ("horni", cu, sp_in_u, 1.0)):
-            sp_out = sp_in + smer_ven * Lp          # vnější (hákový) konec
-            sa, sb = min(sp_in, sp_out), max(sp_in, sp_out)
-            tv = [fr.obb(sa, sb, tk - wp / 2, tk + wp / 2, -cfg["pod"], 0.0, rodic="koncovka", nazev="zaklad")]
+        for role, kfg, kid in (("dolni", cd, 5282), ("horni", cu, 5281)):
             if role == "dolni":
-                if p["zarazka_u"] == "kapsa":
-                    z0, z1 = sp_in - ts, sp_in
-                else:
-                    z0, z1 = sp_out, sp_out + ts
-                tv.append(fr.obb(z0, z1, tk - wp / 2, tk + wp / 2, 0.0, cfg["nad"], rodic="koncovka", nazev="zarazka"))
-            # lokální +podél směřuje od háku ke kapse
-            d_part = fr.d if role == "dolni" else -fr.d
-            vys_c = (cfg["nad"] - cfg["pod"]) / 2
-            stred = fr.bod((sa + sb) / 2, tk, vys_c)
-            pos, q, Mx = _pose_dil(d_part, fr.n, None, cfg, stred)
+                d_pl, s0 = fr.d, kfg["z_lic_zarazky"] * -1.0                  # s = z + 11,1
+            else:
+                d_pl, s0 = -fr.d, s_stop_u + kfg["z_lic_zarazky"]             # s = s_stop_u - 11,1 - z
+            h0 = -(kfg["y_zaklad_horni"] + delta)
+            pos, q, Mx = _pose_dil(d_pl, fr.n, None, kfg, fr.bod(s0, tk, h0))
+            tv = _tvary_lok(kfg["tvary"], pos, Mx, "koncovka")
             idk = "%s/koncovka_%s%d" % (rid, role, k + 1)
-            ko = {"id": idk, "rada": rid, "patro": pid, "pas": k + 1, "role": role,
-                  "part_id": 5282 if role == "dolni" else 5281,
-                  "sku": cfg["sku"], "position": pos, "quaternion": q, "scale": [1.0, 1.0, 1.0],
+            ko = {"id": idk, "rada": rid, "patro": pid, "pas": k + 1, "role": role, "part_id": kid,
+                  "sku": kfg["sku"], "position": pos, "quaternion": q, "scale": [1.0, 1.0, 1.0],
                   "tvary_nahrady": [_vyst_tvar(t) for t in tv],
-                  "s_otvor_kapsy": sp_in, "s_hak": sp_out, "neoverene": True}
+                  "s_lic_zarazky": 0.0 if role == "dolni" else s_stop_u}
             res["koncovky"].append(ko)
             for t in tv:
                 t["vlastnik"] = idk
@@ -635,30 +629,21 @@ def _stavba_rady(r, spec, p, soupis):
                 res["tvary"].append(t)
     res["draha"] = {
         "rada": rid, "patro": pid, "part_id": dr, "sku": dcfg["sku"], "moduly_na_pas": m, "pasy": pasy,
-        "delka_celku_mm": m * M_mod, "viditelna_delka_mm": sp_in_u - sp_in_d,
+        "delka_celku_mm": m * pitch, "telo_od_do_mm": [s_bs, s_be], "viditelna_delka_mm": s_be - s_bs,
         "zasun_draha_mm": zasun, "roztec_mm": roztec, "roztec_vychozi": roztec_auto,
         "vzdalenost_trubek_mm": s_tu - s_tl,
-        "spoj_modulu": "na sraz, bez spojky (neověřeno)",
+        "spoj_modulu": "ucho na ucho (špička na špičku), bez spojky (neověřeno)",
     }
-    # kotvení pro nosníky: osa trubky v rámu řady
-    res["trubka_dole"] = (s_tl, h_t)
-    res["trubka_nahore"] = (s_tu, h_t)
+    # kotvení pro nosníky: osa trubky v rámu řady (s, h)
+    res["trubka_dole"] = (s_tl, h_hak[5282])
+    res["trubka_nahore"] = (s_tu, h_hak[5281])
     res["plech_t_rozsah"] = (tc - roztec / 2 - wp / 2, tc + roztec / 2 + wp / 2)
     res["draha_t_rozsah"] = (tc - roztec / 2 - w / 2, tc + roztec / 2 + w / 2)
-    if disk:
-        # disk, který by zasahoval do kapsy koncovky (zasunutá část dráhy), je fyzicky nemožný
-        prvni = STEP_5276["kolecka_z"][0] + 127.52 - STEP_5276["disk"]["polomer"]   # okraj prvního disku od konce modulu
-        if zasun > prvni + 1e-9:
-            res["problemy"].append({"kod": "DISK_V_KAPSE", "uroven": "varovani", "id": [rid],
-                                    "text": "Zasunutí dráhy %.1f mm: první disk 5276 začíná %.1f mm od konce dráhy, takže by zasahoval do kapsy koncovky." % (zasun, prvni)})
-    # kontrola opory: dráha musí ležet pod nožkou
+    # kontrola opory: válečky musí ležet pod nožkou
     nz = nz_ac_d
     for k, tk in enumerate((tc - roztec / 2, tc + roztec / 2)):
         vn = -1.0 if k == 0 else 1.0
-        if disk:   # váleček: lokální x od -11,92 do 9,88; +X míří ven (vn)
-            wa, wb = sorted((tk + vn * STEP_5276["valec"]["x0"], tk + vn * STEP_5276["valec"]["x1"]))
-        else:
-            wa, wb = tk - w / 2, tk + w / 2
+        wa, wb = sorted((tk + vn * dcfg["kolo_w"][0], tk + vn * dcfg["kolo_w"][1]))
         prekryv = min(wb, tc + nz / 2) - max(wa, tc - nz / 2)
         if prekryv <= 0:
             res["problemy"].append({"kod": "DRAHA_MIMO_OPORU", "uroven": "chyba", "id": [rid],
@@ -704,9 +689,15 @@ def _nosniky(rady, p):
         b_ = bod.copy()
         a_[fr.os_napric] = lo
         b_[fr.os_napric] = hi
+        ax = (b_ - a_) / np.linalg.norm(b_ - a_)
+        px = np.cross(ax, _v(0, 1, 0))
+        px = px / np.linalg.norm(px)
+        Mt = np.column_stack([px, ax, np.cross(px, ax)])        # lokální osa Y trubky (GLB 3673, délka 1000) -> osa nosníku
         out.append({
             "id": "nosnik_%s_%s_%d" % (role, patro, len(out) + 1), "role": role, "patro": patro,
-            "a": a_, "b": b_, "polomer": R_TRUBKY, "prumer": 2 * R_TRUBKY, "part_id": 3673,
+            "a": a_, "b": b_, "polomer": R_TRUBKY, "prumer": 2 * R_TRUBKY, "part_id": TRUBKA["part_id"],
+            "position": (a_ + b_) / 2, "quaternion": _quat(Mt),
+            "scale": [1.0, float(np.linalg.norm(b_ - a_)) / TRUBKA["delka_glb"], 1.0],
             "rady": [r["id"] for r, _ in cl], "osa_napric": "x" if fr.os_napric == 0 else "z",
         })
     return out
@@ -937,14 +928,11 @@ def postav(spec):
     aabbs = [_aabb(t) for t in tvary]
 
     def vyjimka(A, B):
-        # záměrné styky: koncovka s vlastní dráhou (zasunutí do kapsy) a s vlastním nosníkem (hák)
+        # záměrný styk: hák koncovky se na trubce zaklapne s přesahem ~0,2 mm na každé straně (změřeno na GLB)
         for X, Y in ((A, B), (B, A)):
-            if X.get("rodic") == "koncovka":
-                if Y.get("rodic") == "draha" and Y["vlastnik"].split("/")[0] == X["vlastnik"].split("/")[0] \
-                        and Y.get("pas") == X.get("pas"):
-                    return True
-                if Y.get("rodic") == "nosnik" and X["vlastnik"].split("/")[0] in Y["rady"]:
-                    return True
+            if X.get("rodic") == "koncovka" and X.get("role") == "hak" and Y.get("rodic") == "nosnik" \
+                    and X["vlastnik"].split("/")[0] in Y["rady"]:
+                return True
         return False
 
     kolize = {}
