@@ -7,6 +7,7 @@ export const V = {
   xRim0: -166.5, xRim1: 162,       // lem víka (obálka −166,5; čelo lemu 162, západky dosahují 166,5)
   y: 220,                          // polovina délky (obálka)
   zRimH: 22,                       // výška lemu nad spárou
+  xUp: 148,                        // čelo víka nad lemem (lem tvoří před ním římsu ~14 mm; c01: římsa pod ostrůvkem a štítky)
   rec: { x0: -52, x1: 62, y: 89, dno: 16 },   // kapsa držadla na horní ploše: hloubka 16 mm pod temenem
   piv: { x: 55, zDol: 9 },         // pivot držadla (vpředu na kapse), z' = H − 9
 };
@@ -19,27 +20,27 @@ export function vicko() {
   const FR = [
     { z: Z, xr: V.xRim0 + T, xf: V.xRim1, y: V.y, rc: 10 },
     { z: Zf + 21, xr: V.xRim0 + T, xf: V.xRim1, y: V.y, rc: 10 },
-    { z: Zf + V.zRimH, xr: -164 + T, xf: 160.5, y: 218.4, rc: 12 },
-    { z: H - 12, xr: -160 + T, xf: 158, y: 209, rc: 24 },
-    { z: ZT, xr: -148 + T, xf: 107, y: 199, rc: 25 },
+    { z: Zf + V.zRimH, xr: -164 + T, xf: V.xUp, y: 218.4, rc: 12 },
+    { z: H - 12, xr: S.rearMid + T, xf: V.xUp - 2, y: 209, rc: 24 },
+    { z: ZT, xr: S.rearTop + T, xf: 105, y: 199, rc: 25 },
   ];
   const r = V.rec;
   g.add(vickoPlast('cerna', 'vicko_plast', FR, { wall: 3.5, topT: 3.5, holes: [{ x0: r.x0, x1: r.x1, y0: -r.y, y1: r.y }] }));
   g.add(vyrez('cerna_mat', 'vicko_kapsa', r.x0, r.x1, -r.y, r.y, H - r.dno, ZT));
   // --- čelní sloupky víka (rohové bloky nad západkami, y 108…172): mírně předsazené před čelo, mezi sloupkem a ostrůvkem je drážka ---
-  for (const s of [-1, 1]) g.add(rb('cerna', 'sloupek' + (s < 0 ? '_l' : '_p'), { x0: 100, x1: 160.8, y0: s < 0 ? -172 : 108, y1: s < 0 ? -108 : 172, z0: Zf + V.zRimH, z1: H - 11, rc: 4, re: 1.6, seg: 1, fs: 1 }));
+  for (const s of [-1, 1]) g.add(rb('cerna', 'sloupek' + (s < 0 ? '_l' : '_p'), { x0: 100, x1: V.xUp + 1.8, y0: s < 0 ? -172 : 108, y1: s < 0 ? -108 : 172, z0: Zf + V.zRimH, z1: H - 11, rc: 4, re: 1.6, seg: 1, fs: 1 }));
   // --- ostrůvek s logem a štítkem TSTAK (čelo, uprostřed) ---
-  g.add(rb('cerna', 'ostruvek', { x0: 98, x1: 159, y0: -92, y1: 92, z0: H - 50, z1: H - 4, rc: 3, re: 1.2, seg: 1, fs: 1 }));
+  g.add(rb('cerna', 'ostruvek', { x0: 98, x1: V.xUp + 0.6, y0: -92, y1: 92, z0: H - 50, z1: H - 4, rc: 3, re: 1.2, seg: 1, fs: 1 }));
   g.add(bx('zluta', 'logo_dewalt', 120, 146, -57, 57, H - 4.2, H - 3.6));
-  g.add(bx('zluta', 'stitek_tstak', 159, 159.5, -47, 47, Zf + 36, Zf + 51));
-  g.add(bx('cira', 'stitek_tstak_kryt', 159.3, 160.3, -51, 51, Zf + 34, Zf + 53.5));
+  g.add(bx('zluta', 'stitek_tstak', V.xUp + 0.5, V.xUp + 1.0, -47, 47, Zf + 36, Zf + 51));
+  g.add(bx('cira', 'stitek_tstak_kryt', V.xUp + 0.8, V.xUp + 1.8, -51, 51, Zf + 34, Zf + 53.5));
   // --- žlutý proužek pod ostrůvkem na lemu (c02, vlevo od středu) ---
-  g.add(bx('zluta', 'prouzek_zluty', 161.6, 162.8, -90, -36, Zf + 11, Zf + 17));
+  g.add(bx('zluta', 'prouzek_zluty', 150, 160, -90, -36, Zf + V.zRimH, Zf + V.zRimH + 0.7));
   // --- štítky IP54 na čelech levého a pravého sloupku (c02: y −162…−118) ---
   for (const s of [-1]) {   // štítek IP54 je na fotografiích jen vlevo (pohled zepředu)
     const a = s < 0 ? -162 : 118, b = s < 0 ? -118 : 162, nm = s < 0 ? '_l' : '_p';
-    g.add(bx('zluta', 'stitek_ip54' + nm, 160.6, 162.0, a, b, Zf + 23, Zf + 54));
-    g.add(bx('cerna_mat', 'stitek_ip54_pole' + nm, 160.9, 162.3, a + 1.6, b - 1.6, Zf + 25, Zf + 52));
+    g.add(bx('zluta', 'stitek_ip54' + nm, V.xUp + 2.0, V.xUp + 3.4, a, b, Zf + 23, Zf + 54));
+    g.add(bx('cerna_mat', 'stitek_ip54_pole' + nm, V.xUp + 2.3, V.xUp + 3.7, a + 1.6, b - 1.6, Zf + 25, Zf + 52));
   }
   // --- žluté stohovací háky na koncích víka (c01/c02: na horní ploše u konců, přes rameno konce) ---
   const tab = [[182, H - 0.1], [200.3, H - 0.1], [211.0, H - 12.0], [212.2, H - 13.2], [210.6, H - 14.8], [190, H - 4], [182, H - 4]];

@@ -1,6 +1,6 @@
 // Kopie fit_lm.mjs (Hilti PKC 19) pro DeWalt TSTAK: dolní mez ohniska 1,2° (studiové fotografie jsou pořízeny dlouhým objektivem), navíc --pose k=v,... (pevná poloha skupin, např. drzadlo=80) a --len (rozlišení masky). Původní popis:
 // Doladění kamery: překryv obrysu (IoU ve pevném rámu fotografie) + vzdálenosti ručně změřených bodů (landmarků) po promítnutí.
-// Použití: node fit_lm.mjs --glb ../modely/2437394.glb --foto foto.jpg --lm landmarky.json --kam start.json --sku 2437394 --pohled c02-lm [--wl 0.004] [--pose-fix] [--cervena 1 (maska podle červené barvy – pro fotografie s kótami)]
+// Použití: node fit_lm.mjs --glb ../modely/2437394.glb --foto foto.jpg --lm landmarky.json --kam start.json --sku 2437394 --pohled c02-lm [--wl 0.004] [--roll (uvolní náklon kamery)] [--cervena 1 (maska podle červené barvy – pro fotografie s kótami)]
 // landmarky.json: {"w":614,"h":800,"body":[[X,Y,Z,px,py,vaha],...]}  (X,Y,Z = souřadnice modelu, Z = z'-133,5; px,py = pixel na fotografii)
 // start.json: výstup kalibruj.py (azim, elev, dist, fov, cx, cy, roll[, vicko]). Výstup: srovnani/<sku>/<pohled>.json s kamerou (kamera.shiftX/Y = (cx-w/2)/w ...).
 import fs from 'node:fs';
@@ -25,11 +25,12 @@ const fitName = opt('fit-pose', null);   // volitelně se fituje úhel jedné sk
 const fixLid = !fitName;
 // projekce (stejné konvence jako render.mjs / kalibruj.py)
 function proj(p, X) {
-  const [az, el, , dist, fov, sx, sy] = p; const a = az * Math.PI / 180, e = el * Math.PI / 180;
+  const [az, el, roll, dist, fov, sx, sy] = p; const a = az * Math.PI / 180, e = el * Math.PI / 180;
   const pos = [dist * Math.cos(e) * Math.cos(a), dist * Math.cos(e) * Math.sin(a), dist * Math.sin(e)];
   const f = pos.map(v => -v / dist); const up = [0, 0, 1];
   const cr = (a, b) => [a[1] * b[2] - a[2] * b[1], a[2] * b[0] - a[0] * b[2], a[0] * b[1] - a[1] * b[0]];
-  let r = cr(f, up); const rl = Math.hypot(...r); r = r.map(v => v / rl); const u = cr(r, f);
+  let r = cr(f, up); const rl = Math.hypot(...r); r = r.map(v => v / rl); let u = cr(r, f);
+  { const ro = roll * Math.PI / 180, c = Math.cos(ro), s = Math.sin(ro); const r2 = r.map((v, i) => v * c + u[i] * s), u2 = r.map((v, i) => -v * s + u[i] * c); r = r2; u = u2; }   // náklon kamery (rotateZ jako v render.mjs)
   const d = [X[0] - pos[0], X[1] - pos[1], X[2] - pos[2]];
   const dot = (a, b) => a[0] * b[0] + a[1] * b[1] + a[2] * b[2];
   const xc = dot(d, r), yc = dot(d, u), zc = dot(d, f), t = Math.tan(fov * Math.PI / 360);
@@ -47,7 +48,7 @@ const cost = async p => {
 };
 if (!fitName) await R.pose(fixPose);
 let p = [st.azim, st.elev, st.roll || 0, st.dist, st.fov, (st.cx - lm.w / 2) / lm.w, (st.cy - lm.h / 2) / lm.h, fitName ? (fixPose[fitName] ?? 80) : 0];
-const steps = [4, 4, 0.0001, p[3] * 0.3, 3, 0.03, 0.03, fixLid ? 0.0001 : 8];
+const steps = [4, 4, process.argv.includes('--roll') ? 0.6 : 0.0001, p[3] * 0.3, 3, 0.03, 0.03, fixLid ? 0.0001 : 8];
 async function nm(x0, steps, iters) {
   const n = x0.length; let pts = [x0.slice()]; for (let i = 0; i < n; i++) { const q = x0.slice(); q[i] += steps[i]; pts.push(q); }
   let vals = []; for (const q of pts) vals.push(await cost(q));

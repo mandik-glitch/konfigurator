@@ -1,0 +1,19 @@
+{
+ "sku": "DWST83346",
+ "pohled": "celo-c03",
+ "foto_repo_cesta": "../../../tmp/claude-0/-home-user-konfigurator/4afe04ea-52af-557e-a8a4-75a8d542e4f9/scratchpad/tstak/c03_box.jpg",
+ "foto_url": null,
+ "pose": {},
+ "kamera": {
+  "azim": -0.2594168343510451,
+  "elev": 13.366427043448127,
+  "roll": 0.0002606312641420847,
+  "dist": 3529.496086083177,
+  "fov": 9.065164628307485,
+  "shiftX": -0.0011344515253588986,
+  "shiftY": -0.15896973175270152,
+  "iou": 0.9887106256443464
+ },
+ "iou": 0.9887106256443464,
+ "poznamka": "Kamera odhadnuta z obrysu fotografie (IoU); ohnisko je pevně zvolené, ne změřené."
+}

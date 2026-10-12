@@ -6,7 +6,8 @@ import { Part, Group, loftRings, rrRing, roundedBox, prism, cylinder, box } from
 import { earcut2 } from '../kufry_hilti/earcut2.mjs';
 export { Part, Group, roundedBox, prism, cylinder, box };
 
-export const S = { H: 302, trim: +(process.env.TSTAK_TRIM || 0) };   // trim = zkrácení zadní strany (jen pro pokusy; ve výsledném modelu 0)                 // aktuální výška kufru (nastavuje build)
+// H = aktuální výška; zadní strana (neviditelná na fotografiích, odhad): rearBody = zadní stěna korpusu, rearMid/rearTop = zadní hrana víka v z' = H−12 a při temeni; trim = zkrácení zadní strany (jen pro pokusy, v modelu 0)
+export const S = { H: 302, trim: 0, rearBody: -158, rearTop: -148, rearMid: -160 };                 // aktuální výška kufru (nastavuje build)
 export const zc = z => z - S.H / 2;
 export const LID_H = 72;                     // výška víka od spáry (odhad z čelní fotografie c02, viz poznámky)
 export const zs = () => S.H - LID_H;         // z' spáry víko/korpus

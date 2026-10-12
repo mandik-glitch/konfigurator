@@ -1,23 +1,19 @@
 {
  "sku": "DWST83346",
  "pohled": "celo-c02",
- "foto_repo_cesta": "DWST83346-1/c02.jpg (mimo repo, scratchpad)",
+ "foto_repo_cesta": "../../../tmp/claude-0/-home-user-konfigurator/4afe04ea-52af-557e-a8a4-75a8d542e4f9/scratchpad/kufry2/DWST83346-1/c02.jpg",
+ "foto_url": null,
  "pose": {},
  "kamera": {
-  "azim": 2,
-  "elev": 11.5,
-  "roll": 0,
-  "dist": 3000,
-  "fov": 10.285529115768483,
-  "poznamka": "téměř ortografický pohled; render i fotografie oříznuty na obrys, render roztažen na rozměr obrysu fotografie; elevace vybrána maximem IoU"
+  "azim": 0.0678998496132917,
+  "elev": 13.4498284535554,
+  "roll": 0.09845374630541777,
+  "dist": 3254.1458613018253,
+  "fov": 8.594686952187587,
+  "shiftX": -0.005319047771906237,
+  "shiftY": -0.004361952920368093,
+  "iou": 0.9892605371673453
  },
- "iou": 0.96989,
- "obrys_foto_px": [
-  2424,
-  1944
- ],
- "obrys_render_px": [
-  1381,
-  1059
- ]
+ "iou": 0.9892605371673453,
+ "poznamka": "Kamera odhadnuta z obrysu fotografie (IoU); ohnisko je pevně zvolené, ne změřené."
 }

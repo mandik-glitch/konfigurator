@@ -4,18 +4,18 @@
  "foto_repo_cesta": "../../../tmp/claude-0/-home-user-konfigurator/4afe04ea-52af-557e-a8a4-75a8d542e4f9/scratchpad/kufry2/DWST83345-1/c02.jpg",
  "foto_url": null,
  "pose": {
-  "drzadlo": 73.1
+  "drzadlo": 73.30021683841485
  },
  "kamera": {
-  "azim": -0.12136413598919951,
-  "elev": 14.366482454034822,
-  "roll": 0.00004124333892873088,
-  "dist": 3220.0373733685014,
-  "fov": 8.606934473914187,
-  "shiftX": 0.003022171539005241,
-  "shiftY": 0.009592645604778252,
-  "iou": 0.9584934810460471
+  "azim": 0.008983602173964371,
+  "elev": 14.939368365062162,
+  "roll": -0.0000012836379765856237,
+  "dist": 3226.189313263734,
+  "fov": 8.633388106816362,
+  "shiftX": 0.004091404664533108,
+  "shiftY": 0.010324036827589537,
+  "iou": 0.9618688515294985
  },
- "iou": 0.9584934810460471,
+ "iou": 0.9618688515294985,
  "poznamka": "Kamera odhadnuta z obrysu fotografie (IoU); ohnisko je pevně zvolené, ne změřené."
 }
