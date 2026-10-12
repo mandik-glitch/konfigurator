@@ -23,8 +23,8 @@ const NOTCHES = [
 ];
 
 function madlo(g) {
-  // černé madlo (šestiúhelník c01) v kapse; zadní strana u dna kapsy (x = 159)
-  g.add(extYZ('cerna', 'madlo', MADLO, 160, 188.8));
+  // černé madlo (šestiúhelník c01) v kapse; zadní strana 1 mm zapuštěná do dna kapsy (x = 159)
+  g.add(extYZ('cerna', 'madlo', MADLO, 158, 188.8));
   // zkosený horní okraj madla (světlejší pás v c01 py 108..125) – jen jemný stupeň
   g.add(extYZ('cerna', 'madlo_rant', [[pY(231), pZ(108)], [pY(510), pZ(108)], [pY(526), pZ(120)], [pY(215), pZ(120)]], 188.6, 189.3));
 }

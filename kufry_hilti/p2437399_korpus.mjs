@@ -52,11 +52,11 @@ function klinSte(g) {
 }
 
 function zamek(g) {
-  // černý stohovací zámek v kapse (c01: černé tělo py 640..745, žebrovaná horní část py 580..640, osa souměrnosti px 370,5); dno kapsy x = 169
-  g.add(extYZ('cerna_mat', 'zamek_cerny', [[-34, 22], [34, 22], [30, 59], [-30, 59]], 167, 178.5));
-  g.add(extYZ('cerna_mat', 'zamek_zebra', [[-29.5, 59], [29.5, 59], [25.5, 81], [-25.5, 81]], 167, 175.5));
-  for (let i = 0; i < 6; i++) { const y = -21 + i * 8.4; g.add(extYZ('seda', 'zamek_zebro', [[y, 60], [y + 3, 60], [y + 6.5, 80], [y + 3.5, 80]], 175.4, 176.1)); }
-  g.add(bx('cerna_mat', 'zamek_zaves', 176, 179.5, -30, 30, 57.5, 60));
+  // černý stohovací zámek v kapse (c01: černé tělo py ~630..730, žebrovaná horní část py 575..640, osa souměrnosti px 370,5); dno kapsy x = 169
+  g.add(extYZ('cerna_mat', 'zamek_cerny', [[-26.5, 26], [26.5, 26], [29.5, 29], [29.5, 60], [-29.5, 60], [-29.5, 29]], 167, 178.5));
+  g.add(extYZ('cerna_mat', 'zamek_zebra', [[-29, 60], [29, 60], [25, 82], [-25, 82]], 167, 175.5));
+  for (let i = 0; i < 6; i++) { const y = -21 + i * 8.4; g.add(extYZ('seda', 'zamek_zebro', [[y, 61], [y + 3, 61], [y + 6.5, 81], [y + 3.5, 81]], 175.4, 176.1)); }
+  g.add(bx('cerna_mat', 'zamek_zaves', 176, 179.5, -29.5, 29.5, 57.5, 60));
 }
 
 function nozky(g) {

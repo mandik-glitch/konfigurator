@@ -10,5 +10,7 @@
   "dist": 10200,
   "fov": 2,
   "poznamka": "téměř ortografický pohled, render oříznut na obrys a roztažen na rozměr fotografie"
- }
+ },
+ "iou": 0.9899,
+ "foto_url": "https://productdata.hilti.com/APQ_HC_f800/L158755.jpg"
 }

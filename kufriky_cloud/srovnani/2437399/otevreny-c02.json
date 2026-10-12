@@ -3,18 +3,20 @@
  "pohled": "otevreny-c02",
  "foto_repo_cesta": "2437399/c02.jpg (mimo repo, scratchpad)",
  "pose": {
-  "vicko": 89.22198939159965
+  "vicko": 89.04354900600828
  },
  "kamera": {
-  "azim": 41.0146391670275,
-  "elev": 48.0214300359861,
-  "dist": 2956.6756117230125,
-  "fov": 17.321548088615124,
+  "azim": 41.24620859973276,
+  "elev": 48.243278420425334,
+  "dist": 2973.3285341997553,
+  "fov": 17.19793036641608,
   "roll": 0,
-  "shiftX": -0.1780015001121661,
-  "shiftY": 0.0734265537755504,
-  "iou": 0.9459208541255657
+  "shiftX": -0.17727965517456368,
+  "shiftY": 0.07298955811213657,
+  "iou": 0.9461758564689506
  },
- "iou": 0.9459208541255657,
- "poznamka": "kamera odhadnuta z obrysu fotografie (fit_2437399.mjs, roll = 0); ohnisko a úhel víka jsou odhad, ne měření"
+ "iou": 0.9462,
+ "poznamka": "kamera odhadnuta z obrysu fotografie (fit_2437399.mjs, roll = 0); ohnisko a úhel víka jsou odhad, ne měření",
+ "foto_url": "https://productdata.hilti.com/APQ_HC_f800/L160230.jpg",
+ "maska": "podle červené barvy (šipky/popisky a pomocná vanička mimo výrobek se nepočítají)"
 }

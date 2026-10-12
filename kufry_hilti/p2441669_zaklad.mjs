@@ -38,7 +38,7 @@ function interp(frames, z) {
 // ---------- výřezy ----------
 // Vlastnosti (feature): {e:'+X'|'+Y'|'-X'|'-Y', s0, s1, z0, z1, at, ring:'o'|'i'|'oi', thru?}
 //  e = stěna (+X čelo, -X zadní, +Y/-Y konce); s0..s1 = rozsah podél stěny ve SVĚTOVÝCH souřadnicích (Y u ±X, X u ±Y);
-//  z0..z1 = výška z'; at = absolutní poloha dna výřezu (vzdálenost od osy kolmo na stěnu; kapsa sahá od stěny k dnu);
+//  z0..z1 = výška z'; at = absolutní poloha dna výřezu (číslo, nebo funkce výšky z' → poloha; mezi z0 a z1 se interpoluje lineárně) (vzdálenost od osy kolmo na stěnu; kapsa sahá od stěny k dnu);
 //  ring: 'o' vnější plocha, 'i' vnitřní (dutina), 'oi' obě (průchozí otvor: u thru se plochy dna výřezu odstraní -> otvor je průchozí).
 // Z vlastností se pro každou stěnu vytvoří disjunktní buňky (rozsahy s) - to je podmínka platného půdorysu (výřezy se nesmí překrývat).
 const EDGE = {
@@ -67,7 +67,8 @@ export function buildCells(features) {
         const frames = [];
         for (const f of fr) {
           const off = ring === 'o' ? BIG : -BIG;                  // "žádná hloubka": vnější plocha → +BIG (kapsa dovnitř), vnitřní → -BIG (kapsa ven do stěny)
-          frames.push({ z: f.z0, at: off, thru: 0 }, { z: f.z0, at: f.at, thru: f.thru ? 1 : 0 }, { z: f.z1, at: f.at, thru: f.thru ? 1 : 0 }, { z: f.z1, at: off, thru: 0 });
+          const a0 = typeof f.at === 'function' ? f.at(f.z0) : f.at, a1 = typeof f.at === 'function' ? f.at(f.z1) : f.at;   // at může být funkce výšky (stěna se svažuje)
+          frames.push({ z: f.z0, at: off, thru: 0 }, { z: f.z0, at: a0, thru: f.thru ? 1 : 0 }, { z: f.z1, at: a1, thru: f.thru ? 1 : 0 }, { z: f.z1, at: off, thru: 0 });
         }
         return frames;
       };
