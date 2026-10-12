@@ -1,0 +1,20 @@
+{
+ "sku": "DWST83294",
+ "pohled": "otevreny-c03",
+ "foto_repo_cesta": "DWST83294-1/c03.jpg (mimo repo, scratchpad)",
+ "pose": {
+  "vicko": 100
+ },
+ "kamera": {
+  "azim": -48.75506178256037,
+  "elev": 20.00283207490168,
+  "roll": 4.567560770990138,
+  "dist": 4058.7063644679392,
+  "fov": 12,
+  "shiftX": 0.06112449695688698,
+  "shiftY": 0.15041166640141299,
+  "iou": 0.9433507804900644
+ },
+ "iou": 0.9433507804900644,
+ "poznamka": "kamera z obrysu fotografie (IoU masky; roll volný); nastroje/fit_ts2.mjs"
+}

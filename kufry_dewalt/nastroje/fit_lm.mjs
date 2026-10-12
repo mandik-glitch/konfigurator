@@ -21,7 +21,8 @@ else execFileSync('python3', [path.join(KC, 'nastroje/foto_maska.py'), foto, mas
 const mb = fs.readFileSync(maskFile); const w = mb.readUInt32LE(0), h = mb.readUInt32LE(4), mask = mb.slice(8);
 const k = w / lm.w;                                   // měřítko landmarků do rozlišení masky
 const R = await new Renderer().open(w, h); await R.load(glb, true); if (hide.length) await R.hide(hide);
-const fixLid = true;   // víko se nefituje (zavřené); pozice skupin jen z --pose
+const fitName = opt('fit-pose', null);   // volitelně se fituje úhel jedné skupiny (např. drzadlo), ostatní z --pose
+const fixLid = !fitName;
 // projekce (stejné konvence jako render.mjs / kalibruj.py)
 function proj(p, X) {
   const [az, el, , dist, fov, sx, sy] = p; const a = az * Math.PI / 180, e = el * Math.PI / 180;
@@ -37,15 +38,16 @@ function proj(p, X) {
 const cost = async p => {
   const [az, el, roll, dist, fov, sx, sy, lid] = p;
   if (fov < 1.2 || fov > 60 || dist < 400 || el < 0 || el > 89) return 9;
+  if (fitName) { if (lid < 0 || lid > 110) return 9; await R.pose({ ...fixPose, [fitName]: lid }); }
   
   const m = await R.mask(kamera({ azim: az, elev: el, dist, fov, roll, shiftX: sx, shiftY: sy }));
   let I = 0, U = 0; for (let i = 0; i < m.length; i++) { const a = m[i], b = mask[i]; if (a & b) I++; if (a | b) U++; }
   let le = 0, ws = 0; for (const [X, Y, Z, px, py, wt = 1] of lm.body) { const q = proj(p, [X, Y, Z]); le += wt * Math.hypot(q[0] - px * k, q[1] - py * k); ws += wt; }
   return (1 - I / U) + WL * (le / ws) / k * 1.0;
 };
-await R.pose(fixPose);
-let p = [st.azim, st.elev, st.roll || 0, st.dist, st.fov, (st.cx - lm.w / 2) / lm.w, (st.cy - lm.h / 2) / lm.h, st.vicko ?? 100];
-const steps = [4, 4, 0.0001, p[3] * 0.3, 3, 0.03, 0.03, fixLid ? 0.0001 : 6];
+if (!fitName) await R.pose(fixPose);
+let p = [st.azim, st.elev, st.roll || 0, st.dist, st.fov, (st.cx - lm.w / 2) / lm.w, (st.cy - lm.h / 2) / lm.h, fitName ? (fixPose[fitName] ?? 80) : 0];
+const steps = [4, 4, 0.0001, p[3] * 0.3, 3, 0.03, 0.03, fixLid ? 0.0001 : 8];
 async function nm(x0, steps, iters) {
   const n = x0.length; let pts = [x0.slice()]; for (let i = 0; i < n; i++) { const q = x0.slice(); q[i] += steps[i]; pts.push(q); }
   let vals = []; for (const q of pts) vals.push(await cost(q));
@@ -64,6 +66,7 @@ async function nm(x0, steps, iters) {
 let r = await nm(p, steps, 150); r = await nm(r.x, steps.map(s => s / 3), 150);
 const q = r.x;
 // vyhodnocení
+if (fitName) await R.pose({ ...fixPose, [fitName]: q[7] });
 
 const m = await R.mask(kamera({ azim: q[0], elev: q[1], dist: q[3], fov: q[4], roll: q[2], shiftX: q[5], shiftY: q[6] }));
 let I = 0, U = 0; for (let i = 0; i < m.length; i++) { const a = m[i], b = mask[i]; if (a & b) I++; if (a | b) U++; }
@@ -71,5 +74,5 @@ const errs = lm.body.map(([X, Y, Z, px, py]) => { const o = proj(q, [X, Y, Z]); 
 await R.close();
 const cam = { azim: q[0], elev: q[1], roll: q[2], dist: q[3], fov: q[4], shiftX: q[5], shiftY: q[6], iou: I / U };
 const outDir = path.join(KC, 'srovnani', sku); fs.mkdirSync(outDir, { recursive: true });
-fs.writeFileSync(path.join(outDir, pohled + '.json'), JSON.stringify({ sku, pohled, foto_repo_cesta: path.basename(path.dirname(foto)) + '/' + path.basename(foto) + ' (mimo repo, scratchpad)', pose: fixPose, kamera: cam, iou: cam.iou, chyby_landmarku_px: errs, poznamka: 'kamera z ručně změřených bodů (kalibruj.py) a doladění překryvem obrysu (fit_lm.mjs)' }, null, 1));
-console.log(JSON.stringify({ iou: cam.iou, pose: fixPose, az: q[0], el: q[1], dist: q[3], fov: q[4], chyby_px: errs }));
+fs.writeFileSync(path.join(outDir, pohled + '.json'), JSON.stringify({ sku, pohled, foto_repo_cesta: path.basename(path.dirname(foto)) + '/' + path.basename(foto) + ' (mimo repo, scratchpad)', pose: fitName ? { ...fixPose, [fitName]: q[7] } : fixPose, kamera: cam, iou: cam.iou, chyby_landmarku_px: errs, poznamka: 'kamera z ručně změřených bodů (kalibruj.py) a doladění překryvem obrysu (fit_lm.mjs)' }, null, 1));
+console.log(JSON.stringify({ iou: cam.iou, pose: fitName ? { ...fixPose, [fitName]: q[7] } : fixPose, az: q[0], el: q[1], dist: q[3], fov: q[4], chyby_px: errs }));

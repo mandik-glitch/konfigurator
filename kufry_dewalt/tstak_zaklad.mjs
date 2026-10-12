@@ -8,7 +8,7 @@ export { Part, Group, roundedBox, prism, cylinder, box };
 
 export const S = { H: 302 };                 // aktuální výška kufru (nastavuje build)
 export const zc = z => z - S.H / 2;
-export const LID_H = 77;                     // výška víka od spáry (odhad z obrysu čelní fotografie c02, viz poznámky)
+export const LID_H = 72;                     // výška víka od spáry (odhad z čelní fotografie c02, viz poznámky)
 export const zs = () => S.H - LID_H;         // z' spáry víko/korpus
 export const zf = () => S.H - 72;            // referenční výška „spáry“ pro prvky změřené z fotografie (z' = H − 72 = 230 u hlubokého)
 

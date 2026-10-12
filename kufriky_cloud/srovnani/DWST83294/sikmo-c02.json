@@ -13,8 +13,16 @@
   "fov": 12,
   "shiftX": 0.018380851436687374,
   "shiftY": -0.034673506309780916,
-  "iou": 0.9625558499070815
+  "iou": 0.9609280754061268
  },
- "iou": 0.9625558499070815,
- "poznamka": "kamera z obrysu fotografie (IoU masky; roll volný); nastroje/fit_ts2.mjs"
+ "iou": 0.9609280754061268,
+ "poznamka": "kamera z obrysu fotografie (IoU masky; roll volný); nastroje/fit_ts2.mjs",
+ "iou_rozliseni_masky": "640x443",
+ "chyby_landmarku_px": [
+  116,
+  82.7,
+  79.5,
+  115.2
+ ],
+ "landmarky_rozmer_fotky_px": "2000px (šířka)"
 }

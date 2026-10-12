@@ -6,9 +6,9 @@ import { Group, S, zs, zf, plne, vana, bx, rb, extXZ, extYZ, vyrez, mirY, Part }
 export const K = {
   yB: 212.5,            // polovina šířky korpusu (c02: 2340 px / 5,507 px/mm = 424,9 mm)
   xR: -158, xHull: 140, // zadní stěna korpusu; čelo „holé“ vany (dno kapsy)
-  xCol: 157, xZona: 152, xPanel: 161,   // čelní plochy: vnější sloupky, zóny západek, střední panel
+  xCol: 157, xZona: 155, xPanel: 161,   // čelní plochy: vnější sloupky, zóny západek, střední panel
   yCol: 171, yPanel: 108,               // hranice sloupek | zóna západky (y=171), zóna | střední panel (y=108)
-  yPk: 86, zPk: 85,                     // kapsa vpředu: polovina šířky, výška (z' 0..85)
+  yPk: 93, zPk: 85,                     // kapsa vpředu: polovina šířky, výška (z' 0..85)
   latY0: 113, latY1: 167,               // západka: y rozsah (absolutní hodnoty)
 };
 
@@ -39,11 +39,12 @@ export function korpus({ celoMadlo = false } = {}) {
   g.add(extYZ('cerna', 'kapsa_jazyk', [[-48, t.zPk + 1], [48, t.zPk + 1], [38, t.zPk - 9], [-38, t.zPk - 9]], t.xHull - 2, t.xPanel - 0.4));
   // svislé drážky ve středním panelu (c01: dvě svislé hrany ~ y ±40, hloubka neověřena)
   for (const y of [-42, 42]) g.add(bx('cerna_mat', 'celo_drazka', t.xPanel - 0.1, t.xPanel + 0.35, y - 1, y + 1, t.zPk + 12, Z - 8));
-  // --- boční kapsy pro stohovací háky (c01 pravý konec): rámeček + tmavá vložka, kapsa je jen naznačena (nevyříznuta) ---
+  // --- boční kapsy pro stohovací háky (c01 pravý konec): rámeček + tmavá vložka; kapsa je jen naznačena (nevyříznuta), vpředu u dna otevřená ---
   {
-    const xa = -18, xb = 112, za = 7, zb = 62, y0 = t.yB - 0.3;
-    const parts = [[xa, xb, za, za + 3], [xa, xb, zb - 3, zb], [xa, xa + 3, za, zb], [xb - 3, xb, za, zb]].map(([a, b, c, e], i) => bx('cerna', 'bok_ramecek' + i + '_p', a, b, y0, y0 + 1.9, c, e));
-    parts.push(bx('cerna_mat', 'bok_kapsa_p', xa + 3, xb - 3, y0, y0 + 0.9, za + 3, zb - 3));
+    const xa = -54, xb = 92, zb = 68, y0 = t.yB - 0.3;
+    const parts = [[xa, xb, zb - 3.5, zb, 'h'], [xa, xa + 3.5, 0, zb, 'r'], [xb - 3.5, xb, 0, zb, 'f']].map(([a, b, c, e, n]) => bx('cerna', 'bok_ramecek_' + n + '_p', a, b, y0, y0 + 1.9, c, e));
+    parts.push(bx('cerna_mat', 'bok_kapsa_p', xa + 3.5, xb - 3.5, y0, y0 + 0.9, 0, zb - 3.5));
+    for (const x of [138, -117]) parts.push(bx('cerna_mat', 'bok_drazka_' + x + '_p', x - 1.5, x + 1.5, y0, y0 + 0.5, 6, Z - 6));
     for (const p of parts) { g.add(p); g.add(mirY(p, p.name.replace(/_p$/, '_l'))); }
   }
   // --- mělký kufr: v kapse sklopné čelní madlo (c01/c02 DWST83345: dva držáky + válcová hmatnice), jen pevný díl ---
@@ -53,7 +54,7 @@ export function korpus({ celoMadlo = false } = {}) {
   }
   // --- západky (pozinkovaný plech): profil v rovině XZ, 3 vylisovaná žebra ---
   const Zf = zf(), zl0 = Zf - 49, zl1 = Zf + 20;
-  const prof = [[153.2, zl0], [155.7, zl0], [155.7, Zf - 5], [165.7, Zf + 6], [165.7, zl1], [163.5, zl1], [163.5, Zf + 8], [153.2, Zf - 3]];
+  const prof = [[156.6, zl0], [158.8, zl0], [158.8, Zf - 8], [165.7, Zf + 4], [165.7, zl1], [163.5, zl1], [163.5, Zf + 6], [156.6, Zf - 6]];
   for (const s of [-1, 1]) {
     const y0 = s > 0 ? K.latY0 : -K.latY1, y1 = s > 0 ? K.latY1 : -K.latY0, nm = s > 0 ? '_p' : '_l';
     g.add(extXZ('pozink', 'zamek' + nm, prof, y0, y1, { crease: 20 }));

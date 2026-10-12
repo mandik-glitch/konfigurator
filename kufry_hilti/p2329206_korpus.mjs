@@ -5,7 +5,7 @@
 import { Group, Part, vanaH, trubka, prstenec, extYZ, bx, rb, cylinder, zc, pX, pY } from './p2329206_zaklad.mjs';
 
 // z' = výška od spodní plochy kufru (0..175). SP = dělicí spára víko/korpus – NENÍ změřena (žádný boční pohled), odhad.
-export const SP = +(process.env.KUF_SP || 100);
+export const SP = +(process.env.KUF_SP || 90);
 export const Z_CAP = 163;          // horní plocha skořepiny víka (dno drážky s logem), odhad
 export const Z_PL = 172;           // plató víka, odhad
 export const Z_PAD = 175;          // vršek stohovacích ploten = celková výška 175 (katalog)

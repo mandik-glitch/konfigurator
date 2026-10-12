@@ -25,13 +25,13 @@ export function korEnds(p) { return [{ fr: [{ z: p.zRim - 86, x0: -160, x1: 78, 
 // žlutá těsnicí linka podél spáry (tenký pás, vyčnívá o ~0,5 mm nad korpus a je kryt přesahem víka)
 function tesneni(g, p) {
   const f = (z) => F(z, 185.0, -185.0, 276.7, 250.7, 26, 22);
-  g.add(prstenec('zluta', 'tesneni', { frames: [f(p.zRim - 3), f(p.zRim + 1.2)], wall: 2.5 }));
+  g.add(prstenec('zluta', 'tesneni', { frames: [f(p.zRim - 5.5), f(p.zRim + 1)], wall: 2.5 }));
 }
 
 function logo(g, p) {
   // logo DEWALT + TOUGHSYSTEM 2.0 jako tenké žluté plošky (písmena z obdélníků) na vybrání štítku; rovina x = xF − panelD
   const x0 = KOR.xF - KOR.panelD - 0.05, x1 = x0 + 0.7, zt = p.zRim;
-  const R = (a, b, c, d) => g.add(bx('zluta', 'logo_dewalt', x0, x1, a, b, zt + c, zt + d));   // y0,y1,z0,z1 (z relativně ke spáře, záporné dolů)
+  const R = (a, b, c, d) => g.add(bx('zluta', 'logo_dewalt', x0, x1, Math.min(a, b), Math.max(a, b), zt + Math.min(c, d), zt + Math.max(c, d)));   // y0,y1,z0,z1 (z relativně ke spáře, záporné dolů)
   const bar = (a, b, c, d) => R(a, b, c, d);
   // horní a dolní linka
   bar(-92, 92, -50, -53.5); bar(-92, 92, -92, -95.5);
@@ -44,14 +44,11 @@ function logo(g, p) {
     if (ch === 'E') { bar(a, a + st, zA, zB); bar(a, b, zB - st, zB); bar(a, b - 3, (zA + zB) / 2 - st / 2, (zA + zB) / 2 + st / 2); bar(a, b, zA, zA + st); }
     if (ch === 'W') { bar(a, a + st, zA + 3, zB); bar(b - st, b, zA + 3, zB); bar(m - st / 2, m + st / 2, zA + 3, zB - 8); bar(a, b, zA, zA + st); }
     if (ch === 'A') { bar(a, a + st, zA, zB - 6); bar(b - st, b, zA, zB - 6); bar(a + 3, b - 3, zB - st, zB); bar(a, b, (zA + zB) / 2 - st / 2, (zA + zB) / 2 + st / 2); }
-    if (ch === 'L') { bar(a, a + st, zA, zB); bar(a, b - 3, zA, zA + st); }
+    if (ch === 'L') { bar(a, a + st, zA, zB); bar(a, b, zA, zA + st); }
     if (ch === 'T') { bar(a, b, zB - st, zB); bar(m - st / 2, m + st / 2, zA, zB); }
   });
-  // TOUGHSYSTEM 2.0: pás jednotlivých „písmen“ (svislé tahy), výška 17 (z −99 … −116)
-  const zc0 = -116, zc1 = -99;
-  let yy = -90;
-  for (let i = 0; i < 15; i++) { const w2 = i < 5 ? 7.5 : 5.5; bar(yy, yy + (i < 5 ? 5.5 : 3.6), zc0, zc1); yy += w2 + 0.9; if (i === 4) bar(yy - 1, yy + 2, zc0, zc0 + 3); }
-  bar(yy + 2, yy + 20, zc0, zc1 - 6);
+  // TOUGHSYSTEM 2.0: schematicky tři ploché pásy (TOUGH tučně, SYSTEM tenčí, 2.0 tučně), výška 17 (z −99 … −116)
+  bar(-92, -22, -116, -99); bar(-19, 52, -113, -102); bar(56, 92, -116, -99);
 }
 
 function zapadky(g, p) {
@@ -61,10 +58,10 @@ function zapadky(g, p) {
     // spodní (dlouhý) díl páky v kapse korpusu: z' zRim−120 … zRim−4, šířka 62
     g.add(rb('cerna_mat', 'zapadka_paka', { x0: xp + 1, x1: KOR.xF - 0.9, y0: yc - 31, y1: yc + 31, z0: zRim - 120, z1: zRim - 4, rc: 2, re: 1.5, seg: 2, fs: 2 }));
     for (const k of [-18, -6, 6, 18]) g.add(bx('cerna', 'zapadka_zebro', KOR.xF - 1.2, KOR.xF - 0.45, yc + k - 1, yc + k + 1, zRim - 100, zRim - 60));
-    // drátový třmen (pozink): dvě svislé větve + spodní příčka
+    // drátový třmen (pozink), spodní polovina: dvě svislé větve + spodní příčka; horní polovina je na víku (ts2_vicko.mjs)
     const xw = xp + 5.5;
-    const path = [[xw, yc - 40, zRim + 48], [xw, yc - 40, zRim + 10], [xw, yc - 40, zRim - 100], [xw, yc - 39, zRim - 106], [xw, yc - 33, zRim - 108.5], [xw, yc + 33, zRim - 108.5], [xw, yc + 39, zRim - 106], [xw, yc + 40, zRim - 100], [xw, yc + 40, zRim + 10], [xw, yc + 40, zRim + 48]];
-    g.add(tube('seda_svetla', 'zapadka_drat', path.map(q => [q[0], q[1], zc(q[2])]), 2.3, 8));
+    const path = [[xw, yc - 40, zRim - 1], [xw, yc - 40, zRim - 100], [xw, yc - 39, zRim - 106], [xw, yc - 33, zRim - 108.5], [xw, yc + 33, zRim - 108.5], [xw, yc + 39, zRim - 106], [xw, yc + 40, zRim - 100], [xw, yc + 40, zRim - 1]];
+    g.add(tube('seda_svetla', 'zapadka_drat_spodni', path.map(q => [q[0], q[1], zc(q[2])]), 2.3, 8));
   }
 }
 

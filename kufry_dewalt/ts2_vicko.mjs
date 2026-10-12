@@ -1,7 +1,7 @@
 // Víko DeWalt ToughSystem 2.0: dutý plášť (stěna 3 mm) s přesahem u spáry, zkosenou horní hranou, kapsami horních částí západek v rozích čela,
 // vybráním štítku v čele, kapsou sklopného madla v horní ploše (madlo = samostatná skupina `drzadlo`), žlutými čepy na koncích a pantovými články.
 // Vnitřek víka je hladký (zjednodušeno; ve skutečnosti žebrování).
-import { Group, vickoPlast, vana, extYZ, extXZ, bx, rb, cylX, cylinder, tube, zc } from './ts2_zaklad.mjs';
+import { Group, vickoPlast, vana, prstenec, extYZ, extXZ, bx, rb, cylX, cylinder, tube, zc } from './ts2_zaklad.mjs';
 import { par, F, nl, D } from './ts2_par.mjs';
 import { KOR } from './ts2_korpus.mjs';
 
@@ -53,8 +53,17 @@ function hornDilyZapadek(g, p) {
     const yc = s * yLatch;
     // horní žebrovaná část páky (na víku): z' zRim+4 … zRim+54, šířka 66; rozteč žeber 4 × 14
     g.add(rb('cerna_mat', 'zapadka_hlava', { x0: xp + 1, x1: 185.0, y0: yc - 33, y1: yc + 33, z0: zRim + 4, z1: zRim + 54, rc: 2, re: 1.5, seg: 2, fs: 2 }));
+    const xw = xp + 5.5, path = [[xw, yc - 40, zRim - 1], [xw, yc - 40, zRim + 44], [xw, yc - 37, zRim + 48], [xw, yc + 37, zRim + 48], [xw, yc + 40, zRim + 44], [xw, yc + 40, zRim - 1]];
+    g.add(tube('seda_svetla', 'zapadka_drat_horni', path.map(q => [q[0], q[1], zc(q[2])]), 2.3, 8));
     for (const k of [-21, -7, 7, 21]) g.add(bx('cerna', 'zapadka_zebro_hlava', 184.4, 185.2, yc + k - 1.2, yc + k + 1.2, zRim + 12, zRim + 50));
   }
+}
+function lemVnitrni(g, p) {
+  // žlutý vnitřní lem víka (těsnění) u spodního okraje, uvnitř stěny; kopíruje kapsy západek posunuté o stěnu (3 mm), viditelný jen z vnitřní strany
+  const { zRim } = p, w = 3;
+  const nn = vickoNotches(p).map(n => ({ fr: n.fr.map(f => ({ ...f, y0: f.y0 - w - 0.4, y1: f.y1 + w + 0.4, nx: f.nx - w - 0.4 })) }));
+  const f = z => F(z, 182.4, -182.4, 274, 248, 26, 19);
+  g.add(prstenec('zluta', 'lem_vicka', { frames: [f(zRim + 0.4), f(zRim + 9)], notches: nn, wall: 3 }));
 }
 function pant(g, p) {
   // horní (víkové) články pantu na zadní straně (sudé úseky); tvar přibližný, zadní strana na fotografiích není vidět
@@ -67,7 +76,7 @@ export function vicko(p) {
   const g = new Group('vicko', { pivot: [p.pivotVicko[0], p.pivotVicko[1], zc(p.pivotVicko[2])], extras: { osa: [0, -1, 0], max_uhel: 105 } });
   const O3 = kapsa(g, p);
   g.add(vickoPlast('cerna', 'vicko_plast', { frames: vickoFrames(p), notches: vickoNotches(p), wall: 3, topT: 3, holes: [{ ...OT(), z: p.H }] }));
-  zluteDily(g, p); hornDilyZapadek(g, p); pant(g, p);
+  zluteDily(g, p); hornDilyZapadek(g, p); lemVnitrni(g, p); pant(g, p);
   return g;
 }
 

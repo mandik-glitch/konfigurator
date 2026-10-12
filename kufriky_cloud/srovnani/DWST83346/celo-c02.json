@@ -4,20 +4,20 @@
  "foto_repo_cesta": "DWST83346-1/c02.jpg (mimo repo, scratchpad)",
  "pose": {},
  "kamera": {
-  "azim": 0,
+  "azim": 2,
   "elev": 11.5,
   "roll": 0,
   "dist": 3000,
   "fov": 10.285529115768483,
   "poznamka": "téměř ortografický pohled; render i fotografie oříznuty na obrys, render roztažen na rozměr obrysu fotografie; elevace vybrána maximem IoU"
  },
- "iou": 0.96846,
+ "iou": 0.96989,
  "obrys_foto_px": [
   2424,
   1944
  ],
  "obrys_render_px": [
-  1382,
-  1053
+  1381,
+  1059
  ]
 }

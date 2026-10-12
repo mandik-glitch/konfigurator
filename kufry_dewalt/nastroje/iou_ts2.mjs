@@ -18,8 +18,16 @@ const cam = kamera({ azim: c.azim, elev: c.elev, dist: c.dist, fov: c.fov, roll:
 const R = await new Renderer().open(w, h); await R.load(glb, true); if (j.pose && Object.keys(j.pose).length) await R.pose(j.pose);
 const m = await R.mask(cam); let I = 0, U = 0, Mo = 0, Fo = 0;
 for (let i = 0; i < m.length; i++) { const a = m[i], b = mask[i]; if (a & b) I++; if (a | b) U++; }
+let lmErr = null, lmPr = null;
+if (opt('lm', null)) {   // nezávislá kontrola: ručně změřené landmarky (3D bod modelu ↔ pixel fotografie) promítnuté fitovanou kamerou (stejná projekce jako render)
+  const lm = JSON.parse(fs.readFileSync(opt('lm'))), k = w / lm.w;
+  const pr = await R.page.evaluate(pts => pts.map(([X, Y, Z]) => { const v = new THREE.Vector3(X, Y, Z).project(camera); const cv = renderer.domElement; return [(v.x * 0.5 + 0.5) * cv.width, (1 - (v.y * 0.5 + 0.5)) * cv.height]; }), lm.body.map(b => b.slice(0, 3)));
+  lmPr = pr.map(q => [Math.round(q[0] / k), Math.round(q[1] / k)]);
+  lmErr = lm.body.map((b, i) => +(Math.hypot(pr[i][0] - b[3] * k, pr[i][1] - b[4] * k) / k).toFixed(1));
+}
 await R.close();
 const iou = I / U; console.log(pohled, 'IoU', iou.toFixed(4), JSON.stringify(j.pose));
+if (lmErr) { j.chyby_landmarku_px = lmErr; j.landmarky_rozmer_fotky_px = opt('lm') ? JSON.parse(fs.readFileSync(opt('lm'))).w + 'px (šířka)' : null; console.log('landmarky: chyby [px fotografie]', lmErr.join(', '), ' projekce:', JSON.stringify(lmPr)); }
 j.iou = iou; j.kamera.iou = iou; j.iou_rozliseni_masky = `${w}x${h}`; fs.writeFileSync(jf, JSON.stringify(j, null, 1));
 if (opt('png', '1') !== '0') {
   const len = +opt('len', 1100), sc = len / Math.max(w, h), W = Math.round(w * sc), H = Math.round(h * sc);

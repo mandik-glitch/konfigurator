@@ -1,21 +1,36 @@
 {
  "sku": "DWST83346",
  "pohled": "sikmo-c01",
- "foto_repo_cesta": "../../../tmp/claude-0/-home-user-konfigurator/4afe04ea-52af-557e-a8a4-75a8d542e4f9/scratchpad/kufry2/DWST83346-1/c01.jpg",
- "foto_url": null,
+ "foto_repo_cesta": "DWST83346-1/c01.jpg (mimo repo, scratchpad)",
  "pose": {
-  "drzadlo": 80
+  "drzadlo": 38.187102353556114
  },
  "kamera": {
-  "azim": 31.207338054962513,
-  "elev": 15.053344710999577,
-  "roll": -0.000014695415931148304,
-  "dist": 7425.055312630326,
-  "fov": 4.014074972319818,
-  "shiftX": 0.04116065804742906,
-  "shiftY": -0.007338662219596424,
-  "iou": 0.9069544894090801
+  "azim": 26.56521336805177,
+  "elev": 16.817832411698873,
+  "roll": 0.0003566924419428122,
+  "dist": 5182.643908124311,
+  "fov": 6.089537727410556,
+  "shiftX": 0.003916031878329255,
+  "shiftY": -0.0020745158177203817,
+  "iou": 0.9687450475094571
  },
- "iou": 0.9069544894090801,
- "poznamka": "Kamera odhadnuta z obrysu fotografie (IoU); ohnisko je pevně zvolené, ne změřené."
+ "iou": 0.9687450475094571,
+ "chyby_landmarku_px": [
+  61.5,
+  92.5,
+  26.6,
+  70.1,
+  31.2,
+  4.5,
+  69.3,
+  61.8,
+  79.2,
+  82.9,
+  89.5,
+  83,
+  84.7,
+  89.6
+ ],
+ "poznamka": "kamera z ručně změřených bodů (kalibruj.py) a doladění překryvem obrysu (fit_lm.mjs)"
 }

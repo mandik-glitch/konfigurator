@@ -27,6 +27,7 @@ const M = makeMask(MASKLEN);
 const lm = opt('lm', null) ? JSON.parse(fs.readFileSync(opt('lm'))) : null;
 const WL = +opt('wl', 0.004);
 let pose0 = parsePose(opt('pose', '')); const free = opt('free', '').split(',').filter(Boolean);
+const lim = {}; for (const kv of opt('lim', '').split(',').filter(Boolean)) { const [k, v] = kv.split('='); const [a, b] = v.split(':').map(Number); lim[k] = [a, b]; }
 const fixFov = opt('fov', null) !== null; const fov0 = +opt('fov', opt('fov0', 18));
 const iouOf = (m, mask) => { let I = 0, U = 0; for (let i = 0; i < m.length; i++) { const a = m[i], b = mask[i]; if (a & b) I++; if (a | b) U++; } return U ? I / U : 0; };
 // projekce landmarku (stejné konvence jako render.mjs)
@@ -74,6 +75,7 @@ else {
     const f = fixFov ? fov0 : fv;
     if (f < 4 || f > 45 || dist < 300 || Math.abs(roll) > 15 || el < -80 || el > 89.5) return 9;
     const pz = { ...pose }; if (!telo) free.forEach((n, i) => { pz[n] = fp[i]; });
+    for (const n of Object.keys(lim)) if (pz[n] !== undefined && (pz[n] < lim[n][0] || pz[n] > lim[n][1])) return 9;
     if (Object.keys(pz).length) await R.pose(pz);
     const c = { azim: az, elev: el, dist, fov: f, roll, shiftX: sx, shiftY: sy };
     const m = await R.mask(kamera(c));
@@ -90,7 +92,7 @@ else {
   if (telo) {
     await R.hide([]);
     // pózy (madlo, víko) při pevné kameře proti plné masce
-    const G = async pp => { const pz = { ...pose }; free.forEach((n, i) => { pz[n] = pp[i]; }); await R.pose(pz); return 1 - iouOf(await R.mask(kamera(c0)), M.m); };
+    const G = async pp => { const pz = { ...pose }; free.forEach((n, i) => { pz[n] = pp[i]; }); for (const n of Object.keys(lim)) if (pz[n] !== undefined && (pz[n] < lim[n][0] || pz[n] > lim[n][1])) return 9; await R.pose(pz); return 1 - iouOf(await R.mask(kamera(c0)), M.m); };
     if (free.length) { const r2 = await nm(G, free.map(n => pose[n] ?? 0), free.map(() => 8), 80); free.forEach((n, i) => { pose[n] = r2.x[i]; }); }
   }
   if (Object.keys(pose).length) await R.pose(pose);
