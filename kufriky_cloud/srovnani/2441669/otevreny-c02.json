@@ -1,0 +1,26 @@
+{
+ "sku": "2441669",
+ "pohled": "otevreny-c02",
+ "foto_repo_cesta": "2441669/c02.jpg (mimo repo, scratchpad)",
+ "pose": {},
+ "kamera": {
+  "azim": 42.12617992628975,
+  "elev": 50.717867958470535,
+  "roll": -3.3062421235545303e-06,
+  "dist": 10986.633272486753,
+  "fov": 3.196966975353309,
+  "shiftX": -0.005838300919399241,
+  "shiftY": 0.009289733429257287,
+  "iou": 0.9758059545090304
+ },
+ "iou": 0.9758059545090304,
+ "chyby_landmarku_px": [
+  3.2,
+  3.8,
+  3.7,
+  3.5,
+  4.8,
+  10.3
+ ],
+ "poznamka": "kamera z ru\u010dn\u011b zm\u011b\u0159en\u00fdch bod\u016f (kalibruj.py) a dolad\u011bn\u00ed p\u0159ekryvem obrysu (fit_lm.mjs)"
+}

@@ -22,4 +22,5 @@ f=Image.open(sys.argv[1]).convert('RGB'); m=Image.open(sys.argv[2]).convert('RGB
 b=Image.blend(f,m,0.5)
 o=Image.new('RGB',(f.width*3,f.height),'white'); o.paste(f,(0,0)); o.paste(m,(f.width,0)); o.paste(b,(2*f.width,0)); o.save(sys.argv[3])
 `, foto, png, out]);
+if (opt('vlastni-render', null)) { fs.copyFileSync(png, path.join(KC, 'srovnani', sku, opt('vlastni-render'))); }   // jen náš render (ne fotografie) do repa
 console.log(out);

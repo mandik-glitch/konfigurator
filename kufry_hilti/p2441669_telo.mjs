@@ -85,11 +85,11 @@ function okenkaTmava(g) {
   }
 }
 function vetraky(g) {
-  // 6 větracích otvorů na zkosené horní hraně každého konce (c02/c03: čtvercové otvory ~15 mm v řadě); tmavé plošky ležící na rampě (odhad polohy)
+  // 6 větracích otvorů na zkosené horní hraně každého konce (c02/c03: řada 6 čtvercových otvorů, rozteč ~22 mm, rozměr ~16-20 mm - odhad); tmavé plošky ležící na rampě (odhad polohy)
   const sl = Math.atan2(279 - 258.9, 270 - 244) * 180 / Math.PI;     // sklon rampy
   const yc = 257, zcR = 279 - (yc - 244) * (279 - 258.9) / (270 - 244);
   for (const sY of [1, -1]) for (let k = -2.5; k <= 2.5; k++) {
-    const p = box('cerna_mat', 'vetrak', -7.2, 7.2, -9, 9, -0.6, 0.45).rot('x', -sl * sY).move(k * 22.3, sY * yc, zc(zcR));
+    const p = box('cerna_mat', 'vetrak', -8.2, 8.2, -10, 10, -0.6, 0.45).rot('x', -sl * sY).move(k * 22.3, sY * yc, zc(zcR));
     g.add(p);
   }
 }

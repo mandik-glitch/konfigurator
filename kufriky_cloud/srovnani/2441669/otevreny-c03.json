@@ -4,16 +4,23 @@
  "foto_repo_cesta": "2441669/c03.jpg (mimo repo, scratchpad)",
  "pose": {},
  "kamera": {
-  "azim": 41.40649955263937,
-  "elev": 54.0207497819308,
-  "roll": -0.00017466361384647151,
-  "dist": 3216.8207962760557,
-  "fov": 11.90178600098468,
-  "shiftX": 0.051923787680803316,
-  "shiftY": -0.0006201431516812718,
-  "iou": 0.9652446449603737
+  "azim": 42.078417879311175,
+  "elev": 50.799543117532394,
+  "roll": 2.418747257960741e-05,
+  "dist": 12760.28451730551,
+  "fov": 2.988209360791534,
+  "shiftX": 0.0630520047961192,
+  "shiftY": -0.00788569886125941,
+  "iou": 0.9755199001469611
  },
- "iou": 0.9652446449603737,
- "chyby_landmarku_px": [],
- "poznamka": "kamera z ručně změřených bodů (kalibruj.py) a doladění překryvem obrysu (fit_lm.mjs)"
+ "iou": 0.9755199001469611,
+ "chyby_landmarku_px": [
+  2.7,
+  1.4,
+  3.1,
+  2.9,
+  0.4,
+  6.9
+ ],
+ "poznamka": "kamera z ru\u010dn\u011b zm\u011b\u0159en\u00fdch bod\u016f (kalibruj.py) a dolad\u011bn\u00ed p\u0159ekryvem obrysu (fit_lm.mjs)"
 }
