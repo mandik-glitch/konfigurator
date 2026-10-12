@@ -1,0 +1,28 @@
+{
+ "sku": "2329206",
+ "pohled": "scan_sp70",
+ "foto_repo_cesta": "2329206/c02.jpg (mimo repo, scratchpad)",
+ "pose": {
+  "vicko": 105.57232090335216
+ },
+ "kamera": {
+  "azim": -0.07285901857331506,
+  "elev": 71.32951916333997,
+  "roll": -0.0003241383720725325,
+  "dist": 2981.3298549262445,
+  "fov": 15.856229224022009,
+  "shiftX": -0.0037269974337438144,
+  "shiftY": 0.21162908506375194,
+  "iou": 0.9749172309494939
+ },
+ "iou": 0.9749172309494939,
+ "chyby_landmarku_px": [
+  0.1,
+  1.5,
+  3.5,
+  5.5,
+  1,
+  11.7
+ ],
+ "poznamka": "kamera z ručně změřených bodů (kalibruj.py) a doladění překryvem obrysu (fit_lm_2329206.mjs)"
+}

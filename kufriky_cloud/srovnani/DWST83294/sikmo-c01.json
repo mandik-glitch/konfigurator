@@ -1,0 +1,21 @@
+{
+ "sku": "DWST83294",
+ "pohled": "sikmo-c01",
+ "foto_repo_cesta": "../../../tmp/claude-0/-home-user-konfigurator/4afe04ea-52af-557e-a8a4-75a8d542e4f9/scratchpad/kufry2/DWST83294-1/c01.jpg",
+ "foto_url": null,
+ "pose": {
+  "drzadlo": 90
+ },
+ "kamera": {
+  "azim": 26.661521644667204,
+  "elev": 15.489598097519682,
+  "roll": 2.2403842773699223,
+  "dist": 1905.3654363039557,
+  "shiftX": -0.006102213532425021,
+  "shiftY": -0.038927820690636175,
+  "fov": 20.12216087754838,
+  "iou": 0.9263581559660439
+ },
+ "iou": 0.9263581559660439,
+ "poznamka": "Kamera odhadnuta z obrysu fotografie (IoU); ohnisko je pevně zvolené, ne změřené."
+}

@@ -1,0 +1,21 @@
+{
+ "sku": "2329229",
+ "pohled": "otevreny-c03",
+ "foto_repo_cesta": "../../../tmp/claude-0/-home-user-konfigurator/4afe04ea-52af-557e-a8a4-75a8d542e4f9/scratchpad/kufry2/2329229/c03.jpg",
+ "foto_url": null,
+ "pose": {
+  "vicko": 135.69995425986988
+ },
+ "kamera": {
+  "azim": -0.07244938439977056,
+  "elev": 82.04568695702949,
+  "roll": -0.0008740381476341546,
+  "dist": 1390.1276330401195,
+  "fov": 28.751733528328472,
+  "shiftX": -0.004059341957211128,
+  "shiftY": 0.21967971676081696,
+  "iou": 0.8823611518222296
+ },
+ "iou": 0.8823611518222296,
+ "poznamka": "Kamera odhadnuta z obrysu fotografie (IoU); ohnisko je pevně zvolené, ne změřené."
+}

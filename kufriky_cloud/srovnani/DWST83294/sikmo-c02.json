@@ -1,0 +1,20 @@
+{
+ "sku": "DWST83294",
+ "pohled": "sikmo-c02",
+ "foto_repo_cesta": "DWST83294-1/c02.jpg (mimo repo, scratchpad)",
+ "pose": {
+  "vicko": 0
+ },
+ "kamera": {
+  "azim": -39.81870520831147,
+  "elev": 15.866838384222552,
+  "roll": -2.852121406810678,
+  "dist": 2539.314342920163,
+  "fov": 12,
+  "shiftX": 0.018380851436687374,
+  "shiftY": -0.034673506309780916,
+  "iou": 0.9625558499070815
+ },
+ "iou": 0.9625558499070815,
+ "poznamka": "kamera z obrysu fotografie (IoU masky; roll volný); nastroje/fit_ts2.mjs"
+}

@@ -1,0 +1,14 @@
+{
+ "sku": "2329206",
+ "pohled": "shora",
+ "foto_repo_cesta": "2329206/c01.jpg (mimo repo, scratchpad)",
+ "pose": {},
+ "kamera": {
+  "azim": 180,
+  "elev": 89.97,
+  "roll": 0,
+  "dist": 10000,
+  "fov": 4.924403459172575,
+  "poznamka": "téměř ortografický pohled, render oříznut na obrys a roztažen na rozměr fotografie"
+ }
+}

@@ -1,0 +1,26 @@
+{
+ "sku": "DWST83294",
+ "pohled": "zavreny-c02",
+ "foto_repo_cesta": "DWST83294-1/c02.jpg (mimo repo, scratchpad)",
+ "pose": {
+  "vicko": -0.00006752693347977077
+ },
+ "kamera": {
+  "azim": -42.73910468882863,
+  "elev": 14.46909839847908,
+  "roll": -0.00003662909451857601,
+  "dist": 1532.8929661672296,
+  "fov": 20.643046133918315,
+  "shiftX": 0.025261340964403384,
+  "shiftY": -0.08884135369911234,
+  "iou": 0.8644517463794572
+ },
+ "iou": 0.8644517463794572,
+ "chyby_landmarku_px": [
+  0.3,
+  19.3,
+  40.3,
+  0.1
+ ],
+ "poznamka": "kamera z ručně změřených bodů (kalibruj.py) a doladění překryvem obrysu (fit_lm.mjs)"
+}

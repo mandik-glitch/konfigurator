@@ -1,0 +1,16 @@
+{
+ "sku": "8215526",
+ "pohled": "c09-celo",
+ "foto_repo_cesta": "821552-6/c09.jpg (scratchpad, mimo repo)",
+ "pose": {
+  "madlo": 0
+ },
+ "kamera": {
+  "azim": 0,
+  "elev": 0,
+  "roll": 0,
+  "dist": 8000,
+  "fov": 6.153375027770294,
+  "poznamka": "téměř ortografický pohled, render oříznut na obrys a roztažen na rozměr fotografie"
+ }
+}

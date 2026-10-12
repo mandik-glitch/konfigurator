@@ -1,0 +1,14 @@
+{
+ "sku": "2294834",
+ "pohled": "celo",
+ "foto_repo_cesta": "2294834/c01.jpg (mimo repo, scratchpad)",
+ "pose": {},
+ "kamera": {
+  "azim": 180,
+  "elev": 89.99,
+  "roll": 0,
+  "dist": 6000,
+  "fov": 8.198378308707966,
+  "poznamka": "téměř ortografický pohled, render oříznut na obrys a roztažen na rozměr fotografie"
+ }
+}
