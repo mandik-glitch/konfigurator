@@ -1,0 +1,16 @@
+{
+ "sku": "2437354",
+ "pohled": "celo",
+ "foto_repo_cesta": "(fotografie mimo repo, jen ve scratchpadu)",
+ "pose": {},
+ "kamera": {
+  "azim": 0,
+  "elev": 0,
+  "roll": 0,
+  "dist": 14400,
+  "fov": 2,
+  "poznamka": "téměř ortografický pohled, render oříznut na obrys a roztažen na rozměr fotografie"
+ },
+ "foto_url": "https://productdata.hilti.com/APQ_HC_f2000/L153710.jpg (c01, 1200 px)",
+ "iou": 0.9842
+}

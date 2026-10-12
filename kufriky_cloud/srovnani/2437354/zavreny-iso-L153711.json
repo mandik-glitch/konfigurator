@@ -1,0 +1,21 @@
+{
+ "sku": "2437354",
+ "pohled": "zavreny-iso-L153711",
+ "foto_repo_cesta": "(fotografie mimo repo, jen ve scratchpadu)",
+ "foto_url": "https://productdata.hilti.com/APQ_HC_f2000/L153711_ISO.jpg (na hilti.cz jen 250x234 px, pro masku zvětšeno 4x)",
+ "pose": {
+  "vicko": 0
+ },
+ "kamera": {
+  "azim": 40.462874630133584,
+  "elev": 20.89345146666149,
+  "roll": -8.398298380167596e-05,
+  "dist": 8175.634160076355,
+  "fov": 4.123634619573892,
+  "shiftX": -0.014794005001170764,
+  "shiftY": 0.00852886979767875,
+  "iou": 0.9661
+ },
+ "iou": 0.9661,
+ "poznamka": "Kamera z ručně změřených bodů (kufry_hilti/zdroje/landmarky/2437354_zavreny-iso-L153711_vstup.json; kalibruj.py) a doladění překryvem obrysu (fit_lm.mjs); IoU z nastroje/iou_kamera.mjs. Ohnisko není změřené."
+}

@@ -1,0 +1,21 @@
+{
+ "sku": "2437354",
+ "pohled": "otevreny-c02",
+ "foto_repo_cesta": "(fotografie mimo repo, jen ve scratchpadu)",
+ "foto_url": "https://productdata.hilti.com/APQ_HC_f2000/L156512.jpg (c02, 834x1200 px)",
+ "pose": {
+  "vicko": 91.4659408556439
+ },
+ "kamera": {
+  "azim": 42.73238467323941,
+  "elev": 49.99676592088338,
+  "roll": -0.00016649986036167407,
+  "dist": 4060.6454183985543,
+  "fov": 13.753148698908268,
+  "shiftX": -0.05474492690546366,
+  "shiftY": 0.14557485761773356,
+  "iou": 0.9553
+ },
+ "iou": 0.9553,
+ "poznamka": "Kamera z ručně změřených bodů (kufry_hilti/zdroje/landmarky/2437354_otevreny-c02_vstup.json; kalibruj.py) a doladění překryvem obrysu (fit_lm.mjs); IoU z nastroje/iou_kamera.mjs. Ohnisko není změřené."
+}
