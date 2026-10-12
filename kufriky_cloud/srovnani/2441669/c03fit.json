@@ -1,0 +1,26 @@
+{
+ "sku": "2441669",
+ "pohled": "c03fit",
+ "foto_repo_cesta": "2441669/c03.jpg (mimo repo, scratchpad)",
+ "pose": {},
+ "kamera": {
+  "azim": 42.078417879311175,
+  "elev": 50.799543117532394,
+  "roll": 0.00002418747257960741,
+  "dist": 12760.28451730551,
+  "fov": 2.988209360791534,
+  "shiftX": 0.0630520047961192,
+  "shiftY": -0.00788569886125941,
+  "iou": 0.9755199001469611
+ },
+ "iou": 0.9755199001469611,
+ "chyby_landmarku_px": [
+  2.7,
+  1.4,
+  3.1,
+  2.9,
+  0.4,
+  6.9
+ ],
+ "poznamka": "kamera z ručně změřených bodů (kalibruj.py) a doladění překryvem obrysu (fit_lm.mjs)"
+}
