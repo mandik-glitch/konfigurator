@@ -1,0 +1,16 @@
+{
+ "sku": "2437355",
+ "pohled": "celo",
+ "foto_repo_cesta": "c01.jpg (L153708; mimo repo, scratchpad)",
+ "pose": {},
+ "kamera": {
+  "azim": 0,
+  "elev": 0,
+  "roll": 0,
+  "dist": 10200,
+  "fov": 2,
+  "poznamka": "téměř ortografický pohled, render oříznut na obrys a roztažen na rozměr fotografie"
+ },
+ "foto_url": "https://productdata.hilti.com/APQ_HC_f800/L153708.jpg",
+ "iou": 0.9894
+}

@@ -1,0 +1,19 @@
+{
+ "sku": "2437355",
+ "pohled": "zavreny-iso-L153709",
+ "foto_repo_cesta": "L153709_f2000.jpg (mimo repo, scratchpad)",
+ "foto_url": "https://productdata.hilti.com/APQ_HC_f2000/L153709.jpg",
+ "pose": {},
+ "kamera": {
+  "azim": 39.53162245942838,
+  "elev": 20.12044863959909,
+  "roll": 2.765477875835865e-05,
+  "dist": 8823.453355929632,
+  "fov": 2.288105111612143,
+  "shiftX": -0.01607871300261875,
+  "shiftY": 0.01614692293286655,
+  "iou": 0.9487687733475643
+ },
+ "iou": 0.9487687733475643,
+ "poznamka": "Kamera z 4 ručně změřených bodů (šrouby čepů západek, rovina čela) a doladění překryvem obrysu (nastroje/fit_lm_2437355.mjs); dlouhé ohnisko (fov ~2,3°, téměř ortografický pohled). Hloubka (osa X) kamerou není omezena landmarky – část zbytkové odchylky obrysu je chyba kamery, ne modelu."
+}
