@@ -84,6 +84,11 @@ export function vyrez(mat, name, x0, x1, y0, y1, z0, z1) {
   q([x1, y1, b], [x1, y1, a], [x1, y0, a], [x1, y0, b]);       // stěna x1, normála −x
   q([x1, y0, b], [x1, y0, a], [x0, y0, a], [x0, y0, b]);       // stěna y0, normála +y
   q([x0, y1, b], [x0, y1, a], [x1, y1, a], [x1, y1, b]);       // stěna y1, normála −y
+  // stěny i z druhé strany (víko otevřené: kapsa vidět zespodu / bez průhledu)
+  q([x0, y1, b], [x0, y1, a], [x0, y0, a], [x0, y0, b]);
+  q([x1, y0, b], [x1, y0, a], [x1, y1, a], [x1, y1, b]);
+  q([x0, y0, b], [x0, y0, a], [x1, y0, a], [x1, y0, b]);
+  q([x1, y1, b], [x1, y1, a], [x0, y1, a], [x0, y1, b]);
   return p;
 }
 // kvádr v z'

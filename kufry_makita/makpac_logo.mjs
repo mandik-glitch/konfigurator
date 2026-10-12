@@ -9,7 +9,7 @@ const G = {
   i: { adv: 0.42, s: [[[0, 0], [0, 0.6]], [[0, 0.82], [0, 0.98]]] },
   t: { adv: 0.62, s: [[[0.12, 0], [0.12, 0.88]], [[-0.08, 0.6], [0.4, 0.6]]] },
 };
-export const LOGO_P = { xc: 97, w: 190, h: 33, z: 0 };
+export const LOGO_P = { xc: 104, w: 212, h: 29, z: 0 };
 
 export function logo(V, { xc = LOGO_P.xc, w = LOGO_P.w, h = LOGO_P.h } = {}) {
   const txt = 'Makita', shear = 0.28, sw = 0.19;

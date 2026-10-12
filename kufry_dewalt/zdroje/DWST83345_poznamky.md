@@ -22,15 +22,20 @@ Stejně jako u hlubokého: samostatná skupina `vicko` (pivot [−160, 0, spára
 
 ## Odhad (hodnota není z fotografie přímo měřitelná)
 - Hloubky čelních panelů, římsy, kapsy, boční kapsy, tloušťky stěn – stejně jako u DWST83346.
-- Tvar madla v kapse (držáky + válcová hmatnice) a jeho hloubka v kapse (x 140,5…156) jsou zjednodušené; skutečné madlo má výřez, hmatník s vroubky a jazyk – z jedné čelní a jedné šikmé fotografie nelze určit. Madlo je modelováno jako pevný díl.
-- Výška korpusu: model ji bere jako H − 72 = 90 mm. Hrubé přímé měření z c02 (bez perspektivy) dávalo ≈ 83 mm; po zahrnutí kamery z překryvu v rámu fotografie sedí 90 mm lépe, ale odchylka ±3 mm zůstává.
+- Tvar madla v kapse (držáky + válcová hmatnice) a jeho hloubka v kapse (x 140,5…156) jsou zjednodušené; skutečné madlo má výřez, hmatník s vroubky a jazyk – z jedné čelní a jedné šikmé fotografie nelze určit. Madlo je modelováno jako pevný díl; v obrysu fotografie vyčnívá hmatnice o ~5 mm pod spodek korpusu, v modelu ne (obálka výšky 162 mm z datasheetu).
+- Výška korpusu: model ji bere jako H − 72 = 90 mm (víko 72 mm jako u hlubokého). Přímé měření px → mm z c02 bez perspektivy dávalo ≈ 83 mm; perspektivní překryv (IoU 0,974) s 90 mm sedí v obrysu i uvnitř (spára, štítky, západky), odchylka ±3 mm ale zůstává.
 
 ## Výsledky porovnání (IoU obrysu v rámu fotografie, `nastroje/srovnej_vse_tstak.sh`)
-@@IOU@@
+Metoda: stejná jako u DWST83346 (kamera z ručních landmarků + překryv obrysu v rámu fotografie, volné azimut/elevace/náklon/vzdálenost/ohnisko/posun a úhel držadla; `nastroje/fit_lm.mjs`, `landmarky/DWST83345_*_lm.json`). Kamera ani ohnisko nejsou změřené.
+| pohled | fotografie | IoU | kamera (azim / elev / náklon / vzdálenost / fov) | poznámka |
+|---|---|---:|---|---|
+| `celo-c02` | c02 (čelo, držadlo zvednuté) | **0,974** | 0,0° / 14,7° / 0,4° / 3,25 m / 8,5°; držadlo 54° | střední chyba landmarků ≈ 2 mm; zbylé rozdíly: výška držadla, spodek hmatnice v kapse (fotografie o ~5 mm níž) |
+| `sikmo-c01` | c01 (šikmo zprava, držadlo zvednuté) | **0,964** | 24,7° / 16,4° / 2,7° / 4,94 m / 6,3°; držadlo 66° | střední chyba landmarků ≈ 5 mm; hmatnice v kapse vyčnívá pod spodek korpusu |
+c03 se nepoužívá (viz tabulka fotografií). Dvojice a průsvitné překryvy byly prohlédnuty. Výstupy bez fotografií: `kufriky_cloud/srovnani/DWST83345/<pohled>.png|json`.
 
 ## Neověřeno / zjednodušeno
 - **Zadní strana, pant, spodek, vnitřek:** na fotografiích nejsou (c03 možná ukazuje spodek/zadek, ale nepodařilo se ho spolehlivě přiřadit). Zadní stěna rovná, spodek rovný se zkosením, vnitřek hladká vana, víko dutý plášť.
-- **Hloubka 333 mm** (z datasheetu) dodržena; stejná poznámka jako u hlubokého – obrys v šikmém c01 by vycházel lépe s mírně kratší zadní stranou.
+- **Hloubka 333 mm** (z datasheetu) dodržena, zadní strana je odhad (stejně jako u hlubokého; zkrácení zadku se při překryvu c01 nepotvrdilo).
 - Stohovací hák na konci a boční kapsa (jen rámeček + tmavá vložka) jsou naznačeny; kinematika západek a držadel není modelována (pevné díly kromě `vicko`, `drzadlo`).
 - Povrchová struktura, nápisy a logo (jen žlutá ploška), text na štítcích.
 - Materiály: `cerna`, `cerna_mat`, `zluta`, `pozink` (západky), `cira` (kryt štítku); `seda_svetla` se nepoužívá.

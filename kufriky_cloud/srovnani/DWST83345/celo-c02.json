@@ -1,21 +1,21 @@
 {
  "sku": "DWST83345",
  "pohled": "celo-c02",
- "foto_repo_cesta": "../../../tmp/claude-0/-home-user-konfigurator/4afe04ea-52af-557e-a8a4-75a8d542e4f9/scratchpad/kufry2/DWST83345-1/c02.jpg",
- "foto_url": null,
+ "foto_repo_cesta": "scratchpad session: kufry2/DWST83345-1/c02.jpg (mimo repo, jen ke čtení)",
+ "foto_url": "https://assets.dewalt.cz/EMEA/PRODUCT/IMAGES/HIRES/WHITEBG/DWST83345-1_2_2560.webp",
  "pose": {
-  "drzadlo": 73.30021683841485
+  "drzadlo": 54.076737253602495
  },
  "kamera": {
-  "azim": 0.008983602173964371,
-  "elev": 14.939368365062162,
-  "roll": -0.0000012836379765856237,
-  "dist": 3226.189313263734,
-  "fov": 8.633388106816362,
-  "shiftX": 0.004091404664533108,
-  "shiftY": 0.010324036827589537,
-  "iou": 0.9618688515294985
+  "azim": 0.029378142764597083,
+  "elev": 14.746773581475004,
+  "roll": 0.4431930868008761,
+  "dist": 3252.2863001301876,
+  "fov": 8.541324452751,
+  "shiftX": 0.005033386057654819,
+  "shiftY": 0.011635109046714696,
+  "iou": 0.973943171297401
  },
- "iou": 0.9618688515294985,
- "poznamka": "Kamera odhadnuta z obrysu fotografie (IoU); ohnisko je pevně zvolené, ne změřené."
+ "iou": 0.973943171297401,
+ "poznamka": "Kamera (azim, elev, roll, dist, fov, posun hlavního bodu) odhadnuta z ručních landmarků (kufry_dewalt/zdroje/landmarky/) a překryvu obrysu v rámu fotografie (kufry_dewalt/nastroje/fit_lm.mjs, Nelder–Mead); ohnisko není změřené. U fotografií se zvednutým držadlem je fitován i úhel skupiny drzadlo (pose). IoU = obrys modelu vs. maska fotografie (díry vyplněny) v rozlišení 480 px."
 }

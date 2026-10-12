@@ -36,3 +36,4 @@ for r in "${POHLEDY[@]}"; do
   (cd ../../kufriky_cloud && node render/srovnej.mjs --glb ../kufry_dewalt/modely/$K.glb --foto "$F" --sku $K --pohled $P --reuse ${POSEJ:+--pose $POSEJ} --len 1600 | tail -1 | cut -c1-120)
   python3 -I prekryv.py "$F" ../../kufriky_cloud/srovnani/$K/$P.png "$KUF_SCRATCH/${K}_${P}_prekryv.png" 0.5
 done
+python3 -I anotuj_json.py

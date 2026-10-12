@@ -1,8 +1,8 @@
 {
  "sku": "DWST83346",
  "pohled": "celo-c02",
- "foto_repo_cesta": "../../../tmp/claude-0/-home-user-konfigurator/4afe04ea-52af-557e-a8a4-75a8d542e4f9/scratchpad/kufry2/DWST83346-1/c02.jpg",
- "foto_url": null,
+ "foto_repo_cesta": "scratchpad session: kufry2/DWST83346-1/c02.jpg (mimo repo, jen ke čtení)",
+ "foto_url": "https://assets.dewalt.cz/EMEA/PRODUCT/IMAGES/HIRES/WHITEBG/DWST83346-1_2_2560.webp",
  "pose": {},
  "kamera": {
   "azim": 0.0678998496132917,
@@ -15,5 +15,5 @@
   "iou": 0.9892605371673453
  },
  "iou": 0.9892605371673453,
- "poznamka": "Kamera odhadnuta z obrysu fotografie (IoU); ohnisko je pevně zvolené, ne změřené."
+ "poznamka": "Kamera (azim, elev, roll, dist, fov, posun hlavního bodu) odhadnuta z ručních landmarků (kufry_dewalt/zdroje/landmarky/) a překryvu obrysu v rámu fotografie (kufry_dewalt/nastroje/fit_lm.mjs, Nelder–Mead); ohnisko není změřené. U fotografií se zvednutým držadlem je fitován i úhel skupiny drzadlo (pose). IoU = obrys modelu vs. maska fotografie (díry vyplněny) v rozlišení 480 px."
 }
