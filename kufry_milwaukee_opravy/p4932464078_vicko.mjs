@@ -53,6 +53,7 @@ export function vicko() {
   // chromový držák (drátěná oka) uprostřed zadní hrany víka
   const dr = [[-236, -46, zc(336)], [-236, -46, zc(362)], [-236, -30, zc(374)], [-236, 30, zc(374)], [-236, 46, zc(362)], [-236, 46, zc(336)]];
   g.add(tube('ocel', 'vicko_drzak', dr, 3.0, 8));
+  for (const z of zapadky()) g.addGroup(z);
   return g;
 }
 
