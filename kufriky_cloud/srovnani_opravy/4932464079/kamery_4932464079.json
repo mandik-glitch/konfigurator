@@ -1,0 +1,56 @@
+{
+ "c01": {
+  "z_kontroly": {
+   "azim": 31.31,
+   "elev": 12.35,
+   "dist": 1688.22,
+   "fov": 23.88,
+   "cx": 615.53,
+   "cy": 684.94,
+   "roll": 0,
+   "zt": 94.58,
+   "rms_px": 11.4,
+   "w": 1200,
+   "h": 1200,
+   "uhel_viko_deg_kontrola": null,
+   "iou_john": 0.895,
+   "iou_poznamka_john": "IoU jen těla: z fotky vyříznuta oblast zvednutého držadla (v modelu je sklopené); kamera jen z landmarků; model zbytek bez úprav"
+  }
+ },
+ "c02": {
+  "z_kontroly": {
+   "azim": 22.11,
+   "elev": 43.33,
+   "dist": 3245.96,
+   "fov": 16.94,
+   "cx": 590.81,
+   "cy": 770.04,
+   "roll": 0,
+   "zt": 86.41,
+   "rms_px": 18.1,
+   "w": 1200,
+   "h": 1200,
+   "uhel_viko_deg_kontrola": -95,
+   "iou_john": 0.9398,
+   "iou_poznamka_john": "úhel víka −95° (rotace uzlů víka kolem osy pantů v modelu) DOFITOVÁN podle IoU, proto IoU není nezávislý důkaz tvaru víka; tělo: kamera jen z landmarků"
+  }
+ },
+ "c03": {
+  "z_kontroly": {
+   "azim": 21.2,
+   "elev": 43.81,
+   "dist": 3093.13,
+   "fov": 22.83,
+   "cx": 490.51,
+   "cy": 700.25,
+   "roll": 0,
+   "zt": 84.81,
+   "rms_px": 6.3,
+   "w": 1200,
+   "h": 1200,
+   "uhel_viko_deg_kontrola": -95,
+   "iou_john": 0.9227,
+   "iou_poznamka_john": "úhel víka −95° dofitován; oddělená vložka vyloučena z masky fotky; kamera z landmarků (rms 6 px)"
+  }
+ }
+}

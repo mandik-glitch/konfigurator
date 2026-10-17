@@ -1,0 +1,20 @@
+{
+ "c01": {
+  "z_kontroly": {
+   "azim": -0.48,
+   "elev": 78.69,
+   "dist": 4754.42,
+   "fov": 10.49,
+   "cx": 569.77,
+   "cy": 797.41,
+   "roll": 0,
+   "zt": null,
+   "rms_px": 2.4,
+   "w": 1200,
+   "h": 1200,
+   "uhel_viko_deg_kontrola": -118,
+   "iou_john": 0.9092,
+   "iou_poznamka_john": "kamera jen ze 4 rohů těla (téměř kolmý pohled, fov ≈ 10°, el ≈ 79°), 4 body na 6 parametrů: rms 2,4 px je zavádějící, kamera je slabě určená (perspektiva víka nejistá, IoU víka jen orientační); úhel víka −118° DOFITOVÁN podle IoU; svěšené třmeny západek vyloučeny z masky"
+  }
+ }
+}

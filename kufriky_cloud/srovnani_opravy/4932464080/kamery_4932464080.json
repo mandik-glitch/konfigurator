@@ -1,0 +1,38 @@
+{
+ "c01": {
+  "z_kontroly": {
+   "azim": 31.59,
+   "elev": 10.58,
+   "dist": 1243.16,
+   "fov": 31.89,
+   "cx": 614.43,
+   "cy": 536.04,
+   "roll": 0,
+   "zt": 29.11,
+   "rms_px": 19.5,
+   "w": 1200,
+   "h": 1200,
+   "uhel_viko_deg_kontrola": null,
+   "iou_john": 0.8441,
+   "iou_poznamka_john": "kamera jen z landmarků (rms 19 px; dva body mají zbytek ≈ 30–35 px, tj. nejistota kamery je tady největší); IoU celého obrysu"
+  }
+ },
+ "c02": {
+  "z_kontroly": {
+   "azim": 15.11,
+   "elev": 33.54,
+   "dist": 3647.65,
+   "fov": 16.79,
+   "cx": 640.66,
+   "cy": 745.24,
+   "roll": 0,
+   "zt": 30.19,
+   "rms_px": 2.4,
+   "w": 1200,
+   "h": 1200,
+   "uhel_viko_deg_kontrola": -92,
+   "iou_john": 0.8847,
+   "iou_poznamka_john": "úhel víka −92° (osa pantů v modelu) DOFITOVÁN podle IoU → není nezávislý důkaz; rms 2,4 px je optimistické (7 parametrů na 12 rovnic); vyloučeny boční přihrádky a svěšené třmeny; tělo: kamera z landmarků"
+  }
+ }
+}
