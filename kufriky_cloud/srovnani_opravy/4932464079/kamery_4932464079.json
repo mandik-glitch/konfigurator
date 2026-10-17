@@ -14,7 +14,18 @@
    "h": 1200,
    "uhel_viko_deg_kontrola": null,
    "iou_john": 0.895,
-   "iou_poznamka_john": "IoU jen těla: z fotky vyříznuta oblast zvednutého držadla (v modelu je sklopené); kamera jen z landmarků; model zbytek bez úprav"
+   "iou_poznamka_john": "IoU jen t\u011bla: z fotky vy\u0159\u00edznuta oblast zvednut\u00e9ho dr\u017eadla (v modelu je sklopen\u00e9); kamera jen z landmark\u016f; model zbytek bez \u00faprav"
+  },
+  "z_obrysu_v1": {
+   "azim": 32.248,
+   "elev": 11.92,
+   "dist": 1698.435,
+   "fov": 23.685,
+   "cx": 611.748,
+   "cy": 688.032,
+   "roll": 0,
+   "w": 1200,
+   "h": 1200
   }
  },
  "c02": {
@@ -32,7 +43,7 @@
    "h": 1200,
    "uhel_viko_deg_kontrola": -95,
    "iou_john": 0.9398,
-   "iou_poznamka_john": "úhel víka −95° (rotace uzlů víka kolem osy pantů v modelu) DOFITOVÁN podle IoU, proto IoU není nezávislý důkaz tvaru víka; tělo: kamera jen z landmarků"
+   "iou_poznamka_john": "\u00fahel v\u00edka \u221295\u00b0 (rotace uzl\u016f v\u00edka kolem osy pant\u016f v modelu) DOFITOV\u00c1N podle IoU, proto IoU nen\u00ed nez\u00e1visl\u00fd d\u016fkaz tvaru v\u00edka; t\u011blo: kamera jen z landmark\u016f"
   }
  },
  "c03": {
@@ -50,7 +61,7 @@
    "h": 1200,
    "uhel_viko_deg_kontrola": -95,
    "iou_john": 0.9227,
-   "iou_poznamka_john": "úhel víka −95° dofitován; oddělená vložka vyloučena z masky fotky; kamera z landmarků (rms 6 px)"
+   "iou_poznamka_john": "\u00fahel v\u00edka \u221295\u00b0 dofitov\u00e1n; odd\u011blen\u00e1 vlo\u017eka vylou\u010dena z masky fotky; kamera z landmark\u016f (rms 6 px)"
   }
  }
 }

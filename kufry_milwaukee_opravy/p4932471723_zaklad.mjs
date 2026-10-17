@@ -85,6 +85,16 @@ export function kit(V) {
     if (H.length) { capHoles(p, O, H, x1, true); capHoles(p, O, H, x0, false); } else { capPoly(p, O, x1, true); capPoly(p, O, x0, false); }
     p.mapV((u, v, w) => [w, u, v]); return p;
   };
+  // extruze obrysu s otvory v rovině XZ podél Y (outer, holes = [[x, z']...]), y0..y1
+  o.extXZh = (mat, name, outer, holes, y0, y1, { crease = 25 } = {}) => {
+    const p = new Part(name, mat); p.crease = crease; const f = P => P.map(([x, z]) => [x, zc(z)]);
+    const O = ccw(dedup(f(outer))), H = holes.map(h => cw(dedup(f(h))));
+    wall(p, O, y0, y1); for (const h of H) wall(p, h, y0, y1);
+    if (H.length) { capHoles(p, O, H, y1, true); capHoles(p, O, H, y0, false); } else { capPoly(p, O, y1, true); capPoly(p, O, y0, false); }
+    p.mapV((u, v, w) => [u, w, v]); p.flip(); return p;
+  };
+  // rotační těleso kolem osy X: prof = [[r, x]...] (zdola od menšího x), střed (y, z')
+  o.latheX = (mat, name, prof, y, z, n = 24) => lathe(mat, name, prof, n, [0, 0, 0]).mapV((u, v, w) => [w, u + y, v + zc(z)]);
   // těleso z vrstev s libovolnými obrysy (polygon se stejným počtem bodů v celé skupině): sloupec = pole {z, pts}
   o.sloupec = (mat, name, layers, opt) => o.loft(mat, name, layers, opt);
   // nosník po cestě (cesta v z')
@@ -102,21 +112,21 @@ const G = {
   O: [[[1, 0], [0, 1], [0, 5], [1, 6], [3, 6], [4, 5], [4, 1], [3, 0], [1, 0]]], T: [[[0, 6], [4, 6]], [[2, 6], [2, 0]]], 'a': [[[0, 3], [3, 3], [4, 2], [3, 0], [0, 0], [0, 3]]],
 };
 // text → seznam úseček [[x0,y0,x1,y1]] v jednotkách mm, výška h, počátek vlevo dole; vrací také šířku
-export function textSegs(str, h, gap = 1.6) {
-  const s = h / 6, segs = []; let x = 0;
+export function textSegs(str, h, gap = 1.6, ax = 1) {
+  const s = h / 6, sxx = s * ax, segs = []; let x = 0;
   for (const ch of str) {
-    if (ch === ' ') { x += 3 * s; continue; }
-    const g = G[ch]; if (!g) { x += 5 * s; continue; }
-    for (const pl of g) for (let i = 0; i + 1 < pl.length; i++) segs.push([x + pl[i][0] * s, pl[i][1] * s, x + pl[i + 1][0] * s, pl[i + 1][1] * s]);
-    x += (4 + gap) * s;
+    if (ch === ' ') { x += 3 * sxx; continue; }
+    const g = G[ch]; if (!g) { x += 5 * sxx; continue; }
+    for (const pl of g) for (let i = 0; i + 1 < pl.length; i++) segs.push([x + pl[i][0] * sxx, pl[i][1] * s, x + pl[i + 1][0] * sxx, pl[i + 1][1] * s]);
+    x += (4 + gap) * sxx;
   }
-  return { segs, w: x - gap * s };
+  return { segs, w: x - gap * sxx };
 }
 // tahy textu jako tenké hranoly na ploše: plane 'Y+' (čelo +Y), 'Y-', 'X+', 'X-' (čitelné zvenku); u0 = počátek textu vodorovně (ve směru čtení: Y+ → -X, Y- → +X, X+ → +Y, X- → -Y),
 // z0 = z' spodní hrany textu, h = výška písma, d = vyvýšení nad plochu `face`, t = tloušťka tahu
 export function napisFn(zc) {
-  return (mat, name, str, { plane, face, u0, z0, h, d = 0.6, t }) => {
-    const { segs } = textSegs(str, h); const tt = t ?? h / 6 * 0.8; const p = new Part(name, mat); p.crease = 5;
+  return (mat, name, str, { plane, face, u0, z0, h, d = 0.6, t, ax = 1 }) => {
+    const { segs } = textSegs(str, h, 1.6, ax); const tt = t ?? h / 6 * 0.8; const p = new Part(name, mat); p.crease = 5;
     for (const [a, b, c, e] of segs) {
       const dx = c - a, dy = e - b, L = Math.hypot(dx, dy) || 1e-3, nx = -dy / L * tt / 2, ny = dx / L * tt / 2, ex = dx / L * tt / 2, ey = dy / L * tt / 2;
       const q = [[a - ex + nx, b - ey + ny], [c + ex + nx, e + ey + ny], [c + ex - nx, e + ey - ny], [a - ex - nx, b - ey - ny]];
@@ -131,7 +141,7 @@ export function napisFn(zc) {
     return p;
   };
 }
-export const textWidth = (str, h) => textSegs(str, h).w;
+export const textWidth = (str, h, ax = 1) => textSegs(str, h, 1.6, ax).w;
 
 // kontrola orientace: znaménkový objem sítě (kladný = normály ven)
 export function objem(part) { let v = 0; const P = part.pos, I = part.idx; for (let t = 0; t < I.length; t += 3) { const a = I[t] * 3, b = I[t + 1] * 3, c = I[t + 2] * 3; v += (P[a] * (P[b + 1] * P[c + 2] - P[b + 2] * P[c + 1]) - P[a + 1] * (P[b] * P[c + 2] - P[b + 2] * P[c]) + P[a + 2] * (P[b] * P[c + 1] - P[b + 1] * P[c])) / 6; } return v; }

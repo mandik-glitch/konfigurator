@@ -3,7 +3,7 @@
 // Moduly: p4932464078_korpus (vana, čelo, lišty, boční madla, zadní stěna), _vicko (víko + západky), _madlo (dvoustupňové madlo), _kola (kola); společné: p4932464078_zaklad.
 import { Group } from './p4932464078_zaklad.mjs';
 import { korpus, zc } from './p4932464078_korpus.mjs';
-import { vicko } from './p4932464078_vicko.mjs';
+import { vicko, zapadky } from './p4932464078_vicko.mjs';
 import { madlo } from './p4932464078_madlo.mjs';
 import { kolo } from './p4932464078_kola.mjs';
 
@@ -16,6 +16,7 @@ export function build() {
   const root = new Group(SKU);
   root.addGroup(korpus());
   root.addGroup(vicko());
+  for (const z of zapadky()) root.addGroup(z);
   root.addGroup(madlo());
   root.addGroup(kolo('kolo_P', { cx: -112, cz: zc(112.5), yIn: 194.5, yOut: 280.5 }));
   root.addGroup(kolo('kolo_L', { cx: -112, cz: zc(112.5), yIn: -194.5, yOut: -280.5 }));

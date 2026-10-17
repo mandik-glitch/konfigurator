@@ -10,7 +10,8 @@ const HERE = path.dirname(fileURLToPath(import.meta.url)), REPO = path.join(HERE
 const opt = (k, d) => { const i = process.argv.indexOf('--' + k); return i > 0 ? process.argv[i + 1] : d; };
 const sku = opt('sku'), pohledy = opt('pohled').split(','), out = opt('out');
 const glb = opt('glb', path.join(HERE, '../modely', sku + '.glb'));
-const SKLOPENY = { '4932472129:c02': -90, '4932472130:c02': -90, '4932493189:c03': -90, '4932493190:c03': -90 };   // fotky se sklopeným třmenem (viz report R5)
+// fotky se sklopeným třmenem: c02/c03 (report R5) a všechny fotky s vysunutými zásuvkami (na nich třmen není vidět – překážel by zásuvkám)
+const SKLOPENY = { '4932472129:c02': -90, '4932472130:c02': -90, '4932493189:c03': -90, '4932493189:c04': -90, '4932493189:c05': -90, '4932493190:c03': -90, '4932493190:c04': -90, '4932493190:c05': -90, '4932493190:c06': -90 };
 fs.mkdirSync(out, { recursive: true });
 const R = await new Renderer().open(1200, 1200);
 async function pose2(p) {
@@ -35,8 +36,9 @@ for (const pohled of pohledy) {
   const tr = opt('trmen') !== undefined ? +opt('trmen') : SKLOPENY[sku + ':' + pohled];
   if (tr !== undefined) pose['trmen'] = tr;
   const c = kj.kamera, cam = kamera({ azim: c.azim, elev: c.elev, dist: c.dist, fov: c.fov, roll: c.roll || 0, shiftX: c.shiftX || 0, shiftY: c.shiftY || 0 });
-  await R.load(glb, true); await pose2(pose); await R.png(cam, path.join(out, `${sku}_${pohled}_maska.png`));
-  await R.load(glb, false); await pose2(pose); await R.png(cam, path.join(out, `${sku}_${pohled}_model.png`));
+  const bezPrepazek = (sku + ':' + pohled) === '4932493190:c05';          // na fotce c05 (3190) je vysunutá zásuvka bez přepážek
+  await R.load(glb, true); if (bezPrepazek) await R.hide(['prepazk']); await pose2(pose); await R.png(cam, path.join(out, `${sku}_${pohled}_maska.png`));
+  await R.load(glb, false); if (bezPrepazek) await R.hide(['prepazk']); await pose2(pose); await R.png(cam, path.join(out, `${sku}_${pohled}_model.png`));
   console.log(sku, pohled, JSON.stringify(pose));
 }
 await R.close();

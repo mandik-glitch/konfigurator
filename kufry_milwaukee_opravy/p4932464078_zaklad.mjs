@@ -145,3 +145,44 @@ export function ringSolid(mat, name, outer, inner, z0, z1, { innerWall = true, o
 }
 // deska s libovolným polygonem a zaoblením všech rohů (rovné okraje)
 export const plate = (mat, name, pts, r, z0, z1, n = 3) => ext(mat, name, roundPoly(ccw(pts), pts.map(() => r), n), z0, z1);
+
+// ---------- zjednodušený "tahový" font pro loga (plochá červená písmena, tloušťka 0,6 mm; normála +X) ----------
+const GL = {
+  M: [[[0, 0], [0, 1], [.5, .42], [1, 1], [1, 0]]], I: [[[.5, 0], [.5, 1]]], L: [[[0, 1], [0, 0], [1, 0]]],
+  W: [[[0, 1], [.25, 0], [.5, .62], [.75, 0], [1, 1]]], A: [[[0, 0], [.5, 1], [1, 0]], [[.2, .35], [.8, .35]]],
+  U: [[[0, 1], [0, .15], [.3, 0], [.7, 0], [1, .15], [1, 1]]], K: [[[0, 0], [0, 1]], [[1, 1], [0, .45], [1, 0]]],
+  E: [[[1, 1], [0, 1], [0, 0], [1, 0]], [[0, .5], [.8, .5]]], P: [[[0, 0], [0, 1], [1, 1], [1, .5], [0, .5]]],
+  C: [[[1, .88], [.7, 1], [.3, 1], [0, .8], [0, .2], [.3, 0], [.7, 0], [1, .12]]],
+  O: [[[.3, 0], [.7, 0], [1, .2], [1, .8], [.7, 1], [.3, 1], [0, .8], [0, .2], [.3, 0]]], T: [[[0, 1], [1, 1]], [[.5, 1], [.5, 0]]],
+};
+// napis(text, {x, y, z, h, mat, sklon, bok}) – písmena v rovině YZ na ploše X = x; y = střed textu (Y), z = střed výšky (model Z), h = výška písmen; bok = +1 (normála +X) / -1
+export function napis(text, { x, y, z, h, mat = 'cervena', sklon = 0.22, tl = 0.17, bok = 1, mezera = 0.38, sirka = 0.62 }) {
+  const out = [], cw = h * sirka, gap = h * mezera, tot = text.length * cw + (text.length - 1) * gap;
+  let cursor = y - tot / 2;
+  for (const ch of text) {
+    const strokes = GL[ch];
+    if (strokes) for (const st of strokes) for (let k = 0; k + 1 < st.length; k++) {
+      const P = st[k], Q = st[k + 1];
+      const p = [cursor + (P[0] + sklon * P[1]) * cw, z - h / 2 + P[1] * h], q = [cursor + (Q[0] + sklon * Q[1]) * cw, z - h / 2 + Q[1] * h];
+      const dy = q[0] - p[0], dz = q[1] - p[1], L = Math.hypot(dy, dz) || 1, ny = -dz / L * h * tl / 2, nz = dy / L * h * tl / 2, ex = dy / L * h * tl / 2, ez = dz / L * h * tl / 2;
+      const poly = [[p[0] - ex + ny, p[1] - ez + nz], [q[0] + ex + ny, q[1] + ez + nz], [q[0] + ex - ny, q[1] + ez - nz], [p[0] - ex - ny, p[1] - ez - nz]];
+      const part = extYZ(mat, 'logo_' + ch, poly, x, x + 0.7 * bok, 25);
+      out.push(part);
+    }
+    cursor += cw + gap;
+  }
+  return out;
+}
+// blesk (zubatý polygon pod nápisem) v rovině YZ: y0..y1 zleva doprava, střed z, výška h
+export function blesk(mat, x, y0, y1, z, h, bok = 1) {
+  const w = y1 - y0, P = [[0, .55], [.55, .5], [.5, .65], [1, .3], [.45, .4], [.5, .25]].map(([u, v]) => [y0 + u * w, z + (v - .45) * h]);
+  return extYZ(mat, 'logo_blesk', P, x, x + 0.7 * bok, 25);
+}
+
+// rotační těleso kolem osy Z z UZAVŘENÉHO profilu (poslední bod se napojí na první, bez víček): [r,z] zdola nahoru po vnější straně a zpět po vnitřní
+export function latheClosed(mat, name, prof, n = 24, center = [0, 0, 0]) {
+  const p = new Part(name, mat);
+  const rings = prof.map(([r, z]) => { const R = []; for (let i = 0; i < n; i++) { const a = 2 * Math.PI * i / n; R.push([center[0] + r * Math.cos(a), center[1] + r * Math.sin(a), center[2] + z]); } return R; });
+  loftRings(p, rings, { closed: true });
+  return p;
+}

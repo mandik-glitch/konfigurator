@@ -1,0 +1,22 @@
+{
+ "sku": "4932480623",
+ "pohled": "kolo3_c03",
+ "foto": "c03.jpg (jen ve scratchpadu, mimo repo)",
+ "kamera": {
+  "azim": 2.1702702268304934,
+  "elev": 20.47498966684575,
+  "dist": 1762.9228659740481,
+  "fov": 21.562000483706186,
+  "roll": 0,
+  "shiftX": 0.006526656102627511,
+  "shiftY": -0.010817549638008907
+ },
+ "kamera_zdroj": "../../../tmp/claude-0/-home-user-konfigurator/4afe04ea-52af-557e-a8a4-75a8d542e4f9/scratchpad/out/kam03.json",
+ "pose": {
+  "dvirka": 90
+ },
+ "skryto": [],
+ "iou": 0.9396,
+ "iou_rozliseni_px": "600x600",
+ "poznamka": "IoU = průnik/sjednocení obrysu modelu a produktu na fotografii při dané kameře; kamera je z ručních bodů (ne dofitovaná na tento model), proto IoU není důkaz tvaru."
+}

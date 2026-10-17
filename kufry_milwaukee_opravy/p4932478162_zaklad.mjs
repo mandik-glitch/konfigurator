@@ -102,23 +102,23 @@ const GLYF = {
   e: [[[0.05, 0.3], [0.95, 0.3], [0.95, 0.45], [0.75, 0.62], [0.25, 0.62], [0.05, 0.45], [0.05, 0.17], [0.25, 0], [0.75, 0], [0.95, 0.12]]],
 };
 // text → díl (cervena) v rovině X = x0 .. x0+t; počátek (yc = střed textu, zb = spodek), výška h, šířka znaku cw, mezera gap, šířka tahu w; skos = zešikmení (italic) v mm na výšku
-export function textYZ(mat, name, str, { x0, t = 1.2, yc, zb, h, cw, gap = 0.2, w = 2.2, skew = 0, mirror = false }) {
+export function textYZ(mat, name, str, { x0, t = 1.2, yc, zb, h, cw, gap = 0.2, w = 2.2, skew = 0, mirror = false, wid = { i: 0.3, l: 0.3, M: 1.15, w: 1.2, T: 0.95, A: 1.05, K: 1.0 } }) {
   const p = new Part(name, mat); p.crease = 20;
-  const adv = cw * (1 + gap), total = adv * str.length - cw * gap;
+  const adv = ch => cw * (wid[ch] ?? 1) * (1 + gap);
+  let total = 0; for (const ch of str) total += adv(ch); total -= cw * gap;
   let u0 = -total / 2;
   for (const ch of str) {
-    const g = GLYF[ch];
+    const g = GLYF[ch], cwc = cw * (wid[ch] ?? 1);
     if (g) for (const stroke of g) {
-      const pts = stroke.map(([u, v]) => { const yy = u0 + u * cw + skew * v * h; return [mirror ? yc - yy : yc + yy, zb + v * h]; });
+      const pts = stroke.map(([u, v]) => { const yy = u0 + u * cwc + skew * v * h; return [mirror ? yc - yy : yc + yy, zb + v * h]; });
       for (let i = 0; i < pts.length - 1; i++) {
         const a = pts[i], b = pts[i + 1], dy = b[0] - a[0], dz = b[1] - a[1], L = Math.hypot(dy, dz) || 1, ny = -dz / L * w / 2, nz = dy / L * w / 2;
         const q = [[a[0] + ny, a[1] + nz], [b[0] + ny, b[1] + nz], [b[0] - ny, b[1] - nz], [a[0] - ny, a[1] - nz]];
         const e = extYZ(mat, 'seg', mirror ? q.slice().reverse() : q, x0, x0 + t, 20); p.append(e);
       }
-      // zaoblení styků (kolečka) – jen pro návaznost tahů
       for (let i = 1; i < pts.length - 1; i++) { const c = cylX(mat, 'k', w / 2, x0, x0 + t, pts[i][0], pts[i][1], 8); p.append(c); }
     }
-    u0 += adv;
+    u0 += adv(ch);
   }
   return p;
 }

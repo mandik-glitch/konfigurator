@@ -1,0 +1,34 @@
+{
+ "sku": "4932501784",
+ "foto": "c01",
+ "kolo": 1,
+ "popis": "první sestava",
+ "poza": {
+  "rot": {
+   "madlo_nosne": 180
+  },
+  "pos": {}
+ },
+ "iou_kamera_kontroly": {
+  "iou": 0.7518,
+  "iou_pod_radkem": 0.9453,
+  "ycut_px": 365
+ },
+ "iou_kamera_dofitovana": {
+  "iou": 0.7841,
+  "iou_pod_radkem": 0.962,
+  "ycut_px": 365
+ },
+ "kamera_dofitovana": {
+  "azim": 25.604050632952948,
+  "elev": 15.984397584961506,
+  "dist": 3542.0485122524824,
+  "fov": 12.449100319567496,
+  "roll": 0,
+  "shiftX": 0.012623094652301225,
+  "shiftY": 0.07260566530448129,
+  "w": 1200,
+  "h": 1200
+ },
+ "poznamka": "madlo zdvižené (pose madlo_nosne=180); ycut = řádek, pod kterým se v kontrole počítalo IoU bez madla"
+}

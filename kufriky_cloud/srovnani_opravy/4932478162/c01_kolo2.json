@@ -1,0 +1,37 @@
+{
+ "sku": "4932478162",
+ "foto": "c01",
+ "kolo": 2,
+ "popis": "kamery znovu dofitovány maskou bez vyplnění děr; spodní zuby těla",
+ "poza": {
+  "rot": {},
+  "pos": {}
+ },
+ "iou_kamera_kontroly": {
+  "iou": 0.9174,
+  "iou_pod_radkem": 0.9174,
+  "ycut_px": 0
+ },
+ "iou_kamera_dofitovana": {
+  "iou": 0.9407,
+  "iou_pod_radkem": 0.9407,
+  "ycut_px": 0
+ },
+ "iou_dofit_maska_bez_vyplneni_der": {
+  "iou": 0.9358,
+  "iou_pod_radkem": 0.9358,
+  "ycut_px": 0
+ },
+ "kamera_dofitovana": {
+  "azim": 17.1186012878521,
+  "elev": 18.241730535445907,
+  "dist": 3608.363804481592,
+  "fov": 11.315789068368328,
+  "roll": 0,
+  "shiftX": 0.029874356705205808,
+  "shiftY": -0.039696459148009684,
+  "w": 1200,
+  "h": 1200
+ },
+ "poznamka": "kamera kontroly = z 8 ručních bodů + obrys vs. kvádr obálky (nezávislá na tvaru); dofit = kamera dofitovaná podle siluety nového modelu (není důkaz)"
+}

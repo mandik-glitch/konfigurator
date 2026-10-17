@@ -6,15 +6,7 @@ const args = process.argv.slice(2); const zoff = (i => i >= 0 ? +args.splice(i, 
 const [kf, pohled, varianta, osa, hod, ...pts] = args; const hv = +hod;
 let c = JSON.parse(fs.readFileSync(kf, 'utf8'))[pohled]; if (varianta !== '-') c = c[varianta];
 const W = c.w ?? 1200, H = c.h ?? 1200;
-export function proj(X, c = c, W = 1200, H = 1200) {
-  const a = c.azim * Math.PI / 180, e = c.elev * Math.PI / 180, d = c.dist;
-  const pos = [d * Math.cos(e) * Math.cos(a), d * Math.cos(e) * Math.sin(a), d * Math.sin(e)];
-  const f = pos.map(v => -v / d); const cr = (a, b) => [a[1] * b[2] - a[2] * b[1], a[2] * b[0] - a[0] * b[2], a[0] * b[1] - a[1] * b[0]];
-  let r = cr(f, [0, 0, 1]); const rl = Math.hypot(...r); r = r.map(v => v / rl); const u = cr(r, f);
-  const dd = [X[0] - pos[0], X[1] - pos[1], X[2] - pos[2]]; const dot = (p, q) => p[0] * q[0] + p[1] * q[1] + p[2] * q[2];
-  const xc = dot(dd, r), yc = dot(dd, u), zc = dot(dd, f), t = Math.tan(c.fov * Math.PI / 360);
-  return [c.cx + (W / 2) * (xc / zc) / (t * W / H), c.cy - (H / 2) * (yc / zc) / t];
-}
+import { project as proj } from './proj.mjs';
 if (process.argv[1].endsWith('unproj.mjs')) {
   const mk = osa === 'X' ? (p, q) => [hv, p, q - zoff] : osa === 'Y' ? (p, q) => [p, hv, q - zoff] : (p, q) => [p, q, hv];
   for (const s of pts) {

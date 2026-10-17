@@ -1,0 +1,26 @@
+{
+ "sku": "4932480623",
+ "pohled": "final_c03_bez_dvirek_kamera_kontroly",
+ "foto": "c03.jpg (jen ve scratchpadu, mimo repo)",
+ "kamera": {
+  "azim": 0.028445418998869775,
+  "elev": 24.909169435822033,
+  "dist": 1811.6221045728755,
+  "fov": 20.681945233452048,
+  "cx": 599.3440151913155,
+  "cy": 579.7250449122496,
+  "roll": 0,
+  "shiftX": -0.0005466540072370662,
+  "shiftY": -0.016895795906458677
+ },
+ "kamera_zdroj": "kufriky_cloud/kontrola_john_v6/4932480623/kamera_c03.json",
+ "pose": {
+  "dvirka": 90
+ },
+ "skryto": [
+  "dvirka"
+ ],
+ "iou": 0.9165,
+ "iou_rozliseni_px": "600x600",
+ "poznamka": "IoU = průnik/sjednocení obrysu modelu a produktu na fotografii při dané kameře; kamera je z ručních bodů (ne dofitovaná na tento model), proto IoU není důkaz tvaru."
+}

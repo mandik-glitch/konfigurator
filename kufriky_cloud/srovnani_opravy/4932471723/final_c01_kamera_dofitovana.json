@@ -1,0 +1,20 @@
+{
+ "sku": "4932471723",
+ "pohled": "final_c01_kamera_dofitovana",
+ "foto": "c01.jpg (jen ve scratchpadu, mimo repo)",
+ "kamera": {
+  "azim": 115.58481293279587,
+  "elev": 20.255789238302604,
+  "dist": 2979.029133261297,
+  "fov": 12.062862838168666,
+  "roll": 0,
+  "shiftX": 0.02050827602508914,
+  "shiftY": 0.04563691887139913
+ },
+ "kamera_zdroj": "../../../tmp/claude-0/-home-user-konfigurator/4afe04ea-52af-557e-a8a4-75a8d542e4f9/scratchpad/out/kam4723.json",
+ "pose": {},
+ "skryto": [],
+ "iou": 0.9495,
+ "iou_rozliseni_px": "600x600",
+ "poznamka": "IoU = průnik/sjednocení obrysu modelu a produktu na fotografii při dané kameře; kamera je z ručních bodů (ne dofitovaná na tento model), proto IoU není důkaz tvaru."
+}

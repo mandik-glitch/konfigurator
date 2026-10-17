@@ -16,21 +16,21 @@ export function lidPoly(x0, x1, y0, y1, nx, ny, r = 14, rn = 3) {
 }
 // půdorys bez výřezů zaoblený tak, aby měl stejný počet bodů jako lidPoly: výřez zmenšíme na minimum
 export const LIDLAY = [
-  { z: Z_SEAM, x0: -LID.xf, x1: LID.xf, y0: -LID.yw, y1: LID.yw, nx: 50, ny: 34 },
-  { z: 164, x0: -LID.xf, x1: LID.xf, y0: -LID.yw, y1: LID.yw, nx: 50, ny: 34 },
-  { z: 197, x0: -189, x1: 190, y0: -(LID.yw - 6), y1: LID.yw - 6, nx: 50, ny: 34 },
-  { z: 198.2, x0: -187, x1: 188, y0: -(LID.yw - 8), y1: LID.yw - 8, nx: 1.5, ny: 1.5 },
-  { z: 206, x0: -176, x1: 176, y0: -240, y1: 240, nx: 1.5, ny: 1.5 },
-  { z: 209.5, x0: -163, x1: 163, y0: -229, y1: 229, nx: 1.5, ny: 1.5 },
+  { z: Z_SEAM, x0: LID.xr, x1: LID.xf, y0: -LID.yw, y1: LID.yw, nx: 50, ny: 34 },
+  { z: 164, x0: LID.xr, x1: LID.xf, y0: -LID.yw, y1: LID.yw, nx: 50, ny: 34 },
+  { z: 197, x0: -165, x1: 190, y0: -(LID.yw - 6), y1: LID.yw - 6, nx: 50, ny: 34 },
+  { z: 198.2, x0: -163, x1: 188, y0: -(LID.yw - 8), y1: LID.yw - 8, nx: 1.5, ny: 1.5 },
+  { z: 206, x0: -158, x1: 176, y0: -240, y1: 240, nx: 1.5, ny: 1.5 },
+  { z: 209.5, x0: -148, x1: 163, y0: -229, y1: 229, nx: 1.5, ny: 1.5 },
 ];
 const poly = L => lidPoly(L.x0, L.x1, L.y0, L.y1, L.nx, L.ny);
 
 // 10 kapes: [x0,x1,y0,y1] – řady od zadní (-X) k přední (+X); malé × 4, dlouhé × 2, malé × 4 (odhad rozměrů z rektifikace)
 const YI = [[37, 117], [137, 217]];
 export const KAPSY_RADY = [
-  { x0: -138, x1: -76, bloky: [[-217, -137], [-117, -37], [37, 117], [137, 217]] },
-  { x0: -62, x1: 14, bloky: [[-217, -37], [37, 217]] },
-  { x0: 28, x1: 94, bloky: [[-217, -137], [-117, -37], [37, 117], [137, 217]] },
+  { x0: -160, x1: -62, bloky: [[-217, -137], [-117, -37], [37, 117], [137, 217]] },
+  { x0: -48, x1: 48, bloky: [[-208, -40], [40, 208]] },
+  { x0: 62, x1: 158, bloky: [[-217, -137], [-117, -37], [37, 117], [137, 217]] },
 ];
 export function kapsy() {
   const out = [];
@@ -70,13 +70,13 @@ export function vicko(uhelOtevreni = 0) {
 // větrání na čele víka (4 štěrbiny), ouška pro spony – součást víka (otáčejí se s ním)
 export function vickoDetaily(g) {
   // blok větrání: zadní stěna + 5 svislých žeber
-  g.add(rbox('cerna', 'vetrani_blok', 182, 195, -78, 72, 158, 198, 3, 1.5));
-  for (let k = 0; k < 5; k++) { const y = -62 + k * 28; g.add(bx('cerna_mat', 'vetrani_zebro', 190, 196.5, y - 4.5, y + 4.5, 160, 196)); }
+  g.add(rbox('cerna', 'vetrani_blok', 182, 195, -80, 70, 150, 192, 3, 1.5));
+  for (let k = 0; k < 5; k++) { const y = -62 + k * 28; g.add(bx('cerna_mat', 'vetrani_zebro', 190, 196.5, y - 4.5, y + 4.5, 152, 188)); }
   // ouška spon na čele víka (černá), na nich oka pro třmen
   for (const s of [1, -1]) {
     const yc = s * 162;
-    g.add(rbox('cerna', 'ouško_sponky' + (s > 0 ? '' : '_m'), 186, 196.5, yc - 38, yc + 38, 138, 192, 6, 2.5));
-    g.add(bx('cerna_mat', 'ouško_zlab' + (s > 0 ? '' : '_m'), 195, 197, yc - 28, yc + 28, 147, 151));
+    g.add(rbox('cerna', 'ouško_sponky' + (s > 0 ? '' : '_m'), 186, 196.5, yc - 40, yc + 40, 130, 190, 6, 2.5));
+    g.add(bx('cerna_mat', 'ouško_zlab' + (s > 0 ? '' : '_m'), 195, 197, yc - 28, yc + 28, 140, 144));
   }
   // lišta pod švíkem
   g.add(rbox('cerna', 'vicko_lista', 190, 196.5, -245, 245, Z_SEAM - 1, Z_SEAM + 8, 4, 1.5));

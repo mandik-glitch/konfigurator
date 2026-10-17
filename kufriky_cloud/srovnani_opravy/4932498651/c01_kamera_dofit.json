@@ -1,0 +1,14 @@
+{
+ "kamera": {
+  "azim": 49.89380041169045,
+  "elev": 7.482377783933028,
+  "dist": 4618.936084304847,
+  "fov": 17.69999959653726,
+  "roll": 0,
+  "shiftX": -0.017134484537479615,
+  "shiftY": 0.19312630460343816,
+  "w": 1200,
+  "h": 1200
+ },
+ "poznamka": "kamera DOFITOVANÁ podle siluety nového modelu (IoU) – není důkaz"
+}

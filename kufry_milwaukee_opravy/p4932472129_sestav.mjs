@@ -12,9 +12,9 @@ export function stejnaCela(n) {
   return out;
 }
 
-export function sestav(faces, { jmeno = 'box_se_zasuvkami' } = {}) {
+export function sestav(faces, { jmeno = 'box_se_zasuvkami', stredCerveny = false } = {}) {
   const root = new Group(jmeno);
-  root.addGroup(telo(faces));
+  root.addGroup(telo(faces, { stredCerveny }));
   root.addGroup(vicko());
   root.addGroup(madla());
   faces.forEach((f, i) => { const z = zasuvka(i, f); root.addGroup(z); for (const k of kolejnice(i, f)) root.addGroup(k); });

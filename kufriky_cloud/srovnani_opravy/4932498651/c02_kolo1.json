@@ -1,0 +1,34 @@
+{
+ "sku": "4932498651",
+ "foto": "c02",
+ "kolo": 1,
+ "popis": "první sestava",
+ "poza": {
+  "rot": {},
+  "pos": {
+   "zasuvka": 330
+  }
+ },
+ "iou_kamera_kontroly": {
+  "iou": 0.9391,
+  "iou_pod_radkem": 0.9391,
+  "ycut_px": 0
+ },
+ "iou_kamera_dofitovana": {
+  "iou": 0.9444,
+  "iou_pod_radkem": 0.9444,
+  "ycut_px": 0
+ },
+ "kamera_dofitovana": {
+  "azim": 26.53313652149985,
+  "elev": 15.729063770406942,
+  "dist": 3182.5624672440044,
+  "fov": 18.20804479434768,
+  "roll": 0,
+  "shiftX": 0.08159148885199471,
+  "shiftY": -0.05856402484342728,
+  "w": 1200,
+  "h": 1200
+ },
+ "poznamka": "zásuvka vysunutá (kamera kontroly byla dofitována se zásuvkou +300 mm; naše dofitovaná kamera se zásuvkou +330 mm); IoU není důkaz"
+}

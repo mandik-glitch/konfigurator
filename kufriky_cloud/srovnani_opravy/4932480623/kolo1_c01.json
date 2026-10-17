@@ -1,0 +1,22 @@
+{
+ "sku": "4932480623",
+ "pohled": "kolo1_c01",
+ "foto": "c01.jpg (jen ve scratchpadu, mimo repo)",
+ "kamera": {
+  "azim": 30.231721801713284,
+  "elev": 13.359671448379322,
+  "dist": 3489.342887513364,
+  "fov": 12.710923575669458,
+  "cx": 610.2719441362993,
+  "cy": 623.5997729761873,
+  "roll": 0,
+  "shiftX": 0.008559953446916116,
+  "shiftY": 0.01966647748015608
+ },
+ "kamera_zdroj": "kufriky_cloud/kontrola_john_v6/4932480623/kamera_c01.json",
+ "pose": {},
+ "skryto": [],
+ "iou": 0.8984,
+ "iou_rozliseni_px": "600x600",
+ "poznamka": "IoU = průnik/sjednocení obrysu modelu a produktu na fotografii při dané kameře; kamera je z ručních bodů (ne dofitovaná na tento model), proto IoU není důkaz tvaru."
+}

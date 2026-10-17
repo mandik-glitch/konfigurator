@@ -1,0 +1,235 @@
+{
+ "c06": {
+  "z_bodu": {
+   "azim": 0,
+   "elev": 8,
+   "dist": 7386.34,
+   "fov": 8,
+   "cx": 598.5,
+   "cy": 564.82,
+   "roll": 0,
+   "w": 1200,
+   "h": 1200
+  },
+  "z_obrysu": {
+   "azim": 0.48,
+   "elev": 9.79,
+   "dist": 7669.9,
+   "fov": 8.17,
+   "cx": 604.91,
+   "cy": 569.42,
+   "roll": 0,
+   "w": 1200,
+   "h": 1200
+  },
+  "dofit_v1": {
+   "azim": -0.55,
+   "elev": 8.703,
+   "dist": 7555.31,
+   "fov": 8.129,
+   "cx": 596.13,
+   "cy": 577.5,
+   "roll": 0,
+   "w": 1200,
+   "h": 1200,
+   "iou": 0.9619,
+   "pose": {},
+   "ymin": null,
+   "xmin": null
+  },
+  "dofit_v3": {
+   "azim": -0.516,
+   "elev": 8.682,
+   "dist": 7563.05,
+   "fov": 8.135,
+   "cx": 596.65,
+   "cy": 577.96,
+   "roll": 0,
+   "w": 1200,
+   "h": 1200,
+   "iou": 0.9627,
+   "pose": {},
+   "ymin": null,
+   "xmin": null
+  }
+ },
+ "c01": {
+  "z_obrysu": {
+   "azim": 24.69,
+   "elev": 15.32,
+   "dist": 3736.3,
+   "fov": 21.15,
+   "cx": 680.94,
+   "cy": 569.68,
+   "roll": 0,
+   "w": 1200,
+   "h": 1200
+  },
+  "dofit_v1": {
+   "azim": 28.609,
+   "elev": 12.048,
+   "dist": 3728.78,
+   "fov": 20.941,
+   "cx": 681.21,
+   "cy": 566.25,
+   "roll": 0,
+   "w": 1200,
+   "h": 1200,
+   "iou": 0.9368,
+   "pose": {},
+   "ymin": null,
+   "xmin": "235"
+  },
+  "dofit_v2": {
+   "azim": 28.406,
+   "elev": 13.094,
+   "dist": 3754.58,
+   "fov": 20.861,
+   "cx": 683.15,
+   "cy": 565.76,
+   "roll": 0,
+   "w": 1200,
+   "h": 1200,
+   "iou": 0.9268,
+   "pose": {
+    "madlo": 285
+   },
+   "ymin": null,
+   "xmin": null
+  },
+  "dofit_v3": {
+   "azim": 29.075,
+   "elev": 13.24,
+   "dist": 3775.87,
+   "fov": 20.776,
+   "cx": 682.73,
+   "cy": 565.26,
+   "roll": 0,
+   "w": 1200,
+   "h": 1200,
+   "iou": 0.9285,
+   "pose": {
+    "madlo": 285
+   },
+   "ymin": null,
+   "xmin": null
+  }
+ },
+ "c02": {
+  "z_obrysu": {
+   "azim": 30,
+   "elev": 58,
+   "dist": 4100,
+   "fov": 22,
+   "cx": 644,
+   "cy": 741,
+   "roll": 0,
+   "w": 1200,
+   "h": 1200
+  },
+  "dofit_v3": {
+   "azim": 32.162,
+   "elev": 58.005,
+   "dist": 4066.13,
+   "fov": 22,
+   "cx": 647.3,
+   "cy": 728.33,
+   "roll": 0,
+   "w": 1200,
+   "h": 1200,
+   "iou": 0.9067,
+   "pose": {
+    "vicko": 95,
+    "madlo": 285
+   },
+   "ymin": null,
+   "xmin": null
+  }
+ },
+ "c05": {
+  "z_bodu": {
+   "azim": -10.642,
+   "elev": 39.086,
+   "roll": 92.434,
+   "dist": 6140.5,
+   "fov": 10.807,
+   "cx": 581.62,
+   "cy": 580.24,
+   "w": 1200,
+   "h": 1200,
+   "poznamka": "z 7 rucnich bodu (kalibruj.mjs), RMS 42 px = jen hruby odhad"
+  },
+  "dofit_v2": {
+   "azim": -15.299,
+   "elev": 27.234,
+   "dist": 6008.2,
+   "fov": 11.304,
+   "cx": 611.75,
+   "cy": 570.84,
+   "roll": 96.55,
+   "w": 1200,
+   "h": 1200,
+   "iou": 0.939,
+   "pose": {},
+   "ymin": null,
+   "xmin": null
+  },
+  "dofit_v3": {
+   "azim": -16.011,
+   "elev": 27.408,
+   "dist": 5986.88,
+   "fov": 11.416,
+   "cx": 612.04,
+   "cy": 570.04,
+   "roll": 97.243,
+   "w": 1200,
+   "h": 1200,
+   "iou": 0.9376,
+   "pose": {},
+   "ymin": null,
+   "xmin": null
+  }
+ },
+ "c03": {
+  "dofit_v3": {
+   "azim": 32.162,
+   "elev": 58.005,
+   "dist": 4066.13,
+   "fov": 22,
+   "cx": 647.3,
+   "cy": 728.33,
+   "roll": 0,
+   "w": 1200,
+   "h": 1200,
+   "iou": 0.9067,
+   "pose": {
+    "vicko": 95,
+    "madlo": 285
+   },
+   "ymin": null,
+   "xmin": null
+  },
+  "poznamka": "stejny zaber jako c02"
+ },
+ "c04": {
+  "dofit_v3": {
+   "azim": 32.162,
+   "elev": 58.005,
+   "dist": 4066.13,
+   "fov": 22,
+   "cx": 647.3,
+   "cy": 728.33,
+   "roll": 0,
+   "w": 1200,
+   "h": 1200,
+   "iou": 0.9067,
+   "pose": {
+    "vicko": 95,
+    "madlo": 285
+   },
+   "ymin": null,
+   "xmin": null
+  },
+  "poznamka": "stejny zaber jako c02"
+ }
+}

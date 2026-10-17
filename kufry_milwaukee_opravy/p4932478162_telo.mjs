@@ -8,10 +8,10 @@ const insetL = (L, d, z) => ({ x0: L.x0 + d, x1: L.x1 - d, y0: L.y0 + d, y1: L.y
 // vnější vrstvy vany (boční plocha |Y| = 222 – boční panely se přidávají zvlášť, aby šla vytvořit pouzdra rukojetí)
 const YB = 222;
 export const VANA = [
-  { z: Z_BOT, x0: -166, x1: 160, y0: -(YB - 14), y1: YB - 14, r: 22 },
-  { z: Z_BOT + 8, x0: -176, x1: 174, y0: -(YB - 4), y1: YB - 4, r: 20 },
-  { z: Z_BOT + 16, x0: -182, x1: 181, y0: -YB, y1: YB, r: 18 },
-  { z: Z_SEAM - 4, x0: -184, x1: 181, y0: -YB, y1: YB, r: 16 },
+  { z: Z_BOT, x0: -152, x1: 160, y0: -(YB - 14), y1: YB - 14, r: 22 },
+  { z: Z_BOT + 8, x0: -161, x1: 174, y0: -(YB - 4), y1: YB - 4, r: 20 },
+  { z: Z_BOT + 16, x0: -166, x1: 181, y0: -YB, y1: YB, r: 18 },
+  { z: Z_SEAM - 4, x0: -168, x1: 181, y0: -YB, y1: YB, r: 16 },
 ];
 
 export function vana() {
@@ -20,9 +20,9 @@ export function vana() {
   g.add(loftVessel('cerna', 'telo_vana', VANA, inner, { seg: 4 }));
   // horní lem pod švíkem (okraj vany pod víkem), přesah ven
   g.add(loftVessel('cerna', 'telo_lem', [
-    { z: Z_SEAM - 14, x0: -190, x1: 190, y0: -(BODY.yw + 6), y1: BODY.yw + 6, r: 17 },
-    { z: Z_SEAM - 1, x0: -192, x1: 193, y0: -(BODY.yw + 8), y1: BODY.yw + 8, r: 17 }],
-    [{ z: Z_SEAM - 1, x0: -189, x1: 190, y0: -(BODY.yw + 4), y1: BODY.yw + 4, r: 14 }, { z: Z_SEAM - 14, x0: -187, x1: 187, y0: -(BODY.yw + 1), y1: BODY.yw + 1, r: 14 }], { seg: 4 }));
+    { z: Z_SEAM - 14, x0: -170, x1: 190, y0: -(BODY.yw + 6), y1: BODY.yw + 6, r: 17 },
+    { z: Z_SEAM - 1, x0: -172, x1: 193, y0: -(BODY.yw + 8), y1: BODY.yw + 8, r: 17 }],
+    [{ z: Z_SEAM - 1, x0: -169, x1: 190, y0: -(BODY.yw + 4), y1: BODY.yw + 4, r: 14 }, { z: Z_SEAM - 14, x0: -167, x1: 187, y0: -(BODY.yw + 1), y1: BODY.yw + 1, r: 14 }], { seg: 4 }));
   return g;
 }
 
@@ -31,9 +31,9 @@ export function bocniPanely(g) {
   const POC = { x0: -122, x1: 126, z0: 36 };      // pouzdro rukojeti: odhad z c01 (501784) – X od -122 do 126, dno z = 36
   for (const s of [1, -1]) {
     const y0 = s > 0 ? YB - 1 : -BODY.yw, y1 = s > 0 ? BODY.yw : -(YB - 1);
-    g.add(rbox('cerna', 'bok_spodni' + (s > 0 ? '' : '_m'), -186, 186, y0, y1, Z_BOT + 14, POC.z0, 9, 2.5));
+    g.add(rbox('cerna', 'bok_spodni' + (s > 0 ? '' : '_m'), -168, 186, y0, y1, Z_BOT + 14, POC.z0, 9, 2.5));
     g.add(rbox('cerna', 'bok_predni_sloupek' + (s > 0 ? '' : '_m'), POC.x1, 186, y0, y1, POC.z0 - 2, Z_SEAM - 2, 8, 2));
-    g.add(rbox('cerna', 'bok_zadni_sloupek' + (s > 0 ? '' : '_m'), -186, POC.x0, y0, y1, POC.z0 - 2, Z_SEAM - 2, 8, 2));
+    g.add(rbox('cerna', 'bok_zadni_sloupek' + (s > 0 ? '' : '_m'), -168, POC.x0, y0, y1, POC.z0 - 2, Z_SEAM - 2, 8, 2));
     // dno pouzdra (stěna vany je v |Y| = 222); žebra v pouzdře
     const ys = s > 0 ? [YB, YB + 7] : [-(YB + 7), -YB];
     for (const x of [-60, 0, 60]) g.add(bx('cerna_mat', 'pouzdro_zebro' + (s > 0 ? '' : '_m') + x, x - 2, x + 2, ys[0], ys[1] + 6 * (s > 0 ? 1 : -1) * 0 , 44, 108));
@@ -45,14 +45,15 @@ export function bocniPanely(g) {
 // čelní panel (rovina X = 188) s kapsami pro spony; kapsa = zahloubení k rovině vany (X = 181)
 export function celniPanel(g) {
   const XB = 181, XF = 188;
-  const poly = [[-217, Z_BOT + 8], [217, Z_BOT + 8], [217, Z_SEAM - 2], [205, Z_SEAM - 2], [205, 45], [125, 45], [125, Z_SEAM - 2], [-125, Z_SEAM - 2], [-125, 45], [-205, 45], [-205, Z_SEAM - 2], [-217, Z_SEAM - 2]];
-  g.add(extYZ('cerna', 'celo_panel', roundPoly(poly, [4, 4, 0, 0, 3, 3, 0, 0, 3, 3, 0, 0].map((v, i) => [4, 4, 0.5, 0.5, 2, 2, 0.5, 0.5, 2, 2, 0.5, 0.5][i]), 2), XB - 1, XF));
-  // střední zvýšený pult pod větráním (lichoběžník), rovina X = 192
-  g.add(extYZ('cerna', 'celo_pult', [[-77, 70], [70, 70], [66, 100], [66, 164], [-72, 164], [-77, 100]].map(([y, z]) => [y, z]), XF - 1, XF + 4, 22));
-  // kapsy sponek: tmavé rámy po obvodu
+  const poly = [[-218, Z_BOT + 8], [218, Z_BOT + 8], [218, Z_SEAM - 2], [204, Z_SEAM - 2], [204, 25], [122, 25], [122, Z_SEAM - 2], [-122, Z_SEAM - 2], [-122, 25], [-204, 25], [-204, Z_SEAM - 2], [-218, Z_SEAM - 2]];
+  const rr = [4, 4, 0.5, 0.5, 5, 5, 0.5, 0.5, 5, 5, 0.5, 0.5];
+  g.add(extYZ('cerna', 'celo_panel', roundPoly(poly, rr, 2), XB - 1, XF));
+  // střední zvýšený pult pod větráním (lichoběžník se zkosenými boky), rovina X = 192
+  g.add(extYZ('cerna', 'celo_pult', [[-74, 62], [68, 62], [68, 105], [62, 150], [-68, 150], [-74, 105]], XF - 1, XF + 4, 22));
+  // kapsy sponek: tmavé rámy po obvodu (dno kapsy)
   for (const s of [1, -1]) {
-    const yc = s * 165;
-    g.add(extYZ('cerna_mat', 'kapsa_ram' + (s > 0 ? '' : '_m'), [[yc - 36, 45], [yc + 36, 45], [yc + 36, 56], [yc - 36, 56]], XB, XB + 7, 22));
+    const yc = s * 163;
+    g.add(extYZ('cerna_mat', 'kapsa_ram' + (s > 0 ? '' : '_m'), [[yc - 41, 25], [yc + 41, 25], [yc + 41, 33], [yc - 41, 33]], XB, XB + 6, 22));
   }
 }
 
@@ -61,34 +62,29 @@ export function nohy(g) {
   for (const sy of [1, -1]) for (const sx of [1, -1]) {
     const x0 = sx > 0 ? 118 : -178, x1 = sx > 0 ? 178 : -118;
     // klínový profil v XZ: noha se zužuje dolů
-    const poly = sx > 0 ? [[x0, Z_BOT + 5], [x1, Z_BOT + 5], [x1 - 6, -HZ], [x0 + 12, -HZ]] : [[x0 + 6, -HZ], [x1 - 12, -HZ], [x1, Z_BOT + 5], [x0, Z_BOT + 5]];
+    const poly = sx > 0 ? [[x0, Z_BOT + 8], [x1, Z_BOT + 8], [x1 - 8, -HZ], [x0 + 14, -HZ]] : [[x0 + 8, -HZ], [x1 - 14, -HZ], [x1, Z_BOT + 8], [x0, Z_BOT + 8]];
     const y0 = sy > 0 ? 114 : -158, y1 = sy > 0 ? 158 : -114;
     g.add(extXZ('cerna', 'noha_' + (sx > 0 ? 'p' : 'z') + (sy > 0 ? '1' : '2'), poly, y0, y1, 30));
   }
   // spodní pás (rám dna) pod vanou
-  g.add(rbox('cerna', 'dno_pas', -176, 172, -222, 222, -HZ + 11, Z_BOT + 3, 16, 2));
+  g.add(rbox('cerna', 'dno_pas', -161, 172, -222, 222, Z_BOT - 2, Z_BOT + 6, 16, 2));
 }
 
-// spodní zámková šachta (čelo): rám se žebrováním, červená rukojeť zámku jako samostatný uzel s pivotem na spodním čepu
+// spodní zámková šachta (čelo): rám se žebrováním, červená rukojeť zámku jako samostatný uzel s pivotem na spodním čepu (rozměry z rektifikace c02 na rovinu X = 190)
 export function zamekSachta(g) {
-  // vystupující šachta (lichoběžník) – trojúhelníkové boky = zkosení
-  g.add(extYZ('cerna', 'sachta', [[-115, -64], [113, -64], [97, -205], [-99, -205]].map(([y, z]) => [y, z]), 176, 192, 25));
-  g.add(extYZ('cerna', 'sachta_hrana', [[-108, -66], [106, -66], [104, -72], [-106, -72]], 191, 195, 25));
-  // žebrovaný pás nad rukojetí
-  for (let k = 0; k < 11; k++) { const y = -52 + k * 9.5; g.add(bx('cerna_mat', 'sachta_zebro', 190, 196.5, y, y + 4, -96, -80)); }
-  g.add(bx('cerna_mat', 'sachta_pas_h', 189, 196, -54, 56, -80, -76));
-  // rám rukojeti (černý, žebrovaný) kolem červeného úchytu
-  g.add(extYZ('cerna', 'sachta_ram', [[-52, -118], [54, -118], [54, -204], [-52, -204]], 187, 195.5, 22,
-    [[[-40, -127], [-40, -186], [44, -186], [44, -127]]]));
-  for (let k = 0; k < 9; k++) { const y = -46 + k * 11; g.add(bx('cerna_mat', 'sachta_ram_zebro', 193, 196.5, y, y + 4.5, -204, -190)); }
-  g.add(bx('cerna_mat', 'sachta_zasuvka', 187, 192, -22, 22, -HZ, -190));
+  g.add(extYZ('cerna', 'sachta', [[-108, -197], [108, -197], [108, -76], [80, -54], [-80, -54], [-108, -76]], 178, 190.5, 25));
+  g.add(extYZ('cerna', 'sachta_vnitrni', [[-98, -192], [98, -192], [98, -84], [74, -64], [-74, -64], [-98, -84]], 190, 193, 25));
+  // žebrovaný blok nad rukojetí (svislé štěrbiny) a pod ní
+  g.add(bx('cerna', 'sachta_blok_horni', 190, 196.5, -54, 54, -122, -90));
+  for (let k = 0; k < 11; k++) { const y = -51 + k * 10; g.add(bx('cerna_mat', 'sachta_stepina', 195.5, 197, y, y + 4.2, -118, -94)); }
+  g.add(extYZ('cerna', 'sachta_ram', [[-53, -122], [53, -122], [53, -200], [-53, -200]], 190, 196.5, 22, [[[-47, -126], [-47, -180], [47, -180], [47, -126]]]));
+  for (let k = 0; k < 11; k++) { const y = -51 + k * 10; g.add(bx('cerna_mat', 'sachta_zebro', 195.5, 197, y, y + 4.2, -198, -183)); }
   // červená rukojeť zámku = uzel s pivotem (spodní čep, osa Y)
-  const rk = new Group('rukojet_zamku', { pivot: [186, 0, -186], extras: { osa: [0, -1, 0], max_uhel: 55, popis: 'červená rukojeť zámku šachty (čelo dole)' } });
-  const oval = (cy, cz, a, b, n = 22) => Array.from({ length: n }, (_, i) => { const t = 2 * Math.PI * i / n; return [cy + a * Math.cos(t) * Math.pow(Math.abs(Math.cos(t)), 0.0), cz + b * Math.sin(t)]; });
-  const outer = roundPoly([[-44, -124], [47, -124], [47, -188], [-44, -188]], [11, 11, 11, 11], 4);
-  const hole = roundPoly([[-31, -143], [34, -143], [34, -170], [-31, -170]], [9, 9, 9, 9], 4);
-  rk.add(extYZ('cervena', 'rukojet_zamku_ram', outer, 187, 197, 30, [hole]));
-  rk.add(extYZ('cervena', 'rukojet_zamku_jazyk', [[-20, -188], [20, -188], [20, -211], [-20, -211]], 189, 194.5, 25));
+  const rk = new Group('rukojet_zamku', { pivot: [190, 0, -182], extras: { osa: [0, -1, 0], max_uhel: 55, popis: 'červená rukojeť zámku šachty (čelo dole)' } });
+  const outer = roundPoly([[-45, -125], [45, -125], [45, -179], [-45, -179]], [10, 10, 10, 10], 4);
+  const hole = roundPoly([[-34, -139], [34, -139], [34, -166], [-34, -166]], [8, 8, 8, 8], 4);
+  rk.add(extYZ('cervena', 'rukojet_zamku_ram', outer, 190, 197, 30, [hole]));
+  rk.add(extYZ('cervena', 'rukojet_zamku_jazyk', [[-20, -198], [20, -198], [20, -210], [-20, -210]], 190, 195, 25));
   g.addGroup(rk);
 }
 

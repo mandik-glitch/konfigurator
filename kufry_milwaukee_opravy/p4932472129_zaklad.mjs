@@ -17,10 +17,14 @@ export const G = {
 export const rbx = (mat, name, x0, x1, y0, y1, z0, z1, rc = 2, re = 1, seg = 3, fs = 2) =>
   roundedBox(mat, name, { x0, x1, y0, y1, z0, z1, rc, re, seg, fs });
 
-// anizotropní loft zaoblených obdélníků: profile = [[z, dx, dy, r?], ...] (r = poloměr rohu prstence, jinak odvozen z rc) (zdola nahoru po vnější straně; viz pravidlo orientace v jadro/mesh.js)
+// anizotropní loft zaoblených obdélníků: profile = [[z, dx, dy, r?, dxZad?], ...] (dx = odsazení čela (+X), dxZad = odsazení zadní hrany (−X; výchozí = dx),
+// dy = odsazení boků, r = poloměr rohu prstence, jinak odvozen z rc). Pravidlo orientace viz jadro/mesh.js (profil zdola po vnější straně nahoru).
 export function loftRR(mat, name, { cx = 0, cy = 0, hx, hy, rc = 10, seg = 5, profile, capStart = null, capEnd = null, crease = 40 }) {
   const p = new Part(name, mat); p.crease = crease;
-  const rings = profile.map(([z, dx, dy, r]) => rrRing(cx, cy, Math.max(hx - dx, 0.5), Math.max(hy - dy, 0.5), r ?? Math.max(rc - (dx + dy) / 2, 1.5), seg).map(q => [q[0], q[1], z]));
+  const rings = profile.map(([z, dx, dy, r, dxz]) => {
+    const dz = dxz ?? dx, x0 = cx - hx + dz, x1 = cx + hx - dx;
+    return rrRing((x0 + x1) / 2, cy, Math.max((x1 - x0) / 2, 0.5), Math.max(hy - dy, 0.5), r ?? Math.max(rc - (dx + dy) / 2, 1.5), seg).map(q => [q[0], q[1], z]);
+  });
   loftRings(p, rings, { capStart, capEnd });
   return p;
 }
@@ -33,6 +37,9 @@ export function extYZ(mat, name, poly, x0, x1, crease = 25) {
 export function extXZ(mat, name, poly, y0, y1, crease = 25) {
   const p = prism(mat, name, poly, y0, y1); p.crease = crease; p.mapV((u, v, w) => [u, w, v]); p.flip(); return p;
 }
+
+// válec s osou podél X: x0..x1 na pozici (y,z)
+export function cylX(mat, name, r, x0, x1, y, z, n = 18) { return cylinder(mat, name, r, x0, x1, n, [0, 0]).rot('y', 90).move(0, y, z); }
 
 // zrcadlená kopie dílu podle Y=0 (přejmenovaná)
 export const zrcY = (part, name) => part.clone(name).mirror('y', 0);

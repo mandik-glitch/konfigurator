@@ -1,0 +1,20 @@
+{
+ "sku": "4932471723",
+ "pohled": "kolo7_refit",
+ "foto": "c01.jpg (jen ve scratchpadu, mimo repo)",
+ "kamera": {
+  "azim": 116.21367395041337,
+  "elev": 21.92376742533626,
+  "dist": 3128.5682092014004,
+  "fov": 11.603474750036378,
+  "roll": 0,
+  "shiftX": 0.01897362753106124,
+  "shiftY": 0.05006223196789589
+ },
+ "kamera_zdroj": "../../../tmp/claude-0/-home-user-konfigurator/4afe04ea-52af-557e-a8a4-75a8d542e4f9/scratchpad/out/kam4723.json",
+ "pose": {},
+ "skryto": [],
+ "iou": 0.9388,
+ "iou_rozliseni_px": "600x600",
+ "poznamka": "IoU = průnik/sjednocení obrysu modelu a produktu na fotografii při dané kameře; kamera je z ručních bodů (ne dofitovaná na tento model), proto IoU není důkaz tvaru."
+}

@@ -1,0 +1,35 @@
+{
+ "sku": "4932498651",
+ "foto": "c01",
+ "kolo": 1,
+ "popis": "první sestava",
+ "poza": {
+  "rot": {},
+  "pos": {
+   "madlo_horni": 618,
+   "madlo_stredni": 254
+  }
+ },
+ "iou_kamera_kontroly": {
+  "iou": 0.7058,
+  "iou_pod_radkem": 0.9477,
+  "ycut_px": 600
+ },
+ "iou_kamera_dofitovana": {
+  "iou": 0.7427,
+  "iou_pod_radkem": 0.9452,
+  "ycut_px": 600
+ },
+ "kamera_dofitovana": {
+  "azim": 43.838938686673615,
+  "elev": 15.285119609095805,
+  "dist": 4756.077808539748,
+  "fov": 17.700000631392825,
+  "roll": 0,
+  "shiftX": -0.011557287057329297,
+  "shiftY": 0.19233917214108953,
+  "w": 1200,
+  "h": 1200
+ },
+ "poznamka": "madlo vytažené (posuv horní 618, střední 254 mm)"
+}

@@ -1,0 +1,53 @@
+{
+ "sku": "4932493190",
+ "pohled": "c03",
+ "kamera": {
+  "azim": 26.65099888405119,
+  "elev": 12.969920407090989,
+  "dist": 1571.552917124196,
+  "fov": 28.776537770342827,
+  "cx": 621.2810408499588,
+  "cy": 554.8983661092722,
+  "roll": 0.0,
+  "w": 1200,
+  "h": 1200,
+  "shiftX": 0.017734200708298998,
+  "shiftY": -0.03758469490893987
+ },
+ "landmarky_px": {
+  "FLlid": [
+   75,
+   316
+  ],
+  "BRlid": [
+   1124,
+   291
+  ],
+  "FLbase": [
+   100,
+   810
+  ],
+  "FRbase": [
+   908,
+   966
+  ],
+  "BRbase": [
+   1110,
+   761
+  ]
+ },
+ "z_rohu": {
+  "lid": 170.0,
+  "base": -163.0
+ },
+ "chyby_px": [
+  2.7,
+  4.6,
+  4.4,
+  1.7,
+  4.5
+ ],
+ "rms_px": 3.8,
+ "rms_px_report": 11.556888277848266,
+ "poznamka": "kamera přepočtena z původních ručních landmarků (rohy obrysu) s opravenými z-úrovněmi rohů; bez dofitování podle tvaru modelu"
+}

@@ -1,0 +1,32 @@
+{
+ "sku": "4932478162",
+ "foto": "c01",
+ "kolo": 1,
+ "popis": "první sestava",
+ "poza": {
+  "rot": {},
+  "pos": {}
+ },
+ "iou_kamera_kontroly": {
+  "iou": 0.9192,
+  "iou_pod_radkem": 0.9192,
+  "ycut_px": 0
+ },
+ "iou_kamera_dofitovana": {
+  "iou": 0.9422,
+  "iou_pod_radkem": 0.9422,
+  "ycut_px": 0
+ },
+ "kamera_dofitovana": {
+  "azim": 17.297527238006182,
+  "elev": 18.8024852333099,
+  "dist": 3620.68221539931,
+  "fov": 11.296651913653301,
+  "roll": 0,
+  "shiftX": 0.03087923186309338,
+  "shiftY": -0.03958952783063294,
+  "w": 1200,
+  "h": 1200
+ },
+ "poznamka": "kamera kontroly = z 8 ručních bodů + obrys vs. kvádr obálky (nezávislá na tvaru); dofit = kamera dofitovaná podle siluety nového modelu (není důkaz)"
+}
