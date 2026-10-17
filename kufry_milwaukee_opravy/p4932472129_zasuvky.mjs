@@ -1,7 +1,7 @@
 // Zásuvky: pohyblivé uzly „zasuvka-N“ (N = 1 nahoře …) s osou výsuvu +X (extras.osa) a teleskopické kolejnice (střední člen „kolejnice-N-L/P“
 // se pohybuje poloviční rychlostí, extras.vazba/podil). Délka zásuvky a kolejnic je volená tak, aby se zásuvka při plném výsuvu neoddělila od těla
 // (kontroluje se v ověřZasuvky()). Čela: červené držadlo ≈ 190 × 18 mm v prolisu, štítek na horní zásuvce.
-import { Group, rbx, hollowBox, G, box } from './p4932472129_zaklad.mjs';
+import { Group, rbx, G } from './p4932472129_zaklad.mjs';
 import { hollowBox as hb } from '../kufriky_cloud/jadro/mesh.js';
 
 export const Z = {
