@@ -1,0 +1,133 @@
+{
+ "sku": "4932480623",
+ "foto": "c01.jpg (jen ve scratchpadu, mimo repo)",
+ "foto_url": "https://static.milwaukeetool.eu/remote.axd/milwaukee-media-images.s3.amazonaws.com/hi/4932480623--Hero_1.jpg?v=E38F1881A4832FEBA766E6DF0C56AA8C&width=1200",
+ "souradnice": "mm, počátek ve středu obálky, X=šířka, Y=délka, Z=výška; Z_modelu = Z_katalog - V/2",
+ "kamera": {
+  "azim": 30.231721801713284,
+  "elev": 13.359671448379322,
+  "dist": 3489.342887513364,
+  "fov": 12.710923575669458,
+  "cx": 610.2719441362993,
+  "cy": 623.5997729761873,
+  "roll": 0.0,
+  "shiftX": 0.008559953446916116,
+  "shiftY": 0.01966647748015608
+ },
+ "kamera_poznamka": "kamera z 8 ručně změřených bodů (lem víka, horní hrany, dolní rohy těla s odhadnutým zapuštěním 10 mm), rms 22 px = slabší kamera",
+ "landmarky_vstup": {
+  "w": 1200,
+  "h": 1200,
+  "cx": 600,
+  "cy": 600,
+  "free_c": true,
+  "az0": 22,
+  "el0": 15,
+  "priors": {
+   "zt": [
+    178,
+    14
+   ],
+   "zl": [
+    140,
+    30
+   ],
+   "zb": [
+    -180,
+    10
+   ]
+  },
+  "fov_prior": [
+   12,
+   8
+  ],
+  "body": [
+   [
+    190.5,
+    -254,
+    "zl",
+    100,
+    447,
+    1
+   ],
+   [
+    190.5,
+    254,
+    "zl",
+    805,
+    517,
+    1
+   ],
+   [
+    190.5,
+    -254,
+    "zt",
+    140,
+    338,
+    0.8
+   ],
+   [
+    -190.5,
+    254,
+    "zt",
+    1085,
+    348,
+    0.8
+   ],
+   [
+    -190.5,
+    -254,
+    "zt",
+    430,
+    263,
+    0.8
+   ],
+   [
+    180.5,
+    -244,
+    "zb",
+    143,
+    917,
+    0.7
+   ],
+   [
+    180.5,
+    244,
+    "zb",
+    835,
+    1040,
+    0.7
+   ],
+   [
+    -180.5,
+    244,
+    "zb",
+    1085,
+    858,
+    0.7
+   ]
+  ]
+ },
+ "vyska_skupin_z_fitu_mm": {
+  "zb": -182.5,
+  "zl": 129.7,
+  "zt": 184.5
+ },
+ "chyby_landmarku_px": [
+  16.5,
+  16.5,
+  31.8,
+  20.1,
+  4.3,
+  8.8,
+  31.3,
+  29.2
+ ],
+ "rms_px": 22.0,
+ "iou": {
+  "iou": 0.9445,
+  "foto_px": 670792,
+  "model_px": 639803
+ },
+ "render": "4932480623_c01_model.png"
+}

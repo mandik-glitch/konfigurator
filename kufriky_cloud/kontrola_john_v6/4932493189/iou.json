@@ -1,0 +1,37 @@
+{
+ "c01": {
+  "iou": 0.9301,
+  "px_jen_foto": 16799,
+  "px_jen_model": 31711,
+  "kamera_id": "C1",
+  "rms_landmarku_px": 2.8
+ },
+ "c02": {
+  "iou": 0.9006,
+  "px_jen_foto": 24451,
+  "px_jen_model": 42953,
+  "kamera_id": "D1",
+  "rms_landmarku_px": 9.1
+ },
+ "c03": {
+  "iou": 0.9032,
+  "px_jen_foto": 22661,
+  "px_jen_model": 43016,
+  "kamera_id": "E1",
+  "rms_landmarku_px": 9.3
+ },
+ "c04": {
+  "iou": 0.9317,
+  "px_jen_foto": 18184,
+  "px_jen_model": 18002,
+  "kamera_id": "F1",
+  "rms_landmarku_px": 7.1
+ },
+ "c05": {
+  "iou": 0.9352,
+  "px_jen_foto": 18650,
+  "px_jen_model": 16752,
+  "kamera_id": "F2",
+  "rms_landmarku_px": 5.9
+ }
+}

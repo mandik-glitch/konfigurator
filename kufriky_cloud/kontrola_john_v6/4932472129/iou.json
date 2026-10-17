@@ -1,0 +1,16 @@
+{
+ "c01": {
+  "iou": 0.9251,
+  "px_jen_foto": 28543,
+  "px_jen_model": 22964,
+  "kamera_id": "A",
+  "rms_landmarku_px": 11.0
+ },
+ "c02": {
+  "iou": 0.9234,
+  "px_jen_foto": 29696,
+  "px_jen_model": 25676,
+  "kamera_id": "B",
+  "rms_landmarku_px": 11.8
+ }
+}

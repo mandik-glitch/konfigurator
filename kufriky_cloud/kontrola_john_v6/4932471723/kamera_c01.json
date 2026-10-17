@@ -1,0 +1,94 @@
+{
+ "sku": "4932471723",
+ "foto": "c01.jpg (jen ve scratchpadu, mimo repo)",
+ "foto_url": "https://static.milwaukeetool.eu/remote.axd/milwaukee-media-images.s3.amazonaws.com/hi/4932471723--Hero_1.jpg?v=E841FD38A26E03A0C3ADCC376C8E08CD&width=1200",
+ "souradnice": "mm, počátek ve středu obálky, X=šířka, Y=délka, Z=výška; Z_modelu = Z_katalog - V/2",
+ "kamera": {
+  "azim": 115.11740485380787,
+  "elev": 17.948644323552934,
+  "dist": 3026.739148283214,
+  "fov": 12.301738122790573,
+  "cx": 621.7733214255536,
+  "cy": 669.6689446205896,
+  "roll": 0.0,
+  "shiftX": 0.01814443452129467,
+  "shiftY": 0.05805745385049135
+ },
+ "kamera_poznamka": "kamera ze 4 ručně změřených obrysových rohů (2 svislé hrany nahoře a dole) + priorů výšek a fov; hlavní bod volný. Fit je téměř přesně určený, shoda rohů proto IoU nijak nedokazuje. Nezávislá kontrola: predikovaná přední pravá svislá hrana (x≈673) sedí s fotkou na ±15 px a osa otvoru je ve středu čela.",
+ "landmarky_vstup": {
+  "w": 1200,
+  "h": 1200,
+  "cx": 600,
+  "cy": 600,
+  "az0": 125,
+  "el0": 18,
+  "priors": {
+   "zt": [
+    157,
+    6
+   ],
+   "zb": [
+    -150,
+    8
+   ]
+  },
+  "body": [
+   [
+    124.5,
+    205.5,
+    "zt",
+    232,
+    458,
+    1
+   ],
+   [
+    -124.5,
+    -205.5,
+    "zt",
+    978,
+    330,
+    1
+   ],
+   [
+    124.5,
+    205.5,
+    "zb",
+    243,
+    1017,
+    1
+   ],
+   [
+    -124.5,
+    -205.5,
+    "zb",
+    980,
+    840,
+    0.5
+   ]
+  ],
+  "fov_prior": [
+   12,
+   6
+  ],
+  "free_c": true
+ },
+ "vyska_skupin_z_fitu_mm": {
+  "zb": -149.5,
+  "zt": 156.7
+ },
+ "chyby_landmarku_px": [
+  1.0,
+  2.6,
+  1.3,
+  11.8
+ ],
+ "rms_px": 6.1,
+ "iou": {
+  "iou": 0.8675,
+  "foto_px": 573152,
+  "model_px": 505411,
+  "iou_bez_ignorovane_oblasti": 0.9518,
+  "ignorovano": "oblast zdviženého držadla nad víkem (fotka má držadlo vztyčené, model sklopené)"
+ },
+ "render": "4932471723_c01_model.png"
+}

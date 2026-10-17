@@ -1,0 +1,21 @@
+{
+ "sku": "4932493190",
+ "pohled": "c04",
+ "kamera": {
+  "azim": 36.11653362695015,
+  "elev": 23.061840979749807,
+  "dist": 2311.8573124515437,
+  "fov": 27.08624707363212,
+  "cx": 737.8312402721524,
+  "cy": 481.2295549246647,
+  "roll": 0,
+  "w": 1200,
+  "h": 1200,
+  "shiftX": 0.11485936689346034,
+  "shiftY": -0.09897537089611276
+ },
+ "ext": {
+  "drawer-2": 378
+ },
+ "poznamka": "kamera z ručně změřených bodů na fotografii (obrysové rohy + katalogová obálka), bez dofitování podle tvaru modelu"
+}

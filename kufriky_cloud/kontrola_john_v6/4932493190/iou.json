@@ -1,0 +1,44 @@
+{
+ "c01": {
+  "iou": 0.9329,
+  "px_jen_foto": 16859,
+  "px_jen_model": 30036,
+  "kamera_id": "C2",
+  "rms_landmarku_px": 3.1
+ },
+ "c02": {
+  "iou": 0.8975,
+  "px_jen_foto": 26205,
+  "px_jen_model": 43404,
+  "kamera_id": "D2",
+  "rms_landmarku_px": 9.8
+ },
+ "c03": {
+  "iou": 0.9068,
+  "px_jen_foto": 8332,
+  "px_jen_model": 55141,
+  "kamera_id": "E2",
+  "rms_landmarku_px": 11.6
+ },
+ "c04": {
+  "iou": 0.9316,
+  "px_jen_foto": 18686,
+  "px_jen_model": 17818,
+  "kamera_id": "G1",
+  "rms_landmarku_px": 7.5
+ },
+ "c05": {
+  "iou": 0.9352,
+  "px_jen_foto": 17339,
+  "px_jen_model": 17334,
+  "kamera_id": "G2",
+  "rms_landmarku_px": 6.5
+ },
+ "c06": {
+  "iou": 0.9378,
+  "px_jen_foto": 18520,
+  "px_jen_model": 15820,
+  "kamera_id": "G3",
+  "rms_landmarku_px": 6.9
+ }
+}

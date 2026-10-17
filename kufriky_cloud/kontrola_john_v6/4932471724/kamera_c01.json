@@ -1,0 +1,119 @@
+{
+ "sku": "4932471724",
+ "foto": "c01.jpg (jen ve scratchpadu, mimo repo)",
+ "foto_url": "https://static.milwaukeetool.eu/remote.axd/milwaukee-media-images.s3.amazonaws.com/hi/4932471724--Hero_1.jpg?v=5D970D1B8DCB2803843A534EA68DB141&width=1200",
+ "souradnice": "mm, počátek ve středu obálky, X=šířka, Y=délka, Z=výška; Z_modelu = Z_katalog - V/2",
+ "kamera": {
+  "azim": 24.240567718911862,
+  "elev": 13.324986997366276,
+  "dist": 1934.8264746238026,
+  "fov": 20.292384118737395,
+  "cx": 621.3694242232364,
+  "cy": 552.3733012151105,
+  "roll": 0.0,
+  "shiftX": 0.017807853519363637,
+  "shiftY": -0.039688915654074605
+ },
+ "kamera_poznamka": "kamera ze 7 ručně změřených rohů (okraj lemu, konce spodní příruby), rms 9 px, hlavní bod volný; body leží na obálce, takže IoU na krajích je částečně dané konstrukcí",
+ "landmarky_vstup": {
+  "w": 1200,
+  "h": 1200,
+  "cx": 600,
+  "cy": 600,
+  "free_c": true,
+  "az0": 25,
+  "el0": 18,
+  "priors": {
+   "zt": [
+    122,
+    10
+   ],
+   "zb": [
+    -118,
+    12
+   ]
+  },
+  "fov_prior": [
+   12,
+   8
+  ],
+  "body": [
+   [
+    194.5,
+    -237.5,
+    "zt",
+    80,
+    357,
+    1
+   ],
+   [
+    -194.5,
+    237.5,
+    "zt",
+    1113,
+    328,
+    1
+   ],
+   [
+    -194.5,
+    -237.5,
+    "zt",
+    410,
+    264,
+    1
+   ],
+   [
+    194.5,
+    237.5,
+    "zt",
+    897,
+    440,
+    0.7
+   ],
+   [
+    194.5,
+    -237.5,
+    "zb",
+    92,
+    785,
+    1
+   ],
+   [
+    194.5,
+    237.5,
+    "zb",
+    900,
+    915,
+    1
+   ],
+   [
+    -194.5,
+    237.5,
+    "zb",
+    1112,
+    722,
+    1
+   ]
+  ]
+ },
+ "vyska_skupin_z_fitu_mm": {
+  "zb": -121.0,
+  "zt": 123.6
+ },
+ "chyby_landmarku_px": [
+  8.8,
+  13.7,
+  5.1,
+  5.8,
+  9.7,
+  9.4,
+  7.4
+ ],
+ "rms_px": 9.0,
+ "iou": {
+  "iou": 0.9202,
+  "foto_px": 572812,
+  "model_px": 555027
+ },
+ "render": "4932471724_c01_model.png"
+}
