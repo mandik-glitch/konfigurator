@@ -16,9 +16,15 @@ for s in ['4932464079','4932464080','4932499703','4932499704']:
         for i in sorted(LMSKIP.get(s, {}).get(f['id'], []), reverse=True): lm.pop(i)
         e = {'foto': f"{SC}/kufry3/{s}/{f['id']}.jpg", 'start': cam, 'lm': lm, 'pose': {}, 'vyloucit': VYL.get(s, {}).get(f['id'], []), 'john_iou': f['iou_siluety'], 'john_iou_poznamka': f['iou_poznamka']}
         if f.get('uhel_viko_deg') is not None: e['pose'] = {'vicko': -f['uhel_viko_deg']}      # v našem modelu otevření = kladný úhel (osa -Y)
+        if s in ('4932464079','4932464080') and f['id'] != 'c01':
+            e['pose'].update({'trmen_L': 125 if s == '4932464079' else 135, 'trmen_P': 125 if s == '4932464079' else 135})   # drátěné třmeny na fotografiích visí dolů (otevřené západky)
         c[f['id']] = e
     if s == '4932464079':
         c['c01_nahore'] = json.loads(json.dumps(c['c01'])); c['c01_nahore']['vyloucit'] = []; c['c01_nahore']['glb'] = '../modely/4932464079_drzadlo_nahore.glb'
     if s in ('4932499703','4932499704'):
         c['c01']['pose'] = {'vicko': 118}
+    if s in ('4932499703','4932499704'):
+        base = {"azim": 30, "elev": 33, "dist": 2100, "fov": 22, "cx": 600, "cy": 600, "roll": 0, "w": 1200, "h": 1200}
+        c['c02'] = {'foto': f"{SC}/kufry3/{s}/c02.jpg", 'start': base, 'lm': [], 'pose': {'vicko': 100}, 'vyloucit': [], 'nazev': 'sada 4932499466 Hero_3 (nepřímý důkaz, jiná fotografie než SKU)'}
+        c['c03'] = {'foto': f"{SC}/kufry3/{s}/c03.jpg", 'start': dict(base, azim=0, elev=65, dist=2600, fov=18), 'lm': [], 'pose': {'vicko': 100}, 'vyloucit': [], 'nazev': 'sada 4932499466 Hero_2 (nepřímý důkaz, jiná fotografie než SKU)'}
     json.dump(c, open(f'cfg_{s}.json', 'w'), indent=1, ensure_ascii=False); print(s, {k: v['pose'] for k, v in c.items()})
