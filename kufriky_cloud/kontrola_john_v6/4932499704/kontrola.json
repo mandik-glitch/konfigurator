@@ -1,0 +1,141 @@
+{
+ "sku": "4932499704",
+ "nazev": "Box pro instalatéry 165×410×560",
+ "model": "kufriky_john/nahled-modely-v6/modely/4932499704.glb",
+ "hodnoceni": "nevěrohodný",
+ "duvod": "Jediná fotka (shora, otevřený kufr) ukazuje, že vložka v modelu neodpovídá: místo dvou vložných panelů a 4 vysokých látkových kapes je jeden panel a 5 malých kapes 60×60 mm, víko bez pásu úchytů. Vnější tvar (stěny, rohy, tyče, západky) z této fotky posoudit nelze.",
+ "kamera_poznamka": "Kamera z ručně změřených bodů na fotce (rohy těla/krytek) a katalogových rozměrů obálky; výška horních bodů (horní hrana krytek) je volný parametr, protože se nepodařilo spolehlivě určit její Z. Kamera NENÍ dofitována podle obrysu modelu. Přesnost kamery je odhad: zbytky landmarků viz rms_px, v obrazu ≈ ±15–20 px z 1200 (≈ ±10 mm na čele).",
+ "souradnice": "X = šířka (čelo +X), Y = délka, Z = výška, mm, počátek ve středu obálky",
+ "fotky": [
+  {
+   "id": "c01",
+   "zdroj_url": "https://static.milwaukeetool.eu/remote.axd/milwaukee-media-images.s3.amazonaws.com/hi/4932499704--Hero_1.jpg?width=1200",
+   "popis": "otevřený kufr shora, víko vzadu (použitelné jen pro vnitřek a obrys; fotka je BAJT PO BAJTU STEJNÁ jako u 4932499703, md5 shodné)",
+   "iou_siluety": 0.9092,
+   "iou_poznamka": "kamera jen ze 4 rohů těla (téměř kolmý pohled, fov ≈ 10°, el ≈ 79°), 4 body na 6 parametrů: rms 2,4 px je zavádějící, kamera je slabě určená (perspektiva víka nejistá, IoU víka jen orientační); úhel víka −118° DOFITOVÁN podle IoU; svěšené třmeny západek vyloučeny z masky",
+   "kamera": {
+    "azim": -0.48,
+    "elev": 78.69,
+    "dist": 4754.42,
+    "fov": 10.49,
+    "cx": 569.77,
+    "cy": 797.41,
+    "roll": 0,
+    "zt": null,
+    "rms_px": 2.4
+   },
+   "rms_landmarku_px": 2.4,
+   "zbytky_landmarku_px": [
+    2.2,
+    2.2,
+    2.5,
+    2.5
+   ],
+   "landmarky_xyz_px": [
+    {
+     "model_xyz": [
+      205,
+      -280,
+      0
+     ],
+     "foto_px": [
+      186,
+      1078
+     ],
+     "jen_svisle": false
+    },
+    {
+     "model_xyz": [
+      205,
+      280,
+      0
+     ],
+     "foto_px": [
+      962,
+      1074
+     ],
+     "jen_svisle": false
+    },
+    {
+     "model_xyz": [
+      -205,
+      -280,
+      0
+     ],
+     "foto_px": [
+      184,
+      525
+     ],
+     "jen_svisle": false
+    },
+    {
+     "model_xyz": [
+      -205,
+      280,
+      0
+     ],
+     "foto_px": [
+      947,
+      522
+     ],
+     "jen_svisle": false
+    }
+   ],
+   "uhel_viko_deg": -118,
+   "uhel_viko_stav": "dofitováno",
+   "render_png": "c01_model_z_kamery_foto.png"
+  }
+ ],
+ "rozdily": [
+  {
+   "n": 1,
+   "foto": "c01",
+   "co": "Vložné panely: na fotce DVA panely – levý hladký černý (viditelná část ≈ 135×300 mm, zbytek je pod pravým) a pravý červeně lemovaný panel ≈ 350×290 mm s kapsami při zadní hraně; společně ≈ 490×300 mm. Model: jediný panel 434×275 mm s červeným rámem.",
+   "vel": "celek ≈ 490×300 vs 434×275 mm (±5 %)",
+   "zav": "viditelný"
+  },
+  {
+   "n": 2,
+   "foto": "c01",
+   "co": "Kapsy: na fotce 4 vysoké látkové kapsy (každá ≈ 75 mm široká × ≈ 130 mm vysoká) v pravém panelu při zadní hraně; model 5 kapes 60×60 mm (hloubka 43 mm) v řadě po celé šířce panelu.",
+   "vel": "4 vs 5 kapes; ≈ 75×130 vs 60×60 mm",
+   "zav": "zásadní"
+  },
+  {
+   "n": 3,
+   "foto": "c01",
+   "co": "Víko zevnitř: na fotce černý panel s červeným lemem, červeným štítkem Milwaukee vlevo nahoře a dlouhým pásem červených pružných úchytů přes šířku víka (odhad ≈ 380×45 mm, ±15 %); model jen červený rám 340×488 mm bez pásu a štítku.",
+   "vel": "pás úchytů a štítek chybí",
+   "zav": "viditelný"
+  },
+  {
+   "n": 4,
+   "foto": "c01",
+   "co": "Poloha západek: třmeny na fotce při čele na ≈ ±160 mm od osy; model ±179 mm (rozdíl ≈ 20 mm).",
+   "vel": "≈ 20 mm",
+   "zav": "kosmetický"
+  },
+  {
+   "n": 5,
+   "foto": "c01",
+   "co": "Víko: na fotce silný rám s žebrovaným okrajem a viditelnými pantovými články; model plochý panel bez dutiny. Rozměr rozdílu nelze určit (perspektiva víka při slabé kameře).",
+   "vel": "nelze změřit",
+   "zav": "viditelný"
+  }
+ ],
+ "nepouzite_fotky": [],
+ "nelze_posoudit": [
+  "Celý vnějšek (čelo, boky, rohy, tyče, spodek): z jediného pohledu shora nelze; zda má kufr hliníkové tyče a chytací okna jako PACKOUT box, neví se.",
+  "Rozdíl mezi variantou pro elektrikáře a instalatéry: výrobce používá TUTÉŽ fotku (md5 shodné), Hero_2–5 na CDN neexistují (404); GLB obou SKU jsou binárně shodné.",
+  "Přesná poloha vložek vůči podlaze (jen obrys shora).",
+  "Poloměry, úkosy, tloušťky; úhel otevření víka."
+ ],
+ "doporuceni": [
+  "Vnější tvar pro tato SKU ověřit na dalších fotkách (zavřený kufr zepředu a z boku) – bez nich nelze hodnotit.",
+  "Vložku přepracovat podle c01: dva panely, 4 vysoké kapsy, pás úchytů ve víku.",
+  "Rozhodnout, zda mají mít SKU 4932499703 a 4932499703 různý model (fotky to nerozlišují)."
+ ],
+ "porovnano": [
+  "c01: dvojice foto | model | překryv; výřezy vnitřku těla a víka"
+ ]
+}

@@ -1,0 +1,551 @@
+{
+ "sku": "4932464079",
+ "nazev": "Velký box na nářadí 282×411×561",
+ "model": "kufriky_john/nahled-modely-v6/modely/4932464079.glb",
+ "hodnoceni": "nevěrohodný",
+ "duvod": "Obálka a hrubá kvádrová silueta sedí (IoU 0,84–0,94), ale chybí/jsou špatně všechny charakteristické prvky PACKOUT: hliníkové tyče s rohovými krytkami, průchozí chytací okna v krátkých stranách, červená U-rukojeť, velké západky (poloha i velikost), tvar a členění víka.",
+ "kamera_poznamka": "Kamera z ručně změřených bodů na fotce (rohy těla/krytek) a katalogových rozměrů obálky; výška horních bodů (horní hrana krytek) je volný parametr, protože se nepodařilo spolehlivě určit její Z. Kamera NENÍ dofitována podle obrysu modelu. Přesnost kamery je odhad: zbytky landmarků viz rms_px, v obrazu ≈ ±15–20 px z 1200 (≈ ±10 mm na čele).",
+ "souradnice": "X = šířka (čelo +X), Y = délka, Z = výška, mm, počátek ve středu obálky",
+ "fotky": [
+  {
+   "id": "c01",
+   "zdroj_url": "https://static.milwaukeetool.eu/remote.axd/milwaukee-media-images.s3.amazonaws.com/hi/4932464079--Hero_1.jpg?width=1200",
+   "popis": "zavřený box, horní držadlo zvednuté, pohled zepředu zprava (použitelné)",
+   "iou_siluety": 0.895,
+   "iou_poznamka": "IoU jen těla: z fotky vyříznuta oblast zvednutého držadla (v modelu je sklopené); kamera jen z landmarků; model zbytek bez úprav",
+   "kamera": {
+    "azim": 31.31,
+    "elev": 12.35,
+    "dist": 1688.22,
+    "fov": 23.88,
+    "cx": 615.53,
+    "cy": 684.94,
+    "roll": 0,
+    "zt": 94.58,
+    "rms_px": 11.4
+   },
+   "rms_landmarku_px": 11.4,
+   "zbytky_landmarku_px": [
+    11.1,
+    18.8,
+    2.2,
+    3.8,
+    17.0,
+    6.6,
+    9.3
+   ],
+   "landmarky_xyz_px": [
+    {
+     "model_xyz": [
+      205.5,
+      -280.5,
+      "zt"
+     ],
+     "foto_px": [
+      15,
+      525
+     ],
+     "jen_svisle": false
+    },
+    {
+     "model_xyz": [
+      205.5,
+      280.5,
+      "zt"
+     ],
+     "foto_px": [
+      910,
+      645
+     ],
+     "jen_svisle": false
+    },
+    {
+     "model_xyz": [
+      -205.5,
+      280.5,
+      "zt"
+     ],
+     "foto_px": [
+      1195,
+      522
+     ],
+     "jen_svisle": false
+    },
+    {
+     "model_xyz": [
+      205.5,
+      -280.5,
+      -141
+     ],
+     "foto_px": [
+      30,
+      928
+     ],
+     "jen_svisle": false
+    },
+    {
+     "model_xyz": [
+      205.5,
+      280.5,
+      -141
+     ],
+     "foto_px": [
+      868,
+      1096
+     ],
+     "jen_svisle": false
+    },
+    {
+     "model_xyz": [
+      -205.5,
+      280.5,
+      -141
+     ],
+     "foto_px": [
+      1182,
+      893
+     ],
+     "jen_svisle": false
+    },
+    {
+     "model_xyz": [
+      -190,
+      -250,
+      141
+     ],
+     "foto_px": [
+      395,
+      402
+     ],
+     "jen_svisle": true
+    }
+   ],
+   "uhel_viko_deg": null,
+   "uhel_viko_stav": null,
+   "render_png": "c01_model_z_kamery_foto.png"
+  },
+  {
+   "id": "c02",
+   "zdroj_url": "https://static.milwaukeetool.eu/remote.axd/milwaukee-media-images.s3.amazonaws.com/hi/4932464079--Hero_2.jpg?width=1200",
+   "popis": "otevřený box s nářadím, víko vzhůru, pohled shora zepředu (použitelné; tělo i víko)",
+   "iou_siluety": 0.9398,
+   "iou_poznamka": "úhel víka −95° (rotace uzlů víka kolem osy pantů v modelu) DOFITOVÁN podle IoU, proto IoU není nezávislý důkaz tvaru víka; tělo: kamera jen z landmarků",
+   "kamera": {
+    "azim": 22.11,
+    "elev": 43.33,
+    "dist": 3245.96,
+    "fov": 16.94,
+    "cx": 590.81,
+    "cy": 770.04,
+    "roll": 0,
+    "zt": 86.41,
+    "rms_px": 18.1
+   },
+   "rms_landmarku_px": 18.1,
+   "zbytky_landmarku_px": [
+    8.4,
+    31.1,
+    10.6,
+    10.0,
+    23.9,
+    11.8
+   ],
+   "landmarky_xyz_px": [
+    {
+     "model_xyz": [
+      205.5,
+      -280.5,
+      -141
+     ],
+     "foto_px": [
+      185,
+      968
+     ],
+     "jen_svisle": false
+    },
+    {
+     "model_xyz": [
+      205.5,
+      280.5,
+      -141
+     ],
+     "foto_px": [
+      855,
+      1175
+     ],
+     "jen_svisle": false
+    },
+    {
+     "model_xyz": [
+      -205.5,
+      280.5,
+      -141
+     ],
+     "foto_px": [
+      990,
+      812
+     ],
+     "jen_svisle": false
+    },
+    {
+     "model_xyz": [
+      205.5,
+      -280.5,
+      "zt"
+     ],
+     "foto_px": [
+      148,
+      758
+     ],
+     "jen_svisle": false
+    },
+    {
+     "model_xyz": [
+      205.5,
+      280.5,
+      "zt"
+     ],
+     "foto_px": [
+      815,
+      955
+     ],
+     "jen_svisle": false
+    },
+    {
+     "model_xyz": [
+      -205.5,
+      280.5,
+      "zt"
+     ],
+     "foto_px": [
+      1003,
+      630
+     ],
+     "jen_svisle": false
+    }
+   ],
+   "uhel_viko_deg": -95,
+   "uhel_viko_stav": "dofitováno",
+   "render_png": "c02_model_z_kamery_foto.png"
+  },
+  {
+   "id": "c03",
+   "zdroj_url": "https://static.milwaukeetool.eu/remote.axd/milwaukee-media-images.s3.amazonaws.com/hi/4932464079--Hero_3.jpg?width=1200",
+   "popis": "totéž + vyjmutá vložka vpravo (použitelné; vložka vyloučena z masky fotky)",
+   "iou_siluety": 0.9227,
+   "iou_poznamka": "úhel víka −95° dofitován; oddělená vložka vyloučena z masky fotky; kamera z landmarků (rms 6 px)",
+   "kamera": {
+    "azim": 21.2,
+    "elev": 43.81,
+    "dist": 3093.13,
+    "fov": 22.83,
+    "cx": 490.51,
+    "cy": 700.25,
+    "roll": 0,
+    "zt": 84.81,
+    "rms_px": 6.3
+   },
+   "rms_landmarku_px": 6.3,
+   "zbytky_landmarku_px": [
+    4.1,
+    4.8,
+    8.7,
+    4.7,
+    5.0,
+    8.6
+   ],
+   "landmarky_xyz_px": [
+    {
+     "model_xyz": [
+      205.5,
+      -280.5,
+      -141
+     ],
+     "foto_px": [
+      175,
+      858
+     ],
+     "jen_svisle": false
+    },
+    {
+     "model_xyz": [
+      205.5,
+      280.5,
+      -141
+     ],
+     "foto_px": [
+      680,
+      1008
+     ],
+     "jen_svisle": false
+    },
+    {
+     "model_xyz": [
+      -205.5,
+      280.5,
+      -141
+     ],
+     "foto_px": [
+      800,
+      728
+     ],
+     "jen_svisle": false
+    },
+    {
+     "model_xyz": [
+      205.5,
+      -280.5,
+      "zt"
+     ],
+     "foto_px": [
+      150,
+      700
+     ],
+     "jen_svisle": false
+    },
+    {
+     "model_xyz": [
+      205.5,
+      280.5,
+      "zt"
+     ],
+     "foto_px": [
+      685,
+      845
+     ],
+     "jen_svisle": false
+    },
+    {
+     "model_xyz": [
+      -205.5,
+      280.5,
+      "zt"
+     ],
+     "foto_px": [
+      810,
+      590
+     ],
+     "jen_svisle": false
+    }
+   ],
+   "uhel_viko_deg": -95,
+   "uhel_viko_stav": "dofitováno",
+   "render_png": "c03_model_z_kamery_foto.png"
+  }
+ ],
+ "rozdily": [
+  {
+   "n": 1,
+   "foto": "c01 (potvrzeno c02, c03)",
+   "co": "Rohy: na fotce 4 svislé hliníkové tyče (≈ 30–35 mm široké, viditelná délka ≈ 140 mm) mezi černými rohovými krytkami (≈ 50×55 mm, se šroubem) vystupující z těla. V modelu jen sloupek ochrany rohu 15×15 mm a kovová lišta 5×5 mm (zdroj GLB: roh-kov-*), prakticky bez reliéfu.",
+   "vel": "≈ 30 mm profil × 140 mm délka",
+   "zav": "zásadní"
+  },
+  {
+   "n": 2,
+   "foto": "c01, c02, c03",
+   "co": "Krátké strany: na fotce mezi tyčemi a tělem průchozí chytací okno (na fotce vidět bílé pozadí skrz). Model: plná rovná stěna bez otvoru (ověřeno renderem koncové stěny).",
+   "vel": "okno ≈ výška tyče (≈ 140 mm)",
+   "zav": "viditelný"
+  },
+  {
+   "n": 3,
+   "foto": "c01, c02, c03",
+   "co": "Čelní rukojeť: na fotce červená vystupující U-rukojeť s černým gripem, ≈ 230×120 mm, těžiště o ≈ 130 mm (±15) NÍŽE než v modelu. V modelu plochý červený rámeček 186×33 mm („okno“) v horní třetině čela.",
+   "vel": "≈ 130 mm poloha, tvar jiný",
+   "zav": "zásadní"
+  },
+  {
+   "n": 4,
+   "foto": "c01, c02, c03",
+   "co": "Západky: na fotce velké červené západky ≈ 65×57 mm s dlouhým drátěným třmenem; model 31×38 mm, ≈ poloviční, se třmenem krátkým; těžiště modelu o ≈ 60 mm (±15) výš než na fotce (u obou západek).",
+   "vel": "≈ 2× menší, ≈ 60 mm výš",
+   "zav": "viditelný"
+  },
+  {
+   "n": 5,
+   "foto": "c01",
+   "co": "Horní plocha víka: na fotce 10 hlubokých kapes/prolisů (2 skupiny po 5, středové žebro, červený štítek vpravo), víko má zkosená ramena a zaoblené rohy. Model: 6 obdélníkových rámečků + 2 okrajové lišty, plný ostrý kvádr celé půdorysné plochy, červený štítek 36×24 mm (na fotce ≈ 120×20 mm podélně).",
+   "vel": "10 vs 6 kapes; víko nad skutečný obrys přesahuje o ≈ 10–15 mm",
+   "zav": "viditelný"
+  },
+  {
+   "n": 6,
+   "foto": "c01, c02, c03 (odhad kamery)",
+   "co": "Dělení víko/tělo: horní hrana rohových krytek a těla leží na fotkách ≈ 50 mm pod rovinou víka (odhad z kamery, ±15 mm); v modelu horní okraj těla 30 mm pod vrchem víka (Z 111 z 141). Víko skutečné je tedy silnější (≈ 50 mm skořepina), model má ≈ 30 mm.",
+   "vel": "≈ 20 mm (±15)",
+   "zav": "viditelný"
+  },
+  {
+   "n": 7,
+   "foto": "c02, c03",
+   "co": "Víko zevnitř: na fotce hluboká skořepina se žebry a kruhovým výstupkem uprostřed (⌀ ≈ 70 mm, ±15) a ozubením u pantu; model plná deska ≈ 30 mm s plochou spodní stranou (viko-panel 8 mm) bez vnitřního reliéfu.",
+   "vel": "skořepina ≈ 40–50 mm vs plochá deska",
+   "zav": "viditelný"
+  },
+  {
+   "n": 8,
+   "foto": "c02, c03",
+   "co": "Vnitřek těla: na fotce hluboká vana s žebry a zvlněnou stěnou; vyjmutá/vložená vložka (2 přihrádky) ≈ 60 % délky kufru × téměř plná hloubka. Model: plochá podlaha a úzká lavice 450×100×42 mm podél zadní stěny (vlozka-*), ve fotkách nic takového není. Zda je vložka součástí dodávky, fotky neříkají.",
+   "vel": "půdorys vložky ≈ 450×100 vs ≈ 350×330 mm (odhad ±50)",
+   "zav": "viditelný"
+  },
+  {
+   "n": 9,
+   "foto": "c01",
+   "co": "Horní držadlo: foto zvednuté, model sklopené – srovnání nelze. Z fotky rozteč noh držadla ≈ 500 mm (±40), model sklopené rameno 52×354 mm.",
+   "vel": "≈ 150 mm (odhad)",
+   "zav": "viditelný (odhad)"
+  },
+  {
+   "n": 10,
+   "foto": "c01",
+   "co": "Logo a drobnosti: na fotce malé logo Milwaukee/PACKOUT v prohlubni nad rukojetí, kruhový otvor ⌀ ≈ 35 mm nad rukojetí, červený jazýček u dolní hrany. Model: velký červený nápis MILWAUKEE PACKOUT pod rukojetí a červený kroužek o ≈ 50 mm výš než jazýček.",
+   "vel": "kosmetické, ≈ 50 mm poloha",
+   "zav": "kosmetický"
+  },
+  {
+   "n": 11,
+   "foto": "c01",
+   "co": "Spodní hrana čela: na fotce souvislá přímá hrana na nejnižší úrovni; v modelu je čelní hrana těla 12 mm nad nožkami (nožky odsazené od čela), obrys je tam o ≈ 8–12 mm výš.",
+   "vel": "≈ 10 mm",
+   "zav": "kosmetický"
+  }
+ ],
+ "nepouzite_fotky": [],
+ "nelze_posoudit": [
+  "Zadní strana, spodek (nožky/spojovací prvky) a koncové strany zblízka – žádná fotka (v c01 jen pravá krátká strana pod úhlem ≈ 60°).",
+  "Horní držadlo ve sklopené poloze (c01 ukazuje jen zvednuté).",
+  "Poloměry zaoblení, úkosy a tloušťky stěn – fotografie je nekótují.",
+  "Přesná poloha dělení víko/tělo a výška krytek – jen odhad z kamery (±15 mm).",
+  "Zda jsou vložky z c02/c03 součástí dodávky."
+ ],
+ "doporuceni": [
+  "Před dalším použitím modelu přepracovat čelo: U-rukojeť (poloha o ≈ 130 mm níž), velké západky (≈ 65×57 mm, o ≈ 60 mm níž).",
+  "Doplnit hliníkové tyče a rohové krytky jako samostatné objemové díly (≈ 30–35 mm profil, krytky ≈ 50 mm) a chytací okna v krátkých stranách.",
+  "Víko: zkosená ramena, 10 kapes, silnější skořepina (≈ 50 mm); vnitřek víka a vany zjednodušeně zrekonstruovat podle c02/c03.",
+  "Sklopenou polohu horního držadla doměřit na kusu nebo z další fotky; rozteč noh ověřit."
+ ],
+ "porovnano": [
+  "c01: dvojice foto | model | překryv + přiblížené výřezy zleva a zprava",
+  "c02: dvojice + výřez celé sestavy",
+  "c03: dvojice + výřez celé sestavy"
+ ],
+ "poloha_prvku_c01": [
+  {
+   "prvek": "zapadka cervena vlevo (stred)",
+   "model_px": [
+    162,
+    580
+   ],
+   "foto_px": [
+    180,
+    688
+   ],
+   "rozdil_px": [
+    18,
+    108
+   ],
+   "meritko_px_mm": [
+    1.39,
+    1.75
+   ],
+   "rozdil_mm_priblizne": [
+    13,
+    -62
+   ]
+  },
+  {
+   "prvek": "zapadka cervena vpravo (stred)",
+   "model_px": [
+    718,
+    646
+   ],
+   "foto_px": [
+    700,
+    770
+   ],
+   "rozdil_px": [
+    -18,
+    124
+   ],
+   "meritko_px_mm": [
+    1.77,
+    1.97
+   ],
+   "rozdil_mm_priblizne": [
+    -10,
+    -63
+   ]
+  },
+  {
+   "prvek": "drzadlo (cervene, stred)",
+   "model_px": [
+    420,
+    604
+   ],
+   "foto_px": [
+    432,
+    845
+   ],
+   "rozdil_px": [
+    12,
+    241
+   ],
+   "meritko_px_mm": [
+    1.56,
+    1.86
+   ],
+   "rozdil_mm_priblizne": [
+    8,
+    -130
+   ]
+  },
+  {
+   "prvek": "cerveny prvek dole uprostred (stred)",
+   "model_px": [
+    428,
+    932
+   ],
+   "foto_px": [
+    460,
+    1022
+   ],
+   "rozdil_px": [
+    32,
+    90
+   ],
+   "meritko_px_mm": [
+    1.54,
+    1.76
+   ],
+   "rozdil_mm_priblizne": [
+    21,
+    -51
+   ]
+  },
+  {
+   "prvek": "kruhovy otvor/kroužek (stred)",
+   "model_px": [
+    428,
+    932
+   ],
+   "foto_px": [
+    460,
+    805
+   ],
+   "rozdil_px": [
+    32,
+    -127
+   ],
+   "meritko_px_mm": [
+    1.54,
+    1.76
+   ],
+   "rozdil_mm_priblizne": [
+    21,
+    72
+   ]
+  }
+ ]
+}
