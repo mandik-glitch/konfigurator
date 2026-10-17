@@ -9,8 +9,8 @@ export const B = { x: 203, zPiv: -150.5, yNoha: 62.5, zHor: 167.5, r: 2.3 };
 export function trmen() {
   const g = new Group('trmen', { pivot: [B.x, 0, B.zPiv], extras: { osa: [0, 1, 0], typ: 'rotace', rozsah_deg: [-90, 0], poznamka: 'sklopení dozadu je neověřené (z fotek vidět jen příčka mezi svorkami)' } });
   const { x, zPiv, yNoha: yn, zHor, r } = B;
-  const pts = [[x, -88, zPiv], [x, -74, zPiv], [x, -yn, zPiv + 12], [x, -yn, zHor - 10], [x, -yn + 2, zHor], [x, 0, zHor], [x, yn - 2, zHor], [x, yn, zHor - 10], [x, yn, zPiv + 12], [x, 74, zPiv], [x, 88, zPiv]];
-  const cesta = zaoblenaCesta(pts, [10, 14, 10, 10, 14, 10], 5);
+  const pts = [[x, -88, zPiv], [x, -yn, zPiv], [x, -yn, zHor], [x, yn, zHor], [x, yn, zPiv], [x, 88, zPiv]];
+  const cesta = zaoblenaCesta(pts, [9, 13, 13, 9], 6);
   g.add(tube('ocel', 'trmen_drat', cesta, r, 10, true));
   return g;
 }
