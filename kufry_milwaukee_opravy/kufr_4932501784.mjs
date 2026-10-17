@@ -11,7 +11,7 @@ export const NAZEV = 'Milwaukee PACKOUT XL Box, revize s U-madlem (4932501784)';
 
 export function build() {
   const root = new Group(SKU);
-  zakladXL(root);
+  zakladXL(root, { stitek: true });
   root.addGroup(madlo());
   return root;
 }

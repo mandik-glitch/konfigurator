@@ -1,0 +1,61 @@
+{
+ "sku": "4932493189",
+ "poznamka": "IoU = průnik/sjednocení obrysu fotografie (jas < 245, bez vyplňování děr) a obrysu modelu v 1200×1200 px; nová kamera = přepočet z ručních landmarků reportu s opravenými z-úrovněmi rohů (bez dofitování podle tvaru); iou_nova_kamera_reportu = kamery z reportu beze změny; dofit = kamera doladěná překryvem obrysu (400 px) a NENÍ důkaz.",
+ "pohledy": {
+  "c01": {
+   "iou_john_v6": 0.9301,
+   "iou_nova_kamera_landmarky": 0.9676,
+   "iou_nova_kamera_reportu": 0.9752,
+   "px_jen_foto": 16923,
+   "px_jen_model": 4682,
+   "rms_landmarku_px_report": 2.8,
+   "iou_dofit_kamera_400px_NENI_DUKAZ": 0.979,
+   "iou_start_400px": 0.9668,
+   "rms_landmarku_px_nova": 3.2
+  },
+  "c02": {
+   "iou_john_v6": 0.9006,
+   "iou_nova_kamera_landmarky": 0.9441,
+   "iou_nova_kamera_reportu": 0.9483,
+   "px_jen_foto": 28764,
+   "px_jen_model": 7164,
+   "rms_landmarku_px_report": 9.1,
+   "iou_dofit_kamera_400px_NENI_DUKAZ": 0.9685,
+   "iou_start_400px": 0.9437,
+   "rms_landmarku_px_nova": 2.7
+  },
+  "c03": {
+   "iou_john_v6": 0.9032,
+   "iou_nova_kamera_landmarky": 0.9487,
+   "iou_nova_kamera_reportu": 0.9524,
+   "px_jen_foto": 26591,
+   "px_jen_model": 6315,
+   "rms_landmarku_px_report": 9.3,
+   "iou_dofit_kamera_400px_NENI_DUKAZ": 0.9686,
+   "iou_start_400px": 0.948,
+   "rms_landmarku_px_nova": 2.4
+  },
+  "c04": {
+   "iou_john_v6": 0.9317,
+   "iou_nova_kamera_landmarky": 0.9519,
+   "iou_nova_kamera_reportu": 0.9261,
+   "px_jen_foto": 14018,
+   "px_jen_model": 11147,
+   "rms_landmarku_px_report": 7.1,
+   "iou_dofit_kamera_400px_NENI_DUKAZ": 0.9693,
+   "iou_start_400px": 0.9516,
+   "rms_landmarku_px_nova": 9.3
+  },
+  "c05": {
+   "iou_john_v6": 0.9352,
+   "iou_nova_kamera_landmarky": 0.9592,
+   "iou_nova_kamera_reportu": 0.9295,
+   "px_jen_foto": 12603,
+   "px_jen_model": 9409,
+   "rms_landmarku_px_report": 5.9,
+   "iou_dofit_kamera_400px_NENI_DUKAZ": 0.9729,
+   "iou_start_400px": 0.9591,
+   "rms_landmarku_px_nova": 8.0
+  }
+ }
+}

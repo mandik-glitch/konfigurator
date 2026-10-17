@@ -13,22 +13,28 @@ export const D = {
 const bx = (mat, name, x0, x1, y0, y1, z0, z1) => box(mat, name, x0, x1, y0, y1, zc(z0), zc(z1));
 
 // půdorys vany: obdélník se zaoblenými rohy; v oblasti kol (Y > yK) je spodní část užší (kola stojí po stranách)
-function planVana(yL, yR, hx, r = 22) { return rrPoly(-hx, hx, yL, yR, [r, r, r, r], 4); }
+function planVana(yL, yR, hx, r = 22, hxn = null, yN = 336) {
+  if (hxn === null) return rrPoly(-hx, hx, yL, yR, [r, r, r, r], 4);
+  const P = [[hx, yL], [hx, yN], [hxn, yN], [hxn, yR], [-hxn, yR], [-hxn, yN], [-hx, yN], [-hx, yL]];   // výřez pro kola (u konce +Y je spodní část užší)
+  return roundPoly(P, [r, 4, 4, r, r, 4, 4, r], 3);
+}
 
 export function korpus() {
   const g = new Group('korpus');
   // ---- vana: vnější plášť + vnitřní dutina (hladká, zjednodušená) ----
   const rings = [], add = (poly, z) => rings.push({ poly, z: zc(z) });
-  add(planVana(D.yL + 14, D.yR - 12, D.xf - 14, 16), D.zDno);
-  add(planVana(D.yL + 6, D.yR - 5, D.xf - 5, 20), D.zDno + 8);
-  add(planVana(D.yL, D.yR, D.xf, 24), D.zDno + 20);
-  add(planVana(D.yL - 2, D.yR + 1, D.xf, 24), 210);
-  add(planVana(D.yL - 4, D.yR + 3, D.xf, 24), D.zSeva - 3);
-  add(planVana(D.yL - 4, D.yR + 3, D.xf, 24), D.zSeva);
+  const HN = 206;                                            // poloviční šířka spodní části u kol (kola ±216…304,5 stojí vně)
+  add(planVana(D.yL + 14, D.yR - 12, D.xf - 14, 16, HN - 14), D.zDno);
+  add(planVana(D.yL + 6, D.yR - 5, D.xf - 5, 20, HN - 5), D.zDno + 8);
+  add(planVana(D.yL, D.yR, D.xf, 24, HN), D.zDno + 20);
+  add(planVana(D.yL - 2, D.yR + 1, D.xf, 24, HN), 238);
+  add(planVana(D.yL - 3, D.yR + 2, D.xf, 24, D.xf - 0.6), 240);    // schod nad koly: nahoře plná šířka
+  add(planVana(D.yL - 4, D.yR + 3, D.xf, 24, D.xf - 0.6), D.zSeva - 3);
+  add(planVana(D.yL - 4, D.yR + 3, D.xf, 24, D.xf - 0.6), D.zSeva);
   const top = rings[rings.length - 1].poly, w = 5;
   rings.push({ poly: polyInset(top, w), z: zc(D.zSeva) });
   rings.push({ poly: polyInset(top, w), z: zc(D.zDno + 14) });
-  rings.push({ poly: polyInset(planVana(D.yL + 6, D.yR - 5, D.xf - 5, 20), w), z: zc(D.zDno + 8) });
+  rings.push({ poly: polyInset(planVana(D.yL + 6, D.yR - 5, D.xf - 5, 20, HN - 5), w), z: zc(D.zDno + 8) });
   g.add(skorepina('cerna', 'vana', rings, { otevreno: 'nahoru' }));
 
   // ---- čelní stěna: pás pod víkem, výlisky kolem západek, zvýšený štít s logem, stupňovitý spodek ----
@@ -47,9 +53,9 @@ export function korpus() {
     g.add(slab('cerna', `patka_${sx > 0 ? 'P' : 'L'}_${y0}`, { x0: sx > 0 ? 190 : -286, x1: sx > 0 ? 286 : -190, y0, y1, z0: zc(16), z1: zc(D.zDno + 2), rs: 8, reB: 3, fs: 2 }));
   }
   // ---- konec u kol: koncový blok (nástavec s úchytem), spodní žebrovaná patka mezi koly ----
-  g.add(slab('cerna', 'konec_blok', { x0: -168, x1: 168, y0: D.yR - 14, y1: 482.5, z0: zc(262), z1: zc(372), rs: 14, reT: 14, reB: 3, fs: 3, kT: 0.6 }));
-  g.add(extYZ('cerna', 'konec_sikma', [[400, zc(372)], [460, zc(372)], [482.5, zc(345)], [482.5, zc(300)], [400, zc(300)]], -150, 150));
-  for (let i = 0; i < 9; i++) g.add(bx('cerna_mat', 'konec_zebro' + i, -150 + i * 37.5 - 4, -150 + i * 37.5 + 4, 480.5, 482.5, 290, 345));
+  g.add(slab('cerna', 'konec_blok', { x0: -168, x1: 168, y0: D.yR - 14, y1: 482.5, z0: zc(246), z1: zc(350), rs: 14, reT: 14, reB: 3, fs: 3, kT: 0.6 }));
+  g.add(extYZ('cerna', 'konec_sikma', [[400, zc(350)], [460, zc(350)], [482.5, zc(326)], [482.5, zc(280)], [400, zc(280)]], -150, 150));
+  for (let i = 0; i < 9; i++) g.add(bx('cerna_mat', 'konec_zebro' + i, -150 + i * 37.5 - 4, -150 + i * 37.5 + 4, 480.5, 482.5, 270, 325));
   g.add(slab('cerna', 'konec_patka', { x0: -170, x1: 170, y0: D.yR - 8, y1: 462, z0: zc(26), z1: zc(80), rs: 10, reB: 4, fs: 2 }));
   for (let i = 0; i < 12; i++) g.add(bx('cerna_mat', 'konec_patka_zebro' + i, -156 + i * 28.4 - 3, -156 + i * 28.4 + 3, 458, 462.5, 32, 74));
   return g;

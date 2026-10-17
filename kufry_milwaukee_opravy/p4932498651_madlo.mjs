@@ -9,7 +9,7 @@ export function madlo() {
   // pevné vedení (dva černé profily v zadní stěně, vyčnívají nad víko jen krátce – zadní okraj)
   for (const s of [1, -1]) g.add(rbox('cerna', 'madlo_vedeni' + (s > 0 ? '' : '_m'), x0 - 3, x1 + 3, s * M.y - a - 3, s * M.y + a + 3, -240, 238, 3, 1.2));
   // střední stupeň
-  const st = new Group('madlo_stredni', { pivot: [M.x, 0, 0], extras: { osa: [0, 0, 1], max_posuv: M.zdvihStredni, popis: 'střední stupeň teleskopu (posuv podél +Z)' } });
+  const st = new Group('madlo_stredni', { pivot: [M.x, 0, 0], extras: { posuv_osa: [0, 0, 1], max_posuv: M.zdvihStredni, popis: 'střední stupeň teleskopu (posuv podél +Z)' } });
   const zS = 234;   // horní hrana červené vodicí spony ve výchozí poloze (pod víkem; spona je ukryta ve skříni)
   for (const s of [1, -1]) st.add(rbox('cerna', 'madlo_trubka2' + (s > 0 ? '' : '_m'), x0 + 0.3, x1 - 0.3, s * M.y - a + 0.5, s * M.y + a - 0.5, -190, zS, 2, 1));
   // červená vodicí spona: konce (kolem trubek) vyšší, střed nižší a se zahloubením; pod ní černá polička
@@ -20,7 +20,7 @@ export function madlo() {
   st.add(rbox('cerna', 'madlo_spona_tlacitko', M.x - 8, M.x + 8, -22, 22, zS - 18, zS - 12, 2, 1));
   g.addGroup(st);
   // horní stupeň
-  const hr = new Group('madlo_horni', { pivot: [M.x, 0, 0], extras: { osa: [0, 0, 1], max_posuv: M.zdvihHorni, popis: 'horní stupeň teleskopu (posuv podél +Z), červená příčka s úchopem' } });
+  const hr = new Group('madlo_horni', { pivot: [M.x, 0, 0], extras: { posuv_osa: [0, 0, 1], max_posuv: M.zdvihHorni, popis: 'horní stupeň teleskopu (posuv podél +Z), červená příčka s úchopem' } });
   for (const s of [1, -1]) hr.add(rbox('cerna', 'madlo_trubka1' + (s > 0 ? '' : '_m'), x0 + 2, x1 - 2, s * M.y - a + 2, s * M.y + a - 2, -160, Z_TOP - 40, 1.5, 0.8));
   // červená příčka: tělo (zkosené konce), černý gumový úchop, čepy
   const bar = roundPoly([[-M.y - a - 10, Z_TOP - 40], [M.y + a + 10, Z_TOP - 40], [M.y + a + 10, Z_TOP], [-M.y - a - 10, Z_TOP]], [5, 5, 5, 5], 3);

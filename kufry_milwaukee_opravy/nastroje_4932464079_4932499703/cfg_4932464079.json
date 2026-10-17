@@ -94,7 +94,9 @@
      565
     ]
    ]
-  ]
+  ],
+  "john_iou": 0.895,
+  "john_iou_poznamka": "IoU jen těla: z fotky vyříznuta oblast zvednutého držadla (v modelu je sklopené); kamera jen z landmarků; model zbytek bez úprav"
  },
  "c02": {
   "foto": "/tmp/claude-0/-home-user-konfigurator/4afe04ea-52af-557e-a8a4-75a8d542e4f9/scratchpad/kufry3/4932464079/c02.jpg",
@@ -136,9 +138,11 @@
    ]
   ],
   "pose": {
-   "vicko": -95
+   "vicko": 95
   },
-  "vyloucit": []
+  "vyloucit": [],
+  "john_iou": 0.9398,
+  "john_iou_poznamka": "úhel víka −95° (rotace uzlů víka kolem osy pantů v modelu) DOFITOVÁN podle IoU, proto IoU není nezávislý důkaz tvaru víka; tělo: kamera jen z landmarků"
  },
  "c03": {
   "foto": "/tmp/claude-0/-home-user-konfigurator/4afe04ea-52af-557e-a8a4-75a8d542e4f9/scratchpad/kufry3/4932464079/c03.jpg",
@@ -180,7 +184,7 @@
    ]
   ],
   "pose": {
-   "vicko": -95
+   "vicko": 95
   },
   "vyloucit": [
    [
@@ -201,7 +205,9 @@
      1090
     ]
    ]
-  ]
+  ],
+  "john_iou": 0.9227,
+  "john_iou_poznamka": "úhel víka −95° dofitován; oddělená vložka vyloučena z masky fotky; kamera z landmarků (rms 6 px)"
  },
  "c01_nahore": {
   "foto": "/tmp/claude-0/-home-user-konfigurator/4afe04ea-52af-557e-a8a4-75a8d542e4f9/scratchpad/kufry3/4932464079/c01.jpg",
@@ -243,6 +249,9 @@
    ]
   ],
   "pose": {},
-  "vyloucit": []
+  "vyloucit": [],
+  "john_iou": 0.895,
+  "john_iou_poznamka": "IoU jen těla: z fotky vyříznuta oblast zvednutého držadla (v modelu je sklopené); kamera jen z landmarků; model zbytek bez úprav",
+  "glb": "../modely/4932464079_drzadlo_nahore.glb"
  }
 }

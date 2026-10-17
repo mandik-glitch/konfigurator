@@ -13,10 +13,11 @@ fs.mkdirSync(path.join(HERE, 'modely'), { recursive: true });
 let bad = 0;
 for (const sku of sk) {
   let mod; try { mod = await import('./kufr_' + sku + '.mjs'); } catch (e) { if (e.code === 'ERR_MODULE_NOT_FOUND' && String(e.message).includes('kufr_' + sku)) { console.log(sku + ': modul zatím neexistuje'); continue; } throw e; }
-  const varianty = mod.VARIANTY || [{ soubor: mod.SKU, opt: {} }];
+  let varianty = mod.VARIANTY || [{ soubor: mod.SKU, opt: {} }];
+  if (process.env.KUF_OUT) varianty = varianty.slice(0, 1);       // ladění: jen první varianta do KUF_OUT
   for (const v of varianty) {
     const t0 = Date.now(); const root = mod.build(v.opt || {});
-    const out = path.join(HERE, 'modely', v.soubor + '.glb');
+    const out = process.env.KUF_OUT || path.join(HERE, 'modely', v.soubor + '.glb');
     const r = writeGLB(root, out, { sku: mod.SKU, nazev: mod.NAZEV, jednotky: 'mm', osy: 'X=hloubka, Y=delka, Z=vyska; pocatek ve stredu obalky; celo +' + (mod.CELO || 'X'), zdroj: 'vlastni generator kufriky_cloud (oprava v6), tvar podle fotografii vyrobce; presnost viz kufry_milwaukee_opravy/zdroje/' + mod.SKU + '_poznamky.md', varianta: v.soubor });
     const g = readGLB(out);
     const b = [Infinity, Infinity, Infinity, -Infinity, -Infinity, -Infinity];

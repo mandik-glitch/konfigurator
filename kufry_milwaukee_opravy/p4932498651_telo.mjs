@@ -11,7 +11,7 @@ export function skrin() {
   g.add(rbox('cerna', 'dno', XR, 236, -250, 250, Z_BOT, Z_BOT + T, 10, 2));
   g.add(rbox('cerna', 'strop', XR, 240, -250, 250, zt - T, zt, 10, 2));
   // boční stěny s pouzdrem rukojeti (otevřené nahoře pod víkem)
-  const POC = { x0: XR + 68, x1: 150, z0: 62 };
+  const POC = { x0: XR + 68, x1: 150, z0: 94 };
   for (const s of [1, -1]) {
     const ya = s > 0 ? 238 : -251, yb = s > 0 ? 251 : -238, m = s > 0 ? '' : '_m';
     g.add(rbox('cerna', 'bok_spodni' + m, XR, 236, ya, yb, Z_BOT, POC.z0, 8, 2.5));
@@ -33,9 +33,9 @@ export function skrin() {
 
 // 10 kapes na víku (rozložení jako u XL: zadní řada 4 malé, střední 2 dlouhé, přední 4 malé)
 export const KAPSY_RADY = [
-  { x0: -210, x1: -128, bloky: [[-222, -134], [-118, -30], [30, 118], [134, 222]] },
-  { x0: -112, x1: -20, bloky: [[-222, -24], [24, 222]] },
-  { x0: -4, x1: 80, bloky: [[-222, -134], [-118, -30], [30, 118], [134, 222]] },
+  { x0: -172, x1: -98, bloky: [[-222, -134], [-118, -30], [30, 118], [134, 222]] },
+  { x0: -84, x1: -4, bloky: [[-222, -24], [24, 222]] },
+  { x0: 8, x1: 92, bloky: [[-222, -134], [-118, -30], [30, 118], [134, 222]] },
 ];
 const poly = (x0, x1, y0, y1, r, rn = 2) => roundPoly([[x1, y1], [x0, y1], [x0, y0], [x1, y0]], [r, r, r, r], rn);
 export function viko() {
@@ -49,7 +49,7 @@ export function viko() {
   g.add(extrude('cerna_lesk', 'viko_deska', out, holes, Z_PLATE - 0.5, Z_TOP, { crease: 30 }));
   for (const h of holes) g.add(extrude('cerna', 'kapsa_dno', h, [], Z_PLATE - 6, Z_PLATE, { crease: 30 }));
   // červený štítek na ploše víka (vpravo) a lišty
-  g.add(rbox('cervena', 'viko_stitek', -70, -10, 40, 130, Z_TOP - 1.2, Z_TOP + 0.01, 3, 0.4));
+  g.add(rbox('cervena', 'viko_stitek', -70, -14, 50, 130, Z_PLATE - 0.2, Z_PLATE + 1.2, 3, 0.4));
   // větrací blok na čele víka
   g.add(rbox('cerna', 'viko_vetrani', 230, 240, -60, 60, 234, 262, 3, 1.5));
   for (let k = 0; k < 7; k++) { const y = -48 + k * 16; g.add(bx('cerna_mat', 'viko_vetrani_zebro', 238.5, 240, y - 3, y + 3, 238, 258)); }

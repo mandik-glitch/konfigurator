@@ -10,6 +10,6 @@ export const OBALKA = { x: 410, y: 560, z: 165 };
 export const CELO = 'X';
 export const NAZEV = 'Milwaukee PACKOUT Box pro elektrikáře (4932499703)';
 export function build(opt = {}) {
-  const V = { ...V499703, sku: opt.sku || SKU, nazev: NAZEV, doplnky: [(V, root, vk) => { root.addGroup(vlozkyTelo(V)); vlozkaVicko(V, vk); }] };
+  const V = { ...V499703, sku: opt.sku || SKU, nazev: opt.nazev || NAZEV, doplnky: [(V, root, vk) => { root.addGroup(vlozkyTelo(V)); vlozkaVicko(V, vk); }] };
   return sestavBox(V, opt);
 }

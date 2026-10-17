@@ -21,24 +21,28 @@ export const LIDLAY = [
   { z: 197, x0: -165, x1: 190, y0: -(LID.yw - 6), y1: LID.yw - 6, nx: 50, ny: 34 },
   { z: 198.2, x0: -163, x1: 188, y0: -(LID.yw - 8), y1: LID.yw - 8, nx: 1.5, ny: 1.5 },
   { z: 206, x0: -158, x1: 176, y0: -240, y1: 240, nx: 1.5, ny: 1.5 },
-  { z: 209.5, x0: -148, x1: 163, y0: -229, y1: 229, nx: 1.5, ny: 1.5 },
+  { z: 209.5, x0: -150, x1: 163, y0: -229, y1: 229, nx: 1.5, ny: 1.5 },
 ];
 const poly = L => lidPoly(L.x0, L.x1, L.y0, L.y1, L.nx, L.ny);
 
 // 10 kapes: [x0,x1,y0,y1] – řady od zadní (-X) k přední (+X); malé × 4, dlouhé × 2, malé × 4 (odhad rozměrů z rektifikace)
 const YI = [[37, 117], [137, 217]];
 export const KAPSY_RADY = [
-  { x0: -160, x1: -62, bloky: [[-217, -137], [-117, -37], [37, 117], [137, 217]] },
-  { x0: -48, x1: 48, bloky: [[-208, -40], [40, 208]] },
-  { x0: 62, x1: 158, bloky: [[-217, -137], [-117, -37], [37, 117], [137, 217]] },
+  { x0: -140, x1: -66, bloky: [[-217, -137], [-117, -37], [37, 117], [137, 217]] },
+  { x0: -52, x1: 44, bloky: [[-208, -40], [40, 208]] },
+  { x0: 58, x1: 150, bloky: [[-217, -137], [-117, -37], [37, 117], [137, 217]] },
 ];
 export function kapsy() {
   const out = [];
   for (const r of KAPSY_RADY) for (const [y0, y1] of r.bloky) {
-    const c = 9;   // sražené rohy
+    const c = 10;   // sražené rohy
     out.push(roundPoly([[r.x1, y1], [r.x0, y1], [r.x0, y0], [r.x1, y0]], [c, c, c, c], 3));
   }
   return out;
+}
+// dvě malé protáhlé prohlubně ve střední ploše víka (vpředu a vzadu, Y ±24)
+export function pilulky() {
+  return [[132, 146], [-146, -134]].map(([x0, x1]) => roundPoly([[x1, 26], [x0, 26], [x0, -26], [x1, -26]], [6, 6, 6, 6], 3));
 }
 
 export function vicko(uhelOtevreni = 0) {
@@ -57,10 +61,10 @@ export function vicko(uhelOtevreni = 0) {
   loftRings(hood, [...outer, ...inner].map(L => poly(L).map(q => [q[0], q[1], L.z])), { closed: true });
   g.add(hood);
   // horní deska s pocket-výřezy (plošina 205 → 211)
-  const plate = extrude('cerna_lesk', 'vicko_deska', poly(LIDLAY[5]), kapsy(), 204.5, LID.zTop, { crease: 30 });
+  const plate = extrude('cerna_lesk', 'vicko_deska', poly(LIDLAY[5]), [...kapsy(), ...pilulky()], 200.5, LID.zTop, { crease: 30 });
   g.add(plate);
   // dna kapes (pod deskou, vyčnívají dovnitř víka)
-  for (const h of kapsy()) g.add(extrude('cerna', 'kapsa_dno', h, [], 198, 205.4, { top: true, bottom: true, crease: 30 }));
+  for (const h of [...kapsy(), ...pilulky()]) g.add(extrude('cerna', 'kapsa_dno', h, [], 194, 201.2, { top: true, bottom: true, crease: 30 }));
   // žebra uvnitř víka (mřížka 5 × 3 jako na Feat_1; odhad)
   for (const y of [-146, -88, -30, 30, 88, 146]) g.add(bx('cerna', 'zebro_y', -150, 150, y - 1.5, y + 1.5, 174, 199));
   for (const x of [-100, -20, 62]) g.add(bx('cerna', 'zebro_x', x - 1.5, x + 1.5, -216, 216, 174, 199));
@@ -68,7 +72,8 @@ export function vicko(uhelOtevreni = 0) {
 }
 
 // větrání na čele víka (4 štěrbiny), ouška pro spony – součást víka (otáčejí se s ním)
-export function vickoDetaily(g) {
+export function vickoDetaily(g, { stitek = false } = {}) {
+  if (stitek) g.add(rbox('cervena', 'vicko_stitek', -40, 10, 50, 130, 201.0, 203, 2, 0.4));
   // blok větrání: zadní stěna + 5 svislých žeber
   g.add(rbox('cerna', 'vetrani_blok', 182, 195, -80, 70, 150, 192, 3, 1.5));
   for (let k = 0; k < 5; k++) { const y = -62 + k * 28; g.add(bx('cerna_mat', 'vetrani_zebro', 190, 196.5, y - 4.5, y + 4.5, 152, 188)); }

@@ -1,0 +1,59 @@
+{
+ "sku": "4932464078",
+ "pohled": "c05",
+ "popis": "zezadu, madlo vysunuto naplno",
+ "foto_url": "https://static.milwaukeetool.eu/remote.axd/milwaukee-media-images.s3.amazonaws.com/hi/4932464078--Hero_5.jpg?width=1200",
+ "foto_repo_cesta": null,
+ "poznamka_foto": "Fotografie se do repa nekopíruje; zde je jen URL (v6 kontrola: stejné soubory).",
+ "pose": {
+  "madlo_1": 130,
+  "madlo_2": 479
+ },
+ "hide": null,
+ "mereno_od_radku_y": null,
+ "render": "kufriky_cloud/srovnani_opravy/4932464078/c05_nas_model.png",
+ "kamera_dofit": {
+  "azim": 181.485,
+  "elev": 9.269,
+  "dist": 5682.04,
+  "fov": 12.431,
+  "cx": 620.38,
+  "cy": 890.63,
+  "roll": 0,
+  "w": 1200,
+  "h": 1200,
+  "iou": 0.9046,
+  "pose": {
+   "madlo_1": 130,
+   "madlo_2": 479
+  },
+  "ymin": null,
+  "xmin": null
+ },
+ "iou_nova_dofit_kamera": 0.9045,
+ "iou_nova_dofit_kamera_s_vyplnenim": 0.612,
+ "kamera_dana_kontrolou": {
+  "azim": 180,
+  "elev": 8,
+  "dist": 5825.12,
+  "fov": 12,
+  "cx": 615,
+  "cy": 876.65,
+  "roll": 0,
+  "w": 1200,
+  "h": 1200
+ },
+ "iou_nova_dana_kamera": 0.8382,
+ "iou_nova_dana_kamera_s_vyplnenim": 0.6017,
+ "iou_john_dana_kamera": 0.6739,
+ "iou_john_dana_kamera_s_vyplnenim": 0.5116,
+ "iou_john_dofit_kamera": 0.6796,
+ "iou_nova_dana_kamera_radky_od": {
+  "y": 790,
+  "s_vyplnenim": 0.9599,
+  "dofit_s_vyplnenim": 0.9337,
+  "john_dana_s_vyplnenim": 0.9208,
+  "john_dofit_s_vyplnenim": 0.9305
+ },
+ "poznamka": "Kamera z obrysu (dofit) je ODHAD přizpůsobený fotografii; IoU z dofitované kamery je horní mez, ne důkaz správnosti tvaru. IoU \"bez vyplnění\" počítá okna/mezery jako pozadí (přísnější než sdílená maska kontroly, která díry vyplňuje; sloupce s_vyplnenim jsou srovnatelné s hodnotami v kontrolním reportu)."
+}

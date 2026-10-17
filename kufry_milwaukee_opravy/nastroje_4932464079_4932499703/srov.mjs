@@ -15,8 +15,9 @@ const cfg = JSON.parse(fs.readFileSync(opt('cfg'), 'utf8'))[opt('pohled')]; cons
 const glb = opt('glb'); if (!glb) throw new Error('--glb');
 const scratch = process.env.KUF_SCRATCH || '/tmp/kuf_scratch'; fs.mkdirSync(scratch, { recursive: true });
 const ML = +opt('maska', 320), tag = opt('tag', pohled);
-const maskFile = path.join(scratch, `mask_${tag}_${ML}.bin`);
-execFileSync('python3', [path.join(KC, 'nastroje/foto_maska.py'), cfg.foto, maskFile, String(ML)], { stdio: 'ignore' });
+const maskFile = path.join(scratch, `mask_${tag}_${ML}${process.argv.includes('--raw') ? 'r' : ''}.bin`);
+const RAW = flag('raw');
+execFileSync('python3', [RAW ? path.join(HERE, 'foto_maska_raw.py') : path.join(KC, 'nastroje/foto_maska.py'), cfg.foto, maskFile, String(ML)], { stdio: 'ignore' });
 const mb = fs.readFileSync(maskFile); const w = mb.readUInt32LE(0), h = mb.readUInt32LE(4), mask = mb.slice(8);
 const pose = Object.assign({}, cfg.pose || {}); for (const s of (opt('pose', '') || '').split(',').filter(Boolean)) { const [k, v] = s.split('='); pose[k] = +v; }
 const W0 = 1200, H0 = 1200;
@@ -31,10 +32,11 @@ function vyplnDiry(m) { // zaplavení pozadí od okraje; vše ostatní = objekt
   while (st.length) { const i = st.pop(), x = i % w, y = (i / w) | 0; push(x + 1, y); push(x - 1, y); push(x, y + 1); push(x, y - 1); }
   for (let i = 0; i < w * h; i++) out[i] = seen[i] ? 0 : 1; return out;
 }
+if (opt('oblast')) { const boxes = opt('oblast').split(';').map(s => s.split(',').map(Number)); for (let y = 0; y < h; y++) for (let x = 0; x < w; x++) { const X = (x + .5) * W0 / w, Y = (y + .5) * H0 / h; if (!boxes.some(([a, b, c, d]) => X >= a && X <= c && Y >= b && Y <= d)) excl[y * w + x] = 1; } }
 const R = await new Renderer().open(w, h); await R.load(glb, true); if (cfg.hide) await R.hide(cfg.hide); if (Object.keys(pose).length) await R.pose(pose);
 const kmr = c => kamera({ azim: c.azim, elev: c.elev, dist: c.dist, fov: c.fov, roll: c.roll || 0, shiftX: (c.cx - W0 / 2) / W0, shiftY: (c.cy - H0 / 2) / H0 });
 async function iouOf(c, fill = true) {
-  const m0 = await R.mask(kmr(c)); const m = fill ? vyplnDiry(m0) : m0;
+  const m0 = await R.mask(kmr(c)); const m = (fill && !RAW) ? vyplnDiry(m0) : m0;
   let I = 0, U = 0; for (let i = 0; i < w * h; i++) { if (excl[i]) continue; const a = m[i], b = mask[i]; if (a & b) I++; if (a | b) U++; } return I / U;
 }
 // projekce pro landmarky (pixely 1200)

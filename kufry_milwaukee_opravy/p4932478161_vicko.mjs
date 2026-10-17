@@ -51,7 +51,7 @@ export function zapadky() {
     const g = new Group('zapadka_' + nm, { pivot: piv, extras: { osa: [0, 1, 0], popis: 'západka na vaně; kladný úhel odklopí páčku (a třmen) od čela kolem čepu u dolního konce jazyka (osa Y)' } });
     const w = 45, zT = 336, zB = 214;
     const wire = [[301.4, yc - w, zc(zB)], [302.0, yc - w, zc(zT - 5)], [302.4, yc - w + 6, zc(zT + 2)], [302.4, yc + w - 6, zc(zT + 2)], [302.0, yc + w, zc(zT - 5)], [301.4, yc + w, zc(zB)]];
-    g.add(tube('ocel', 'zapadka_tremen_' + nm, wire, 2.0, 8));
+    g.add(tube('ocel', 'zapadka_tremen_' + nm, wire, 2.3, 8));
     const jy0 = yc - 33, jy1 = yc + 33;
     g.add(extYZ('cervena', 'zapadka_jazyk_' + nm, roundPoly([[jy0, zc(180)], [jy1, zc(180)], [jy1, zc(250)], [jy0, zc(250)]], [5, 5, 3, 3], 2), 297.5, 301.6));
     for (let i = 0; i < 6; i++) g.add(bx('cervena', 'zapadka_zub_' + nm + i, 298, 303.4, jy0 + 3 + i * 10.4, jy0 + 9 + i * 10.4, 242, 262));

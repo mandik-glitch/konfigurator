@@ -1,0 +1,40 @@
+{
+ "sku": "4932498651",
+ "foto": "c01",
+ "kolo": 4,
+ "popis": "užší tělo XL 240 (ne 232), víko 272, větší nohy, štítek na víku; pojízdný: čelo zásuvky, kola s paprsky; kamery dofitovány",
+ "poza": {
+  "rot": {},
+  "pos": {
+   "madlo_horni": 618,
+   "madlo_stredni": 254
+  }
+ },
+ "iou_kamera_kontroly": {
+  "iou": 0.7058,
+  "iou_pod_radkem": 0.9478,
+  "ycut_px": 600
+ },
+ "iou_kamera_dofitovana": {
+  "iou": 0.7751,
+  "iou_pod_radkem": 0.9467,
+  "ycut_px": 600
+ },
+ "iou_dofit_maska_bez_vyplneni_der": {
+  "iou": 0.9162,
+  "iou_pod_radkem": 0.9162,
+  "ycut_px": 0
+ },
+ "kamera_dofitovana": {
+  "azim": 49.877427003855615,
+  "elev": 7.720685151637255,
+  "dist": 4620.181541607759,
+  "fov": 17.700000034786083,
+  "roll": 0,
+  "shiftX": -0.017069000466016386,
+  "shiftY": 0.1929877864202148,
+  "w": 1200,
+  "h": 1200
+ },
+ "poznamka": "madlo vytažené (posuv horní 618, střední 254 mm)"
+}

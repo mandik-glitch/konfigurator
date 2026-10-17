@@ -1,0 +1,30 @@
+{
+ "sku": "4932478161",
+ "pohled": "c05",
+ "popis": "bedna nakloněná na kolech (póza nahrazena pohybem kamery)",
+ "foto_url": "https://static.milwaukeetool.eu/remote.axd/milwaukee-media-images.s3.amazonaws.com/hi/4932478161--Hero_5.jpg?width=1200",
+ "foto_repo_cesta": null,
+ "poznamka_foto": "Fotografie se do repa nekopíruje; zde je jen URL (v6 kontrola: stejné soubory).",
+ "pose": {},
+ "hide": null,
+ "mereno_od_radku_y": null,
+ "render": "kufriky_cloud/srovnani_opravy/4932478161/c05_nas_model.png",
+ "kamera_dofit": {
+  "azim": -16.083,
+  "elev": 27.399,
+  "dist": 5983.65,
+  "fov": 11.408,
+  "cx": 612.1,
+  "cy": 571.29,
+  "roll": 97.356,
+  "w": 1200,
+  "h": 1200,
+  "iou": 0.9406,
+  "pose": {},
+  "ymin": null,
+  "xmin": null
+ },
+ "iou_nova_dofit_kamera": 0.9406,
+ "iou_nova_dofit_kamera_s_vyplnenim": 0.941,
+ "poznamka": "Kamera z obrysu (dofit) je ODHAD přizpůsobený fotografii; IoU z dofitované kamery je horní mez, ne důkaz správnosti tvaru. IoU \"bez vyplnění\" počítá okna/mezery jako pozadí (přísnější než sdílená maska kontroly, která díry vyplňuje; sloupce s_vyplnenim jsou srovnatelné s hodnotami v kontrolním reportu)."
+}

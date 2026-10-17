@@ -1,0 +1,39 @@
+{
+ "sku": "4932501784",
+ "foto": "c01",
+ "kolo": 4,
+ "popis": "užší tělo XL 240 (ne 232), víko 272, větší nohy, štítek na víku; pojízdný: čelo zásuvky, kola s paprsky; kamery dofitovány",
+ "poza": {
+  "rot": {
+   "madlo_nosne": 90
+  },
+  "pos": {}
+ },
+ "iou_kamera_kontroly": {
+  "iou": 0.7813,
+  "iou_pod_radkem": 0.9518,
+  "ycut_px": 365
+ },
+ "iou_kamera_dofitovana": {
+  "iou": 0.7816,
+  "iou_pod_radkem": 0.937,
+  "ycut_px": 365
+ },
+ "iou_dofit_maska_bez_vyplneni_der": {
+  "iou": 0.8716,
+  "iou_pod_radkem": 0.8716,
+  "ycut_px": 0
+ },
+ "kamera_dofitovana": {
+  "azim": 19.96893740624615,
+  "elev": 7.573756530986336,
+  "dist": 3573.7184294524723,
+  "fov": 12.078360706480913,
+  "roll": 0,
+  "shiftX": 0.011773907208179831,
+  "shiftY": 0.07650186175898749,
+  "w": 1200,
+  "h": 1200
+ },
+ "poznamka": "madlo zdvižené (pose madlo_nosne=180); ycut = řádek, pod kterým se v kontrole počítalo IoU bez madla"
+}

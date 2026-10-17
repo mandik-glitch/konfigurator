@@ -6,7 +6,8 @@ import { vicko } from './p4932464079_vicko.mjs';
 import { rukojet, zapadka, celoDetaily } from './p4932464079_celo.mjs';
 import { horniDrzadlo } from './p4932464079_drzadlo.mjs';
 
-export function sestavBox(V, opt = {}) {
+export function sestavBox(V0, opt = {}) {
+  const V = Object.assign({}, V0, JSON.parse(process.env.KUF_OVR || '{}'));   // ladění parametrů (jen pro nástroje)
   nastavVysku(V.H);
   const root = new Group(V.sku);
   const k = vana(V);

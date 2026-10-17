@@ -51,6 +51,36 @@
    "pose": {},
    "ymin": null,
    "xmin": null
+  },
+  "john_dofit": {
+   "azim": -1.287,
+   "elev": 11.798,
+   "dist": 7606.2,
+   "fov": 8.394,
+   "cx": 590.23,
+   "cy": 572.34,
+   "roll": 0,
+   "w": 1200,
+   "h": 1200,
+   "iou": 0.9312,
+   "pose": {},
+   "ymin": null,
+   "xmin": null
+  },
+  "dofit_final": {
+   "azim": -0.584,
+   "elev": 8.691,
+   "dist": 7557.69,
+   "fov": 8.144,
+   "cx": 596.56,
+   "cy": 577.95,
+   "roll": 0,
+   "w": 1200,
+   "h": 1200,
+   "iou": 0.9673,
+   "pose": {},
+   "ymin": null,
+   "xmin": null
   }
  },
  "c01": {
@@ -113,6 +143,38 @@
    },
    "ymin": null,
    "xmin": null
+  },
+  "john_dofit": {
+   "azim": 25.142,
+   "elev": 15,
+   "dist": 3693.04,
+   "fov": 21.328,
+   "cx": 681.21,
+   "cy": 568.02,
+   "roll": 0,
+   "w": 1200,
+   "h": 1200,
+   "iou": 0.9315,
+   "pose": {},
+   "ymin": null,
+   "xmin": null
+  },
+  "dofit_final": {
+   "azim": 29.395,
+   "elev": 13.119,
+   "dist": 3776.1,
+   "fov": 20.778,
+   "cx": 682.35,
+   "cy": 565.47,
+   "roll": 0,
+   "w": 1200,
+   "h": 1200,
+   "iou": 0.9285,
+   "pose": {
+    "madlo": 285
+   },
+   "ymin": null,
+   "xmin": null
   }
  },
  "c02": {
@@ -128,6 +190,24 @@
    "h": 1200
   },
   "dofit_v3": {
+   "azim": 32.162,
+   "elev": 58.005,
+   "dist": 4066.13,
+   "fov": 22,
+   "cx": 647.3,
+   "cy": 728.33,
+   "roll": 0,
+   "w": 1200,
+   "h": 1200,
+   "iou": 0.9067,
+   "pose": {
+    "vicko": 95,
+    "madlo": 285
+   },
+   "ymin": null,
+   "xmin": null
+  },
+  "dofit_final": {
    "azim": 32.162,
    "elev": 58.005,
    "dist": 4066.13,
@@ -188,10 +268,25 @@
    "pose": {},
    "ymin": null,
    "xmin": null
+  },
+  "dofit_final": {
+   "azim": -16.083,
+   "elev": 27.399,
+   "dist": 5983.65,
+   "fov": 11.408,
+   "cx": 612.1,
+   "cy": 571.29,
+   "roll": 97.356,
+   "w": 1200,
+   "h": 1200,
+   "iou": 0.9406,
+   "pose": {},
+   "ymin": null,
+   "xmin": null
   }
  },
  "c03": {
-  "dofit_v3": {
+  "dofit_final": {
    "azim": 32.162,
    "elev": 58.005,
    "dist": 4066.13,
@@ -209,10 +304,10 @@
    "ymin": null,
    "xmin": null
   },
-  "poznamka": "stejny zaber jako c02"
+  "poznamka": "stejny zaber jako c02 (stejna kamera)"
  },
  "c04": {
-  "dofit_v3": {
+  "dofit_final": {
    "azim": 32.162,
    "elev": 58.005,
    "dist": 4066.13,
@@ -230,6 +325,6 @@
    "ymin": null,
    "xmin": null
   },
-  "poznamka": "stejny zaber jako c02"
+  "poznamka": "stejny zaber jako c02 (stejna kamera)"
  }
 }

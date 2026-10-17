@@ -1,0 +1,37 @@
+{
+ "sku": "4932478162",
+ "foto": "c01",
+ "kolo": 3,
+ "popis": "madlo XL na bocich vika (cepy za stredem hloubky), kamery dofitovany maskou bez der",
+ "poza": {
+  "rot": {},
+  "pos": {}
+ },
+ "iou_kamera_kontroly": {
+  "iou": 0.9217,
+  "iou_pod_radkem": 0.9217,
+  "ycut_px": 0
+ },
+ "iou_kamera_dofitovana": {
+  "iou": 0.9407,
+  "iou_pod_radkem": 0.9407,
+  "ycut_px": 0
+ },
+ "iou_dofit_maska_bez_vyplneni_der": {
+  "iou": 0.9362,
+  "iou_pod_radkem": 0.9362,
+  "ycut_px": 0
+ },
+ "kamera_dofitovana": {
+  "azim": 16.506273001008935,
+  "elev": 18.290333908229783,
+  "dist": 3597.5418554565886,
+  "fov": 11.371952568777601,
+  "roll": 0,
+  "shiftX": 0.027449548116610257,
+  "shiftY": -0.04126439374526653,
+  "w": 1200,
+  "h": 1200
+ },
+ "poznamka": "kamera kontroly = z 8 ručních bodů + obrys vs. kvádr obálky (nezávislá na tvaru); dofit = kamera dofitovaná podle siluety nového modelu (není důkaz)"
+}

@@ -1,0 +1,72 @@
+{
+ "sku": "4932493190",
+ "poznamka": "IoU = průnik/sjednocení obrysu fotografie (jas < 245, bez vyplňování děr) a obrysu modelu v 1200×1200 px; nová kamera = přepočet z ručních landmarků reportu s opravenými z-úrovněmi rohů (bez dofitování podle tvaru); iou_nova_kamera_reportu = kamery z reportu beze změny; dofit = kamera doladěná překryvem obrysu (400 px) a NENÍ důkaz.",
+ "pohledy": {
+  "c01": {
+   "iou_john_v6": 0.9329,
+   "iou_nova_kamera_landmarky": 0.9674,
+   "iou_nova_kamera_reportu": 0.9772,
+   "px_jen_foto": 18809,
+   "px_jen_model": 3088,
+   "rms_landmarku_px_report": 3.1,
+   "iou_dofit_kamera_400px_NENI_DUKAZ": 0.981,
+   "iou_start_400px": 0.9654,
+   "rms_landmarku_px_nova": 2.7
+  },
+  "c02": {
+   "iou_john_v6": 0.8975,
+   "iou_nova_kamera_landmarky": 0.9428,
+   "iou_nova_kamera_reportu": 0.9453,
+   "px_jen_foto": 29594,
+   "px_jen_model": 7151,
+   "rms_landmarku_px_report": 9.8,
+   "iou_dofit_kamera_400px_NENI_DUKAZ": 0.967,
+   "iou_start_400px": 0.9422,
+   "rms_landmarku_px_nova": 2.9
+  },
+  "c03": {
+   "iou_john_v6": 0.9068,
+   "iou_nova_kamera_landmarky": 0.924,
+   "iou_nova_kamera_reportu": 0.9504,
+   "px_jen_foto": 31506,
+   "px_jen_model": 17390,
+   "rms_landmarku_px_report": 11.6,
+   "iou_dofit_kamera_400px_NENI_DUKAZ": 0.9561,
+   "iou_start_400px": 0.9233,
+   "rms_landmarku_px_nova": 3.8
+  },
+  "c04": {
+   "iou_john_v6": 0.9316,
+   "iou_nova_kamera_landmarky": 0.9509,
+   "iou_nova_kamera_reportu": 0.9281,
+   "px_jen_foto": 12388,
+   "px_jen_model": 13613,
+   "rms_landmarku_px_report": 7.5,
+   "iou_dofit_kamera_400px_NENI_DUKAZ": 0.9698,
+   "iou_start_400px": 0.9507,
+   "rms_landmarku_px_nova": 10.1
+  },
+  "c05": {
+   "iou_john_v6": 0.9352,
+   "iou_nova_kamera_landmarky": 0.9529,
+   "iou_nova_kamera_reportu": 0.9312,
+   "px_jen_foto": 11322,
+   "px_jen_model": 13677,
+   "rms_landmarku_px_report": 6.5,
+   "iou_dofit_kamera_400px_NENI_DUKAZ": 0.9705,
+   "iou_start_400px": 0.9531,
+   "rms_landmarku_px_nova": 9.6
+  },
+  "c06": {
+   "iou_john_v6": 0.9378,
+   "iou_nova_kamera_landmarky": 0.9577,
+   "iou_nova_kamera_reportu": 0.9334,
+   "px_jen_foto": 11611,
+   "px_jen_model": 11567,
+   "rms_landmarku_px_report": 6.9,
+   "iou_dofit_kamera_400px_NENI_DUKAZ": 0.9717,
+   "iou_start_400px": 0.9577,
+   "rms_landmarku_px_nova": 9.0
+  }
+ }
+}

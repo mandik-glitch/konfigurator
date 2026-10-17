@@ -28,22 +28,20 @@ function sponka(s) {
 
 export function spony() { const g = new Group('spony'); g.addGroup(sponka(1)); g.addGroup(sponka(-1)); return g; }
 
-// boční rukojeť v pouzdře: červený rám + černý gumový úchop; otáčí se kolem horního čepu (osa X)
+// boční rukojeť v pouzdře (zapuštěná; uzel s čepem nahoře, osa X): dvě červené vidlice s hřebeny nahoře, spodní červená příčka a černý gumový úchop
 export function rukojetBok(s, POC) {
-  const id = s > 0 ? 'P' : 'L', y0 = 223.5, y1 = 233;
+  const id = s > 0 ? 'P' : 'L', y0 = 223.5, y1 = 232;
   const piv = [3, s * 222, 118];
   const g = new Group('rukojet_bok_' + id, { pivot: piv, extras: { osa: [s > 0 ? 1 : -1, 0, 0], max_uhel: 60, popis: 'boční rukojeť (zapuštěná v pouzdře), čep nahoře' } });
   const yA = s > 0 ? y0 : -y1, yB = s > 0 ? y1 : -y0;
-  // červený rám v rovině XZ
-  const outer = roundPoly([[-108, 50], [112, 50], [112, 116], [-108, 116]], [7, 7, 5, 5], 3);
-  const hole = roundPoly([[-88, 68], [90, 68], [90, 100], [-88, 100]], [5, 5, 5, 5], 3);
-  g.add(extXZ('cervena', 'rukojet_bok_ram_' + id, outer, yA, yB, 30, [hole]));
-  // úchop (guma) přes okénko
-  g.add(rbox('guma', 'rukojet_bok_uchop_' + id, -76, 80, s > 0 ? y0 + 1 : -(y1 + 3.5), s > 0 ? y1 + 3.5 : -(y0 + 1), 70, 84, 4, 2));
-  // hrdla (zesílení na koncích)
-  g.add(rbox('cervena', 'rukojet_bok_ucho_' + id, -108, -88, s > 0 ? y0 : -(y1 + 3), s > 0 ? y1 + 3 : -y0, 50, 124, 4, 1.5));
-  g.add(rbox('cervena', 'rukojet_bok_ucho2_' + id, 92, 112, s > 0 ? y0 : -(y1 + 3), s > 0 ? y1 + 3 : -y0, 50, 124, 4, 1.5));
-  // šroub čepu
-  g.add(cylY('ocel', 'rukojet_bok_cep_' + id, 4, s > 0 ? y1 + 2.5 : -(y1 + 5.5), s > 0 ? y1 + 5.5 : -(y1 + 2.5), -98, 112, 12));
+  const ucho = (xa, xb, nm) => {
+    const poly = roundPoly([[xa, 46], [xb, 46], [xb, 126], [xb - 7, 126], [xb - 7, 112], [xa + 7, 112], [xa + 7, 126], [xa, 126]], [4, 4, 1, 1, 1, 1, 1, 1], 2);
+    g.add(extXZ('cervena', nm + id, poly, yA, yB, 30));
+  };
+  ucho(-112, -86, 'rukojet_bok_ucho_'); ucho(88, 114, 'rukojet_bok_ucho2_');
+  g.add(rbox('cervena', 'rukojet_bok_pricka_' + id, -112, 114, s > 0 ? y0 : -(y1 + 2), s > 0 ? y1 + 2 : -y0, 46, 60, 4, 2));
+  g.add(rbox('guma', 'rukojet_bok_uchop_' + id, -84, 88, s > 0 ? y0 + 1 : -(y1 + 6), s > 0 ? y1 + 6 : -(y0 + 1), 58, 76, 4, 3));
+  g.add(cylY('ocel', 'rukojet_bok_cep_' + id, 4, s > 0 ? y1 : -(y1 + 3), s > 0 ? y1 + 3 : -y1, -99, 116, 12));
+  g.add(cylY('ocel', 'rukojet_bok_cep2_' + id, 4, s > 0 ? y1 : -(y1 + 3), s > 0 ? y1 + 3 : -y1, 101, 116, 12));
   return g;
 }

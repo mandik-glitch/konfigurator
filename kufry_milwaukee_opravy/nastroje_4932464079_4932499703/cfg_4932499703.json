@@ -2,12 +2,12 @@
  "c01": {
   "foto": "/tmp/claude-0/-home-user-konfigurator/4afe04ea-52af-557e-a8a4-75a8d542e4f9/scratchpad/kufry3/4932499703/c01.jpg",
   "start": {
-   "azim": -0.259,
-   "elev": 75.744,
-   "dist": 1606.098,
-   "fov": 29.782,
-   "cx": 568.587,
-   "cy": 793.503,
+   "azim": -0.48,
+   "elev": 78.69,
+   "dist": 4754.42,
+   "fov": 10.49,
+   "cx": 569.77,
+   "cy": 797.41,
    "roll": 0,
    "w": 1200,
    "h": 1200
@@ -47,8 +47,50 @@
    ]
   ],
   "pose": {
-   "vicko": -96.73
+   "vicko": 118
   },
-  "vyloucit": []
+  "vyloucit": [],
+  "john_iou": 0.9092,
+  "john_iou_poznamka": "kamera jen ze 4 rohů těla (téměř kolmý pohled, fov ≈ 10°, el ≈ 79°), 4 body na 6 parametrů: rms 2,4 px je zavádějící, kamera je slabě určená (perspektiva víka nejistá, IoU víka jen orientační); úhel víka −118° DOFITOVÁN podle IoU; svěšené třmeny západek vyloučeny z masky"
+ },
+ "c02": {
+  "foto": "/tmp/claude-0/-home-user-konfigurator/4afe04ea-52af-557e-a8a4-75a8d542e4f9/scratchpad/kufry3/4932499703/c02.jpg",
+  "start": {
+   "azim": 30,
+   "elev": 33,
+   "dist": 2100,
+   "fov": 22,
+   "cx": 600,
+   "cy": 600,
+   "roll": 0,
+   "w": 1200,
+   "h": 1200
+  },
+  "lm": [],
+  "pose": {
+   "vicko": 100
+  },
+  "vyloucit": [],
+  "nazev": "sada 4932499466 Hero_3 (nepřímo)"
+ },
+ "c03": {
+  "foto": "/tmp/claude-0/-home-user-konfigurator/4afe04ea-52af-557e-a8a4-75a8d542e4f9/scratchpad/kufry3/4932499703/c03.jpg",
+  "start": {
+   "azim": 0,
+   "elev": 65,
+   "dist": 2600,
+   "fov": 18,
+   "cx": 600,
+   "cy": 600,
+   "roll": 0,
+   "w": 1200,
+   "h": 1200
+  },
+  "lm": [],
+  "pose": {
+   "vicko": 100
+  },
+  "vyloucit": [],
+  "nazev": "sada 4932499466 Hero_2 (nepřímo)"
  }
 }

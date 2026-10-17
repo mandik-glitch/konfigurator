@@ -7,9 +7,13 @@ import { extrude, roundPoly, offsetPoly, ccw, cw, rectPoly, circlePoly, rotPoly,
 export { Part, Group, loftRings, box, tube, cylinder, lathe, prism, earClip, roundedBox, extrude, roundPoly, offsetPoly, ccw, cw, rectPoly, circlePoly, rotPoly, movePoly, area2 };
 
 // doplňkové materiály (jen za běhu skriptu; jádro se neupravuje)
+// tmavší černé materiály pro tyto modely (fotky výrobce: černý PP téměř bez lesku) – mění se jen v procesu generátoru, jádro zůstává
+MATERIALY.cerna = { color: [0.011, 0.011, 0.013], metallic: 0.0, roughness: 0.62 };
+MATERIALY.cerna_mat = { color: [0.007, 0.007, 0.008], metallic: 0.0, roughness: 0.88 };
 MATERIALY.hlinik = { color: [0.60, 0.62, 0.65], metallic: 0.95, roughness: 0.34 };       // leštěný / kartáčovaný hliník
 MATERIALY.guma = { color: [0.012, 0.012, 0.014], metallic: 0.0, roughness: 0.9 };         // černá guma (úchopy, pneumatiky)
-MATERIALY.cerna_lesk = { color: [0.012, 0.012, 0.014], metallic: 0.0, roughness: 0.32 };  // lesklé víko
+MATERIALY.cerna_lesk = { color: [0.010, 0.010, 0.012], metallic: 0.0, roughness: 0.4 };  // lesklé víko
+MATERIALY.kolo_seda = { color: [0.03, 0.03, 0.033], metallic: 0.0, roughness: 0.5 };
 MATERIALY.cervena_mat = { color: [0.50, 0.010, 0.025], metallic: 0.0, roughness: 0.6 };
 
 // ---------- 2D ----------

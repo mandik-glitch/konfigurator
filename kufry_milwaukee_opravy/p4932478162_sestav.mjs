@@ -6,13 +6,13 @@ import { rohy } from './p4932478162_rohy.mjs';
 import { spony, rukojetBok } from './p4932478162_zamky.mjs';
 import { logoXL } from './p4932478162_logo.mjs';
 
-export function zakladXL(root) {
+export function zakladXL(root, { stitek = false } = {}) {
   const telo = vana(); telo.name = 'telo';
   const poc = bocniPanely(telo);
   celniPanel(telo); nohy(telo); zamekSachta(telo); vnitrek(telo);
   root.addGroup(telo);
   root.addGroup(rohy());
-  const v = vicko(); vickoDetaily(v);
+  const v = vicko(); vickoDetaily(v, { stitek });
   root.addGroup(v);
   root.addGroup(spony());
   root.addGroup(rukojetBok(1, poc)); root.addGroup(rukojetBok(-1, poc));

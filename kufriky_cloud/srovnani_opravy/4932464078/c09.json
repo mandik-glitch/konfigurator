@@ -1,0 +1,30 @@
+{
+ "sku": "4932464078",
+ "pohled": "c09",
+ "popis": "sestava (dole pojízdný box), madlo vysunuto; měřeno jen od y>=790",
+ "foto_url": "https://static.milwaukeetool.eu/remote.axd/milwaukee-media-images.s3.amazonaws.com/hi/4932464078--Hero_9.jpg?width=1200",
+ "foto_repo_cesta": null,
+ "poznamka_foto": "Fotografie se do repa nekopíruje; zde je jen URL (v6 kontrola: stejné soubory).",
+ "pose": {},
+ "hide": null,
+ "mereno_od_radku_y": 790,
+ "render": "kufriky_cloud/srovnani_opravy/4932464078/c09_nas_model.png",
+ "kamera_dofit": {
+  "azim": 30.644,
+  "elev": 17.412,
+  "dist": 3812.78,
+  "fov": 20.287,
+  "cx": 624.92,
+  "cy": 839.15,
+  "roll": 0,
+  "w": 1200,
+  "h": 1200,
+  "iou": 0.9297,
+  "pose": {},
+  "ymin": "790",
+  "xmin": null
+ },
+ "iou_nova_dofit_kamera": 0.9296,
+ "iou_nova_dofit_kamera_s_vyplnenim": 0.921,
+ "poznamka": "Kamera z obrysu (dofit) je ODHAD přizpůsobený fotografii; IoU z dofitované kamery je horní mez, ne důkaz správnosti tvaru. IoU \"bez vyplnění\" počítá okna/mezery jako pozadí (přísnější než sdílená maska kontroly, která díry vyplňuje; sloupce s_vyplnenim jsou srovnatelné s hodnotami v kontrolním reportu)."
+}

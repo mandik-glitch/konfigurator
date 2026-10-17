@@ -1,0 +1,58 @@
+{
+ "sku": "4932464078",
+ "pohled": "c02",
+ "popis": "šikmo zepředu, první stupeň madla vysunut",
+ "foto_url": "https://static.milwaukeetool.eu/remote.axd/milwaukee-media-images.s3.amazonaws.com/hi/4932464078--Hero_2.jpg?width=1200",
+ "foto_repo_cesta": null,
+ "poznamka_foto": "Fotografie se do repa nekopíruje; zde je jen URL (v6 kontrola: stejné soubory).",
+ "pose": {
+  "madlo_1": 130
+ },
+ "hide": null,
+ "mereno_od_radku_y": null,
+ "render": "kufriky_cloud/srovnani_opravy/4932464078/c02_nas_model.png",
+ "kamera_dofit": {
+  "azim": 28.999,
+  "elev": 15.146,
+  "dist": 2723.47,
+  "fov": 18.419,
+  "cx": 608.21,
+  "cy": 659.62,
+  "roll": 0,
+  "w": 1200,
+  "h": 1200,
+  "iou": 0.9201,
+  "pose": {
+   "madlo_1": 130
+  },
+  "ymin": null,
+  "xmin": null
+ },
+ "iou_nova_dofit_kamera": 0.9201,
+ "iou_nova_dofit_kamera_s_vyplnenim": 0.8527,
+ "kamera_dana_kontrolou": {
+  "azim": 23.74,
+  "elev": 15.3,
+  "dist": 2815.21,
+  "fov": 18.44,
+  "cx": 597.65,
+  "cy": 641.9,
+  "roll": 0,
+  "chyby_px": {
+   "FLT": 4.2,
+   "FLB": 10.5,
+   "FRT": 5.6,
+   "FRB": 9.6,
+   "BRT": 5
+  },
+  "rms_px": 7.4,
+  "w": 1200,
+  "h": 1200
+ },
+ "iou_nova_dana_kamera": 0.8312,
+ "iou_nova_dana_kamera_s_vyplnenim": 0.7909,
+ "iou_john_dana_kamera": 0.7033,
+ "iou_john_dana_kamera_s_vyplnenim": 0.7515,
+ "iou_john_dofit_kamera": 0.7427,
+ "poznamka": "Kamera z obrysu (dofit) je ODHAD přizpůsobený fotografii; IoU z dofitované kamery je horní mez, ne důkaz správnosti tvaru. IoU \"bez vyplnění\" počítá okna/mezery jako pozadí (přísnější než sdílená maska kontroly, která díry vyplňuje; sloupce s_vyplnenim jsou srovnatelné s hodnotami v kontrolním reportu)."
+}

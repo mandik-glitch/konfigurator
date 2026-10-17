@@ -12,7 +12,7 @@ export function parseKV(s) { const o = {}; for (const kv of (s || '').split(',')
 export async function nastavPozu(R, rot, pos) {
   await R.pose(rot || {});
   if (pos && Object.keys(pos).length) await R.page.evaluate(p => {
-    root.traverse(o => { const d = p[o.name]; if (d !== undefined && o.userData.osa) { const ax = new THREE.Vector3(...o.userData.osa).normalize(); if (!o.userData._p0) o.userData._p0 = o.position.clone(); o.position.copy(o.userData._p0).addScaledVector(ax, d); } });
+    root.traverse(o => { const d = p[o.name]; if (d !== undefined && o.userData.posuv_osa) { const ax = new THREE.Vector3(...o.userData.posuv_osa).normalize(); if (!o.userData._p0) o.userData._p0 = o.position.clone(); o.position.copy(o.userData._p0).addScaledVector(ax, d); } });
   }, pos);
 }
 export function camObj(j, w, h) {

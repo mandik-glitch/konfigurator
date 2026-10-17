@@ -1,7 +1,7 @@
 [
  {"sku":"4932478162","id":"c01","ycut":0,"poznamka":"kamera kontroly = z 8 ručních bodů + obrys vs. kvádr obálky (nezávislá na tvaru); dofit = kamera dofitovaná podle siluety nového modelu (není důkaz)"},
- {"sku":"4932501784","id":"c01","ycut":365,"pose":{"madlo_nosne":180},"poznamka":"madlo zdvižené (pose madlo_nosne=180); ycut = řádek, pod kterým se v kontrole počítalo IoU bez madla"},
- {"sku":"4932501784","id":"c02","ycut":345,"pose":{"madlo_nosne":180},"poznamka":"madlo zdvižené (pose madlo_nosne=180)"},
+ {"sku":"4932501784","id":"c01","ycut":365,"pose":{"madlo_nosne":90},"poznamka":"madlo zdvižené (pose madlo_nosne=180); ycut = řádek, pod kterým se v kontrole počítalo IoU bez madla"},
+ {"sku":"4932501784","id":"c02","ycut":345,"pose":{"madlo_nosne":90},"poznamka":"madlo zdvižené (pose madlo_nosne=180)"},
  {"sku":"4932498651","id":"c01","ycut":600,"pos":{"madlo_horni":618,"madlo_stredni":254},"poznamka":"madlo vytažené (posuv horní 618, střední 254 mm)"},
  {"sku":"4932498651","id":"c02","ycut":0,"pos":{"zasuvka":330},"posKontrola":{"zasuvka":300},"poznamka":"zásuvka vysunutá (kamera kontroly byla dofitována se zásuvkou +300 mm; naše dofitovaná kamera se zásuvkou +330 mm); IoU není důkaz"}
 ]

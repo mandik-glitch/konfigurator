@@ -1,0 +1,37 @@
+{
+ "sku": "4932478162",
+ "foto": "c01",
+ "kolo": 5,
+ "popis": "tmavsi materialy, hlubsi kapsy, nove rozlozeni kapes, bocni rukojet XL s vidlicemi, zebra zasuvky, opraveny lem (plne viko uvnitr vany zmizelo)",
+ "poza": {
+  "rot": {},
+  "pos": {}
+ },
+ "iou_kamera_kontroly": {
+  "iou": 0.9227,
+  "iou_pod_radkem": 0.9227,
+  "ycut_px": 0
+ },
+ "iou_kamera_dofitovana": {
+  "iou": 0.9426,
+  "iou_pod_radkem": 0.9426,
+  "ycut_px": 0
+ },
+ "iou_dofit_maska_bez_vyplneni_der": {
+  "iou": 0.9389,
+  "iou_pod_radkem": 0.9389,
+  "ycut_px": 0
+ },
+ "kamera_dofitovana": {
+  "azim": 16.507323983308844,
+  "elev": 18.29294377212779,
+  "dist": 3597.590476962569,
+  "fov": 11.371790078284443,
+  "roll": 0,
+  "shiftX": 0.027450917370592284,
+  "shiftY": -0.041260334005053786,
+  "w": 1200,
+  "h": 1200
+ },
+ "poznamka": "kamera kontroly = z 8 ručních bodů + obrys vs. kvádr obálky (nezávislá na tvaru); dofit = kamera dofitovaná podle siluety nového modelu (není důkaz)"
+}

@@ -14,7 +14,18 @@
    "h": 1200,
    "uhel_viko_deg_kontrola": null,
    "iou_john": 0.8441,
-   "iou_poznamka_john": "kamera jen z landmarků (rms 19 px; dva body mají zbytek ≈ 30–35 px, tj. nejistota kamery je tady největší); IoU celého obrysu"
+   "iou_poznamka_john": "kamera jen z landmark\u016f (rms 19 px; dva body maj\u00ed zbytek \u2248 30\u201335 px, tj. nejistota kamery je tady nejv\u011bt\u0161\u00ed); IoU cel\u00e9ho obrysu"
+  },
+  "z_obrysu_v1": {
+   "azim": 34.105,
+   "elev": 8.705,
+   "dist": 1233.395,
+   "fov": 31.912,
+   "cx": 605.372,
+   "cy": 552.859,
+   "roll": 0,
+   "w": 1200,
+   "h": 1200
   }
  },
  "c02": {
@@ -32,7 +43,19 @@
    "h": 1200,
    "uhel_viko_deg_kontrola": -92,
    "iou_john": 0.8847,
-   "iou_poznamka_john": "úhel víka −92° (osa pantů v modelu) DOFITOVÁN podle IoU → není nezávislý důkaz; rms 2,4 px je optimistické (7 parametrů na 12 rovnic); vyloučeny boční přihrádky a svěšené třmeny; tělo: kamera z landmarků"
+   "iou_poznamka_john": "\u00fahel v\u00edka \u221292\u00b0 (osa pant\u016f v modelu) DOFITOV\u00c1N podle IoU \u2192 nen\u00ed nez\u00e1visl\u00fd d\u016fkaz; rms 2,4 px je optimistick\u00e9 (7 parametr\u016f na 12 rovnic); vylou\u010deny bo\u010dn\u00ed p\u0159ihr\u00e1dky a sv\u011b\u0161en\u00e9 t\u0159meny; t\u011blo: kamera z landmark\u016f"
+  },
+  "z_obrysu_v1": {
+   "azim": 15.376,
+   "elev": 35.134,
+   "dist": 3493.216,
+   "fov": 17.531,
+   "cx": 642.633,
+   "cy": 746.083,
+   "roll": 0,
+   "w": 1200,
+   "h": 1200,
+   "vicko": -108.1
   }
  }
 }

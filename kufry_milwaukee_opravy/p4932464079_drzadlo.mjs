@@ -6,7 +6,7 @@ import { Group, slab, cylY, bx, extXZ, zc } from './p4932464079_zaklad.mjs';
 
 export function horniDrzadlo(V, zvednuto = false) {
   const H = V.H, xp = -12, L = 202, yL = 262, zp = H - 17.5;
-  const g = new Group('horni_drzadlo', { pivot: [xp, 0, zc(zp)], extras: { osa: [0, -1, 0], max_uhel: 95, poznamka: 'horní držadlo: 0° = sklopené (výchozí), ≈ 92° = zvednuté jako na fotografii c01; tvar sklopené polohy je odhad' } });
+  const g = new Group(zvednuto ? 'horni_drzadlo_zvednuto' : 'horni_drzadlo', zvednuto ? { pivot: [xp, 0, zc(zp)], extras: { poznamka: 'varianta: držadlo zvednuté (≈ 92°) jako na fotografii c01; obálka je tím překročena' } } : { pivot: [xp, 0, zc(zp)], extras: { osa: [0, -1, 0], max_uhel: 95, poznamka: 'horní držadlo: 0° = sklopené (výchozí), ≈ 92° = zvednuté jako na fotografii c01; tvar sklopené polohy je odhad' } });
   const P = [];
   const xe = xp + L;                                       // osa hrazdy
   for (const s of [-1, 1]) {

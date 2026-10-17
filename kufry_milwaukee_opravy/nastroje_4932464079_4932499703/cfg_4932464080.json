@@ -28,18 +28,12 @@
     872,
     846,
     1
-   ],
-   [
-    -205.5,
-    280.5,
-    -82.5,
-    1185,
-    648,
-    1
    ]
   ],
   "pose": {},
-  "vyloucit": []
+  "vyloucit": [],
+  "john_iou": 0.8441,
+  "john_iou_poznamka": "kamera jen z landmarků (rms 19 px; dva body mají zbytek ≈ 30–35 px, tj. nejistota kamery je tady největší); IoU celého obrysu"
  },
  "c02": {
   "foto": "/tmp/claude-0/-home-user-konfigurator/4afe04ea-52af-557e-a8a4-75a8d542e4f9/scratchpad/kufry3/4932464080/c02.jpg",
@@ -81,7 +75,7 @@
    ]
   ],
   "pose": {
-   "vicko": -92
+   "vicko": 92
   },
   "vyloucit": [
    [
@@ -120,6 +114,8 @@
      1040
     ]
    ]
-  ]
+  ],
+  "john_iou": 0.8847,
+  "john_iou_poznamka": "úhel víka −92° (osa pantů v modelu) DOFITOVÁN podle IoU → není nezávislý důkaz; rms 2,4 px je optimistické (7 parametrů na 12 rovnic); vyloučeny boční přihrádky a svěšené třmeny; tělo: kamera z landmarků"
  }
 }

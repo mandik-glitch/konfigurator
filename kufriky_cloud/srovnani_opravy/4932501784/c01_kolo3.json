@@ -1,0 +1,39 @@
+{
+ "sku": "4932501784",
+ "foto": "c01",
+ "kolo": 3,
+ "popis": "madlo XL na bocich vika (cepy za stredem hloubky), kamery dofitovany maskou bez der",
+ "poza": {
+  "rot": {
+   "madlo_nosne": 90
+  },
+  "pos": {}
+ },
+ "iou_kamera_kontroly": {
+  "iou": 0.7813,
+  "iou_pod_radkem": 0.9519,
+  "ycut_px": 365
+ },
+ "iou_kamera_dofitovana": {
+  "iou": 0.782,
+  "iou_pod_radkem": 0.9531,
+  "ycut_px": 365
+ },
+ "iou_dofit_maska_bez_vyplneni_der": {
+  "iou": 0.8603,
+  "iou_pod_radkem": 0.8603,
+  "ycut_px": 0
+ },
+ "kamera_dofitovana": {
+  "azim": 20.75430681739582,
+  "elev": 8.25632611688746,
+  "dist": 3608.68231703984,
+  "fov": 12.089391945574679,
+  "roll": 0,
+  "shiftX": 0.009812605877571323,
+  "shiftY": 0.09007851962542579,
+  "w": 1200,
+  "h": 1200
+ },
+ "poznamka": "madlo zdvižené (pose madlo_nosne=180); ycut = řádek, pod kterým se v kontrole počítalo IoU bez madla"
+}

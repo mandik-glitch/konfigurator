@@ -19,6 +19,7 @@ for (const v of V) {
   let r2 = null, r3 = null; if (fit) { r2 = await iouRender({ glb, foto, cam: fit, rot, pos, ycut: v.ycut || 0 }); r3 = await iouRender({ glb, foto, cam: fit, rot, pos, ycut: 0, nofill: true }); }
   const cam = fit || kont, p = path.join(OUT, v.sku, `${v.id}_kolo${kolo}.png`);
   await renderPng({ glb, cam, rot, pos, W: 1000, out: p });
+  await renderPng({ glb, cam: kont, rot, pos: posK, W: 1000, out: path.join(OUT, v.sku, `${v.id}_kolo${kolo}_kamera_kontroly.png`) });
   const pair = path.join(SCR, `${v.sku}_${v.id}_kolo${kolo}_pair.png`);
   execFileSync('python3', [path.join(ROOT, 'kufriky_cloud/nastroje/porovnej.py'), foto, p, pair, '700'], { stdio: 'ignore' });
   const j = { sku: v.sku, foto: v.id, kolo: +kolo, popis, poza: { rot, pos }, iou_kamera_kontroly: r1, iou_kamera_dofitovana: r2, iou_dofit_maska_bez_vyplneni_der: r3, kamera_dofitovana: fit ? (fit.kamera || fit) : null, poznamka: v.poznamka || '' };

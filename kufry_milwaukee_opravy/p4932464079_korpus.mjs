@@ -1,5 +1,5 @@
 // Spodní díl (vana) s rohovými výřezy, prolisy a stěnami. Vana je dutá (stěna 5 mm, dno 6 mm), nahoře otevřená pod víkem.
-import { Group, Part, rrPoly, loftSolid, roundPoly, ccw, polyInset, dutyLoft, bx, slab, extYZ, extXZ, cylX, cylY, zc } from './p4932464079_zaklad.mjs';
+import { Group, Part, rrPoly, loftRings, loftSolid, roundPoly, ccw, polyInset, dutyLoft, bx, slab, extYZ, extXZ, cylX, cylY, zc } from './p4932464079_zaklad.mjs';
 
 export function tubPoly(V) {
   const { xF, xR, yB, xN, yN } = V;
@@ -12,6 +12,10 @@ export function vana(V) {
   const zs = V.H - V.lidH, P = tubPoly(V);
   const L = (d, z) => ({ poly: polyInset(P, d), z });
   g.add(dutyLoft('cerna', 'vana', [L(9, 0), L(4.5, 3), L(1.8, 7), L(0.6, 16), L(0, zs - 6), L(0, zs)], { wall: 5, floorZ: 7, ri: 3 }));
+  // okraj vany (lem pod víkem): vnitřní římsa 11 mm široká, 8 mm vysoká
+  { const Pi = polyInset(P, 11), rim = new Part('vana_lem', 'cerna'); rim.crease = 38;
+    const R = (poly, z) => poly.map(q => [q[0], q[1], zc(z)]);
+    loftRings(rim, [R(polyInset(P, 4.2), zs - 9), R(polyInset(P, 4.2), zs - 0.2), R(Pi, zs - 0.2), R(Pi, zs - 9)], { closed: true }); g.add(rim); }
   if (V.rohy !== false) {
     // koncové stěny: řada svislých žeber pod uchem víka a svislé výlisky
     for (const s of [-1, 1]) {

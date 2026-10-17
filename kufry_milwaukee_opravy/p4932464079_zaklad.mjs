@@ -252,3 +252,25 @@ export function prstenX(mat, name, { r0, r1, x0, x1, y, z, n = 28, fil = 1 }) {
   return p;
 }
 export const lerp = (a, b, t) => a + (b - a) * t;
+
+// ---------- jednoduchý bitmapový text (5×7) pro reliéf/potisk loga; čte se zepředu (od +X): písmena postupují ve směru +Y ----------
+const FONT = {
+  M: '10001 11011 10101 10101 10001 10001 10001', I: '11111 00100 00100 00100 00100 00100 11111', L: '10000 10000 10000 10000 10000 10000 11111',
+  W: '10001 10001 10001 10101 10101 11011 10001', A: '01110 10001 10001 11111 10001 10001 10001', U: '10001 10001 10001 10001 10001 10001 01110',
+  K: '10001 10010 10100 11000 10100 10010 10001', E: '11111 10000 10000 11110 10000 10000 11111', P: '11110 10001 10001 11110 10000 10000 10000',
+  C: '01110 10001 10000 10000 10000 10001 01110', O: '01110 10001 10001 10001 10001 10001 01110', T: '11111 00100 00100 00100 00100 00100 00100',
+};
+// text na čelní ploše x = xf (tloušťka t), střed řádku (y, z' střed), velikost pixelu px; vrací jediný Part
+export function tekst(mat, name, str, { xf, y, z, px = 1.2, t = 0.5, sklon = 0 }) {
+  const p = new _Part(name, mat); p.crease = 20;
+  const wTot = str.length * 6 * px - px, y0 = y - wTot / 2;
+  [...str].forEach((ch, ci) => {
+    const g = (FONT[ch] || '').split(' ');
+    g.forEach((row, ri) => [...row].forEach((c, k) => {
+      if (c !== '1') return;
+      const yy = y0 + ci * 6 * px + k * px + (3 - ri) * sklon * px * 0.18, zz = z + (3 - ri) * px - px / 2;
+      p.append(box(mat, 'px', xf - 0.1, xf + t, yy, yy + px * 1.02, zc(zz), zc(zz + px * 1.02)));
+    }));
+  });
+  return p;
+}

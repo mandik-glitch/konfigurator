@@ -1,12 +1,12 @@
 // Spodní díl (tělo) XL boxu: dutá vana, boční zapuštěná pouzdra s rukojetí, čelní panel, nohy, spodní zámková šachta s červenou rukojetí, vnitřek (vložka, podložky).
-import { Part, Group, rrPoly, loftBox, loftVessel, rbox, bx, extYZ, extXZ, cylX, cylY, addSymY, mirY, mirX, extrude, roundPoly, tube } from './p4932478162_zaklad.mjs';
+import { Part, Group, rrPoly, loftBox, loftVessel, loftHood, rbox, bx, extYZ, extXZ, cylX, cylY, addSymY, mirY, mirX, extrude, roundPoly, tube } from './p4932478162_zaklad.mjs';
 import { HX, HY, HZ, Z_SEAM, Z_BOT, BODY } from './p4932478162_data.mjs';
 
 const W = 4;   // tloušťka stěny (odhad)
 const insetL = (L, d, z) => ({ x0: L.x0 + d, x1: L.x1 - d, y0: L.y0 + d, y1: L.y1 - d, r: Math.max(L.r - d, 1), z });
 
 // vnější vrstvy vany (boční plocha |Y| = 222 – boční panely se přidávají zvlášť, aby šla vytvořit pouzdra rukojetí)
-const YB = 222;
+const YB = 221;
 export const VANA = [
   { z: Z_BOT, x0: -152, x1: 160, y0: -(YB - 14), y1: YB - 14, r: 22 },
   { z: Z_BOT + 8, x0: -161, x1: 174, y0: -(YB - 4), y1: YB - 4, r: 20 },
@@ -19,7 +19,7 @@ export function vana() {
   const inner = [{ ...insetL(VANA[3], W, Z_SEAM) }, { ...insetL(VANA[2], W, Z_BOT + 16) }, { ...insetL(VANA[1], W, Z_BOT + 8 + 4) }, { ...insetL(VANA[0], W + 1, Z_BOT + 6) }];
   g.add(loftVessel('cerna', 'telo_vana', VANA, inner, { seg: 4 }));
   // horní lem pod švíkem (okraj vany pod víkem), přesah ven
-  g.add(loftVessel('cerna', 'telo_lem', [
+  g.add(loftHood('cerna', 'telo_lem', [
     { z: Z_SEAM - 14, x0: -170, x1: 190, y0: -(BODY.yw + 6), y1: BODY.yw + 6, r: 17 },
     { z: Z_SEAM - 1, x0: -172, x1: 193, y0: -(BODY.yw + 8), y1: BODY.yw + 8, r: 17 }],
     [{ z: Z_SEAM - 1, x0: -169, x1: 190, y0: -(BODY.yw + 4), y1: BODY.yw + 4, r: 14 }, { z: Z_SEAM - 14, x0: -167, x1: 187, y0: -(BODY.yw + 1), y1: BODY.yw + 1, r: 14 }], { seg: 4 }));
@@ -63,7 +63,7 @@ export function nohy(g) {
     const x0 = sx > 0 ? 118 : -178, x1 = sx > 0 ? 178 : -118;
     // klínový profil v XZ: noha se zužuje dolů
     const poly = sx > 0 ? [[x0, Z_BOT + 8], [x1, Z_BOT + 8], [x1 - 8, -HZ], [x0 + 14, -HZ]] : [[x0 + 8, -HZ], [x1 - 14, -HZ], [x1, Z_BOT + 8], [x0, Z_BOT + 8]];
-    const y0 = sy > 0 ? 114 : -158, y1 = sy > 0 ? 158 : -114;
+    const y0 = sy > 0 ? 108 : -170, y1 = sy > 0 ? 170 : -108;
     g.add(extXZ('cerna', 'noha_' + (sx > 0 ? 'p' : 'z') + (sy > 0 ? '1' : '2'), poly, y0, y1, 30));
   }
   // spodní pás (rám dna) pod vanou

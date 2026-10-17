@@ -1,0 +1,40 @@
+{
+ "sku": "4932498651",
+ "foto": "c01",
+ "kolo": 3,
+ "popis": "madlo XL na bocich vika (cepy za stredem hloubky), kamery dofitovany maskou bez der",
+ "poza": {
+  "rot": {},
+  "pos": {
+   "madlo_horni": 618,
+   "madlo_stredni": 254
+  }
+ },
+ "iou_kamera_kontroly": {
+  "iou": 0.7058,
+  "iou_pod_radkem": 0.9477,
+  "ycut_px": 600
+ },
+ "iou_kamera_dofitovana": {
+  "iou": 0.7752,
+  "iou_pod_radkem": 0.9467,
+  "ycut_px": 600
+ },
+ "iou_dofit_maska_bez_vyplneni_der": {
+  "iou": 0.9161,
+  "iou_pod_radkem": 0.9161,
+  "ycut_px": 0
+ },
+ "kamera_dofitovana": {
+  "azim": 49.87648115484927,
+  "elev": 7.7141498907682,
+  "dist": 4620.142114988317,
+  "fov": 17.700000139099327,
+  "roll": 0,
+  "shiftX": -0.01707404324005809,
+  "shiftY": 0.19296605896618602,
+  "w": 1200,
+  "h": 1200
+ },
+ "poznamka": "madlo vytažené (posuv horní 618, střední 254 mm)"
+}

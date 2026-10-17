@@ -27,18 +27,13 @@ export function vicko() {
   const zf = V.zFloor, zt = V.zTop;
   const outer = P(25, 32), inner = P(38, 18);
   g.add(ringSolid('cerna', 'vicko_ram', outer, inner, zc(zf - 0.5), zc(zt), { innerWall: true, outerWall: false }));
-  const xs = [-210, -104, 2, 108];                         // začátky řad kapes (každá 92 mm dlouhá)
-  const x0 = -203, x1 = 201;
-  // střední pruh (šíře 60) a příčná žebra
-  for (const s of [-1, 1]) g.add(bx('cerna', 'vicko_pruh' + (s > 0 ? 'P' : 'L'), x0 - 2, x1 + 2, s * 30 - (s > 0 ? 0 : 14), s * 30 + (s > 0 ? 14 : 0), zf - 0.5, zt));
-  for (let k = 1; k < 4; k++) g.add(bx('cerna', 'vicko_zebro' + k, xs[k] - 14, xs[k], -236, 236, zf - 0.5, zt));
-  // zvýšené středové tlapky (kulaté výstupky v kapsách) – jen naznačeno
-  for (const s of [-1, 1]) for (let k = 0; k < 4; k++) {
-    const xc = xs[k] + 46, yc = s * 136;
-    g.add(slab('cerna_mat', `vicko_tlapka${s > 0 ? 'P' : 'L'}${k}`, { x0: xc - 16, x1: xc + 16, y0: yc - 16, y1: yc + 16, z0: zc(zf), z1: zc(zf + 4), rs: 16, seg: 5, reT: 1.5, fs: 2 }));
-  }
-  // červená plaketa v pruhu u čela
-  g.add(bx('cervena', 'vicko_plaketa', 118, 200, -26, 26, zf, zf + 1.2));
+  // dvě poloviny (přední X>0 / zadní X<0) po čtyřech kapsách podél Y, mezi nimi podélný žlab (plaketa); v kapsách kulaté výstupky
+  const ycs = [-182, -60, 60, 182];                          // středy kapes podél Y
+  for (const gy of [-120, 0, 120]) for (const sx of [-1, 1]) g.add(bx('cerna', `vicko_zebro_${sx}_${gy}`, sx > 0 ? 32 : -203, sx > 0 ? 201 : -32, gy - 7, gy + 7, zf - 0.5, zt));
+  for (const sx of [-1, 1]) g.add(bx('cerna', 'vicko_hrbet' + (sx > 0 ? 'P' : 'L'), sx > 0 ? 32 : -46, sx > 0 ? 46 : -32, -236, 236, zf - 0.5, zt));
+  for (const sx of [-1, 1]) for (const yc of ycs) g.add(slab('cerna_mat', `vicko_tlapka_${sx}_${yc}`, { x0: sx * 116 - 15, x1: sx * 116 + 15, y0: yc - 15, y1: yc + 15, z0: zc(zf), z1: zc(zf + 4.5), rs: 15, seg: 5, reT: 1.5, fs: 2 }));
+  // červená plaketa v žlabu
+  g.add(slab('cervena', 'vicko_plaketa', { x0: -22, x1: 22, y0: 52, y1: 168, z0: zc(zf), z1: zc(zf + 1.4), rs: 5, reT: 0.4, fs: 1 }));
   // větrací žebra na čelní straně víka
   for (let i = 0; i < 7; i++) g.add(extXZ('cerna_mat', 'vicko_vetrani' + i, [[200, zc(zt - 0.5)], [226, zc(zt - 0.5)], [219, zc(zt - 8)], [193, zc(zt - 8)]], -52 + i * 15 + 0, -52 + i * 15 + 4));
   // čelní lemy víka nad zámky (výstupky)

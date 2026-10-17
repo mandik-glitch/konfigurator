@@ -1,0 +1,56 @@
+{
+ "c01": {
+  "foto": "/tmp/claude-0/-home-user-konfigurator/4afe04ea-52af-557e-a8a4-75a8d542e4f9/scratchpad/kufry3/4932499704/c01.jpg",
+  "start": {
+   "azim": -0.48,
+   "elev": 78.69,
+   "dist": 4754.42,
+   "fov": 10.49,
+   "cx": 569.77,
+   "cy": 797.41,
+   "roll": 0,
+   "w": 1200,
+   "h": 1200
+  },
+  "lm": [
+   [
+    205,
+    -280,
+    0,
+    186,
+    1078,
+    1
+   ],
+   [
+    205,
+    280,
+    0,
+    962,
+    1074,
+    1
+   ],
+   [
+    -205,
+    -280,
+    0,
+    184,
+    525,
+    1
+   ],
+   [
+    -205,
+    280,
+    0,
+    947,
+    522,
+    1
+   ]
+  ],
+  "pose": {
+   "vicko": 118
+  },
+  "vyloucit": [],
+  "john_iou": 0.9092,
+  "john_iou_poznamka": "kamera jen ze 4 rohů těla (téměř kolmý pohled, fov ≈ 10°, el ≈ 79°), 4 body na 6 parametrů: rms 2,4 px je zavádějící, kamera je slabě určená (perspektiva víka nejistá, IoU víka jen orientační); úhel víka −118° DOFITOVÁN podle IoU; svěšené třmeny západek vyloučeny z masky"
+ }
+}
