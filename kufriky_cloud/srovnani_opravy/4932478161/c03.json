@@ -13,16 +13,16 @@
  "mereno_od_radku_y": null,
  "render": "kufriky_cloud/srovnani_opravy/4932478161/c03_nas_model.png",
  "kamera_dofit": {
-  "azim": 32.162,
-  "elev": 58.005,
-  "dist": 4066.13,
+  "azim": 32.174,
+  "elev": 57.995,
+  "dist": 4066.21,
   "fov": 22,
-  "cx": 647.3,
-  "cy": 728.33,
+  "cx": 647.29,
+  "cy": 728.27,
   "roll": 0,
   "w": 1200,
   "h": 1200,
-  "iou": 0.9067,
+  "iou": 0.9069,
   "pose": {
    "vicko": 95,
    "madlo": 285
@@ -30,7 +30,7 @@
   "ymin": null,
   "xmin": null
  },
- "iou_nova_dofit_kamera": 0.9067,
- "iou_nova_dofit_kamera_s_vyplnenim": 0.858,
+ "iou_nova_dofit_kamera": 0.9068,
+ "iou_nova_dofit_kamera_s_vyplnenim": 0.8581,
  "poznamka": "Kamera z obrysu (dofit) je ODHAD přizpůsobený fotografii; IoU z dofitované kamery je horní mez, ne důkaz správnosti tvaru. IoU \"bez vyplnění\" počítá okna/mezery jako pozadí (přísnější než sdílená maska kontroly, která díry vyplňuje; sloupce s_vyplnenim jsou srovnatelné s hodnotami v kontrolním reportu)."
 }

@@ -75,7 +75,9 @@
    ]
   ],
   "pose": {
-   "vicko": 92
+   "vicko": 92,
+   "trmen_L": 135,
+   "trmen_P": 135
   },
   "vyloucit": [
    [

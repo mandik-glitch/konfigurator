@@ -69,7 +69,7 @@ export function vicko(V) {
     for (let i = 0; i < 6; i++) g.add(bx('cerna_mat', 'vicko_uso_zebro', -34 + i * 17, -34 + i * 17 + 3.5, s > 0 ? V.Y - 11.5 : -V.Y + 9.4, s > 0 ? V.Y - 9.4 : -V.Y + 11.5, H - 50, H - 22));
   }
   // --- čelo víka: nájezdy zámků (pouzdra) a žebrovaný výstupek uprostřed
-  for (const s of [-1, 1]) g.add(slab('cerna', 'vicko_pouzdro_' + (s > 0 ? 'P' : 'L'), { x0: V.xF - 0.5, x1: V.X - 0.6, y0: s * V.yLatch - 36, y1: s * V.yLatch + 36, z0: zk - 0.5, z1: zk + 22, rs: 5, seg: 2, reT: 2, reB: 1, fs: 2 }));
+  for (const s of [-1, 1]) g.add(slab('cerna', 'vicko_pouzdro_' + (s > 0 ? 'P' : 'L'), { x0: V.xF - 0.5, x1: V.X - 0.6, y0: s * V.yLatch - 43, y1: s * V.yLatch + 43, z0: zk - 0.5, z1: zk + 22, rs: 5, seg: 2, reT: 2, reB: 1, fs: 2 }));
   g.add(slab('cerna', 'vicko_vystupek', { x0: V.X - 12, x1: V.X - 0.4, y0: -52, y1: 46, z0: zs + 2, z1: zs + 56, rs: 3, seg: 2, reT: 3, reB: 1, fs: 2 }));
   for (let k = 0; k < 5; k++) g.add(slab('cerna_mat', 'vicko_zebro', { x0: V.X - 12, x1: V.X + 0.1 - 0.5, y0: -42 + k * 17 - 1.5, y1: -42 + k * 17 + 1.5, z0: zs + 6, z1: zs + 50, rs: 0.5, seg: 1, reT: 1.5, reB: 0.3, fs: 1 }));
   if (V.vnitrekVika !== 'panel') {

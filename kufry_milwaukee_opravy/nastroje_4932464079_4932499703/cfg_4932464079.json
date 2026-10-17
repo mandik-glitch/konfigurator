@@ -138,7 +138,9 @@
    ]
   ],
   "pose": {
-   "vicko": 95
+   "vicko": 95,
+   "trmen_L": 105,
+   "trmen_P": 105
   },
   "vyloucit": [],
   "john_iou": 0.9398,
@@ -184,7 +186,9 @@
    ]
   ],
   "pose": {
-   "vicko": 95
+   "vicko": 95,
+   "trmen_L": 105,
+   "trmen_P": 105
   },
   "vyloucit": [
    [

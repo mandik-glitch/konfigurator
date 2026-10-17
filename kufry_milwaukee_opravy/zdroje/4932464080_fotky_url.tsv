@@ -1,0 +1,7 @@
+id	url	poznamka
+c01	https://static.milwaukeetool.eu/remote.axd/milwaukee-media-images.s3.amazonaws.com/hi/4932464080--Hero_1.jpg?width=1200	zavřený box zepředu zprava (kalibrace + IoU)
+c02	https://static.milwaukeetool.eu/remote.axd/milwaukee-media-images.s3.amazonaws.com/hi/4932464080--Hero_2.jpg?width=1200	otevřený box, dvě vyjmuté boční přihrádky, třmeny visí (IoU; přihrádky vyloučeny z masky)
+d01	https://static.milwaukeetool.eu/remote.axd/milwaukee-media-images.s3.amazonaws.com/hi/4932464080--Feat_1.jpg?width=1200	doplňková (jen scratchpad): detail rukojeti a západky
+d02	https://static.milwaukeetool.eu/remote.axd/milwaukee-media-images.s3.amazonaws.com/hi/4932464080--Feat_2.jpg?width=1200	doplňková (jen scratchpad): detail západky s visacím zámkem
+d03	https://static.milwaukeetool.eu/remote.axd/milwaukee-media-images.s3.amazonaws.com/hi/4932464080--App_1.jpg?width=1200	doplňková (jen scratchpad): použití – nepoužito k měření
+d04	https://static.milwaukeetool.eu/remote.axd/milwaukee-media-images.s3.amazonaws.com/hi/4932464080--App_2.jpg?width=1200	doplňková (jen scratchpad): použití – nepoužito k měření

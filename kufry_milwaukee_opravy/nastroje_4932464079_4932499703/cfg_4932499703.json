@@ -47,7 +47,9 @@
    ]
   ],
   "pose": {
-   "vicko": 118
+   "vicko": 118,
+   "trmen_L": 115,
+   "trmen_P": 115
   },
   "vyloucit": [],
   "john_iou": 0.9092,
@@ -68,10 +70,12 @@
   },
   "lm": [],
   "pose": {
-   "vicko": 100
+   "vicko": 100,
+   "trmen_L": 140,
+   "trmen_P": 140
   },
   "vyloucit": [],
-  "nazev": "sada 4932499466 Hero_3 (nepřímo)"
+  "nazev": "sada 4932499466 Hero_3 (nepřímý důkaz, jiná fotografie než SKU)"
  },
  "c03": {
   "foto": "/tmp/claude-0/-home-user-konfigurator/4afe04ea-52af-557e-a8a4-75a8d542e4f9/scratchpad/kufry3/4932499703/c03.jpg",
@@ -88,9 +92,11 @@
   },
   "lm": [],
   "pose": {
-   "vicko": 100
+   "vicko": 100,
+   "trmen_L": 120,
+   "trmen_P": 120
   },
   "vyloucit": [],
-  "nazev": "sada 4932499466 Hero_2 (nepřímo)"
+  "nazev": "sada 4932499466 Hero_2 (nepřímý důkaz, jiná fotografie než SKU)"
  }
 }

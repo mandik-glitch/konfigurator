@@ -1,0 +1,7 @@
+id	url	poznamka
+c01	https://static.milwaukeetool.eu/remote.axd/milwaukee-media-images.s3.amazonaws.com/hi/4932464079--Hero_1.jpg?width=1200	zavřený box zepředu zprava, horní držadlo zvednuté (kalibrace + IoU)
+c02	https://static.milwaukeetool.eu/remote.axd/milwaukee-media-images.s3.amazonaws.com/hi/4932464079--Hero_2.jpg?width=1200	otevřený box shora zepředu (víko zvenčí/zevnitř, IoU)
+c03	https://static.milwaukeetool.eu/remote.axd/milwaukee-media-images.s3.amazonaws.com/hi/4932464079--Hero_3.jpg?width=1200	totéž + vyjmutá vložka vpravo (IoU, vložka vyloučena z masky)
+d01	https://static.milwaukeetool.eu/remote.axd/milwaukee-media-images.s3.amazonaws.com/hi/4932464079--Feat_1.jpg?width=1200	doplňková (jen scratchpad): detail červené rukojeti se zdvihem rukou – tvar rukojeti, pozice čepů
+d02	https://static.milwaukeetool.eu/remote.axd/milwaukee-media-images.s3.amazonaws.com/hi/4932464079--Feat_2.jpg?width=1200	doplňková (jen scratchpad): detail západky s visacím zámkem a rukojeti zprava – tvar jazyka západky
+d03	https://static.milwaukeetool.eu/remote.axd/milwaukee-media-images.s3.amazonaws.com/hi/4932464079--App_1.jpg?width=1200	doplňková (jen scratchpad): sestava boxů na vozíku – nepoužito k měření

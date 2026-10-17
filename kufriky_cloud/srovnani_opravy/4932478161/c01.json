@@ -12,12 +12,12 @@
  "mereno_od_radku_y": null,
  "render": "kufriky_cloud/srovnani_opravy/4932478161/c01_nas_model.png",
  "kamera_dofit": {
-  "azim": 29.395,
-  "elev": 13.119,
-  "dist": 3776.1,
-  "fov": 20.778,
-  "cx": 682.35,
-  "cy": 565.47,
+  "azim": 29.166,
+  "elev": 13.118,
+  "dist": 3774.01,
+  "fov": 20.78,
+  "cx": 682.48,
+  "cy": 565.36,
   "roll": 0,
   "w": 1200,
   "h": 1200,
@@ -28,8 +28,8 @@
   "ymin": null,
   "xmin": null
  },
- "iou_nova_dofit_kamera": 0.9284,
- "iou_nova_dofit_kamera_s_vyplnenim": 0.9239,
+ "iou_nova_dofit_kamera": 0.9285,
+ "iou_nova_dofit_kamera_s_vyplnenim": 0.924,
  "kamera_dana_kontrolou": {
   "azim": 24.69,
   "elev": 15.32,
@@ -48,10 +48,10 @@
  "iou_john_dofit_kamera": 0.9315,
  "iou_od_sloupce_x": {
   "x": 235,
-  "nova_dofit": 0.9382,
+  "nova_dofit": 0.9384,
   "john_dofit": 0.9571,
   "john_dofit_s_vyplnenim": 0.9577,
-  "nova_dofit_s_vyplnenim": 0.9388
+  "nova_dofit_s_vyplnenim": 0.939
  },
  "poznamka": "Kamera z obrysu (dofit) je ODHAD přizpůsobený fotografii; IoU z dofitované kamery je horní mez, ne důkaz správnosti tvaru. IoU \"bez vyplnění\" počítá okna/mezery jako pozadí (přísnější než sdílená maska kontroly, která díry vyplňuje; sloupce s_vyplnenim jsou srovnatelné s hodnotami v kontrolním reportu)."
 }

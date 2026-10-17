@@ -41,7 +41,7 @@ export function zapadka(V, s) {
   // černé pouzdro pod víkem (kapsa nad zuby) – součást vany
   g.add(slab('cerna', 'zapadka_pouzdro_' + nm, { x0: xf - 0.5, x1: xf + 7.5, y0: yc - 33, y1: yc + 33, z0: zt + 1, z1: zs - 1, rs: 3, seg: 2, reT: 1.2, reB: 0.5, fs: 2 }));
   // drátěný třmen: otáčí se kolem čepů (osa Y) na spodku jazyka; zavřený = nahoře nad jazykem, otevřený visí dolů
-  const zp = zb + 10, xp = xf + 8.5, yl = yc - 33, yr = yc + 33, zTop = Math.min(V.latchTop + 45, zs + (V.capUp || 0) - 3), xw = xf + 13.2;
+  const zp = zb + 10, xp = xf + 8.5, yl = yc - 38, yr = yc + 38, zTop = Math.min(V.latchTop + 45, zs + (V.capUp || 0) - 3), xw = xf + 13.2;
   const tg = new Group('trmen_' + nm, { pivot: [xp, yc, zc(zp)], extras: { osa: [0, 1, 0], max_uhel: 165, poznamka: 'drátěný třmen západky; kladný úhel = horní příčka ven a dolů (otevřeno ≈ 160°)' } });
   tg.add(tube('ocel', 'trmen_drat_' + nm, [
     [xp - 2, yl + 4.5, zc(zp)], [xp, yl + 1, zc(zp)], [xw - 1.5, yl, zc(zp + 7)], [xw, yl, zc(zp + 14)], [xw, yl, zc(zTop - 8)], [xw - 0.5, yl + 2.5, zc(zTop - 3.5)], [xw - 1.0, yl + 7, zc(zTop - 0.4)],
