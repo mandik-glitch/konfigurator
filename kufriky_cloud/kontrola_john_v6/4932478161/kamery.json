@@ -1,0 +1,47 @@
+{
+ "sku": "4932478161",
+ "model": "kufriky_john/nahled-modely-v6/modely/4932478161.glb",
+ "osy_modelu": "X=šířka 609 (čelo se západkami +X), Y=délka 965 (kola na +Y konci), Z=výška; střed obálky v počátku",
+ "foto": {
+  "c06": {
+   "IoU_kamera_z_bodu": 0.863,
+   "IoU_kamera_dofitovana_na_obrys": 0.927,
+   "kamera_z_bodu": {
+    "azim": 0,
+    "elev": 8,
+    "dist": 7386.34,
+    "fov": 8,
+    "cx": 598.5,
+    "cy": 564.82,
+    "roll": 0
+   },
+   "kamera_obrys": {
+    "azim": 0.48,
+    "elev": 9.79,
+    "dist": 7669.9,
+    "fov": 8.17,
+    "cx": 604.91,
+    "cy": 569.42,
+    "roll": 0
+   },
+   "poznamka": "téměř boční pohled (az=0, fov 8°); měřítko 1,162 px/mm z délky obálky 965 mm = 1121 px (levý okraj víka x=38, pravý blok x=1159), střed obálky x=598,5, podlaha = spodek kola y=851 (Z=-200,5), el=8° odhad z viditelné horní plochy. Nezávislé na tvaru modelu, ale el/fov jen odhad."
+  },
+  "c01": {
+   "IoU_kamera_dofitovana_na_obrys_od_x235": 0.956,
+   "IoU_celá_fotka": 0.9275,
+   "kamera_obrys": {
+    "azim": 24.69,
+    "elev": 15.32,
+    "dist": 3736.3,
+    "fov": 21.15,
+    "cx": 680.94,
+    "cy": 569.68,
+    "roll": 0
+   },
+   "poznamka": "KAMERA JEN DOFITOVANÁ NA OBRYS (bez nezávislých bodů) -> IoU je horní mez; vysunuté madlo vlevo (x<235) z IoU vyloučeno."
+  },
+  "c05": "box postavený na kolech (nakloněný), model leží -> póza nereprodukována, bez IoU (fit obrysu 0,87 nevypovídá)",
+  "c02,c03,c04": "víko otevřené, vysunuté madlo -> bez IoU"
+ },
+ "metoda": "viz 4932464078"
+}

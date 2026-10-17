@@ -1,0 +1,189 @@
+{
+ "sku": "4932501784",
+ "foto": "c01",
+ "foto_url": "https://static.milwaukeetool.eu/remote.axd/milwaukee-media-images.s3.amazonaws.com/hi/4932501784--Hero_1.jpg?width=1200",
+ "foto_v_repu": false,
+ "kamera": {
+  "azim": 26.456340762110383,
+  "elev": 12.415576179483313,
+  "dist": 2580.818020711263,
+  "fov": 17.519587700275636,
+  "cx": 610.6635930725411,
+  "cy": 696.5600760294956,
+  "w": 1200,
+  "h": 1200,
+  "roll": 0
+ },
+ "iou": {
+  "iou": 0.7418,
+  "iou_pod_radkem": 0.9622,
+  "ycut_px": 365,
+  "maskL": 600,
+  "model_px": 177469,
+  "foto_px": 229418
+ },
+ "landmarky": [
+  [
+   197,
+   -277,
+   "zTh",
+   85,
+   426,
+   "FL cap horni"
+  ],
+  [
+   197,
+   -277,
+   "zTl",
+   85,
+   512,
+   "FL cap horni dolni konec"
+  ],
+  [
+   197,
+   -277,
+   "zBh",
+   102,
+   928,
+   "FL cap spodni horni konec"
+  ],
+  [
+   197,
+   -277,
+   "zBl",
+   102,
+   997,
+   "FL cap spodni dolni konec"
+  ],
+  [
+   -197,
+   277,
+   "zTh",
+   1114,
+   403,
+   "BR cap horni"
+  ],
+  [
+   -197,
+   277,
+   "zTl",
+   1114,
+   478,
+   "BR cap horni dolni konec"
+  ],
+  [
+   -197,
+   277,
+   "zBh",
+   1105,
+   909,
+   "BR cap spodni horni konec"
+  ],
+  [
+   -197,
+   277,
+   "zBl",
+   1105,
+   950,
+   "BR cap spodni dolni konec"
+  ]
+ ],
+ "apriorni_rozptyly": {
+  "zTh": [
+   190,
+   15
+  ],
+  "zTl": [
+   140,
+   20
+  ],
+  "zBh": [
+   -140,
+   20
+  ],
+  "zBl": [
+   -190,
+   15
+  ]
+ },
+ "kalibrace": {
+  "z_parametry_mm": {
+   "zBh": -147.33320618801508,
+   "zBl": -191.396591080644,
+   "zTh": 188.6755333403567,
+   "zTl": 136.13192516084456
+  },
+  "cena": 0.06431773775276721,
+  "podil_fotky_mimo_kvadr": 0.0035150596181680338,
+  "podil_kvadru_mimo_fotku": 0.04267081281851948,
+  "lm_chyba_px_prumer": 4.971333931430405,
+  "lm_chyby_px": [
+   {
+    "bod": "FL cap horni",
+    "chyba_px": 0.3
+   },
+   {
+    "bod": "FL cap horni dolni konec",
+    "chyba_px": 5.5
+   },
+   {
+    "bod": "FL cap spodni horni konec",
+    "chyba_px": 5.0
+   },
+   {
+    "bod": "FL cap spodni dolni konec",
+    "chyba_px": 0.0
+   },
+   {
+    "bod": "BR cap horni",
+    "chyba_px": 1.1
+   },
+   {
+    "bod": "BR cap horni dolni konec",
+    "chyba_px": 2.9
+   },
+   {
+    "bod": "BR cap spodni horni konec",
+    "chyba_px": 19.1
+   },
+   {
+    "bod": "BR cap spodni dolni konec",
+    "chyba_px": 5.8
+   }
+  ],
+  "nejlepsi_5_azim_elev_fov": [
+   [
+    26.5,
+    12.4,
+    17.5,
+    0.0643
+   ],
+   [
+    26.0,
+    12.5,
+    19.6,
+    0.0707
+   ],
+   [
+    27.9,
+    12.8,
+    21.8,
+    0.0714
+   ],
+   [
+    27.3,
+    13.5,
+    19.1,
+    0.072
+   ],
+   [
+    27.3,
+    13.3,
+    21.6,
+    0.0728
+   ]
+  ]
+ },
+ "zpusob_kamery": "nezavisla_na_modelu_odhad",
+ "poznamka": "Kamera: ruční body (rohové ochrany; xy z obálky katalogu, z s apriorním rozptylem) + obrys fotografie vs. promítnutý KVÁDR obálky z katalogu; tvar Johnova modelu se do kamery nepoužil. IoU je tedy nezávislé na modelu, kamera je ale jen odhad (poloha rohových ochran z je známa jen ±15 mm). Zdvižené nosné madlo je mimo obálku a model ho nemá: IoU \"iou\" je zahrnuje (nízké), \"iou_pod_radkem\" je počítáno jen pod řádkem y=365 px (madlo vynecháno)."
+}

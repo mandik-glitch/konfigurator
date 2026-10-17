@@ -1,0 +1,175 @@
+{
+ "sku": "4932498651",
+ "foto": "c01",
+ "foto_url": "https://static.milwaukeetool.eu/remote.axd/milwaukee-media-images.s3.amazonaws.com/hi/4932498651--Hero_1.jpg?width=1200",
+ "foto_v_repu": false,
+ "kamera": {
+  "azim": 39.62044355946526,
+  "elev": 15.881633899579656,
+  "dist": 4029.217507424437,
+  "fov": 21.226707546966292,
+  "cx": 573.1511620902291,
+  "cy": 830.4473600935484,
+  "w": 1200,
+  "h": 1200,
+  "roll": 0
+ },
+ "iou": {
+  "iou": 0.6636,
+  "iou_pod_radkem": 0.9425,
+  "ycut_px": 600,
+  "maskL": 600,
+  "model_px": 67495,
+  "foto_px": 95063
+ },
+ "landmarky": [
+  [
+   240,
+   "-yl",
+   "zlid",
+   291,
+   630,
+   "lid FL roh"
+  ],
+  [
+   -240,
+   "yl",
+   "zlid",
+   841,
+   642,
+   "lid BR roh"
+  ],
+  [
+   240,
+   "-yb",
+   "zb",
+   297,
+   1028,
+   "FL spodni cap"
+  ],
+  [
+   240,
+   "yb",
+   "zb",
+   613,
+   1122,
+   "FR spodni cap"
+  ],
+  [
+   "xw",
+   "yw",
+   -161,
+   842,
+   967,
+   "naboj kola"
+  ],
+  [
+   "xw",
+   "yw",
+   -275,
+   838,
+   1067,
+   "kolo dole"
+  ]
+ ],
+ "apriorni_rozptyly": {
+  "yb": [
+   257,
+   35
+  ],
+  "yl": [
+   262,
+   35
+  ],
+  "yw": [
+   300,
+   15
+  ],
+  "xw": [
+   -125,
+   30
+  ],
+  "zb": [
+   -255,
+   20
+  ],
+  "zlid": [
+   268,
+   8
+  ]
+ },
+ "kalibrace": {
+  "z_parametry_mm": {
+   "xw": -143.1162611907356,
+   "yb": 258.92363195261214,
+   "yl": 249.51644128396936,
+   "yw": 312.54673758247117,
+   "zb": -256.5608754421684,
+   "zlid": 261.52836973067
+  },
+  "cena": 0.08956286374983502,
+  "podil_fotky_mimo_kvadr": 0.9999582149423366,
+  "podil_kvadru_mimo_fotku": 0.0,
+  "lm_chyba_px_prumer": 6.425331008974477,
+  "lm_chyby_px": [
+   {
+    "bod": "lid FL roh",
+    "chyba_px": 1.8
+   },
+   {
+    "bod": "lid BR roh",
+    "chyba_px": 21.8
+   },
+   {
+    "bod": "FL spodni cap",
+    "chyba_px": 0.6
+   },
+   {
+    "bod": "FR spodni cap",
+    "chyba_px": 0.4
+   },
+   {
+    "bod": "naboj kola",
+    "chyba_px": 7.7
+   },
+   {
+    "bod": "kolo dole",
+    "chyba_px": 6.4
+   }
+  ],
+  "nejlepsi_5_azim_elev_fov": [
+   [
+    39.6,
+    15.9,
+    21.2,
+    0.0896
+   ],
+   [
+    39.8,
+    15.1,
+    23.9,
+    0.0901
+   ],
+   [
+    40.7,
+    15.5,
+    20.2,
+    0.0911
+   ],
+   [
+    39.5,
+    15.2,
+    25.3,
+    0.094
+   ],
+   [
+    39.1,
+    14.8,
+    27.1,
+    0.0946
+   ]
+  ]
+ },
+ "zpusob_kamery": "nezavisla_na_modelu_slaby_odhad",
+ "poznamka": "Kamera ze 6 ručních bodů (rohy víka, spodní rohové ochrany, náboj a spodek kola) + apriorní rozptyly neznámých souřadnic (šířka těla, osa kola) + apriorní ohnisko 18±5 st. (z kalibrace XL fotek stejné série). Slabě určená (principal point cy se odchýlil na ~830 px); IoU (pod řádkem y=600 px, vysunuté madlo mimo obálku vynecháno) bere jako orientační."
+}

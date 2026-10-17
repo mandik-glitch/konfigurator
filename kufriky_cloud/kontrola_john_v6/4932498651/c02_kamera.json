@@ -1,0 +1,32 @@
+{
+ "sku": "4932498651",
+ "foto": "c02",
+ "foto_url": "https://static.milwaukeetool.eu/remote.axd/milwaukee-media-images.s3.amazonaws.com/hi/4932498651--Hero_2.jpg?width=1200",
+ "foto_v_repu": false,
+ "kamera": {
+  "azim": 28.28110696366439,
+  "elev": 15.396968549870444,
+  "roll": -1.5864873989430044,
+  "dist": 2775.555376046681,
+  "shiftX": 0.0717899011255225,
+  "shiftY": -0.059293553915047356,
+  "fov": 21,
+  "w": 1200,
+  "h": 1200
+ },
+ "iou": {
+  "iou": 0.9474,
+  "iou_pod_radkem": 0.9474,
+  "ycut_px": 0,
+  "maskL": 600,
+  "model_px": 178621,
+  "foto_px": 175739
+ },
+ "landmarky": null,
+ "apriorni_rozptyly": null,
+ "kalibrace": {},
+ "zpusob_kamery": "DOFITOVANA_PODLE_OBRYSU_posun_zasuvky_300mm",
+ "poznamka": "Zásuvka je na fotce vysunutá o neznámou délku; model nemá vysunutou polohu. Kamera byla dofitována podle obrysu Johnova modelu se zásuvkou ručně posunutou o +300 mm v X (zkoušeno 200/300/400 mm, IoU 0.923/0.949/0.955) při pevném ohnisku 21 st. IoU proto NENÍ důkazem. Pokus o kameru ze 4 ručních bodů byl nedourčený a zamítnut.",
+ "posun_zasuvky_mm": 300,
+ "ohnisko_pevne_st": 21
+}

@@ -1,0 +1,19 @@
+{
+ "glb_4932478162": "kufriky_john/nahled-modely-v6/modely/4932478162.glb",
+ "glb_4932501784": "kufriky_john/nahled-modely-v6/modely/4932501784.glb",
+ "velikost_bajtu": [
+  1498380,
+  1498380
+ ],
+ "md5_souboru": [
+  "21afaa26946a2ac4ebf0318c52ca028e",
+  "45d48dfb1c9c0c5663c3857477098725"
+ ],
+ "binarni_blok_geometrie_shodny": true,
+ "sha256_binarniho_bloku": "502ec793fe2ed2a778a8f996a6e9fa6a02fcf1764f8a96c3ee6fc86d6f28f9a8",
+ "json_cast_se_lisi_jen_v": [
+  "sku"
+ ],
+ "ostatni_json_shodny": true,
+ "vysledek": "Geometricky IDENTICKÉ (všechny vrcholy, normály a indexy bajt po bajtu; liší se jen pole asset.extras.sku). Soubory se liší pouze tímto řetězcem."
+}

@@ -1,0 +1,5 @@
+{"foto":"../kufry3/4932501784/c02.jpg","w":1200,"h":1200,"box":[-197,197,-277,277,-211,211],"y_cut":345,
+ "zpri":{"zTh":[190,15],"zTl":[140,20],"zBh":[-140,20],"zBl":[-190,15]},
+ "body":[[197,-277,"zTh",121,498,"FL cap horni"],[197,-277,"zTl",121,577,"FL cap horni dolni konec"],[197,-277,"zBh",147,1012,"FL cap spodni horni konec"],[197,-277,"zBl",147,1072,"FL cap spodni dolni konec"],
+ [197,277,"zTh",1077,500,"FR cap horni"],[197,277,"zTl",1077,575,"FR cap horni dolni konec"],[197,277,"zBh",1052,1012,"FR cap spodni horni konec"],[197,277,"zBl",1052,1068,"FR cap spodni dolni konec"]],
+ "az0":[-8,8],"el0":[5,30],"trials":30}

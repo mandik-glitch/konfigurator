@@ -1,0 +1,141 @@
+{
+ "sku": "4932464078",
+ "model": "kufriky_john/nahled-modely-v6/modely/4932464078.glb",
+ "osy_modelu": "X=čelo se západkami (+X), Y=šířka/délka obálky 561, Z=výška; střed obálky v počátku; kola na -X straně (vzadu)",
+ "foto_zdroj": "scratchpad kufry3/4932464078/cNN.jpg (jen čteno, do repa nekopírováno)",
+ "foto": {
+  "c01": {
+   "IoU_kamera_z_bodu": 0.839,
+   "IoU_kamera_dofitovana_na_obrys": 0.87,
+   "kamera_z_bodu": {
+    "azim": 26.02,
+    "elev": 13.85,
+    "dist": 2157.23,
+    "fov": 22.1,
+    "cx": 599.56,
+    "cy": 541.14,
+    "roll": 0.0,
+    "chyby_px": {
+     "FLT": 9.7,
+     "FLB": 5.7,
+     "FRT": 15.6,
+     "FRB": 16.0,
+     "BRT": 5.7
+    },
+    "rms_px": 11.5
+   },
+   "kamera_obrys": {
+    "azim": 29.14,
+    "elev": 11.43,
+    "dist": 2049.79,
+    "fov": 22.26,
+    "cx": 598.28,
+    "cy": 554.23,
+    "roll": 0
+   },
+   "landmarky_px": {
+    "FLT": [
+     73,
+     368
+    ],
+    "FLB": [
+     80,
+     895
+    ],
+    "FRT": [
+     838,
+     443
+    ],
+    "FRB": [
+     856,
+     1042
+    ],
+    "BRT": [
+     1088,
+     385
+    ]
+   },
+   "poznamka": "3D souřadnice landmarků: čelní rovina X=+236, Y=±280,5 (šířka 561 = katalog, shodná šířka čel celé rodiny PACKOUT na c08/c09), zadní roh X=-236 (hloubka 472 = katalog); výška: spodní roh Z=-230 (předpoklad z c05), horní roh a výška okraje řešeny z fotek. Hlavní bod uvolněn (cy 541), RMS 11,5 px => kamera je ODHAD (orient. ±3° a ±15 % ohnisko)."
+  },
+  "c02": {
+   "IoU_kamera_z_bodu": 0.754,
+   "IoU_kamera_dofitovana_na_obrys": 0.796,
+   "kamera_z_bodu": {
+    "azim": 23.74,
+    "elev": 15.3,
+    "dist": 2815.21,
+    "fov": 18.44,
+    "cx": 597.65,
+    "cy": 641.9,
+    "roll": 0.0,
+    "chyby_px": {
+     "FLT": 4.2,
+     "FLB": 10.5,
+     "FRT": 5.6,
+     "FRB": 9.6,
+     "BRT": 5.0
+    },
+    "rms_px": 7.4
+   },
+   "kamera_obrys": {
+    "azim": 25.81,
+    "elev": 20.6,
+    "dist": 2719.44,
+    "fov": 17.69,
+    "cx": 601.5,
+    "cy": 620.7,
+    "roll": 0
+   },
+   "landmarky_px": {
+    "FLT": [
+     116,
+     491
+    ],
+    "FLB": [
+     121,
+     967
+    ],
+    "FRT": [
+     836,
+     572
+    ],
+    "FRB": [
+     841,
+     1088
+    ],
+    "BRT": [
+     1047,
+     500
+    ]
+   },
+   "poznamka": "stejný postup jako c01, RMS 7,4 px; kamera je ODHAD."
+  },
+  "c05": {
+   "IoU_kamera_z_bodu_pod_y790": 0.915,
+   "IoU_kamera_dofitovana_na_obrys_pod_y790": 0.926,
+   "kamera_z_bodu": {
+    "azim": 180,
+    "elev": 8,
+    "dist": 5825.12,
+    "fov": 12,
+    "cx": 615.0,
+    "cy": 876.65,
+    "roll": 0
+   },
+   "kamera_obrys": {
+    "azim": 180.87,
+    "elev": 9.07,
+    "dist": 5880.4,
+    "fov": 11.87,
+    "cx": 619.44,
+    "cy": 861.14,
+    "roll": 0
+   },
+   "poznamka": "pohled zezadu s VYSUNUTÝM madlem (model je složený) -> IoU jen pro řádky y>=790 px (okraj víka a níž). Kamera: az=180, el=8° odhad z viditelnosti horní plochy, měřítko 0,98 px/mm z šířky okraje víka 550 px = 561 mm; poloha dopočtena. Jen ODHAD."
+  },
+  "c03,c04": "víko otevřené, model víko neotevírá -> bez IoU",
+  "c06,c07,c08": "sestavy s kartonem / dalšími výrobky a vysunutým madlem -> bez IoU",
+  "c09": "sestava tří boxů, horní část spodního boxu zakryta; fit obrysu degeneroval (az 6°, el 1°) -> IoU neuváděn"
+ },
+ "metoda": "kamery z ručně změřených rohů (kalibrace Levenberg-Marquardt, jak kufry_hilti/nastroje/kalibruj.py, vlastní varianta se sdílenými rozměry); render Johnova GLB vlastním načítačem (Johnovy GLB mají indexy uint16, sdílená stránka render/stranka.html je neumí -> upravená kopie ve scratchpadu); \"kamera_obrys\" = dofit překryvem obrysu = HORNÍ MEZ IoU, ne důkaz."
+}
