@@ -15,7 +15,9 @@ for (const p of (ph.length ? ph : Object.keys(cfg).filter(k => !cfg[k].glb && !(
   const run = a => { for (let t = 0; ; t++) { try { return JSON.parse(execFileSync('node', [...base, ...a], { cwd: HERE, encoding: 'utf8', maxBuffer: 1e8, stdio: ['ignore', 'pipe', 'ignore'] }).trim().split('\n').pop()); } catch (e) { if (t >= 3) throw e; console.error('opakuji (pád prohlížeče)', p, t + 1); } } };
   const poseJohn = (cfg[p].pose && 'vicko' in cfg[p].pose) ? ['--pose', 'vicko=' + (-cfg[p].pose.vicko)] : [];   // Johnův model: osa pantu opačné znaménko (kontrola: záporný úhel)
   const k = run(poseJohn), f = run([...poseJohn, '--fit', '--free', 'azim,elev,dist,fov,cx,cy' + (poseJohn.length ? ',vicko' : ''), '--iter', '120']);
-  res[p] = { iou_kamera_kontroly: k.iou, iou_dofit: f.iou, kamera_dofit: f.kamera, pose_dofit: f.pose, iou_podle_kontroly: cfg[p].john_iou };
+  const cerv = a => { try { const r = JSON.parse(execFileSync('node', ['srov.mjs', '--cfg', cfgF, '--pohled', p, '--glb', glb, '--len', '800', '--tag', 'john_cerv', ...a], { cwd: HERE, encoding: 'utf8', maxBuffer: 1e8, stdio: ['ignore', 'pipe', 'ignore'] }).trim().split('\n').pop()); return JSON.parse(execFileSync('python3', [path.join(HERE, 'cervena_iou.py'), cfg[p].foto, r.render], { encoding: 'utf8' })); } catch (e) { return null; } };
+  const kc = cerv([]), fc = cerv(['--st', [f.kamera.azim, f.kamera.elev, f.kamera.dist, f.kamera.fov, f.kamera.cx, f.kamera.cy].join(',')]);
+  res[p] = { iou_kamera_kontroly: k.iou, iou_dofit: f.iou, kamera_dofit: f.kamera, pose_dofit: f.pose, iou_podle_kontroly: cfg[p].john_iou, cervena_kontrola: kc, cervena_dofit: fc };
   console.log(sku, p, JSON.stringify(res[p].iou_kamera_kontroly), JSON.stringify(f.iou), 'kontrola uvádí', cfg[p].john_iou);
 }
 fs.writeFileSync(path.join(dir, 'john_iou.json'), JSON.stringify(res, null, 1));

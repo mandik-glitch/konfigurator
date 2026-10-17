@@ -37,6 +37,11 @@ export class Renderer {
     const b64 = await this.page.evaluate(() => window.pixels());
     return Buffer.from(b64, 'base64');
   }
+  async rgb(cam) {
+    await this.page.evaluate(c => window.shot(c), cam);
+    const b64 = await this.page.evaluate(() => window.rgba());
+    return Buffer.from(b64, 'base64');
+  }
   async close() { await this.browser.close(); }
 }
 

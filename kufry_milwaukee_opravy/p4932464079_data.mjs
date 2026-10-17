@@ -12,10 +12,10 @@ export const SPOLECNE = {
   yLatch: 170,                    // střed západky (±Y)
   yHandle: 115,                   // polovina šířky červené rukojeti
 };
-export const V79 = { ...SPOLECNE, sku: '4932464079', nazev: 'Milwaukee PACKOUT Velký box na nářadí (4932464079)', H: 282, horniDrzadlo: true, capT: 50, capB: 42, capUp: 30,  // krytky zasahují do rohových výřezů víka o capUp
+export const V79 = { ...SPOLECNE, sku: '4932464079', nazev: 'Milwaukee PACKOUT Velký box na nářadí (4932464079)', H: 282, horniDrzadlo: true, capT: 50, capB: 31, capUp: 30, capZ0: 11,  // krytky zasahují do rohových výřezů víka o capUp
   // svislé polohy předního hardwaru (z' = výška nad spodní plochou)
   latchTop: 168, latchH: 68, handlePivot: 125, handleH: 85, ringZ: 115, logoZ: 167, tabZ: 0 };
-export const V80 = { ...SPOLECNE, sku: '4932464080', nazev: 'Milwaukee PACKOUT Box na nářadí (4932464080)', H: 165, horniDrzadlo: false, capT: 33, capB: 19, capUp: 25,
+export const V80 = { ...SPOLECNE, sku: '4932464080', nazev: 'Milwaukee PACKOUT Box na nářadí (4932464080)', H: 165, horniDrzadlo: false, capT: 33, capB: 11, capUp: 25, capZ0: 11,
   latchTop: 83, latchH: 69, handlePivot: 84, handleH: 80, ringZ: 70, logoZ: null, tabZ: 0 };
 // Box s vložnými panely (elektrikář 4932499703 / instalatér 4932499704): obálka 410 × 560 × 165; bez hliníkových tyčí a rohových krytek (z fotografií sady – viz poznámky).
 export const V499703 = { sku: '4932499703', nazev: 'Milwaukee PACKOUT Box pro elektrikáře (4932499703)', H: 165, X: 205, Y: 280,

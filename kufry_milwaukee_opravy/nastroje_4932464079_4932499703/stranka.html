@@ -80,6 +80,7 @@ window.shot=function(c){
   if(c.shiftX||c.shiftY){camera.setViewOffset(renderer.domElement.width,renderer.domElement.height,-(c.shiftX||0)*renderer.domElement.width,-(c.shiftY||0)*renderer.domElement.height,renderer.domElement.width,renderer.domElement.height);}
   renderer.render(scene,camera);return true;
 };
+window.rgba=function(){const gl=renderer.getContext();const w=gl.drawingBufferWidth,h=gl.drawingBufferHeight;const px=new Uint8Array(w*h*4);gl.readPixels(0,0,w,h,gl.RGBA,gl.UNSIGNED_BYTE,px);const o=new Uint8Array(w*h*3);for(let y=0;y<h;y++)for(let x=0;x<w;x++){const s=((h-1-y)*w+x)*4,d=(y*w+x)*3;o[d]=px[s];o[d+1]=px[s+1];o[d+2]=px[s+2];}let bin='';const CH=0x8000;for(let i=0;i<o.length;i+=CH)bin+=String.fromCharCode.apply(null,o.subarray(i,i+CH));return btoa(bin);};
 window.pixels=function(){const gl=renderer.getContext();const w=gl.drawingBufferWidth,h=gl.drawingBufferHeight;const px=new Uint8Array(w*h*4);gl.readPixels(0,0,w,h,gl.RGBA,gl.UNSIGNED_BYTE,px);
   // maska: tmavé pixely (silueta) → 1 ; bez převrácení řádků vrací pole shora dolů
   const m=new Uint8Array(w*h);for(let y=0;y<h;y++)for(let x=0;x<w;x++){const s=((h-1-y)*w+x)*4;m[y*w+x]=px[s]<128?1:0;}

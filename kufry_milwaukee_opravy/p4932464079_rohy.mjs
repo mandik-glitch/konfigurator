@@ -11,12 +11,12 @@ function capPoly(V, ins = 0) {
 function rohJeden(V) {
   const L = [];
   const zs = V.H - V.lidH + V.capUp;                         // horní hrana krytky (zasahuje do rohového výřezu víka)
-  const zT0 = zs - V.capT, zB1 = V.capB;
+  const zT0 = zs - V.capT, zB0 = V.capZ0 || 0, zB1 = zB0 + V.capB;
   // horní krytka: těleso od zT0 po zs; hrany zaoblené (zúžení dole)
   const mk = (ins, z) => ({ poly: ccw(capPoly(V, ins)), z });
   L.push(loftSolid('cerna', 'krytka_horni', [mk(4, zT0), mk(1.2, zT0 + 4), mk(0, zT0 + 10), mk(0, zs - 6), mk(0.8, zs)], { crease: 38 }));
   // dolní krytka: od 0 po capB
-  L.push(loftSolid('cerna', 'krytka_dolni', [mk(5, 0), mk(1.5, 4), mk(0, 10), mk(0, zB1 - 5), mk(2.5, zB1)], { crease: 38 }));
+  L.push(loftSolid('cerna', 'krytka_dolni', [mk(5, zB0), mk(1.5, zB0 + 4), mk(0, zB0 + 10), mk(0, zB1 - 5), mk(2.5, zB1)], { crease: 38 }));
   // tyč: čtvercový profil 29 s ostrými hranami zkosenými; okraj leží u vnějšího rohu
   const b = V.bar, x1 = V.X - 0.5, y1 = V.Y - 0.5;
   L.push(slab('ocel', 'tyc_hlinik', { x0: x1 - V.barX, x1, y0: y1 - b, y1, z0: zB1 - 2, z1: zT0 + 2, rs: 3, seg: 2, reT: 0.2, reB: 0.2, fs: 1 }));
@@ -26,9 +26,9 @@ function rohJeden(V) {
     L.push(slab('seda', 'tyc_zebro_y', { x0: x1 - V.barX + V.barX * k - 0.6, x1: x1 - V.barX + V.barX * k + 0.6, y0: y1 - 0.3, y1: y1 + 0.2, z0: zB1, z1: zT0, rs: 0.1, seg: 1 }));
   }
   // šrouby: boční plocha dolní krytky (+Y) a horní krytky (+Y), čelní plocha (+X) dolní krytky
-  L.push(cylY('ocel', 'sroub_dolni_y', 4.6, y1 - 1.2, y1 + 0.1, x1 - 20, zB1 * 0.55, 18));
+  L.push(cylY('ocel', 'sroub_dolni_y', 4.6, y1 - 1.2, y1 + 0.1, x1 - 20, (zB0 + zB1) * 0.5, 18));
   L.push(cylY('ocel', 'sroub_horni_y', 4.0, y1 - 1.0, y1 + 0.1, x1 - 22, zT0 + V.capT * 0.5, 18));
-  L.push(cylX('ocel', 'sroub_dolni_x', 4.2, x1 - 1.2, x1 + 0.1, y1 - 24, zB1 * 0.55, 18));
+  L.push(cylX('ocel', 'sroub_dolni_x', 4.2, x1 - 1.2, x1 + 0.1, y1 - 24, (zB0 + zB1) * 0.5, 18));
   L.push(cylX('cerna_mat', 'sroub_horni_x', 5.5, x1 - 1.0, x1 + 0.1, y1 - 24, zT0 + V.capT * 0.5, 18));
   return L;
 }

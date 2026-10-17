@@ -13,6 +13,10 @@ for s in ['4932464079','4932464080','4932499703','4932499704']:
     for f in d['fotky']:
         cam = dict(f['kamera']); cam.pop('rms_px', None); cam.pop('zt', None); cam['w'] = 1200; cam['h'] = 1200
         lm = [[l['model_xyz'][0], l['model_xyz'][1], l['model_xyz'][2], l['foto_px'][0], l['foto_px'][1], 1] for l in f['landmarky_xyz_px'] if not l['jen_svisle'] and not isinstance(l['model_xyz'][2], str)]
+        if s in ('4932464079','4932464080'):
+            H = 282 if s == '4932464079' else 165
+            for l in lm:
+                if abs(l[2] + H / 2) < 1e-6: l[2] += 11      # dolní krytky leží ≈ 11 mm nad nejnižší hranou těla (nožky/patky těla jsou níž)
         for i in sorted(LMSKIP.get(s, {}).get(f['id'], []), reverse=True): lm.pop(i)
         e = {'foto': f"{SC}/kufry3/{s}/{f['id']}.jpg", 'start': cam, 'lm': lm, 'pose': {}, 'vyloucit': VYL.get(s, {}).get(f['id'], []), 'john_iou': f['iou_siluety'], 'john_iou_poznamka': f['iou_poznamka']}
         if f.get('uhel_viko_deg') is not None: e['pose'] = {'vicko': -f['uhel_viko_deg']}      # v našem modelu otevření = kladný úhel (osa -Y)

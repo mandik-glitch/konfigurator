@@ -11,8 +11,8 @@ export function horniDrzadlo(V, zvednuto = false) {
   const xe = xp + L;                                       // osa hrazdy
   for (const s of [-1, 1]) {
     const nm = s > 0 ? 'P' : 'L', ya = s * yL - 7, yb = s * yL + 7;
-    P.push(slab('cerna', 'drzadlo_rameno_' + nm, { x0: xp - 12, x1: xe - 12, y0: Math.min(ya, yb), y1: Math.max(ya, yb), z0: zp - 11, z1: zp + 11, rs: 3, seg: 2, reT: 2.5, reB: 2.5, fs: 2 }));
-    P.push(slab('cerna', 'drzadlo_loket_' + nm, { x0: xe - 24, x1: xe + 13, y0: Math.min(s * (yL - 21), s * (yL + 9)), y1: Math.max(s * (yL - 21), s * (yL + 9)), z0: zp - 15, z1: zp + 15, rs: 8, seg: 3, reT: 4, reB: 4, fs: 3 }));
+    P.push(slab('cerna', 'drzadlo_rameno_' + nm, { x0: xp - 12, x1: xe - 12, y0: Math.min(ya, yb), y1: Math.max(ya, yb), z0: zp - 14, z1: zp + 14, rs: 3, seg: 2, reT: 2.5, reB: 2.5, fs: 2 }));
+    P.push(slab('cerna', 'drzadlo_loket_' + nm, { x0: xe - 24, x1: xe + 13, y0: Math.min(s * (yL - 21), s * (yL + 9)), y1: Math.max(s * (yL - 21), s * (yL + 9)), z0: zp - 17, z1: zp + 17, rs: 8, seg: 3, reT: 4, reB: 4, fs: 3 }));
     P.push(cylY('ocel', 'drzadlo_cep_' + nm, 4.5, s > 0 ? yL + 6 : -yL - 8, s > 0 ? yL + 9 : -yL - 6, xp, zp, 14));
   }
   P.push(cylY('ocel', 'drzadlo_trubka', 11.5, -(yL - 21) - 1, (yL - 21) + 1, xe, zp, 24));
