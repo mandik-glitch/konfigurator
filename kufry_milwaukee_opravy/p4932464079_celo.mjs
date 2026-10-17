@@ -53,11 +53,11 @@ export function zapadka(V, s) {
 // ---------- kroužek, logo, kanál s jazýčkem, žebra nad sloupky rukojeti ----------
 export function celoDetaily(V) {
   const L = [], xf = V.xF;
-  L.push(prstenX('cerna', 'kruzek_okruzi', { r0: 17, r1: 27, x0: xf - 0.5, x1: xf + 3.2, y: 14, z: V.ringZ, fil: 0.8 }));
-  L.push(prstenX('cervena', 'kruzek', { r0: 10.4, r1: 18.6, x0: xf + 1, x1: xf + 8.5, y: 14, z: V.ringZ, fil: 1.6 }));
-  L.push(cylX('cerna', 'kruzek_dno', 10.6, xf - 0.2, xf + 1.2, 14, V.ringZ, 24));
+  L.push(prstenX('cerna', 'kruzek_okruzi', { r0: 17, r1: 27, x0: xf - 0.5, x1: xf + 3.2, y: V.ringY ?? 14, z: V.ringZ, fil: 0.8 }));
+  L.push(prstenX('cervena', 'kruzek', { r0: 10.4, r1: 18.6, x0: xf + 1, x1: xf + 8.5, y: V.ringY ?? 14, z: V.ringZ, fil: 1.6 }));
+  L.push(cylX('cerna', 'kruzek_dno', 10.6, xf - 0.2, xf + 1.2, V.ringY ?? 14, V.ringZ, 24));
   // logo (potisk): „MILWAUKEE“ + blesk + „PACKOUT“ – bitmapové písmo, plochý červený potisk; 4932464080 logo nad rukojetí nemá
-  if (V.logoZ != null) { const zl = V.logoZ, yl = 8;
+  if (V.logoZ != null) { const zl = V.logoZ, yl = V.logoY ?? 8;
     L.push(tekst('cervena', 'logo_milwaukee', 'MILWAUKEE', { xf, y: yl - 2, z: zl + 6, px: 1.25, t: 0.5, sklon: 1 }));
     L.push(tekst('cervena', 'logo_packout', 'PACKOUT', { xf, y: yl + 14, z: zl - 9, px: 0.95, t: 0.5 }));
     L.push(extYZ('cervena', 'logo_blesk', [[yl - 34, zl - 1], [yl + 6, zl + 0.2], [yl - 8, zl - 3], [yl + 12, zl - 6.5], [yl - 12, zl - 2.6], [yl - 26, zl - 4.2]], xf - 0.1, xf + 0.5)); }

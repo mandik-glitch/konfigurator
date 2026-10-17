@@ -274,3 +274,6 @@ export function tekst(mat, name, str, { xf, y, z, px = 1.2, t = 0.5, sklon = 0 }
   });
   return p;
 }
+
+// posun skupiny (dílů i pivotů, rekurzivně) ve směru Y
+export function shiftY(g, dy) { g.pivot = [g.pivot[0], g.pivot[1] + dy, g.pivot[2]]; for (const p of g.parts) p.move(0, dy, 0); for (const c of g.children) shiftY(c, dy); return g; }
