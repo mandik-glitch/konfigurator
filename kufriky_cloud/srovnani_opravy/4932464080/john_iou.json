@@ -1,14 +1,14 @@
 {
  "c01": {
   "iou_kamera_kontroly": 0.8435,
-  "iou_dofit": 0.8906,
+  "iou_dofit": 0.9059,
   "kamera_dofit": {
-   "azim": 34.083,
-   "elev": 9.617,
-   "dist": 1225.563,
-   "fov": 32.185,
-   "cx": 604.006,
-   "cy": 549.594,
+   "azim": 32.419,
+   "elev": 10.577,
+   "dist": 1291.752,
+   "fov": 31.185,
+   "cx": 595.951,
+   "cy": 563.772,
    "roll": 0,
    "w": 1200,
    "h": 1200
@@ -23,7 +23,7 @@
   "cervena_dofit": {
    "iou_cervena": 0,
    "px_foto": 39257,
-   "px_model": 17697
+   "px_model": 17191
   }
  }
 }

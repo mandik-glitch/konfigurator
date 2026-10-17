@@ -6,7 +6,7 @@ function capPoly(V, ins = 0) {
   const x0 = V.xN, x1 = V.X - 0.5, y0 = V.yN, y1 = V.Y - 0.5;
   const P = [[x0, y0], [x1, y0], [x1, y1], [x0, y1]];
   // rozšířená krytka: zkosení vnějšího rohu 12, ostatní 5
-  return polyInset(roundPoly(P, [5, 9, 12, 5], 2), ins);
+  return polyInset(roundPoly(P, [6, 10, 13, 6], 2), ins);   // osmihranné krytky: vnější roh zkosen 13, ostatní 6–10
 }
 function rohJeden(V) {
   const L = [];

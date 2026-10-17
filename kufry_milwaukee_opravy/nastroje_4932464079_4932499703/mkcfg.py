@@ -21,7 +21,7 @@ for s in ['4932464079','4932464080','4932499703','4932499704']:
         e = {'foto': f"{SC}/kufry3/{s}/{f['id']}.jpg", 'start': cam, 'lm': lm, 'pose': {}, 'vyloucit': VYL.get(s, {}).get(f['id'], []), 'john_iou': f['iou_siluety'], 'john_iou_poznamka': f['iou_poznamka']}
         if f.get('uhel_viko_deg') is not None: e['pose'] = {'vicko': -f['uhel_viko_deg']}      # v našem modelu otevření = kladný úhel (osa -Y)
         if s in ('4932464079','4932464080') and f['id'] != 'c01':
-            e['pose'].update({'trmen_L': 105 if s == '4932464079' else 135, 'trmen_P': 105 if s == '4932464079' else 135})   # drátěné třmeny na fotografiích visí dolů (otevřené západky)
+            e['pose'].update({'trmen_L': 105 if s == '4932464079' else 125, 'trmen_P': 105 if s == '4932464079' else 125})   # drátěné třmeny na fotografiích visí dolů (otevřené západky)
         c[f['id']] = e
     if s == '4932464079':
         c['c01_nahore'] = json.loads(json.dumps(c['c01'])); c['c01_nahore']['vyloucit'] = []; c['c01_nahore']['glb'] = '../modely/4932464079_drzadlo_nahore.glb'

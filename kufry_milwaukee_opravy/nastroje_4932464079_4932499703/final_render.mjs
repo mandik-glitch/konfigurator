@@ -6,7 +6,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { Renderer, kamera } from './render.mjs';
 const HERE = path.dirname(fileURLToPath(import.meta.url));
-const sku = process.argv[2], len = +(process.argv[process.argv.indexOf('--len') + 1] || 900);
+const sku = process.argv[2], li = process.argv.indexOf('--len'), len = li > 0 ? +process.argv[li + 1] : 900;
 const dir = path.join(HERE, '../../kufriky_cloud/srovnani_opravy', sku);
 const dof = JSON.parse(fs.readFileSync(path.join(dir, `kamery_dofit_${sku}.json`), 'utf8'));
 const cfg = JSON.parse(fs.readFileSync(path.join(HERE, `cfg_${sku}.json`), 'utf8'));

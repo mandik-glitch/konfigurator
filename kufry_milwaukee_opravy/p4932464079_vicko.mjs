@@ -20,12 +20,13 @@ export function profilVika(V) {
 // obdélníkové kapsy plató: [x0,x1,y0,y1], skupiny levá (Y<0) a pravá (Y>0), středové žebro mezi nimi
 export function kapsyVika(V = {}) {
   if (V.lidTyp === 'elektrikar') {
-    // zavřené víko boxu z fotografie sady (shora): 2 skupiny po 5 kapsách + úzká drážka mezi skupinami; v jedné skupině kapsa s červeným štítkem, ve druhé vysoká kapsa
-    const rz = [-160, -96], rs = [-84, 22], rp = [34, 100], R = [];
+    // zavřené víko boxu z fotografie sady (shora, its.co.uk; rozměry z měřítka 1,04 px/mm, ±8 mm): 2 skupiny po 5 kapsách + úzká drážka mezi skupinami;
+    // v jedné skupině kapsa s červeným štítkem (kratší), ve druhé vysoká kapsa. Řady: zadní X −170…−77, střední −56…32, přední 51…146.
+    const rz = [-170, -77], rs = [-56, 32], rp = [51, 146], R = [];
     const add = (r, y0, y1, d = 14) => R.push({ x0: r[0], x1: r[1], y0, y1, d });
-    add(rz, -232, -132); add(rz, -120, -12); add(rs, -176, -58); add(rp, -232, -132); add(rp, -120, -12);
-    add(rz, 12, 120); add(rz, 132, 232); add(rs, 30, 232); add(rp, 12, 120); add(rp, 132, 232);
-    R.push({ x0: -150, x1: 110, y0: -9, y1: 9, d: 7 });
+    add(rz, -237, -146); add(rz, -131, -27); add(rs, -200, -77); add(rp, -237, -146); add(rp, -131, -27);
+    add(rz, 40, 133); add(rz, 153, 241); add(rs, 43, 246); add(rp, 40, 133); add(rp, 153, 241);
+    R.push({ x0: -154, x1: 155, y0: -19, y1: 21, d: 7 });
     return R;
   }
   const R = [], radky = { zad: [-160, -96], stred: [-84, 22], predni: [34, 100] };
@@ -61,7 +62,7 @@ export function vicko(V) {
   // hluboké kapsy: stěny do dna (plateHoles má stěny děr do z0 = H - dKap); mělčí drážka má dno výše
   kap.forEach((k, i) => { const f = new Part('kapsa_dno_' + i, 'cerna'); capPoly(f, k, zc(H - dKap), true); g.add(f); });
   // červený štítek
-  if (V.lidTyp === 'elektrikar') g.add(slab('cervena', 'vicko_stitek', { x0: -76, x1: 12, y0: -170, y1: -64, z0: H - dKap, z1: H - dKap + 1.6, rs: 4, seg: 2, reT: 0.5, reB: 0.1, fs: 1 }));
+  if (V.lidTyp === 'elektrikar') g.add(slab('cervena', 'vicko_stitek', { x0: -50, x1: 26, y0: -192, y1: -86, z0: H - dKap, z1: H - dKap + 1.6, rs: 4, seg: 2, reT: 0.5, reB: 0.1, fs: 1 }));
   else g.add(slab('cervena', 'vicko_stitek', { x0: 4, x1: 16, y0: 112, y1: 226, z0: H - dKap, z1: H - dKap + 1.2, rs: 2, seg: 2, reT: 0.4, reB: 0.1, fs: 1 }));
   // --- ouška na koncích víka (pro čepy horního držadla / žebrovaný výstupek)
   if (V.rohy !== false) for (const s of [-1, 1]) {

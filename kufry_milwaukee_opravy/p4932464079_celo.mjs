@@ -31,17 +31,17 @@ export function zapadka(V, s) {
   const zt = V.latchTop, zb = zt - V.latchH, zs = V.H - V.lidH;
   const g = new Group('zapadka_' + nm);
   // červené těleso jazyka (obrys v YZ), mírně zkosený dolní okraj
-  const body = roundPoly([[yc - 26, zb + 2], [yc + 26, zb - 1], [yc + 26, zt - 14], [yc - 26, zt - 14]], [9, 9, 0, 0], 3);
+  const body = roundPoly([[yc - 29, zb + 2], [yc + 29, zb - 1], [yc + 29, zt - 14], [yc - 29, zt - 14]], [9, 9, 0, 0], 3);
   g.add(extYZ('cervena', 'zapadka_telo_' + nm, body, xf - 0.5, xf + 6.5));
   // prsty (4 zuby) nahoře
-  for (let k = 0; k < 4; k++) { const a = yc - 24 + k * 13, b = a + 8.4; g.add(extYZ('cervena', 'zapadka_zub', roundPoly([[a, zt - 15], [b, zt - 15], [b, zt], [a, zt]], [0, 0, 2.5, 2.5], 2), xf + 0.5, xf + 5.5)); }
+  for (let k = 0; k < 4; k++) { const a = yc - 27.5 + k * 14.4, b = a + 9.2; g.add(extYZ('cervena', 'zapadka_zub', roundPoly([[a, zt - 15], [b, zt - 15], [b, zt], [a, zt]], [0, 0, 2.5, 2.5], 2), xf + 0.5, xf + 5.5)); }
   // střední vyvýšený panel a žebra v dolní části
-  g.add(slab('cervena', 'zapadka_panel_' + nm, { x0: xf + 6, x1: xf + 8.6, y0: yc - 19, y1: yc + 19, z0: zb + 14, z1: zt - 20, rs: 3, seg: 2, reT: 0.8, reB: 0.5, fs: 1 }));
-  for (let k = 0; k < 3; k++) g.add(slab('cervena', 'zapadka_zebro', { x0: xf + 6, x1: xf + 8, y0: yc - 20, y1: yc + 20, z0: zb + 3 + k * 3.6, z1: zb + 5.2 + k * 3.6, rs: 0.5, seg: 1, reT: 0.5, reB: 0.3, fs: 1 }));
+  g.add(slab('cervena', 'zapadka_panel_' + nm, { x0: xf + 6, x1: xf + 8.6, y0: yc - 22, y1: yc + 22, z0: zb + 14, z1: zt - 20, rs: 3, seg: 2, reT: 0.8, reB: 0.5, fs: 1 }));
+  for (let k = 0; k < 3; k++) g.add(slab('cervena', 'zapadka_zebro', { x0: xf + 6, x1: xf + 8, y0: yc - 23, y1: yc + 23, z0: zb + 3 + k * 3.6, z1: zb + 5.2 + k * 3.6, rs: 0.5, seg: 1, reT: 0.5, reB: 0.3, fs: 1 }));
   // černé pouzdro pod víkem (kapsa nad zuby) – součást vany
-  g.add(slab('cerna', 'zapadka_pouzdro_' + nm, { x0: xf - 0.5, x1: xf + 7.5, y0: yc - 33, y1: yc + 33, z0: zt + 1, z1: zs - 1, rs: 3, seg: 2, reT: 1.2, reB: 0.5, fs: 2 }));
+  g.add(slab('cerna', 'zapadka_pouzdro_' + nm, { x0: xf - 0.5, x1: xf + 7.5, y0: yc - 36, y1: yc + 36, z0: zt + 1, z1: zs - 1, rs: 3, seg: 2, reT: 1.2, reB: 0.5, fs: 2 }));
   // drátěný třmen: otáčí se kolem čepů (osa Y) na spodku jazyka; zavřený = nahoře nad jazykem, otevřený visí dolů
-  const zp = zb + 10, xp = xf + 8.5, yl = yc - 38, yr = yc + 38, zTop = Math.min(V.latchTop + 45, zs + (V.capUp || 0) - 3), xw = xf + 13.2;
+  const zp = zb + 10, xp = xf + 8.5, yl = yc - 41, yr = yc + 41, zTop = Math.min(V.latchTop + 45, zs + (V.capUp || 0) - 3), xw = xf + 13.2;
   const tg = new Group('trmen_' + nm, { pivot: [xp, yc, zc(zp)], extras: { osa: [0, 1, 0], max_uhel: 165, poznamka: 'drátěný třmen západky; kladný úhel = horní příčka ven a dolů (otevřeno ≈ 160°)' } });
   tg.add(tube('ocel', 'trmen_drat_' + nm, [
     [xp - 2, yl + 4.5, zc(zp)], [xp, yl + 1, zc(zp)], [xw - 1.5, yl, zc(zp + 7)], [xw, yl, zc(zp + 14)], [xw, yl, zc(zTop - 8)], [xw - 0.5, yl + 2.5, zc(zTop - 3.5)], [xw - 1.0, yl + 7, zc(zTop - 0.4)],

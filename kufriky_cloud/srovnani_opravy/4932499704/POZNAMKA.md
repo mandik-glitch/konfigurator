@@ -1,0 +1,1 @@
+Model 4932499704 (box pro instalatéry) je STEJNÝ jako 4932499703 – fotografie výrobce (Hero_1) je u obou SKU bajt po bajtu totožná, proto jsou rendery, kamery dofitované k c01 a IoU zkopírovány z 4932499703 (jen jiné SKU v názvu/meta). Viz kufry_milwaukee_opravy/zdroje/4932499704_poznamky.md.

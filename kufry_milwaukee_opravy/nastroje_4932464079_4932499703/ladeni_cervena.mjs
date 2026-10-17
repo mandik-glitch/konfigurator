@@ -12,15 +12,17 @@ const dof = JSON.parse(fs.readFileSync(path.join(HERE, '../../kufriky_cloud/srov
 const scratch = process.env.KUF_SCRATCH || '/tmp/kuf_scratch'; fs.mkdirSync(scratch, { recursive: true });
 const L = 640, mf = path.join(scratch, `cm_${sku}_${pohled}.bin`);
 execFileSync('python3', [path.join(HERE, 'cervena_maska.py'), cfg.foto, mf, String(L)]);
-const photo = fs.readFileSync(mf).slice(8);
+const photo = Buffer.from(fs.readFileSync(mf).slice(8));
+const REG = process.env.KUF_REG ? process.env.KUF_REG.split(',').map(Number) : null;   // oblast v px fotografie 1200 (x0,y0,x1,y1) – mimo ni se červená nepočítá (např. nářadí na fotografii)
+const inReg = i => { if (!REG) return true; const x = (i % L + .5) * 1200 / L, y = (((i / L) | 0) + .5) * 1200 / L; return x >= REG[0] && x <= REG[2] && y >= REG[1] && y <= REG[3]; };
 const c = dof.kamera, cam = kamera({ azim: c.azim, elev: c.elev, dist: c.dist, fov: c.fov, roll: 0, shiftX: (c.cx - 600) / 1200, shiftY: (c.cy - 600) / 1200 });
 const R = await new Renderer().open(L, L);
 const glb = `/tmp/lad_${sku}.glb`;
 async function ev(ovr) {
-  execFileSync('node', [path.join(HERE, '../vytvor_4932464079_4932499703.mjs'), sku], { env: { ...process.env, KUF_OVR: JSON.stringify(ovr), KUF_OUT: glb }, stdio: 'ignore' });
+  try { execFileSync('node', [path.join(HERE, '../vytvor_4932464079_4932499703.mjs'), sku], { env: { ...process.env, KUF_OVR: JSON.stringify(ovr), KUF_OUT: glb }, stdio: 'ignore' }); } catch (e) { if (e.status !== 1) throw e; }   // exit 1 = obálka mimo toleranci (GLB se zapíše)
   await R.load(glb, false); await R.pose(dof.pose || {});
   const rgb = await R.rgb(cam); let I = 0, U = 0;
-  for (let i = 0; i < L * L; i++) { const r = rgb[3 * i], g = rgb[3 * i + 1], b = rgb[3 * i + 2]; const m = (r > 130 && g < 95 && b < 95 && r - g > 60) ? 1 : 0, p = photo[i]; if (m & p) I++; if (m | p) U++; }
+  for (let i = 0; i < L * L; i++) { if (!inReg(i)) continue; const r = rgb[3 * i], g = rgb[3 * i + 1], b = rgb[3 * i + 2]; const m = (r > 130 && g < 95 && b < 95 && r - g > 60) ? 1 : 0, p = photo[i]; if (m & p) I++; if (m | p) U++; }
   return I / U;
 }
 const steps = JSON.parse(stepsJ); const base = {}; // výchozí hodnoty z dat

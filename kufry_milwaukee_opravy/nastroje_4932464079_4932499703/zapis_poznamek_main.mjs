@@ -41,7 +41,7 @@ Fotografie nejsou v repu. URL: \`zdroje/${s}_fotky_url.tsv\`. Doplňkové fotogr
 **Pozor:** c02–c05 patří k SADĚ (box + nářadí), ne k samostatnému SKU ${s}. Box v sadě je podle názvu stránky milwaukeetool.eu „packout electrician box“ (/en-eu/packout-electrician-set-62pcs/packout-electrician-box); panely na c01 a na fotografiích sady jsou shodné, ale 100% jistota, že jde o totéž provedení, **není**.
 
 ## 2. Elektrikář × instalatér
-- Hero_1 obou SKU je **bajt po bajtu totožná** (md5 812c851f…, kontrola i my); PNG verze Hero_1 je také shodná. Hero_2–5 (a další) pro 4932499703/04 vracejí 404.
+- Hero_1 obou SKU je **bajt po bajtu totožná** (md5 812c851f…, kontrola i my); PNG verze Hero_1 je také shodná. Hero_2 pro 4932499703/04 vrací 404 (ověřeno mnou), Hero_3–5 podle kontroly také.
 - Prodejce haumesser.com používá pro 4932499704 stejný snímek (800 px).
 - Sady výrobce: elektrikář 4932499466 a instalatér 4932499467 – fotografie (Hero_1–5) ukazují **tentýž box**, stejné dva panely (vlevo hladký, vpravo se čtyřmi kapsami), stejný panel ve víku s pásem úchytů; liší se jen vložené nářadí. Prázdné SKU 4932499703/04 se tedy podle dostupných podkladů **neliší**. Model je proto totožný, jen s jiným SKU v meta (\`asset.extras.sku\`, \`nazev\`).
 - Neověřeno: zda existuje drobný rozdíl (barva úchytů, potisk, počet kapes) – fotografie ho neukazují.
@@ -49,10 +49,10 @@ Fotografie nejsou v repu. URL: \`zdroje/${s}_fotky_url.tsv\`. Doplňkové fotogr
 ## 3. Co z reportu je opraveno (všech 5 bodů kontroly + nové zjištění)
 | č. | report | stav | jak |
 |---|---|---|---|
-| 1 | dva vložné panely (levý hladký, pravý červeně lemovaný) ≈ 490×300 celkem | **opraveno** | levý panel Y −244…70, pravý Y −108…236, oba X ≈ −145…144 (z c01 přes mřížku bodů; ±10 mm); černá plsť + červená obruba 4 mm. Zakrytá část levého panelu pod pravým = odhad |
-| 2 | 4 vysoké látkové kapsy ≈ 75×130 mm (ne 5× 60×60) | **opraveno** | 4 kapsy 74 × 128 mm (Y × X), výška 17 mm (vyboulení), při zadní hraně pravého panelu; středy Y −52, 28, 107, 187 (c01) |
+| 1 | dva vložné panely (levý hladký, pravý červeně lemovaný) ≈ 490×300 celkem | **opraveno** | levý panel Y ${V499703.pLy0}…${V499703.pLy1}, pravý Y ${V499703.pRy0}…${V499703.pRy1}, X ≈ ${V499703.pRx0}…${V499703.pRx1} (z c01 při dofitované kameře; ±10 mm; polohy lemů doladěny podle IoU červených lemů); černá plsť + červená obruba 4 mm. Zakrytá část levého panelu pod pravým = odhad |
+| 2 | 4 vysoké látkové kapsy ≈ 75×130 mm (ne 5× 60×60) | **opraveno** | 4 kapsy 74 × 128 mm (Y × X), výška 17 mm (vyboulení), při zadní hraně pravého panelu; středy Y ${V499703.pRy0 + 56}, ${V499703.pRy0 + 136}, ${V499703.pRy0 + 215}, ${V499703.pRy0 + 295} (c01) |
 | 3 | pás červených pružných úchytů ve víku + červený štítek vlevo nahoře | **opraveno** | panel ve víku 300 × 492 mm s červeným lemem; černá lišta 44 × 384 mm u pantové hrany + 64 červených „prstů“ (jen výška a rozteč odhad); červený štítek 22 × 54 mm v rohu u čela vlevo |
-| 4 | poloha západek ≈ ±160 mm (model ±179) | **opraveno** | střed západek ±155 mm (c01 třmeny; c02 poloha vůči rukojeti), velikost jazyka 56 × 62 mm |
+| 4 | poloha západek ≈ ±160 mm (model ±179) | **opraveno** | střed západek ±${V499703.yLatch} mm (c01 třmeny ±155–160; c02 vyladěno podle červených prvků ±169; zvoleno 164), velikost jazyka 58 × ${V499703.latchH} mm |
 | 5 | víko: silný rám s žebrovaným okrajem, pantové články | **opraveno zjednodušeně** | víko jako dutá skořepina 62 mm (strop −17,5 mm), 10 kapes + drážka (c05), 5 pantových ok střídavě s oky vany, ocelový čep |
 | nové | vnější tvar nešlo z c01 posoudit | **částečně z c02–c05** | tub se zaoblenými rohy bez hliníkových tyčí a rohových krytek (na žádné fotografii sady nejsou), červené žebrované držadlo s kruhovým otvorem, dvě západky s drátěným třmenem – vše **nepřímý důkaz** (fotografie sady) |
 
@@ -105,7 +105,7 @@ Souřadnice: X = hloubka 411 (čelo s rukojetí a západkami do +X, pant vzadu �
 
 ## 1. Fotografie
 Fotografie nejsou v repu. URL v \`zdroje/${s}_fotky_url.tsv\`; kopie jen ve scratchpadu (\`…/scratchpad/kufry3/${s}/cNN.jpg\`, doplňkové \`…/scratchpad/mk79/dalsi/\`).
-${velky ? `| c01 | zavřený box zepředu zprava, horní držadlo zvednuté | kalibrace, silueta, rohy, rukojeť, západky, víko zvenčí |
+| foto | co ukazuje | použití |\n|---|---|---|\n${velky ? `| c01 | zavřený box zepředu zprava, horní držadlo zvednuté | kalibrace, silueta, rohy, rukojeť, západky, víko zvenčí |
 | c02 | otevřený, víko vzhůru (≈ 100°), shora zepředu | tělo, víko zevnitř, tyče, okna |
 | c03 | totéž + vyjmutá vložka vpravo (z masky vyloučena) | totéž |
 | d01–d02 (Feat_1/2, scratchpad) | detaily rukojeti a západky | jen tvar rukojeti (výklopná za horní čepy) a západky (jazyk + drátěný třmen) – **bez kamery** |` : `| c01 | zavřený box zepředu zprava | kalibrace, silueta, rohy, rukojeť, západky, víko |
@@ -118,14 +118,14 @@ ${velky ? `| c01 | zavřený box zepředu zprava, horní držadlo zvednuté | ka
 |---|---|---|
 | obálka | 411 × 561 × ${V.H} (katalog) – model se nenatahuje | \`kufriky.csv\` |
 | rohové tyče | 4 ks hliník, průřez ≈ 29 (Y) × 8 (X) mm, mezi černými krytkami, stojí mimo stěnu těla | c01–c03, ±3 mm; X-hloubka je odhad z šířky viditelných ploch |
-| rohové krytky | horní ${V.capT} × 56 × 58 mm (z' ${(zk - V.capT).toFixed(0)}…${zk.toFixed(0)}), dolní ${V.capB} mm (z' ${V.capZ0}…${V.capZ0 + V.capB}); zasahují o ${V.capUp} mm do rohových výřezů víka | c01–c03, ±10 mm (svislé polohy z kamery ±15 mm) |
-| chytací okna | průchozí: vana má v každém rohu výřez 56 × 58 mm (koncová stěna končí v |X| = ${V.xN}, čelní/zadní v |Y| = ${V.yN}); mezi tyčí a stěnou zbývá okno ≈ 27–29 mm | c01–c03: na fotografii je skrz okno vidět pozadí |
+| rohové krytky | horní výška ${V.capT} mm, půdorys 56 × 58 mm (z' ${(zk - V.capT).toFixed(0)}…${zk.toFixed(0)}), dolní výška ${V.capB} mm (z' ${V.capZ0}…${V.capZ0 + V.capB}); zasahují o ${V.capUp} mm do rohových výřezů víka | c01–c03, ±10 mm (svislé polohy z kamery ±15 mm) |
+| chytací okna | průchozí: vana má v každém rohu výřez 56 × 58 mm (koncová stěna končí v X = ±${V.xN}, čelní/zadní stěna v Y = ±${V.yN}); mezi tyčí a stěnou zbývá okno ≈ 27–29 mm | c01–c03: na fotografii je skrz okno vidět pozadí |
 | spodní hrana těla | tělo (patky/nožky) sahá ≈ 11 mm pod dolní krytky; celá čelní hrana je souvislá | c01: silueta pod čarou spodních rohů krytek |
 | švík víko/tělo | z' ${zs} (víko ${V.lidH} mm vysoké); odhad z kamery | ±15 mm |
 | víko | hluboká skořepina: spodní lem s rohovými výřezy, vertikální čelo, zkosená ramena na koncích (≈ 40 mm), zaoblené rohy ≈ 30 mm, plató s **10 kapsami** (2 skupiny po 5: zadní řada 2, střední 1 dlouhá, přední 2; hloubka 14 mm), středové žebro, červený štítek 114 × 12 mm vpravo; uvnitř 2 podélná žebra, kruhový výstupek ⌀ 66, 5 šikmých výztuh u pantu, šrouby | c01 (vnějšek), c02/c03 (vnitřek); polohy kapes po hloubce X jsou odhad (±15 mm) |
 | červená U-rukojeť | šířka 230 (Y ±115), z' ${V.handlePivot - V.handleH}…${V.handlePivot}, sloupky s 3 prsty a čepy nahoře, červená příčka, ${velky ? 'černý gumový' : 'černý gumový'} úchop se žebry, vystupuje do X = 205; **pohyblivý uzel** \`drzadlo_cervene\` (výklop kolem horních čepů, 0…55°) | c01, d01 |
-| západky (2×) | červený jazyk 52 × ${V.latchH} mm se 4 zuby, střed Y = ±${V.yLatch}, z' ${V.latchTop - V.latchH}…${V.latchTop}; drátěný třmen Ø 4 mm jako **pohyblivý uzel** \`trmen_L/P\` (čep dole, 0…165°); černé pouzdro pod víkem | c01 (poloha), d02 (tvar); ≈ 2× větší a o ≈ 60–85 mm níž než Johnovy |
-| kroužek s otvorem | ⌀ 37 mm, červený, v černém okruží ⌀ 54 mm, střed Y ≈ +14, z' ${V.ringZ} | c01 |
+| západky (2×) | červený jazyk 58 × ${V.latchH} mm se 4 zuby, střed Y = ±${V.yLatch}, z' ${V.latchTop - V.latchH}…${V.latchTop}; drátěný třmen Ø 4 mm jako **pohyblivý uzel** \`trmen_L/P\` (čep dole, 0…165°); černé pouzdro pod víkem | c01 (poloha), d02 (tvar); ≈ 2× větší a o ≈ 60–85 mm níž než Johnovy |
+| kroužek s otvorem | ⌀ 37 mm, červený, v černém okruží ⌀ 54 mm, střed Y ≈ +${V.ringY}, z' ${V.ringZ} | c01 |
 | logo | ${V.logoZ != null ? 'potisk „MILWAUKEE“ + blesk + „PACKOUT“ (bitmapové písmo, plochý červený reliéf 0,5 mm) nad rukojetí, střed Y ≈ +8' : 'nad rukojetí na fotografii není – v modelu není'} | c01 – zjednodušené písmo, ne věrný font |
 | červený jazýček a žebrovaný kanál pod rukojetí | jazýček 38 × 18 mm u dolní hrany, 7 žeber | c01 |
 | pant | 4 oka vany + 5 ok víka, ocelový čep, osa Y | c02/c03 (tvar a počet odhad) |
@@ -136,7 +136,7 @@ ${velky ? `| c01 | zavřený box zepředu zprava, horní držadlo zvednuté | ka
 | 1 | rohy: hliníkové tyče + rohové krytky (zásadní) | **opraveno** | 4 tyče 29 × 8 mm, horní a dolní krytky s šrouby, samostatné díly (\`tyc_hlinik\`, \`krytka_horni/dolni\`) |
 | 2 | krátké strany: průchozí chytací okna | **opraveno** | rohové výřezy vany – skutečné průchozí okno (ověřeno renderem: skrz okno je vidět pozadí) |
 | 3 | čelní rukojeť: červená U-rukojeť, o ≈ ${velky ? '130' : '100'} mm níž, jiný tvar (zásadní) | **opraveno** | tvar U s prsty a gumovým úchopem, správná výška, pohyblivý uzel |
-| 4 | západky ≈ 65×57 / 70×73 mm, o ≈ ${velky ? '60' : '85'} mm níž | **opraveno** | 52 × ${V.latchH} mm + drátěný třmen (uzel); polohy podle c01 |
+| 4 | západky ≈ 65×57 / 70×73 mm, o ≈ ${velky ? '60' : '85'} mm níž | **opraveno** | 58 × ${V.latchH} mm (Johnovy 31 × 38) + drátěný třmen (uzel); polohy podle c01, doladěno podle IoU červených prvků |
 | 5 | víko: 10 kapes, zkosená ramena, štítek podélně | **opraveno** | viz tabulka výše |
 | 6 | dělení víko/tělo ≈ 50 mm pod rovinou víka | **opraveno** | švík z' ${zs}, krytky do z' ${zk} (vychází z kamery, ±15 mm) |
 | 7 | víko zevnitř: skořepina, žebra, kruhový výstupek | **opraveno zjednodušeně** | skořepina ${V.lidH} mm, žebra, výstupek ⌀ 66, výztuhy u pantu; jemné reliéfy nemodelovány |
