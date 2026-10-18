@@ -47,7 +47,7 @@ function vana(g) {
 
 // ---------- červené tlačítko (palcová část pod víkem + tělo při dně), rektifikace čela c07: 44 mm široké, z' 14..32 ----------
 function tlacitko(g) {
-  g.add(ex('cervena', 'tlacitko_dno', rrect(0, 136, 45.6, 28, 4), [], 2.6, K.zWallBot + 1));
+  g.add(ex('cervena', 'tlacitko_dno', rrect(0, 136, 45.6, 28, 4), [], K.zPlate - 0.4, K.zWallBot + 1));   // spodek tlačítka 0,4 mm pod deskou dna (dřív 2,6 při desce na 3,0)
   // palec: vystupuje z čelní stěny okna o ~3 mm (c12), horní plocha pod okrajem desky rukojeti
   g.add(loftSolid('cervena', 'tlacitko_palec', [
     { poly: ccw(rrect(0, 150.2, 44, 8.6, 3, 0, 2)), z: 14 }, { poly: ccw(rrect(0, 150.2, 44, 8.6, 3, 0, 2)), z: 26.5 },
