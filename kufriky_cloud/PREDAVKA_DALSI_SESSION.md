@@ -38,3 +38,6 @@ Robert píše česky, stručně, čte z mobilu; chce viditelný malý výsledek 
 - Renderování: Playwright + three.js swiftshader (`kufriky_cloud/render/render.mjs`), kamera z ručně změřených bodů (`kalibruj.py`, `fit_lm.mjs`); volný odhad kamery na těsně oříznutých fotkách degeneruje (IoU zdánlivé).
 - Pravidlo z `CLAUDE.md` projektu: před prací zjistit `$BOT_ID`/specializaci (u cloudové session se nezjistí; řešit podle pokynů Roberta), číst `WORKFLOW.md`, `TASKS.md`, `STAV.md`; do `AGENTS_LOG.md` se zapisuje jen na pokyn.
 - Spolupráce: bot9 (hosting, DB zápisy), bot10 (Generátor konstrukcí Dynamic, přebírá `dily_cloud/eurobox_rady/`; zpětný kanál ke mně jen přes zprávy/GitHub).
+
+## 3D prohlídka všech modelů (2026-10-18)
+Nástroj `kufriky_cloud/nastroje/zabal_prohlidku.mjs` + šablona `kufriky_cloud/prohlizec/prohlidka.html` vyrobí jeden samostatný HTML se všemi modely skupiny (výběr, šipky, víka/zásuvky/madla, řez). Výstupy (HTML jsou velké, nejsou v repu): `node nastroje/zabal_prohlidku.mjs <out.html> --titulek "…" <složky s modely oddělené čárkou> --jmena <csv…>`; složky: `kufriky_cloud/modely`, `kufry_milwaukee_opravy/modely`, `kufry_hilti/modely`, `kufry_makita/modely`, `kufry_dewalt/modely`.
