@@ -4,7 +4,8 @@ import { Group, Part, rrPoly, roundPoly, ccw, loftSolid, ext, slab, rrShell, rin
 import { extrude, offsetPoly, rectPoly, rrect, cylX } from './pomocne.mjs';
 
 export const K = {
-  zFoot: 0, zPlate: 3, zWallBot: 7, zFloor: 8,           // patky 0..3, deska dna 3..8, spodní hrana vnější stěny 7
+  // Výška patek: dřív 3 mm, Robert 2026-10-18 „poloviční výšku“ → 1,5 mm (NEOVĚŘENO – z fotek 4932471065 nejde změřit, viz poznámky). Obálka: spodek patek zůstává z' = 0, deska dna je o stejnou hodnotu níž.
+  zFoot: 0, zPlate: +(process.env.KUF_PATKA_H ?? 1.5), zWallBot: 7, zFloor: 8,           // patky 0..zPlate, deska dna zPlate..8, spodní hrana vnější stěny 7
   zStep: 23.5, zSeam: 28,                                // schod na horním okraji, švík s víkem
   hHandleBot: 9.5, hHandleTop: 28.6,                     // rukojeť (deska): c07 rektifikace čelní plochy Y = 205,5
   hw: 115.5, rimHw: 113, y0: -196, y1: 150,              // vana: poloviční šířka, zadní a čelní hrana těla

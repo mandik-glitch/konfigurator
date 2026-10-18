@@ -1,8 +1,11 @@
 // Korpus (černá vana), rohové nárazníky, hřbet s pantem, patky a kanál spodku – model 4932464082.
 import { Group, Part, rrPoly, roundPoly, ccw, loftSolid, ext, slab, rrShell, tray, ringSolid, bx, zc, polyMirrorY, polyArea, cylinder, ZC } from './p4082_zaklad.mjs';
 
+// Výška podložek (patek) spodku v mm. Robert 2026-10-18: „poloviční výšku jim dej“ (dřív 12 → 6). Měření z c11 (boční pohled, podložky vyčnívají ≈ 8–10 mm) viz zdroje/4932464082_poznamky.md.
+// Obálka zůstává: spodek podložek je dál na z' = 0, o stejnou hodnotu níž klesla spodní plocha desek vany (K.zBot = PATKA_H).
+const PATKA_H = +(process.env.KUF_PATKA_H ?? 6);
 export const K = {
-  zBot: 12, zChan: 20, yCh: 32,            // spodní plocha vany (nad patkami)
+  zBot: PATKA_H, zChan: 20, yCh: 32,            // spodní plocha vany (nad patkami); původně 12
   zRim: 93.5, yT: 239.5,           // horní okraj černé vany = švík s víkem (z' 93,5; c11/c06); nádoby vyčnívají nad něj
   xF: 181, xR: -166.5,   // čelní a zadní vnější rovina vany
   yB: 233,             // polovina šířky vany (spodní deska / stěny u rohů)
@@ -119,12 +122,14 @@ function patky(g) {
   for (const row of PADS) for (const [a, b] of row.ys) for (const s of [-1, 1]) {
     const y0 = s > 0 ? a : -b, y1 = s > 0 ? b : -a;
     const lay = (dx, dy, z) => ({ poly: ccw(rrPoly(row.x0 + dx, row.x1 - dx, y0 + dy, y1 - dy, 4, 3)), z });
-    g.add(loftSolid('cerna_mat', 'patka', [lay(4.6, 1.9, 4), lay(3.6, 1.4, 5.5), lay(0.6, 0.3, K.zBot - 1.5), lay(0, 0, K.zBot + 1)], { crease: 40 }));
+    // profil patky byl navržen pro výšku 12 mm (rámeček 0–4,5, úkos 4–10,5, zapuštění do desky +1); při jiné výšce se svislé míry škálují poměrem hs
+    const hs = PATKA_H / 12;
+    g.add(loftSolid('cerna_mat', 'patka', [lay(4.6, 1.9, 4 * hs), lay(3.6, 1.4, 5.5 * hs), lay(0.6, 0.3, K.zBot - 1.5 * hs), lay(0, 0, K.zBot + 1)], { crease: 40 }));
     // spodní plocha: obvodový rámeček + žebra mezi štěrbinami (štěrbiny = 4,6 × ~19 mm, rozteč 8,9 mm)
     const bx0 = row.x0 + 4.6, bx1 = row.x1 - 4.6, by0 = y0 + 1.9, by1 = y1 - 1.9;
     const sx0 = bx0 + 3.5, sx1 = bx1 - 3.5, ylen = by1 - by0;
     const n = Math.max(2, Math.floor((ylen - 7 + 4.3) / 8.9)), tot = n * 4.6 + (n - 1) * 4.3, ys0 = (by0 + by1) / 2 - tot / 2;
-    const T = (x0, x1, yy0, yy1) => g.add(bx('cerna_mat', 'patka_zebro', x0, x1, yy0, yy1, 0, 4.5));
+    const T = (x0, x1, yy0, yy1) => g.add(bx('cerna_mat', 'patka_zebro', x0, x1, yy0, yy1, 0, 4.5 * hs));
     T(bx0, sx0, by0, by1); T(sx1, bx1, by0, by1); T(sx0, sx1, by0, ys0); T(sx0, sx1, ys0 + tot, by1);
     for (let k = 0; k < n - 1; k++) T(sx0, sx1, ys0 + k * 8.9 + 4.6, ys0 + (k + 1) * 8.9);
   }
