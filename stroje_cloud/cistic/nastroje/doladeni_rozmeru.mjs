@@ -6,10 +6,7 @@ import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { DA } from '../c_zaklad.mjs';
-import { createRequire } from 'node:module';
-const { chromium } = createRequire(import.meta.url)('/opt/node22/lib/node_modules/playwright');
-const server = await chromium.launchServer({ args: ['--use-gl=angle', '--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist', '--allow-file-access-from-files'] });
-const WS = server.wsEndpoint();
+
 const HERE = path.dirname(fileURLToPath(import.meta.url)), ROOT = path.join(HERE, '..');
 const tag = process.argv[2], ITER = +(process.argv[3] || 120), outFile = process.argv[4] || path.join(ROOT, `zdroje/rozmery_doladene_${tag}.json`);
 const WL = 0.004;
@@ -20,7 +17,7 @@ let evals = 0;
 function cost(x) {
   for (let i = 0; i < P.length; i++) if (Math.abs(x[i] - x0[i]) > P[i][1]) return 9;
   const f = `/tmp/dims_${process.pid}.json`, d = {}; P.forEach(([k], i) => { d[k] = x[i]; }); fs.writeFileSync(f, JSON.stringify(d));
-  let r; try { r = JSON.parse(execFileSync('node', [path.join(HERE, 'eval_rozmery.mjs'), tag, '300'], { env: { ...process.env, CISTIC_DIMS: f, CISTIC_WS: WS }, encoding: 'utf8' })); } catch (e) { return 9; }
+  let r; try { r = JSON.parse(execFileSync('node', [path.join(HERE, 'eval_rozmery.mjs'), tag, '300'], { env: { ...process.env, CISTIC_DIMS: f }, encoding: 'utf8' })); } catch (e) { return 9; }
   evals++;
   const iou = Object.values(r.iou).reduce((a, b) => a + b, 0) / 4, lm = Object.values(r.lm).reduce((a, b) => a + b, 0) / 4;
   let pr = 0; P.forEach(([k, s], i) => { pr += ((x[i] - x0[i]) / s) ** 2; });
@@ -47,4 +44,3 @@ const r = await nm(x0, P.map(([, s]) => s * 0.25), ITER);
 const d = {}; P.forEach(([k], i) => { d[k] = +r.x[i].toFixed(2); });
 fs.writeFileSync(outFile, JSON.stringify({ tag, cena_start: base, cena: r.f, evals, dims: d, poznamka: 'rozměry v „A“ prostoru (před roztažením v Y); doladěno proti ručně obkresleným obrysům + landmarkům při pevných kamerách; priory = ±rozsah' }, null, 1));
 console.log(JSON.stringify({ start: base, konec: r.f, evals, dims: d }));
-await server.close();

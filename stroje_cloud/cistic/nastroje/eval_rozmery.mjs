@@ -23,21 +23,24 @@ function proj(c, X, w, h) {
   return [w / 2 + fp * dot(d, r2) / dot(d, f), h / 2 - fp * dot(d, u2) / dot(d, f)];
 }
 const out = { iou: {}, lm: {} };
+const W0 = RES, H0 = Math.round(RES * 3 / 4);
+const R = new Renderer();
+if (process.env.CISTIC_WS) {           // sdílený prohlížeč z doladeni_rozmeru.mjs (ušetří start chromia)
+  const { chromium } = (await import('node:module')).createRequire(import.meta.url)('/opt/node22/lib/node_modules/playwright');
+  R.w = W0; R.h = H0; R.browser = await chromium.connect(process.env.CISTIC_WS); R.page = await R.browser.newPage({ viewport: { width: W0, height: H0 } });
+  await R.page.goto('file://' + path.join(ROOT, '../../kufriky_cloud/render/stranka.html')); await R.page.evaluate(([w, h]) => window.init(w, h), [W0, H0]);
+} else await R.open(W0, H0);
+await R.load(tmp, true);
 for (const id of ['11', '12', '13', '14']) {
   const cam = JSON.parse(fs.readFileSync(path.join(ROOT, `srovnani/c${id}_${tag}.json`))).kamera_cx_cy_cz_yaw_pitch_roll_fov;
   const lm = JSON.parse(fs.readFileSync(path.join(ROOT, `zdroje/landmarky/l${id}.json`))), mj = JSON.parse(fs.readFileSync(path.join(ROOT, `zdroje/masky/m${id}.json`)));
   const W = RES, H = Math.round(RES * 3 / 4), k = W / lm.w, poly = mj.polygon.map(([x, y]) => [x * k, y * k]), mask = new Uint8Array(W * H);
   for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) { let c = false; const px = x + 0.5, py = y + 0.5; for (let i = 0, j = poly.length - 1; i < poly.length; j = i++) { const [xi, yi] = poly[i], [xj, yj] = poly[j]; if ((yi > py) !== (yj > py) && px < (xj - xi) * (py - yi) / (yj - yi) + xi) c = !c; } mask[y * W + x] = c ? 1 : 0; }
-  const R = new Renderer();
-if (process.env.CISTIC_WS) {           // sdílený prohlížeč z doladeni_rozmeru.mjs (ušetří start chromia)
-  const { chromium } = await import('/opt/node22/lib/node_modules/playwright/index.mjs').catch(() => import('playwright'));
-  R.w = W; R.h = H; R.browser = await chromium.connect(process.env.CISTIC_WS); R.page = await R.browser.newPage({ viewport: { width: W, height: H } });
-  await R.page.goto('file://' + path.join(ROOT, '../../kufriky_cloud/render/stranka.html')); await R.page.evaluate(([w, h]) => window.init(w, h), [W, H]);
-} else await R.open(W, H);
-await R.load(tmp, true); const m = await R.mask(kameraZ(cam)); await R.close();
+  const m = await R.mask(kameraZ(cam));
   let I = 0, U = 0; for (let i = 0; i < m.length; i++) { const a = m[i], b = mask[i]; if (a & b) I++; if (a | b) U++; }
   out.iou[id] = I / U;
   let s = 0, n = 0; for (const [nm, [px, py]] of Object.entries(lm.pts)) { if (!xyz[nm]) continue; const q = proj(cam, xyz[nm], lm.w, lm.h); s += Math.hypot(q[0] - px, q[1] - py) / (lm.w / 1500); n++; } out.lm[id] = s / n;
 }
+if (process.env.CISTIC_WS) await R.page.close(); else await R.close();
 fs.unlinkSync(tmp);
 console.log(JSON.stringify(out));
