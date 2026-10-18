@@ -1,0 +1,30 @@
+{
+ "foto": "11",
+ "tag": "r3",
+ "kamera_cx_cy_cz_yaw_pitch_roll_fov": [
+  -1183.926,
+  969.938,
+  1059.727,
+  -39.572,
+  -24.994,
+  1.202,
+  49.973
+ ],
+ "iou": 0.9172,
+ "chyby_landmarku_px_na_1500": {
+  "FT_W": 15.9,
+  "SH_W": 23.5,
+  "SB_W": 14.1,
+  "FRtf_W": 19,
+  "HUB_W": 25.7,
+  "HOLE": 33.5,
+  "PBOT_W": 16.5,
+  "CST_W": 35.9,
+  "CST_E": 11.1,
+  "HNDM": 10.3,
+  "TT_W": 25.4,
+  "TB_W": 33.7
+ },
+ "prumer_chyby_px": 22.1,
+ "poznamka": "kamera = ODHAD z ručně změřených bodů a doladění překryvem obrysu (IoU proti ručně obkreslenému polygonu); z' nad zemí; fotografie ani překryv v repu nejsou"
+}

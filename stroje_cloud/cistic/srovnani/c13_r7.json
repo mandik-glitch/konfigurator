@@ -1,0 +1,30 @@
+{
+ "foto": "13",
+ "tag": "r7",
+ "kamera_cx_cy_cz_yaw_pitch_roll_fov": [
+  1086.467,
+  -768.564,
+  934.258,
+  148.095,
+  -24.433,
+  1.093,
+  56.153
+ ],
+ "iou": 0.9209,
+ "chyby_landmarku_px_na_1500": {
+  "FT_E": 5.1,
+  "SH_E": 16,
+  "SB_E": 6.2,
+  "FRtf_E": 6.3,
+  "HUB_E": 13.3,
+  "FB_E": 18.9,
+  "HOLE": 6.2,
+  "FT_W": 6.8,
+  "PBOT_E": 19.5,
+  "CST_E": 22.8,
+  "TT_E": 15.1,
+  "TB_E": 23
+ },
+ "prumer_chyby_px": 13.3,
+ "poznamka": "kamera = ODHAD z ručně změřených bodů a doladění překryvem obrysu (IoU proti ručně obkreslenému polygonu); z' nad zemí; fotografie ani překryv v repu nejsou"
+}

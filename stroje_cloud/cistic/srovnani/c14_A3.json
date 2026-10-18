@@ -1,0 +1,31 @@
+{
+ "foto": "14",
+ "tag": "A3",
+ "kamera_cx_cy_cz_yaw_pitch_roll_fov": [
+  937.198,
+  1048.548,
+  1035.911,
+  -130.433,
+  -25.829,
+  -2.759,
+  49.702
+ ],
+ "iou": 0.9508,
+ "chyby_landmarku_px_na_1500": {
+  "FT_E": 12.8,
+  "SH_E": 6.2,
+  "SB_E": 5.4,
+  "FRtf_E": 12.2,
+  "HUB_E": 15.2,
+  "HOLE": 5.7,
+  "PBOT_E": 9.5,
+  "PBOT_W": 14.8,
+  "CST_E": 3.8,
+  "CST_W": 3.6,
+  "HNDM": 18.8,
+  "TT_E": 10.9,
+  "TB_E": 22.2
+ },
+ "prumer_chyby_px": 10.8,
+ "poznamka": "kamera = ODHAD z ručně změřených bodů a doladění překryvem obrysu (IoU proti ručně obkreslenému polygonu); z' nad zemí; fotografie ani překryv v repu nejsou"
+}

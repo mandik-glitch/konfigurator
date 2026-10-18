@@ -1,0 +1,31 @@
+{
+ "foto": "14",
+ "tag": "r4",
+ "kamera_cx_cy_cz_yaw_pitch_roll_fov": [
+  913.045,
+  1072.441,
+  1032.857,
+  -129.869,
+  -26.201,
+  -2.598,
+  51.185
+ ],
+ "iou": 0.937,
+ "chyby_landmarku_px_na_1500": {
+  "FT_E": 13.9,
+  "SH_E": 8.4,
+  "SB_E": 0.4,
+  "FRtf_E": 16.1,
+  "HUB_E": 35.2,
+  "HOLE": 9.8,
+  "PBOT_E": 13.3,
+  "PBOT_W": 16.3,
+  "CST_E": 8.6,
+  "CST_W": 1,
+  "HNDM": 25.8,
+  "TT_E": 31.8,
+  "TB_E": 41.6
+ },
+ "prumer_chyby_px": 17.1,
+ "poznamka": "kamera = ODHAD z ručně změřených bodů a doladění překryvem obrysu (IoU proti ručně obkreslenému polygonu); z' nad zemí; fotografie ani překryv v repu nejsou"
+}

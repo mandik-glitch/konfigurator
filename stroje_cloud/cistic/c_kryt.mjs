@@ -1,6 +1,6 @@
 // Nerezový plechový kryt: profil v rovině YZ (vpředu vyšší, plató, zaoblený přehyb, šikmý přechod dozadu), zaoblené hrany plechu,
 // otvor v temeni, dvě pole svislých šikmých drážek v čelní stěně, černý pryžový lem hran, neutrální plošky (nálepky bez textu).
-import { Part, Group, tube, box, roundedBox, extrudeRound, roundPoly, plate, slotRing, rrect, filletPath, cylX, prism, K, zc } from './c_zaklad.mjs';
+import { Part, Group, tube, box, roundedBox, extrudeRound, roundPoly, plate, slotRing, rrect, filletPath, cylX, prism, K, Y, DA, zc } from './c_zaklad.mjs';
 
 // profil krytu (y, z') proti směru hodinových ručiček při pohledu z +X; štítek = štítek rovné hrany ZA rohem
 export function profilKrytu() {
@@ -13,7 +13,7 @@ export function profilKrytu() {
 // poloha dírky v rovné hraně se štítkem tag: vrací (A = začátek hrany, e = směr)
 function hrana(pr, tag) { const i = pr.tags.indexOf(tag), A = pr.pts[i], B = pr.pts[(i + 1) % pr.pts.length], L = Math.hypot(B[0] - A[0], B[1] - A[1]); return { A, e: [(B[0] - A[0]) / L, (B[1] - A[1]) / L], L }; }
 
-export const OTVOR = { cx: 25, cy: -250, hx: 62.5, hy: 27.5, r: 14 };      // otvor v temeni (zaoblený obdélník 125 × 55) – poloha odhad ±30 mm
+export const OTVOR = { cx: DA.holeX, cy: Y(DA.holeY), hx: DA.holeHX, hy: DA.holeHY, r: 14 };      // otvor v temeni (zaoblený obdélník 125 × 55) – poloha odhad ±30 mm
 export const SLIT = { xc: 120, len: 62, wid: 7.5, ang: 32, z0: 660, dz: 20.4, n: 18 };      // pole drážek v čele (±xc, šikmé, rostou k okraji)
 
 export function kryt() {
@@ -31,6 +31,13 @@ export function kryt() {
   }
   const body = extrudeRound('nerez', 'kryt_plech', pr.pts, -K.hw, K.hw, { re: 12, seg: 3, tags: pr.tags, mapF: (u, v, w) => [w, u, v], holes: [{ tag: 'plato', polys: [otvorPoly] }, { tag: 'celo', polys: slity }] });
   g.add(body);
+  // vyvýšená pole žaluziových drážek na čele (světlejší plech, 1,8 mm), drážky skutečné otvory
+  for (const sg of [-1, 1]) {
+    const x0 = sg > 0 ? 66 : -176, x1 = sg > 0 ? 176 : -66, z0 = SLIT.z0 - (SLIT.n - 1) * SLIT.dz - 38, z1 = SLIT.z0 + 38;
+    const outer = rrect((x0 + x1) / 2, (z0 + z1) / 2, (x1 - x0) / 2, (z1 - z0) / 2, 6, 3);
+    const holes = []; for (let i = 0; i < SLIT.n; i++) holes.push(slotRing(sg * SLIT.xc, SLIT.z0 - i * SLIT.dz, SLIT.len, SLIT.wid, sg > 0 ? SLIT.ang : 180 - SLIT.ang, 4));
+    g.add(plate('nerez_svetly', 'pole_zaluzie', outer, holes, K.Yf - 1.8, K.Yf, (u, v, w) => [u, w, v]));
+  }
   // vnitřek otvoru a drážek (tmavá vložka) – za dírami je tmavý prostor
   g.add(vlozka(otvorSvet));
   g.add(boxTmavy());

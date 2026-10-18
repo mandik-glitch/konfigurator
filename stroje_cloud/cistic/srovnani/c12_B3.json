@@ -1,0 +1,28 @@
+{
+ "foto": "12",
+ "tag": "B3",
+ "kamera_cx_cy_cz_yaw_pitch_roll_fov": [
+  -1072.37,
+  -1131.714,
+  1085.306,
+  45.848,
+  -25.019,
+  -2.446,
+  51.434
+ ],
+ "iou": 0.9549,
+ "chyby_landmarku_px_na_1500": {
+  "FT_W": 1.5,
+  "FT_E": 8.4,
+  "SH_W": 6.4,
+  "SB_W": 18.4,
+  "FB_W": 11.2,
+  "HUB_W": 14.4,
+  "FRtf_W": 3.7,
+  "HOLE": 13,
+  "TT_W": 1.9,
+  "TB_W": 26.6
+ },
+ "prumer_chyby_px": 10.5,
+ "poznamka": "kamera = ODHAD z ručně změřených bodů a doladění překryvem obrysu (IoU proti ručně obkreslenému polygonu); z' nad zemí; fotografie ani překryv v repu nejsou"
+}

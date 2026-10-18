@@ -1,0 +1,28 @@
+{
+ "foto": "12",
+ "tag": "A5",
+ "kamera_cx_cy_cz_yaw_pitch_roll_fov": [
+  -1045.972,
+  -1100.564,
+  1094.874,
+  45.868,
+  -25.857,
+  -3.007,
+  51.304
+ ],
+ "iou": 0.9447,
+ "chyby_landmarku_px_na_1500": {
+  "FT_W": 10.7,
+  "FT_E": 12.2,
+  "SH_W": 6.5,
+  "SB_W": 15.8,
+  "FB_W": 10.2,
+  "HUB_W": 10.5,
+  "FRtf_W": 4,
+  "HOLE": 0.8,
+  "TT_W": 0.9,
+  "TB_W": 18.8
+ },
+ "prumer_chyby_px": 9,
+ "poznamka": "kamera = ODHAD z ručně změřených bodů a doladění překryvem obrysu (IoU proti ručně obkreslenému polygonu); z' nad zemí; fotografie ani překryv v repu nejsou"
+}

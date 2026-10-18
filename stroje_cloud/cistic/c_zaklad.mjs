@@ -5,6 +5,7 @@
 import { Part, Group, loftRings, earClip, roundedBox, prism, cylinder, tube, lathe, box, rrRing } from '../../kufriky_cloud/jadro/mesh.js';
 import { MATERIALY } from '../../kufriky_cloud/jadro/glb.js';
 import { earcut2 } from '../../kufriky_cloud/earcut_cloud.mjs';
+import fs from 'node:fs';
 export { Part, Group, loftRings, roundedBox, prism, cylinder, tube, lathe, box, rrRing, earcut2, MATERIALY };
 
 // ---------- vlastní materiály (jádro se neupravuje – doplňují se do exportovaného slovníku) ----------
@@ -21,22 +22,36 @@ MATERIALY.plocha_zluta = { color: [0.85, 0.62, 0.0], metallic: 0.0, roughness: 0
 // ---------- rozměry (z' od země) – původ každého čísla viz zdroje/cistic_poznamky.md ----------
 export const ZC = 390;
 export const zc = z => z - ZC;
+// ---- Y-souřadnice ----
+// Hodnoty „A“ (…_A) jsou odhad z fotografií (svazkové vyrovnání, nezávisle na zadané obálce; v Y vychází ≈ 585–610 mm, nejistota ≈ ±6 %).
+// Obálka 650 mm v Y je dána zadáním (Robert: „vše vnější rozměr“) → polohy v Y se roztahují od přední roviny (−325, čelo pneumatik)
+// koeficientem SY tak, aby nejzazší bod (konec přípojek na zadní stěně) ležel v +325. Kola (poloměry, tloušťky) se neroztahují.
+export const A_FRONT = -323.1, FIT_LEN = 26;
+// Rozměry „A“ (z fotografií); lze přepsat JSON souborem v CISTIC_DIMS (nástroj nastroje/doladeni_rozmeru.mjs)
+export const DA = {
+  hw: 228, Yf: -298, ys: 52, yb: 193, Hb: 612, zb: 168, zft: 595, yft: -171, yRear: 215, zfb: 188, slope: 0.142,
+  tw: 86, R: 135.5, hwBox: 218, yBox0: 190, yBox: 235, zBoxT: 612, xp: 231, yp: 231, Yh: 223, zh: 655, xc: 173, yc: 206, Rc: 54,
+  holeX: 25, holeY: -225, holeHX: 62.5, holeHY: 27.5,
+};
+if (process.env.CISTIC_DIMS) Object.assign(DA, JSON.parse(fs.readFileSync(process.env.CISTIC_DIMS, 'utf8')));
+export const SY = process.env.CISTIC_SY ? +process.env.CISTIC_SY : (650 - FIT_LEN) / (DA.yBox - A_FRONT);
+export const Y = y => -325 + (y - A_FRONT) * SY;
 export const K = {
   Ht: 780,                  // temeno krytu (zadání)
-  hw: 226,                  // polovina šířky krytu (rovina bočních stěn)
-  Yf: -314,                 // čelní (přední, vyšší) stěna krytu
-  ys: 62, yb: 212,          // začátek a konec šikmého přechodu (y)
-  Hb: 610,                  // výška dolní hrany šikmého přechodu (nad boxem)
-  zb: 162,                  // spodní okraj krytu
+  hw: DA.hw,                // polovina šířky krytu (rovina bočních stěn)
+  Yf: Y(DA.Yf),             // čelní (přední, vyšší) stěna krytu (za čelem pneumatik)
+  ys: Y(DA.ys), yb: Y(DA.yb),    // začátek a konec šikmého přechodu (y)
+  Hb: DA.Hb,                // výška dolní hrany šikmého přechodu (nad boxem)
+  zb: DA.zb,                // spodní okraj krytu
   // boční rám (černé úhelníky) + děrovaný panel
-  zft: 594, yft: -183, slope: 0.142, zfb: 188, wBar: 30,
-  // kola
-  xw: 284, tw: 82, R: 130, yw: -195,
+  zft: DA.zft, yft: Y(DA.yft), slope: DA.slope * SY, zfb: DA.zfb, wBar: 30, yRear: Y(DA.yRear),
+  // kola (poloha v Y je pevná: čelo pneumatik = čelo obálky)
+  xw: 325 - DA.tw / 2, tw: DA.tw, R: DA.R, yw: -325 + DA.R,
   // zadní stěna / sloupky / rukojeť
-  hwBox: 218, yBox0: 212, yBox: 254, zBox0: 125, zBoxT: 612,
-  xp: 229, yp: 250, rp: 15.5, Yh: 283, zh: 655, ramH: 22,
+  hwBox: DA.hwBox, yBox0: Y(DA.yBox0), yBox: Y(DA.yBox), zBox0: 125, zBoxT: DA.zBoxT,
+  xp: DA.xp, yp: Y(DA.yp), rp: 15.5, Yh: Y(DA.Yh), zh: DA.zh, ramH: 22,
   // otočná kolečka
-  xc: 172, yc: 214, Rc: 50,
+  xc: DA.xc, yc: Y(DA.yc), Rc: DA.Rc,
 };
 
 // ---------- 2D pomůcky ----------
