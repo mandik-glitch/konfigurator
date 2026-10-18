@@ -1,0 +1,28 @@
+{
+ "foto": "12",
+ "tag": "r1",
+ "kamera_cx_cy_cz_yaw_pitch_roll_fov": [
+  -1094.917,
+  -1141.513,
+  1080.904,
+  45.419,
+  -24.497,
+  -2.73,
+  50.724
+ ],
+ "iou": 0.9518,
+ "chyby_landmarku_px_na_1500": {
+  "FT_W": 3.1,
+  "FT_E": 5.9,
+  "SH_W": 6.9,
+  "SB_W": 15.3,
+  "FB_W": 13.2,
+  "HUB_W": 11.8,
+  "FRtf_W": 3.7,
+  "HOLE": 10.1,
+  "TT_W": 2.5,
+  "TB_W": 22.8
+ },
+ "prumer_chyby_px": 9.5,
+ "poznamka": "kamera = ODHAD z ručně změřených bodů a doladění překryvem obrysu (IoU proti ručně obkreslenému polygonu); z' nad zemí; fotografie ani překryv v repu nejsou"
+}
