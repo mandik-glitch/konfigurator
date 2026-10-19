@@ -1,0 +1,31 @@
+{
+ "tag": "r8",
+ "cena_start": 0.1253465559460242,
+ "cena": 0.1176049942194802,
+ "evals": 133,
+ "dims": {
+  "hw": 229.34,
+  "Yf": -294.74,
+  "ys": 54.81,
+  "yb": 193.05,
+  "Hb": 611.99,
+  "zb": 168.81,
+  "zft": 593.82,
+  "yft": -170.75,
+  "yRear": 217.04,
+  "xp": 230.08,
+  "yp": 219.07,
+  "Yh": 220.06,
+  "zh": 662.16,
+  "hwBox": 215.94,
+  "zBoxT": 613.82,
+  "xc": 174.14,
+  "yc": 201.52,
+  "holeX": 33.78,
+  "holeY": -218.04,
+  "R": 134.86,
+  "tw": 85.12,
+  "Rc": 53.85
+ },
+ "poznamka": "rozměry v „A“ prostoru (před roztažením v Y); doladěno proti ručně obkresleným obrysům + landmarkům při pevných kamerách; priory = ±rozsah"
+}
