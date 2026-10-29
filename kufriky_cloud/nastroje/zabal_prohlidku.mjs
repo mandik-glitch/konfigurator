@@ -28,7 +28,7 @@ for (const f of jmenaCsv) {
 const nazevPro = (id) => { const k = klic(id); if (nazvy.has(k)) return nazvy.get(k); for (const [kk, v] of nazvy) { if (kk.startsWith(k) || k.startsWith(kk)) return v; } return ''; };
 const polozky = [];
 for (const s of slozky) {
-  const dir = path.resolve(ROOT, '..', s);
+  const dir = path.isAbsolute(s) ? s : path.resolve(ROOT, '..', s);
   for (const f of fs.readdirSync(dir).filter(x => x.endsWith('.glb')).sort()) {
     const id = f.replace(/\.glb$/, '');
     const varianta = id.includes('_') ? ' (varianta: ' + id.split('_').slice(1).join(' ') + ')' : '';

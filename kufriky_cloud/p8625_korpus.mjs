@@ -4,7 +4,8 @@
 import { Group, Part, rrPoly, roundPoly, ccw, loftSolid, ext, slab, rrShell, tray, ringSolid, bx, zc, cylinder, ZC } from './p8625_zaklad.mjs';
 
 export const K = {
-  zBot: 26.5, zBotC: 30.5,        // spodní hrana stěn (boky) a uprostřed pod držadlem (c13, silueta)
+  // Oprava výšky nožek (Robert, 2026-10-29): nožky 27,5 → 11 mm (−60 %, tj. −16,5 mm), tělo o stejnou hodnotu vyšší, vnější výška 178 mm beze změny.
+  zBot: 26.5 - 16.5, zBotC: 30.5 - 16.5,   // spodní hrana stěn (boky) a uprostřed pod držadlem (původně 26,5 a 30,5; c13, silueta)
   zRim: 157.5, yT: 247,         // horní okraj vany = švík víka; poloviční šířka vany
   xF: 183.5, xR: -172,            // čelní a zadní rovina vany
   cav: { x0: -162.2, x1: 151.3, y: 235.2, floor: 30 },        // dutina vany (viz měření na c03) a horní plocha dna

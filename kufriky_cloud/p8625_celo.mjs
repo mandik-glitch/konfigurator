@@ -6,7 +6,7 @@ import { RAM, JAZYK, ZAMEK_L, ZAMEK_P } from './p8625_data.mjs';
 
 export const F = {
   xf: 183.5,                    // rovina čelní stěny (horní okraj vany pod víkem, c04: X = 183)
-  zB: 26.5,                     // spodní hrana čelní stěny (silueta c13)
+  zB: 26.5 - 16.5,              // spodní hrana čelní stěny (původně 26,5, silueta c13; nožky sníženy o 16,5 mm, tělo vyšší o stejnou hodnotu)
   zSeam: 157.5,                 // švík s víkem
   win: { hy: 98.0, z0: 36, z1: 121, xBack: 154 },                 // okno držadla
   blade: { y0: 98.0, y1: 118.6, z1: 115, h: 1.5 },                // žebra mezi oknem a kapsou
@@ -45,7 +45,7 @@ function reliefCela(g) {
 function nozicky(g) {
   for (const s of [-1, 1]) {
     const a = 98.0, b = 120.5;
-    const poly = s > 0 ? [[a, 31], [b, 31], [b - 7.5, 0.5], [a, 0.5]] : [[-a, 31], [-a, 0.5], [-b + 7.5, 0.5], [-b, 31]];
+    const poly = s > 0 ? [[a, 31 - 16.5], [b, 31 - 16.5], [b - 7.5, 0.5], [a, 0.5]] : [[-a, 31 - 16.5], [-a, 0.5], [-b + 7.5, 0.5], [-b, 31 - 16.5]];
     const p = prismYZ('cerna_mat', 'klin', poly.map(([y, z]) => [y, z - ZC]), 160, F.xf - 1);
     g.add(p);
   }
